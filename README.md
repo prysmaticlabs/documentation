@@ -10,13 +10,7 @@ Below are steps for initialising and reproducing this portal for development.
 
     > You have to be on Node >= 8.x and Yarn >= 1.5.
 
-2.  Create a project, if none exists, and change your directory to this project's root.
-
-    You will be creating the docs in this directory. The root directory may contain other files. The Docusaurus installation script will create two new directories: `docs` and `website`.
-
-    > Commonly, either an existing or newly created GitHub project will be the location for your Docusaurus site, but that is not mandatory to use Docusaurus.
-
-3.  Run the Docusaurus installation script: `npx docusaurus-init`.
+2.  Run the Docusaurus installation script: `npx docusaurus-init`.
 
     > If you don't have Node 8.2+ or if you prefer to install Docusaurus globally, run `yarn global add docusaurus-init` or `npm install --global docusaurus-init`. After that, run `docusaurus-init`.
 
