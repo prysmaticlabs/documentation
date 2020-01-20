@@ -85,10 +85,12 @@ Below are instructions for initialising a beacon node and connecting to the publ
 To start your beacon node, issue the following command:
 
 ```text
-docker run -it -v $HOME/prysm:/data -p 4000:4000 --name beacon-node \
+docker run -it -v $HOME/prysm:/data -p 4000:4000 -p 13000:13000 --name beacon-node \
   gcr.io/prysmaticlabs/prysm/beacon-chain:latest \
   --datadir=/data
 ```
+
+It is also recommended to include the `--p2p-host-ip` and `--min-peers 7` flags to improve peering.
 
 The beacon node can be halted by either using `Ctrl+c` or with the command:
 
@@ -111,7 +113,7 @@ docker rm beacon-node
 To recreate a deleted container and refresh the chain database, issue the start command with an additional `--clear-db` parameter:
 
 ```text
-docker run -it -v $HOME/prysm:/data -p 4000:4000 --name beacon-node \
+docker run -it -v $HOME/prysm:/data -p 4000:4000 -p 13000:13000 --name beacon-node \
   gcr.io/prysmaticlabs/prysm/beacon-chain:latest \
   --datadir=/data \
   --clear-db
@@ -128,8 +130,10 @@ docker run -it -v $HOME/prysm:/data -p 4000:4000 --name beacon-node \
 3. To run the beacon node, issue the following command:
 
 ```text
-docker run -it -v c:/prysm/:/data -p 4000:4000 gcr.io/prysmaticlabs/prysm/beacon-chain:latest --datadir=/data --clear-db
+docker run -it -v c:/prysm/:/data -p 4000:4000 -p 13000:13000 gcr.io/prysmaticlabs/prysm/beacon-chain:latest --datadir=/dat --clear-db
 ```
+
+It is also recommended to include the `--p2p-host-ip` and `--min-peers 7` flags to improve peering.
 
 ### Running via Bazel
 
