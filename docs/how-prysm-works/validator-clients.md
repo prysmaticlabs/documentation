@@ -1,5 +1,5 @@
 ---
-id: database-backend-boltdb
+id: prysm-validator-client
 title: Prysm Validator Client
 sidebar_label: Prysm Validator Client
 ---
