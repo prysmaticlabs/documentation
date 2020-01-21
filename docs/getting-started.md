@@ -90,7 +90,7 @@ docker run -it -v $HOME/prysm:/data -p 4000:4000 -p 13000:13000 --name beacon-no
   --datadir=/data
 ```
 
-It is also recommended to include the `--p2p-host-ip` and `--min-peers 7` flags to improve peering.
+It is also recommended to include the `--p2p-host-ip` and `--min-sync-peers 7` flags to improve peering.
 
 The beacon node can be halted by either using `Ctrl+c` or with the command:
 
@@ -133,7 +133,7 @@ docker run -it -v $HOME/prysm:/data -p 4000:4000 -p 13000:13000 --name beacon-no
 docker run -it -v c:/prysm/:/data -p 4000:4000 -p 13000:13000 gcr.io/prysmaticlabs/prysm/beacon-chain:latest --datadir=/data --clear-db
 ```
 
-It is also recommended to include the `--p2p-host-ip` and `--min-peers 7` flags to improve peering.
+It is also recommended to include the `--p2p-host-ip` and `--min-sync-peers 7` flags to improve peering.
 
 ### Running via Bazel
 
