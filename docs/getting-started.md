@@ -10,7 +10,7 @@ sidebar_label: Getting Started with Prysm
 
 #### **Need assistance?**
 
-If you have questions about this documentation, feel free to stop by either the [Prysmatic Discord](https://discord.gg/KSA7rPr)'s **\#docs** channel or [our Gitter](https://gitter.im/prysmaticlabs/geth-sharding?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) and a member of the team or our community will be happy to assist you.
+If you have questions about this documentation, feel free to stop by either the [Prysmatic Discord](https://github.com/prysmaticlabs/documentation/commit/aa6c10427234591357d510f629b58a4462f81998)'s **#documentation** channel or [Gitter](https://gitter.im/prysmaticlabs/geth-sharding?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) and a member of the team or our community will be happy to assist you.
 
 ## Dependencies
 
