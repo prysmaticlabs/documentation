@@ -1,7 +1,7 @@
 ---
 id: reading
 title: External Reading
-sidebar_label: Required reading
+sidebar_label: Required Reading
 ---
 
 This page serves material that is necessary to catch up with the current state of ETH2 development, and equips readers with the knowledge required to begin making meaningful contributions to the Prysm project. Whether you are an expert on all things Ethereum or are new to the blockchain world entirely, there are appropriate resources here that will help you get up to speed swiftly.
