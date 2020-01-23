@@ -20,15 +20,15 @@ Below are steps for initialising and reproducing this portal for development.
 2.  From within the `website` directory, run the local web server using `yarn start` or `npm start`.
 3.  Load the example site at http://localhost:3000 if it did not already open automatically. If port 3000 has already been taken, another port will be used. Look at the console messages to see which.
 
-    You should see the example site loaded in your web browser. There's also a LiveReload server running and any changes made to the docs and files in the `website` directory will cause the page to refresh. A randomly generated primary and secondary theme color will be picked for you.
+    You should see the example site loaded in your web browser. There's also a LiveReload server running, and any changes made to the docs and files in the `website` directory will cause the page to refresh.
     
     
 ## Building Static HTML Pages
 
-To create a static build of your website, run the following script from the `website` directory:
+To create a static build of the documentation portal, run the following script from the `website` directory:
 
 ```bash
 yarn run build # or `npm run build`
 ```
 
-This will generate a `build` directory inside the `website` directory containing the `.html` files from all of your docs and other pages included in `pages`.
+This will generate a `build` subdirectory within the `website` directory, containing the `.html` files from all of the docs and other files included in `pages`.
