@@ -100,20 +100,20 @@ Open a second terminal window. Depending on your platform, issue the appropriate
 docker run -it -v $HOME/prysm/validator:/data --network="host" \
   gcr.io/prysmaticlabs/prysm/validator:latest \
   --beacon-rpc-provider=127.0.0.1:4000 \
-  --keystore-path=/data \
-  --password=changeme
+  --keymanager=keystore \
+  --keymanageropts='{"path":"/data","passphrase":"changeme"}'
 ```
 
 #### Starting the validator client with Docker on Windows
 
 ```text
-docker run -it -v $HOME/prysm/validator:/data --network="host" gcr.io/prysmaticlabs/prysm/validator:latest --beacon-rpc-provider=127.0.0.1:4000 --keystore-path=/data --password=changeme
+docker run -it -v $HOME/prysm/validator:/data --network="host" gcr.io/prysmaticlabs/prysm/validator:latest --beacon-rpc-provider=127.0.0.1:4000 --keymanager=keystore --keymanageropts='{"path":"/data","passphrase":"changeme"}'
 ```
 
 #### Starting the validator client with Bazel
 
 ```text
-bazel run //validator -- --keystore-path=$HOME/beacon-chain --password=changeme
+bazel run //validator -- --keymanager=keystore --keymanageropts='{"path":"'${HOME}'/beacon-chain","passphrase":"changeme"}'
 ```
 
 ## Submitting the deposit contract
