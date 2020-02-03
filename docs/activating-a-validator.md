@@ -33,7 +33,7 @@ docker run -it -v $HOME/prysm/validator:/data \
 #### Generating with Docker on Windows
 
 ```text
-docker run -it -v $HOME/prysm:/data gcr.io/prysmaticlabs/prysm/validator:latest accounts create --keystore-path=/data --password=changeme
+docker run -it -v c:/prysm:/data gcr.io/prysmaticlabs/prysm/validator:latest accounts create --keystore-path=/data --password=changeme
 ```
 
 #### Generating with Bazel
@@ -64,15 +64,15 @@ Open a terminal window. Depending on your platform, issue the appropriate comman
 #### Starting the beacon node with Docker on GNU/Linux or macOS
 
 ```text
-docker run -it -v $HOME/prysm/beacon:/data -p 4000:4000 \
+docker run -it -v $HOME/prysm/beacon:/data -p 4000:4000 -p 13000:13000 \
   gcr.io/prysmaticlabs/prysm/beacon-chain:latest \
   --datadir=/data
 ```
 
-#### Starting the beacon node with Docker on WIndows
+#### Starting the beacon node with Docker on Windows
 
 ```text
-docker run -it -v $HOME/prysm/beacon:/data -p 4000:4000 gcr.io/prysmaticlabs/prysm/beacon-chain:latest --datadir=/data
+docker run -it -v c:/prysm/beacon:/data -p 4000:4000 -p 13000:13000 gcr.io/prysmaticlabs/prysm/beacon-chain:latest --datadir=/data
 ```
 
 #### Starting the beacon node with Bazel
