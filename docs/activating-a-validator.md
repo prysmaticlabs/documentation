@@ -33,7 +33,7 @@ docker run -it -v $HOME/prysm/validator:/data \
 #### Generating with Docker on Windows
 
 ```text
-docker run -it -v $HOME/prysm:/data gcr.io/prysmaticlabs/prysm/validator:latest accounts create --keystore-path=/data --password=changeme
+docker run -it -v c:/prysm:/data gcr.io/prysmaticlabs/prysm/validator:latest accounts create --keystore-path=/data --password=changeme
 ```
 
 #### Generating with Bazel
@@ -64,15 +64,15 @@ Open a terminal window. Depending on your platform, issue the appropriate comman
 #### Starting the beacon node with Docker on GNU/Linux or macOS
 
 ```text
-docker run -it -v $HOME/prysm/beacon:/data -p 4000:4000 \
+docker run -it -v $HOME/prysm/beacon:/data -p 4000:4000 -p 13000:13000 \
   gcr.io/prysmaticlabs/prysm/beacon-chain:latest \
   --datadir=/data
 ```
 
-#### Starting the beacon node with Docker on WIndows
+#### Starting the beacon node with Docker on Windows
 
 ```text
-docker run -it -v $HOME/prysm/beacon:/data -p 4000:4000 gcr.io/prysmaticlabs/prysm/beacon-chain:latest --datadir=/data
+docker run -it -v c:/prysm/beacon:/data -p 4000:4000 -p 13000:13000 gcr.io/prysmaticlabs/prysm/beacon-chain:latest --datadir=/data
 ```
 
 #### Starting the beacon node with Bazel
@@ -100,20 +100,20 @@ Open a second terminal window. Depending on your platform, issue the appropriate
 docker run -it -v $HOME/prysm/validator:/data --network="host" \
   gcr.io/prysmaticlabs/prysm/validator:latest \
   --beacon-rpc-provider=127.0.0.1:4000 \
-  --keystore-path=/data \
-  --password=changeme
+  --keymanager=keystore \
+  --keymanageropts='{"path":"/data","passphrase":"changeme"}'
 ```
 
 #### Starting the validator client with Docker on Windows
 
 ```text
-docker run -it -v $HOME/prysm/validator:/data --network="host" gcr.io/prysmaticlabs/prysm/validator:latest --beacon-rpc-provider=127.0.0.1:4000 --keystore-path=/data --password=changeme
+docker run -it -v $HOME/prysm/validator:/data --network="host" gcr.io/prysmaticlabs/prysm/validator:latest --beacon-rpc-provider=127.0.0.1:4000 --keymanager=keystore --keymanageropts='{"path":"/data","passphrase":"changeme"}'
 ```
 
 #### Starting the validator client with Bazel
 
 ```text
-bazel run //validator -- --keystore-path=$HOME/beacon-chain --password=changeme
+bazel run //validator -- --keymanager=keystore --keymanageropts='{"path":"'${HOME}'/beacon-chain","passphrase":"changeme"}'
 ```
 
 ## Submitting the deposit contract
