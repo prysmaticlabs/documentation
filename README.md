@@ -4,21 +4,24 @@ This repository houses all the documentation pertaining to the Prysm client and 
 
 Below are steps for initialising and reproducing this portal for development.
 
-## Installing Docusaurus
+## Dependencies
 
-1.  Ensure you have the latest version of [Node](https://nodejs.org/en/download/) installed. We also recommend you install [Yarn](https://yarnpkg.com/en/docs/install) as well.
+1.  The latest version of [Node](https://nodejs.org/en/download/) installed. 
+2. The latest version of [Yarn](https://yarnpkg.com/en/docs/install) installed. (Optional, but recommended)
 
     > You have to be on Node >= 8.x and Yarn >= 1.5.
 
-2.  Run the Docusaurus installation script: `npx docusaurus-init`.
+## Installation
 
-    > If you don't have Node 8.2+ or if you prefer to install Docusaurus globally, run `yarn global add docusaurus-init` or `npm install --global docusaurus-init`. After that, run `docusaurus-init`.
+1. Clone this repository.
+2.  Enter the newly cloned repo and enter the ` website` directory.
+3. Issue the command `npm install`
+4. Wait for the installation process to complete.
 
-## Running the development server
+## Running the development server  
 
-1.  `cd website`
-2.  From within the `website` directory, run the local web server using `yarn start` or `npm start`.
-3.  Load the example site at http://localhost:3000 if it did not already open automatically. If port 3000 has already been taken, another port will be used. Look at the console messages to see which.
+1. From within the `website` directory, run the local web server using `yarn start` or `npm start`.
+2.  Load the example site at http://localhost:3000 if it did not already open automatically. If port 3000 has already been taken, another port will be used. Look at the console messages to see which.
 
     You should see the example site loaded in your web browser. There's also a LiveReload server running, and any changes made to the docs and files in the `website` directory will cause the page to refresh.
     
