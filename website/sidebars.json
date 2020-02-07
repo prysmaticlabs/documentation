@@ -1,7 +1,8 @@
 {
   "docs": {
     "Getting Started": ["getting-started",
-						           "activating-a-validator"],
+			            "activating-a-validator",
+			            "wallet-keymanager"],
 
     "Introduction": ["introduction/what-is-prysm",
 					 "introduction/on-ethereum-2",
