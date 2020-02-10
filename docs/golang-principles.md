@@ -1,7 +1,7 @@
 ---
 id: golang-principles
 title: Prysm's Golang Principles
-sidebar_label: Prysm's Golang Principles
+sidebar_label: Golang Principles
 ---
 
 Prysmatic Labs sticks to the official [Effective Go guidelines](https://golang.org/doc/effective_go.html), and all code committed to Prysm's master branch goes through extensive lint tools that check formatting correctness and review potential security flaws in the code itself.
