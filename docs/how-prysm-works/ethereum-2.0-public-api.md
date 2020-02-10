@@ -1,7 +1,7 @@
 ---
 id: ethereum-2-public-api
 title: Ethereum 2.0 Public API
-sidebar_label:  Ethereum 2.0 Public API
+sidebar_label: Public API
 description: This section contains service definitions and gRPC instructions to interact with the public API.
 ---
 
@@ -94,4 +94,3 @@ For more details on JSON mapping for other types, view the relevant section in t
 * [Language reference for protoc3](https://developers.google.com/protocol-buffers/docs/proto3)
 * [Protocol Buffer Basics: Go](https://developers.google.com/protocol-buffers/docs/gotutorial)
 * [Transcoding gRPC to JSON/HTTP using Envoy](https://blog.jdriven.com/2018/11/transcoding-grpc-to-http-json-using-envoy/)
-
