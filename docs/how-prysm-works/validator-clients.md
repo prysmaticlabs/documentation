@@ -1,7 +1,7 @@
 ---
 id: prysm-validator-client
-title: Prysm Validator Client
-sidebar_label: Prysm Validator Client
+title: Prysm's Validator Client
+sidebar_label: Validator client
 ---
 
 Although [beacon nodes](the-beacon-chain.md) handle network syncronisation, drawing consensus and performing several other low-level functions, the role of [validators](../glossaries/terminology.md#validator) whom stake ETH to in order to perform block [proposals](../glossaries/terminology.md#propose) and [attestations](../glossaries/terminology.md#attest) are an equally critical component of the Ethereum 2.0 network.
@@ -52,4 +52,3 @@ A [block proposal](../glossaries/terminology.md#propose) must include several it
 3. An attestation bitfield is constructed using the validator index.
 4. The attestation key is then signed with a [validator](../glossaries/terminology.md#validator)'s private key.
 5. Halfway through the slot duration, the attestation is sent to the beacon node via [gRPC](ethereum-2.0-public-api.md).
-

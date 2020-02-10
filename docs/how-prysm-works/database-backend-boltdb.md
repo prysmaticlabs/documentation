@@ -1,14 +1,14 @@
 ---
 id: database-backend-boltdb
 title: BoltDB Database
-sidebar_label: BoltDB Database
+sidebar_label: BoltDB database
 ---
 
 BoltDB is the persistent [key-value store](../glossaries/terminology.md#key-value-store) database utilised by the Prysm client. A piece of software that Prysm initially inherited from its origins as a [Geth](https://geth.ethereum.org/) fork was its storage engine, LevelDB. As a simple embedded [key-value store](../glossaries/terminology.md#key-value-store) written in Go, LevelDB worked well; however, after observing a number of corruption-related issues, it was decided to survey some other options for the project.
 
 #### Why BoltDB?
 
-There were two main requirements of the new storage engine; it needed to be an embedded environment, and written in Go. After a considerable amount of testing, three options in particular met this criteria as well as performance expectancy: BoltDB, Badger and the old option, LevelDB. 
+There were two main requirements of the new storage engine; it needed to be an embedded environment, and written in Go. After a considerable amount of testing, three options in particular met this criteria as well as performance expectancy: BoltDB, Badger and the old option, LevelDB.
 
 After testing and benchmarking all three options, Bolt was decided upon as the best option for Prysm. Although LevelDB and Badger performed better in write-heavy benchmarks \(as expected for an LSM-tree\), the difference was not substantial, while BoltDB performed much better on read-heavy benchmarks. Further, though Bolt also consumes more space on disk compared to the other two options, it provides the strongest guarantees against data loss, one of the most crucial goals of the project.
 
@@ -66,4 +66,3 @@ func NewDB(dirPath string) (*BeaconDB, error) {
     return db, err
 }
 ```
-
