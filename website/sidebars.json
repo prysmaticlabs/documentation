@@ -7,13 +7,11 @@
  "Installing Prysm": ["install/linux",
                     "install/windows",
                     "install/mac",
-                    "install/arm",
-                    "install/troubleshooting"],
+                    "install/arm"],
 
     "Running Prysm": ["activating-a-validator",
                      "parameters",
-                     "tests",
-                     "tips"],
+                     "tests"],
 
 
 
@@ -26,14 +24,12 @@
 						         "how-prysm-works/p2p-networking",
 						         "how-prysm-works/bls-cryptography"],
 
- "Developer Tools": ["devtools/metrics",
-                    "devtools/block-explorers"],
+ "Developer Tools": ["devtools/block-explorers"],
 
 		  "Public API": ["how-prysm-works/ethereum-2-public-api"],
 
-    "Get Involved": ["contribute/contribution-guidelines",
-                     "contribute/bugreports",
-						         "community",
+    "Get Involved": ["community",
+                     "contribute/contribution-guidelines",
 						         "contribute/golang-principles"],
 
 		  "Learn More": ["reading/eth2",
