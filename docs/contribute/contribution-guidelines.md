@@ -4,11 +4,6 @@ title: Contribution Guide
 sidebar_label: Contribution Guide
 ---
 
-Learn what you need to do to begin making meaningful contributions to the Prysm project.
-
-
-Contribution Guide
-
 New to the Prysm project, the Ethereum protocol or the concepts behind blockchain entirely? The [external reading](required-reading.md) page includes a large selection of comprehensive information for both part-time and core contributors alike.
 
 #### Ready to begin?
@@ -44,7 +39,7 @@ Core contributors are remote contractors of Prysmatic Labs and are considered  c
 * Formulate independent ideas, suggest new work to do, point out improvements
 * Participate in code review, quality control and ensuring high code coverage
 * Help with our social media presence, write bi-weekly development updates
-* Represent Prysmatic Labs at events to help spread the word 
+* Represent Prysmatic Labs at events to help spread the word
 
 The team loves to work with people that are autonomous, have new and excting ideas and enthusiasm about the work they are doing. The project takes a merit-based approach to becoming a core contributor, and any part-time contributor that puts the time, work and commitment in can become a core member of the team.
 
@@ -69,7 +64,7 @@ Then link your local repository to your newly created fork.
 $ git remote add myprysmrepo https://github.com/<your_github_user_name>/prysm.git
 ```
 
-Lastly, link your local clone to the Prysm repository to easily fetch future changes. 
+Lastly, link your local clone to the Prysm repository to easily fetch future changes.
 
 ```text
 $ git remote add prysm https://github.com/prysmaticlabs/prysm.git
@@ -166,7 +161,7 @@ $ git push myrepo feature-in-progress-branch
 
 Navigate to your fork of the repository on Github. In the upper left where the current branch is listed, change the branch to your newly created one. Open the files that you have worked on and ensure they include your changes.
 
-Navigate to [https://github.com/prysmaticlabs/prysm](https://github.com/prysmaticlabs/prysm) and click on the new pull request button. In the “base” box on the left, leave the default selection “base master”, the branch that you want your changes to be applied to. In the “compare” box on the right, select the branch containing the changes you want to apply. You will then be asked to answer a few questions about your pull request. 
+Navigate to [https://github.com/prysmaticlabs/prysm](https://github.com/prysmaticlabs/prysm) and click on the new pull request button. In the “base” box on the left, leave the default selection “base master”, the branch that you want your changes to be applied to. In the “compare” box on the right, select the branch containing the changes you want to apply. You will then be asked to answer a few questions about your pull request.
 
 After you complete the questionnaire, the pull request will appear in the list of pull requests at [https://github.com/prysmaticlabs/prysm/pulls](https://github.com/prysmaticlabs/prysm/pulls).
 
@@ -174,7 +169,6 @@ After you complete the questionnaire, the pull request will appear in the list o
 
 Core Contributors may ask questions and request that you make edits. If you set notifications at the top of the page to “not watching,” you will still be notified by email whenever someone comments on the page of a pull request you have created. If you are asked to modify your pull request, repeat steps 8 through 15, then leave a comment to notify the Core Contributors that the pull request is ready for further review.
 
-### 
+###
 
-### 
-
+###

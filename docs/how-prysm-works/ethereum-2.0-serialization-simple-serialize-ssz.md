@@ -4,7 +4,7 @@ title: Simple Serialize (SSZ)
 sidebar_label: Simple Serialize (SSZ)
 ---
 
-Simple Serialize \(also known as SSZ\) is the serialization algorithm standard for all data structures common across Ethereum 2.0 client implementations. It is outlined in the official [Ethereum 2.0 specification](https://github.com/ethereum/eth2.0-specs/blob/dev/specs/simple-serialize.md). 
+Simple Serialize \(also known as SSZ\) is the serialization algorithm standard for all data structures common across Ethereum 2.0 client implementations. It is outlined in the official [Ethereum 2.0 specification](https://github.com/ethereum/eth2.0-specs/blob/dev/specs/simple-serialize.md).
 
 Simple Serialize contains support for `bool`, `uint8`, `uint16`, `uint32`, `uint64`, `slice`, `array`, `struct` and `pointer` data types.
 
@@ -38,7 +38,7 @@ func Unmarshal(input []byte, val interface{}) error
 func HashTreeRoot(val interface{}) ([32]byte, error)
 ```
 
-## Usage examples 
+## Usage examples
 
 ### Encoding an object \(Marshal\)
 
@@ -51,7 +51,7 @@ type exampleStruct1 struct {
 }
 ```
 
-1. Next, we can encode the defined object like so:
+2. Next, we can encode the defined object like so:
 
 ```go
 e1 := exampleStruct1{
@@ -64,7 +64,7 @@ if err != nil {
 }
 ```
 
-1. **\(Optional\)** It is also possible to specify the size of a struct's field by utilising ssz-specific field tags:
+3. **\(Optional\)** It is also possible to specify the size of a struct's field by utilising ssz-specific field tags:
 
 ```go
 type exampleStruct struct {
@@ -75,7 +75,7 @@ type exampleStruct struct {
 
 This will treat `Field2` as as `[32]byte` array when marshaling.
 
-1. **\(Optional\)** For unbounded fields or multidimensional slices, SSZ size tags can also be used:
+4. **\(Optional\)** For unbounded fields or multidimensional slices, SSZ size tags can also be used:
 
 ```go
 type exampleStruct struct {
@@ -100,7 +100,7 @@ reflect.DeepEqual(e1, e2) // Returns true as e2 now has the same content as e1.
 
 ### Calculating the tree-hash \(HashTreeRoot\)
 
-1. To calculate tree-hash root of the object run:
+2. To calculate tree-hash root of the object run:
 
 ```go
 root, err := HashTreeRoot(e1)
@@ -108,4 +108,3 @@ if err != nil {
     return fmt.Errorf("failed to compute Merkle root: %v", err)
 }
 ```
-
