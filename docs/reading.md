@@ -8,14 +8,7 @@ This page serves material that is necessary to catch up with the current state o
 
 ## Blockchain and Ethereum basics
 
-### **Blockchain fundamentals**
-
-* [What is Blockchain Technology? A Step by Step Guide for Beginners](https://blockgeeks.com/guides/what-is-blockchain-technology/)
-* [What is Bitcoin? A Step by Step Guide for Beginners](https://blockgeeks.com/guides/what-is-bitcoin/)
-* [The Science Behind Cryptocurrencies' Cryptography](https://blockgeeks.com/guides/cryptocurrencies-cryptography/)
-* [The Ins and Outs of Cryptographic Hash Functions](https://blockgeeks.com/guides/cryptographic-hash-functions/)
-* [Blockchain Glossary from A-Z](https://blockgeeks.com/guides/blockchain-glossary-from-a-z/)
-* [Blockchain Addresses 101: What Are They?](https://blockgeeks.com/guides/blockchain-address-101/)
+z
 
 ### **Ethereum fundamentals**
 
@@ -137,12 +130,3 @@ After reading the sharding material for part-time contributors, it is important 
 * [Casper CBC and Sharding by Vlad Zamfir](https://www.youtube.com/watch?v=qDa4xjQq1RE&t=1951s)
 * [Casper FFG in Depth by Carl](https://www.youtube.com/watch?v=uQ3IqLDf-oo)
 * [Ethereum & Scalability Technology from Asia Pacific ETH meet up by Hsiao Wei](https://www.youtube.com/watch?v=GhuWWShfqBI)
-
-## Getting to know Golang
-
-* [The Go Programming Language \(Only Recommended Book\)](https://www.amazon.com/Programming-Language-Addison-Wesley-Professional-Computing/dp/0134190440)
-* [Ethereum Development with Go](https://goethereumbook.org)
-* [How to Write Go Code](http://golang.org/doc/code.html)
-* [The Go Programming Language Tour](http://tour.golang.org/)
-* [Getting Started With Go](http://www.youtube.com/watch?v=2KmHtgtEZ1s)
-* [Go Official Website](https://golang.org/)
