@@ -23,8 +23,8 @@ const users = [
 const siteConfig = {
   title: "Prysm 'Sapphire' Testnet", // Title for your website.
   tagline: 'An Ethereum 2.0 client written entirely in Go.',
-  url: 'https://docs.prylabs.network', // Your website URL
-  baseUrl: '/', // Base URL for your project */
+  url: 'https://hakr.gg', // Your website URL
+  baseUrl: '/prystage/', // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
   //   url: 'https://facebook.github.io',
   //   baseUrl: '/test-site/',
@@ -41,8 +41,8 @@ const siteConfig = {
     {doc: 'getting-started', label: 'Documentation'},
     { href: 'https://prylabs.net', label: 'Activate a Validator' },
     { href: 'https://github.com/prysmaticlabs/prysm', label: 'GitHub' },
-    { href: 'https://medium.com/prysmatic-labs', label: 'Blog' },
     { href: 'https://api.prylabs.network', label: 'API' },
+    { href: 'https://medium.com/prysmatic-labs', label: 'Blog' },
   ],
 
   // If you have users set above, you add it here:

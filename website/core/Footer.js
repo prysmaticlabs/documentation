@@ -37,10 +37,7 @@ class Footer extends React.Component {
           </a>
           <div>
             <h5>Sections</h5>
-            <a href={this.docUrl('getting-started.html', this.props.language)}>
-              Getting Started
-            </a>
-            <a href={this.docUrl('introduction/how-prysm-works.html', this.props.language)}>
+            <a href={this.docUrl('/', this.props.language)}>
               Documentation
             </a>
             <a href={this.docUrl('doc3.html', this.props.language)}>
@@ -71,10 +68,10 @@ class Footer extends React.Component {
               className="github-button"
               href={this.props.config.repoUrl}
               data-icon="octicon-star"
-              data-count-href="/facebook/docusaurus/stargazers"
+              data-count-href="/prysmaticlabs/prysm"
               data-show-count="true"
               data-count-aria-label="# stargazers on GitHub"
-              aria-label="Star this project on GitHub">
+              aria-label="Star Prysm on GitHub">
               Star
             </a>
             {this.props.config.twitterUsername && (

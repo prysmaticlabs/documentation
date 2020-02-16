@@ -1,10 +1,10 @@
 ---
 id: prysm-beacon-node
-title: Prysm Beacon Node
-sidebar_label: Prysm Beacon Node
+title: Prysm's Beacon Node
+sidebar_label: Beacon node
 ---
 
-The beacon node shipped with Prysm is the keystone component of the Ethereum 2.0 protocol. It is responsibile for running a full [Proof-of-Stake](../glossaries/terminology.md#proof-of-stake-pos) blockchain, known as a beacon chain, which uses distributed consensus to agree on blocks both [proposed](../glossaries/terminology.md#propose) and [attested](../glossaries/terminology.md#attest) on by [validators](../glossaries/terminology.md#validator) in the network. Beacon nodes communicate their processed blocks to their peers via a P2P \(peer-to-peer\) network, which also manages the lifecycle process of active [validator clients](validator-clients.md). 
+The beacon node shipped with Prysm is the keystone component of the Ethereum 2.0 protocol. It is responsibile for running a full [Proof-of-Stake](../glossaries/terminology.md#proof-of-stake-pos) blockchain, known as a beacon chain, which uses distributed consensus to agree on blocks both [proposed](../glossaries/terminology.md#propose) and [attested](../glossaries/terminology.md#attest) on by [validators](../glossaries/terminology.md#validator) in the network. Beacon nodes communicate their processed blocks to their peers via a P2P \(peer-to-peer\) network, which also manages the lifecycle process of active [validator clients](validator-clients.md).
 
 ## Beacon node functionality
 
@@ -33,7 +33,7 @@ The operations service handles important information contained in blocks on the 
 
 ## Core package
 
-The core package implements the Ethereum 2.0 state transition function, as well as the core helpers and utilities. Every function that manages block processing, epoch processing, validator shuffling and finality is defined within this package. It is designed to be a near-identical translation of the official specification. The aim is to keep this package as free of outside code as possible, and it is comprised of mostly pure functions which do not require access to the other services across Prysm to function. 
+The core package implements the Ethereum 2.0 state transition function, as well as the core helpers and utilities. Every function that manages block processing, epoch processing, validator shuffling and finality is defined within this package. It is designed to be a near-identical translation of the official specification. The aim is to keep this package as free of outside code as possible, and it is comprised of mostly pure functions which do not require access to the other services across Prysm to function.
 
 ## Sync service
 
@@ -48,4 +48,3 @@ As the beacon node will need to frequently access information and one cannot rel
 ## Public RPC server
 
 The public RPC server is one of the most critical components of the beacon node. It implements a variety of methods that [validators ](../glossaries/terminology.md#validator)connected to the node can query and obtain assignments to propose or attest blocks. The API is defined in a [protobuf](https://developers.google.com/protocol-buffers/) formatted file, and any client that implements the client side of these methods can connect via gRPC to the beacon node and begin requesting data from its public endpoints.
-
