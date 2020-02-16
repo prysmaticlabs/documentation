@@ -1,27 +1,40 @@
 {
   "docs": {
-    "Getting Started": ["getting-started",
-			            "activating-a-validator",
-			            "wallet-keymanager"],
 
-    "Introduction": ["introduction/what-is-prysm",
-					 "introduction/on-ethereum-2",
-					 "introduction/on-the-public-testnet"],
+ "An Introduction": ["getting-started",
+                      "introduction/on-ethereum-2"],
 
-    "How Prysm Works": ["how-prysm-works/architecture-overview",
-						"how-prysm-works/prysm-beacon-node",
-						"how-prysm-works/prysm-validator-client",
-						"how-prysm-works/validator-deposit-contract",
-						"how-prysm-works/ethereum-2-public-api",
-						"how-prysm-works/simple-serialize-ssz",
-						"how-prysm-works/database-backend-boltdb",
-						"how-prysm-works/p2p-networking",
-						"how-prysm-works/bls-cryptography"],
+ "Installing Prysm": ["install/linux",
+                    "install/windows",
+                    "install/mac",
+                    "install/arm"],
 
-   "Getting Involved": ["contribute/contribution-guidelines",
-						"contribute/our-prcommunity",
-						"golang-principles",
-						"reading"],
+    "Running Prysm": ["activating-a-validator",
+                     "parameters",
+                     "wallet-keymanager",
+                      "tests"],
+
+
+
+  "How Prysm Works": ["how-prysm-works/architecture-overview",
+                     "how-prysm-works/prysm-beacon-node",
+						         "how-prysm-works/prysm-validator-client",
+						         "how-prysm-works/validator-deposit-contract",
+						         "how-prysm-works/simple-serialize-ssz",
+						         "how-prysm-works/database-backend-boltdb",
+						         "how-prysm-works/p2p-networking",
+						         "how-prysm-works/bls-cryptography"],
+
+ "Developer Tools": ["devtools/block-explorers"],
+
+		  "Public API": ["how-prysm-works/ethereum-2-public-api"],
+
+    "Get Involved": ["community",
+                     "contribute/contribution-guidelines",
+						         "contribute/golang-principles"],
+
+		  "Learn More": ["reading/eth2",
+                    "reading/golang"],
 
 		   "Glossaries": ["terminology"],
 
