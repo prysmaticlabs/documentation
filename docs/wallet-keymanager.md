@@ -8,11 +8,9 @@ The wallet keymanager is the recommended way of storing and accessing keys on a 
 
 ## ethdo
 
-`ethdo` is a third-party product that manages Ethereum 2 wallets, amongst other things.  `ethdo` is written in the Go programming language (the same language in which Prysm itself is written) and requires a suitable installation of Go to operate.  To install `ethdo` run the following command:
-
+[ethdo](https://github.com/wealdtech/ethdo) is a third-party product that manages Ethereum 2 wallets, amongst other things.  `ethdo` is written in the Go programming language (the same language in which Prysm itself is written) and requires a suitable installation of Go to operate.  To install `ethdo` run the following command:
 
 > In the below and future commands, the `$` sign indicates lines you should type to run the command; these lines should be entered *without* the `$` sign.  Lines without the `$` sign are expected output from commands.
-
 
 ```sh
 $ go get -u github.com/wealdtech/ethdo
@@ -121,7 +119,7 @@ Although options for the wallet keymanager can be supplied directly on the comma
 To create the relevant directory run the following:
 
 ```sh
-$ mkdir -p ${HOME}/prysm/validator
+$ mkdir -p "${HOME}/prysm/validator"
 ```
 
 and then use your favourite text editor to create a file in this directory called `keymanager.json` with the following contents:
@@ -144,8 +142,16 @@ and then use your favourite text editor to create a file in this directory calle
 To start the validator you must supply the desired keymanager and the location of the keymanager options file.   Run the following command:
 
 ```sh
-$ bazel run //validator:validator -- --keymanager=wallet --keymanageropts=${HOME}/prysm/validator/keymanager.json
+$ bazel run //validator:validator -- --keymanager=wallet --keymanageropts="${HOME}/prysm/validator/keymanager.json"
 ```
+
+> The examples below uses the standard wallet path for linux, however the path is different for different operating systems.  The paths are:
+> 
+>  - Linux: ${HOME}/.config/ethereum2/wallets
+>  - MacOS: ${HOME}/Library/Application Support/ethereum2/wallets
+>  - Windows: %APPDATA%\ethereum2\wallets
+>
+> Please substitute the path relevant for your operating system when seen below.
 
 #### Docker
 
@@ -168,9 +174,9 @@ Docker will not have direct access to the wallet created above, and requires the
 and run the validator with the following command:
 
 ```sh
-$ docker run -v ${HOME}/prysm/validator:/data \
-      -v ${HOME}/.config/ethereum2/wallets:/wallets \
-      bazel/validator:image \
+$ docker run -v "${HOME}/prysm/validator:/data" \
+      -v "${HOME}/.config/ethereum2/wallets:/wallets" \
+      gcr.io/prysmaticlabs/prysm/validator:latest \
       --keymanager=wallet \
       --keymanageropts=/data/keymanager.json
 ```
@@ -186,3 +192,58 @@ As part of the output when running the validator you should see something like:
 ```
 
 The first line states how many keys the validator is validating with, and subsequent lines state the specific public keys.  You should confirm that these values match your expectations.
+
+## Migrating keys from keystore
+
+To migrate keys from the `keystore` keymanager you need to extract the private keys and then import them in to a wallet
+
+### Extracting private keys from keystore
+
+To extract the private keys you must run the `validator accounts keys` command with the path and passphrase for the keystore.  
+
+#### Standalone
+
+Run the following command:
+
+```sh
+$ bazel run //validator:validator -- accounts keys --keystore-path="${HOME}/.eth2validators" --password=secret
+```
+
+#### Docker
+
+Run the following command:
+
+```sh
+$ docker run -v "${HOME}/prysm/validator:/data" \
+      -v "${HOME}/.eth2validators:/validators" \
+      gcr.io/prysmaticlabs/prysm/validator:latest \
+      accounts keys \
+      --keystore-path=/validators \
+      --password=secret
+```
+
+### Importing private keys to wallet
+
+The output from the prior extraction piece should include lines that look like:
+
+```sh
+Public key: 0xa551e2558c839162b5df961ceb27cd10e9cf711ac15ff7866143cbf6df5fe523e5c3c91fdfa95f47e20b9499ee5766fc private key: 0x3e89ad55d05fa8e412045c4187417e6a480a82203bd85779e673a43761dcbcb1
+```
+
+Each private key can be imported using the command:
+
+```sh
+ethdo account import --account=Validators/newname --passphrase=newvalidatorsecret --key=0x3e89ad55d05fa8e412045c4187417e6a480a82203bd85779e673a43761dcbcb1
+```
+
+You will need a different `account` for each new account you add, for example if following the prior steps you could add the next with `Validators/3`, then `Validators/4` and so on.  You should also set the passphrase accordingly.
+
+### Exiting a validator
+
+To exit a validator run the following command:
+
+```sh
+$ ethdo validator exit --account=Validators/1 --passphrase=validator1secret
+```
+
+Note that this assumes you have a beacon chain node running locally with gRPC on port 4000.  If the beacon chain node is elsewhere use the `--connection` option to allow `ethdo` to connect to it.
