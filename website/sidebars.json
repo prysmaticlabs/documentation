@@ -11,7 +11,8 @@
 
     "Running Prysm": ["activating-a-validator",
                      "parameters",
-                     "tests"],
+                     "wallet-keymanager",
+                      "tests"],
 
 
 
