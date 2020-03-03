@@ -9,10 +9,10 @@
                     "install/mac",
                     "install/arm"],
 
-    "Running Prysm": ["activating-a-validator",
-                     "parameters",
-                     "wallet-keymanager",
-                      "tests"],
+    "Running Prysm": ["prysm-usage/activating-a-validator",
+                     "prysm-usage/parameters",
+                     "prysm-usage/wallet-keymanager",
+                     "prysm-usage/tests"],
 
 
 
