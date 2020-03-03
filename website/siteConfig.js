@@ -23,8 +23,8 @@ const users = [
 const siteConfig = {
   title: "Prysm 'Sapphire' Testnet", // Title for your website.
   tagline: 'An Ethereum 2.0 client written entirely in Go.',
-  url: 'https://hakr.gg', // Your website URL
-  baseUrl: '/prystage/', // Base URL for your project */
+  url: '/', // Your website URL
+  baseUrl: '/', // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
   //   url: 'https://facebook.github.io',
   //   baseUrl: '/test-site/',
