@@ -1,5 +1,5 @@
 ---
-id: prysm-beacon-node
+id: beacon-node
 title: Prysm's Beacon Node
 sidebar_label: Beacon node
 ---

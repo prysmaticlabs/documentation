@@ -4,35 +4,6 @@ title: Available parameters
 sidebar_label: Available parameters
 ---
 
-## Docker Commands
-The beacon node can be halted by either using `Ctrl+c` or with the command:
-
-```text
-docker stop beacon-node
-```
-
-To restart the beacon node, issue the following command:
-
-```text
-docker start -ai beacon-node
-```
-
-To delete a corrupted container, issue the following command:
-
-```text
-docker rm beacon-node
-```
-
-To recreate a deleted container and refresh the chain database, issue the start command with an additional `--clear-db` parameter:
-
-```text
-docker run -it -v $HOME/prysm:/data -p 4000:4000 -p 13000:13000 --name beacon-node \
-  gcr.io/prysmaticlabs/prysm/beacon-chain:latest \
-  --datadir=/data \
-  --clear-db
-```
-
-## Startup parameters
 This section lists the various flags used to customise the startup process of beacon nodes and validator clients.
 ### Shared flags
 These flags are shared by both the beacon node and validator client.
