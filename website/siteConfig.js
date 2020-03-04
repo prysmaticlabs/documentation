@@ -1,4 +1,4 @@
-t users = [
+const users = [
   {
     caption: 'User1',
     // You will need to prepend the image path with your baseUrl
@@ -96,7 +96,7 @@ const siteConfig = {
   // template. For example, if you need your repo's URL...
   //   repoUrl: 'https://github.com/facebook/test-site',
   algolia: {
-    apiKey: process.env.ALGOLIA_API_KEY',
+    apiKey: process.env.ALGOLIA_API_KEY,
     indexName: 'prysmaticlabs_prysm',
     algoliaOptions: {} // Optional, if provided by Algolia
   },
