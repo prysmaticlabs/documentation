@@ -4,7 +4,7 @@ title: Prysm's Beacon Node
 sidebar_label: Beacon node
 ---
 
-The beacon node shipped with Prysm is the keystone component of the Ethereum 2.0 protocol. It is responsibile for running a full [Proof-of-Stake](../glossaries/terminology.md#proof-of-stake-pos) blockchain, known as a beacon chain, which uses distributed consensus to agree on blocks both [proposed](../glossaries/terminology.md#propose) and [attested](../glossaries/terminology.md#attest) on by [validators](../glossaries/terminology.md#validator) in the network. Beacon nodes communicate their processed blocks to their peers via a P2P \(peer-to-peer\) network, which also manages the lifecycle process of active [validator clients](validator-clients.md).
+The beacon node shipped with Prysm is the keystone component of the Ethereum 2.0 protocol. It is responsibile for running a full [Proof-of-Stake](../glossaries/terminology.md#proof-of-stake-pos) blockchain, known as a beacon chain, which uses distributed consensus to agree on blocks both [proposed](../glossaries/terminology.md#propose) and [attested](../glossaries/terminology.md#attest) on by [validators](../glossaries/terminology.md#validator) in the network. Beacon nodes communicate their processed blocks to their peers via a P2P \(peer-to-peer\) network, which also manages the lifecycle process of active [validator clients](../how-prysm-worksvalidator-clients.md).
 
 ## Beacon node functionality
 
