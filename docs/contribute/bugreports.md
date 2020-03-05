@@ -8,7 +8,7 @@ Bug reports are critical to the rapid development of the Prysm client. In order 
 
 ## Checking if your issue exists
 
-Duplicate tickets are a hinderance to the development process, and as such, it is crucial to first check through Prysm's existing issues to see if what you are experiencing is already indexed.
+Duplicate tickets are a hinderance to the development process and, as such, it is crucial to first check through Prysm's existing issues to see if what you are experiencing has already been indexed.
 
 To do so, head over to the [issue page](https://github.com/prysmaticlabs/prysm/issues) and enter some related keywords into the search bar. This may include a sample from the output or specific components it affects. If this is unsuccessful, check the [issue labels index](https://github.com/prysmaticlabs/prysm/labels) for related catagories and review the tickets within.
 
@@ -16,8 +16,45 @@ If searches have shown the issue in question has not been reported yet, feel fre
 
 ## Writing quality bug reports
 
-A good bug report is strcutured to help the developers and contributors visualise the issue in the clearest way possible. It's important to be concise and use comprehensive language, while also providing as much relevant information as possible. Use short and accurate sentences without any unecessary additions, and include all existing specifications with a list of steps to reproduce the expected problem. A nonreproducible issue **cannot be solved**.
+A good bug report is strcutured to help the developers and contributors visualise the issue in the clearest way possible. It's important to be concise and use comprehensive language, while also providing as all relevant information on-hand. Use short and accurate sentences without any unecessary additions, and include all existing specifications with a list of steps to reproduce the expected problem. A nonreproducible issue **cannot be solved**.
 
 If you are experiencing multiple issues, it is best to open each as a seperate ticket. This allows them to be closed individually as they are resolved.
 
-An original bug report will very likely be preserved and used as a record and sounding board for users who experience the same in the future. Because of this, it is a great service to the community to ensure that reports meet these standards.
+An original bug report will very likely be preserved and used as a record and sounding board for users that have similar experiences in the future. Because of this, it is a great service to the community to ensure that reports meet these standards and follow the template closely.
+
+
+## The bug report template
+
+Below is the standard bug report template used by all of Prysm's official repositories. 
+
+```sh
+<!--- Provide a general summary of the issue in the Title above -->
+
+## Expected Behaviour
+<!--- What should be happening? -->
+
+## Current Behaviour
+<!--- What happens instead? -->
+
+## Steps to Reproduce
+<!--- Provide a concise set of steps to reproduce this bug.  -->
+1.
+2.
+3.
+4.
+5. 
+
+## Detailed Description
+<!--- Provide some context for the issue you are experiencing. -->
+
+## Specifications
+<!--- Provide some information regarding your local system. --->
+Operating system:
+Version(s) used:
+
+## Possible Solution
+<!--- (Optional) Suggest a fix, reason or implementation for the bug. -->
+
+## Further Information
+<!--- Anything else to add?
+```
