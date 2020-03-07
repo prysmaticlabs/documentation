@@ -4,7 +4,7 @@ title:  Welcome to the Prysmatic Documentation Portal
 sidebar_label: Getting started
 ---
 
-![Prysm logo](http://hakr.gg/prystage/img/logo3.png "Prysmatic Labs")
+![Prysm logo](/img/logo3.png "Prysmatic Labs")
 
 ## What is Prysm?
 The Prysm client is being developed to provide a full-featured staking client for the Ethereum 2.0 network written entirely in the [Go programming language](https://golang.org). Originally released in early 2019 by [Prysmatic Labs](https://prysmaticlabs.com), Prysm implements the official [Ethereum 'Serenity' 2.0 specification](https://github.com/ethereum/eth2.0-specs), which is the product of an ongoing collective research and development effort by various teams across the Ethereum ecosystem.

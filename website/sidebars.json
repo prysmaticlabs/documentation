@@ -17,7 +17,7 @@
 
 
   "How Prysm Works": ["how-prysm-works/architecture-overview",
-                     "how-prysm-works/prysm-beacon-node",
+                     "how-prysm-works/beacon-node",
 						         "how-prysm-works/prysm-validator-client",
 						         "how-prysm-works/validator-deposit-contract",
 						         "how-prysm-works/simple-serialize-ssz",
