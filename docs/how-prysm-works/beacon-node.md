@@ -10,12 +10,12 @@ The beacon node shipped with Prysm is the keystone component of the Ethereum 2.0
 
 At runtime, the beacon node initialises and maintains a number of services that are all vital to providing all the features of Ethereum 2.0. In no particular order, these services include:
 
-* A [**blockchain** **service**](the-beacon-chain.md#blockchain-service) which processes incoming blocks from the network, advances the beacon chain's state, and applies a fork choice rule to select the best head block.
-* An [**operations service**](the-beacon-chain.md#operations-service) prepares information contained in beacon blocks received from peers \(such as block deposits and attestations\) for inclusion into new validator blocks.
-* A [**core package** ](the-beacon-chain.md#core-package)containing Ethereum 2.0 core functions, utilities, and state transitions required for conformity with the protocol.
-* A [**sync service**](the-beacon-chain.md#sync-service) which both queries nodes across the network to ensure latest [canonical head](../glossaries/terminology.md#canonical-head-block) and state are synced and processes incoming block announcements from peers.
-* An [**ETH 1.0 service**](the-beacon-chain.md#eth1-service) that listens to latest event logs from the validator deposit contract and the ETH 1.0 blockchain.
-* A [**public RPC server**](the-beacon-chain.md#public-rpc-server) that requests information about the beacon chain's state, the latest block, validator information, etcetera.
+* A [**blockchain** **service**](#blockchain-service) which processes incoming blocks from the network, advances the beacon chain's state, and applies a fork choice rule to select the best head block.
+* An [**operations service**](#operations-service) prepares information contained in beacon blocks received from peers \(such as block deposits and attestations\) for inclusion into new validator blocks.
+* A [**core package** ](#core-package)containing Ethereum 2.0 core functions, utilities, and state transitions required for conformity with the protocol.
+* A [**sync service**](#sync-service) which both queries nodes across the network to ensure latest [canonical head](../glossaries/terminology.md#canonical-head-block) and state are synced and processes incoming block announcements from peers.
+* An [**ETH 1.0 service**](#eth1-service) that listens to latest event logs from the validator deposit contract and the ETH 1.0 blockchain.
+* A [**public RPC server**](#public-rpc-server) that requests information about the beacon chain's state, the latest block, validator information, etcetera.
 * A [**P2P server**](p2p-networking.md) which handles the lifecycle of peer connections and facilitates broadcasting across the network.
 * A **full test suite** for running simulation on Ethereum 2.0 state transitions, benchmarks and conformity tests across clients.
 
@@ -23,13 +23,13 @@ We isolate each of these services into separate packages, each responsible for i
 
 ## Blockchain service
 
-The blockchain service is arguably the most important part of the project, as it allows the network to reach consensus on the state of the protocol itself. It is responsible for handling the lifecycle of blocks, and applies the [fork choice rule](../glossaries/terminology.md#fork-choice-rule) and [state transition function](../glossaries/terminology.md#state-transition-function) provided by the [core package](the-beacon-chain.md#core-package) to advance the beacon chain.
+The blockchain service is arguably the most important part of the project, as it allows the network to reach consensus on the state of the protocol itself. It is responsible for handling the lifecycle of blocks, and applies the [fork choice rule](../glossaries/terminology.md#fork-choice-rule) and [state transition function](../glossaries/terminology.md#state-transition-function) provided by the [core package](#core-package) to advance the beacon chain.
 
 In Ethereum 2.0, blocks can be proposed in intervals known as _slots_, which are period of seconds. During a slot, proposers are assigned to create and send blocks into the beacon node for acceptance. It is possible, however, that proposer may fail to do their job at their assigned slot; in this case, the blockchain service processes skipped slots appropriately to ensure that the chain does not stall.
 
 ## Operations service
 
-The operations service handles important information contained in blocks on the beacon chain, such as voluntary validator exits, [proposals](../glossaries/terminology.md#propose), [attestations](../glossaries/terminology.md#attest), slashings and more. The operation is received from the [sync service](the-beacon-chain.md#sync-service) via the [P2P network](p2p-networking.md), or from data the node retrieves locally.
+The operations service handles important information contained in blocks on the beacon chain, such as voluntary validator exits, [proposals](../glossaries/terminology.md#propose), [attestations](../glossaries/terminology.md#attest), slashings and more. The operation is received from the [sync service](#sync-service) via the [P2P network](p2p-networking.md), or from data the node retrieves locally.
 
 ## Core package
 
