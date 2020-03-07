@@ -1,7 +1,7 @@
 ---
 id: contribution-guidelines
-title: Contribution Guide
-sidebar_label: Contribution Guide
+title: Contribution guide
+sidebar_label: Contribution guide
 ---
 
 New to the Prysm project, the Ethereum protocol or the concepts behind blockchain entirely? The [external reading](required-reading.md) page includes a large selection of comprehensive information for both part-time and core contributors alike.
