@@ -21,7 +21,7 @@ The easiest way to install the beacon chain and validator is by running the `pry
 
 > **NOTICE:** It is recommended to open up port 13000 on your local router to improve connectivity and receive more peers from the network. To do so, navigate to `192.168.0.1` in your browser and login if required. Follow along with the interface to modify your routers firewall settings. When this task is completed, append the parameter`--p2p-host-ip=$(curl -s ident.me)` to your selected beacon startup command presented in this section to use the newly opened port.
 
-### Running the initialising script
+### Running the Prysm startup script
 
 1. Clone Prysm's [main repository](https://github.com/prysmaticlabs/prysm) and enter the directory:
 
@@ -30,7 +30,7 @@ git clone https://github.com/prysmaticlabs/prysm
 cd prysm
 ```
 
-2. Run the `prysm.sh` script with the recommended [startup parameters](/prysm-usageparameters) by issuing the following command:
+2. Run the `prysm.sh` script with the recommended [startup parameters](../prysm-usage/parameters) by issuing the following command:
 
 ```sh
 ./prysm.sh -it -v $HOME/prysm:/data -p 4000:4000 -p 13000:13000 --name beacon-node \
@@ -67,7 +67,7 @@ At this point, the beacon chain data will begin syncronising up to the latest he
 
   Once your beacon node is up, the chain will be waiting for you to deposit 3.2 Goerli ETH into a [validator deposit contract](../how-prysm-works/validator-deposit-contract) in order to activate your validator.
 
-  To begin setting up a validator, follow the instructions found on [prylabs.network](https://prylabs.network) to use the Göerli ETH faucet and make a deposit. For step-by-step assistance with the deposit page, see the [activating a validator ](../prysm-usage/activating-a-validator.md)section of this documentation.
+  To begin setting up a validator, follow the instructions found on [prylabs.network](https://prylabs.network) to use the Göerli ETH faucet and make a deposit. For step-by-step assistance with the deposit page, see the [activating a validator ](../prysm-usage/activating-a-validator.md)section of this documentation. For instructions on setting up multiple validators on a single machine, see the [../prysm-usage/wallet-keymanager](wallet keymanagers) section.
 
   It will take a while for the nodes in the network to process a deposit. Once the node is active, the validator will immediately begin performing its responsibilities.
 
