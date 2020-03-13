@@ -11,7 +11,7 @@ A wallet keymanager is the recommended way of storing and accessing wallet keys 
 1. To install `ethdo`, issue the following command:
 
 ```sh
-go get -u github.com/wealdtech/ethdo
+GO111MODULE=on go get github.com/wealdtech/ethdo@v1.2.1
 ```
 
 2. Ensure `ethdo` is installed properly by issuing the command:
@@ -65,7 +65,7 @@ ethdo account create --account=Validators/1 --passphrase=validator1secret
 ethdo account create --account=Validators/2 --passphrase=validator2secret
 ```
 
- > The two validators are given different passphrases in the above example.  This is not required but is highly recommended, as it will prevent both nodes from being compromised should an attacker acquire the passphrase for only one.
+ > The two validators are given different passphrases in the above example.  This is not required but is recommended, as it will prevent both validators from being compromised should an attacker acquire the passphrase for one of them.
 
 ### Creating a withdrawal wallet and account
 
@@ -160,7 +160,7 @@ To start the validator you must supply the desired keymanager and the location o
 bazel run //validator:validator -- --keymanager=wallet --keymanageropts="${HOME}/prysm/validator/keymanager.json"
 ```
 
-> The below commands use the `{HOME}`` field, which is standard on GNU/Linux and macOS. For Windows users, replace it with `%APPDATA%`. E.g. ``%APPDATA%\ethereum2\wallets`.
+> The below commands use the `${HOME}` environment variable, which is standard on GNU/Linux and macOS. For Windows users, replace it with `%APPDATA%` e.g. `%APPDATA%\ethereum2\wallets`.  This may also require you to remove the double quotes around the `keymanageropts` value, especially on Windows.
 
 #### Starting the validator with Docker
 
@@ -193,7 +193,7 @@ Then run the validator by issuing the following command:
 
 When the validator is operational, you should see output similar to:
 
-```
+```text
 [2020-02-07 10:00:59]  INFO node: Found validator keys validators=2
 [2020-02-07 10:00:59]  INFO node: Validating for public key pubKey=0x85016bd4ca67e57e1438308fdb3d98b74b81428fb09e6d16d2dcbc72f240be090d5faebb63f84d6f35a950fdbb36f910
 [2020-02-07 10:00:59]  INFO node: Validating for public key pubKey=0x8de04b4cd3f0947f4e76fa2f86fa1cfd33cc2500688f2757e406448c36f0f1255758874b46d72002ad206ed560975d39
@@ -238,7 +238,7 @@ The output from the prior extraction piece should include lines similar to:
 Public key: 0xa551e2558c839162b5df961ceb27cd10e9cf711ac15ff7866143cbf6df5fe523e5c3c91fdfa95f47e20b9499ee5766fc private key: 0x3e89ad55d05fa8e412045c4187417e6a480a82203bd85779e673a43761dcbcb1
 ```
 
-Each private key can be imported using the command:
+You want to use the information after `private key`.  Each private key can be imported using the command:
 
 ```sh
 ethdo account import --account=Validators/newname --passphrase=newvalidatorsecret --key=0x3e89ad55d05fa8e412045c4187417e6a480a82203bd85779e673a43761dcbcb1
