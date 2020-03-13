@@ -4,81 +4,72 @@ title: Installing Prysm on ARM Hardware
 sidebar_label: ARM installations
 ---
 
-Prysm can be installed on various ARM boards using our build tool, Bazel. This page includes instructions for performing this process.
+Prysm can be installed on ARM64 systems using the Prysm build script. This page includes instructions for performing this process.
 
 **Have questions?** Stop by the [#documentation](https://discord.gg/QQZMCgU) channel on Discord and let us know.
 
 ## Dependencies
 
 * A modern GNU/Linux operating system
-* The unofficial [ARM64 Bazel](https://github.com/SuburbanDad/bazel/releases/tag/2.1.0-arm64) installed
 * The `cmake` package installed
-* The `git` package installed
-
- > To install ARM64 Bazel, simply copy the files to `/usr/local/bin`.
+* The `curl` package installed
 
 ## Installing the beacon chain and validator
 
-1. Open a terminal window. Ensure you are running the most recent version of Bazel by issuing the command:
+The easiest way to install the beacon chain and validator is by running the `prysm.sh` script found in the main directory of the [Prysm repository](https://github.com/prysmaticlabs/prysm). This script will download and start up the latest release of Prysm's binaries suited for the host system.
 
-```text
-bazel version
+> **NOTICE:** It is recommended to open up port 13000 on your local router to improve connectivity and receive more peers from the network. To do so, navigate to `192.168.0.1` in your browser and login if required. Follow along with the interface to modify your routers firewall settings. When this task is completed, append the parameter`--p2p-host-ip=$(curl -s ident.me)` to your selected beacon startup command presented in this section to use the newly opened port.
+
+### Running the Prysm startup script
+
+1. Create a working directory and enter it:
+
+```sh
+mkdir prysm && cd prysm
 ```
 
-2. Clone Prysm's [main repository](https://github.com/prysmaticlabs/prysm) and enter the directory:
+2. Fetch the `prysm.sh` script from Github:
 
-```text
-git clone https://github.com/prysmaticlabs/prysm
-cd prysm
+```sh
+curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --output prysm.sh
 ```
 
-3. Build both the beacon chain node and the validator client:
+3. Run the `prysm.sh` script with the recommended [startup parameters](../prysm-usage/parameters):
 
-```text
-bazel build //beacon-chain:beacon-chain
-bazel build //validator:validator
+```sh
+./prysm.sh --clear-db --datadir=$HOME/prysm
 ```
 
-Bazel will automatically pull and install any dependencies as well, including Go and necessary compilers.
+It is also recommended to include the `--p2p-host-ip` and `--min-sync-peers 7` flags to improve peering. For advanced users that desire standard debugging tools found in the Busybox base image, append a `--debug` flag to enable them.
 
-4. To shut down Bazel and conserve memory, issue the command:
+The `prysm.sh` script will now download and initialise the beacon chain with the specified parameters. The terminal will produce output like so:
 
-```
-bazel shutdown
-```
-
-### Looping the beacon chain
-
-When using ARM64 hardware, it is recommended to run the beacon chain on a loop to ensure that it restarts in the event it experiences an OOM (out of memory) issue.
-
-To start the beacon chain on a loop, issue the following command:
-
-```text
-while true; do bazel-bin/beacon-chain/linux_arm64_stripped/beacon-chain --enable-ssz-cache --cache-proposer-indices ; sleep 5s; done
-```
-
-## Connecting to the testnet: running a beacon node
-
-Below are instructions for initialising a beacon node and connecting to the public testnet. To further understand the role that the beacon node plays in Prysm, see [this section](../how-prysm-works/beacon-node) of the documentation.
-
-
-   > **NOTICE:** It is recommended to open up port 13000 on your local router to improve connectivity and receive more peers from the network. To do so, navigate to `192.168.0.1` in your browser and login if required. Follow along with the interface to modify your routers firewall settings. When this task is completed, append the parameter`--p2p-host-ip=$(curl -s ident.me)` to your selected beacon startup command presented in this section to use the newly opened port.
-
-To start your [beacon node](../how-prysm-works/beacon-node) with Bazel, issue the following command:
-
-```text
-bazel run //beacon-chain -- --clear-db --datadir=$HOME/prysm
+```sh
+./prysm.sh beacon-chain
+Latest Prysm version is v0.3.3.
+Downloading beacon chain@v0.3.3 to /home/{USER}/prysm/dist/beacon-chain-v0.3.3-linux-amd64 (automatically selected latest available version)
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   622  100   622    0     0   2320      0 --:--:-- --:--:-- --:--:--  2312
+100 39.6M  100 39.6M    0     0  13.6M      0  0:00:02  0:00:02 --:--:-- 20.4M
+Downloading validator@v0.3.3 to /home/{USER}/prysm/dist/validator-v0.3.3-linux-amd64 (automatically selected latest available version)
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   619  100   619    0     0   1484      0 --:--:-- --:--:-- --:--:--  1484
+100 32.5M  100 32.5M    0     0  12.6M      0  0:00:02  0:00:02 --:--:-- 21.7M
+Starting Prysm beacon-chain
+...
 ```
 
-This will sync up the beacon node with the latest head block in the network.
+At this point, the beacon chain data will begin syncronising up to the latest head block. Please note that, depending on your network capacity and CPU, this process may take several hours. Once it is complete, you will be ready to make a deposit and begin setting up a validator client.
 
-  > **NOTICE:** The beacon node must be **completely synced** before attempting to initialise a validator client, otherwise the validator will not be able to complete the deposit and **funds will lost**.
+  > **NOTICE:** The beacon chain must be **completely synced** before attempting to initialise a validator client, otherwise the validator will not be able to complete the deposit and **funds will lost**.
 
 ## Staking ETH: Running a validator client
 
-Once your beacon node is up, the chain will be waiting for you to deposit 3.2 Goerli ETH into a [validator deposit contract](../how-prysm-works/validator-deposit-contract) in order to activate your validator \(discussed in the section below\).
+  Once your beacon node is up, the chain will be waiting for you to deposit 3.2 Goerli ETH into a [validator deposit contract](../how-prysm-works/validator-deposit-contract) in order to activate your validator.
 
-To begin setting up a validator, follow the instructions found on [prylabs.network](https://prylabs.network) to use the Göerli ETH faucet and make a deposit. For step-by-step assistance with the deposit page, see the [activating a validator ](../prysm-usage/activating-a-validator.md)section of this documentation.
+  To begin setting up a validator, follow the instructions found on [prylabs.network](https://prylabs.network) to use the Göerli ETH faucet and make a deposit. For step-by-step assistance with the deposit page, see the [activating a validator ](../prysm-usage/activating-a-validator.md)section of this documentation. For instructions on setting up multiple validators on a single machine, see the [wallet keymanager](../prysm-usage/wallet-keymanager) section.
 
   It will take a while for the nodes in the network to process a deposit. Once the node is active, the validator will immediately begin performing its responsibilities.
 

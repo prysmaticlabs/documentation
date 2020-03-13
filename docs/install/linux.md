@@ -3,39 +3,41 @@ id: linux
 title: Installing Prysm on GNU/Linux
 sidebar_label: GNU/Linux installation
 ---
-Prysm can be installed on GNU/Linux systems with either Docker (recommended) or using our build tool, Bazel. This page includes instructions for performing both methods.
+
+Prysm can be installed on GNU/Linux systems using the Prysm build script. This page includes instructions for performing this process.
 
 **Have questions?** Stop by the [#documentation](https://discord.gg/QQZMCgU) channel on Discord and let us know.
 
 ## Dependencies
 
-#### **For Docker installations:**
-
 * A modern GNU/Linux operating system
 * The `cmake` package installed
-* The `git` package installed
+* The `curl` package installed
 
 ## Installing the beacon chain and validator
 
-The easiest way to install the beacon chain and validator is by running the `prysm.sh` script found in the main directory of the [Prysm repository](https://github.com/prysmaticlabs/prysm). Doing this will download the latest release of Prysm's binaries suited for the host system. 
+The easiest way to install the beacon chain and validator is by running the `prysm.sh` script found in the main directory of the [Prysm repository](https://github.com/prysmaticlabs/prysm). This script will download and start up the latest release of Prysm's binaries suited for the host system.
 
 > **NOTICE:** It is recommended to open up port 13000 on your local router to improve connectivity and receive more peers from the network. To do so, navigate to `192.168.0.1` in your browser and login if required. Follow along with the interface to modify your routers firewall settings. When this task is completed, append the parameter`--p2p-host-ip=$(curl -s ident.me)` to your selected beacon startup command presented in this section to use the newly opened port.
 
 ### Running the Prysm startup script
 
-1. Clone Prysm's [main repository](https://github.com/prysmaticlabs/prysm) and enter the directory:
+1. Create a working directory and enter it:
 
 ```sh
-git clone https://github.com/prysmaticlabs/prysm
-cd prysm
+mkdir prysm && cd prysm
 ```
 
-2. Run the `prysm.sh` script with the recommended [startup parameters](../prysm-usage/parameters) by issuing the following command:
+2. Fetch the `prysm.sh` script from Github:
 
 ```sh
-./prysm.sh -it -v $HOME/prysm:/data -p 4000:4000 -p 13000:13000 --name beacon-node \
-  gcr.io/prysmaticlabs/prysm/beacon-chain:latest \
-  --datadir=/data
+curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --output prysm.sh
+```
+
+3. Run the `prysm.sh` script with the recommended [startup parameters](../prysm-usage/parameters):
+
+```sh
+./prysm.sh --clear-db --datadir=$HOME/prysm
 ```
 
 It is also recommended to include the `--p2p-host-ip` and `--min-sync-peers 7` flags to improve peering. For advanced users that desire standard debugging tools found in the Busybox base image, append a `--debug` flag to enable them.
@@ -59,7 +61,7 @@ Starting Prysm beacon-chain
 ...
 ```
 
-At this point, the beacon chain data will begin syncronising up to the latest head block. Please note that, depending on your network capacity and CPU, this process may take several hours. Once it is complete, you will be ready to spin up a validator.
+At this point, the beacon chain data will begin syncronising up to the latest head block. Please note that, depending on your network capacity and CPU, this process may take several hours. Once it is complete, you will be ready to make a deposit and begin setting up a validator client.
 
   > **NOTICE:** The beacon chain must be **completely synced** before attempting to initialise a validator client, otherwise the validator will not be able to complete the deposit and **funds will lost**.
 
@@ -67,21 +69,10 @@ At this point, the beacon chain data will begin syncronising up to the latest he
 
   Once your beacon node is up, the chain will be waiting for you to deposit 3.2 Goerli ETH into a [validator deposit contract](../how-prysm-works/validator-deposit-contract) in order to activate your validator.
 
-  To begin setting up a validator, follow the instructions found on [prylabs.network](https://prylabs.network) to use the Göerli ETH faucet and make a deposit. For step-by-step assistance with the deposit page, see the [activating a validator ](../prysm-usage/activating-a-validator.md)section of this documentation. For instructions on setting up multiple validators on a single machine, see the [../prysm-usage/wallet-keymanager](wallet keymanagers) section.
+  To begin setting up a validator, follow the instructions found on [prylabs.network](https://prylabs.network) to use the Göerli ETH faucet and make a deposit. For step-by-step assistance with the deposit page, see the [activating a validator ](../prysm-usage/activating-a-validator.md)section of this documentation. For instructions on setting up multiple validators on a single machine, see the [wallet keymanager](../prysm-usage/wallet-keymanager) section.
 
   It will take a while for the nodes in the network to process a deposit. Once the node is active, the validator will immediately begin performing its responsibilities.
 
   In your validator client, you will be able to frequently see your validator balance as it goes up over time. Note that, should your node ever go offline for a long period, a validator will start gradually losing its deposit until it is removed from the network entirely.
 
   **Congratulations, you are now running Ethereum 2.0 Phase 0!**
-
-  ## Managing the beacon node
-
-  To recreate a deleted container and refresh the chain database, issue the start command with an additional `--clear-db` parameter:
-
-  ```text
-  ./peysm.sh -it -v $HOME/prysm:/data -p 4000:4000 -p 13000:13000 --name beacon-node \
-    gcr.io/prysmaticlabs/prysm/beacon-chain:latest \
-    --datadir=/data \
-    --clear-db
-  ```
