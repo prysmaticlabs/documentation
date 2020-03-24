@@ -89,7 +89,7 @@ The process of syncronising may take a while; the incoming block per second capa
 
 ## Starting up the validator client
 
-**NOTICE:** The beacon node must be **completely synced** before attempting to initialise a validator client, otherwise the validator will not be able to complete the deposit and **funds will be lost**.
+**NOTICE:** The beacon node you are using should be **completely synced** before submitting your deposit for the validator client, otherwise the validator will not be able to validate and will **inflict minor inactivity balance penalties**.
 
 
 Open a second terminal window. Depending on your platform, issue the appropriate command from the examples below to start the validator.
