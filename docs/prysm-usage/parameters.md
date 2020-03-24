@@ -20,11 +20,11 @@ datadir: "/data"
 enable-ssz-cache: true
 ```
 
-3. Start Prysm as normal, while specifying the location of the `.yaml` like so:
+3. Start the Prysm beacon chain as normal, while specifying the location of the `.yaml` like so:
 ```sh
 ./prysm.sh beacon-chain --config-file=/path/to/file.yaml
 ```
-or 
+or for a validator like so:
 ```sh
 ./prysm.sh validator --config-file=/path/to/file.yaml
 ```
