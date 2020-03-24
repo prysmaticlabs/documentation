@@ -22,7 +22,11 @@ enable-ssz-cache: true
 
 3. Start Prysm as normal, while specifying the location of the `.yaml` like so:
 ```sh
-./prysm.sh --config-file=/path/to/file.yaml
+./prysm.sh beacon-chain --config-file=/path/to/file.yaml
+```
+or 
+```sh
+./prysm.sh validator --config-file=/path/to/file.yaml
 ```
 
 It is possible to provide additional flags alongside the `.yaml` file, though if there is conflicts, the `.yaml` file will take priority. For example, if the flag `--datadir=/data2` is specified and `datadir: "/data1"` is in the `.yaml` file, Prysm would prioritise writing to `/data1`.
