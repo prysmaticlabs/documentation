@@ -5,7 +5,30 @@ sidebar_label: Available parameters
 ---
 
 This section lists the various flags used to customise the startup process of beacon nodes and validator clients.
-### Shared flags
+
+## Loading parameters via .YAML file
+
+Prysm now supports loading flag values from a specified `.yaml` file. Defining parameters in this way cuts back on terminal clutter and allows unique startup profiles to be saved independently.
+
+The below steps show how place the two common Prysm flags `--datadir=/data` and` --enable-ssz-cache` into a YAML file and how to specify it at start up.
+
+1. In your Prysm working directory, create a `.yaml` file and open it in a text editor.
+
+2. Add the following lines to the file before closing and saving:
+```sh
+datadir: "/data"
+enable-ssz-cache: true
+```
+
+3. Start Prysm as normal, while specifying the location of the `.yaml` like so:
+```sh
+./prysm.sh --config-file=/path/to/file.yaml
+```
+
+It is possible to provide additional flags alongside the `.yaml` file, though if there is conflicts, the `.yaml` file will take priority. For example, if the flag `--datadir=/data2` is specified and `datadir: "/data1"` is in the `.yaml` file, Prysm would prioritise writing to `/data1`.
+
+
+## Shared flags
 These flags are shared by both the beacon node and validator client.
 | Flag          | Usage         |
 | ------------- |:-------------|
