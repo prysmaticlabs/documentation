@@ -54,7 +54,7 @@ docker run -it -v c:/prysm/:/data -p 4000:4000 -p 13000:13000 gcr.io/prysmaticla
 
 It is also recommended to include the `--p2p-host-ip` and `--min-sync-peers 7` flags to improve peering.
 
-  > **NOTICE:** The beacon node must be **completely synced** before attempting to initialise a validator client, otherwise the validator will not be able to complete the deposit and **funds will lost**.
+  > **NOTICE:** The beacon node you are using should be **completely synced** before submitting your deposit for the validator client, otherwise the validator will not be able to validate and will **inflict minor inactivity balance penalties**.
 
 
   ## Staking ETH: Running a validator client
