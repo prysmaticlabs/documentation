@@ -14,6 +14,14 @@ Prysm can be installed on GNU/Linux systems using the Prysm build script. This p
 * The `cmake` package installed
 * The `curl` package installed
 
+**For Fedora systems:**
+* The `patch` package installed
+  * Afterwards, export the environment variables with the commands:
+```sh
+export CC="/usr/bin/gcc"
+export CXX="/usr/bin/g++"
+```
+
 ## Installing the beacon chain and validator
 
 The easiest way to install the beacon chain and validator is by running the `prysm.sh` script found in the main directory of the [Prysm repository](https://github.com/prysmaticlabs/prysm). This script will download and start up the latest release of Prysm binaries compatible with the host system.
