@@ -14,6 +14,14 @@ Prysm can be installed on GNU/Linux systems using the Prysm build script. This p
 * The `cmake` package installed
 * The `curl` package installed
 
+**For Fedora systems:**
+* The `patch` package installed
+  * Afterwards, export the environment variables with the commands:
+```sh
+export CC="/usr/bin/gcc"
+export CXX="/usr/bin/g++"
+```
+
 ## Installing the beacon chain and validator
 
 The easiest way to install the beacon chain and validator is by running the `prysm.sh` script found in the main directory of the [Prysm repository](https://github.com/prysmaticlabs/prysm). This script will download and start up the latest release of Prysm binaries compatible with the host system.
@@ -34,10 +42,10 @@ mkdir prysm && cd prysm
 curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --output prysm.sh
 ```
 
-3. Run the `prysm.sh` script with the recommended [startup parameters](../prysm-usage/parameters):
+3. Run the `prysm.sh` script alongside any [startup parameters](../prysm-usage/parameters):
 
 ```sh
-./prysm.sh --clear-db --datadir=$HOME/prysm
+./prysm.sh beacon-chain --clear-db
 ```
 
 It is also recommended to include the `--p2p-host-ip` and `--min-sync-peers 7` flags to improve peering. For advanced users that desire standard debugging tools found in the Busybox base image, append a `--debug` flag to enable them.
@@ -63,7 +71,7 @@ Starting Prysm beacon-chain
 
 At this point, the beacon chain data will begin syncronising up to the latest head block. Please note that, depending on your network capacity and CPU, this process may take several hours. Once it is complete, you will be ready to make a deposit and begin setting up a validator client.
 
-  > **NOTICE:** The beacon chain must be **completely synced** before attempting to initialise a validator client, otherwise the validator will not be able to complete the deposit and **funds will lost**.
+  > **NOTICE:** The beacon node you are using should be **completely synced** before submitting your deposit for the validator client, otherwise the validator will not be able to validate and will **inflict minor inactivity balance penalties**.
 
 ## Staking ETH: Running a validator client
 
