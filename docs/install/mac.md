@@ -34,10 +34,10 @@ mkdir prysm && cd prysm
 curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --output prysm.sh
 ```
 
-3. Run the `prysm.sh` script with the recommended [startup parameters](../prysm-usage/parameters):
+3. Run the `prysm.sh` script alongside any [startup parameters](../prysm-usage/parameters):
 
 ```sh
-./prysm.sh --clear-db
+./prysm.sh beacon-chain --clear-db
 ```
 
 It is also recommended to include the `--p2p-host-ip` and `--min-sync-peers 7` flags to improve peering. For advanced users that desire standard debugging tools found in the Busybox base image, append a `--debug` flag to enable them.
