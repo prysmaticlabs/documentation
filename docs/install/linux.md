@@ -11,8 +11,8 @@ Prysm can be installed on GNU/Linux systems using the Prysm build script. This p
 ## Dependencies
 
 * A modern GNU/Linux operating system
-* The `cmake` package installed
-* The `curl` package installed
+* The `cmake` package installed (`sudo apt install cmake`)
+* The `curl` package installed (`sudo apt install curl`)
 
 **For Fedora systems:**
 * The `patch` package installed
