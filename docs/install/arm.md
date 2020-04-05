@@ -11,8 +11,8 @@ Prysm can be installed on ARM64 systems using the Prysm build script. This page 
 ## Dependencies
 
 * A modern GNU/Linux operating system
-* The `cmake` package installed
-* The `curl` package installed
+* The `cmake` package installed (`sudo apt install cmake`)
+* The `curl` package installed (`sudo apt install curl`)
 
 ## Installing the beacon chain and validator
 
