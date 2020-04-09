@@ -4,12 +4,34 @@
  "An Introduction": ["getting-started",
                       "introduction/on-ethereum-2"],
 
- "Installing Prysm": ["install/linux",
-                    "install/windows",
-                    "install/mac",
-                    "install/arm"],
-
-    "Running Prysm": ["prysm-usage/activating-a-validator",
+ "GNU/Linux installations": ["install/linux",
+											"install/lin/docker",
+											"install/lin/bazel",
+											"install/lin/activating-a-validator",
+											"install/lin/troubleshooting"
+                    ],
+                    
+ "Windows installations": ["install/windows",
+ 											"install/win/docker",
+											"install/win/activating-a-validator",
+ 											"install/win/troubleshooting"
+                    ],
+                    
+ "macOS installations": ["install/mac",
+ 											"install/mac/docker",
+ 											"install/mac/bazel",
+											"install/win/activating-a-validator",
+ 											"install/mac/troubleshooting"
+                    ],
+                    
+ "ARM64 installations": ["install/arm",
+ 											"install/arm/docker",
+ 											"install/arm/bazel",
+											"install/arm/activating-a-validator",
+ 											"install/arm/troubleshooting"
+                    ],
+                    
+    "Running Prysm": ["prysm-usage/deploy-eth1-node",
                      "prysm-usage/parameters",
                      "prysm-usage/wallet-keymanager",
                      "prysm-usage/tests"],
@@ -34,10 +56,9 @@
                      "contribute/contribution-guidelines",
 						         "contribute/golang-principles"],
 
-		  "Learn More": ["reading/eth2",
+		  "Learn More": [ "terminology",
+											"reading/eth2",
                     "reading/golang"],
-
-		   "Glossaries": ["terminology"],
 
 		   "Licenses": ["licenses/prysmatic-labs"]
   }

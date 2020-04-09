@@ -1,7 +1,7 @@
 ---
 id: arm
-title: Installing Prysm on ARM Hardware
-sidebar_label: ARM installations
+title: Installing Prysm on ARM64 with Prysm.sh
+sidebar_label: Prysm installation script
 ---
 
 Prysm can be installed on ARM64 systems using the Prysm build script. This page includes instructions for performing this process.
@@ -38,7 +38,6 @@ curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --out
 
 ```sh
 ./prysm.sh beacon-chain --clear-db
-```
 
 It is also recommended to include the `--p2p-host-ip` and `--min-sync-peers 7` flags to improve peering. For advanced users that desire standard debugging tools found in the Busybox base image, append a `--debug` flag to enable them.
 
