@@ -1,7 +1,7 @@
 ---
 id: linux
-title: Installing Prysm on GNU/Linux
-sidebar_label: GNU/Linux installation
+title: Installing Prysm on GNU/Linux with Prysm.sh
+sidebar_label: Prysm installation script
 ---
 
 Prysm can be installed on GNU/Linux systems using the Prysm build script. This page includes instructions for performing this process.

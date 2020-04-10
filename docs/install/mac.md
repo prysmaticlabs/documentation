@@ -1,7 +1,7 @@
 ---
 id: mac
 title: Installing Prysm on macOS
-sidebar_label: macOS installation
+sidebar_label: Prysm installation script
 ---
 
 Prysm can be installed on macOS systems using the Prysm build script. This page includes instructions for performing this process.

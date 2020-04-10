@@ -1,7 +1,7 @@
 ---
 id: arm
-title: Installing Prysm on ARM Hardware
-sidebar_label: ARM installations
+title: Installing Prysm on ARM64 with Prysm.sh
+sidebar_label: Prysm installation script
 ---
 
 Prysm can be installed on ARM64 systems using the Prysm build script. This page includes instructions for performing this process.
