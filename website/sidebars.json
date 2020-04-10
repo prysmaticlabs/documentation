@@ -25,7 +25,6 @@
                     ],
                     
  "ARM64 installations": ["install/arm",
- 											"install/arm/docker",
  											"install/arm/bazel",
 											"install/arm/activating-a-validator",
  											"install/arm/troubleshooting"
