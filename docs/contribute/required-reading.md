@@ -2,7 +2,7 @@
 id: required-reading
 title: External Reading
 sidebar_label: External Reading
---- 
+---
 
 This page serves material that is necessary to catch up with the current state of ETH2 development, and equips readers with the knowledge required to begin making meaningful contributions to the Prysm project. Whether you are an expert on all things Ethereum or are new to the blockchain world entirely, there are appropriate resources here that will help you get up to speed swiftly.
 
@@ -146,4 +146,3 @@ After reading the sharding material for part-time contributors, it is important 
 * [The Go Programming Language Tour](http://tour.golang.org/)
 * [Getting Started With Go](http://www.youtube.com/watch?v=2KmHtgtEZ1s)
 * [Go Official Website](https://golang.org/)
-
