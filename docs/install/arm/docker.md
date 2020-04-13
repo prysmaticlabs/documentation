@@ -1,12 +1,12 @@
 ---
 id: docker
-title: Installing Prysm on macOS with Docker
+title: Installing Prysm on ARM64 with Docker
 sidebar_label: Installing with Docker
 ---
 
    > **NOTICE:** Docker is no longer a recommended installation method. Instead, please use the Prysm installation script instructions found [here](/docs/install/linux).
 
-Prysm can be installed on macOS systems with Docker. This page includes instructions for performing this method.
+Prysm can be installed on ARM64 systems with Docker. This page includes instructions for performing this method.
 
 **Have questions?** Stop by the [#documentation](https://discord.gg/QQZMCgU) channel on Discord and let us know.
 
@@ -14,7 +14,7 @@ Prysm can be installed on macOS systems with Docker. This page includes instruct
 
 #### **For Docker installations:**
 
-* A modern macOS operating system
+* A modern GNU/Linux operating system
 * The latest release of [Docker](https://docs.docker.com/install/) installed
 
 
