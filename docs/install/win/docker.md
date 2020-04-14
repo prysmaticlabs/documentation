@@ -4,7 +4,7 @@ title: Installing Prysm on Windows with Docker
 sidebar_label: Installing with Docker
 ---
 
-   > **NOTICE:** Docker is no longer a recommended installation method. Instead, please use the Prysm installation script instructions found here.
+   > **NOTICE:** The Prysm installation script is the easiest and most efficient way of installing the latest binaries. Instructions for using it can be found [here](/docs/install/windows).
 
 Prysm can be installed locally on Windows systems using Docker. This page includes instructions for performing this process.
 
