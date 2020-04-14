@@ -75,7 +75,7 @@ At this point, the beacon chain data will begin syncronising up to the latest he
 
 ## Staking ETH: Running a validator client
 
-  Once your beacon node is up, the chain will be waiting for you to deposit 3.2 Goerli ETH into a [validator deposit contract](../how-prysm-works/validator-deposit-contract) in order to activate your validator.
+  Once your beacon node is up, the chain will be waiting for you to deposit 32 Goerli ETH into a [validator deposit contract](../how-prysm-works/validator-deposit-contract) in order to activate your validator.
 
   To begin setting up a validator, follow the instructions found on [prylabs.network](https://prylabs.network) to use the Göerli ETH faucet and make a deposit. For step-by-step assistance with the deposit page, see the [activating a validator ](../prysm-usage/activating-a-validator.md)section of this documentation. For instructions on setting up multiple validators on a single machine, see the [wallet keymanager](../prysm-usage/wallet-keymanager) section.
 

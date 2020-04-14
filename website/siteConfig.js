@@ -10,7 +10,7 @@ const users = [
 ];
 
 const siteConfig = {
-  title: "Prysm 'Sapphire' Testnet", // Title for your website.
+  title: "Prysm 'Topaz' Testnet", // Title for your website.
   tagline: 'An Ethereum 2.0 client written entirely in Go.',
   url: '/', // Your website URL
   baseUrl: '/', // Base URL for your project */
@@ -104,4 +104,3 @@ const siteConfig = {
 
 
 module.exports = siteConfig;
-

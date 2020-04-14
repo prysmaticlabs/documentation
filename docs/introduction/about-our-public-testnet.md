@@ -3,7 +3,7 @@ id: on-the-public-testnet
 title: On the Public Testnet
 sidebar_label: On the Public Testnet
 ---
-  The various features and limitations of the Prysm 'Sapphire' Phase 0 testnet
+  The various features and limitations of the Prysm 'Topaz' Phase 0 testnet
   release.
 
 
@@ -22,4 +22,3 @@ sidebar_label: On the Public Testnet
 * **This is NOT a multi-client network**, though this is the next step most ETH2 teams have in mind.
 * **The testnet uses different configuration parameters than what we’d see on mainnet;** that is, we support fewer shards, a smaller [validator](../glossaries/terminology.md#validator) count, and different constants for the sake of simplicity.
 * **The testnet does not contain voluntary exits or attester/proposer slashings**, as those will come in later iterations and are not critical for showcasing the core functions of the beacon chain.
-

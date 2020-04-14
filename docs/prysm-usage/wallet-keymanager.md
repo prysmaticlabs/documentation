@@ -88,7 +88,7 @@ The validator now requires deposited funds. If you do not have any Göerli Ether
 ethdo validator depositdata \
       --validatoraccount=Validators/1 \
       --withdrawalaccount=Withdrawal/Primary \
-      --depositvalue=3.2Ether \
+      --depositvalue=32Ether \
       --passphrase=validator1secret \
       --raw
 ```
@@ -101,7 +101,7 @@ Alternatively, if you have your own Göerli ETH, you can send deposit transactio
 ethdo validator depositdata \
       --validatoraccount=Validators/1 \
       --withdrawalaccount=Withdrawal/Primary \
-      --depositvalue=3.2Ether \
+      --depositvalue=32Ether \
       --passphrase=validator1secret
 {"account":"Validators/1","pubkey":"a9ca9cf7fa2d0ab1d5d52d2d8f79f68c50c5296bfce81546c254df68eaac0418717b2f9fc6655cbbddb145daeb282c00","withdrawal_credentials":"0059a28dc2db987d59bdfc4ab20b9ad4c83888bcd32456a629aece07de6895aa","signature":"9335b872253fdab328678bd3636115681d52b42fe826c6acb7f1cd1327c6bba48e3231d054e4f274cc7c1c184f28263b13083e01db8c08c17b59f22277dff341f7c96e7a0407a0a31c8563bcf479d31136c833712ae3bfd93ee9ea6abdfa52d4","value":3200000000,"deposit_data_root":"14278c9345eeeb7b2d5307a36ed1c72eea5ed09a30cf7c47525e34f39f564ef5"}
 ```
@@ -112,7 +112,7 @@ This can be passed to [ethereal](https://github.com/wealdtech/ethereal) to send 
 DEPOSITDATA=`ethdo validator depositdata \
                    --validatoraccount=Validators/1 \
                    --withdrawalaccount=Withdrawal/Primary \
-                   --depositvalue=3.2Ether \
+                   --depositvalue=32Ether \
                    --passphrase=validator1secret`
 ethereal beacon deposit \
       --network=goerli \

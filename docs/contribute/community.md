@@ -10,7 +10,7 @@ Thank you for your interest in joining us. We'll see you in chat! ♡
 
 ## Becoming a validator
 
-For those would would like to participate in the Prysm 'Sapphire' testnet, it is now possible to sign up as a validator to process blocks and help advance the chain. Visit [PryLabs.net](https://prylabs.net) for setup instructions and to sign up as a validator on the network.
+For those would would like to participate in the Prysm 'Topaz' testnet, it is now possible to sign up as a validator to process blocks and help advance the chain. Visit [PryLabs.net](https://prylabs.net) for setup instructions and to sign up as a validator on the network.
 
 ## Assisting with code
 
