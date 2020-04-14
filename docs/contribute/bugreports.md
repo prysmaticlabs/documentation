@@ -25,7 +25,7 @@ An original bug report will very likely be preserved and used as a record and so
 
 ## The bug report template
 
-Below is the standard bug report template used by all of Prysm's official repositories. 
+Below is the standard bug report template used by all of Prysm's official repositories.
 
 ```sh
 <!--- Provide a general summary of the issue in the Title above -->
@@ -42,7 +42,7 @@ Below is the standard bug report template used by all of Prysm's official reposi
 2.
 3.
 4.
-5. 
+5.
 
 ## Detailed Description
 <!--- Provide some context for the issue you are experiencing. -->

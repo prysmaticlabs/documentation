@@ -11,7 +11,7 @@ The Prysm client is being developed to provide a full-featured staking client fo
 
 ## This documentation
 
-This manual is aimed at developers interested in exploring the Prysm 'Ruby' testnet release and reviews the concepts behind the changes made in Ethereum 2.0, as well as the core components of the Prysm client itself. Please note that, as the specification is a constantly evolving document, explanations are generally broad and comprehensive; for more detailed information or see the most recent developments, it is recommended to review the official [Ethereum 'Serenity' 2.0 specification](https://github.com/ethereum/eth2.0-specs) repository and the [notes on Serenity's phases](https://docs.ethhub.io/ethereum-roadmap/ethereum-2.0/eth-2.0-phases).
+This manual is aimed at developers interested in exploring the Prysm 'Topaz' testnet release and reviews the concepts behind the changes made in Ethereum 2.0, as well as the core components of the Prysm client itself. Please note that, as the specification is a constantly evolving document, explanations are generally broad and comprehensive; for more detailed information or see the most recent developments, it is recommended to review the official [Ethereum 'Serenity' 2.0 specification](https://github.com/ethereum/eth2.0-specs) repository and the [notes on Serenity's phases](https://docs.ethhub.io/ethereum-roadmap/ethereum-2.0/eth-2.0-phases).
 
 ## Need assistance?
 

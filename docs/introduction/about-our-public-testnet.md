@@ -3,7 +3,7 @@ id: on-the-public-testnet
 title: On the Public Testnet
 sidebar_label: On the Public Testnet
 ---
-  The various features and limitations of the Prysm 'Ruby' Phase 0 testnet
+  The various features and limitations of the Prysm 'Topaz' Phase 0 testnet
   release.
 
 
