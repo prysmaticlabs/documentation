@@ -5,7 +5,7 @@ sidebar_label: Installing with Bazel
 ---
 
 
-   > **NOTICE:** Bazel is no longer a recommended installation method. Instead, please use the Prysm installation script instructions found [here](/docs/install/linux).
+   > **NOTICE:** The Prysm installation script is the easiest and most efficient way of installing the latest binaries. Instructions for using it can be found [here](/docs/install/linux).
 
 Prysm can be installed on GNU/Linux using our build tool, Bazel. This page includes instructions for performing this method.
 
