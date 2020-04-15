@@ -33,7 +33,7 @@ docker run -it -v $HOME/prysm/validator:/data \
 #### Generating with Bazel
 
 ```text
-bazel run //validator -- accounts create --keystore-path=$HOME/beacon-chain --password=changeme
+bazel run //validator -- accounts create --keystore-path=$HOME/prysm/validator --password=changeme
 ```
 
 This command will output a `Raw Transaction Data` block:
@@ -75,6 +75,43 @@ The beacon node will spin up and immediately begin communicating with the Prysm 
 
 The process of syncronising may take a while; the incoming block per second capacity is dependent upon the connection strength, network congestion and overall peer count.
 
+## Securing the validator key with Docker
+
+Create a file at $HOME/prysm/validator/keystore.json with the following contents:
+
+```
+{
+  "path": "/data",
+  "passphrase": "changeme"
+}
+```
+
+## Securing the validator key with Bazel
+
+Obtain the location of your home directory with the following command:
+
+```
+echo $HOME
+```
+
+Create a file at $HOME/prysm/validator/keystore.json with the following contents, replacing HOME` with the output you just obtained from running `echo $HOME`:
+
+```
+{
+  "path": "HOME/prysm/validator",
+  "passphrase": "changeme"
+}
+```
+
+For example if `echo $HOME` return `/home/john` then the contents of the file would be:
+
+```
+{
+  "path": "/home/john/prysm/validator",
+  "passphrase": "changeme"
+}
+```
+
 ## Starting up the validator client
 
 **NOTICE:** The beacon node you are using should be **completely synced** before submitting your deposit for the validator client, otherwise the validator will not be able to validate and will **inflict minor inactivity balance penalties**.
@@ -89,13 +126,13 @@ docker run -it -v $HOME/prysm/validator:/data --network="host" \
   gcr.io/prysmaticlabs/prysm/validator:latest \
   --beacon-rpc-provider=127.0.0.1:4000 \
   --keymanager=keystore \
-  --keymanageropts='{"path":"/data","passphrase":"changeme"}'
+  --keymanageropts=/data/keystore.json
 ```
 
 #### Starting the validator client with Bazel
 
 ```text
-bazel run //validator -- --keymanager=keystore --keymanageropts='{"path":"'${HOME}'/beacon-chain","passphrase":"changeme"}'
+bazel run //validator -- --keymanager=keystore --keymanageropts=${HOME}/prysm/validator/keystore.json
 ```
 
 ## Submitting the deposit contract
