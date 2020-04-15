@@ -11,7 +11,7 @@ A wallet keymanager is the recommended way of storing and accessing wallet keys 
 1. To install `ethdo`, issue the following command:
 
 ```sh
-GO111MODULE=on go get github.com/wealdtech/ethdo@v1.2.1
+GO111MODULE=on go get github.com/wealdtech/ethdo@latest
 ```
 
 2. Ensure `ethdo` is installed properly by issuing the command:
