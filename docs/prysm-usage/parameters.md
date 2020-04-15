@@ -10,14 +10,13 @@ This section lists the various flags used to customise the startup process of be
 
 Prysm now supports loading flag values from a specified `.yaml` file. Defining parameters in this way cuts back on terminal clutter and allows unique startup profiles to be saved independently.
 
-The below steps show how place the two common Prysm flags `--datadir=/data` and` --enable-ssz-cache` into a YAML file and how to specify it at start up.
+The below steps show how place a common Prysm flag `--datadir=/data` into a YAML file and how to specify it at start up.
 
 1. In your Prysm working directory, create a `.yaml` file and open it in a text editor.
 
 2. Add the following lines to the file before closing and saving:
 ```sh
 datadir: "/data"
-enable-ssz-cache: true
 ```
 
 3. Start the Prysm beacon chain as normal, while specifying the location of the `.yaml` like so:
@@ -82,14 +81,6 @@ These flags are specific to launching the beacon node.
 | `--contract-deployment-block` | Define the ETH1 block in which the deposit contract was deployed. <br>Default: 1960177
 | `--slasher-tls-cert` | Certificate for secure slasher gRPC connection. Pass this in order to use slasher gRPC securely.
 | `--slasher-provider` | Define a slasher provider string endpoint. Can either be an gRPC server endpoint. <br>Default: 127.0.0.1:5000
-### Archive flags
-| Flag      | Usage           |
-| ------------- |:-------------|
-| `--archive` | Whether or not beacon chain should archive historical data including blocks, attestations, and validator set changes.
-| `--archive-validator-set-changes` | Whether or not beacon chain should archive historical validator set changes.
-| `--archive-Blocks [Y/N]` | Whether or not beacon chain should archive historical blocks
-| `--archive-attestations` | Whether or not beacon chain should archive historical attestations.
-
 ### Interop flags
 | Flag          | Usage         |
 | ------------- |:-------------|

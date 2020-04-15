@@ -32,8 +32,7 @@
                     
     "Running Prysm": ["prysm-usage/deploy-eth1-node",
                      "prysm-usage/parameters",
-                     "prysm-usage/wallet-keymanager",
-                     "prysm-usage/tests"],
+                     "prysm-usage/wallet-keymanager"],
 
 
 
@@ -41,7 +40,6 @@
                      "how-prysm-works/beacon-node",
 						         "how-prysm-works/prysm-validator-client",
 						         "how-prysm-works/validator-deposit-contract",
-						         "how-prysm-works/simple-serialize-ssz",
 						         "how-prysm-works/database-backend-boltdb",
 						         "how-prysm-works/p2p-networking",
 						         "how-prysm-works/bls-cryptography"],
@@ -52,7 +50,8 @@
 
     "Get Involved": ["contribute/community",
 										 "contribute/bugreports",
-                     "contribute/contribution-guidelines",
+					 "contribute/contribution-guidelines",
+					 "contribute/tests",
 						         "contribute/golang-principles"],
 
 		  "Learn More": [ "terminology",
