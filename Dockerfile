@@ -18,12 +18,11 @@ COPY ./website /app/website
 
 COPY ./website/package.json ./website/package-lock.json ./
 
-## Storing node modules on a separate layer will prevent unnecessary npm installs at each build
+# Storing node modules on a separate layer will prevent unnecessary npm installs at each build
 RUN npm i -g npm@6.4
 RUN npm ci
 RUN mv ./node_modules .
 
-## Build the angular app in production mode and store the artifacts in dist folder
 RUN npm run build
 
 # Copy only the dist dir.

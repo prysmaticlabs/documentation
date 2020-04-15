@@ -25,7 +25,7 @@ As stated, each node on the Ethereum 1.0 network must verify each transaction ma
 
 Shards in the context of Ethereum 2.0 are essentially 1024 independent blockchains that operate in sync with the existing [ETH1](../glossaries/terminology.md#eth1) chain. They communicate and coordinate both transactions and network state via a root chain -- in the case of Ethereum 2.0, this is referred to as the **beacon chain**.
 
-As each shard chain will be able to facilitate as much traffic as the existing Ethereum 1.0 network and transactions will be processed in parallel to the 1.0 chain, sharding allows for magnitudes higher horizontal scalability potential in terms of transactions-per-second capacity. This, among other 2.0 features such as the Casper [Proof-of-Stake](../glossaries/terminology.md#proof-of-stake-pos) ****system, will allow the Ethereum ecosystem to grow in a much more sustainable way. 
+As each shard chain will be able to facilitate as much traffic as the existing Ethereum 1.0 network and transactions will be processed in parallel to the 1.0 chain, sharding allows for magnitudes higher horizontal scalability potential in terms of transactions-per-second capacity. This, among other 2.0 features such as [Proof-of-Stake](../glossaries/terminology.md#proof-of-stake-pos), will allow the Ethereum ecosystem to grow in a much more sustainable way. 
 
 For more general information on blockchains, sharding and the Ethereum protocol, check out the [external reading page](../getting-involved/required-reading.md).
 
