@@ -56,7 +56,9 @@
 
 		  "Learn More": [ "terminology",
 											"reading/eth2",
-                    "reading/golang"],
+					"reading/golang",
+					"reading/testnet-postmortems"
+				],
 
 		   "Licenses": ["licenses/prysmatic-labs"]
   }
