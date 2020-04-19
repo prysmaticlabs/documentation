@@ -14,7 +14,7 @@ Prysm can be installed on GNU/Linux using our build tool, Bazel. This page inclu
 ## Dependencies
 
 * A modern GNU/Linux operating system
-* The latest release of [Bazel](https://docs.bazel.build/versions/master/install.html) installed
+* The latest release (3.0+) of [Bazel](https://docs.bazel.build/versions/master/install.html) installed
 * The `cmake` package installed
 * The `git` package installed
 
