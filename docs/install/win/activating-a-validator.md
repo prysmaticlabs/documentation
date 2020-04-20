@@ -27,19 +27,19 @@ Step 3 requires running a command to generate a public / private keypair for you
 ```bash
 docker run -it -v $HOME/prysm/validator:/data \
    gcr.io/prysmaticlabs/prysm/validator:latest \
-   accounts create --keystore-path=/data --password=changeme
+   accounts create --keystore-path=/data
 ```
 
 #### Generating with Docker on Windows
 
 ```text
-docker run -it -v c:/prysm:/data gcr.io/prysmaticlabs/prysm/validator:latest accounts create --keystore-path=/data --password=changeme
+docker run -it -v c:/prysm:/data gcr.io/prysmaticlabs/prysm/validator:latest accounts create --keystore-path=/data
 ```
 
 #### Generating with Bazel
 
 ```text
-bazel run //validator -- accounts create --keystore-path=$HOME/beacon-chain --password=changeme
+bazel run //validator -- accounts create --keystore-path=$HOME/beacon-chain
 ```
 
 This command will output a `Raw Transaction Data` block:
