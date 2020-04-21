@@ -11,8 +11,9 @@ Prysm can be installed on macOS systems using the Prysm build script. This page 
 ## Dependencies
 
 * A modern macOS operating system
-* The `cmake` package installed
-* The `curl` package installed
+* Homebrew (Install with `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"`)
+* The `cmake` package installed (`brew install cmake`)
+* The `curl` package installed (`brew install curl`)
 
 ## Installing the beacon chain and validator
 
