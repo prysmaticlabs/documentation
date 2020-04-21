@@ -27,19 +27,19 @@ Step 3 requires running a command to generate a public / private keypair for you
 ```bash
 docker run -it -v $HOME/prysm/validator:/data \
    gcr.io/prysmaticlabs/prysm/validator:latest \
-   accounts create --keystore-path=/data --password=changeme
+   accounts create --keystore-path=/data
 ```
 
 #### Generating with Docker on Windows
 
 ```text
-docker run -it -v c:/prysm:/data gcr.io/prysmaticlabs/prysm/validator:latest accounts create --keystore-path=/data --password=changeme
+docker run -it -v c:/prysm:/data gcr.io/prysmaticlabs/prysm/validator:latest accounts create --keystore-path=/data
 ```
 
 #### Generating with Bazel
 
 ```text
-bazel run //validator -- accounts create --keystore-path=$HOME/beacon-chain --password=changeme
+bazel run //validator -- accounts create --keystore-path=$HOME/beacon-chain
 ```
 
 This command will output a `Raw Transaction Data` block:
@@ -52,7 +52,7 @@ This command will output a `Raw Transaction Data` block:
 
 ![](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LRNnKRqTm4z1mzdDqDF%2F-Lua_6kBgtyMjsJFCSPr%2F-Lua_XtevNAg0ybDIGfI%2F77.png?alt=media&token=ee25ea72-3436-455e-b28c-66471b5ddf88)
 
-**Method 2:** Users may also choose to submit the required 3.2 GöETH along with the data directly to the current deposit contract ****\(found [here](https://prylabs.net/contract)\). To enable the hex data field on the Send page in Metamask, click your wallets avatar &gt; Settings &gt; Advanced &gt; toggle 'Show hex data'.
+**Method 2:** Users may also choose to submit the required 32 GöETH along with the data directly to the current deposit contract ****\(found [here](https://prylabs.net/contract)\). To enable the hex data field on the Send page in Metamask, click your wallets avatar &gt; Settings &gt; Advanced &gt; toggle 'Show hex data'.
 
 ## Starting up the beacon node
 

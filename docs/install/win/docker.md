@@ -39,7 +39,7 @@ This process will also install any related dependencies.
 
 ## Connecting to the testnet: running a beacon node
 
-Below are instructions for initialising a beacon node and connecting to the public testnet. To further understand the role that the beacon node plays in Prysm, see [this section](https://prysmaticlabs.gitbook.io/prysm/how-prysm-works/overview-technical) of the documentation.
+Below are instructions for initialising a beacon node and connecting to the public testnet. To further understand the role that the beacon node plays in Prysm, see [this section](/docs/how-prysm-works/prysm-beacon-node) of the documentation.
 
 
 1. You will need to share the local drive you wish to mount to to container \(e.g. C:\).
@@ -47,7 +47,7 @@ Below are instructions for initialising a beacon node and connecting to the publ
    2. Click 'Shared Drives'
    3. Select a drive to share
    4. Click 'Apply'
-2. You will next need to create a directory named `/prysm/` within your selected shared Drive. This folder will be used as a local data directory for [beacon node](../how-prysm-works/prysm-beacon-node) chain data as well as account and keystore information required by the validator. Docker **will not** create this directory if it does not exist already. For the purposes of these instructions, it is assumed that `C:` is your prior-selected shared Drive.
+2. You will next need to create a directory named `/prysm/` within your selected shared Drive. This folder will be used as a local data directory for [beacon node](/docs/how-prysm-works/prysm-beacon-node) chain data as well as account and keystore information required by the validator. Docker **will not** create this directory if it does not exist already. For the purposes of these instructions, it is assumed that `C:` is your prior-selected shared Drive.
 3. To run the beacon node, issue the following command:
 
 ```text
@@ -61,15 +61,15 @@ It is also recommended to include the `--p2p-host-ip` and `--min-sync-peers 7` f
 
   ## Staking ETH: Running a validator client
 
-  Once your beacon node is up, the chain will be waiting for you to deposit 3.2 Goerli ETH into a [validator deposit contract](../how-prysm-works/validator-deposit-contract) in order to activate your validator \(discussed in the section below\).
+  Once your beacon node is up, the chain will be waiting for you to deposit 32 Goerli ETH into a [validator deposit contract](/docs/how-prysm-works/validator-deposit-contract) in order to activate your validator \(discussed in the section below\).
 
-  To begin setting up a validator, follow the instructions found on [prylabs.network](https://prylabs.network) to use the Göerli ETH faucet and make a deposit. For step-by-step assistance with the deposit page, see the [activating a validator ](../prysm-usage/activating-a-validator.md)section of this documentation.
+  To begin setting up a validator, follow the instructions found on [prylabs.network](https://prylabs.network) to use the Göerli ETH faucet and make a deposit. For step-by-step assistance with the deposit page, see the [activating a validator ](activating-a-validator)section of this documentation.
 
   It will take a while for the nodes in the network to process a deposit. Once the node is active, the validator will immediately begin performing its responsibilities.
 
   In your validator client, you will be able to frequently see your validator balance as it goes up over time. Note that, should your node ever go offline for a long period, a validator will start gradually losing its deposit until it is removed from the network entirely.
 
-**Congratulations, you are now running Ethereum 2.0 Phase 0!**
+  **Congratulations, you are now running Ethereum 2.0 Phase 0!**
 
 ## Managing the beacon node with Docker
 
