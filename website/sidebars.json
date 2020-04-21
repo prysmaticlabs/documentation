@@ -59,7 +59,7 @@
 					"reading/golang",
 					"reading/testnet-postmortems"
 				],
-
+        "FAQ": ["faq"],
 		   "Licenses": ["licenses/prysmatic-labs"]
   }
 }
