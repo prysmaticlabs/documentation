@@ -4,6 +4,9 @@ title: Wallet Keymanagers
 sidebar_label: Wallet keymanager
 ---
 
+  > **IMPORTANT NOTICE:** As Prysmatic Labs cannot maintain nor endorse third party tools used to manage keys, this guide is no longer maintained and, if followed, there **is a risk that your deposit will experience issues**. To find the the latest version of `ethdo` installation instructions for Prysm, it is highly recommended to view [this guide on Github](
+https://github.com/wealdtech/ethdo/blob/master/docs/usage.md).
+
 A wallet keymanager is the recommended way of storing and accessing wallet keys on a local filesystem. The below guide outlines the configuration and operation of [ethdo](https://github.com/wealdtech/ethdo), a third-party software package that is used to perform several common tasks on Ethereum 2.0, including keystore functionality. It follows the Ethereum 2.0 specification and provides cross-client support (interoperability) as well as advanced features suitable for multi-node deployments.
 
 ## Installing ethdo
