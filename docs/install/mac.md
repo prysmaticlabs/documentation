@@ -23,8 +23,6 @@ The easiest way to install the beacon chain and validator is by running the `pry
 
 ### Running the Prysm startup script
 
-You can get started by cloning the Prysm repository:
-
 1. Create a working directory and enter it:
 
 ```sh
