@@ -11,8 +11,9 @@ Prysm can be installed on macOS systems using the Prysm build script. This page 
 ## Dependencies
 
 * A modern macOS operating system
-* The `cmake` package installed
-* The `curl` package installed
+* Homebrew (Install with `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"`)
+* The `cmake` package installed (`brew install cmake`)
+* The `curl` package installed (`brew install curl`)
 
 ## Installing the beacon chain and validator
 
@@ -21,6 +22,8 @@ The easiest way to install the beacon chain and validator is by running the `pry
 > **NOTICE:** It is recommended to open up port 13000 on your local router to improve connectivity and receive more peers from the network. To do so, navigate to `192.168.0.1` in your browser and login if required. Follow along with the interface to modify your routers firewall settings. When this task is completed, append the parameter`--p2p-host-ip=$(curl -s ident.me)` to your selected beacon startup command presented in this section to use the newly opened port.
 
 ### Running the Prysm startup script
+
+You can get started by cloning the Prysm repository:
 
 1. Create a working directory and enter it:
 
