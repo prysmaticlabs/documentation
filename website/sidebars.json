@@ -57,7 +57,7 @@
 		  "Learn More": [ "terminology",
 											"reading/eth2",
                     "reading/golang"],
-
+			"FAQ": ["faq"],
 		   "Licenses": ["licenses/prysmatic-labs"]
   }
 }

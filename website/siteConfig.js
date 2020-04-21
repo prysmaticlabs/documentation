@@ -31,7 +31,7 @@ const siteConfig = {
     { href: 'https://prylabs.net', label: 'Activate a Validator' },
     { href: 'https://github.com/prysmaticlabs/prysm', label: 'GitHub' },
     { href: 'https://api.prylabs.network', label: 'API' },
-    { href: 'https://medium.com/prysmatic-labs', label: 'Blog' },
+    { href: 'https://docs.prylabs.network/docs/faq', label: 'FAQ' },
   ],
 
   // If you have users set above, you add it here:
