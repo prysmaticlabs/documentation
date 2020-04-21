@@ -44,13 +44,13 @@ Bazel will automatically pull and install any dependencies as well, including Go
 
 ## Connecting to the testnet: running a beacon node
 
-Below are instructions for initialising a beacon node and connecting to the public testnet. To further understand the role that the beacon node plays in Prysm, see [this section](../how-prysm-works/overview-technical) of the documentation.
+Below are instructions for initialising a beacon node and connecting to the public testnet. To further understand the role that the beacon node plays in Prysm, see [this section](/docs/how-prysm-works/overview-technical) of the documentation.
 
 
    > **NOTICE:** It is recommended to open up port 13000 on your local router to improve connectivity and receive more peers from the network. To do so, navigate to `192.168.0.1` in your browser and login if required. Follow along with the interface to modify your routers firewall settings. When this task is completed, append the parameter`--p2p-host-ip=$(curl -s ident.me)` to your selected beacon startup command presented in this section to use the newly opened port.
 
 
-To start your [beacon node](how-prysm-works/prysm-beacon-node) with Bazel, issue the following command:
+To start your [beacon node](/docs/how-prysm-works/prysm-beacon-node) with Bazel, issue the following command:
 
 ```text
 bazel run //beacon-chain -- --clear-db --datadir=$HOME/prysm
@@ -62,9 +62,9 @@ This will sync up the beacon node with the latest head block in the network.
 
   ## Staking ETH: Running a validator client
 
-  Once your beacon node is up, the chain will be waiting for you to deposit 32 Goerli ETH into a [validator deposit contract](../how-prysm-works/validator-deposit-contract) in order to activate your validator \(discussed in the section below\).
+  Once your beacon node is up, the chain will be waiting for you to deposit 32 Goerli ETH into a [validator deposit contract](/docs/how-prysm-works/validator-deposit-contract) in order to activate your validator \(discussed in the section below\).
 
-  To begin setting up a validator, follow the instructions found on [prylabs.network](https://prylabs.network) to use the Göerli ETH faucet and make a deposit. For step-by-step assistance with the deposit page, see the [activating a validator ](../prysm-usage/activating-a-validator.md)section of this documentation.
+  To begin setting up a validator, follow the instructions found on [prylabs.network](https://prylabs.network) to use the Göerli ETH faucet and make a deposit. For step-by-step assistance with the deposit page, see the [activating a validator ](activating-a-validator)section of this documentation.
 
   It will take a while for the nodes in the network to process a deposit. Once the node is active, the validator will immediately begin performing its responsibilities.
 

@@ -10,26 +10,26 @@
 											"install/lin/activating-a-validator",
 											"install/lin/troubleshooting"
                     ],
-                    
+
  "Windows installations": ["install/windows",
  											"install/win/docker",
 											"install/win/activating-a-validator",
  											"install/win/troubleshooting"
                     ],
-                    
+
  "macOS installations": ["install/mac",
  											"install/mac/docker",
  											"install/mac/bazel",
 											"install/win/activating-a-validator",
  											"install/mac/troubleshooting"
                     ],
-                    
+
  "ARM64 installations": ["install/arm",
  											"install/arm/bazel",
 											"install/arm/activating-a-validator",
  											"install/arm/troubleshooting"
                     ],
-                    
+
     "Running Prysm": ["prysm-usage/deploy-eth1-node",
                      "prysm-usage/parameters",
                      "prysm-usage/wallet-keymanager"],
@@ -50,14 +50,16 @@
 
     "Get Involved": ["contribute/community",
 										 "contribute/bugreports",
-					 "contribute/contribution-guidelines",
-					 "contribute/tests",
+					           "contribute/contribution-guidelines",
+					           "contribute/tests",
 						         "contribute/golang-principles"],
 
 		  "Learn More": [ "terminology",
 											"reading/eth2",
-                    "reading/golang"],
-			"FAQ": ["faq"],
+					"reading/golang",
+					"reading/testnet-postmortems"
+				],
+        "FAQ": ["faq"],
 		   "Licenses": ["licenses/prysmatic-labs"]
   }
 }
