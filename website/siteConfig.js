@@ -93,6 +93,9 @@ const siteConfig = {
   enableUpdateTime: true,
 
   editUrl: 'https://github.com/prysmaticlabs/documentation/edit/master/docs/',
+  
+  // Google Analytics
+  gaTrackingId: 'UA-139640266-2',
 
   // You may provide arbitrary config keys to be used as needed by your
   // template. For example, if you need your repo's URL...
