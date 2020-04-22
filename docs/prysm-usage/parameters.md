@@ -30,6 +30,7 @@ or for a validator like so:
 
 It is possible to provide additional flags alongside the `.yaml` file, though if there is conflicts, the `.yaml` file will take priority. For example, if the flag `--datadir=/data2` is specified and `datadir: "/data1"` is in the `.yaml` file, Prysm would prioritise writing to `/data1`.
 
+  > **Fun tip:** You can use the `--graffiti` flag to add a string to your proposed blocks, which will be seen on the block explorer. I.e; `<startup command> --graffiti "Prysm is awesome!"`
 
 ## Shared flags
 These flags are shared by both the beacon node and validator client.
@@ -103,7 +104,7 @@ These flags are specific to launching a validator client.
 |`--keymanageropts`| The options for the keymanger, either a JSON string or path to same.
 |`--password` | String value of the password for your validator private keys.
 |`--disable-rewards-penalties-logging` | Disable reward/penalty logging during cluster deployment.
-|`--graffiti` | String to include in proposed block.
+|`--graffiti` | A string to include in proposed block.
 |`--grpc-max-msg-size`| Integer to define max recieve message call size. <br>Default: 52428800 (for 50Mb).
 |`--enable-account-metrics` | Enable prometheus metrics for validator accounts.
 

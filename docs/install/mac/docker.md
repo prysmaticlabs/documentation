@@ -4,9 +4,10 @@ title: Installing Prysm on macOS with Docker
 sidebar_label: Installing with Docker
 ---
 
+Prysm can be installed on macOS systems with Docker. This page includes instructions for performing this method.
+
    > **NOTICE:** The Prysm installation script is the easiest and most efficient way of installing the latest binaries. Instructions for using it can be found [here](/docs/install/linux).
 
-Prysm can be installed on macOS systems with Docker. This page includes instructions for performing this method.
 
 **Have questions?** Stop by the [#documentation](https://discord.gg/QQZMCgU) channel on Discord and let us know.
 
@@ -52,21 +53,23 @@ docker run -it -v $HOME/prysm:/data -p 4000:4000 -p 13000:13000 --name beacon-no
   --datadir=/data
 ```
 
-This will sync up the beacon node with the latest head block in the network. It is also recommended to include the `--p2p-host-ip` and `--min-sync-peers 7` flags to improve peering.
+This will sync up the beacon node with the latest head block in the network. It is also recommended to include the `--p2p-host-ip` and `--min-sync-peers 7` flags to improve peering. The Docker `-d` flag can be appended before the `-v` flag to launch the process in a detached terminal window.
 
   > **NOTICE:** The beacon node must be **completely synced** before attempting to initialise a validator client, otherwise the validator will not be able to complete the deposit and **funds will lost**.
 
-  ## Staking ETH: Running a validator client
+## Staking ETH: Running a validator client
 
-  Once your beacon node is up, the chain will be waiting for you to deposit 32 Goerli ETH into a [validator deposit contract](/docs/how-prysm-works/validator-deposit-contract) in order to activate your validator \(discussed in the section below\).
+For step-by-step assistance with performing a deposit and setting up a validator client, see the [activating a validator ](/docs/install/mac/activating-a-validator)section of this documentation.
 
-  To begin setting up a validator, follow the instructions found on [prylabs.network](https://prylabs.network) to use the Göerli ETH faucet and make a deposit. For step-by-step assistance with the deposit page, see the [activating a validator ](activating-a-validator)section of this documentation.
+Once your beacon node is up, the chain will be waiting for you to deposit 32 Goerli ETH into a [validator deposit contract](/docs/prysm-usage/validator-deposit-contract) in order to activate your validator \(discussed in the section below\).
 
-  It will take a while for the nodes in the network to process a deposit. Once the node is active, the validator will immediately begin performing its responsibilities.
+**If you need Goerli ETH**, follow the instructions found on [prylabs.network](https://prylabs.network) to use the testnet faucet. Otherwise, you can contact a team member on Discord to be sent some.
 
-  In your validator client, you will be able to frequently see your validator balance as it goes up over time. Note that, should your node ever go offline for a long period, a validator will start gradually losing its deposit until it is removed from the network entirely.
+Please note that **it may take up to 12 hours** for the nodes in the network to process a deposit. Once the node is active, the validator will immediately begin performing its responsibilities.
 
-  **Congratulations, you are now running Ethereum 2.0 Phase 0!**
+In your validator client, you will be able to frequently see your validator balance as it goes up over time. Note that, should your node ever go offline for a long period, a validator will start gradually losing its deposit until it is removed from the network entirely.
+
+**Congratulations! If you've made it this far, you are now running Ethereum 2.0 Phase 0.**
 
   ## Managing the beacon node with Docker
 
