@@ -49,7 +49,12 @@ mkdir prysm && cd prysm
 curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --output prysm.sh && chmod +x prysm.sh
 ```
 
-3. Run the `prysm.sh` script alongside any [startup parameters](/docs/prysm-usage/parameters):
+3. To ensure logging appears properly, issue the following command:
+```
+reg add HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1
+``` 
+
+4. Run the `prysm.sh` script alongside any [startup parameters](/docs/prysm-usage/parameters):
 
 ```sh
 .\prysm.sh beacon-chain --clear-db
