@@ -12,7 +12,7 @@ Prysm can be installed on macOS systems using the Prysm build script. This page 
 
 ### Minimum specifications
 These specifications must be met in order to successfuly run the Prysm client.
-* Operating System: 64-bit Linux, Mac OS X, Windows
+* Operating System: 64-bit Linux, Mac OS X 10.14+, Windows
 * Processor: Intel Core i5–760 or AMD FX-8100 or better
 * Memory: 4GB RAM
 * Storage: 20GB available space SSD
