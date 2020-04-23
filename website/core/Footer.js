@@ -37,11 +37,11 @@ class Footer extends React.Component {
           </a>
           <div>
             <h5>Sections</h5>
-            <a href={this.docUrl('/', this.props.language)}>
+            <a href={this.docUrl('getting-started')}>
               Documentation
             </a>
-            <a href={this.docUrl('doc3.html', this.props.language)}>
-              Guides
+            <a href={this.docUrl('faq')}>
+              FAQ
             </a>
           </div>
           <div>
@@ -62,11 +62,11 @@ class Footer extends React.Component {
           </div>
           <div>
             <h5>More</h5>
-            <a href={`${this.props.config.baseUrl}blog`}>Blog</a>
+            <a href={"https://medium.com/prysmatic-labs"}>Blog</a>
             <a href="https://github.com/prysmaticlabs/prysm">GitHub</a>
             <a
               className="github-button"
-              href={this.props.config.repoUrl}
+              href="https://github.com/prysmaticlabs/prysm"
               data-icon="octicon-star"
               data-count-href="/prysmaticlabs/prysm"
               data-show-count="true"

@@ -66,7 +66,7 @@ These flags are shared by both the beacon node and validator client.
 ## Beacon node parameters
 These flags are specific to launching the beacon node.
 ### Base flags
-| r        | Are           |
+| Flag        | Usage           |
 | ------------- |:-------------|
 | `--no-custom-config` | Run the beacon chain with the real Phase 0 parameters.
 | `--http-web3provider` | Define a mainchain web3 provider string http endpoint. <br>Default:  https://goerli.prylabs.net
