@@ -13,7 +13,7 @@ When a Prysm client is initialised out of the box, it starts a variety of servic
 
 * A [**beacon node**](/docs/how-prysm-works/beacon-node) which powers the beacon chain at the core of Ethereum 2.0.
 * A [**validator client**](/docs/how-prysm-works/validator-clients) connects to the beacon node and manages staking keypairs.
-* A [**public RPC server**](/docs/how-prysm-works/ethereum-2.0-public-api) to request data about network state, blocks, validators etc.
+* A [**public RPC server**](/docs/how-prysm-works/ethereum-2-public-api) to request data about network state, blocks, validators etc.
 * A [**persistent key-value store**](/docs/how-prysm-works/database-backend-boltdb) in the form of a database \([BoltDB](/docs/how-prysm-works/database-backend-boltdb)\).
 * A [**P2P networking framework and server**](/docs/how-prysm-works/p2p-networking) to connect with other beacon nodes.
 * **Monitoring and metrics gathering technologies** [**Grafana**](https://grafana.com/) and [**Prometheus**](https://prometheus.io) track everything. happening across beacon nodes in the network.
