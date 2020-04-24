@@ -57,7 +57,7 @@ reg add HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1
 4. Run the `prysm.sh` script alongside any [startup parameters](/docs/prysm-usage/parameters):
 
 ```sh
-.\prysm.sh beacon-chain --clear-db
+.\prysm.sh beacon-chain
 ```
 
 It is also recommended to include the `--p2p-host-ip` and `--min-sync-peers 7` flags to improve peering. For advanced users that desire standard debugging tools found in the Busybox base image, append a `--debug` flag to enable them.
