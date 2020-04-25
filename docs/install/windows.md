@@ -46,7 +46,7 @@ mkdir prysm && cd prysm
 2. Fetch the `prysm.sh` script from Github and make it executable:
 
 ```sh
-curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --output prysm.sh && chmod +x prysm.sh
+curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh
 ```
 
 3. To ensure logging appears properly, issue the following command:
