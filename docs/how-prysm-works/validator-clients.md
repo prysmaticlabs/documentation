@@ -26,7 +26,7 @@ In order of operations, the client:
 4. The validator then has a ticker that works every slot \(6 seconds\). If the slot ticks at the validator's assigned slot, a beacon block is either [proposed](/docs/glossaries/terminology#propose) or [attested](/docs/glossaries/terminology#attest), depending on assigned role.
 5. This repeats forever until the validator decides to exit the system voluntarily, or is penalized by the system for either acting maliciously or being idle when assigned tasks to perform.
 
-As mentioned, every validator instance represents 32 ETH being staked in the network. In Prysm, this is currently the default; however, the goal is to implement support for running multiple public keys that correspond to multiple validators in a single runtime, simplifying the process of deploying several nodes for those whom want to stake more funds to help secure the network.
+As mentioned, every validator instance represents 32 ETH being staked in the network. In Prysm, this is currently the default; however, the Prysm validator also supports running multiple keypairs that correspond to multiple validators in a single runtime, simplifying the process of deploying several validator instances for those whom want to stake more funds to help secure the network.  To run multiple keypairs, they must be encrypted with the same password and kept in the same directory.
 
 ### Proposing a beacon block
 
