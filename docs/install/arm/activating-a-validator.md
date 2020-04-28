@@ -3,13 +3,13 @@ id: activating-a-validator
 title: Activating a Validator
 sidebar_label: Activate a validator
 ---
-This section outlines the step-by-step process for ARM found on prylabs.net to submit a deposit and initialise a validator for participation in the testnet.
+This section outlines the step-by-step process for ARM64 found on prylabs.net to submit a deposit and initialise a validator for participation in the testnet.
 
 
 ## Step 1: Get Prysm
 
 To begin, follow the instructions to fetch and install Prysm with either the [Prysm Installation Script](../arm), or [Bazel](./bazel).
-Note: Docker images are not currenlty generated for ARM
+> NOTICE: Docker images are not currently generated for ARM64
 
 ## Step 2: Get Göerli ETH - Test ether
 
@@ -18,7 +18,7 @@ You will be asked to link a wallet address to your validator with either the [Me
 
 The wallet is scanned for the required amount of Göerli ETH after being linked. If the wallet does not have sufficient funds, you will be given the option to receive the required GöETH from our faucet.
 
-## Step 3: Generating a validator keypair
+## Step 3a: Generating a validator keypair
 
 Depending on your platform, issue the appropriate command from the examples below to generate a public / private keypair for your validator.
 
@@ -37,7 +37,7 @@ This command will output a `Raw Transaction Data` block:
 
 ![](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LRNnKRqTm4z1mzdDqDF%2F-LuJpxGKxOpat8TfDxPP%2F-Lua3OVmMOefnzXXvdGq%2F4.png?alt=media&token=96459a93-055c-4bf1-a0af-07a900d7b47f)
 
-## Submitting the deposit data
+## Step 3b: Submitting the deposit data
 
 **Method 1:** Copy and paste the deposit data into the field on prylabs.net:
 

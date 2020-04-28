@@ -9,7 +9,7 @@ This section outlines the step-by-step process for Windows found on prylabs.net 
 ## Step 1: Get Prysm
 
 To begin, follow the instructions to fetch and install Prysm with either the [Prysm Installation Script](../windows), or [Docker](./docker).
-  Note: Compiling Prysm with Bazel is not currently supported on Windows.
+> NOTICE: Compiling Prysm with Bazel is not currently supported on Windows.
 
 ## Step 2: Get Göerli ETH - Test ether
 
