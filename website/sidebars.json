@@ -8,23 +8,27 @@
 		"GNU/Linux installations": [	"install/linux",
 										"install/lin/docker",
 										"install/lin/bazel",
-										"install/lin/activating-a-validator"
+										"install/lin/activating-a-validator",
+										"install/lin/slasher"
 									],
 
 		"Windows installations": 	[	"install/windows",
 										"install/win/docker",
-										"install/win/activating-a-validator"
+										"install/win/activating-a-validator",
+										"install/win/slasher"
 									],
 
 		"macOS installations": 	[	"install/mac",
 									"install/mac/docker",
 									"install/mac/bazel",
-									"install/mac/activating-a-validator"
+									"install/mac/activating-a-validator",
+									"install/mac/slasher"
 								],
 
 		"ARM64 installations": 	[	"install/arm",
 									"install/arm/bazel",
-									"install/arm/activating-a-validator"
+									"install/arm/activating-a-validator",
+									"install/arm/slasher"
 								],
 
 		"Running Prysm": 	[	"prysm-usage/deploy-eth1-node",
