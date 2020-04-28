@@ -25,7 +25,7 @@ Depending on your platform, issue the appropriate command from the examples belo
 #### Generating with prysm.sh
 
 ```text
-prysm.sh validator accounts create --keystore-path=$HOME/.eth2validator --password=changeme
+./prysm.sh validator accounts create --keystore-path=$HOME/.eth2validator --password=changeme
 ```
 #### Generating with Bazel
 
@@ -54,7 +54,7 @@ The beacon node is a long running process that will require a dedicated terminal
 #### Starting the beacon-chain node with prysm.sh
 
 ```text
-prysm.sh beacon-chain --datadir=$HOME/beacon-chain
+./prysm.sh beacon-chain --datadir=$HOME/beacon-chain
 ```
 
 #### Starting the beacon-chain node with Bazel
@@ -78,7 +78,7 @@ Open a second terminal window. Depending on your platform, issue the appropriate
 #### Starting the validator client with prysm.sh
 
 ```text
-prysm.sh validator --keystore-path=$HOME/.eth2validator --password=changeme
+./prysm.sh validator --keystore-path=$HOME/.eth2validator --password=changeme
 ```
 
 #### Starting the validator client with Bazel
