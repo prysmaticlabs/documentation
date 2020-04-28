@@ -30,6 +30,7 @@
 		"Running Prysm": 	[	"prysm-usage/deploy-eth1-node",
 								"prysm-usage/parameters",
 								"prysm-usage/wallet-keymanager",
+								"prysm-usage/slasher",
 								"faq"
 							],
 
