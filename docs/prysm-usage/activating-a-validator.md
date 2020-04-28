@@ -56,7 +56,7 @@ This command will output a `Raw Transaction Data` block:
 
 ## Starting up the beacon node
 
-**NOTICE:** If you have already started and syncronised your beacon node by following the [Getting Started](./#connecting-to-the-testnet-running-a-beacon-node) guide section on the topic, this portion can be skipped.
+> **NOTICE:** If you have already started and syncronised your beacon node by following the [Getting Started](./#connecting-to-the-testnet-running-a-beacon-node) guide section on the topic, this portion can be skipped.
 
 
 Open a terminal window. Depending on your platform, issue the appropriate command from the examples below to start the beacon node.
@@ -89,7 +89,7 @@ The process of syncronising may take a while; the incoming block per second capa
 
 ## Starting up the validator client
 
-**NOTICE:** The beacon node you are using should be **completely synced** before submitting your deposit for the validator client, otherwise the validator will not be able to validate and will **inflict minor inactivity balance penalties**.
+> **NOTICE:** The beacon node you are using should be **completely synced** before submitting your deposit for the validator client, otherwise the validator will not be able to validate and will **inflict minor inactivity balance penalties**.
 
 
 Open a second terminal window. Depending on your platform, issue the appropriate command from the examples below to start the validator.
