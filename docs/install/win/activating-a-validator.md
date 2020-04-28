@@ -8,19 +8,19 @@ This section outlines the step-by-step process for Windows found on prylabs.net 
 
 ## Step 1: Get Prysm
 
-To begin, follow the instructions to fetch and install Prysm with either the [Prysm Installation Script](../windows), [Docker](./docker) or [Bazel](./bazel).
+To begin, follow the instructions to fetch and install Prysm with either the [Prysm Installation Script](../windows), or [Docker](./docker).
+  Note: Compiling Prysm with Bazel is not currently supported on Windows.
 
 ## Step 2: Get Göerli ETH - Test ether
 
 You will be asked to link a wallet address to your validator with either the [Metamask](https://metamask.io/) browser extension \(recommended\) or [Portis](https://portis.io). Select your preferred platform and click through the steps presented.
-
 ![](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LRNnKRqTm4z1mzdDqDF%2F-LuJpxGKxOpat8TfDxPP%2F-Lua4msnLMulYW-XYrN_%2F2.png?alt=media&token=8268d6b5-97da-414a-9110-141a7aaeb3de)
 
 The wallet is scanned for the required amount of Göerli ETH after being linked. If the wallet does not have sufficient funds, you will be given the option to receive the required GöETH from our faucet.
 
 ## Step 3: Generating a validator keypair
 
-You need to run a command to generate a public / private keypair for your validator.  Depending on your platform, issue the appropriate command from the examples below.
+Depending on your platform, issue the appropriate command from the examples below to generate a public / private keypair for your validator.
 
 #### Generating with prysm.bat
 
@@ -32,12 +32,6 @@ prysm.bat validator accounts create --keystore-path=%USERPROFILE%\.eth2validator
 
 ```text
 docker run -it -v c:/prysm:/data gcr.io/prysmaticlabs/prysm/validator:latest accounts create --keystore-path=/data --password=changeme
-```
-
-#### Generating with Bazel
-
-```text
-bazel run //validator -- accounts create --keystore-path=%USERPROFILE%\.eth2validator
 ```
 
 This command will output a `Raw Transaction Data` block:
@@ -61,7 +55,7 @@ The beacon node is a long running process that will require a dedicated command 
 #### Starting the beacon-chain node with prysm.bat
 
 ```text
-prysm.bat beacon-chain
+prysm.bat beacon-chain --datadir=%APPDATA%\Eth2
 ```
 
 #### Starting the beacon-chain node with Docker
@@ -70,11 +64,6 @@ prysm.bat beacon-chain
 docker run -it -v c:/prysm/beacon:/data -p 4000:4000 -p 13000:13000 gcr.io/prysmaticlabs/prysm/beacon-chain:latest --datadir=/data
 ```
 
-#### Starting the beacon-chain node with Bazel
-
-```text
-bazel run //beacon-chain -- --datadir=%USERPROFILE%\beacon-chain
-```
 
 The beacon-chain node will spin up and immediately begin communicating with the Prysm testnet, outputting data similar to the image below.
 
@@ -94,16 +83,10 @@ Open a second Command Prompt window. Depending on your platform, issue the appro
 prysm.bat validator --keystore-path=%USERPROFILE%\.eth2validator --password=changeme
 ```
 
-#### Starting the validator client with Docker on Windows
+#### Starting the validator client with Docker
 
 ```text
 docker run -it -v $HOME/prysm/validator:/data --network="host" gcr.io/prysmaticlabs/prysm/validator:latest --beacon-rpc-provider=127.0.0.1:4000 --keymanager=keystore --keymanageropts='{"path":"/data","passphrase":"changeme"}'
-```
-
-#### Starting the validator client with Bazel
-
-```text
-bazel run //validator -- --keymanager=keystore --keymanageropts='{"path":"'${%USERPROFILE%}'/beacon-chain","passphrase":"changeme"}'
 ```
 
 ## Step 5: Submitting the deposit contract

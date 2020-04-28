@@ -13,7 +13,6 @@
 
 		"Windows installations": 	[	"install/windows",
 										"install/win/docker",
-										"install/win/bazel",
 										"install/win/activating-a-validator"
 									],
 

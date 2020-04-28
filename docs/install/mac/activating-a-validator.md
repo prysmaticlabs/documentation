@@ -10,7 +10,7 @@ This section outlines the step-by-step process for MacOS found on prylabs.net to
 
 To begin, follow the instructions to fetch and install Prysm with either the [Prysm Installation Script](../mac), [Docker](./docker) or [Bazel](./bazel).
 
-## Receiving Göerli ETH
+## Step 2: Get Göerli ETH - Test ether
 
 You will be asked to link a wallet address to your validator with either the [Metamask](https://metamask.io/) browser extension \(recommended\) or [Portis](https://portis.io). Select your preferred platform and click through the steps presented.
 ![](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LRNnKRqTm4z1mzdDqDF%2F-LuJpxGKxOpat8TfDxPP%2F-Lua4msnLMulYW-XYrN_%2F2.png?alt=media&token=8268d6b5-97da-414a-9110-141a7aaeb3de)
@@ -19,9 +19,15 @@ The wallet is scanned for the required amount of Göerli ETH after being linked.
 
 ## Step 3: Generating a validator keypair
 
-You need to run a command to generate a public / private keypair for your validator.  Depending on your platform, issue the appropriate command from the examples below.
+Depending on your platform, issue the appropriate command from the examples below to generate a public / private keypair for your validator.  
 
-#### Generating with Docker on GNU/Linux or macOS
+#### Generating with prysm.sh
+
+```text
+prysm.sh validator accounts create --keystore-path=$HOME/.eth2validator --password=changeme
+```
+
+#### Generating with Docker
 
 ```bash
 docker run -it -v $HOME/prysm/validator:/data \
@@ -32,7 +38,7 @@ docker run -it -v $HOME/prysm/validator:/data \
 #### Generating with Bazel
 
 ```text
-bazel run //validator -- accounts create --keystore-path=$HOME/beacon-chain
+bazel run //validator -- accounts create --keystore-path=$HOME/prysm/validator
 ```
 
 This command will output a `Raw Transaction Data` block:
@@ -51,10 +57,15 @@ This command will output a `Raw Transaction Data` block:
 
 **NOTICE:** If you have already started and syncronised your beacon node, this portion can be skipped.
 
-
 The beacon node is a long running process that will require a dedicated terminal window. Depending on your platform, issue the appropriate command from the examples below to start the beacon node.
 
-#### Starting the beacon-chain node with Docker on GNU/Linux or macOS
+#### Starting the beacon-chain node with prysm.sh
+
+```text
+prysm.sh beacon-chain --datadir=$HOME/beacon-chain
+```
+
+#### Starting the beacon-chain node with Docker
 
 ```text
 docker run -it -v $HOME/prysm/beacon:/data -p 4000:4000 -p 13000:13000 \
@@ -68,7 +79,7 @@ docker run -it -v $HOME/prysm/beacon:/data -p 4000:4000 -p 13000:13000 \
 bazel run //beacon-chain -- --datadir=$HOME/beacon-chain
 ```
 
-The beacon node will spin up and immediately begin communicating with the Prysm testnet, outputting data similar to the image below.
+The beacon-chain node will spin up and immediately begin communicating with the Prysm testnet, outputting data similar to the image below.
 
 ![](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LRNnKRqTm4z1mzdDqDF%2F-Lua_6kBgtyMjsJFCSPr%2F-LuaaWo6lTgjk4e7WQ4p%2F9.png?alt=media&token=901b8c14-2a09-4365-bf63-1991c4996544)
 
@@ -78,10 +89,15 @@ The process of syncronising may take a while; the incoming block per second capa
 
 **NOTICE:** The beacon-chain node you are using should be **completely synced** before submitting your deposit. You may **incur minor inactivity balance penalties** if the validator is unable to perform its duties by the time the deposit is processed and activated by the ETH2 network.
 
-
 Open a second terminal window. Depending on your platform, issue the appropriate command from the examples below to start the validator.
 
-#### Starting the validator client with Docker on GNU/Linux or macOS
+#### Starting the validator client with prysm.sh
+
+```text
+prysm.sh validator --keystore-path=$HOME/.eth2validator --password=changeme
+```
+
+#### Starting the validator client with Docker
 
 ```text
 docker run -it -v $HOME/prysm/validator:/data --network="host" \
@@ -104,6 +120,7 @@ Once both the beacon node and validator client are successfully running, make yo
 ![](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LRNnKRqTm4z1mzdDqDF%2F-LuJpxGKxOpat8TfDxPP%2F-Lua3RjIGSbGQbe7NrjZ%2F5.png?alt=media&token=0561a974-edf7-49f9-b225-8997982eb8e0)
 
 ## Step 6: Wait for your validator assignment
+
 It will take a significant while for the nodes in the network to process a deposit. Meanwhile, leave both terminal windows open and running. Once the node is actived by the ETH2 network, the validator will immediately begin performing its responsibilities. The validator is now awaiting its first assignment from the network.
 
 **Congratulations, you are now fully participating in the Prysm ETH 2.0 Phase 0 testnet!** ♡
