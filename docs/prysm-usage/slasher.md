@@ -1,7 +1,7 @@
 ---
 id: slasher
-title: Run a slasher
-sidebar_label: Run a slasher
+title: Running a Slasher
+sidebar_label: Running a slasher
 ---
 This section provides instructions to run slasher to identify and report slashable offenses on the testnet.
 
