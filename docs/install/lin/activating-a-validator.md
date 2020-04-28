@@ -3,7 +3,7 @@ id: activating-a-validator
 title: Activating a Validator
 sidebar_label: Activate a validator
 ---
-This section outlines the step-by-step process for Linux found on prylabs.net to submit a deposit and initialise a validator for participation in the testnet.
+This section outlines the step-by-step process for GNU/Linux found on prylabs.net to submit a deposit and initialise a validator for participation in the testnet.
 
 
 ## Step 1: Get Prysm
@@ -55,7 +55,7 @@ This command will output a `Raw Transaction Data` block:
 
 ## Step 4a: Starting up the beacon node
 
-**NOTICE:** If you have already started and syncronised your beacon node, this portion can be skipped.
+> **NOTICE:** If you have already started and syncronised your beacon node, this portion can be skipped.
 
 The beacon node is a long running process that will require a dedicated terminal window. Depending on your platform, issue the appropriate command from the examples below to start the beacon node.
 
@@ -125,7 +125,7 @@ For example if `echo $HOME` return `/home/john` then the contents of the file wo
 
 ## Step 4b: Starting up the validator client
 
-**NOTICE:** The beacon-chain node you are using should be **completely synced** before submitting your deposit. You may **incur minor inactivity balance penalties** if the validator is unable to perform its duties by the time the deposit is processed and activated by the ETH2 network.
+> **NOTICE:** The beacon-chain node you are using should be **completely synced** before submitting your deposit. You may **incur minor inactivity balance penalties** if the validator is unable to perform its duties by the time the deposit is processed and activated by the ETH2 network.
 
 Open a second terminal window. Depending on your platform, issue the appropriate command from the examples below to start the validator.
 
@@ -159,7 +159,7 @@ Once both the beacon node and validator client are successfully running, make yo
 
 ## Step 6: Wait for your validator assignment
 
-It will take a significant while for the nodes in the network to process a deposit. Meanwhile, leave both terminal windows open and running. Once the node is actived by the ETH2 network, the validator will immediately begin performing its responsibilities. The validator is now awaiting its first assignment from the network.
+Please note that it may take up to 12 hours for nodes in the ETH2 network to process a deposit. In the meantime, leave both terminal windows open and running; once the node is activated by the ETH2 network, the validator will immediately begin receiving tasks and performing its responsibilities.
 
 **Congratulations, you are now fully participating in the Prysm ETH 2.0 Phase 0 testnet!** ♡
 
