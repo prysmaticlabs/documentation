@@ -9,7 +9,7 @@ This section outlines the step-by-step process for Windows found on prylabs.net 
 ## Step 1: Get Prysm
 
 To begin, follow the instructions to fetch and install Prysm with either the [Prysm Installation Script](../windows), or [Docker](./docker).
-  Note: Compiling Prysm with Bazel is not currently supported on Windows.
+> NOTICE: Compiling Prysm with Bazel is not currently supported on Windows.
 
 ## Step 2: Get Göerli ETH - Test ether
 
@@ -18,7 +18,7 @@ You will be asked to link a wallet address to your validator with either the [Me
 
 The wallet is scanned for the required amount of Göerli ETH after being linked. If the wallet does not have sufficient funds, you will be given the option to receive the required GöETH from our faucet.
 
-## Step 3: Generating a validator keypair
+## Step 3a: Generating a validator keypair
 
 Depending on your platform, issue the appropriate command from the examples below to generate a public / private keypair for your validator.
 
@@ -38,7 +38,7 @@ This command will output a `Raw Transaction Data` block:
 
 ![](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LRNnKRqTm4z1mzdDqDF%2F-LuJpxGKxOpat8TfDxPP%2F-Lua3OVmMOefnzXXvdGq%2F4.png?alt=media&token=96459a93-055c-4bf1-a0af-07a900d7b47f)
 
-## Submitting the deposit data
+## Step 3b: Submitting the deposit data
 
 **Method 1:** Copy and paste the deposit data into the field on prylabs.net:
 
