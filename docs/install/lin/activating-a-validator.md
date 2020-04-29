@@ -24,7 +24,7 @@ Depending on your platform, issue the appropriate command from the examples belo
 #### Generating with prysm.sh
 
 ```text
-./prysm.sh validator accounts create --keystore-path=$HOME/.eth2validator --password=changeme
+./prysm.sh validator accounts create --keystore-path=$HOME/.eth2validator
 ```
 
 #### Generating with Docker
@@ -96,7 +96,7 @@ Create a file at $HOME/prysm/validator/keystore.json with the following contents
 }
 ```
 
-## Securing the validator key with Bazel
+## Securing the validator key with prysm.sh or Bazel
 
 Obtain the location of your home directory with the following command:
 
@@ -132,7 +132,7 @@ Open a second terminal window. Depending on your platform, issue the appropriate
 #### Starting the validator client with prysm.sh
 
 ```text
-./prysm.sh validator --keystore-path=$HOME/.eth2validator --password=changeme
+./prysm.sh validator --keymanager=keystore --keymanageropts=${HOME}/prysm/validator/keystore.json
 ```
 
 #### Starting the validator client with Docker
