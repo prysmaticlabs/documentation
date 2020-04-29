@@ -102,7 +102,7 @@ Many computers have a local firewall that blocks incoming connections. Ensure th
 
 ## Setting the `--p2p-host-ip` flag
 
-The [beacon node](/docs/how-prysm-works/beacon-node) needs to know what your **public** IP address is so that it can inform other peers how to reach your node.  Do this by including the --p2p-host-ip=<your public IP> flag when you start beacon-chain
+The [beacon node](/docs/how-prysm-works/beacon-node) needs to know what your **public** IP address is so that it can inform other peers how to reach your node.  Do this by including the `--p2p-host-ip=<your public IP>` flag when you start up the `beacon-chain`.
 
 **On GNU\Linux, MacOS, and ARM:**
 ```
