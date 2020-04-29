@@ -27,11 +27,11 @@
 									"install/arm/activating-a-validator"
 								],
 
-		"Running Prysm": 	[	"prysm-usage/get-more-peers",
-								"prysm-usage/deploy-eth1-node",
+		"Running Prysm": 	[	"prysm-usage/deploy-eth1-node",
 								"prysm-usage/parameters",
 								"prysm-usage/wallet-keymanager",
 								"prysm-usage/slasher",
+								"prysm-usage/get-more-peers",
 								"faq"
 							],
 
