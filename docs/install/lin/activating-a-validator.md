@@ -87,7 +87,7 @@ The process of syncronising may take a while; the incoming block per second capa
 
 ## Step 4b: Securing the validator key
 
-### Securing the validator key with Docker
+#### Securing the validator key with Docker
 
 Create a file at $HOME/prysm/validator/keystore.json with the following contents (change the passphrase):
 
@@ -98,7 +98,7 @@ Create a file at $HOME/prysm/validator/keystore.json with the following contents
 }
 ```
 
-### Securing the validator key for use with prysm.sh or Bazel
+#### Securing the validator key for use with prysm.sh or Bazel
 
 Create a file at $HOME/prysm/validator/keystore.json using the following command:
 
