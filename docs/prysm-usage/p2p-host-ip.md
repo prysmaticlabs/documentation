@@ -12,22 +12,24 @@ ETH2 leverages [libp2p](../how-prysm-works/p2p-networking), a framework and suit
 - It begins listening for new incoming P2P connections
 - It starts a [discovery](https://github.com/ethereum/devp2p/wiki/Discovery-Overview) process to find and connect to new peers
 
-#### Home networks & routers
+![P2P Network Diagram](/img/prysm-p2p-host-ip.png)
+
+## Home networks & routers
 
 Many participants on the ETH2 network operate their nodes on a home network. Home networks typically have a router that provides a logical boundary between your private home network, and the public internet.  While this is good for keeping bad traffic out of your network, it presents a challenge for communicating with other nodes who are also on home networks.
 
-#### Virtual public cloud (VPC) networks
+## Virtual public cloud (VPC) networks
 
 Other participants on the ETH2 network operate their nodes on a virtual public cloud (VPC) instance.  This is basically a computer running in a datacenter that quite often is directly connected to the public internet.
 
-#### Incoming p2p connection prerequisites
+## Incoming p2p connection prerequisites
 
 In order for other participants on the ETH2 network to establish incoming p2p connections with your beacon-chain node, a number of conditions must be met:
 1) Your public IP address must be known.
 2) The protocol (TCP/UDP) and port number (0-65535) on which your beacon-chain node is listening must be known (Default - TCP/13000).
 3) All routers & firewalls must be configured to allow incoming traffic on that protocol/port combination.
 
-#### Private IP addresses
+## Private IP addresses
 
 Computers on a home network will typically have a private IP address.  Attempting to establish a p2p connection to another participant on the ETH2 network using that participant's **private** IP address is not possible, you must use the **public** IP address.  Private IPv4 addresses will always fall into one of the following ranges, as per [RFC1918](https://en.wikipedia.org/wiki/Private_network):
  - 192.168.0.0 – 192.168.255.255
@@ -36,11 +38,12 @@ Computers on a home network will typically have a private IP address.  Attemptin
 
 To determine your **private** ip address, or run the appropriate commmand for your OS:
 > NOTE: You may have more then one private ip address
+
 Windows
 ```
 ipconfig | findstr /i "IPv4 Address"
 ```
-macOS,
+macOS
 ```
 ifconfig | grep "inet " | grep -v 127.0.0.1
 ```
@@ -49,7 +52,7 @@ GNU\Linux
 ip addr show | grep "inet " | grep -v 127.0.0.1
 ```
 
-#### Public IP addresses
+## Public IP addresses
 
 Public IP addresses include all other IP addresses not in the private ranges mentioned above, with some exceptions for [Special-Use IPv4 Addresses](https://tools.ietf.org/html/rfc3330).
 
@@ -58,7 +61,7 @@ To determine your **public** ip address, visit (http://v4.ident.me/) or run this
 curl v4.ident.me
 ```
 
-### Port forwarding
+## Port forwarding
 Participants on home networks will need to configure their router to perform port forwarding so that other ETH2 participants can establish a connection to your beacon-chain node on TCP/13000.  The specific steps required vary based on your router, but can be summarised as follows:
 
 > NOTICE : Participants with nodes on a virtual public cloud (VPC) instance can skip this step.
@@ -92,11 +95,11 @@ GNU\Linux
 ip route | grep default
 ```
 
-### Firewalls
+## Firewalls
 
 Many computers have a local firewall that blocks incoming connections. Ensure that you have configured the firewall to allow incoming connections on TCP/13000 from all source IP addresses.
 
-### Beacon-chain node --p2p-host-ip
+## Setting the p2p-host-ip flag
 
 The beacon-chain node needs to know what your **public** IP address is so that it can inform other peers how to reach your node.  Do this by including the --p2p-host-ip=<your public IP> flag when you start beacon-chain
 
