@@ -102,15 +102,15 @@ Many computers have a local firewall that blocks incoming connections. Ensure th
 
 ## Setting the `--p2p-host-ip` flag
 
-The [beacon node](/docs/how-prysm-works/beacon-node) needs to know what your **public** IP address is so that it can inform other peers how to reach your node.  Do this by including the --P2P-host-ip=<your public IP> flag when you start beacon-chain
+The [beacon node](/docs/how-prysm-works/beacon-node) needs to know what your **public** IP address is so that it can inform other peers how to reach your node.  Do this by including the --p2p-host-ip=<your public IP> flag when you start beacon-chain
 
 **On GNU\Linux, MacOS, and ARM:**
 ```
-prysm.sh beacon-chain --P2P-host-ip=$(curl -s v4.ident.me)
+prysm.sh beacon-chain --p2p-host-ip=$(curl -s v4.ident.me)
 ```
 **Windows:**
 ```
 for /f %i in ('curl -s curl -s v4.ident.me') do set PRYSM-P2P-HOST-IP=%i
-prysm.bat beacon-chain --P2P-host-ip=%PRYSM-P2P-HOST-IP%
+prysm.bat beacon-chain --p2p-host-ip=%PRYSM-P2P-HOST-IP%
 ```
 > **NOTICE:** If you are using this command in a `.bat` script, replace both instances of `%i` with `%%i`.
