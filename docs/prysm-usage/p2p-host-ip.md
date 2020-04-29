@@ -22,16 +22,16 @@ Many participants on the ETH2 network operate their nodes on a home network. Hom
 
 Other participants on the ETH2 network operate their nodes on a virtual public cloud (VPC) instance.  This is basically a computer running in a datacenter that quite often is directly connected to the public internet.
 
-## Incoming p2p connection prerequisites
+## Incoming P2P connection prerequisites
 
-In order for other participants on the ETH2 network to establish incoming p2p connections with your beacon-chain node, a number of conditions must be met:
+In order for other participants on the ETH2 network to establish incoming P2P connections with your beacon-chain node, a number of conditions must be met:
 1) Your public IP address must be known.
 2) The protocol (TCP/UDP) and port number (0-65535) on which your beacon-chain node is listening must be known (Default - TCP/13000).
 3) All routers & firewalls must be configured to allow incoming traffic on that protocol/port combination.
 
 ## Private IP addresses
 
-Computers on a home network will typically have a private IP address.  Attempting to establish a p2p connection to another participant on the ETH2 network using that participant's **private** IP address is not possible, you must use the **public** IP address.  Private IPv4 addresses will always fall into one of the following ranges, as per [RFC1918](https://en.wikipedia.org/wiki/Private_network):
+Computers on a home network will typically have a private IP address.  Attempting to establish a P2P connection to another participant on the ETH2 network using that participant's **private** IP address is not possible, you must use the **public** IP address.  Private IPv4 addresses will always fall into one of the following ranges, as per [RFC1918](https://en.wikipedia.org/wiki/Private_network):
  - 192.168.0.0 – 192.168.255.255
  - 172.16.0.0 – 172.31.255.255
  - 10.0.0.0 – 10.255.255.255
@@ -76,7 +76,7 @@ Participants on home networks will need to configure their router to perform por
     - Protocol: TCP
     - IP Address: Private IP address of the computer running beacon-chain
 
-There are many websites availible with more detailed instructions on how to perform the steps above on your specific router.  A quick google search should help get you started.  Feel free to ask for help in our [Discord](https://discord.gg/YMVYzv6).
+There are many websites availible with more detailed instructions on how to perform the steps above on your specific router.  A quick search should help get you started.  Feel free to ask for help in our [Discord](https://discord.gg/YMVYzv6).
 
 To determine the IP address for your home router, run the appropriate command for your OS:
 

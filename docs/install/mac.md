@@ -51,7 +51,7 @@ curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --out
 ./prysm.sh beacon-chain
 ```
 
-> Advanced users: Not getting enough peers?  Refer to the [improve P2P connectivity](/docs/prysm-usage/p2p-host-ip) section of this documentation for tips on network configuration.
+> Not getting enough peers?  Refer to the [improve P2P connectivity](/docs/prysm-usage/p2p-host-ip) section of this documentation for tips on network configuration.
 
 The `prysm.sh` script will now download and initialise the beacon chain with the specified parameters. The terminal will produce output like so:
 
