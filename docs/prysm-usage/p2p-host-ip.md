@@ -110,7 +110,7 @@ prysm.sh beacon-chain --p2p-host-ip=$(curl -s v4.ident.me)
 ```
 **Windows:**
 ```
-for /f %i in ('curl -s curl -s v4.ident.me') do set PRYSM-P2P-HOST-IP=%i
+for /f %i in ('curl -s v4.ident.me') do set PRYSM-P2P-HOST-IP=%i
 prysm.bat beacon-chain --p2p-host-ip=%PRYSM-P2P-HOST-IP%
 ```
 > **NOTICE:** If you are using this command in a `.bat` script, replace both instances of `%i` with `%%i`.
