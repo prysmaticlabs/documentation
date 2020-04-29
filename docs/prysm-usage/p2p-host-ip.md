@@ -1,5 +1,5 @@
 ---
-id: P2P-host-ip
+id: p2p-host-ip
 title: Improve Peer-to-Peer Connectivity
 sidebar_label: Improve P2P connectivity
 ---
