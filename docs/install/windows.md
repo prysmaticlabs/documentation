@@ -19,7 +19,6 @@ These specifications must be met in order to successfuly run the Prysm client.
 
 ### Recommended specifications
 These hardware specifications are recommended, but not required to run the Prysm client.
-
 * Processor: Intel Core i7–4770 or AMD FX-8310 or better
 * Memory: 8GB RAM
 * Storage: 100GB available space SSD
@@ -28,8 +27,6 @@ These hardware specifications are recommended, but not required to run the Prysm
 ## Installing the beacon chain and validator
 
 The easiest way to install the beacon chain and validator is by running the `prysm.bat` script found in the main directory of the [Prysm repository](https://github.com/prysmaticlabs/prysm). This script will download and start up the latest release of Prysm binaries compatible with the host system.
-
-> **NOTICE:** It is recommended to open up port 13000 on your local router to improve connectivity and receive more peers from the network. To do so, navigate to `192.168.0.1` in your browser and login if required. Follow along with the interface to modify your routers firewall settings. When this task is completed, append the parameter`--p2p-host-ip=$(curl -s ident.me)` to your selected beacon startup command presented in this section to use the newly opened port.
 
 ### Running the Prysm startup script
 
@@ -56,7 +53,7 @@ reg add HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1
 .\prysm.bat beacon-chain
 ```
 
-It is also recommended to include the `--p2p-host-ip` and `--min-sync-peers 7` flags to improve peering. For advanced users that desire standard debugging tools found in the Busybox base image, append a `--debug` flag to enable them.
+> Not getting enough peers?  Refer to the [improve P2P connectivity](/docs/prysm-usage/p2p-host-ip) section of this documentation for tips on network configuration.
 
 The `prysm.bat` script will now download and initialise the beacon chain with the specified parameters. The terminal will produce output like so:
 
