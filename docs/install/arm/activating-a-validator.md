@@ -8,7 +8,7 @@ This section outlines the step-by-step process for ARM64 found on prylabs.net to
 
 ## Step 1: Get Prysm
 
-To begin, follow the instructions to fetch and install Prysm with either the [Prysm Installation Script](../arm), or [Bazel](./bazel).
+To begin, follow the instructions to fetch and install Prysm with either the [Prysm Installation Script](/docs/install/arm), or [Bazel](/docs/install/bazel).
 > NOTICE: Docker images are not currently generated for ARM64
 
 ## Step 2: Get Göerli ETH - Test ether
@@ -96,6 +96,12 @@ Once both the beacon node and validator client are successfully running, make yo
 ## Step 6: Wait for your validator assignment
 
 Please note that it may take up to 12 hours for nodes in the ETH2 network to process a deposit. In the meantime, leave both terminal windows open and running; once the node is activated by the ETH2 network, the validator will immediately begin receiving tasks and performing its responsibilities.
+
+## Running a second validator
+
+Multiple validators can easily be initialised on the same system. Simply perform the steps outlined above once more for each new validator, ensuring the chosen password for [step 4b](activating-a-validator#step-4b-securing-the-validator-key) is the **same as your first validator, and that all keypairs are stored in the same location**. If not done this way, the second validator will try to start already running services and cause porting-related errors to occur.
+
+For running multiple keypairs alongside multiple validator instances, refer the [wallet keymanager](/docs/prysm-usage/wallet-keymanager) section of this documentation.
 
 **Congratulations, you are now fully participating in the Prysm ETH 2.0 Phase 0 testnet!** ♡
 
