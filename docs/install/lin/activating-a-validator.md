@@ -24,7 +24,7 @@ Depending on your platform, issue the appropriate command from the examples belo
 #### Generating with prysm.sh
 
 ```text
-./prysm.sh validator accounts create --keystore-path=$HOME/.eth2validator
+./prysm.sh validator accounts create --keystore-path=$HOME/prysm/validator/
 ```
 
 #### Generating with Docker
@@ -85,9 +85,11 @@ The beacon node will spin up and immediately begin communicating with the Prysm 
 
 The process of syncronising may take a while; the incoming block per second capacity is dependent upon the connection strength, network congestion and overall peer count.
 
-## Securing the validator key with Docker
+## Step 4b: Securing the validator key
 
-Create a file at $HOME/prysm/validator/keystore.json with the following contents:
+### Securing the validator key with Docker
+
+Create a file at $HOME/prysm/validator/keystore.json with the following contents (change the passphrase):
 
 ```
 {
@@ -96,34 +98,27 @@ Create a file at $HOME/prysm/validator/keystore.json with the following contents
 }
 ```
 
-## Securing the validator key with prysm.sh or Bazel
+### Securing the validator key for use with prysm.sh or Bazel
 
-Obtain the location of your home directory with the following command:
-
-```
-echo $HOME
-```
-
-Create a file at $HOME/prysm/validator/keystore.json with the following contents, replacing HOME` with the output you just obtained from running `echo $HOME`:
+Create a file at $HOME/prysm/validator/keystore.json using the following command:
 
 ```
+cat >> $HOME/prysm/validator/keystore.json << EOF
 {
-  "path": "HOME/prysm/validator",
+  "path": "$HOME/prysm/validator",
   "passphrase": "changeme"
 }
-```
-
-For example if `echo $HOME` return `/home/john` then the contents of the file would be:
+EOF
 
 ```
-{
-  "path": "/home/john/prysm/validator",
-  "passphrase": "changeme"
-}
+
+Edit the file using your preffered text editor (e.g. nano or vi) and change the passphrase.
+
+```
+nano $HOME/prysm/validator/keystore.json
 ```
 
-
-## Step 4b: Starting up the validator client
+## Step 4c: Starting up the validator client
 
 > **NOTICE:** The beacon-chain node you are using should be **completely synced** before submitting your deposit. You may **incur minor inactivity balance penalties** if the validator is unable to perform its duties by the time the deposit is processed and activated by the ETH2 network.
 
