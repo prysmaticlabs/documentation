@@ -99,7 +99,7 @@ Please note that it may take up to 12 hours for nodes in the ETH2 network to pro
 
 ## Running a second validator
 
-Multiple validators can easily be initialised on the same system. Simply perform the steps outlined above once more for each new validator, ensuring the chosen password for [step 4b](activating-a-validator#step-4b-securing-the-validator-key) is the **same as your first validator, and that all keypairs are stored in the same location**. If not done this way, the second validator will try to start already running services and cause porting-related errors to occur.
+Multiple validators can easily be initialised on the same system. Simply perform the steps outlined above once more for each new validator, ensuring the chosen password for [step 4b](activating-a-validator#step-4b-securing-the-validator-key) is the **same for all validators, and that all keypairs are stored in the same location**.
 
 For running multiple keypairs alongside multiple validator instances, refer the [wallet keymanager](/docs/prysm-usage/wallet-keymanager) section of this documentation.
 
