@@ -48,8 +48,8 @@ curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --out
 ```sh
 ./prysm.sh beacon-chain
 ```
-> Advanced users: Please refer to the article on how to [improve P2P connectivity](../p2p-host-ip).  
-Developers: Append `--debug` to enable standard debugging tools found in the Busybox base image.
+
+> Advanced users: Not getting enough peers?  Refer to the [improve P2P connectivity](/docs/prysm-usage/p2p-host-ip) section of this documentation for tips on network configuration.
 
 The `prysm.sh` script will now download and initialise the beacon chain with the specified parameters. The terminal will produce output like so:
 
