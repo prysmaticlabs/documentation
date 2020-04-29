@@ -31,7 +31,7 @@
 								"prysm-usage/parameters",
 								"prysm-usage/wallet-keymanager",
 								"prysm-usage/slasher",
-								"prysm-usage/get-more-peers",
+								"prysm-usage/p2p-host-ip",
 								"faq"
 							],
 

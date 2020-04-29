@@ -27,16 +27,33 @@ In order for other participants on the ETH2 network to establish incoming p2p co
 2) The protocol (TCP/UDP) and port number (0-65535) on which your beacon-chain node is listening must be known (Default - TCP/13000).
 3) All routers & firewalls must be configured to allow incoming traffic on that protocol/port combination.
 
-#### Private & public IP addresses
+#### Private IP addresses
 
 Computers on a home network will typically have a private IP address.  Attempting to establish a p2p connection to another participant on the ETH2 network using that participant's **private** IP address is not possible, you must use the **public** IP address.  Private IPv4 addresses will always fall into one of the following ranges, as per [RFC1918](https://en.wikipedia.org/wiki/Private_network):
  - 192.168.0.0 – 192.168.255.255
  - 172.16.0.0 – 172.31.255.255
  - 10.0.0.0 – 10.255.255.255
 
-Public IP addresses include all other IP addresses not in the ranges mentioned above, with some exceptions for [Special-Use IPv4 Addresses](https://tools.ietf.org/html/rfc3330).
+To determine your **private** ip address, or run the appropriate commmand for your OS:
+> NOTE: You may have more then one private ip address
+Windows
+```
+ipconfig | findstr /i "IPv4 Address"
+```
+macOS,
+```
+ifconfig | grep "inet " | grep -v 127.0.0.1
+```
+GNU\Linux
+```
+ip addr show | grep "inet " | grep -v 127.0.0.1
+```
 
-You can determine your public ip address by visiting (http://v4.ident.me/) or running this commmand:
+#### Public IP addresses
+
+Public IP addresses include all other IP addresses not in the private ranges mentioned above, with some exceptions for [Special-Use IPv4 Addresses](https://tools.ietf.org/html/rfc3330).
+
+To determine your **public** ip address, visit (http://v4.ident.me/) or run this commmand:
 ```
 curl v4.ident.me
 ```
@@ -57,6 +74,23 @@ Participants on home networks will need to configure their router to perform por
     - IP Address: Private IP address of the computer running beacon-chain
 
 There are many websites availible with more detailed instructions on how to perform the steps above on your specific router.  A quick google search should help get you started.  Feel free to ask for help in our [Discord](https://discord.gg/YMVYzv6).
+
+To determine the IP address for your home router, run the appropriate command for your OS:
+
+> NOTE: You may have more then one gateway ip address
+
+Windows
+```
+ipconfig | findstr /i "Gateway"
+```
+macOS
+```
+netstat -nr | grep default
+```
+GNU\Linux
+```
+ip route | grep default
+```
 
 ### Firewalls
 
