@@ -34,7 +34,7 @@ docker pull gcr.io/prysmaticlabs/prysm/beacon-chain:latest
 
 This process will also install any related dependencies.
 
-> For advanced users, the beacon-chain and validator images with Busybox debugging tools bundled in can be fetched instead by appending `-debug` to the end of the images in the `pull` commands above. For example: `docker pull .../prysm/validator:latest-debug`
+> For advanced users, the beacon-chain and validator images with debugging tools bundled in can be fetched instead by appending `-alpine` to the end of the images in the `pull` commands above. For example: `docker pull .../prysm/validator:latest-alpine`.
  
 ## Connecting to the testnet: running a beacon node
 
