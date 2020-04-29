@@ -97,7 +97,7 @@ Once both the beacon node and validator client are successfully running, make yo
 
 Please note that it may take up to 12 hours for nodes in the ETH2 network to process a deposit. In the meantime, leave both terminal windows open and running; once the node is activated by the ETH2 network, the validator will immediately begin receiving tasks and performing its responsibilities.
 
-## Running a second validator
+## Running multiple validators
 
 Multiple validators can easily be initialised on the same system. Simply perform the steps outlined above once more for each new validator, ensuring the chosen password for [step 4b](activating-a-validator#step-4b-securing-the-validator-key) is the **same for all validators, and that all keypairs are stored in the same location**.
 
