@@ -51,7 +51,7 @@ These flags are shared by both the beacon node and validator client.
 | `--p2p-udp-port ` | The port used by discv5. <br>Default: 12000
 | `--p2p-tcp-port` | The port used by libP2P. <br>Default: 13000
 | `--p2p-local-ip` | The local ip address to listen for incoming data.
-| `--p2p-host-ip` |  The DNS address advertised by libp2p. This may be used to advertise an external DNS.
+| `--p2p-host-ip` |  The IP address advertised by libp2p. This may be used to advertise a public IP.
 | `--p2p-host-dns` | The DNS address advertised by libp2p. This may be used to advertise an external DNS.
 | `--p2p-max-peers` | The max number of p2p peers to maintain. <br>Default: 30
 | `--p2p-whitelist` | The CIDR subnet for whitelisting peer connections. Example: 192.168.0.0/16 would whitelist connections to peers on your local network only. The default is to accept all connections.
