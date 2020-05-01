@@ -36,6 +36,7 @@ It is possible to provide additional flags alongside the `.yaml` file, though if
 These flags are shared by both the beacon node and validator client.
 | Flag          | Usage         |
 | ------------- |:-------------|
+| `--config-file` | Allows user to specifying the location of a `.yaml` config file with flag values. |
 | `--verbosity`     | Logging verbosity (trace, debug, info=default, warn, error, fatal, panic). |
 | `--datadir [path]`     | Allows user to specify a data directory for the databases and keystore. |
 | `--enable-tracing` | Enables request tracing.    |
@@ -51,7 +52,7 @@ These flags are shared by both the beacon node and validator client.
 | `--p2p-udp-port ` | The port used by discv5. <br>Default: 12000
 | `--p2p-tcp-port` | The port used by libP2P. <br>Default: 13000
 | `--p2p-local-ip` | The local ip address to listen for incoming data.
-| `--p2p-host-ip` |  The DNS address advertised by libp2p. This may be used to advertise an external DNS.
+| `--p2p-host-ip` |  The IP address advertised by libp2p. This may be used to advertise a public IP.
 | `--p2p-host-dns` | The DNS address advertised by libp2p. This may be used to advertise an external DNS.
 | `--p2p-max-peers` | The max number of p2p peers to maintain. <br>Default: 30
 | `--p2p-whitelist` | The CIDR subnet for whitelisting peer connections. Example: 192.168.0.0/16 would whitelist connections to peers on your local network only. The default is to accept all connections.
@@ -59,8 +60,8 @@ These flags are shared by both the beacon node and validator client.
 | `--force-clear-db` | Clear any previously stored data at the data directory.
 | `--clear-db` | Prompt for clearing any previously stored data at the data directory.
 | `--log-format` | Specify log formatting. Supports: text, json, fluentd.
-| `--log-file` | Specifies the upper limit of goroutines running before a status check fails. <br>Default: 5000
-| `--max-goroutines` | Specify log file name, relative or absolute.
+| `--log-file` | Specify log file name, relative or absolute.
+| `--max-goroutines` | Specifies the upper limit of goroutines running before a status check fails. <br>Default: 5000
 | `--enable-upnp` | Enable the service (Beacon chain or Validator) to use UPnP when possible.
 
 ## Beacon node parameters
@@ -113,3 +114,25 @@ These flags are specific to launching a validator client.
 | ------------- |:-------------|
 |`--interop-start-index` | The start index to deterministically generate validator keys when used in combination with `--interop-num-validators`. Example: `--interop-start-index=5 --interop-num-validators=3` would generate keys from index 5 to 7.
 |`--interop-num-validators` | The number of validators to deterministically generate validator keys when used in combination with `--interop-num-validators`. Example: `--interop-start-index=5 --interop-num-validators=3` would generate keys from index 5 to 7.
+
+## Slasher parameters
+These flags are specific to launching a slasher client.
+### Base flags
+| Flag          | Usage         |
+| ------------- |:-------------|
+|`--beacon-rpc-provider` | Specify the beacon node RPC provider endpoint <br>Default: "localhost:4000"
+|`--beacon-tls-cert` | Provide the certificate for secure beacon gRPC connection. Pass this in order to use beacon gRPC securely.
+|`--rebuild-span-maps` | Rebuild span maps from indexed attestations in db <br>Default: false
+|`--rpc-port` | Specify the RPC port exposed by the slasher <br>Default: 5000
+|`--tls-cert` | Specify the certificate to use for secure gRPC. Pass this and the tls-key flag in order to use gRPC securely.
+|`--tls-key` | Specify the private key for secure gRPC. Pass this and the tls-cert flag in order to use gRPC securely.
+
+### Debug flags
+| Flag          | Usage         |
+| ------------- |:-------------|
+|`--cpuprofile` | Write CPU profile to the given file
+|`--memprofilerate` | Turn on memory profiling with the given rate <br>Default: 524288
+|`--pprof` | Enable the pprof HTTP server <br>Default: false
+|`--pprofaddr` | pprof HTTP server listening interface <br>Default: "127.0.0.1"
+|`--pprofport` | pprof HTTP server listening port <br>Default: 6060
+|`--trace` | Write execution trace to the given file
