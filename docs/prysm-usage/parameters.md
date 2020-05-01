@@ -133,6 +133,6 @@ These flags are specific to launching a slasher client.
 |`--cpuprofile` | Write CPU profile to the given file
 |`--memprofilerate` | Turn on memory profiling with the given rate <br>Default: 524288
 |`--pprof` | Enable the pprof HTTP server <br>Default: false
-|`--pprofaddr` | pprof HTTP server listening interface <br>Default: "127.0.0.1")
-|`--pprofport` | pprof HTTP server listening port <br>Default: 6060)
+|`--pprofaddr` | pprof HTTP server listening interface <br>Default: "127.0.0.1"
+|`--pprofport` | pprof HTTP server listening port <br>Default: 6060
 |`--trace` | Write execution trace to the given file
