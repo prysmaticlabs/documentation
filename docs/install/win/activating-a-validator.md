@@ -5,6 +5,7 @@ sidebar_label: Activate a validator
 ---
 This section outlines the step-by-step process for Windows found on prylabs.net to submit a deposit and initialise a validator for participation in the testnet.
 
+![Prysm Single Validator Key Setup](/img/prysm-single-key.png)
 
 ## Step 1: Get Prysm
 
@@ -99,11 +100,20 @@ Once both the beacon node and validator client are successfully running, make yo
 
 Please note that it may take up to 12 hours for nodes in the ETH2 network to process a deposit. In the meantime, leave both terminal windows open and running; once the node is activated by the ETH2 network, the validator will immediately begin receiving tasks and performing its responsibilities.
 
+> NOTE: Additional information about the status of your ETH 1 deposit and validator is availble on a number of [block explorers](/docs/devtools/block-explorers).
+
 ## Running multiple validators
 
-Multiple validators can easily be initialised on the same system. Simply perform the steps outlined above once more for each new validator, ensuring the chosen password for [step 4b](activating-a-validator#step-4b-securing-the-validator-key) is the **same for all validators, and that all keypairs are stored in the same location**.
+Multiple validator keys can easily be initialised on the same validator process.
 
-For running multiple keypairs alongside multiple validator instances, refer the [wallet keymanager](/docs/prysm-usage/wallet-keymanager) section of this documentation.
+![Prysm Single Validator Key Setup](/img/prysm-multiple-keys.png)
+
+ Simply repeat the following steps:
+ * [Step 3a](activating-a-validator#step-3a-generating-a-validator-keypair) to generate additional validator keys in the same keystore path, using the same password.
+ * [Step 3b](activating-a-validator#step-3b-submitting-the-deposit-data) to deposit 32 Göerli ETH for each validator key
+ * Now restart the validator process, and it will automatically detect the new keys!
+
+For running multiple keypairs alongside multiple validator instances, or to use different passwords refer the [wallet keymanager](/docs/prysm-usage/wallet-keymanager) section of this documentation.
 
 **Congratulations, you are now fully participating in the Prysm ETH 2.0 Phase 0 testnet!** ♡
 

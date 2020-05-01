@@ -7,6 +7,8 @@ sidebar_label: On Ethereum 2.0
   are new to the core concepts presented in the following sections of this
   documentation.
 
+![Ethereum 2.0](/img/ethereum-2.0.png)
+
 Ethereum 2.0 \( also known as 'Serenity'\) is the most recent iteration of the Ethereum protocol. It includes a number of new features that all aim to address the '**Scalability Trilemma**', a concept regarded as the single biggest impediment to the mass adoption of blockchain. Possibly the keystone of these updates is the introduction of **sharding**, the feature that Prysm itself is designed to leverage. These concepts are explained more in-depth below.
 
 ### What is the 'Scalability Trilemma'?

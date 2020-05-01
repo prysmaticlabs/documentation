@@ -3,6 +3,7 @@ id: docker
 title: Installing Prysm on Windows with Docker
 sidebar_label: Installing with Docker
 ---
+![Prysm Docker Setup](/img/prysm-basic-docker-setup.png)
 
    > **NOTICE:** The Prysm installation script is the easiest and most efficient way of installing the latest binaries. Instructions for using it can be found [here](/docs/install/windows).
 
@@ -35,13 +36,9 @@ This process will also install any related dependencies.
 
 > For advanced users, the beacon-chain and validator images with debugging tools bundled in can be fetched instead by appending `-alpine` to the end of the images in the `pull` commands above. For example: `docker pull .../prysm/validator:latest-alpine`.
 
-   > **NOTICE:** It is recommended to open up port 13000 on your local router to improve connectivity and receive more peers from the network. To do so, navigate to `192.168.0.1` in your browser and login if required. Follow along with the interface to modify your routers firewall settings. When this task is completed, append the parameter`--p2p-host-ip=$(curl -s ident.me)` to your selected beacon startup command presented in this section to use the newly opened port.
-
-
 ## Connecting to the testnet: running a beacon node
 
 Below are instructions for initialising a beacon node and connecting to the public testnet. To further understand the role that the beacon node plays in Prysm, see [this section](/docs/how-prysm-works/prysm-beacon-node) of the documentation.
-
 
 1. You will need to share the local drive you wish to mount to to container \(e.g. C:\).
    1. Enter Docker settings \(right click the tray icon\)
@@ -55,7 +52,9 @@ Below are instructions for initialising a beacon node and connecting to the publ
 docker run -it -v c:/prysm/:/data -p 4000:4000 -p 13000:13000 gcr.io/prysmaticlabs/prysm/beacon-chain:latest --datadir=/data --clear-db
 ```
 
-This will sync up the beacon node with the latest cannonical head block in the network. It is also recommended to include the `--p2p-host-ip` and `--min-sync-peers 7` flags to improve peering. The Docker `-d` flag can be appended before the `-v` flag to launch the process in a detached terminal window.
+This will sync up the beacon node with the latest cannonical head block in the network. The Docker `-d` flag can be appended before the `-v` flag to launch the process in a detached terminal window.
+
+  > Not getting enough peers?  Refer to the [improve P2P connectivity](/docs/prysm-usage/p2p-host-ip) section of this documentation for tips on network configuration.
 
   > **NOTICE:** The beacon node you are using should be **completely synced** before submitting your deposit for the validator client, otherwise the validator will not be able to validate and will **inflict minor inactivity balance penalties**.
 

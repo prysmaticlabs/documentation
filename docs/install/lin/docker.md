@@ -3,6 +3,7 @@ id: docker
 title: Installing Prysm on GNU/Linux with Docker
 sidebar_label: Installing with Docker
 ---
+![Prysm Docker Setup](/img/prysm-basic-docker-setup.png)
 
    > **NOTICE:** The Prysm installation script is the easiest and most efficient way of installing the latest binaries. Instructions for using it can be found [here](/docs/install/linux).
 
@@ -40,10 +41,6 @@ This process will also install any related dependencies.
 
 Below are instructions for initialising a beacon node and connecting to the public testnet. To further understand the role that the beacon node plays in Prysm, see [this section](../how-prysm-works/overview-technical) of the documentation.
 
-
-   > **NOTICE:** It is recommended to open up port 13000 on your local router to improve connectivity and receive more peers from the network. To do so, navigate to `192.168.0.1` in your browser and login if required. Follow along with the interface to modify your routers firewall settings. When this task is completed, append the parameter`--p2p-host-ip=$(curl -s ident.me)` to your selected beacon startup command presented in this section to use the newly opened port.
-
-
 To start your beacon node, issue the following command:
 
 ```text
@@ -52,7 +49,9 @@ docker run -it -v $HOME/prysm:/data -p 4000:4000 -p 13000:13000 --name beacon-no
   --datadir=/data
 ```
 
-This will sync up the beacon node with the latest head block in the network. It is also recommended to include the `--p2p-host-ip` and `--min-sync-peers 7` flags to improve peering. The Docker `-d` flag can be appended before the `-v` flag to launch the process in a detached terminal window.
+This will sync up the beacon node with the latest head block in the network. 
+
+  > Not getting enough peers?  Refer to the [improve P2P connectivity](/docs/prysm-usage/p2p-host-ip) section of this documentation for tips on network configuration.
 
   > **NOTICE:** The beacon node must be **completely synced** before attempting to initialise a validator client, otherwise the validator will not be able to complete the deposit and **funds will lost**.
 
