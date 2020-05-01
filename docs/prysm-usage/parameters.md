@@ -120,18 +120,19 @@ These flags are specific to launching a slasher client.
 ### Base flags
 | Flag          | Usage         |
 | ------------- |:-------------|
-|`--beacon-rpc-provider` | Specify the beacon node RPC provider endpoint (default: "localhost:4000")
+|`--beacon-rpc-provider` | Specify the beacon node RPC provider endpoint <br>Default: "localhost:4000"
 |`--beacon-tls-cert` | Provide the certificate for secure beacon gRPC connection. Pass this in order to use beacon gRPC securely.
-|`--rebuild-span-maps` | Rebuild span maps from indexed attestations in db (default: false)
-|`--rpc-port` | Specify the RPC port exposed by the slasher (default: 5000)
+|`--rebuild-span-maps` | Rebuild span maps from indexed attestations in db <br>Default: false
+|`--rpc-port` | Specify the RPC port exposed by the slasher <br>Default: 5000
+|`--tls-cert` | Specify the certificate to use for secure gRPC. Pass this and the tls-key flag in order to use gRPC securely.
 |`--tls-key` | Specify the private key for secure gRPC. Pass this and the tls-cert flag in order to use gRPC securely.
 
 ### Debug flags
 | Flag          | Usage         |
 | ------------- |:-------------|
 |`--cpuprofile` | Write CPU profile to the given file
-|`--memprofilerate` | Turn on memory profiling with the given rate (default: 524288)
-|`--pprof` | Enable the pprof HTTP server (default: false)
-|`--pprofaddr` | pprof HTTP server listening interface (default: "127.0.0.1")
-|`--pprofport` | pprof HTTP server listening port (default: 6060)
+|`--memprofilerate` | Turn on memory profiling with the given rate <br>Default: 524288
+|`--pprof` | Enable the pprof HTTP server <br>Default: false
+|`--pprofaddr` | pprof HTTP server listening interface <br>Default: "127.0.0.1")
+|`--pprofport` | pprof HTTP server listening port <br>Default: 6060)
 |`--trace` | Write execution trace to the given file
