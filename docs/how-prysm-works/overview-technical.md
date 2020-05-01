@@ -6,6 +6,7 @@ sidebar_label: Architecture overview
   This section outlines Prysm's various internal components and their role in
   the client.
 
+![Architecture Diagram](/img/prysm-architecture.png)
 
 ## Prysm client components
 
