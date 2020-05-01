@@ -5,7 +5,7 @@ sidebar_label: Activate a validator
 ---
 This section outlines the step-by-step process for ARM64 found on prylabs.net to submit a deposit and initialise a validator for participation in the testnet.
 
-![Prysm Single Validator Key Setup](/img/prysm-single-key.png)
+![ETH1 Deposit Overview](/img/prysm-eth1-deposit.png)
 
 ## Step 1: Get Prysm
 
@@ -20,6 +20,8 @@ You will be asked to link a wallet address to your validator with either the [Me
 The wallet is scanned for the required amount of Göerli ETH after being linked. If the wallet does not have sufficient funds, you will be given the option to receive the required GöETH from our faucet.
 
 ## Step 3a: Generating a validator keypair
+
+![Prysm Single Validator Key Setup](/img/prysm-single-key.png)
 
 Depending on your platform, issue the appropriate command from the examples below to generate a public / private keypair for your validator.
 
