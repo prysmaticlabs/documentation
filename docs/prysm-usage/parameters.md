@@ -116,7 +116,7 @@ These flags are specific to launching a validator client.
 |`--interop-num-validators` | The number of validators to deterministically generate validator keys when used in combination with `--interop-num-validators`. Example: `--interop-start-index=5 --interop-num-validators=3` would generate keys from index 5 to 7.
 
 ## Slasher parameters
-These flags are specific to launching a validator client.
+These flags are specific to launching a slasher client.
 ### Base flags
 | Flag          | Usage         |
 | ------------- |:-------------|
