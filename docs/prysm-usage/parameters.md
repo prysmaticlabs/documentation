@@ -6,30 +6,6 @@ sidebar_label: Available parameters
 
 This section lists the various flags used to customise the startup process of beacon nodes and validator clients.
 
-## Loading parameters via .YAML file
-
-Prysm now supports loading flag values from a specified `.yaml` file. Defining parameters in this way cuts back on terminal clutter and allows unique startup profiles to be saved independently.
-
-The below steps show how place a common Prysm flag `--datadir=/data` into a YAML file and how to specify it at start up.
-
-1. In your Prysm working directory, create a `.yaml` file and open it in a text editor.
-
-2. Add the following lines to the file before closing and saving:
-```sh
-datadir: "/data"
-```
-
-3. Start the Prysm beacon chain as normal, while specifying the location of the `.yaml` like so:
-```sh
-./prysm.sh beacon-chain --config-file=/path/to/file.yaml
-```
-or for a validator like so:
-```sh
-./prysm.sh validator --config-file=/path/to/file.yaml
-```
-
-It is possible to provide additional flags alongside the `.yaml` file, though if there is conflicts, the `.yaml` file will take priority. For example, if the flag `--datadir=/data2` is specified and `datadir: "/data1"` is in the `.yaml` file, Prysm would prioritise writing to `/data1`.
-
   > **Fun tip:** You can use the `--graffiti` flag to add a string to your proposed blocks, which will be seen on the block explorer. I.e; `<startup command> --graffiti "Prysm is awesome!"`
 
 ## Shared flags
@@ -136,3 +112,46 @@ These flags are specific to launching a slasher client.
 |`--pprofaddr` | pprof HTTP server listening interface <br>Default: "127.0.0.1"
 |`--pprofport` | pprof HTTP server listening port <br>Default: 6060
 |`--trace` | Write execution trace to the given file
+
+## Loading parameters via .YAML file
+
+Prysm now supports loading flag values from a specified `.yaml` file. Defining parameters in this way cuts back on terminal clutter and allows unique startup profiles to be saved independently.
+
+The below steps show how place a common Prysm flag into a YAML file and how to specify it at start up.
+
+### GNU\Linux, Mac, ARM64
+1. In your Prysm working directory, create a `.yaml` file and open it in a text editor.
+
+2. Add the following lines to the file before closing and saving:
+```sh
+datadir: "/data"
+```
+
+3. Start the Prysm beacon chain as normal, while specifying the location of the `.yaml` like so:
+```sh
+./prysm.sh beacon-chain --config-file=/path/to/file.yaml
+```
+or for a validator like so:
+```sh
+./prysm.sh validator --config-file=/path/to/file.yaml
+```
+
+### Windows
+1. In your Prysm working directory, create a `.yaml` file and open it in a text editor.
+
+2. Add the following lines to the file before closing and saving:
+```sh
+datadir: "c:\prysm"
+```
+
+3. Start the Prysm beacon chain as normal, while specifying the location of the `.yaml` like so:
+```sh
+.\prysm.bat beacon-chain --config-file=c:\path\to\file.yaml
+```
+or for a validator like so:
+```sh
+.\prysm.bat validator --config-file=c:\path\to\file.yaml
+```
+
+
+It is possible to provide additional flags alongside the `.yaml` file, though if there is conflicts, the `.yaml` file will take priority. For example, if the flag `--datadir=/data2` is specified and `datadir: "/data1"` is in the `.yaml` file, Prysm would prioritise writing to `/data1`.
