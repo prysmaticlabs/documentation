@@ -22,16 +22,18 @@ The wallet is scanned for the required amount of Göerli ETH after being linked.
 
 Depending on your platform, issue the appropriate command from the examples below to generate a public / private keypair for your validator.
 
+> NOTICE: When prompted, provide a password to encrypt your new ETH2 validator and withdrawl keys.
+
 #### Generating with prysm.bat
 
 ```text
-prysm.bat validator accounts create --keystore-path=%USERPROFILE%\.eth2validator --password=changeme
+prysm.bat validator accounts create --keystore-path=%USERPROFILE%\.eth2validator
 ```
 
 #### Generating with Docker
 
 ```text
-docker run -it -v c:/prysm:/data gcr.io/prysmaticlabs/prysm/validator:latest accounts create --keystore-path=/data --password=changeme
+docker run -it -v c:/prysm:/data gcr.io/prysmaticlabs/prysm/validator:latest accounts create --keystore-path=/data
 ```
 
 This command will output a `Raw Transaction Data` block:
@@ -77,10 +79,12 @@ The process of syncronising may take a while; the incoming block per second capa
 
 Open a second Command Prompt window. Depending on your platform, issue the appropriate command from the examples below to start the validator.
 
+> NOTICE: When prompted, provide the password used to encrypt your ETH2 validator key.
+
 #### Starting the validator client with prysm.bat
 
 ```text
-prysm.bat validator --keystore-path=%USERPROFILE%\.eth2validator --password=changeme
+prysm.bat validator --keystore-path=%USERPROFILE%\.eth2validator
 ```
 
 #### Starting the validator client with Docker

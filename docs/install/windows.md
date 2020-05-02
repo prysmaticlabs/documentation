@@ -81,8 +81,10 @@ At this point, the beacon chain data will begin syncronising up to the latest he
 
 5. Run the `prysm.bat` script to generate a new keypair, alongside any [startup parameters](/docs/prysm-usage/parameters):
 
+> NOTICE: When prompted, provide a password to encrypt your new ETH2 validator and withdrawl keys.
+
 ```sh
-.\prysm.bat validator accounts create --keystore-path=c:/prysm/validator --password=changeme
+.\prysm.bat validator accounts create --keystore-path=c:/prysm/validator
 ```
 
 For step-by-step assistance with performing a deposit and setting up a validator client, see the [activating a validator ](/docs/install/win/activating-a-validator)section of this documentation.
@@ -95,12 +97,14 @@ Please note that **it may take up to 12 hours** for the nodes in the network to 
 
 6. Run the `prysm.bat` script alongside any [startup parameters](/docs/prysm-usage/parameters#validator-parameters):
 
+> NOTICE: When prompted, provide the password used to encrypt your ETH2 validator key.
+
 ```sh
-.\prysm.bat validator --keystore-path=%USERPROFILE%\.eth2validator --password=changeme
+.\prysm.bat validator --keystore-path=%USERPROFILE%\.eth2validator
 ```
 
 ```sh
-.\prysm.bat validator --keystore-path=%USERPROFILE%\.eth2validator --password=changeme
+.\prysm.bat validator --keystore-path=%USERPROFILE%\.eth2validator
 Latest prysm release is v1.0.0-alpha.5.
 Using prysm version v1.0.0-alpha.5.
 Downloading validator v1.0.0-alpha.5 to .\dist\validator-v1.0.0-alpha.5-windows-amd64.exe automatically selected latest available release
@@ -111,7 +115,7 @@ WARN GPG verification is not natively available on Windows.
 WARN Skipping integrity verification of downloaded binary
 Verifying binary authenticity with SHA265 Hash.
 SHA265 Hash Match
-Starting Prysm validator --keystore-path=%USERPROFILE%\.eth2validator --password=changeme
+Starting Prysm validator --keystore-path=%USERPROFILE%\.eth2validator
 ...
 ```
 
