@@ -124,7 +124,7 @@ The below steps show how place a common Prysm flag into a YAML file and how to s
 
 2. Add the following lines to the file before closing and saving:
 ```sh
-datadir: "/data"
+datadir: '/data'
 ```
 
 3. Start the Prysm beacon chain as normal, while specifying the location of the `.yaml` like so:
@@ -141,7 +141,7 @@ or for a validator like so:
 
 2. Add the following lines to the file before closing and saving:
 ```sh
-datadir: "c:\prysm"
+datadir: 'c:\prysm'
 ```
 
 3. Start the Prysm beacon chain as normal, while specifying the location of the `.yaml` like so:
