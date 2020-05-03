@@ -10,7 +10,7 @@ This section lists the various flags used to customise the startup process of be
 
 ## Loading parameters via .YAML file
 
-> **NOTICE:** Loading parameters via .YAML file is optional
+> **NOTICE:** Loading parameters via .YAML file is optional.
 
 Prysm now supports loading flag values from a specified `.yaml` file. Defining parameters in this way cuts back on terminal clutter and allows unique startup profiles to be saved independently.
 
