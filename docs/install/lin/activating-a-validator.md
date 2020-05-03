@@ -81,57 +81,24 @@ docker run -it -v $HOME/prysm/beacon:/data -p 4000:4000 -p 13000:13000 \
 bazel run //beacon-chain -- --datadir=$HOME/beacon-chain
 ```
 
-The beacon node will spin up and immediately begin communicating with the Prysm testnet, outputting data similar to the image below.
+The beacon-chain node will spin up and immediately begin communicating with the Prysm testnet, outputting data similar to the image below.
 
 ![](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LRNnKRqTm4z1mzdDqDF%2F-Lua_6kBgtyMjsJFCSPr%2F-LuaaWo6lTgjk4e7WQ4p%2F9.png?alt=media&token=901b8c14-2a09-4365-bf63-1991c4996544)
 
 The process of syncronising may take a while; the incoming block per second capacity is dependent upon the connection strength, network congestion and overall peer count.
 
-## Step 4b: Securing the validator key
-
-#### Securing the validator key with Docker
-
-Create a file at $HOME/prysm/validator/keystore.json with the following contents (change the passphrase):
-
-```
-{
-  "path": "/data",
-  "passphrase": "changeme"
-}
-```
-
-#### Securing the validator key for use with prysm.sh or Bazel
-
-Create a file at $HOME/prysm/validator/keystore.json using the following command:
-
-```
-cat >> $HOME/prysm/validator/keystore.json << EOF
-{
-  "path": "$HOME/prysm/validator",
-  "passphrase": "changeme"
-}
-EOF
-
-```
-
-Edit the file using your preffered text editor (e.g. nano or vi) and change the passphrase.
-
-```
-nano $HOME/prysm/validator/keystore.json
-```
-
-## Step 4c: Starting up the validator client
+## Step 4b: Starting up the validator client
 
 > **NOTICE:** The beacon-chain node you are using should be **completely synced** before submitting your deposit. You may **incur minor inactivity balance penalties** if the validator is unable to perform its duties by the time the deposit is processed and activated by the ETH2 network.
 
 Open a second terminal window. Depending on your platform, issue the appropriate command from the examples below to start the validator.
 
-> NOTICE: When prompted, provide the password used to encrypt your ETH2 validator key.
+> **NOTICE:** When prompted, provide the password used to encrypt your ETH2 validator key.
 
 #### Starting the validator client with prysm.sh
 
 ```text
-./prysm.sh validator --keymanager=keystore --keymanageropts=${HOME}/prysm/validator/keystore.json
+./prysm.sh validator --keystore-path=$HOME/prysm/validator
 ```
 
 #### Starting the validator client with Docker
@@ -141,7 +108,7 @@ docker run -it -v $HOME/prysm/validator:/data --network="host" \
   gcr.io/prysmaticlabs/prysm/validator:latest \
   --beacon-rpc-provider=127.0.0.1:4000 \
   --keymanager=keystore \
-  --keymanageropts=/data/keystore.json
+  --keymanageropts='{"path":"/data","passphrase":"changeme"}'
 ```
 
 #### Starting the validator client with Bazel
