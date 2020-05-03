@@ -9,7 +9,7 @@ This section outlines the step-by-step process for ARM64 found on prylabs.net to
 ## Step 1: Get Prysm
 
 To begin, follow the instructions to fetch and install Prysm with either the [Prysm Installation Script](/docs/install/arm), or [Bazel](/docs/install/bazel).
-> NOTICE: Docker images are not currently generated for ARM64
+> **NOTICE:** Docker images are not currently generated for ARM64
 
 ## Step 2: Get Göerli ETH - Test ether
 
@@ -22,7 +22,7 @@ The wallet is scanned for the required amount of Göerli ETH after being linked.
 
 Depending on your platform, issue the appropriate command from the examples below to generate a public / private keypair for your validator.
 
-> NOTICE: When prompted, provide a password to encrypt your new ETH2 validator and withdrawl keys.
+> **NOTICE:** When prompted, provide a password to encrypt your new ETH2 validator and withdrawal keys.
 
 #### Generating with prysm.sh
 
@@ -78,7 +78,7 @@ The process of syncronising may take a while; the incoming block per second capa
 
 Open a second terminal window. Depending on your platform, issue the appropriate command from the examples below to start the validator.
 
-> NOTICE: When prompted, provide the password used to encrypt your ETH2 validator key.
+> **NOTICE:** When prompted, provide the password used to encrypt your ETH2 validator key.
 
 #### Starting the validator client with prysm.sh
 

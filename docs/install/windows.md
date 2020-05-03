@@ -81,7 +81,7 @@ At this point, the beacon chain data will begin syncronising up to the latest he
 
 5. Run the `prysm.bat` script to generate a new keypair, alongside any [startup parameters](/docs/prysm-usage/parameters):
 
-> NOTICE: When prompted, provide a password to encrypt your new ETH2 validator and withdrawl keys.
+> **NOTICE:** When prompted, provide a password to encrypt your new ETH2 validator and withdrawal keys.
 
 ```sh
 .\prysm.bat validator accounts create --keystore-path=c:/prysm/validator
@@ -97,7 +97,7 @@ Please note that **it may take up to 12 hours** for the nodes in the network to 
 
 6. Run the `prysm.bat` script alongside any [startup parameters](/docs/prysm-usage/parameters#validator-parameters):
 
-> NOTICE: When prompted, provide the password used to encrypt your ETH2 validator key.
+> **NOTICE:** When prompted, provide the password used to encrypt your ETH2 validator key.
 
 ```sh
 .\prysm.bat validator --keystore-path=%USERPROFILE%\.eth2validator

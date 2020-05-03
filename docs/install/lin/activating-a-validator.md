@@ -21,7 +21,7 @@ The wallet is scanned for the required amount of Göerli ETH after being linked.
 
 Depending on your platform, issue the appropriate command from the examples below to generate a public / private keypair for your validator.
 
-> NOTICE: When prompted, provide a password to encrypt your new ETH2 validator and withdrawl keys.
+> **NOTICE:** When prompted, provide a password to encrypt your new ETH2 validator and withdrawal keys.
 
 #### Generating with prysm.sh
 
