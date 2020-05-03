@@ -21,6 +21,8 @@ The wallet is scanned for the required amount of Göerli ETH after being linked.
 
 Depending on your platform, issue the appropriate command from the examples below to generate a public / private keypair for your validator.
 
+> **NOTICE:** When prompted, provide a password to encrypt your new ETH2 validator and withdrawal keys.
+
 #### Generating with prysm.sh
 
 ```text
@@ -123,6 +125,8 @@ nano $HOME/prysm/validator/keystore.json
 > **NOTICE:** The beacon-chain node you are using should be **completely synced** before submitting your deposit. You may **incur minor inactivity balance penalties** if the validator is unable to perform its duties by the time the deposit is processed and activated by the ETH2 network.
 
 Open a second terminal window. Depending on your platform, issue the appropriate command from the examples below to start the validator.
+
+> NOTICE: When prompted, provide the password used to encrypt your ETH2 validator key.
 
 #### Starting the validator client with prysm.sh
 
