@@ -53,7 +53,7 @@
 		"Contribute": [	
 			"contribute/contribution-guidelines",
 							"contribute/bugreports",
-							"contribute/golang-principles",
+							"contribute/golang-principles"
 						],
 
 		"Learn more": 	[ 	"terminology",
