@@ -40,7 +40,7 @@ $ bazel version
 
 Congratulations, you are now ready to begin contributing!
 
-### Building and Testing Prysm
+### Building and testing Prysm
 
 The Prysm project is a large monorepo containing all sorts of tools and services that implement the eth2 protocol. We use the Bazel build system for everything we do in development, helping everyone have reproducible builds. If you want to build the beacon chain or validator, you can run the commands:
 
@@ -57,7 +57,7 @@ $ bazel run //beacon-chain:beacon-chain -- --help
 
 Where you can specify any amount of command line arguments you need based on the available flags of the item you're running.
 
-**Running Tests**
+**Running tests**
 
 All code we check into our repo needs to have sufficient tests to ensure it is maintainable and works as expected. We use bazel to run all of our test suites in Prysm. If there is a particular subfolder you want to test, such as `beacon-chain/rpc/node`, you can run the command:
 
@@ -79,7 +79,7 @@ You can also run our full, end-to-end test suite with:
 $ bazel test //endtoend:go_default_test --define=ssz=minimal
 ```
 
-### Running a Local Chain
+### Running a local chain
 
 Although tests are the best and most simple way of ensuring your feature or bug fix contribution works, sometimes it can be helpful to run a real chain with your changes to ensure they are reflected at runtime. Here are some helpful commands to try running your own, local chain with 64 validators!
 
@@ -115,7 +115,7 @@ $ bazel run //validator --define=ssz=mainnet -- \
   --datadir /tmp/validator
 ```
 
-### Making Your First Contribution
+### Making your first contribution
 
 Each time you begin a set of changes, ensure that you are working on a new branch that you have created as opposed to the `master` of your local repository. By keeping your changes segregated in this branch, merging your changes into the main repository later will be much simpler for the team.
 
@@ -183,7 +183,7 @@ When you are ready, use git push to move your local copy of the changes to your 
 $ git push myrepo feature-in-progress-branch
 ```
 
-#### Opening a Pull Request
+#### Opening a pull request
 
 Navigate to your fork of the repository on Github. In the upper left where the current branch is listed, change the branch to your newly created one. Open the files that you have worked on and ensure they include your changes.
 
