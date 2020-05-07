@@ -4,58 +4,26 @@ title: Contribution guide
 sidebar_label: Contribution guide
 ---
 
-New to the Prysm project, the Ethereum protocol or the concepts behind blockchain entirely? The [external reading](required-reading.md) page includes a large selection of comprehensive information for both part-time and core contributors alike.
+New to the Prysm project and eth2? We first recommend checking out this awesome reading list here: [https://eth2.info](https://eth2.info). There's a number of ways to help out the project for people of all skillsets and experience levels. If you are unsure where you may be best suited, stop by either our [**Discord**](https://discord.gg/KSA7rPr) or [**Gitter**](https://gitter.im/prysmaticlabs/geth-sharding?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) and a member of the team or community will be happy to answer questions and offer some direction.
 
-#### Ready to begin?
+## Getting Started
 
-If you have read the below guidelines and are prepared to get to work, head over and explore Prysm's [open issues on Github](https://github.com/prysmaticlabs/prysm/issues). Once you have found something that you are interested in working on, feel free to assign yourself to the issue, fork the repository and begin submitting pull requests.
-
-**Need assistance?** We are always chatting with the community on [Discord](https://discord.gg/che9auJ) and [Gitter](https://gitter.im/prysmaticlabs/geth-sharding). You can stop by any time if you would like to learn more or get involved!
-
-## Contributor responsibilities
-
-Prysmatic Labs recognises two different types of contributors to repositories: part-time and core. They are categorised as outlined below.
-
-### Part-Time Contributors
-
-Anyone can become a part-time contributor and begin to assist with the current implementation of sharding. The responsibilities of a part-time contributor include:
-
-* Engaging in Gitter conversations with other contributors
-* Searching out and opening issue tickets on Github for Prysm code
-* Creating PRs for open issue tickets in the repository, which should include:
-  * Detailed context of what would be required for merge
-  * An implementation-consistent testing process
-* Ensuring proper labeling and milestones on projects
-* Following up on open pull requests
-
-Note that, while not expected to be experts on sharding, part-time contributors _are_ expected to be at least familiarised with the information found within the [External Reading](required-reading.md) page.
-
-### Core Contributors
-
-Core contributors are remote contractors of Prysmatic Labs and are considered  critical team members of our organization. Core developers have all of the responsibilities of part-time contributors, as well as the following:
-
-* Staying up-to-date on the latest changes to the beacon chain specification
-* Monitor Github issues and pull requests to ensure accuracy and consistency
-* Formulate independent ideas, suggest new work to do, point out improvements
-* Participate in code review, quality control and ensuring high code coverage
-* Help with our social media presence, write bi-weekly development updates
-* Represent Prysmatic Labs at events to help spread the word
-
-The team loves to work with people that are autonomous, have new and excting ideas and enthusiasm about the work they are doing. The project takes a merit-based approach to becoming a core contributor, and any part-time contributor that puts the time, work and commitment in can become a core member of the team.
-
-## Initialising a contribution repository
-
-Before starting this guide, set up Prysm following the instructions in [README.md](https://github.com/prysmaticlabs/prysm). Sign in to your Github account, then navigate to [the official Prysm repository](https://github.com/prysmaticlabs/prysm/). In the upper right hand corner of the page, click the 'Fork' button. This will create a copy of the Prysm repository on your account that can be edited for pull requests.
+Once you are a bit more familiar with the concepts behind eth2 and are ready to write some code, head over and explore Prysm's [open issues on Github](https://github.com/prysmaticlabs/prysm/issues). We recommend looking for issues tagged with the "Good First Issue" label if it is your first contribution. If you are still unsure about how to tackle a bug or a feature, our team is always available on [Discord](https://discord.gg/KSA7rPr). Sign in to your Github account, then navigate to [the official Prysm repository](https://github.com/prysmaticlabs/prysm/). In the upper right hand corner of the page, click the 'Fork' button. This will create a copy of the Prysm repository on your account that can be edited for pull requests.
 
 ### Setting up your environment
 
-First, create a local clone of Prsym.
+To develop Prysm, you'll need the following:
+
+- A modern, UNIX operating system
+- The latest release of [Bazel](https://docs.bazel.build/versions/master/install.html) installed
+- The `cmake` package installed
+- The `git` package installed
+- A code editor such as [Visual Studio Code](https://code.visualstudio.com/download) with the [Bazel plugin](https://marketplace.visualstudio.com/items?itemName=BazelBuild.vscode-bazel) or Jetbrains' [Goland IDE](https://www.jetbrains.com/go/)
+
+First, create a local clone of Prysm.
 
 ```text
-$ mkdir -p $GOPATH/src/github.com/prysmaticlabs
-$ cd $GOPATH/src/github.com/prysmaticlabs
-$ git clone https://github.com/prysmaticlabs/prysm.git
-$ cd $GOPATH/src/github.com/prysmaticlabs/prysm
+$ git clone https://github.com/prysmaticlabs/prysm.git && cd prysm
 ```
 
 Then link your local repository to your newly created fork.
@@ -64,22 +32,94 @@ Then link your local repository to your newly created fork.
 $ git remote add myprysmrepo https://github.com/<your_github_user_name>/prysm.git
 ```
 
-Lastly, link your local clone to the Prysm repository to easily fetch future changes.
+Finally, ensure bazel is installed and working on your machine:
 
 ```text
-$ git remote add prysm https://github.com/prysmaticlabs/prysm.git
-$ git remote -v (you should see myrepo and prysm in the list of remotes)
+$ bazel version
 ```
 
 Congratulations, you are now ready to begin contributing!
 
-### **Making your first contribution**
+### Building and testing Prysm
 
-Check out Prysm's [open issues on Github](https://github.com/prysmaticlabs/prysm/issues) and select one that you would like to work on, and then leave a comment to let the development team know. Alternatively, you can examine the code for areas that can be improved on and reach out to the development team to ask if they would like you to focus on it.
+The Prysm project is a large monorepo containing all sorts of tools and services that implement the eth2 protocol. We use the Bazel build system for everything we do in development, helping everyone have reproducible builds. If you want to build the beacon chain or validator, you can run the commands:
+
+```text
+$ bazel build //beacon-chain:beacon-chain
+$ bazel build //validator:validator
+```
+
+Other binaries in our codebase use a similar command to build. If you want to run a particular built binary, you can use the command:
+
+```
+$ bazel run //beacon-chain:beacon-chain -- --help
+```
+
+Where you can specify any amount of command line arguments you need based on the available flags of the item you're running.
+
+**Running tests**
+
+All code we check into our repo needs to have sufficient tests to ensure it is maintainable and works as expected. We use bazel to run all of our test suites in Prysm. If there is a particular subfolder you want to test, such as `beacon-chain/rpc/node`, you can run the command:
+
+```text
+$ bazel test //beacon-chain/rpc/node:go_default_test
+```
+
+For running a specific test, for example, a test called `TestNode_GetPeers` inside of `beacon-chain/node/node_test.go`, you can use Bazel to filter it out:
+
+```text
+$ bazel test //beacon-chain/rpc/node:go_default_test --test_output=streamed --test_filter=TestNode_GetPeers
+```
+
+For the list of all available flags to the `bazel test` command, you can see the reference documentation [here](https://docs.bazel.build/versions/master/command-line-reference.html#test).
+
+You can also run our full, end-to-end test suite with:
+
+```text
+$ bazel test //endtoend:go_default_test --define=ssz=minimal
+```
+
+### Running a local chain
+
+Although tests are the best and most simple way of ensuring your feature or bug fix contribution works, sometimes it can be helpful to run a real chain with your changes to ensure they are reflected at runtime. Here are some helpful commands to try running your own, local chain with 64 validators!
+
+```
+$ bazel run //tools/genesis-state-gen --define=ssz=mainnet -- \
+  --num-validators=64 \
+  --output-ssz=/tmp/genesis.ssz \
+  --mainnet-config
+```
+
+Next up, run your beacon node with:
+
+```
+bazel run //beacon-chain --define ssz=mainnet -- \
+  --http-web3provider=http://localhost:7777 \
+  --web3provider=ws://localhost:7778 \
+  --bootstrap-node= \
+  --datadir /tmp/chaindata \
+  --force-clear-db \
+  --interop-genesis-state /tmp/genesis.ssz \
+  --interop-eth1data-votes \
+  --min-sync-peers=0 \
+```
+
+In a separate window, run your validator with:
+
+```text
+$ bazel run //validator --define=ssz=mainnet -- \
+  --keymanager=interop \
+  --keymanageropts='{"keys":64,"offset":0}' \
+  --disable-protect-attester \
+  --disable-protect-proposer \
+  --datadir /tmp/validator
+```
+
+### Making your first contribution
 
 Each time you begin a set of changes, ensure that you are working on a new branch that you have created as opposed to the `master` of your local repository. By keeping your changes segregated in this branch, merging your changes into the main repository later will be much simpler for the team.
 
-To create a local branch for git to checkout, issue the command:
+To create a local branch for `git` to checkout, issue the command:
 
 ```text
 $ git checkout -b feature-in-progress-branch
@@ -91,26 +131,12 @@ To checkout a branch you have already created:
 $ git checkout feature-in-progress-branch
 ```
 
-#### **Testing changes**
-
-Changes that only affect a single file can be tested with:
-
-```text
-$ go test <file_you_are_working_on>
-```
-
-Changes that affect multiple files can be tested with:
-
-```text
-$ golangci-lint run && bazel test //...
-```
-
 **Preparing your commit**
 
 To fetch changes to the Prysm repository since your last session:
 
 ```text
-$ git fetch prysm
+$ git fetch origin
 ```
 
 Then syncronise your master branch:
@@ -157,18 +183,14 @@ When you are ready, use git push to move your local copy of the changes to your 
 $ git push myrepo feature-in-progress-branch
 ```
 
-#### **Making a pull request**
+#### Opening a pull request
 
 Navigate to your fork of the repository on Github. In the upper left where the current branch is listed, change the branch to your newly created one. Open the files that you have worked on and ensure they include your changes.
 
-Navigate to [https://github.com/prysmaticlabs/prysm](https://github.com/prysmaticlabs/prysm) and click on the new pull request button. In the “base” box on the left, leave the default selection “base master”, the branch that you want your changes to be applied to. In the “compare” box on the right, select the branch containing the changes you want to apply. You will then be asked to answer a few questions about your pull request.
+Navigate to [https://github.com/prysmaticlabs/prysm](https://github.com/prysmaticlabs/prysm) and click on the new pull request button. In the “base” box on the left, leave the default selection “base master”, the branch that you want your changes to be applied to. In the “compare” box on the right, select the branch containing the changes you want to apply. You will then be asked to answer a few questions about your pull request. Pull requests should have enough context about what you are working on, how you are solving a problem, and reference all necessary information for your reviewers to help.
 
 After you complete the questionnaire, the pull request will appear in the list of pull requests at [https://github.com/prysmaticlabs/prysm/pulls](https://github.com/prysmaticlabs/prysm/pulls).
 
 #### Following up
 
-Core Contributors may ask questions and request that you make edits. If you set notifications at the top of the page to “not watching,” you will still be notified by email whenever someone comments on the page of a pull request you have created. If you are asked to modify your pull request, repeat steps 8 through 15, then leave a comment to notify the Core Contributors that the pull request is ready for further review.
-
-###
-
-###
+Core developers may ask questions and request that you make edits. If you set notifications at the top of the page to “not watching,” you will still be notified by email whenever someone comments on the page of a pull request you have created. If you are asked to modify your pull request, edit your local branch, push up your fixes, then leave a comment to notify the original reviewer that the pull request is ready for further review.
