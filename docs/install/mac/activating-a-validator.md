@@ -8,7 +8,7 @@ This section outlines the step-by-step process for MacOS found on prylabs.net to
 
 ## Step 1: Get Prysm
 
-To begin, follow the instructions to fetch and install Prysm with either the [Prysm Installation Script](../../mac), [Docker](../docker) or [Bazel](../bazel).
+To begin, follow the instructions to fetch and install Prysm with either the [Prysm Installation Script](/docs/install/mac), [Docker](/docs/install/mac/docker) or [Bazel](/docs/install/mac/bazel).
 
 ## Step 2: Get Göerli ETH - Test ether
 
