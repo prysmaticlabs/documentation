@@ -45,7 +45,7 @@ mkdir prysm && cd prysm
 curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --output prysm.sh && chmod +x prysm.sh
 ```
 
-3. Run the `prysm.sh` script alongside any [startup parameters](../prysm-usage/parameters):
+3. Run the `prysm.sh` script alongside any [startup parameters](/docs/prysm-usage/parameters#beacon-node-parameters):
 
 ```sh
 ./prysm.sh beacon-chain

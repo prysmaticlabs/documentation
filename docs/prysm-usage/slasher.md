@@ -21,7 +21,7 @@ This section provides instructions to run [slasher](https://github.com/prysmatic
 ![Prysm with Slasher](/img/prysm-with-slasher.png)
 
 ## Get Prysm and start beacon-chain
-> NOTICE: If beacon-chain is already running, skip to step 2 
+> **NOTICE:** If beacon-chain is already running, skip to step 2 
 
 1. To begin, follow the instructions for [GNU\Linux](../install/linux), [macOS](../install/mac), [ARM64](../install/arm), or [Windows](../install/windows) to fetch and install Prysm.  The beacon-chain process should be running and fully synced before proceeding.
 

@@ -10,7 +10,7 @@ This section outlines the step-by-step process for ARM64 found on prylabs.net to
 ## Step 1: Get Prysm
 
 To begin, follow the instructions to fetch and install Prysm with either the [Prysm Installation Script](/docs/install/arm), or [Bazel](/docs/install/bazel).
-> NOTICE: Docker images are not currently generated for ARM64
+> **NOTICE:** Docker images are not currently generated for ARM64
 
 ## Step 2: Get Göerli ETH - Test ether
 
@@ -25,15 +25,18 @@ The wallet is scanned for the required amount of Göerli ETH after being linked.
 
 Depending on your platform, issue the appropriate command from the examples below to generate a public / private keypair for your validator.
 
+> **NOTICE:** When prompted, provide a password to encrypt your new ETH2 validator and withdrawal keys.
+
 #### Generating with prysm.sh
 
 ```text
-./prysm.sh validator accounts create --keystore-path=$HOME/.eth2validator --password=changeme
+./prysm.sh validator accounts create --keystore-path=$HOME/.eth2validator
 ```
+
 #### Generating with Bazel
 
 ```text
-bazel run //validator -- accounts create --keystore-path=$HOME/beacon-chain
+bazel run //validator -- accounts create --keystore-path=$HOME/prysm/validator
 ```
 
 This command will output a `Raw Transaction Data` block:
@@ -66,7 +69,7 @@ The beacon node is a long running process that will require a dedicated terminal
 bazel run //beacon-chain -- --datadir=$HOME/beacon-chain
 ```
 
-The beacon node will spin up and immediately begin communicating with the Prysm testnet, outputting data similar to the image below.
+The beacon-chain node will spin up and immediately begin communicating with the Prysm testnet, outputting data similar to the image below.
 
 ![](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LRNnKRqTm4z1mzdDqDF%2F-Lua_6kBgtyMjsJFCSPr%2F-LuaaWo6lTgjk4e7WQ4p%2F9.png?alt=media&token=901b8c14-2a09-4365-bf63-1991c4996544)
 
@@ -78,10 +81,12 @@ The process of syncronising may take a while; the incoming block per second capa
 
 Open a second terminal window. Depending on your platform, issue the appropriate command from the examples below to start the validator.
 
+> **NOTICE:** When prompted, provide the password used to encrypt your ETH2 validator key.
+
 #### Starting the validator client with prysm.sh
 
 ```text
-./prysm.sh validator --keystore-path=$HOME/.eth2validator --password=changeme
+./prysm.sh validator --keystore-path=$HOME/.eth2validator
 ```
 
 #### Starting the validator client with Bazel

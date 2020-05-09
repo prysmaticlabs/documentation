@@ -39,7 +39,7 @@ This process will also install any related dependencies.
  
 ## Connecting to the testnet: running a beacon node
 
-Below are instructions for initialising a beacon node and connecting to the public testnet. To further understand the role that the beacon node plays in Prysm, see [this section](../how-prysm-works/overview-technical) of the documentation.
+Below are instructions for initialising a beacon node and connecting to the public testnet. To further understand the role that the beacon node plays in Prysm, see [this section](/docs/how-prysm-works/architecture-overview/) of the documentation.
 
 To start your beacon node, issue the following command:
 

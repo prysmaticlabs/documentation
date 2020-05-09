@@ -65,7 +65,7 @@ curl v4.ident.me
 ## Port forwarding
 Participants on home networks will need to configure their router to perform port forwarding so that other ETH2 participants can establish a connection to your [beacon node](/docs/how-prysm-works/beacon-node) on TCP/13000.  The specific steps required vary based on your router, but can be summarised as follows:
 
-> NOTICE : Participants with nodes on a virtual public cloud (VPC) instance can skip this step.
+> **NOTICE:** Participants with nodes on a virtual public cloud (VPC) instance can skip this step.
 
 1. Determine the IP address for your home router
 2. Browse to the managment website for your home router (typically http://192.168.1.1)
