@@ -89,7 +89,7 @@ Open a second terminal window. Depending on your platform, issue the appropriate
 #### Starting the validator client with Bazel
 
 ```text
-bazel run //validator -- --keymanager=keystore --keymanageropts='{"path":"'${HOME}'/beacon-chain","passphrase":"changeme"}'
+bazel run //validator -- --keystore-path=$HOME/.eth2validators
 ```
 
 ## Step 5: Submitting the deposit contract
