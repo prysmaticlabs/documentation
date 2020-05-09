@@ -107,7 +107,7 @@ Open a second terminal window. Depending on your platform, issue the appropriate
 docker run -it -v $HOME/.eth2validators:/data --network="host" \
   gcr.io/prysmaticlabs/prysm/validator:latest \
   --beacon-rpc-provider=127.0.0.1:4000 \
-  --keystore-path=$HOME/.eth2validators
+  --keystore-path=/data
 ```
 
 #### Starting the validator client with Bazel
