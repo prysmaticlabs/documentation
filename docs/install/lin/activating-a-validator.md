@@ -113,7 +113,7 @@ docker run -it -v $HOME/.eth2validators:/data --network="host" \
 #### Starting the validator client with Bazel
 
 ```text
-bazel run //validator -- --keymanager=keystore --keymanageropts=${HOME}/prysm/validator/keystore.json
+bazel run //validator -- --keystore-path=$HOME/.eth2validators
 ```
 
 ## Step 5: Submitting the deposit contract
