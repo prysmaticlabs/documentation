@@ -32,7 +32,7 @@ Depending on your platform, issue the appropriate command from the examples belo
 #### Generating with Docker
 
 ```bash
-docker run -it -v $HOME/prysm/validator:/data \
+docker run -it -v $HOME/.eth2validators:/data \
    gcr.io/prysmaticlabs/prysm/validator:latest \
    accounts create --keystore-path=/data 
 ```
@@ -104,7 +104,7 @@ Open a second terminal window. Depending on your platform, issue the appropriate
 #### Starting the validator client with Docker
 
 ```text
-docker run -it -v $HOME/prysm/validator:/data --network="host" \
+docker run -it -v $HOME/.eth2validators:/data --network="host" \
   gcr.io/prysmaticlabs/prysm/validator:latest \
   --beacon-rpc-provider=127.0.0.1:4000 \
   --keymanager=keystore \

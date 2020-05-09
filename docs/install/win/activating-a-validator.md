@@ -90,7 +90,7 @@ prysm.bat validator --keystore-path=%USERPROFILE%\.eth2validator
 #### Starting the validator client with Docker
 
 ```text
-docker run -it -v $HOME/prysm/validator:/data --network="host" gcr.io/prysmaticlabs/prysm/validator:latest --beacon-rpc-provider=127.0.0.1:4000 --keymanager=keystore --keymanageropts='{"path":"/data","passphrase":"changeme"}'
+docker run -it -v $HOME/.eth2validators:/data --network="host" gcr.io/prysmaticlabs/prysm/validator:latest --beacon-rpc-provider=127.0.0.1:4000 --keymanager=keystore --keymanageropts='{"path":"/data","passphrase":"changeme"}'
 ```
 
 ## Step 5: Submitting the deposit contract
