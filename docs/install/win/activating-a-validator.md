@@ -5,8 +5,6 @@ sidebar_label: Activate a validator
 ---
 This section outlines the step-by-step process for Windows found on prylabs.net to submit a deposit and initialise a validator for participation in the testnet.
 
-![ETH1 Deposit Overview](/img/prysm-eth1-deposit.png)
-
 ## Step 1: Get Prysm
 
 To begin, follow the instructions to fetch and install Prysm with either the [Prysm Installation Script](../windows), or [Docker](./docker).
@@ -44,6 +42,8 @@ This command will output a `Raw Transaction Data` block:
 ![](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LRNnKRqTm4z1mzdDqDF%2F-LuJpxGKxOpat8TfDxPP%2F-Lua3OVmMOefnzXXvdGq%2F4.png?alt=media&token=96459a93-055c-4bf1-a0af-07a900d7b47f)
 
 ## Step 3b: Submitting the deposit data
+
+![ETH1 Deposit Overview](/img/prysm-eth1-deposit.png)
 
 **Method 1:** Copy and paste the deposit data into the field on prylabs.net:
 
