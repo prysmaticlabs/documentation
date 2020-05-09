@@ -26,7 +26,7 @@ Depending on your platform, issue the appropriate command from the examples belo
 #### Generating with prysm.sh
 
 ```text
-./prysm.sh validator accounts create --keystore-path=$HOME/prysm/validator/
+./prysm.sh validator accounts create --keystore-path=$HOME/.eth2validators
 ```
 
 #### Generating with Docker
@@ -40,7 +40,7 @@ docker run -it -v $HOME/prysm/validator:/data \
 #### Generating with Bazel
 
 ```text
-bazel run //validator -- accounts create --keystore-path=$HOME/prysm/validator
+bazel run //validator -- accounts create --keystore-path=$HOME/.eth2validators
 ```
 
 This command will output a `Raw Transaction Data` block:
@@ -98,7 +98,7 @@ Open a second terminal window. Depending on your platform, issue the appropriate
 #### Starting the validator client with prysm.sh
 
 ```text
-./prysm.sh validator --keystore-path=$HOME/prysm/validator
+./prysm.sh validator --keystore-path=$HOME/.eth2validators
 ```
 
 #### Starting the validator client with Docker

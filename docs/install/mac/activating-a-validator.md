@@ -40,7 +40,7 @@ docker run -it -v $HOME/prysm/validator:/data \
 #### Generating with Bazel
 
 ```text
-bazel run //validator -- accounts create --keystore-path=$HOME/prysm/validator
+bazel run //validator -- accounts create --keystore-path=$HOME/.eth2validators
 ```
 
 This command will output a `Raw Transaction Data` block:
