@@ -27,13 +27,13 @@ Depending on your platform, issue the appropriate command from the examples belo
 #### Generating with prysm.bat
 
 ```text
-prysm.bat validator accounts create --keystore-path=%USERPROFILE%\.eth2validator
+prysm.bat validator accounts create --keystore-path=%appdata%\.eth2validators
 ```
 
 #### Generating with Docker
 
 ```text
-docker run -it -v c:/prysm:/data gcr.io/prysmaticlabs/prysm/validator:latest accounts create --keystore-path=/data
+docker run -it -v %appdata%\Eth2Validators:/data gcr.io/prysmaticlabs/prysm/validator:latest accounts create --keystore-path=/data
 ```
 
 This command will output a `Raw Transaction Data` block:
@@ -41,6 +41,8 @@ This command will output a `Raw Transaction Data` block:
 ![](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LRNnKRqTm4z1mzdDqDF%2F-LuJpxGKxOpat8TfDxPP%2F-Lua3OVmMOefnzXXvdGq%2F4.png?alt=media&token=96459a93-055c-4bf1-a0af-07a900d7b47f)
 
 ## Step 3b: Submitting the deposit data
+
+> **NOTICE:** The beacon-chain node you are using should be **completely synced** before submitting your deposit. You may **incur minor inactivity balance penalties** if the validator is unable to perform its duties by the time the deposit is processed and activated by the ETH2 network.
 
 **Method 1:** Copy and paste the deposit data into the field on prylabs.net:
 
@@ -63,9 +65,8 @@ prysm.bat beacon-chain --datadir=%APPDATA%\Eth2
 #### Starting the beacon-chain node with Docker
 
 ```text
-docker run -it -v c:/prysm/beacon:/data -p 4000:4000 -p 13000:13000 gcr.io/prysmaticlabs/prysm/beacon-chain:latest --datadir=/data
+docker run -it -v %appdata%\Eth2:/data -p 4000:4000 -p 13000:13000 gcr.io/prysmaticlabs/prysm/beacon-chain:latest --datadir=/data
 ```
-
 
 The beacon-chain node will spin up and immediately begin communicating with the Prysm testnet, outputting data similar to the image below.
 
@@ -75,8 +76,6 @@ The process of syncronising may take a while; the incoming block per second capa
 
 ## Step 4b: Starting up the validator client
 
-> **NOTICE:** The beacon-chain node you are using should be **completely synced** before submitting your deposit. You may **incur minor inactivity balance penalties** if the validator is unable to perform its duties by the time the deposit is processed and activated by the ETH2 network.
-
 Open a second Command Prompt window. Depending on your platform, issue the appropriate command from the examples below to start the validator.
 
 > **NOTICE:** When prompted, provide the password used to encrypt your ETH2 validator key.
@@ -84,13 +83,13 @@ Open a second Command Prompt window. Depending on your platform, issue the appro
 #### Starting the validator client with prysm.bat
 
 ```text
-prysm.bat validator --keystore-path=%USERPROFILE%\.eth2validator
+prysm.bat validator --keystore-path=%appdata%\.eth2validators
 ```
 
 #### Starting the validator client with Docker
 
 ```text
-docker run -it -v $HOME/.eth2validators:/data --network="host" gcr.io/prysmaticlabs/prysm/validator:latest --beacon-rpc-provider=127.0.0.1:4000 --keymanager=keystore --keymanageropts='{"path":"/data","passphrase":"changeme"}'
+docker run -it -v %appdata%\Eth2Validators:/data --network="host" gcr.io/prysmaticlabs/prysm/validator:latest --beacon-rpc-provider=127.0.0.1:4000 --keystore-path=/data
 ```
 
 ## Step 5: Submitting the deposit contract

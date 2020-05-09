@@ -100,11 +100,11 @@ Please note that **it may take up to 12 hours** for the nodes in the network to 
 > **NOTICE:** When prompted, provide the password used to encrypt your ETH2 validator key.
 
 ```sh
-.\prysm.bat validator --keystore-path=%USERPROFILE%\.eth2validator
+.\prysm.bat validator --keystore-path=%appdata%\.eth2validator
 ```
 
 ```sh
-.\prysm.bat validator --keystore-path=%USERPROFILE%\.eth2validator
+.\prysm.bat validator --keystore-path=%appdata%\.eth2validator
 Latest prysm release is v1.0.0-alpha.5.
 Using prysm version v1.0.0-alpha.5.
 Downloading validator v1.0.0-alpha.5 to .\dist\validator-v1.0.0-alpha.5-windows-amd64.exe automatically selected latest available release
@@ -115,7 +115,7 @@ WARN GPG verification is not natively available on Windows.
 WARN Skipping integrity verification of downloaded binary
 Verifying binary authenticity with SHA265 Hash.
 SHA265 Hash Match
-Starting Prysm validator --keystore-path=%USERPROFILE%\.eth2validator
+Starting Prysm validator --keystore-path=%appdata%\.eth2validator
 ...
 ```
 
