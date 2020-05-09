@@ -52,7 +52,7 @@ Below are instructions for initialising a beacon node and connecting to the publ
 3. To run the beacon node, issue the following command:
 
 ```text
-docker run -it -v c:/prysm/:/data -p 4000:4000 -p 13000:13000 gcr.io/prysmaticlabs/prysm/beacon-chain:latest --datadir=/data --clear-db
+docker run -it -v %appdata%\Eth2:/data -p 4000:4000 -p 13000:13000 gcr.io/prysmaticlabs/prysm/beacon-chain:latest --datadir=/data
 ```
 
 This will sync up the beacon node with the latest cannonical head block in the network. It is also recommended to include the `--p2p-host-ip` and `--min-sync-peers 7` flags to improve peering. The Docker `-d` flag can be appended before the `-v` flag to launch the process in a detached terminal window.
