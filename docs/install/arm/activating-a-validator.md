@@ -57,13 +57,13 @@ The beacon node is a long running process that will require a dedicated terminal
 #### Starting the beacon-chain node with prysm.sh
 
 ```text
-./prysm.sh beacon-chain --datadir=$HOME/beacon-chain
+./prysm.sh beacon-chain --datadir=$HOME/.eth2
 ```
 
 #### Starting the beacon-chain node with Bazel
 
 ```text
-bazel run //beacon-chain -- --datadir=$HOME/beacon-chain
+bazel run //beacon-chain -- --datadir=$HOME/.eth2
 ```
 
 The beacon-chain node will spin up and immediately begin communicating with the Prysm testnet, outputting data similar to the image below.
