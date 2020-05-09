@@ -70,7 +70,7 @@ The beacon node is a long running process that will require a dedicated terminal
 #### Starting the beacon-chain node with Docker
 
 ```text
-docker run -it -v $HOME/.eth2/beacon:/data -p 4000:4000 -p 13000:13000 \
+docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 \
   gcr.io/prysmaticlabs/prysm/beacon-chain:latest \
   --datadir=/data
 ```
