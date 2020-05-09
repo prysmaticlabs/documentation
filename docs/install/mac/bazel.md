@@ -53,7 +53,7 @@ Below are instructions for initialising a beacon node and connecting to the publ
 To start your [beacon node](how-prysm-works/prysm-beacon-node) with Bazel, issue the following command:
 
 ```text
-bazel run //beacon-chain -- --clear-db --datadir=$HOME/prysm
+bazel run //beacon-chain -- --datadir=$HOME/.eth2
 ```
 
 This will sync up the beacon node with the latest head block in the network.
