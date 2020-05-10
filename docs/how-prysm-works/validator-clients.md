@@ -4,13 +4,13 @@ title: Prysm's Validator Client
 sidebar_label: Validator client
 ---
 
-Although [beacon nodes](./beacon-node) handle network syncronisation, drawing consensus and performing several other low-level functions, the role of [validators](/docs/terminology#validator) whom stake ETH to in order to perform block [proposals](/docs/terminology#propose) and [attestations](/docs/terminology#attest) are an equally critical component of the Ethereum 2.0 network.
+Although [beacon nodes](./beacon-node) handle network syncronisation, drawing consensus and performing several other low-level functions, the role of [validators](/docs/terminology#validator) whom stake ETH to in order to perform block [proposals](/docs/terminology#proposal-propose) and [attestations](/docs/terminology#attestation-attest) are an equally critical component of the Ethereum 2.0 network.
 
-As mentioned, validators have two responsibilities: to [propose](/docs/terminology#propose) \(or produce\) blocks known as beacon blocks, which contain consensus information about shards across the network, or to [attest](/docs/terminology#attest) \(or vote on\) the validity of blocks that have already been produced.
+As mentioned, validators have two responsibilities: to [propose](/docs/terminology#proposal-propose) \(or produce\) blocks known as beacon blocks, which contain consensus information about shards across the network, or to [attest](/docs/terminology#attestation-attest) \(or vote on\) the validity of blocks that have already been produced.
 
 ## How does it work?
 
-A validator instance is permitted to begin participating in the network once 32 ETH is locked up in a [validator deposit contract](./validator-deposit-contract). Validators are tasked with correctly [proposing](/docs/terminology#propose) or [attesting](/docs/terminology#attest) to blocks on the beacon chain, and receive either rewards or penalties to the initial deposit based upon their overall performance.
+A validator instance is permitted to begin participating in the network once 32 ETH is locked up in a [validator deposit contract](./validator-deposit-contract). Validators are tasked with correctly [proposing](/docs/terminology#proposal-propose) or [attesting](/docs/terminology#attestation-attest) to blocks on the beacon chain, and receive either rewards or penalties to the initial deposit based upon their overall performance.
 
 If validators act against the protocol, their locked up deposit will be cut in a process known as 'slashing'. Validators that are intermittently offline or do not have reliable uptime will gradually lose their deposit, eventually leaking enough to be automatically removed from the network entirely. More on this topic can be found in the [Ethereum 2.0 economics](https://docs.ethhub.io/ethereum-roadmap/ethereum-2.0/eth-2.0-economics/) outline.
 
@@ -23,14 +23,14 @@ In order of operations, the client:
 1. Waits for the event log signaling a start to have occurred in the [validator deposit contract](./validator-deposit-contract).
 2. Checks if public key corresponding to the validator instance has been activated on the beacon chain.
 3. A validator is assigned to a shard either as a[ proposer](/docs/glossaries/terminology#proposal-propose) \(creator\) or [attester](/docs/terminology#attestation-attest) \(voter\).
-4. The validator then has a ticker that works every slot \(6 seconds\). If the slot ticks at the validator's assigned slot, a beacon block is either [proposed](/docs/terminology#propose) or [attested](/docs/terminology#attest), depending on assigned role.
+4. The validator then has a ticker that works every slot \(6 seconds\). If the slot ticks at the validator's assigned slot, a beacon block is either [proposed](/docs/terminology#proposal-propose) or [attested](/docs/terminology#attestation-attest), depending on assigned role.
 5. This repeats forever until the validator decides to exit the system voluntarily, or is penalized by the system for either acting maliciously or being idle when assigned tasks to perform.
 
 As mentioned, every validator instance represents 32 ETH being staked in the network. In Prysm, this is currently the default; however, the Prysm validator also supports running multiple keypairs that correspond to multiple validators in a single runtime, simplifying the process of deploying several validator instances for those whom want to stake more funds to help secure the network.  To run multiple keypairs, they must be encrypted with the same password and kept in the same directory.
 
 ### Proposing a beacon block
 
-A [block proposal](/docs/terminology#propose) must include several items to meet the minimum requirements for verification by the protocol. In chronological order, these steps are:
+A [block proposal](/docs/terminology#proposal-propose) must include several items to meet the minimum requirements for verification by the protocol. In chronological order, these steps are:
 
 1. The [canonical head block](/docs/terminology#canonical-head-block) is fetched from the beacon node and its root is used as the parent root of the new block.
 2. All pending deposits which have not yet been included in the chain are fetched.
@@ -38,14 +38,14 @@ A [block proposal](/docs/terminology#propose) must include several items to meet
 4. All pending slashings and [validator](/docs/terminology#validator) voluntary exits are fetched.
 5. The latest fork data from the beacon chain is retrieved.
 6. A randao reveal is generated by [BLS](./bls-signature-aggregation-and-cryptography) signing the epoch.
-7. All pending [attestations](/docs/terminology#attest) from the beacon node are fetched.
+7. All pending [attestations](/docs/terminology#attestation-attest) from the beacon node are fetched.
 8. The block object is constructed by packaging the above items into a block data structure.
 9. The state root hash is computed, signing the block with the [validator](/docs/terminology#validator)'s private key.
-10. The block is [proposed](/docs/terminology#propose) by sending it to the beacon node via [gRPC](./ethereum-2-public-api).
+10. The block is [proposed](/docs/terminology#proposal-propose) by sending it to the beacon node via [gRPC](./ethereum-2-public-api).
 
 ### Attesting to a Beacon Block
 
-[Attesting](/docs/terminology#attest) to a block is a similar process to proposing, albeit with a few slightly different steps:
+[Attesting](/docs/terminology#attestation-attest) to a block is a similar process to proposing, albeit with a few slightly different steps:
 
 1. An attestation data structure is assembled and the validator's assigned shard is fetched.
 2. A request is made to the beacon node for the information required to attest a block.

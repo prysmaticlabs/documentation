@@ -14,11 +14,11 @@ The PoS concept states that a person can mine or validate block transactions acc
 
 Most often refers to a validator client instance, but can also refer to an individual that is physically managing a validator client.
 
-#### Proposal \(propose\) <a id="propose"></a>
+#### Proposal \(propose\)
 
 The process of creating and adding new blocks to the beacon chain.
 
-#### Attestation \(attest\) <a id="attest"></a>
+#### Attestation \(attest\)
 
 The process of voting on the validity of newly created blocks on the beacon chain.
 

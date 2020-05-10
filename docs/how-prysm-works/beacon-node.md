@@ -4,7 +4,7 @@ title: Prysm's Beacon Node
 sidebar_label: Beacon node
 ---
 
-The beacon node shipped with Prysm is the keystone component of the Ethereum 2.0 protocol. It is responsibile for running a full [Proof-of-Stake](/docs/terminology#proof-of-stake-pos) blockchain, known as a beacon chain, which uses distributed consensus to agree on blocks both [proposed](/docs/terminology#propose) and [attested](/docs/terminology#attest) on by [validators](/docs/terminology#validator) in the network. Beacon nodes communicate their processed blocks to their peers via a P2P \(peer-to-peer\) network, which also manages the lifecycle process of active [validator clients](/how-prysm-works/validator-clients).
+The beacon node shipped with Prysm is the keystone component of the Ethereum 2.0 protocol. It is responsibile for running a full [Proof-of-Stake](/docs/terminology#proof-of-stake-pos) blockchain, known as a beacon chain, which uses distributed consensus to agree on blocks both [proposed](/docs/terminology#proposal-propose) and [attested](/docs/terminology#attestation-attest) on by [validators](/docs/terminology#validator) in the network. Beacon nodes communicate their processed blocks to their peers via a P2P \(peer-to-peer\) network, which also manages the lifecycle process of active [validator clients](/how-prysm-works/validator-clients).
 
 ## Beacon node functionality
 
@@ -29,7 +29,7 @@ In Ethereum 2.0, blocks can be proposed in intervals known as _slots_, which are
 
 ## Operations service
 
-The operations service handles important information contained in blocks on the beacon chain, such as voluntary validator exits, [proposals](/docs/terminology#propose), [attestations](/docs/terminology#attest), slashings and more. The operation is received from the [sync service](#sync-service) via the [P2P network](p2p-networking), or from data the node retrieves locally.
+The operations service handles important information contained in blocks on the beacon chain, such as voluntary validator exits, [proposals](/docs/terminology#proposal-propose), [attestations](/docs/terminology#attestation-attest), slashings and more. The operation is received from the [sync service](#sync-service) via the [P2P network](p2p-networking), or from data the node retrieves locally.
 
 ## Core package
 
