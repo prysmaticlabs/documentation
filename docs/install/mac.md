@@ -80,7 +80,7 @@ At this point, the beacon chain data will begin syncronising up to the latest he
 
 For step-by-step assistance with performing a deposit and setting up a validator client, see the [activating a validator ](/docs/install/mac/activating-a-validator)section of this documentation.
 
-Once your beacon node is up, the chain will be waiting for you to deposit 32 Goerli ETH into a [validator deposit contract](/docs/prysm-usage/validator-deposit-contract) in order to activate your validator \(discussed in the section below\).
+Once your beacon node is up, the chain will be waiting for you to deposit 32 Goerli ETH into a [validator deposit contract](/docs/how-prysm-works/validator-deposit-contract) in order to activate your validator \(discussed in the section below\).
 
 **If you need Goerli ETH**, follow the instructions found on [prylabs.network](https://prylabs.network) to use the testnet faucet. Otherwise, you can contact a team member on Discord to be sent some.
 

@@ -8,7 +8,7 @@ This section outlines the step-by-step process for ARM64 found on prylabs.net to
 
 ## Step 1: Get Prysm
 
-To begin, follow the instructions to fetch and install Prysm with either the [Prysm Installation Script](/docs/install/arm), or [Bazel](/docs/install/bazel).
+To begin, follow the instructions to fetch and install Prysm with either the [Prysm Installation Script](/docs/install/arm), or [Bazel](/docs/install/arm/bazel).
 > **NOTICE:** Docker images are not currently generated for ARM64
 
 ## Step 2: Get Göerli ETH - Test ether
