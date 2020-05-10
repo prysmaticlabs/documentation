@@ -114,7 +114,7 @@ EOF
 
 ```
 
-Edit the file using your preffered text editor (e.g. nano or vi) and change the passphrase.
+Edit the file using your preferred text editor (e.g. nano or vi) and change the passphrase.
 
 ```
 nano $HOME/prysm/validator/keystore.json

@@ -139,7 +139,7 @@ To fetch changes to the Prysm repository since your last session:
 $ git fetch origin
 ```
 
-Then syncronise your master branch:
+Then synchronise your master branch:
 
 ```text
 $ git pull origin master
