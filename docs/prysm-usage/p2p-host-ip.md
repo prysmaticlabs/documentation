@@ -4,11 +4,11 @@ title: Improve Peer-to-Peer Connectivity
 sidebar_label: Improve P2P connectivity
 ---
 
-The ETH2 [architecture](../how-prysm-works/architecture-overview/) is designed to be a fully peer to peer (P2P) network.  This section describes how to configure the Prysm [beacon node](../how-prysm-works/beacon-node) and your network to optimise the number of peers that you communicate with on the ETH2 Network.  Increasing peers helps improve the health, performance and stablity of nodes and the overall network.
+The ETH2 [architecture](/docs/how-prysm-works/architecture-overview/) is designed to be a fully peer to peer (P2P) network.  This section describes how to configure the Prysm [beacon node](/docs/how-prysm-works/beacon-node) and your network to optimise the number of peers that you communicate with on the ETH2 Network.  Increasing peers helps improve the health, performance and stablity of nodes and the overall network.
 
 > **NOTICE:** This section contains advanced network configurations and is optional.
 
-ETH2 leverages [libp2p](../how-prysm-works/p2p-networking), a framework and suite of protocols for building peer-to-peer network applications.  When a [beacon node](/docs/how-prysm-works/beacon-node) first starts up, it does two things to start communicating with other participants:
+ETH2 leverages [libp2p](/docs/how-prysm-works/p2p-networking), a framework and suite of protocols for building peer-to-peer network applications.  When a [beacon node](/docs/how-prysm-works/beacon-node) first starts up, it does two things to start communicating with other participants:
 - Begins listening for new incoming P2P connections
 - Starts a [discovery](https://github.com/ethereum/devp2p/wiki/Discovery-Overview) process to find and connect to new peers
 
