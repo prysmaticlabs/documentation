@@ -78,7 +78,7 @@ This page serves material that is necessary to catch up with the current state o
 
 ### **Ethereum client implementations**
 
-* [Geth](https://github.com/ethereum/go-ethereum) \(known also as go-ethereum\) is the Golang implementation of [ETH1](/docs/terminology.md#eth1)
+* [Geth](https://github.com/ethereum/go-ethereum) \(known also as go-ethereum\) is the Golang implementation of [ETH1](/docs/terminology#eth1)
 * [Parity](https://github.com/paritytech/parity) the fastest and most performant implementation - written in Rust
 * [Trinity](https://github.com/ethereum/py-evm/tree/master/trinity) new project implements Ethereum in Python
 * [Cpp-Ethereum](https://github.com/ethereum/cpp-ethereum) a C++ implementation of Ethereum

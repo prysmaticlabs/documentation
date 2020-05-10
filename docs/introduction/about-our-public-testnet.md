@@ -18,7 +18,7 @@ sidebar_label: On the Public Testnet
 
 ## Limitations of this release
 
-* **The network does not include smart contract or EVM-related functionality.** This is a part of Ethereum 2.0 Phase 2. The current testnet is only tasked with managing a registry of [validators](/docs/terminology.md#validator), allowing for Casper [Proof-of-Stake](/docs/terminology.md#proof-of-stake-pos) and the advancement of the blockchain.
+* **The network does not include smart contract or EVM-related functionality.** This is a part of Ethereum 2.0 Phase 2. The current testnet is only tasked with managing a registry of [validators](/docs/terminology#validator), allowing for Casper [Proof-of-Stake](/docs/terminology#proof-of-stake-pos) and the advancement of the blockchain.
 * **This is NOT a multi-client network**, though this is the next step most ETH2 teams have in mind.
-* **The testnet uses different configuration parameters than what we’d see on mainnet;** that is, we support fewer shards, a smaller [validator](/docs/terminology.md#validator) count, and different constants for the sake of simplicity.
+* **The testnet uses different configuration parameters than what we’d see on mainnet;** that is, we support fewer shards, a smaller [validator](/docs/terminology#validator) count, and different constants for the sake of simplicity.
 * **The testnet does not contain voluntary exits or attester/proposer slashings**, as those will come in later iterations and are not critical for showcasing the core functions of the beacon chain.

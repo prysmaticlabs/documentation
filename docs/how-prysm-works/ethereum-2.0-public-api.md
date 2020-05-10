@@ -5,7 +5,7 @@ sidebar_label: Public API
 description: This section contains service definitions and gRPC instructions to interact with the public API.
 ---
 
-One of the required components for staking on the Ethereum 2.0 network is the [gRPC](https://grpc.io) server. It is utilised by the client to query the network for a variety of different public data, from the [canonical head block](/docs/terminology.md#canonical-head-block) to versioning and assignments.
+One of the required components for staking on the Ethereum 2.0 network is the [gRPC](https://grpc.io) server. It is utilised by the client to query the network for a variety of different public data, from the [canonical head block](/docs/terminology#canonical-head-block) to versioning and assignments.
 
 Interacting with the API requires the use of protocol buffers, also known as protobuf. These [protocol buffer](https://developers.google.com/protocol-buffers/) service definitions support both [gRPC](https://grpc.io/) as well as JSON over HTTP.  For information on the functionality of gRPC and protocol buffers more generally, see the [gRPC guide](https://grpc.io/docs/guides/).
 
