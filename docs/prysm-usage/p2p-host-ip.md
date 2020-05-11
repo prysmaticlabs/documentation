@@ -119,3 +119,14 @@ for /f %i in ('curl -s v4.ident.me') do set PRYSM-P2P-HOST-IP=%i
 prysm.bat beacon-chain --p2p-host-ip=%PRYSM-P2P-HOST-IP%
 ```
 > **NOTICE:** If you are using this command in a `.bat` script, replace both instances of `%i` with `%%i`.
+
+## Verifying `--p2p-host-ip` settings
+
+To verify the `--p2p-host-ip` settings are operating correctly, use [MX Toolbox TCP Lookup tool](https://mxtoolbox.com/SuperTool.aspx?action=tcp%3a{node-IP-address}%3a13000&run=toolpage).
+
+Enter the IP Address of the node, followed by `:13000` and click "TCP Lookup".
+
+If the results are as below, then the settings are correct:
+
+![image](https://user-images.githubusercontent.com/2212651/81552111-7c703400-93a0-11ea-83b5-abeebc63c285.png)
+
