@@ -36,7 +36,7 @@ Computers on a home network will typically have a private IP address.  Attemptin
  - 172.16.0.0 – 172.31.255.255
  - 10.0.0.0 – 10.255.255.255
 
-> **NOTICE:** You may have more then one private IP address
+> **NOTICE:** You may have more than one private IP address
 
 To determine your **private** IP address, or run the appropriate command for your OS:
 
