@@ -42,7 +42,7 @@ Slashable offenses include:
 
 ```text
 docker pull gcr.io/prysmaticlabs/prysm/slasher:latest
-docker run -it -v $HOME/prysm:/data --name slasher \
+docker run -it -v $HOME/.eth2:/data --name slasher \
   gcr.io/prysmaticlabs/prysm/slasher:latest \
   --datadir=/data
 ```
