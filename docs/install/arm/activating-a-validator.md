@@ -45,6 +45,8 @@ This command will output a `Raw Transaction Data` block:
 
 ![ETH1 Deposit Overview](/img/prysm-eth1-deposit.png)
 
+> **NOTICE:** The beacon-chain node you are using should be **completely synced** before submitting your deposit. You may **incur minor inactivity balance penalties** if the validator is unable to perform its duties by the time the deposit is processed and activated by the ETH2 network.
+
 **Method 1:** Copy and paste the deposit data into the field on prylabs.net:
 
 ![](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LRNnKRqTm4z1mzdDqDF%2F-Lua_6kBgtyMjsJFCSPr%2F-Lua_XtevNAg0ybDIGfI%2F77.png?alt=media&token=ee25ea72-3436-455e-b28c-66471b5ddf88)
