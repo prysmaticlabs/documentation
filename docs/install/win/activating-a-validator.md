@@ -63,7 +63,7 @@ prysm.bat beacon-chain --datadir=%APPDATA%\Eth2
 #### Starting the beacon-chain node with Docker
 
 ```text
-docker run -it -v c:/prysm/beacon:/data -p 4000:4000 -p 13000:13000 gcr.io/prysmaticlabs/prysm/beacon-chain:latest --datadir=/data
+docker run -it -v c:/prysm/beacon:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp gcr.io/prysmaticlabs/prysm/beacon-chain:latest --datadir=/data
 ```
 
 
