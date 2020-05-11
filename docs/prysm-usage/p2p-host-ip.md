@@ -36,9 +36,9 @@ Computers on a home network will typically have a private IP address.  Attemptin
  - 172.16.0.0 – 172.31.255.255
  - 10.0.0.0 – 10.255.255.255
 
-> **NOTICE:** You may have more then one private IP address
+> **NOTICE:** You may have more than one private IP address
 
-To determine your **private** IP address, or run the appropriate commmand for your OS:
+To determine your **private** IP address, or run the appropriate command for your OS:
 
 **GNU/Linux:**
 ```
@@ -57,7 +57,7 @@ ifconfig | grep "inet " | grep -v 127.0.0.1
 
 Public IP addresses include all other IP addresses not in the private ranges mentioned above, with some exceptions for [Special-Use IPv4 Addresses](https://tools.ietf.org/html/rfc3330).
 
-To determine your **public**  IP  address, visit (http://v4.ident.me/) or run this commmand:
+To determine your **public**  IP  address, visit (http://v4.ident.me/) or run this command:
 ```
 curl v4.ident.me
 ```
@@ -68,7 +68,7 @@ Participants on home networks will need to configure their router to perform por
 > **NOTICE:** Participants with nodes on a virtual public cloud (VPC) instance can skip this step.
 
 1. Determine the IP address for your home router
-2. Browse to the managment website for your home router (typically http://192.168.1.1)
+2. Browse to the management website for your home router (typically http://192.168.1.1)
 3. Log in as admin / root
 4. Find the section to configure port forwarding
 5. Configure a port forwarding rule with the following values:

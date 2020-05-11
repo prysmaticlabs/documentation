@@ -366,7 +366,7 @@ Danny Ryan, [Nov 24, 2019 at 11:16:04 AM]:
     )
 ```
 
-should prevent adding new blocks that are not descendents of the finalized block.
+should prevent adding new blocks that are not descendants of the finalized block.
 
 There is a corner case in which a branch might have the finalized block but not enough votes on the branch to have _finalized_ the block. Such a case does not currently have a fix in the spec, but the fix you added doesn’t properly cover this case because it cuts out possible branches that _might_ finalize the root in the future (include proper amount of attestations).
 
