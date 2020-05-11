@@ -9,7 +9,7 @@ sidebar_label: Architecture overview
 
 ## Prysm client components
 
-When a Prysm client is initialised out of the box, it starts a variety of services that run in parallel to handle everything required for the lifecycle of the beacon chain. In no particular order, Prysm includes:
+When a Prysm client is initialised out of the box, it starts a variety of services that run in parallel to handle everything required for the life cycle of the beacon chain. In no particular order, Prysm includes:
 
 * A [**beacon node**](/docs/how-prysm-works/beacon-node) which powers the beacon chain at the core of Ethereum 2.0.
 * A [**validator client**](/docs/how-prysm-works/validator-clients) connects to the beacon node and manages staking keypairs.
