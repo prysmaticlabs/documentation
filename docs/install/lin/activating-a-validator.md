@@ -18,8 +18,6 @@ The wallet is scanned for the required amount of Göerli ETH after being linked.
 
 ## Step 3a: Generating a validator keypair
 
-![Prysm Single Validator Key Setup](/img/prysm-single-key.png)
-
 Depending on your platform, issue the appropriate command from the examples below to generate a public / private keypair for your validator.
 
 > **NOTICE:** When prompted, provide a password to encrypt your new ETH2 validator and withdrawal keys.
@@ -49,8 +47,6 @@ This command will output a `Raw Transaction Data` block:
 ![](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LRNnKRqTm4z1mzdDqDF%2F-LuJpxGKxOpat8TfDxPP%2F-Lua3OVmMOefnzXXvdGq%2F4.png?alt=media&token=96459a93-055c-4bf1-a0af-07a900d7b47f)
 
 ## Step 3b: Submitting the deposit data
-
-![ETH1 Deposit Overview](/img/prysm-eth1-deposit.png)
 
 > **NOTICE:** The beacon-chain node you are using should be **completely synced** before submitting your deposit. You may **incur minor inactivity balance penalties** if the validator is unable to perform its duties by the time the deposit is processed and activated by the ETH2 network.
 
@@ -171,7 +167,6 @@ Please note that it may take up to 12 hours for nodes in the ETH2 network to pro
 
 Multiple validator keys can easily be initialised on the same validator process.
 
-![Prysm Single Validator Key Setup](/img/prysm-multiple-keys.png)
 
  Simply repeat the following steps:
  * [Step 3a](activating-a-validator#step-3a-generating-a-validator-keypair) to generate additional validator keys in the same keystore path, using the same password.
