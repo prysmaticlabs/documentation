@@ -4,12 +4,11 @@ title: Prysm's Validator Client
 sidebar_label: Validator client
 ---
 
-![Validator](/img/prysm-validator.png)
-
 Although [beacon nodes](./beacon-node) handle network syncronisation, drawing consensus and performing several other low-level functions, the role of [validators](/docs/terminology#validator) whom stake ETH to in order to perform block [proposals](/docs/terminology#propose) and [attestations](/docs/terminology#attest) are an equally critical component of the Ethereum 2.0 network.
 
-
 As mentioned, validators have two responsibilities: to [propose](/docs/terminology#propose) \(or produce\) blocks known as beacon blocks, which contain consensus information about shards across the network, or to [attest](/docs/terminology#attest) \(or vote on\) the validity of blocks that have already been produced.
+
+![Validator](/img/prysm-validator.png)
 
 ## How does it work?
 
