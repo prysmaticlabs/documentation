@@ -16,7 +16,7 @@ After testing and benchmarking all three options, Bolt was decided upon as the b
 
 ## BoltDB functionality
 
-All database related logic is contained in the `db/` directory of the Prysm repository. Given that BoltDB is a [key-value store](../glossaries/terminology.md#key-value-store) backend, 'buckets' \(akin to tables in relational databases\) are required for data storage. Blocks, transactions, state, proposals and attestations are are all defined in these buckets, in what is known as 'bucket data'.
+All database related logic is contained in the `db/` directory of the Prysm repository. Given that BoltDB is a [key-value store](/docs/terminology#key-value-store) backend, 'buckets' \(akin to tables in relational databases\) are required for data storage. Blocks, transactions, state, proposals and attestations are are all defined in these buckets, in what is known as 'bucket data'.
 
 ### Example: bucket creation
 

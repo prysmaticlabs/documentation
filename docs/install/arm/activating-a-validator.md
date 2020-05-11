@@ -7,7 +7,7 @@ This section outlines the step-by-step process for ARM64 found on prylabs.net to
 
 ## Step 1: Get Prysm
 
-To begin, follow the instructions to fetch and install Prysm with either the [Prysm Installation Script](/docs/install/arm), or [Bazel](/docs/install/bazel).
+To begin, follow the instructions to fetch and install Prysm with either the [Prysm Installation Script](/docs/install/arm), or [Bazel](/docs/install/arm/bazel).
 > **NOTICE:** Docker images are not currently generated for ARM64
 
 ## Step 2: Get Göerli ETH - Test ether
@@ -32,7 +32,7 @@ Depending on your platform, issue the appropriate command from the examples belo
 #### Generating with Bazel
 
 ```text
-bazel run //validator -- accounts create --keystore-path=$HOME/prysm/validator
+bazel run //validator -- accounts create --keystore-path=$HOME/.eth2validators
 ```
 
 This command will output a `Raw Transaction Data` block:
@@ -51,31 +51,29 @@ This command will output a `Raw Transaction Data` block:
 
 ## Step 4a: Starting up the beacon node
 
-> **NOTICE:** If you have already started and syncronised your beacon node, this portion can be skipped.
+> **NOTICE:** If you have already started and synchronised your beacon node, this portion can be skipped.
 
 The beacon node is a long running process that will require a dedicated terminal window. Depending on your platform, issue the appropriate command from the examples below to start the beacon node.
 
 #### Starting the beacon-chain node with prysm.sh
 
 ```text
-./prysm.sh beacon-chain --datadir=$HOME/beacon-chain
+./prysm.sh beacon-chain --datadir=$HOME/.eth2
 ```
 
 #### Starting the beacon-chain node with Bazel
 
 ```text
-bazel run //beacon-chain -- --datadir=$HOME/beacon-chain
+bazel run //beacon-chain -- --datadir=$HOME/.eth2
 ```
 
 The beacon-chain node will spin up and immediately begin communicating with the Prysm testnet, outputting data similar to the image below.
 
 ![](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LRNnKRqTm4z1mzdDqDF%2F-Lua_6kBgtyMjsJFCSPr%2F-LuaaWo6lTgjk4e7WQ4p%2F9.png?alt=media&token=901b8c14-2a09-4365-bf63-1991c4996544)
 
-The process of syncronising may take a while; the incoming block per second capacity is dependent upon the connection strength, network congestion and overall peer count.
+The process of synchronising may take a while; the incoming block per second capacity is dependent upon the connection strength, network congestion and overall peer count.
 
 ## Step 4b: Starting up the validator client
-
-> **NOTICE:** The beacon-chain node you are using should be **completely synced** before submitting your deposit. You may **incur minor inactivity balance penalties** if the validator is unable to perform its duties by the time the deposit is processed and activated by the ETH2 network.
 
 Open a second terminal window. Depending on your platform, issue the appropriate command from the examples below to start the validator.
 
@@ -90,7 +88,7 @@ Open a second terminal window. Depending on your platform, issue the appropriate
 #### Starting the validator client with Bazel
 
 ```text
-bazel run //validator -- --keymanager=keystore --keymanageropts='{"path":"'${HOME}'/beacon-chain","passphrase":"changeme"}'
+bazel run //validator -- --keystore-path=$HOME/.eth2validators
 ```
 
 ## Step 5: Submitting the deposit contract

@@ -7,7 +7,7 @@ This section outlines the step-by-step process for GNU/Linux found on prylabs.ne
 
 ## Step 1: Get Prysm
 
-To begin, follow the instructions to fetch and install Prysm with either the [Prysm Installation Script](../linux), [Docker](./docker) or [Bazel](./bazel).
+To begin, follow the instructions to fetch and install Prysm with either the [Prysm Installation Script](/docs/install/linux), [Docker](./docker) or [Bazel](./bazel).
 
 ## Step 2: Get Göerli ETH - Test ether
 
@@ -25,13 +25,13 @@ Depending on your platform, issue the appropriate command from the examples belo
 #### Generating with prysm.sh
 
 ```text
-./prysm.sh validator accounts create --keystore-path=$HOME/prysm/validator/
+./prysm.sh validator accounts create --keystore-path=$HOME/.eth2validators
 ```
 
 #### Generating with Docker
 
 ```bash
-docker run -it -v $HOME/prysm/validator:/data \
+docker run -it -v $HOME/.eth2validators:/data \
    gcr.io/prysmaticlabs/prysm/validator:latest \
    accounts create --keystore-path=/data 
 ```
@@ -39,7 +39,7 @@ docker run -it -v $HOME/prysm/validator:/data \
 #### Generating with Bazel
 
 ```text
-bazel run //validator -- accounts create --keystore-path=$HOME/prysm/validator
+bazel run //validator -- accounts create --keystore-path=$HOME/.eth2validators
 ```
 
 This command will output a `Raw Transaction Data` block:
@@ -65,13 +65,14 @@ The beacon node is a long running process that will require a dedicated terminal
 #### Starting the beacon-chain node with prysm.sh
 
 ```text
-./prysm.sh beacon-chain --datadir=$HOME/beacon-chain
+./prysm.sh beacon-chain --datadir=$HOME/.eth2
 ```
 
 #### Starting the beacon-chain node with Docker
 
 ```text
-docker run -it -v $HOME/prysm/beacon:/data -p 4000:4000 -p 13000:13000 \
+docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp \
+
   gcr.io/prysmaticlabs/prysm/beacon-chain:latest \
   --datadir=/data
 ```
@@ -79,76 +80,41 @@ docker run -it -v $HOME/prysm/beacon:/data -p 4000:4000 -p 13000:13000 \
 #### Starting the beacon-chain node with Bazel
 
 ```text
-bazel run //beacon-chain -- --datadir=$HOME/beacon-chain
+bazel run //beacon-chain -- --datadir=$HOME/.eth2
 ```
 
-The beacon node will spin up and immediately begin communicating with the Prysm testnet, outputting data similar to the image below.
+The beacon-chain node will spin up and immediately begin communicating with the Prysm testnet, outputting data similar to the image below.
 
 ![](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LRNnKRqTm4z1mzdDqDF%2F-Lua_6kBgtyMjsJFCSPr%2F-LuaaWo6lTgjk4e7WQ4p%2F9.png?alt=media&token=901b8c14-2a09-4365-bf63-1991c4996544)
 
 The process of syncronising may take a while; the incoming block per second capacity is dependent upon the connection strength, network congestion and overall peer count.
 
-## Step 4b: Securing the validator key
-
-#### Securing the validator key with Docker
-
-Create a file at $HOME/prysm/validator/keystore.json with the following contents (change the passphrase):
-
-```
-{
-  "path": "/data",
-  "passphrase": "changeme"
-}
-```
-
-#### Securing the validator key for use with prysm.sh or Bazel
-
-Create a file at $HOME/prysm/validator/keystore.json using the following command:
-
-```
-cat >> $HOME/prysm/validator/keystore.json << EOF
-{
-  "path": "$HOME/prysm/validator",
-  "passphrase": "changeme"
-}
-EOF
-
-```
-
-Edit the file using your preffered text editor (e.g. nano or vi) and change the passphrase.
-
-```
-nano $HOME/prysm/validator/keystore.json
-```
-
-## Step 4c: Starting up the validator client
-
+## Step 4b: Starting up the validator client
 > **NOTICE:** The beacon-chain node you are using should be **completely synced** before submitting your deposit. You may **incur minor inactivity balance penalties** if the validator is unable to perform its duties by the time the deposit is processed and activated by the ETH2 network.
 
 Open a second terminal window. Depending on your platform, issue the appropriate command from the examples below to start the validator.
 
-> NOTICE: When prompted, provide the password used to encrypt your ETH2 validator key.
+> **NOTICE:** When prompted, provide the password used to encrypt your ETH2 validator key.
 
 #### Starting the validator client with prysm.sh
 
 ```text
-./prysm.sh validator --keymanager=keystore --keymanageropts=${HOME}/prysm/validator/keystore.json
+./prysm.sh validator --keystore-path=$HOME/.eth2validators
 ```
 
 #### Starting the validator client with Docker
 
 ```text
-docker run -it -v $HOME/prysm/validator:/data --network="host" \
+docker run -it -v $HOME/.eth2validators:/data --network="host" \
   gcr.io/prysmaticlabs/prysm/validator:latest \
   --beacon-rpc-provider=127.0.0.1:4000 \
-  --keymanager=keystore \
-  --keymanageropts=/data/keystore.json
+  --keystore-path=/data
 ```
 
 #### Starting the validator client with Bazel
 
 ```text
-bazel run //validator -- --keymanager=keystore --keymanageropts=${HOME}/prysm/validator/keystore.json
+bazel run //validator -- --keystore-path=$HOME/.eth2validators
 ```
 
 ## Step 5: Submitting the deposit contract

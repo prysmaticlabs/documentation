@@ -11,7 +11,7 @@ Prysm can be installed on ARM64 systems using the Prysm build script. This page 
 ## System requirements
 
 ### Minimum specifications
-These specifications must be met in order to successfuly run the Prysm client.
+These specifications must be met in order to successfully run the Prysm client.
 * Operating System: 64-bit Linux, Mac OS X 10.14+, Windows
 * Processor: Intel Core i5–760 or AMD FX-8100 or better
 * Memory: 4GB RAM
@@ -72,7 +72,7 @@ Starting Prysm beacon-chain
 ...
 ```
 
-At this point, the beacon chain data will begin syncronising up to the latest head block. Please note that, depending on your network capacity and CPU, this process may take several hours. Once it is complete, you will be ready to make a deposit and begin setting up a validator client.
+At this point, the beacon chain data will begin synchronising up to the latest head block. Please note that, depending on your network capacity and CPU, this process may take several hours. Once it is complete, you will be ready to make a deposit and begin setting up a validator client.
 
   > **NOTICE:** The beacon node you are using should be **completely synced** before submitting your deposit for the validator client, otherwise the validator will not be able to validate and will **inflict minor inactivity balance penalties**.
 
@@ -80,7 +80,7 @@ At this point, the beacon chain data will begin syncronising up to the latest he
 
 For step-by-step assistance with performing a deposit and setting up a validator client, see the [activating a validator ](/docs/install/arm/activating-a-validator)section of this documentation.
 
-Once your beacon node is up, the chain will be waiting for you to deposit 32 Goerli ETH into a [validator deposit contract](/docs/prysm-usage/validator-deposit-contract) in order to activate your validator \(discussed in the section below\).
+Once your beacon node is up, the chain will be waiting for you to deposit 32 Goerli ETH into a [validator deposit contract](/docs/how-prysm-works/validator-deposit-contract) in order to activate your validator \(discussed in the section below\).
 
 **If you need Goerli ETH**, follow the instructions found on [prylabs.network](https://prylabs.network) to use the testnet faucet. Otherwise, you can contact a team member on Discord to be sent some.
 

@@ -6,7 +6,7 @@ description: This section contains service definitions and gRPC instructions to 
 ---
 ![gRPC](/img/grpc-logo2.png)
 
-One of the required components for staking on the Ethereum 2.0 network is the [gRPC](https://grpc.io) server. It is utilised by the client to query the network for a variety of different public data, from the [canonical head block](../glossaries/terminology.md#canonical-head-block) to versioning and assignments.
+One of the required components for staking on the Ethereum 2.0 network is the [gRPC](https://grpc.io) server. It is utilised by the client to query the network for a variety of different public data, from the [canonical head block](/docs/terminology#canonical-head-block) to versioning and assignments.
 
 Interacting with the API requires the use of protocol buffers, also known as protobuf. These [protocol buffer](https://developers.google.com/protocol-buffers/) service definitions support both [gRPC](https://grpc.io/) as well as JSON over HTTP.  For information on the functionality of gRPC and protocol buffers more generally, see the [gRPC guide](https://grpc.io/docs/guides/).
 
@@ -16,7 +16,7 @@ Interacting with the API requires the use of protocol buffers, also known as pro
 | :--- | :--- | :--- | :--- |
 | eth | [BeaconChain](https://github.com/prysmaticlabs/ethereumapis/blob/master/eth/v1alpha1/beacon_chain.proto#L36) | v1alpha1 | This service is used to retrieve critical data relevant to the Ethereum 2.0 phase 0 beacon chain, including the most recent head block, current pending deposits, the chain state and more. |
 | eth | [Node](https://github.com/prysmaticlabs/ethereumapis/blob/master/eth/v1alpha1/node.proto#L33) | v1alpha1 | The Node service returns information about the Ethereum node itself, including versioning and general information as well as network sync status and a list of services currently implemented on the node. |
-| eth | [Validator](https://github.com/prysmaticlabs/ethereumapis/blob/master/eth/v1alpha1/validator.proto) | v1alpha1 | This API provides the information a validator needs to retrieve throughout its lifecycle, including recieved assignments from the network, its current index in the state as well as the rewards and penalties that have been applied to it. |
+| eth | [Validator](https://github.com/prysmaticlabs/ethereumapis/blob/master/eth/v1alpha1/validator.proto) | v1alpha1 | This API provides the information a validator needs to retrieve throughout its life cycle, including recieved assignments from the network, its current index in the state as well as the rewards and penalties that have been applied to it. |
 
 ## Generating client libraries
 

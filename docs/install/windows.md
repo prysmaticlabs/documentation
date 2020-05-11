@@ -10,7 +10,7 @@ Prysm can be installed on Windows systems using the Prysm build script. This pag
 ## System requirements
 
 ### Minimum specifications
-These specifications must be met in order to successfuly run the Prysm client.
+These specifications must be met in order to successfully run the Prysm client.
 * Operating System: 64-bit Windows 
 * Processor: Intel Core i5–760 or AMD FX-8100 or better
 * Memory: 4GB RAM
@@ -75,7 +75,7 @@ Starting Prysm beacon-chain
 ...
 ```
 
-At this point, the beacon chain data will begin syncronising up to the latest head block. Please note that, depending on your network capacity and CPU, this process may take several hours. Once it is complete, you will be ready to make a deposit and begin setting up a validator client.
+At this point, the beacon chain data will begin synchronising up to the latest head block. Please note that, depending on your network capacity and CPU, this process may take several hours. Once it is complete, you will be ready to make a deposit and begin setting up a validator client.
 
   > **NOTICE:** The beacon node you are using should be **completely synced** before submitting your deposit for the validator client, otherwise the validator will not be able to validate and will **inflict minor inactivity balance penalties**.
 
@@ -102,11 +102,11 @@ Please note that **it may take up to 12 hours** for the nodes in the network to 
 > **NOTICE:** When prompted, provide the password used to encrypt your ETH2 validator key.
 
 ```sh
-.\prysm.bat validator --keystore-path=%USERPROFILE%\.eth2validator
+.\prysm.bat validator --keystore-path=%appdata%\.eth2validator
 ```
 
 ```sh
-.\prysm.bat validator --keystore-path=%USERPROFILE%\.eth2validator
+.\prysm.bat validator --keystore-path=%appdata%\.eth2validator
 Latest prysm release is v1.0.0-alpha.5.
 Using prysm version v1.0.0-alpha.5.
 Downloading validator v1.0.0-alpha.5 to .\dist\validator-v1.0.0-alpha.5-windows-amd64.exe automatically selected latest available release
@@ -117,7 +117,7 @@ WARN GPG verification is not natively available on Windows.
 WARN Skipping integrity verification of downloaded binary
 Verifying binary authenticity with SHA265 Hash.
 SHA265 Hash Match
-Starting Prysm validator --keystore-path=%USERPROFILE%\.eth2validator
+Starting Prysm validator --keystore-path=%appdata%\.eth2validator
 ...
 ```
 

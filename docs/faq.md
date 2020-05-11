@@ -64,7 +64,7 @@ We find Digital Ocean tends to have fairly priced instances for running beacon n
 
 #### Can I run this on a raspberry pi? What are the instructions?
 
-Yes we currently support arm 64-bit architectures such as the raspberry pi 4 and they go out as part of our precompiled binary releases [here](https://github.com/prysmaticlabs/prysm/releases). Our documentation portal has instructions on how to run the entire installation process [here](https://docs.prylabs.network/docs/install/arm/).
+Yes we currently support arm 64-bit architectures such as the raspberry pi 4 and they go out as part of our pre-compiled binary releases [here](https://github.com/prysmaticlabs/prysm/releases). Our documentation portal has instructions on how to run the entire installation process [here](https://docs.prylabs.network/docs/install/arm/).
 
 ## Managing Validators
 

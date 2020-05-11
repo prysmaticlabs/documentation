@@ -18,14 +18,14 @@ At runtime, the beacon node initialises and maintains a number of services that 
 * A [**sync service**](#sync-service) which both queries nodes across the network to ensure latest [canonical head](/docs/terminology#canonical-head-block) and state are synced and processes incoming block announcements from peers.
 * An [**ETH 1.0 service**](#eth1-service) that listens to latest event logs from the validator deposit contract and the ETH 1.0 blockchain.
 * A [**public RPC server**](#public-rpc-server) that requests information about the beacon chain's state, the latest block, validator information, etcetera.
-* A [**P2P server**](p2p-networking) which handles the lifecycle of peer connections and facilitates broadcasting across the network.
+* A [**P2P server**](p2p-networking) which handles the life cycle of peer connections and facilitates broadcasting across the network.
 * A **full test suite** for running simulation on Ethereum 2.0 state transitions, benchmarks and conformity tests across clients.
 
-We isolate each of these services into separate packages, each responsible for its own lifecycle, logging and dependency management. Each Prysm service implements an interface to start, stop, and verify its status at any time.
+We isolate each of these services into separate packages, each responsible for its own life cycle, logging and dependency management. Each Prysm service implements an interface to start, stop, and verify its status at any time.
 
 ## Blockchain service
 
-The blockchain service is arguably the most important part of the project, as it allows the network to reach consensus on the state of the protocol itself. It is responsible for handling the lifecycle of blocks, and applies the [fork choice rule](/docs/terminology#fork-choice-rule) and [state transition function](/docs/terminology#state-transition-function) provided by the [core package](#core-package) to advance the beacon chain.
+The blockchain service is arguably the most important part of the project, as it allows the network to reach consensus on the state of the protocol itself. It is responsible for handling the life cycle of blocks, and applies the [fork choice rule](/docs/terminology#fork-choice-rule) and [state transition function](/docs/terminology#state-transition-function) provided by the [core package](#core-package) to advance the beacon chain.
 
 In Ethereum 2.0, blocks can be proposed in intervals known as _slots_, which are period of seconds. During a slot, proposers are assigned to create and send blocks into the beacon node for acceptance. It is possible, however, that proposer may fail to do their job at their assigned slot; in this case, the blockchain service processes skipped slots appropriately to ensure that the chain does not stall.
 
@@ -43,7 +43,7 @@ The sync service has two responsibilities: ensuring the local beacon chain is up
 
 ## ETH1 service
 
-The [ETH1](/docs/terminology#eth1) service uses the [go-ethereum ethclient](https://github.com/ethereum/go-ethereum/tree/master/ethclient) to connect to a running Ethereum 1.0 node in order to listen for incoming [validator deposit contract](validator-deposit-contract) logs. The [validator clients](validator-clients) include deposit objects inside of their proposed blocks, and the beacon chain state transition function then activates any pending validators from these deposits.
+The [ETH1](/docs/terminology#eth1) service uses the [go-ethereum ethclient](https://github.com/ethereum/go-ethereum/tree/master/ethclient) to connect to a running Ethereum 1.0 node in order to listen for incoming [validator deposit contract](validator-deposit-contract) logs. The [validator clients](prysm-validator-client) include deposit objects inside of their proposed blocks, and the beacon chain state transition function then activates any pending validators from these deposits.
 
 As the beacon node will need to frequently access information and one cannot rely on perfect latency from the [ETH1](/docs/terminology#eth1) node, the service also includes the ability to cache received logs and blocks from the Ethereum 1.0 chain.
 

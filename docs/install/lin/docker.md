@@ -46,7 +46,7 @@ Below are instructions for initialising a beacon node and connecting to the publ
 To start your beacon node, issue the following command:
 
 ```text
-docker run -it -v $HOME/prysm:/data -p 4000:4000 -p 13000:13000 --name beacon-node \
+docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node \
   gcr.io/prysmaticlabs/prysm/beacon-chain:latest \
   --datadir=/data
 ```
@@ -61,7 +61,7 @@ This will sync up the beacon node with the latest head block in the network.
 
 For step-by-step assistance with performing a deposit and setting up a validator client, see the [activating a validator ](/docs/install/lin/activating-a-validator)section of this documentation.
 
-Once your beacon node is up, the chain will be waiting for you to deposit 32 Goerli ETH into a [validator deposit contract](/docs/prysm-usage/validator-deposit-contract) in order to activate your validator \(discussed in the section below\).
+Once your beacon node is up, the chain will be waiting for you to deposit 32 Goerli ETH into a [validator deposit contract](/docs/how-prysm-works/validator-deposit-contract) in order to activate your validator \(discussed in the section below\).
 
 **If you need Goerli ETH**, follow the instructions found on [prylabs.network](https://prylabs.network) to use the testnet faucet. Otherwise, you can contact a team member on Discord to be sent some.
 
@@ -96,7 +96,8 @@ In your validator client, you will be able to frequently see your validator bala
   To recreate a deleted container and refresh the chain database, issue the start command with an additional `--clear-db` parameter:
 
   ```text
-  docker run -it -v $HOME/prysm:/data -p 4000:4000 -p 13000:13000 --name beacon-node \
+  docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node \
+
     gcr.io/prysmaticlabs/prysm/beacon-chain:latest \
     --datadir=/data \
     --clear-db

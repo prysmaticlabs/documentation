@@ -25,8 +25,8 @@ The Ethereum community quickly attached to this concept as the de-facto problem 
 
 As stated, each node on the Ethereum 1.0 network must verify each transaction made, meaning that the networks speed has a ceiling at its collective transaction-per-second capacity. This is where sharding comes in.
 
-Shards in the context of Ethereum 2.0 are essentially 1024 independent blockchains that operate in sync with the existing [ETH1](/docs/glossaries/terminology#eth1) chain. They communicate and coordinate both transactions and network state via a root chain -- in the case of Ethereum 2.0, this is referred to as the **beacon chain**.
+Shards in the context of Ethereum 2.0 are essentially 1024 independent blockchains that operate in sync with the existing [ETH1](/docs/terminology#eth1) chain. They communicate and coordinate both transactions and network state via a root chain -- in the case of Ethereum 2.0, this is referred to as the **beacon chain**.
 
-As each shard chain will be able to facilitate as much traffic as the existing Ethereum 1.0 network and transactions will be processed in parallel to the 1.0 chain, sharding allows for magnitudes higher horizontal scalability potential in terms of transactions-per-second capacity. This, among other 2.0 features such as [Proof-of-Stake](/docs/glossaries/terminology#proof-of-stake-pos), will allow the Ethereum ecosystem to grow in a much more sustainable way.
+As each shard chain will be able to facilitate as much traffic as the existing Ethereum 1.0 network and transactions will be processed in parallel to the 1.0 chain, sharding allows for magnitudes higher horizontal scalability potential in terms of transactions-per-second capacity. This, among other 2.0 features such as [Proof-of-Stake](/docs/terminology#proof-of-stake-pos), will allow the Ethereum ecosystem to grow in a much more sustainable way.
 
 For more general information on blockchains, sharding and the Ethereum protocol, check out the [external reading page](/docs/contribute/required-reading).

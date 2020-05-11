@@ -23,7 +23,7 @@ This section provides instructions to run [slasher](https://github.com/prysmatic
 ## Get Prysm and start beacon-chain
 > **NOTICE:** If beacon-chain is already running, skip to step 2 
 
-1. To begin, follow the instructions for [GNU\Linux](../install/linux), [macOS](../install/mac), [ARM64](../install/arm), or [Windows](../install/windows) to fetch and install Prysm.  The beacon-chain process should be running and fully synced before proceeding.
+1. To begin, follow the instructions for [GNU\Linux](/docs/install/linux), [macOS](/docs/install/mac), [ARM64](/docs/install/arm), or [Windows](/docs/install/windows) to fetch and install Prysm.  The beacon-chain process should be running and fully synced before proceeding.
 
 ## Run Slasher
 
@@ -45,7 +45,7 @@ This section provides instructions to run [slasher](https://github.com/prysmatic
 
 ```text
 docker pull gcr.io/prysmaticlabs/prysm/slasher:latest
-docker run -it -v $HOME/prysm:/data --name slasher \
+docker run -it -v $HOME/.eth2:/data --name slasher \
   gcr.io/prysmaticlabs/prysm/slasher:latest \
   --datadir=/data
 ```
