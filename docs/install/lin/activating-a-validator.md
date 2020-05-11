@@ -8,7 +8,7 @@ This section outlines the step-by-step process for GNU/Linux found on prylabs.ne
 
 ## Step 1: Get Prysm
 
-To begin, follow the instructions to fetch and install Prysm with either the [Prysm Installation Script](../linux), [Docker](./docker) or [Bazel](./bazel).
+To begin, follow the instructions to fetch and install Prysm with either the [Prysm Installation Script](/docs/install/linux), [Docker](./docker) or [Bazel](./bazel).
 
 ## Step 2: Get Göerli ETH - Test ether
 
