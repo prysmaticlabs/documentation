@@ -8,7 +8,7 @@ This section outlines the step-by-step process for Windows found on prylabs.net 
 
 ## Step 1: Get Prysm
 
-To begin, follow the instructions to fetch and install Prysm with either the [Prysm Installation Script](../windows), or [Docker](./docker).
+To begin, follow the instructions to fetch and install Prysm with either the [Prysm Installation Script](/docs/install/windows), or [Docker](./docker).
 > **NOTICE:** Compiling Prysm with Bazel is not currently supported on Windows.
 
 ## Step 2: Get Göerli ETH - Test ether
@@ -52,7 +52,7 @@ This command will output a `Raw Transaction Data` block:
 
 ## Step 4a: Starting up the beacon node
 
-> **NOTICE:** If you have already started and syncronised your beacon node, this portion can be skipped.
+> **NOTICE:** If you have already started and synchronised your beacon node, this portion can be skipped.
 
 The beacon node is a long running process that will require a dedicated command prompt window. Depending on your platform, issue the appropriate command from the examples below to start the beacon node.
 
@@ -65,14 +65,14 @@ prysm.bat beacon-chain --datadir=%APPDATA%\Eth2
 #### Starting the beacon-chain node with Docker
 
 ```text
-docker run -it -v %appdata%\Eth2:/data -p 4000:4000 -p 13000:13000 gcr.io/prysmaticlabs/prysm/beacon-chain:latest --datadir=/data
+docker run -it -v %appdata%\Eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp gcr.io/prysmaticlabs/prysm/beacon-chain:latest --datadir=/data
 ```
 
 The beacon-chain node will spin up and immediately begin communicating with the Prysm testnet, outputting data similar to the image below.
 
 ![](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LRNnKRqTm4z1mzdDqDF%2F-Lua_6kBgtyMjsJFCSPr%2F-LuaaWo6lTgjk4e7WQ4p%2F9.png?alt=media&token=901b8c14-2a09-4365-bf63-1991c4996544)
 
-The process of syncronising may take a while; the incoming block per second capacity is dependent upon the connection strength, network congestion and overall peer count.
+The process of synchronising may take a while; the incoming block per second capacity is dependent upon the connection strength, network congestion and overall peer count.
 
 ## Step 4b: Starting up the validator client
 

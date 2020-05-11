@@ -61,7 +61,7 @@ Accounts: 0
 
 ### Generating multiple wallets
 
-To create two seperate wallets with different passphrases, issue the command:
+To create two separate wallets with different passphrases, issue the command:
 ```sh
 ethdo account create --account=Validators/1 --passphrase=validator1secret
 ethdo account create --account=Validators/2 --passphrase=validator2secret
@@ -71,7 +71,7 @@ ethdo account create --account=Validators/2 --passphrase=validator2secret
 
 ### Creating a withdrawal wallet and account
 
-It is recommended to set up seperate wallets for withdrawls and validator nodes. This allows users to have a validator wallet actively running on the node, while a second wallet key can be kept securely offline in cold storage.
+It is recommended to set up separate wallets for withdrawals and validator nodes. This allows users to have a validator wallet actively running on the node, while a second wallet key can be kept securely offline in cold storage.
 
 Creating a withdrawal wallet and account is very similar to the process above to generate validator accounts.  For example:
 

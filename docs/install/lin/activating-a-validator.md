@@ -8,7 +8,7 @@ This section outlines the step-by-step process for GNU/Linux found on prylabs.ne
 
 ## Step 1: Get Prysm
 
-To begin, follow the instructions to fetch and install Prysm with either the [Prysm Installation Script](../linux), [Docker](./docker) or [Bazel](./bazel).
+To begin, follow the instructions to fetch and install Prysm with either the [Prysm Installation Script](/docs/install/linux), [Docker](./docker) or [Bazel](./bazel).
 
 ## Step 2: Get Göerli ETH - Test ether
 
@@ -72,7 +72,8 @@ The beacon node is a long running process that will require a dedicated terminal
 #### Starting the beacon-chain node with Docker
 
 ```text
-docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 \
+docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp \
+
   gcr.io/prysmaticlabs/prysm/beacon-chain:latest \
   --datadir=/data
 ```
@@ -90,6 +91,7 @@ The beacon-chain node will spin up and immediately begin communicating with the 
 The process of syncronising may take a while; the incoming block per second capacity is dependent upon the connection strength, network congestion and overall peer count.
 
 ## Step 4b: Starting up the validator client
+> **NOTICE:** The beacon-chain node you are using should be **completely synced** before submitting your deposit. You may **incur minor inactivity balance penalties** if the validator is unable to perform its duties by the time the deposit is processed and activated by the ETH2 network.
 
 Open a second terminal window. Depending on your platform, issue the appropriate command from the examples below to start the validator.
 

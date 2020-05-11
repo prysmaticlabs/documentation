@@ -25,6 +25,6 @@ To begin, follow the instructions for your Operating System:
  - [macOS](/docs/install/mac/bazel)
  - [ARM64](/docs/install/arm/bazel)
 
-Additional information is availilble in the [Getting Started](/docs/getting-started) guide.
+Additional information is available in the [Getting Started](/docs/getting-started) guide.
 
 **Still have questions?**  Stop by our [Discord](https://discord.gg/KSA7rPr) for further assistance!

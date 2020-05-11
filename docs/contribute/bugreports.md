@@ -16,9 +16,9 @@ If searches have shown the issue in question has not been reported yet, feel fre
 
 ## Writing quality bug reports
 
-A good bug report is structured to help the developers and contributors visualise the issue in the clearest way possible. It's important to be concise and use comprehensive language, while also providing all relevant information on-hand. Use short and accurate sentences without any unecessary additions, and include all existing specifications with a list of steps to reproduce the expected problem. A nonreproducible issue **cannot be solved**.
+A good bug report is structured to help the developers and contributors visualise the issue in the clearest way possible. It's important to be concise and use comprehensive language, while also providing all relevant information on-hand. Use short and accurate sentences without any unnecessary additions, and include all existing specifications with a list of steps to reproduce the expected problem. Issues that cannot be reproduced **cannot be solved**.
 
-If you are experiencing multiple issues, it is best to open each as a seperate ticket. This allows them to be closed individually as they are resolved.
+If you are experiencing multiple issues, it is best to open each as a separate ticket. This allows them to be closed individually as they are resolved.
 
 An original bug report will very likely be preserved and used as a record and sounding board for users that have similar experiences in the future. Because of this, it is a great service to the community to ensure that reports meet these standards and follow the template closely.
 

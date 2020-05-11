@@ -10,7 +10,7 @@ Prysm can be installed on Windows systems using the Prysm build script. This pag
 ## System requirements
 
 ### Minimum specifications
-These specifications must be met in order to successfuly run the Prysm client.
+These specifications must be met in order to successfully run the Prysm client.
 * Operating System: 64-bit Windows 
 * Processor: Intel Core i5–760 or AMD FX-8100 or better
 * Memory: 4GB RAM
@@ -73,7 +73,7 @@ Starting Prysm beacon-chain
 ...
 ```
 
-At this point, the beacon chain data will begin syncronising up to the latest head block. Please note that, depending on your network capacity and CPU, this process may take several hours. Once it is complete, you will be ready to make a deposit and begin setting up a validator client.
+At this point, the beacon chain data will begin synchronising up to the latest head block. Please note that, depending on your network capacity and CPU, this process may take several hours. Once it is complete, you will be ready to make a deposit and begin setting up a validator client.
 
   > **NOTICE:** The beacon node you are using should be **completely synced** before submitting your deposit for the validator client, otherwise the validator will not be able to validate and will **inflict minor inactivity balance penalties**.
 
