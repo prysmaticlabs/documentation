@@ -4,6 +4,7 @@ title: Ethereum 2.0 Public API
 sidebar_label: Public API
 description: This section contains service definitions and gRPC instructions to interact with the public API.
 ---
+![gRPC](/img/grpc-logo2.png)
 
 One of the required components for staking on the Ethereum 2.0 network is the [gRPC](https://grpc.io) server. It is utilised by the client to query the network for a variety of different public data, from the [canonical head block](/docs/terminology#canonical-head-block) to versioning and assignments.
 

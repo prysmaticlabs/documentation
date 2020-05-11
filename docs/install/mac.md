@@ -31,6 +31,9 @@ These hardware specifications are recommended, but not required to run the Prysm
 
 The easiest way to install the beacon chain and validator is by running the `prysm.sh` script found in the main directory of the [Prysm repository](https://github.com/prysmaticlabs/prysm). This script will download and start up the latest release of Prysm binaries compatible with the host system.
 
+![Prysm Basic Setup](/img/prysm-basic-setup.png)
+
+
 ### Running the Prysm startup script
 
 1. Create a working directory and enter it:

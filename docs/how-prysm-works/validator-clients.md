@@ -8,6 +8,8 @@ Although [beacon nodes](./beacon-node) handle network synchronisation, drawing c
 
 As mentioned, validators have two responsibilities: to [propose](/docs/terminology#propose) \(or produce\) blocks known as beacon blocks, which contain consensus information about shards across the network, or to [attest](/docs/terminology#attest) \(or vote on\) the validity of blocks that have already been produced.
 
+![Validator](/img/prysm-validator.png)
+
 ## How does it work?
 
 A validator instance is permitted to begin participating in the network once 32 ETH is locked up in a [validator deposit contract](./validator-deposit-contract). Validators are tasked with correctly [proposing](/docs/terminology#propose) or [attesting](/docs/terminology#attest) to blocks on the beacon chain, and receive either rewards or penalties to the initial deposit based upon their overall performance.

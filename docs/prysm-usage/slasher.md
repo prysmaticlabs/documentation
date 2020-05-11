@@ -5,7 +5,9 @@ sidebar_label: Running a slasher
 ---
 This section provides instructions to run [slasher](https://github.com/prysmaticlabs/prysm/tree/master/slasher) to identify and report slashable offenses on the testnet.  If slasher detects a slashable offense, proof is sent to the [beacon-chain node](https://docs.prylabs.network/docs/how-prysm-works/beacon-node/) for inclusion in a block.  [Validators](https://docs.prylabs.network/docs/how-prysm-works/prysm-validator-client/) earn a small whistleblower reward for including this proof into a block.  
 
-Slashable offenses include:
+> NOTICE: Running slasher is optional, but helps secure the chain and may result in additional earnings.
+
+## Slashable Offenses
 
 #### Validator slashings 
  - Double voting
@@ -16,6 +18,7 @@ Slashable offenses include:
 #### Block Proposer slashings
  - occurs when a proposer broadcasts more then one block for the same slot
  
+![Prysm with Slasher](/img/prysm-with-slasher.png)
 
 ## Get Prysm and start beacon-chain
 > **NOTICE:** If beacon-chain is already running, skip to step 2 
