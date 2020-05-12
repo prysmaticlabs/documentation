@@ -86,7 +86,7 @@ At this point, the beacon chain data will begin synchronising up to the latest h
 > **NOTICE:** When prompted, provide a password to encrypt your new ETH2 validator and withdrawal keys.
 
 ```sh
-.\prysm.bat validator accounts create --keystore-path=c:/prysm/validator
+.\prysm.bat validator accounts create --keystore-path=%appdata%\.eth2validator
 ```
 
 For step-by-step assistance with performing a deposit and setting up a validator client, see the [activating a validator ](/docs/install/win/activating-a-validator)section of this documentation.

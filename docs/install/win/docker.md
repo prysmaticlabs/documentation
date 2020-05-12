@@ -99,5 +99,5 @@ docker rm beacon-node
 To recreate a deleted container and refresh the chain database, issue the start command with an additional `--clear-db` parameter:
 
 ```text
-docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node gcr.io/prysmaticlabs/prysm/beacon-chain:latest --datadir=/data --clear-db
+docker run -it -v %appdata%\Eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node gcr.io/prysmaticlabs/prysm/beacon-chain:latest --datadir=/data --clear-db
 ```
