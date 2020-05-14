@@ -39,6 +39,7 @@
 		"How Prysm works": 	[	"how-prysm-works/architecture-overview",
 								"how-prysm-works/beacon-node",
 								"how-prysm-works/prysm-validator-client",
+								"how-prysm-works/validator-lifecycle",
 								"how-prysm-works/validator-deposit-contract",
 								"how-prysm-works/database-backend-boltdb",
 								"how-prysm-works/p2p-networking",
