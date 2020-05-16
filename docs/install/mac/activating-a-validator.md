@@ -98,7 +98,7 @@ Open a second terminal window. Depending on your platform, issue the appropriate
 #### Starting the validator client with prysm.sh
 
 ```text
-./prysm.sh validator --keystore-path=$HOME/.eth2validator
+./prysm.sh validator --keystore-path=$HOME/.eth2validators
 ```
 
 #### Starting the validator client with Docker
