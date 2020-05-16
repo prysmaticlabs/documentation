@@ -139,8 +139,8 @@ You can now create your own alert rules if needed, the guide above explain how.
 
 ### Creating/importing dashboards
 You can now create your own dashboard how you feel like to. Or you can also just import the Prysm dashboards:
-- [dashboard designed for small amount of validator keys](./grafana-dashboards/small_amount_validators.json)
-- [dashboard designed for more than 10 validator keys](./grafana-dashboards/big_amount_validators.json).
+- [dashboard designed for small amount of validator keys](https://raw.githubusercontent.com/prysmaticlabs/documentation/master/docs/prysm-usage/grafana-dashboards/small_amount_validators.json)
+- [dashboard designed for more than 10 validator keys](https://raw.githubusercontent.com/prysmaticlabs/documentation/master/docs/prysm-usage/grafana-dashboards/big_amount_validators.json)
 
 It’s the json for a node/validator grafana dashboard made by myself. To import this json into your Grafana dashboard, you click on the **+** icon on the left menu and select Import, you then just have to paste the json and click **Load** button.
 
