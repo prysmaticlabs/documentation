@@ -26,7 +26,7 @@ Depending on your platform, issue the appropriate command from the examples belo
 #### Generating with prysm.sh
 
 ```text
-./prysm.sh validator accounts create --keystore-path=$HOME/.eth2validator
+./prysm.sh validator accounts create --keystore-path=$HOME/.eth2validators
 ```
 
 #### Generating with Bazel
