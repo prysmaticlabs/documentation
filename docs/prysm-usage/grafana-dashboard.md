@@ -91,7 +91,7 @@ curl v4.ident.me
  
 
 ### Verification
-Once the **prometheus.yml** file has been updated, you can run the **prometheus.exe** file, then open this web page http://localhost:9090/graph
+Once the **prometheus.yml** file has been updated, you can run the **prometheus.exe** file, then open this web page http://localhost:9090/graph.
 If everything is working, you should see a page similar to this
 ![Prometheus page](https://github.com/GuillaumeMiralles/documentation/blob/add_grafana_dashboard/docs/prysm-usage/grafana-dashboards/assets/prometheus_page.png?raw=true "Prometheus page")
 
