@@ -7,7 +7,7 @@ sidebar_label: Monitoring with Grafana
 Now that you have your validator and node process running, you will probably need a nice dashboard and alert system to ensure at maximum the profitability of your staking ETH. Here is a simple guide that explain how to get one, without any developer skill.
 
 Here is the result of what you will get if you follow this guide!
-![Grafana dashboard for prysm node and validator](https://github.com/GuillaumeMiralles/documentation/blob/add_grafana_dashboard/docs/prysm-usage/grafana-dashboards/assets/dashboard_overview.png?raw=true "Grafana dashboard for prysm node and validator")
+![Grafana dashboard for prysm node and validator](https://github.com/prysmaticlabs/documentation/blob/master/docs/prysm-usage/grafana-dashboards/assets/dashboard_overview.png?raw=true "Grafana dashboard for prysm node and validator")
 
 
 ## Metrics from validators and node process
@@ -93,7 +93,7 @@ curl v4.ident.me
 ### Verification
 Once the **prometheus.yml** file has been updated, you can run the **prometheus.exe** file, then open this web page http://localhost:9090/graph.
 If everything is working, you should see a page similar to this
-![Prometheus page](https://github.com/GuillaumeMiralles/documentation/blob/add_grafana_dashboard/docs/prysm-usage/grafana-dashboards/assets/prometheus_page.png?raw=true "Prometheus page")
+![Prometheus page](https://github.com/prysmaticlabs/documentation/blob/master/docs/prysm-usage/grafana-dashboards/assets/prometheus_page.png?raw=true "Prometheus page")
 
 Now you have to make sure that you can find both metrics in the previous image: `validator_balance` and `total_voted_target_balances`. You need to find both metrics to have access to all of them.
 
