@@ -54,9 +54,9 @@ You still can regroup your metrics on a single machine.
 ##### **Local network**
 If you don’t run your validator and your node on the same machine but on the same network, you will need to replace `localhost` by the **private** IP of the machine that run the process in the **prometheus.yml** file.
 
-For the job `beacon node` you will need to replace `localhost` by the **private** IP of the machine where the `beacon node` is running. Same goes for validator.
+If `beacon node` is running on a separate machine, you will need to replace `localhost` by the **private** IP of the machine where the `beacon node` is running. Same goes for validator.
 
-To determine your  **private**  IP address, or run the appropriate command for your OS:
+To determine your  **private**  IP address run the appropriate command for your OS:
 
 ###### **GNU/Linux:**
 
@@ -79,7 +79,7 @@ ifconfig | grep "inet " | grep -v 127.0.0.1
 ##### **Different network**
 If you don’t run your validator and your node on the same machine and also on different network, you will need to replace `localhost` by the **public** IP of the machine that run the process in the **prometheus.yml** file.
 
-For the job `beacon node` you will need to replace `localhost` by the **public** IP of the machine where the `beacon node` is running. Same goes for validator.
+If `beacon node` is running on a separate machine, you will need to replace `localhost` by the **public** IP of the machine where the `beacon node` is running. Same goes for validator.
 
 To determine your  **public**  IP address, visit ([http://v4.ident.me/](http://v4.ident.me/)) or run this command:
 
