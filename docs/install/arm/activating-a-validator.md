@@ -115,7 +115,7 @@ To check on the status of your validator, run the following command:
 bazel run validator accounts status -- --keymanager=keystore --keymanageropts=$HOME/.eth2validator  --beacon-rpc-provider=localhost:4000
 ```
 
-Additional information about the status of your ETH1 deposit and validator is also available on a number of [block explorers](/docs/devtools/block-explorers).
+Additional information about the validator and status of ETH1 deposits is also available on various testnet [block explorers](/docs/devtools/block-explorers).
 
 ## Running multiple validators
 
