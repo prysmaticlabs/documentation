@@ -79,7 +79,7 @@ Even after you deposit, it takes several hours to join the testnet as an active 
 #### How can I check on the status of my validator?
 
 Make sure your beacon node is synced and running, and run the command
-`./prysm.sh validator accounts status --keymanager={unencrypted, interop, keystore, wallet} --keymanageropts={$YOUR_PATH, $YOUR_PATH/keymanager.json} --beacon-rpc-provider=localhost:4000`.
+`./prysm.sh validator accounts status --keymanager={unencrypted, interop, keystore, wallet} --keymanageropts={$YOUR_PATH, $YOUR_PATH/keymanageropts.json} --beacon-rpc-provider=localhost:4000`.
 
 
 #### I made a correct deposit and my validator status is still UNKNOWN, what’s going on?
