@@ -38,7 +38,11 @@ Finally, ensure bazel is installed and working on your machine:
 $ bazel version
 ```
 
-Congratulations, you are now ready to begin contributing!
+### Setting up your code / text editor
+
+For developing Prysm, the only option is to use the `bazel` tool - Prysm _cannot_ be built with Go by itself. In order to write code for the Prysm codebase comfortably, we recommend using either [Visual Studio Code](https://code.visualstudio.com/download) with its [Bazel plugin](https://marketplace.visualstudio.com/items?itemName=BazelBuild.vscode-bazel), or any [Jetbrains IDE](https://www.jetbrains.com/) with the [Bazel plugin](https://plugins.jetbrains.com/plugin/8609-bazel) ([Goland](https://www.jetbrains.com/go/) is a great choice, used by most of the Prysmatic Labs team). 
+
+You can also find various other types of IDE support for Bazel in the official Bazel documentation [here](https://docs.bazel.build/versions/master/ide.html). Once you have your coding environment set-up, you'll be well-equipped to contribute to eth2!
 
 ### Building and testing Prysm
 
