@@ -83,6 +83,10 @@ You can also run our full, end-to-end test suite with:
 $ bazel test //endtoend:go_default_test --define=ssz=minimal
 ```
 
+### Contributing to the Eth2 API
+
+The eth2 API implemented by Prysm is maintained as a separate repository than Prysm. You can read more about how to contribute specifically to the API [here](/docs/how-prysm-works/ethereum-2-public-api#contributing).
+
 ### Running a local chain
 
 Although tests are the best and most simple way of ensuring your feature or bug fix contribution works, sometimes it can be helpful to run a real chain with your changes to ensure they are reflected at runtime. Here are some helpful commands to try running your own, local chain with 64 validators!
@@ -143,7 +147,7 @@ To fetch changes to the Prysm repository since your last session:
 $ git fetch origin
 ```
 
-Then synchronise your master branch:
+Then synchronize your master branch:
 
 ```text
 $ git pull origin master
