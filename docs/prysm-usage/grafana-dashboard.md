@@ -63,7 +63,13 @@ scrape_configs:
 
 
 ### Verification
-Once the **prometheus.yml** file has been updated, you can then run prometheus by double clicking on the **prometheus** file (with extension **.exe** for windows OS).
+Once the **prometheus.yml** file has been updated, you can then run prometheus by double clicking on the **prometheus** file (with extension **.exe** for windows OS),
+or with a terminal, using `cd` command to go to the prometheus directory, then issuing this command line
+```
+prometheus
+```
+> **NOTICE**: For Windows OS the command will be `prometheus.exe`
+
 This should open a terminal that will display the prometheus log. You should now be able to open this web page http://localhost:9090/graph.
 
 If everything is working, you should see a page similar to this
@@ -72,12 +78,12 @@ If everything is working, you should see a page similar to this
 Now you have to make sure that you can find both metrics in the previous image: `validator_balance` and `total_voted_target_balances`. You need to find both metrics to have access to all of them.
 
 ### Setting the storage time to 31 days (recommended)
+  > **NOTICE:** If you don't plan to have panels that will require metrics older than 15 days then you can skip this part
+>
 You'll probably need to add this flag while running **prometheus** to upgrade to 31 days the storage time of the metrics. By default, this value is set to 15 days
 ```
 --storage.tsdb.retention.time=31d
 ```
-  > **NOTICE:** If you don't plan to have panels that will require metrics older than 15 days then you can skip this part
-
 
 ### Windows: Prometheus running in background (facultative)
 For that you need to open a **Windows Powershell** prompt, then go to the directory where is located the **prometheus.exe** file (using command `cd`) and to run this:
