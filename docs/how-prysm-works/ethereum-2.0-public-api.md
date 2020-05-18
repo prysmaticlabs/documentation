@@ -1,14 +1,14 @@
 ---
 id: ethereum-2-public-api
 title: Ethereum 2.0 Public API
-sidebar_label: Public API
+sidebar_label: Eth2 Public API
 description: This section contains service definitions and gRPC instructions to interact with the public API.
 ---
 ![gRPC](/img/grpc-logo2.png)
 
-One of the required components for staking on the Ethereum 2.0 network is the [gRPC](https://grpc.io) server. It is utilised by the client to query the network for a variety of different public data, from the [canonical head block](/docs/terminology#canonical-head-block) to versioning and assignments.
+One of the required components nodes in the Ethereum 2.0 network is to expose an API server for outside interaction. This API is critical for running validators on eth2, as validator clients can connect to nodes and query their API to figure out their assigned duties, to submit block proposals, and more. Prysm's eth2 API schema is maintained in its unique repository: [github.com/prysmaticlabs/ethereumapis](https://github.com/prysmaticlabs/ethereumapis) and is implemented by Prysm beacon nodes [here](https://github.com/prysmaticlabs/prysm/blob/master/beacon-chain/rpc/service.go). 
 
-Interacting with the API requires the use of protocol buffers, also known as protobuf. These [protocol buffer](https://developers.google.com/protocol-buffers/) service definitions support both [gRPC](https://grpc.io/) as well as JSON over HTTP.  For information on the functionality of gRPC and protocol buffers more generally, see the [gRPC guide](https://grpc.io/docs/guides/).
+Prysm implements its API by using the popular [gRPC](https://grpc.io) project created by Google, providing highly advanced functionality for eth2. Interacting with the API requires the use of protocol buffers, also known as protobuf. These [protocol buffer](https://developers.google.com/protocol-buffers/) service definitions support both [gRPC](https://grpc.io/) as well as JSON over HTTP.  For information on the functionality of gRPC and protocol buffers more generally, see the [gRPC guide](https://grpc.io/docs/guides/).
 
 ## Service definitions
 
@@ -18,41 +18,66 @@ Interacting with the API requires the use of protocol buffers, also known as pro
 | eth | [Node](https://github.com/prysmaticlabs/ethereumapis/blob/master/eth/v1alpha1/node.proto#L33) | v1alpha1 | The Node service returns information about the Ethereum node itself, including versioning and general information as well as network sync status and a list of services currently implemented on the node. |
 | eth | [Validator](https://github.com/prysmaticlabs/ethereumapis/blob/master/eth/v1alpha1/validator.proto) | v1alpha1 | This API provides the information a validator needs to retrieve throughout its life cycle, including recieved assignments from the network, its current index in the state as well as the rewards and penalties that have been applied to it. |
 
-## Generating client libraries
+## Contributing
 
-Client libraries may be generated using [protoc](https://github.com/protocolbuffers/protobuf), a language-neutral tool for serializing structured data. Below are instructions for performing an installation and compiling a `.proto` file.
+Thanks for wanting to contribute to our eth2 API! Go libraries may be generated from the [ethereumapis repository](https://github.com/prysmaticlabs/ethereumapis) using [Bazel](https://bazel.build), making it easy to make changes to the schemas needed and generate Go files from them. Here's what you need to get started:
 
 ### Dependencies
 
-* The latest release of [**protobuf compiler** \(protoc\)](https://github.com/protocolbuffers/protobuf/releases/tag/v3.9.0)
+- A modern, UNIX operating system
+- The latest release of [Bazel](https://docs.bazel.build/versions/master/install.html) installed
+- The `cmake` package installed
+- The `git` package installed
 
-### Compiling with protoc
+### Making API Schema Changes
 
-First, ensure you have the most recent version of `protoc` installed.
+Say you want to add a new endpoint to the `BeaconChain` gRPC service in our API schema to retrieve orphaned blocks. First, make sure the functionality you wish to add is not already covered by one of our endpoints on https://api.prylabs.network. Also, keep in mind making strict changes to the API schema can often times be difficult without a significant reason as this API is used by many different developers building on eth2. If you are confident in your desired changes, you can proceed by modifying the protobuf schema:
 
-```text
-protoc --version
+```go
+service BeaconChain {
+    // Retrieve orphaned blocks from the eth2 chain.
+    rpc GetOrphanedBlocks(OrphanedBlocksRequest) returns (OrphanedBlocksResponse) {
+        option (google.api.http) = {
+            get: "/eth/v1alpha1/beacon/blocks/orphaned"
+        };
+    }
+    ...
+}
+
+message OrphanedBlocksRequest {
+    uint64 slot = 1;
+}
+
+message OrphanedBlocksResponse {
+    repeated BeaconBlock blocks = 1;
+}
 ```
 
-Then, to install the Go protocol buffers plugin, issue the command:
+After making your changes, you can regenerate the Go libraries from the schema by running:
 
-```text
-go get -u github.com/golang/protobuf/protoc-gen-go
+```bash
+$ ./scripts/update-go-pbs.sh
 ```
 
-The compiler plugin `protoc-gen-go` will be installed in `$GOBIN`, defaulting to `$GOPATH/bin`. It must be in your `$PATH` for `protoc` to locate it.
+Then, open a pull request with your changes on https://github.com/prysmaticlabs/ethereumapis. Next, you'll be ready to implement your new changes in Prysm itself.
 
-The compiler can now be run. Note that this command requires a few parameters; namely a source directly, a destination directory and a path to the `.proto` file itself.
+### Implementing Your Changes in Prysm
 
-```text
-protoc -I=$SRC_DIR --go_out=$DST_DIR $SRC_DIR/node.proto
+Ensure you have read our [contribution guidelines](/docs/contribute/contribution-guidelines) first. Then, once your changes to the API schema are merged into the master branch of ethereumapis, you can update Prysm's dependency on ethereumapis to its latest version with the command:
+
+```bash
+$ bazel run //:gazelle -- update-repos github.com/prysmaticlabs/ethereumapis
 ```
 
-The above command will generate a `node.pb.go` file in your specified destination directory.
+Prysm also utilizes generated mocks for testing gRPC requests/responses, so you will also need to regenerate the required mocks by running:
 
-## Additional information
+```bash
+$ ./scripts/update-mockgen.sh
+```
 
-### RESTful endpoints \(gRPC Transcoding\)
+Now, you will be able to implement your required changes in Prysm.
+
+## RESTful endpoints \(gRPC Transcoding\)
 
 All of the gRPC services should define JSON over HTTP endpoints by specifying [HTTPRules](https://github.com/googleapis/googleapis/blob/master/google/api/http.proto). Developers may choose to bundle a REST service of gRPC with their client implementation binaries, or alternatively, they may use a JSON encoding proxy such as [Envoy Proxy](https://www.envoyproxy.io/), [grpc-gateway](https://github.com/grpc-ecosystem/grpc-gateway), etc.
 
@@ -67,12 +92,12 @@ service Messaging {
             get: "/v1/{name=messages/*}"
         };
     }
-    message GetMessageRequest {
-        string name = 1; // Mapped to URL Path.
-    }
-    message Message {
-        string text = 1; // The resource content.
-    }
+}
+message GetMessageRequest {
+    string name = 1; // Mapped to URL Path.
+}
+message Message {
+    string text = 1; // The resource content.
 }
 ```
 
