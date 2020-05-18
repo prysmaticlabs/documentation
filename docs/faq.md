@@ -76,6 +76,12 @@ I deposited but it’s taking a long time to become active - how can I check if 
 
 Even after you deposit, it takes several hours to join the testnet as an active validator and can take even longer if there is a queue ahead of you. You can track your validator’s status on block explorers such as https://beaconcha.in and https://beacon.etherscan.io. Please be patient, as there is quite a wait for new validators to become active.
 
+#### How can I check on the status of my validator?
+
+Make sure your beacon node is synced and running, and run the command
+`./prysm.sh validator accounts status --keymanager={unencrypted, interop, keystore, wallet} --keymanageropts={$YOUR_PATH, $YOUR_PATH/keymanageropts.json} --beacon-rpc-provider=localhost:4000`.
+
+
 #### I made a correct deposit and my validator status is still UNKNOWN, what’s going on?
 
 There are a few possibilities. (1) your deposit has not yet been processed by beacon nodes. It takes a while for the beacon node to be able to process logs from the eth1 Goerli chain by design. If you have already waited a few hours and no luck, there is a chance that (2) your deposit did not verify (that is, you used some other method of creating the deposit than our recommended, standard way on prylabs.net), or (3) you never actually sent a deposit to the right contract address
