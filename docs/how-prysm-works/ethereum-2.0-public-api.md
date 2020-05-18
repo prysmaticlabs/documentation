@@ -20,7 +20,7 @@ Prysm implements its API by using the popular [gRPC](https://grpc.io) project cr
 
 ## Contributing
 
-Thanks for wanting to contribute to our eth2 API! Go libraries may be generated from the [ethereumapis repository](https://github.com/prysmaticlabs/ethereumapis) using [Bazel](https://bazel.build), making it easy to make changes to the schemas needed and generate Go files from them. Here's what you need to get started:
+Thanks for wanting to contribute to our eth2 API! Go and Java libraries may be generated from the [ethereumapis repository](https://github.com/prysmaticlabs/ethereumapis) using [Bazel](https://bazel.build), making it easy to make changes to the schemas needed and generate Go files or Java packages from them. Here's what you need to get started:
 
 ### Dependencies
 
