@@ -7,7 +7,7 @@ sidebar_label: Monitoring with Grafana
 Now that you have your validator and node process running, you will probably need a nice dashboard and alert system to ensure at maximum the profitability of your staking ETH. Here is a simple guide that explain how to get one, without any developer skill.
 
 Here is the result of what you will get if you follow this guide!
-![Grafana dashboard for prysm node and validator](https://github.com/prysmaticlabs/documentation/blob/master/docs/prysm-usage/grafana-dashboards/assets/dashboard_overview.png?raw=true "Grafana dashboard for prysm node and validator")
+![Grafana dashboard for prysm node and validator](/img/dashboard_overview.png "Grafana dashboard for prysm node and validator")
 
 
 ## Metrics from validators and node process
@@ -22,7 +22,7 @@ Now you have to make sure that you have access to both metrics:
 
 ## Prometheus
 ### Installation
-[Download Prometheus](https://prometheus.io/download/), then go to the directory where the **prometheus.exe** file is, and edit the **prometheus.yml** file to replace the content of the file by this:
+[Download Prometheus](https://prometheus.io/download/), then go to the directory where the **prometheus.yml** file is, and edit it to replace the content of the file by this:
 ```# my global config
 global:
   scrape_interval:     15s # Set the scrape interval to every 15 seconds. Default is every 1 minute.
@@ -48,52 +48,26 @@ scrape_configs:
     static_configs:
       - targets: ['localhost:8080']
 ```
-#### Node and validator running on different machine
-You still can regroup your metrics on a single machine.
+> **NOTICE:** If you run your node and validator on different machine you still can regroup your metrics on a single machine.
+> For this you will need to get the correct IP depending if you are running both machine in a local network or in a different network.
+> 
+> [Get your **private IP**](https://docs.prylabs.network/docs/prysm-usage/p2p-host-ip/#private-ip-addresses)
+>
+> [Get your **public IP**](https://docs.prylabs.network/docs/prysm-usage/p2p-host-ip/#public-ip-addresses)
+>
+> You can now replace `localhost` in the yml file by the IP address you got for the process that you want to send the metrics to prometheus.
+>
+> Example: validator running under IP 12.34.56.78, and I want to display the dashboard on the machine where run the node, I will replace `- targets: ['localhost:8081']` by `- targets: ['12.34.56.78:8081']`
+>
+> In case of public IP you might need to configure your [port forwarding](https://github.com/wgknowles/documentation/blob/15da3fb1ea477f260ef287497fe047b0a78879b3/docs/prysm-usage/p2p-host-ip.md#port-forwarding).
 
-##### **Local network**
-If you don’t run your validator and your node on the same machine but on the same network, you will need to replace `localhost` by the **private** IP of the machine that run the process in the **prometheus.yml** file.
-
-If `beacon node` is running on a separate machine, you will need to replace `localhost` by the **private** IP of the machine where the `beacon node` is running. Same goes for validator.
-
-To determine your  **private**  IP address run the appropriate command for your OS:
-
-###### **GNU/Linux:**
-
-```
-ip addr show | grep "inet " | grep -v 127.0.0.1
-```
-
-###### **Windows:**
-
-```
-ipconfig | findstr /i "IPv4 Address"
-```
-
-###### **macOS:**
-
-```
-ifconfig | grep "inet " | grep -v 127.0.0.1
-```
-
-##### **Different network**
-If you don’t run your validator and your node on the same machine and also on different network, you will need to replace `localhost` by the **public** IP of the machine that run the process in the **prometheus.yml** file.
-
-If `beacon node` is running on a separate machine, you will need to replace `localhost` by the **public** IP of the machine where the `beacon node` is running. Same goes for validator.
-
-To determine your  **public**  IP address, visit ([http://v4.ident.me/](http://v4.ident.me/)) or run this command:
-
-```
-curl v4.ident.me
-```
-
-  > **NOTICE:** In the case of different network, you might need to configure your firewalls for [port forwarding](https://github.com/wgknowles/documentation/blob/15da3fb1ea477f260ef287497fe047b0a78879b3/docs/prysm-usage/p2p-host-ip.md#port-forwarding).
- 
 
 ### Verification
-Once the **prometheus.yml** file has been updated, you can run the **prometheus.exe** file, then open this web page http://localhost:9090/graph.
+Once the **prometheus.yml** file has been updated, you can then run prometheus by double clicking on the **prometheus** file (with extension **.exe** for windows OS).
+This should open a terminal that will display the prometheus log. You should now be able to open this web page http://localhost:9090/graph.
+
 If everything is working, you should see a page similar to this
-![Prometheus page](https://github.com/prysmaticlabs/documentation/blob/master/docs/prysm-usage/grafana-dashboards/assets/prometheus_page.png?raw=true "Prometheus page")
+![Prometheus page](/img/prometheus_page.png "Prometheus page")
 
 Now you have to make sure that you can find both metrics in the previous image: `validator_balance` and `total_voted_target_balances`. You need to find both metrics to have access to all of them.
 
@@ -110,7 +84,7 @@ For that you need to open a **Windows Powershell** prompt, then go to the direct
 ```
 Start-Process "prometheus.exe" "--storage.tsdb.retention.time=31d" -WindowStyle Hidden
 ```
-If you ever want to stop the prometheus process, you can find it under the name prometheus.exe in the windows task manager (shortcut ctrl+alt+del), then you can end the task.
+If you ever want to stop the prometheus process, you can find it under the name **prometheus.exe** in the windows task manager (shortcut ctrl+alt+del), then you can end the task.
 
 
 ## Grafana
@@ -139,7 +113,7 @@ You can now create your own alert rules if needed, the guide above explain how.
 
 ### Creating/importing dashboards
 You can now create your own dashboard how you feel like to. Or you can also just import the Prysm dashboards:
-- [dashboard designed for small amount of validator keys](https://raw.githubusercontent.com/prysmaticlabs/documentation/master/docs/prysm-usage/grafana-dashboards/small_amount_validators.json)
-- [dashboard designed for more than 10 validator keys](https://raw.githubusercontent.com/prysmaticlabs/documentation/master/docs/prysm-usage/grafana-dashboards/big_amount_validators.json)
+- [dashboard designed for small amount of validator keys](../docs/prysm-usage/grafana-dashboards/small_amount_validators.json)
+- [dashboard designed for more than 10 validator keys](../docs/prysm-usage/grafana-dashboards/big_amount_validators.json)
 
 This are the json for a node/validator grafana dashboard made by the Prysm community. To import this json into your Grafana dashboard, you click on the **+** icon on the left menu and select Import, you then just have to paste the json and click **Load** button.
