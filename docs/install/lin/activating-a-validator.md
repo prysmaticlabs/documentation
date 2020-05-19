@@ -129,19 +129,19 @@ Please note that it may take up to 12 hours for nodes in the ETH2 network to pro
 
 To check on the status of your validator, run the following command:
 
-#### With prysm.sh
+#### Check validator status with prysm.sh
 
 ```text
 ./prysm validator accounts status --keymanager=keystore --keymanageropts=$HOME/.eth2validator --beacon-rpc-provider=localhost:4000
 ```
 
-#### With Bazel
+#### Check validator status with Bazel
 
 ```text
 bazel run validator accounts status -- --keymanager=keystore --keymanageropts=$HOME/.eth2validator  --beacon-rpc-provider=localhost:4000
 ```
 
-> NOTE: Additional information about the status of your ETH 1 deposit and validator is also availble on a number of [block explorers](/docs/devtools/block-explorers).
+Additional information about the validator and status of ETH1 deposits is also available on various testnet [block explorers](/docs/devtools/block-explorers).
 
 
 ## Running multiple validators
