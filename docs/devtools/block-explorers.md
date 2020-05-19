@@ -14,6 +14,6 @@ beacon.etherscan.io is a beacon chain explorer specific to the Prysm 'Sapphire' 
 
 eth2stats.io is a beacon chain explorer maintained by [Alethio](https://aleth.io).
 
-## [beconcha.in](https://beaconcha.in/)
+## [beaconcha.in](https://beaconcha.in/)
 
 beaconcha.in is a beacon chain explorer maintained by [Bitfly](https://www.bitfly.at).
