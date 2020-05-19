@@ -132,7 +132,7 @@ To check on the status of your validator, run the following command:
 #### Check validator status with prysm.sh
 
 ```text
-./prysm validator accounts status --keymanager=keystore --keymanageropts=$HOME/.eth2validator --beacon-rpc-provider=localhost:4000
+./prysm.sh validator accounts status --keymanager=keystore --keymanageropts=$HOME/.eth2validator --beacon-rpc-provider=localhost:4000
 ```
 
 #### Check validator status with Bazel
