@@ -126,7 +126,20 @@ Once both the beacon node and validator client are successfully running, make yo
 
 Please note that it may take up to 12 hours for nodes in the ETH2 network to process a deposit. In the meantime, leave both terminal windows open and running; once the node is activated by the ETH2 network, the validator will immediately begin receiving tasks and performing its responsibilities.
 
-> NOTE: Additional information about the status of your ETH 1 deposit and validator is availble on a number of [block explorers](/docs/devtools/block-explorers).
+To check on the status of your validator, run the following command:
+
+#### Check validator status with prysm.sh
+
+```text
+./prysm.sh validator accounts status --keymanager=keystore --keymanageropts=$HOME/.eth2validator --beacon-rpc-provider=localhost:4000
+```
+
+#### Check validator status with Bazel
+
+```text
+bazel run validator accounts status -- --keymanager=keystore --keymanageropts=$HOME/.eth2validator  --beacon-rpc-provider=localhost:4000
+```
+Additional information about the validator and status of ETH1 deposits is also available on various testnet [block explorers](/docs/devtools/block-explorers).
 
 ## Running multiple validators
 
