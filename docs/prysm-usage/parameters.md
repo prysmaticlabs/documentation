@@ -117,7 +117,7 @@ These flags are specific to launching a validator client.
 | Flag          | Usage         |
 | ------------- |:-------------|
 |`--no-custom-config` | Run the beacon chain with the real parameters from phase 0.
-|`--beacon-rpc-server` | Beacon node RPC provider endpoint. <br>Default: localhost:4000
+|`--beacon-rpc-provider` | Beacon node RPC provider endpoint. <br>Default: localhost:4000
 |`--tls-cert` | Certificate for secure gRPC. Pass this and the tls-key flag in order to use gRPC securely.
 |`--keystore-path` | Path to the desired keystore directory.
 |`--unencrypted-keys` | Filepath to a JSON file of unencrypted validator keys for easier launching of the validator client.
