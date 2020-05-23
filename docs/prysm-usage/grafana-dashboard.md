@@ -9,7 +9,7 @@ Grafana is an open-source data metrics tool that is used to aggregate large amou
 ![Grafana dashboard for prysm node and validator](/img/dashboard_overview.png "Grafana dashboard for prysm node and validator")
 
 
-## Metrics from validators and node process
+### Enabling account metrics
 1. Enable validator metrics by appending the following flag to the validator startup command:
 ```
 --enable-account-metrics
@@ -18,11 +18,10 @@ Grafana is an open-source data metrics tool that is used to aggregate large amou
   * Node metrics are found at http://localhost:8080/metrics
   * Validator metrics are found at http://localhost:8081/metrics
 
-## Prometheus
+## Installing Prometheus
 
 Prometheus must first be installed to fetch the data from the beacon node and validator for Grafana to display.
 
-### Installation
 1. [Download the Prometheus files](https://prometheus.io/download/) suited for the host system. 
 
 2. Extract the archive and enter it's new directory. 
@@ -69,7 +68,8 @@ or do so in a terminal by issuing the command:
 
 Take note of the `validator_balance` and `total_voted_target_balances`, as they are required later.
 
-### Windows: Prometheus running in background (facultative)
+#### (Optional) Windows: Running Prometheus in the background
+
 In a **Windows Powershell** prompt, navigate to the directory the `prometheus.exe` file is saved and issue the command:
 ```
 Start-Process "prometheus.exe" "--storage.tsdb.retention.time=31d" -WindowStyle Hidden
@@ -77,8 +77,9 @@ Start-Process "prometheus.exe" "--storage.tsdb.retention.time=31d" -WindowStyle 
 To stop the prometheus process at any time, open the windows task manager and search for `prometheus.exe`, then end the task.
 
 
-## Grafana
-### Installation
+## Installing Grafana
+
+Grafana must now be installed to provide the graphical component of the data analytics.
 
 1. [download Grafana](https://grafana.com/grafana/download) and install it.
 
@@ -90,13 +91,13 @@ To stop the prometheus process at any time, open the windows task manager and se
 
 A green notification saying “Datasource updated” should now be visible on the upper right corner.
 
-### Enable alerts
+## Enabling mobile alerts
 
 1. On the left menu of Grafana, select **Notification channels** under the bell icon. 
 
 2. Click on **New channel**.
 
-#### Option 1: Telegram
+### Option 1: Telegram
 
 1. Select Telegram from the list.
 
@@ -104,7 +105,7 @@ A green notification saying “Datasource updated” should now be visible on th
 
 3. Once completed, invite the bot to the newly created channel.
 
-#### Option 2: Discord
+### Option 2: Discord
 
 1. Select **Discord** in the type drop down selection. 
 
@@ -114,7 +115,7 @@ A green notification saying “Datasource updated” should now be visible on th
 
 2. Click **Send Test**, which will push a confirmation message to the Discord channel.
 
-### Creating/importing dashboards
+## Creating/importing dashboards
 
 1. The dashboard can now be customised to the users preferences. There are two examples that can be used:
 - [dashboard designed for small amount of validator keys](../docs/prysm-usage/grafana-dashboards/small_amount_validators.json)
