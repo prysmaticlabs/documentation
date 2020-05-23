@@ -113,7 +113,7 @@ A green notification saying “Datasource updated” should now be visible on th
   
 3. Navigate back to http://localhost:3000 and enter the Webhook URL in the Discord notification settings panel. 
 
-2. Click **Send Test**, which will push a confirmation message to the Discord channel.
+4. Click **Send Test**, which will push a confirmation message to the Discord channel.
 
 ## Creating/importing dashboards
 
