@@ -75,7 +75,7 @@ class Footer extends React.Component {
               Star
             </a>
             {this.props.config.twitterUsername && (
-              <div className="social left-adjust">
+              <div className="social">
                 <a
                   href={`https://twitter.com/${this.props.config.twitterUsername}`}
                   className="twitter-follow-button">
@@ -83,7 +83,6 @@ class Footer extends React.Component {
                 </a>
               </div>
             )}
-
             {this.props.config.facebookAppId && (
               <div className="social">
                 <div
