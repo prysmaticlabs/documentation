@@ -41,7 +41,17 @@ a {
     font-weight: 600;
 }
 
+@media (max-width: 736px) {
+    .nav-footer {
+        text-align: center;
+        margin:auto;
+    }
 
+    .nav-home {
+        margin:auto !important; 
+    }
+
+}
 
 @media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
 }
