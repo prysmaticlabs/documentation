@@ -75,11 +75,11 @@ Here are some language-specific rules that the Prysm documentation follows. If y
 
 ### British English
 
-The Prysm documentation portal is written in British English. The basic rules for converting other styles of English into American English are:
+The Prysm documentation portal is written in British English. The basic rules for converting other styles of English into British English are:
 
 1. Swap the `z` for a `s` in words like _categorize_ and _pluralize_.
 2. Add a `u` to words like _colour_ and _honour_.
-3. Swap `ter` for `treu` in words like _centre_.
+3. Swap `ter` for `tre` in words like _centre_.
 
 ### The Oxford comma
 
@@ -92,7 +92,7 @@ Follow each list of three or more items with a comma `,`:
 
 ### Acronyms
 
-If you have to use an acronym, spell the full phrase first and include the acronym in parentheses `()` the first time it is used in each document. Exception: This generally isn't necessary for commonly-encountered acronyms like _IPFS_, unless writing for a stand-alone article that may not be presented alongside project documentation.
+If you have to use an acronym, spell the full phrase first and include the acronym in parentheses `()` the first time it is used in each document. Exception: This generally isn't necessary for commonly-encountered acronyms like _EVM_, unless writing for a stand-alone article that may not be presented alongside project documentation.
 
 > Virtual Machine (VM), Decentralized Web (DWeb).
 
