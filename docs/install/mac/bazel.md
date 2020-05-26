@@ -11,6 +11,22 @@ Prysm can be installed on macOS using our build tool, Bazel. This page includes 
 
 **Have questions?** Stop by the [#documentation](https://discord.gg/QQZMCgU) channel on Discord and let us know.
 
+## System requirements
+
+### Minimum specifications
+These specifications must be met in order to successfully run the Prysm client.
+* Operating System: Mac OS X 10.14+
+* Processor: Intel Core i5–760 or AMD FX-8100 or better
+* Memory: 4GB RAM
+* Storage: 20GB available space SSD
+* Internet: Broadband connection
+
+### Recommended specifications
+These hardware specifications are recommended, but not required to run the Prysm client.
+* Processor: Intel Core i7–4770 or AMD FX-8310 or better
+* Memory: 8GB RAM
+* Storage: 100GB available space SSD
+
 ## Dependencies
 
 * A modern macOS operating system
