@@ -52,6 +52,7 @@
 		"Public API": 	["how-prysm-works/ethereum-2-public-api"],
 
 		"Contribute": [	
+			"contribute/doc-standards",
 			"contribute/contribution-guidelines",
 							"contribute/bugreports",
 							"contribute/golang-principles"
