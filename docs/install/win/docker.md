@@ -11,6 +11,22 @@ Prysm can be installed locally on Windows systems using Docker. This page includ
 
 **Have questions?** Stop by the [#documentation](https://discord.gg/QQZMCgU) channel on Discord and let us know.
 
+## System requirements
+
+### Minimum specifications
+These specifications must be met in order to successfully run the Prysm client.
+* Operating System: 64-bit Windows 
+* Processor: Intel Core i5–760 or AMD FX-8100 or better
+* Memory: 4GB RAM
+* Storage: 20GB available space SSD
+* Internet: Broadband connection
+
+### Recommended specifications
+These hardware specifications are recommended, but not required to run the Prysm client.
+* Processor: Intel Core i7–4770 or AMD FX-8310 or better
+* Memory: 8GB RAM
+* Storage: 100GB available space SSD
+
 ## Dependencies
 
 * A Windows operating system
@@ -28,13 +44,13 @@ docker -v
 2. To pull the Prysm images, issue the following commands:
 
 ```text
-docker pull gcr.io/prysmaticlabs/prysm/validator:latest
-docker pull gcr.io/prysmaticlabs/prysm/beacon-chain:latest
+docker pull gcr.io/prysmaticlabs/prysm/validator:stable
+docker pull gcr.io/prysmaticlabs/prysm/beacon-chain:stable
 ```
 
 This process will also install any related dependencies.
 
-> For advanced users, the beacon-chain and validator images with debugging tools bundled in can be fetched instead by appending `-alpine` to the end of the images in the `pull` commands above. For example: `docker pull .../prysm/validator:latest-alpine`.
+> For advanced users, the beacon-chain and validator images with debugging tools bundled in can be fetched instead by appending `-alpine` to the end of the images in the `pull` commands above. For example: `docker pull .../prysm/validator:stable-alpine`.
 
    > **NOTICE:** It is recommended to open up port tcp/13000 and udp/12000 on your local router to improve connectivity and receive more peers from the network. To do so, navigate to `192.168.0.1` in your browser and login if required. Follow along with the interface to modify your routers firewall settings. When this task is completed, append the parameter`--p2p-host-ip=$(curl -s ident.me)` to your selected beacon startup command presented in this section to use the newly opened port.
 
@@ -51,7 +67,7 @@ Below are instructions for initialising a beacon node and connecting to the publ
 3. To run the beacon node, issue the following command:
 
 ```text
-docker run -it -v %LOCALAPPDATA%\Eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp gcr.io/prysmaticlabs/prysm/beacon-chain:latest --datadir=/data
+docker run -it -v %LOCALAPPDATA%\Eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp gcr.io/prysmaticlabs/prysm/beacon-chain:stable --datadir=/data
 ```
 
 This will sync up the beacon node with the latest cannonical head block in the network. The Docker `-d` flag can be appended before the `-v` flag to launch the process in a detached terminal window.
@@ -99,5 +115,5 @@ docker rm beacon-node
 To recreate a deleted container and refresh the chain database, issue the start command with an additional `--clear-db` parameter:
 
 ```text
-docker run -it -v %LOCALAPPDATA%\Eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node gcr.io/prysmaticlabs/prysm/beacon-chain:latest --datadir=/data --clear-db
+docker run -it -v %LOCALAPPDATA%\Eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node gcr.io/prysmaticlabs/prysm/beacon-chain:stable --datadir=/data --clear-db
 ```

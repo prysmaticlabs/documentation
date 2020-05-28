@@ -4,8 +4,6 @@ title: Documentation standards
 sidebar_label: Documentation standards
 ---
 
-# Documentation standards
-
 This section outlines the formatting standards presented within this documentation. In order to maintain continuity and quality, all pull requests must best conform to the specifics below.
 
 ## Content types

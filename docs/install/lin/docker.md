@@ -11,6 +11,22 @@ Prysm can be installed on GNU/Linux systems with Docker. This page includes inst
 
 **Have questions?** Stop by the [#documentation](https://discord.gg/QQZMCgU) channel on Discord and let us know.
 
+## System requirements
+
+### Minimum specifications
+These specifications must be met in order to successfully run the Prysm client.
+* Operating System: 64-bit GNU/Linux
+* Processor: Intel Core i5–760 or AMD FX-8100 or better
+* Memory: 4GB RAM
+* Storage: 20GB available space SSD
+* Internet: Broadband connection
+
+### Recommended specifications
+These hardware specifications are recommended, but not required to run the Prysm client.
+* Processor: Intel Core i7–4770 or AMD FX-8310 or better
+* Memory: 8GB RAM
+* Storage: 100GB available space SSD
+
 ## Dependencies
 
 * A modern GNU/Linux operating system
@@ -29,14 +45,14 @@ docker -v
 2. To pull the Prysm images, issue the following commands:
 
 ```text
-docker pull gcr.io/prysmaticlabs/prysm/validator:latest
-docker pull gcr.io/prysmaticlabs/prysm/beacon-chain:latest
+docker pull gcr.io/prysmaticlabs/prysm/validator:stable
+docker pull gcr.io/prysmaticlabs/prysm/beacon-chain:stable
 ```
 
 This process will also install any related dependencies.
 
-> For advanced users, the beacon-chain and validator images with debugging tools bundled in can be fetched instead by appending `-alpine` to the end of the images in the `pull` commands above. For example: `docker pull .../prysm/validator:latest-alpine`.
- 
+> For advanced users, the beacon-chain and validator images with debugging tools bundled in can be fetched instead by appending `-alpine` to the end of the images in the `pull` commands above. For example: `docker pull .../prysm/validator:stable-alpine`.
+
 ## Connecting to the testnet: running a beacon node
 
 Below are instructions for initialising a beacon node and connecting to the public testnet. To further understand the role that the beacon node plays in Prysm, see [this section](/docs/how-prysm-works/architecture-overview/) of the documentation.
@@ -47,11 +63,11 @@ To start your beacon node, issue the following command:
 
 ```text
 docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node \
-  gcr.io/prysmaticlabs/prysm/beacon-chain:latest \
+  gcr.io/prysmaticlabs/prysm/beacon-chain:stable \
   --datadir=/data
 ```
 
-This will sync up the beacon node with the latest head block in the network. 
+This will sync up the beacon node with the latest head block in the network.
 
   > Not getting enough peers?  Refer to the [improve P2P connectivity](/docs/prysm-usage/p2p-host-ip) section of this documentation for tips on network configuration.
 
@@ -98,7 +114,7 @@ In your validator client, you will be able to frequently see your validator bala
   ```text
   docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node \
 
-    gcr.io/prysmaticlabs/prysm/beacon-chain:latest \
+    gcr.io/prysmaticlabs/prysm/beacon-chain:stable \
     --datadir=/data \
     --clear-db
   ```
