@@ -162,7 +162,7 @@ To start the validator you must supply the desired keymanager and the location o
 bazel run //validator:validator -- --keymanager=wallet --keymanageropts="${HOME}/prysm/validator/keymanager.json"
 ```
 
-> The below commands use the `${HOME}` environment variable, which is standard on GNU/Linux and macOS. For Windows users, replace it with `%APPDATA%` e.g. `%APPDATA%\ethereum2\wallets`.  This may also require you to remove the double quotes around the `keymanageropts` value, especially on Windows.
+> The below commands use the `${HOME}` environment variable, which is standard on GNU/Linux and macOS. For Windows users, replace it with `%LOCALAPPDATA%` e.g. `%LOCALAPPDATA%\ethereum2\wallets`.  This may also require you to remove the double quotes around the `keymanageropts` value, especially on Windows.
 
 #### Starting the validator with Docker
 
