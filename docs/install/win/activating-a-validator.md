@@ -26,13 +26,13 @@ Depending on your platform, issue the appropriate command from the examples belo
 #### Generating with prysm.bat
 
 ```text
-prysm.bat validator accounts create --keystore-path=%appdata%\.eth2validators
+prysm.bat validator accounts create --keystore-path=%LOCALAPPDATA%\.eth2validators
 ```
 
 #### Generating with Docker
 
 ```text
-docker run -it -v %appdata%\Eth2Validators:/data gcr.io/prysmaticlabs/prysm/validator:latest accounts create --keystore-path=/data
+docker run -it -v %LOCALAPPDATA%\Eth2Validators:/data gcr.io/prysmaticlabs/prysm/validator:latest accounts create --keystore-path=/data
 ```
 
 This command will output a `Raw Transaction Data` block:
@@ -58,13 +58,13 @@ The beacon node is a long running process that will require a dedicated command 
 #### Starting the beacon-chain node with prysm.bat
 
 ```text
-prysm.bat beacon-chain --datadir=%APPDATA%\Eth2
+prysm.bat beacon-chain --datadir=%LOCALAPPDATA%\Eth2
 ```
 
 #### Starting the beacon-chain node with Docker
 
 ```text
-docker run -it -v %appdata%\Eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp gcr.io/prysmaticlabs/prysm/beacon-chain:latest --datadir=/data
+docker run -it -v %LOCALAPPDATA%\Eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp gcr.io/prysmaticlabs/prysm/beacon-chain:latest --datadir=/data
 ```
 
 The beacon-chain node will spin up and immediately begin communicating with the Prysm testnet, outputting data similar to the image below.
@@ -82,13 +82,13 @@ Open a second Command Prompt window. Depending on your platform, issue the appro
 #### Starting the validator client with prysm.bat
 
 ```text
-prysm.bat validator --keystore-path=%appdata%\.eth2validators
+prysm.bat validator --keystore-path=%LOCALAPPDATA%\.eth2validators
 ```
 
 #### Starting the validator client with Docker
 
 ```text
-docker run -it -v %appdata%\Eth2Validators:/data --network="host" gcr.io/prysmaticlabs/prysm/validator:latest --beacon-rpc-provider=127.0.0.1:4000 --keystore-path=/data
+docker run -it -v %LOCALAPPDATA%\Eth2Validators:/data --network="host" gcr.io/prysmaticlabs/prysm/validator:latest --beacon-rpc-provider=127.0.0.1:4000 --keystore-path=/data
 ```
 
 ## Step 5: Submitting the deposit contract
@@ -104,7 +104,7 @@ Please note that it may take up to 12 hours for nodes in the ETH2 network to pro
 To check on the status of your validator, run the following command:
 
 ```text
-prysm.bat validator accounts status --keymanager=keystore --keymanageropts=%appdata%\.eth2validators --beacon-rpc-provider=localhost:4000
+prysm.bat validator accounts status --keymanager=keystore --keymanageropts=%LOCALAPPDATA%\.eth2validators --beacon-rpc-provider=localhost:4000
 ```
 
 Additional information about the validator and status of ETH1 deposits is also available on various testnet [block explorers](/docs/devtools/block-explorers).
