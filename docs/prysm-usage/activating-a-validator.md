@@ -1,6 +1,6 @@
 ---
 id: activating-a-validator
-title: Downloading and Installing Prysm
+title: Downloading and installing Prysm
 sidebar_label: n/a
 ---
 Step-by-step procedures to install and run Prysm have been developed to help with getting started.  

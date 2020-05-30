@@ -1,7 +1,7 @@
 ---
 id: testnet-postmortems
-title: Testnet Postmortems
-sidebar_label: Testnet Postmortems
+title: Testnet postmortems
+sidebar_label: Testnet postmortems
 ---
 
 ## Testnet Incident Reports

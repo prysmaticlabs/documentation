@@ -1,6 +1,6 @@
 ---
 id: golang
-title: Golang Resources
+title: Golang resources
 sidebar_label: Golang resources
 ---
 

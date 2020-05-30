@@ -1,6 +1,6 @@
 ---
 id: eth2
-title: ETH2 Resources
+title: ETH2 resources
 sidebar_label: ETH2 resources
 ---
 

@@ -1,6 +1,6 @@
 ---
 id: slasher
-title: Running a Slasher
+title: Running a slasher
 sidebar_label: Running a slasher
 ---
 This section provides instructions to run [slasher](https://github.com/prysmaticlabs/prysm/tree/master/slasher) to identify and report slashable offenses on the testnet.  If slasher detects a slashable offense, proof is sent to the [beacon-chain node](https://docs.prylabs.network/docs/how-prysm-works/beacon-node/) for inclusion in a block.  [Validators](https://docs.prylabs.network/docs/how-prysm-works/prysm-validator-client/) earn a small whistleblower reward for including this proof into a block.  

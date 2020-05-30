@@ -1,6 +1,6 @@
 ---
 id: validator-lifecycle
-title: Validator Lifecycle
+title: Validator lifecycle
 sidebar_label: Validator lifecycle
 ---
 

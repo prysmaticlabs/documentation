@@ -1,6 +1,6 @@
 ---
 id: getting-started
-title:  Welcome to the Prysmatic Labs Official Documentation Portal
+title:  Welcome to the Prysmatic Labs official documentation portal
 sidebar_label: Getting started
 ---
 
