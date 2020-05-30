@@ -4,10 +4,9 @@ title: Installing Prysm on GNU/Linux with Bazel
 sidebar_label: Installing with Bazel
 ---
 
+Prysm can be installed on GNU/Linux using our build tool, Bazel. This page includes instructions for performing this method.
 
    > **NOTICE:** The Prysm installation script is the easiest and most efficient way of installing the latest binaries. Instructions for using it can be found [here](/docs/install/linux).
-
-Prysm can be installed on GNU/Linux using our build tool, Bazel. This page includes instructions for performing this method.
 
 **Have questions?** Stop by the [#documentation](https://discord.gg/QQZMCgU) channel on Discord and let us know.
 
