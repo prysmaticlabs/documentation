@@ -1,6 +1,6 @@
 ---
 id: wallet-keymanager
-title: Wallet Keymanagers
+title: Wallet keymanagers
 sidebar_label: Wallet keymanager
 ---
 

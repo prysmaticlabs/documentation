@@ -1,7 +1,7 @@
 ---
 id: our-community
-title: Our Community
-sidebar_label: Our Community
+title: Our community
+sidebar_label: Our community
 ---
 
 There's a number of ways to help out the project for people of all skill sets and experience levels. If you are unsure where you may be best suited, stop by either our [**Discord**](https://discord.gg/KSA7rPr) or [**Gitter**](https://gitter.im/prysmaticlabs/geth-sharding?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) and a member of the team or community will be happy to answer questions and offer some direction. For those who already have an idea of what they would like to do, the below sections will help you get started.

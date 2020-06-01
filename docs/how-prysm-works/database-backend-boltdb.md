@@ -1,6 +1,6 @@
 ---
 id: database-backend-boltdb
-title: BoltDB Database
+title: BoltDB database
 sidebar_label: BoltDB database
 ---
 

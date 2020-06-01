@@ -1,6 +1,6 @@
 ---
 id: faq
-title: Frequently Asked Questions
+title: Frequently asked questions
 sidebar_label: Frequently asked questions
 ---
 ## Joining the Testnet / Making Deposits

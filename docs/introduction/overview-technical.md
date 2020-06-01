@@ -1,6 +1,6 @@
 ---
 id: architecture-overview
-title: Architecture Overview
+title: Architecture overview
 sidebar_label: Architecture overview
 ---
   This section outlines Prysm's various internal components and their role in

@@ -1,6 +1,6 @@
 ---
 id: metrics
-title: Prysm's Metric Tools
+title: Prysm's metric tools
 sidebar_label: Internal metric tools
 ---
 

@@ -1,6 +1,6 @@
 ---
 id: golang-principles
-title: Golang Principles
+title: Golang principles
 sidebar_label: Golang principles
 ---
 

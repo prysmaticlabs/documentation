@@ -1,6 +1,6 @@
 ---
 id: p2p-networking
-title: P2P Networking
+title: P2P networking
 sidebar_label: P2P networking
 ---
 

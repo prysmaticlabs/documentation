@@ -1,6 +1,6 @@
 ---
 id: validator-deposit-contract
-title: Validator Deposit Contract
+title: Validator deposit contract
 sidebar_label: Validator deposit contract
 ---
 

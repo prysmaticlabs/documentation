@@ -1,7 +1,7 @@
 ---
 id: ethereum-2-public-api
-title: Ethereum 2.0 Public API
-sidebar_label: Eth2 Public API
+title: Ethereum 2.0 public API
+sidebar_label: Eth2 public API
 description: This section contains service definitions and gRPC instructions to interact with the public API.
 ---
 ![gRPC](/img/grpc-logo2.png)
