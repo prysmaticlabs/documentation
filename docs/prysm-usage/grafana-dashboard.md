@@ -9,12 +9,8 @@ Grafana is an open-source data metrics tool that is used to aggregate large amou
 ![Grafana dashboard for prysm node and validator](/img/dashboard_overview.png "Grafana dashboard for prysm node and validator")
 
 
-### Enabling account metrics
-1. Enable validator metrics by appending the following flag to the validator startup command:
-```
---enable-account-metrics
-```
-2. Ensure validator metrics have been activated by visiting the following dashboards:
+### Getting account metrics
+ Ensure metrics have been activated by visiting the following dashboards:
   * Node metrics are found at http://localhost:8080/metrics
   * Validator metrics are found at http://localhost:8081/metrics
 
@@ -66,7 +62,7 @@ or do so in a terminal by issuing the command:
 5. Navigate to http://localhost:9090/graph in a browser. It will present a page similar to this:
 ![Prometheus page](/img/prometheus_page.png "Prometheus page")
 
-Take note of the `validator_balance` and `total_voted_target_balances`, as they are required later.
+Take note of the `validator_statuses` and `total_voted_target_balances`, as they are required later.
 
 #### (Optional) Windows: Running Prometheus in the background
 
