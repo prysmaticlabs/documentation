@@ -9,7 +9,7 @@ Grafana is an open-source data metrics tool that is used to aggregate large amou
 ![Grafana dashboard for prysm node and validator](/img/dashboard_overview.png "Grafana dashboard for prysm node and validator")
 
 
-### Getting Prysm metrics
+### Getting account metrics
  Ensure validator metrics have been activated by visiting the following dashboards:
   * Node metrics are found at http://localhost:8080/metrics
   * Validator metrics are found at http://localhost:8081/metrics
