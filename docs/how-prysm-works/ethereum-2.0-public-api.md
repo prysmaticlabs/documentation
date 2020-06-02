@@ -4,11 +4,12 @@ title: Ethereum 2.0 public API
 sidebar_label: Eth2 public API
 description: This section contains service definitions and gRPC instructions to interact with the public API.
 ---
-![gRPC](/img/grpc-logo2.png)
 
 Browse our API documentation for ETH2 [https://api.prylabs.network](https://api.prylabs.network)!
 
 One of the required components nodes in the Ethereum 2.0 network is to expose an API server for outside interaction. This API is critical for running validators on eth2, as validator clients can connect to nodes and query their API to figure out their assigned duties, to submit block proposals, and more. Prysm's eth2 API schema is maintained in its unique repository: [github.com/prysmaticlabs/ethereumapis](https://github.com/prysmaticlabs/ethereumapis) and is implemented by Prysm beacon nodes [here](https://github.com/prysmaticlabs/prysm/blob/master/beacon-chain/rpc/service.go). 
+
+![gRPC](/img/grpc-logo2.png)
 
 Prysm implements its API by using the popular [gRPC](https://grpc.io) project created by Google, providing highly advanced functionality for eth2. Interacting with the API requires the use of protocol buffers, also known as protobuf. These [protocol buffer](https://developers.google.com/protocol-buffers/) service definitions support both [gRPC](https://grpc.io/) as well as JSON over HTTP.  For information on the functionality of gRPC and protocol buffers more generally, see the [gRPC guide](https://grpc.io/docs/guides/).
 

@@ -4,10 +4,9 @@ title: Installing Prysm on macOS with Bazel
 sidebar_label: Installing with Bazel
 ---
 
+Prysm can be installed on macOS using our build tool, Bazel. This page includes instructions for performing this method.
 
    > **NOTICE:** The Prysm installation script is the easiest and most efficient way of installing the latest binaries. Instructions for using it can be found [here](/docs/install/mac).
-
-Prysm can be installed on macOS using our build tool, Bazel. This page includes instructions for performing this method.
 
 **Have questions?** Stop by the [#documentation](https://discord.gg/QQZMCgU) channel on Discord and let us know.
 

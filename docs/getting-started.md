@@ -4,9 +4,9 @@ title:  Welcome to the Prysmatic Labs official documentation portal
 sidebar_label: Getting started
 ---
 
-![Prysm logo](/img/logo3.png "Prysmatic Labs")
-
 ## What is Prysm?
+
+![Prysm logo](/img/logo3.png "Prysmatic Labs")
 
 The [Prysm](https://github.com/prysmaticlabs/prysm) project is a full-featured client for the Ethereum 2.0 network written entirely in the [Go programming language](https://golang.org). Created by [Prysmatic Labs](https://prysmaticlabs.com), Prysm implements the official [Ethereum 2.0 specification](https://github.com/ethereum/eth2.0-specs), which is the product of an ongoing collective research and development effort by various teams across the Ethereum ecosystem including the [Ethereum Foundation](https://ethereum.org).
 
