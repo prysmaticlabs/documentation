@@ -27,7 +27,8 @@
 									"install/arm/activating-a-validator"
 								],
 
-		"Running Prysm": 	[	"prysm-usage/parameters",
+		"Running Prysm": 	[   "prysm-usage/setup-eth1",
+							    "prysm-usage/parameters",
 								"prysm-usage/wallet-keymanager",
 								"prysm-usage/slasher",
 								"prysm-usage/p2p-host-ip",
