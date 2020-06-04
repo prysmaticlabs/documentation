@@ -14,11 +14,10 @@ Once you are a bit more familiar with the concepts behind eth2 and are ready to 
 
 To develop Prysm, you'll need the following:
 
-- A modern, UNIX operating system
-- The latest release of [Bazel](https://docs.bazel.build/versions/master/install.html) installed
-- The `cmake` package installed
+- A modern windows, osx, or linux operating system
+- Go 1.14.x version installed, download and install [here](https://golang.org/dl/)
 - The `git` package installed
-- A code editor such as [Visual Studio Code](https://code.visualstudio.com/download) with the [Bazel plugin](https://marketplace.visualstudio.com/items?itemName=BazelBuild.vscode-bazel) or Jetbrains' [Goland IDE](https://www.jetbrains.com/go/)
+- A code editor such as [Visual Studio Code](https://code.visualstudio.com/download) or Jetbrains' [Goland IDE](https://www.jetbrains.com/go/) or your preferred one
 
 First, create a local clone of Prysm.
 
@@ -32,21 +31,42 @@ Then link your local repository to your newly created fork.
 $ git remote add myprysmrepo https://github.com/<your_github_user_name>/prysm.git
 ```
 
-Finally, ensure bazel is installed and working on your machine:
+Finally, ensure Go is installed and working on your machine:
 
 ```text
-$ bazel version
+$ go version
 ```
 
-### Setting up your code / text editor
+Example output:
+```text
+go version go1.14.4 darwin/amd64
+```
 
-For developing Prysm, the only option is to use the `bazel` tool - Prysm _cannot_ be built with Go by itself. In order to write code for the Prysm codebase comfortably, we recommend using either [Visual Studio Code](https://code.visualstudio.com/download) with its [Bazel plugin](https://marketplace.visualstudio.com/items?itemName=BazelBuild.vscode-bazel), or any [Jetbrains IDE](https://www.jetbrains.com/) with the [Bazel plugin](https://plugins.jetbrains.com/plugin/8609-bazel) ([Goland](https://www.jetbrains.com/go/) is a great choice, used by most of the Prysmatic Labs team). 
+### Building and testing Prysm with Go
 
-You can also find various other types of IDE support for Bazel in the official Bazel documentation [here](https://docs.bazel.build/versions/master/ide.html). Once you have your coding environment set-up, you'll be well-equipped to contribute to eth2!
+The Prysm project is a large monorepo containing all sorts of tools and services that implement the eth2 protocol. We use the Bazel build system for everything we do in development, helping everyone have reproducible builds. If you want to build the whole project, you can run the following command:
 
-### Building and testing Prysm
+```text
+$ go build -v ./...
+```
 
-The Prysm project is a large monorepo containing all sorts of tools and services that implement the eth2 protocol. We use the Bazel build system for everything we do in development, helping everyone have reproducible builds. If you want to build the beacon chain or validator, you can run the commands:
+This will build the project by downloading dependencies as Go modules.
+
+#### Running Go tests
+
+All code we check into our repo needs to have sufficient tests to ensure it is maintainable and works as expected. We use bazel to run all of our test suites in Prysm. If there is a particular subfolder you want to test, such as `beacon-chain/rpc/node`, you can run the command:
+
+```text
+$ go test ./beacon-chain/rpc/node/...
+```
+
+#### Adding dependencies
+
+If you want to add a new dependency to Prysm, please adhere to the guidelines found in our [DEPENDENCIES.md](https://github.com/prysmaticlabs/prysm/blob/master/DEPENDENCIES.md) document.
+
+### Building and testing Prysm with Bazel
+
+The Prysm project is a large monorepo containing all sorts of tools and services that implement the eth2 protocol. We use the [Bazel](https://bazel.build) build system created by Google for everything we do, helping everyone have reproducible builds. If you want to build the beacon chain or validator using Bazel, you can run the commands:
 
 ```text
 $ bazel build //beacon-chain:beacon-chain
@@ -61,7 +81,11 @@ $ bazel run //beacon-chain:beacon-chain -- --help
 
 Where you can specify any amount of command line arguments you need based on the available flags of the item you're running.
 
-**Running tests**
+In order to write code for the Prysm codebase comfortably with Bazel, we recommend using either [Visual Studio Code](https://code.visualstudio.com/download) with its [Bazel plugin](https://marketplace.visualstudio.com/items?itemName=BazelBuild.vscode-bazel), or any [Jetbrains IDE](https://www.jetbrains.com/) with the [Bazel plugin](https://plugins.jetbrains.com/plugin/8609-bazel) ([Goland](https://www.jetbrains.com/go/) is a great choice, used by most of the Prysmatic Labs team). 
+
+You can also find various other types of IDE support for Bazel in the official Bazel documentation [here](https://docs.bazel.build/versions/master/ide.html). Once you have your coding environment set-up, you'll be well-equipped to contribute to eth2!
+
+#### Running Bazel tests
 
 All code we check into our repo needs to have sufficient tests to ensure it is maintainable and works as expected. We use bazel to run all of our test suites in Prysm. If there is a particular subfolder you want to test, such as `beacon-chain/rpc/node`, you can run the command:
 
@@ -83,11 +107,7 @@ You can also run our full, end-to-end test suite with:
 $ bazel test //endtoend:go_default_test --define=ssz=minimal
 ```
 
-### Contributing to the Eth2 API
-
-The eth2 API implemented by Prysm is maintained as a separate repository than Prysm. You can read more about how to contribute specifically to the API [here](/docs/how-prysm-works/ethereum-2-public-api#contributing).
-
-### Running a local chain
+#### Running a local chain with bazel
 
 Although tests are the best and most simple way of ensuring your feature or bug fix contribution works, sometimes it can be helpful to run a real chain with your changes to ensure they are reflected at runtime. Here are some helpful commands to try running your own, local chain with 64 validators!
 
@@ -122,6 +142,11 @@ $ bazel run //validator --define=ssz=mainnet -- \
   --disable-protect-proposer \
   --datadir /tmp/validator
 ```
+
+### Contributing to the Eth2 API
+
+The eth2 API implemented by Prysm is maintained as a separate repository than Prysm. You can read more about how to contribute specifically to the API [here](/docs/how-prysm-works/ethereum-2-public-api#contributing).
+
 
 ### Making your first contribution
 
