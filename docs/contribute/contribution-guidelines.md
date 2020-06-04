@@ -44,7 +44,7 @@ go version go1.14.4 darwin/amd64
 
 ### Building and testing Prysm with Go
 
-The Prysm project is a large monorepo containing all sorts of tools and services that implement the eth2 protocol. We use the Bazel build system for everything we do in development, helping everyone have reproducible builds. If you want to build the whole project, you can run the following command:
+The Prysm project is a large monorepo containing all sorts of tools and services that implement the eth2 protocol. We use the Go for everything we do in development, helping everyone have reproducible builds. If you want to build the whole project, you can run the following command:
 
 ```text
 $ go build -v ./...
@@ -54,7 +54,13 @@ This will build the project by downloading dependencies as Go modules.
 
 #### Running Go tests
 
-All code we check into our repo needs to have sufficient tests to ensure it is maintainable and works as expected. We use bazel to run all of our test suites in Prysm. If there is a particular subfolder you want to test, such as `beacon-chain/rpc/node`, you can run the command:
+All code we check into our repo needs to have sufficient tests to ensure it is maintainable and works as expected. You can use Go run tests in Prysm. 
+
+```text
+$ go test -v ./...
+```
+
+If there is a particular subfolder you want to test, such as `beacon-chain/rpc/node`, you can run the command:
 
 ```text
 $ go test ./beacon-chain/rpc/node/...
