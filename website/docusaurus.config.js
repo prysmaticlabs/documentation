@@ -74,7 +74,7 @@ module.exports = {
     favicon: 'img/Prysm.svg',
     tagline: 'An Ethereum 2.0 client written entirely in Go.',
     title: 'Prysm ETH2.0 Testnet',
-    url: '/', // Your website URL
+    url: 'https://docs.prylabs.network', // Your website URL
     baseUrl: '/', // Base URL for your project */
     projectName: 'prysm-docs',
     organizationName: 'Prysmatic Labs',
@@ -100,15 +100,22 @@ module.exports = {
                     homePageId: 'getting-started',
                     // Docs folder path relative to website dir.
                     path: './docs',
+                    routeBasePath: '/',
                     // Sidebars file relative to website dir.
                     sidebarPath: require.resolve('./sidebars.json'),
                 },
                 theme: {
                     customCss: require.resolve('./src/css/custom.css'),
                 },
+                sitemap: {
+                    cacheTime: 600 * 1000, // 600 sec - cache purge period
+                    changefreq: 'weekly',
+                    priority: 0.5,
+                },
             },
         ],
     ],
+
     // stylesheets: [
     //   {
     //       href: require.resolve('./static/css/custom.css'),
