@@ -16,7 +16,7 @@ As part of our day to day job in building eth2 with our Prysm project, we are ta
 
 **Status:** Root cause identified, resolved
 
-**Network:** Topaz
+**Network:** Onyx
 
 **Summary:** Beacon nodes were not receiving blocks via gossipsub p2p at all, making it impossible to keep up with the chain head after initial sync completes. 
 
