@@ -12,7 +12,7 @@ The [Prysm](https://github.com/prysmaticlabs/prysm) project is a full-featured c
 
 ## This documentation
 
-This manual is aimed at developers interested in participating in Prysmatic Labs's **public test network** known as the "Topaz" release and reviews the concepts behind the changes made in Ethereum 2.0, as well as the core components of the Prysm client itself. For more detailed information on the most recent research developments and understanding **what Ethereum 2.0 is**, it is recommended to review [Eth2Info](https://eth2.info) and the official [Ethereum 'Serenity' 2.0 specification](https://github.com/ethereum/eth2.0-specs) repository.
+This manual is aimed at developers interested in participating in Prysmatic Labs's **public test network** known as the "Onyx" release and reviews the concepts behind the changes made in Ethereum 2.0, as well as the core components of the Prysm client itself. For more detailed information on the most recent research developments and understanding **what Ethereum 2.0 is**, it is recommended to review [Eth2Info](https://eth2.info) and the official [Ethereum 'Serenity' 2.0 specification](https://github.com/ethereum/eth2.0-specs) repository.
 
 ## Need assistance?
 
