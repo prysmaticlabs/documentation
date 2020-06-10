@@ -3,10 +3,10 @@ module.exports = {
         defaultDarkMode: false,
         // disableDarkMode: true,
         navbar: {
-            title: "Prysm 'Topaz' Testnet", // Title for your website.
+            title: "Prysm 'Onyx' Testnet", // Title for your website.
             /* path to images for header/footer */
             logo: {
-                alt: "Prysm Topaz Testnet logo",
+                alt: "Prysm Onyx Testnet logo",
                 src: 'img/logo2.png',
             },
             links: [
@@ -39,7 +39,7 @@ module.exports = {
         },
         footer: {
             logo: {
-                alt: "Prysm 'Topaz' Testnet",
+                alt: "Prysm 'Onyx' Testnet",
                 href: '/',
                 src: 'img/Prysm.svg',
             },
