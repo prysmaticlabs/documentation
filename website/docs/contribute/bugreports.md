@@ -1,6 +1,6 @@
 ---
 id: bugreports
-title: Filing a Bug Report
+title: Filing a bug report
 sidebar_label: Filing a bug report
 ---
 

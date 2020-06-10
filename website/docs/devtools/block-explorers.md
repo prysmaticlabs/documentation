@@ -1,6 +1,6 @@
 ---
 id: block-explorers
-title: ETH2 Block Explorers
+title: ETH2 block explorers
 sidebar_label: Block explorers
 ---
 

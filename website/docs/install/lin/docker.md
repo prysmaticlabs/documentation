@@ -3,11 +3,12 @@ id: docker
 title: Installing Prysm on GNU/Linux with Docker
 sidebar_label: Installing with Docker
 ---
+
+Prysm can be installed on GNU/Linux systems with Docker. This page includes instructions for performing this method.
+
 ![Prysm Docker Setup](/img/prysm-basic-docker-setup.png)
 
    > **NOTICE:** The Prysm installation script is the easiest and most efficient way of installing the latest binaries. Instructions for using it can be found [here](/docs/install/linux).
-
-Prysm can be installed on GNU/Linux systems with Docker. This page includes instructions for performing this method.
 
 **Have questions?** Stop by the [#documentation](https://discord.gg/QQZMCgU) channel on Discord and let us know.
 

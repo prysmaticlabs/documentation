@@ -1,6 +1,6 @@
 ---
 id: beacon-node
-title: Prysm's Beacon Node
+title: Prysm's beacon node
 sidebar_label: Beacon node
 ---
 

@@ -1,6 +1,6 @@
 ---
 id: tips
-title: Useful Tips
+title: Useful tips
 sidebar_label: Useful tips
 ---
 

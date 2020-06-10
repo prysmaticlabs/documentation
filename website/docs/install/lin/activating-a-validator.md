@@ -1,6 +1,6 @@
 ---
 id: activating-a-validator
-title: Activating a Validator
+title: Activating a validator
 sidebar_label: Activate a validator
 ---
 This section outlines the step-by-step process for GNU/Linux found on prylabs.net to submit a deposit and initialise a validator for participation in the testnet.

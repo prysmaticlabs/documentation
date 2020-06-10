@@ -1,6 +1,6 @@
 ---
 id: prysm-validator-client
-title: Prysm's Validator Client
+title: Prysm's validator client
 sidebar_label: Validator client
 ---
 

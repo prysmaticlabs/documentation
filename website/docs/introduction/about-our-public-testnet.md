@@ -1,9 +1,9 @@
 ---
 id: on-the-public-testnet
-title: On the Public Testnet
-sidebar_label: On the Public Testnet
+title: On the public testnet
+sidebar_label: On the public testnet
 ---
-  The various features and limitations of the Prysm 'Topaz' Phase 0 testnet
+  The various features and limitations of the Prysm 'Onyx' Phase 0 testnet
   release.
 
 
