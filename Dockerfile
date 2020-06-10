@@ -29,6 +29,6 @@ RUN npm run build
 FROM nginx
 RUN rm -rf /usr/share/nginx/html/*
 
-COPY --from=builder /app/website/build/prysm-docs /usr/share/nginx/html
+COPY --from=builder /app/website/build /usr/share/nginx/html
 
 CMD ["nginx", "-g", "daemon off;"]
