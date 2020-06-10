@@ -13,7 +13,6 @@ RUN apk add --no-cache \
     nasm
 
 WORKDIR /app/website
-COPY ./docs /app/docs
 COPY ./website /app/website
 
 COPY ./website/package.json ./website/package-lock.json ./
