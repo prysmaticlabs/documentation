@@ -50,7 +50,7 @@ module.exports = {
         // template. For example, if you need your repo's URL...
         //   repoUrl: 'https://github.com/facebook/test-site',
         algolia: {
-            apiKey: process.env.ALGOLIA_API_KEY,
+            apiKey: 'd56b00e670b1ea4c44047c2d34807f6d',
             indexName: 'prysmaticlabs_prysm',
             algoliaOptions: {} // Optional, if provided by Algolia
         },
