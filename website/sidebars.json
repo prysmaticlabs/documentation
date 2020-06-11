@@ -1,70 +1,70 @@
 {
   	"docs": {
 
-		"An introduction": 	[	"getting-started",
-								"introduction/on-ethereum-2"
+		"An introduction": 	[	"/docs/getting-started",
+								"/docs/introduction/on-ethereum-2"
 							],
 
-		"GNU/Linux installations": [	"install/linux",
-										"install/lin/docker",
-										"install/lin/bazel",
-										"install/lin/activating-a-validator"
+		"GNU/Linux installations": [	"/docs/install/linux",
+										"/docs/install/lin/docker",
+										"/docs/install/lin/bazel",
+										"/docs/install/lin/activating-a-validator"
 									],
 
-		"Windows installations": 	[	"install/windows",
-										"install/win/docker",
-										"install/win/activating-a-validator"
+		"Windows installations": 	[	"/docs/install/windows",
+										"/docs/install/win/docker",
+										"/docs/install/win/activating-a-validator"
 									],
 
-		"macOS installations": 	[	"install/mac",
-									"install/mac/docker",
-									"install/mac/bazel",
-									"install/mac/activating-a-validator"
+		"macOS installations": 	[	"/docs/install/mac",
+									"/docs/install/mac/docker",
+									"/docs/install/mac/bazel",
+									"/docs/install/mac/activating-a-validator"
 								],
 
-		"ARM64 installations": 	[	"install/arm",
-									"install/arm/bazel",
-									"install/arm/activating-a-validator"
+		"ARM64 installations": 	[	"/docs/install/arm",
+									"/docs/install/arm/bazel",
+									"/docs/install/arm/activating-a-validator"
 								],
 
-		"Running Prysm": 	[   "prysm-usage/setup-eth1",
-							    "prysm-usage/parameters",
-								"prysm-usage/wallet-keymanager",
-								"prysm-usage/slasher",
-								"prysm-usage/p2p-host-ip",
-								"prysm-usage/monitoring/grafana-dashboard",
-								"faq"
+		"Running Prysm": 	[   "/docs/prysm-usage/setup-eth1",
+							    "/docs/prysm-usage/parameters",
+								"/docs/prysm-usage/wallet-keymanager",
+								"/docs/prysm-usage/slasher",
+								"/docs/prysm-usage/p2p-host-ip",
+								"/docs/prysm-usage/monitoring/grafana-dashboard",
+								"/docs/faq"
 							],
 
 
 
-		"How Prysm works": 	[	"how-prysm-works/architecture-overview",
-								"how-prysm-works/beacon-node",
-								"how-prysm-works/prysm-validator-client",
-								"how-prysm-works/validator-lifecycle",
-								"how-prysm-works/validator-deposit-contract",
-								"how-prysm-works/database-backend-boltdb",
-								"how-prysm-works/p2p-networking",
-								"how-prysm-works/bls-cryptography"
+		"How Prysm works": 	[	"/docs/how-prysm-works/architecture-overview",
+								"/docs/how-prysm-works/beacon-node",
+								"/docs/how-prysm-works/prysm-validator-client",
+								"/docs/how-prysm-works/validator-lifecycle",
+								"/docs/how-prysm-works/validator-deposit-contract",
+								"/docs/how-prysm-works/database-backend-boltdb",
+								"/docs/how-prysm-works/p2p-networking",
+								"/docs/how-prysm-works/bls-cryptography"
 							],
 
-		"Developer tools": 	["devtools/block-explorers"],
+		"Developer tools": 	["/docs/devtools/block-explorers"],
 
-		"Public API": 	["how-prysm-works/ethereum-2-public-api"],
+		"Public API": 	["/docs/how-prysm-works/ethereum-2-public-api"],
 
 		"Contribute": [	
-			"contribute/doc-standards",
-			"contribute/contribution-guidelines",
-							"contribute/bugreports",
-							"contribute/golang-principles"
+			"/docs/contribute/doc-standards",
+			"/docs/contribute/contribution-guidelines",
+							"/docs/contribute/bugreports",
+							"/docs/contribute/golang-principles"
 						],
 
-		"Learn more": 	[ 	"terminology",
-							"reading/eth2",
-							"reading/golang",
-							"reading/testnet-postmortems"
+		"Learn more": 	[ 	"/docs/terminology",
+							"/docs/reading/eth2",
+							"/docs/reading/golang",
+							"/docs/reading/testnet-postmortems"
 						],
 		
-		"Licenses": ["licenses/prysmatic-labs"]
+		"Licenses": ["/docs/licenses/prysmatic-labs"]
   	}
 }
