@@ -87,8 +87,6 @@ module.exports = {
     // Show documentation's last update time.
     // enableUpdateTime: true,
 
-    editUrl: 'https://github.com/prysmaticlabs/documentation/edit/master/website/docs/',
-
     // twitterUsername: 'prylabs',
     presets: [
         [
@@ -103,6 +101,7 @@ module.exports = {
                     routeBasePath: '/',
                     // Sidebars file relative to website dir.
                     sidebarPath: require.resolve('./sidebars.json'),
+                    editUrl: 'https://github.com/prysmaticlabs/documentation/edit/master/website/',
                 },
                 theme: {
                     customCss: require.resolve('./src/css/custom.css'),
