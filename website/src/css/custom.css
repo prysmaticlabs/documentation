@@ -8,6 +8,11 @@ a {
 	color: var(--prysm-pink);
 }
 
+.navbar {
+    background-color: #22292f;
+    color: white;
+}
+
 .navbar--fixed-top {
     border-bottom: 3px solid var(--prysm-pink);
 }
@@ -16,9 +21,17 @@ a {
     font-weight:  600;
 }
 
+.navbar__link {
+    color: white;
+}
+
 .navbar__link:hover, 
 .navbar__link--active {
     color:  var(--prysm-pink);
+}
+
+.navbar__brand {
+   color: white;
 }
 
 .table-of-contents li a {
@@ -50,7 +63,7 @@ a {
 
 }
 .toc .toggleNav ul li.navListItemActive a {
-    color: #22292f;
+    color: white;
     font-weight: 600;
 }
 
