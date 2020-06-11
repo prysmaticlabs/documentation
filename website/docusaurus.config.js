@@ -87,7 +87,7 @@ module.exports = {
     // Show documentation's last update time.
     // enableUpdateTime: true,
 
-    // editUrl: 'https://github.com/prysmaticlabs/documentation/edit/master/docs/',
+    editUrl: 'https://github.com/prysmaticlabs/documentation/edit/master/website/docs/',
 
     // twitterUsername: 'prylabs',
     presets: [
