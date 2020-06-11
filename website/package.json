@@ -14,5 +14,8 @@
     "@docusaurus/preset-classic": "^2.0.0-alpha.56",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
+  },
+  "dependencies": {
+    "clsx": "^1.1.1"
   }
 }
