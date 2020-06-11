@@ -289,7 +289,7 @@ function Navbar() {
         <Link
     className="navbar__brand"
     onClick={hideSidebar}
-    to={logoLink}
+    to="/docs/getting-started"
     {...logoLinkProps}>
     {logoImageUrl != null && (
     <img
