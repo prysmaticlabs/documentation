@@ -18,6 +18,17 @@ These specifications must be met in order to successfully run the Prysm client.
 * Storage: 20GB available space SSD
 * Internet: Broadband connection
 
+According to [Apple's Support site](https://support.apple.com/en-us/HT210190), the following Apple products are compatible
+with OS X 10.14.
+
+* MacBook introduced in 2015 or later
+* MacBook Air introduced in 2012 or later
+* MacBook Pro introduced in 2012 or later
+* Mac mini introduced in 2012 or later
+* iMac introduced in 2012 or later
+* iMac Pro (all models)
+* Mac Pro introduced in 2013, plus mid-2010 or mid-2012 models with a recommended Metal-capable graphics card.
+
 ### Recommended specifications
 These hardware specifications are recommended, but not required to run the Prysm client.
 * Processor: Intel Core i7–4770 or AMD FX-8310 or better
