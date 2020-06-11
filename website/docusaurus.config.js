@@ -100,7 +100,7 @@ module.exports = {
                     homePageId: 'getting-started',
                     // Docs folder path relative to website dir.
                     path: './docs',
-                    routeBasePath: '/',
+                    routeBasePath: 'docs',
                     // Sidebars file relative to website dir.
                     sidebarPath: require.resolve('./sidebars.json'),
                 },
