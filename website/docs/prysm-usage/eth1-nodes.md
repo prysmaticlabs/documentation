@@ -43,7 +43,7 @@ You should wait for your node to sync and then will be able to access its endpoi
 Next, in a separate terminal window, you can run a Prysm beacon node according to our [installation instructions](https://docs.prylabs.network/docs/install/linux/) for your operating system, and then connect to your eth1 node with:
 
 ```text
-./prysm.sh beacon-chain -- --http-web3provider=http://localhost:8545
+./prysm.sh beacon-chain --http-web3provider=http://localhost:8545
 ```
 
 ## Other resources
