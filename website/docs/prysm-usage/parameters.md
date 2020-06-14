@@ -53,7 +53,10 @@ or for a validator like so:
 It is possible to provide additional flags alongside the `.yaml` file, though if there is conflicts, the `.yaml` file will take priority. For example, if the flag `--datadir=/data2` is specified and `datadir: "/data1"` is in the `.yaml` file, Prysm would prioritise writing to `/data1`.
 
 ## Shared flags
+
 These flags are shared by both the beacon node and validator client.
+
+
 | Flag          | Usage         |
 | ------------- |:-------------|
 | `--config-file` | Allows user to specifying the location of a `.yaml` config file with flag values.
