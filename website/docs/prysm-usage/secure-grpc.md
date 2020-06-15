@@ -7,32 +7,32 @@ sidebar_label: Securing your gRPC connection
 This section will help advanced users create and setup TLS certificates to allow for secure gRPC connections to their beacon nodes.
 
 :::tip Pro-Tip
-You should be concerned with securing your gRPC connection if you're hosting a remote beacon node that you plan connecting to from a different machine. No need to add a secure gRPC connection if you are running a beacon node and a validator on a single machine instance you have full control over.
+The only practical use for using secure gRPC is in the case of connecting a beacon node that is being hosted remotely. For configurations in which the beacon node and validator reside on the same host system, these steps are not required nor recommended.
 :::
 
-A beacon node, by default, hosts a gRPC server on host 127.0.0.1 and port 4000, allowing any other process, such as a validator client, to establish an insecure connection on that port. The beacon node can also allow for secure, TLS connections if ran with the `--tls-cert=/path/to/cert.pem` and `--tls-key=/path/to/cert.key` flags, ensuring all connections via gRPC are secured. 
+A beacon node, by default, hosts a gRPC server on host `127.0.0.1` and port 4000, allowing any other process, such as a validator client, to establish an insecure connection on that port. The beacon node can also allow for secure, TLS connections if ran with the `--tls-cert=/path/to/cert.pem` and `--tls-key=/path/to/cert.key` flags, ensuring all connections via gRPC are secured. 
 
-A validator client will attempt to connect to a beacon node by default with an insecure connection, but can be a secure TLS connection by using a `--tls-cert=/path/to/cert.pem` flag, utilizing either a server pem certificate or a `ca.cert` certificate authority file. Assuming you already have a TLS certificate ready for your beacon node with some trusted certificate authority, you can use the commands below to launch your beacon node and validator. Otherwise, you can see the following section on creating your own self-signed certificates.
+A validator client will attempt to connect to a beacon node by default with an insecure connection, but can be a secure TLS connection by using a `--tls-cert=/path/to/cert.pem` flag, utilising either a server pem certificate or a `ca.cert` certificate authority file. Assuming a TLS certificate has already been set up with a trusted authority for your beacon node, use the commands below to launch the node and validator. Otherwise, review the following section on creating your own self-signed certificates.
 
-For your beacon node:
+To use secure gRPC with a beacon node:
 
 ```text
 ./prysm.sh beacon-node --tls-cert=server.pem --tls-key=server.key
 ```
 
-and for your validator:
+and to use secure gRPC with a validator:
 
 ```text
 ./prysm.sh validator --tls-cert=server.pem
 ```
 
-Or alternatively, if you have a ca.cert certificate authority file, you can pass that into your validator to attempt a connection without needing the server's certificate itself:
+Alternatively, a `ca.cert` certificate authority file can be passed to the validator to attempt a connection without requiring the server's certificate itself:
  
 ```text
 ./prysm.sh validator --tls-cert=ca.cert
 ```
 
-You should now see:
+    This will generate an output like so:
 
 ```text
 [2020-06-15 17:09:13]  INFO validator: Established secure gRPC connection
@@ -40,100 +40,101 @@ You should now see:
 
 ## Generating self-signed TLS certificates
 
-Creating a self-signed certificate is fine for simple TLS connections, but it's always recommended to obtain valid certificates from a trusted certificate authority instead if you will be exposing your deployments to public usage.
+  > **NOTICE:** Creating a self-signed certificate is fine for simple TLS connections, though if the deployment will see public usage, it is always recommended to obtain valid certificates from a trusted certificate authority instead.
 
-First, make sure you install [openssl](https://www.openssl.org/) for your operating system. Next up:
+1. Install [openssl](https://www.openssl.org/) for your operating system. 
 
-**Create a root signing key**
+2. Create a root signing key:
 
-```text
-openssl genrsa -out ca.key 4096
-```
+    ```text
+    openssl genrsa -out ca.key 4096
+    ```
 
-**Create a self-signed root certificate**
+3. Create a self-signed root certificate
 
-```text
-openssl req -new -x509 -key ca.key -sha256 -subj "/C=US/ST=NJ/O=CA, Inc." -days 365 -out ca.cert
-```
+    ```text
+    openssl req -new -x509 -key ca.key -sha256 -subj "/C=US/ST=NJ/O=CA, Inc." -days 365 -out ca.cert
+    ```
 
-**Create a key certificate for the beacon node**
+4. Create a key certificate for the beacon node:
 
-```text
-openssl genrsa -out beacon.key 4096
-```
+    ```text
+    openssl genrsa -out beacon.key 4096
+    ```
 
-**Create a signing CSR**
+5. Generate a signing CSR by first creating a  `certificate.conf` configuration file containing the specifications. For reference, you can use something as follows with any of its fields customized to your needs:
 
-First, create a `certificate.conf` configuration file we'll use to generate the signing csr. For reference, you can use something as follows with any of its fields customized to your needs:
+    ```text
+    [req]
+    default_bits = 4096
+    prompt = no
+    default_md = sha256
+    req_extensions = req_ext
+    distinguished_name = dn
+    [dn]
+    C = US
+    ST = NJ
+    O = Test, Inc.
+    CN = localhost
+    [req_ext]
+    subjectAltName = @alt_names
+    [alt_names]
+    DNS.1 = localhost
+    IP.1 = ::1
+    IP.2 = 127.0.0.1
+    ```
 
-```text
-[req]
-default_bits = 4096
-prompt = no
-default_md = sha256
-req_extensions = req_ext
-distinguished_name = dn
-[dn]
-C = US
-ST = NJ
-O = Test, Inc.
-CN = localhost
-[req_ext]
-subjectAltName = @alt_names
-[alt_names]
-DNS.1 = localhost
-IP.1 = ::1
-IP.2 = 127.0.0.1
-```
+6. Generate the signing CSR:
+    ```text
+    openssl req -new -key beacon.key -out beacon.csr -config certificate.conf
+    ```
 
-```text
-openssl req -new -key beacon.key -out beacon.csr -config certificate.conf
-```
+7. Generate a certificate for the beacon node:
 
-**Generate a certificate for the beacon node**
+    ```text
+    openssl x509 -req -in beacon.csr -CA ca.cert -CAkey ca.key -CAcreateserial -out beacon.pem -days 365 -sha256 -extfile certificate.conf -extensions req_ext
+    ```
 
-```text
-openssl x509 -req -in beacon.csr -CA ca.cert -CAkey ca.key -CAcreateserial -out beacon.pem -days 365 -sha256 -extfile certificate.conf -extensions req_ext
-```
+8. Verify your certificate is correct with openssl:
 
-**Verify your certificate is correct with openssl**
+    ```text
+    openssl x509 -in beacon.pem -text -noout
+    ```
 
-```text
-openssl x509 -in beacon.pem -text -noout
-```
+    This will generate an output like so:
 
-You'll see some output like this below:
+    ```text
+    Certificate:
+        Data:
+            Version: 3 (0x2)
+            Serial Number: 12510557889986420634 (0xad9e6e1dfe99df9a)
+        Signature Algorithm: sha256WithRSAEncryption
+            Issuer: C=US, ST=NJ, O=CA, Inc.
+            Validity
+                Not Before: Jun 15 21:12:24 2020 GMT
+                Not After : Jun 15 21:12:24 2021 GMT
+            Subject: C=US, ST=NJ, O=Test, Inc., CN=localhost
+            Subject Public Key Info:
+                Public Key Algorithm: rsaEncryption
+                    Public-Key: (4096 bit)
+    ```
 
-```text
-Certificate:
-    Data:
-        Version: 3 (0x2)
-        Serial Number: 12510557889986420634 (0xad9e6e1dfe99df9a)
-    Signature Algorithm: sha256WithRSAEncryption
-        Issuer: C=US, ST=NJ, O=CA, Inc.
-        Validity
-            Not Before: Jun 15 21:12:24 2020 GMT
-            Not After : Jun 15 21:12:24 2021 GMT
-        Subject: C=US, ST=NJ, O=Test, Inc., CN=localhost
-        Subject Public Key Info:
-            Public Key Algorithm: rsaEncryption
-                Public-Key: (4096 bit)
-```
+### Using the new certificates
 
-Finally, you can use your certificates to launch your beacon node and validator:
+1. Use the certificates to launch the beacon node:
 
 ```text
 ./prysm.sh beacon-node --tls-cert=beacon.pem --tls-key=beacon.key
 ```
 
-and for your validator:
+2. As well as a validator:
 
-```text
-./prysm.sh validator --tls-cert=ca.cert
-```
+    ```text
+    ./prysm.sh validator --tls-cert=ca.cert
+    ```
 
-You should see:
+    This will generate an output like so: 
 
-```text
-[2020-06-15 17:09:13]  INFO validator: Established secure gRPC connection
-```
+    ```text
+    [2020-06-15 17:09:13]  INFO validator: Established secure gRPC connection
+    ```
