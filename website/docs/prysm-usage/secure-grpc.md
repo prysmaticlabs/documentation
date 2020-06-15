@@ -7,7 +7,7 @@ sidebar_label: Securing your gRPC connection
 This section will help advanced users create and setup TLS certificates to allow for secure gRPC connections to their beacon nodes.
 
 :::tip Pro-Tip
-You should be concerned with securing your gRPC connection if you're hosting a remote beacon node that you plan connecting to via the Internet. No need to add a secure gRPC connection if you are running a beacon node and a validator on a single machine.
+You should be concerned with securing your gRPC connection if you're hosting a remote beacon node that you plan connecting to from a different machine. No need to add a secure gRPC connection if you are running a beacon node and a validator on a single machine instance you have full control over.
 :::
 
 A beacon node, by default, hosts a gRPC server on host 127.0.0.1 and port 4000, allowing any other process, such as a validator client, to establish an insecure connection on that port. The beacon node can also allow for secure, TLS connections if ran with the `--tls-cert=/path/to/cert.pem` and `--tls-key=/path/to/cert.key` flags, ensuring all connections via gRPC are secured. 
