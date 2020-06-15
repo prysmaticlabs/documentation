@@ -10,15 +10,39 @@ This section will help advanced users create and setup TLS certificates to allow
 You should be concerned with securing your gRPC connection if you're hosting a remote beacon node that you plan connecting to via the Internet. No need to add a secure gRPC connection if you are running a beacon node and a validator on a single machine.
 :::
 
-A beacon node, by default, hosts a gRPC server on host 127.0.0.1 and port 4000, allowing any other process, such as a validator client, to establish an insecure connection on that port. The beacon node can also allow for secure, TLS connections if ran with a `--tls-crt` flag, ensuring all connections via gRPC are secured. 
+A beacon node, by default, hosts a gRPC server on host 127.0.0.1 and port 4000, allowing any other process, such as a validator client, to establish an insecure connection on that port. The beacon node can also allow for secure, TLS connections if ran with the `--tls-cert=/path/to/cert.pem` and `--tls-key=/path/to/cert.key` flags, ensuring all connections via gRPC are secured. 
 
-A validator client will attempt to connect to a beacon node by default with an insecure connection, but can be a secure TLS connection by using a `--tls` flag. Let's see a practical example:
+A validator client will attempt to connect to a beacon node by default with an insecure connection, but can be a secure TLS connection by using a `--tls-cert=/path/to/cert.pem` flag, utilizing either a server pem certificate or a `ca.cert` certificate authority file. Assuming you already have a TLS certificate ready for your beacon node with some trusted certificate authority, you can use the commands below to launch your beacon node and validator. Otherwise, you can see the following section on creating your own self-signed certificates.
 
-## Free TLS certificates with Let's Encrypt (Recommended)
+For your beacon node:
 
-## Generating self-signed TLS certificates (Not recommended)
+```text
+./prysm.sh beacon-node --tls-cert=server.pem --tls-key=server.key
+```
 
-Self-signed certificates are not recommended for production deployments, but can help you verify that a secure connection is working. First, make sure you install [openssl](https://www.openssl.org/) for your operating system. Next up:
+and for your validator:
+
+```text
+./prysm.sh validator --tls-cert=server.pem
+```
+
+Or alternatively, if you have a ca.cert certificate authority file, you can pass that into your validator to attempt a connection without needing the server's certificate itself:
+ 
+```text
+./prysm.sh validator --tls-cert=ca.cert
+```
+
+You should now see:
+
+```text
+[2020-06-15 17:09:13]  INFO validator: Established secure gRPC connection
+```
+
+## Generating self-signed TLS certificates
+
+Creating a self-signed certificate is fine for simple TLS connections, but it's always recommended to obtain valid certificates from a trusted certificate authority instead if you will be exposing your deployments to public usage.
+
+First, make sure you install [openssl](https://www.openssl.org/) for your operating system. Next up:
 
 **Create a root signing key**
 
@@ -39,6 +63,28 @@ openssl genrsa -out beacon.key 4096
 ```
 
 **Create a signing CSR**
+
+First, create a `certificate.conf` configuration file we'll use to generate the signing csr. For reference, you can use something as follows with any of its fields customized to your needs:
+
+```text
+[req]
+default_bits = 4096
+prompt = no
+default_md = sha256
+req_extensions = req_ext
+distinguished_name = dn
+[dn]
+C = US
+ST = NJ
+O = Test, Inc.
+CN = localhost
+[req_ext]
+subjectAltName = @alt_names
+[alt_names]
+DNS.1 = localhost
+IP.1 = ::1
+IP.2 = 127.0.0.1
+```
 
 ```text
 openssl req -new -key beacon.key -out beacon.csr -config certificate.conf
@@ -74,3 +120,20 @@ Certificate:
                 Public-Key: (4096 bit)
 ```
 
+Finally, you can use your certificates to launch your beacon node and validator:
+
+```text
+./prysm.sh beacon-node --tls-cert=beacon.pem --tls-key=beacon.key
+```
+
+and for your validator:
+
+```text
+./prysm.sh validator --tls-cert=ca.cert
+```
+
+You should see:
+
+```text
+[2020-06-15 17:09:13]  INFO validator: Established secure gRPC connection
+```
