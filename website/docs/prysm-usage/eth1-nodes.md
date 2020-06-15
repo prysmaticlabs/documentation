@@ -35,7 +35,7 @@ You can also run your own eth1 node in the full spirit of decentralization and u
 First, install go-ethereum [here](https://github.com/ethereum/go-ethereum/wiki/Building-Ethereum0).
 
 ```text
-$ geth --goerli --rpc
+$ geth --goerli --datadir="$HOME/Goerli"
 ```
 
 You should wait for your node to sync and then will be able to access its endpoint via `http://localhost:8545` by default.
@@ -43,7 +43,7 @@ You should wait for your node to sync and then will be able to access its endpoi
 Next, in a separate terminal window, you can run a Prysm beacon node according to our [installation instructions](https://docs.prylabs.network/docs/install/linux/) for your operating system, and then connect to your eth1 node with:
 
 ```text
-./prysm.sh beacon-chain --http-web3provider=http://localhost:8545
+./prysm.sh beacon-chain --http-web3provider=$HOME/Goerli/geth.ipc
 ```
 
 ## Other resources
