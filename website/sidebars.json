@@ -32,7 +32,9 @@
 								"prysm-usage/wallet-keymanager",
 								"prysm-usage/slasher",
 								"prysm-usage/p2p-host-ip",
-								"prysm-usage/monitoring/grafana-dashboard",
+								"Monitoring":	[	"prysm-usage/monitoring/grafana-dashboard",
+											"prysm-usage/monitoring/currency-converter"
+										],
 								"faq"
 							],
 
