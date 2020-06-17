@@ -37,11 +37,18 @@ The easiest way to install the beacon chain and validator is by running the `pry
 ```sh
 mkdir prysm && cd prysm
 ```
+//If you have enabled  Linix line cmds in the shell of your env 
+//This following .bat script is not worth the headache
 
 2. Fetch the `prysm.bat` script from Github:
 
+//2.0.1  Fetch the `prysm.sh` script from Github
 ```sh
 curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.bat --output prysm.bat
+```
+OR
+```sh
+curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --output prysm.sh
 ```
 
 3. To ensure logging appears properly, issue the following command:
