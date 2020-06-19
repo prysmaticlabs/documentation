@@ -37,18 +37,12 @@ The easiest way to install the beacon chain and validator is by running the `pry
 ```sh
 mkdir prysm && cd prysm
 ```
-//If you have enabled  Linix line cmds in the shell of your env 
-//This following .bat script is not worth the headache
 
 2. Fetch the `prysm.bat` script from Github:
 
-//2.0.1  Fetch the `prysm.sh` script from Github
+
 ```sh
 curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.bat --output prysm.bat
-```
-OR
-```sh
-curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --output prysm.sh
 ```
 
 3. To ensure logging appears properly, issue the following command:
@@ -62,7 +56,7 @@ reg add HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1
 .\prysm.bat beacon-chain
 ```
 
-> Not getting enough peers?  Refer to the [improve P2P connectivity](/docs/prysm-usage/p2p-host-ip) section of this documentation for tips on network configuration.
+ > *TIP:** Not getting enough peers?  Refer to the [improve P2P connectivity](/docs/prysm-usage/p2p-host-ip) section of this documentation for tips on network configuration.
 
 The `prysm.bat` script will now download and initialise the beacon chain with the specified parameters. The terminal will produce output like so:
 
