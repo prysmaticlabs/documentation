@@ -94,7 +94,7 @@ These flags are specific to launching the beacon node.
 | ------------- |:-------------|
 | `--no-custom-config` | Run the beacon chain with the real Phase 0 parameters.
 | `--http-web3provider` | Define a mainchain web3 provider string http endpoint. Default:  https://goerli.prylabs.net
-| `--web3provider` | Define a mainchain web3 provider string endpoint. Can be either a IRC file strong or a WebSocket endpoint. Cannot be an HTTP endpoint. Default: wss://goerli.prylabs.net/websocket
+| `--web3provider` | Define a mainchain web3 provider string endpoint. Can be either a IPC file string or a WebSocket endpoint. Cannot be an HTTP endpoint. Default: wss://goerli.prylabs.net/websocket
 | `--deposit-contract` |Define a deposit contract address. Beacon chain node will listen logs coming from the deposit contract to determine when validator is eligible to participate.
 | `--rpc-host` | Define an address of the host on which the RPC server should listen. Default: 0.0.0.0
 | `--rpc-port` | Define a RPC port to be exposed by the beacon node. >Value: 4000
