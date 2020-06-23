@@ -25,7 +25,7 @@ Instead of running your own eth1 node, it is a lot easier to use a third-party p
 Once you have an API key, you can then run a **Prysm eth2 beacon node** by pointing the `--http-web3provider` flag to your eth1 endpoint. For example, running an eth2 node connected to Infura's goerli eth1 endpoint is as follows:
 
 ```text
-./prysm.sh beacon-chain -- --http-web3provider=https://goerli.infura.io/v3/YOUR-PROJECT-ID
+./prysm.sh beacon-chain --http-web3provider=https://goerli.infura.io/v3/YOUR-PROJECT-ID
 ```
 
 ## Running your own eth1 node
