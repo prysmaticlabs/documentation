@@ -6,7 +6,7 @@ sidebar_label: Running an ETH1 node
 
 Eth2 is a massive upgrade to the Ethereum blockchain, which will start off as a proof of stake chain that runs in parallel to the current proof of work chain. In order to become a validator in eth2, users have to do a one-way "burn" of their ETH into a smart contract on the proof of work chain. Eth2 beacon nodes will track the eth1 chain's logs to determine deposits and verify those deposits' data to onboard new, proof of stake validators.
 
-As such, running a validator and a beacon node in eth2 entails also having a reliable connection to the eth1 chain. The Prysmatic Labs team currently runs a few eth1 nodes that users are free to use for running their validators. Currently, eth2 testnets rely on an eth1, proof-of-authority testnet called the [Goërli Testnet](https://goerli.net/). The testnet has significant support, with a block explorer on Etherscan [here](https://goerli.etherscan.io).
+As such, running a validator and a beacon node in eth2 entails also having a reliable connection to the eth1 chain. The Prysmatic Labs team currently runs a few eth1 nodes that users are free to use for running their validators. Currently, eth2 testnets rely on an eth1, proof-of-authority testnet called the [Görli Testnet](https://goerli.net/). The testnet has significant support, with a block explorer on Etherscan [here](https://goerli.etherscan.io).
 
 By default, Prysm beacon nodes use `https://goerli.prylabs.net` as their eth1 endpoints. However, our endpoints have no uptime guarantees and recommend users to explore their own solutions such as those below:
   
