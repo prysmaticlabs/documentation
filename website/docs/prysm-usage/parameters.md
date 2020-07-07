@@ -101,6 +101,7 @@ These flags are specific to launching the beacon node.
 | `--rpc-max-page-size` | Define the max number of items returned per page in RPC responses for paginated endpoints. Default: 500
 | `--tls-cert` |Certificate for secure gRPC. Pass this and the tls-key flag in order to use gRPC securely.
 | `--tls-key` | Key for secure gRPC. Pass this and the tls-cert flag in order to use gRPC securely.
+| `--grpc-gateway-host` | Enable gRPC gateway for JSON requests. Default: 127.0.0.1
 | `--grpc-gateway-port` | Enable gRPC gateway for JSON requests. Default: 3500
 | `--min-sync-peers` | The required number of valid peers to connect with before syncing."
 | `--contract-deployment-block` | Define the ETH1 block in which the deposit contract was deployed. Default: 1960177
