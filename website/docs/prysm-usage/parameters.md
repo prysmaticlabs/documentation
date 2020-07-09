@@ -94,14 +94,15 @@ These flags are specific to launching the beacon node.
 | ------------- |:-------------|
 | `--no-custom-config` | Run the beacon chain with the real Phase 0 parameters.
 | `--http-web3provider` | Define a mainchain web3 provider string http endpoint. Default:  https://goerli.prylabs.net
-| `--web3provider` | Define a mainchain web3 provider string endpoint. Can be either a IRC file strong or a WebSocket endpoint. Cannot be an HTTP endpoint. Default: wss://goerli.prylabs.net/websocket
+| `--web3provider` | Define a mainchain web3 provider string endpoint. Can be either a IPC file string or a WebSocket endpoint. Cannot be an HTTP endpoint. Default: wss://goerli.prylabs.net/websocket
 | `--deposit-contract` |Define a deposit contract address. Beacon chain node will listen logs coming from the deposit contract to determine when validator is eligible to participate.
 | `--rpc-host` | Define an address of the host on which the RPC server should listen. Default: 0.0.0.0
 | `--rpc-port` | Define a RPC port to be exposed by the beacon node. >Value: 4000
 | `--rpc-max-page-size` | Define the max number of items returned per page in RPC responses for paginated endpoints. Default: 500
 | `--tls-cert` |Certificate for secure gRPC. Pass this and the tls-key flag in order to use gRPC securely.
 | `--tls-key` | Key for secure gRPC. Pass this and the tls-cert flag in order to use gRPC securely.
-| `--grpc-gateway-port` | Enable gRPC gateway for JSON requests.
+| `--grpc-gateway-host` | Enable gRPC gateway for JSON requests. Default: 127.0.0.1
+| `--grpc-gateway-port` | Enable gRPC gateway for JSON requests. Default: 3500
 | `--min-sync-peers` | The required number of valid peers to connect with before syncing."
 | `--contract-deployment-block` | Define the ETH1 block in which the deposit contract was deployed. Default: 1960177
 | `--slasher-tls-cert` | Certificate for secure slasher gRPC connection. Pass this in order to use slasher gRPC securely.
