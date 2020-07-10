@@ -65,7 +65,9 @@ To start your beacon node, issue the following command:
 ```text
 docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node \
   gcr.io/prysmaticlabs/prysm/beacon-chain:latest \
-  --datadir=/data
+  --datadir=/data \
+  --rpc-host=0.0.0.0 \
+  --monitoring-host=0.0.0.0
 ```
 
 This will sync up the beacon node with the latest head block in the network.
