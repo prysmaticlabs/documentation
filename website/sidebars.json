@@ -37,7 +37,9 @@
 								"faq"
 							],
 
-
+		"Wallet and accounts": 	[   
+			"wallet/introduction"
+		],
 
 		"How Prysm works": 	[	"how-prysm-works/architecture-overview",
 								"how-prysm-works/beacon-node",
