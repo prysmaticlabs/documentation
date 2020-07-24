@@ -38,7 +38,10 @@
 							],
 
 		"Wallet and accounts": 	[   
-			"wallet/introduction"
+			"wallet/introduction",
+			"wallet/deterministic",
+			"wallet/nondeterministic",
+			"wallet/remote"
 		],
 
 		"How Prysm works": 	[	"how-prysm-works/architecture-overview",
