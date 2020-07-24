@@ -1,6 +1,6 @@
 ---
 id: deterministic
-title: HD (hierarchical deterministic) wallet 
+title: Deterministic, HD wallet 
 sidebar_label: HD wallet
 ---
 
