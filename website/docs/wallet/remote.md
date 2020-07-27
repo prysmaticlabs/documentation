@@ -85,15 +85,28 @@ and selecting **Remote** wallet when prompted during an interactive process. You
 | ------------- |:-------------|
 | `--wallet-dir` | Path to a wallet directory (default: "$HOME/Eth2Validators/prysm-wallet-v2")
 | `--keymanager-kind`     | Type of wallet to create, either "direct", "derived, or "remote" (default "derived")
-| `--password-file`     | Path to a plain-text, password.txt file to lock your wallet
+| `--grpc-remote-address`     | Host:port of a gRPC server for the remote signer server
+| `--remote-signer-crt-path`     | /path/to/client.crt for establishing a secure, TLS gRPC connection to a remote signer server
+| `--remote-signer-key-path`     | /path/to/client.key for establishing a secure, TLS gRPC connection to a remote signer server
+| `--remote-signer-ca-crt-path`     | /path/to/ca.crt for establishing a secure, TLS gRPC connection to a remote signer server
 
 ### Wallet edit configuration
 
-To edit your existing remote wallet configuration, such as for changing the path of your TLS certs or remote address, you can run
+To edit your existing remote wallet configuration, such as changing the path of your TLS certs or remote address, you can run
 
 ```bash
 ./prysm.sh validator wallet-v2 edit-config
 ```
+
+You can also edit your wallet configuration **non-interactively** by using the following command line flags, which are also viewable by typing `./prysm.sh validator wallet-v2 create --help`.
+
+| Flag          | Usage         |
+| ------------- |:-------------|
+| `--wallet-dir` | Path to a wallet directory (default: "$HOME/Eth2Validators/prysm-wallet-v2")
+| `--grpc-remote-address`     | Host:port of a gRPC server for the remote signer server
+| `--remote-signer-crt-path`     | /path/to/client.crt for establishing a secure, TLS gRPC connection to a remote signer server
+| `--remote-signer-key-path`     | /path/to/client.key for establishing a secure, TLS gRPC connection to a remote signer server
+| `--remote-signer-ca-crt-path`     | /path/to/ca.crt for establishing a secure, TLS gRPC connection to a remote signer server
 
 ### List validator accounts
 
@@ -128,5 +141,3 @@ You can view all available options to run the `list` command by typing `./prysm.
 | Flag          | Usage         |
 | ------------- |:-------------|
 | `--wallet-dir` | Path to a wallet directory (default: "$HOME/Eth2Validators/prysm-wallet-v2")
-| `--passwords-dir`     | Path to a directory where account passwords will be stored (default: "$HOME/Eth2Validators/prysm-wallet-passwords")
-| `--show-deposit-data`     |  Display raw eth1 tx deposit data for validator accounts-v2 (default: false
