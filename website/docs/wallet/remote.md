@@ -106,43 +106,24 @@ You can list all validator accounts in your non-HD wallet using the following co
 Where you'll see the following output
 
 ```bash
-INFO accounts-v2: (wallet path) /Users/johndoe/Library/Eth2Validators/prysm-wallet-v2
-INFO accounts-v2: (account passwords path) /Users/johndoe/Library/Eth2Validators/prysm-wallet-passwords
+[2020-07-27 14:30:13]  INFO accounts-v2: (wallet path) /Users/johndoe/Library/Eth2Validators/prysm-wallet-v2
+(keymanager kind) remote signer
+(configuration file path) /Users/johndoe/Library/Eth2Validators/prysm-wallet-v2/remote/keymanageropts.json
 
-Showing **1** validator account
-View the eth1 deposit transaction data for your accounts by running `validator accounts-v2 list --show-deposit-data
-
-personally-conscious-echidna
-[public key] 0x971d780edfe98743f41cdcdba8521548fc343ffcd958e90968c4f1cc5a2e9b6ea11a984397c34c6cc13e9d4e8d14ce1e
-[created at] 16 minutes ago
-```
-
-You can view the `deposit_data` needed to send 32ETH to the eth2 deposit contract for your validator accounts by optionally passing in a `--show-deposit-data` flag as follows.
-
-```bash
-./prysm.sh validator accounts-v2 list --show-deposit-data
-```
-
-Where you'll see the following output
-
-```bash
-INFO accounts-v2: (wallet path) /Users/johndoe/Library/Eth2Validators/prysm-wallet-v2
-INFO accounts-v2: (account passwords path) /Users/johndoe/Library/Eth2Validators/prysm-wallet-passwords
+Configuration options
+Remote gRPC address: localhost:4000
+Client cert path: /path/to/example-client.crt
+Client key path: /path/to/example.client.key
+CA cert path: /path/to/ca.crt
 
 Showing **1** validator account
 
 personally-conscious-echidna
 [validating public key] 0x971d780edfe98743f41cdcdba8521548fc343ffcd958e90968c4f1cc5a2e9b6ea11a984397c34c6cc13e9d4e8d14ce1e
 [created at] 16 minutes ago
-
-========================Deposit Data===============================
-
-0x2289511800000000000000000000000000000000000000000...
-
-===================================================================
 ```
 
-You can also run the `accounts-v2 list` command **non-interactively** by using the following command line flags, which are also viewable by typing `./prysm.sh validator accounts-v2 list --help.
+You can view all available options to run the `list` command by typing `./prysm.sh validator accounts-v2 list --help.
 
 | Flag          | Usage         |
 | ------------- |:-------------|
