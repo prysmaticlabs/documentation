@@ -6,13 +6,13 @@ sidebar_label: Non-HD wallet
 
 ## Background
 
-A Non-HD wallet provides the ability to create simple, encrypted validators accounts stored directly-on disk. Validator private keys are generated non-deterministically, meaning there is **no seed phrase** (mnemonic) which can be used to recover an entire wallet. 
+A Non-HD wallet provides the ability to create simple, encrypted validators accounts stored directly-on disk. Validator private keys are generated non-deterministically, meaning there is **no seed phrase** (mnemonic) which can be used to recover an entire wallet. If you created a deposit using the official [Medalla testnet launchpad](https://medalla.launchpad.ethereum.org/) and want to run Prysm using it, see our dedicated instructions [here](http://docs.prylabs.network/docs/prysm-usage/medalla-testnet).
 
 :::tip Pro-Tip
-We always recommend using an [HD wallet](http://docs.prylabs.network/docs/wallet/deterministic), as it provides the greatest flexibility, security, and compatibility with blockchain standards. Using an HD wallet allows you to recover your wallet with all your precious accounts easily from a mnemonic phrase you can store offline should anything happen to your computer.
+In general, we recommend using an [HD wallet](http://docs.prylabs.network/docs/wallet/deterministic), as it provides the greatest flexibility, security, and compatibility with blockchain standards. Using an HD wallet allows you to recover your wallet with all your precious accounts easily from a mnemonic phrase you can store offline should anything happen to your computer.
 :::
 
-Validator private keys are encrypted with a password using the [EIP-2335](https://eips.ethereum.org/EIPS/eip-2335) keystore.json standard for storing BLS12-381 private keys. This keystore.json file, along with a `deposit_data` transaction file and a timestamp file comprise an **account** in a non-HD wallet.
+Validator private keys are encrypted with a password using the [EIP-2335](https://eips.ethereum.org/EIPS/eip-2335) keystore.json standard for storing BLS12-381 private keys. This keystore.json file, along with a human-readable name, comprises an **account** in a non-HD wallet.
 
 Accounts are stored in the wallet's directory using human-readable names such as `personally-conscious-echidna`.
 
@@ -20,11 +20,9 @@ Accounts are stored in the wallet's directory using human-readable names such as
 wallet-dir/
 	personally-conscious-echidna/
 		keystore.json
-		deposit_transaction.rlp
  		created_at.txt
 	shy-extroverted-robin/
 		keystore.json
-		deposit_transaction.rlp
  		created_at.txt
 ```
 
@@ -32,13 +30,13 @@ For ease of use, passwords for each account are also stored on disk at a separat
 
 ```
 wallet-passwords/
- personally-conscious-echidna.pass
- shy-extroverted-robin.pass
+	personally-conscious-echidna.pass
+	shy-extroverted-robin.pass
 ```
 
-Validator deposit credentials are also stored under the account's path in the wallet directory, containing a `deposit_transaction.rlp` with raw bytes eth1 transaction data ready to be used to submit a 32ETH deposit to the eth2 deposit contract for the corresponding validator account. 
+Validator deposit credentials are also stored under the account's path in the wallet directory, containing a `deposit_transaction.rlp` with raw bytes eth1 transaction data ready to be used to submit a 32ETH deposit to the eth2 deposit contract for the corresponding validator account.
 
-##  Usage
+## Usage
 
 ### Wallet creation
 
@@ -56,10 +54,10 @@ and selecting **non-HD** wallet when prompted during an interactive process. You
 | `--passwords-dir`     | Path to a directory where account passwords will be stored (default: "$HOME/Eth2Validators/prysm-wallet-passwords")
 | `--keymanager-kind`     | Type of wallet to create, either "direct", "derived, or "remote" (default "derived")
 
-Here's a full example on how to create a non-HD wallet at `/tmp/mynonhdwallet` with account passwords stored at `/tmp/myaccountpasswords`.
+Here's a full example on how to create a non-HD wallet at `$HOME/mynonhdwallet` with account passwords stored at `$HOME/myaccountpasswords`.
 
 ```bash
-./prysm.sh validator wallet-v2 create --wallet-dir=/tmp/nonhdwallet --passwords-dir=/tmp/myaccountpasswords --keymanager-kind=direct
+./prysm.sh validator wallet-v2 create --wallet-dir=$HOME/nonhdwallet --passwords-dir=$HOME/myaccountpasswords --keymanager-kind=direct
 ```
 
 ### New validator account
@@ -98,7 +96,7 @@ Copy + paste the deposit data below when using the eth1 deposit contract
 
 ===================================================================
 
-INFO non-hd-wallet: Successfully created new validator 
+INFO non-hd-wallet: Successfully created new validator account
 account_name=personally-conscious-echidna
 ```
 
@@ -110,13 +108,13 @@ You can also create a new validator account **non-interactively** by using the f
 | ------------- |:-------------|
 | `--wallet-dir` | Path to a wallet directory (default: "$HOME/Eth2Validators/prysm-wallet-v2")
 | `--passwords-dir`     | Path to a directory where account passwords will be stored (default: "$HOME/Eth2Validators/prysm-wallet-passwords")
-| `--password-file`     | Path to plaintext file containing your desired new account password
+| `--password-file`     | Path to a plain-text, password.txt file containing your desired new account password
 
 
-Here's a full example on how to create a new validator account for your non-HD wallet stored at `/tmp/mynonhdwallet` with account passwords stored at `/tmp/myaccountpasswords`.
+Here's a full example on how to create a new validator account for your non-HD wallet stored at `$HOME/mynonhdwallet` with account passwords stored at `$HOME/myaccountpasswords`.
 
 ```bash
-./prysm.sh validator accounts-v2 create --wallet-dir=/tmp/nonhdwallet --passwords-dir=/tmp/myaccountpasswords --password-file=password.txt
+./prysm.sh validator accounts-v2 create --wallet-dir=$HOME/nonhdwallet --passwords-dir=$HOME/myaccountpasswords --password-file=password.txt
 ```
 
 Where you provide a plain-text `password.txt` containing your account password.
@@ -158,7 +156,7 @@ INFO accounts-v2: (account passwords path) /Users/johndoe/Library/Eth2Validators
 Showing **1** validator account
 
 personally-conscious-echidna
-[public key] 0x971d780edfe98743f41cdcdba8521548fc343ffcd958e90968c4f1cc5a2e9b6ea11a984397c34c6cc13e9d4e8d14ce1e
+[validating public key] 0x971d780edfe98743f41cdcdba8521548fc343ffcd958e90968c4f1cc5a2e9b6ea11a984397c34c6cc13e9d4e8d14ce1e
 [created at] 16 minutes ago
 
 ========================Deposit Data===============================
@@ -193,3 +191,5 @@ You can export validator accounts from your non-HD wallet into their own zip fil
 ```bash
 ./prysm.sh validator accounts-v2 export
 ```
+
+TODO: Work-in-progress
