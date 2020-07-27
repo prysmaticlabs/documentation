@@ -3,11 +3,29 @@ id: medalla-testnet
 title: Medalla testnet onboarding
 sidebar_label: Medalla testnet
 ---
-This section outlines the step-by-step process for how to join the [Medalla multiclient testnet]() and run a Prysm beacon node + validator
+This section outlines the step-by-step process for how to join the [Medalla multiclient testnet](https://medalla.launchpad.ethereum.org/) to run a Prysm eth2 beacon node and validator.
 
 ## Step 1: Get Prysm
 
-To begin, follow the instructions to fetch and install Prysm with either the [Prysm Installation Script](/docs/install/linux), [Docker](/docs/install/lin/docker) or [Bazel](/docs/install/lin/bazel).
+To begin, follow the instructions to fetch and install Prysm for your operating system.
+
+### Using the Prysm installation script (Recommended)
+ - [Windows](/docs/install/windows)
+ - [GNU\Linux](/docs/install/linux)
+ - [macOS](/docs/install/mac)
+ - [ARM64](/docs/install/arm)
+ 
+### Using Docker
+ - [Windows](/docs/install/win/docker)
+ - [GNU\Linux](/docs/install/lin/docker)
+ - [macOS](/docs/install/mac/docker)
+ - ARM64 - Not supported
+ 
+### Using Bazel
+ - Windows - Not supported
+ - [GNU\Linux](/docs/install/lin/bazel)
+ - [macOS](/docs/install/mac/bazel)
+ - [ARM64](/docs/install/arm/bazel)
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
