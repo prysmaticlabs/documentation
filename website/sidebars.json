@@ -27,7 +27,9 @@
 									"install/arm/activating-a-validator"
 								],
 
-		"Running Prysm": 	[   "prysm-usage/setup-eth1",
+		"Running Prysm": 	[   
+								"prysm-usage/medalla-testnet",
+								"prysm-usage/setup-eth1",
 								"prysm-usage/secure-grpc",
 								"prysm-usage/parameters",
 								"prysm-usage/wallet-keymanager",
