@@ -44,16 +44,16 @@ This section provides instructions to run [slasher](https://github.com/prysmatic
 #### Running slasher with Docker on GNU\Linux, and macOS 
 
 ```text
-docker pull gcr.io/prysmaticlabs/prysm/slasher:stable
+docker pull gcr.io/prysmaticlabs/prysm/slasher:latest
 docker run -it --network="host" -v $HOME/.eth2:/data --name slasher \
-  gcr.io/prysmaticlabs/prysm/slasher:stable \
+  gcr.io/prysmaticlabs/prysm/slasher:latest \
   --datadir=/data
 ```
 #### Running slasher with Docker on Windows
 
 ```text
-docker pull gcr.io/prysmaticlabs/prysm/slasher:stable
-docker run -it --network="host" -v c:/prysm:/data gcr.io/prysmaticlabs/prysm/slasher:stable
+docker pull gcr.io/prysmaticlabs/prysm/slasher:latest
+docker run -it --network="host" -v c:/prysm:/data gcr.io/prysmaticlabs/prysm/slasher:latest
 ```
 
 #### Running slasher with Bazel on GNU\Linux, macOS, and ARM64
