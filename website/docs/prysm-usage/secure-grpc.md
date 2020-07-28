@@ -23,16 +23,16 @@ To use secure gRPC with a beacon node:
 and to use secure gRPC with a validator:
 
 ```text
-./prysm.sh validator --tls-cert=server.pem --enable-accounts-v2
+./prysm.sh validator --tls-cert=server.pem
 ```
 
 Alternatively, a `ca.cert` certificate authority file can be passed to the validator to attempt a connection without requiring the server's certificate itself:
  
 ```text
-./prysm.sh validator --tls-cert=ca.cert --enable-accounts-v2
+./prysm.sh validator --tls-cert=ca.cert
 ```
 
-This will generate an output like so:
+    This will generate an output like so:
 
 ```text
 [2020-06-15 17:09:13]  INFO validator: Established secure gRPC connection
@@ -123,14 +123,14 @@ This will generate an output like so:
 
 1. Use the certificates to launch the beacon node:
 
-    ```text
-    ./prysm.sh beacon-node --tls-cert=beacon.pem --tls-key=beacon.key
-    ```
+```text
+./prysm.sh beacon-node --tls-cert=beacon.pem --tls-key=beacon.key
+```
 
 2. As well as a validator:
 
     ```text
-    ./prysm.sh validator --tls-cert=ca.cert --enable-accounts-v2
+    ./prysm.sh validator --tls-cert=ca.cert
     ```
 
     This will generate an output like so: 

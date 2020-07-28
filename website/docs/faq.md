@@ -76,9 +76,23 @@ I deposited but it’s taking a long time to become active - how can I check if 
 
 Even after you deposit, it takes several hours to join the testnet as an active validator and can take even longer if there is a queue ahead of you. You can track your validator’s status on block explorers such as https://beaconcha.in and https://beacon.etherscan.io. Please be patient, as there is quite a wait for new validators to become active.
 
+#### How can I check on the status of my validator?
+
+Make sure your beacon node is synced and running, and run the command
+`./prysm.sh validator accounts status --keymanager={unencrypted, interop, keystore, wallet} --keymanageropts={$YOUR_PATH, $YOUR_PATH/keymanageropts.json} --beacon-rpc-provider=localhost:4000`.
+
+
 #### I made a correct deposit and my validator status is still UNKNOWN, what’s going on?
 
 There are a few possibilities. (1) your deposit has not yet been processed by beacon nodes. It takes a while for the beacon node to be able to process logs from the eth1 Goerli chain by design. If you have already waited a few hours and no luck, there is a chance that (2) your deposit did not verify (that is, you used some other method of creating the deposit than our recommended, standard way on prylabs.net), or (3) you never actually sent a deposit to the right contract address
+
+#### How can I check my validator public key?
+
+You can run the command `./prysm.sh validator accounts keys --keystore-path=$HOME/validator --password=YOURPASSWORD` to check your validator public keys currently within that keystore.
+
+I’m running my node and validator and they seem fine but my balance is going down, help!
+
+First of all, check your validator public key on https://beaconcha.in or https://beacon.etherscan.io to cross-reference that you are, indeed, losing funds as detailed by these block explorers. Note that block explorers may not always have the most up-to-date information. Also, check your node and validator for any errors (is the beacon node full of ERROR logs? is it off? Is the validator client down?). Finally, if everything seems perfect to you but you are still losing funds, please get in touch with us on our discord [here](https://discord.gg/CTYGPUJ).
 
 #### What is balance and what is effective balance?
 
@@ -87,3 +101,7 @@ Your validator balance is the actual amount of ETH you have from being a validat
 #### When do my validators get to propose a block?
 
 Validators receive new assignments approximately every 6.4 minutes. This period of time is known as an “epoch” and you may be assigned to propose a block several times in an epoch. Proposing a block, however, is rare, as there can only be one block proposer per slot and there are many validators in the network. Voting on blocks, that is, being assigned as an attester, is very common and you will be assigned to attest once per epoch if you are an active validator. You can see how many votes your validator has been assigned to create vs. how many blocks your validator has been assigned to propose by using a popular block explorer such as https://beaconcha.in and looking up your validator index or public key.
+
+#### How can I run multiple validator keys at the same time? Do I need to spin up multiple validator clients?
+
+A validator client looks for a keystore to read in multiple keys and use them for validating. As long as you created multiple accounts in the same keystore, you will be able to use a single validator client to run multiple keys. We’ve even been able to run 50,000 keys on a single validator!
