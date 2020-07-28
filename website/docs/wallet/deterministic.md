@@ -6,7 +6,7 @@ sidebar_label: HD wallet
 
 ## Background
 
-An HD wallet provides the ability to create new validator private keys deterministically from a seed phrase, shown as an english mnemonic following the [BIP-39 standard](https://en.bitcoin.it/wiki/Seed_phrase) upon wallet creation. If you created a deposit using the official [Medalla testnet launchpad](https://medalla.launchpad.ethereum.org/) and want to run Prysm using it, see our dedicated instructions [here](http://docs.prylabs.network/docs/prysm-usage/medalla-testnet).
+An HD wallet provides the ability to create new validator private keys deterministically from a seed phrase, shown as an english mnemonic following the [BIP-39 standard](https://en.bitcoin.it/wiki/Seed_phrase) upon wallet creation. If you created a deposit using the official [Medalla testnet launchpad](https://medalla.launchpad.ethereum.org/) and want to run Prysm using it, see our dedicated instructions [here](/docs/install/medalla-testnet).
 
 Validator private keys are encrypted with the wallet's password using the [EIP-2335](https://eips.ethereum.org/EIPS/eip-2335) keystore.json standard for storing BLS12-381 private keys. This keystore.json file, along with its derivation path, comprises an **account** in an HD wallet.
 

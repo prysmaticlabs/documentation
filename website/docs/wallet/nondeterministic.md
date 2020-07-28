@@ -6,7 +6,7 @@ sidebar_label: Non-HD wallet
 
 ## Background
 
-A Non-HD wallet provides the ability to create simple, encrypted validators accounts stored directly-on disk. Validator private keys are generated non-deterministically, meaning there is **no seed phrase** (mnemonic) which can be used to recover an entire wallet. If you created a deposit using the official [Medalla testnet launchpad](https://medalla.launchpad.ethereum.org/) and want to run Prysm using it, see our dedicated instructions [here](http://docs.prylabs.network/docs/prysm-usage/medalla-testnet).
+A Non-HD wallet provides the ability to create simple, encrypted validators accounts stored directly-on disk. Validator private keys are generated non-deterministically, meaning there is **no seed phrase** (mnemonic) which can be used to recover an entire wallet. If you created a deposit using the official [Medalla testnet launchpad](https://medalla.launchpad.ethereum.org/) and want to run Prysm using it, see our dedicated instructions [here](/docs/install/medalla-testnet).
 
 :::tip Pro-Tip
 In general, we recommend using an [HD wallet](http://docs.prylabs.network/docs/wallet/deterministic), as it provides the greatest flexibility, security, and compatibility with blockchain standards. Using an HD wallet allows you to recover your wallet with all your precious accounts easily from a mnemonic phrase you can store offline should anything happen to your computer.
