@@ -16,7 +16,7 @@ module.exports = {
                     position: 'right',
                 },
                 {
-                    href: 'https://prylabs.net',
+                    href: 'https://medalla.launchpad.ethereum.org',
                     label: 'Activate a Validator',
                     position: 'right',
                 },
