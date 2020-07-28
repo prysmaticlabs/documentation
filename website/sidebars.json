@@ -7,25 +7,27 @@
 
 		"GNU/Linux installations": [	"install/linux",
 										"install/lin/docker",
-										"install/lin/bazel"
+										"install/lin/bazel",
+										"install/lin/activating-a-validator"
 									],
 
 		"Windows installations": 	[	"install/windows",
-										"install/win/docker"
+										"install/win/docker",
+										"install/win/activating-a-validator"
 									],
 
 		"macOS installations": 	[	"install/mac",
 									"install/mac/docker",
-									"install/mac/bazel"
+									"install/mac/bazel",
+									"install/mac/activating-a-validator"
 								],
 
 		"ARM64 installations": 	[	"install/arm",
-									"install/arm/bazel"
+									"install/arm/bazel",
+									"install/arm/activating-a-validator"
 								],
 
-		"Running Prysm": 	[   
-								"prysm-usage/medalla-testnet",
-								"prysm-usage/setup-eth1",
+		"Running Prysm": 	[   "prysm-usage/setup-eth1",
 								"prysm-usage/secure-grpc",
 								"prysm-usage/parameters",
 								"prysm-usage/wallet-keymanager",
