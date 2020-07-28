@@ -248,4 +248,4 @@ At this point, the beacon chain data will begin synchronising up to the latest h
 The beacon node you are using should be **completely synced** before submitting your deposit for the validator client, otherwise the validator will not be able to validate and will **inflict minor inactivity balance penalties**.
 :::
 
-Now that your beacon chain is setup, you can then run a validator on the **Medalla testnet** by following our detailed guidelines [here](https://docs.prylabs.network/docs/install/medalla-testnet)
+Now that your beacon chain is setup, you can then run a validator on the **Medalla testnet** by following our detailed guidelines [here](/docs/install/medalla-testnet)

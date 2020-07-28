@@ -11,26 +11,9 @@ This section outlines the step-by-step process for how to join the [Medalla mult
 
 To begin, follow the instructions to fetch and install Prysm for your operating system.
 
-### Using the Prysm installation script (Recommended)
-
-- [Windows](/docs/install/windows)
-- [GNU\Linux](/docs/install/linux)
-- [macOS](/docs/install/mac)
-- [ARM64](/docs/install/arm)
-
-### Using Docker
-
-- [Windows](/docs/install/win/docker)
-- [GNU\Linux](/docs/install/lin/docker)
-- [macOS](/docs/install/mac/docker)
-- ARM64 - Not supported
-
-### Building from source with Bazel (Advanced)
-
-- Windows - Not supported
-- [GNU\Linux](/docs/install/lin/bazel)
-- [macOS](/docs/install/mac/bazel)
-- [ARM64](/docs/install/arm/bazel)
+* [Using the Prysm installation script (Recommended)](/docs/install/install-with-script)
+* [Using Docker](/docs/install/install-with-docker)
+* [Building from source with Bazel (Advanced)](/docs/install/install-with-bazel)
 
 ## Step 2: Get Test ETH
 
