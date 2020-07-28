@@ -5,7 +5,7 @@ sidebar_label: Wallet keymanager
 ---
 
 :::danger Deprecated
-This wallet keymanager is now deprecated and no longer the recommended way to manage accounts in Prysm. Read [wallet and accounts](http://localhost:3000/docs/wallet/introduction) for the latest information and usage.
+This wallet keymanager is now deprecated and no longer the recommended way to manage accounts in Prysm. Read [wallet and accounts](http://docs.prylabs.network/docs/wallet/introduction) for the latest information and usage.
 :::
 
 A wallet keymanager is a way of storing and accessing wallet keys on a local filesystem. The below guide outlines the configuration and operation of [ethdo](https://github.com/wealdtech/ethdo), a third-party software package that is used to perform several common tasks on Ethereum 2.0, including keystore functionality. It follows the Ethereum 2.0 specification and provides cross-client support (interoperability) as well as advanced features suitable for multi-node deployments.

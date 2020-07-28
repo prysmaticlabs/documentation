@@ -7,24 +7,20 @@
 
 		"GNU/Linux installations": [	"install/linux",
 										"install/lin/docker",
-										"install/lin/bazel",
-										"install/lin/activating-a-validator"
+										"install/lin/bazel"
 									],
 
 		"Windows installations": 	[	"install/windows",
-										"install/win/docker",
-										"install/win/activating-a-validator"
+										"install/win/docker"
 									],
 
 		"macOS installations": 	[	"install/mac",
 									"install/mac/docker",
-									"install/mac/bazel",
-									"install/mac/activating-a-validator"
+									"install/mac/bazel"
 								],
 
 		"ARM64 installations": 	[	"install/arm",
-									"install/arm/bazel",
-									"install/arm/activating-a-validator"
+									"install/arm/bazel"
 								],
 
 		"Running Prysm": 	[   

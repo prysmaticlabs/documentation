@@ -5,202 +5,362 @@ sidebar_label: Medalla testnet
 ---
 This section outlines the step-by-step process for how to join the [Medalla multiclient testnet](https://medalla.launchpad.ethereum.org/) to run a Prysm eth2 beacon node and validator.
 
+![image](https://i.imgur.com/3oUwf4N.png)
+
 ## Step 1: Get Prysm
 
 To begin, follow the instructions to fetch and install Prysm for your operating system.
 
 ### Using the Prysm installation script (Recommended)
- - [Windows](/docs/install/windows)
- - [GNU\Linux](/docs/install/linux)
- - [macOS](/docs/install/mac)
- - [ARM64](/docs/install/arm)
- 
+
+- [Windows](/docs/install/windows)
+- [GNU\Linux](/docs/install/linux)
+- [macOS](/docs/install/mac)
+- [ARM64](/docs/install/arm)
+
 ### Using Docker
- - [Windows](/docs/install/win/docker)
- - [GNU\Linux](/docs/install/lin/docker)
- - [macOS](/docs/install/mac/docker)
- - ARM64 - Not supported
- 
-### Using Bazel
- - Windows - Not supported
- - [GNU\Linux](/docs/install/lin/bazel)
- - [macOS](/docs/install/mac/bazel)
- - [ARM64](/docs/install/arm/bazel)
+
+- [Windows](/docs/install/win/docker)
+- [GNU\Linux](/docs/install/lin/docker)
+- [macOS](/docs/install/mac/docker)
+- ARM64 - Not supported
+
+### Building from source with Bazel (Advanced)
+
+- Windows - Not supported
+- [GNU\Linux](/docs/install/lin/bazel)
+- [macOS](/docs/install/mac/bazel)
+- [ARM64](/docs/install/arm/bazel)
+
+## Step 2: Get Test ETH
+
+To participate in eth2, you'll need to stake 32 ETH. For the Medalla eth2 testnet, we use test ETH from the Görli eth1 testnet. You can request this testnet ETH by joining our [discord server](https://discord.gg/hmq4y2P).
+
+## Step 3: Complete the onboarding process in the official eth2 launchpad
+
+The [official eth2 launchpad](https://medalla.launchpad.ethereum.org/summary) is the easiest way to go through a step-by-step process to deposit your 32 ETH to become a validator. Throughout the process, you'll be asked to generate new validator credentials using the official Ethereum deposit command-line-tool [here](https://github.com/ethereum/eth2.0-deposit-cli). During the process, you will have generated a `validator_keys` folder under the `eth2.0-deposit-cli` directory. You can import all of your validator accounts into Prysm from that folder in the next step.
+
+## Step 4: Import your validator accounts into Prysm
+
+For this step, you'll need to copy the path to the `validator_keys` folder under the `eth2.0-deposit-cli` directory you created during the launchpad process. For example, if your eth2.0-deposit-cli installation is in your `$HOME` (or `%LOCALAPPDATA%` on Windows) directory, you can then run the following commands for your operating system
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs
   groupId="operating-systems"
-  defaultValue="win"
+  defaultValue="lin"
   values={[
+    {label: 'Linux', value: 'lin'},
     {label: 'Windows', value: 'win'},
-    {label: 'macOS', value: 'mac'},
+    {label: 'MacOS', value: 'mac'},
+    {label: 'Arm64', value: 'arm'},
   ]
 }>
-<TabItem value="win">Use Ctrl + C to copy.</TabItem>
-<TabItem value="mac">Use Command + C to copy.</TabItem>
+<TabItem value="lin">
+
+**Using the Prysm installation script**
+
+```text
+./prysm.sh validator accounts-v2 import --keys-dir=$HOME/eth2.0-deposit-cli/validator_keys
+```
+
+**Using Docker**
+
+```text
+docker run -it -v $HOME/eth2.0-deposit-cli/validator_keys:/keys \
+  -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
+  -v $HOME/Eth2Validators/prysm-wallet-v2-passwords:/eth2passwords \
+  gcr.io/prysmaticlabs/prysm/validator:latest \
+  accounts-v2 import --keys-dir=/keys --wallet-dir=/wallet -passwords-dir=/eth2passwords
+```
+
+**Using Bazel**
+
+```text
+bazel run //validator:validator -- accounts-v2 import --keys-dir=$HOME/eth2.0-deposit-cli/validator_keys
+```
+
+</TabItem>
+<TabItem value="win">
+
+**Using the prysm.bat script**
+
+```text
+prysm.bat validator accounts-v2 import --keys-dir=%LOCALAPPDATA%\eth2.0-deposit-cli\validator_keys
+```
+
+**Using Docker**
+
+```text
+docker run -it -v %LOCALAPPDATA%\eth2.0-deposit-cli\validator_keys:/keys -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2-passwords:/eth2passwords gcr.io/prysmaticlabs/prysm/validator:latest accounts-v2 import --keys-dir=/keys --wallet-dir=/wallet --passwords-dir=/eth2passwords
+```
+
+</TabItem>
+<TabItem value="mac">
+
+**Using the Prysm installation script**
+
+```text
+./prysm.sh validator accounts-v2 import --keys-dir=$HOME/eth2.0-deposit-cli/validator_keys
+```
+
+**Using Docker**
+
+```text
+docker run -it -v $HOME/eth2.0-deposit-cli/validator_keys:/keys \
+  -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
+  -v $HOME/Eth2Validators/prysm-wallet-v2-passwords:/eth2passwords \
+  gcr.io/prysmaticlabs/prysm/validator:latest \
+  accounts-v2 import --keys-dir=/keys --wallet-dir=/wallet -passwords-dir=/eth2passwords
+```
+
+**Using Bazel**
+
+```text
+bazel run //validator:validator -- accounts-v2 import --keys-dir=$HOME/eth2.0-deposit-cli/validator_keys
+```
+
+</TabItem>
+<TabItem value="arm">
+
+**Using the Prysm installation script**
+
+```text
+./prysm.sh validator accounts-v2 import --keys-dir=$HOME/eth2.0-deposit-cli/validator_keys
+```
+
+**Using Bazel**
+
+```text
+bazel run //validator:validator -- accounts-v2 import --keys-dir=$HOME/eth2.0-deposit-cli/validator_keys
+```
+
+</TabItem>
 </Tabs>
+
+## Step 5: Run your beacon node and validator
+
+![image](https://i.imgur.com/3yH946I.png)
+
+First, let's run the beacon node connected to the medalla testnet. It will begin to sync with other nodes and will be ready for you to connect to it.
 
 <Tabs
   groupId="operating-systems"
-  defaultValue="win"
+  defaultValue="lin"
   values={[
+    {label: 'Linux', value: 'lin'},
     {label: 'Windows', value: 'win'},
-    {label: 'macOS', value: 'mac'},
+    {label: 'MacOS', value: 'mac'},
+    {label: 'Arm64', value: 'arm'},
   ]
 }>
-<TabItem value="win">Use Ctrl + V to paste.</TabItem>
-<TabItem value="mac">Use Command + V to paste.</TabItem>
+<TabItem value="lin">
+
+**Using the Prysm installation script**
+
+```text
+./prysm.sh beacon-chain --medalla
+```
+
+**Using Docker**
+
+```text
+docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node \
+  gcr.io/prysmaticlabs/prysm/beacon-chain:latest \
+  --medalla \
+  --datadir=/data \
+  --rpc-host=0.0.0.0 \
+  --monitoring-host=0.0.0.0
+```
+
+**Using Bazel**
+
+```text
+bazel run //beacon-chain -- --medalla
+```
+
+</TabItem>
+<TabItem value="win">
+
+**Using the Prysm installation script**
+
+```text
+.\prysm.bat beacon-chain --medalla
+```
+
+**Using Docker**
+
+1. You will need to share the local drive you wish to mount to to container \(e.g. C:\).
+   1. Enter Docker settings \(right click the tray icon\)
+   2. Click 'Shared Drives'
+   3. Select a drive to share
+   4. Click 'Apply'
+2. You will next need to create a directory named `/prysm/` within your selected shared Drive. This folder will be used as a local data directory for [beacon node](/docs/how-prysm-works/beacon-node) chain data as well as account and keystore information required by the validator. Docker **will not** create this directory if it does not exist already. For the purposes of these instructions, it is assumed that `C:` is your prior-selected shared Drive.
+3. To run the beacon node, issue the following command:
+
+```text
+docker run -it -v %LOCALAPPDATA%\Eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp gcr.io/prysmaticlabs/prysm/beacon-chain:latest --datadir=/data --rpc-host=0.0.0.0 --monitoring-host=0.0.0.0
+```
+
+This will sync up the beacon node with the latest cannonical head block in the network. The Docker `-d` flag can be appended before the `-v` flag to launch the process in a detached terminal window.
+
+</TabItem>
+<TabItem value="mac">
+
+**Using the Prysm installation script**
+
+```text
+./prysm.sh beacon-chain --medalla
+```
+
+**Using Docker**
+
+```text
+docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node \
+  gcr.io/prysmaticlabs/prysm/beacon-chain:latest \
+  --medalla \
+  --datadir=/data \
+  --rpc-host=0.0.0.0 \
+  --monitoring-host=0.0.0.0
+```
+
+**Using Bazel**
+
+```text
+bazel run //beacon-chain -- --medalla
+```
+
+</TabItem>
+<TabItem value="arm">
+
+**Using the Prysm installation script**
+
+```text
+./prysm.sh beacon-chain --medalla
+```
+
+**Using Bazel**
+
+```text
+bazel run //beacon-chain -- --medalla
+```
+
+</TabItem>
 </Tabs>
 
-## Step 2: Get Göerli ETH - Test ether
 
-You will be asked to link a wallet address to your validator with either the [Metamask](https://metamask.io/) browser extension \(recommended\) or [Portis](https://portis.io). Select your preferred platform and click through the steps presented.
-![](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LRNnKRqTm4z1mzdDqDF%2F-LuJpxGKxOpat8TfDxPP%2F-Lua4msnLMulYW-XYrN_%2F2.png?alt=media&token=8268d6b5-97da-414a-9110-141a7aaeb3de)
-
-The wallet is scanned for the required amount of Göerli ETH after being linked. If the wallet does not have sufficient funds, you will be given the option to receive the required GöETH from our faucet.
-
-## Step 3a: Generating a validator keypair
-
-Depending on your platform, issue the appropriate command from the examples below to generate a public / private keypair for your validator.
-
-> **NOTICE:** When prompted, provide a password to encrypt your new ETH2 validator and withdrawal keys.
-
-#### Generating with prysm.sh
-
-```text
-./prysm.sh validator accounts create --keystore-path=$HOME/.eth2validators
-```
-
-#### Generating with Docker
-
-```bash
-docker run -it -v $HOME/.eth2validators:/data \
-   gcr.io/prysmaticlabs/prysm/validator:latest \
-   accounts create --keystore-path=/data 
-```
-
-#### Generating with Bazel
-
-```text
-bazel run //validator -- accounts create --keystore-path=$HOME/.eth2validators
-```
-
-This command will output a `Raw Transaction Data` block:
-
-![](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LRNnKRqTm4z1mzdDqDF%2F-LuJpxGKxOpat8TfDxPP%2F-Lua3OVmMOefnzXXvdGq%2F4.png?alt=media&token=96459a93-055c-4bf1-a0af-07a900d7b47f)
-
-## Step 3b: Submitting the deposit data
-
-> **NOTICE:** The beacon-chain node you are using should be **completely synced** before submitting your deposit. You may **incur minor inactivity balance penalties** if the validator is unable to perform its duties by the time the deposit is processed and activated by the ETH2 network.
-
-**Method 1:** Copy and paste the deposit data into the field on prylabs.net:
-
-![](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LRNnKRqTm4z1mzdDqDF%2F-Lua_6kBgtyMjsJFCSPr%2F-Lua_XtevNAg0ybDIGfI%2F77.png?alt=media&token=ee25ea72-3436-455e-b28c-66471b5ddf88)
-
-**Method 2:** Users may also choose to submit the required 32 GöETH along with the data directly to the current deposit contract ****\(found [here](https://prylabs.net/contract)\). To enable the hex data field on the Send page in Metamask, click your wallets avatar &gt; Settings &gt; Advanced &gt; toggle 'Show hex data'.
-
-## Step 4a: Starting up the beacon node
-
-> **NOTICE:** If you have already started and syncronised your beacon node, this portion can be skipped.
-
-The beacon node is a long running process that will require a dedicated terminal window. Depending on your platform, issue the appropriate command from the examples below to start the beacon node.
-
-#### Starting the beacon-chain node with prysm.sh
-
-```text
-./prysm.sh beacon-chain --datadir=$HOME/.eth2
-```
-
-#### Starting the beacon-chain node with Docker
-
-```text
-docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp \
-
-  gcr.io/prysmaticlabs/prysm/beacon-chain:latest \
-  --datadir=/data
-```
-
-#### Starting the beacon-chain node with Bazel
-
-```text
-bazel run //beacon-chain -- --datadir=$HOME/.eth2
-```
-
-The beacon-chain node will spin up and immediately begin communicating with the Prysm testnet, outputting data similar to the image below.
-
-![](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LRNnKRqTm4z1mzdDqDF%2F-Lua_6kBgtyMjsJFCSPr%2F-LuaaWo6lTgjk4e7WQ4p%2F9.png?alt=media&token=901b8c14-2a09-4365-bf63-1991c4996544)
-
-The process of syncronising may take a while; the incoming block per second capacity is dependent upon the connection strength, network congestion and overall peer count.
-
-## Step 4b: Starting up the validator client
-> **NOTICE:** The beacon-chain node you are using should be **completely synced** before submitting your deposit. You may **incur minor inactivity balance penalties** if the validator is unable to perform its duties by the time the deposit is processed and activated by the ETH2 network.
+:::tip Syncing your node
+The beacon-chain node you are using should be **completely synced** before submitting your deposit. You may **incur minor inactivity balance penalties** if the validator is unable to perform its duties by the time the deposit is processed and activated by the ETH2 network. You do not need to worry about this if the chain has not started yet.
+:::
 
 Open a second terminal window. Depending on your platform, issue the appropriate command from the examples below to start the validator.
 
-> **NOTICE:** When prompted, provide the password used to encrypt your ETH2 validator key.
+<Tabs
+  groupId="operating-systems"
+  defaultValue="lin"
+  values={[
+    {label: 'Linux', value: 'lin'},
+    {label: 'Windows', value: 'win'},
+    {label: 'MacOS', value: 'mac'},
+    {label: 'Arm64', value: 'arm'},
+  ]
+}>
+<TabItem value="lin">
 
-#### Starting the validator client with prysm.sh
+**Using the Prysm installation script**
 
 ```text
-./prysm.sh validator --keystore-path=$HOME/.eth2validators
+./prysm.sh validator --medalla --enable-accounts-v2
 ```
 
-#### Starting the validator client with Docker
+**Using Docker**
 
 ```text
-docker run -it -v $HOME/.eth2validators:/data --network="host" \
+docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet --network="host" \
+  -v $HOME/Eth2Validators/prysm-wallet-v2-passwords:/eth2passwords
   gcr.io/prysmaticlabs/prysm/validator:latest \
+  --medalla \
+  --enable-accounts-v2 \
   --beacon-rpc-provider=127.0.0.1:4000 \
-  --keystore-path=/data
+  --wallet-dir=/wallet
+  --passwords-dir=/eth2passwords
 ```
 
-#### Starting the validator client with Bazel
+**Using Bazel**
 
 ```text
-bazel run //validator -- --keystore-path=$HOME/.eth2validators
+bazel run //validator -- --medalla --enable-accounts-v2
 ```
 
-## Step 5: Submitting the deposit contract
+</TabItem>
+<TabItem value="win">
 
-Once both the beacon node and validator client are successfully running, make your deposit by clicking the button and following the steps presented in your wallet.
+**Using Docker**
 
-![](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LRNnKRqTm4z1mzdDqDF%2F-LuJpxGKxOpat8TfDxPP%2F-Lua3RjIGSbGQbe7NrjZ%2F5.png?alt=media&token=0561a974-edf7-49f9-b225-8997982eb8e0)
+```text
+docker run -it -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2-passwords:/eth2passwords --network="host" gcr.io/prysmaticlabs/prysm/validator:latest --beacon-rpc-provider=127.0.0.1:4000 --enable-accounts-v2 --wallet-dir=/wallet --passwords-dir=/eth2passwords
+```
+
+</TabItem>
+<TabItem value="mac">
+
+**Using the Prysm installation script**
+
+```text
+./prysm.sh validator --medalla --enable-accounts-v2
+```
+
+**Using Docker**
+
+```text
+docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet --network="host" \
+  -v $HOME/Eth2Validators/prysm-wallet-v2-passwords:/eth2passwords
+  gcr.io/prysmaticlabs/prysm/validator:latest \
+  --medalla \
+  --enable-accounts-v2 \
+  --beacon-rpc-provider=127.0.0.1:4000 \
+  --wallet-dir=/wallet
+  --passwords-dir=/eth2passwords
+```
+
+**Using Bazel**
+
+```text
+bazel run //validator -- --medalla --enable-accounts-v2
+```
+
+</TabItem>
+<TabItem value="arm">
+
+**Using the Prysm installation script**
+
+```text
+./prysm.sh validator --medalla --enable-accounts-v2
+```
+
+**Using Bazel**
+
+```text
+bazel run //validator -- --medalla --enable-accounts-v2
+```
+
+</TabItem>
+</Tabs>
+
 
 ## Step 6: Wait for your validator assignment
 
-Please note that it may take up to 12 hours for nodes in the ETH2 network to process a deposit. In the meantime, leave both terminal windows open and running; once the node is activated by the ETH2 network, the validator will immediately begin receiving tasks and performing its responsibilities.
+Please note that it may from **5-12 hours** for nodes in the ETH2 network to process a deposit. In the meantime, leave both terminal windows open and running; once the node is activated by the ETH2 network, the validator will immediately begin receiving tasks and performing its responsibilities. If the chain has not yet started, it will be ready to start proposing blocks and signing votes as soon as the genesis time is reached.
 
-To check on the status of your validator, run the following command:
+To check on the status of your validator, we recommend checking out the popular block explorers: [beaconcha.in](https://beaconcha.in) by Bitfly and [beacon.etherscan.io](https://beacon.etherscan.io) by the Etherscan team.
 
-#### Check validator status with prysm.sh
+![image](https://i.imgur.com/CDNc6Ft.png)
 
-```text
-./prysm.sh validator accounts status --keymanager=keystore --keymanageropts=$HOME/.eth2validator --beacon-rpc-provider=localhost:4000
-```
+## Advanced wallet setups
 
-#### Check validator status with Bazel
+For running an advanced wallet setups, our documentation includes comprehensive guides as to how to use the wallet built into Prysm to recover another wallet, use a remote signing server, and more. You can read more about it [here](https://docs.prylabs.network/docs/wallet/introduction).
 
-```text
-bazel run validator accounts status -- --keymanager=keystore --keymanageropts=$HOME/.eth2validator  --beacon-rpc-provider=localhost:4000
-```
-
-Additional information about the validator and status of ETH1 deposits is also available on various testnet [block explorers](/docs/devtools/block-explorers).
-
-
-## Running multiple validators
-
-Multiple validator keys can easily be initialised on the same validator process.
-
-
- Simply repeat the following steps:
- * [Step 3a](activating-a-validator#step-3a-generating-a-validator-keypair) to generate additional validator keys in the same keystore path, using the same password.
- * [Step 3b](activating-a-validator#step-3b-submitting-the-deposit-data) to deposit 32 Göerli ETH for each validator key
- * Now restart the validator process, and it will automatically detect the new keys!
-
-For running multiple keypairs alongside multiple validator instances, or to use different passwords refer the [wallet keymanager](/docs/prysm-usage/wallet-keymanager) section of this documentation.
-
-**Congratulations, you are now fully participating in the Prysm ETH 2.0 Phase 0 testnet!** ♡
+**Congratulations, you are now fully participating in the Prysm ETH 2.0 Phase 0 testnet!**
 
 **Still have questions?**  Stop by our [Discord](https://discord.gg/KSA7rPr) for further assistance!
