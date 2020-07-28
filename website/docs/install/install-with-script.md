@@ -242,10 +242,10 @@ Starting Prysm beacon-chain
 </TabItem>
 </Tabs>
 
-At this point, the beacon chain data will begin synchronising up to the latest head block. Please note that, depending on your network capacity and CPU, this process may take several hours. Once it is complete, you will be ready to make a deposit and begin setting up a validator client.
+At this point, the beacon chain data will begin synchronising up to the latest head block. If the network hasn't started yet, it will process eth1 deposits from the deposit contract so far and await the genesis time. Please note that, depending on your network capacity and CPU, this process may take several hours. Once it is complete, you will be ready to make a deposit and begin setting up a validator client.
 
 :::info Syncing the Blockchain
-The beacon node you are using should be **completely synced** before submitting your deposit for the validator client, otherwise the validator will not be able to validate and will **inflict minor inactivity balance penalties**.
+The beacon node you are using should be **completely synced** before submitting your deposit for the validator client, otherwise the validator will not be able to validate and will **inflict minor inactivity balance penalties**. No need to worry about this if the chain has not yet started.
 :::
 
 Now that your beacon chain is setup, you can then run a validator on the **Medalla testnet** by following our detailed guidelines [here](/docs/install/medalla-testnet)
