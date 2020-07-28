@@ -37,12 +37,7 @@
 								"faq"
 							],
 
-		"Wallet and accounts": 	[   
-			"wallet/introduction",
-			"wallet/deterministic",
-			"wallet/nondeterministic",
-			"wallet/remote"
-		],
+
 
 		"How Prysm works": 	[	"how-prysm-works/architecture-overview",
 								"how-prysm-works/beacon-node",

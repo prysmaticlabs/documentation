@@ -30,7 +30,7 @@ datadir: '/data'
 ```
 or for a validator like so:
 ```sh
-./prysm.sh validator --config-file=/path/to/file.yaml --enable-accounts-v2
+./prysm.sh validator --config-file=/path/to/file.yaml
 ```
 
 ### Windows
@@ -47,7 +47,7 @@ datadir: 'c:\prysm'
 ```
 or for a validator like so:
 ```sh
-.\prysm.bat validator --config-file=c:\path\to\file.yaml --enable-accounts-v2
+.\prysm.bat validator --config-file=c:\path\to\file.yaml
 ```
 
 It is possible to provide additional flags alongside the `.yaml` file, though if there is conflicts, the `.yaml` file will take priority. For example, if the flag `--datadir=/data2` is specified and `datadir: "/data1"` is in the `.yaml` file, Prysm would prioritise writing to `/data1`.
