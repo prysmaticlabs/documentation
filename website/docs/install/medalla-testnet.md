@@ -143,7 +143,7 @@ First, let's run the beacon node connected to the medalla testnet. It will begin
 **Using the Prysm installation script**
 
 ```text
-./prysm.sh beacon-chain --medalla
+./prysm.sh beacon-chain
 ```
 
 **Using Docker**
@@ -151,7 +151,6 @@ First, let's run the beacon node connected to the medalla testnet. It will begin
 ```text
 docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node \
   gcr.io/prysmaticlabs/prysm/beacon-chain:latest \
-  --medalla \
   --datadir=/data \
   --rpc-host=0.0.0.0 \
   --monitoring-host=0.0.0.0
@@ -160,7 +159,7 @@ docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/u
 **Using Bazel**
 
 ```text
-bazel run //beacon-chain -- --medalla
+bazel run //beacon-chain
 ```
 
 </TabItem>
@@ -169,7 +168,7 @@ bazel run //beacon-chain -- --medalla
 **Using the Prysm installation script**
 
 ```text
-.\prysm.bat beacon-chain --medalla
+.\prysm.bat beacon-chain
 ```
 
 **Using Docker**
@@ -194,7 +193,7 @@ This will sync up the beacon node with the latest cannonical head block in the n
 **Using the Prysm installation script**
 
 ```text
-./prysm.sh beacon-chain --medalla
+./prysm.sh beacon-chain
 ```
 
 **Using Docker**
@@ -202,7 +201,6 @@ This will sync up the beacon node with the latest cannonical head block in the n
 ```text
 docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node \
   gcr.io/prysmaticlabs/prysm/beacon-chain:latest \
-  --medalla \
   --datadir=/data \
   --rpc-host=0.0.0.0 \
   --monitoring-host=0.0.0.0
@@ -211,7 +209,7 @@ docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/u
 **Using Bazel**
 
 ```text
-bazel run //beacon-chain -- --medalla
+bazel run //beacon-chain
 ```
 
 </TabItem>
@@ -220,13 +218,13 @@ bazel run //beacon-chain -- --medalla
 **Using the Prysm installation script**
 
 ```text
-./prysm.sh beacon-chain --medalla
+./prysm.sh beacon-chain
 ```
 
 **Using Bazel**
 
 ```text
-bazel run //beacon-chain -- --medalla
+bazel run //beacon-chain
 ```
 
 </TabItem>
@@ -254,7 +252,7 @@ Open a second terminal window. Depending on your platform, issue the appropriate
 **Using the Prysm installation script**
 
 ```text
-./prysm.sh validator --medalla --enable-accounts-v2
+./prysm.sh validator --enable-accounts-v2
 ```
 
 **Using Docker**
@@ -263,7 +261,6 @@ Open a second terminal window. Depending on your platform, issue the appropriate
 docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet --network="host" \
   -v $HOME/Eth2Validators/prysm-wallet-v2-passwords:/eth2passwords
   gcr.io/prysmaticlabs/prysm/validator:latest \
-  --medalla \
   --enable-accounts-v2 \
   --beacon-rpc-provider=127.0.0.1:4000 \
   --wallet-dir=/wallet
@@ -273,7 +270,7 @@ docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet --network="host" 
 **Using Bazel**
 
 ```text
-bazel run //validator -- --medalla --enable-accounts-v2
+bazel run //validator -- --enable-accounts-v2
 ```
 
 </TabItem>
@@ -291,7 +288,7 @@ docker run -it -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet -v %LOCA
 **Using the Prysm installation script**
 
 ```text
-./prysm.sh validator --medalla --enable-accounts-v2
+./prysm.sh validator --enable-accounts-v2
 ```
 
 **Using Docker**
@@ -300,7 +297,6 @@ docker run -it -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet -v %LOCA
 docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet --network="host" \
   -v $HOME/Eth2Validators/prysm-wallet-v2-passwords:/eth2passwords
   gcr.io/prysmaticlabs/prysm/validator:latest \
-  --medalla \
   --enable-accounts-v2 \
   --beacon-rpc-provider=127.0.0.1:4000 \
   --wallet-dir=/wallet
@@ -310,7 +306,7 @@ docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet --network="host" 
 **Using Bazel**
 
 ```text
-bazel run //validator -- --medalla --enable-accounts-v2
+bazel run //validator -- --enable-accounts-v2
 ```
 
 </TabItem>
@@ -319,13 +315,13 @@ bazel run //validator -- --medalla --enable-accounts-v2
 **Using the Prysm installation script**
 
 ```text
-./prysm.sh validator --medalla --enable-accounts-v2
+./prysm.sh validator --enable-accounts-v2
 ```
 
 **Using Bazel**
 
 ```text
-bazel run //validator -- --medalla --enable-accounts-v2
+bazel run //validator -- --enable-accounts-v2
 ```
 
 </TabItem>

@@ -74,7 +74,7 @@ It is recommended to open up port tcp/13000 and udp/12000 on your local router t
 To start your [beacon node](/docs/how-prysm-works/beacon-node) with Bazel, issue the following command:
 
 ```text
-bazel run //beacon-chain -- --datadir=$HOME/.eth2 --medalla
+bazel run //beacon-chain -- --datadir=$HOME/.eth2 
 ```
 
 This will sync up the beacon node with the latest head block in the network. If the network hasn't started yet, it will process eth1 deposits from the deposit contract so far and await the genesis time.

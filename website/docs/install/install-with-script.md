@@ -67,7 +67,7 @@ curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --out
 3. Run the `prysm.sh` script alongside any [startup parameters](/docs/prysm-usage/parameters#beacon-node-parameters):
 
 ```sh
-./prysm.sh beacon-chain --medalla
+./prysm.sh beacon-chain
 ```
 
 :::tip Pro-Tip
@@ -77,7 +77,7 @@ Not getting enough peers?  Refer to the [improve P2P connectivity](/docs/prysm-u
 The `prysm.sh` script will now download and initialize the beacon chain with the specified parameters. The terminal will produce output like so:
 
 ```sh
-./prysm.sh beacon-chain --medalla
+./prysm.sh beacon-chain
 Latest Prysm version is v0.3.3.
 Downloading beacon chain@v0.3.3 to /home/{USER}/prysm/dist/beacon-chain-v0.3.3-linux-amd64 (automatically selected latest available version)
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
@@ -116,7 +116,7 @@ reg add HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1
 4. Run the `prysm.bat` script alongside any [startup parameters](/docs/prysm-usage/parameters#beacon-node-parameters):
 
 ```sh
-.\prysm.bat beacon-chain --medalla
+.\prysm.bat beacon-chain
 ```
 
 :::tip Pro-Tip
@@ -126,7 +126,7 @@ Not getting enough peers?  Refer to the [improve P2P connectivity](/docs/prysm-u
 The `prysm.bat` script will now download and initialise the beacon chain with the specified parameters. The terminal will produce output like so:
 
 ```sh
-.\prysm.bat beacon-chain --medalla
+.\prysm.bat beacon-chain
 Latest prysm release is v1.0.0-alpha.5.
 Using prysm version v1.0.0-alpha.5.
 Downloading beacon chain v1.0.0-alpha.5 to .\dist\validator-v1.0.0-alpha.5-windows-amd64.exe automatically selected latest available release
@@ -169,7 +169,7 @@ curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --out
 3. Run the `prysm.sh` script alongside any [startup parameters](/docs/prysm-usage/parameters#beacon-node-parameters):
 
 ```sh
-./prysm.sh beacon-chain --medalla
+./prysm.sh beacon-chain
 ```
 
 :::tip Pro-Tip
@@ -179,7 +179,7 @@ Not getting enough peers?  Refer to the [improve P2P connectivity](/docs/prysm-u
 The `prysm.sh` script will now download and initialise the beacon chain with the specified parameters. The terminal will produce output like so:
 
 ```sh
-./prysm.sh beacon-chain --medalla
+./prysm.sh beacon-chain
 Latest Prysm version is v0.3.3.
 Downloading beacon chain@v0.3.3 to /home/{USER}/prysm/dist/beacon-chain-v0.3.3-linux-amd64 (automatically selected latest available version)
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
@@ -213,7 +213,7 @@ curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --out
 3. Run the `prysm.sh` script alongside any [startup parameters](/docs/prysm-usage/parameters#beacon-node-parameters):
 
 ```sh
-./prysm.sh beacon-chain --medalla
+./prysm.sh beacon-chain
 ```
 
 :::tip Pro-Tip
@@ -223,7 +223,7 @@ Not getting enough peers?  Refer to the [improve P2P connectivity](/docs/prysm-u
 The `prysm.sh` script will now download and initialise the beacon chain with the specified parameters. The terminal will produce output like so:
 
 ```sh
-./prysm.sh beacon-chain --medalla
+./prysm.sh beacon-chain
 Latest Prysm version is v0.3.3.
 Downloading beacon chain@v0.3.3 to /home/{USER}/prysm/dist/beacon-chain-v0.3.3-linux-amd64 (automatically selected latest available version)
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
