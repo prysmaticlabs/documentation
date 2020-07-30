@@ -252,7 +252,7 @@ Open a second terminal window. Depending on your platform, issue the appropriate
 **Using the Prysm installation script**
 
 ```text
-./prysm.sh validator --enable-accounts-v2
+./prysm.sh validator
 ```
 
 **Using Docker**
@@ -261,7 +261,6 @@ Open a second terminal window. Depending on your platform, issue the appropriate
 docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet --network="host" \
   -v $HOME/Eth2Validators/prysm-wallet-v2-passwords:/eth2passwords
   gcr.io/prysmaticlabs/prysm/validator:latest \
-  --enable-accounts-v2 \
   --beacon-rpc-provider=127.0.0.1:4000 \
   --wallet-dir=/wallet
   --passwords-dir=/eth2passwords
@@ -270,7 +269,7 @@ docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet --network="host" 
 **Using Bazel**
 
 ```text
-bazel run //validator -- --enable-accounts-v2
+bazel run //validator
 ```
 
 </TabItem>
@@ -279,7 +278,7 @@ bazel run //validator -- --enable-accounts-v2
 **Using Docker**
 
 ```text
-docker run -it -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2-passwords:/eth2passwords --network="host" gcr.io/prysmaticlabs/prysm/validator:latest --beacon-rpc-provider=127.0.0.1:4000 --enable-accounts-v2 --wallet-dir=/wallet --passwords-dir=/eth2passwords
+docker run -it -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2-passwords:/eth2passwords --network="host" gcr.io/prysmaticlabs/prysm/validator:latest --beacon-rpc-provider=127.0.0.1:4000 --wallet-dir=/wallet --passwords-dir=/eth2passwords
 ```
 
 </TabItem>
@@ -288,7 +287,7 @@ docker run -it -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet -v %LOCA
 **Using the Prysm installation script**
 
 ```text
-./prysm.sh validator --enable-accounts-v2
+./prysm.sh validator
 ```
 
 **Using Docker**
@@ -297,7 +296,6 @@ docker run -it -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet -v %LOCA
 docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet --network="host" \
   -v $HOME/Eth2Validators/prysm-wallet-v2-passwords:/eth2passwords
   gcr.io/prysmaticlabs/prysm/validator:latest \
-  --enable-accounts-v2 \
   --beacon-rpc-provider=127.0.0.1:4000 \
   --wallet-dir=/wallet
   --passwords-dir=/eth2passwords
@@ -306,7 +304,7 @@ docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet --network="host" 
 **Using Bazel**
 
 ```text
-bazel run //validator -- --enable-accounts-v2
+bazel run //validator
 ```
 
 </TabItem>
@@ -315,13 +313,13 @@ bazel run //validator -- --enable-accounts-v2
 **Using the Prysm installation script**
 
 ```text
-./prysm.sh validator --enable-accounts-v2
+./prysm.sh validator
 ```
 
 **Using Bazel**
 
 ```text
-bazel run //validator -- --enable-accounts-v2
+bazel run //validator
 ```
 
 </TabItem>

@@ -18,12 +18,6 @@ Out of the box, Prysm supports 3 basic kinds of wallets that encompass many diff
 
 At the core of Prysm's validator accounts lies the notion of a validator private key, which is stored in a password-protected, keystore.json file. Prysm supports the ability to manage many validator accounts, making it easy to import and export them as well as easily list all the account info in your wallet. Prysm is compliant with the [EIP-2335](https://eips.ethereum.org/EIPS/eip-2335) standards for storing eth2 validator private keys, making it possible to move keys between different eth2 client implementations.
 
-To run this new version of Prysm's account management, you will need to run your validator client with the `--enable-accounts-v2` flag. For example
-
-```text
-./prysm.sh validator --enable-accounts-v2
-```
-
 ## HD wallets
 
 By default, a Prysm validator client encourages use of an **HD wallet**, which you can recover from a 24-word, simple english sentence should you lose access to it, such as:
