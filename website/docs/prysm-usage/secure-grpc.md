@@ -23,13 +23,13 @@ To use secure gRPC with a beacon node:
 and to use secure gRPC with a validator:
 
 ```text
-./prysm.sh validator --tls-cert=server.pem --enable-accounts-v2
+./prysm.sh validator --tls-cert=server.pem
 ```
 
 Alternatively, a `ca.cert` certificate authority file can be passed to the validator to attempt a connection without requiring the server's certificate itself:
  
 ```text
-./prysm.sh validator --tls-cert=ca.cert --enable-accounts-v2
+./prysm.sh validator --tls-cert=ca.cert
 ```
 
 This will generate an output like so:
@@ -130,7 +130,7 @@ This will generate an output like so:
 2. As well as a validator:
 
     ```text
-    ./prysm.sh validator --tls-cert=ca.cert --enable-accounts-v2
+    ./prysm.sh validator --tls-cert=ca.cert
     ```
 
     This will generate an output like so: 
