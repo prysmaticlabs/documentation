@@ -275,6 +275,12 @@ bazel run //validator
 </TabItem>
 <TabItem value="win">
 
+**Using the prysm.bat script**
+
+```text
+prysm.bat validator
+```
+
 **Using Docker**
 
 ```text
