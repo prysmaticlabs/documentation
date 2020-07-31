@@ -1,7 +1,7 @@
 ---
 id: medalla-testnet
-title: Medalla testnet onboarding
-sidebar_label: Medalla testnet
+title: Eth2 launchpad onboarding
+sidebar_label: Eth2 launchpad onboarding
 ---
 This section outlines the step-by-step process for how to join the [Medalla multiclient testnet](https://medalla.launchpad.ethereum.org/) to run a Prysm eth2 beacon node and validator.
 

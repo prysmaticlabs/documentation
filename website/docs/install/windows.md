@@ -78,3 +78,49 @@ Starting Prysm beacon-chain
 At this point, the beacon chain data will begin synchronising up to the latest head block. Please note that, depending on your network capacity and CPU, this process may take several hours. Once it is complete, you will be ready to make a deposit and begin setting up a validator client.
 
   > **NOTICE:** The beacon node you are using should be **completely synced** before submitting your deposit for the validator client, otherwise the validator will not be able to validate and will **inflict minor inactivity balance penalties**.
+
+## Staking ETH: Running a validator client
+
+5. Run the `prysm.bat` script to generate a new keypair, alongside any [startup parameters](/docs/prysm-usage/parameters):
+
+> **NOTICE:** When prompted, provide a password to encrypt your new ETH2 validator and withdrawal keys.
+
+```sh
+.\prysm.bat validator accounts create --keystore-path=%LOCALAPPDATA%\.eth2validator
+```
+
+For step-by-step assistance with performing a deposit and setting up a validator client, see the [activating a validator ](/docs/install/win/activating-a-validator)section of this documentation.
+
+Once your beacon node is up, the chain will be waiting for you to deposit 32 Goerli ETH into a [validator deposit contract](/docs/how-prysm-works/validator-deposit-contract) in order to activate your validator \(discussed in the section below\).
+
+**If you need Goerli ETH**, follow the instructions found on [prylabs.network/participate](https://prylabs.network/participate) to use the testnet faucet. Otherwise, you can contact a team member on Discord to be sent some.
+
+Please note that **it may take up to 12 hours** for the nodes in the network to process a deposit. Once the node is active, the validator will immediately begin performing its responsibilities.
+
+6. Run the `prysm.bat` script alongside any [startup parameters](/docs/prysm-usage/parameters#validator-parameters):
+
+> **NOTICE:** When prompted, provide the password used to encrypt your ETH2 validator key.
+
+```sh
+.\prysm.bat validator --keystore-path=%LOCALAPPDATA%\.eth2validator
+```
+
+```sh
+.\prysm.bat validator --keystore-path=%LOCALAPPDATA%\.eth2validator
+Latest prysm release is v1.0.0-alpha.5.
+Using prysm version v1.0.0-alpha.5.
+Downloading validator v1.0.0-alpha.5 to .\dist\validator-v1.0.0-alpha.5-windows-amd64.exe automatically selected latest available release
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 32.4M  100 32.4M    0     0  4747k      0  0:00:07  0:00:07 --:--:-- 5396k
+WARN GPG verification is not natively available on Windows.
+WARN Skipping integrity verification of downloaded binary
+Verifying binary authenticity with SHA265 Hash.
+SHA265 Hash Match
+Starting Prysm validator --keystore-path=%LOCALAPPDATA%\.eth2validator
+...
+```
+
+In your validator client, you will be able to see your validator balance as it goes up over time. Note that, should your node ever go offline for a long period, your validator will start gradually losing its deposit.  If it drops below 16 ETH, it will be removed from the network entirely.
+
+**Congratulations! If you've made it this far, you are now running Ethereum 2.0 Phase 0.**
