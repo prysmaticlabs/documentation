@@ -1,5 +1,5 @@
 ---
-id: medalla-testnet
+id: medalla
 title: Eth2 launchpad onboarding
 sidebar_label: Eth2 launchpad onboarding
 ---

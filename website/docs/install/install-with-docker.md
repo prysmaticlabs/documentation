@@ -99,7 +99,7 @@ At this point, the beacon chain data will begin synchroni zing up to the latest 
 The beacon node you are using should be **completely synced** before submitting your deposit for the validator client, otherwise the validator will not be able to validate and will **inflict minor inactivity balance penalties**.
 :::
 
-Now that your beacon chain is setup, you can then run a validator on the **Medalla testnet** by following our detailed guidelines [here](/docs/testnets/medalla-testnet)
+Now that your beacon chain is setup, you can then run a validator on the **Medalla testnet** by following our detailed guidelines [here](//docs/testnet/medalla-testnet)
 
 ## Managing the beacon node with Docker
 
@@ -178,7 +178,7 @@ This will sync up the beacon node with the latest cannonical head block in the n
 The beacon node you are using should be **completely synced** before submitting your deposit for the validator client, otherwise the validator will not be able to validate and will **inflict minor inactivity balance penalties**. No need to worry about this if the chain has not yet started.
 :::
 
-Now that your beacon chain is setup, you can then run a validator on the **Medalla testnet** by following our detailed guidelines [here](/docs/testnets/medalla-testnet)
+Now that your beacon chain is setup, you can then run a validator on the **Medalla testnet** by following our detailed guidelines [here](//docs/testnet/medalla-testnet)
 
 ## Managing the beacon node with Docker
 
@@ -250,7 +250,7 @@ This will sync up the beacon node with the latest cannonical head block in the n
 The beacon node you are using should be **completely synced** before submitting your deposit for the validator client, otherwise the validator will not be able to validate and will **inflict minor inactivity balance penalties**. No need to worry about this if the chain has not yet started.
 :::
 
-Now that your beacon chain is setup, you can then run a validator on the **Medalla testnet** by following our detailed guidelines [here](/docs/testnets/medalla-testnet)
+Now that your beacon chain is setup, you can then run a validator on the **Medalla testnet** by following our detailed guidelines [here](//docs/testnet/medalla-testnet)
 
 ## Managing the beacon node with Docker
 
