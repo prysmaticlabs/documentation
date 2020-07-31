@@ -4,7 +4,7 @@ title: Wallets and validator accounts
 sidebar_label: Introduction
 ---
 
-This section explains everything about how to manage validator accounts using Prysm's built-in wallet, as well as setup instructions for different types of wallets including HD (hierarchical deterministic), non-HD, and remote signing wallets. If you created a wallet using the official [Medalla testnet launchpad](https://medalla.launchpad.ethereum.org/) and want to run Prysm using it, see our dedicated instructions [here](//docs/testnet/medalla-testnet).
+This section explains everything about how to manage validator accounts using Prysm's built-in wallet, as well as setup instructions for different types of wallets including HD (hierarchical deterministic), non-HD, and remote signing wallets. If you created a wallet using the official [Medalla testnet launchpad](https://medalla.launchpad.ethereum.org/) and want to run Prysm using it, see our dedicated instructions [here](/docs/testnet/medalla-testnet).
 
 :::tip Pro-Tip
 Prysm's validator accounts are extensible enough to allow for the most basic setup all the way to advanced production setups where security is paramount
@@ -13,7 +13,7 @@ Prysm's validator accounts are extensible enough to allow for the most basic set
 Out of the box, Prysm supports 3 basic kinds of wallets that encompass many different use-cases
 
 1. **HD wallet**: (Default) A common type of blockchain wallet which is generated from a english mnemonic, able to create new accounts deterministically
-2. **non-HD wallet**: A simple wallet in which accounts are password protected and validator keys are generated non-deterministically. This is the recommended approach if you want to import an account from the [Medalla testnet launchpad](https://medalla.launchpad.ethereum.org/) and you read dedicated instructions [here](//docs/testnet/medalla-testnet).
+2. **non-HD wallet**: A simple wallet in which accounts are password protected and validator keys are generated non-deterministically. This is the recommended approach if you want to import an account from the [Medalla testnet launchpad](https://medalla.launchpad.ethereum.org/) and you read dedicated instructions [here](/docs/testnet/medalla-testnet).
 3. **Remote signing wallet**: An advanced kind of wallet in which validator keys and signing requests are processed by a remote server via gRPC (view our remote server [reference implementation](https://github.com/prysmaticlabs/remote-signer))
 
 At the core of Prysm's validator accounts lies the notion of a validator private key, which is stored in a password-protected, keystore.json file. Prysm supports the ability to manage many validator accounts, making it easy to import and export them as well as easily list all the account info in your wallet. Prysm is compliant with the [EIP-2335](https://eips.ethereum.org/EIPS/eip-2335) standards for storing eth2 validator private keys, making it possible to move keys between different eth2 client implementations.
