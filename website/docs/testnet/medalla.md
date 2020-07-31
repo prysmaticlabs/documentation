@@ -259,10 +259,10 @@ Open a second terminal window. Depending on your platform, issue the appropriate
 
 ```text
 docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet --network="host" \
-  -v $HOME/Eth2Validators/prysm-wallet-v2-passwords:/eth2passwords
+  -v $HOME/Eth2Validators/prysm-wallet-v2-passwords:/eth2passwords \
   gcr.io/prysmaticlabs/prysm/validator:latest \
   --beacon-rpc-provider=127.0.0.1:4000 \
-  --wallet-dir=/wallet
+  --wallet-dir=/wallet \
   --passwords-dir=/eth2passwords
 ```
 
