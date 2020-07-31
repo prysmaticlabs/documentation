@@ -32,7 +32,7 @@ Alternatively, a `ca.cert` certificate authority file can be passed to the valid
 ./prysm.sh validator --tls-cert=ca.cert
 ```
 
-    This will generate an output like so:
+This will generate an output like so:
 
 ```text
 [2020-06-15 17:09:13]  INFO validator: Established secure gRPC connection
@@ -123,9 +123,9 @@ Alternatively, a `ca.cert` certificate authority file can be passed to the valid
 
 1. Use the certificates to launch the beacon node:
 
-```text
-./prysm.sh beacon-node --tls-cert=beacon.pem --tls-key=beacon.key
-```
+    ```text
+    ./prysm.sh beacon-node --tls-cert=beacon.pem --tls-key=beacon.key
+    ```
 
 2. As well as a validator:
 
