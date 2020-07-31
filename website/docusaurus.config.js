@@ -3,10 +3,10 @@ module.exports = {
         defaultDarkMode: false,
         // disableDarkMode: true,
         navbar: {
-            title: "Prysm 'Onyx' Testnet", // Title for your website.
+            title: "Prysm 'Medalla' Testnet", // Title for your website.
             /* path to images for header/footer */
             logo: {
-                alt: "Prysm Onyx Testnet logo",
+                alt: "Prysm Medalla Testnet logo",
                 src: 'img/logo2.png',
             },
             links: [
@@ -16,7 +16,7 @@ module.exports = {
                     position: 'right',
                 },
                 {
-                    href: 'https://prylabs.net',
+                    href: 'https://medalla.launchpad.ethereum.org',
                     label: 'Activate a Validator',
                     position: 'right',
                 },
@@ -39,7 +39,7 @@ module.exports = {
         },
         footer: {
             logo: {
-                alt: "Prysm 'Onyx' Testnet",
+                alt: "Prysm 'Medalla' Testnet",
                 href: '/',
                 src: 'img/Prysm.svg',
             },

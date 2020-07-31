@@ -30,7 +30,7 @@ These hardware specifications are recommended, but not required to run the Prysm
 ## Dependencies
 
 * A modern GNU/Linux operating system
-* The latest release (2.1.1 onwards) of [Bazel](https://docs.bazel.build/versions/master/install.html) installed
+* The latest release (3.2.0 onwards) of [Bazel](https://docs.bazel.build/versions/master/install.html) installed
 * The `cmake` package installed
 * The `git` package installed
 
