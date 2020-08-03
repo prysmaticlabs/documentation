@@ -30,12 +30,12 @@ and selecting **HD** wallet when prompted during an interactive process. You can
 | ------------- |:-------------|
 | `--wallet-dir` | Path to a wallet directory (default: "$HOME/Eth2Validators/prysm-wallet-v2")
 | `--keymanager-kind`     | Type of wallet to create, either "direct", "derived, or "remote" (default "derived")
-| `--password-file`     | Path to a plain-text, password.txt file to lock your wallet
+| `--wallet-password-file`     | Path to a plain-text, password.txt file to lock your wallet
 
 Here's a full example on how to create an HD wallet at `$HOME/myhdwallet`
 
 ```bash
-./prysm.sh validator wallet-v2 create --wallet-dir=$HOME/myhdwallet --keymanager-kind=derived --password-file=password.txt
+./prysm.sh validator wallet-v2 create --wallet-dir=$HOME/myhdwallet --keymanager-kind=derived --wallet-password-file=password.txt
 ```
 
 ### Wallet recovery
@@ -98,7 +98,7 @@ You can also create a new validator account **non-interactively** by using the f
 | Flag          | Usage         |
 | ------------- |:-------------|
 | `--wallet-dir` | Path to a wallet directory (default: "$HOME/Eth2Validators/prysm-wallet-v2")
-| `--password-file` | Path to a plain-text, password.txt file to unlock your wallet
+| `--wallet-password-file` | Path to a plain-text, password.txt file to unlock your wallet
 | `--num-accounts` | Total number of accounts to generate (default: 1)
 
 Here's a full example on how to create a new validator account for your HD wallet stored at `$HOME/myhdwallet`.
@@ -159,5 +159,6 @@ You can also run the `accounts-v2 list` command **non-interactively** by using t
 | Flag          | Usage         |
 | ------------- |:-------------|
 | `--wallet-dir` | Path to a wallet directory (default: "$HOME/Eth2Validators/prysm-wallet-v2")
+| `--wallet-password-file` | Path to plain-text file containing your wallet's password
 | `--show-deposit-data`     |  Display raw eth1 tx deposit data for validator accounts-v2 (default: false
 
