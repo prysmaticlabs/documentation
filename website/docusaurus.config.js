@@ -17,7 +17,7 @@ module.exports = {
                 },
                 {
                     href: 'https://medalla.launchpad.ethereum.org',
-                    label: 'Activate a Validator',
+                    label: 'Join the Testnet',
                     position: 'right',
                 },
                 {
