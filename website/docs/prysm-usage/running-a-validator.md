@@ -46,9 +46,7 @@ import TabItem from '@theme/TabItem';
 
 Prysm supports importing only the validating keys one needs to join eth2, keeping ones mnemonic and other wallet secrets safe. This type of wallet is also referred to as a **non-deterministic** wallet, as the keys it manages can be imported from anywhere, not necessarily from a 24-word mnemonic phrase. This is the **recommended approach** for key management if you have joined the eth2 testnet via the [Medalla testnet launchpad](https://medalla.launchpad.ethereum.org/) and you read our dedicated instructions [here](/docs/testnet/medalla).
 
-The idea behind the simple import functionality is for a user to create a wallet elsewhere, with a tool, such as the official [eth2.0-deposit-cli](https://github.com/ethereum/eth2.0-deposit-cli), and import only what one needs into their validator client. This is a great approach for simple cloud hosting in which you run Prysm in your favorite cloud provider, create your keys offline on your personal computer, and simply upload the validating keys the Prysm client needs to your cloud server. Your accounts are then protected by a **strong** password.
-
-For more information on this simple import wallet functionality, you can read our instructions [here](/docs/wallet/nondeterministic).
+The idea behind the simple import functionality is for a user to create a wallet elsewhere, with a tool, such as the official [eth2.0-deposit-cli](https://github.com/ethereum/eth2.0-deposit-cli), and import only what one needs into their validator client. This is a great approach for simple cloud hosting in which you run Prysm in your favorite cloud provider, create your keys offline on your personal computer, and simply upload the validating keys the Prysm client needs to your cloud server. Your accounts are then protected by a **strong** password. For more information on the full capabilities of our simple-import wallet, you can read our docs [here](/docs/wallet/nondeterministic).
 
 </TabItem>
 <TabItem value="hd">
@@ -134,7 +132,116 @@ If you created an HD wallet with Prysm, you'll be able to see the `deposit data
 
 Now that you created your wallet, sent your deposit, and got through all these steps, you're now ready to run our validator client software. The simplest way to run it is with the following command based on your operating system and preferred installation method.
 
+<Tabs
+  groupId="operating-systems"
+  defaultValue="lin"
+  values={[
+    {label: 'Linux', value: 'lin'},
+    {label: 'Windows', value: 'win'},
+    {label: 'MacOS', value: 'mac'},
+    {label: 'Arm64', value: 'arm'},
+  ]
+}>
+<TabItem value="lin">
+
+**Using the Prysm installation script**
+
+```text
+./prysm.sh validator
+```
+
+**Using Docker**
+
+```text
+docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet --network="host" \
+  gcr.io/prysmaticlabs/prysm/validator:latest \
+  --beacon-rpc-provider=127.0.0.1:4000 \
+  --wallet-dir=/walle$
+```
+
+**Using Bazel**
+
+```text
+bazel run //validator
+```
+
+</TabItem>
+<TabItem value="win">
+
+**Using the prysm.bat script**
+
+```text
+prysm.bat validator
+```
+
+**Using Docker**
+
+```text
+docker run -it -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet --network="host" gcr.io/prysmaticlabs/prysm/validator:latest --beacon-rpc-provider=127.0.0.1:4000 --wallet-dir=/wallet
+```
+
+</TabItem>
+<TabItem value="mac">
+
+**Using the Prysm installation script**
+
+```text
+./prysm.sh validator
+```
+
+**Using Docker**
+
+```text
+docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet --network="host" \
+  gcr.io/prysmaticlabs/prysm/validator:latest \
+  --beacon-rpc-provider=127.0.0.1:4000 \
+  --wallet-dir=/wallet
+```
+
+**Using Bazel**
+
+```text
+bazel run //validator
+```
+
+</TabItem>
+<TabItem value="arm">
+
+**Using the Prysm installation script**
+
+```text
+./prysm.sh validator
+```
+
+**Using Bazel**
+
+```text
+bazel run //validator
+```
+
+</TabItem>
+</Tabs>
+
+:::tip Skipping the Wallet Password Prompt
+Upon starting your validator client, you will always be prompted to provide your wallet's password. If you want to avoid this prompt, you can provide a `--wallet-password-file` flag to launch your validator client without required user input.
+:::
+
 ### Available parameters
+
+There are several options available to customize your validator client. Here is a list of all command line flags you can pass in when running the program.
+
+| Flag          | Usage         |
+| ------------- |:-------------|
+|`--no-custom-config` | Run the beacon chain with the real parameters from phase 0.
+|`--beacon-rpc-provider` | Beacon node RPC provider endpoint. Default: localhost:4000
+|`--tls-cert` | Certificate for secure gRPC to a beacon node
+|`--tls-key` | TLS key for secure gRPC to a beacon node
+|`--disable-rewards-penalties-logging` | Disable reward/penalty logging during cluster deployment.
+|`--graffiti` | A string to include in proposed block.
+|`--grpc-max-msg-size`| Integer to define max recieve message call size. Default: 52428800 (for 50Mb).
+|`--enable-account-metrics` | Enable prometheus metrics for validator accounts.
+|`--wallet-dir` | Path to the wallet for the validator client
+|`--wallet-password-file` | Path to a plain-text file containing the password for unlocking the user's wallet 
 
 ### Keeping your validator always online using systemd or Docker
 
