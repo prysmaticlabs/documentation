@@ -20,7 +20,6 @@
 			"prysm-usage/setup-eth1",
 			"prysm-usage/secure-grpc",
 			"prysm-usage/parameters",
-			"prysm-usage/wallet-keymanager",
 			"prysm-usage/slasher",
 			"prysm-usage/p2p-host-ip",
 			"prysm-usage/monitoring/grafana-dashboard",

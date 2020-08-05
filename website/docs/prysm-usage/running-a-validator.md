@@ -44,7 +44,9 @@ import TabItem from '@theme/TabItem';
 }>
 <TabItem value="simple-import">
 
-Prysm supports importing only the validating keys one needs to join eth2, keeping ones mnemonic and other wallet secrets safe. This type of wallet is also referred to as a **non-deterministic** wallet, as the keys it manages can be imported from anywhere, not necessarily from a 24-word mnemonic phrase. This is the **recommended approach** for key management if you have joined the eth2 testnet via the [Medalla testnet launchpad](https://medalla.launchpad.ethereum.org/) and you read our dedicated instructions [here](/docs/testnet/medalla).
+Prysm supports importing only the validating keys one needs to join eth2, keeping ones mnemonic and other wallet secrets safe. This type of functionality in Prysm is also referred to as a **non-deterministic** wallet, as the keys it manages can be imported from anywhere, not necessarily from a 24-word mnemonic phrase. This is the **recommended approach** for key management if you have joined the eth2 testnet via the [Medalla testnet launchpad](https://medalla.launchpad.ethereum.org/) and you read our dedicated instructions [here](/docs/testnet/medalla).
+
+![image](/img/imports.svg)
 
 The idea behind the simple import functionality is for a user to create a wallet elsewhere, with a tool, such as the official [eth2.0-deposit-cli](https://github.com/ethereum/eth2.0-deposit-cli), and import only what one needs into their validator client. This is a great approach for simple cloud hosting in which you run Prysm in your favorite cloud provider, create your keys offline on your personal computer, and simply upload the validating keys the Prysm client needs to your cloud server. Your accounts are then protected by a **strong** password. For more information on the full capabilities of our simple-import wallet, you can read our docs [here](/docs/wallet/nondeterministic).
 
@@ -92,9 +94,102 @@ The ideal security for an average user participating as a validator is as follow
 
 For **best security** in production cloud deployments, it's best you use a **remote signer**, as that offers absolute separation of your secret keys and your validator client software. Read more about remote signers [here](/docs/wallet/remote).
 
-### Creating your wallet and keys
+### Creating your wallet
 
 After you've made your decision on which type of wallet you prefer to run, you can then create one from the following instructions.
+
+
+<Tabs
+  groupId="operating-systems"
+  defaultValue="lin"
+  values={[
+    {label: 'Linux', value: 'lin'},
+    {label: 'Windows', value: 'win'},
+    {label: 'MacOS', value: 'mac'},
+    {label: 'Arm64', value: 'arm'},
+  ]
+}>
+<TabItem value="lin">
+
+**Using the Prysm installation script**
+
+```text
+./prysm.sh validator wallet-v2 create
+```
+
+**Using Docker**
+
+```text
+docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet --network="host" \
+  gcr.io/prysmaticlabs/prysm/validator:latest \
+  wallet-v2 create \
+  --wallet-dir=/wallet
+```
+
+**Using Bazel**
+
+```text
+bazel run //validator -- wallet-v2 create
+```
+
+</TabItem>
+<TabItem value="win">
+
+**Using the prysm.bat script**
+
+```text
+prysm.bat validator wallet-v2 create
+```
+
+**Using Docker**
+
+```text
+docker run -it -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet gcr.io/prysmaticlabs/prysm/validator:latest wallet-v2 create --wallet-dir=/wallet
+```
+
+</TabItem>
+<TabItem value="mac">
+
+**Using the Prysm installation script**
+
+```text
+./prysm.sh validator wallet-v2 create
+```
+
+**Using Docker**
+
+```text
+docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
+  gcr.io/prysmaticlabs/prysm/validator:latest \
+  wallet-v2 create \
+  --wallet-dir=/wallet
+```
+
+**Using Bazel**
+
+```text
+bazel run //validator -- wallet-v2 create
+```
+
+</TabItem>
+<TabItem value="arm">
+
+**Using the Prysm installation script**
+
+```text
+./prysm.sh validator wallet-v2 create
+```
+
+**Using Bazel**
+
+```text
+bazel run //validator -- wallet-v2 create
+```
+
+</TabItem>
+</Tabs>
+
+You'll be asked to create a **strong password** for your wallet during the process.
 
 ## Step 3: Submitting your 32 ETH deposit
 
@@ -104,7 +199,7 @@ Joining as a validator in ETH2 involves making a one-time deposit of 32 ETH
   groupId="deposit"
   defaultValue="via-launchpad"
   values={[
-    {label: 'Via launchpad', value: 'via-launchpad'},
+    {label: 'Via launchpad (recommended)', value: 'via-launchpad'},
     {label: 'Manually through Metamask', value: 'metamask'},
   ]
 }>
@@ -117,13 +212,115 @@ We highly recommend going through the official [eth2 launchpad](https://medalla.
 </TabItem>
 <TabItem value="metamask">
 
-You can also participate in eth2 by depositing 32 ETH into the Medalla testnet contract directly using a wallet such as Metamask. You'll 
+You can also participate in eth2 by depositing 32 ETH into the Medalla testnet contract directly using a wallet such as Metamask. You'll need to obtain 32 Goerli test ETH to participate in the Medalla testnet, which you can obtain by joining our [Discord](https://discord.gg/hmq4y2P) server.
 
 :::danger Do not send real ETH!
 Eth2 is currently only in **testnet mode**, meaning there is no real money involved. Never send any real ETH to deposit contract, and be mindful of how you're submitting your deposit! The eth2 launchpad is the friendlist way to send your deposit.
 :::
 
-If you created an HD wallet with Prysm, you'll be able to see the `deposit data
+Next-up, you'll need to create a validator key using the wallet you created in the previous steps.
+
+<Tabs
+  groupId="operating-systems"
+  defaultValue="lin"
+  values={[
+    {label: 'Linux', value: 'lin'},
+    {label: 'Windows', value: 'win'},
+    {label: 'MacOS', value: 'mac'},
+    {label: 'Arm64', value: 'arm'},
+  ]
+}>
+<TabItem value="lin">
+
+**Using the Prysm installation script**
+
+```text
+./prysm.sh validator accounts-v2 create
+```
+
+**Using Docker**
+
+```text
+docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet --network="host" \
+  gcr.io/prysmaticlabs/prysm/validator:latest \
+  accounts-v2 create \
+  --wallet-dir=/wallet
+```
+
+**Using Bazel**
+
+```text
+bazel run //validator -- accounts-v2 create
+```
+
+</TabItem>
+<TabItem value="win">
+
+**Using the prysm.bat script**
+
+```text
+prysm.bat validator accounts-v2 create
+```
+
+**Using Docker**
+
+```text
+docker run -it -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet gcr.io/prysmaticlabs/prysm/validator:latest accounts-v2 create --wallet-dir=/wallet
+```
+
+</TabItem>
+<TabItem value="mac">
+
+**Using the Prysm installation script**
+
+```text
+./prysm.sh validator accounts-v2 create
+```
+
+**Using Docker**
+
+```text
+docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
+  gcr.io/prysmaticlabs/prysm/validator:latest \
+  accounts-v2 create \
+  --wallet-dir=/wallet
+```
+
+**Using Bazel**
+
+```text
+bazel run //validator -- accounts-v2 create
+```
+
+</TabItem>
+<TabItem value="arm">
+
+**Using the Prysm installation script**
+
+```text
+./prysm.sh validator accounts-v2 create
+```
+
+**Using Bazel**
+
+```text
+bazel run //validator -- accounts-v2 create
+```
+
+</TabItem>
+</Tabs>
+
+After you create a new account, you'll see a long string of text printed out to your terminal.
+
+![image](/img/depositdata.png)
+
+:::tip Medalla Testnet Contract Address
+The address for the Medalla testnet deposit contract on the Goerli ETH1 chain is `0x07b39F4fDE4A38bACe212b546dAc87C58DfE3fDC`. You can paste this into the `recipient` text box in Metamask.
+:::
+
+You can copy the deposit data from your account creation process and paste it into the `Hex Data:` text box when sending your transaction. If this option is not available, visit your account settings in Metamask and enable showing Hex Data as shown below.
+
+![image](/img/metamasksend.png)
 
 </TabItem>
 </Tabs>
@@ -156,7 +353,7 @@ Now that you created your wallet, sent your deposit, and got through all these s
 docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet --network="host" \
   gcr.io/prysmaticlabs/prysm/validator:latest \
   --beacon-rpc-provider=127.0.0.1:4000 \
-  --wallet-dir=/walle$
+  --wallet-dir=/wallet
 ```
 
 **Using Bazel**
@@ -246,6 +443,71 @@ There are several options available to customize your validator client. Here is 
 ### Keeping your validator always online using systemd or Docker
 
 Running a validator is a 24/7 task, meaning you can't always expect to be in front of your computer to manage it. If you're running the validator on a cloud server, or you want the ability for it to restart automatically once your computer restarts, you need a way to run the software in the background. There are several ways of doing this, but we'll cover Docker and systemd, which are popular methods of running software as a service.
+
+<Tabs
+  groupId="service"
+  defaultValue="docker"
+  values={[
+    {label: 'Docker', value: 'docker'},
+    {label: 'Systemd', value: 'systemd'},
+  ]
+}>
+<TabItem value="docker">
+
+You can use Docker to run your beacon node and validators in the background effectively.
+
+```text
+docker run -it -d -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node gcr.io/prysmaticlabs/prysm/beacon-chain:latest --datadir=/data --rpc-host=0.0.0.0 --monitoring-host=0.0.0.0
+```
+
+The `-d` option will run the node in the background. Likewise, for the validator client
+
+```text
+docker run -it -d -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet --network="host" gcr.io/prysmaticlabs/prysm/validator:latest --beacon-rpc-provider=127.0.0.1:4000 --wallet-dir=/wallet
+```
+
+You can monitor and view your running containers using `docker ps`.
+
+</TabItem>
+<TabItem value="systemd">
+
+Linux systems allow for easy running of services in the background through a daemon process called [systemd](https://www.digitalocean.com/community/tutorials/systemd-essentials-working-with-services-units-and-the-journal). You can follow the tutorial posted by [Digital Ocean](https://www.digitalocean.com/community/tutorials/systemd-essentials-working-with-services-units-and-the-journal) on setting up systemd services.
+
+You can run your beacon node with the following systemd configuration, where you can modify some of the fields and flags to your liking. Assuming your prysm.sh script is at `/home/prysm/prysm.sh`.
+
+```text
+[Unit]
+Description=Prysm Beacon chain daemon
+After=network.target
+
+[Service]
+ExecStart=/home/prysm/prysm.sh beacon-chain
+Restart=always
+User=YOUR_USER
+
+[Install]
+WantedBy=multi-user.target
+```
+
+You can also run your validator client in systemd using the following configuration.
+
+```text
+[Unit]
+Description=Prysm Validator daemon
+After=network.target
+Wants=prysm-beacon.service
+
+[Service]
+ExecStart=/home/prysm/prysm.sh validator --wallet-dir DIR/TO/prysm-wallet-v2 --wallet-password-file DIR/TO/YOUR_PASSWORDFILE --graffiti YOUR_GRAFFITI
+Restart=always
+User=YOUR_USER
+
+[Install]
+WantedBy=multi-user.target
+```
+
+</TabItem>
+</Tabs>
 
 ## Step 5: Monitoring your performance
 
@@ -368,7 +630,7 @@ bazel run //validator:validator -- accounts-v2 import --keys-dir=/path/to/keys
 
 #### Why is my validator losing ETH despite my setup appearing ok?
 
-If your validator client is running fine without errors but you're seeing your validator balance decrease, it is typically a sign your beacon node is either (a) crashed, (b) not synced to the chain head. This might also mean your beacon node doesn't have any peers and is likely not connected to anyone. To debug this problem, please read our guide on checking [everything is running as expected](/docs/prysm-usage/is-everything-fine). If this still does not resolve your issue, you can get in touch with our team on [Discord](https://discord.gg/hmq4y2P) anytime
+If your validator client is running fine without errors but you're seeing your validator balance decrease, it is typically a sign your beacon node is either (a) crashed, (b) not synced to the chain head. This might also mean your beacon node doesn't have any peers and is likely not connected to anyone. To debug this problem, please read our guide on checking [everything is running as expected](/docs/prysm-usage/is-everything-fine). If this still does not resolve your issue, you can get in touch with our team on [Discord](https://discord.gg/hmq4y2P) anytime.
 
 #### How can I use a hardware wallet with my validator?
 
@@ -376,7 +638,7 @@ At the moment, there is no built-in hardware wallet support for validators, but 
 
 #### Help! Something is messed up with the validator and I can't start it
 
-If you're encountering an unexpected issue that causes your client to crash or throw errors yuo cannot understand, you can always talk to your team on [Discord](https://discord.gg/hmq4y2P).
+If you're encountering an unexpected issue that causes your client to crash or throw errors you cannot understand, you can always talk to your team on [Discord](https://discord.gg/hmq4y2P).
 
 #### How can I stop being a validator?
 
