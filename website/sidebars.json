@@ -15,15 +15,16 @@
 		],
 
 		"Running Prysm": 	[   
-								"prysm-usage/setup-eth1",
-								"prysm-usage/secure-grpc",
-								"prysm-usage/parameters",
-								"prysm-usage/wallet-keymanager",
-								"prysm-usage/slasher",
-								"prysm-usage/p2p-host-ip",
-								"prysm-usage/monitoring/grafana-dashboard",
-								"faq"
-							],
+			"prysm-usage/running-a-validator",
+			"prysm-usage/is-everything-fine",
+			"prysm-usage/setup-eth1",
+			"prysm-usage/secure-grpc",
+			"prysm-usage/parameters",
+			"prysm-usage/slasher",
+			"prysm-usage/p2p-host-ip",
+			"prysm-usage/monitoring/grafana-dashboard",
+			"faq"
+		],
 
 		"Wallet and accounts": 	[   
 			"wallet/introduction",

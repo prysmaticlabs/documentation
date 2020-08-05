@@ -123,11 +123,6 @@ These flags are specific to launching a validator client.
 |`--no-custom-config` | Run the beacon chain with the real parameters from phase 0.
 |`--beacon-rpc-provider` | Beacon node RPC provider endpoint. Default: localhost:4000
 |`--tls-cert` | Certificate for secure gRPC. Pass this and the tls-key flag in order to use gRPC securely.
-|`--keystore-path` | Path to the desired keystore directory.
-|`--unencrypted-keys` | Filepath to a JSON file of unencrypted validator keys for easier launching of the validator client.
-|`--keymanager`| The keymanger to use (unencrypted, interop, keystore, wallet).
-|`--keymanageropts`| The options for the keymanger, either a JSON string or path to same.
-|`--password` | String value of the password for your validator private keys. (Not recommended - your password may get logged in command history)
 |`--disable-rewards-penalties-logging` | Disable reward/penalty logging during cluster deployment.
 |`--graffiti` | A string to include in proposed block.
 |`--grpc-max-msg-size`| Integer to define max recieve message call size. Default: 52428800 (for 50Mb).
