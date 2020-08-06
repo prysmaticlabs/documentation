@@ -50,11 +50,13 @@ const Search = ({handleSearchBarToggle, isSearchBarExpanded}) => {
         // Algolia use closest parent element id #__docusaurus when a h1 page title does
         // not have an id, so we can safely remove it.
         // See https://github.com/facebook/docusaurus/issues/1828 for more details.
-        const routePath =
+        let routePath =
           `#__docusaurus` === a.hash
             ? `${a.pathname}`
             : `${a.pathname}${a.hash}`;
-        history.push('/docs'+routePath);
+        routePath = routePath.replace('/docs', '');
+        routePath = '/docs' + routePath;
+        history.push(routePath);
       },
     });
 
