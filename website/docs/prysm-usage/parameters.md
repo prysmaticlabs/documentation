@@ -68,17 +68,6 @@ These flags are shared by both the beacon node and validator client.
 | `--trace-sample-fraction` | Indicate what fraction of P@P messages are sampled for tracing. Default: 0.20
 | `--disable-monitoring` | Disable all monitoring service.
 | `--monitoring-port` | Port used by prometheus for listening and responding to messages. Default: 8080
-| `--no-discovery` | Enable only local network P2P and do not connect to cloud bootstrap nodes.
-| `--peer` | Connect with a specified peer. This flag may be used multiple times.
-| `--bootstrap-node` | The address of bootstrap node. Beacon node will connect for peer discovery via DHT.  Multiple nodes can be separated with a comma. Default:
-| `--relay-node ` | The address of relay node. The beacon node will connect to the relay node and advertise their address via the relay node to other peers.
-| `--p2p-udp-port ` | The port used by discv5. Default: 12000
-| `--p2p-tcp-port` | The port used by libP2P. Default: 13000
-| `--p2p-local-ip` | The local ip address to listen for incoming data.
-| `--p2p-host-ip` |  The IP address advertised by libp2p. This may be used to advertise a public IP.
-| `--p2p-host-dns` | The DNS address advertised by libp2p. This may be used to advertise an external DNS.
-| `--p2p-whitelist` | The CIDR subnet for whitelisting peer connections. Example: 192.168.0.0/16 would whitelist connections to peers on your local network only. The default is to accept all connections.
-| `--p2p-encoding` | The encoding format of messages sent over the wire. The default is 0, which represents ssz.
 | `--force-clear-db` | Clear any previously stored data at the data directory.
 | `--clear-db` | Prompt for clearing any previously stored data at the data directory.
 | `--log-format` | Specify log formatting. Supports: text, json, fluentd.
@@ -105,6 +94,17 @@ These flags are specific to launching the beacon node.
 | `--min-sync-peers` | The required number of valid peers to connect with before syncing."
 | `--contract-deployment-block` | Define the ETH1 block in which the deposit contract was deployed. Default: 1960177
 | `--p2p-max-peers` | The max number of p2p peers to maintain. Default: 30
+| `--no-discovery` | Enable only local network P2P and do not connect to cloud bootstrap nodes.
+| `--peer` | Connect with a specified peer. This flag may be used multiple times.
+| `--bootstrap-node` | The address of bootstrap node. Beacon node will connect for peer discovery via DHT.  Multiple nodes can be separated with a comma. Default:
+| `--relay-node ` | The address of relay node. The beacon node will connect to the relay node and advertise their address via the relay node to other peers.
+| `--p2p-udp-port ` | The port used by discv5. Default: 12000
+| `--p2p-tcp-port` | The port used by libP2P. Default: 13000
+| `--p2p-local-ip` | The local ip address to listen for incoming data.
+| `--p2p-host-ip` |  The IP address advertised by libp2p. This may be used to advertise a public IP.
+| `--p2p-host-dns` | The DNS address advertised by libp2p. This may be used to advertise an external DNS.
+| `--p2p-whitelist` | The CIDR subnet for whitelisting peer connections. Example: 192.168.0.0/16 would whitelist connections to peers on your local network only. The default is to accept all connections.
+| `--p2p-encoding` | The encoding format of messages sent over the wire. The default is 0, which represents ssz.
 | `--slasher-tls-cert` | Certificate for secure slasher gRPC connection. Pass this in order to use slasher gRPC securely.
 | `--slasher-provider` | Define a slasher provider string endpoint. Can either be an gRPC server endpoint. Default: 127.0.0.1:5000
 ### Interop flags
