@@ -77,7 +77,6 @@ These flags are shared by both the beacon node and validator client.
 | `--p2p-local-ip` | The local ip address to listen for incoming data.
 | `--p2p-host-ip` |  The IP address advertised by libp2p. This may be used to advertise a public IP.
 | `--p2p-host-dns` | The DNS address advertised by libp2p. This may be used to advertise an external DNS.
-| `--p2p-max-peers` | The max number of p2p peers to maintain. Default: 30
 | `--p2p-whitelist` | The CIDR subnet for whitelisting peer connections. Example: 192.168.0.0/16 would whitelist connections to peers on your local network only. The default is to accept all connections.
 | `--p2p-encoding` | The encoding format of messages sent over the wire. The default is 0, which represents ssz.
 | `--force-clear-db` | Clear any previously stored data at the data directory.
@@ -105,6 +104,7 @@ These flags are specific to launching the beacon node.
 | `--grpc-gateway-port` | Enable gRPC gateway for JSON requests. Default: 3500
 | `--min-sync-peers` | The required number of valid peers to connect with before syncing."
 | `--contract-deployment-block` | Define the ETH1 block in which the deposit contract was deployed. Default: 1960177
+| `--p2p-max-peers` | The max number of p2p peers to maintain. Default: 30
 | `--slasher-tls-cert` | Certificate for secure slasher gRPC connection. Pass this in order to use slasher gRPC securely.
 | `--slasher-provider` | Define a slasher provider string endpoint. Can either be an gRPC server endpoint. Default: 127.0.0.1:5000
 ### Interop flags
