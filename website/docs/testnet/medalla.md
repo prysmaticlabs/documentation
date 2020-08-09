@@ -124,7 +124,7 @@ bazel run //validator:validator -- accounts-v2 import --keys-dir=$HOME/eth2.0-de
 
 ![image](https://i.imgur.com/3yH946I.png)
 
-First, let's run the beacon node connected to the medalla testnet. It will begin to sync with other nodes and will be ready for you to connect to it.  If your beacon node is still running from [Step 1](https://docs.prylabs.network/docs/testnet/medalla#step-1-get-prysm), you do not have to perform this step.
+First, let's run the beacon node connected to the medalla testnet. It will begin to sync with other nodes and will be ready for you to connect to it.  If your beacon node is still running from [Step 1](https://docs.prylabs.network/docs/testnet/medalla#step-1-get-prysm), you do not have to perform this portion of Step 5.  Skip to the [validator portion](#validatorPortion).
 
 <Tabs
   groupId="operating-systems"
@@ -233,7 +233,7 @@ bazel run //beacon-chain
 The beacon-chain node you are using should be **completely synced** before submitting your deposit. You may **incur minor inactivity balance penalties** if the validator is unable to perform its duties by the time the deposit is processed and activated by the ETH2 network. You do not need to worry about this if the chain has not started yet.
 :::
 
-Open a second terminal window. Depending on your platform, issue the appropriate command from the examples below to start the validator.
+<a name="validatorPortion"></a>Open a second terminal window. Depending on your platform, issue the appropriate command from the examples below to start the validator.
 
 <Tabs
   groupId="operating-systems"
