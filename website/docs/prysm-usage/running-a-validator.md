@@ -120,7 +120,7 @@ After you've made your decision on which type of wallet you prefer to run, you c
 **Using Docker**
 
 ```text
-docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet --network="host" \
+docker run -it -v $HOME/.eth2validators/prysm-wallet-v2:/wallet --network="host" \
   gcr.io/prysmaticlabs/prysm/validator:latest \
   wallet-v2 create \
   --wallet-dir=/wallet
@@ -144,7 +144,7 @@ prysm.bat validator wallet-v2 create
 **Using Docker**
 
 ```text
-docker run -it -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet gcr.io/prysmaticlabs/prysm/validator:latest wallet-v2 create --wallet-dir=/wallet
+docker run -it -v %APPDATA%\Eth2Validators\prysm-wallet-v2:/wallet gcr.io/prysmaticlabs/prysm/validator:latest wallet-v2 create --wallet-dir=/wallet
 ```
 
 </TabItem>
@@ -215,7 +215,7 @@ We highly recommend going through the official [eth2 launchpad](https://medalla.
 You can also participate in eth2 by depositing 32 ETH into the Medalla testnet contract directly using a wallet such as Metamask. You'll need to obtain 32 Goerli test ETH to participate in the Medalla testnet, which you can obtain by joining our [Discord](https://discord.gg/hmq4y2P) server.
 
 :::danger Do not send real ETH!
-Eth2 is currently only in **testnet mode**, meaning there is no real money involved. Never send any real ETH to deposit contract, and be mindful of how you're submitting your deposit! The eth2 launchpad is the friendlist way to send your deposit.
+Eth2 is currently only in **testnet mode**, meaning there is no real money involved. Never send any real ETH to deposit contract, and be mindful of how you're submitting your deposit! The eth2 launchpad is the friendliest way to send your deposit.
 :::
 
 Next-up, you'll need to create a validator key using the wallet you created in the previous steps.
@@ -241,7 +241,7 @@ Next-up, you'll need to create a validator key using the wallet you created in t
 **Using Docker**
 
 ```text
-docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet --network="host" \
+docker run -it -v $HOME/.eth2validators/prysm-wallet-v2:/wallet --network="host" \
   gcr.io/prysmaticlabs/prysm/validator:latest \
   accounts-v2 create \
   --wallet-dir=/wallet
@@ -265,7 +265,7 @@ prysm.bat validator accounts-v2 create
 **Using Docker**
 
 ```text
-docker run -it -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet gcr.io/prysmaticlabs/prysm/validator:latest accounts-v2 create --wallet-dir=/wallet
+docker run -it -v %APPDATA%\Eth2Validators\prysm-wallet-v2:/wallet gcr.io/prysmaticlabs/prysm/validator:latest accounts-v2 create --wallet-dir=/wallet
 ```
 
 </TabItem>
@@ -350,7 +350,7 @@ Now that you created your wallet, sent your deposit, and got through all these s
 **Using Docker**
 
 ```text
-docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet --network="host" \
+docker run -it -v $HOME/.eth2validators/prysm-wallet-v2:/wallet --network="host" \
   gcr.io/prysmaticlabs/prysm/validator:latest \
   --beacon-rpc-provider=127.0.0.1:4000 \
   --wallet-dir=/wallet
@@ -374,7 +374,7 @@ prysm.bat validator
 **Using Docker**
 
 ```text
-docker run -it -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet --network="host" gcr.io/prysmaticlabs/prysm/validator:latest --beacon-rpc-provider=127.0.0.1:4000 --wallet-dir=/wallet
+docker run -it -v %APPDATA%\Eth2Validators\prysm-wallet-v2:/wallet --network="host" gcr.io/prysmaticlabs/prysm/validator:latest --beacon-rpc-provider=127.0.0.1:4000 --wallet-dir=/wallet
 ```
 
 </TabItem>
@@ -420,7 +420,7 @@ bazel run //validator
 </Tabs>
 
 :::tip Skipping the Wallet Password Prompt
-Upon starting your validator client, you will always be prompted to provide your wallet's password. If you want to avoid this prompt, you can provide a `--wallet-password-file` flag to launch your validator client without required user input.
+Upon starting your validator client, you will always be prompted to provide your wallet's password. If you want to avoid this prompt, you can provide a `--wallet-password-file` flag to launch your validator client without required user input. If you choose to do this, you will have to create a plain text file with your wallet password.  Make sure this file's permissions are set so that it can only be read by you and not other users on your system.  Put the path to this new file immediately after the `--wallet-password-file` in the command. **If you are using docker, it is slightly different**;  you will have to adjust the docker command to include `-v /path/to/directory:/walletPass` interposed between `docker run` and the rest of the docker command.  `/path/to/directory` refers to the path of the directory **containing** the password file.  Then at the end of the command you will have `--wallet-password-file /walletPass/fileName` where fileName is the actual file name you chose for the password-containing file.
 :::
 
 ### Available parameters
@@ -560,7 +560,7 @@ Using Docker
 
 ```text
 docker run -it -v /path/to/keys:/keys \
-  -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
+  -v $HOME/.eth2validators/prysm-wallet-v2:/wallet \
   gcr.io/prysmaticlabs/prysm/validator:latest \
   accounts-v2 import --keys-dir=/keys --wallet-dir=/wallet
 ```
@@ -583,7 +583,7 @@ prysm.bat validator accounts-v2 import --keys-dir=path\to\keys
 Using Docker
 
 ```text
-docker run -it -v path\to\keys:/keys -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet gcr.io/prysmaticlabs/prysm/validator:latest accounts-v2 import --keys-dir=/keys --wallet-dir=/wallet
+docker run -it -v path\to\keys:/keys -v %APPDATA%\Eth2Validators\prysm-wallet-v2:/wallet gcr.io/prysmaticlabs/prysm/validator:latest accounts-v2 import --keys-dir=/keys --wallet-dir=/wallet
 ```
 
 </TabItem>
