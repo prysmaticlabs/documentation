@@ -53,9 +53,8 @@ import TabItem from '@theme/TabItem';
 ```text
 docker run -it -v $HOME/eth2.0-deposit-cli/validator_keys:/keys \
   -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
-  -v $HOME/Eth2Validators/prysm-wallet-v2-passwords:/eth2passwords \
   gcr.io/prysmaticlabs/prysm/validator:latest \
-  accounts-v2 import --keys-dir=/keys --wallet-dir=/wallet --passwords-dir=/eth2passwords
+  accounts-v2 import --keys-dir=/keys --wallet-dir=/wallet
 ```
 
 **Using Bazel**
@@ -76,7 +75,7 @@ prysm.bat validator accounts-v2 import --keys-dir=%LOCALAPPDATA%\eth2.0-deposit-
 **Using Docker**
 
 ```text
-docker run -it -v %LOCALAPPDATA%\eth2.0-deposit-cli\validator_keys:/keys -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2-passwords:/eth2passwords gcr.io/prysmaticlabs/prysm/validator:latest accounts-v2 import --keys-dir=/keys --wallet-dir=/wallet --passwords-dir=/eth2passwords
+docker run -it -v %LOCALAPPDATA%\eth2.0-deposit-cli\validator_keys:/keys -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet gcr.io/prysmaticlabs/prysm/validator:latest accounts-v2 import --keys-dir=/keys --wallet-dir=/wallet
 ```
 
 </TabItem>
@@ -93,9 +92,8 @@ docker run -it -v %LOCALAPPDATA%\eth2.0-deposit-cli\validator_keys:/keys -v %LOC
 ```text
 docker run -it -v $HOME/eth2.0-deposit-cli/validator_keys:/keys \
   -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
-  -v $HOME/Eth2Validators/prysm-wallet-v2-passwords:/eth2passwords \
   gcr.io/prysmaticlabs/prysm/validator:latest \
-  accounts-v2 import --keys-dir=/keys --wallet-dir=/wallet --passwords-dir=/eth2passwords
+  accounts-v2 import --keys-dir=/keys --wallet-dir=/wallet
 ```
 
 **Using Bazel**
@@ -126,7 +124,8 @@ bazel run //validator:validator -- accounts-v2 import --keys-dir=$HOME/eth2.0-de
 
 ![image](https://i.imgur.com/3yH946I.png)
 
-First, let's run the beacon node connected to the medalla testnet. It will begin to sync with other nodes and will be ready for you to connect to it.
+#### Beacon node
+First, let's run the beacon node connected to the medalla testnet. It will begin to sync with other nodes and will be ready for you to connect to it.  If your beacon node is still running from [Step 1](https://docs.prylabs.network/docs/testnet/medalla#step-1-get-prysm), you do not have to perform this portion of Step 5.  Skip to the [validator portion](#validator).
 
 <Tabs
   groupId="operating-systems"
@@ -230,11 +229,11 @@ bazel run //beacon-chain
 </TabItem>
 </Tabs>
 
-
 :::tip Syncing your node
 The beacon-chain node you are using should be **completely synced** before submitting your deposit. You may **incur minor inactivity balance penalties** if the validator is unable to perform its duties by the time the deposit is processed and activated by the ETH2 network. You do not need to worry about this if the chain has not started yet.
 :::
 
+#### Validator
 Open a second terminal window. Depending on your platform, issue the appropriate command from the examples below to start the validator.
 
 <Tabs
@@ -259,11 +258,9 @@ Open a second terminal window. Depending on your platform, issue the appropriate
 
 ```text
 docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet --network="host" \
-  -v $HOME/Eth2Validators/prysm-wallet-v2-passwords:/eth2passwords \
   gcr.io/prysmaticlabs/prysm/validator:latest \
   --beacon-rpc-provider=127.0.0.1:4000 \
-  --wallet-dir=/wallet \
-  --passwords-dir=/eth2passwords
+  --wallet-dir=/wallet
 ```
 
 **Using Bazel**
@@ -284,7 +281,7 @@ prysm.bat validator
 **Using Docker**
 
 ```text
-docker run -it -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2-passwords:/eth2passwords --network="host" gcr.io/prysmaticlabs/prysm/validator:latest --beacon-rpc-provider=127.0.0.1:4000 --wallet-dir=/wallet --passwords-dir=/eth2passwords
+docker run -it -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet --network="host" gcr.io/prysmaticlabs/prysm/validator:latest --beacon-rpc-provider=127.0.0.1:4000 --wallet-dir=/wallet
 ```
 
 </TabItem>
@@ -300,11 +297,9 @@ docker run -it -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet -v %LOCA
 
 ```text
 docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet --network="host" \
-  -v $HOME/Eth2Validators/prysm-wallet-v2-passwords:/eth2passwords \
   gcr.io/prysmaticlabs/prysm/validator:latest \
   --beacon-rpc-provider=127.0.0.1:4000 \
-  --wallet-dir=/wallet \
-  --passwords-dir=/eth2passwords
+  --wallet-dir=/wallet
 ```
 
 **Using Bazel**
