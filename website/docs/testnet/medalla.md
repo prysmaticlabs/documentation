@@ -53,8 +53,10 @@ import TabItem from '@theme/TabItem';
 ```text
 docker run -it -v $HOME/eth2.0-deposit-cli/validator_keys:/keys \
   -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
+  -v $HOME/Eth2:/validatorDB \
+  --name validator \
   gcr.io/prysmaticlabs/prysm/validator:latest \
-  accounts-v2 import --keys-dir=/keys --wallet-dir=/wallet
+  accounts-v2 import --keys-dir=/keys --wallet-dir=/wallet --datadir=/validatorDB
 ```
 
 **Using Bazel**
@@ -92,8 +94,10 @@ docker run -it -v %LOCALAPPDATA%\eth2.0-deposit-cli\validator_keys:/keys -v %LOC
 ```text
 docker run -it -v $HOME/eth2.0-deposit-cli/validator_keys:/keys \
   -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
+  -v $HOME/Eth2:/validatorDB \
+  --name validator \
   gcr.io/prysmaticlabs/prysm/validator:latest \
-  accounts-v2 import --keys-dir=/keys --wallet-dir=/wallet
+  accounts-v2 import --keys-dir=/keys --wallet-dir=/wallet --datadir=/validatorDB
 ```
 
 **Using Bazel**
@@ -257,10 +261,12 @@ Open a second terminal window. Depending on your platform, issue the appropriate
 **Using Docker**
 
 ```text
-docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet --network="host" \
+docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
+  -v $HOME/Eth2:/validatorDB \
+  --network="host" --name validator \
   gcr.io/prysmaticlabs/prysm/validator:latest \
   --beacon-rpc-provider=127.0.0.1:4000 \
-  --wallet-dir=/wallet
+  --wallet-dir=/wallet --datadir=/validatorDB
 ```
 
 **Using Bazel**
@@ -281,7 +287,7 @@ prysm.bat validator
 **Using Docker**
 
 ```text
-docker run -it -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet --network="host" gcr.io/prysmaticlabs/prysm/validator:latest --beacon-rpc-provider=127.0.0.1:4000 --wallet-dir=/wallet
+docker run -it -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet -v %LOCALAPPDATA%\Eth2:/validatorDB --network="host" --name validator gcr.io/prysmaticlabs/prysm/validator:latest --beacon-rpc-provider=127.0.0.1:4000 --wallet-dir=/wallet --datadir=/validatorDB
 ```
 
 </TabItem>
@@ -296,10 +302,12 @@ docker run -it -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet --networ
 **Using Docker**
 
 ```text
-docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet --network="host" \
+docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \ 
+  -v $HOME/Eth2:/validatorDB \
+  --network="host" --name validator \
   gcr.io/prysmaticlabs/prysm/validator:latest \
   --beacon-rpc-provider=127.0.0.1:4000 \
-  --wallet-dir=/wallet
+  --wallet-dir=/wallet --datadir=/validatorDB
 ```
 
 **Using Bazel**
