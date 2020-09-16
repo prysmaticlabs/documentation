@@ -23,6 +23,7 @@
 			"prysm-usage/slasher",
 			"prysm-usage/p2p-host-ip",
 			"prysm-usage/monitoring/grafana-dashboard",
+			"prysm-usage/exit-delay-warning",
 			"faq"
 		],
 
