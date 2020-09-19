@@ -1,0 +1,13 @@
+name: Require Labels
+uses: mheap/github-action-required-labels@v1
+
+on: 
+  pull_request:
+    branches: [master]
+  push:
+    branches: [master]
+
+with:
+    mode: exactly
+    count: 0
+    labels: "not implemented"
