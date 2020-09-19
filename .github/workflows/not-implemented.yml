@@ -1,5 +1,4 @@
-name: Require Labels
-uses: mheap/github-action-required-labels@v1
+name: Not Implemented
 
 on: 
   pull_request:
@@ -7,7 +6,16 @@ on:
   push:
     branches: [master]
 
-with:
-    mode: exactly
-    count: 0
-    labels: "not implemented"
+jobs:
+  link-check:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./website
+    steps:
+      - name: Check label
+        uses: mheap/github-action-required-labels@v1
+        with:
+          mode: exactly
+          count: 0
+          labels: "not implemented"
