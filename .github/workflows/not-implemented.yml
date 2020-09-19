@@ -1,4 +1,4 @@
-name: Not Implemented
+name: not-implemented
 
 on: 
   pull_request:
@@ -7,7 +7,7 @@ on:
     branches: [master]
 
 jobs:
-  link-check:
+  not-implemented:
     runs-on: ubuntu-latest
     defaults:
       run:
