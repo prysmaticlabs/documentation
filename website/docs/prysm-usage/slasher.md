@@ -16,7 +16,7 @@ This section provides instructions to run [slasher](https://github.com/prysmatic
    - occurs when a validator signs two conflicting attestations  
 
 #### Block Proposer slashings
- - occurs when a proposer broadcasts more then one block for the same slot
+ - occurs when a proposer broadcasts more than one block for the same slot
  
 ![Prysm with Slasher](/img/prysm-with-slasher.png)
 
