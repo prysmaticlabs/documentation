@@ -30,7 +30,8 @@
 			"wallet/introduction",
 			"wallet/deterministic",
 			"wallet/nondeterministic",
-			"wallet/remote"
+			"wallet/remote",
+			"wallet/ethdo"
 		],
 
 		"How Prysm works": 	[	"how-prysm-works/architecture-overview",
