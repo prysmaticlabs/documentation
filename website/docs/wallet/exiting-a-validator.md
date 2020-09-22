@@ -35,5 +35,5 @@ One of the main design decisions of the Ethereum 2 project is performing the rol
 :::caution
 Make sure you understand that YOU CAN NOT WITHDRAW your staked GöETH until Phase 2. If you still wish to perform a voluntary exit, please enter the below passphrase when using `accounts-v2 exit`
 
-**Bye bye Eth2 :-(**
+**Exit my validator**
 :::
