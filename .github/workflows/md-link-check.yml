@@ -1,0 +1,17 @@
+name: md-link-check
+
+on: 
+  pull_request:
+    branches: [master]
+  push:
+    branches: [master]
+
+jobs:
+  markdown-link-check:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./website
+    steps:
+    - uses: actions/checkout@master
+    - uses: gaurav-nelson/github-action-markdown-link-check@v1
