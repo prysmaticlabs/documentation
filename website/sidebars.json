@@ -30,8 +30,7 @@
 			"wallet/introduction",
 			"wallet/deterministic",
 			"wallet/nondeterministic",
-			"wallet/remote",
-			"wallet/exiting-a-validator"
+			"wallet/remote"
 		],
 
 		"How Prysm works": 	[	"how-prysm-works/architecture-overview",
