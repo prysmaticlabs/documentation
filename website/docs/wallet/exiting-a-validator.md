@@ -9,7 +9,7 @@ sidebar_label: Exiting a validator
 You can exit one or more validator accounts in your wallet (HD, non-HD or remote) using the following command:
 
 ```bash
-./prysm.sh validator accounts-v2 voluntary-exit
+./prysm.sh validator accounts-v2 exit
 ```
 
 At first, you will be prompted to select one or more validator accounts that you wish to exit.
@@ -24,7 +24,7 @@ After completing the selection, you will be presented with an additional conform
 The validator client needs to establish a gRPC connection with a running beacon node in order to be able to submit a voluntary exit request. By default, it will try to access a node running on `127.0.0.1:4000`. There are several flags that you can use to modify the connection parameters.
 :::
 
-You can view all available command line flags by typing `./prysm.sh validator accounts-v2 voluntary-exit --help`.
+You can view all available command line flags by typing `./prysm.sh validator accounts-v2 exit --help`.
 
 ## Withdrawal delay warning
 
