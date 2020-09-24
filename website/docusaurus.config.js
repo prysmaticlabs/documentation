@@ -40,7 +40,7 @@ module.exports = {
                     position: 'right',
                 },
                 {
-                    href: 'https://docs.prylabs.network/docs/faq',
+                    to: 'docs/faq',
                     label: 'FAQ',
                     position: 'right',
                 },
