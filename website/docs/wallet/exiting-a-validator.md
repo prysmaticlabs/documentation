@@ -33,7 +33,7 @@ One of the main design decisions of the Ethereum 2 project is performing the rol
 * [Learn more about phases of Ethereum 2](https://docs.ethhub.io/ethereum-roadmap/ethereum-2.0/eth-2.0-phases/)
 
 :::caution
-It is important to note that ONE CANNOT WITHDRAW their staked GöETH until Phase 2 of the system. In order to perform a voluntary exit, please enter the below passphrase when using `accounts-v2 voluntary-exit`:
+It is important to note that ONE CANNOT WITHDRAW their staked ETH until Phase 2 of the system. In order to perform a voluntary exit, please enter the below passphrase when using `accounts-v2 voluntary-exit`:
 
 **Exit my validator**
 :::
