@@ -1,8 +1,17 @@
 module.exports = {
+    title: 'Prysm ETH2.0 Testnet',
+    tagline: 'An Ethereum 2.0 client written entirely in Go.',
+    url: 'https://docs.prylabs.network',
+    baseUrl: '/',
+    onBrokenLinks: 'throw',
+    favicon: 'img/Prysm.svg',
+    organizationName: 'Prysmatic Labs',
+    projectName: 'prysm-docs',
+    customFields: {
+        image: 'img/Prysm.svg',
+    },
+    scripts: ['https://buttons.github.io/buttons.js'],
     themeConfig: {
-        colorMode: {
-            defaultMode: "dark"
-        },
         navbar: {
             title: "Prysm 'Medalla' Testnet",
             logo: {
@@ -60,17 +69,6 @@ module.exports = {
         ogImage: 'img/Prysm.svg',
         twitterImage: 'img/Prysm.svg',
     },
-    customFields: {
-        image: 'img/Prysm.svg',
-    },
-    favicon: 'img/Prysm.svg',
-    tagline: 'An Ethereum 2.0 client written entirely in Go.',
-    title: 'Prysm ETH2.0 Testnet',
-    url: 'https://docs.prylabs.network',
-    baseUrl: '/',
-    projectName: 'prysm-docs',
-    organizationName: 'Prysmatic Labs',
-    scripts: ['https://buttons.github.io/buttons.js'],
     presets: [
         [
             '@docusaurus/preset-classic',
