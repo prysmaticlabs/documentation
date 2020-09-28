@@ -20,7 +20,7 @@ When a Prysm client is initialised out of the box, it starts a variety of servic
 
 ## Prysm client functionality
 
-As described in [this section](on-ethereum-2), Ethereum 2.0 encompasses a distributed network of blockchains called shard chains which are coordinated by a root chain, known as a beacon chain. This beacon chain serves as a mechanism to manage a set of [Proof-of-Stake](/docs/terminology#proof-of-stake-pos) [validators](/docs/terminology#validator) and overall consensus across shards.
+As described in [this section](ethereum-2.0), Ethereum 2.0 encompasses a distributed network of blockchains called shard chains which are coordinated by a root chain, known as a beacon chain. This beacon chain serves as a mechanism to manage a set of [Proof-of-Stake](/docs/terminology#proof-of-stake-pos) [validators](/docs/terminology#validator) and overall consensus across shards.
 
 Shards themselves are similar to the current Ethereum 1.0 chain, which stores blocks containing user-generated transactions such as token transfers and smart contracts. Ethereum 2.0 provides a massive improvement over 1.0 by having 1024 of these shard chains, each with the capacity of the existing [ETH1](/docs/terminology#eth1) blockchain.
 
