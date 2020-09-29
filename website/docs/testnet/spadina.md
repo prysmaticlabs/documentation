@@ -133,7 +133,7 @@ bazel run //validator:validator -- accounts-v2 import --keys-dir=$HOME/eth2.0-de
 ![image](https://i.imgur.com/3yH946I.png)
 
 #### Beacon node
-First, let's run the beacon node connected to the medalla testnet. It will begin to sync with other nodes and will be ready for you to connect to it.  If your beacon node is still running from [Step 1](https://docs.prylabs.network/docs/testnet/medalla#step-1-get-prysm), you do not have to perform this portion of Step 5.  Skip to the [validator portion](#validator).
+First, let's run the beacon node connected to the Spadina testnet. It will begin to sync with other nodes and will be ready for you to connect to it.  If your beacon node is still running from [Step 1](https://docs.prylabs.network/docs/testnet/spadina#step-1-get-prysm), you do not have to perform this portion of Step 5.  Skip to the [validator portion](#validator).
 
 <Tabs
   groupId="operating-systems"
