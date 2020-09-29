@@ -1,14 +1,14 @@
 ---
-id: medalla
-title: Medalla Eth2 launchpad onboarding
-sidebar_label: Medalla Eth2 launchpad onboarding
+id: spadina
+title: Spadina Eth2 launchpad onboarding
+sidebar_label: Spadina Eth2 launchpad onboarding
 ---
-This section outlines the step-by-step process for how to join the [Medalla multiclient testnet](https://medalla.launchpad.ethereum.org/) to run a Prysm eth2 beacon node and validator.
+This section outlines the step-by-step process for how to join the [Spadina multiclient testnet](https://spadina.launchpad.ethereum.org/) to run a Prysm eth2 beacon node and validator.
 
 ![image](https://i.imgur.com/3oUwf4N.png)
 
 :::danger Ensure You Are Joining the Right Testnet
-Medalla is the long-lasting, multiclient testnet. If this isn't the testnet you wish to join, but instead participate in the smaller spadina testnet, follow our instructions [here](/docs/testnet/spadina).
+Spadina is a small testnet that serves a rehearsal for the eth2 genesis. If this isn't the testnet you wish to join, but instead participate in the larger Medalla testnet, follow our instructions [here](/docs/testnet/medalla).
 :::
 
 ## Step 1: Get Prysm
@@ -21,11 +21,11 @@ To begin, follow the instructions to fetch and install Prysm for your operating 
 
 ## Step 2: Get Test ETH
 
-To participate in eth2, you'll need to stake 32 ETH. For the Medalla eth2 testnet, we use test ETH from the Görli eth1 testnet. You can request this testnet ETH by joining our [discord server](https://discord.gg/hmq4y2P).
+To participate in eth2, you'll need to stake 32 ETH. For the Spadina eth2 testnet, we use test ETH from the Görli eth1 testnet. You can request this testnet ETH by joining our [discord server](https://discord.gg/prysmaticlabs).
 
 ## Step 3: Complete the onboarding process in the official eth2 launchpad
 
-The [official eth2 launchpad](https://medalla.launchpad.ethereum.org/summary) is the easiest way to go through a step-by-step process to deposit your 32 ETH to become a validator. Throughout the process, you'll be asked to generate new validator credentials using the official Ethereum deposit command-line-tool [here](https://github.com/ethereum/eth2.0-deposit-cli). During the process, you will have generated a `validator_keys` folder under the `eth2.0-deposit-cli` directory. You can import all of your validator accounts into Prysm from that folder in the next step.
+The [official eth2 launchpad](https://spadina.launchpad.ethereum.org/summary) is the easiest way to go through a step-by-step process to deposit your 32 ETH to become a validator. Throughout the process, you'll be asked to generate new validator credentials using the official Ethereum deposit command-line-tool [here](https://github.com/ethereum/eth2.0-deposit-cli). During the process, you will have generated a `validator_keys` folder under the `eth2.0-deposit-cli` directory. You can import all of your validator accounts into Prysm from that folder in the next step.
 
 ## Step 4: Import your validator accounts into Prysm
 
@@ -49,7 +49,7 @@ import TabItem from '@theme/TabItem';
 **Using the Prysm installation script**
 
 ```text
-./prysm.sh validator accounts-v2 import --keys-dir=$HOME/eth2.0-deposit-cli/validator_keys
+./prysm.sh validator accounts-v2 import --keys-dir=$HOME/eth2.0-deposit-cli/validator_keys --spadina
 ```
 
 **Using Docker**
@@ -60,13 +60,13 @@ docker run -it -v $HOME/eth2.0-deposit-cli/validator_keys:/keys \
   -v $HOME/Eth2:/validatorDB \
   --name validator \
   gcr.io/prysmaticlabs/prysm/validator:latest \
-  accounts-v2 import --keys-dir=/keys --wallet-dir=/wallet --datadir=/validatorDB
+  accounts-v2 import --keys-dir=/keys --wallet-dir=/wallet --datadir=/validatorDB --spadina
 ```
 
 **Using Bazel**
 
 ```text
-bazel run //validator:validator -- accounts-v2 import --keys-dir=$HOME/eth2.0-deposit-cli/validator_keys
+bazel run //validator:validator -- accounts-v2 import --keys-dir=$HOME/eth2.0-deposit-cli/validator_keys --spadina
 ```
 
 </TabItem>
@@ -75,13 +75,13 @@ bazel run //validator:validator -- accounts-v2 import --keys-dir=$HOME/eth2.0-de
 **Using the prysm.bat script**
 
 ```text
-prysm.bat validator accounts-v2 import --keys-dir=%LOCALAPPDATA%\eth2.0-deposit-cli\validator_keys
+prysm.bat validator accounts-v2 import --keys-dir=%LOCALAPPDATA%\eth2.0-deposit-cli\validator_keys --spadina
 ```
 
 **Using Docker**
 
 ```text
-docker run -it -v %LOCALAPPDATA%\eth2.0-deposit-cli\validator_keys:/keys -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet gcr.io/prysmaticlabs/prysm/validator:latest accounts-v2 import --keys-dir=/keys --wallet-dir=/wallet
+docker run -it -v %LOCALAPPDATA%\eth2.0-deposit-cli\validator_keys:/keys -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet gcr.io/prysmaticlabs/prysm/validator:latest accounts-v2 import --keys-dir=/keys --wallet-dir=/wallet --spadina
 ```
 
 </TabItem>
@@ -90,7 +90,7 @@ docker run -it -v %LOCALAPPDATA%\eth2.0-deposit-cli\validator_keys:/keys -v %LOC
 **Using the Prysm installation script**
 
 ```text
-./prysm.sh validator accounts-v2 import --keys-dir=$HOME/eth2.0-deposit-cli/validator_keys
+./prysm.sh validator accounts-v2 import --keys-dir=$HOME/eth2.0-deposit-cli/validator_keys --spadina
 ```
 
 **Using Docker**
@@ -101,13 +101,13 @@ docker run -it -v $HOME/eth2.0-deposit-cli/validator_keys:/keys \
   -v $HOME/Eth2:/validatorDB \
   --name validator \
   gcr.io/prysmaticlabs/prysm/validator:latest \
-  accounts-v2 import --keys-dir=/keys --wallet-dir=/wallet --datadir=/validatorDB
+  accounts-v2 import --keys-dir=/keys --wallet-dir=/wallet --datadir=/validatorDB --spadina
 ```
 
 **Using Bazel**
 
 ```text
-bazel run //validator:validator -- accounts-v2 import --keys-dir=$HOME/eth2.0-deposit-cli/validator_keys
+bazel run //validator:validator -- accounts-v2 import --keys-dir=$HOME/eth2.0-deposit-cli/validator_keys --spadina
 ```
 
 </TabItem>
@@ -116,13 +116,13 @@ bazel run //validator:validator -- accounts-v2 import --keys-dir=$HOME/eth2.0-de
 **Using the Prysm installation script**
 
 ```text
-./prysm.sh validator accounts-v2 import --keys-dir=$HOME/eth2.0-deposit-cli/validator_keys
+./prysm.sh validator accounts-v2 import --keys-dir=$HOME/eth2.0-deposit-cli/validator_keys --spadina
 ```
 
 **Using Bazel**
 
 ```text
-bazel run //validator:validator -- accounts-v2 import --keys-dir=$HOME/eth2.0-deposit-cli/validator_keys
+bazel run //validator:validator -- accounts-v2 import --keys-dir=$HOME/eth2.0-deposit-cli/validator_keys --spadina
 ```
 
 </TabItem>
@@ -133,7 +133,7 @@ bazel run //validator:validator -- accounts-v2 import --keys-dir=$HOME/eth2.0-de
 ![image](https://i.imgur.com/3yH946I.png)
 
 #### Beacon node
-First, let's run the beacon node connected to the medalla testnet. It will begin to sync with other nodes and will be ready for you to connect to it.  If your beacon node is still running from [Step 1](https://docs.prylabs.network/docs/testnet/medalla#step-1-get-prysm), you do not have to perform this portion of Step 5.  Skip to the [validator portion](#validator).
+First, let's run the beacon node connected to the Spadina testnet. It will begin to sync with other nodes and will be ready for you to connect to it.  If your beacon node is still running from [Step 1](https://docs.prylabs.network/docs/testnet/spadina#step-1-get-prysm), you do not have to perform this portion of Step 5.  Skip to the [validator portion](#validator).
 
 <Tabs
   groupId="operating-systems"
@@ -150,7 +150,7 @@ First, let's run the beacon node connected to the medalla testnet. It will begin
 **Using the Prysm installation script**
 
 ```text
-./prysm.sh beacon-chain
+./prysm.sh beacon-chain --spadina
 ```
 
 **Using Docker**
@@ -160,13 +160,14 @@ docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/u
   gcr.io/prysmaticlabs/prysm/beacon-chain:latest \
   --datadir=/data \
   --rpc-host=0.0.0.0 \
-  --monitoring-host=0.0.0.0
+  --monitoring-host=0.0.0.0 \
+  --spadina
 ```
 
 **Using Bazel**
 
 ```text
-bazel run //beacon-chain
+bazel run //beacon-chain --spadina
 ```
 
 </TabItem>
@@ -175,7 +176,7 @@ bazel run //beacon-chain
 **Using the Prysm installation script**
 
 ```text
-prysm.bat beacon-chain
+prysm.bat beacon-chain --spadina
 ```
 
 **Using Docker**
@@ -189,7 +190,7 @@ prysm.bat beacon-chain
 3. To run the beacon node, issue the following command:
 
 ```text
-docker run -it -v %LOCALAPPDATA%\Eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp gcr.io/prysmaticlabs/prysm/beacon-chain:latest --datadir=/data --rpc-host=0.0.0.0 --monitoring-host=0.0.0.0
+docker run -it -v %LOCALAPPDATA%\Eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp gcr.io/prysmaticlabs/prysm/beacon-chain:latest --datadir=/data --rpc-host=0.0.0.0 --monitoring-host=0.0.0.0 --spadina
 ```
 
 This will sync up the beacon node with the latest cannonical head block in the network. The Docker `-d` flag can be appended before the `-v` flag to launch the process in a detached terminal window.
@@ -200,7 +201,7 @@ This will sync up the beacon node with the latest cannonical head block in the n
 **Using the Prysm installation script**
 
 ```text
-./prysm.sh beacon-chain
+./prysm.sh beacon-chain --spadina
 ```
 
 **Using Docker**
@@ -210,13 +211,14 @@ docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/u
   gcr.io/prysmaticlabs/prysm/beacon-chain:latest \
   --datadir=/data \
   --rpc-host=0.0.0.0 \
-  --monitoring-host=0.0.0.0
+  --monitoring-host=0.0.0.0 \
+  --spadina
 ```
 
 **Using Bazel**
 
 ```text
-bazel run //beacon-chain
+bazel run //beacon-chain --spadina
 ```
 
 </TabItem>
@@ -225,13 +227,13 @@ bazel run //beacon-chain
 **Using the Prysm installation script**
 
 ```text
-./prysm.sh beacon-chain
+./prysm.sh beacon-chain --spadina
 ```
 
 **Using Bazel**
 
 ```text
-bazel run //beacon-chain
+bazel run //beacon-chain --spadina
 ```
 
 </TabItem>
@@ -259,7 +261,7 @@ Open a second terminal window. Depending on your platform, issue the appropriate
 **Using the Prysm installation script**
 
 ```text
-./prysm.sh validator
+./prysm.sh validator --spadina
 ```
 
 **Using Docker**
@@ -270,13 +272,14 @@ docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
   --network="host" --name validator \
   gcr.io/prysmaticlabs/prysm/validator:latest \
   --beacon-rpc-provider=127.0.0.1:4000 \
-  --wallet-dir=/wallet --datadir=/validatorDB
+  --wallet-dir=/wallet --datadir=/validatorDB \
+  --spadina
 ```
 
 **Using Bazel**
 
 ```text
-bazel run //validator
+bazel run //validator --spadina
 ```
 
 </TabItem>
@@ -285,13 +288,13 @@ bazel run //validator
 **Using the prysm.bat script**
 
 ```text
-prysm.bat validator
+prysm.bat validator --spadina
 ```
 
 **Using Docker**
 
 ```text
-docker run -it -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet -v %LOCALAPPDATA%\Eth2:/validatorDB --network="host" --name validator gcr.io/prysmaticlabs/prysm/validator:latest --beacon-rpc-provider=127.0.0.1:4000 --wallet-dir=/wallet --datadir=/validatorDB
+docker run -it -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet -v %LOCALAPPDATA%\Eth2:/validatorDB --network="host" --name validator gcr.io/prysmaticlabs/prysm/validator:latest --beacon-rpc-provider=127.0.0.1:4000 --wallet-dir=/wallet --datadir=/validatorDB --spadina
 ```
 
 </TabItem>
@@ -300,7 +303,7 @@ docker run -it -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet -v %LOCA
 **Using the Prysm installation script**
 
 ```text
-./prysm.sh validator
+./prysm.sh validator --spadina
 ```
 
 **Using Docker**
@@ -311,13 +314,14 @@ docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
   --network="host" --name validator \
   gcr.io/prysmaticlabs/prysm/validator:latest \
   --beacon-rpc-provider=127.0.0.1:4000 \
-  --wallet-dir=/wallet --datadir=/validatorDB
+  --wallet-dir=/wallet --datadir=/validatorDB \
+  --spadina
 ```
 
 **Using Bazel**
 
 ```text
-bazel run //validator
+bazel run //validator --spadina
 ```
 
 </TabItem>
@@ -326,13 +330,13 @@ bazel run //validator
 **Using the Prysm installation script**
 
 ```text
-./prysm.sh validator
+./prysm.sh validator --spadina
 ```
 
 **Using Bazel**
 
 ```text
-bazel run //validator
+bazel run //validator --spadina
 ```
 
 </TabItem>
@@ -343,7 +347,7 @@ bazel run //validator
 
 Please note that it may take from **5-12 hours** for nodes in the ETH2 network to process a deposit. In the meantime, leave both terminal windows open and running; once the node is activated by the ETH2 network, the validator will immediately begin receiving tasks and performing its responsibilities. If the chain has not yet started, it will be ready to start proposing blocks and signing votes as soon as the genesis time is reached.
 
-To check on the status of your validator, we recommend checking out the popular block explorers: [beaconcha.in](https://beaconcha.in) by Bitfly and [beacon.etherscan.io](https://beacon.etherscan.io) by the Etherscan team.
+To check on the status of your validator, we recommend checking out the popular block explorers: [beaconcha.in](https://spadina.beaconcha.in) by Bitfly.
 
 ![image](https://i.imgur.com/CDNc6Ft.png)
 
