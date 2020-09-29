@@ -6,7 +6,8 @@
 							],
 
 		"Joining the testnet": [
-			"testnet/medalla"
+			"testnet/medalla",
+			"testnet/spadina"
 		],
 		"Installing Prysm": [
 			"install/install-with-script",
