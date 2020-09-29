@@ -21,7 +21,7 @@ To begin, follow the instructions to fetch and install Prysm for your operating 
 
 ## Step 2: Get Test ETH
 
-To participate in eth2, you'll need to stake 32 ETH. For the Medalla eth2 testnet, we use test ETH from the Görli eth1 testnet. You can request this testnet ETH by joining our [discord server](https://discord.gg/prysmaticlabs).
+To participate in eth2, you'll need to stake 32 ETH. For the Spadina eth2 testnet, we use test ETH from the Görli eth1 testnet. You can request this testnet ETH by joining our [discord server](https://discord.gg/prysmaticlabs).
 
 ## Step 3: Complete the onboarding process in the official eth2 launchpad
 
