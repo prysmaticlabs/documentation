@@ -5,10 +5,6 @@ sidebar_label: Zinken Eth2 launchpad onboarding
 ---
 This section outlines the step-by-step process for how to join the [Zinken multiclient testnet](https://zinken.launchpad.ethereum.org/) to run a Prysm eth2 beacon node and validator.
 
-:::danger Prysm Zinken Support is Not Yet Live
-Zinken is a small testnet that serves a rehearsal for the eth2 genesis. Prysm support in our current release, alpha.27, is not yet available. On Monday, release alpha.28 will be announced which will include full support for the testnet.
-:::
-
 ## Step 1: Get Prysm
 
 To begin, follow the instructions to fetch and install Prysm for your operating system.
