@@ -12,7 +12,7 @@ This guide is the only recommended way to use ethdo with Prysm which will always
 
 ## Installation
 
-This is recommended option to keep using ethdo for all your wallet needs and simply import the validating keys you wish to validate with in Prysm.
+This is the recommended option to keep using ethdo for all your wallet needs and simply import the validating keys you wish to validate with in Prysm.
 
 To begin, follow the instructions to fetch and install Prysm for your operating system.
 
