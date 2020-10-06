@@ -83,6 +83,8 @@ Below are instructions for initialising a beacon node and connecting to the publ
 It is recommended to open up port tcp/13000 and udp/12000 on your local router to improve connectivity and receive more peers from the network. To do so, navigate to `192.168.0.1` in your browser and login if required. Follow along with the interface to modify your routers firewall settings. When this task is completed, append the parameter`--p2p-host-ip=$(curl -s ident.me)` to your selected beacon startup command presented in this section to use the newly opened port.
 :::
 
+You will need to setup an eth1 node connection to run a beacon node. We have dedicated instructions for this step [here](/docs/prysm-usage/setup-eth1).
+
 To start your beacon node, issue the following command:
 
 ```text
@@ -90,7 +92,8 @@ docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/u
   gcr.io/prysmaticlabs/prysm/beacon-chain:latest \
   --datadir=/data \
   --rpc-host=0.0.0.0 \
-  --monitoring-host=0.0.0.0
+  --monitoring-host=0.0.0.0 \
+  --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
 ```
 
 At this point, the beacon chain data will begin synchroni zing up to the latest head block. Please note that, depending on your network capacity and CPU, this process may take several hours. Once it is complete, you will be ready to make a deposit and begin setting up a validator client.
@@ -131,7 +134,8 @@ docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/u
   --datadir=/data \
   --clear-db \
   --rpc-host=0.0.0.0 \
-  --monitoring-host=0.0.0.0
+  --monitoring-host=0.0.0.0 \
+  --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
 ```
 </TabItem>
 <TabItem value="win">
@@ -166,10 +170,11 @@ Below are instructions for initialising a beacon node and connecting to the publ
    3. Select a drive to share
    4. Click 'Apply'
 2. You will next need to create a directory named `/prysm/` within your selected shared Drive. This folder will be used as a local data directory for [beacon node](/docs/how-prysm-works/beacon-node) chain data as well as account and keystore information required by the validator. Docker **will not** create this directory if it does not exist already. For the purposes of these instructions, it is assumed that `C:` is your prior-selected shared Drive.
-3. To run the beacon node, issue the following command:
+3. You will need to setup an eth1 node connection to run a beacon node. We have dedicated instructions for this step [here](/docs/prysm-usage/setup-eth1)
+4. To run the beacon node, issue the following command:
 
 ```text
-docker run -it -v %LOCALAPPDATA%\Eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp gcr.io/prysmaticlabs/prysm/beacon-chain:latest --datadir=/data --rpc-host=0.0.0.0 --monitoring-host=0.0.0.0
+docker run -it -v %LOCALAPPDATA%\Eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp gcr.io/prysmaticlabs/prysm/beacon-chain:latest --datadir=/data --rpc-host=0.0.0.0 --monitoring-host=0.0.0.0 --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
 ```
 
 This will sync up the beacon node with the latest cannonical head block in the network. If the network hasn't started yet, it will process eth1 deposits from the deposit contract so far and await the genesis time. The Docker `-d` flag can be appended before the `-v` flag to launch the process in a detached terminal window. Please note that, depending on your network capacity and CPU, this process may take several hours. Once it is complete, you will be ready to make a deposit and begin setting up a validator client.
@@ -205,7 +210,7 @@ docker rm beacon-node
 To recreate a deleted container and refresh the chain database, issue the start command with an additional `--clear-db` parameter:
 
 ```text
-docker run -it -v %LOCALAPPDATA%\Eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node gcr.io/prysmaticlabs/prysm/beacon-chain:latest --datadir=/data --clear-db --monitoring-host=0.0.0.0 --rpc-host=0.0.0.0
+docker run -it -v %LOCALAPPDATA%\Eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node gcr.io/prysmaticlabs/prysm/beacon-chain:latest --datadir=/data --clear-db --monitoring-host=0.0.0.0 --rpc-host=0.0.0.0 --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
 ```
 
 </TabItem>
@@ -234,6 +239,8 @@ Below are instructions for initialising a beacon node and connecting to the publ
 It is recommended to open up port tcp/13000 and udp/12000 on your local router to improve connectivity and receive more peers from the network. To do so, navigate to `192.168.0.1` in your browser and login if required. Follow along with the interface to modify your routers firewall settings. When this task is completed, append the parameter`--p2p-host-ip=$(curl -s ident.me)` to your selected beacon startup command presented in this section to use the newly opened port.
 :::
 
+You will need to setup an eth1 node connection to run a beacon node. We have dedicated instructions for this step [here](/docs/prysm-usage/setup-eth1).
+
 To start your beacon node, issue the following command:
 
 ```text
@@ -241,7 +248,8 @@ docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/u
   gcr.io/prysmaticlabs/prysm/beacon-chain:latest \
   --datadir=/data \
   --rpc-host=0.0.0.0 \
-  --monitoring-host=0.0.0.0
+  --monitoring-host=0.0.0.0 \
+  --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
 ```
 
 This will sync up the beacon node with the latest cannonical head block in the network. If the network hasn't started yet, it will process eth1 deposits from the deposit contract so far and await the genesis time. The Docker `-d` flag can be appended before the `-v` flag to launch the process in a detached terminal window. Please note that, depending on your network capacity and CPU, this process may take several hours. Once it is complete, you will be ready to make a deposit and begin setting up a validator client.
@@ -282,7 +290,8 @@ docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/u
   --datadir=/data \
   --clear-db \
   --rpc-host=0.0.0.0 \
-  --monitoring-host=0.0.0.0
+  --monitoring-host=0.0.0.0 \
+  --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
 ```
 
 </TabItem>
