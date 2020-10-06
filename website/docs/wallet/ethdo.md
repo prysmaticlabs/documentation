@@ -24,7 +24,7 @@ Next, make sure you install [ethdo](https://github.com/wealdtech/ethdo/tree/v1.6
 
 ### Create an ethdo wallet
 
-If you already have an ethdo wallet, you can skip this step. You can follow along the [usage documentation](https://github.com/wealdtech/ethdo/blob/master/docs/usage.md#create-1) in ethdo itself for the most up-to-date information on available options, but at the most basic level, you can create an ethdo wallet as follows:
+If you already have an ethdo wallet, you can skip this step. You can follow along the [usage documentation](https://github.com/wealdtech/ethdo/blob/v1.6.1/docs/usage.md#create-1) in ethdo itself for the most up-to-date information on available options, but at the most basic level, you can create an ethdo wallet as follows:
 
 ```
 ethdo wallet create --wallet="mywallet"
