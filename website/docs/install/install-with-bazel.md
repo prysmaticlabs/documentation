@@ -71,10 +71,12 @@ Below are instructions for initialising a beacon node and connecting to the publ
 It is recommended to open up port tcp/13000 and udp/12000 on your local router to improve connectivity and receive more peers from the network. To do so, navigate to `192.168.0.1` in your browser and login if required. Follow along with the interface to modify your routers firewall settings. When this task is completed, append the parameter`--p2p-host-ip=$(curl -s ident.me)` to your selected beacon startup command presented in this section to use the newly opened port.
 :::
 
+You will need to setup an eth1 node connection to run a beacon node. We have dedicated instructions for this step [here](/docs/prysm-usage/setup-eth1)
+
 To start your [beacon node](/docs/how-prysm-works/beacon-node) with Bazel, issue the following command:
 
 ```text
-bazel run //beacon-chain -- --datadir=$HOME/.eth2 
+bazel run //beacon-chain -- --datadir=$HOME/.eth2 --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
 ```
 
 This will sync up the beacon node with the latest head block in the network. If the network hasn't started yet, it will process eth1 deposits from the deposit contract so far and await the genesis time.

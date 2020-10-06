@@ -64,10 +64,10 @@ mkdir prysm && cd prysm
 curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --output prysm.sh && chmod +x prysm.sh
 ```
 
-3. Run the `prysm.sh` script alongside any [startup parameters](/docs/prysm-usage/parameters#beacon-node-parameters):
+3. Run the `prysm.sh` script alongside any [startup parameters](/docs/prysm-usage/parameters#beacon-node-parameters). You will need to setup an eth1 node connection to run a beacon node. We have dedicated instructions for this step [here](/docs/prysm-usage/setup-eth1).
 
 ```sh
-./prysm.sh beacon-chain
+./prysm.sh beacon-chain --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
 ```
 
 :::tip Pro-Tip
@@ -77,7 +77,7 @@ Not getting enough peers?  Refer to the [improve P2P connectivity](/docs/prysm-u
 The `prysm.sh` script will now download and initialize the beacon chain with the specified parameters. The terminal will produce output like so:
 
 ```sh
-./prysm.sh beacon-chain
+./prysm.sh beacon-chain --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
 Latest Prysm version is v0.3.3.
 Downloading beacon chain@v0.3.3 to /home/{USER}/prysm/dist/beacon-chain-v0.3.3-linux-amd64 (automatically selected latest available version)
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
@@ -113,10 +113,10 @@ curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.bat --ou
 reg add HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1
 ``` 
 
-4. Run the `prysm.bat` script alongside any [startup parameters](/docs/prysm-usage/parameters#beacon-node-parameters):
+4. Run the `prysm.bat` script alongside any [startup parameters](/docs/prysm-usage/parameters#beacon-node-parameters). You will need to setup an eth1 node connection to run a beacon node. We have dedicated instructions for this step [here](/docs/prysm-usage/setup-eth1).
 
 ```sh
-.\prysm.bat beacon-chain
+.\prysm.bat beacon-chain --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
 ```
 
 :::tip Pro-Tip
@@ -126,7 +126,7 @@ Not getting enough peers?  Refer to the [improve P2P connectivity](/docs/prysm-u
 The `prysm.bat` script will now download and initialise the beacon chain with the specified parameters. The terminal will produce output like so:
 
 ```sh
-.\prysm.bat beacon-chain
+.\prysm.bat beacon-chain --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
 Latest prysm release is v1.0.0-alpha.5.
 Using prysm version v1.0.0-alpha.5.
 Downloading beacon chain v1.0.0-alpha.5 to .\dist\validator-v1.0.0-alpha.5-windows-amd64.exe automatically selected latest available release
@@ -166,10 +166,10 @@ mkdir prysm && cd prysm
 curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --output prysm.sh && chmod +x prysm.sh
 ```
 
-3. Run the `prysm.sh` script alongside any [startup parameters](/docs/prysm-usage/parameters#beacon-node-parameters):
+3. Run the `prysm.sh` script alongside any [startup parameters](/docs/prysm-usage/parameters#beacon-node-parameters). You will need to setup an eth1 node connection to run a beacon node. We have dedicated instructions for this step [here](/docs/prysm-usage/setup-eth1).
 
 ```sh
-./prysm.sh beacon-chain
+./prysm.sh beacon-chain --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
 ```
 
 :::tip Pro-Tip
@@ -179,7 +179,7 @@ Not getting enough peers?  Refer to the [improve P2P connectivity](/docs/prysm-u
 The `prysm.sh` script will now download and initialise the beacon chain with the specified parameters. The terminal will produce output like so:
 
 ```sh
-./prysm.sh beacon-chain
+./prysm.sh beacon-chain --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
 Latest Prysm version is v0.3.3.
 Downloading beacon chain@v0.3.3 to /home/{USER}/prysm/dist/beacon-chain-v0.3.3-linux-amd64 (automatically selected latest available version)
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
@@ -210,10 +210,10 @@ mkdir prysm && cd prysm
 curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --output prysm.sh && chmod +x prysm.sh
 ```
 
-3. Run the `prysm.sh` script alongside any [startup parameters](/docs/prysm-usage/parameters#beacon-node-parameters):
+3. Run the `prysm.sh` script alongside any [startup parameters](/docs/prysm-usage/parameters#beacon-node-parameters). You will need to setup an eth1 node connection to run a beacon node. We have dedicated instructions for this step [here](/docs/prysm-usage/setup-eth1).
 
 ```sh
-./prysm.sh beacon-chain
+./prysm.sh beacon-chain --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
 ```
 
 :::tip Pro-Tip
@@ -223,7 +223,7 @@ Not getting enough peers?  Refer to the [improve P2P connectivity](/docs/prysm-u
 The `prysm.sh` script will now download and initialise the beacon chain with the specified parameters. The terminal will produce output like so:
 
 ```sh
-./prysm.sh beacon-chain
+./prysm.sh beacon-chain --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
 Latest Prysm version is v0.3.3.
 Downloading beacon chain@v0.3.3 to /home/{USER}/prysm/dist/beacon-chain-v0.3.3-linux-amd64 (automatically selected latest available version)
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
