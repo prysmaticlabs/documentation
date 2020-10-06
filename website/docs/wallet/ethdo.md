@@ -7,7 +7,7 @@ sidebar_label: Using Ethdo
 This section explains how to use the popular, third-party wallet, [ethdo](https://github.com/wealdtech/ethdo/tree/v1.6.1) with Prysm's validator client. At the time of writing, this guide is made for ethdo v1.6.1. Ethdo offers a command-line tool that allows advanced stakers to perform all sorts of tasks relating to wallets and validating keys which is far more extensible than what Prysm has built-in. Ethdo provides useful helpers for managing HD wallets, signing deposits, performing validator exits, and more. In this guide, we'll go over how to use a wallet you created in ethdo to validate with Prysm.
 
 :::danger This is the only recommended way to use Ethdo with Prysm
-This guide is the only recommended way to use ethdo with Prysm which will always be supported by our client. Do not use ethdo with the old flags --keymanager, --keymanageropts, or --disable-accounts-v2. These flags will be removed in Prysm's beta release
+This guide is the only recommended way to use ethdo with Prysm which will always be supported by our client. Do not use ethdo with the old flags --keymanager, --keymanageropts, or --disable-accounts-v2. These flags will be removed in Prysm's beta release!
 :::
 
 ## Installation
