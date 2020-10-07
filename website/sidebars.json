@@ -32,7 +32,8 @@
 			"wallet/deterministic",
 			"wallet/nondeterministic",
 			"wallet/remote",
-			"wallet/exiting-a-validator"
+			"wallet/exiting-a-validator",
+			"wallet/ethdo"
 		],
 
 		"How Prysm works": 	[	"how-prysm-works/architecture-overview",
