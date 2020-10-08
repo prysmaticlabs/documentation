@@ -62,7 +62,7 @@ docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/u
 **Using Bazel**
 
 ```text
-bazel run //beacon-chain --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT> --zinken
+bazel run //beacon-chain -- --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT> --zinken
 ```
 
 </TabItem>
@@ -114,7 +114,7 @@ docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/u
 **Using Bazel**
 
 ```text
-bazel run //beacon-chain --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT> --zinken
+bazel run //beacon-chain -- --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT> --zinken
 ```
 
 </TabItem>
@@ -129,7 +129,7 @@ bazel run //beacon-chain --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT> --zinken
 **Using Bazel**
 
 ```text
-bazel run //beacon-chain --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT> --zinken
+bazel run //beacon-chain -- --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT> --zinken
 ```
 
 </TabItem>
@@ -337,7 +337,7 @@ bazel run //validator -- --zinken
 **Using Bazel**
 
 ```text
-bazel run //validator --zinken
+bazel run //validator -- --zinken
 ```
 
 </TabItem>
