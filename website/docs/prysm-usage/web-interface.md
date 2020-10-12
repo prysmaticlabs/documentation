@@ -109,7 +109,7 @@ bazel run //validator --web
 
 ## Step 3: Create a wallet
 
-The Prysm web interface will open in your default browser automatically, and you can then navigate to the create a wallet page.
+The Prysm web interface will open in your default browser automatically, and you can then navigate to the Create a Wallet page.
 
 ![Onboarding](/img/createawallet.png "Create a Wallet")
 
