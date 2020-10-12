@@ -20,7 +20,7 @@ Based on the instructions above, you should now have a running beacon node.
 
 ## Step 2: Start your validator client
 
-You'll then need to start your validator client with the --web flag. In a second terminal window. Depending on your platform, issue the appropriate command from the examples below to start the validator.
+You'll then need to start your validator client with the `--web` flag in a second terminal window. Depending on your platform, issue the appropriate command from the examples below to start the validator.
 
 :::danger Important Caveats
 The --web interface is currently and beta and has some limitations. At the moment, this assumes you are running your beacon node and validator client with default RPC ports, and on the same machines or at least within the same network. For more advanced configurations, you can get in touch with our team on Discord or follow the progress of prysm-web [here](https://github.com/prysmaticlabs/prysm-web-ui).
