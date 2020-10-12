@@ -49,7 +49,7 @@ import TabItem from '@theme/TabItem';
 
 **Using Docker**
 
-At the moment, docker installations do not work with the web UI due to some assumptions about default ports which will be resolved in future releases, we apologize in advance.
+At the moment, docker installations do not work with the web UI due to some assumptions about default ports which will be resolved in future releases. We apologize in advance.
 
 **Using Bazel**
 
