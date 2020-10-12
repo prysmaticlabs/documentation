@@ -113,7 +113,7 @@ The Prysm web interface will open in your default browser automatically, and you
 
 ![Onboarding](/img/createawallet.png "Create a Wallet")
 
-We recommend going through the "imported wallet" route, and importing your keys you obtained during the eth2 launchpad deposit-cli process, as this is the most secure setup. Upon completing wallet creation, you will be redirected to your main dashboard, where you can see several important items such as your recent validating performance, your beacon node's sync status.
+We recommend going through the "imported wallet" route, and importing your keys you obtained during the eth2 launchpad deposit-cli process, as this is the most secure setup. Upon completing wallet creation, you will be redirected to your main dashboard, where you can see several important items such as your recent validating performance or your beacon node's sync status.
 
 ## Step 4: Monitor your beacon node and validator client logs, manage accounts, and more
 
