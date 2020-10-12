@@ -17,6 +17,7 @@
 
 		"Running Prysm": 	[   
 			"prysm-usage/running-a-validator",
+			"prysm-usage/web-interface",
 			"prysm-usage/is-everything-fine",
 			"prysm-usage/setup-eth1",
 			"prysm-usage/secure-grpc",
