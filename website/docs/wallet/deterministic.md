@@ -104,7 +104,7 @@ You can also create a new validator account **non-interactively** by using the f
 Here's a full example on how to create a new validator account for your HD wallet stored at `$HOME/myhdwallet`.
 
 ```bash
-./prysm.sh validator accounts-v2 create --wallet-dir=$HOME/myhdwallet --password-file=password.txt
+./prysm.sh validator accounts-v2 create --wallet-dir=$HOME/myhdwallet --wallet-password-file=password.txt
 ```
 
 ### List validator accounts
