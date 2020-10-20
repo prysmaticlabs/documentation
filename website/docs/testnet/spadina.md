@@ -49,7 +49,7 @@ import TabItem from '@theme/TabItem';
 **Using the Prysm installation script**
 
 ```text
-./prysm.sh validator accounts-v2 import --keys-dir=$HOME/eth2.0-deposit-cli/validator_keys --spadina
+./prysm.sh validator accounts import --keys-dir=$HOME/eth2.0-deposit-cli/validator_keys --spadina
 ```
 
 **Using Docker**
@@ -60,13 +60,13 @@ docker run -it -v $HOME/eth2.0-deposit-cli/validator_keys:/keys \
   -v $HOME/Eth2:/validatorDB \
   --name validator \
   gcr.io/prysmaticlabs/prysm/validator:latest \
-  accounts-v2 import --keys-dir=/keys --wallet-dir=/wallet --datadir=/validatorDB --spadina
+  accounts import --keys-dir=/keys --wallet-dir=/wallet --datadir=/validatorDB --spadina
 ```
 
 **Using Bazel**
 
 ```text
-bazel run //validator:validator -- accounts-v2 import --keys-dir=$HOME/eth2.0-deposit-cli/validator_keys --spadina
+bazel run //validator:validator -- accounts import --keys-dir=$HOME/eth2.0-deposit-cli/validator_keys --spadina
 ```
 
 </TabItem>
@@ -75,13 +75,13 @@ bazel run //validator:validator -- accounts-v2 import --keys-dir=$HOME/eth2.0-de
 **Using the prysm.bat script**
 
 ```text
-prysm.bat validator accounts-v2 import --keys-dir=%LOCALAPPDATA%\eth2.0-deposit-cli\validator_keys --spadina
+prysm.bat validator accounts import --keys-dir=%LOCALAPPDATA%\eth2.0-deposit-cli\validator_keys --spadina
 ```
 
 **Using Docker**
 
 ```text
-docker run -it -v %LOCALAPPDATA%\eth2.0-deposit-cli\validator_keys:/keys -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet gcr.io/prysmaticlabs/prysm/validator:latest accounts-v2 import --keys-dir=/keys --wallet-dir=/wallet --spadina
+docker run -it -v %LOCALAPPDATA%\eth2.0-deposit-cli\validator_keys:/keys -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet gcr.io/prysmaticlabs/prysm/validator:latest accounts import --keys-dir=/keys --wallet-dir=/wallet --spadina
 ```
 
 </TabItem>
@@ -90,7 +90,7 @@ docker run -it -v %LOCALAPPDATA%\eth2.0-deposit-cli\validator_keys:/keys -v %LOC
 **Using the Prysm installation script**
 
 ```text
-./prysm.sh validator accounts-v2 import --keys-dir=$HOME/eth2.0-deposit-cli/validator_keys --spadina
+./prysm.sh validator accounts import --keys-dir=$HOME/eth2.0-deposit-cli/validator_keys --spadina
 ```
 
 **Using Docker**
@@ -101,13 +101,13 @@ docker run -it -v $HOME/eth2.0-deposit-cli/validator_keys:/keys \
   -v $HOME/Eth2:/validatorDB \
   --name validator \
   gcr.io/prysmaticlabs/prysm/validator:latest \
-  accounts-v2 import --keys-dir=/keys --wallet-dir=/wallet --datadir=/validatorDB --spadina
+  accounts import --keys-dir=/keys --wallet-dir=/wallet --datadir=/validatorDB --spadina
 ```
 
 **Using Bazel**
 
 ```text
-bazel run //validator:validator -- accounts-v2 import --keys-dir=$HOME/eth2.0-deposit-cli/validator_keys --spadina
+bazel run //validator:validator -- accounts import --keys-dir=$HOME/eth2.0-deposit-cli/validator_keys --spadina
 ```
 
 </TabItem>
@@ -116,13 +116,13 @@ bazel run //validator:validator -- accounts-v2 import --keys-dir=$HOME/eth2.0-de
 **Using the Prysm installation script**
 
 ```text
-./prysm.sh validator accounts-v2 import --keys-dir=$HOME/eth2.0-deposit-cli/validator_keys --spadina
+./prysm.sh validator accounts import --keys-dir=$HOME/eth2.0-deposit-cli/validator_keys --spadina
 ```
 
 **Using Bazel**
 
 ```text
-bazel run //validator:validator -- accounts-v2 import --keys-dir=$HOME/eth2.0-deposit-cli/validator_keys --spadina
+bazel run //validator:validator -- accounts import --keys-dir=$HOME/eth2.0-deposit-cli/validator_keys --spadina
 ```
 
 </TabItem>

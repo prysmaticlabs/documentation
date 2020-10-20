@@ -114,7 +114,7 @@ After you've made your decision on which type of wallet you prefer to run, you c
 **Using the Prysm installation script**
 
 ```text
-./prysm.sh validator wallet-v2 create
+./prysm.sh validator wallet create
 ```
 
 **Using Docker**
@@ -122,14 +122,14 @@ After you've made your decision on which type of wallet you prefer to run, you c
 ```text
 docker run -it -v $HOME/.eth2validators/prysm-wallet-v2:/wallet --network="host" \
   gcr.io/prysmaticlabs/prysm/validator:latest \
-  wallet-v2 create \
+  wallet create \
   --wallet-dir=/wallet
 ```
 
 **Using Bazel**
 
 ```text
-bazel run //validator -- wallet-v2 create
+bazel run //validator -- wallet create
 ```
 
 </TabItem>
@@ -138,13 +138,13 @@ bazel run //validator -- wallet-v2 create
 **Using the prysm.bat script**
 
 ```text
-prysm.bat validator wallet-v2 create
+prysm.bat validator wallet create
 ```
 
 **Using Docker**
 
 ```text
-docker run -it -v %APPDATA%\Eth2Validators\prysm-wallet-v2:/wallet gcr.io/prysmaticlabs/prysm/validator:latest wallet-v2 create --wallet-dir=/wallet
+docker run -it -v %APPDATA%\Eth2Validators\prysm-wallet-v2:/wallet gcr.io/prysmaticlabs/prysm/validator:latest wallet create --wallet-dir=/wallet
 ```
 
 </TabItem>
@@ -153,7 +153,7 @@ docker run -it -v %APPDATA%\Eth2Validators\prysm-wallet-v2:/wallet gcr.io/prysma
 **Using the Prysm installation script**
 
 ```text
-./prysm.sh validator wallet-v2 create
+./prysm.sh validator wallet create
 ```
 
 **Using Docker**
@@ -161,14 +161,14 @@ docker run -it -v %APPDATA%\Eth2Validators\prysm-wallet-v2:/wallet gcr.io/prysma
 ```text
 docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
   gcr.io/prysmaticlabs/prysm/validator:latest \
-  wallet-v2 create \
+  wallet create \
   --wallet-dir=/wallet
 ```
 
 **Using Bazel**
 
 ```text
-bazel run //validator -- wallet-v2 create
+bazel run //validator -- wallet create
 ```
 
 </TabItem>
@@ -177,13 +177,13 @@ bazel run //validator -- wallet-v2 create
 **Using the Prysm installation script**
 
 ```text
-./prysm.sh validator wallet-v2 create
+./prysm.sh validator wallet create
 ```
 
 **Using Bazel**
 
 ```text
-bazel run //validator -- wallet-v2 create
+bazel run //validator -- wallet create
 ```
 
 </TabItem>
@@ -235,7 +235,7 @@ Next-up, you'll need to create a validator key using the wallet you created in t
 **Using the Prysm installation script**
 
 ```text
-./prysm.sh validator accounts-v2 create
+./prysm.sh validator accounts create
 ```
 
 **Using Docker**
@@ -243,14 +243,14 @@ Next-up, you'll need to create a validator key using the wallet you created in t
 ```text
 docker run -it -v $HOME/.eth2validators/prysm-wallet-v2:/wallet --network="host" \
   gcr.io/prysmaticlabs/prysm/validator:latest \
-  accounts-v2 create \
+  accounts create \
   --wallet-dir=/wallet
 ```
 
 **Using Bazel**
 
 ```text
-bazel run //validator -- accounts-v2 create
+bazel run //validator -- accounts create
 ```
 
 </TabItem>
@@ -259,13 +259,13 @@ bazel run //validator -- accounts-v2 create
 **Using the prysm.bat script**
 
 ```text
-prysm.bat validator accounts-v2 create
+prysm.bat validator accounts create
 ```
 
 **Using Docker**
 
 ```text
-docker run -it -v %APPDATA%\Eth2Validators\prysm-wallet-v2:/wallet gcr.io/prysmaticlabs/prysm/validator:latest accounts-v2 create --wallet-dir=/wallet
+docker run -it -v %APPDATA%\Eth2Validators\prysm-wallet-v2:/wallet gcr.io/prysmaticlabs/prysm/validator:latest accounts create --wallet-dir=/wallet
 ```
 
 </TabItem>
@@ -274,7 +274,7 @@ docker run -it -v %APPDATA%\Eth2Validators\prysm-wallet-v2:/wallet gcr.io/prysma
 **Using the Prysm installation script**
 
 ```text
-./prysm.sh validator accounts-v2 create
+./prysm.sh validator accounts create
 ```
 
 **Using Docker**
@@ -282,14 +282,14 @@ docker run -it -v %APPDATA%\Eth2Validators\prysm-wallet-v2:/wallet gcr.io/prysma
 ```text
 docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
   gcr.io/prysmaticlabs/prysm/validator:latest \
-  accounts-v2 create \
+  accounts create \
   --wallet-dir=/wallet
 ```
 
 **Using Bazel**
 
 ```text
-bazel run //validator -- accounts-v2 create
+bazel run //validator -- accounts create
 ```
 
 </TabItem>
@@ -298,13 +298,13 @@ bazel run //validator -- accounts-v2 create
 **Using the Prysm installation script**
 
 ```text
-./prysm.sh validator accounts-v2 create
+./prysm.sh validator accounts create
 ```
 
 **Using Bazel**
 
 ```text
-bazel run //validator -- accounts-v2 create
+bazel run //validator -- accounts create
 ```
 
 </TabItem>
@@ -553,7 +553,7 @@ Prysm can import keys from any directory as long as the keys are stored in files
 Using the Prysm installation script
 
 ```text
-./prysm.sh validator accounts-v2 import --keys-dir=/path/to/keys
+./prysm.sh validator accounts import --keys-dir=/path/to/keys
 ```
 
 Using Docker
@@ -562,13 +562,13 @@ Using Docker
 docker run -it -v /path/to/keys:/keys \
   -v $HOME/.eth2validators/prysm-wallet-v2:/wallet \
   gcr.io/prysmaticlabs/prysm/validator:latest \
-  accounts-v2 import --keys-dir=/keys --wallet-dir=/wallet
+  accounts import --keys-dir=/keys --wallet-dir=/wallet
 ```
 
 Using Bazel
 
 ```text
-bazel run //validator:validator -- accounts-v2 import --keys-dir=/path/to/keys
+bazel run //validator:validator -- accounts import --keys-dir=/path/to/keys
 ```
 
 </TabItem>
@@ -577,13 +577,13 @@ bazel run //validator:validator -- accounts-v2 import --keys-dir=/path/to/keys
 Using the prysm.bat script
 
 ```text
-prysm.bat validator accounts-v2 import --keys-dir=path\to\keys
+prysm.bat validator accounts import --keys-dir=path\to\keys
 ```
 
 Using Docker
 
 ```text
-docker run -it -v path\to\keys:/keys -v %APPDATA%\Eth2Validators\prysm-wallet-v2:/wallet gcr.io/prysmaticlabs/prysm/validator:latest accounts-v2 import --keys-dir=/keys --wallet-dir=/wallet
+docker run -it -v path\to\keys:/keys -v %APPDATA%\Eth2Validators\prysm-wallet-v2:/wallet gcr.io/prysmaticlabs/prysm/validator:latest accounts import --keys-dir=/keys --wallet-dir=/wallet
 ```
 
 </TabItem>
@@ -592,7 +592,7 @@ docker run -it -v path\to\keys:/keys -v %APPDATA%\Eth2Validators\prysm-wallet-v2
 Using the Prysm installation script
 
 ```text
-./prysm.sh validator accounts-v2 import --keys-dir=/path/to/keys
+./prysm.sh validator accounts import --keys-dir=/path/to/keys
 ```
 
 Using Docker
@@ -601,13 +601,13 @@ Using Docker
 docker run -it -v /path/to/keys:/keys \
   -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
   gcr.io/prysmaticlabs/prysm/validator:latest \
-  accounts-v2 import --keys-dir=/keys --wallet-dir=/wallet
+  accounts import --keys-dir=/keys --wallet-dir=/wallet
 ```
 
 Using Bazel
 
 ```text
-bazel run //validator:validator -- accounts-v2 import --keys-dir=/path/to/keys
+bazel run //validator:validator -- accounts import --keys-dir=/path/to/keys
 ```
 
 </TabItem>
@@ -616,13 +616,13 @@ bazel run //validator:validator -- accounts-v2 import --keys-dir=/path/to/keys
 Using the Prysm installation script
 
 ```text
-./prysm.sh validator accounts-v2 import --keys-dir=/path/to/keys
+./prysm.sh validator accounts import --keys-dir=/path/to/keys
 ```
 
 Using Bazel
 
 ```text
-bazel run //validator:validator -- accounts-v2 import --keys-dir=/path/to/keys
+bazel run //validator:validator -- accounts import --keys-dir=/path/to/keys
 ```
 
 </TabItem>

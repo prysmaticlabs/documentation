@@ -7,7 +7,7 @@ sidebar_label: Using Ethdo
 This section explains how to configure a new wallet with the popular third-party wallet [ethdo](https://github.com/wealdtech/ethdo/tree/v1.6.1) for Prysm's validator client. At the time of writing, this guide is made for ethdo v1.6.1. Ethdo offers a command-line tool that allows advanced stakers to manage HD wallets, sign deposits, perform validator exits, as well as other robust features relating to wallets and validating keys that are not currently present within Prysm. 
 
 :::danger This is the only recommended way to use Ethdo with Prysm
-This guide is the only recommended way to use ethdo with Prysm, which will always be supported by our client. Do **NOT** use ethdo with the flags ``--keymanager``, ``--keymanageropts``, or -``-disable-accounts-v2``. They will be removed in Prysm's beta release!
+This guide is the only recommended way to use ethdo with Prysm, which will always be supported by our client.
 :::
 
 ## Installation
@@ -67,7 +67,7 @@ import TabItem from '@theme/TabItem';
 **Using the Prysm installation script**
 
 ```text
-./prysm.sh validator accounts-v2 import --keys-dir=<PATH_TO_ETHDO_WALLET>
+./prysm.sh validator accounts import --keys-dir=<PATH_TO_ETHDO_WALLET>
 ```
 
 **Using Docker on GNU/Linux and macOS**
@@ -80,13 +80,13 @@ docker run -it -v <PATH_TO_ETHDO_WALLET>:/keys \
   -v $HOME/Eth2:/validatorDB \
   --name validator \
   gcr.io/prysmaticlabs/prysm/validator:latest \
-  accounts-v2 import --keys-dir=/keys --wallet-dir=/wallet --datadir=/validatorDB
+  accounts import --keys-dir=/keys --wallet-dir=/wallet --datadir=/validatorDB
 ```
 
 **Using Docker on Windows**
 
 ```text
-docker run -it -v <PATH_TO_ETHDO_WALLET>:/keys -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet gcr.io/prysmaticlabs/prysm/validator:latest accounts-v2 import --keys-dir=/keys --wallet-dir=/wallet
+docker run -it -v <PATH_TO_ETHDO_WALLET>:/keys -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet gcr.io/prysmaticlabs/prysm/validator:latest accounts import --keys-dir=/keys --wallet-dir=/wallet
 ```
 
 **Using Bazel**
@@ -94,7 +94,7 @@ docker run -it -v <PATH_TO_ETHDO_WALLET>:/keys -v %LOCALAPPDATA%\Eth2Validators\
 To import your keys with a Bazel installation of Prysm, issue the command:
 
 ```text
-bazel run //validator:validator -- accounts-v2 import --keys-dir=<PATH_TO_ETHDO_WALLET>
+bazel run //validator:validator -- accounts import --keys-dir=<PATH_TO_ETHDO_WALLET>
 ```
 
 </TabItem>
@@ -103,7 +103,7 @@ bazel run //validator:validator -- accounts-v2 import --keys-dir=<PATH_TO_ETHDO_
 **Using the prysm.bat script**
 
 ```text
-prysm.bat validator accounts-v2 import --keys-dir=<PATH_TO_ETHDO_WALLET>
+prysm.bat validator accounts import --keys-dir=<PATH_TO_ETHDO_WALLET>
 ```
 
 
@@ -113,7 +113,7 @@ prysm.bat validator accounts-v2 import --keys-dir=<PATH_TO_ETHDO_WALLET>
 **Using the Prysm installation script**
 
 ```text
-./prysm.sh validator accounts-v2 import --keys-dir=<PATH_TO_ETHDO_WALLET>
+./prysm.sh validator accounts import --keys-dir=<PATH_TO_ETHDO_WALLET>
 ```
 
 **Using Docker**
@@ -124,13 +124,13 @@ docker run -it -v <PATH_TO_ETHDO_WALLET>:/keys \
   -v $HOME/Eth2:/validatorDB \
   --name validator \
   gcr.io/prysmaticlabs/prysm/validator:latest \
-  accounts-v2 import --keys-dir=/keys --wallet-dir=/wallet --datadir=/validatorDB
+  accounts import --keys-dir=/keys --wallet-dir=/wallet --datadir=/validatorDB
 ```
 
 **Using Bazel**
 
 ```text
-bazel run //validator:validator -- accounts-v2 import --keys-dir=<PATH_TO_ETHDO_WALLET>
+bazel run //validator:validator -- accounts import --keys-dir=<PATH_TO_ETHDO_WALLET>
 ```
 
 </TabItem>
@@ -139,13 +139,13 @@ bazel run //validator:validator -- accounts-v2 import --keys-dir=<PATH_TO_ETHDO_
 **Using the Prysm installation script**
 
 ```text
-./prysm.sh validator accounts-v2 import --keys-dir=<PATH_TO_ETHDO_WALLET>
+./prysm.sh validator accounts import --keys-dir=<PATH_TO_ETHDO_WALLET>
 ```
 
 **Using Bazel**
 
 ```text
-bazel run //validator:validator -- accounts-v2 import --keys-dir=<PATH_TO_ETHDO_WALLET>
+bazel run //validator:validator -- accounts import --keys-dir=<PATH_TO_ETHDO_WALLET>
 ```
 
 </TabItem>

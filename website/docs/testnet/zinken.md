@@ -47,6 +47,8 @@ First, let's run the beacon node connected to the zinken testnet. It will begin 
 ./prysm.sh beacon-chain --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT> --zinken
 ```
 
+You will be asked to do a one time acknowledgement of our [Terms of Use](https://github.com/prysmaticlabs/prysm/blob/master/TERMS_OF_SERVICE.md). You can also read the legal terms first, then confirm them via a flag using --accept-terms-of-use in both your beacon node and validator.
+
 **Using Docker**
 
 ```text
@@ -59,11 +61,15 @@ docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/u
   --zinken
 ```
 
+You will be asked to do a one time acknowledgement of our [Terms of Use](https://github.com/prysmaticlabs/prysm/blob/master/TERMS_OF_SERVICE.md). You can also read the legal terms first, then confirm them via a flag using --accept-terms-of-use in both your beacon node and validator.
+
 **Using Bazel**
 
 ```text
 bazel run //beacon-chain -- --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT> --zinken
 ```
+
+You will be asked to do a one time acknowledgement of our [Terms of Use](https://github.com/prysmaticlabs/prysm/blob/master/TERMS_OF_SERVICE.md). You can also read the legal terms first, then confirm them via a flag using --accept-terms-of-use in both your beacon node and validator.
 
 </TabItem>
 <TabItem value="win">
@@ -73,6 +79,8 @@ bazel run //beacon-chain -- --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT> --zink
 ```text
 prysm.bat beacon-chain --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT> --zinken
 ```
+
+You will be asked to do a one time acknowledgement of our [Terms of Use](https://github.com/prysmaticlabs/prysm/blob/master/TERMS_OF_SERVICE.md). You can also read the legal terms first, then confirm them via a flag using --accept-terms-of-use in both your beacon node and validator.
 
 **Using Docker**
 
@@ -88,6 +96,8 @@ prysm.bat beacon-chain --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT> --zinken
 docker run -it -v %LOCALAPPDATA%\Eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp gcr.io/prysmaticlabs/prysm/beacon-chain:latest --datadir=/data --rpc-host=0.0.0.0 --monitoring-host=0.0.0.0 --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT> --zinken
 ```
 
+You will be asked to do a one time acknowledgement of our [Terms of Use](https://github.com/prysmaticlabs/prysm/blob/master/TERMS_OF_SERVICE.md). You can also read the legal terms first, then confirm them via a flag using --accept-terms-of-use in both your beacon node and validator.
+
 This will sync up the beacon node with the latest cannonical head block in the network. The Docker `-d` flag can be appended before the `-v` flag to launch the process in a detached terminal window.
 
 </TabItem>
@@ -98,6 +108,8 @@ This will sync up the beacon node with the latest cannonical head block in the n
 ```text
 ./prysm.sh beacon-chain --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT> --zinken
 ```
+
+You will be asked to do a one time acknowledgement of our [Terms of Use](https://github.com/prysmaticlabs/prysm/blob/master/TERMS_OF_SERVICE.md). You can also read the legal terms first, then confirm them via a flag using --accept-terms-of-use in both your beacon node and validator.
 
 **Using Docker**
 
@@ -111,11 +123,15 @@ docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/u
   --zinken
 ```
 
+You will be asked to do a one time acknowledgement of our [Terms of Use](https://github.com/prysmaticlabs/prysm/blob/master/TERMS_OF_SERVICE.md). You can also read the legal terms first, then confirm them via a flag using --accept-terms-of-use in both your beacon node and validator.
+
 **Using Bazel**
 
 ```text
 bazel run //beacon-chain -- --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT> --zinken
 ```
+
+You will be asked to do a one time acknowledgement of our [Terms of Use](https://github.com/prysmaticlabs/prysm/blob/master/TERMS_OF_SERVICE.md). You can also read the legal terms first, then confirm them via a flag using --accept-terms-of-use in both your beacon node and validator.
 
 </TabItem>
 <TabItem value="arm">
@@ -126,11 +142,15 @@ bazel run //beacon-chain -- --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT> --zink
 ./prysm.sh beacon-chain --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT> --zinken
 ```
 
+You will be asked to do a one time acknowledgement of our [Terms of Use](https://github.com/prysmaticlabs/prysm/blob/master/TERMS_OF_SERVICE.md). You can also read the legal terms first, then confirm them via a flag using --accept-terms-of-use in both your beacon node and validator.
+
 **Using Bazel**
 
 ```text
 bazel run //beacon-chain -- --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT> --zinken
 ```
+
+You will be asked to do a one time acknowledgement of our [Terms of Use](https://github.com/prysmaticlabs/prysm/blob/master/TERMS_OF_SERVICE.md). You can also read the legal terms first, then confirm them via a flag using --accept-terms-of-use in both your beacon node and validator.
 
 </TabItem>
 </Tabs>
@@ -165,8 +185,10 @@ import TabItem from '@theme/TabItem';
 **Using the Prysm installation script**
 
 ```text
-./prysm.sh validator accounts-v2 import --keys-dir=$HOME/eth2.0-deposit-cli/validator_keys --zinken
+./prysm.sh validator accounts import --keys-dir=$HOME/eth2.0-deposit-cli/validator_keys --zinken
 ```
+
+You will be asked to do a one time acknowledgement of our [Terms of Use](https://github.com/prysmaticlabs/prysm/blob/master/TERMS_OF_SERVICE.md). You can also read the legal terms first, then confirm them via a flag using --accept-terms-of-use in both your beacon node and validator.
 
 **Using Docker**
 
@@ -176,14 +198,18 @@ docker run -it -v $HOME/eth2.0-deposit-cli/validator_keys:/keys \
   -v $HOME/Eth2:/validatorDB \
   --name validator \
   gcr.io/prysmaticlabs/prysm/validator:latest \
-  accounts-v2 import --keys-dir=/keys --wallet-dir=/wallet --datadir=/validatorDB --zinken
+  accounts import --keys-dir=/keys --wallet-dir=/wallet --datadir=/validatorDB --zinken
 ```
+
+You will be asked to do a one time acknowledgement of our [Terms of Use](https://github.com/prysmaticlabs/prysm/blob/master/TERMS_OF_SERVICE.md). You can also read the legal terms first, then confirm them via a flag using --accept-terms-of-use in both your beacon node and validator.
 
 **Using Bazel**
 
 ```text
-bazel run //validator:validator -- accounts-v2 import --keys-dir=$HOME/eth2.0-deposit-cli/validator_keys --zinken
+bazel run //validator:validator -- accounts import --keys-dir=$HOME/eth2.0-deposit-cli/validator_keys --zinken
 ```
+
+You will be asked to do a one time acknowledgement of our [Terms of Use](https://github.com/prysmaticlabs/prysm/blob/master/TERMS_OF_SERVICE.md). You can also read the legal terms first, then confirm them via a flag using --accept-terms-of-use in both your beacon node and validator.
 
 </TabItem>
 <TabItem value="win">
@@ -191,14 +217,18 @@ bazel run //validator:validator -- accounts-v2 import --keys-dir=$HOME/eth2.0-de
 **Using the prysm.bat script**
 
 ```text
-prysm.bat validator accounts-v2 import --keys-dir=%LOCALAPPDATA%\eth2.0-deposit-cli\validator_keys --zinken
+prysm.bat validator accounts import --keys-dir=%LOCALAPPDATA%\eth2.0-deposit-cli\validator_keys --zinken
 ```
+
+You will be asked to do a one time acknowledgement of our [Terms of Use](https://github.com/prysmaticlabs/prysm/blob/master/TERMS_OF_SERVICE.md). You can also read the legal terms first, then confirm them via a flag using --accept-terms-of-use in both your beacon node and validator.
 
 **Using Docker**
 
 ```text
-docker run -it -v %LOCALAPPDATA%\eth2.0-deposit-cli\validator_keys:/keys -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet gcr.io/prysmaticlabs/prysm/validator:latest accounts-v2 import --keys-dir=/keys --wallet-dir=/wallet --zinken
+docker run -it -v %LOCALAPPDATA%\eth2.0-deposit-cli\validator_keys:/keys -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet gcr.io/prysmaticlabs/prysm/validator:latest accounts import --keys-dir=/keys --wallet-dir=/wallet --zinken
 ```
+
+You will be asked to do a one time acknowledgement of our [Terms of Use](https://github.com/prysmaticlabs/prysm/blob/master/TERMS_OF_SERVICE.md). You can also read the legal terms first, then confirm them via a flag using --accept-terms-of-use in both your beacon node and validator.
 
 </TabItem>
 <TabItem value="mac">
@@ -206,8 +236,10 @@ docker run -it -v %LOCALAPPDATA%\eth2.0-deposit-cli\validator_keys:/keys -v %LOC
 **Using the Prysm installation script**
 
 ```text
-./prysm.sh validator accounts-v2 import --keys-dir=$HOME/eth2.0-deposit-cli/validator_keys --zinken
+./prysm.sh validator accounts import --keys-dir=$HOME/eth2.0-deposit-cli/validator_keys --zinken
 ```
+
+You will be asked to do a one time acknowledgement of our [Terms of Use](https://github.com/prysmaticlabs/prysm/blob/master/TERMS_OF_SERVICE.md). You can also read the legal terms first, then confirm them via a flag using --accept-terms-of-use in both your beacon node and validator.
 
 **Using Docker**
 
@@ -217,14 +249,18 @@ docker run -it -v $HOME/eth2.0-deposit-cli/validator_keys:/keys \
   -v $HOME/Eth2:/validatorDB \
   --name validator \
   gcr.io/prysmaticlabs/prysm/validator:latest \
-  accounts-v2 import --keys-dir=/keys --wallet-dir=/wallet --datadir=/validatorDB --zinken
+  accounts import --keys-dir=/keys --wallet-dir=/wallet --datadir=/validatorDB --zinken
 ```
+
+You will be asked to do a one time acknowledgement of our [Terms of Use](https://github.com/prysmaticlabs/prysm/blob/master/TERMS_OF_SERVICE.md). You can also read the legal terms first, then confirm them via a flag using --accept-terms-of-use in both your beacon node and validator.
 
 **Using Bazel**
 
 ```text
-bazel run //validator:validator -- accounts-v2 import --keys-dir=$HOME/eth2.0-deposit-cli/validator_keys --zinken
+bazel run //validator:validator -- accounts import --keys-dir=$HOME/eth2.0-deposit-cli/validator_keys --zinken
 ```
+
+You will be asked to do a one time acknowledgement of our [Terms of Use](https://github.com/prysmaticlabs/prysm/blob/master/TERMS_OF_SERVICE.md). You can also read the legal terms first, then confirm them via a flag using --accept-terms-of-use in both your beacon node and validator.
 
 </TabItem>
 <TabItem value="arm">
@@ -232,14 +268,18 @@ bazel run //validator:validator -- accounts-v2 import --keys-dir=$HOME/eth2.0-de
 **Using the Prysm installation script**
 
 ```text
-./prysm.sh validator accounts-v2 import --keys-dir=$HOME/eth2.0-deposit-cli/validator_keys --zinken
+./prysm.sh validator accounts import --keys-dir=$HOME/eth2.0-deposit-cli/validator_keys --zinken
 ```
+
+You will be asked to do a one time acknowledgement of our [Terms of Use](https://github.com/prysmaticlabs/prysm/blob/master/TERMS_OF_SERVICE.md). You can also read the legal terms first, then confirm them via a flag using --accept-terms-of-use in both your beacon node and validator.
 
 **Using Bazel**
 
 ```text
-bazel run //validator:validator -- accounts-v2 import --keys-dir=$HOME/eth2.0-deposit-cli/validator_keys --zinken
+bazel run //validator:validator -- accounts import --keys-dir=$HOME/eth2.0-deposit-cli/validator_keys --zinken
 ```
+
+You will be asked to do a one time acknowledgement of our [Terms of Use](https://github.com/prysmaticlabs/prysm/blob/master/TERMS_OF_SERVICE.md). You can also read the legal terms first, then confirm them via a flag using --accept-terms-of-use in both your beacon node and validator.
 
 </TabItem>
 </Tabs>
