@@ -59,6 +59,7 @@ These flags are shared by both the beacon node and validator client.
 
 | Flag          | Usage         |
 | ------------- |:-------------|
+| `--accept-terms-of-use` | Allows user to to accept our legal [Terms of Use](https://github.com/prysmaticlabs/prysm/blob/master/TERMS_OF_SERVICE.md) programmatically.
 | `--config-file` | Allows user to specifying the location of a `.yaml` config file with flag values.
 | `--verbosity`     | Logging verbosity (trace, debug, info=default, warn, error, fatal, panic).
 | `--datadir [path]`     | Allows user to specify a data directory for the databases and keystore.

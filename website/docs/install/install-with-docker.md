@@ -96,6 +96,8 @@ docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/u
   --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
 ```
 
+You will be asked to do a one time acknowledgement of our [Terms of Use](https://github.com/prysmaticlabs/prysm/blob/master/TERMS_OF_SERVICE.md). You can also read the legal terms first, then confirm them via a flag using --accept-terms-of-use.
+
 At this point, the beacon chain data will begin synchroni zing up to the latest head block. Please note that, depending on your network capacity and CPU, this process may take several hours. Once it is complete, you will be ready to make a deposit and begin setting up a validator client.
 
 :::info Syncing the Blockchain
@@ -177,6 +179,8 @@ Below are instructions for initialising a beacon node and connecting to the publ
 docker run -it -v %LOCALAPPDATA%\Eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp gcr.io/prysmaticlabs/prysm/beacon-chain:latest --datadir=/data --rpc-host=0.0.0.0 --monitoring-host=0.0.0.0 --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
 ```
 
+You will be asked to do a one time acknowledgement of our [Terms of Use](https://github.com/prysmaticlabs/prysm/blob/master/TERMS_OF_SERVICE.md). You can also read the legal terms first, then confirm them via a flag using --accept-terms-of-use.
+
 This will sync up the beacon node with the latest cannonical head block in the network. If the network hasn't started yet, it will process eth1 deposits from the deposit contract so far and await the genesis time. The Docker `-d` flag can be appended before the `-v` flag to launch the process in a detached terminal window. Please note that, depending on your network capacity and CPU, this process may take several hours. Once it is complete, you will be ready to make a deposit and begin setting up a validator client.
 
 :::info Syncing the Blockchain
@@ -251,6 +255,8 @@ docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/u
   --monitoring-host=0.0.0.0 \
   --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
 ```
+
+You will be asked to do a one time acknowledgement of our [Terms of Use](https://github.com/prysmaticlabs/prysm/blob/master/TERMS_OF_SERVICE.md). You can also read the legal terms first, then confirm them via a flag using --accept-terms-of-use.
 
 This will sync up the beacon node with the latest cannonical head block in the network. If the network hasn't started yet, it will process eth1 deposits from the deposit contract so far and await the genesis time. The Docker `-d` flag can be appended before the `-v` flag to launch the process in a detached terminal window. Please note that, depending on your network capacity and CPU, this process may take several hours. Once it is complete, you will be ready to make a deposit and begin setting up a validator client.
 

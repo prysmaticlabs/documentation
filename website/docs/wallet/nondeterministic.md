@@ -31,10 +31,10 @@ Your password to unlock this file is **not** stored on disk. You will need to pr
 A non-HD wallet is the most basic sort of wallet, storing all information on-disk. This approach makes it trivial to import, export and list all associated accounts within the wallet. To start using the non-HD wallet, you can create a new wallet using
 
 ```bash
-./prysm.sh validator wallet-v2 create
+./prysm.sh validator wallet create
 ```
 
-and selecting **non-HD** wallet when prompted during an interactive process. You can also create a wallet **non-interactively** by using the following command line flags, which are also viewable by typing `./prysm.sh validator wallet-v2 create --help.
+and selecting **non-HD** wallet when prompted during an interactive process. You can also create a wallet **non-interactively** by using the following command line flags, which are also viewable by typing `./prysm.sh validator wallet create --help.
 
 :::info
 You'll need to set a **strong** password for your new validator account, containing at least 1 uppercase letter, 1 number, a special character, and be at least 8 characters long. Any unicode characters can be used for your account passwords.
@@ -48,7 +48,7 @@ You'll need to set a **strong** password for your new validator account, contain
 
 Here's a full example on how to create a non-HD wallet at `$HOME/mynonhdwallet`.
 ```bash
-./prysm.sh validator wallet-v2 create --wallet-dir=$HOME/nonhdwallet --wallet-password-file=/path/to/password.txt --keymanager-kind=direct
+./prysm.sh validator wallet create --wallet-dir=$HOME/nonhdwallet --wallet-password-file=/path/to/password.txt --keymanager-kind=direct
 ```
 
 ### New validator account
@@ -56,13 +56,13 @@ Here's a full example on how to create a non-HD wallet at `$HOME/mynonhdwallet`.
 You can create a new validator account for your non-HD wallet using the following command
 
 ```bash
-./prysm.sh validator accounts-v2 create
+./prysm.sh validator accounts create
 ```
 
 Soon after, the command will complete and you will see two **important** pieces of information you'll need for your validator.
 
 ```go
-INFO accounts-v2: (wallet path) /Users/johndoe/Library/Eth2Validators/prysm-wallet-v2█
+INFO accounts: (wallet path) /Users/johndoe/Library/Eth2Validators/prysm-wallet-v2█
 
 INFO non-hd-wallet: Write down the private key, as it is your unique withdrawal private key for eth2
 
@@ -84,7 +84,7 @@ account_name=personally-conscious-echidna
 
 Copy your **withdrawal key** somewhere safe and offline, as it is your only means of withdrawing your validator rewards from participating in eth2. You can then copy the deposit data text and use it when sending 32ETH to the Validator Deposit Contract for eth2.
 
-You can also create a new validator account **non-interactively** by using the following command line flags, which are also viewable by typing `./prysm.sh validator accounts-v2 create --help.
+You can also create a new validator account **non-interactively** by using the following command line flags, which are also viewable by typing `./prysm.sh validator accounts create --help.
 
 | Flag          | Usage         |
 | ------------- |:-------------|
@@ -95,7 +95,7 @@ You can also create a new validator account **non-interactively** by using the f
 Here's a full example on how to create a new validator account for your non-HD wallet stored at `$HOME/mynonhdwallet` with account passwords stored at `$HOME/myaccountpasswords`.
 
 ```bash
-./prysm.sh validator accounts-v2 create --wallet-dir=$HOME/nonhdwallet --wallet-password-file=password.txt
+./prysm.sh validator accounts create --wallet-dir=$HOME/nonhdwallet --wallet-password-file=password.txt
 ```
 
 ### List validator accounts
@@ -103,13 +103,13 @@ Here's a full example on how to create a new validator account for your non-HD w
 You can list all validator accounts in your non-HD wallet using the following command
 
 ```bash
-./prysm.sh validator accounts-v2 list
+./prysm.sh validator accounts list
 ```
 
 Where you'll see the following output
 
 ```bash
-INFO accounts-v2: (wallet path) /Users/johndoe/Library/Eth2Validators/prysm-wallet-v2
+INFO accounts: (wallet path) /Users/johndoe/Library/Eth2Validators/prysm-wallet-v2
 
 Showing **1** validator account
 
@@ -118,7 +118,7 @@ personally-conscious-echidna
 [created at] 16 minutes ago
 ```
 
-You can also run the `accounts-v2 list` command **non-interactively** by using the following command line flags, which are also viewable by typing `./prysm.sh validator accounts-v2 list --help.
+You can also run the `accounts list` command **non-interactively** by using the following command line flags, which are also viewable by typing `./prysm.sh validator accounts list --help.
 
 | Flag          | Usage         |
 | ------------- |:-------------|
@@ -130,7 +130,7 @@ You can also run the `accounts-v2 list` command **non-interactively** by using t
 You can import validator keystores from a separate folder into your wallet with the following command
 
 ```bash
-./prysm.sh validator accounts-v2 import --keys-dir=/path/to/keystores
+./prysm.sh validator accounts import --keys-dir=/path/to/keystores
 ```
 
 This will import all files that are valid [EIP-2335](https://eips.ethereum.org/EIPS/eip-2335) keystores, such as those generated by the official [eth2 deposit launchpad](https://medalla.launchpad.ethereum.org/)'s command-line tool. For more information on how to run Prysm when coming from launchpad, read our [Medalla testnet onboarding](/docs/testnet/medalla) documentation. The files you are importing must have the prefix `keystore-`.
@@ -140,7 +140,7 @@ This will import all files that are valid [EIP-2335](https://eips.ethereum.org/E
 You can export validator accounts from your non-HD wallet using the following command
 
 ```bash
-./prysm.sh validator accounts-v2 export
+./prysm.sh validator accounts export
 ```
 
 TODO: Work-in-progress.
