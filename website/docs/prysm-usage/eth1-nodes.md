@@ -32,7 +32,7 @@ Once you have an API key, you can then run a **Prysm eth2 beacon node** by point
 
 You can also run your own eth1 node in the full spirit of decentralization and use that for your eth2 Prysm beacon nodes. You can look at instructions on the various ways of running eth1 Goërli nodes [here](https://github.com/goerli/testnet#connecting-the-clients). We'll be giving an example of running a go-ethereum node on Goërli.
 
-First, install go-ethereum [here](https://github.com/ethereum/go-ethereum/wiki/Building-Ethereum0).
+First, install go-ethereum [here](https://geth.ethereum.org/docs/).
 
 ```text
 $ geth --goerli --datadir="$HOME/Goerli"
