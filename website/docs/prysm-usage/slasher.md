@@ -5,6 +5,10 @@ sidebar_label: Running a slasher
 ---
 This section provides instructions to run [slasher](https://github.com/prysmaticlabs/prysm/tree/master/slasher) to identify and report slashable offenses on the testnet.  If slasher detects a slashable offense, proof is sent to the [beacon-chain node](https://docs.prylabs.network/docs/how-prysm-works/beacon-node/) for inclusion in a block.  [Validators](https://docs.prylabs.network/docs/how-prysm-works/prysm-validator-client/) earn a small whistleblower reward for including this proof into a block.  
 
+:::danger Slasher Can Be a Resource Hog
+Slasher can be a huge resource hog during times of no chain finality, which can manifest as massive RAM usage. Please make sure you understand the risks of this, especially if you want high uptime for your beacon nodes. Slasher places significant stress on beacon nodes when the chain has no finality, and might be the reason why your validators are underperforming if your beacon node is under this much stress.
+:::
+
 > NOTICE: Running slasher is optional, but helps secure the chain and may result in additional earnings.
 
 ## Slashable Offenses
