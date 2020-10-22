@@ -64,7 +64,7 @@ mkdir prysm && cd prysm
 curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --output prysm.sh && chmod +x prysm.sh
 ```
 
-3. Run the `prysm.sh` script alongside any [startup parameters](/docs/prysm-usage/parameters#beacon-node-parameters). You will need to setup an eth1 node connection to run a beacon node. We have dedicated instructions for this step [here](/docs/prysm-usage/setup-eth1).
+3. Run the `prysm.sh` script alongside any [startup parameters](/docs/prysm-usage/parameters#beacon-node-parameters). You will need to setup an eth1 node connection to run a beacon node. We have dedicated instructions for this step [here](/docs/prysm-usage/setup-eth1) where <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`:
 
 ```sh
 ./prysm.sh beacon-chain --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
@@ -76,7 +76,7 @@ You will be asked to do a one time acknowledgement of our [Terms of Use](https:/
 Not getting enough peers?  Refer to the [improve P2P connectivity](/docs/prysm-usage/p2p-host-ip) section of this documentation for tips on network configuration.
 :::
 
-The `prysm.sh` script will now download and initialize the beacon chain with the specified parameters. The terminal will produce output like so:
+The `prysm.sh` script will now download and initialize the beacon chain with the specified parameters. The terminal will produce output like so where <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`:
 
 ```sh
 ./prysm.sh beacon-chain --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
@@ -115,7 +115,7 @@ curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.bat --ou
 reg add HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1
 ``` 
 
-4. Run the `prysm.bat` script alongside any [startup parameters](/docs/prysm-usage/parameters#beacon-node-parameters). You will need to setup an eth1 node connection to run a beacon node. We have dedicated instructions for this step [here](/docs/prysm-usage/setup-eth1).
+4. Run the `prysm.bat` script alongside any [startup parameters](/docs/prysm-usage/parameters#beacon-node-parameters). You will need to setup an eth1 node connection to run a beacon node. We have dedicated instructions for this step [here](/docs/prysm-usage/setup-eth1) where <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`:
 
 ```sh
 .\prysm.bat beacon-chain --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
@@ -127,7 +127,7 @@ You will be asked to do a one time acknowledgement of our [Terms of Use](https:/
 Not getting enough peers?  Refer to the [improve P2P connectivity](/docs/prysm-usage/p2p-host-ip) section of this documentation for tips on network configuration.
 :::
 
-The `prysm.bat` script will now download and initialise the beacon chain with the specified parameters. The terminal will produce output like so:
+The `prysm.bat` script will now download and initialise the beacon chain with the specified parameters. The terminal will produce output like so where <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`:
 
 ```sh
 .\prysm.bat beacon-chain --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
@@ -170,7 +170,7 @@ mkdir prysm && cd prysm
 curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --output prysm.sh && chmod +x prysm.sh
 ```
 
-3. Run the `prysm.sh` script alongside any [startup parameters](/docs/prysm-usage/parameters#beacon-node-parameters). You will need to setup an eth1 node connection to run a beacon node. We have dedicated instructions for this step [here](/docs/prysm-usage/setup-eth1).
+3. Run the `prysm.sh` script alongside any [startup parameters](/docs/prysm-usage/parameters#beacon-node-parameters). You will need to setup an eth1 node connection to run a beacon node. We have dedicated instructions for this step [here](/docs/prysm-usage/setup-eth1) where <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`:
 
 ```sh
 ./prysm.sh beacon-chain --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
@@ -182,7 +182,7 @@ You will be asked to do a one time acknowledgement of our [Terms of Use](https:/
 Not getting enough peers?  Refer to the [improve P2P connectivity](/docs/prysm-usage/p2p-host-ip) section of this documentation for tips on network configuration.
 :::
 
-The `prysm.sh` script will now download and initialise the beacon chain with the specified parameters. The terminal will produce output like so:
+The `prysm.sh` script will now download and initialise the beacon chain with the specified parameters. The terminal will produce output like so where <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`:
 
 ```sh
 ./prysm.sh beacon-chain --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
@@ -216,7 +216,7 @@ mkdir prysm && cd prysm
 curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --output prysm.sh && chmod +x prysm.sh
 ```
 
-3. Run the `prysm.sh` script alongside any [startup parameters](/docs/prysm-usage/parameters#beacon-node-parameters). You will need to setup an eth1 node connection to run a beacon node. We have dedicated instructions for this step [here](/docs/prysm-usage/setup-eth1).
+3. Run the `prysm.sh` script alongside any [startup parameters](/docs/prysm-usage/parameters#beacon-node-parameters). You will need to setup an eth1 node connection to run a beacon node. We have dedicated instructions for this step [here](/docs/prysm-usage/setup-eth1) where <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`:
 
 ```sh
 ./prysm.sh beacon-chain --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
@@ -228,7 +228,7 @@ You will be asked to do a one time acknowledgement of our [Terms of Use](https:/
 Not getting enough peers?  Refer to the [improve P2P connectivity](/docs/prysm-usage/p2p-host-ip) section of this documentation for tips on network configuration.
 :::
 
-The `prysm.sh` script will now download and initialise the beacon chain with the specified parameters. The terminal will produce output like so:
+The `prysm.sh` script will now download and initialise the beacon chain with the specified parameters. The terminal will produce output like so where <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`:
 
 ```sh
 ./prysm.sh beacon-chain --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
