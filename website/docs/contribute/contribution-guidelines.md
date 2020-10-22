@@ -113,46 +113,9 @@ You can also run our full, end-to-end test suite with:
 $ bazel test //endtoend:go_default_test --define=ssz=minimal
 ```
 
-#### Running a local chain with bazel
-
-Although tests are the best and most simple way of ensuring your feature or bug fix contribution works, sometimes it can be helpful to run a real chain with your changes to ensure they are reflected at runtime. Here are some helpful commands to try running your own, local chain with 64 validators!
-
-```
-$ bazel run //tools/genesis-state-gen --define=ssz=mainnet -- \
-  --num-validators=64 \
-  --output-ssz=/tmp/genesis.ssz \
-  --mainnet-config
-```
-
-Next up, run your beacon node with:
-
-```
-bazel run //beacon-chain --define ssz=mainnet -- \
-  --http-web3provider=http://localhost:7777 \
-  --web3provider=ws://localhost:7778 \
-  --bootstrap-node= \
-  --datadir /tmp/chaindata \
-  --force-clear-db \
-  --interop-genesis-state /tmp/genesis.ssz \
-  --interop-eth1data-votes \
-  --min-sync-peers=0 \
-```
-
-In a separate window, run your validator with:
-
-```text
-$ bazel run //validator --define=ssz=mainnet -- \
-  --keymanager=interop \
-  --keymanageropts='{"keys":64,"offset":0}' \
-  --disable-protect-attester \
-  --disable-protect-proposer \
-  --datadir /tmp/validator
-```
-
 ### Contributing to the Eth2 API
 
 The eth2 API implemented by Prysm is maintained as a separate repository than Prysm. You can read more about how to contribute specifically to the API [here](/docs/how-prysm-works/ethereum-2-public-api#contributing).
-
 
 ### Making your first contribution
 

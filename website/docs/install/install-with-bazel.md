@@ -79,6 +79,8 @@ To start your [beacon node](/docs/how-prysm-works/beacon-node) with Bazel, issue
 bazel run //beacon-chain -- --datadir=$HOME/.eth2 --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
 ```
 
+You will be asked to do a one time acknowledgement of our [Terms of Use](https://github.com/prysmaticlabs/prysm/blob/master/TERMS_OF_SERVICE.md). You can also read the legal terms first, then confirm them via a flag using --accept-terms-of-use.
+
 This will sync up the beacon node with the latest head block in the network. If the network hasn't started yet, it will process eth1 deposits from the deposit contract so far and await the genesis time.
 
 :::info Syncing the Blockchain
