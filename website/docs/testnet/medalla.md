@@ -49,6 +49,8 @@ First, let's run the beacon node connected to the medalla testnet. It will begin
 ./prysm.sh beacon-chain --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
 ```
 
+Where <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`
+
 **Using Docker**
 
 ```text
@@ -60,11 +62,15 @@ docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/u
   --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
 ```
 
+Where <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`
+
 **Using Bazel**
 
 ```text
 bazel run //beacon-chain --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
 ```
+
+Where <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`
 
 </TabItem>
 <TabItem value="win">
@@ -75,6 +81,8 @@ bazel run //beacon-chain --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
 prysm.bat beacon-chain --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
 ```
 
+Where <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`
+
 **Using Docker**
 
 1. You will need to share the local drive you wish to mount to to container \(e.g. C:\).
@@ -83,7 +91,7 @@ prysm.bat beacon-chain --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
    3. Select a drive to share
    4. Click 'Apply'
 2. You will next need to create a directory named `/prysm/` within your selected shared Drive. This folder will be used as a local data directory for [beacon node](/docs/how-prysm-works/beacon-node) chain data as well as account and keystore information required by the validator. Docker **will not** create this directory if it does not exist already. For the purposes of these instructions, it is assumed that `C:` is your prior-selected shared Drive.
-3. To run the beacon node, issue the following command:
+3. To run the beacon node, issue the following command where <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`:
 
 ```text
 docker run -it -v %LOCALAPPDATA%\Eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp gcr.io/prysmaticlabs/prysm/beacon-chain:latest --datadir=/data --rpc-host=0.0.0.0 --monitoring-host=0.0.0.0 --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
@@ -100,6 +108,8 @@ This will sync up the beacon node with the latest cannonical head block in the n
 ./prysm.sh beacon-chain --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
 ```
 
+Where <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`.
+
 **Using Docker**
 
 ```text
@@ -111,11 +121,15 @@ docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/u
   --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
 ```
 
+Where <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`.
+
 **Using Bazel**
 
 ```text
 bazel run //beacon-chain --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
 ```
+
+Where <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`.
 
 </TabItem>
 <TabItem value="arm">
@@ -126,11 +140,15 @@ bazel run //beacon-chain --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
 ./prysm.sh beacon-chain --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
 ```
 
+Where <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`.
+
 **Using Bazel**
 
 ```text
 bazel run //beacon-chain --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
 ```
+
+Where <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`.
 
 </TabItem>
 </Tabs>

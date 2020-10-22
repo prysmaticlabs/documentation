@@ -73,7 +73,7 @@ It is recommended to open up port tcp/13000 and udp/12000 on your local router t
 
 You will need to setup an eth1 node connection to run a beacon node. We have dedicated instructions for this step [here](/docs/prysm-usage/setup-eth1)
 
-To start your [beacon node](/docs/how-prysm-works/beacon-node) with Bazel, issue the following command:
+To start your [beacon node](/docs/how-prysm-works/beacon-node) with Bazel, issue the following command where <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`:
 
 ```text
 bazel run //beacon-chain -- --datadir=$HOME/.eth2 --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
