@@ -16,7 +16,7 @@ These specifications must be met in order to successfully run the Prysm client.
 
 * Operating System: 64-bit Linux, Mac OS X 10.14+, Windows 64-bit
 * Processor: Intel Core i5–760 or AMD FX-8100 or better
-* Memory: 4GB RAM
+* Memory: 8GB RAM
 * Storage: 20GB available space SSD
 * Internet: Broadband connection
 
@@ -25,7 +25,7 @@ These specifications must be met in order to successfully run the Prysm client.
 These hardware specifications are recommended, but not required to run the Prysm client.
 
 * Processor: Intel Core i7–4770 or AMD FX-8310 or better
-* Memory: 8GB RAM
+* Memory: 16GB RAM
 * Storage: 100GB available space SSD
 * Internet: Broadband connection
 
