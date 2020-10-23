@@ -45,14 +45,14 @@ Memory management is an ongoing process for our team - we are constantly working
 
 Recommended Hardware
 Processor: Intel Core i7–4770 or AMD FX-8310 or better
-Memory: 8GB RAM
+Memory: 16GB RAM
 Storage: 100GB available space SSD
 Internet: Broadband connection
 
 Minimum Hardware:
 Operating System: 64-bit Linux, Mac OS X, Windows
 Processor: Intel Core i5–760 or AMD FX-8100 or better
-Memory: 4GB RAM
+Memory: 8GB RAM
 Storage: 20GB available space SSD
 Internet: Broadband connection
 
