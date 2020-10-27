@@ -54,7 +54,7 @@ It is possible to provide additional flags alongside the `.yaml` file, though if
 
 ## Shared flags
 
-These flags are shared by both the beacon node and validator client.
+These flags are shared by both the beacon node, validator client, and slasher.
 
 
 | Flag          | Usage         |
