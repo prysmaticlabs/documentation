@@ -63,6 +63,9 @@
 							"reading/golang",
 							"reading/testnet-postmortems"
 						],
+		"Audits": [
+			"audits/phase0"
+		],
 		
 		"Licenses": ["licenses/prysmatic-labs"]
   	}
