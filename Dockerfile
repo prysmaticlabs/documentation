@@ -25,10 +25,11 @@ RUN mv ./node_modules .
 RUN npm run build
 
 # Copy only the dist dir.
-FROM nginx
-RUN rm -rf /usr/share/nginx/html/*
+FROM caddy
+RUN rm -rf /usr/share/caddy/html/*
 
-COPY --from=builder /app/website/build /usr/share/nginx/html
-COPY nginx.conf /etc/nginx/nginx.conf
+COPY --from=builder /app/website/build /usr/share/caddy/html
+COPY Caddyfile /etc/caddy/Caddyfile
+COPY robots.txt /usr/share/caddy/html/robots.txt
 
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["caddy", "run", "--config", "/etc/caddy/Caddyfile"]
