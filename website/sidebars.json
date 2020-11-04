@@ -5,6 +5,9 @@
 								"introduction/on-ethereum-2"
 							],
 
+		"Joining eth2 mainnet": [
+			"mainnet/mainnet",
+		],
 		"Joining the testnet": [
 			"testnet/medalla",
 			"testnet/zinken"
