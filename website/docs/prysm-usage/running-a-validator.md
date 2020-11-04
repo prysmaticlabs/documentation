@@ -6,11 +6,11 @@ sidebar_label: Running a validator
 
 This page outlines step-by-step information on how to run a validator client for eth2 using Prysm, security considerations, additional parameters, and answers to common questions. A **validator client** is a piece of software that can interact with your private keys to participate in staking on eth2. The validator client needs to connect to a **beacon node**, which is a separate piece of software which actually runs the eth2 blockchain. This separation helps protect your precious staking keys by not exposing them to the Internet like your beacon node is.
 
-![image](/img/validator.png)
+![image](/img/mainnetlaunchpad.png)
 
 ## Need assistance?
 
-If you have questions about this documentation, feel free to stop by either the [Prysmatic Discord](https://discord.gg/hmq4y2P)'s **#documentation** channel or [Gitter](https://gitter.im/prysmaticlabs/geth-sharding?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) and a member of the team or our community will be happy to assist you.
+If you have questions about this documentation, feel free to stop by either the [Prysmatic Discord](https://discord.gg/hmq4y2P)'s **#documentation** channel and a member of the team or our community will be happy to assist you.
 
 ## Step 1: Setting up Prysm and the beacon node
 
@@ -44,7 +44,7 @@ import TabItem from '@theme/TabItem';
 }>
 <TabItem value="simple-import">
 
-Prysm supports importing only the validating keys one needs to join eth2, keeping ones mnemonic and other wallet secrets safe. This type of functionality in Prysm is also referred to as a **non-deterministic** wallet, as the keys it manages can be imported from anywhere, not necessarily from a 24-word mnemonic phrase. This is the **recommended approach** for key management if you have joined the eth2 testnet via the [Medalla testnet launchpad](https://medalla.launchpad.ethereum.org/) and you read our dedicated instructions [here](/docs/testnet/medalla).
+Prysm supports importing only the validating keys one needs to join eth2, keeping ones mnemonic and other wallet secrets safe. This type of functionality in Prysm is also referred to as a **non-deterministic** wallet, as the keys it manages can be imported from anywhere, not necessarily from a 24-word mnemonic phrase. This is the **recommended approach** for key management if you have joined eth2 via the [Official Eth2 Launchpad](https://launchpad.ethereum.org/) and you read our dedicated instructions [here](/docs/mainnet/mainnet).
 
 ![image](/img/imports.svg)
 
@@ -90,7 +90,7 @@ When creating an HD wallet, you'll be given a 24-word mnemonic phrase which you 
 The ideal security for an average user participating as a validator is as follows:
 
 - Create a wallet using the official [eth2.0-deposit-cli](https://github.com/ethereum/eth2.0-deposit-cli) and keep your mnemonic stored offline, safely
-- Import only the validating keys you need into your validator client, such as by following the instructions [here](/docs/testnet/medalla)
+- Import only the validating keys you need into your validator client, such as by following the instructions [here](/docs/mainnet/joining-eth2)
 
 For **best security** in production cloud deployments, it's best you use a **remote signer**, as that offers absolute separation of your secret keys and your validator client software. Read more about remote signers [here](/docs/wallet/remote).
 
@@ -195,135 +195,13 @@ You'll be asked to create a **strong password** for your wallet during the proce
 
 Joining as a validator in ETH2 involves making a one-time deposit of 32 ETH
 
-<Tabs
-  groupId="deposit"
-  defaultValue="via-launchpad"
-  values={[
-    {label: 'Via launchpad (recommended)', value: 'via-launchpad'},
-    {label: 'Manually through Metamask', value: 'metamask'},
-  ]
-}>
-<TabItem value="via-launchpad">
-
-We highly recommend going through the official [eth2 launchpad](https://medalla.launchpad.ethereum.org/) which can help onboard you directly the Medalla testnet. As part of the process, you'll be asked to create a wallet using the official [eth2.0-deposit-cli](https://github.com/ethereum/eth2.0-deposit-cli). You can then upload the `deposit_data.json` file created by the CLI to the launchpad as prompted by their instructions. You can then import your validating keys to run the Prysm validator client by running our dedicated instructions [here](/docs/testnet/medalla).
+We highly recommend going through the official [eth2 launchpad](https://launchpad.ethereum.org/) which can help onboard you directly into eth2. As part of the process, you'll be asked to create a wallet using the official [eth2.0-deposit-cli](https://github.com/ethereum/eth2.0-deposit-cli). You can then upload the `deposit_data.json` file created by the CLI to the launchpad as prompted by their instructions. You can then import your validating keys to run the Prysm validator client by running our dedicated instructions [here](/docs/mainnet/joining-eth2).
 
 ![image](/img/deposit.png)
 
-</TabItem>
-<TabItem value="metamask">
-
-You can also participate in eth2 by depositing 32 ETH into the Medalla testnet contract directly using a wallet such as Metamask. You'll need to obtain 32 Goerli test ETH to participate in the Medalla testnet, which you can obtain by joining our [Discord](https://discord.gg/hmq4y2P) server.
-
-:::danger Do not send real ETH!
-Eth2 is currently only in **testnet mode**, meaning there is no real money involved. Never send any real ETH to deposit contract, and be mindful of how you're submitting your deposit! The eth2 launchpad is the friendliest way to send your deposit.
+:::tip Official Eth2 Deposit Contract
+The **only** address for the eth2 deposit contract is [`0x00000000219ab540356cbb839cbe05303d7705fa`](https://etherscan.io/address/0x00000000219ab540356cbb839cbe05303d7705fa). Be wary of scams and do not send ETH directly to the contract. Only do so through the eth2 launchpad. 
 :::
-
-Next-up, you'll need to create a validator key using the wallet you created in the previous steps.
-
-<Tabs
-  groupId="operating-systems"
-  defaultValue="lin"
-  values={[
-    {label: 'Linux', value: 'lin'},
-    {label: 'Windows', value: 'win'},
-    {label: 'MacOS', value: 'mac'},
-    {label: 'Arm64', value: 'arm'},
-  ]
-}>
-<TabItem value="lin">
-
-**Using the Prysm installation script**
-
-```text
-./prysm.sh validator accounts create
-```
-
-**Using Docker**
-
-```text
-docker run -it -v $HOME/.eth2validators/prysm-wallet-v2:/wallet --network="host" \
-  gcr.io/prysmaticlabs/prysm/validator:latest \
-  accounts create \
-  --wallet-dir=/wallet
-```
-
-**Using Bazel**
-
-```text
-bazel run //validator -- accounts create
-```
-
-</TabItem>
-<TabItem value="win">
-
-**Using the prysm.bat script**
-
-```text
-prysm.bat validator accounts create
-```
-
-**Using Docker**
-
-```text
-docker run -it -v %APPDATA%\Eth2Validators\prysm-wallet-v2:/wallet gcr.io/prysmaticlabs/prysm/validator:latest accounts create --wallet-dir=/wallet
-```
-
-</TabItem>
-<TabItem value="mac">
-
-**Using the Prysm installation script**
-
-```text
-./prysm.sh validator accounts create
-```
-
-**Using Docker**
-
-```text
-docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
-  gcr.io/prysmaticlabs/prysm/validator:latest \
-  accounts create \
-  --wallet-dir=/wallet
-```
-
-**Using Bazel**
-
-```text
-bazel run //validator -- accounts create
-```
-
-</TabItem>
-<TabItem value="arm">
-
-**Using the Prysm installation script**
-
-```text
-./prysm.sh validator accounts create
-```
-
-**Using Bazel**
-
-```text
-bazel run //validator -- accounts create
-```
-
-</TabItem>
-</Tabs>
-
-After you create a new account, you'll see a long string of text printed out to your terminal.
-
-![image](/img/depositdata.png)
-
-:::tip Medalla Testnet Contract Address
-The address for the Medalla testnet deposit contract on the Goerli ETH1 chain is `0x07b39F4fDE4A38bACe212b546dAc87C58DfE3fDC`. You can paste this into the `recipient` text box in Metamask.
-:::
-
-You can copy the deposit data from your account creation process and paste it into the `Hex Data:` text box when sending your transaction. If this option is not available, visit your account settings in Metamask and enable showing Hex Data as shown below.
-
-![image](/img/metamasksend.png)
-
-</TabItem>
-</Tabs>
 
 ## Step 4: Running your validator
 
@@ -534,100 +412,6 @@ If you are running an **HD wallet**, we store your encrypted wallet seed under y
 
 If you are running a **remote signer wallet**, we do not store anything on disk except for the remote server credential information, such as the remote address and path to the TLS certificates required to establish a connection.
 
-#### How can I import keys I use in a different eth2 client such as Lighthouse or Teku?
-
-Prysm can import keys from any directory as long as the keys are stored in files with the format keystore-*.json. If this is the case, you can run the following commands for your operating system.
-
-<Tabs
-  groupId="operating-systems"
-  defaultValue="lin"
-  values={[
-    {label: 'Linux', value: 'lin'},
-    {label: 'Windows', value: 'win'},
-    {label: 'MacOS', value: 'mac'},
-    {label: 'Arm64', value: 'arm'},
-  ]
-}>
-<TabItem value="lin">
-
-Using the Prysm installation script
-
-```text
-./prysm.sh validator accounts import --keys-dir=/path/to/keys
-```
-
-Using Docker
-
-```text
-docker run -it -v /path/to/keys:/keys \
-  -v $HOME/.eth2validators/prysm-wallet-v2:/wallet \
-  gcr.io/prysmaticlabs/prysm/validator:latest \
-  accounts import --keys-dir=/keys --wallet-dir=/wallet
-```
-
-Using Bazel
-
-```text
-bazel run //validator:validator -- accounts import --keys-dir=/path/to/keys
-```
-
-</TabItem>
-<TabItem value="win">
-
-Using the prysm.bat script
-
-```text
-prysm.bat validator accounts import --keys-dir=path\to\keys
-```
-
-Using Docker
-
-```text
-docker run -it -v path\to\keys:/keys -v %APPDATA%\Eth2Validators\prysm-wallet-v2:/wallet gcr.io/prysmaticlabs/prysm/validator:latest accounts import --keys-dir=/keys --wallet-dir=/wallet
-```
-
-</TabItem>
-<TabItem value="mac">
-
-Using the Prysm installation script
-
-```text
-./prysm.sh validator accounts import --keys-dir=/path/to/keys
-```
-
-Using Docker
-
-```text
-docker run -it -v /path/to/keys:/keys \
-  -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
-  gcr.io/prysmaticlabs/prysm/validator:latest \
-  accounts import --keys-dir=/keys --wallet-dir=/wallet
-```
-
-Using Bazel
-
-```text
-bazel run //validator:validator -- accounts import --keys-dir=/path/to/keys
-```
-
-</TabItem>
-<TabItem value="arm">
-
-Using the Prysm installation script
-
-```text
-./prysm.sh validator accounts import --keys-dir=/path/to/keys
-```
-
-Using Bazel
-
-```text
-bazel run //validator:validator -- accounts import --keys-dir=/path/to/keys
-```
-
-</TabItem>
-</Tabs>
-
 #### Why is my validator losing ETH despite my setup appearing ok?
 
 If your validator client is running fine without errors but you're seeing your validator balance decrease, it is typically a sign your beacon node is either (a) crashed, (b) not synced to the chain head. This might also mean your beacon node doesn't have any peers and is likely not connected to anyone. To debug this problem, please read our guide on checking [everything is running as expected](/docs/prysm-usage/is-everything-fine). If this still does not resolve your issue, you can get in touch with our team on [Discord](https://discord.gg/hmq4y2P) anytime.
@@ -642,4 +426,4 @@ If you're encountering an unexpected issue that causes your client to crash or t
 
 #### How can I stop being a validator?
 
-You can stop being a validator by issuing a **voluntary exit**, which is a special type of object included in the eth2 beacon chain that signifies your validator is ready to stop validating and securely exit the validator set. Although during phase 0 of eth2, you will **not** be able to withdraw your staking rewards, you can still issue a voluntary exit. This feature is still under development and you can follow our progress [here](https://github.com/prysmaticlabs/prysm/issues/6882).
+You can stop being a validator by issuing a **voluntary exit**, which is a special type of object included in the eth2 beacon chain that signifies your validator is ready to stop validating and securely exit the validator set. Although during phase 0 of eth2, you will **not** be able to withdraw your staking rewards, you can still issue a voluntary exit. You can find instructions for this process [here](/docs/wallet/exiting-a-validator).

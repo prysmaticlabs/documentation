@@ -5,12 +5,9 @@
 								"introduction/on-ethereum-2"
 							],
 
-		"Joining eth2 mainnet": [
-			"mainnet/mainnet",
-		],
-		"Joining the testnet": [
-			"testnet/medalla",
-			"testnet/zinken"
+		"Joining eth2": [
+			"mainnet/joining-eth2",
+			"testnet/medalla"
 		],
 		"Installing Prysm": [
 			"install/install-with-script",
