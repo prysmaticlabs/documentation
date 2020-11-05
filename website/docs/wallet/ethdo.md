@@ -79,14 +79,14 @@ docker run -it -v <PATH_TO_ETHDO_WALLET>:/keys \
   -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
   -v $HOME/Eth2:/validatorDB \
   --name validator \
-  gcr.io/prysmaticlabs/prysm/validator:latest \
+  gcr.io/prysmaticlabs/prysm/validator:stable \
   accounts import --keys-dir=/keys --wallet-dir=/wallet --datadir=/validatorDB
 ```
 
 **Using Docker on Windows**
 
 ```text
-docker run -it -v <PATH_TO_ETHDO_WALLET>:/keys -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet gcr.io/prysmaticlabs/prysm/validator:latest accounts import --keys-dir=/keys --wallet-dir=/wallet
+docker run -it -v <PATH_TO_ETHDO_WALLET>:/keys -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet gcr.io/prysmaticlabs/prysm/validator:stable accounts import --keys-dir=/keys --wallet-dir=/wallet
 ```
 
 **Using Bazel**
@@ -123,7 +123,7 @@ docker run -it -v <PATH_TO_ETHDO_WALLET>:/keys \
   -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
   -v $HOME/Eth2:/validatorDB \
   --name validator \
-  gcr.io/prysmaticlabs/prysm/validator:latest \
+  gcr.io/prysmaticlabs/prysm/validator:stable \
   accounts import --keys-dir=/keys --wallet-dir=/wallet --datadir=/validatorDB
 ```
 

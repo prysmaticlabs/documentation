@@ -1,14 +1,14 @@
 ---
-id: medalla
-title: Medalla testnet onboarding
-sidebar_label: Testnet onboarding
+id: joining-eth2
+title: Joining Eth2 Mainnet
+sidebar_label: Mainnet launchpad onboarding
 ---
-This section outlines the step-by-step process for how to join the [Medalla multiclient testnet](https://medalla.launchpad.ethereum.org/) to run a Prysm eth2 beacon node and validator.
+This section outlines the step-by-step process for how to join [eth2 mainnet](https://launchpad.ethereum.org/) to run a Prysm eth2 beacon node and validator.
 
-![image](https://i.imgur.com/3oUwf4N.png)
+![image](/img/mainnetlaunchpad.png)
 
-:::danger Ensure You Are Joining the Right Network
-Medalla is the long-lasting, multiclient testnet. If you want to join mainnet eth2 instead, read our guide [here](/docs/mainnet/joining-eth2).
+:::danger Ensure You Are Not Being Scammed
+The correct address for the launchpad is https://launchpad.ethereum.org and the only, official validator deposit contract is [0x00000000219ab540356cbb839cbe05303d7705fa](https://etherscan.io/address/0x00000000219ab540356cbb839cbe05303d7705fa). Do not send ETH directly to the contract, and only join by using the eth2 launchpad.
 :::
 
 ## Step 1: Get Prysm
@@ -19,17 +19,13 @@ To begin, follow the instructions to fetch and install Prysm for your operating 
 * [Using Docker](/docs/install/install-with-docker)
 * [Building from source with Bazel (Advanced)](/docs/install/install-with-bazel)
 
-## Step 2: Get Test ETH
-
-To participate in eth2, you'll need to stake 32 testnet ETH. For the Medalla eth2 testnet, we use test ETH from the Görli eth1 testnet. You can request this testnet ETH by joining our [discord server](https://discord.gg/hmq4y2P).
-
-## Step 3: Run your beacon node
+## Step 2: Run your beacon node
 
 ![image](https://i.imgur.com/3yH946I.png)
 
 #### Beacon node
 
-First, let's run the beacon node connected to the medalla testnet. It will begin to sync with other nodes and will be ready for you to connect to it. To run a beacon node, you will need access to an eth1 node. We have dedicated instructions for this [here](/docs/prysm-usage/setup-eth1).
+First, let's run the beacon node connected to the main eth2 network. To run a beacon node, you will need access to an eth1 node. We have dedicated instructions for this [here](/docs/prysm-usage/setup-eth1).
 
 <Tabs
   groupId="operating-systems"
@@ -46,7 +42,7 @@ First, let's run the beacon node connected to the medalla testnet. It will begin
 **Using the Prysm installation script**
 
 ```text
-./prysm.sh beacon-chain --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT> --medalla
+./prysm.sh beacon-chain --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
 ```
 
 Where <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`
@@ -59,8 +55,7 @@ docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/u
   --datadir=/data \
   --rpc-host=0.0.0.0 \
   --monitoring-host=0.0.0.0 \
-  --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT> \
-  --medalla
+  --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
 ```
 
 Where <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`
@@ -68,7 +63,7 @@ Where <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `ht
 **Using Bazel**
 
 ```text
-bazel run //beacon-chain --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT> --medalla
+bazel run //beacon-chain --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
 ```
 
 Where <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`
@@ -79,7 +74,7 @@ Where <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `ht
 **Using the Prysm installation script**
 
 ```text
-prysm.bat beacon-chain --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT> --medalla
+prysm.bat beacon-chain --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
 ```
 
 Where <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`
@@ -95,7 +90,7 @@ Where <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `ht
 3. To run the beacon node, issue the following command where <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`:
 
 ```text
-docker run -it -v %LOCALAPPDATA%\Eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp gcr.io/prysmaticlabs/prysm/beacon-chain:stable --datadir=/data --rpc-host=0.0.0.0 --monitoring-host=0.0.0.0 --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT> --medalla
+docker run -it -v %LOCALAPPDATA%\Eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp gcr.io/prysmaticlabs/prysm/beacon-chain:stable --datadir=/data --rpc-host=0.0.0.0 --monitoring-host=0.0.0.0 --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
 ```
 
 This will sync up the beacon node with the latest cannonical head block in the network. The Docker `-d` flag can be appended before the `-v` flag to launch the process in a detached terminal window.
@@ -106,7 +101,7 @@ This will sync up the beacon node with the latest cannonical head block in the n
 **Using the Prysm installation script**
 
 ```text
-./prysm.sh beacon-chain --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT> --medalla
+./prysm.sh beacon-chain --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
 ```
 
 Where <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`.
@@ -119,8 +114,7 @@ docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/u
   --datadir=/data \
   --rpc-host=0.0.0.0 \
   --monitoring-host=0.0.0.0 \
-  --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT> \
-  --medalla
+  --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
 ```
 
 Where <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`.
@@ -128,7 +122,7 @@ Where <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `ht
 **Using Bazel**
 
 ```text
-bazel run //beacon-chain --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT> --medalla
+bazel run //beacon-chain --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
 ```
 
 Where <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`.
@@ -139,7 +133,7 @@ Where <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `ht
 **Using the Prysm installation script**
 
 ```text
-./prysm.sh beacon-chain --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT> --medalla
+./prysm.sh beacon-chain --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
 ```
 
 Where <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`.
@@ -147,7 +141,7 @@ Where <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `ht
 **Using Bazel**
 
 ```text
-bazel run //beacon-chain --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT> --medalla
+bazel run //beacon-chain --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
 ```
 
 Where <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`.
@@ -161,7 +155,7 @@ The beacon-chain node you are using should be **completely synced** before submi
 
 ## Step 4: Complete the onboarding process in the official eth2 launchpad
 
-The [Medalla testnet eth2 launchpad](https://medalla.launchpad.ethereum.org/summary) is the easiest way to go through a step-by-step process to deposit your 32 ETH to become a validator. Throughout the process, you'll be asked to generate new validator credentials using the official Ethereum deposit command-line-tool [here](https://github.com/ethereum/eth2.0-deposit-cli). Make sure you use the `medalla` option when generating keys with the deposit CLI. During the process, you will have generated a `validator_keys` folder under the `eth2.0-deposit-cli` directory. You can import all of your validator accounts into Prysm from that folder in the next step.
+The [Official Eth2 Launchpad](https://launchpad.ethereum.org/summary) is the easiest way to go through a step-by-step process to deposit your 32 ETH to become a validator. Throughout the process, you'll be asked to generate new validator credentials using the official Ethereum deposit command-line-tool [here](https://github.com/ethereum/eth2.0-deposit-cli). Make sure you use the `mainnet` option when generating keys with the deposit CLI. During the process, you will have generated a `validator_keys` folder under the `eth2.0-deposit-cli` directory. You can import all of your validator accounts into Prysm from that folder in the next step.
 
 ## Step 5: Import your validator accounts into Prysm
 
@@ -303,7 +297,7 @@ Open a second terminal window. Depending on your platform, issue the appropriate
 **Using the Prysm installation script**
 
 ```text
-./prysm.sh validator --medalla
+./prysm.sh validator
 ```
 
 **Using Docker**
@@ -315,14 +309,13 @@ docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
   gcr.io/prysmaticlabs/prysm/validator:stable \
   --beacon-rpc-provider=127.0.0.1:4000 \
   --wallet-dir=/wallet \
-  --datadir=/validatorDB \
-  --medalla
+  --datadir=/validatorDB
 ```
 
 **Using Bazel**
 
 ```text
-bazel run //validator -- --medalla
+bazel run //validator
 ```
 
 </TabItem>
@@ -331,13 +324,13 @@ bazel run //validator -- --medalla
 **Using the prysm.bat script**
 
 ```text
-prysm.bat validator --medalla
+prysm.bat validator
 ```
 
 **Using Docker**
 
 ```text
-docker run -it -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet -v %LOCALAPPDATA%\Eth2:/validatorDB --network="host" --name validator gcr.io/prysmaticlabs/prysm/validator:latest --beacon-rpc-provider=127.0.0.1:4000 --wallet-dir=/wallet --datadir=/validatorDB --medalla
+docker run -it -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet -v %LOCALAPPDATA%\Eth2:/validatorDB --network="host" --name validator gcr.io/prysmaticlabs/prysm/validator:latest --beacon-rpc-provider=127.0.0.1:4000 --wallet-dir=/wallet --datadir=/validatorDB
 ```
 
 </TabItem>
@@ -346,7 +339,7 @@ docker run -it -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet -v %LOCA
 **Using the Prysm installation script**
 
 ```text
-./prysm.sh validator --medalla
+./prysm.sh validator
 ```
 
 **Using Docker**
@@ -358,14 +351,13 @@ docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
   gcr.io/prysmaticlabs/prysm/validator:latest \
   --beacon-rpc-provider=127.0.0.1:4000 \
   --wallet-dir=/wallet \
-  --datadir=/validatorDB \
-  --medalla
+  --datadir=/validatorDB
 ```
 
 **Using Bazel**
 
 ```text
-bazel run //validator -- --medalla
+bazel run //validator
 ```
 
 </TabItem>
@@ -374,13 +366,13 @@ bazel run //validator -- --medalla
 **Using the Prysm installation script**
 
 ```text
-./prysm.sh validator --medalla
+./prysm.sh validator
 ```
 
 **Using Bazel**
 
 ```text
-bazel run //validator -- --medalla
+bazel run //validator
 ```
 
 </TabItem>
@@ -399,6 +391,6 @@ To check on the status of your validator, we recommend checking out the popular 
 
 For running an advanced wallet setups, our documentation includes comprehensive guides as to how to use the wallet built into Prysm to recover another wallet, use a remote signing server, and more. You can read more about it [here](https://docs.prylabs.network/docs/wallet/introduction).
 
-**Congratulations, you are now fully participating in the Prysm ETH 2.0 Phase 0 testnet!**
+**Congratulations, you are now fully participating in eth2**
 
 **Still have questions?**  Stop by our [Discord](https://discord.gg/KSA7rPr) for further assistance!
