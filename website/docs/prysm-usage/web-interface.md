@@ -4,6 +4,10 @@ title: Using the Prysm Web Interface
 sidebar_label: Using the Prysm Web Interface
 ---
 
+:::danger Our Code Is Not Yet Updated to Mainnet!
+Our latest release of Prysm, beta.1, is not mainnet compatible. Please do not run Prysm yet until we announce it in our Discord channel, our [releases page](https://github.com/prysmaticlabs/prysm/releases), our [official mailing list](https://groups.google.com/g/prysm-dev) or in this documentation portal.
+:::
+
 This section outlines the step-by-step process for how to use Prysm with its built-in web interface.
 
 ![Dashboard](/img/webdashboard.png "Main Dashboard")
