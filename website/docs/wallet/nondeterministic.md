@@ -4,6 +4,10 @@ title: Non-deterministic wallet
 sidebar_label: Non-HD wallet
 ---
 
+:::danger Our Code Is Not Yet Updated to Mainnet!
+Our latest release of Prysm, beta.1, is not mainnet compatible. Please do not run Prysm yet until we announce it in our Discord channel, our [releases page](https://github.com/prysmaticlabs/prysm/releases), our [official mailing list](https://groups.google.com/g/prysm-dev) or in this documentation portal.
+:::
+
 ## Background
 
 A Non-HD wallet provides the ability to create simple, encrypted validators accounts stored directly-on disk. Validator private keys are generated non-deterministically, meaning there is **no seed phrase** (mnemonic) which can be used to recover an entire wallet. If you created a deposit using the official [eth2 launchpad](https://launchpad.ethereum.org/) and want to run Prysm using it, see our dedicated instructions [here](/docs/mainnet/joining-eth2).
