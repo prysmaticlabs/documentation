@@ -48,16 +48,16 @@ Slasher can be a huge resource hog during times of no chain finality, which can 
 #### Running slasher with Docker on GNU\Linux, and macOS 
 
 ```text
-docker pull gcr.io/prysmaticlabs/prysm/slasher:latest
+docker pull gcr.io/prysmaticlabs/prysm/slasher:stable
 docker run -it --network="host" -v $HOME/.eth2:/data --name slasher \
-  gcr.io/prysmaticlabs/prysm/slasher:latest \
+  gcr.io/prysmaticlabs/prysm/slasher:stable \
   --datadir=/data
 ```
 #### Running slasher with Docker on Windows
 
 ```text
-docker pull gcr.io/prysmaticlabs/prysm/slasher:latest
-docker run -it --network="host" -v c:/prysm:/data gcr.io/prysmaticlabs/prysm/slasher:latest
+docker pull gcr.io/prysmaticlabs/prysm/slasher:stable
+docker run -it --network="host" -v c:/prysm:/data gcr.io/prysmaticlabs/prysm/slasher:stable
 ```
 
 #### Running slasher with Bazel on GNU\Linux, macOS, and ARM64

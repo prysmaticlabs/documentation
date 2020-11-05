@@ -3,21 +3,17 @@ id: faq
 title: Frequently asked questions
 sidebar_label: Frequently asked questions
 ---
-## Joining the Testnet / Making Deposits
+## Joining Eth2 Questions
 
 #### How can I make a deposit?
 
-The best way to make a deposit and join the testnet is to follow the direct instructions on https://prylabs.net/participate. We have more detailed instructions in our documentation portal depending on your architecture [here](https://docs.prylabs.network/docs/install/lin/activating-a-validator/).
+The best way to make a deposit and join eth2 is to follow the direct instructions on the [official eth2 launchpad](https://launchpad.ethereum.org).
 
-#### My deposit on prylabs.net isn’t working / metamask isn’t working, help!
-
-Ensure your metamask is set to the Goerli Network and NOT mainnet. If metamask isn’t working, we recommend trying the Portis wallet instead which is also enabled in prylabs.net. If you are getting a “funded too recently” error from our faucet, then please reach out to us on discord [here](https://discord.gg/CTYGPUJ) for more goerli ETH.
-
-#### How can I get a bunch of test ETH to spin up a lot of validators?
+#### How can I get a bunch of test ETH to spin up a lot of validators on the testnet?
 
 Our current faucet only gives out increments of 32.5 Goerli test ETH at any given time and prevents sending out to the same address too often. If you need a larger amount of test ETH, please reach out to us on discord [here](https://discord.gg/CTYGPUJ).
 
-#### Can I get back my testnet ETH? How can I withdraw my validator gains?
+#### Can I get back my ETH? How can I withdraw my validator gains?
 
 Deposits into eth2 are one-way in the beginning. Functionality of withdrawing gains transferring ETH won’t be available until later phases of the project. You can read more about the phases of eth2 [here](https://docs.ethhub.io/ethereum-roadmap/ethereum-2.0/eth-2.0-phases/).
 
@@ -41,7 +37,7 @@ Slashings in the network occur when you propose two conflicting blocks (blocks w
 
 #### My CPU/RAM usage is huge, what’s going on?
 
-Memory management is an ongoing process for our team - we are constantly working on improving the experience of running a node itself. For now, these are the specs we recommend for our current testnet (these values will go down significantly over time):
+Memory management is an ongoing process for our team - we are constantly working on improving the experience of running a node itself. For now, these are the specs we recommend (these values will go down over time):
 
 Recommended Hardware
 Processor: Intel Core i7–4770 or AMD FX-8310 or better
@@ -70,19 +66,19 @@ Yes we currently support arm 64-bit architectures such as the raspberry pi 4 and
 
 #### How can I create a new validator key and join the testnet?
 
-The best way to join the testnet is to follow the direct instructions on [https://prylabs.net/participate](https://prylabs.net/participate). We have more detailed instructions in our documentation portal depending on your operating system [here](https://docs.prylabs.network/docs/install/lin/activating-a-validator/).
+The best way to join the testnet is to follow the direct instructions on [https://medalla.launchpad.ethereum.org](https://medalla.launchpad.ethereum.org). We have more detailed instructions in our documentation portal depending on your operating system [here](/docs/testnet/medalla).
 
-I deposited but it’s taking a long time to become active - how can I check if my deposit was correct?
+#### I deposited but it’s taking a long time to become active - how can I check if my deposit was correct?
 
-Even after you deposit, it takes several hours to join the testnet as an active validator and can take even longer if there is a queue ahead of you. You can track your validator’s status on block explorers such as https://beaconcha.in and https://beacon.etherscan.io. Please be patient, as there is quite a wait for new validators to become active.
+Even after you deposit, it takes several hours to join eth2 as an active validator and can take even longer if there is a queue ahead of you. You can track your validator’s status on block explorers such as https://beaconcha.in and https://beacon.etherscan.io. Please be patient, as there is quite a wait for new validators to become active.
 
 #### I made a correct deposit and my validator status is still UNKNOWN, what’s going on?
 
-There are a few possibilities. (1) your deposit has not yet been processed by beacon nodes. It takes a while for the beacon node to be able to process logs from the eth1 Goerli chain by design. If you have already waited a few hours and no luck, there is a chance that (2) your deposit did not verify (that is, you used some other method of creating the deposit than our recommended, standard way on prylabs.net), or (3) you never actually sent a deposit to the right contract address
+There are a few possibilities. (1) your deposit has not yet been processed by beacon nodes. It takes a while for the beacon node to be able to process logs from the eth1 chain by design. If you have already waited a few hours and no luck, there is a chance that (2) your deposit did not verify (that is, you used some other method of creating the deposit than our recommended, standard way on the eth2 launchpad), or (3) you never actually sent a deposit to the right contract address
 
 #### What is balance and what is effective balance?
 
-Your validator balance is the actual amount of ETH you have from being a validator in the testnet. It can go up or down every epoch depending on your participation. Effective balance is a bit different. It is a value that lags behind your actual balance and is used exclusively to determine rewards and penalties for your validator. It has a max value of 32ETH, but your regular balance is uncapped. You can read more about the purpose of effective balance in this excellent post by Attestant [here](https://www.attestant.io/posts/understanding-validator-effective-balance/).
+Your validator balance is the actual amount of ETH you have from being a validator in eth2. It can go up or down every epoch depending on your participation. Effective balance is a bit different. It is a value that lags behind your actual balance and is used exclusively to determine rewards and penalties for your validator. It has a max value of 32ETH, but your regular balance is uncapped. You can read more about the purpose of effective balance in this excellent post by Attestant [here](https://www.attestant.io/posts/understanding-validator-effective-balance/).
 
 #### When do my validators get to propose a block?
 

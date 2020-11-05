@@ -7,7 +7,7 @@ This section outlines the step-by-step process for how to join the [Medalla mult
 
 ![image](https://i.imgur.com/3oUwf4N.png)
 
-:::danger Ensure You Are Joining the Right Testnet
+:::danger Ensure You Are Joining the Right Network
 Medalla is the long-lasting, multiclient testnet. If you want to join mainnet eth2 instead, read our guide [here](/docs/mainnet/joining-eth2).
 :::
 
