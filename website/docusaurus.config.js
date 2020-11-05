@@ -52,7 +52,7 @@ module.exports = {
                 href: '/',
                 src: 'img/Prysm.svg',
             },
-            copyright: `Copyright © ${new Date().getFullYear()} Prysmatic Labs, LLC.`,
+            copyright: `Copyright © ${new Date().getFullYear()} Prysmatic Labs, LLC., Validator Deposit Contract 0x00000000219ab540356cbb839cbe05303d7705fa`,
             links: [],
         },
         algolia: {

@@ -14,6 +14,10 @@ The [Prysm](https://github.com/prysmaticlabs/prysm) project is a full-featured i
 
 This manual is aimed at developers interested in participating in Ethereum 2.0's consensus, which involves locking up a 32 ETH deposit to vote and produce blocks using our software. For more detailed information on the most recent research developments and understanding **what Ethereum 2.0 is**, it is recommended to review [Eth2Info](https://eth2.info) and the official [Ethereum 'Serenity' 2.0 specification](https://github.com/ethereum/eth2.0-specs) repository.
 
+## Staking in Eth2
+
+To participate in the eth2 network, read our comprehensive guidelines [here](/docs/mainnet/joining-eth2).
+
 ## Need assistance?
 
 If you have questions about this documentation, feel free to stop by either the [Prysmatic Discord](https://discord.gg/CTYGPUJ)'s **#documentation** channel and a member of the team or our community will be happy to assist you.
