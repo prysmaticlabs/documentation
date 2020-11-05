@@ -39,7 +39,7 @@ These hardware specifications are recommended, but not required to run the Prysm
 * The `cmake` package installed
 * The `git` package installed
 
-## Installing the beacon chain and validator
+## Installing Prysm
 
 1. Open a terminal window. Ensure you are running the most recent version of Bazel by issuing the command:
 
@@ -61,30 +61,4 @@ bazel build //beacon-chain:beacon-chain
 bazel build //validator:validator
 ```
 
-Bazel will automatically pull and install any dependencies as well, including Go and necessary compilers.
-
-## Connecting to the testnet: running a beacon node
-
-Below are instructions for initialising a beacon node and connecting to the public testnet. To further understand the role that the beacon node plays in Prysm, see [this section](/docs/how-prysm-works/architecture-overview) of the documentation.
-
-:::tip Connectivity
-It is recommended to open up port tcp/13000 and udp/12000 on your local router to improve connectivity and receive more peers from the network. To do so, navigate to `192.168.0.1` in your browser and login if required. Follow along with the interface to modify your routers firewall settings. When this task is completed, append the parameter`--p2p-host-ip=$(curl -s ident.me)` to your selected beacon startup command presented in this section to use the newly opened port.
-:::
-
-You will need to setup an eth1 node connection to run a beacon node. We have dedicated instructions for this step [here](/docs/prysm-usage/setup-eth1)
-
-To start your [beacon node](/docs/how-prysm-works/beacon-node) with Bazel, issue the following command where <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`:
-
-```text
-bazel run //beacon-chain -- --datadir=$HOME/.eth2 --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
-```
-
-You will be asked to do a one time acknowledgement of our [Terms of Use](https://github.com/prysmaticlabs/prysm/blob/master/TERMS_OF_SERVICE.md). You can also read the legal terms first, then confirm them via a flag using --accept-terms-of-use.
-
-This will sync up the beacon node with the latest head block in the network. If the network hasn't started yet, it will process eth1 deposits from the deposit contract so far and await the genesis time.
-
-:::info Syncing the Blockchain
-The beacon node you are using should be **completely synced** before submitting your deposit for the validator client, otherwise the validator will not be able to validate and will **inflict minor inactivity balance penalties**. No need to worry about this if the chain has not yet started.
-:::
-
-Now that your beacon chain is setup, you can then run a validator on the **Medalla testnet** by following our detailed guidelines [here](/docs/testnet/medalla)
+Bazel will automatically pull and install any dependencies as well, including Go and necessary compilers. Now that your installation is done, you can then read [joining eth2](/docs/mainnet/joining-eth2).

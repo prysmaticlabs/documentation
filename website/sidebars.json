@@ -5,9 +5,9 @@
 								"introduction/on-ethereum-2"
 							],
 
-		"Joining the testnet": [
-			"testnet/medalla",
-			"testnet/zinken"
+		"Joining eth2": [
+			"mainnet/joining-eth2",
+			"testnet/medalla"
 		],
 		"Installing Prysm": [
 			"install/install-with-script",
@@ -16,14 +16,13 @@
 		],
 
 		"Running Prysm": 	[   
-			"prysm-usage/running-a-validator",
-			"prysm-usage/web-interface",
-			"prysm-usage/is-everything-fine",
-			"prysm-usage/setup-eth1",
-			"prysm-usage/secure-grpc",
 			"prysm-usage/parameters",
-			"prysm-usage/slasher",
+			"prysm-usage/setup-eth1",
 			"prysm-usage/p2p-host-ip",
+			"prysm-usage/is-everything-fine",
+			"prysm-usage/web-interface",
+			"prysm-usage/secure-grpc",
+			"prysm-usage/slasher",
 			"prysm-usage/monitoring/grafana-dashboard",
 			"faq"
 		],

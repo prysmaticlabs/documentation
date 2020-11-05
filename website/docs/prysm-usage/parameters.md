@@ -6,11 +6,15 @@ sidebar_label: Available parameters
 
 This section lists the various flags used to customise the startup process of beacon nodes and validator clients.
 
-  > **Fun tip:** You can use the `--graffiti` validator flag to add a string to your proposed blocks, which will be seen on the block explorer. I.e; `<startup command> --graffiti "Prysm is awesome!"`
+:::tip Graffiti
+You can use the `--graffiti` validator flag to add a string to your proposed blocks, which will be seen on the block explorer. I.e; `<startup command> --graffiti "Prysm is awesome!"`
+:::
 
 ## Loading parameters via .YAML file
 
-> **NOTICE:** Loading parameters via .YAML file is optional.
+:::info
+Loading parameters via .YAML file is optional.
+:::
 
 Prysm now supports loading flag values from a specified `.yaml` file. Defining parameters in this way cuts back on terminal clutter and allows unique startup profiles to be saved independently.
 
