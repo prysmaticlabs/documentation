@@ -3,6 +3,11 @@ id: faq
 title: Frequently asked questions
 sidebar_label: Frequently asked questions
 ---
+
+:::danger Our Code Is Not Yet Updated to Mainnet!
+Our latest release of Prysm, beta.1, is not mainnet compatible. Please do not run Prysm yet until we announce it in our Discord channel, our [releases page](https://github.com/prysmaticlabs/prysm/releases), our [official mailing list](https://groups.google.com/g/prysm-dev) or in this documentation portal.
+:::
+
 ## Joining Eth2 Questions
 
 #### How can I make a deposit?

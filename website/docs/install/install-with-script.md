@@ -4,6 +4,10 @@ title: Installing Prysm with prysm.sh
 sidebar_label: Prysm installation script
 ---
 
+:::danger Our Code Is Not Yet Updated to Mainnet!
+Our latest release of Prysm, beta.1, is not mainnet compatible. Please do not run Prysm yet until we announce it in our Discord channel, our [releases page](https://github.com/prysmaticlabs/prysm/releases), our [official mailing list](https://groups.google.com/g/prysm-dev) or in this documentation portal.
+:::
+
 Prysm can be installed on Windows, GNU/Linux, MacOS, or ARM64 systems using the Prysm installation script which downloads signed binaries from our latest release. This page includes instructions for performing this process.
 
 **Have questions?** Stop by the [#documentation](https://discord.gg/QQZMCgU) channel on Discord and let us know.
