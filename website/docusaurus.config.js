@@ -20,13 +20,13 @@ module.exports = {
             },
             items: [
                 {
-                    label: 'Getting Started',
-                    to: 'docs/getting-started',
+                    href: 'https://launchpad.ethereum.org',
+                    label: 'Join Eth2',
                     position: 'right',
                 },
                 {
-                    href: 'https://launchpad.ethereum.org',
-                    label: 'Join Eth2',
+                    label: 'Staying Updated',
+                    to: 'docs/prysm-usage/staying-up-to-date',
                     position: 'right',
                 },
                 {

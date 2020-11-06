@@ -16,6 +16,7 @@
 		],
 
 		"Running Prysm": 	[   
+			"prysm-usage/staying-up-to-date",
 			"prysm-usage/parameters",
 			"prysm-usage/setup-eth1",
 			"prysm-usage/p2p-host-ip",
