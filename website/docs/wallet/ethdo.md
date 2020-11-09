@@ -4,6 +4,10 @@ title: Integrating with third-party wallet, ethdo
 sidebar_label: Using Ethdo
 ---
 
+:::danger Our Code Is Not Yet Updated to Mainnet!
+Our latest release of Prysm, beta.1, is not mainnet compatible. Please do not run Prysm yet until we announce it in our Discord channel, our [releases page](https://github.com/prysmaticlabs/prysm/releases), our [official mailing list](https://groups.google.com/g/prysm-dev) or in this documentation portal.
+:::
+
 This section explains how to configure a new wallet with the popular third-party wallet [ethdo](https://github.com/wealdtech/ethdo/tree/v1.6.1) for Prysm's validator client. At the time of writing, this guide is made for ethdo v1.6.1. Ethdo offers a command-line tool that allows advanced stakers to manage HD wallets, sign deposits, perform validator exits, as well as other robust features relating to wallets and validating keys that are not currently present within Prysm. 
 
 :::danger This is the only recommended way to use Ethdo with Prysm
@@ -79,14 +83,14 @@ docker run -it -v <PATH_TO_ETHDO_WALLET>:/keys \
   -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
   -v $HOME/Eth2:/validatorDB \
   --name validator \
-  gcr.io/prysmaticlabs/prysm/validator:latest \
+  gcr.io/prysmaticlabs/prysm/validator:stable \
   accounts import --keys-dir=/keys --wallet-dir=/wallet --datadir=/validatorDB
 ```
 
 **Using Docker on Windows**
 
 ```text
-docker run -it -v <PATH_TO_ETHDO_WALLET>:/keys -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet gcr.io/prysmaticlabs/prysm/validator:latest accounts import --keys-dir=/keys --wallet-dir=/wallet
+docker run -it -v <PATH_TO_ETHDO_WALLET>:/keys -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet gcr.io/prysmaticlabs/prysm/validator:stable accounts import --keys-dir=/keys --wallet-dir=/wallet
 ```
 
 **Using Bazel**
@@ -123,7 +127,7 @@ docker run -it -v <PATH_TO_ETHDO_WALLET>:/keys \
   -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
   -v $HOME/Eth2:/validatorDB \
   --name validator \
-  gcr.io/prysmaticlabs/prysm/validator:latest \
+  gcr.io/prysmaticlabs/prysm/validator:stable \
   accounts import --keys-dir=/keys --wallet-dir=/wallet --datadir=/validatorDB
 ```
 

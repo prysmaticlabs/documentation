@@ -1,6 +1,6 @@
 module.exports = {
-    title: 'Prysm ETH2.0 Testnet',
-    tagline: 'An Ethereum 2.0 client written entirely in Go.',
+    title: 'Prysm',
+    tagline: 'Ethereum 2.0 implementation written entirely in Go.',
     url: 'https://docs.prylabs.network',
     baseUrl: '/',
     onBrokenLinks: 'throw',
@@ -13,20 +13,20 @@ module.exports = {
     scripts: ['https://buttons.github.io/buttons.js'],
     themeConfig: {
         navbar: {
-            title: "Prysm 'Medalla' Testnet",
+            title: "Prysm Eth2 Docs",
             logo: {
-                alt: "Prysm Medalla Testnet logo",
+                alt: "Prysm logo",
                 src: 'img/logo2.png',
             },
             items: [
                 {
-                    label: 'Documentation',
-                    to: 'docs/getting-started',
+                    href: 'https://launchpad.ethereum.org',
+                    label: 'Join Eth2',
                     position: 'right',
                 },
                 {
-                    href: 'https://medalla.launchpad.ethereum.org',
-                    label: 'Join the Testnet',
+                    label: 'Staying Updated',
+                    to: 'docs/prysm-usage/staying-up-to-date',
                     position: 'right',
                 },
                 {
@@ -48,11 +48,11 @@ module.exports = {
         },
         footer: {
             logo: {
-                alt: "Prysm 'Medalla' Testnet",
+                alt: "Prysm Eth2 Docs",
                 href: '/',
                 src: 'img/Prysm.svg',
             },
-            copyright: `Copyright © ${new Date().getFullYear()} Prysmatic Labs, LLC.`,
+            copyright: `Copyright © ${new Date().getFullYear()} Prysmatic Labs, LLC., Validator Deposit Contract 0x00000000219ab540356cbb839cbe05303d7705fa`,
             links: [],
         },
         algolia: {

@@ -4,6 +4,10 @@ title: Installing Prysm with prysm.sh
 sidebar_label: Prysm installation script
 ---
 
+:::danger Our Code Is Not Yet Updated to Mainnet!
+Our latest release of Prysm, beta.1, is not mainnet compatible. Please do not run Prysm yet until we announce it in our Discord channel, our [releases page](https://github.com/prysmaticlabs/prysm/releases), our [official mailing list](https://groups.google.com/g/prysm-dev) or in this documentation portal.
+:::
+
 Prysm can be installed on Windows, GNU/Linux, MacOS, or ARM64 systems using the Prysm installation script which downloads signed binaries from our latest release. This page includes instructions for performing this process.
 
 **Have questions?** Stop by the [#documentation](https://discord.gg/QQZMCgU) channel on Discord and let us know.
@@ -29,9 +33,9 @@ These hardware specifications are recommended, but not required to run the Prysm
 * Storage: 100GB available space SSD
 * Internet: Broadband connection
 
-## Installing the beacon chain and validator
+## Installing Prysm
 
-The easiest way to install the beacon chain and validator is by running the `prysm.sh` script found in the main directory of the [Prysm repository](https://github.com/prysmaticlabs/prysm). This script will download and start up the latest release of Prysm binaries compatible with the host system.
+The easiest way to install Prysm is by running the `prysm.sh` script found in the main directory of the [Prysm repository](https://github.com/prysmaticlabs/prysm). This script will download and start up the latest release of Prysm binaries compatible with the host system.
 
 ![Prysm Basic Setup](/img/prysm-basic-setup.png)
 
@@ -64,36 +68,7 @@ mkdir prysm && cd prysm
 curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --output prysm.sh && chmod +x prysm.sh
 ```
 
-3. Run the `prysm.sh` script alongside any [startup parameters](/docs/prysm-usage/parameters#beacon-node-parameters). You will need to setup an eth1 node connection to run a beacon node. We have dedicated instructions for this step [here](/docs/prysm-usage/setup-eth1) where <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`:
-
-```sh
-./prysm.sh beacon-chain --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
-```
-
-You will be asked to do a one time acknowledgement of our [Terms of Use](https://github.com/prysmaticlabs/prysm/blob/master/TERMS_OF_SERVICE.md). You can also read the legal terms first, then confirm them via a flag using --accept-terms-of-use.
-
-:::tip Pro-Tip
-Not getting enough peers?  Refer to the [improve P2P connectivity](/docs/prysm-usage/p2p-host-ip) section of this documentation for tips on network configuration.
-:::
-
-The `prysm.sh` script will now download and initialize the beacon chain with the specified parameters. The terminal will produce output like so where <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`:
-
-```sh
-./prysm.sh beacon-chain --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
-Latest Prysm version is v0.3.3.
-Downloading beacon chain@v0.3.3 to /home/{USER}/prysm/dist/beacon-chain-v0.3.3-linux-amd64 (automatically selected latest available version)
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100   622  100   622    0     0   2320      0 --:--:-- --:--:-- --:--:--  2312
-100 39.6M  100 39.6M    0     0  13.6M      0  0:00:02  0:00:02 --:--:-- 20.4M
-Downloading validator@v0.3.3 to /home/{USER}/prysm/dist/validator-v0.3.3-linux-amd64 (automatically selected latest available version)
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100   619  100   619    0     0   1484      0 --:--:-- --:--:-- --:--:--  1484
-100 32.5M  100 32.5M    0     0  12.6M      0  0:00:02  0:00:02 --:--:-- 21.7M
-Starting Prysm beacon-chain
-...
-```
+Now that you downloaded the .sh file, you can proceed to [joining eth2](/docs/mainnet/joining-eth2).
 
 </TabItem>
 <TabItem value="win">
@@ -115,35 +90,7 @@ curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.bat --ou
 reg add HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1
 ``` 
 
-4. Run the `prysm.bat` script alongside any [startup parameters](/docs/prysm-usage/parameters#beacon-node-parameters). You will need to setup an eth1 node connection to run a beacon node. We have dedicated instructions for this step [here](/docs/prysm-usage/setup-eth1) where <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`:
-
-```sh
-.\prysm.bat beacon-chain --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
-```
-
-You will be asked to do a one time acknowledgement of our [Terms of Use](https://github.com/prysmaticlabs/prysm/blob/master/TERMS_OF_SERVICE.md). You can also read the legal terms first, then confirm them via a flag using --accept-terms-of-use.
-
-:::tip Pro-Tip
-Not getting enough peers?  Refer to the [improve P2P connectivity](/docs/prysm-usage/p2p-host-ip) section of this documentation for tips on network configuration.
-:::
-
-The `prysm.bat` script will now download and initialise the beacon chain with the specified parameters. The terminal will produce output like so where <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`:
-
-```sh
-.\prysm.bat beacon-chain --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
-Latest prysm release is v1.0.0-alpha.5.
-Using prysm version v1.0.0-alpha.5.
-Downloading beacon chain v1.0.0-alpha.5 to .\dist\validator-v1.0.0-alpha.5-windows-amd64.exe automatically selected latest available release
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100 40.3M  100 40.3M    0     0  4593k      0  0:00:09  0:00:09 --:--:-- 5177k
-WARN GPG verification is not natively available on Windows.
-WARN Skipping integrity verification of downloaded binary
-Verifying binary authenticity with SHA265 Hash.
-SHA265 Hash Match
-Starting Prysm beacon-chain
-...
-```
+Now that you downloaded the .bat file, you can proceed to [joining eth2](/docs/mainnet/joining-eth2).
 
 </TabItem>
 <TabItem value="mac">
@@ -169,37 +116,7 @@ mkdir prysm && cd prysm
 ```sh
 curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --output prysm.sh && chmod +x prysm.sh
 ```
-
-3. Run the `prysm.sh` script alongside any [startup parameters](/docs/prysm-usage/parameters#beacon-node-parameters). You will need to setup an eth1 node connection to run a beacon node. We have dedicated instructions for this step [here](/docs/prysm-usage/setup-eth1) where <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`:
-
-```sh
-./prysm.sh beacon-chain --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
-```
-
-You will be asked to do a one time acknowledgement of our [Terms of Use](https://github.com/prysmaticlabs/prysm/blob/master/TERMS_OF_SERVICE.md). You can also read the legal terms first, then confirm them via a flag using --accept-terms-of-use.
-
-:::tip Pro-Tip
-Not getting enough peers?  Refer to the [improve P2P connectivity](/docs/prysm-usage/p2p-host-ip) section of this documentation for tips on network configuration.
-:::
-
-The `prysm.sh` script will now download and initialise the beacon chain with the specified parameters. The terminal will produce output like so where <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`:
-
-```sh
-./prysm.sh beacon-chain --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
-Latest Prysm version is v0.3.3.
-Downloading beacon chain@v0.3.3 to /home/{USER}/prysm/dist/beacon-chain-v0.3.3-linux-amd64 (automatically selected latest available version)
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100   622  100   622    0     0   2320      0 --:--:-- --:--:-- --:--:--  2312
-100 39.6M  100 39.6M    0     0  13.6M      0  0:00:02  0:00:02 --:--:-- 20.4M
-Downloading validator@v0.3.3 to /home/{USER}/prysm/dist/validator-v0.3.3-linux-amd64 (automatically selected latest available version)
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100   619  100   619    0     0   1484      0 --:--:-- --:--:-- --:--:--  1484
-100 32.5M  100 32.5M    0     0  12.6M      0  0:00:02  0:00:02 --:--:-- 21.7M
-Starting Prysm beacon-chain
-...
-```
+Now that you downloaded the .sh file, you can proceed to [joining eth2](/docs/mainnet/joining-eth2).
 
 </TabItem>
 <TabItem value="arm">
@@ -215,45 +132,7 @@ mkdir prysm && cd prysm
 ```sh
 curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --output prysm.sh && chmod +x prysm.sh
 ```
-
-3. Run the `prysm.sh` script alongside any [startup parameters](/docs/prysm-usage/parameters#beacon-node-parameters). You will need to setup an eth1 node connection to run a beacon node. We have dedicated instructions for this step [here](/docs/prysm-usage/setup-eth1) where <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`:
-
-```sh
-./prysm.sh beacon-chain --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
-```
-
-You will be asked to do a one time acknowledgement of our [Terms of Use](https://github.com/prysmaticlabs/prysm/blob/master/TERMS_OF_SERVICE.md). You can also read the legal terms first, then confirm them via a flag using --accept-terms-of-use.
-
-:::tip Pro-Tip
-Not getting enough peers?  Refer to the [improve P2P connectivity](/docs/prysm-usage/p2p-host-ip) section of this documentation for tips on network configuration.
-:::
-
-The `prysm.sh` script will now download and initialise the beacon chain with the specified parameters. The terminal will produce output like so where <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`:
-
-```sh
-./prysm.sh beacon-chain --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
-Latest Prysm version is v0.3.3.
-Downloading beacon chain@v0.3.3 to /home/{USER}/prysm/dist/beacon-chain-v0.3.3-linux-amd64 (automatically selected latest available version)
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100   622  100   622    0     0   2320      0 --:--:-- --:--:-- --:--:--  2312
-100 39.6M  100 39.6M    0     0  13.6M      0  0:00:02  0:00:02 --:--:-- 20.4M
-Downloading validator@v0.3.3 to /home/{USER}/prysm/dist/validator-v0.3.3-linux-amd64 (automatically selected latest available version)
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100   619  100   619    0     0   1484      0 --:--:-- --:--:-- --:--:--  1484
-100 32.5M  100 32.5M    0     0  12.6M      0  0:00:02  0:00:02 --:--:-- 21.7M
-Starting Prysm beacon-chain
-...
-```
+Now that you downloaded the .sh file, you can proceed to [joining eth2](/docs/mainnet/joining-eth2).
 
 </TabItem>
 </Tabs>
-
-At this point, the beacon chain data will begin synchronising up to the latest head block. If the network hasn't started yet, it will process eth1 deposits from the deposit contract so far and await the genesis time. Please note that, depending on your network capacity and CPU, this process may take several hours. Once it is complete, you will be ready to make a deposit and begin setting up a validator client.
-
-:::info Syncing the Blockchain
-The beacon node you are using should be **completely synced** before submitting your deposit for the validator client, otherwise the validator will not be able to validate and will **inflict minor inactivity balance penalties**. No need to worry about this if the chain has not yet started.
-:::
-
-Now that your beacon chain is setup, you can then run a validator on the **Medalla testnet** by following our detailed guidelines [here](/docs/testnet/medalla)

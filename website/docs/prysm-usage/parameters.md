@@ -4,13 +4,21 @@ title: Available parameters
 sidebar_label: Available parameters
 ---
 
+:::danger Our Code Is Not Yet Updated to Mainnet!
+Our latest release of Prysm, beta.1, is not mainnet compatible. Please do not run Prysm yet until we announce it in our Discord channel, our [releases page](https://github.com/prysmaticlabs/prysm/releases), our [official mailing list](https://groups.google.com/g/prysm-dev) or in this documentation portal.
+:::
+
 This section lists the various flags used to customise the startup process of beacon nodes and validator clients.
 
-  > **Fun tip:** You can use the `--graffiti` validator flag to add a string to your proposed blocks, which will be seen on the block explorer. I.e; `<startup command> --graffiti "Prysm is awesome!"`
+:::tip Graffiti
+You can use the `--graffiti` validator flag to add a string to your proposed blocks, which will be seen on the block explorer. I.e; `<startup command> --graffiti "Prysm is awesome!"`
+:::
 
 ## Loading parameters via .YAML file
 
-> **NOTICE:** Loading parameters via .YAML file is optional.
+:::info
+Loading parameters via .YAML file is optional.
+:::
 
 Prysm now supports loading flag values from a specified `.yaml` file. Defining parameters in this way cuts back on terminal clutter and allows unique startup profiles to be saved independently.
 
@@ -69,6 +77,7 @@ These flags are shared by both the beacon node, validator client, and slasher.
 | `--trace-sample-fraction` | Indicate what fraction of P@P messages are sampled for tracing. Default: 0.20
 | `--disable-monitoring` | Disable all monitoring service.
 | `--monitoring-port` | Port used by prometheus for listening and responding to messages. Default: Beacon:8080, Validator:8081, Slasher: 8082
+| `--monitoring-host` | Host IP address used for monitoring. Default: 127.0.0.1
 | `--force-clear-db` | Clear any previously stored data at the data directory.
 | `--clear-db` | Prompt for clearing any previously stored data at the data directory.
 | `--log-format` | Specify log formatting. Supports: text, json, fluentd.
