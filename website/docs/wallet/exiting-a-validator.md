@@ -8,9 +8,88 @@ sidebar_label: Exiting a validator
 
 Exiting one or more validator accounts in a wallet (HD, non-HD or remote) is possible using the following command:
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs
+  groupId="operating-systems"
+  defaultValue="lin"
+  values={[
+    {label: 'Linux', value: 'lin'},
+    {label: 'Windows', value: 'win'},
+    {label: 'MacOS', value: 'mac'},
+    {label: 'Arm64', value: 'arm'},
+  ]
+}>
+<TabItem value="lin">
+
+**Using Prysm.sh**
+
 ```bash
 ./prysm.sh validator accounts voluntary-exit
 ```
+
+**Using Docker**
+
+```text
+docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
+  gcr.io/prysmaticlabs/prysm/validator:latest \
+  accounts voluntary-exit --wallet-dir=/wallet
+```
+
+**Using Bazel**
+
+```bash
+bazel run //validator -- accounts voluntary-exit
+```
+
+</TabItem>
+<TabItem value="win">
+
+**Using Prysm.bat**
+
+```bash
+prysm.bat validator accounts voluntary-exit
+```
+
+**Using Docker**
+
+```text
+docker run -it -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet gcr.io/prysmaticlabs/prysm/validator:latest accounts voluntary-exit --wallet-dir=/wallet
+```
+
+</TabItem>
+<TabItem value="mac">
+
+**Using Prysm.sh**
+
+```bash
+./prysm.sh validator accounts voluntary-exit
+```
+
+**Using Docker**
+
+```text
+docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
+  gcr.io/prysmaticlabs/prysm/validator:latest \
+  accounts voluntary-exit --wallet-dir=/wallet
+```
+
+**Using Bazel**
+
+```bash
+bazel run //validator -- accounts voluntary-exit
+```
+
+</TabItem>
+<TabItem value="arm">
+
+```bash
+./prysm.sh validator accounts voluntary-exit
+```
+
+</TabItem>
+</Tabs>
 
 At first, a prompt will be displayed, asking to select one or more validator accounts that should be exited.
 
