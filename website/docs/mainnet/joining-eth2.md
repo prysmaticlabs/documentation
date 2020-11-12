@@ -68,7 +68,7 @@ Where <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `ht
 **Using Bazel**
 
 ```text
-bazel run //beacon-chain --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
+bazel run //beacon-chain -- --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
 ```
 
 Where <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`
@@ -127,7 +127,7 @@ Where <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `ht
 **Using Bazel**
 
 ```text
-bazel run //beacon-chain --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
+bazel run //beacon-chain -- --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
 ```
 
 Where <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`.
@@ -146,7 +146,7 @@ Where <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `ht
 **Using Bazel**
 
 ```text
-bazel run //beacon-chain --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
+bazel run //beacon-chain -- --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
 ```
 
 Where <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`.
