@@ -105,7 +105,7 @@ bazel run //validator -- --web
 **Using Bazel**
 
 ```text
-bazel run //validator --web
+bazel run //validator -- --web
 ```
 
 </TabItem>
