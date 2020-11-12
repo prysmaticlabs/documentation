@@ -131,6 +131,8 @@ These flags are specific to launching a validator client.
 | ------------- |:-------------|
 |`--no-custom-config` | Run the beacon chain with the real parameters from phase 0.
 |`--beacon-rpc-provider` | Beacon node RPC provider endpoint. Default: localhost:4000
+|`--rpc-host` | Specify the RPC host exposed by the validator Default: localhost
+|`--rpc-port` | Specify the RPC port exposed by the slasher Default: 7000
 |`--tls-cert` | Certificate for secure gRPC. Pass this and the tls-key flag in order to use gRPC securely.
 |`--disable-rewards-penalties-logging` | Disable reward/penalty logging during cluster deployment.
 |`--graffiti` | A string to include in proposed block.
