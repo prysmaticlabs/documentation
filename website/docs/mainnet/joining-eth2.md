@@ -194,10 +194,9 @@ You will be asked to do a one time acknowledgement of our [Terms of Use](https:/
 ```text
 docker run -it -v $HOME/eth2.0-deposit-cli/validator_keys:/keys \
   -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
-  -v $HOME/Eth2:/validatorDB \
   --name validator \
   gcr.io/prysmaticlabs/prysm/validator:stable \
-  accounts import --keys-dir=/keys --wallet-dir=/wallet --datadir=/validatorDB
+  accounts import --keys-dir=/keys --wallet-dir=/wallet
 ```
 
 You will be asked to do a one time acknowledgement of our [Terms of Use](https://github.com/prysmaticlabs/prysm/blob/master/TERMS_OF_SERVICE.md). You can also read the legal terms first, then confirm them via a flag using --accept-terms-of-use in both your beacon node and validator.
@@ -245,10 +244,9 @@ You will be asked to do a one time acknowledgement of our [Terms of Use](https:/
 ```text
 docker run -it -v $HOME/eth2.0-deposit-cli/validator_keys:/keys \
   -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
-  -v $HOME/Eth2:/validatorDB \
   --name validator \
   gcr.io/prysmaticlabs/prysm/validator:stable \
-  accounts import --keys-dir=/keys --wallet-dir=/wallet --datadir=/validatorDB
+  accounts import --keys-dir=/keys --wallet-dir=/wallet
 ```
 
 You will be asked to do a one time acknowledgement of our [Terms of Use](https://github.com/prysmaticlabs/prysm/blob/master/TERMS_OF_SERVICE.md). You can also read the legal terms first, then confirm them via a flag using --accept-terms-of-use in both your beacon node and validator.
@@ -335,7 +333,7 @@ prysm.bat validator
 **Using Docker**
 
 ```text
-docker run -it -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet -v %LOCALAPPDATA%\Eth2:/validatorDB --network="host" --name validator gcr.io/prysmaticlabs/prysm/validator:latest --beacon-rpc-provider=127.0.0.1:4000 --wallet-dir=/wallet --datadir=/validatorDB
+docker run -it -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet -v %LOCALAPPDATA%\Eth2:/validatorDB --network="host" --name validator gcr.io/prysmaticlabs/prysm/validator:stable --beacon-rpc-provider=127.0.0.1:4000 --wallet-dir=/wallet --datadir=/validatorDB
 ```
 
 </TabItem>
@@ -353,7 +351,7 @@ docker run -it -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet -v %LOCA
 docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \ 
   -v $HOME/Eth2:/validatorDB \
   --network="host" --name validator \
-  gcr.io/prysmaticlabs/prysm/validator:latest \
+  gcr.io/prysmaticlabs/prysm/validator:stable \
   --beacon-rpc-provider=127.0.0.1:4000 \
   --wallet-dir=/wallet \
   --datadir=/validatorDB
