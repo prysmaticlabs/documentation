@@ -66,7 +66,15 @@ import TabItem from '@theme/TabItem';
 docker -v
 ```
 
-2. To pull the Prysm images, issue the following commands:
+2. Ensure that your user is a member of the `docker` group by issuing the command, where `username` is your user:
+
+```text
+sudo usermod -aG docker username
+```
+
+Any changes made will take effect when your user next logs in.
+
+3. To pull the Prysm images, issue the following commands:
 
 ```text
 docker pull gcr.io/prysmaticlabs/prysm/validator:stable
