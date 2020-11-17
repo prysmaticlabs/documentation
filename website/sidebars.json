@@ -7,7 +7,7 @@
 
 		"Joining eth2": [
 			"mainnet/joining-eth2",
-			"testnet/medalla"
+			"testnet/pyrmont"
 		],
 		"Installing Prysm": [
 			"install/install-with-script",
