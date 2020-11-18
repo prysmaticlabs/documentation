@@ -71,7 +71,7 @@ Yes we currently support arm 64-bit architectures such as the raspberry pi 4 and
 
 #### How can I create a new validator key and join the testnet?
 
-The best way to join the testnet is to follow the direct instructions on [https://medalla.launchpad.ethereum.org](https://medalla.launchpad.ethereum.org). We have more detailed instructions in our documentation portal depending on your operating system [here](/docs/testnet/medalla).
+The best way to join the testnet is to follow the direct instructions on [https://pyrmont.launchpad.ethereum.org](https://pyrmont.launchpad.ethereum.org). We have more detailed instructions in our documentation portal depending on your operating system [here](/docs/testnet/pyrmont).
 
 #### I deposited but it’s taking a long time to become active - how can I check if my deposit was correct?
 
