@@ -18,10 +18,6 @@ Prysm has two official channels for release updates: our [Discord](https://disco
 
 ## Staking in Eth2
 
-:::danger Our Code Is Not Yet Updated to Mainnet!
-Our latest release of Prysm, beta.1, is not mainnet compatible. Please do not run Prysm yet until we announce it in our Discord channel, our [releases page](https://github.com/prysmaticlabs/prysm/releases), our [official mailing list](https://groups.google.com/g/prysm-dev) or in this documentation portal.
-:::
-
 To participate in the eth2 network, read our comprehensive guidelines [here](/docs/mainnet/joining-eth2).
 
 ## Need assistance?

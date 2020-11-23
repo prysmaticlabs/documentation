@@ -4,10 +4,6 @@ title: Keeping Prysm updated
 sidebar_label: Staying up to date
 ---
 
-:::danger Our Code Is Not Yet Updated to Mainnet!
-Our latest release of Prysm, beta.1, is not mainnet compatible. Please do not run Prysm yet until we announce it in our Discord channel, our [releases page](https://github.com/prysmaticlabs/prysm/releases), our [official mailing list](https://groups.google.com/g/prysm-dev) or in this documentation portal.
-:::
-
 This section outlines the step-by-step process for how to keep Prysm up to date along with security recommendations for stakers regarding updates. 
 
 ## Installing Prysm
