@@ -4,6 +4,10 @@ title: Remote signing wallet
 sidebar_label: Remote signing wallet
 ---
 
+:::danger Our Code Is Not Yet Updated to Mainnet!
+Our latest release of Prysm, beta.1, is not mainnet compatible. Please do not run Prysm yet until we announce it in our Discord channel, our [releases page](https://github.com/prysmaticlabs/prysm/releases), our [official mailing list](https://groups.google.com/g/prysm-dev) or in this documentation portal.
+:::
+
 ## Background
 
 A **remote signing wallet** provides the ability to connect to a remote server to retrieve validating public keys and process eth2 signing requests via a secure [gRPC](https://grpc.io) connection. You must supply valid TLS certificates for establishing the secure connection to your server. We have created a reference implementation of a remote signer server, maintained as an open source, Apache 2 project on Github [here](https://github.com/prysmaticlabs/remote-signer) as a starting point

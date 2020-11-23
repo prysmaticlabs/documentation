@@ -4,6 +4,10 @@ title: Joining Eth2 Mainnet
 sidebar_label: Mainnet launchpad onboarding
 ---
 
+:::danger Our Code Is Not Yet Updated to Mainnet!
+Our latest release of Prysm, beta.1, is not mainnet compatible. Please do not run Prysm yet until we announce it in our Discord channel, our [releases page](https://github.com/prysmaticlabs/prysm/releases), our [official mailing list](https://groups.google.com/g/prysm-dev) or in this documentation portal.
+:::
+
 This section outlines the step-by-step process for how to join [eth2 mainnet](https://launchpad.ethereum.org/) to run a Prysm eth2 beacon node and validator.
 
 ![image](/img/mainnetlaunchpad.png)
