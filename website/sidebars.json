@@ -49,7 +49,10 @@
 
 		"Developer tools": 	["devtools/block-explorers"],
 
-		"Public API": 	["how-prysm-works/ethereum-2-public-api"],
+		"Public API": 	[
+			"how-prysm-works/ethereum-2-public-api",
+			"how-prysm-works/ethereum-2-minimal-slashing-api"
+		],
 
 		"Contribute": [	
 			"contribute/doc-standards",
