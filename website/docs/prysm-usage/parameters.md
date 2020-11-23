@@ -98,17 +98,17 @@ These flags are specific to launching the beacon node.
 | `--rpc-port` | Define a RPC port to be exposed by the beacon node. >Value: 4000
 | `--tls-cert` |Certificate for secure gRPC. Pass this and the tls-key flag in order to use gRPC securely.
 | `--tls-key` | Key for secure gRPC. Pass this and the tls-cert flag in order to use gRPC securely.
-| `--grpc-gateway-host` | Enable gRPC gateway for JSON requests. Default: 127.0.0.1
+| `--grpc-gateway-host` | The host on which the gateway server runs on. Default: 127.0.0.1
 | `--grpc-gateway-port` | Enable gRPC gateway for JSON requests. Default: 3500
 | `--contract-deployment-block` | Define the ETH1 block in which the deposit contract was deployed. Default: 1960177
 | `--gc-percent` | The percentage of freshly allocated data to live data on which the gc will be run again. Default: 100
 | `--head-sync` | Starts the beacon node with the previously saved head state instead of finalized state.
 | `--slots-per-archive-point` | The slot durations of when an archived state gets saved in the DB. Default: 2048
 | `--weak-subjectivity-checkpoint` | Input in `block_root:epoch_number` format to sync from the weak subjectivity checkpoint.
-| `--disable-sync` | Starts the beacon node without entering initial sync and instead exits to regular sync immediately. Default: 10
+| `--disable-sync` | Starts the beacon node without entering initial sync and instead exits to regular sync immediately.
 | `--historical-slasher-node` | Enables required flags for serving historical data to a slasher client. Results in additional storage and disk usage.
 | `--slasher-tls-cert` | Certificate for secure slasher gRPC connection. Pass this in order to use slasher gRPC securely.
-| `--slasher-provider` | Define a slasher provider string endpoint. Can either be an gRPC server endpoint. Default: 127.0.0.1:5000
+| `--slasher-rpc-provider` | Define a slasher provider string endpoint. Can either be an gRPC server endpoint. Default: 127.0.0.1:4002
 | `--chain-id` | Sets the chain id of the beacon chain.
 | `--network-id` | Sets the network id of the beacon chain.
 | `--enable-db-backup-webhook` | Serve HTTP handler to initiate database backups. The handler is served on the monitoring port at path /db/backup.
