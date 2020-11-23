@@ -93,10 +93,10 @@ These flags are specific to launching the beacon node.
 | Flag        | Usage           |
 | ------------- |:-------------|
 | `--http-web3provider` | Define an eth1 web3 provider string http endpoint. See [here](/docs/prysm-usage/setup-eth1)
-| `--deposit-contract` |Define a deposit contract address. Beacon chain node will listen logs coming from the deposit contract to determine when validator is eligible to participate.
+| `--deposit-contract` | Define a deposit contract address. Beacon chain node will listen logs coming from the deposit contract to determine when validator is eligible to participate.
 | `--rpc-host` | Define an address of the host on which the RPC server should listen. Default: 0.0.0.0
 | `--rpc-port` | Define a RPC port to be exposed by the beacon node. >Value: 4000
-| `--tls-cert` |Certificate for secure gRPC. Pass this and the tls-key flag in order to use gRPC securely.
+| `--tls-cert` | Certificate for secure gRPC. Pass this and the tls-key flag in order to use gRPC securely.
 | `--tls-key` | Key for secure gRPC. Pass this and the tls-cert flag in order to use gRPC securely.
 | `--grpc-gateway-host` | The host on which the gateway server runs on. Default: 127.0.0.1
 | `--grpc-gateway-port` | Enable gRPC gateway for JSON requests. Default: 3500
@@ -126,7 +126,7 @@ These flags are specific to launching the beacon node.
 | `--disable-discv5` | Does not run the discoveryV5 DHT.
 | `--peer` | Connect with a specified peer. This flag may be used multiple times.
 | `--bootstrap-node` | The address of bootstrap node. Beacon node will connect for peer discovery via DHT.  Multiple nodes can be separated with a comma. Default:
-| `--relay-node ` | The address of relay node. The beacon node will connect to the relay node and advertise their address via the relay node to other peers.
+| `--relay-node` | The address of relay node. The beacon node will connect to the relay node and advertise their address via the relay node to other peers.
 | `--p2p-udp-port ` | The port used by discv5. Default: 12000
 | `--p2p-tcp-port` | The port used by libP2P. Default: 13000
 | `--p2p-local-ip` | The local ip address to listen for incoming data.
