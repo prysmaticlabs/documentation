@@ -7,7 +7,7 @@ description: This section contains service definitions and gRPC instructions to 
 
 
 ## Problem statement
-The basic eth2 phase 0 slashing conditions premise dictates that a validator can’t forget past signed messages without a penalty. It’s a simple rule, don’t sign the same message but with different parameters (double voting) or try to change history by signing a message “deleting” a previous one (surrounded and surrounding votes).
+The basic eth2 phase 0 slashing conditions premise dictates that a validator should store past signed data pointers. It’s a simple rule, don’t sign the same message but with different parameters (double voting) or try to change history by signing a message “deleting” a previous one (surrounded and surrounding votes).
 There are 3 types of slashing events:
 
 ![gRPC](/img/slashing_conditions.png)
@@ -15,7 +15,7 @@ There are 3 types of slashing events:
 Under a naive approach this is fairly easy to implement, simply code the slashing conditions into the validator client and write to a local database every time the validator signs any message. Things get complicated in the real world.
 A validator has a duty every 6.4 minutes, the amount of signed messages can grow rapidly to tens of thousands and even more. A naive implementation will quickly face performance issues and backup issues, the latter more severe under a recovery from seed scenario. 
 
-The basic promise of a seed managed wallet is that all a user needs to recover fully is the seed. Under eth2 slashing conditions that same user will now need all the historical slashing data as well to stay safe. That’s just not feasible nor convenient.
+The basic promise of a seed managed wallet is that all a user needs to recover fully is the seed. Under eth2 slashing conditions that same user will now need all the historical slashing data as well to stay safe.
 A re-think of the slashing condition database is needed.
 
 ## Minimal Slashing protection
