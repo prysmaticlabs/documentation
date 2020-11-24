@@ -7,7 +7,7 @@ description: This section contains service definitions and gRPC instructions to 
 
 
 ## Problem statement
-The basic eth2 phase 0 slashing conditions premise dictates that a validator can’t forget past signed messages without a penalty. It’s a simple rule, don’t sign the same message but with different parameters (double voting) or try to change history by signing a message “deleting” a previous one (surrounded and surrounding votes).
+The basic eth2 phase 0 slashing conditions premise dictates that a validator should store past signed data pointers. It’s a simple rule, don’t sign the same message but with different parameters (double voting) or try to change history by signing a message “deleting” a previous one (surrounded and surrounding votes).
 There are 3 types of slashing events:
 
 ![gRPC](/img/slashing_conditions.png)
