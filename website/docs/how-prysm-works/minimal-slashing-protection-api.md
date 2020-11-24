@@ -16,7 +16,6 @@ Under a naive approach this is fairly easy to implement, simply code the slashin
 A validator has a duty every 6.4 minutes, the amount of signed messages can grow rapidly to tens of thousands and even more. A naive implementation will quickly face performance issues and backup issues, the latter more severe under a recovery from seed scenario. 
 
 The basic promise of a seed managed wallet is that all a user needs to recover fully is the seed. Under eth2 slashing conditions that same user will now need all the historical slashing data as well to stay safe. That’s just not feasible nor convenient.
-A re-think of the slashing condition database is needed.
 
 ## Minimal Slashing protection
 A solution can be found in adopting more stringent slashing rules that enable reducing the footprint of a slashing database significantly. Instead of holding the entire past attestation history, we can minimize it to just holding the highest source and highest target attestation ever signed, then force inner validator rules that reference only those 2 pieces of data to validate and ultimately sign an attestation.<br />
@@ -24,6 +23,8 @@ The rules are:
 
 1) New attestation source epoch must be equal or higher than known highest source.<br />
 2) New attestation target epoch must be higher than known highest target.
+
+**Minimal slashing protection was first discussed by Michael Sproul (lighthouse team) and initiallly incldued in the [Slashing protection Database Interchange Format](https://hackmd.io/@sproul/Bk0Y0qdGD).** 
 
 ## Highset Attestation API
 ```go
