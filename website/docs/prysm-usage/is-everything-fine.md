@@ -6,11 +6,11 @@ sidebar_label: Checking if Prysm runs as expected
 
 ## Running the beacon node
 
-Once you run a beacon node for the very first time, it will attempt to process deposits from the eth1 chain's deposit contract. These are all the validators that have deposited 32 ETH to join the eth2 beacon chain. This process may take a few minutes
+When running a beacon node for the first time, it will attempt to process deposits from the eth1 chain's deposit contract. These are all the validators that have deposited 32 ETH to join the eth2 beacon chain. This process may take a few minutes.
 
 ![image](/img/processingdeposits.png)
 
-Soon after, the beacon node will attempt to download the blockchain via its connected node peers over the Internet. This process may also take a while, depending on how long the chain has been running. As this process is occurring, your validator client connected to your beacon node will be unable to produce blocks or vote on others' blocks. Here's what a beacon node "synchronizing" looks like.
+Soon after, the beacon node will attempt to download the blockchain via its connected node peers over the Internet. This process may also take a while, depending on how long the chain has been running. As this process is occurring, the validator client connected to your beacon node will be unable to produce blocks or vote on others' blocks. Here's what a beacon node "synchronizing" looks like.
 
 ![image](/img/syncing.png)
 
@@ -26,7 +26,7 @@ If your beacon node is struggling to find peers, and it says something along the
 
 #### Node stuck during sync
 
-If your node seems stuck in a loop during initial synchronization of the blockchain, a typical restart will usually resolve the problem. If the problem, persists, please get in touch with us via [Discord](https://discord.gg/hmq4y2P).
+If your node seems stuck in a loop while it is syncing the blockchain, a restart will usually resolve the problem. If the problem persists, please get in touch with us via [Discord](https://discord.gg/hmq4y2P).
 
 ## Running the validator client
 

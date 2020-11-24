@@ -24,7 +24,7 @@ Based on the instructions above, you should now have a running beacon node.
 
 ## Step 2: Start your validator client
 
-You'll then need to start your validator client with the `--web` flag in a second terminal window. Depending on your platform, issue the appropriate command from the examples below to start the validator.
+With a beacon node running, you'll need to start your validator client with the `--web` flag in a second terminal window. Depending on your platform, issue the appropriate command from the examples below to start the validator.
 
 :::danger Important Caveats
 The `--web` interface is currently a beta release and has some limitations. At the moment, it assumes you are running your beacon node and validator client with default RPC ports, and on the same machine or at least within the same network. For more advanced configurations, you can get in touch with our team on Discord or follow the progress of prysm-web [here](https://github.com/prysmaticlabs/prysm-web-ui).
@@ -117,7 +117,7 @@ The Prysm web interface will open in your default browser automatically, and you
 
 ![Onboarding](/img/createawallet.png "Create a Wallet")
 
-We recommend going through the "imported wallet" route, and importing your keys you obtained during the eth2 launchpad deposit-cli process, as this is the most secure setup. Upon completing wallet creation, you will be redirected to your main dashboard, where you can see several important items such as your recent validating performance or your beacon node's sync status.
+We recommend going through the ["imported wallet"](/docs/wallet/nondeterministic) route, and importing your keys you obtained during the [eth2 launchpad deposit-cli](https://launchpad.ethereum.org/) process, as this is the most secure setup. Upon completing wallet creation, you will be redirected to your main dashboard, where you can see several important items such as your recent validating performance or your beacon node's sync status.
 
 ## Step 4: Monitor your beacon node and validator client logs, manage accounts, and more
 
