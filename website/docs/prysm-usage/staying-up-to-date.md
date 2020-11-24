@@ -53,7 +53,7 @@ import TabItem from '@theme/TabItem';
 
 **Using the Prysm installation script**
 
-If you are running `prysm.sh`, all it takes to upgrade to the latest release is to restart your beacon node and validator with `ctrl+c` (wait for the process to close down gracefully, do not spam ctrl+c). Then, restart it with the same command you used to start the process. The script will automatically downloaded our latest release for you.
+If you are running `prysm.sh`, all it takes to upgrade to the latest release is to stop your beacon node and validator with `ctrl+c` (wait for the process to close down gracefully, do not spam ctrl+c). Then, restart it with the same command you used to start the process. The script will automatically downloaded our latest release for you.
 
 **Using Docker**
 
@@ -73,7 +73,7 @@ To run our latest release with Bazel, you can look up our [releases page](https:
 
 **Using the Prysm installation script**
 
-If you are running `prysm.bat`, all it takes to upgrade to the latest release is to restart your beacon node and validator with `ctrl+c` (wait for the process to close down gracefully, do not spam ctrl+c). Then, restart it with the same command you used to start the process. The script will automatically downloaded our latest release for you.
+If you are running `prysm.bat`, all it takes to upgrade to the latest release is to stop your beacon node and validator with `ctrl+c` (wait for the process to close down gracefully, do not spam ctrl+c). Then, restart it with the same command you used to start the process. The script will automatically downloaded our latest release for you.
 
 **Using Docker**
 
@@ -89,7 +89,7 @@ docker pull gcr.io/prysmaticlabs/prysm/validator:stable
 
 **Using the Prysm installation script**
 
-If you are running `prysm.sh`, all it takes to upgrade to the latest release is to restart your beacon node and validator with `ctrl+c` (wait for the process to close down gracefully, do not spam ctrl+c). Then, restart it with the same command you used to start the process. The script will automatically downloaded our latest release for you.
+If you are running `prysm.sh`, all it takes to upgrade to the latest release is to stop your beacon node and validator with `ctrl+c` (wait for the process to close down gracefully, do not spam ctrl+c). Then, restart it with the same command you used to start the process. The script will automatically downloaded our latest release for you.
 
 **Using Docker**
 
@@ -110,7 +110,7 @@ To run our latest release with Bazel, you can look up our [releases page](https:
 
 **Using the Prysm installation script**
 
-If you are running `prysm.sh`, all it takes to upgrade to the latest release is to restart your beacon node and validator with `ctrl+c` (wait for the process to close down gracefully, do not spam ctrl+c). Then, restart it with the same command you used to start the process. The script will automatically downloaded our latest release for you.
+If you are running `prysm.sh`, all it takes to upgrade to the latest release is to stop your beacon node and validator with `ctrl+c` (wait for the process to close down gracefully, do not spam ctrl+c). Then, restart it with the same command you used to start the process. The script will automatically downloaded our latest release for you.
 
 **Using Docker**
 
