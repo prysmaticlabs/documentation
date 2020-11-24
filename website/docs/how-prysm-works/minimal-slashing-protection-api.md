@@ -24,7 +24,7 @@ The rules are:
 1) New attestation source epoch must be equal or higher than known highest source.<br />
 2) New attestation target epoch must be higher than known highest target.
 
-**Minimal slashing protection was first discussed by Michael Sproul (lighthouse team) and initiallly incldued in the [Slashing protection Database Interchange Format](https://hackmd.io/@sproul/Bk0Y0qdGD).** 
+**Minimal slashing protection was first discussed by Michael Sproul (lighthouse team) and initially included in the [Slashing protection Database Interchange Format](https://hackmd.io/@sproul/Bk0Y0qdGD).** 
 
 ## Highset Attestation API
 ```go
