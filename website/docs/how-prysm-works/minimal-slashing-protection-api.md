@@ -42,3 +42,6 @@ The rules are:
 		ValidatorIds:         []uint64{}, // array of validator indexes
 	})
 ```
+
+**Important!**
+Using a random slasher to get this data is dangerous as it might not know of all attestations broadcasted to the network. A local slasher which is connected as external protection can be used safely for this purpose. Use with caution.
