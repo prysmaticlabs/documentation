@@ -10,112 +10,72 @@ This section outlines the step-by-step process for how to use Prysm with its bui
 
 ## Step 1: Get Prysm
 
-To begin, follow the instructions to fetch and install Prysm for your operating system.
+To begin, follow the instructions to run Prysm in either the eth2 mainnet or the test network
 
-* [Using the Prysm installation script (Recommended)](/docs/install/install-with-script)
-* [Using Docker](/docs/install/install-with-docker)
-* [Building from source with Bazel (Advanced)](/docs/install/install-with-bazel)
+- [Joining Eth2 Mainnet](/docs/mainnet/joining-eth2)
+- [Joining the Testnet](/docs/testnet/pyrmont)
 
-Based on the instructions above, you should now have a running beacon node.
+By the end of the documentation, you should have a functioning beacon node and validator client running!
 
-## Step 2: Start your validator client
+## Step 2: Restart your validator client with --web
 
-You'll then need to start your validator client with the `--web` flag in a second terminal window. Depending on your platform, issue the appropriate command from the examples below to start the validator.
+To launch the web interface, you will need to restart your validator client from step 1 with the `--web` flag. This will allow you to access the web interface by default on `http://localhost:7500` if running on the same computer as your validator client and using `prysm.sh`, `prysm.bat` or building from source. For more advanced configurations, keep reading below in step (3).
 
-:::danger Important Caveats
-The `--web` interface is currently a beta release and has some limitations. At the moment, it assumes you are running your beacon node and validator client with default RPC ports, and on the same machine or at least within the same network. For more advanced configurations, you can get in touch with our team on Discord or follow the progress of prysm-web [here](https://github.com/prysmaticlabs/prysm-web-ui).
+![Image](/img/walletcreate.png)
+
+[2020-11-27 14:30:58]  WARN rpc: You are using the --web option but have not yet signed via a browser. If your web host and port are exposed to the Internet, someone else can attempt to sign up for you! You can visit http://127.0.0.1:7500 to view the Prysm web interface
+
+## Step 3: Configuration and Common Issues
+
+The way the web interface works today is as follows:
+
+```text
+      /---> beacon-node (default: localhost:3500)
+web -- 
+      \---> validator client (default: localhost:7500)
+```
+
+:::info Default setup only works on same machine!
+The default setup will **only work** if you are accessing the web interface from the same computer where the beacon node and validator are running. If you want to customize the `host` or `port` for the beacon node and validator client backends, you can use the flags:
+```
+--grpc-gateway-host (default: 127.0.0.1)
+--grpc-gateway-port (default: 7500 for validator, 3500 for beacon node)
+```
 :::
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 
-<Tabs
-  groupId="operating-systems"
-  defaultValue="lin"
-  values={[
-    {label: 'Linux', value: 'lin'},
-    {label: 'Windows', value: 'win'},
-    {label: 'MacOS', value: 'mac'},
-    {label: 'Arm64', value: 'arm'},
-  ]
-}>
-<TabItem value="lin">
+If you are **running with docker**, you ideally want to set the `--grpc-gateway-host` in **both** the beacon node and validator client to `0.0.0.0`, allowing the backends to accessible beyond the localhost within the running docker containers.
 
-**Using the Prysm installation script**
+The available parameters to customize are:
 
-```text
-./prysm.sh validator --web
+### Beacon Node
+| Flag          | Usage         |
+| ------------- |:-------------|
+|`--grpc-gateway-host` | The host for the beacon node's JSON-HTTP API, default `127.0.0.1`
+|`--grpc-gateway-port` | The port for the beacon node's JSON-HTTP API, default `3500`
+|`--grpc-gateway-corsdomain` | Comma separated list of allowed domains to access the JSON-HTTP API, default includes `http://0.0.0.0:7500,http://127.0.0.1:7500,http://localhost:7500`
+|`--monitoring-host` | The host for where the beacon node's /logs websocket endpoint is served, default `127.0.0.1`
+|`--monitoring-port` | The port for where the beacon node's /logs websocket endpoint is served, default `8080`
+
+### Validator
+| Flag          | Usage         |
+| ------------- |:-------------|
+|`--grpc-gateway-host` | The host for the validator client's JSON-HTTP API, default `127.0.0.1`
+|`--grpc-gateway-port` | The port for the validator client's JSON-HTTP API, default `7500`
+|`--monitoring-host` | The host for where the validator client's /logs websocket endpoint is served, default `127.0.0.1`
+|`--monitoring-port` | The port for where the validator client's /logs websocket endpoint is served, default `8081`
+
+## Step 4: Accessing Web Interface from a Remote Computer
+
+If you are running your beacon node and validator on some server that you want to access from the outside, we recommend SSH local port forwarding to access it. For example, you would do the following from your home computer:
+
+```
+ssh -L 7500:127.0.0.1:7500 user@host_ip
 ```
 
-**Using Docker**
+where you replace `user@host_ip` with the user and host ip address of the remote machine you are trying to access. This will forward all requests from your home computer's localhost:7500 to the remote instance's localhost:7500, allowing you to visit `http://localhost:7500` from your favorite browser and then access the validator web interface! This is the safest approach to access it, as you are exposing the web interface to the open Internet.
 
-At the moment, docker installations do not work with the web UI due to some assumptions about default ports which will be resolved in future releases. We apologize in advance.
-
-**Using Bazel**
-
-```text
-bazel run //validator -- --web
-```
-
-</TabItem>
-<TabItem value="win">
-
-**Using the prysm.bat script**
-
-```text
-prysm.bat validator -- --web
-```
-
-**Using Docker**
-
-At the moment, docker installations do not work with the web UI due to some assumptions about default ports which will be resolved in future releases. We apologize in advance.
-
-</TabItem>
-<TabItem value="mac">
-
-**Using the Prysm installation script**
-
-```text
-./prysm.sh validator --web
-```
-
-**Using Docker**
-
-At the moment, docker installations do not work with the web UI due to some assumptions about default ports which will be resolved in future releases. We apologize in advance.
-
-**Using Bazel**
-
-```text
-bazel run //validator -- --web
-```
-
-</TabItem>
-<TabItem value="arm">
-
-**Using the Prysm installation script**
-
-```text
-./prysm.sh validator --web
-```
-
-**Using Bazel**
-
-```text
-bazel run //validator -- --web
-```
-
-</TabItem>
-</Tabs>
-
-## Step 3: Create a wallet
-
-The Prysm web interface will open in your default browser automatically, and you can then navigate to the Create a Wallet page.
-
-![Onboarding](/img/createawallet.png "Create a Wallet")
-
-We recommend going through the "imported wallet" route, and importing your keys you obtained during the eth2 launchpad deposit-cli process, as this is the most secure setup. Upon completing wallet creation, you will be redirected to your main dashboard, where you can see several important items such as your recent validating performance or your beacon node's sync status.
-
-## Step 4: Monitor your beacon node and validator client logs, manage accounts, and more
+## Step 4: Monitor your beacon node and validator client logs, accounts, and more
 
 You can visualize your beacon node and validator client logs from the web interface easily by navigating to `System Process -> Logs` on the left-hand sidebar.
 
