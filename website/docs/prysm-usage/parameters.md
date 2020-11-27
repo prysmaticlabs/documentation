@@ -111,8 +111,6 @@ These flags are specific to launching the beacon node.
 | `--tls-key` | Key for secure gRPC. Pass this and the tls-cert flag in order to use gRPC securely.
 | `--grpc-gateway-host` | The host on which the gateway server runs on. Default: 127.0.0.1
 | `--grpc-gateway-port` | Enable gRPC gateway for JSON requests. Default: 3500
-| `--slasher-tls-cert` | Certificate for secure slasher gRPC connection. Pass this in order to use slasher gRPC securely.
-| `--slasher-rpc-provider` | Define a slasher provider string endpoint. Can either be an gRPC server endpoint. Default: 127.0.0.1:4002
 
 ### P2P flags
 | Flag        | Usage           |
