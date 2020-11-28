@@ -33,7 +33,7 @@ You can also run your own eth1 node in the full spirit of decentralization and u
 First, install go-ethereum [here](https://geth.ethereum.org/docs/).
 
 ```text
-$ geth --datadir="$HOME/Mainnet"
+$ geth --datadir="$HOME/Mainnet" --http
 ```
 
 You should wait for your node to sync and then will be able to access its endpoint via `http://localhost:8545` by default.
