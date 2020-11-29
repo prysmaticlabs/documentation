@@ -4,10 +4,6 @@ title: Installing Prysm with prysm.sh
 sidebar_label: Prysm installation script
 ---
 
-:::danger Our Code Is Not Yet Updated to Mainnet!
-Our latest release of Prysm, beta.1, is not mainnet compatible. Please do not run Prysm yet until we announce it in our Discord channel, our [releases page](https://github.com/prysmaticlabs/prysm/releases), our [official mailing list](https://groups.google.com/g/prysm-dev) or in this documentation portal.
-:::
-
 Prysm can be installed on Windows, GNU/Linux, MacOS, or ARM64 systems using the Prysm installation script which downloads signed binaries from our latest release. This page includes instructions for performing this process.
 
 **Have questions?** Stop by the [#documentation](https://discord.gg/QQZMCgU) channel on Discord and let us know.
@@ -39,7 +35,7 @@ The easiest way to install Prysm is by running the `prysm.sh` script found in th
 
 ![Prysm Basic Setup](/img/prysm-basic-setup.png)
 
-### Running the Prysm startup script
+### Downloading the Prysm startup script
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -56,7 +52,7 @@ import TabItem from '@theme/TabItem';
 }>
 <TabItem value="lin">
 
-1. Create a working directory and enter it:
+1. Open a terminal in the desired directory for Prysm. Then create a working directory and enter it:
 
 ```sh
 mkdir prysm && cd prysm
@@ -73,7 +69,7 @@ Now that you downloaded the .sh file, you can proceed to [joining eth2](/docs/ma
 </TabItem>
 <TabItem value="win">
 
-1. Decide where you would like to keep prysm files, create a working directory and enter it:
+1. Open a command prompt window in the desired directory for Prysm. Then create a working directory and enter it:
 
 ```sh
 mkdir prysm && cd prysm
@@ -105,7 +101,7 @@ According to [Apple's Support site](https://support.apple.com/en-us/HT210190), t
 * iMac Pro (all models)
 * Mac Pro introduced in 2013, plus mid-2010 or mid-2012 models with a recommended Metal-capable graphics card.
 
-1. Create a working directory and enter it:
+1. Open a terminal window in the desired directory for Prysm. Then create a working directory and enter it:
 
 ```sh
 mkdir prysm && cd prysm

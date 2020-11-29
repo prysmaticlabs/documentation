@@ -10,7 +10,7 @@ As such, running a validator and a beacon node in eth2 entails also having a rel
   
 ## Supported eth1 clients
 
-Eth2 nodes can use any sort of eth1 mainnet node http endpoint as long as it supports reading smart contract logs. Users can choose either of the following eth1 client.
+Eth2 nodes can use any sort of eth1 mainnet node http endpoint as long as it supports reading smart contract logs. Users can choose either of the following eth1 clients.
 
 - [Go-Ethereum](https://github.com/ethereum/go-ethereum)
 - [Nethermind](https://github.com/NethermindEth/nethermind)
@@ -18,12 +18,12 @@ Eth2 nodes can use any sort of eth1 mainnet node http endpoint as long as it sup
 
 ## Using a third-party eth1 provider
 
-Instead of running your own eth1 node, it is a lot easier to use a third-party provider such as Infura for this purpose. You can easily [sign-up here for free](https://infura.io/register) and get an API key which then entitles you to use their respective eth1 endpoints. 
+Instead of running your own eth1 node, it is a lot easier to use a third-party provider such as [Infura](https://infura.io/) or [Alchemy](https://alchemyapi.io/) for this purpose. You can easily [sign-up here for free](https://infura.io/register) and get an API key which then entitles you to use their respective eth1 endpoints. However, remember that using a third party provider is relying on their services, instead of your own node. 
 
 Once you have an API key, you can then run a **Prysm eth2 beacon node** by pointing the `--http-web3provider` flag to your eth1 endpoint. For example, running an eth2 node connected to Infura's eth1 endpoint is as follows:
 
 ```text
-./prysm.sh beacon-chain --http-web3provider=https://infura.io/v3/YOUR-PROJECT-ID
+./prysm.sh beacon-chain --http-web3provider=https://mainnet.infura.io/v3/YOUR-PROJECT-ID
 ```
 
 ## Running your own eth1 node
@@ -33,7 +33,7 @@ You can also run your own eth1 node in the full spirit of decentralization and u
 First, install go-ethereum [here](https://geth.ethereum.org/docs/).
 
 ```text
-$ geth --datadir="$HOME/Mainnet"
+$ geth --datadir="$HOME/Mainnet" --http
 ```
 
 You should wait for your node to sync and then will be able to access its endpoint via `http://localhost:8545` by default.

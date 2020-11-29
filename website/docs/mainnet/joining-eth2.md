@@ -4,10 +4,6 @@ title: Joining Eth2 Mainnet
 sidebar_label: Mainnet launchpad onboarding
 ---
 
-:::danger Our Code Is Not Yet Updated to Mainnet!
-Our latest release of Prysm, beta.1, is not mainnet compatible. Please do not run Prysm yet until we announce it in our Discord channel, our [releases page](https://github.com/prysmaticlabs/prysm/releases), our [official mailing list](https://groups.google.com/g/prysm-dev) or in this documentation portal.
-:::
-
 This section outlines the step-by-step process for how to join [eth2 mainnet](https://launchpad.ethereum.org/) to run a Prysm eth2 beacon node and validator.
 
 ![image](/img/mainnetlaunchpad.png)
@@ -158,11 +154,11 @@ Where <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `ht
 The beacon-chain node you are using should be **completely synced** before submitting your deposit. You may **incur minor inactivity balance penalties** if the validator is unable to perform its duties by the time the deposit is processed and activated by the ETH2 network. You do not need to worry about this if the chain has not started yet.
 :::
 
-## Step 4: Complete the onboarding process in the official eth2 launchpad
+## Step 3: Complete the onboarding process in the official eth2 launchpad
 
 The [Official Eth2 Launchpad](https://launchpad.ethereum.org/summary) is the easiest way to go through a step-by-step process to deposit your 32 ETH to become a validator. Throughout the process, you'll be asked to generate new validator credentials using the official Ethereum deposit command-line-tool [here](https://github.com/ethereum/eth2.0-deposit-cli). Make sure you use the `mainnet` option when generating keys with the deposit CLI. During the process, you will have generated a `validator_keys` folder under the `eth2.0-deposit-cli` directory. You can import all of your validator accounts into Prysm from that folder in the next step.
 
-## Step 5: Import your validator accounts into Prysm
+## Step 4: Import your validator accounts into Prysm
 
 For this step, you'll need to copy the path to the `validator_keys` folder under the `eth2.0-deposit-cli` directory you created during the launchpad process. For example, if your eth2.0-deposit-cli installation is in your `$HOME` (or `%LOCALAPPDATA%` on Windows) directory, you can then run the following commands for your operating system
 
@@ -281,7 +277,7 @@ You will be asked to do a one time acknowledgement of our [Terms of Use](https:/
 </TabItem>
 </Tabs>
 
-## Step 6: Run your validator
+## Step 5: Run your validator
 
 Open a second terminal window. Depending on your platform, issue the appropriate command from the examples below to start the validator.
 
@@ -382,7 +378,7 @@ bazel run //validator
 </Tabs>
 
 
-## Step 7: Wait for your validator assignment
+## Step 6: Wait for your validator assignment
 
 Please note that it may take from **5-12 hours** for nodes in the ETH2 network to process a deposit. In the meantime, leave both terminal windows open and running; once the validator is activated by the ETH2 network, it will immediately begin receiving tasks and performing its responsibilities. If the eth2 chain has not yet started, the validator will be ready to start proposing blocks and signing votes as soon as the genesis time is reached.
 
