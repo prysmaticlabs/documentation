@@ -9,11 +9,11 @@ Cryptowat is a third party tool that converts data from https://cryptowat.ch/ in
 ![Currency converter for Grafana dashboard](/img/dashboard_currency_converter.png "Currency converter for Grafana dashboard")
 
 ## Get Cryptowat
-To get the currency converter feature you will need to download and run a third party tool on [this repository](https://github.com/nbarrientos/cryptowat_exporter/tree/e4bcf6e16dd2e04c4edc699e795d9450dee486ab "cryptowat")
+To get the currency converter feature you will need to download and run a third party tool on [this repository](https://github.com/nbarrientos/cryptowat_exporter "cryptowat")
 
 1. You can simply run the command below to download the specific state of this repository
 
-```curl -OL https://github.com/nbarrientos/cryptowat_exporter/archive/e4bcf6e16dd2e04c4edc699e795d9450dee486ab.zip```
+```curl -OL https://github.com/nbarrientos/cryptowat_exporter/archive/v2.1.1.zip```
 
 > **NOTICE:** This repository being a third party, we can't be sure that it will stay safe forever. To prevent stakers to download the new versions that could maybe contain malicious purpose. Be sure to download the version recommended above.
 
