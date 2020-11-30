@@ -28,13 +28,13 @@ Your password to unlock this file is **not** stored on disk by Prysm. You will n
 
 ### Wallet creation
 
-A non-HD wallet is the most basic sort of wallet, storing all information on-disk. This approach makes it trivial to import, export and list all associated accounts within the wallet. To start using the non-HD wallet, you can create a new wallet using
+A non-HD wallet is the most basic sort of wallet, storing all information on-disk. This approach makes it trivial to import, export and list all associated accounts within the wallet. To start using the non-HD wallet, you can create a new wallet using:
 
 ```bash
 ./prysm.sh validator wallet create
 ```
 
-and selecting **non-HD** wallet when prompted during an interactive process. You can also create a wallet **non-interactively** by using the following command line flags, which are also viewable by typing `./prysm.sh validator wallet create --help.
+Then select **non-HD** wallet when prompted during an interactive process. You can also create a wallet **non-interactively** by using the following command line flags, which are also viewable by typing `./prysm.sh validator wallet create --help.
 
 :::info
 You'll need to set a **strong** password for your wallet, containing at least 1 uppercase letter, 1 number, a special character, and be at least 8 characters long. Any unicode characters can be used for passwords.

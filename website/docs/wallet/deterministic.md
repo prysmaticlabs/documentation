@@ -14,7 +14,7 @@ Validator private keys are encrypted with the wallet's password using the [EIP-2
 
 ### Wallet creation
 
-To start using the HD wallet, you can create a new wallet using
+To start using the HD wallet, you can create a new wallet using:
 
 ```bash
 ./prysm.sh validator wallet create
@@ -24,13 +24,16 @@ To start using the HD wallet, you can create a new wallet using
 You'll need to set a **strong** password for your new HD wallet, containing at least 1 uppercase letter, 1 number, a special character, and be at least 8 characters long. Any unicode characters can be used for your wallet password.
 :::
 
-and selecting **HD** wallet when prompted during an interactive process. You can also create a wallet **non-interactively** by using the following command line flags, which are also viewable by typing `./prysm.sh validator wallet create --help`.
+Then select **HD** wallet when prompted during an interactive process. You can also create a wallet **non-interactively** by using the following command line flags, which are also viewable by typing `./prysm.sh validator wallet create --help`.
+We support 
 
 | Flag          | Usage         |
 | ------------- |:-------------|
 | `--wallet-dir` | Path to a wallet directory (default: "$HOME/Eth2Validators/prysm-wallet-v2")
 | `--keymanager-kind`     | Type of wallet to create, either "direct", "derived, or "remote" (default "derived")
-| `--wallet-password-file`     | Path to a plain-text, password.txt file to lock your wallet
+| `--wallet-password-file` | Path to a plain-text, password.txt file to lock your wallet
+|`--mnemonic-25th-word-file`| (Advanced) Path to a plain-text, .txt file containing a 25th word passphrase for your mnemonic for HD wallets.
+|`--skip-mnemonic-25th-word-check` | Allows for skipping the check for a mnemonic 25th word passphrase for HD wallets.
 
 Here's a full example on how to create an HD wallet at `$HOME/myhdwallet`
 
@@ -65,47 +68,6 @@ Your accounts are generated deterministically from your recovery phrase, so you 
 | ------------- |:-------------|
 | `--wallet-dir` | Path to a wallet directory (default: "$HOME/Eth2Validators/prysm-wallet-v2")
 | `--num-accounts` | Total number of accounts to recover from the wallet (default 1)
-
-### New validator account
-
-You can create a new validator account for your HD wallet using the following command
-
-```bash
-./prysm.sh validator accounts create
-```
-
-This command will generate both a withdrawal key and a validating key for eth2. Soon after, the command will complete and you will see an **important** piece of information you'll need to activate your eth2 validator.
-
-```go
-INFO accounts: (wallet path) /Users/johndoe/Library/Eth2Validators/prysm-wallet-v2
-
-Copy + paste the deposit data below when using the eth1 deposit contract
-
-========================Deposit Data===============================
-
-0x2289511800000000000000000000000000000000000000000...
-
-===================================================================
-
-INFO hd-wallet: Successfully created new validator 
-account_name=personally-conscious-echidna
-```
-
-You can then copy the deposit data text and use it when sending 32ETH to the Validator Deposit Contract for eth2.
-
-You can also create a new validator account **non-interactively** by using the following command line flags, which are also viewable by typing `./prysm.sh validator accounts create --help`.
-
-| Flag          | Usage         |
-| ------------- |:-------------|
-| `--wallet-dir` | Path to a wallet directory (default: "$HOME/Eth2Validators/prysm-wallet-v2")
-| `--wallet-password-file` | Path to a plain-text, password.txt file to unlock your wallet
-| `--num-accounts` | Total number of accounts to generate (default: 1)
-
-Here's a full example on how to create a new validator account for your HD wallet stored at `$HOME/myhdwallet`.
-
-```bash
-./prysm.sh validator accounts create --wallet-dir=$HOME/myhdwallet --wallet-password-file=password.txt
-```
 
 ### List validator accounts
 
@@ -158,7 +120,8 @@ You can also run the `accounts list` command **non-interactively** by using the 
 
 | Flag          | Usage         |
 | ------------- |:-------------|
-| `--wallet-dir` | Path to a wallet directory (default: "$HOME/Eth2Validators/prysm-wallet-v2")
-| `--wallet-password-file` | Path to plain-text file containing your wallet's password
-| `--show-deposit-data`     |  Display raw eth1 tx deposit data for validator accounts (default: false
+| `--wallet-dir` | Path to a wallet directory (default: "$HOME/Eth2Validators/prysm-wallet-v2").
+| `--wallet-password-file` | Path to plain-text file containing your wallet's password.
+| `--show-deposit-data` | Display raw eth1 tx deposit data for validator accounts.
+| `--show-private-keys` | Display the private keys for validator accounts.
 

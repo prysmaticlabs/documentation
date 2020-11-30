@@ -83,12 +83,12 @@ and selecting **Remote** wallet when prompted during an interactive process. You
 
 | Flag          | Usage         |
 | ------------- |:-------------|
-| `--wallet-dir` | Path to a wallet directory (default: "$HOME/Eth2Validators/prysm-wallet-v2")
-| `--keymanager-kind`     | Type of wallet to create, either "direct", "derived, or "remote" (default "derived")
-| `--grpc-remote-address`     | Host:port of a gRPC server for the remote signer server
-| `--remote-signer-crt-path`     | /path/to/client.crt for establishing a secure, TLS gRPC connection to a remote signer server
-| `--remote-signer-key-path`     | /path/to/client.key for establishing a secure, TLS gRPC connection to a remote signer server
-| `--remote-signer-ca-crt-path`     | /path/to/ca.crt for establishing a secure, TLS gRPC connection to a remote signer server
+| `--wallet-dir` | Path to a wallet directory (default: "$HOME/Eth2Validators/prysm-wallet-v2").
+| `--keymanager-kind`     | Type of wallet to create, either "direct", "derived, or "remote" (default "derived").
+| `--grpc-remote-address`     | Host:port of a gRPC server for the remote signer server.
+| `--remote-signer-crt-path`     | /path/to/client.crt for establishing a secure, TLS gRPC connection to a remote signer server.
+| `--remote-signer-key-path`     | /path/to/client.key for establishing a secure, TLS gRPC connection to a remote signer server.
+| `--remote-signer-ca-crt-path`     | /path/to/ca.crt for establishing a secure, TLS gRPC connection to a remote signer server.
 
 ### Wallet edit configuration
 
@@ -102,11 +102,11 @@ You can also edit your wallet configuration **non-interactively** by using the f
 
 | Flag          | Usage         |
 | ------------- |:-------------|
-| `--wallet-dir` | Path to a wallet directory (default: "$HOME/Eth2Validators/prysm-wallet-v2")
-| `--grpc-remote-address`     | Host:port of a gRPC server for the remote signer server
-| `--remote-signer-crt-path`     | /path/to/client.crt for establishing a secure, TLS gRPC connection to a remote signer server
-| `--remote-signer-key-path`     | /path/to/client.key for establishing a secure, TLS gRPC connection to a remote signer server
-| `--remote-signer-ca-crt-path`     | /path/to/ca.crt for establishing a secure, TLS gRPC connection to a remote signer server
+| `--wallet-dir` | Path to a wallet directory (default: "$HOME/Eth2Validators/prysm-wallet-v2").
+| `--grpc-remote-address`     | Host:port of a gRPC server for the remote signer server.
+| `--remote-signer-crt-path`     | /path/to/client.crt for establishing a secure, TLS gRPC connection to a remote signer server.
+| `--remote-signer-key-path`     | /path/to/client.key for establishing a secure, TLS gRPC connection to a remote signer server.
+| `--remote-signer-ca-crt-path`     | /path/to/ca.crt for establishing a secure, TLS gRPC connection to a remote signer server.
 
 ### List validator accounts
 
