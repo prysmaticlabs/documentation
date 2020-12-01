@@ -18,7 +18,7 @@ Eth2 nodes can use any sort of eth1 mainnet node http endpoint as long as it sup
 
 ## Using a third-party eth1 provider
 
-Instead of running your own eth1 node, it is a lot easier to use a third-party provider such as [Infura](https://infura.io/) or [Alchemy](https://alchemyapi.io/) for this purpose. You can easily [sign-up here for free](https://infura.io/register) and get an API key which then entitles you to use their respective eth1 endpoints. However, remember that using a third party provider is relying on their services, instead of your own node. 
+Instead of running your own eth1 node, it is a lot easier to use a third-party provider such as [Infura](https://infura.io/), [Alchemy](https://alchemyapi.io/), or [Chainstack](https://chainstack.com/) for this purpose. You can easily [sign-up here for free](https://infura.io/register) and get an API key which then entitles you to use their respective eth1 endpoints. However, remember that using a third party provider is relying on their services, instead of your own node. 
 
 Once you have an API key, you can then run a **Prysm eth2 beacon node** by pointing the `--http-web3provider` flag to your eth1 endpoint. For example, running an eth2 node connected to Infura's eth1 endpoint is as follows:
 
