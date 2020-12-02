@@ -12,7 +12,8 @@ The best way to make a deposit and join eth2 is to follow the direct instruction
 
 #### How can I get a bunch of test ETH to spin up a lot of validators on the testnet?
 
-Our current faucet only gives out increments of 32.5 Goerli test ETH at any given time and prevents sending out to the same address too often. If you need a larger amount of test ETH, please reach out to us on discord [here](https://discord.gg/CTYGPUJ).
+Our current faucet only gives out increments of 32.5 Goerli test ETH at any given time and prevents sending out to the same address too often. 
+If you'd like more Goerli ETH, please use our [Discord](https://discord.gg/CTYGPUJ) faucet. If you need a larger amount of test ETH, please reach out to us on discord [here](https://discord.gg/CTYGPUJ).
 
 #### Can I get back my ETH? How can I withdraw my validator gains?
 
@@ -61,7 +62,7 @@ We find Digital Ocean tends to have fairly priced instances for running beacon n
 
 #### Can I run this on a raspberry pi? What are the instructions?
 
-Yes we currently support arm 64-bit architectures such as the raspberry pi 4 and they go out as part of our pre-compiled binary releases [here](https://github.com/prysmaticlabs/prysm/releases). Our documentation portal has instructions on how to run the entire installation process [here](https://docs.prylabs.network/docs/install/arm/).
+Yes we currently support arm 64-bit architectures such as the raspberry pi 4 and they go out as part of our pre-compiled binary releases [here](https://github.com/prysmaticlabs/prysm/releases). Our documentation portal has instructions on how to run the entire installation process [here](https://docs.prylabs.network/docs/install/arm/). However, we recommend using more powerful hardware in mainnet conditions. 
 
 ## Managing Validators
 
