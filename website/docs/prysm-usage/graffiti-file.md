@@ -14,9 +14,9 @@ Reasons may include:
 
 ## Usages
 
-Thee validator flag: `--graffiti-file=/path/to/graffitis.yaml`
+The validator flag: `--graffiti-file=/path/to/graffitis.yaml`
 
-It supports yaml and the following scalar and collections. We well go through each of them in detail below.
+It supports yaml and the following scalar and collections. We will go through each of them in detail below.
  * Specific
  * Random
  * Default
