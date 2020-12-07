@@ -38,7 +38,7 @@ random:
 default: "Mr F was here"
 ```
 Example output:
-![](https://i.imgur.com/UT3EvGu.png)
+![image](/img/graffiti-specific.png)
 
 ### Random
 Random chooses a random graffiti from the list. If `random` is not specified, the `default` graffiti will be used.
@@ -58,7 +58,7 @@ random:
 default: "Mr F was here"
 ```
 Example output:
-![](https://i.imgur.com/IwimkeW.png)
+![image](/img/graffiti-random.png)
 
 
 ### Default
@@ -78,4 +78,4 @@ Default specifies the graffiti to be used by all the keys under validator client
 default: "Mr F was here"
 ```
 Example output:
-![](https://i.imgur.com/M7Qmkhg.png)
+![image](/img/graffiti-default.png)
