@@ -21,6 +21,7 @@
 			"prysm-usage/setup-eth1",
 			"prysm-usage/graffiti-file",
 			"prysm-usage/p2p-host-ip",
+			"prysm-usage/database-backups",
 			"prysm-usage/is-everything-fine",
 			"prysm-usage/web-interface",
 			"prysm-usage/secure-grpc",
