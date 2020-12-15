@@ -32,6 +32,12 @@ Prysm has two official channels for release updates: our [Discord](https://disco
 
 ## How to securely update Prysm
 
+Updating in Prysm can incur a few seconds downtime depending on your installation method. Every validator will attest once per epoch (every 6.4 minutes on average), while proposals are more rare. To check your next assigned slot to attest or propose, we recommend checking your validator on [beaconcha.in](https://beaconcha.in). Although missing a single validator duty is not a big deal, you can wait to update right after you attest or propose for optimal performance.
+
+:::tip Missing a single validator duty is not a big deal
+Missing a single duty is really not a big deal for your validator profitability. Unless you want to be at the top of the [leaderboard](https://beaconcha.in/validators/leaderboard), do not worry too much. You will be profitable again in no time once your validator is up next epoch.
+:::
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
