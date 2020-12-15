@@ -39,6 +39,8 @@
 			"wallet/ethdo"
 		],
 
+		"ETH2 API": 	["how-prysm-works/ethereum-2-public-api"],
+
 		"How Prysm works": 	[	"how-prysm-works/architecture-overview",
 								"how-prysm-works/beacon-node",
 								"how-prysm-works/prysm-validator-client",
@@ -51,7 +53,6 @@
 
 		"Developer tools": 	["devtools/block-explorers"],
 
-		"Public API": 	["how-prysm-works/ethereum-2-public-api"],
 
 		"Contribute": [	
 			"contribute/doc-standards",
