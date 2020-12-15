@@ -86,13 +86,10 @@ where you replace `user@host_ip` with the user and host ip address of the remote
 
 ## Step 4: Monitor your beacon node and validator client logs, accounts, and more
 
-You can visualize your beacon node and validator client logs from the web interface easily by navigating to `System Process -> Logs` on the left-hand sidebar.
-
-<<<<<<< HEAD
-We recommend going through the ["imported wallet"](/docs/wallet/nondeterministic) route, and importing your keys you obtained during the [eth2 launchpad deposit-cli](https://launchpad.ethereum.org/) process, as this is the most secure setup. Upon completing wallet creation, you will be redirected to your main dashboard, where you can see several important items such as your recent validating performance or your beacon node's sync status.
-=======
+You can visualize your beacon node and validator client logs from the web interface easily by navigating to `System Process -> Logs` on the left-hand sidebar.  
 ![Logs](/img/logs.png "Logs")
->>>>>>> d051f5e72a367b62ffe33fb31e321807e12261f4
+
+- We recommend going through the ["imported wallet"](/docs/wallet/nondeterministic) route, and importing your keys you obtained during the [eth2 launchpad deposit-cli](https://launchpad.ethereum.org/) process, as this is the most secure setup. Upon completing wallet creation, you will be redirected to your main dashboard, where you can see several important items such as your recent validating performance or your beacon node's sync status.  
 
 This page is useful to monitor how your processes are doing without needing to navigate to your terminal! In addition, you can visit your `Wallet and Accounts -> Accounts` page to view all your validating keys in an ordered table, explore their historical performance on https://beaconcha.in, and import new ones.
 
