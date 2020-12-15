@@ -57,13 +57,13 @@ In case your eth1 node unexpectedly goes down, you can specify a list of fallbac
 #### Using regular flags
 
 ```
---http-web3provider=<YOUR MAIN ETH1 ENDPOINT> --fallback-web3provider=<PROVIDER 1>,<PROVIDER 2>
+--http-web3provider=<YOUR MAIN ETH1 ENDPOINT> --fallback-web3provider=<PROVIDER 1> --fallback-web3provider=<PROVIDER 2>
 ```
 
-You can specify your main provider and then a comma-separated list of --fallback-web3provider. Here's what a real setup could look like:
+You can specify your main provider and as many --fallback-web3provider as you need. Here's what a real setup could look like:
 
 ```
---http-web3provider=http://localhost:8545 --fallback-web3provider=https://mainnet.infura.io/v3/YOUR-PROJECT-ID,https://eth-mainnet.alchemyapi.io/v2/YOUR-PROJECT-ID
+--http-web3provider=http://localhost:8545 --fallback-web3provider=https://mainnet.infura.io/v3/YOUR-PROJECT-ID --fallback-web3provider=https://eth-mainnet.alchemyapi.io/v2/YOUR-PROJECT-ID
 ```
 
 Where your main provider is your local go-ethereum node running on port 8545, then you can fallback to infura or alchemy as needed.
