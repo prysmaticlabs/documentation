@@ -17,3 +17,11 @@ eth2stats.io is a beacon chain explorer maintained by [Alethio](https://aleth.io
 ## [beaconcha.in](https://beaconcha.in/)
 
 beaconcha.in is a beacon chain explorer maintained by [Bitfly](https://www.bitfly.at).
+
+## [ethscan.org](https://ethscan.org)
+
+ethscan.org is a beacon chain explorer maintained by [Redot](https://redot.com).
+
+## [eth2.redot.com](https://eth2.redot.com)
+
+eth2.redot.com is a beacon chain explorer (mirror) maintained by [Redot](https://redot.com).
