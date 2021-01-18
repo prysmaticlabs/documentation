@@ -1,10 +1,10 @@
 ---
 id: staying-up-to-date
-title: Keeping Prysm updated
-sidebar_label: Staying up to date
+title: Upgrading and downgrading Prysm
+sidebar_label: Upgrading and downgrading versions
 ---
 
-This section outlines the step-by-step process for how to keep Prysm up to date along with security recommendations for stakers regarding updates. 
+This section outlines the step-by-step process for how to keep Prysm up-to-date, how to downgrade versions, and some security recommendations for stakers regarding updates. 
 
 ## Installing Prysm
 
@@ -30,7 +30,7 @@ If you are running docker or building from source, we **never** recommend runnin
 
 Prysm has two official channels for release updates: our [Discord](https://discord.gg/TvM3RWR) and our [mailing list](https://groups.google.com/g/prysm-dev). All releases will be notified via those channels, and we always recommend reading our release notes on Github in case there are **breaking changes** to running a node. Our team avoids breaking changes whenever possible, and we will make it clear in our release notes or in releases ahead of time that breaking changes are coming.
 
-## How to securely update Prysm
+## How to securely upgrade Prysm
 
 Updating in Prysm can incur a few seconds downtime depending on your installation method. Every validator will attest once per epoch (every 6.4 minutes on average), while proposals are more rare. To check your next assigned slot to attest or propose, we recommend checking your validator on [beaconcha.in](https://beaconcha.in). Although missing a single validator duty is not a big deal, you can wait to update right after you attest or propose for optimal performance.
 
@@ -125,3 +125,271 @@ docker pull gcr.io/prysmaticlabs/prysm/validator:stable
 
 </TabItem>
 </Tabs>
+
+## How to securely downgrade Prysm
+
+Sometimes, a new version might not work best for you and could impact your profitability negatively if there is an unforeseen issue in the software. To downgrade, there are a few important steps to keep in mind.
+
+### Downgrading between patch versions (v1.0.x)
+
+If you are downgrading between **patch versions**, which means only the last number in the version changed, such as `v1.0.5` to `v1.0.4`, then follow the instructions below:
+
+<Tabs
+  groupId="operating-systems"
+  defaultValue="lin"
+  values={[
+    {label: 'Linux', value: 'lin'},
+    {label: 'Windows', value: 'win'},
+    {label: 'MacOS', value: 'mac'},
+    {label: 'Arm64', value: 'arm'},
+  ]
+}>
+<TabItem value="lin">
+
+**Using the Prysm installation script**
+
+If you are running `prysm.sh`, all it takes to downgrade to a previous release is to stop your beacon node and validator with `ctrl+c` (wait for the process to close down gracefully, do not spam ctrl+c). 
+
+Then, find the Prysm version you wish to run from our [releases page](https://github.com/prysmaticlabs/prysm/releases), such as v1.0.5, then run the command `set=USE_PRYSM_VERSION=v1.0.5`.
+
+Then, restart it with the same command you used to start the process. The script will automatically use the release you specified.
+
+**Using Docker**
+
+To run a previous Prysm version with Docker, choose the release you want to run, then change all your docker run commands to use that version tag. For example, instead of `docker run gcr.io/prysmaticlabs/prysm:stable`, do `docker run gcr.io/prysmaticlabs/prysm:v1.0.5` if you want to run version v1.0.5.
+
+**Using Bazel**
+
+To run our latest release with Bazel, you can look up our [releases page](https://github.com/prysmaticlabs/prysm/releases), look at the release tag you want to run, such as v1.0.5, then do `git checkout v1.0.5`. Afterwards, you can re-run your beacon chain and validator as you ran them earlier with Bazel.
+
+</TabItem>
+<TabItem value="win">
+
+**Using the Prysm installation script**
+
+If you are running `prysm.bat`, all it takes to downgrade to a previous release is to stop your beacon node and validator with `ctrl+c` (wait for the process to close down gracefully, do not spam ctrl+c). 
+
+Then, find the Prysm version you wish to run from our [releases page](https://github.com/prysmaticlabs/prysm/releases), such as v1.0.5, then run the command `set=USE_PRYSM_VERSION=v1.0.5`.
+
+Then, restart it with the same command you used to start the process. The script will automatically use the release you specified.
+
+**Using Docker**
+
+To run a previous Prysm version with Docker, choose the release you want to run, then change all your docker run commands to use that version tag. For example, instead of `docker run gcr.io/prysmaticlabs/prysm:stable`, do `docker run gcr.io/prysmaticlabs/prysm:v1.0.5` if you want to run version v1.0.5.
+
+</TabItem>
+<TabItem value="mac">
+
+**Using the Prysm installation script**
+
+If you are running `prysm.sh`, all it takes to downgrade to a previous release is to stop your beacon node and validator with `ctrl+c` (wait for the process to close down gracefully, do not spam ctrl+c). 
+
+Then, find the Prysm version you wish to run from our [releases page](https://github.com/prysmaticlabs/prysm/releases), such as v1.0.5, then run the command `set=USE_PRYSM_VERSION=v1.0.5`.
+
+Then, restart it with the same command you used to start the process. The script will automatically use the release you specified.
+
+**Using Docker**
+
+To run a previous Prysm version with Docker, choose the release you want to run, then change all your docker run commands to use that version tag. For example, instead of `docker run gcr.io/prysmaticlabs/prysm:stable`, do `docker run gcr.io/prysmaticlabs/prysm:v1.0.5` if you want to run version v1.0.5.
+
+**Using Bazel**
+
+To run our latest release with Bazel, you can look up our [releases page](https://github.com/prysmaticlabs/prysm/releases), look at the release tag you want to run, such as v1.0.5, then do `git checkout v1.0.5`. Afterwards, you can re-run your beacon chain and validator as you ran them earlier with Bazel.
+
+</TabItem>
+<TabItem value="arm">
+
+**Using the Prysm installation script**
+
+If you are running `prysm.sh`, all it takes to downgrade to a previous release is to stop your beacon node and validator with `ctrl+c` (wait for the process to close down gracefully, do not spam ctrl+c). 
+
+Then, find the Prysm version you wish to run from our [releases page](https://github.com/prysmaticlabs/prysm/releases), such as v1.0.5, then run the command `set=USE_PRYSM_VERSION=v1.0.5`.
+
+Then, restart it with the same command you used to start the process. The script will automatically use the release you specified.
+
+**Using Docker**
+
+To run a previous Prysm version with Docker, choose the release you want to run, then change all your docker run commands to use that version tag. For example, instead of `docker run gcr.io/prysmaticlabs/prysm:stable`, do `docker run gcr.io/prysmaticlabs/prysm:v1.0.5` if you want to run version v1.0.5.
+
+</TabItem>
+</Tabs>
+
+### Downgrading between minor versions (v1.x)
+
+If you are downgrading between **minor versions**, meaning the middle number in the version has changed, such as `v1.1.0` to `v1.0.x`, then follow the instructions below carefully:
+
+<Tabs
+  groupId="operating-systems"
+  defaultValue="lin"
+  values={[
+    {label: 'Linux', value: 'lin'},
+    {label: 'Windows', value: 'win'},
+    {label: 'MacOS', value: 'mac'},
+    {label: 'Arm64', value: 'arm'},
+  ]
+}>
+<TabItem value="lin">
+
+**Using the Prysm installation script**
+
+If you are running `prysm.sh`, first stop your beacon node and validator with `ctrl+c` (wait for the process to close down gracefully, do not spam ctrl+c). 
+
+Next, we recommend backing up any important important folders such as your beacon node data directory and the validator wallet is important. You can simply make copies of the directories and keep them safe in case the downgrade process goes wrong. 
+
+Next up, run our database rollback command to make sure your database is going to be compatible with your new version. Find the folder where your `validator.db` file lives (it is in your wallet directory under a folder called `direct` or `derived`), then run:
+
+```
+prysm.sh validator db migrate down --datadir=/path/to/folder
+```
+
+Then, find the Prysm version you wish to run from our [releases page](https://github.com/prysmaticlabs/prysm/releases), such as v1.0.5, then run the command `set=USE_PRYSM_VERSION=v1.0.5`.
+
+Then, restart it with the same command you used to start the process. The script will automatically use the release you specified.
+
+**Using Docker**
+
+To run a previous Prysm version with Docker, choose the release you want to run, such as v1.0.5.
+
+Next, we recommend backing up any important important folders such as your beacon node data directory and the validator wallet is important. You can simply make copies of the directories and keep them safe in case the downgrade process goes wrong. 
+
+Next up, run our database rollback command to make sure your database is going to be compatible with your new version. Find the folder where your `validator.db` file lives (it is in your wallet directory under a folder called `direct` or `derived`), then run:
+
+```
+docker run -v /path/to/folder:/data gcr.io/prysmaticlabs/prysm/validator:stable db migrate down --datadir=/data
+```
+
+Then change all your docker run commands to use that version tag. For example, instead of `docker run gcr.io/prysmaticlabs/prysm:stable`, do `docker run gcr.io/prysmaticlabs/prysm:v1.0.5` if you want to run version v1.0.5.
+
+**Using Bazel**
+
+To run our latest release with Bazel, you can look up our [releases page](https://github.com/prysmaticlabs/prysm/releases), look at the release tag you want to run, such as v1.0.5.
+
+Next, we recommend backing up any important important folders such as your beacon node data directory and the validator wallet is important. You can simply make copies of the directories and keep them safe in case the downgrade process goes wrong. 
+
+Next up, run our database rollback command to make sure your database is going to be compatible with your new version. Find the folder where your `validator.db` file lives (it is in your wallet directory under a folder called `direct` or `derived`), then run:
+
+```
+bazel run //validator:validator -- db migrate down --datadir=/path/to/folder
+```
+
+Then do `git checkout v1.0.5`. Afterwards, you can re-run your beacon chain and validator as you ran them earlier with Bazel.
+
+</TabItem>
+<TabItem value="win">
+
+**Using the Prysm installation script**
+
+If you are running `prysm.bat`, first stop your beacon node and validator with `ctrl+c` (wait for the process to close down gracefully, do not spam ctrl+c). 
+
+Next, we recommend backing up any important important folders such as your beacon node data directory and the validator wallet is important. You can simply make copies of the directories and keep them safe in case the downgrade process goes wrong. 
+
+Next up, run our database rollback command to make sure your database is going to be compatible with your new version. Find the folder where your `validator.db` file lives (it is in your wallet directory under a folder called `direct` or `derived`), then run:
+
+```
+prysm.bat validator db migrate down --datadir=\path\to\folder
+```
+
+Then, find the Prysm version you wish to run from our [releases page](https://github.com/prysmaticlabs/prysm/releases), such as v1.0.5, then run the command `set=USE_PRYSM_VERSION=v1.0.5`.
+
+Then, restart it with the same command you used to start the process. The script will automatically use the release you specified.
+
+**Using Docker**
+
+To run a previous Prysm version with Docker, choose the release you want to run, such as v1.0.5.
+
+Next, we recommend backing up any important important folders such as your beacon node data directory and the validator wallet is important. You can simply make copies of the directories and keep them safe in case the downgrade process goes wrong. 
+
+Next up, run our database rollback command to make sure your database is going to be compatible with your new version. Find the folder where your `validator.db` file lives (it is in your wallet directory under a folder called `direct` or `derived`), then run:
+
+```
+docker run -v \path\to\folder:/data gcr.io/prysmaticlabs/prysm/validator:stable db migrate down --datadir=/data
+```
+
+Then change all your docker run commands to use that version tag. For example, instead of `docker run gcr.io/prysmaticlabs/prysm:stable`, do `docker run gcr.io/prysmaticlabs/prysm:v1.0.5` if you want to run version v1.0.5.
+
+</TabItem>
+<TabItem value="mac">
+
+**Using the Prysm installation script**
+
+If you are running `prysm.sh`, first stop your beacon node and validator with `ctrl+c` (wait for the process to close down gracefully, do not spam ctrl+c). 
+
+Next, we recommend backing up any important important folders such as your beacon node data directory and the validator wallet is important. You can simply make copies of the directories and keep them safe in case the downgrade process goes wrong. 
+
+Next up, run our database rollback command to make sure your database is going to be compatible with your new version. Find the folder where your `validator.db` file lives (it is in your wallet directory under a folder called `direct` or `derived`), then run:
+
+```
+prysm.sh validator db migrate down --datadir=/path/to/folder
+```
+
+Then, find the Prysm version you wish to run from our [releases page](https://github.com/prysmaticlabs/prysm/releases), such as v1.0.5, then run the command `set=USE_PRYSM_VERSION=v1.0.5`.
+
+Then, restart it with the same command you used to start the process. The script will automatically use the release you specified.
+
+**Using Docker**
+
+To run a previous Prysm version with Docker, choose the release you want to run, such as v1.0.5.
+
+Next, we recommend backing up any important important folders such as your beacon node data directory and the validator wallet is important. You can simply make copies of the directories and keep them safe in case the downgrade process goes wrong. 
+
+Next up, run our database rollback command to make sure your database is going to be compatible with your new version. Find the folder where your `validator.db` file lives (it is in your wallet directory under a folder called `direct` or `derived`), then run:
+
+```
+docker run -v /path/to/folder:/data gcr.io/prysmaticlabs/prysm/validator:stable db migrate down --datadir=/data
+```
+
+Then change all your docker run commands to use that version tag. For example, instead of `docker run gcr.io/prysmaticlabs/prysm:stable`, do `docker run gcr.io/prysmaticlabs/prysm:v1.0.5` if you want to run version v1.0.5.
+
+**Using Bazel**
+
+To run our latest release with Bazel, you can look up our [releases page](https://github.com/prysmaticlabs/prysm/releases), look at the release tag you want to run, such as v1.0.5.
+
+Next, we recommend backing up any important important folders such as your beacon node data directory and the validator wallet is important. You can simply make copies of the directories and keep them safe in case the downgrade process goes wrong. 
+
+Next up, run our database rollback command to make sure your database is going to be compatible with your new version. Find the folder where your `validator.db` file lives (it is in your wallet directory under a folder called `direct` or `derived`), then run:
+
+```
+bazel run //validator:validator -- db migrate down --datadir=/path/to/folder
+```
+
+Then do `git checkout v1.0.5`. Afterwards, you can re-run your beacon chain and validator as you ran them earlier with Bazel.
+
+</TabItem>
+<TabItem value="arm">
+
+**Using the Prysm installation script**
+
+If you are running `prysm.sh`, first stop your beacon node and validator with `ctrl+c` (wait for the process to close down gracefully, do not spam ctrl+c). 
+
+Next, we recommend backing up any important important folders such as your beacon node data directory and the validator wallet is important. You can simply make copies of the directories and keep them safe in case the downgrade process goes wrong. 
+
+Next up, run our database rollback command to make sure your database is going to be compatible with your new version. Find the folder where your `validator.db` file lives (it is in your wallet directory under a folder called `direct` or `derived`), then run:
+
+```
+prysm.sh validator db migrate down --datadir=/path/to/folder
+```
+
+Then, find the Prysm version you wish to run from our [releases page](https://github.com/prysmaticlabs/prysm/releases), such as v1.0.5, then run the command `set=USE_PRYSM_VERSION=v1.0.5`.
+
+Then, restart it with the same command you used to start the process. The script will automatically use the release you specified.
+
+**Using Docker**
+
+To run a previous Prysm version with Docker, choose the release you want to run, such as v1.0.5.
+
+Next, we recommend backing up any important important folders such as your beacon node data directory and the validator wallet is important. You can simply make copies of the directories and keep them safe in case the downgrade process goes wrong. 
+
+Next up, run our database rollback command to make sure your database is going to be compatible with your new version. Find the folder where your `validator.db` file lives (it is in your wallet directory under a folder called `direct` or `derived`), then run:
+
+```
+docker run -v /path/to/folder:/data gcr.io/prysmaticlabs/prysm/validator:stable db migrate down --datadir=/data
+```
+
+Then change all your docker run commands to use that version tag. For example, instead of `docker run gcr.io/prysmaticlabs/prysm:stable`, do `docker run gcr.io/prysmaticlabs/prysm:v1.0.5` if you want to run version v1.0.5.
+
+</TabItem>
+</Tabs>
+
+### Downgrading between major version bumps
+
+For **major version bumps** such as from `v1.0.0` to `v2.0.0`, you cannot downgrade as these are meant to be backwards incompatible changes.
