@@ -130,9 +130,9 @@ docker pull gcr.io/prysmaticlabs/prysm/validator:stable
 
 Sometimes, a new version might not work best for you and could impact your profitability negatively if there is an unforeseen issue in the software. To downgrade, there are a few important steps to keep in mind.
 
-### Downgrading between minor patch versions
+### Downgrading between patch versions (v1.0.x)
 
-If you are downgrading between **minor patch versions**, which means only the last number in the version changed, such as `v1.0.5` to `v1.0.4`, then follow the instructions below:
+If you are downgrading between **patch versions**, which means only the last number in the version changed, such as `v1.0.5` to `v1.0.4`, then follow the instructions below:
 
 <Tabs
   groupId="operating-systems"
@@ -214,9 +214,9 @@ To run a previous Prysm version with Docker, choose the release you want to run,
 </TabItem>
 </Tabs>
 
-### Downgrading between minor version bumps
+### Downgrading between minor versions (v1.x)
 
-If you are downgrading between **minor version bumps**, meaning the middle number in the version has changed, such as `v1.1.0` to `v1.0.x`, then follow the instructions below carefully:
+If you are downgrading between **minor versions**, meaning the middle number in the version has changed, such as `v1.1.0` to `v1.0.x`, then follow the instructions below carefully:
 
 <Tabs
   groupId="operating-systems"
