@@ -37,52 +37,28 @@ After you signup, you'll be able to access your dashboard and login any future t
 
 ## Step 3: Configuration and common issues
 
-The way the web interface works today is as follows:
+The web UI runs by default on port 7500 of the validator client if you are running with the --web flag. To customize this port, change the following flag to your liking:
 
-```text
-      /---> beacon-node (default: localhost:3500)
-web -- 
-      \---> validator client (default: localhost:7500)
 ```
-
-:::info Default setup only works on same machine!
-The default setup will **only work** if you are accessing the web interface from the same computer where the beacon node and validator are running. If you want to customize the `host` or `port` for the beacon node and validator client backends, you can use the flags:
+--grpc-gateway-port (default: 7500 for validator)
 ```
---grpc-gateway-host (default: 127.0.0.1)
---grpc-gateway-port (default: 7500 for validator, 3500 for beacon node)
-```
-:::
-
-If you are **running with docker**, you ideally want to set the `--grpc-gateway-host` in **both** the beacon node and validator client to `0.0.0.0`, allowing the backends to accessible beyond the localhost within the running docker containers.
 
 The available parameters to customize are:
 
-### Beacon node
-| Flag          | Usage         |
-| ------------- |:-------------|
-|`--grpc-gateway-host` | The host for the beacon node's JSON-HTTP API, default `127.0.0.1`
-|`--grpc-gateway-port` | The port for the beacon node's JSON-HTTP API, default `3500`
-|`--grpc-gateway-corsdomain` | Comma separated list of allowed domains to access the JSON-HTTP API, default includes `http://0.0.0.0:7500,http://127.0.0.1:7500,http://localhost:7500`
-|`--monitoring-host` | The host for where the beacon node's /logs websocket endpoint is served, default `127.0.0.1`
-|`--monitoring-port` | The port for where the beacon node's /logs websocket endpoint is served, default `8080`
-
-### Validator
 | Flag          | Usage         |
 | ------------- |:-------------|
 |`--grpc-gateway-host` | The host for the validator client's JSON-HTTP API, default `127.0.0.1`
 |`--grpc-gateway-port` | The port for the validator client's JSON-HTTP API, default `7500`
-|`--monitoring-host` | The host for where the validator client's /logs websocket endpoint is served, default `127.0.0.1`
-|`--monitoring-port` | The port for where the validator client's /logs websocket endpoint is served, default `8081`
 
 ## Step 4: Accessing the web interface from a remote computer
 
 If you are running your beacon node and validator on some server that you want to access from the outside, we recommend SSH local port forwarding to access it. For example, you would do the following from your home computer:
 
 ```
-ssh -L 7500:127.0.0.1:7500 -L 3500:127.0.0.1:3500 -L 8080:127.0.0.1:8080 -L 8081:127.0.0.1:8081 user@host_ip
+ssh -L 7500:127.0.0.1:7500 user@host_ip
 ```
 
-where you replace `user@host_ip` with the user and host ip address of the remote machine you are trying to access. This will forward all requests from your home computer's localhost:7500 to the remote instance's localhost:7500, allowing you to visit `http://localhost:7500` from your favorite browser and then access the validator web interface! This is the safest approach to access it, as you are exposing the web interface to the open Internet. The beacon port 3500 and the websocket port 8080/8081 are needed as well to get the data for the webui and logs.
+where you replace `user@host_ip` with the user and host ip address of the remote machine you are trying to access. This will forward all requests from your home computer's localhost:7500 to the remote instance's localhost:7500, allowing you to visit `http://localhost:7500` from your favorite browser and then access the validator web interface! This is the safest approach to access it, as you are exposing the web interface to the open Internet.
 
 ## Step 4: Monitor your beacon node and validator client logs, accounts, and more
 
