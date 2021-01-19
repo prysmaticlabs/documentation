@@ -150,7 +150,7 @@ If you are downgrading between **patch versions**, which means only the last num
 
 If you are running `prysm.sh`, all it takes to downgrade to a previous release is to stop your beacon node and validator with `ctrl+c` (wait for the process to close down gracefully, do not spam ctrl+c). 
 
-Then, find the Prysm version you wish to run from our [releases page](https://github.com/prysmaticlabs/prysm/releases), such as v1.0.5, then run the command `set=USE_PRYSM_VERSION=v1.0.5`.
+Then, find the Prysm version you wish to run from our [releases page](https://github.com/prysmaticlabs/prysm/releases), such as v1.0.5, then run the command `set USE_PRYSM_VERSION=v1.0.5`.
 
 Then, restart it with the same command you used to start the process. The script will automatically use the release you specified.
 
