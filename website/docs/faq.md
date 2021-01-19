@@ -205,6 +205,8 @@ Yes this is possible however we recommend against it. We recommend you deposit a
 
 Adding new validators to your already-running Prysm instance is quite simple! Go through the launchpad process again, generate a new deposit keystore using the eth2 deposit cli, then run the `validator accounts import` command again as you used when you added your first validator key. You can then confirm your validator was added by running `validator accounts list`. Let us know on [discord](https://discord.gg/prysmaticlabs) if you still have issues.
 
+Please note you will need to **restart the validator client** after importing the new one for the changes to take effect.
+
 #### How can I get a bunch of test ETH to spin up a lot of validators on the testnet?
 
 Our current faucet only gives out increments of 32.5 Goerli test ETH at any given time and prevents sending out to the same address too often. 
