@@ -47,10 +47,11 @@ These hardware specifications are recommended, but not required to run the Prysm
 bazel version
 ```
 
-2. Clone Prysm's [main repository](https://github.com/prysmaticlabs/prysm) and enter the directory:
+2. Clone Prysm's [main repository](https://github.com/prysmaticlabs/prysm), make sure you switch to the latest version (the latest version number can be found from the [releases page](https://github.com/prysmaticlabs/prysm/releases)), and enter the directory:
 
 ```text
 git clone https://github.com/prysmaticlabs/prysm
+git checkout <version>
 cd prysm
 ```
 

@@ -25,7 +25,7 @@ module.exports = {
                     position: 'right',
                 },
                 {
-                    label: 'Staying Updated',
+                    label: 'Updating/Downgrading Versions',
                     to: 'docs/prysm-usage/staying-up-to-date',
                     position: 'right',
                 },
