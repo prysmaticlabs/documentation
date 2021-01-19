@@ -74,7 +74,7 @@ Depending on your installation method, there are different ways to verify your p
 
 <Tabs
   groupId="method"
-  defaultValue="sh"
+  defaultValue="script"
   values={[
     {label: 'Installation script', value: 'script'},
     {label: 'Docker', value: 'docker'},
