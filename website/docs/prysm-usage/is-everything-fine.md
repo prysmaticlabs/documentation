@@ -42,6 +42,8 @@ Your validators might also be **PENDING** activation, which means it will be a w
 
 Around 4 validators are activated every 6 minutes, so you will need to wait for a while if your position is far away in the activation queue.
 
+Your validator might also be in the status **DEPOSITED** and the info message says something along the lines of `Deposit processed, entering activation queue after finalization`
+
 ### Common failures
 
 #### Everything seems fine, but my balance is going down
