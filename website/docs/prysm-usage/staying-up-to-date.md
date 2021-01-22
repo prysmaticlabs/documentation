@@ -55,7 +55,7 @@ import TabItem from '@theme/TabItem';
 
 **Using the Prysm installation script**
 
-If you are running `prysm.sh`, all it takes to upgrade to the latest release is to stop your beacon node and validator with `ctrl+c` (wait for the process to close down gracefully, do not spam ctrl+c). Then, restart it with the same command you used to start the process. The script will automatically downloaded our latest release for you.
+If you are running `prysm.sh`, all it takes to upgrade to the latest release is to stop your beacon node and validator (wait for the process to close down gracefully). Then, restart it with the same command you used to start the process. The script will automatically downloaded our latest release for you.
 
 **Using Docker**
 
@@ -75,7 +75,7 @@ To run our latest release with Bazel, you can look up our [releases page](https:
 
 **Using the Prysm installation script**
 
-If you are running `prysm.bat`, all it takes to upgrade to the latest release is to stop your beacon node and validator with `ctrl+c` (wait for the process to close down gracefully, do not spam ctrl+c). Then, restart it with the same command you used to start the process. The script will automatically downloaded our latest release for you.
+If you are running `prysm.bat`, all it takes to upgrade to the latest release is to stop your beacon node and validator (wait for the process to close down gracefully). Then, restart it with the same command you used to start the process. The script will automatically downloaded our latest release for you.
 
 **Using Docker**
 
@@ -91,7 +91,7 @@ docker pull gcr.io/prysmaticlabs/prysm/validator:stable
 
 **Using the Prysm installation script**
 
-If you are running `prysm.sh`, all it takes to upgrade to the latest release is to stop your beacon node and validator with `ctrl+c` (wait for the process to close down gracefully, do not spam ctrl+c). Then, restart it with the same command you used to start the process. The script will automatically downloaded our latest release for you.
+If you are running `prysm.sh`, all it takes to upgrade to the latest release is to stop your beacon node and validator (wait for the process to close down gracefully). Then, restart it with the same command you used to start the process. The script will automatically downloaded our latest release for you.
 
 **Using Docker**
 
@@ -112,7 +112,7 @@ To run our latest release with Bazel, you can look up our [releases page](https:
 
 **Using the Prysm installation script**
 
-If you are running `prysm.sh`, all it takes to upgrade to the latest release is to stop your beacon node and validator with `ctrl+c` (wait for the process to close down gracefully, do not spam ctrl+c). Then, restart it with the same command you used to start the process. The script will automatically downloaded our latest release for you.
+If you are running `prysm.sh`, all it takes to upgrade to the latest release is to stop your beacon node and validator (wait for the process to close down gracefully). Then, restart it with the same command you used to start the process. The script will automatically downloaded our latest release for you.
 
 **Using Docker**
 
@@ -148,7 +148,7 @@ If you are downgrading between **patch versions**, which means only the last num
 
 **Using the Prysm installation script**
 
-If you are running `prysm.sh`, all it takes to downgrade to a previous release is to stop your beacon node and validator with `ctrl+c` (wait for the process to close down gracefully, do not spam ctrl+c). 
+If you are running `prysm.sh`, all it takes to downgrade to a previous release is to stop your beacon node and validator (wait for the process to close down gracefully). 
 
 Then, find the Prysm version you wish to run from our [releases page](https://github.com/prysmaticlabs/prysm/releases), such as v1.0.5, then run the command `set USE_PRYSM_VERSION=v1.0.5`.
 
@@ -167,7 +167,7 @@ To run our latest release with Bazel, you can look up our [releases page](https:
 
 **Using the Prysm installation script**
 
-If you are running `prysm.bat`, all it takes to downgrade to a previous release is to stop your beacon node and validator with `ctrl+c` (wait for the process to close down gracefully, do not spam ctrl+c). 
+If you are running `prysm.bat`, all it takes to downgrade to a previous release is to stop your beacon node and validator (wait for the process to close down gracefully). 
 
 Then, find the Prysm version you wish to run from our [releases page](https://github.com/prysmaticlabs/prysm/releases), such as v1.0.5, then run the command `set=USE_PRYSM_VERSION=v1.0.5`.
 
@@ -182,7 +182,7 @@ To run a previous Prysm version with Docker, choose the release you want to run,
 
 **Using the Prysm installation script**
 
-If you are running `prysm.sh`, all it takes to downgrade to a previous release is to stop your beacon node and validator with `ctrl+c` (wait for the process to close down gracefully, do not spam ctrl+c). 
+If you are running `prysm.sh`, all it takes to downgrade to a previous release is to stop your beacon node and validator (wait for the process to close down gracefully). 
 
 Then, find the Prysm version you wish to run from our [releases page](https://github.com/prysmaticlabs/prysm/releases), such as v1.0.5, then run the command `set=USE_PRYSM_VERSION=v1.0.5`.
 
@@ -201,7 +201,7 @@ To run our latest release with Bazel, you can look up our [releases page](https:
 
 **Using the Prysm installation script**
 
-If you are running `prysm.sh`, all it takes to downgrade to a previous release is to stop your beacon node and validator with `ctrl+c` (wait for the process to close down gracefully, do not spam ctrl+c). 
+If you are running `prysm.sh`, all it takes to downgrade to a previous release is to stop your beacon node and validator (wait for the process to close down gracefully). 
 
 Then, find the Prysm version you wish to run from our [releases page](https://github.com/prysmaticlabs/prysm/releases), such as v1.0.5, then run the command `set=USE_PRYSM_VERSION=v1.0.5`.
 
@@ -232,7 +232,7 @@ If you are downgrading between **minor versions**, meaning the middle number in 
 
 **Using the Prysm installation script**
 
-If you are running `prysm.sh`, first stop your beacon node and validator with `ctrl+c` (wait for the process to close down gracefully, do not spam ctrl+c). 
+If you are running `prysm.sh`, first stop your beacon node and validator (wait for the process to close down gracefully). 
 
 Next, we recommend backing up any important important folders such as your beacon node data directory and the validator wallet is important. You can simply make copies of the directories and keep them safe in case the downgrade process goes wrong. 
 
@@ -279,7 +279,7 @@ Then do `git checkout v1.0.5`. Afterwards, you can re-run your beacon chain and 
 
 **Using the Prysm installation script**
 
-If you are running `prysm.bat`, first stop your beacon node and validator with `ctrl+c` (wait for the process to close down gracefully, do not spam ctrl+c). 
+If you are running `prysm.bat`, first stop your beacon node and validator (wait for the process to close down gracefully). 
 
 Next, we recommend backing up any important important folders such as your beacon node data directory and the validator wallet is important. You can simply make copies of the directories and keep them safe in case the downgrade process goes wrong. 
 
@@ -312,7 +312,7 @@ Then change all your docker run commands to use that version tag. For example, i
 
 **Using the Prysm installation script**
 
-If you are running `prysm.sh`, first stop your beacon node and validator with `ctrl+c` (wait for the process to close down gracefully, do not spam ctrl+c). 
+If you are running `prysm.sh`, first stop your beacon node and validator (wait for the process to close down gracefully). 
 
 Next, we recommend backing up any important important folders such as your beacon node data directory and the validator wallet is important. You can simply make copies of the directories and keep them safe in case the downgrade process goes wrong. 
 
@@ -359,7 +359,7 @@ Then do `git checkout v1.0.5`. Afterwards, you can re-run your beacon chain and 
 
 **Using the Prysm installation script**
 
-If you are running `prysm.sh`, first stop your beacon node and validator with `ctrl+c` (wait for the process to close down gracefully, do not spam ctrl+c). 
+If you are running `prysm.sh`, first stop your beacon node and validator (wait for the process to close down gracefully). 
 
 Next, we recommend backing up any important important folders such as your beacon node data directory and the validator wallet is important. You can simply make copies of the directories and keep them safe in case the downgrade process goes wrong. 
 
