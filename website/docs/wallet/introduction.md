@@ -12,7 +12,7 @@ Prysm's validator accounts are extensible enough to allow for the most basic set
 
 Out of the box, Prysm supports 3 basic kinds of wallets that encompass many different use-cases. In order of highest to lowest security:
 
-1. **Remote signing wallet**: (most secure) An advanced kind of wallet in which validator keys and signing requests are processed by a remote server via gRPC (view our remote server [reference implementation](https://github.com/prysmaticlabs/remote-signer))
+1. **Remote signing wallet**: (most secure) An advanced kind of wallet in which validator keys and signing requests are processed by a remote server via gRPC (view our remote server [reference implementation](https://github.com/prysmaticlabs/remote-signer)).
 2. **non-HD wallet**: (good security) A simple wallet in which accounts are password protected and validator keys are generated non-deterministically. This is the recommended approach if you want to import an account from the [eth2 launchpad](https://launchpad.ethereum.org/) and you read dedicated instructions [here](/docs/mainnet/joining-eth2).
 3. **HD wallet**: (least security) A common type of blockchain wallet which is generated from a english mnemonic, able to create new accounts deterministically. The encrypted seed is stored on day encrypted by a strong password. Given you are tying your HD wallet to the validator client, it is less secure than simply importing validating keys you need from an external source or running a remote signer. 
 
@@ -30,8 +30,8 @@ When creating an HD wallet, you'll be given a 24-word mnemonic phrase which you 
 
 The ideal security for an average user participating as a validator is as follows:
 
-- Create a wallet using the official [eth2.0-deposit-cli](https://github.com/ethereum/eth2.0-deposit-cli) and keep your mnemonic stored offline, safely
-- Import only the validating keys you need into your validator client, such as by following the instructions [here](/docs/mainnet/joining-eth2)
+- Create a wallet using the official [eth2.0-deposit-cli](https://github.com/ethereum/eth2.0-deposit-cli) and keep your mnemonic stored offline, safely.
+- Import only the validating keys you need into your validator client, such as by following the instructions [here](/docs/mainnet/joining-eth2).
 
 For **best security** in production cloud deployments, it's best you use a **remote signer**, as that offers absolute separation of your secret keys and your validator client software. Read more about remote signers [here](/docs/wallet/remote).
 

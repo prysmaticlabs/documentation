@@ -4,37 +4,40 @@ title: Frequently asked questions
 sidebar_label: Frequently asked questions
 ---
 
-## Joining Eth2 Questions
+## Troubleshooting Prysm
 
-#### How can I make a deposit?
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-The best way to make a deposit and join eth2 is to follow the direct instructions on the [official eth2 launchpad](https://launchpad.ethereum.org).
+#### Help, I see this error and don't know what it means!
 
-#### How can I get a bunch of test ETH to spin up a lot of validators on the testnet?
+If you have seen a scary ERROR log in your beacon node or validator, there are few things you should do first. Go to our [open issues](https://github.com/prysmaticlabs/prysm/issues) to see if someone has reported the same problem before. Otherwise, note the Prysm version you are running, your operating system, and file a bug report [here](https://github.com/prysmaticlabs/prysm/issues/new?assignees=&labels=&template=bug_report.md). You can also ask our community on [discord](https://discord.gg/prysmaticlabs) about your error and we will take a look as soon as possible.
 
-Our current faucet only gives out increments of 32.5 Goerli test ETH at any given time and prevents sending out to the same address too often. If you need a larger amount of test ETH, please reach out to us on discord [here](https://discord.gg/CTYGPUJ).
+#### My validator is losing money, what's going on?
 
-#### Can I get back my ETH? How can I withdraw my validator gains?
+If your validators is performing poorly and losing money, there are few pieces of information we need to help you out.
 
-Deposits into eth2 are one-way in the beginning. Functionality of withdrawing gains transferring ETH won’t be available until later phases of the project. You can read more about the phases of eth2 [here](https://docs.ethhub.io/ethereum-roadmap/ethereum-2.0/eth-2.0-phases/).
+**Things you can do**
 
-## Running a Node
+1. Check if your node or validator client crashed. You can view the logs of the process to see if there were any ERROR logs. If so, please file a bug report or talk to our team on [discord](https://discord.gg/prysmaticlabs). A fatal crash is quite serious and something we will inestigate right away. You can try restarting your processes in the meantime to see if you can be fully operational again.
+2. Check your network connectivity. You can improve this by following our tips [here](/docs/prysm-usage/p2p-host-ip) which can help you find better peers, improve attestation effectiveness, and more.
+3. Check your system resource usage, perhaps your node is using excess CPU and RAM. Depending on your operating system, there are different ways to do this.
 
-#### How can I view the metrics of my node? How can I visualize them?
+**Things we can do**
 
-Your node is running the popular [prometheus](https://prometheus.io/) server for metrics collection which displays its data by default on localhost:8080/metrics. You can visualize these metrics by connecting them to a [grafana](https://grafana.com/) instance.
+If your issue has not yet been resolved, please do the following. Note your Prysm version and operating system, ensure none of the issues are above were the root cause of your problem, then reach out to our team on [Discord](https://discord.gg/prysmaticlabs). We need as much information about error logs or other issues you may be seeing to effectively answer your questions and get you back to validating correctly.
 
-#### Can I run a node in the background?
+#### My node suddenly lost peers, what can I do?
 
-Absolutely! If you are running via docker, it is as easy as adding the -d flag to your docker run command itself to run it in “detached” mode. You can see your running docker instances by typing in `docker ps`. If you are running via our precompiled binaries, such as the prysm.sh script, you can use tools such as `systemd` (example [here](https://paulgorman.org/technical/blog/20171121184114.html))
+Losing peers can be due the following reasons:
 
-#### I got slashed! Why? How can I avoid getting slashed?
+1. Your network connectivity has problems. You can check how to improve it with some of our tips [here](/docs/prysm-usage/p2p-host-ip).
+2. Prysm is using a ton of memory or system resources and perhaps you ran out of memory. Ensure you meet the minimum specifications for runnuing Prysm specified in our installation pages for your operating system.
+3. A bug in our software that can affect your p2p connectivity. It is known that certain versions have issues with peers on operating systems such as Windows, so you could try [downgrading](/docs/prysm-usage/staying-up-to-date) to see if your issue is resolved. If this is the case, talk to our team on [Discord](https://discord.gg/prysmaticlabs) letting us know you had this issue
 
-Slashings in the network occur when you propose two conflicting blocks (blocks with the same slot but different inner data) or when you do a conflicting vote or a surround vote (read more about surrounding [here](https://blog.ethereum.org/2020/01/13/validated-staking-on-eth2-1-incentives/)). These will never happen if your node is operating as intended. You can, however, get yourself slashed if you run multiple validator clients with the same keys. There is a chance they may create two blocks or two conflicting votes at the same time as each other, causing you to get slashed from eth2. This is more common than it seems, as typically developers want to run redundant instances of servers for reliability purposes (if one goes down, the other one is ready right away to do its job). Famously, this same event happened in the Cosmos network as seen [here](https://twitter.com/zmanian/status/1145072296723275776?lang=en). There are some cool projects that aim to prevent validators from getting slashed such as [this one](https://devpost.com/software/eth-2-0-validator-protection) that are community built, but we have yet to standardize this functionality into Prysm.
+#### I have an issue in the web UI, getting errors, what can I do?
 
-#### Where can I read more about the incentive model in eth2?
-
-[This resource](https://blog.ethereum.org/2020/01/13/validated-staking-on-eth2-1-incentives/) from the Ethereum blog is an excellent example.
+The web UI is still in beta meaning there are bound to be UI bugs or other issues that we need to resolve. If you ran into a bug, please file a bug report [here](https://github.com/prysmaticlabs/prysm-web-ui/issues/new) with a thorough description of your problem and screenshots if possible.
 
 #### My CPU/RAM usage is huge, what’s going on?
 
@@ -55,32 +58,180 @@ Internet: Broadband connection
 
 If that still does not help, please file an issue with our team on Github [here](https://github.com/prysmaticlabs/prysm/issues/new?template=bug_report.md).
 
-#### What’s the best cloud service to run a beacon node on?
+#### I got slashed! Why? How can I avoid getting slashed?
 
-We find Digital Ocean tends to have fairly priced instances for running beacon nodes, but as always, we recommend you running a node yourself on your machine for the full experience. You can also try the small instances on AWS ec2 to run in the cloud.
+Slashing is a way for the network to penalize validator actions that can be harmful to the eth2 network. At a high level, a single validator proposing two conflicting blocks or votes or trying to rewrite the history of the chain is considered malicious and such validators will get slashed. Unfortunately, there is no way for the protocol to detect between malicious validators or validators who simply had some faulty configuration that led them to create a slashable offense.
+
+The most common way validators get slashed is by **running the same validator key in two separate validator client processes at the same time**. This will absolutely get you slashed. Some stakers try to create complicated failover scenarios without realizing the risk this entails, do not do this. If you already got slashed, you will leak funds for a while until you are forcefully exited from the validator registry. Thankfully, slashing penalties in phase 0 are quite small. If you are slashed, you should keep performing your validator duties until you are exited. You will be able to then withdraw your validator balance in future phases of eth2 and will miss out on all the rewards until then.
+
+Our team prepared a blog post on [slashing prevention tips](https://medium.com/prysmatic-labs/eth2-slashing-prevention-tips-f6faa5025f50) you can read to avoid slashings in the future.
+
+## Running Prysm
+
+#### How can I check my Prysm version?
+
+Depending on your installation method, there are different ways to verify your prysm version:
+
+<Tabs
+  groupId="method"
+  defaultValue="script"
+  values={[
+    {label: 'Installation script', value: 'script'},
+    {label: 'Docker', value: 'docker'},
+    {label: 'Bazel', value: 'bazel'},
+  ]
+}>
+<TabItem value="script">
+
+**Using prysm.sh**
+
+```text
+./prysm.sh validator --version
+./prysm.sh beacon-chain --version
+```
+
+**Using prysm.bat**
+
+```text
+prysm.bat validator --version
+prysm.bat beacon-chain --version
+```
+
+</TabItem>
+<TabItem value="docker">
+
+If you are running using docker and the :stable tag for Prysm, stable will always point to our latest [release](https://github.com/prysmaticlabs/prysm/releases). Otherwise, you can run the command `docker ps` to see your running docker containers. The suffix of your image name after the colon is the version you are runnning.
+
+```
+CONTAINER ID        IMAGE                  COMMAND                  CREATED             STATUS              PORTS               NAMES
+371d6675888b        gcr.io/prysmaticlabs/prysm/validator:stable            "validator"              6 days ago
+```
+</TabItem>
+<TabItem value="bazel">
+
+If you are using Bazel, it means you are building Prysm from source. You can do `git log` and you will see the current commit hash you are running at the top. You can then visit our [releases page](https://github.com/prysmaticlabs/prysm/releases) to check what version the commit hash corresponds to.
+
+</TabItem>
+</Tabs>
+
+#### How can I upgrade Prysm? Do I just need to close and restart the process?
+
+Upgrading Prysm is done differently depending on your operating system and installation method. We prepared comprehensive instructions here in our docs portal on [upgrading and downgrading Prysm](/docs/prysm-usage/staying-up-to-date).
+
+#### How can I downgrade Prysm to an older version?
+
+Upgrading Prysm is done differently depending on your operating system and installation method. Please note that downgrading may not be as easy as upgrading as some versions may not be backwards compatible and you will need to perform extra steps. For example, migrating down from v1.x to v1.0.x has breaking changes that require you to also rollback your database.
+
+We prepared comprehensive instructions here in our docs portal on [upgrading and downgrading Prysm](/docs/prysm-usage/staying-up-to-date).
+
+#### How can I improve my attestation effectiveness?
+
+Attestation effectiveness is a metric that directly affects your validator rewards. In simple terms, an attestation is more valuable the sooner it is put into a block and included in the chain. This interval is called the "inclusion distance" of an attestation. The smaller it is, the more profitable your validator will be. We highly recommend reading Attestant's awesome blog post on the matter [here](https://www.attestant.io/posts/defining-attestation-effectiveness/).
+
+Some stakers might notice their effectiveness is perfect, while others might see lower values such as 80%. Improving attestation effectiveness depends on a variety of factors, such as attestation network propagation, your network connectivity, the peers you are connected to. However, your network connectivity is one of the most important factors you can control to improve this metric. We have some tips to improve your connectivity [here](/docs/prysm-usage/p2p-host-ip).
+
+#### Do I need to keep my deposit keystores after I have imported them into Prysm?
+
+It's always good to keep offline backups of important files such as the original keystores you used to import into Prysm. However, after you import them and are running Prysm successfully, there is no reason to keep the keystore files in that computer as Prysm has already converted the private keys into its own wallet representation. You can delete them.
+
+#### I am running into issues running geth, how can I get help?
+
+For help with running geth specifically, the [go-ethereum discord](https://discord.com/invite/nthXNEv) is the most reliable source of help.
+
+#### Where can I find the Prysm API documentation?
+
+Prysm uses its own API schema at the moment, called eth/v1alpha1 maintained open source at [github.com/prysmaticlabs/ethereumapis](https://github.com/prysmaticlabs/ethereumapis). However, there is also a standard eth2 API that all eth2 teams are working on implementing and aligning with. Prysm is still in the process of aligning to this specification and will likely be complete by end of Q1 2021. You can browse the API documentation for this new standard [here](https://ethereum.github.io/eth2.0-APIs/). Note: Prysm still does not implement this standard but it is priority for our team.
+
+#### How often should I perform database backups?
+
+The Prysm beacon node and validator allow performing database backups in case your machine gets corrupted and you need to restore it from some checkpoint. You can read our instructions on performing backups [here](/docs/prysm-usage/database-backups). Briefly, the frequency at which you should perform backups really depends on your personal preference. If you want to perform backups once a day or once every week, ther is no harm nor bigger difference in doing so. Losing your beacon chain database is not a big deal aside from the fact that you will need to sync again from genesis. Losing your validator db can be problematic but if you wait several epochs before starting your validator, ensure your computer's clock is synced, the risk of slashing is low.
+
+#### Seeing a warning regarding binary signature not being trusted when downloading Prysm, should I be worried?
+
+When downloading the Prysm precompiled binaries such as with prysm.sh or prysm.bat, you might see the following output
+
+```
+Latest Prysm version is v1.1.0.
+Beacon chain is up to date.
+Verifying binary integrity.
+beacon-chain-v1.1.0-linux-amd64: OK
+gpg: Signature made Mon Jan 18 13:03:57 2021 PST
+gpg:                using RSA key 0AE0051D647BA3C1A917AF4072E33E4DF1A5036E
+gpg: Good signature from "Preston Van Loon <preston@prysmaticlabs.com>" [unknown]
+gpg: WARNING: This key is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+```
+
+Regarding the WARNING above, it means that the signature is correctly signed by the owner, however, since Prysm does not yet provide official linux packages nor windows trusted certs, you will get a warning that it might not have been Preston Van Loon that actually signed the binary, since there is no way to verify the integrity with a trusted authority. If binary integrity and security matters the most to you, building and running open source software from source is the best way to have full confidence the software you are running is a result of code you can inspect yourself.
+
+#### How can I view the metrics of my node? How can I visualize them?
+
+Your node is running the popular [prometheus](https://prometheus.io/) server for metrics collection which displays its data by default on localhost:8080/metrics. You can visualize these metrics by connecting them to a [grafana](https://grafana.com/) instance.
 
 #### Can I run this on a raspberry pi? What are the instructions?
 
-Yes we currently support arm 64-bit architectures such as the raspberry pi 4 and they go out as part of our pre-compiled binary releases [here](https://github.com/prysmaticlabs/prysm/releases). Our documentation portal has instructions on how to run the entire installation process [here](https://docs.prylabs.network/docs/install/arm/).
+Yes we currently support arm 64-bit architectures such as the raspberry pi 4 and they go out as part of our pre-compiled binary releases [here](https://github.com/prysmaticlabs/prysm/releases). Our documentation portal has instructions on how to run the entire installation process [here](http://localhost:3000/docs/mainnet/joining-eth2). However, we recommend using more powerful hardware in mainnet conditions. 
 
-## Managing Validators
+## Validator keys and validator deposits
 
-#### How can I create a new validator key and join the testnet?
+#### I sent my deposit and so much time has passed but my validator is not active yet
 
-The best way to join the testnet is to follow the direct instructions on [https://pyrmont.launchpad.ethereum.org](https://pyrmont.launchpad.ethereum.org). We have more detailed instructions in our documentation portal depending on your operating system [here](/docs/testnet/pyrmont).
+Depositing into eth2 is a multi-step process that can require quite a bit of waiting. As a comprehensive reference, we recommend reading Jim McDee's excellent post on the matter [here](https://www.attestant.io/posts/understanding-the-validator-lifecycle/#:~:text=Active%20%2D%20the%20validator%20is%20attesting,blocks%2C%20having%20been%20caught%20cheating). If you sent your deposit, we recommend tracking its progress in one of the block explorers such as [beaconcha.in](https://beaconcha.in) or [beaconscan](https://beaconscan.io). If your deposit is pending and it has still been a while, it is likely because there are a lot of validators in the pending queue ahead of you. There are approximately 4 validators activated every 6.4 minutes, and with thousands in the queue, your wait time can take days or even weeks. You can check how many validators are in the queue in the front page of [beaconcha.in](https://beaconcha.in).
 
-#### I deposited but it’s taking a long time to become active - how can I check if my deposit was correct?
-
-Even after you deposit, it takes several hours to join eth2 as an active validator and can take even longer if there is a queue ahead of you. You can track your validator’s status on block explorers such as https://beaconcha.in and https://beacon.etherscan.io. Please be patient, as there is quite a wait for new validators to become active.
-
-#### I made a correct deposit and my validator status is still UNKNOWN, what’s going on?
+#### I made a correct deposit and my validator status in Prysm is still UNKNOWN, what’s going on?
 
 There are a few possibilities. (1) your deposit has not yet been processed by beacon nodes. It takes a while for the beacon node to be able to process logs from the eth1 chain by design. If you have already waited a few hours and no luck, there is a chance that (2) your deposit did not verify (that is, you used some other method of creating the deposit than our recommended, standard way on the eth2 launchpad), or (3) you never actually sent a deposit to the right contract address
+
+#### How can I move my validator to a different computer without getting slashed?
+
+Prysm will soon implement the slashing protection [standard format](https://eips.ethereum.org/EIPS/eip-3076), meaning that you can export your slashing protection history and import it easily into another machine running any eth2 client, not just Prysm! In the meantime, however, migrating machines can be a little tricky and we prepared the following set of tips to help keep you safe.
+
+1. Turn off your beacon node and validator on machine 1, make sure it is not running as a system process. You can check this using the process monitor tools of your OS, or a command line tool such as top or htop and check for anything containing the name “prysm” “validator” or “beacon”
+2. Note the location of your wallet directory. If you used the default when you started Prysm, you can view its path at the top of the output of `validator accounts list`, which varies based on your operating system
+3. Take that entire directory and move it over to your next machine
+4. If you modified your validators’ — datadir, also migrate that directory to your next machine
+5. Wait at least a few epochs, sync your beacon node on your second machine, then start your validator client on your second machine
+6. Ensure you never run the same keys again on machine 1 or anywhere else
+
+#### Can I use testnet validators keys on mainnet?
+
+While this is possible, we highly recommend against it. Given there are so many things that can go wrong when generating keys and when sending deposits to eth2, we absolutely recommend starting on a clean slate and not reusing any data you used for your testnet runs. Messing something up is not worth the risk.
+
+#### Can I send validator deposits using different ETH1 accounts or should it all be from a single metamask?
+
+Yes this is possible however we recommend against it. We recommend you deposit all within the same eth2 launchpad session from a single metamask instance to keep things simple as it is possible a step could get messed up along the way.
+
+#### Can I add more validators after I am already running one with Prysm?
+
+Adding new validators to your already-running Prysm instance is quite simple! Go through the launchpad process again, generate a new deposit keystore using the eth2 deposit cli, then run the `validator accounts import` command again as you used when you added your first validator key. You can then confirm your validator was added by running `validator accounts list`. Let us know on [discord](https://discord.gg/prysmaticlabs) if you still have issues.
+
+Please note you will need to **restart the validator client** after importing the new one for the changes to take effect.
+
+#### How can I get a bunch of test ETH to spin up a lot of validators on the testnet?
+
+Our current faucet only gives out increments of 32.5 Goerli test ETH at any given time and prevents sending out to the same address too often. 
+If you'd like more Goerli ETH, please use our [Discord](https://discord.gg/CTYGPUJ) faucet. If you need a larger amount of test ETH, please reach out to us on discord [here](https://discord.gg/CTYGPUJ).
+
+## Eth2 specific questions
+
+#### Why are some validators making a lot more money than others?
+
+If you look at the [validator leaderboard](https://beaconcha.in/validators/leaderboard), there are some validators at the top that seem to be doing a lot better than others. The reason being that either they (a) got lucky with being assigned to propse more blocks than other validators, or (b) they caught slashable offenses in the network and packed them into their blocks. Slashings are meant to be rare, and Prysm's slasher by default broadcasts slashings it finds to the network so that validators do not selfishly hold on to them. You can actually disable this to selfishly withhold slashings with the `--disable-broadcast-slasings` flag in your beacon node, although don't expect to get rich from slashing other validators. 
+
+Overall, keep in mind that no one has an extra advantage as a validator compared to others. Block proposal opportunities are random and it does not matter how powerful your hardware is. A lot of the times the validators near the top simply got lucky.
+
+#### It's been so long and I have not yet proposed a block, when will this happen?
+
+Proposing a block is a factor of random chance depending on the number of active validators currently in the network. As time goes on, however, the probability of you proposing a block indeed goes up. One of our contributors, dv8s, prepared a handy tool to calculate your proposal probability [here](https://proposalprobab.web.app/). Your hardware does not affect your chances of you getting assigned to propose a block, it is random and you cannot gain any advantage over other validators.
+
+#### Can I get back my ETH? How can I withdraw my validator gains?
+
+Deposits into eth2 are one-way in the beginning. Functionality of withdrawing gains transferring ETH won’t be available until later phases of the project. You can read more about the phases of eth2 [here](https://docs.ethhub.io/ethereum-roadmap/ethereum-2.0/eth-2.0-phases/).
+
+#### Where can I read more about the incentive model in eth2?
+
+[This resource](https://blog.ethereum.org/2020/01/13/validated-staking-on-eth2-1-incentives/) from the Ethereum blog is an excellent example.
 
 #### What is balance and what is effective balance?
 
 Your validator balance is the actual amount of ETH you have from being a validator in eth2. It can go up or down every epoch depending on your participation. Effective balance is a bit different. It is a value that lags behind your actual balance and is used exclusively to determine rewards and penalties for your validator. It has a max value of 32ETH, but your regular balance is uncapped. You can read more about the purpose of effective balance in this excellent post by Attestant [here](https://www.attestant.io/posts/understanding-validator-effective-balance/).
-
-#### When do my validators get to propose a block?
-
-Validators receive new assignments approximately every 6.4 minutes. This period of time is known as an “epoch” and you may be assigned to propose a block several times in an epoch. Proposing a block, however, is rare, as there can only be one block proposer per slot and there are many validators in the network. Voting on blocks, that is, being assigned as an attester, is very common and you will be assigned to attest once per epoch if you are an active validator. You can see how many votes your validator has been assigned to create vs. how many blocks your validator has been assigned to propose by using a popular block explorer such as https://beaconcha.in and looking up your validator index or public key.

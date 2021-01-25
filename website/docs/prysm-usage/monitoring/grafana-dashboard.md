@@ -4,7 +4,7 @@ title: Monitoring and alerts with Grafana
 sidebar_label: Monitoring with Grafana
 ---
 
-Grafana is an open-source data metrics tool that is used to aggregate large amounts of data into a comprehensive visual dashboard for easy analysis. This section includes instructions for installing Grafana on the local machine and configuring Telegram or Discord alerts for monitoring validator status on-the-go.
+[Grafana](https://grafana.com/) is an open-source data metrics tool that is used to aggregate large amounts of data into a comprehensive visual dashboard for easy analysis. This section includes instructions for installing Grafana on the local machine and configuring Telegram or Discord alerts for monitoring validator status on-the-go.
 
 ![Grafana dashboard for prysm node and validator](/img/dashboard_overview.png "Grafana dashboard for prysm node and validator")
 
@@ -15,7 +15,7 @@ Grafana is an open-source data metrics tool that is used to aggregate large amou
   * Validator metrics are found at http://localhost:8081/metrics
   * Slasher metrics are found at http://localhost:8082/metrics 
 
-> Note: Slasher isn't mandatory for staking, only people that are running a slasher can find the metrics at the port 8082. For those that doesn't run a slasher, everything that follows remain correct.
+> Note: Running a slasher isn't mandatory for staking, only people that are running a slasher can find the metrics at the port 8082. For those that don't run a slasher, all instructions that follow remain correct.
 
 ## Installing Prometheus
 
@@ -83,7 +83,7 @@ To stop the prometheus process at any time, open the windows task manager and se
 
 Grafana must now be installed to provide the graphical component of the data analytics.
 
-1. [download Grafana](https://grafana.com/grafana/download) and install it.
+1. [Download Grafana](https://grafana.com/grafana/download) and install it.
 
 2. Open http://localhost:3000 in a browser. By default, the username and the password to this panel are both ‘admin’.
 
@@ -137,4 +137,4 @@ For those running their node and validators on separate machines, simply modify 
 > **NOTICE:** In case of public IPs, [port forwarding](/docs/prysm-usage/p2p-host-ip/#port-forwarding) may need to be configured.
 
 ## Activate currency converter feature
-A specific [guide](/docs/prysm-usage/monitoring/currency-converter/) has been designed for it
+A specific [guide](/docs/prysm-usage/monitoring/currency-converter/) has been designed for adding currency conversion.
