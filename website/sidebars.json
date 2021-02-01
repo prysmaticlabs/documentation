@@ -35,6 +35,7 @@
 			"wallet/deterministic",
 			"wallet/nondeterministic",
 			"wallet/remote",
+			"wallet/slashing-protection",
 			"wallet/exiting-a-validator",
 			"wallet/ethdo"
 		],
