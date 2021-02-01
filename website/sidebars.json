@@ -30,7 +30,7 @@
 			"faq"
 		],
 
-		"Wallet and accounts": 	[   
+		"Wallet and validator accounts": 	[   
 			"wallet/introduction",
 			"wallet/deterministic",
 			"wallet/nondeterministic",
