@@ -33,7 +33,7 @@ You can also run your own eth1 node in the full spirit of decentralization and u
 First, install go-ethereum [here](https://geth.ethereum.org/docs/).
 
 ```text
-$ geth --datadir="$HOME/Mainnet" --http
+geth --datadir="$HOME/Mainnet" --http
 ```
 
 You should wait for your node to sync and then will be able to access its endpoint via `http://localhost:8545` by default.
@@ -46,9 +46,74 @@ Next, in a separate terminal window, you can run a Prysm beacon node according t
 
 then connect to your eth1 node with:
 
-```text
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs
+  groupId="operating-systems"
+  defaultValue="lin"
+  values={[
+    {label: 'Linux', value: 'lin'},
+    {label: 'Windows', value: 'win'},
+    {label: 'MacOS', value: 'mac'},
+    {label: 'Arm64', value: 'arm'},
+  ]
+}>
+<TabItem value="lin">
+
+**Using Prysm.sh**
+
+```bash
 ./prysm.sh beacon-chain --http-web3provider=$HOME/Mainnet/geth.ipc
 ```
+
+**Using Bazel**
+
+```bash
+bazel run //beacon-chain --config=release -- --http-web3provider=$HOME/Mainnet/geth.ipc
+```
+
+</TabItem>
+<TabItem value="win">
+
+**Using Prysm.bat**
+
+```bash
+prysm.bat beacon-chain --http-web3provider=\\.\pipe\geth.ipc
+```
+
+</TabItem>
+<TabItem value="mac">
+
+**Using Prysm.sh**
+
+```bash
+./prysm.sh beacon-chain --http-web3provider=$HOME/Mainnet/geth.ipc
+```
+
+**Using Bazel**
+
+```bash
+bazel run //beacon-chain --config=release -- --http-web3provider=$HOME/Mainnet/geth.ipc
+```
+
+</TabItem>
+<TabItem value="arm">
+
+**Using Prysm.sh**
+
+```bash
+./prysm.sh beacon-chain --http-web3provider=$HOME/Mainnet/geth.ipc
+```
+
+**Using Bazel**
+
+```bash
+bazel run //beacon-chain --config=release -- --http-web3provider=$HOME/Mainnet/geth.ipc
+```
+
+</TabItem>
+</Tabs>
 
 ## Adding fallback eth1 nodes
 
