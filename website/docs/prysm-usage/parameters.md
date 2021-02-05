@@ -154,6 +154,7 @@ These flags are specific to launching a validator client.
 |`--tls-cert` | Certificate for secure gRPC. Pass this and the tls-key flag in order to use gRPC securely.
 |`--graffiti` | A string to include in proposed block.
 |`--web` | Enables the web portal for the validator client (work in progress).
+|`--monitoring-host` | Host used to listening and respond metrics for prometheus. (Default: 127.0.0.1)
 |`--monitoring-port` | Port used to listening and respond metrics for prometheus. (Default: 8081)
 |`--grpc-max-msg-size`| Integer to define max recieve message call size. Default: 52428800 (for 50Mb).
 |`--disable-rewards-penalties-logging` | Disable reward/penalty logging during cluster deployment.
@@ -220,6 +221,7 @@ These flags are specific to launching a slasher client.
 |`--highest-att-cache-size`| Sets the highest attestation cache size. (default: 3000)
 |`--tls-cert`| Certificate for secure gRPC. Pass this and the tls-key flag in order to use gRPC securely.
 |`--tls-key`| Key for secure gRPC. Pass this and the tls-cert flag in order to use gRPC securely.
+|`--monitoring-host` | Host used to listening and respond metrics for prometheus. (Default: 127.0.0.1)
 |`--monitoring-port`| Port used to listening and respond metrics for prometheus. (default: 8082)
 |`--rpc-host`| Host on which the RPC server should listen. (default: "127.0.0.1")
 |`--rpc-port`| RPC port exposed by the slasher. (default: 4002)

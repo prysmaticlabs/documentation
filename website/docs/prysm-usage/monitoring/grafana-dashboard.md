@@ -15,6 +15,8 @@ sidebar_label: Monitoring with Grafana
   * Validator metrics are found at http://localhost:8081/metrics
   * Slasher metrics are found at http://localhost:8082/metrics 
 
+If you are using a custom --monitoring-host for these processes, such as an IP address, then just change `localhost` to the custom host you are using. 
+
 > Note: Running a slasher isn't mandatory for staking, only people that are running a slasher can find the metrics at the port 8082. For those that don't run a slasher, all instructions that follow remain correct.
 
 ## Installing Prometheus
