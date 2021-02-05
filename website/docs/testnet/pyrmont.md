@@ -68,7 +68,7 @@ Where <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `ht
 **Using Bazel**
 
 ```text
-bazel run //beacon-chain -- --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT> --pyrmont
+bazel run //beacon-chain --config=release -- --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT> --pyrmont
 ```
 
 Where <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`
@@ -128,7 +128,7 @@ Where <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `ht
 **Using Bazel**
 
 ```text
-bazel run //beacon-chain -- --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT> --pyrmont
+bazel run //beacon-chain --config=release -- --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT> --pyrmont
 ```
 
 Where <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`.
@@ -147,7 +147,7 @@ Where <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `ht
 **Using Bazel**
 
 ```text
-bazel run //beacon-chain -- --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT> --pyrmont
+bazel run //beacon-chain --config=release -- --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT> --pyrmont
 ```
 
 Where <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`.
@@ -320,7 +320,7 @@ docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
 **Using Bazel**
 
 ```text
-bazel run //validator -- --pyrmont
+bazel run //validator --config=release -- --pyrmont
 ```
 
 </TabItem>
@@ -363,7 +363,7 @@ docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
 **Using Bazel**
 
 ```text
-bazel run //validator -- --pyrmont
+bazel run //validator --config=release -- --pyrmont
 ```
 
 </TabItem>
@@ -378,7 +378,7 @@ bazel run //validator -- --pyrmont
 **Using Bazel**
 
 ```text
-bazel run //validator -- --pyrmont
+bazel run //validator --config=release -- --pyrmont
 ```
 
 </TabItem>

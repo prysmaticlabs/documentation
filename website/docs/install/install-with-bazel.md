@@ -35,9 +35,12 @@ These hardware specifications are recommended, but not required to run the Prysm
 ## Dependencies
 
 * A modern UNIX operating system
-* The latest release (3.2.0 onwards) of [Bazel](https://docs.bazel.build/versions/master/install.html) installed
+* The latest release of [Bazel](https://docs.bazel.build/versions/master/install.html) installed
 * The `cmake` package installed
 * The `git` package installed
+* `libssl-dev` installed
+* `libgmp-dev` installed
+* `libtinfo5` installed
 
 ## Installing Prysm
 
@@ -58,8 +61,8 @@ cd prysm
 3. Build both the beacon chain node and the validator client:
 
 ```text
-bazel build //beacon-chain:beacon-chain
-bazel build //validator:validator
+bazel build //beacon-chain:beacon-chain --config=release
+bazel build //validator:validator --config=release
 ```
 
 Bazel will automatically pull and install any dependencies as well, including Go and necessary compilers. Now that your installation is done, you can then read [joining eth2](/docs/mainnet/joining-eth2).
