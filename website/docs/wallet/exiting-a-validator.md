@@ -54,7 +54,7 @@ docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
 **Using Bazel**
 
 ```bash
-bazel run //validator -- accounts voluntary-exit
+bazel run //validator --config=release -- accounts voluntary-exit
 ```
 
 </TabItem>
@@ -92,7 +92,7 @@ docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
 **Using Bazel**
 
 ```bash
-bazel run //validator -- accounts voluntary-exit
+bazel run //validator --config=release -- accounts voluntary-exit
 ```
 
 </TabItem>
