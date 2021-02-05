@@ -105,9 +105,14 @@ netstat -nr | grep default
 
 Many computers have a local firewall that blocks incoming connections. Ensure that you have configured the firewall to allow incoming connections on TCP/13000 and UDP/12000 from all source IP addresses.
 
-## Setting the `--p2p-host-ip` flag
+## Setting the `--p2p-host-ip` or `--p2p-host-dns` flag
 
-The [beacon node](/docs/how-prysm-works/beacon-node) needs to know what your **public** IP address is so that it can inform other peers how to reach your node.  Do this by including the `--p2p-host-ip=<your public IP>` flag when you start up the `beacon-chain`.
+The [beacon node](/docs/how-prysm-works/beacon-node) needs to know what your **public** IP address is so that it can inform other peers how to reach your node.  Do this by including either the `--p2p-host-ip=<your public IP>` or, if you have a valid DNS record `--p2p-host-dns="host.domain.com"` flag when you start up the `beacon-chain`.
+
+**For DNS:**
+```
+prysm.sh beacon-chain --p2p-host-dns=host.domain.com
+```
 
 **On GNU\Linux, MacOS, and ARM:**
 ```
@@ -120,11 +125,11 @@ prysm.bat beacon-chain --p2p-host-ip=%PRYSM-P2P-HOST-IP%
 ```
 > **NOTICE:** If you are using this command in a `.bat` script, replace both instances of `%i` with `%%i`.
 
-## Verifying `--p2p-host-ip` settings
+## Verifying `--p2p-host-ip` or `--p2p-host-dns` settings
 
-To verify the `--p2p-host-ip` settings are operating correctly, use [MX Toolbox TCP Lookup tool](https://mxtoolbox.com/SuperTool.aspx?action=tcp%3a{node-IP-address}%3a13000&run=toolpage).
+To verify the `--p2p-host-ip` or `--p2p-host-dns` settings are operating correctly, use [MX Toolbox TCP Lookup tool](https://mxtoolbox.com/SuperTool.aspx?action=tcp%3a{node-IP-address}%3a13000&run=toolpage).
 
-Enter the IP Address of the node, followed by `:13000` and click "TCP Lookup".
+Enter the IP Address or DNS Name of the node, followed by `:13000` and click "TCP Lookup".
 
 If the results are as below, then the settings are correct:
 
