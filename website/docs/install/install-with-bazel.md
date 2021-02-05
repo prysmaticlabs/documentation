@@ -4,10 +4,6 @@ title: Installing Prysm from source with Bazel
 sidebar_label: Building from source
 ---
 
-:::danger Our Code Is Not Yet Updated to Mainnet!
-Our latest release of Prysm, beta.1, is not mainnet compatible. Please do not run Prysm yet until we announce it in our Discord channel, our [releases page](https://github.com/prysmaticlabs/prysm/releases), our [official mailing list](https://groups.google.com/g/prysm-dev) or in this documentation portal.
-:::
-
 Prysm can be installed on GNU/Linux, MacOS, and Arm64 using our build tool, Bazel. This page includes instructions for performing this method.
 
 :::tip Pro-Tip
@@ -51,10 +47,11 @@ These hardware specifications are recommended, but not required to run the Prysm
 bazel version
 ```
 
-2. Clone Prysm's [main repository](https://github.com/prysmaticlabs/prysm) and enter the directory:
+2. Clone Prysm's [main repository](https://github.com/prysmaticlabs/prysm), make sure you switch to the latest version (the latest version number can be found from the [releases page](https://github.com/prysmaticlabs/prysm/releases)), and enter the directory:
 
 ```text
 git clone https://github.com/prysmaticlabs/prysm
+git checkout <version>
 cd prysm
 ```
 
