@@ -18,7 +18,7 @@ Eth2 nodes can use any sort of eth1 mainnet node http endpoint as long as it sup
 
 ## Using a third-party eth1 provider
 
-Instead of running your own eth1 node, it is a lot easier to use a third-party provider such as [Infura](https://infura.io/), [Alchemy](https://alchemyapi.io/), or [Chainstack](https://chainstack.com/) for this purpose. You can easily [sign-up here for free](https://infura.io/register) and get an API key which then entitles you to use their respective eth1 endpoints. However, remember that using a third party provider is relying on their services, instead of your own node. 
+Instead of running your own eth1 node, it is a lot easier to use a third-party provider such as [Infura](https://infura.io/), [QuikNode](https://www.quiknode.io/), [Chainstack](https://chainstack.com/), or [Alchemy](https://alchemyapi.io/) for this purpose. You can easily [sign-up here for free](https://infura.io/register) and get an API key which then entitles you to use their respective eth1 endpoints. However, remember that using a third party provider is relying on their services, instead of your own node. 
 
 Once you have an API key, you can then run a **Prysm eth2 beacon node** by pointing the `--http-web3provider` flag to your eth1 endpoint. For example, running an eth2 node connected to Infura's eth1 endpoint is as follows:
 
@@ -48,4 +48,37 @@ then connect to your eth1 node with:
 
 ```text
 ./prysm.sh beacon-chain --http-web3provider=$HOME/Mainnet/geth.ipc
+```
+
+## Adding fallback eth1 nodes
+
+In case your eth1 node unexpectedly goes down, you can specify a list of fallback eth1 nodes that your beacon node can always reach out to. To use this functionality, you can add the following flag to the beacon node:
+
+#### Using regular flags
+
+```
+--http-web3provider=<YOUR MAIN ETH1 ENDPOINT> --fallback-web3provider=<PROVIDER 1> --fallback-web3provider=<PROVIDER 2>
+```
+
+You can specify your main provider and as many --fallback-web3provider as you need. Here's what a real setup could look like:
+
+```
+--http-web3provider=http://localhost:8545 --fallback-web3provider=https://mainnet.infura.io/v3/YOUR-PROJECT-ID --fallback-web3provider=https://eth-mainnet.alchemyapi.io/v2/YOUR-PROJECT-ID
+```
+
+Where your main provider is your local go-ethereum node running on port 8545, then you can fallback to infura or alchemy as needed.
+
+:::tip Prysm will automatically use your main provider always
+In case your main provider comes back from the dead, Prysm will detect that and switch over to it for primary usage automatically. This will save you any costs on your fallback providers.
+:::
+
+#### Using a config file
+
+If you are running Prysm and specifying command line flags via a config.yaml file, you can do the following:
+
+```yaml
+http-web3provider: http://localhost:8545
+fallback-web3provider:
+- https://mainnet.infura.io/v3/YOUR-PROJECT-ID
+- https://eth-mainnet.alchemyapi.io/v2/YOUR-PROJECT-ID
 ```

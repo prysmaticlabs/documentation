@@ -24,8 +24,8 @@ To start using the HD wallet, you can create a new wallet using:
 You'll need to set a **strong** password for your new HD wallet, containing at least 1 uppercase letter, 1 number, a special character, and be at least 8 characters long. Any unicode characters can be used for your wallet password.
 :::
 
-Then select **HD** wallet when prompted during an interactive process. You can also create a wallet **non-interactively** by using the following command line flags, which are also viewable by typing `./prysm.sh validator wallet create --help`.
-We support 
+Then select **HD** wallet when prompted. You can also create a wallet **non-interactively** by using the following command line flags, which are also viewable by typing `./prysm.sh validator wallet create --help`.
+
 
 | Flag          | Usage         |
 | ------------- |:-------------|

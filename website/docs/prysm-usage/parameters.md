@@ -145,6 +145,13 @@ These flags are specific to launching a validator client.
 ### Management flags
 | Flag          | Usage         |
 | ------------- |:-------------|
+|`--no-custom-config` | Run the beacon chain with the real parameters from phase 0.
+|`--beacon-rpc-provider` | Beacon node RPC provider endpoint. Default: localhost:4000
+|`--rpc-host` | Specify the RPC host exposed by the validator. Default: localhost
+|`--rpc-port` | Specify the RPC port exposed by the validator. Default: 7000
+|`--grpc-gateway-host` | Specify the gRPC gateway port exposed by the validator. Default: localhost
+|`--grpc-gateway-port` | Specify the gRPC gateway port exposed by the validator. Default: 7500
+|`--tls-cert` | Certificate for secure gRPC. Pass this and the tls-key flag in order to use gRPC securely.
 |`--graffiti` | A string to include in proposed block.
 |`--web` | Enables the web portal for the validator client (work in progress).
 |`--monitoring-port` | Port used to listening and respond metrics for prometheus. (Default: 8081)
@@ -226,5 +233,3 @@ These flags are specific to launching a slasher client.
 |`--pprofaddr` | pprof HTTP server listening interface Default: "127.0.0.1"
 |`--pprofport` | pprof HTTP server listening port Default: 6060
 |`--trace` | Write execution trace to the given file
-
-

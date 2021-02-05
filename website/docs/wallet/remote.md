@@ -69,7 +69,7 @@ A Prysm validator client can then connect securely via [gRPC](https://grpc.io) t
 
 ### Wallet creation
 
-To create a new remote signing-capable wallet, you will need to prepare TLS certificates to connect securely to your remote gRPC server. Then, you can run
+To create a new remote signing-capable wallet, you will need to prepare TLS certificates to connect securely to your remote gRPC server. Then, you can run:
 
 ```bash
 ./prysm.sh validator wallet create
@@ -79,7 +79,7 @@ To create a new remote signing-capable wallet, you will need to prepare TLS cert
 You will need a TLS client cert, client key, and a Certificate Authority (CA) cert to establish a secure gRPC connection
 :::
 
-and selecting **Remote** wallet when prompted during an interactive process. You can also create a wallet **non-interactively** by using the following command line flags, which are also viewable by typing `./prysm.sh validator wallet create --help`.
+Then select **Remote** wallet when prompted. You can also create a wallet **non-interactively** by using the following command line flags, which are also viewable by typing `./prysm.sh validator wallet create --help`.
 
 | Flag          | Usage         |
 | ------------- |:-------------|

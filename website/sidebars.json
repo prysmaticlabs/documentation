@@ -19,7 +19,9 @@
 			"prysm-usage/staying-up-to-date",
 			"prysm-usage/parameters",
 			"prysm-usage/setup-eth1",
+			"prysm-usage/graffiti-file",
 			"prysm-usage/p2p-host-ip",
+			"prysm-usage/database-backups",
 			"prysm-usage/is-everything-fine",
 			"prysm-usage/web-interface",
 			"prysm-usage/secure-grpc",
@@ -37,6 +39,8 @@
 			"wallet/ethdo"
 		],
 
+		"ETH2 API": 	["how-prysm-works/ethereum-2-public-api"],
+
 		"How Prysm works": 	[	"how-prysm-works/architecture-overview",
 								"how-prysm-works/beacon-node",
 								"how-prysm-works/prysm-validator-client",
@@ -49,7 +53,6 @@
 
 		"Developer tools": 	["devtools/block-explorers"],
 
-		"Public API": 	["how-prysm-works/ethereum-2-public-api"],
 
 		"Contribute": [	
 			"contribute/doc-standards",
