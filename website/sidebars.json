@@ -5,8 +5,9 @@
 								"introduction/on-ethereum-2"
 							],
 
-		"Joining the testnet": [
-			"testnet/medalla"
+		"Joining eth2": [
+			"mainnet/joining-eth2",
+			"testnet/pyrmont"
 		],
 		"Installing Prysm": [
 			"install/install-with-script",
@@ -15,13 +16,16 @@
 		],
 
 		"Running Prysm": 	[   
-			"prysm-usage/running-a-validator",
-			"prysm-usage/is-everything-fine",
-			"prysm-usage/setup-eth1",
-			"prysm-usage/secure-grpc",
+			"prysm-usage/staying-up-to-date",
 			"prysm-usage/parameters",
-			"prysm-usage/slasher",
+			"prysm-usage/setup-eth1",
+			"prysm-usage/graffiti-file",
 			"prysm-usage/p2p-host-ip",
+			"prysm-usage/database-backups",
+			"prysm-usage/is-everything-fine",
+			"prysm-usage/web-interface",
+			"prysm-usage/secure-grpc",
+			"prysm-usage/slasher",
 			"prysm-usage/monitoring/grafana-dashboard",
 			"faq"
 		],
@@ -30,8 +34,12 @@
 			"wallet/introduction",
 			"wallet/deterministic",
 			"wallet/nondeterministic",
-			"wallet/remote"
+			"wallet/remote",
+			"wallet/exiting-a-validator",
+			"wallet/ethdo"
 		],
+
+		"ETH2 API": 	["how-prysm-works/ethereum-2-public-api"],
 
 		"How Prysm works": 	[	"how-prysm-works/architecture-overview",
 								"how-prysm-works/beacon-node",
@@ -45,7 +53,6 @@
 
 		"Developer tools": 	["devtools/block-explorers"],
 
-		"Public API": 	["how-prysm-works/ethereum-2-public-api"],
 
 		"Contribute": [	
 			"contribute/doc-standards",
@@ -59,6 +66,9 @@
 							"reading/golang",
 							"reading/testnet-postmortems"
 						],
+		"Audits": [
+			"audits/phase0"
+		],
 		
 		"Licenses": ["licenses/prysmatic-labs"]
   	}

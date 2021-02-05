@@ -4,4 +4,6 @@ title: Useful tips
 sidebar_label: Useful tips
 ---
 
-## This page is under construction.
+:::danger Deprecated
+This page has been deprecated and no longer maintained.
+:::
