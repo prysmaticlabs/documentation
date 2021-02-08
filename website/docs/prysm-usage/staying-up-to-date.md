@@ -184,7 +184,7 @@ To run a previous Prysm version with Docker, choose the release you want to run,
 
 If you are running `prysm.sh`, all it takes to downgrade to a previous release is to stop your beacon node and validator (wait for the process to close down gracefully). 
 
-Then, find the Prysm version you wish to run from our [releases page](https://github.com/prysmaticlabs/prysm/releases), such as v1.0.5, then run the command `set=USE_PRYSM_VERSION=v1.0.5`.
+Then, find the Prysm version you wish to run from our [releases page](https://github.com/prysmaticlabs/prysm/releases), such as v1.0.5, then run the command `export USE_PRYSM_VERSION=v1.0.5`.
 
 Then, restart it with the same command you used to start the process. The script will automatically use the release you specified.
 
@@ -322,7 +322,7 @@ Next up, run our database rollback command to make sure your database is going t
 prysm.sh validator db migrate down --datadir=/path/to/folder
 ```
 
-Then, find the Prysm version you wish to run from our [releases page](https://github.com/prysmaticlabs/prysm/releases), such as v1.0.5, then run the command `set=USE_PRYSM_VERSION=v1.0.5`.
+Then, find the Prysm version you wish to run from our [releases page](https://github.com/prysmaticlabs/prysm/releases), such as v1.0.5, then run the command `export USE_PRYSM_VERSION=v1.0.5`.
 
 Then, restart it with the same command you used to start the process. The script will automatically use the release you specified.
 
