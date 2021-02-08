@@ -30,11 +30,12 @@
 			"faq"
 		],
 
-		"Wallet and accounts": 	[   
+		"Wallet and validator accounts": 	[   
 			"wallet/introduction",
 			"wallet/deterministic",
 			"wallet/nondeterministic",
 			"wallet/remote",
+			"wallet/slashing-protection",
 			"wallet/exiting-a-validator",
 			"wallet/ethdo"
 		],
