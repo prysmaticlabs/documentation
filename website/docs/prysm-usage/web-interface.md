@@ -71,7 +71,7 @@ This page is useful to monitor how your processes are doing without needing to n
 
 ## Step 5: Contributing to the web interface code
 
-The web interface is open source and located at [github.com/prysmaticlabs/prysm-web-ui](https://github.com/prysmaticlabs/prysm-web-ui). It is an Angular application, and we are always welcome to have your help!
+The web interface is open source and located at [github.com/prysmaticlabs/prysm-web-ui](https://github.com/prysmaticlabs/prysm-web-ui). It is an Angular application, and we always welcome your help!
 
 :::warning Web UI in development mode uses mock data by default
 The recommended way to run prysm web is from the validator client itself via the `--web` flag. If you are building the web UI from source and doing `npm start`, you **will be using fake, mock data!** Keep that in mind if you are trying to use real accounts with the web UI.
