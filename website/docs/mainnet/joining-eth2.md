@@ -64,7 +64,7 @@ docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/u
 **Using Bazel**
 
 ```text
-bazel run //beacon-chain -- --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
+bazel run //beacon-chain --config=release -- --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
 ```
 
 </TabItem>
@@ -119,7 +119,7 @@ docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/u
 **Using Bazel**
 
 ```text
-bazel run //beacon-chain -- --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
+bazel run //beacon-chain --config=release -- --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
 ```
 
 </TabItem>
@@ -136,7 +136,7 @@ Note: <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `ht
 **Using Bazel**
 
 ```text
-bazel run //beacon-chain -- --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
+bazel run //beacon-chain --config=release -- --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
 ```
 
 </TabItem>
@@ -294,7 +294,7 @@ docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
 **Using Bazel**
 
 ```text
-bazel run //validator
+bazel run //validator --config=release
 ```
 
 </TabItem>
@@ -336,7 +336,7 @@ docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
 **Using Bazel**
 
 ```text
-bazel run //validator
+bazel run //validator --config=release
 ```
 
 </TabItem>
@@ -351,7 +351,7 @@ bazel run //validator
 **Using Bazel**
 
 ```text
-bazel run //validator
+bazel run //validator --config=release
 ```
 
 </TabItem>

@@ -6,7 +6,21 @@ sidebar_label: Exiting a validator
 
 ## Performing a voluntary exit
 
-Exiting one or more validator accounts in a wallet (HD, non-HD or remote) is possible using the following command:
+Exiting one or more validator accounts is possible in Prysm via the command line, but you **will need to have a running beacon node** for the voluntary exit to be submitted and broadcast to the network. 
+
+At first, a prompt will be displayed, asking to select one or more validator accounts that should be exited.
+
+:::info
+This step can be skipped by providing the `--public-keys` flag to the command.
+:::
+
+After completing the selection, an additional conformation step will be presented, which requires entering a specific passphrase to continue. The purpose of this extra security measure is to ensure that a complete understanding of the consequences of performing a voluntary exit on a validator. Entering the correct passphrase will initiate the exit process by submitting a voluntary exit request.
+
+:::info
+The validator client needs to establish a connection with a running beacon node in order to be able to submit a voluntary exit request. By default, it will try to access a node running on `127.0.0.1:4000`. There are several flags that can be used to modify the connection parameters.
+:::
+
+All available command line flags can be inspected with `./prysm.sh validator accounts voluntary-exit --help`.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -40,7 +54,7 @@ docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
 **Using Bazel**
 
 ```bash
-bazel run //validator -- accounts voluntary-exit
+bazel run //validator --config=release -- accounts voluntary-exit
 ```
 
 </TabItem>
@@ -78,7 +92,7 @@ docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
 **Using Bazel**
 
 ```bash
-bazel run //validator -- accounts voluntary-exit
+bazel run //validator --config=release -- accounts voluntary-exit
 ```
 
 </TabItem>
@@ -90,20 +104,6 @@ bazel run //validator -- accounts voluntary-exit
 
 </TabItem>
 </Tabs>
-
-At first, a prompt will be displayed, asking to select one or more validator accounts that should be exited.
-
-:::info
-This step can be skipped by providing the `--public-keys` flag to the command.
-:::
-
-After completing the selection, an additional conformation step will be presented, which requires entering a specific passphrase to continue. The purpose of this extra security measure is to ensure that a complete understanding of the consequences of performing a voluntary exit on a validator. Entering the correct passphrase will initiate the exit process by submitting a voluntary exit request.
-
-:::info
-The validator client needs to establish a gRPC connection with a running beacon node in order to be able to submit a voluntary exit request. By default, it will try to access a node running on `127.0.0.1:4000`. There are several flags that can be used to modify the connection parameters.
-:::
-
-All available command line flags can be inspected with `./prysm.sh validator accounts voluntary-exit --help`.
 
 ## Withdrawal delay warning
 
