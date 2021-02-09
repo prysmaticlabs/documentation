@@ -49,7 +49,7 @@ module.exports = {
         footer: {
             logo: {
                 alt: "Prysm Eth2 Docs",
-                href: '/',
+                href: '/docs',
                 src: 'img/Prysm.svg',
             },
             copyright: `Copyright © ${new Date().getFullYear()} Prysmatic Labs, LLC., Validator Deposit Contract 0x00000000219ab540356cbb839cbe05303d7705fa`,
