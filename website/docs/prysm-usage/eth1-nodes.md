@@ -18,7 +18,7 @@ Eth2 nodes can use any sort of eth1 mainnet node http endpoint as long as it sup
 
 ## Using a third-party eth1 provider
 
-Instead of running your own eth1 node, it is a lot easier to use a third-party provider such as [Infura](https://infura.io/), [QuikNode](https://www.quiknode.io/) or [Alchemy](https://alchemyapi.io/) for this purpose. You can easily [sign-up here for free](https://infura.io/register) and get an API key which then entitles you to use their respective eth1 endpoints. However, remember that using a third party provider is relying on their services, instead of your own node. 
+Instead of running your own eth1 node, it is a lot easier to use a third-party provider such as [Infura](https://infura.io/), [QuikNode](https://www.quiknode.io/), [Chainstack](https://chainstack.com/), or [Alchemy](https://alchemyapi.io/) for this purpose. You can easily [sign-up here for free](https://infura.io/register) and get an API key which then entitles you to use their respective eth1 endpoints. However, remember that using a third party provider is relying on their services, instead of your own node. 
 
 Once you have an API key, you can then run a **Prysm eth2 beacon node** by pointing the `--http-web3provider` flag to your eth1 endpoint. For example, running an eth2 node connected to Infura's eth1 endpoint is as follows:
 
@@ -33,7 +33,7 @@ You can also run your own eth1 node in the full spirit of decentralization and u
 First, install go-ethereum [here](https://geth.ethereum.org/docs/).
 
 ```text
-$ geth --datadir="$HOME/Mainnet" --http
+geth --datadir="$HOME/Mainnet" --http
 ```
 
 You should wait for your node to sync and then will be able to access its endpoint via `http://localhost:8545` by default.
@@ -46,9 +46,74 @@ Next, in a separate terminal window, you can run a Prysm beacon node according t
 
 then connect to your eth1 node with:
 
-```text
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs
+  groupId="operating-systems"
+  defaultValue="lin"
+  values={[
+    {label: 'Linux', value: 'lin'},
+    {label: 'Windows', value: 'win'},
+    {label: 'MacOS', value: 'mac'},
+    {label: 'Arm64', value: 'arm'},
+  ]
+}>
+<TabItem value="lin">
+
+**Using Prysm.sh**
+
+```bash
 ./prysm.sh beacon-chain --http-web3provider=$HOME/Mainnet/geth.ipc
 ```
+
+**Using Bazel**
+
+```bash
+bazel run //beacon-chain --config=release -- --http-web3provider=$HOME/Mainnet/geth.ipc
+```
+
+</TabItem>
+<TabItem value="win">
+
+**Using Prysm.bat**
+
+```bash
+prysm.bat beacon-chain --http-web3provider=\\.\pipe\geth.ipc
+```
+
+</TabItem>
+<TabItem value="mac">
+
+**Using Prysm.sh**
+
+```bash
+./prysm.sh beacon-chain --http-web3provider=$HOME/Mainnet/geth.ipc
+```
+
+**Using Bazel**
+
+```bash
+bazel run //beacon-chain --config=release -- --http-web3provider=$HOME/Mainnet/geth.ipc
+```
+
+</TabItem>
+<TabItem value="arm">
+
+**Using Prysm.sh**
+
+```bash
+./prysm.sh beacon-chain --http-web3provider=$HOME/Mainnet/geth.ipc
+```
+
+**Using Bazel**
+
+```bash
+bazel run //beacon-chain --config=release -- --http-web3provider=$HOME/Mainnet/geth.ipc
+```
+
+</TabItem>
+</Tabs>
 
 ## Adding fallback eth1 nodes
 
