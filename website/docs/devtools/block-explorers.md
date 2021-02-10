@@ -28,6 +28,6 @@ and
 
 Their respective Github repositories are:
 
-[nobd/ethscan-org](https://github.com/nobd/ethscan-org)
-[eth2-redot-com](https://github.com/AtlantPlatform/eth2-redot-com)
+- [nobd/ethscan-org](https://github.com/nobd/ethscan-org)
+- [eth2-redot-com](https://github.com/AtlantPlatform/eth2-redot-com)
 
