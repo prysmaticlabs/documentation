@@ -17,3 +17,17 @@ eth2stats.io is a beacon chain explorer maintained by [Alethio](https://aleth.io
 ## [beaconcha.in](https://beaconcha.in/)
 
 beaconcha.in is a beacon chain explorer maintained by [Bitfly](https://www.bitfly.at).
+
+## Mirrors and Forks
+
+This sections lists open source mirrors of forks of original, major block explorers. [Redot](https://redot.com) maintains two open-source mirrors that are forks of Bitfly's original work [beaconcha.in](https://beaconcha.in) at
+
+[ethscan.org](https://ethscan.org)
+and
+[eth2.redot.com](https://eth2.redot.com)
+
+Their respective Github repositories are:
+
+[nobd/ethscan-org](https://github.com/nobd/ethscan-org)
+[eth2-redot-com](https://github.com/AtlantPlatform/eth2-redot-com)
+
