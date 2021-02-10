@@ -22,9 +22,8 @@ beaconcha.in is a beacon chain explorer maintained by [Bitfly](https://www.bitfl
 
 This sections lists open source mirrors of forks of original, major block explorers. [Redot](https://redot.com) maintains two open-source mirrors that are forks of Bitfly's original work [beaconcha.in](https://beaconcha.in) at
 
-[ethscan.org](https://ethscan.org)
-and
-[eth2.redot.com](https://eth2.redot.com)
+- [ethscan.org](https://ethscan.org)
+- [eth2.redot.com](https://eth2.redot.com)
 
 Their respective Github repositories are:
 
