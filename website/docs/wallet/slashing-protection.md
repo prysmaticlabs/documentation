@@ -143,7 +143,7 @@ bazel run //validator -- slashing-protection export --datadir=/path/to/your/wall
 **Using the Prysm installation script**
 
 ```sh
-prysm.bat validator slashing-protection export --datadir=\path\to\your\wallet --slashing-protection-export-dir=\path\to\desired\outputdir
+prysm.sh validator slashing-protection export --datadir=\path\to\your\wallet --slashing-protection-export-dir=\path\to\desired\outputdir
 ```
 
 **Using Bazel**
@@ -195,7 +195,7 @@ bazel run //validator -- slashing-protection import --datadir=/path/to/your/wall
 **Using the Prysm installation script**
 
 ```sh
-prysm.sh validator slashing-protection import --datadir=\path\to\your\wallet --slashing-protection-json-file=\path\to\desiredimportfile
+prysm.bat validator slashing-protection import --datadir=\path\to\your\wallet --slashing-protection-json-file=\path\to\desiredimportfile
 ```
 **Using Docker**
 
