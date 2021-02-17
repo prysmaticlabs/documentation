@@ -21,8 +21,8 @@ module.exports = {
             },
             items: [
                 {
-                    href: 'https://launchpad.ethereum.org',
-                    label: 'Join Eth2',
+                    href: 'docs/mainnet/joining-eth2',
+                    label: 'Stake on Eth2',
                     position: 'right',
                 },
                 {
