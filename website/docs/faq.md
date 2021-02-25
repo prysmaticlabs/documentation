@@ -15,11 +15,11 @@ If you have seen a scary ERROR log in your beacon node or validator, there are f
 
 #### My validator is losing money, what's going on?
 
-If your validators is performing poorly and losing money, there are few pieces of information we need to help you out.
+If your validators are performing poorly and losing money, there are few pieces of information we need to help you out.
 
 **Things you can do**
 
-1. Check if your node or validator client crashed. You can view the logs of the process to see if there were any ERROR logs. If so, please file a bug report or talk to our team on [discord](https://discord.gg/prysmaticlabs). A fatal crash is quite serious and something we will inestigate right away. You can try restarting your processes in the meantime to see if you can be fully operational again.
+1. Check if your node or validator client crashed. You can view the logs of the process to see if there were any ERROR logs. If so, please file a bug report or talk to our team on [discord](https://discord.gg/prysmaticlabs). A fatal crash is quite serious and something we will investigate right away. You can try restarting your processes in the meantime to see if you can be fully operational again.
 2. Check your network connectivity. You can improve this by following our tips [here](/docs/prysm-usage/p2p-host-ip) which can help you find better peers, improve attestation effectiveness, and more.
 3. Check your system resource usage, perhaps your node is using excess CPU and RAM. Depending on your operating system, there are different ways to do this.
 
