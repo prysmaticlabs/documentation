@@ -21,7 +21,7 @@ module.exports = {
             },
             items: [
                 {
-                    href: 'docs/mainnet/joining-eth2',
+                    to: 'docs/mainnet/joining-eth2',
                     label: 'Stake on Eth2',
                     position: 'right',
                 },
