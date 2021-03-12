@@ -115,7 +115,7 @@ These flags are specific to launching the beacon node.
 ### P2P flags
 | Flag        | Usage           |
 | ------------- |:-------------|
-| `--p2p-max-peers` | The max number of p2p peers to maintain. Default: 30
+| `--p2p-max-peers` | The max number of p2p peers to maintain. Default: 45
 | `--no-discovery` | Enable only local network P2P and do not connect to cloud bootstrap nodes.
 | `--disable-discv5` | Does not run the discoveryV5 DHT.
 | `--block-batch-limit` | The amount of blocks the local peer is bounded to request and respond to in a batch. Default: 64
