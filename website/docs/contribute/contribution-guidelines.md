@@ -4,7 +4,7 @@ title: Contribution guide
 sidebar_label: Contribution guide
 ---
 
-New to the Prysm project and eth2? We first recommend checking out this awesome reading list here: [https://eth2.info](https://eth2.info). There's a number of ways to help out the project for people of all skillsets and experience levels. If you are unsure where you may be best suited, stop by either our [**Discord**](https://discord.gg/TvM3RWR) or [**Gitter**](https://gitter.im/prysmaticlabs/geth-sharding?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) and a member of the team or community will be happy to answer questions and offer some direction.
+New to the Prysm project and eth2? We first recommend checking out this awesome reading list here: [https://eth2.info](https://eth2.info). There's a number of ways to help out the project for people of all skillsets and experience levels. If you are unsure where you may be best suited, stop by either our [**Discord**](https://discord.gg/prysmaticlabs) or [**Gitter**](https://gitter.im/prysmaticlabs/geth-sharding?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) and a member of the team or community will be happy to answer questions and offer some direction.
 
 ## Getting Started
 
