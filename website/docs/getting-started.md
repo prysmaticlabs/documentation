@@ -14,7 +14,7 @@ This manual is aimed at developers interested in participating in Ethereum 2.0's
 
 ## Communications
 
-Prysm has two official channels for release updates: our [Discord](https://discord.gg/TvM3RWR) and our [mailing list](https://groups.google.com/g/prysm-dev). All releases will be notified via those channels.
+Prysm has two official channels for release updates: our [Discord](https://discord.gg/prysmaticlabs) and our [mailing list](https://groups.google.com/g/prysm-dev). All releases will be notified via those channels.
 
 ## Staking in Eth2
 
@@ -22,4 +22,4 @@ To participate in the eth2 network, read our comprehensive guidelines [here](/do
 
 ## Need assistance?
 
-If you have questions about this documentation, feel free to stop by either the [Prysmatic Discord](https://discord.gg/CTYGPUJ)'s **#documentation** channel and a member of the team or our community will be happy to assist you.
+If you have questions about this documentation, feel free to stop by either the [Prysmatic Discord](https://discord.gg/prysmaticlabs)'s **#documentation** channel and a member of the team or our community will be happy to assist you.
