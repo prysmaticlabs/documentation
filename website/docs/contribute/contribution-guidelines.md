@@ -44,7 +44,7 @@ go version go1.16 darwin/amd64
 
 ### Building and testing Prysm with Go
 
-The Prysm project is a large monorepo containing all sorts of tools and services that implement the eth2 protocol. We use the Go for everything we do in development, helping everyone have reproducible builds. If you want to build the whole project, you can run the following command:
+The Prysm project is a large monorepo containing all sorts of tools and services that implement the eth2 protocol. We use Go for everything we do in development, helping everyone have reproducible builds. If you want to build the whole project, you can run the following command:
 
 ```text
 $ go build -v ./...
