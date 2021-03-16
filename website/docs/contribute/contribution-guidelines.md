@@ -15,7 +15,7 @@ Once you are a bit more familiar with the concepts behind eth2 and are ready to 
 To develop Prysm, you'll need the following:
 
 - A modern windows, osx, or linux operating system
-- Go 1.14.x version installed, download and install [here](https://golang.org/dl/)
+- Go 1.16.x version installed, download and install [here](https://golang.org/dl/)
 - The `git` package installed
 - A code editor such as [Visual Studio Code](https://code.visualstudio.com/download) or Jetbrains' [Goland IDE](https://www.jetbrains.com/go/) or your preferred one
 
@@ -39,7 +39,7 @@ $ go version
 
 Example output:
 ```text
-go version go1.14.4 darwin/amd64
+go version go1.16 darwin/amd64
 ```
 
 ### Building and testing Prysm with Go
