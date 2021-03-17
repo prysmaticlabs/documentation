@@ -40,6 +40,10 @@ These hardware specifications are recommended, but not required to run the Prysm
 * A modern operating system
 * The latest release of [Docker](https://docs.docker.com/install/) installed
 
+## Where are the Docker files?
+
+Instead of using the Dockerfiles, our team relies on the [Bazel](https://bazel.build) build system used by major companies to manage monorepositories. Bazel provides reproducible builds and a sandboxed environment that ensures everyone building Prysm has the same experience and can build our entire project from a single command. For more detailed rationale on why Bazel, how it works in Prysm, and all important information about how exactly building from source works, read our rationale [here](/docs/reading/bazel). That page also explains how we build the actual Docker images in Prysm today.
+
 ## Installing Prysm
 
 import Tabs from '@theme/Tabs';

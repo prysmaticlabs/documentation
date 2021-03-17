@@ -65,6 +65,7 @@
 		"Learn more": 	[ 	"terminology",
 							"reading/eth2",
 							"reading/golang",
+							"reading/bazel",
 							"reading/testnet-postmortems"
 						],
 		"Audits": [

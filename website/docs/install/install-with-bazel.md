@@ -4,7 +4,7 @@ title: Installing Prysm from source with Bazel
 sidebar_label: Building from source
 ---
 
-Prysm can be installed on GNU/Linux, MacOS, and Arm64 using our build tool, Bazel. This page includes instructions for performing this method.
+Prysm can be installed on GNU/Linux, MacOS, and Arm64 using our build tool, [Bazel](https://bazel.build). This page includes instructions for performing this method.
 
 :::tip Pro-Tip
 **NOTICE:** The Prysm installation script is the easiest and most efficient way of installing the latest binaries. Instructions for using it can be found [here](/docs/install/linux).
@@ -41,6 +41,10 @@ These hardware specifications are recommended, but not required to run the Prysm
 * `libssl-dev` installed
 * `libgmp-dev` installed
 * `libtinfo5` installed
+
+## Why Bazel?
+
+Instead of using the `Go` tool to build Prysm, our team relies on the [Bazel](https://bazel.build) build system used by major companies to manage monorepositories. Bazel provides reproducible builds and a sandboxed environment that ensures everyone building Prysm has the same experience and can build our entire project from a single command. For more detailed rationale on why Bazel, how it works in Prysm, and all important information about how exactly building from source works, read our rationale [here](/docs/reading/bazel)
 
 ## Installing Prysm
 
