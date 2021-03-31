@@ -4,39 +4,82 @@ title: ETH2 resources
 sidebar_label: ETH2 resources
 ---
 
-This page serves material necessary to catch up with the current state of ETH2 development and provide readers with the knowledge required to begin making meaningful contributions to the Prysm client. Whether you are an expert on all things Ethereum or are new to the blockchain world entirely, there are appropriate resources here that will help you get up to speed.
+This page serves material necessary to catch up with the current state of ETH2 development and provides readers with the knowledge required to begin making meaningful contributions to the Prysm client. Whether you are an expert on all things Ethereum or are new to the blockchain world entirely, there are appropriate resources here that will help you get up to speed.
 
 ## **Ethereum fundamentals**
 
+### Introduction
+
 * [What is Ethereum?](http://ethdocs.org/en/latest/introduction/what-is-ethereum.html)
 * [How Does Ethereum Work Anyway?](https://medium.com/@preethikasireddy/how-does-ethereum-work-anyway-22d1df506369)
-* [Ethereum Introduction](https://github.com/ethereum/wiki/wiki/Ethereum-introduction)
-* [Ethereum Frequently Asked Questions](https://github.com/ethereum/wiki/wiki/FAQs)
+* [Ethereum Introduction](https://ethereum.org/en/what-is-ethereum/)
+* [Ethereum Foundation](https://ethereum.org/en/foundation/)
+* [Ethereum Wiki](https://eth.wiki/)
+* [Ethereum Research](https://ethresear.ch/)
+* [Ethereum White Paper](https://github.com/ethereum/wiki/wiki/White-Paper)
 * [What is Hashing?](https://blockgeeks.com/guides/what-is-hashing/)
 * [Hashing Algorithms and Security](https://www.youtube.com/watch?v=b4b8ktEV4Bg)
 * [Understanding Merkle Trees](https://www.codeproject.com/Articles/1176140/Understanding-Merkle-Trees-Why-use-them-who-uses-t)
-* [Ethereum White Paper](https://github.com/ethereum/wiki/wiki/White-Paper)
 * [Ethereum Block Architecture](https://ethereum.stackexchange.com/questions/268/ethereum-block-architecture/6413#6413)
-* [Ethereum Beige Paper](https://github.com/chronaeon/beigepaper/blob/master/beigepaper.pdf)
 * [What is an Ethereum Token?](https://blockgeeks.com/guides/ethereum-token/)
 * [What is Ethereum Gas?](https://blockgeeks.com/guides/ethereum-gas-step-by-step-guide/)
+* [Client Implementations](https://eth.wiki/eth1/clients)
 
-### Sharding in Ethereum
+## **ETH2 fundamentals**
+
+*Disclaimer: Because some parts of ETH2 are still an active area of research and/or development, some resources may be outdated.* 
+
+### Introduction and specifications
+
+* [The Explainer You Need to Read First](https://ethos.dev/beacon-chain/)
+* [Official Specifications](https://github.com/ethereum/eth2.0-specs)
+* [Annotated Spec](https://benjaminion.xyz/eth2-annotated-spec/)
+* [Another Annotated Spec](https://notes.ethereum.org/@djrtwo/Bkn3zpwxB)
+* [Rollup-Centric Roadmap](https://ethereum-magicians.org/t/a-rollup-centric-ethereum-roadmap/4698)
+
+### Sharding
 
 * [Blockchain Scalability: Why?](https://blockgeeks.com/guides/blockchain-scalability/)
 * [What Are Ethereum Nodes and Sharding](https://blockgeeks.com/guides/what-are-ethereum-nodes-and-sharding/)
 * [How to Scale Ethereum: Sharding Explained](https://medium.com/prysmatic-labs/how-to-scale-ethereum-sharding-explained-ba2e283b7fce)
-* [Sharding FAQ](https://github.com/ethereum/wiki/wiki/Sharding-FAQ)
-* [Sharding Introduction: R&D Compendium](https://github.com/ethereum/wiki/wiki/Sharding-introduction-R&D-compendium)
+* [Sharding FAQ](https://eth.wiki/sharding/Sharding-FAQs)
+* [Sharding Introduction: R&D Compendium](https://eth.wiki/en/sharding/sharding-introduction-r-d-compendium)
 
-## Peer-to-peer networking
+### Peer-to-peer networking
 
-* [Ethereum Peer to Peer Networking](https://github.com/ethereum/go-ethereum/wiki/Peer-to-Peer)
-* [How Does the P2P on Ethereum Work?](https://www.reddit.com/r/ethereum/comments/3918u0/how_does_the_p2p_network_on_ethereum_work/)
-* [How Does Kademlia Work?](http://gleamly.com/article/introduction-kademlia-dht-how-it-works)
-* [Kademlia Protocol](http://www.divms.uiowa.edu/~ghosh/kademlia.pdf)
+* [Ethereum Peer to Peer Networking](https://geth.ethereum.org/docs/interface/peer-to-peer)
+* [P2P Library](https://libp2p.io/)
+* [Discovery Protocol](https://github.com/ethereum/devp2p/blob/master/discv5/discv5.md)
 
-## Serenity concepts
+### Latest News
+
+* [Ethereum Blog](https://blog.ethereum.org/)
+* [News from Ben Edgington](https://hackmd.io/@benjaminion/eth2_news)
+
+### Pyrmont Testnet Blockchain
+
+* [Launchpad](https://pyrmont.launchpad.ethereum.org/en/)
+* [Beacon Chain Explorer](https://pyrmont.beaconcha.in/)
+
+### Mainnet Blockchain
+
+* [Launchpad](https://launchpad.ethereum.org/en/)
+* [Beacon Chain Explorer](https://beaconcha.in/)
+* [Another Beacon Chain Explorer](https://explorer.bitquery.io/eth2)
+* [Validator Queue Statistics](https://eth2-validator-queue.web.app/index.html)
+* [Slashing Detector](https://twitter.com/eth2slasher)
+
+### Client Implementations
+
+* [Prysm](https://github.com/prysmaticlabs/prysm) developed in Golang and maintained by [Prysmatic Labs](https://prysmaticlabs.com/)
+* [Lighthouse](https://github.com/sigp/lighthouse) developed in Rust and maintained by [Sigma Prime](https://sigmaprime.io/)
+* [Lodestar](https://github.com/ChainSafe/lodestar) developed in TypeScript and maintained by [ChainSafe Systems](https://chainsafe.io/)
+* [Nimbus](https://github.com/status-im/nimbus-eth2) developed in Nim and maintained by [status](https://status.im/)
+* [Teku](https://github.com/ConsenSys/teku) developed in Java and maintained by [ConsenSys](https://consensys.net/)
+
+## Other
+
+### Serenity concepts
 
 * [Sharding Concepts Mental Map](https://www.mindomo.com/zh/mindmap/sharding-d7cf8b6dee714d01a77388cb5d9d2a01)
 * [Taiwan Sharding Workshop Notes](https://hackmd.io/s/HJ_BbgCFz#%E2%9F%A0-General-Introduction)
@@ -44,7 +87,6 @@ This page serves material necessary to catch up with the current state of ETH2 d
 * [Torus Shaped Sharding Network](https://ethresear.ch/t/torus-shaped-sharding-network/1720/8)
 * [General Theory of Sharding](https://ethresear.ch/t/a-general-theory-of-what-quadratically-sharded-validation-is/1730/10)
 * [Sharding Design Compendium](https://ethresear.ch/t/sharding-designs-compendium/1888/25)
-* [Phase 0 for Humans](https://notes.ethereum.org/jDcuUp3-T8CeFTv0YpAsHw?view)
 
 ### Serenity research posts
 
@@ -75,15 +117,14 @@ This page serves material necessary to catch up with the current state of ETH2 d
 * [Casper FFG in Depth by Carl](https://www.youtube.com/watch?v=uQ3IqLDf-oo)
 * [Ethereum & Scalability Technology from Asia Pacific ETH meet up by Hsiao Wei](https://www.youtube.com/watch?v=GhuWWShfqBI)
 
-
-## Ethereum Virtual Machine
+### Ethereum Virtual Machine
 
 * [What is the Ethereum Virtual Machine?](https://themerkle.com/what-is-the-ethereum-virtual-machine/)
 * [Ethereum VM](https://medium.com/@jeff.ethereum/go-ethereums-jit-evm-27ef88277520)
 * [Ethereum Protocol Subtleties](https://github.com/ethereum/wiki/wiki/Subtleties)
 * [Awesome Ethereum Virtual Machine](https://github.com/ethereum/wiki/wiki/Ethereum-Virtual-Machine-%28EVM%29-Awesome-List)
 
-## Ethereum-flavoured WebAssembly
+### Ethereum-flavoured WebAssembly
 
 * [eWASM background, motivation, goals, and design](https://github.com/ewasm/design)
 * [The current eWASM spec](https://github.com/ewasm/design/blob/master/eth_interface.md)
@@ -91,11 +132,3 @@ This page serves material necessary to catch up with the current state of ETH2 d
 * [Why eWASM? by Alex Beregszaszi](https://www.youtube.com/watch?v=VF7f_s2P3U0)
 * [Panel: entire eWASM team discussion and Q&A](https://youtu.be/ThvForkdPyc?t=119)
 * [Ewasm community meetup at ETHBuenosAires](https://www.youtube.com/watch?v=qDzrbj7dtyU)
-
-
-## Ethereum client implementations
-
-* [Geth](https://github.com/ethereum/go-ethereum) \(known also as go-ethereum\) is the Golang implementation of [ETH1](/docs/terminology#eth1)
-* [Parity](https://github.com/paritytech/parity) the fastest and most performant implementation - written in Rust
-* [Trinity](https://github.com/ethereum/py-evm/tree/master/trinity) new project implements Ethereum in Python
-* [Cpp-Ethereum](https://github.com/ethereum/cpp-ethereum) a C++ implementation of Ethereum
