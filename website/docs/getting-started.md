@@ -23,4 +23,3 @@ To participate in the eth2 network, read our comprehensive guidelines [here](/do
 ## Need assistance?
 
 If you have questions about this documentation, feel free to stop by either the [Prysmatic Discord](https://discord.gg/prysmaticlabs)'s **#documentation** channel and a member of the team or our community will be happy to assist you.
-
