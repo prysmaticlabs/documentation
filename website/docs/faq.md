@@ -9,6 +9,10 @@ sidebar_label: Frequently asked questions
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+#### Something went wrong
+
+Please do this and that.
+
 #### Help, I see this error and don't know what it means!
 
 If you have seen a scary ERROR log in your beacon node or validator, there are few things you should do first. Go to our [open issues](https://github.com/prysmaticlabs/prysm/issues) to see if someone has reported the same problem before. Otherwise, note the Prysm version you are running, your operating system, and file a bug report [here](https://github.com/prysmaticlabs/prysm/issues/new?assignees=&labels=&template=bug_report.md). You can also ask our community on [discord](https://discord.gg/prysmaticlabs) about your error and we will take a look as soon as possible.
