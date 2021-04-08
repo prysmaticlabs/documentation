@@ -54,6 +54,10 @@
 
 		"Developer tools": 	["devtools/block-explorers"],
 
+	    "Developer Wiki": 	[	"devtools/init-state",
+								"devtools/net-design",
+								"devtools/pull-requests"
+							],
 
 		"Contribute": [	
 			"contribute/doc-standards",
