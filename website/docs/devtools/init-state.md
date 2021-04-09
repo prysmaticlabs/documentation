@@ -1,7 +1,7 @@
 ---
 id: init-state
-title: Initial Syncronization
-sidebar_label: Initial syncronization
+title: Initial Synchronization
+sidebar_label: Initial synchronization
 ---
 
 ## Overview of the Feature
@@ -425,4 +425,3 @@ bazel run //beacon-chain -- --datadir=$HOME/prysm  \
   --http-web3provider=$HOME/Library/Ethereum/goerli/geth.ipc \ 
   --enable-debug-rpc-endpoints --pyrmont
 ```
-
