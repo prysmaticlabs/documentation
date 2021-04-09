@@ -177,7 +177,6 @@ Peers are added to the peerstore from those that are discovered through our disc
 func setupPeerHandShake(h host.Host, helloHandler sync.RPCHandler) {
   h.Network().Notify(&inet.NotifyBundle{
      ConnectedF: func(net inet.Network, conn inet.Conn) {
-
   }
 }
 ```
@@ -485,4 +484,3 @@ The implementation is already completed in the geth repo. Work required to be do
 16*1240 (deposit) = 19840  
 16*112 (voluntaryexit) = 1792  
   
-
