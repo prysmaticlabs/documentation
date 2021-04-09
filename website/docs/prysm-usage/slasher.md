@@ -18,11 +18,11 @@ A validator that correctly follows the protocol never emits a slashable vote in 
 
 ## What is a Slasher
 
-**Slasher** is the name of software that can detect slashable events from validators and report those to the protocol. You can think of a slasher as the “police” of the network. In order to detect slashable messages, the slasher records the attesting and proposing history for every validator on the network, and cross references this history with what is broadcasted to find slashable messages such as double blocks or surrounding votes.
+**Slasher** is the name of software that can detect slashable events from validators and report those to the protocol. You can think of a slasher as the “police” of the network. Running a slasher is **optional**. In order to detect slashable messages, the slasher records the attesting and proposing history for every validator on the network, and cross references this history with what is broadcasted to find slashable messages such as double blocks or surrounding votes.
 
-All the network needs is **1 honest, properly functioning slasher**to monitor the network because any slashings found are propagated to the entire network for it to be put into a block as soon as possible.
+All the network needs is *1 honest, properly functioning slasher* to monitor the network because any slashings found are propagated to the entire network for it to be put into a block as soon as possible.
 
-Running a slasher is not meant to be profitable. Slashing is meant to be rare and whistleblower rewards are low on purpose. Running a slasher is meant to be an **altruistic action**, and once again, only a single honest, properly functioning slasher needs to be active in the network to catch slashable offenses. Thankfully, this is a low bar to entry, and we envision quite a lot of users and entities will run slashers to ensure network security.
+Running a slasher is not meant to be profitable. Slashing is meant to be rare and whistleblower rewards are low on purpose. Running a slasher is meant to be an *altruistic action*, and once again, only a single honest, properly functioning slasher needs to be active in the network to catch slashable offenses. Thankfully, this is a low bar to entry, and we envision quite a lot of users and entities will run slashers to ensure network security.
 
 ## Running Slasher
 
@@ -34,8 +34,10 @@ Running a slasher can also offer some profits to your validators given certain c
 
 ## Using Slasher for Advanced Slashing Protection
 
-An alternative implementation for slashing prevention is the use of slasher itself as a middleware between your beacon node and validator client. Before a validator client submits a block or an attestation, it asks the slasher if it is slashable first. If the check passes, the data will go through to the beacon node. This is the most advanced form of slashing protection as slasher is, ideally, aware of everything happening in the network and has recorded history of blocks and attestations for every validator. There is a caveat, however, that remote slashing protection is not yet optimized in Prysm as our slasher is still a resource hog. Given the high resource consumption of our slasher, it might cause your validator to miss attestations or blocks. Remote slashing protection is meant to run as an added layer on top of local slashing protection. For security reasons, local slashing protection cannot be disabled in Prysm.
+An alternative implementation for slashing prevention is the use of slasher itself as a middleware between your beacon node and validator client. Before a validator client submits a block or an attestation, it asks the slasher if the object is slashable first. If the check passes, the data will go through to the beacon node. This is the most advanced form of slashing protection as slasher is, ideally, aware of everything happening in the network and has recorded history of blocks and attestations for every validator.
+
+You can enable remote slashing protection if you are running a beacon node with `--slasher` by adding the flag `--enable-external-slashing-protection` to your validator client.
 
 ## Further Reading
 
-https://medium.com/prysmatic-labs/eth2-slashing-prevention-tips-f6faa5025f50
+We recommend reading our piece on [slashing prevention tips](https://medium.com/prysmatic-labs/eth2-slashing-prevention-tips-f6faa5025f50) which has more detailed information about how to protect your own validator from being slashed and clarifying common misconceptions.
