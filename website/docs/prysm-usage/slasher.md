@@ -3,71 +3,41 @@ id: slasher
 title: Running a slasher
 sidebar_label: Running a slasher
 ---
-This section provides instructions on how to run [slasher](https://github.com/prysmaticlabs/prysm/tree/master/slasher) in order to identify and report slashable offenses on eth2 .  If the slasher detects a slashable offense, proof is sent to the [beacon-chain node](https://docs.prylabs.network/docs/how-prysm-works/beacon-node/) for inclusion in a block.  [Validators](https://docs.prylabs.network/docs/how-prysm-works/prysm-validator-client/) earn a small whistleblower reward for including this proof into a block.  
+This section provides instructions on how to run [slasher](https://github.com/prysmaticlabs/prysm/tree/master/slasher) as an **optional** process to report slashable offenses on eth2 .  If slasher detects a slashable offense, proof is sent to the [beacon-chain node](https://docs.prylabs.network/docs/how-prysm-works/beacon-node/) for inclusion in a block.  [Validators](https://docs.prylabs.network/docs/how-prysm-works/prysm-validator-client/) earn a small whistleblower reward for including this proof into a block.  
 
-:::danger Slasher Can Be a Resource Hog
-The Slasher process can be a huge resource hog during times of no chain finality, which can manifest itself as massive RAM usage. Please make sure you understand the risks of running the Slasher, especially if you want high uptime for your beacon nodes. The Slasher can place significant stress on beacon nodes and the increased load on the beacon nodes could contribute to your validators underperforming.  
+:::tip Slasher Requires Significant Disk Space
+Slasher is essentially a beacon node with **superpowers**. It might use over 70Gb of disk space when running on mainnet (*estimated disk usage, April 2021*). We recommend running a slasher with at least the **recommended** system specifications as stated in our [installation guides](/docs/install/install-with-script). 
 :::
 
-> NOTICE: Running slasher is optional, but helps secure the chain and may result in additional earnings.
+## What is Slashing
 
-## Slashable Offenses
 
-#### Validator slashings 
- - Double voting
-   - occurs when a validator signs two different beacon blocks in the same epoch
- - Surround votes
-   - occurs when a validator signs two conflicting attestations  
+The main purpose of slashing is to discourage attacks against the eth2 network that might otherwise be cheap to perform such as trivially creating conflicting forks where validators attest on a different view of historical checkpoints.
 
-#### Block Proposer slashings
- - occurs when a proposer broadcasts more than one block for the same slot
- 
-![Prysm with Slasher](/img/prysm-with-slasher.png)
+A validator that correctly follows the protocol should never emit a slashable vote during normal operation. Validators will not be slashed for simply being offline (*however, they may be penalized*).
 
-## Get Prysm and start beacon-chain
-> **NOTICE:** If beacon-chain is already running, skip to step 2 
+## What is a Slasher
 
-1. To begin, follow the instructions for [GNU\Linux](/docs/install/linux), [MacOS](/docs/install/mac), [ARM64](/docs/install/arm), or [Windows](/docs/install/windows) to fetch and install Prysm.  The beacon-chain process should be running and fully synced before proceeding.
+**Slasher** is the name of software that can detect slashable events from validators and report them to the protocol. You can think of a slasher as the network “police”. Running a slasher is **optional**. In order to detect slashable messages, the slasher records the attesting and proposing history for every validator on the network, then cross references this history with what has been broadcasted to find slashable messages such as double blocks or surrounding votes.
 
-## Run Slasher
+In theory all the network needs is *1 honest, properly functioning slasher* to monitor the network because any slashings found are propagated to the entire network for it to be put into a block as soon as possible.
 
-2. Depending on your platform, issue the appropriate command alongside any [startup parameters](/docs/prysm-usage/parameters#slasher-parameters) from the examples below to start slasher.
+Running a slasher is not meant to be profitable. Slashing is meant to be rare and whistleblower rewards are purposefully low.  Running a slasher is meant to be an *altruistic action*, and as stated, only a single, honest, properly functioning slasher needs to be active in the network to catch slashable offenses. Thankfully, this is a low bar to entry, and we envision quite a lot of users and entities will run slashers to ensure network security.
 
-#### Running slasher with prysm.bat on Windows
+## Running Slasher
 
-```sh
-.\prysm.bat slasher
-```
+Running a slasher is as simple as adding the `--slasher` flag to your **beacon node**. Doing this will enable your beacon node to perform slashing detection. Slasher is very heavy on database access and disk usage, you may see it using over an additional 70Gb of extra storage on disk than normal when running on mainnet. Given that slasher needs to store a lot of information about attestations and blocks within the network, this is to be expected.
 
-#### Running slasher with prysm.sh on GNU\Linux, macOS, and ARM64
+### Whistleblower Rewards
 
-```sh
-./prysm.sh slasher
-```
+Running a slasher can also offer some profits to your validators given certain conditions. If slasher detects a slashable condition, it will **broadcast it to the network by default**. Some lucky validator will then package this slashing evidence into a block and be rewarded for doing so. You can **disable** this broadcast in Prysm using the `--disable-broadcast-slashings` option in your **beacon node**.
 
-#### Running slasher with Docker on GNU\Linux, and macOS 
+## Using Slasher for Advanced Slashing Protection
 
-```text
-docker pull gcr.io/prysmaticlabs/prysm/slasher:stable
-docker run -it --network="host" -v $HOME/.eth2:/data --name slasher \
-  gcr.io/prysmaticlabs/prysm/slasher:stable \
-  --datadir=/data
-```
-#### Running slasher with Docker on Windows
+An alternative implementation for slashing prevention is the use of slasher itself as a middleware client between your beacon node and validator client. Before a validator client submits a block or an attestation, it asks the slasher if the object is slashable. If the check passes, the data will go through to the beacon node. This is the most advanced form of slashing protection as slasher is, ideally, aware of everything happening in the network and has a recorded history of blocks and attestations for every validator.
 
-```text
-docker pull gcr.io/prysmaticlabs/prysm/slasher:stable
-docker run -it --network="host" -v c:/prysm:/data gcr.io/prysmaticlabs/prysm/slasher:stable
-```
+You can enable remote slashing protection if you are running a beacon node with `--slasher` by adding the flag `--enable-external-slashing-protection` to your validator client.
 
-#### Running slasher with Bazel on GNU\Linux, macOS, and ARM64
+## Further Reading
 
-```text
-bazel run //slasher
-```
-
-3. Slasher will spin up and immediately begin communicating with the beacon-chain process.
-
-**Congratulations, you are now ready to identify and report slashable attestations and block proposals**
-
-**Still have questions?**  Stop by our [Discord](https://discord.gg/KSA7rPr) for further assistance!
+We recommend reading our piece on [slashing prevention tips](https://medium.com/prysmatic-labs/eth2-slashing-prevention-tips-f6faa5025f50) which has more detailed information on how to protect your own validator from being slashed, the document also clarifies a number of common misconceptions.
