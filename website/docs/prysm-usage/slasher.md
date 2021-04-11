@@ -3,10 +3,10 @@ id: slasher
 title: Running a slasher
 sidebar_label: Running a slasher
 ---
-This section provides instructions to run [slasher](https://github.com/prysmaticlabs/prysm/tree/master/slasher) to identify and report slashable offenses on eth2 .  If slasher detects a slashable offense, proof is sent to the [beacon-chain node](https://docs.prylabs.network/docs/how-prysm-works/beacon-node/) for inclusion in a block.  [Validators](https://docs.prylabs.network/docs/how-prysm-works/prysm-validator-client/) earn a small whistleblower reward for including this proof into a block.  
+This section provides instructions on how to run [slasher](https://github.com/prysmaticlabs/prysm/tree/master/slasher) in order to identify and report slashable offenses on eth2 .  If the slasher detects a slashable offense, proof is sent to the [beacon-chain node](https://docs.prylabs.network/docs/how-prysm-works/beacon-node/) for inclusion in a block.  [Validators](https://docs.prylabs.network/docs/how-prysm-works/prysm-validator-client/) earn a small whistleblower reward for including this proof into a block.  
 
 :::danger Slasher Can Be a Resource Hog
-Slasher can be a huge resource hog during times of no chain finality, which can manifest as massive RAM usage. Please make sure you understand the risks of this, especially if you want high uptime for your beacon nodes. Slasher places significant stress on beacon nodes when the chain has no finality, and might be the reason why your validators are underperforming if your beacon node is under this much stress.
+The Slasher process can be a huge resource hog during times of no chain finality, which can manifest itself as massive RAM usage. Please make sure you understand the risks of running the Slasher, especially if you want high uptime for your beacon nodes. The Slasher can place significant stress on beacon nodes and the increased load on the beacon nodes could contribute to your validators underperforming.  
 :::
 
 > NOTICE: Running slasher is optional, but helps secure the chain and may result in additional earnings.
@@ -27,7 +27,7 @@ Slasher can be a huge resource hog during times of no chain finality, which can 
 ## Get Prysm and start beacon-chain
 > **NOTICE:** If beacon-chain is already running, skip to step 2 
 
-1. To begin, follow the instructions for [GNU\Linux](/docs/install/linux), [macOS](/docs/install/mac), [ARM64](/docs/install/arm), or [Windows](/docs/install/windows) to fetch and install Prysm.  The beacon-chain process should be running and fully synced before proceeding.
+1. To begin, follow the instructions for [GNU\Linux](/docs/install/linux), [MacOS](/docs/install/mac), [ARM64](/docs/install/arm), or [Windows](/docs/install/windows) to fetch and install Prysm.  The beacon-chain process should be running and fully synced before proceeding.
 
 ## Run Slasher
 
