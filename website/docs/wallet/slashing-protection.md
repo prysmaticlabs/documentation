@@ -18,6 +18,10 @@ To protect itself from accidentally being slashed due to some software bug or ot
 
 **This database is kept, by default, within the validator's wallet directory in a file called validator.db**. However, instead of manually copying and dealing with this file, Prysm provides tools to export and import your slashing protection history into a standard format supported by all eth2 clients, such as Lighthouse, Teku, and Nimbus. This standard format is useful as well if you want to move your validator between computers securely. You can export your slashing protection history from one computer as a file and import it safely into the other.
 
+## How to use slashing protection
+
+Basic slashing protection is **enabled** always for your validator using a database to keep track of objects your local validator has signed in the past to prevent it from signing the same message again and getting slashed. If you want to use a more advanced, *remote* slashing protection, see our section on how to use **slasher** [here](/docs/prysm-usage/slasher).
+
 ## Slashing protection history standard format
 
 Slashing protection history has been standardized by the eth2 client teams into a common format we all comply with. This standardization is known as [EIP-3076](https://eips.ethereum.org/EIPS/eip-3076), which is a JSON file that looks as follows:
