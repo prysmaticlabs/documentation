@@ -11,6 +11,7 @@ Slasher is essentially a beacon node with **superpowers**. It might use over 70G
 
 ## What is Slashing
 
+Slashing occurs when there is evidence a validator has acted against the Ethereum network. Ethereum proof of stake works on a penalty-based incentive mechanism to heavily discourage actions on the network that could cause instability, malicious forking and conflicting information from validators. Slashing does not need to have been the result of malicious intent, it could also happen accidently via misconfiguration. If a validator acts in a way that can confuse or disrupt the integrity of the system, the protocol removes, or **slashes**, a portion of the offending validators existing stake, causing a gradual loss of ETH over time until the validator is forcefully ejected from the network and marked as SLASHED. This is an **irreversible** process.
 
 The main purpose of slashing is to discourage attacks against the eth2 network that might otherwise be cheap to perform such as trivially creating conflicting forks where validators attest on a different view of historical checkpoints.
 
