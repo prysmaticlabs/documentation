@@ -147,3 +147,20 @@ fallback-web3provider:
 - https://mainnet.infura.io/v3/YOUR-PROJECT-ID
 - https://eth-mainnet.alchemyapi.io/v2/YOUR-PROJECT-ID
 ```
+## Authorizing connection to a third-party eth1 provider
+
+In case you need to authorize to your eth1 node, both `--http-web3provider` and `--fallback-web3provider` flags support the following HTTP authorization methods:
+- Basic Authentication
+- Bearer Authentication (Token Authentication)
+
+In order to pass authorization data, append the authorization header to the flag's value, separating the URL and the authorization header with a comma. In the following example:
+- the main endpoint includes Basic Authentication
+- the first fallback endpoint does not include any authorization
+- the second fallback endpoint includes Bearer Authentication
+```
+--http-web3provider="<YOUR MAIN ETH1 ENDPOINT>,Basic <USERNAME>:<PASSWORD>" --fallback-web3provider=<PROVIDER 1> --fallback-web3provider="<PROVIDER 2>,Bearer <TOKEN>"
+```
+
+:::tip 
+Note that you can specify multiple authorization values for the same endpoint by reusing the endpoint URL in `--fallback-web3provider` and changing the value of the authorization header.
+:::
