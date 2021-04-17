@@ -61,6 +61,11 @@ This page serves material necessary to catch up with the current state of ETH2 d
 * [Launchpad](https://pyrmont.launchpad.ethereum.org/en/)
 * [Beacon Chain Explorer](https://pyrmont.beaconcha.in/)
 
+### Prater Testnet Blockchain
+
+* [Launchpad](https://prater.launchpad.ethereum.org/en/)
+* [Beacon Chain Explorer](https://prater.beaconcha.in/)
+
 ### Mainnet Blockchain
 
 * [Launchpad](https://launchpad.ethereum.org/en/)
