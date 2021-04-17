@@ -428,7 +428,6 @@ func (rs *RegularSync) receiveBlock(msg p2p.Message) error {
 
 ```
 
-**TODO: Add path that allows ReceiveBlock with no fork choice option.**
 
 **Migration strategy **
 
