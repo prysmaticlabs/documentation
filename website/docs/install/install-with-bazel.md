@@ -79,7 +79,7 @@ We do not write our own Dockerfiles, as Bazel provides us a more sandboxed, simp
 
 ### Dependencies needed
 
-* All specified dependencies for building with Bazel [here](docs/install/install-with-bazel#dependencies)
+* All specified dependencies for building with Bazel [here](/docs/install/install-with-bazel#dependencies)
 * Python installed and available in your computer
 
 ### Build process
