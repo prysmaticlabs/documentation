@@ -32,6 +32,12 @@ Among a few cons of Bazel are:
 - Large, initial download of Bazel
 - Not enough, comprehensive IDE support for Bazel (although Jetbrains IDEs have good support)
 
+Thankfully, Prysm also builds with `go` and `go` modules as well, so your code editor can use its regular Go support when developing for Prysm.
+
+## BUILD Files
+
+Building with Bazel requires every directory and every package to have a BUILD.bazel file which tells it how it should build the code in question.
+
 ### Do I have to edit BUILD files myself?
 
 Most of the time, developers will not need to edit BUILD files themselves. Instead, they can use the following tool:
@@ -57,27 +63,15 @@ All dependencies in the Prysm monorepo live in a file called `deps.bzl` at the t
 
 ### How to add new dependencies
 
-In order to support a good developer experience, Prysm is also fully Go compatible, allowing users to use `go mod` as well to develop the project locally. Adding a new Go dependency can be done with:
+Adding new dependencies to Prysm requires specific changes. We have prepared a comprehensive [DEPENDENCIES.md](https://github.com/prysmaticlabs/prysm/blob/master/DEPENDENCIES.md) explaining the required process.
 
-```text
-go get github.com/user/repo
-```
+## Bazel and Docker
 
-and then
+A common question we get is: "where are Prysm's Dockerfiles?". With Bazel, we get a ton of benefits in terms of optimizing our deployment and release process. In particular, we use [`bazel rules docker`](https://github.com/bazelbuild/rules_docker) which provides us the ability to specify a base, barebones image, and essentially builds our binary and creates a Docker container as a simple wrapper over our binaries. 
 
-```text
-bazel run //:gazelle -- update-repos -from_file=go.mod
-```
+We do not write our own Dockerfiles, as Bazel provides us a more sandboxed, simple experience with all of its benefits. To see an example use of `bazel rules docker` for how we build a particular package, see [here](https://github.com/prysmaticlabs/prysm/blob/aa389c82a157008741450ba1e04d898924734432/tools/bootnode/BUILD.bazel#L36). 
 
-## Docker and Bazel
-
-A common question we get is: "where are Prysm's Dockerfiles?". With Bazel, we get a ton of benefits in terms of optimizing our deployment and release process. In particular, we use [`bazel rules docker`](https://github.com/bazelbuild/rules_docker) which provides us the ability to specify a base, barebones image, and essentially builds our binary and creates a Docker container as a simple wrapper over our binaries. We do not write our own Dockerfiles, as Bazel provides us a more sandboxed, simple experience with all of its benefits. To see an example use of `bazel rules docker` for how we build a particular package, see [here](https://github.com/prysmaticlabs/prysm/blob/aa389c82a157008741450ba1e04d898924734432/tools/bootnode/BUILD.bazel#L36). In order to push to a registry, you will need to change the `container_bundle` to whatever name you want to give to your image, then run:
-
-```text
-bazel run //tools/bootnode:push_images
-```
-
-in the example above for our `bootnode` package.
+To read comprehensive instructions on how to build Prysm's docker images for your own use, see [here](/docs/install/install-with-bazel).
 
 ## Building Production Releases
 
@@ -88,4 +82,3 @@ Everything in Prysm can be built with Bazel using `bazel build //...`. For examp
 ### With Go
 
 Building Prysm with Go is possible, but it will use precompiled cryptography to build the final executable. Additionally, it will not perform the compile-time optimizations Bazel does, and can have unexpected issues as you are relinquishing reproducible, hermetic builds which Bazel provides. We always recommend Bazel as the only way to run Prysm if you are planning on running it.
-
