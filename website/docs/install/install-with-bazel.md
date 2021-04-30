@@ -35,7 +35,7 @@ These hardware specifications are recommended, but not required to run the Prysm
 ## Dependencies
 
 * A modern UNIX operating system
-* [Bazel](https://docs.bazel.build/versions/3.7.0/install.html) version **3.7.0** installed (Ensure you are doing 3.7.0)
+* [Bazel](https://docs.bazel.build/versions/3.7.0/install.html) version **3.7.0** installed (Ensure you are using 3.7.0)
 * The `cmake` package installed
 * The `git` package installed
 * `libssl-dev` installed
