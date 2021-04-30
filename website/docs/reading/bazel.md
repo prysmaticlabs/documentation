@@ -63,7 +63,7 @@ All dependencies in the Prysm monorepo live in a file called `deps.bzl` at the t
 
 ### How to add new dependencies
 
-Adding new dependencies to Prysm requires specific changes. We have prepared a comprehensive [DEPENDENCIES.md](https://github.com/prysmaticlabs/prysm/blob/cff7dbd01582348d633f971a1e81e0c1a821db3d/DEPENDENCIES.md) explaining the required process.
+Adding new dependencies to Prysm requires specific changes. We have prepared a comprehensive [DEPENDENCIES.md](https://github.com/prysmaticlabs/prysm/blob/master/DEPENDENCIES.md) explaining the required process.
 
 ## Bazel and Docker
 
@@ -82,4 +82,3 @@ Everything in Prysm can be built with Bazel using `bazel build //...`. For examp
 ### With Go
 
 Building Prysm with Go is possible, but it will use precompiled cryptography to build the final executable. Additionally, it will not perform the compile-time optimizations Bazel does, and can have unexpected issues as you are relinquishing reproducible, hermetic builds which Bazel provides. We always recommend Bazel as the only way to run Prysm if you are planning on running it.
-
