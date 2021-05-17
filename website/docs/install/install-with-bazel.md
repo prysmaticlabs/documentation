@@ -41,6 +41,7 @@ These hardware specifications are recommended, but not required to run the Prysm
 * `libssl-dev` installed
 * `libgmp-dev` installed
 * `libtinfo5` installed
+* `libprotoc` version 3.14 installed
 
 ## Why Bazel?
 
