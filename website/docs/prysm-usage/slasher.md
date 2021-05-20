@@ -27,7 +27,7 @@ Running a slasher is not meant to be profitable. Slashing is meant to be rare an
 
 ## Running Slasher
 
-Running a slasher is as simple as adding the `--slasher` flag to your **beacon node**. Doing this will enable your beacon node to perform slashing detection. Slasher is very heavy on database access and disk usage, you may see it using over an additional 70Gb of extra storage on disk than normal when running on mainnet. Given that slasher needs to store a lot of information about attestations and blocks within the network, this is to be expected.
+Running a slasher is as simple as adding the `--historical-slasher-node` flag to your **beacon node**. Doing this will enable your beacon node to perform slashing detection. Slasher is very heavy on database access and disk usage, you may see it using over an additional 70Gb of extra storage on disk than normal when running on mainnet. Given that slasher needs to store a lot of information about attestations and blocks within the network, this is to be expected.
 
 ### Whistleblower Rewards
 
@@ -37,7 +37,7 @@ Running a slasher can also offer some profits to your validators given certain c
 
 An alternative implementation for slashing prevention is the use of slasher itself as a middleware client between your beacon node and validator client. Before a validator client submits a block or an attestation, it asks the slasher if the object is slashable. If the check passes, the data will go through to the beacon node. This is the most advanced form of slashing protection as slasher is, ideally, aware of everything happening in the network and has a recorded history of blocks and attestations for every validator.
 
-You can enable remote slashing protection if you are running a beacon node with `--slasher` by adding the flag `--enable-external-slashing-protection` to your validator client.
+You can enable remote slashing protection if you are running a beacon node with `--historical-slasher-node` by adding the flag `--enable-external-slashing-protection` to your validator client.
 
 ## Further Reading
 
