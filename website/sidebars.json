@@ -30,6 +30,10 @@
 			"faq"
 		],
 
+		"Advanced Usage": [
+			"advanced/migrating-keys"
+		],
+
 		"Wallet and validator accounts": 	[   
 			"wallet/introduction",
 			"wallet/deterministic",
