@@ -119,8 +119,7 @@ These flags are specific to launching the beacon node.
 | `--no-discovery` | Enable only local network P2P and do not connect to cloud bootstrap nodes.
 | `--disable-discv5` | Does not run the discoveryV5 DHT.
 | `--block-batch-limit` | The amount of blocks the local peer is bounded to request and respond to in a batch. Default: 64
-| `--block-batch-limit-burst-factor` | "The factor by which block batch limit may increase on burst. Default: 10
-| `--disable-discv5` | Does not run the discoveryV5 DHT.
+| `--block-batch-limit-burst-factor` | The factor by which block batch limit may increase on burst. Default: 10
 | `--peer` | Connect with a specified peer. This flag may be used multiple times.
 | `--bootstrap-node` | The address of bootstrap node. Beacon node will connect for peer discovery via DHT.  Multiple nodes can be separated with a comma. Default:
 | `--relay-node` | The address of relay node. The beacon node will connect to the relay node and advertise their address via the relay node to other peers.
