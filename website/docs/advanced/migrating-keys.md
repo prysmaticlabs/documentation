@@ -1,6 +1,6 @@
 ---
 id: migrating-keys
-title: Migrating Validator Keys
+title: Migrating validator keys between computers
 sidebar_label: Migrating Validator Keys 
 ---
 
