@@ -27,6 +27,7 @@
 			"prysm-usage/secure-grpc",
 			"prysm-usage/slasher",
 			"prysm-usage/monitoring/grafana-dashboard",
+			"prysm-usage/client-stats",
 			"faq"
 		],
 
