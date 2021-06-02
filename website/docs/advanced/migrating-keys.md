@@ -311,7 +311,7 @@ bazel run //validator -- slashing-protection import --datadir=/path/to/your/wall
 </Tabs>
 
 
-### Step 5:  Verification and restart Validator
+### Step 5:  Verification and restarting the validator client
 
 It is highly recommended that the validator process on the original, migrated validator is stopped and disabled to ensure it is not restarted automatically or accidently. 
 
