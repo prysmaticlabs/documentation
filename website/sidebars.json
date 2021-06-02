@@ -31,7 +31,8 @@
 		],
 
 		"Advanced Usage": [
-			"advanced/migrating-keys"
+			"advanced/migrating-keys",
+			"advanced/beacon_node_api"
 		],
 
 		"Wallet and validator accounts": 	[   
