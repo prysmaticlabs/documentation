@@ -3,6 +3,11 @@ id: client-stats
 title: Using client-stats to collect beaconcha.in metrics
 sidebar_label: Using client-stats
 ---
+
+:::danger Alpha testing
+This functionality is in its early stage alpha testing and may not be fully functional at this time. 
+:::
+
 This section provides instructions on how to run the client-stats cli utility to collect metrics from your prysm validator or beacon node processes and push them to the beaconcha.in stats service.
 
 ## Why is this a separate process?
