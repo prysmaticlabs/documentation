@@ -4,7 +4,7 @@ title: Migrating validator keys between computers
 sidebar_label: Migrating between computers
 ---
 
-The aim of this document is to provide guidance on migrating validator keys from one active system to another whilst minimising the risk of slashing.  
+The aim of this document is to provide guidance on migrating Prysm validator keys from one system to another whilst minimising the risk of slashing.  
 
 :::danger Important Note
 As there is a risk of slashing when undertaking migration, it is important to ensure the following key points are understood and followed: 
