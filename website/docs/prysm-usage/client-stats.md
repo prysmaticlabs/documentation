@@ -10,13 +10,13 @@ This section provides instructions on how to run the client-stats cli utility to
 In order to ensure that running client-stats is an intentional action on the part of the user, we have chosen to break it out into a separate executable that needs to be run on its own. It can be run on the same host as the validator and/or beacon-node, or on a separate host with access to the remote host ip and port.
 
 ## API URL
-The beaconcha.in client-stats collection endpoint is authenticated via an api key embedded in the server url path. A unique identifier for the machine name can also be added to the path. When you configure your account with beaconcha.in they will give you the api key, simply replace {api-key} in the example commands below. If you do not wish to use the machine name feature, that part of the path can simply be excluded. For example, to specify a machine name:
+The beaconcha.in client-stats collection endpoint is authenticated via an api key embedded in the server url path. A unique identifier for the machine name can also be added to the path. When you configure your account with beaconcha.in they will give you the api key, simply replace {apikey} in the example commands below. If you do not wish to use the machine name feature, that part of the path can simply be excluded. For example, to specify a machine name:
 
 `https://beaconcha.in/api/v1/stats/{apikey}/{machineName}`
 
 Or without the machine name:
 
-`https://beaconcha.in/api/v1/stats/{machineName}`
+`https://beaconcha.in/api/v1/stats/{apikey}`
 
 ## Running client-stats
 
