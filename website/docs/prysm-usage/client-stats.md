@@ -21,9 +21,11 @@ Or without the machine name:
 ## Running client-stats
 
 To collect metrics from your validator node, assuming that your validator is running on localhost:
+
 `client-stats --validator-metrics-url=http://localhost:8081/metrics --clientstats-api-url=https://beaconcha.in/api/v1/stats/{apikey}/{machineName}`
 
 To collect metrics from your beacon node, also assuming that the beacon node is running on localhost:
+
 `client-stats --beacon-node-metrics-url=http://localhost:8080/metrics --clientstats-api-url=https://beaconcha.in/api/v1/stats/{apikey}/{machineName}`
 
 # What metrics does client-stats collect?
