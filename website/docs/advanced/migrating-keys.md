@@ -1,7 +1,7 @@
 ---
 id: migrating-keys
 title: Migrating validator keys between computers
-sidebar_label: Migrating Validator Keys 
+sidebar_label: Migrating between computers
 ---
 
 The aim of this document is to provide guidance on migrating validator keys from one active system to another whilst minimising the risk of slashing.  
