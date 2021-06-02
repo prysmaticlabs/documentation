@@ -12,11 +12,11 @@ In order to ensure that running client-stats is an intentional action on the par
 ## API URL
 The beaconcha.in client-stats collection endpoint is authenticated via an api key embedded in the server url path. A unique identifier for the machine name can also be added to the path. When you configure your account with beaconcha.in they will give you the api key, simply replace {api-key} in the example commands below. If you do not wish to use the machine name feature, that part of the path can simply be excluded. For example, to specify a machine name:
 
-`https://beaconcha.in/api/v1/stats/MY_API_KEY/MY_MACHINE_NAME`
+`https://beaconcha.in/api/v1/stats/{apikey}/{machineName}`
 
 Or without the machine name:
 
-`https://beaconcha.in/api/v1/stats/MY_API_KEY`
+`https://beaconcha.in/api/v1/stats/{machineName}`
 
 ## Running client-stats
 
