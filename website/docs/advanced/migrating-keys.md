@@ -9,7 +9,7 @@ The aim of this document is to provide guidance on migrating Prysm validator key
 :::danger Important Note
 As there is a risk of slashing when undertaking migration, it is important to ensure the following key points are understood and followed: 
 
-1.	Never run more than a single Validator process with the same keys loaded
+1.	Never run more than a single validator process with the same keys loaded
 2.	Maintain and utilize slashing protection
 3.	Accept downtime as part of a successful migration
 :::
