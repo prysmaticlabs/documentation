@@ -60,7 +60,7 @@ ssh -L 7500:127.0.0.1:7500 user@host_ip
 
 where you replace `user@host_ip` with the user and host ip address of the remote machine you are trying to access. This will forward all requests from your home computer's localhost:7500 to the remote instance's localhost:7500, allowing you to visit `http://localhost:7500` from your favorite browser and then access the validator web interface! This is the safest approach to access it, as you are exposing the web interface to the open Internet.
 
-## Step 4: Monitor your beacon node and validator client logs, accounts, and more
+## Step 5: Monitor your beacon node and validator client logs, accounts, and more
 
 You can visualize your beacon node and validator client logs from the web interface easily by navigating to `System Process -> Logs` on the left-hand sidebar.  
 ![Logs](/img/logs.png "Logs")
@@ -69,7 +69,7 @@ You can visualize your beacon node and validator client logs from the web interf
 
 This page is useful to monitor how your processes are doing without needing to navigate to your terminal! In addition, you can visit your `Wallet and Accounts -> Accounts` page to view all your validating keys in an ordered table, explore their historical performance on https://beaconcha.in, and import new ones.
 
-## Step 5: Contributing to the web interface code
+## Step 6: Contributing to the web interface code
 
 The web interface is open source and located at [github.com/prysmaticlabs/prysm-web-ui](https://github.com/prysmaticlabs/prysm-web-ui). It is an Angular application, and we always welcome your help!
 
