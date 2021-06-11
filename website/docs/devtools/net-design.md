@@ -444,34 +444,6 @@ Recommended migration strategy for sync is to refactor regular sync and initial 
 
 Similar to the sync migration, the existing mapping will be prefixed with deprecated_ until that mapping can be removed and replaced with the new protocols/topics.
 
-## Work Estimates
-
-**Request/Response Structure**
-
-A good place to start is in specifying the request and response structure as detailed in the networking specification as well as its size enforcements.  Up next, we should be implementing the hello/goodbye messages. This can be implemented in the shared/p2p package.
-
-**Handshake**
-
-Up next, we should be implementing the `hello` and `goodbye` request/response pattern as the handshake beacon nodes exchange upon connecting. We can ensure the peers act as intended as part of the specification.
-
-**P2P Service Configuration Changes**
-
-We should be working on the required config options for gossipsub and our libp2p service, as well as implementing the new topic mappings needed to move forward. We need to implement the particular topics and the messages needed for interoperability.
-
-**Initial Sync**
-
-We need to eliminate the hash announcement pattern across the repo and instead gossip around full objects. 
-
-**Regular Sync**
-
-**Fork Choice**
-
-This is 90% done, I’ve already hooked the new forkchoice up with the existing sync. Shouldn’t take much longer than (1hour) to hook it up with the new sync.
-
-**DiscoveryV5 **
-
-The implementation is already completed in the geth repo. Work required to be done would be to configure it so that it can function in prysm as one of our discovery mechanisms. It should be the default discovery mechanism, with MDNS and DHT being used in the case that the other Peer is unable to support UDP transports.
-
 ## Additional Resources
 - [Networking specification](https://github.com/ethereum/eth2.0-specs/blob/dev/specs/phase0/p2p-interface.md)
 - Block max ssz encoded size = 1.122968 megabytes
