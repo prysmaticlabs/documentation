@@ -4,7 +4,7 @@ title: Migrating validator keys between computers
 sidebar_label: Migrating between computers
 ---
 
-The aim of this document is to provide guidance on migrating Prysm validator keys from one system to another whilst minimising the risk of slashing.  
+This document provides guidance on migrating Prysm validator keys from one host system to another whilst minimising the risk of slashing.  
 
 :::danger Important Note
 As there is a risk of slashing when undertaking migration, it is important to ensure the following key points are understood and followed: 
@@ -13,6 +13,7 @@ As there is a risk of slashing when undertaking migration, it is important to en
 2.	Maintain and utilize slashing protection
 3.	Accept downtime as part of a successful migration
 :::
+
 ## Understanding Slashing
 
 Slashing is a mechanism designed to encourage good behaviour on the Ethereum network and discourage attacks and bad behaviour. Where a validator is found to have broken the rules it will be slashed and removed from the network. In addition to being removed from the network a significant part, up to the entire validator stake, may be removed. 
@@ -140,15 +141,15 @@ The first time you run the process you will be asked to accept or decline the te
 
 ### Step 2:  Verify and Backup Validator accounts
 
-An important aspect of managing Validator accounts is ensuring you know which account(s) you are working with, this enables you to verify the account(s) loaded in the Validator prior to starting or taking any other action using the validator process. This can help reduce the risk of running the same account on more than one Validator. 
+An important aspect of managing Validator accounts is ensuring you know which account(s) you are working with. This enables you to verify the account(s) loaded in the validator prior to starting or taking any other action using the validator process, and can help reduce the risk of running the same account on more than one validator instance. 
 
 
 :::tip Wallet Password needed 
-You will need the password to the Validator wallet in order to undertake Delete, List, Backup or Import actions.   
+You will need the password to the validator wallet in order to undertake Delete, List, Backup or Import actions.   
 :::
 
 #### Identify Accounts 
-To Identify the account(s) loaded in your validator use the following command:
+To Identify the account(s) loaded in your validator, issue the following command:
 
 ***Using Linux/MacOS based systems***
 
@@ -161,7 +162,7 @@ To Identify the account(s) loaded in your validator use the following command:
 ```sh
 prysm.bat validator accounts list
 ```
-This will produce output in the format of account number, three words seperated by a hyphon (-) and the public keys of each account, the output will be similar to this: 
+This will produce output in the format of account number, three words seperated by a hyphon (-) and the public keys of each account. The output will be similar to this: 
 
 ```sh
 Account 0 | three-random-words
@@ -170,7 +171,7 @@ Account 1 | words-three-random
 [validating public key] 0xdcba4321...........
 ```
 
-We recommend that you keep an accurate and up to date record of the name (three word and public key combinations) of your account(s) for management and verification purposes.
+We recommend that you keep an accurate and up-to-date record of the name (three word and public key combinations) of your account(s) for management and verification purposes.
  
  #### Backup
  
@@ -187,7 +188,7 @@ You can backup validator accounts from your wallet using the following command:
 ```sh
 prysm.bat validator accounts backup
 ```
-You will now be promted for the wallet password, once entered, you will be guided through the backup process where you will able to select individual or all accounts to backup and the location where the backup file is created. You will also be prompted for a **"password"** for the backup file, **it is important to keep a note of this for use during the import process**. 
+You will now be promted for the wallet passwor. Once entered, you will be guided through the backup process where you will able to select individual or all accounts to backup and the location where the backup file is created. You will also be prompted for a **"password"** for the backup file, **it is important to keep a note of this for use during the import process**. 
 
 You can also run the accounts backup command non-interactively by using the following command line flags, which are also viewable by appending --help to the command line listed above:
 
