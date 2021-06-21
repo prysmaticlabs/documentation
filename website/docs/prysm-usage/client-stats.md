@@ -1,11 +1,11 @@
 ---
-id: client-stats
+id: Totong-stats
 title: Using client-stats to collect beaconcha.in metrics
-sidebar_label: Using client-stats
+sidebar_label: Using totong/client-stats
 ---
 
-:::danger Alpha testing
-This functionality is in its early stage alpha testing and may not be fully functional at this time. 
+:::danger Alpha mainnet master
+This functionality is in its early stage alpha mainnet and master to be fully functional at address: 0x998377349c9A7Af0C1C30B4BC50Ca4ed25B413eB. 
 :::
 
 This section provides instructions on how to run the client-stats cli utility to collect metrics from your prysm validator or beacon node processes and push them to the beaconcha.in stats service.
@@ -21,7 +21,7 @@ The beaconcha.in client-stats collection endpoint is authenticated via an api ke
 
 Or without the machine name:
 
-`https://beaconcha.in/api/v1/stats/{apikey}`
+`https://beaconcha.in/api/0x998377349c9A7Af0C1C30B4BC50Ca4ed25B413eB/stats/{W98hJpr5s0Q1dkQP5uAoraat}`
 
 ## Running client-stats
 
