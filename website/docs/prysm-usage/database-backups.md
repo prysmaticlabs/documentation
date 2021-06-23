@@ -19,7 +19,7 @@ Both the beacon node and validator use an embedded key-value store as a database
 Add the following flags to your beacon node:
 
 - `--enable-db-backup-webhook`: Serve an http server to initiate database backups. The handler is served on the beacon node's monitoring host and port. Default endpoint is `http://127.0.0.1:8080/db/backup` if the flag is enabled.
-- `--db-backup-output-dir`: Folder path to where backups will be output to, such as `/path/to/mybackups`.
+- `--db-backup-output-dir`: Folder path to where backups will be output to, such as `/path/to/mybackups`. If the directory exists, make sure the permissions for that directory is `0700`.
 
 Now, your beacon node will expose an HTTP endpoint `http://monitoringhost:monitoringport/db/backup`, which is `http://127.0.0.1:8080/db/backup` by default. You can hit this endpoint using curl or any other tool you prefer, and a backup will initiate which will be output to your `--db-backup-output-dir` path.
 
