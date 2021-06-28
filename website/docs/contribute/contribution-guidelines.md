@@ -115,7 +115,7 @@ $ bazel test //endtoend:go_default_test --define=ssz=minimal
 
 ### Contributing to the Eth2 API
 
-The eth2 API implemented by Prysm is maintained as a separate repository than Prysm. You can read more about how to contribute specifically to the API [here](/docs/how-prysm-works/ethereum-2-public-api#contributing).
+The eth2 API implemented by Prysm is maintained as a separate repository than Prysm. You can read more about how to contribute specifically to the API [here](/docs/how-prysm-works/prysm-public-api#contributing).
 
 ### Making your first contribution
 
