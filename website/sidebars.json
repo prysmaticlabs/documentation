@@ -46,7 +46,10 @@
 			"wallet/ethdo"
 		],
 
-		"ETH2 API": 	["how-prysm-works/ethereum-2-public-api"],
+		"ETH2 API": 	[
+			"how-prysm-works/prysm-public-api",
+			"how-prysm-works/ethereum-2-public-api"
+		],
 
 		"How Prysm works": 	[	"how-prysm-works/architecture-overview",
 								"how-prysm-works/beacon-node",
