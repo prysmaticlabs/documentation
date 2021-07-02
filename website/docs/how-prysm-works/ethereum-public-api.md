@@ -19,6 +19,10 @@ http://127.0.0.1:3501/eth/v1/beacon/states/finalized/root
 ```
 Notice that in this example the `{state_id}` URL parameter has been replaced with the literal value `finalized`. Please read the specification carefully to understand how each endpoint behaves.
 
+:::danger Do not use the `--grpc-gateway-port`, use `--eth-api-port` instead
+[The existing Prysm API](/docs/how-prysm-works/ethereum-2-public-api) uses the port specified in the `--grpc-gateway-port` flag, and all request to this API should be done using that port. However, because of technical challenges of making the Ethereum 2.0 REST API conform to the official specification the `--eth-api-port` flag was introduced, and all request to the Ethereum 2.0 REST API should be done using the port specified in that flag. Although requests to `--grpc-gateway-port` are possible, results may be incorrectly encoded, malformed, simply wrong or even not possible to obtain due to server-side errors.
+:::
+
 ## Supported endpoints
 
 While Prysm would like to support all endpoints from the official specification, some of them have a higher priority for us than others, and there are other features that the development team might find more important. Therefore it is plausible that some endpoints will return a `404 Not Found` response for the time being.
