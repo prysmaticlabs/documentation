@@ -35,7 +35,7 @@ These hardware specifications are recommended, but not required to run the Prysm
 ## Dependencies
 
 * A modern UNIX operating system
-* [Bazelisk](https://docs.bazel.build/versions/main/install.html) this will automatically manage the version of ***Bazel*** required. 
+* [Bazelisk](https://docs.bazel.build/versions/main/install-bazelisk.html) this will automatically manage the version of ***Bazel*** required. 
 * The `cmake` package installed
 * The `git` package installed
 * `libssl-dev` installed
