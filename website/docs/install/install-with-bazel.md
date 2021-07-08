@@ -34,8 +34,7 @@ These hardware specifications are recommended, but not required to run the Prysm
 
 ## Dependencies
 
-* A modern UNIX operating system
-* [Bazelisk](https://docs.bazel.build/versions/main/install.html) this will automatically manage the version of ***Bazel*** required. 
+* [Bazelisk](https://docs.bazel.build/versions/main/install-bazelisk.html) this will automatically manage the version of ***Bazel*** required. 
 * The `cmake` package installed
 * The `git` package installed
 * `libssl-dev` installed
@@ -60,14 +59,11 @@ You can install Bazelisk in multiple ways, including:
 
 ## Building Prysm from source
 
-1. Open a terminal window. Ensure you are running ***Bazel*** through the ***Bazelisk*** launcher by issuing the command: 
+:::tip Pro-Tip
+**NOTICE:** We recommend users install Bazelisk in the PATH in place of the Bazel binary. This can be done by simply replacing **/usr/local/bin/bazel** (*default location*) with the **bazelisk**  binary. This will ensure users no longer need to maintain the version of **bazel** in use. Full installation details and options for Bazelisk are available [Here.](https://github.com/bazelbuild/bazelisk/blob/master/README.md#installation) 
+:::
 
-```text
-bazelisk version
-``` 
-
-
-2. Clone Prysm's [main repository](https://github.com/prysmaticlabs/prysm), make sure you switch to the latest version (the latest version number can be found from the [releases page](https://github.com/prysmaticlabs/prysm/releases)), and enter the directory:
+1. Clone Prysm's [main repository](https://github.com/prysmaticlabs/prysm), make sure you switch to the latest version (the latest version number can be found from the [releases page](https://github.com/prysmaticlabs/prysm/releases)), and enter the directory:
 
 ```text
 git clone https://github.com/prysmaticlabs/prysm
@@ -75,11 +71,11 @@ git checkout <version>
 cd prysm
 ```
 
-3. Build both the beacon chain node and the validator client:
+2. Build both the beacon chain node and the validator client:
 
 ```text
-bazelisk build //beacon-chain:beacon-chain --config=release
-bazelisk build //validator:validator --config=release
+bazel build //beacon-chain:beacon-chain --config=release
+bazel build //validator:validator --config=release
 ```
 
 Bazelisk will automatically pull and install any dependencies as well, including Go and necessary compilers. Now that your installation is done, you can then read [joining eth2](/docs/mainnet/joining-eth2).
@@ -102,8 +98,8 @@ We do not write our own Dockerfiles, as Bazel provides us a more sandboxed, simp
 At the moment, Prysm docker images can only be built on **Linux** operating systems. The standard images are very thin wrappers around the Prysm beacon-chain and validator binaries, and do not contain any other typical components of Docker images such as a bash shell. These are the Docker images we ship to all users, and you can build them yourself as follows:
 
 ```bash
-bazelisk build //beacon-chain:image_bundle --config=release
-bazelisk build //validator:image_bundle --config=release
+bazel build //beacon-chain:image_bundle --config=release
+bazel build //validator:image_bundle --config=release
 ```
 
 The tags for the images are specified [here](https://github.com/prysmaticlabs/prysm/blob/ff329df808ad68fbe79d11c73121fa6a7a0c0f29/cmd/beacon-chain/BUILD.bazel#L58) for the beacon-chain and [here](https://github.com/prysmaticlabs/prysm/blob/ff329df808ad68fbe79d11c73121fa6a7a0c0f29/cmd/validator/BUILD.bazel#L59) for the validator. The default image tags for these images are:
@@ -120,8 +116,8 @@ You can edit these in the links above to your liking.
 Prysm also provides Alpine images built using:
 
 ```bash
-bazelisk build //beacon-chain:image_bundle_alpine --config=release
-bazelisk build //validator:image_bundle_alpine --config=release
+bazel build //beacon-chain:image_bundle_alpine --config=release
+bazel build //validator:image_bundle_alpine --config=release
 ```
 
 #### Debug images
@@ -129,8 +125,8 @@ bazelisk build //validator:image_bundle_alpine --config=release
 Prysm also provides debug images built using:
 
 ```bash
-bazelisk build //beacon-chain:image_bundle_debug --config=release
-bazelisk build //validator:image_bundle_debug --config=release
+bazel build //beacon-chain:image_bundle_debug --config=release
+bazel build //validator:image_bundle_debug --config=release
 ```
 
 ### Running images
@@ -138,8 +134,8 @@ bazelisk build //validator:image_bundle_debug --config=release
 You can load the images into your local Docker daemon by first building a `.tar` file as follows for your desired image bundle:
 
 ```text
-bazelisk build cmd/beacon-chain:image_bundle.tar
-bazelisk build cmd/validator:image_bundle.tar
+bazel build cmd/beacon-chain:image_bundle.tar
+bazel build cmd/validator:image_bundle.tar
 ```
 
 Then, you can load it into Docker with:
@@ -181,8 +177,8 @@ See:
 To push the actual images, you do not need to build the image bundle beforehand. You can do a simple:
 
 ```text
-bazelisk run //beacon-chain:push_images --config=release
-bazelisk run //validator:push_images --config=release
+bazel run //beacon-chain:push_images --config=release
+bazel run //validator:push_images --config=release
 ```
 
 Which will deploy all images with the tags specified in [here](https://github.com/prysmaticlabs/prysm/blob/ff329df808ad68fbe79d11c73121fa6a7a0c0f29/cmd/beacon-chain/BUILD.bazel#L58) for the beacon-chain and [here](https://github.com/prysmaticlabs/prysm/blob/ff329df808ad68fbe79d11c73121fa6a7a0c0f29/cmd/validator/BUILD.bazel#L59) for the validator. 
