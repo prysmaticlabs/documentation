@@ -35,4 +35,4 @@ While Prysm would like to support all endpoints from the official specification,
 | v1 | Events | All endpoints are supported |
 | v1 | Node | All endpoints are supported |
 | v1 | Validator | No support |
-| v1 | ValidatorRequiredApi | No support |
+| v1 | ValidatorRequiredApi | Partial support. `/eth/v1/validator` endpoints not supported. |
