@@ -7,7 +7,7 @@ sidebar_label: Building from source
 Prysm can be installed on GNU/Linux, MacOS, and Arm64 using our build tool, [Bazel](https://bazel.build). This page includes instructions for performing this method.
 
 :::tip Pro-Tip
-**NOTICE:** The Prysm installation script is the easiest and most efficient way of installing the latest binaries. Instructions for using it can be found [here](/docs/install/linux).
+**NOTICE:** We recommend users install Bazelisk, the user-friendly launcher for Bazel. It identifies and manages the required Bazel version for any repository you want to build.
 :::
 
 **Have questions?** Stop by the [#documentation](https://discord.gg/QQZMCgU) channel on Discord and let us know.
@@ -34,8 +34,7 @@ These hardware specifications are recommended, but not required to run the Prysm
 
 ## Dependencies
 
-* A modern UNIX operating system
-* [Bazel](https://docs.bazel.build/versions/3.7.0/install.html) version **3.7.0** installed (Ensure you are using 3.7.0)
+* [Bazelisk](https://docs.bazel.build/versions/main/install-bazelisk.html) this will automatically manage the version of ***Bazel*** required. 
 * The `cmake` package installed
 * The `git` package installed
 * `libssl-dev` installed
@@ -47,15 +46,24 @@ These hardware specifications are recommended, but not required to run the Prysm
 
 Instead of using the `Go` tool to build Prysm, our team relies on the [Bazel](https://bazel.build) build system used by major companies to manage monorepositories. Bazel provides reproducible builds and a sandboxed environment that ensures everyone building Prysm has the same experience and can build our entire project from a single command. For more detailed rationale on why Bazel, how it works in Prysm, and all important information about how exactly building from source works, read our rationale [here](/docs/reading/bazel).
 
+## Install Bazel using Bazelisk
+
+Bazelisk is a launcher for Bazel which automatically downloads and installs an appropriate version of Bazel. Use Bazelisk to automtically manage the version of Bazel required.  
+
+You can install Bazelisk in multiple ways, including:
+
+* npm install -g @bazel/bazelisk
+* Using a binary release for Linux, macOS, or Windows [(Download binaries)](https://github.com/bazelbuild/bazelisk/releases)
+* Using Homebrew on macOS
+* By compiling from source using Go: go get github.com/bazelbuild/bazelisk
+
 ## Building Prysm from source
 
-1. Open a terminal window. Ensure you are running the most recent version of Bazel by issuing the command:
+:::tip Pro-Tip
+**NOTICE:** We recommend users install Bazelisk in the PATH in place of the Bazel binary. This can be done by simply replacing **/usr/local/bin/bazel** (*default location*) with the **bazelisk**  binary. This will ensure users no longer need to maintain the version of **bazel** in use. Full installation details and options for Bazelisk are available [Here.](https://github.com/bazelbuild/bazelisk/blob/master/README.md#installation) 
+:::
 
-```text
-bazel version
-```
-
-2. Clone Prysm's [main repository](https://github.com/prysmaticlabs/prysm), make sure you switch to the latest version (the latest version number can be found from the [releases page](https://github.com/prysmaticlabs/prysm/releases)), and enter the directory:
+1. Clone Prysm's [main repository](https://github.com/prysmaticlabs/prysm), make sure you switch to the latest version (the latest version number can be found from the [releases page](https://github.com/prysmaticlabs/prysm/releases)), and enter the directory:
 
 ```text
 git clone https://github.com/prysmaticlabs/prysm
@@ -63,7 +71,7 @@ git checkout <version>
 cd prysm
 ```
 
-3. Build both the beacon chain node and the validator client:
+2. Build both the beacon chain node and the validator client:
 
 ```text
 bazel build //beacon-chain:beacon-chain --config=release
