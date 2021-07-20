@@ -43,7 +43,7 @@ A [block proposal](/docs/terminology#propose) must include several items to meet
 7. All pending [attestations](/docs/terminology#attest) from the beacon node are fetched.
 8. The block object is constructed by packaging the above items into a block data structure.
 9. The state root hash is computed, signing the block with the [validator](/docs/terminology#validator)'s private key.
-10. The block is [proposed](/docs/terminology#propose) by sending it to the beacon node via [gRPC](./ethereum-2-public-api).
+10. The block is [proposed](/docs/terminology#propose) by sending it to the beacon node via [gRPC](./prysm-public-api).
 
 ### Attesting to a Beacon Block
 
@@ -53,4 +53,4 @@ A [block proposal](/docs/terminology#propose) must include several items to meet
 2. A request is made to the beacon node for the information required to attest a block.
 3. An attestation bitfield is constructed using the validator index.
 4. The attestation key is then signed with a [validator](/docs/terminology#validator)'s private key.
-5. Halfway through the slot duration, the attestation is sent to the beacon node via [gRPC](./ethereum-2-public-api).
+5. Halfway through the slot duration, the attestation is sent to the beacon node via [gRPC](./prysm-public-api).

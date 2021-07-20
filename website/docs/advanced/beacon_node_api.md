@@ -25,7 +25,7 @@ Whilst the default setting is sufficient for regular beacon chain functionality,
 
 Full details of the Ethereum 2.0 API are available here: 
 
-The Prysm documenation portal [Ethereum 2.0 public API] (https://docs.prylabs.network/docs/how-prysm-works/ethereum-2-public-api)
+The Prysm documenation portal [Ethereum 2.0 public API] (https://docs.prylabs.network/docs/how-prysm-works/prysm-public-api)
 
 The Prysm github [ethereumapis page] (https://github.com/prysmaticlabs/ethereumapis/blob/master/eth/v1alpha1/beacon_chain.proto#L36) 
 

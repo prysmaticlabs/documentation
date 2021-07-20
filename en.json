@@ -54,7 +54,7 @@
         "title": "Prysm Validator Client",
         "sidebar_label": "Prysm Validator Client"
       },
-      "how-prysm-works/ethereum-2-public-api": {
+      "how-prysm-works/prysm-public-api": {
         "title": "Ethereum 2.0 Public API",
         "sidebar_label": "Ethereum 2.0 Public API"
       },

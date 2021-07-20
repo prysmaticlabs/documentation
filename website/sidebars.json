@@ -47,8 +47,8 @@
 		],
 
 		"ETH2 API": 	[
-			"how-prysm-works/ethereum-2-public-api",
-			"how-prysm-works/ethereum-public-api"
+			"how-prysm-works/ethereum-public-api",
+			"how-prysm-works/prysm-public-api"
 		],
 
 		"How Prysm works": 	[	"how-prysm-works/architecture-overview",
