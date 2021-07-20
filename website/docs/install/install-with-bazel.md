@@ -78,7 +78,7 @@ bazel build //beacon-chain:beacon-chain --config=release
 bazel build //validator:validator --config=release
 ```
 
-Bazelisk will automatically pull and install any dependencies as well, including Go and necessary compilers. Now that your installation is done, you can then read [joining eth2](/docs/mainnet/joining-eth2).
+Bazel will automatically pull and install any dependencies as well, including Go and necessary compilers. Now that your installation is done, you can then read [joining eth2](/docs/mainnet/joining-eth2).
 
 ## Building Docker images
 
