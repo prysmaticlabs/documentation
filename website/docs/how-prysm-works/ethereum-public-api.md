@@ -13,7 +13,7 @@ As of the time of writing, there are two definitions: [v1](https://ethereum.gith
 
 ## Performing requests against a local Prysm node
 
-The Eth2 JSON REST API is exposed by default on `127.0.0.1:3501`. The host can be changed by manipulating the `--grpc-gateway-host` flag and the port can be modified with the `--eth-api-port` flag. Performing a request is straightforward - simply concatenate the Prysm's API endpoint with the API's URL, providing any required URL and query parameters. As an example, the finalized state's root can be obtained using:
+The Eth2 JSON REST API is exposed by default on `127.0.0.1:3501`. The official Eth2 REST API is by default served from localhost. If a user requires that the REST server is run from a different host address, the host can be changed by manipulating the `--grpc-gateway-host` flag. If a user also requires a different port to access the REST API, the port can be modified with the `--eth-api-port` flag. Performing a request is straightforward - simply concatenate the Prysm's API endpoint with the API's URL, providing any required URL and query parameters. As an example, the finalized state's root can be obtained using:
 ```
 http://127.0.0.1:3501/eth/v1/beacon/states/finalized/root
 ```
