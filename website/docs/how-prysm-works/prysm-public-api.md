@@ -17,6 +17,10 @@ Prysm implements its API by using the popular [gRPC](https://grpc.io) project cr
 
 ## Calling the API on your local beacon node
 
+:::danger Do not publicly expose the API
+The API's purpose is a means of communication between your beacon node and your validator client. Because of this it is not protected against external malicious users. Some endpoints are vulnerable to Denial-of-Service attacks, while others may disclose information about your beacon node. The communication between the beacon node and the validator client should be done privately, either on the same machine or through an SSH connection.
+:::
+
 By default, the beacon node exposes a [gRPC](https://grpc.io) API on host `127.0.0.1:4000`, which is accessed by the validator client. This is not an HTTP endpoint, so you will not be able to perform API queries via HTTP on that port. However, we also expose a JSON-HTTP endpoint on `127.0.0.1:3500` by default for your needs. If you want to query information such as the chainhead from your local beacon node, you can call:
 
 ```
