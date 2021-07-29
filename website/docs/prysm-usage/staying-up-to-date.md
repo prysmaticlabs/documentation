@@ -22,6 +22,12 @@ Regardless of your installation method, we always recommend you are running the 
 prysm.sh beacon-chain --version
 ```
 
+You should see a message that says `Using prysm version` and prints the version number. If you have set environment variable `USE_PRYSM_VERSION` to a specific version, the prysm.sh script will not automatically update your client. Unset the environment variable or set it to a recent version, then restart your processes with prysm.sh.
+
+:::warning Double Check Running Processes
+Running `prysm.sh beacon-chain --version` may not reflect the version of the currently running process. After verifying the version with `prysm.sh`, be sure to check that your process was restarted recently to pick up the latest version. Alternatively, you can query the `/metrics` page for the `prysm_version` value on port `8080` or `8081` for the beacon-chain node and validator node, respectively.
+:::
+
 :::info Always Run a Stable Release
 If you are running docker or building from source, we **never** recommend running from the `:latest` docker tag nor the `master` branch of Prysm. we always recommend using `:stable` if running Docker, or using a specific version tag from our latest releases. Likewise for Bazel, we recommend doing a `git checkout COMMIT_HASH` where COMMIT_HASH is for our latest release version
 :::
