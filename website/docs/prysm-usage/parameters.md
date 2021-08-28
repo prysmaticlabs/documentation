@@ -88,7 +88,7 @@ These flags are specific to launching the beacon node.
 ### Management flags
 | Flag        | Usage           |
 | ------------- |:-------------|
-| `--deposit-contract` | Define a deposit contract address. Beacon chain node will listen logs coming from the deposit contract to determine when validator is eligible to participate.
+| `--deposit-contract` | Define a deposit contract address. Beacon chain node will listen to logs coming from the deposit contract to determine when validator is eligible to participate.
 | `--contract-deployment-block` | Define the ETH1 block in which the deposit contract was deployed. (Default: 11184524)
 | `--head-sync` | Starts the beacon node with the previously saved head state instead of finalized state.
 | `--disable-sync` | Starts the beacon node without entering initial sync and instead exits to regular sync immediately.
