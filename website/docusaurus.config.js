@@ -21,6 +21,12 @@ module.exports = {
             },
             items: [
                 {
+                    type: 'docsVersionDropdown',
+                    position: 'left',
+                    dropdownItemsAfter: [{ to: '/versions', label: 'All versions' }],
+                    dropdownActiveClassDisabled: true,
+                },
+                {
                     to: 'docs/mainnet/joining-eth2',
                     label: 'Stake on Eth2',
                     position: 'right',
@@ -38,11 +44,6 @@ module.exports = {
                 {
                     href: 'https://api.prylabs.network',
                     label: 'API',
-                    position: 'right',
-                },
-                {
-                    to: 'docs/faq',
-                    label: 'FAQ',
                     position: 'right',
                 },
             ],
