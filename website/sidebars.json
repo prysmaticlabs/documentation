@@ -25,7 +25,6 @@
 			"prysm-usage/is-everything-fine",
 			"prysm-usage/web-interface",
 			"prysm-usage/secure-grpc",
-			"prysm-usage/slasher",
 			"prysm-usage/monitoring/grafana-dashboard",
 			"prysm-usage/client-stats",
 			"faq"

@@ -58,7 +58,7 @@ It is possible to provide additional flags alongside the `.yaml` file, though if
 
 ## Shared flags
 
-These flags are shared by both the beacon node, validator client, and slasher.
+These flags are shared by both the beacon node, validator client.
 
 
 | Flag          | Usage         |
@@ -93,7 +93,6 @@ These flags are specific to launching the beacon node.
 | `--head-sync` | Starts the beacon node with the previously saved head state instead of finalized state.
 | `--disable-sync` | Starts the beacon node without entering initial sync and instead exits to regular sync immediately.
 | `--slots-per-archive-point` | The slot durations of when an archived state gets saved in the DB. (Default: 2048)
-| `--historical-slasher-node` | Enables required flags for serving historical data to a slasher client. Results in additional storage and disk usage.
 | `--weak-subjectivity-checkpoint` | Input in `block_root:epoch_number` format to sync from the weak subjectivity checkpoint.
 | `--gc-percent` | The percentage of freshly allocated data to live data on which the gc will be run again. (Default: 100)
 | `--enable-db-backup-webhook` | Serve HTTP handler to initiate database backups. The handler is served on the monitoring port at path /db/backup.
@@ -165,8 +164,6 @@ These flags are specific to launching a validator client.
 |`--beacon-rpc-provider` | Beacon node RPC provider endpoint. Default: localhost:4000
 |`--beacon-rpc-gateway-provider` | Beacon node RPC gateway provider endpoint. (Default: localhost:3500)
 |`--tls-cert` | Certificate for secure gRPC. Pass this and the tls-key flag in order to use gRPC securely.
-|`--slasher-rpc-provider`| Slasher node RPC provider endpoint. Default: 127.0.0.1:4002
-|`--slasher-tls-cert`| Certificate for secure slasher gRPC. Pass this and the tls-key flag in order to use gRPC securely.
 |`--rpc`| Enables the RPC server for the validator client (without Web UI).
 |`--rpc-host`| Host on which the RPC server should listen (default: "127.0.0.1")
 |`--rpc-port`| RPC port exposed by a validator client (default: 7000)
@@ -207,23 +204,6 @@ These flags are specific to launching a validator client.
 | ------------- |:-------------|
 |`--interop-start-index` | The start index to deterministically generate validator keys when used in combination with `--interop-num-validators`. Example: `--interop-start-index=5 --interop-num-validators=3` would generate keys from index 5 to 7.
 |`--interop-num-validators` | The number of validators to deterministically generate validator keys when used in combination with `--interop-num-validators`. Example: `--interop-start-index=5 --interop-num-validators=3` would generate keys from index 5 to 7.
-
-## Slasher parameters
-These flags are specific to launching a slasher client.
-### Base flags
-| Flag          | Usage         |
-| ------------- |:-------------|
-|`--beacon-tls-cert`| Certificate for secure beacon gRPC connection. Pass this in order to use beacon gRPC securely.
-|`--beacon-rpc-provider`| Beacon node RPC provider endpoint (default: localhost:4000)
-|`--enable-historical-detection`| Enables historical attestation detection for the slasher. Requires --historical-slasher-node on the beacon node.
-|`--spans-cache-size`| Sets the span cache size. (default: 1500)
-|`--highest-att-cache-size`| Sets the highest attestation cache size. (default: 3000)
-|`--tls-cert`| Certificate for secure gRPC. Pass this and the tls-key flag in order to use gRPC securely.
-|`--tls-key`| Key for secure gRPC. Pass this and the tls-cert flag in order to use gRPC securely.
-|`--monitoring-host` | Host used to listening and respond metrics for prometheus. (Default: 127.0.0.1)
-|`--monitoring-port`| Port used to listening and respond metrics for prometheus. (default: 8082)
-|`--rpc-host`| Host on which the RPC server should listen. (default: "127.0.0.1")
-|`--rpc-port`| RPC port exposed by the slasher. (default: 4002)
 
 ## General debug flags
 | Flag          | Usage         |
