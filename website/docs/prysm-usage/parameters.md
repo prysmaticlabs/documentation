@@ -12,7 +12,7 @@ You can use the `--graffiti` validator flag to add a string to your proposed blo
 
 import {FetchCLIHelp} from './fetchCliHelp.js';
 
-<FetchCLIHelp prysmComponent={validator}/>
+<FetchCLIHelp prysmComponent={"validator"}/>
 
 ## Loading parameters via .YAML file
 
