@@ -10,6 +10,10 @@ This section lists the various flags used to customise the startup process of be
 You can use the `--graffiti` validator flag to add a string to your proposed blocks, which will be seen on the block explorer. I.e; `<startup command> --graffiti "Prysm is awesome!"`
 :::
 
+import {FetchCLIHelp} from './fetchCliHelp.js';
+
+<FetchCLIHelp prysmComponent={validator}/>
+
 ## Loading parameters via .YAML file
 
 :::info
