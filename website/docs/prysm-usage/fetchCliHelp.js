@@ -1,9 +1,9 @@
 import React from 'react'
 
 export class FetchCLIHelp extends React.Component {
-  _isMounted = false;
   constructor(props) {
     super(props);
+	this._isMounted = false;
     this.state = {
       error: null,
       isLoaded: false,
