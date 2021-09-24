@@ -48,9 +48,11 @@ export class FetchCLIHelp extends React.Component {
       return <div>Loading parameter list...</div>;
     } else {
       return (
-		  <code>
-			{items}
-		  </code>
+		  <pre>
+			  <code>
+				  {items}
+			  </code>
+		  </pre>
       );
     }
   }
