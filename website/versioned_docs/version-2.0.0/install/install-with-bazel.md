@@ -1,7 +1,7 @@
 ---
 id: install-with-bazel
-title: Installing Prysm from source with Bazel
-sidebar_label: Building from source
+title: Building Prysm from Source
+sidebar_label: Building from Source
 ---
 
 Prysm can be installed on GNU/Linux, MacOS, and Arm64 using our build tool, [Bazel](https://bazel.build). This page includes instructions for performing this method.

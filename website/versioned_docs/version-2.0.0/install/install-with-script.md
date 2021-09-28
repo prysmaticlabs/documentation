@@ -1,7 +1,7 @@
 ---
 id: install-with-script
 title: Installing Prysm with prysm.sh 
-sidebar_label: Prysm installation script
+sidebar_label: Prysm Quickstart Script
 ---
 
 Prysm can be installed on Windows, GNU/Linux, MacOS, or ARM64 systems using the Prysm installation script which downloads signed binaries from our latest release. This page includes instructions for performing this process.
@@ -32,8 +32,6 @@ These hardware specifications are recommended, but not required to run the Prysm
 ## Installing Prysm
 
 The easiest way to install Prysm is by running the `prysm.sh` script found in the main directory of the [Prysm repository](https://github.com/prysmaticlabs/prysm). This script will download and start up the latest release of Prysm binaries compatible with the host system.
-
-![Prysm Basic Setup](/img/prysm-basic-setup.png)
 
 ### Downloading the Prysm startup script
 
@@ -86,8 +84,6 @@ curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.bat --ou
 reg add HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1
 ``` 
 
-Now that you downloaded the .bat file, you can proceed to [joining eth2](/docs/mainnet/joining-eth2).
-
 </TabItem>
 <TabItem value="mac">
 
@@ -112,7 +108,6 @@ mkdir prysm && cd prysm
 ```sh
 curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --output prysm.sh && chmod +x prysm.sh
 ```
-Now that you downloaded the .sh file, you can proceed to [joining eth2](/docs/mainnet/joining-eth2).
 
 </TabItem>
 <TabItem value="arm">
@@ -128,7 +123,26 @@ mkdir prysm && cd prysm
 ```sh
 curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --output prysm.sh && chmod +x prysm.sh
 ```
-Now that you downloaded the .sh file, you can proceed to [joining eth2](/docs/mainnet/joining-eth2).
 
 </TabItem>
 </Tabs>
+
+## Running a Beacon Node
+
+### Setting up an ETH1 Endpoint
+
+First, let's run a beacon node connected to the main eth2 network. To run a beacon node, you will need access to an eth1 node. We have dedicated instructions for this [here](/docs/prysm-usage/setup-eth1).
+
+### Syncing a beacon node
+
+## Running a Validator
+
+### Ensure your beacon node is synced
+
+### Generate secure validator keys
+
+### Visit the Ethereum validator launchpad
+
+### Import keystores into Prysm
+
+### Run your Prysm validator

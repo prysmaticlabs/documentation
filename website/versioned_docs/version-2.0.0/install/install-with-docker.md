@@ -1,7 +1,7 @@
 ---
 id: install-with-docker
-title: Installing Prysm with docker
-sidebar_label: Installing with Docker
+title: Installing Prysm with Docker
+sidebar_label: Using Docker
 ---
 
 Prysm can be installed on Windows, GNU/Linux, MacOS systems with Docker. This page includes instructions for performing this method.
