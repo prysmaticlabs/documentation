@@ -146,3 +146,47 @@ First, let's run a beacon node connected to the main eth2 network. To run a beac
 ### Import keystores into Prysm
 
 ### Run your Prysm validator
+
+Open a second terminal window. Depending on your platform, issue the appropriate command from the examples below to start the validator.
+
+<Tabs
+  groupId="operating-systems"
+  defaultValue="lin"
+  values={[
+    {label: 'Linux', value: 'lin'},
+    {label: 'Windows', value: 'win'},
+    {label: 'MacOS', value: 'mac'},
+    {label: 'Arm64', value: 'arm'},
+  ]
+}>
+<TabItem value="lin">
+
+```text
+./prysm.sh validator
+```
+
+</TabItem>
+<TabItem value="win">
+
+```text
+prysm.bat validator
+```
+
+</TabItem>
+<TabItem value="mac">
+
+```text
+./prysm.sh validator
+```
+
+</TabItem>
+<TabItem value="arm">
+
+
+```text
+./prysm.sh validator
+```
+
+</TabItem>
+</Tabs>
+
