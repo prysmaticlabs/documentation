@@ -1,7 +1,7 @@
 ---
 id: prysmatic-labs
 title: Prysmatic Labs
-sidebar_label:  Prysmatic Labs
+sidebar_label: Prysm License
 description: Relevant licenses for Prysm and the various materials produced by Prysmatic Labs.
 ---
 

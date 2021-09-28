@@ -1,7 +1,7 @@
 ---
 id: phase0
-title: Phase 0 Audits
-sidebar_label: Phase 0
+title: Prysm Audits
+sidebar_label: Security Audits
 ---
 
 Prysmatic Labs' ETH2 implementation for Phase 0 has received the following audits.

@@ -1,42 +1,15 @@
 {
   "version-2.0.0/docs": [
     {
-      "type": "category",
-      "collapsed": true,
-      "collapsible": true,
-      "label": "An introduction",
-      "items": [
-        {
-          "type": "doc",
-          "id": "version-2.0.0/getting-started"
-        },
-        {
-          "type": "doc",
-          "id": "version-2.0.0/introduction/on-ethereum-2"
-        }
-      ]
+      "type": "doc",
+      "label": "Getting Started",
+      "id": "version-2.0.0/getting-started"
     },
     {
       "type": "category",
       "collapsed": true,
       "collapsible": true,
-      "label": "Joining eth2",
-      "items": [
-        {
-          "type": "doc",
-          "id": "version-2.0.0/mainnet/joining-eth2"
-        },
-        {
-          "type": "doc",
-          "id": "version-2.0.0/testnet/pyrmont"
-        }
-      ]
-    },
-    {
-      "type": "category",
-      "collapsed": true,
-      "collapsible": true,
-      "label": "Installing Prysm",
+      "label": "Installation Guide",
       "items": [
         {
           "type": "doc",
@@ -56,7 +29,23 @@
       "type": "category",
       "collapsed": true,
       "collapsible": true,
-      "label": "Running Prysm",
+      "label": "Staking ETH",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-2.0.0/mainnet/joining-eth2"
+        },
+        {
+          "type": "doc",
+          "id": "version-2.0.0/testnet/pyrmont"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "collapsed": true,
+      "collapsible": true,
+      "label": "Configuration Guide",
       "items": [
         {
           "type": "doc",
@@ -132,7 +121,7 @@
       "type": "category",
       "collapsed": true,
       "collapsible": true,
-      "label": "Wallet and validator accounts",
+      "label": "Validator Key Management",
       "items": [
         {
           "type": "doc",
@@ -168,7 +157,7 @@
       "type": "category",
       "collapsed": true,
       "collapsible": true,
-      "label": "ETH2 API",
+      "label": "API Usage",
       "items": [
         {
           "type": "doc",
@@ -184,8 +173,16 @@
       "type": "category",
       "collapsed": true,
       "collapsible": true,
-      "label": "How Prysm works",
+      "label": "Developer Wiki",
       "items": [
+        {
+          "type": "doc",
+          "id": "version-2.0.0/devtools/init-state"
+        },
+        {
+          "type": "doc",
+          "id": "version-2.0.0/devtools/net-design"
+        },
         {
           "type": "doc",
           "id": "version-2.0.0/how-prysm-works/architecture-overview"
@@ -224,35 +221,7 @@
       "type": "category",
       "collapsed": true,
       "collapsible": true,
-      "label": "Developer tools",
-      "items": [
-        {
-          "type": "doc",
-          "id": "version-2.0.0/devtools/block-explorers"
-        }
-      ]
-    },
-    {
-      "type": "category",
-      "collapsed": true,
-      "collapsible": true,
-      "label": "Developer Wiki",
-      "items": [
-        {
-          "type": "doc",
-          "id": "version-2.0.0/devtools/init-state"
-        },
-        {
-          "type": "doc",
-          "id": "version-2.0.0/devtools/net-design"
-        }
-      ]
-    },
-    {
-      "type": "category",
-      "collapsed": true,
-      "collapsible": true,
-      "label": "Contribute",
+      "label": "Contribution Guidelines",
       "items": [
         {
           "type": "doc",
@@ -276,7 +245,7 @@
       "type": "category",
       "collapsed": true,
       "collapsible": true,
-      "label": "Learn more",
+      "label": "Miscellaneous",
       "items": [
         {
           "type": "doc",
@@ -297,32 +266,22 @@
         {
           "type": "doc",
           "id": "version-2.0.0/reading/testnet-postmortems"
+        },
+        {
+          "type": "doc",
+          "id": "version-2.0.0/devtools/block-explorers"
         }
       ]
     },
     {
-      "type": "category",
-      "collapsed": true,
-      "collapsible": true,
-      "label": "Audits",
-      "items": [
-        {
-          "type": "doc",
-          "id": "version-2.0.0/audits/phase0"
-        }
-      ]
+      "type": "doc",
+      "label": "Security Audits",
+      "id": "version-2.0.0/audits/phase0"
     },
     {
-      "type": "category",
-      "collapsed": true,
-      "collapsible": true,
-      "label": "Licenses",
-      "items": [
-        {
-          "type": "doc",
-          "id": "version-2.0.0/licenses/prysmatic-labs"
-        }
-      ]
+      "type": "doc",
+      "label": "Prysm License",
+      "id": "version-2.0.0/licenses/prysmatic-labs"
     }
   ]
 }
