@@ -1,7 +1,7 @@
 ---
 id: getting-started
 title:  Welcome to the Prysmatic Labs official documentation portal
-sidebar_label: Getting started
+sidebar_label: Getting Started
 ---
 
 ## What is Prysm?
