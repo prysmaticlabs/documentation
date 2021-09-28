@@ -5,10 +5,10 @@ sidebar_label: Ethereum 2.0 API
 description: This section contains information about the official Ethereum 2.0 REST API.
 ---
 
-Prysm supports the official [Ethereum 2.0 REST API specification](https://ethereum.github.io/eth2.0-APIs/?urls.primaryName=v1), the official API standard developed by the Ethereum R&D team. The specification describes a RESTful set of endpoints which should be implemented by an Eth2 client or a third-party service. This reduces the overhead of having to learn a new set of APIs when trying out a different client, and it allows network participants to reliably talk to each other over HTTP. As an example of an external service implementing the spec, Infura's beacon chain API is described [here](https://infura.io/docs/eth2#tag/Beacon).
+Prysm supports the official [Ethereum 2.0 REST API specification](https://ethereum.github.io/beacon-APIs/?urls.primaryName=v1), the official API standard developed by the Ethereum R&D team. The specification describes a RESTful set of endpoints which should be implemented by an Eth2 client or a third-party service. This reduces the overhead of having to learn a new set of APIs when trying out a different client, and it allows network participants to reliably talk to each other over HTTP. As an example of an external service implementing the spec, Infura's beacon chain API is described [here](https://infura.io/docs/eth2#tag/Beacon).
 
 :::caution The official Ethereum 2.0 specification contains multiple definitions
-As of the time of writing, there are two definitions: [v1](https://ethereum.github.io/eth2.0-APIs/?urls.primaryName=v1) and [dev](https://ethereum.github.io/eth2.0-APIs/?urls.primaryName=dev). The latter is an unstable version and supporting it is **not** to be expected.
+As of the time of writing, there are two definitions: [v1](https://ethereum.github.io/beacon-APIs/?urls.primaryName=v1) and [dev](https://ethereum.github.io/eth2.0-APIs/?urls.primaryName=dev). The latter is an unstable version and supporting it is **not** to be expected.
 :::
 
 ## Performing requests against a local Prysm node
@@ -17,7 +17,7 @@ As of the time of writing, there are two definitions: [v1](https://ethereum.gith
 The API's purpose is a means of communication between your beacon node and your validator client. Because of this it is not protected against external malicious users. Some endpoints are vulnerable to Denial-of-Service attacks, while others may disclose information about your beacon node. The communication between the beacon node and the validator client should be done privately, either on the same machine or through an SSH connection.
 :::
 
-The Eth2 JSON REST API is exposed by default on `127.0.0.1:3501`. The host can be changed by manipulating the `--grpc-gateway-host` flag and the port can be modified with the `--eth-api-port` flag. Performing a request is straightforward - simply concatenate the Prysm's API endpoint with the API's URL, providing any required URL and query parameters. As an example, the finalized state's root can be obtained using:
+The Eth2 JSON REST API is exposed by default on `127.0.0.1:3501`. The official Eth2 REST API is by default served from localhost. If a user requires that the REST server is run from a different host address, the host can be changed by manipulating the `--grpc-gateway-host` flag. If a user also requires a different port to access the REST API, the port can be modified with the `--eth-api-port` flag. Performing a request is straightforward - simply concatenate the Prysm's API endpoint with the API's URL, providing any required URL and query parameters. As an example, the finalized state's root can be obtained using:
 ```
 http://127.0.0.1:3501/eth/v1/beacon/states/finalized/root
 ```
