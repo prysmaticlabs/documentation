@@ -29,22 +29,6 @@
       "type": "category",
       "collapsed": true,
       "collapsible": true,
-      "label": "Staking ETH",
-      "items": [
-        {
-          "type": "doc",
-          "id": "version-2.0.0/mainnet/joining-eth2"
-        },
-        {
-          "type": "doc",
-          "id": "version-2.0.0/testnet/pyrmont"
-        }
-      ]
-    },
-    {
-      "type": "category",
-      "collapsed": true,
-      "collapsible": true,
       "label": "Configuration Guide",
       "items": [
         {

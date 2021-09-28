@@ -46,7 +46,9 @@ These hardware specifications are recommended, but not required to run the Prysm
 
 Instead of using the `Go` tool to build Prysm, our team relies on the [Bazel](https://bazel.build) build system used by major companies to manage monorepositories. Bazel provides reproducible builds and a sandboxed environment that ensures everyone building Prysm has the same experience and can build our entire project from a single command. For more detailed rationale on why Bazel, how it works in Prysm, and all important information about how exactly building from source works, read our rationale [here](/docs/reading/bazel).
 
-## Install Bazel using Bazelisk
+## Installing Prysm
+
+### Install Bazel using Bazelisk
 
 Bazelisk is a launcher for Bazel which automatically downloads and installs an appropriate version of Bazel. Use Bazelisk to automtically manage the version of Bazel required.  
 
@@ -57,7 +59,7 @@ You can install Bazelisk in multiple ways, including:
 * Using Homebrew on macOS
 * By compiling from source using Go: go get github.com/bazelbuild/bazelisk
 
-## Building Prysm from source
+### Building Prysm from source
 
 :::tip Pro-Tip
 **NOTICE:** We recommend users install Bazelisk in the PATH in place of the Bazel binary. This can be done by simply replacing **/usr/local/bin/bazel** (*default location*) with the **bazelisk**  binary. This will ensure users no longer need to maintain the version of **bazel** in use. Full installation details and options for Bazelisk are available [Here.](https://github.com/bazelbuild/bazelisk/blob/master/README.md#installation) 
@@ -78,9 +80,81 @@ bazel build //beacon-chain:beacon-chain --config=release
 bazel build //validator:validator --config=release
 ```
 
-Bazel will automatically pull and install any dependencies as well, including Go and necessary compilers. Now that your installation is done, you can then read [joining eth2](/docs/mainnet/joining-eth2).
+Bazel will automatically pull and install any dependencies as well, including Go and necessary compilers.
 
-## Building Docker images
+## Running a Beacon Node
+
+### Step 1: Set up an Eth1 Endpoint
+
+First, let's run a beacon node connected to the main eth2 network. To run a beacon node, you will need access to an eth1 node. We have dedicated instructions for this [here](/docs/prysm-usage/setup-eth1).
+
+### Step 2: Sync your beacon node
+
+Note: <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`.
+
+```text
+bazel run //beacon-chain --config=release -- --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
+```
+
+## Running a Validator
+
+A validator is an optional process that can be attached to a running beacon node to stake your ETH and participate in the chain's consensus. It is the analogue of a **miner** from proof-of-work-based systems.
+
+### Step 1: Ensure your beacon node is synced
+
+An important step in the process is ensuring your beacon node is all set up before trying to run a validator. This is because after your validator is inducted into the participating validator set, it is expected to begin performing its duties almost right away. It is important to run a validator with a node that is synchronized to the chain head so you can start earning ETH instead of losing it.
+
+:::tip Syncing your node
+The beacon-chain node you are using should be **completely synced** before submitting your deposit. You may **incur minor inactivity balance penalties** if the validator is unable to perform its duties by the time the deposit is processed and activated by the beacon chain network.
+:::
+
+You can check the sync status of your node with the following command on most systems:
+
+```text
+curl http://localhost:3500/eth/v1alpha1/node/syncing
+```
+
+If your node is done synchronizing, you will see the response:
+
+```text
+{"syncing":false}%
+```
+
+### Step 2: Send your validator deposit via the Ethereum validator launchpad
+
+:::danger Ensure You Are Not Being Scammed
+The correct address for the launchpad is https://launchpad.ethereum.org and the only, official validator deposit contract is [0x00000000219ab540356cbb839cbe05303d7705fa](https://etherscan.io/address/0x00000000219ab540356cbb839cbe05303d7705fa). Do not send ETH directly to the contract, and only join by using the eth2 launchpad.
+:::
+
+The [Official Eth2 Launchpad](https://launchpad.ethereum.org/summary) is the easiest way to go through a step-by-step process to deposit your 32 ETH to become a validator. Throughout the process, you'll be asked to generate new validator credentials using the official Ethereum deposit command-line-tool [here](https://github.com/ethereum/eth2.0-deposit-cli). Make sure you use the `mainnet` option when generating keys with the deposit CLI. During the process, you will have generated a `validator_keys` folder under the `eth2.0-deposit-cli` directory. You can import all of your validator keys into Prysm from that folder in the next step.
+
+### Step 3: Import keystores into Prysm
+
+For this step, you'll need to copy the path to the `validator_keys` folder under the `eth2.0-deposit-cli` directory you created during the launchpad process. For example, if your eth2.0-deposit-cli installation is in your `$HOME` (or `%LOCALAPPDATA%` on Windows) directory, you can then run the following commands for your operating system
+
+Note: You will be asked to do a one time acknowledgement of our [Terms of Use](https://github.com/prysmaticlabs/prysm/blob/master/TERMS_OF_SERVICE.md). You can also read the legal terms first, then confirm them via a flag using --accept-terms-of-use in both your beacon node and validator.
+
+```text
+bazel run //validator:validator -- accounts import --keys-dir=$HOME/eth2.0-deposit-cli/validator_keys
+```
+
+### Step 4: Run your Prysm validator
+
+Open a second terminal window. Depending on your platform, issue the appropriate command from the examples below to start the validator.
+
+```text
+bazel run //validator --config=release
+```
+
+### Step 6: Wait for your validator assignment
+
+Please note that it may take from **5-12 hours** for nodes in the ETH2 network to process a deposit. In the meantime, leave both terminal windows open and running; once the validator is activated by the ETH2 network, it will immediately begin receiving tasks and performing its responsibilities. If the eth2 chain has not yet started, the validator will be ready to start proposing blocks and signing votes as soon as the genesis time is reached.
+
+To check on the status of your validator, we recommend checking out the popular block explorers: [beaconcha.in](https://beaconcha.in) by Bitfly and [beacon.etherscan.io](https://beacon.etherscan.io) by the Etherscan team.
+
+![image](https://i.imgur.com/CDNc6Ft.png)
+
+## Building Docker Images from Source
 
 We use Bazel to build the Docker images for Prysm as well. This section outlines comprehensive instructions on how to build them by yourself, run them in Docker, and push to an image registry if desired. In particular, we use [`bazel rules docker`](https://github.com/bazelbuild/rules_docker) which provides us the ability to specify a base, barebones image, and essentially builds our binary and creates a Docker container as a simple wrapper over our binaries.
 
