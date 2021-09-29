@@ -59,8 +59,7 @@
 		],
 		"Developer Wiki": [
 			"devtools/init-state",
-			"devtools/net-design",
-			"devtools/api-middleware"
+			"devtools/net-design"
 		],
 		"Contribute": [
 			"contribute/doc-standards",
