@@ -1,10 +1,9 @@
 {
-  	"docs": {
-
-		"An introduction": 	[	"getting-started",
-								"introduction/on-ethereum-2"
-							],
-
+	"docs": {
+		"An introduction": [
+			"getting-started",
+			"introduction/on-ethereum-2"
+		],
 		"Joining eth2": [
 			"mainnet/joining-eth2",
 			"testnet/pyrmont"
@@ -14,8 +13,7 @@
 			"install/install-with-docker",
 			"install/install-with-bazel"
 		],
-
-		"Running Prysm": 	[   
+		"Running Prysm": [
 			"prysm-usage/staying-up-to-date",
 			"prysm-usage/parameters",
 			"prysm-usage/setup-eth1",
@@ -29,13 +27,11 @@
 			"prysm-usage/client-stats",
 			"faq"
 		],
-
 		"Advanced Usage": [
 			"advanced/migrating-keys",
 			"advanced/beacon_node_api"
 		],
-
-		"Wallet and validator accounts": 	[   
+		"Wallet and validator accounts": [
 			"wallet/introduction",
 			"wallet/deterministic",
 			"wallet/nondeterministic",
@@ -44,47 +40,46 @@
 			"wallet/exiting-a-validator",
 			"wallet/ethdo"
 		],
-
-		"ETH2 API": 	[
+		"ETH2 API": [
 			"how-prysm-works/ethereum-public-api",
 			"how-prysm-works/prysm-public-api"
 		],
-
-		"How Prysm works": 	[	"how-prysm-works/architecture-overview",
-								"how-prysm-works/beacon-node",
-								"how-prysm-works/prysm-validator-client",
-								"how-prysm-works/validator-lifecycle",
-								"how-prysm-works/validator-deposit-contract",
-								"how-prysm-works/database-backend-boltdb",
-								"how-prysm-works/p2p-networking",
-								"how-prysm-works/bls-cryptography"
-							],
-
-		"Developer tools": 	["devtools/block-explorers"],
-
-
-    "Developer Wiki": 	["devtools/init-state",
-                                          "devtools/net-design"
-                            ],
-
-
-		"Contribute": [	
+		"How Prysm works": [
+			"how-prysm-works/architecture-overview",
+			"how-prysm-works/beacon-node",
+			"how-prysm-works/prysm-validator-client",
+			"how-prysm-works/validator-lifecycle",
+			"how-prysm-works/validator-deposit-contract",
+			"how-prysm-works/database-backend-boltdb",
+			"how-prysm-works/p2p-networking",
+			"how-prysm-works/bls-cryptography"
+		],
+		"Developer tools": [
+			"devtools/block-explorers"
+		],
+		"Developer Wiki": [
+			"devtools/init-state",
+			"devtools/net-design",
+			"devtools/api-middleware"
+		],
+		"Contribute": [
 			"contribute/doc-standards",
 			"contribute/contribution-guidelines",
-							"contribute/bugreports",
-							"contribute/golang-principles"
-						],
-
-		"Learn more": 	[ 	"terminology",
-							"reading/eth2",
-							"reading/golang",
-							"reading/bazel",
-							"reading/testnet-postmortems"
-						],
+			"contribute/bugreports",
+			"contribute/golang-principles"
+		],
+		"Learn more": [
+			"terminology",
+			"reading/eth2",
+			"reading/golang",
+			"reading/bazel",
+			"reading/testnet-postmortems"
+		],
 		"Audits": [
 			"audits/phase0"
 		],
-		
-		"Licenses": ["licenses/prysmatic-labs"]
-  	}
+		"Licenses": [
+			"licenses/prysmatic-labs"
+		]
+	}
 }
