@@ -131,7 +131,15 @@ curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --out
 
 ### Before you begin: pick your network
 
-:::danger Make sure you are running on the main network (mainnet) if you plan on staking your ETH
+When running Prysm, you can choose to run in the **main network** which has real assets at stake, or in a **test network** which is used by developers and stakers that might want to gain some confidence before depositing 32 ETH to validate. The currently supported networks in Prysm are
+
+* [Mainnet](https://launchpad.ethereum.org) which is the current, live version of Ethereum proof-of-stake with billions of dollars worth of real ETH
+* [Prater testnet](https://prater.launchpad.ethereum.org) which is a useful staging testnet for development and users that want to try things out before hopping into the real mainnet
+
+Mainnet is enabled by **default** in all Prysm commands. If you want to use the **Prater** testnet, just add `--prater` to _all_ your Prysm commands.
+
+:::danger Make sure you are running on the main network (mainnet) if using real money! 
+Do not use `--prater` if you are using real funds and staking your ETH on mainnet. Testnets use testnet ETH to run the network and do not represent real value.
 :::
 
 ### Step 1: Set up an Eth1 Endpoint
@@ -192,8 +200,6 @@ Note: <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `ht
 ## Running a Validator
 
 A validator is an optional process that can be attached to a running beacon node to stake your ETH and participate in the chain's consensus. It is the analogue of a **miner** from proof-of-work-based systems.
-
-### Before you begin: pick your network
 
 ### Step 1: Ensure your beacon node is synced
 
