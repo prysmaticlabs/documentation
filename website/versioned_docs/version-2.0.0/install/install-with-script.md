@@ -163,12 +163,24 @@ First, let's run a beacon node connected to the main eth2 network. To run a beac
 
 Note: <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`.
 
+**Mainnet**
+
 ```text
 ./prysm.sh beacon-chain --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
 ```
 
+**Prater**
+
+Download the genesis state from [github.com/eth2-clients/eth2-networks/blob/master/shared/prater/genesis.ssz](https://github.com/eth2-clients/eth2-networks/blob/master/shared/prater/genesis.ssz) to a local file, then run
+
+```text
+./prysm.sh beacon-chain --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT> --prater --genesis-state=/path/to/genesis.ssz
+```
+
 </TabItem>
 <TabItem value="win">
+
+**Mainnet**
 
 Note: <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`.
 
@@ -176,8 +188,18 @@ Note: <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `ht
 prysm.bat beacon-chain --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
 ```
 
+**Prater**
+
+Download the genesis state from [github.com/eth2-clients/eth2-networks/blob/master/shared/prater/genesis.ssz](https://github.com/eth2-clients/eth2-networks/blob/master/shared/prater/genesis.ssz) to a local file, then run
+
+```text
+prysm.bat beacon-chain --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT> --prater --genesis-state=\path\to\genesis.ssz
+```
+
 </TabItem>
 <TabItem value="mac">
+
+**Mainnet**
 
 Note: <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`.
 
@@ -185,13 +207,31 @@ Note: <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `ht
 ./prysm.sh beacon-chain --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
 ```
 
+**Prater**
+
+Download the genesis state from [github.com/eth2-clients/eth2-networks/blob/master/shared/prater/genesis.ssz](https://github.com/eth2-clients/eth2-networks/blob/master/shared/prater/genesis.ssz) to a local file, then run
+
+```text
+./prysm.sh beacon-chain --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT> --prater --genesis-state=/path/to/genesis.ssz
+```
+
 </TabItem>
 <TabItem value="arm">
+
+**Mainnet**
 
 Note: <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`.
 
 ```text
 ./prysm.sh beacon-chain --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
+```
+
+**Prater**
+
+Download the genesis state from [github.com/eth2-clients/eth2-networks/blob/master/shared/prater/genesis.ssz](https://github.com/eth2-clients/eth2-networks/blob/master/shared/prater/genesis.ssz) to a local file, then run
+
+```text
+./prysm.sh beacon-chain --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT> --prater --genesis-state=/path/to/genesis.ssz
 ```
 
 </TabItem>
