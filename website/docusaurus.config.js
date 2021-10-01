@@ -79,7 +79,6 @@ module.exports = {
                     customCss: require.resolve('./src/css/custom.css'),
                 },
                 sitemap: {
-                    cacheTime: 600 * 1000,
                     changefreq: 'weekly',
                     priority: 0.5,
                 },
