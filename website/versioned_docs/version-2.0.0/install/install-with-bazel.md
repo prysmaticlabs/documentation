@@ -84,6 +84,19 @@ Bazel will automatically pull and install any dependencies as well, including Go
 
 ## Running a Beacon Node
 
+### Before you begin: pick your network
+
+When running Prysm, you can choose to run in the **main network** which has real assets at stake, or in a **test network** which is used by developers and stakers that might want to gain some confidence before depositing 32 ETH to validate. The currently supported networks in Prysm are
+
+* [Mainnet](https://launchpad.ethereum.org) which is the current, live version of Ethereum proof-of-stake with billions of dollars worth of real ETH
+* [Prater testnet](https://prater.launchpad.ethereum.org) which is a useful staging testnet for development and users that want to try things out before hopping into the real mainnet
+
+Mainnet is enabled by **default** in all Prysm commands. If you want to use the **Prater** testnet, just add `--prater` to _all_ your Prysm commands.
+
+:::danger Make sure you are running on the main network (mainnet) if using real money! 
+Do not use `--prater` if you are using real funds and staking your ETH on mainnet. Testnets use testnet ETH to run the network and do not represent real value.
+:::
+
 ### Step 1: Set up an Eth1 Endpoint
 
 First, let's run a beacon node connected to the main eth2 network. To run a beacon node, you will need access to an eth1 node. We have dedicated instructions for this [here](/docs/prysm-usage/setup-eth1).
@@ -92,8 +105,18 @@ First, let's run a beacon node connected to the main eth2 network. To run a beac
 
 Note: <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`.
 
+**Mainnet**
+
 ```text
 bazel run //beacon-chain --config=release -- --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
+```
+
+**Prater**
+
+Download the genesis state from [github.com/eth2-clients/eth2-networks/blob/master/shared/prater/genesis.ssz](https://github.com/eth2-clients/eth2-networks/blob/master/shared/prater/genesis.ssz) to a local file, then run
+
+```text
+bazel run //beacon-chain --config=release -- --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT> --prater --genesis-state=/path/to/genesis.ssz
 ```
 
 ## Running a Validator
