@@ -10,4 +10,4 @@ As stated, Ethereum 2.0 is a distributed and decentralised peer-to-peer \(P2P\) 
 
 Libp2p is a full featured and highly maintained next-generation library. By implementing an already existing and proven peer-to-peer system into Prysm, the low level functions of networking across nodes are managed both effectively and securely 'out of the box', while simultaneously freeing human resources and allowing development to focus on the higher level functionality of the client.
 
-For more information and current developments, see the [official Ethereum 2.0 P2P specification](https://github.com/ethereum/eth2.0-specs/blob/dev/specs/phase0/p2p-interface.md).
+For more information and current developments, see the [official Ethereum consensus P2P specification](https://github.com/ethereum/eth2.0-specs/blob/dev/specs/phase0/p2p-interface.md).

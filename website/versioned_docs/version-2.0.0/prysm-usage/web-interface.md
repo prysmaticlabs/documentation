@@ -8,12 +8,11 @@ This section outlines the step-by-step process for how to use Prysm with its bui
 
 ![Dashboard](/img/webdashboard.png "Main Dashboard")
 
-## Step 1: Get Prysm and join eth2 mainnet or testnet
+## Step 1: Get Prysm and join Ethreum mainnet or testnet
 
-To begin, follow the instructions to run Prysm in either the eth2 mainnet or the test network
+To begin, follow the instructions to run Prysm in mainnet or testnet:
 
-- [Joining Eth2 Mainnet](/docs/mainnet/joining-eth2)
-- [Joining the Testnet](/docs/testnet/pyrmont)
+- [Joining Mainnet](/docs/install/install-with-script)
 
 By the end of the documentation, you should have a functioning beacon node and validator client running!
 
@@ -21,7 +20,7 @@ By the end of the documentation, you should have a functioning beacon node and v
 
 To launch the web interface, you will need to restart your validator client from step 1 with the `--web` flag. This will allow you to access the web interface by default on `http://localhost:7500` if running on the same computer as your validator client and using `prysm.sh`, `prysm.bat` or building from source. For more advanced configurations, keep reading below in step (3).
 
-If it is the first time you have ran your Prysm validator and have not yet created a wallet, you will be faced with a wallet creation screen allowing you to import the keystores generated from the eth2.0-deposit-cli.
+If it is the first time you have ran your Prysm validator and have not yet created a wallet, you will be faced with a wallet creation screen allowing you to import the keystores generated from the Ethereum deposit-cli.
 
 ![Image](/img/walletcreate.png)
 
@@ -55,7 +54,7 @@ The available parameters to customize are:
 If you are running your beacon node and validator on some server that you want to access from the outside, we recommend SSH local port forwarding to access it. For example, you would do the following from your home computer:
 
 ```
-ssh -L 7500:127.0.0.1:7500 user@host_ip
+sh -L 7500:127.0.0.1:7500 user@host_ip
 ```
 
 where you replace `user@host_ip` with the user and host ip address of the remote machine you are trying to access. This will forward all requests from your home computer's localhost:7500 to the remote instance's localhost:7500, allowing you to visit `http://localhost:7500` from your favorite browser and then access the validator web interface! This is the safest approach to access it, as you are exposing the web interface to the open Internet.
@@ -65,7 +64,7 @@ where you replace `user@host_ip` with the user and host ip address of the remote
 You can visualize your beacon node and validator client logs from the web interface easily by navigating to `System Process -> Logs` on the left-hand sidebar.  
 ![Logs](/img/logs.png "Logs")
 
-- We recommend going through the ["imported wallet"](/docs/wallet/nondeterministic) route, and importing your keys you obtained during the [eth2 launchpad deposit-cli](https://launchpad.ethereum.org/) process, as this is the most secure setup. Upon completing wallet creation, you will be redirected to your main dashboard, where you can see several important items such as your recent validating performance or your beacon node's sync status.  
+- We recommend going through the ["imported wallet"](/docs/wallet/nondeterministic) route, and importing your keys you obtained during the [Ethereumlaunchpad deposit-cli](https://launchpad.ethereum.org/) process, as this is the most secure setup. Upon completing wallet creation, you will be redirected to your main dashboard, where you can see several important items such as your recent validating performance or your beacon node's sync status.  
 
 This page is useful to monitor how your processes are doing without needing to navigate to your terminal! In addition, you can visit your `Wallet and Accounts -> Accounts` page to view all your validating keys in an ordered table, explore their historical performance on https://beaconcha.in, and import new ones.
 

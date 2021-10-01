@@ -1,6 +1,6 @@
 module.exports = {
     title: 'Prysm',
-    tagline: 'Ethereum 2.0 implementation written entirely in Go.',
+    tagline: 'Ethereum consensus implementation written entirely in Go.',
     url: 'https://docs.prylabs.network',
     baseUrl: '/',
     onBrokenLinks: 'throw',
@@ -13,7 +13,7 @@ module.exports = {
     scripts: ['https://buttons.github.io/buttons.js'],
     themeConfig: {
         navbar: {
-            title: "Prysm Eth2 Docs",
+            title: "Prysm Documentation",
             logo: {
                 alt: "Prysm logo",
                 src: 'img/logo2.png',
@@ -23,17 +23,11 @@ module.exports = {
                 {
                     type: 'docsVersionDropdown',
                     position: 'left',
-                    dropdownItemsAfter: [{ to: '/versions', label: 'All versions' }],
                     dropdownActiveClassDisabled: true,
                 },
                 {
                     to: 'docs/mainnet/joining-eth2',
-                    label: 'Stake on Eth2',
-                    position: 'right',
-                },
-                {
-                    label: 'Updating/Downgrading Versions',
-                    to: 'docs/prysm-usage/staying-up-to-date',
+                    label: 'Staking on Ethereum',
                     position: 'right',
                 },
                 {

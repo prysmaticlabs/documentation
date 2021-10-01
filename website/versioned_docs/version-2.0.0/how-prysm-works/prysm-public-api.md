@@ -9,11 +9,11 @@ description: This section contains service definitions and gRPC instructions to 
 Our API documentation website [https://api.prylabs.network](https://api.prylabs.network) is currently down due to maintenance. In the meantime, you can browse our API schema here: [github.com/prysmaticlabs/ethereumapis](https://github.com/prysmaticlabs/ethereumapis/tree/master/eth/v1alpha1). Our current API version used in Prysm is `v1alpha1`. 
 :::
 
-One of the required components of nodes in the Ethereum 2.0 network is to expose an API server for outside interaction. This API is critical for running validators on eth2, as validator clients can connect to nodes and query their API to figure out their assigned duties, to submit block proposals, and more. Prysm's eth2 API schema is maintained in its unique repository: [github.com/prysmaticlabs/ethereumapis](https://github.com/prysmaticlabs/ethereumapis) and is implemented by Prysm beacon nodes [here](https://github.com/prysmaticlabs/prysm/blob/master/beacon-chain/rpc/service.go). Note, this API is **only used by Prysm**. 
+One of the required components of nodes in the Ethereum beacon chain network is to expose an API server for outside interaction. This API is critical for running validators on Ethereum, as validator clients can connect to nodes and query their API to figure out their assigned duties, to submit block proposals, and more. Prysm's Ethereum consensus API schema is maintained in its unique repository: [github.com/prysmaticlabs/ethereumapis](https://github.com/prysmaticlabs/ethereumapis) and is implemented by Prysm beacon nodes [here](https://github.com/prysmaticlabs/prysm/blob/master/beacon-chain/rpc/service.go). Note, this API is **only used by Prysm**. 
 
 ![gRPC](/img/grpc-logo2.png)
 
-Prysm implements its API by using the popular [gRPC](https://grpc.io) project created by Google, providing highly advanced functionality for eth2. Interacting with the API requires the use of protocol buffers, also known as protobuf. These [protocol buffer](https://developers.google.com/protocol-buffers/). For information on the functionality of gRPC and protocol buffers more generally, see the [gRPC guide](https://grpc.io/docs/guides/).
+Prysm implements its API by using the popular [gRPC](https://grpc.io) project created by Google, providing highly advanced functionality for Ethereum consensus. Interacting with the API requires the use of protocol buffers, also known as protobuf. These [protocol buffer](https://developers.google.com/protocol-buffers/). For information on the functionality of gRPC and protocol buffers more generally, see the [gRPC guide](https://grpc.io/docs/guides/).
 
 ## Calling the API on your local beacon node
 
@@ -43,7 +43,7 @@ By default the beacon node runs with all available set of APIs enabled. You migh
 
 ## Contributing
 
-Thanks for wanting to contribute to our eth2 API! Go and Java libraries may be generated from the [ethereumapis repository](https://github.com/prysmaticlabs/ethereumapis) using [Bazel](https://bazel.build), making it easy to make changes to the schemas needed and generate Go files or Java packages from them. Here's what you need to get started:
+Thanks for wanting to contribute to our Ethereum consensus API! Go and Java libraries may be generated from the [ethereumapis repository](https://github.com/prysmaticlabs/ethereumapis) using [Bazel](https://bazel.build), making it easy to make changes to the schemas needed and generate Go files or Java packages from them. Here's what you need to get started:
 
 ### Dependencies
 
@@ -54,11 +54,11 @@ Thanks for wanting to contribute to our eth2 API! Go and Java libraries may be g
 
 ### Making API Schema Changes
 
-Say you want to add a new endpoint to the `BeaconChain` gRPC service in our API schema to retrieve orphaned blocks. First, make sure the functionality you wish to add is not already covered by one of our endpoints on https://api.prylabs.network. Also, keep in mind making strict changes to the API schema can often times be difficult without a significant reason as this API is used by many different developers building on eth2. If you are confident in your desired changes, you can proceed by modifying the protobuf schema:
+Say you want to add a new endpoint to the `BeaconChain` gRPC service in our API schema to retrieve orphaned blocks. First, make sure the functionality you wish to add is not already covered by one of our endpoints on https://api.prylabs.network. Also, keep in mind making strict changes to the API schema can often times be difficult without a significant reason as this API is used by many different developers building on Ethereum consensus. If you are confident in your desired changes, you can proceed by modifying the protobuf schema:
 
 ```go
 service BeaconChain {
-    // Retrieve orphaned blocks from the eth2 chain.
+    // Retrieve orphaned blocks from the Ethereum consensus chain.
     rpc GetOrphanedBlocks(OrphanedBlocksRequest) returns (OrphanedBlocksResponse) {
         option (google.api.http) = {
             get: "/eth/v1alpha1/beacon/blocks/orphaned"
