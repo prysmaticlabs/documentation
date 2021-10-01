@@ -93,16 +93,16 @@ You can also find various other types of IDE support for Bazel in the official B
 
 #### Running Bazel tests
 
-All code we check into our repo needs to have sufficient tests to ensure it is maintainable and works as expected. We use bazel to run all of our test suites in Prysm. If there is a particular subfolder you want to test, such as `beacon-chain/rpc/node`, you can run the command:
+All code we check into our repo needs to have sufficient tests to ensure it is maintainable and works as expected. We use bazel to run all of our test suites in Prysm. If there is a particular subfolder you want to test, such as `beacon-chain/node`, you can run the command:
 
 ```text
-$ bazel test //beacon-chain/rpc/node:go_default_test
+$ bazel test //beacon-chain/node:go_default_test
 ```
 
 For running a specific test, for example, a test called `TestNode_GetPeers` inside of `beacon-chain/node/node_test.go`, you can use Bazel to filter it out:
 
 ```text
-$ bazel test //beacon-chain/rpc/node:go_default_test --test_output=streamed --test_filter=TestNode_GetPeers
+$ bazel test //beacon-chain/node:go_default_test --test_output=streamed --test_filter=TestNode_GetPeers
 ```
 
 For the list of all available flags to the `bazel test` command, you can see the reference documentation [here](https://docs.bazel.build/versions/master/command-line-reference.html#test).
@@ -110,7 +110,7 @@ For the list of all available flags to the `bazel test` command, you can see the
 You can also run our full, end-to-end test suite with:
 
 ```text
-$ bazel test //endtoend:go_default_test --define=ssz=minimal
+$ bazel test //testing/endtoend:go_default_test
 ```
 
 ### Contributing to the Eth2 API
