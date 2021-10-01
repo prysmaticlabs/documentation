@@ -129,6 +129,11 @@ curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --out
 
 ## Running a Beacon Node
 
+### Before you begin: pick your network
+
+:::danger Make sure you are running on the main network (mainnet) if you plan on staking your ETH
+:::
+
 ### Step 1: Set up an Eth1 Endpoint
 
 First, let's run a beacon node connected to the main eth2 network. To run a beacon node, you will need access to an eth1 node. We have dedicated instructions for this [here](/docs/prysm-usage/setup-eth1).
@@ -187,6 +192,8 @@ Note: <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `ht
 ## Running a Validator
 
 A validator is an optional process that can be attached to a running beacon node to stake your ETH and participate in the chain's consensus. It is the analogue of a **miner** from proof-of-work-based systems.
+
+### Before you begin: pick your network
 
 ### Step 1: Ensure your beacon node is synced
 
