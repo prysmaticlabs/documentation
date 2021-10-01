@@ -3,7 +3,7 @@ module.exports = {
     tagline: 'Ethereum consensus implementation written entirely in Go.',
     url: 'https://docs.prylabs.network',
     baseUrl: '/',
-    onBrokenLinks: 'throw',
+    onBrokenLinks: 'warn',
     favicon: 'img/Prysm.svg',
     organizationName: 'Prysmatic Labs',
     projectName: 'prysm-docs',
