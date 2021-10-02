@@ -56,19 +56,8 @@ This will build the project by downloading dependencies as Go modules.
 
 All code we check into our repo needs to have sufficient tests to ensure it is maintainable and works as expected. You can use Go run tests in Prysm. 
 
-```text
-$ go test -v ./...
-```
-
-If there is a particular subfolder you want to test, such as `beacon-chain/rpc/node`, you can run the command:
-
-```text
-$ go test ./beacon-chain/rpc/node/...
-```
-
-#### Adding dependencies
-
-If you want to add a new dependency to Prysm, please adhere to the guidelines found in our [DEPENDENCIES.md](https://github.com/prysmaticlabs/prysm/blob/master/DEPENDENCIES.md) document.
+Many tests are rely on the Bazel build system, thus testing with `go test` would not work.
+See the [next section](#building-and-tessting-prysm-with-bazel) for instructions on testing with prysm.
 
 ### Building and testing Prysm with Bazel
 
@@ -112,6 +101,10 @@ You can also run our full, end-to-end test suite with:
 ```text
 $ bazel test //testing/endtoend:go_default_test
 ```
+
+#### Adding dependencies
+
+If you want to add a new dependency to Prysm, please adhere to the guidelines found in our [DEPENDENCIES.md](https://github.com/prysmaticlabs/prysm/blob/master/DEPENDENCIES.md) document.
 
 ### Contributing to the Eth2 API
 
