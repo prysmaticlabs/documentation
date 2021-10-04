@@ -26,8 +26,8 @@ module.exports = {
                     dropdownActiveClassDisabled: true,
                 },
                 {
-                    to: 'docs/mainnet/joining-eth2',
-                    label: 'Staking on Ethereum',
+                    to: 'docs/install/install-with-script',
+                    label: 'Quick Install',
                     position: 'right',
                 },
                 {
@@ -36,8 +36,8 @@ module.exports = {
                     position: 'right',
                 },
                 {
-                    href: 'https://api.prylabs.network',
-                    label: 'API',
+                    href: 'https://discord.gg/prysmaticlabs',
+                    label: 'Discord',
                     position: 'right',
                 },
             ],

@@ -1,10 +1,10 @@
 ---
 id: beacon_node_api
-title: Beacon node for API access
-sidebar_label: Beacon node for API access
+title: Archival beacon node usage
+sidebar_label: Archival node setup
 ---
 
-## Using the Beacon node as a Blockchain API
+## Using archival beacon nodes for API retrieval
 
 The beacon chain is the coordinator of Ethereum proof-of-stake. It is responsible for creating new blocks, ensuring their validity, and both rewarding and penalizing participating validators for their actions. This responsibility gives the beacon node full visibility of actions performed on the blockchain, and as such, can be used as a retrospective API in order to query chain information.  Whilst this could be considered analogous to log analysis, unlike in log analysis, previous states that have not had full data stored locally for review can be requested, then fetched retrospectively and queried.
 

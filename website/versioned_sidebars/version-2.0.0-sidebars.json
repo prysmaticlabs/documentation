@@ -33,10 +33,6 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-2.0.0/prysm-usage/staying-up-to-date"
-        },
-        {
-          "type": "doc",
           "id": "version-2.0.0/prysm-usage/parameters"
         },
         {
@@ -45,19 +41,15 @@
         },
         {
           "type": "doc",
+          "id": "version-2.0.0/prysm-usage/staying-up-to-date"
+        },
+        {
+          "type": "doc",
           "id": "version-2.0.0/prysm-usage/graffiti-file"
         },
         {
           "type": "doc",
-          "id": "version-2.0.0/prysm-usage/p2p-host-ip"
-        },
-        {
-          "type": "doc",
           "id": "version-2.0.0/prysm-usage/database-backups"
-        },
-        {
-          "type": "doc",
-          "id": "version-2.0.0/prysm-usage/is-everything-fine"
         },
         {
           "type": "doc",
@@ -78,10 +70,6 @@
         {
           "type": "doc",
           "id": "version-2.0.0/prysm-usage/client-stats"
-        },
-        {
-          "type": "doc",
-          "id": "version-2.0.0/faq"
         }
       ]
     },
@@ -98,6 +86,26 @@
         {
           "type": "doc",
           "id": "version-2.0.0/advanced/beacon_node_api"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "collapsed": true,
+      "collapsible": true,
+      "label": "Troubleshooting",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-2.0.0/prysm-usage/is-everything-fine"
+        },
+        {
+          "type": "doc",
+          "id": "version-2.0.0/prysm-usage/p2p-host-ip"
+        },
+        {
+          "type": "doc",
+          "id": "version-2.0.0/faq"
         }
       ]
     },

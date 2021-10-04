@@ -1,7 +1,7 @@
 ---
 id: staying-up-to-date
 title: Upgrading and downgrading Prysm
-sidebar_label: Upgrading and downgrading versions
+sidebar_label: Upgrading and downgrading
 ---
 
 This section outlines the step-by-step process for how to keep Prysm up-to-date, how to downgrade versions, and some security recommendations for stakers regarding updates. 
