@@ -350,6 +350,15 @@ docker run -it -v $HOME/.eth2:/data -v /path/to/genesis.ssz:/genesis/genesis.ssz
 
 A validator is an optional process that can be attached to a running beacon node to stake your ETH and participate in the chain's consensus. It is the analogue of a **miner** from proof-of-work-based systems.
 
+### Before you begin: pick your network
+
+When running Prysm, you can choose to run in the **main network** which has real assets at stake, or in a **test network** which is used by developers and stakers that might want to gain some confidence before depositing 32 ETH to validate. The currently supported networks in Prysm are
+
+* [Mainnet](https://launchpad.ethereum.org) which is the current, live version of Ethereum proof-of-stake with billions of dollars worth of real ETH
+* [Prater testnet](https://prater.launchpad.ethereum.org) which is a useful staging testnet for development and users that want to try things out before hopping into the real mainnet
+
+Mainnet is enabled by **default** in all Prysm commands. If you want to use the **Prater** testnet, just add `--prater` to _all_ your Prysm commands.
+
 ### Step 1: Ensure your beacon node is synced
 
 An important step in the process is ensuring your beacon node is all set up before trying to run a validator. This is because after your validator is inducted into the participating validator set, it is expected to begin performing its duties almost right away. It is important to run a validator with a node that is synchronized to the chain head so you can start earning ETH instead of losing it.
@@ -376,7 +385,9 @@ If your node is done synchronizing, you will see the response:
 The correct address for the launchpad is https://launchpad.ethereum.org and the only, official validator deposit contract is [0x00000000219ab540356cbb839cbe05303d7705fa](https://etherscan.io/address/0x00000000219ab540356cbb839cbe05303d7705fa). Do not send ETH directly to the contract, and only join by using the eth2 launchpad.
 :::
 
-The [Official Eth2 Launchpad](https://launchpad.ethereum.org/summary) is the easiest way to go through a step-by-step process to deposit your 32 ETH to become a validator. Throughout the process, you'll be asked to generate new validator credentials using the official Ethereum deposit command-line-tool [here](https://github.com/ethereum/eth2.0-deposit-cli). Make sure you use the `mainnet` option when generating keys with the deposit CLI. During the process, you will have generated a `validator_keys` folder under the `eth2.0-deposit-cli` directory. You can import all of your validator keys into Prysm from that folder in the next step.
+The [Mainnet Eth2 Launchpad](https://launchpad.ethereum.org/summary) is the easiest way to go through a step-by-step process to deposit your 32 ETH to become a validator. If you want to participate in the **testnet**, you can navigte to the [Prater Eth2 Launchpad](https://prater.launchpad.net/summary) instead
+
+Throughout the process, you'll be asked to generate new validator credentials using the official Ethereum deposit command-line-tool [here](https://github.com/ethereum/eth2.0-deposit-cli). Make sure you use the `mainnet` option when generating keys with the deposit CLI. During the process, you will have generated a `validator_keys` folder under the `eth2.0-deposit-cli` directory. You can import all of your validator keys into Prysm from that folder in the next step.
 
 ### Step 3: Import keystores into Prysm
 
@@ -480,7 +491,7 @@ docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
 
 ### Step 6: Wait for your validator assignment
 
-Please note that it may take from **5-12 hours** for nodes in the ETH2 network to process a deposit. In the meantime, leave both terminal windows open and running; once the validator is activated by the ETH2 network, it will immediately begin receiving tasks and performing its responsibilities. If the eth2 chain has not yet started, the validator will be ready to start proposing blocks and signing votes as soon as the genesis time is reached.
+Please note it will take time for nodes in the network to process a deposit. To understand the timeline of becoming a validator and how long it takes on average, please read [this knowledge base](https://kb.beaconcha.in/ethereum-2.0-depositing). In the meantime, leave both terminal windows open and running; once the validator is activated by the ETH2 network, it will immediately begin receiving tasks and performing its responsibilities. If the eth2 chain has not yet started, the validator will be ready to start proposing blocks and signing votes as soon as the genesis time is reached.
 
 To check on the status of your validator, we recommend checking out the popular block explorers: [beaconcha.in](https://beaconcha.in) by Bitfly and [beacon.etherscan.io](https://beacon.etherscan.io) by the Etherscan team.
 
