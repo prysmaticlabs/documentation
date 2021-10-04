@@ -4,7 +4,7 @@ title: Contribution guide
 sidebar_label: Contribution guide
 ---
 
-New to the Prysm project and Ethereum proof-of-stake? We first recommend checking out this awesome reading list here: [https://eth2.info](https://eth2.info). There's a number of ways to help out the project for people of all skillsets and experience levels. If you are unsure where you may be best suited, stop by either our [**Discord**](https://discord.gg/prysmaticlabs) and a member of the team or community will be happy to answer questions and offer some direction.
+There are a number of ways to help out the project for people of all skillsets and experience levels. If you are unsure where you may be best suited, stop by either our [**Discord**](https://discord.gg/prysmaticlabs) and a member of the team or community will be happy to answer questions and offer some direction.
 
 ## Getting Started
 

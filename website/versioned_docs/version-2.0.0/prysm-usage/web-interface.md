@@ -54,7 +54,7 @@ The available parameters to customize are:
 If you are running your beacon node and validator on some server that you want to access from the outside, we recommend SSH local port forwarding to access it. For example, you would do the following from your home computer:
 
 ```
-sh -L 7500:127.0.0.1:7500 user@host_ip
+ssh -L 7500:127.0.0.1:7500 user@host_ip
 ```
 
 where you replace `user@host_ip` with the user and host ip address of the remote machine you are trying to access. This will forward all requests from your home computer's localhost:7500 to the remote instance's localhost:7500, allowing you to visit `http://localhost:7500` from your favorite browser and then access the validator web interface! This is the safest approach to access it, as you are exposing the web interface to the open Internet.

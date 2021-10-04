@@ -62,7 +62,7 @@ If that still does not help, please file an issue with our team on Github [here]
 
 Slashing is a way for the network to penalize validator actions that can be harmful to the Ethereum proof-of-stake network. At a high level, a single validator proposing two conflicting blocks or votes or trying to rewrite the history of the chain is considered malicious and such validators will get slashed. Unfortunately, there is no way for the protocol to detect between malicious validators or validators who simply had some faulty configuration that led them to create a slashable offense.
 
-The most common way validators get slashed is by **running the same validator key in two separate validator client processes at the same time**. This will absolutely get you slashed. Some stakers try to create complicated failover scenarios without realizing the risk this entails, do not do this. If you already got slashed, you will leak funds for a while until you are forcefully exited from the validator registry. Thankfully, slashing penalties in phase 0 are quite small. If you are slashed, you should keep performing your validator duties until you are exited. You will be able to then withdraw your validator balance in future phases of Ethereum proof-of-stake and will miss out on all the rewards until then.
+The most common way validators get slashed is by **running the same validator key in two separate validator client processes at the same time**. This will absolutely get you slashed. Some stakers try to create complicated failover scenarios without realizing the risk this entails, do not do this. If you already got slashed, you will leak funds for a while until you are forcefully exited from the validator registry. Thankfully, slashing penalties in phase 0 are quite small. If you are slashed, you should keep performing your validator duties until you are exited. You will be able to then withdraw your validator balance until after Ethereum is fully proof-of-stake (ETA 2022) and will miss out on all the rewards until then.
 
 Our team prepared a blog post on [slashing prevention tips](https://medium.com/prysmatic-labs/eth2-slashing-prevention-tips-f6faa5025f50) you can read to avoid slashings in the future.
 
@@ -222,7 +222,7 @@ Proposing a block is a factor of random chance depending on the number of active
 
 #### Can I get back my ETH? How can I withdraw my validator gains?
 
-Deposits into Ethereum proof-of-stake are one-way in the beginning. Functionality of withdrawing gains transferring ETH won’t be available until later phases of the project. You can read more about the phases of Ethereum proof-of-stake [here](https://docs.ethhub.io/ethereum-roadmap/ethereum-2.0/eth-2.0-phases/).
+Deposits into Ethereum proof-of-stake are one-way in the beginning. Functionality of withdrawing gains transferring ETH won’t be available until Ethereum is fully using proof-of-stake (ETA 2022).
 
 #### Where can I read more about the incentive model in Ethereum proof-of-stake?
 

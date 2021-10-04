@@ -4,7 +4,7 @@ title: P2P networking
 sidebar_label: P2P networking
 ---
 
-As stated, Ethereum 2.0 is a distributed and decentralised peer-to-peer \(P2P\) network. To accomplish this connectivity, Prysm has decided to utilise the popular [libp2p](https://libp2p.io/) project developed by [Protocol Labs](https://protocol.ai/).
+As stated, Ethereum consensus is a distributed and decentralised peer-to-peer \(P2P\) network. To accomplish this connectivity, Prysm has decided to utilise the popular [libp2p](https://libp2p.io/) project developed by [Protocol Labs](https://protocol.ai/).
 
 #### Why libp2p?
 
