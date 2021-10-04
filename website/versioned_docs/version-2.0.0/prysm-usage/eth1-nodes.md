@@ -1,7 +1,7 @@
 ---
 id: setup-eth1
-title: Running an ETH1 node
-sidebar_label: Running an ETH1 node
+title: Running an eth1 node
+sidebar_label: Running an eth1 node
 ---
 
 Ethereum proof-of-stake is a massive upgrade to the Ethereum blockchain, which will start off as a proof of stake chain that runs in parallel to the current proof of work chain. In order to become a validator in Ethereum proof-of-stake, users have to do a one-way "burn" of their ETH into a smart contract on the proof of work chain. Ethereum beacon nodes will track the eth1 chain's logs to determine deposits and verify those deposits' data to onboard new, proof of stake validators.

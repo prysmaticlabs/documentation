@@ -1,6 +1,6 @@
 ---
 id: database-backups
-title: Performing database backups for your node and validator
+title: Database backups
 sidebar_label: Database backups
 ---
 
