@@ -12,7 +12,7 @@ Prysm can be installed on Windows, GNU/Linux, MacOS systems with Docker. This pa
 The Prysm installation script is the easiest and most efficient way of installing. Docker is mostly for advanced users. Instructions for using it can be found [here](/docs/install/install-with-script).
 :::
 
-**Have questions?** Stop by the [#documentation](https://discord.gg/QQZMCgU) channel on Discord and let us know.
+**Have questions?** Stop by the [#documentation](https://discord.gg/prysmaticlabs) channel on Discord and let us know.
 
 ## System requirements
 
@@ -503,4 +503,4 @@ For running an advanced wallet setups, our documentation includes comprehensive 
 
 **Congratulations, you are now fully participating in Ethereum proof-of-stake**
 
-**Still have questions?**  Stop by our [Discord](https://discord.gg/MjesNv5FYY) for further assistance!
+**Still have questions?**  Stop by our [Discord](https://discord.gg/prysmaticlabs) for further assistance!

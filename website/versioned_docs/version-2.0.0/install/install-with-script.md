@@ -6,7 +6,7 @@ sidebar_label: Prysm Quickstart Script
 
 Prysm can be installed on Windows, GNU/Linux, MacOS, or ARM64 systems using the Prysm installation script which downloads signed binaries from our latest release. This page includes instructions for performing this process.
 
-**Have questions?** Stop by the [#documentation](https://discord.gg/QQZMCgU) channel on Discord and let us know.
+**Have questions?** Stop by the [#documentation](https://discord.gg/prysmaticlabs) channel on Discord and let us know.
 
 ## System requirements
 
@@ -392,5 +392,5 @@ For running an advanced wallet setups, our documentation includes comprehensive 
 
 **Congratulations, you are now fully participating in Ethereum proof-of-stake**
 
-**Still have questions?**  Stop by our [Discord](https://discord.gg/MjesNv5FYY) for further assistance!
+**Still have questions?**  Stop by our [Discord](https://discord.gg/prysmaticlabs) for further assistance!
 

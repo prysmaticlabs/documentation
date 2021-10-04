@@ -34,7 +34,7 @@ If you are running docker or building from source, we **never** recommend runnin
 
 ## How to subscribe for updates
 
-Prysm has two official channels for release updates: our [Discord](https://discord.gg/TvM3RWR) and our [mailing list](https://groups.google.com/g/prysm-dev). All releases will be notified via those channels, and we always recommend reading our release notes on Github in case there are **breaking changes** to running a node. Our team avoids breaking changes whenever possible, and we will make it clear in our release notes or in releases ahead of time that breaking changes are coming.
+Prysm has two official channels for release updates: our [Discord](https://discord.gg/prysmaticlabs) and our [mailing list](https://groups.google.com/g/prysm-dev). All releases will be notified via those channels, and we always recommend reading our release notes on Github in case there are **breaking changes** to running a node. Our team avoids breaking changes whenever possible, and we will make it clear in our release notes or in releases ahead of time that breaking changes are coming.
 
 ## How to securely upgrade Prysm
 

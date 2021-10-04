@@ -203,11 +203,6 @@ Adding new validators to your already-running Prysm instance is quite simple! Go
 
 Please note you will need to **restart the validator client** after importing the new one for the changes to take effect.
 
-#### How can I get a bunch of test ETH to spin up a lot of validators on the testnet?
-
-Our current faucet only gives out increments of 32.5 Goerli test ETH at any given time and prevents sending out to the same address too often. 
-If you'd like more Goerli ETH, please use our [Discord](https://discord.gg/CTYGPUJ) faucet. If you need a larger amount of test ETH, please reach out to us on discord [here](https://discord.gg/CTYGPUJ).
-
 ## Ethereum proof-of-stake specific questions
 
 #### Why are some validators making a lot more money than others?

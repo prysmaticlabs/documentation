@@ -8,7 +8,7 @@ There are a number of ways to help out the project for people of all skillsets a
 
 ## Getting Started
 
-Once you are a bit more familiar with the concepts behind Ethereum and are ready to write some code, head over and explore Prysm's [open issues on Github](https://github.com/prysmaticlabs/prysm/issues). We recommend looking for issues tagged with the "Good First Issue" label if it is your first contribution. If you are still unsure about how to tackle a bug or a feature, our team is always available on [Discord](https://discord.gg/KSA7rPr). Sign in to your Github account, then navigate to [the official Prysm repository](https://github.com/prysmaticlabs/prysm/). In the upper right hand corner of the page, click the 'Fork' button. This will create a copy of the Prysm repository on your account that can be edited for pull requests.
+Once you are a bit more familiar with the concepts behind Ethereum and are ready to write some code, head over and explore Prysm's [open issues on Github](https://github.com/prysmaticlabs/prysm/issues). We recommend looking for issues tagged with the "Good First Issue" label if it is your first contribution. If you are still unsure about how to tackle a bug or a feature, our team is always available on [Discord](https://discord.gg/prysmaticlabs). Sign in to your Github account, then navigate to [the official Prysm repository](https://github.com/prysmaticlabs/prysm/). In the upper right hand corner of the page, click the 'Fork' button. This will create a copy of the Prysm repository on your account that can be edited for pull requests.
 
 ### Setting up your environment
 
@@ -56,19 +56,8 @@ This will build the project by downloading dependencies as Go modules.
 
 All code we check into our repo needs to have sufficient tests to ensure it is maintainable and works as expected. You can use Go run tests in Prysm. 
 
-```text
-$ go test -v ./...
-```
-
-If there is a particular subfolder you want to test, such as `beacon-chain/rpc/node`, you can run the command:
-
-```text
-$ go test ./beacon-chain/rpc/node/...
-```
-
-#### Adding dependencies
-
-If you want to add a new dependency to Prysm, please adhere to the guidelines found in our [DEPENDENCIES.md](https://github.com/prysmaticlabs/prysm/blob/master/DEPENDENCIES.md) document.
+Many tests are rely on the Bazel build system, thus testing with `go test` would not work.
+See the [next section](#building-and-tessting-prysm-with-bazel) for instructions on testing with prysm.
 
 ### Building and testing Prysm with Bazel
 
@@ -93,16 +82,16 @@ You can also find various other types of IDE support for Bazel in the official B
 
 #### Running Bazel tests
 
-All code we check into our repo needs to have sufficient tests to ensure it is maintainable and works as expected. We use bazel to run all of our test suites in Prysm. If there is a particular subfolder you want to test, such as `beacon-chain/rpc/node`, you can run the command:
+All code we check into our repo needs to have sufficient tests to ensure it is maintainable and works as expected. We use bazel to run all of our test suites in Prysm. If there is a particular subfolder you want to test, such as `beacon-chain/node`, you can run the command:
 
 ```text
-$ bazel test //beacon-chain/rpc/node:go_default_test
+$ bazel test //beacon-chain/node:go_default_test
 ```
 
 For running a specific test, for example, a test called `TestNode_GetPeers` inside of `beacon-chain/node/node_test.go`, you can use Bazel to filter it out:
 
 ```text
-$ bazel test //beacon-chain/rpc/node:go_default_test --test_output=streamed --test_filter=TestNode_GetPeers
+$ bazel test //beacon-chain/rpc/prysm/v1alpha1/node:go_default_test --test_output=streamed --test_filter=TestNode_GetPeers
 ```
 
 For the list of all available flags to the `bazel test` command, you can see the reference documentation [here](https://docs.bazel.build/versions/master/command-line-reference.html#test).
@@ -110,8 +99,12 @@ For the list of all available flags to the `bazel test` command, you can see the
 You can also run our full, end-to-end test suite with:
 
 ```text
-$ bazel test //endtoend:go_default_test --define=ssz=minimal
+$ bazel test //testing/endtoend:go_default_test
 ```
+
+#### Adding dependencies
+
+If you want to add a new dependency to Prysm, please adhere to the guidelines found in our [DEPENDENCIES.md](https://github.com/prysmaticlabs/prysm/blob/master/DEPENDENCIES.md) document.
 
 ### Contributing to the Ethereum consensus API
 

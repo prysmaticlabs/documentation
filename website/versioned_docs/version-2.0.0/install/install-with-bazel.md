@@ -10,7 +10,7 @@ Prysm can be installed on GNU/Linux, MacOS, and Arm64 using our build tool, [Baz
 **NOTICE:** We recommend users install Bazelisk, the user-friendly launcher for Bazel. It identifies and manages the required Bazel version for any repository you want to build.
 :::
 
-**Have questions?** Stop by the [#documentation](https://discord.gg/QQZMCgU) channel on Discord and let us know.
+**Have questions?** Stop by the [#documentation](https://discord.gg/prysmaticlabs) channel on Discord and let us know.
 
 ## System requirements
 
