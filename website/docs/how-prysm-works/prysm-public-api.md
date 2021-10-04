@@ -1,15 +1,15 @@
 ---
 id: prysm-public-api
 title: Prysm public API
-sidebar_label: Prysm public API 
+sidebar_label: Prysm-specific API 
 description: This section contains service definitions and gRPC instructions to interact with the Prysm public API.
 ---
 
-:::info Our API documentation website is undergoing maintenance
-Our API documentation website [https://api.prylabs.network](https://api.prylabs.network) is currently down due to maintenance. In the meantime, you can browse our API schema here: [github.com/prysmaticlabs/ethereumapis](https://github.com/prysmaticlabs/ethereumapis/tree/master/eth/v1alpha1). Our current API version used in Prysm is `v1alpha1`. 
+:::info This API is only used by Prysm
+For a standard API that all Ethereum beacon nodes implement, see [here](/docs/how-prysm-works/ethereum-public-api). Over the next few quarters, we plan on deprecating this API and replacing it with the standard API.
 :::
 
-One of the required components of nodes in the Ethereum beacon chain network is to expose an API server for outside interaction. This API is critical for running validators on Ethereum, as validator clients can connect to nodes and query their API to figure out their assigned duties, to submit block proposals, and more. Prysm's Ethereum consensus API schema is maintained in its unique repository: [github.com/prysmaticlabs/ethereumapis](https://github.com/prysmaticlabs/ethereumapis) and is implemented by Prysm beacon nodes [here](https://github.com/prysmaticlabs/prysm/blob/master/beacon-chain/rpc/service.go). Note, this API is **only used by Prysm**. 
+One of the required components of nodes in the Ethereum beacon chain network is to expose an API server for outside interaction. This API is critical for running validators on Ethereum, as validator clients can connect to nodes and query their API to figure out their assigned duties, to submit block proposals, and more. Prysm's Ethereum consensus API schema is maintained in Prysm itself here: [github.com/prysmaticlabs/prysm/proto](https://github.com/prysmaticlabs/prysm/tree/develop/proto) and is implemented by Prysm beacon nodes and validators.
 
 ![gRPC](/img/grpc-logo2.png)
 
@@ -27,23 +27,13 @@ By default, the beacon node exposes a [gRPC](https://grpc.io) API on host `127.0
 http://127.0.0.1:3500/eth/v1alpha1/beacon/chainhead
 ```
 
-All our service definitions are explained below:
-
-### Service definitions
-
-| Package | Service | Version | Description |
-| :--- | :--- | :--- | :--- |
-| eth | [BeaconChain](https://github.com/prysmaticlabs/ethereumapis/blob/master/eth/v1alpha1/beacon_chain.proto#L36) | v1alpha1 | This service is used to retrieve critical data relevant to the Ethereum proof-of-stake beacon chain, including the most recent head block, current pending deposits, the chain state and more. |
-| eth | [Node](https://github.com/prysmaticlabs/ethereumapis/blob/master/eth/v1alpha1/node.proto#L33) | v1alpha1 | The Node service returns information about the Ethereum node itself, including versioning and general information as well as network sync status and a list of services currently implemented on the node. |
-| eth | [Validator](https://github.com/prysmaticlabs/ethereumapis/blob/master/eth/v1alpha1/validator.proto) | v1alpha1 | This API provides the information a validator needs to retrieve throughout its life cycle, including recieved assignments from the network, its current index in the state as well as the rewards and penalties that have been applied to it. |
-
 ## Disabling the API
 
 By default the beacon node runs with all available set of APIs enabled. You might want to disable one or more APIs, for example for security reasons. The `--http-modules` flags allows fine-grained control over which APIs are available on your node.
 
 ## Contributing
 
-Thanks for wanting to contribute to our Ethereum consensus API! Go and Java libraries may be generated from the [ethereumapis repository](https://github.com/prysmaticlabs/ethereumapis) using [Bazel](https://bazel.build), making it easy to make changes to the schemas needed and generate Go files or Java packages from them. Here's what you need to get started:
+Thanks for wanting to contribute to our Ethereum consensus API! Go and Java libraries may be generated from Prysm using [Bazel](https://bazel.build), making it easy to make changes to the schemas needed and generate Go files or Java packages from them. Here's what you need to get started:
 
 ### Dependencies
 
@@ -54,7 +44,7 @@ Thanks for wanting to contribute to our Ethereum consensus API! Go and Java libr
 
 ### Making API Schema Changes
 
-Say you want to add a new endpoint to the `BeaconChain` gRPC service in our API schema to retrieve orphaned blocks. First, make sure the functionality you wish to add is not already covered by one of our endpoints on https://api.prylabs.network. Also, keep in mind making strict changes to the API schema can often times be difficult without a significant reason as this API is used by many different developers building on Ethereum consensus. If you are confident in your desired changes, you can proceed by modifying the protobuf schema:
+Say you want to add a new endpoint to the `BeaconChain` gRPC service in our API schema to retrieve orphaned blocks. Keep in mind making strict changes to the API schema can often times be difficult without a significant reason as this API is used by many different developers building on Ethereum consensus. If you are confident in your desired changes, you can proceed by modifying the protobuf schema:
 
 ```go
 service BeaconChain {
@@ -79,26 +69,10 @@ message OrphanedBlocksResponse {
 After making your changes, you can regenerate the Go libraries from the schema by running:
 
 ```bash
-$ ./scripts/update-go-pbs.sh
+$ ./hack/update-go-pbs.sh
 ```
 
-Then, open a pull request with your changes on https://github.com/prysmaticlabs/ethereumapis. Next, you'll be ready to implement your new changes in Prysm itself.
-
-### Implementing Your Changes in Prysm
-
-Ensure you have read our [contribution guidelines](/docs/contribute/contribution-guidelines) first. Then, once your changes to the API schema are merged into the master branch of ethereumapis, you can update Prysm's dependency on ethereumapis to its latest version with the command:
-
-```bash
-$ bazel run //:gazelle -- update-repos github.com/prysmaticlabs/ethereumapis
-```
-
-Prysm also utilizes generated mocks for testing gRPC requests/responses, so you will also need to regenerate the required mocks by running:
-
-```bash
-$ ./scripts/update-mockgen.sh
-```
-
-Now, you will be able to implement your required changes in Prysm.
+Then, open a pull request with your changes on https://github.com/prysmaticlabs/prysm. Next, you'll be ready to implement your new changes in Prysm itself.
 
 ## RESTful endpoints \(gRPC Transcoding\)
 

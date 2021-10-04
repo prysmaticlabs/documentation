@@ -1,7 +1,7 @@
 ---
 id: graffiti-file
 title: Using graffiti-file flag
-sidebar_label: Using graffiti-file flag
+sidebar_label: Adding graffiti to blocks
 ---
 
 `--graffiti-file` flag for the validator client enables the wonderful feature where validators 
