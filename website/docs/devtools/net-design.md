@@ -48,7 +48,7 @@ In SECIO, channel negotiation begins with a proposal phase,  where we exchange i
 
 ##  Current Status in Prysm
 
-Currently in Prysm we do use SECIO for securing sessions, and a Peer’s identity is generated using the Secp256k1 curve. However we haven’t enforced that the ephemeral key generation curve, cipher for encryption and hash algorithm are the ones that are required for interoperability. We would need to strictly define these when peers are making their initial proposal. If they do not adhere to them, we reject and disconnect from those peers. 
+Currently in Prysm we do use SECIO for securing sessions, and a Peer’s identity is generated using the Secp256k1 curve. However we haven’t enforced that the ephemeral key generation curve, cipher for encryption and hash algorithm are the ones that are required for interoperability We would need to strictly define these when peers are making their initial proposal. If they do not adhere to them, we reject and disconnect from those peers. 
 
 **Protocol Negotiation**
 We must use the multistream-select specification with id [/multistream/1.0.0](https://github.com/multiformats/multistream-select/)
@@ -396,7 +396,7 @@ We listen on a UDP port for incoming messages from other nodes. This returns a n
 network.SetFallbackNodes(BootNode)
 ```
 
-This would set our provided bootnode as the fallback node since our in-memory database has no peers stored and therefore none to connect with yet, this populates the local table with all the node records stored in the bootnode. We would need to define a specific Topic for beacon nodes to communicate from, otherwise any peer using Discovery5 protocol would be our peer whether they are participating in Eth2 or not. Topic Advertisement and Search would come up in peer discovery for shards where each node will accept topic registrations from other nodes for specific shards and then relay them to other nodes who are searching for specific shards. This is to provide a scalable and reasonably secure solution for sub-networks which cannot afford to have separate bootstrap nodes for each of those subnetworks.
+This would set our provided bootnode as the fallback node since our in-memory database has no peers stored and therefore none to connect with yet, this populates the local table with all the node records stored in the bootnode. We would need to define a specific Topic for beacon nodes to communicate from, otherwise any peer using Discovery5 protocol would be our peer whether they are participating in Ethereum consensus or not. Topic Advertisement and Search would come up in peer discovery for shards where each node will accept topic registrations from other nodes for specific shards and then relay them to other nodes who are searching for specific shards. This is to provide a scalable and reasonably secure solution for sub-networks which cannot afford to have separate bootstrap nodes for each of those subnetworks.
 
 
 **TODO: Add more detail of how to integrate into Prysm.**

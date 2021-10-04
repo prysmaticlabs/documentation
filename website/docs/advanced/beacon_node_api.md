@@ -6,7 +6,7 @@ sidebar_label: Beacon node for API access
 
 ## Using the Beacon node as a Blockchain API
 
-The beacon chain is the coordinator of the Ethereum 2.0 network. It is responsible for creating new blocks, ensuring their validity, and both rewarding and penalizing participating validators for their actions. This responsibility gives the beacon node full visibility of actions performed on the blockchain, and as such, can be used as a retrospective API in order to query chain information.  Whilst this could be considered analogous to log analysis, unlike in log analysis, previous states that have not had full data stored locally for review can be requested, then fetched retrospectively and queried.
+The beacon chain is the coordinator of Ethereum proof-of-stake. It is responsible for creating new blocks, ensuring their validity, and both rewarding and penalizing participating validators for their actions. This responsibility gives the beacon node full visibility of actions performed on the blockchain, and as such, can be used as a retrospective API in order to query chain information.  Whilst this could be considered analogous to log analysis, unlike in log analysis, previous states that have not had full data stored locally for review can be requested, then fetched retrospectively and queried.
 
 By default, the Prysm beacon node saves the state of the chain locally in a database every 32 slots. For clarity, a slot is every 12 seconds and 32 slots make an epoch. Hence the beacon node, by default, saves the state on a per epoch basis. Should more detailed information on historical slots be required, these can be requested retrospectively. However, there will be a time delay whilst the data is requested and retrieved. 
 
@@ -23,11 +23,9 @@ Whilst the default setting is sufficient for regular beacon chain functionality,
 
 ## Beacon chain API information  
 
-Full details of the Ethereum 2.0 API are available here: 
+Full details of the Ethereum beacon API are available here: 
 
-The Prysm documenation portal [Ethereum 2.0 public API] (https://docs.prylabs.network/docs/how-prysm-works/prysm-public-api)
-
-The Prysm github [ethereumapis page] (https://github.com/prysmaticlabs/ethereumapis/blob/master/eth/v1alpha1/beacon_chain.proto#L36) 
+The Prysm documenation portal [Ethreum public API] (https://docs.prylabs.network/docs/how-prysm-works/prysm-public-api)
 
 ## Command line/Configuration file usage:
 
@@ -48,8 +46,6 @@ prysm.bat beacon-chain --slots-per-archive-point=1
 **Using the Configuration file:**
 
 If you are running Prysm and specifying command line flags via a configuration file such as ***/home/beacon/config.yaml*** on Linux or MacOS or ***c:\prysm\beacon\config.yaml*** on Windows, you can add the following to that file:
-
-
 
 ```sh
 slots-per-archive-point: 1 

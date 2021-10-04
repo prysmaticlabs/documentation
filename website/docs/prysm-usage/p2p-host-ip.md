@@ -4,11 +4,11 @@ title: Improve peer-to-peer connectivity
 sidebar_label: Improve P2P connectivity
 ---
 
-The ETH2 [architecture](/docs/how-prysm-works/architecture-overview/) is designed to be a fully peer to peer (P2P) network.  This section describes how to configure the Prysm [beacon node](/docs/how-prysm-works/beacon-node) and your network to optimise the number of peers that you communicate with on the ETH2 Network.  Increasing peers helps improve the health, performance and stablity of nodes and the overall network.
+The Ethereum proof-of-stake [architecture](/docs/how-prysm-works/architecture-overview/) is designed to be a fully peer to peer (P2P) network.  This section describes how to configure the Prysm [beacon node](/docs/how-prysm-works/beacon-node) and your network to optimise the number of peers that you communicate with on the Ethereum proof-of-stake etwork.  Increasing peers helps improve the health, performance and stablity of nodes and the overall network.
 
 > **NOTICE:** This section contains advanced network configurations and is optional.
 
-ETH2 leverages [libp2p](/docs/how-prysm-works/p2p-networking), a framework and suite of protocols for building peer-to-peer network applications.  When a [beacon node](/docs/how-prysm-works/beacon-node) first starts up, it does two things to start communicating with other participants:
+Ethereum proof-of-stake leverages [libp2p](/docs/how-prysm-works/p2p-networking), a framework and suite of protocols for building peer-to-peer network applications.  When a [beacon node](/docs/how-prysm-works/beacon-node) first starts up, it does two things to start communicating with other participants:
 - Begins listening for new incoming P2P connections
 - Starts a [discovery](https://github.com/ethereum/devp2p/wiki/Discovery-Overview) process to find and connect to new peers
 
@@ -16,22 +16,22 @@ ETH2 leverages [libp2p](/docs/how-prysm-works/p2p-networking), a framework and s
 
 ## Home networks & routers
 
-Many participants on the ETH2 network operate their nodes on a home network. Home networks typically have a router that provides a logical boundary between your private home network, and the public internet.  While this is good for keeping bad traffic out of your network, it presents a challenge for communicating with other nodes who are also on home networks.
+Many participants on the Ethereum proof-of-stake network operate their nodes on a home network. Home networks typically have a router that provides a logical boundary between your private home network, and the public internet.  While this is good for keeping bad traffic out of your network, it presents a challenge for communicating with other nodes who are also on home networks.
 
 ## Virtual public cloud (VPC) networks
 
-Other participants on the ETH2 network operate their nodes on a virtual public cloud (VPC) instance.  This is basically a computer running in a datacenter that quite often is directly connected to the public internet.
+Other participants on the Ethereum proof-of-stake network operate their nodes on a virtual public cloud (VPC) instance.  This is basically a computer running in a datacenter that quite often is directly connected to the public internet.
 
 ## Incoming P2P connection prerequisites
 
-In order for other participants on the ETH2 network to establish incoming P2P connections with your [beacon node](/docs/how-prysm-works/beacon-node), a number of conditions must be met:
+In order for other participants on the Ethereum proof-of-stake network to establish incoming P2P connections with your [beacon node](/docs/how-prysm-works/beacon-node), a number of conditions must be met:
 1. Your public IP address must be known.
 2. The protocol (TCP/UDP) and port number (0-65535) on which your [beacon node](/docs/how-prysm-works/beacon-node) is listening must be known (Default - TCP/13000 and UDP/12000).
 3. All routers & firewalls must be configured to allow incoming traffic on that protocol/port combination.
 
 ## Private IP addresses
 
-Computers on a home network will typically have a private IP address.  Attempting to establish a P2P connection to another participant on the ETH2 network using that participant's **private** IP address is not possible, you must use the **public** IP address.  Private IPv4 addresses will always fall into one of the following ranges, as per [RFC1918](https://en.wikipedia.org/wiki/Private_network):
+Computers on a home network will typically have a private IP address.  Attempting to establish a P2P connection to another participant on the Ethereum proof-of-stake network using that participant's **private** IP address is not possible, you must use the **public** IP address.  Private IPv4 addresses will always fall into one of the following ranges, as per [RFC1918](https://en.wikipedia.org/wiki/Private_network):
  - 192.168.0.0 – 192.168.255.255
  - 172.16.0.0 – 172.31.255.255
  - 10.0.0.0 – 10.255.255.255
@@ -63,7 +63,7 @@ curl v4.ident.me
 ```
 
 ## Port forwarding
-Participants on home networks will need to configure their router to perform port forwarding so that other ETH2 participants can establish a connection to your [beacon node](/docs/how-prysm-works/beacon-node) on TCP/13000 and UDP/12000.  The specific steps required vary based on your router, but can be summarised as follows:
+Participants on home networks will need to configure their router to perform port forwarding so that other Ethereum proof-of-stake participants can establish a connection to your [beacon node](/docs/how-prysm-works/beacon-node) on TCP/13000 and UDP/12000.  The specific steps required vary based on your router, but can be summarised as follows:
 
 > **NOTICE:** Participants with nodes on a virtual public cloud (VPC) instance can skip this step.
 

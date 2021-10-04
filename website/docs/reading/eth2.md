@@ -1,10 +1,10 @@
 ---
 id: eth2
-title: ETH2 resources
-sidebar_label: ETH2 resources
+title: Ethereum reading resources
+sidebar_label: Ethereum readings
 ---
 
-This page serves material necessary to catch up with the current state of ETH2 development and provides readers with the knowledge required to begin making meaningful contributions to the Prysm client. Whether you are an expert on all things Ethereum or are new to the blockchain world entirely, there are appropriate resources here that will help you get up to speed.
+This page serves material necessary to catch up with the current state of Ethereum proof-of-stake development and provides readers with the knowledge required to begin making meaningful contributions to the Prysm client. Whether you are an expert on all things Ethereum or are new to the blockchain world entirely, there are appropriate resources here that will help you get up to speed.
 
 ## **Ethereum fundamentals**
 
@@ -27,7 +27,7 @@ This page serves material necessary to catch up with the current state of ETH2 d
 
 ## **ETH2 fundamentals**
 
-*Disclaimer: Because some parts of ETH2 are still an active area of research and/or development, some resources may be outdated.* 
+*Disclaimer: Because some parts of Ethereum consensus are still an active area of research and/or development, some resources may be outdated.* 
 
 ### Introduction and specifications
 

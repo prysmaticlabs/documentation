@@ -12,7 +12,7 @@ If you perform backups by manually copying the validator database while the clie
 
 ## Beacon node
 
-Both the beacon node and validator use an embedded key-value store as a database called [BoltDB](https://github.com/boltdb/bolt) to store all important information. Backing up your beacon node database is a good practice, although **not critical** to being able to validate in eth2. if you want to perform a backup, here's the safest way to do it.
+Both the beacon node and validator use an embedded key-value store as a database called [BoltDB](https://github.com/boltdb/bolt) to store all important information. Backing up your beacon node database is a good practice, although **not critical** to being able to validate in Ethereum consensus. if you want to perform a backup, here's the safest way to do it.
 
 ### Add the backup webhook flags to your beacon node
 

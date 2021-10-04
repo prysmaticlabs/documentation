@@ -4,11 +4,11 @@ title: Contribution guide
 sidebar_label: Contribution guide
 ---
 
-New to the Prysm project and eth2? We first recommend checking out this awesome reading list here: [https://eth2.info](https://eth2.info). There's a number of ways to help out the project for people of all skillsets and experience levels. If you are unsure where you may be best suited, stop by either our [**Discord**](https://discord.gg/prysmaticlabs) or [**Gitter**](https://gitter.im/prysmaticlabs/geth-sharding?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) and a member of the team or community will be happy to answer questions and offer some direction.
+There are a number of ways to help out the project for people of all skillsets and experience levels. If you are unsure where you may be best suited, stop by either our [**Discord**](https://discord.gg/prysmaticlabs) and a member of the team or community will be happy to answer questions and offer some direction.
 
 ## Getting Started
 
-Once you are a bit more familiar with the concepts behind eth2 and are ready to write some code, head over and explore Prysm's [open issues on Github](https://github.com/prysmaticlabs/prysm/issues). We recommend looking for issues tagged with the "Good First Issue" label if it is your first contribution. If you are still unsure about how to tackle a bug or a feature, our team is always available on [Discord](https://discord.gg/KSA7rPr). Sign in to your Github account, then navigate to [the official Prysm repository](https://github.com/prysmaticlabs/prysm/). In the upper right hand corner of the page, click the 'Fork' button. This will create a copy of the Prysm repository on your account that can be edited for pull requests.
+Once you are a bit more familiar with the concepts behind Ethereum and are ready to write some code, head over and explore Prysm's [open issues on Github](https://github.com/prysmaticlabs/prysm/issues). We recommend looking for issues tagged with the "Good First Issue" label if it is your first contribution. If you are still unsure about how to tackle a bug or a feature, our team is always available on [Discord](https://discord.gg/KSA7rPr). Sign in to your Github account, then navigate to [the official Prysm repository](https://github.com/prysmaticlabs/prysm/). In the upper right hand corner of the page, click the 'Fork' button. This will create a copy of the Prysm repository on your account that can be edited for pull requests.
 
 ### Setting up your environment
 
@@ -44,7 +44,7 @@ go version go1.16 darwin/amd64
 
 ### Building and testing Prysm with Go
 
-The Prysm project is a large monorepo containing all sorts of tools and services that implement the eth2 protocol. We use Go for everything we do in development, helping everyone have reproducible builds. If you want to build the whole project, you can run the following command:
+The Prysm project is a large monorepo containing all sorts of tools and services that implement the Ethereum protocol. We use Go for everything we do in development, helping everyone have reproducible builds. If you want to build the whole project, you can run the following command:
 
 ```text
 $ go build -v ./...
@@ -72,7 +72,7 @@ If you want to add a new dependency to Prysm, please adhere to the guidelines fo
 
 ### Building and testing Prysm with Bazel
 
-The Prysm project is a large monorepo containing all sorts of tools and services that implement the eth2 protocol. We use the [Bazel](https://bazel.build) build system created by Google for everything we do, helping everyone have reproducible builds. If you want to build the beacon chain or validator using Bazel, you can run the commands:
+The Prysm project is a large monorepo containing all sorts of tools and services that implement the Ethereum consensus protocol. We use the [Bazel](https://bazel.build) build system created by Google for everything we do, helping everyone have reproducible builds. If you want to build the beacon chain or validator using Bazel, you can run the commands:
 
 ```text
 $ bazel build //beacon-chain:beacon-chain
@@ -89,7 +89,7 @@ Where you can specify any amount of command line arguments you need based on the
 
 In order to write code for the Prysm codebase comfortably with Bazel, we recommend using either [Visual Studio Code](https://code.visualstudio.com/download) with its [Bazel plugin](https://marketplace.visualstudio.com/items?itemName=BazelBuild.vscode-bazel), or any [Jetbrains IDE](https://www.jetbrains.com/) with the [Bazel plugin](https://plugins.jetbrains.com/plugin/8609-bazel) ([Goland](https://www.jetbrains.com/go/) is a great choice, used by most of the Prysmatic Labs team). 
 
-You can also find various other types of IDE support for Bazel in the official Bazel documentation [here](https://docs.bazel.build/versions/master/ide.html). Once you have your coding environment set-up, you'll be well-equipped to contribute to eth2!
+You can also find various other types of IDE support for Bazel in the official Bazel documentation [here](https://docs.bazel.build/versions/master/ide.html). Once you have your coding environment set-up, you'll be well-equipped to contribute to Ethereum!
 
 #### Running Bazel tests
 
@@ -113,9 +113,9 @@ You can also run our full, end-to-end test suite with:
 $ bazel test //endtoend:go_default_test --define=ssz=minimal
 ```
 
-### Contributing to the Eth2 API
+### Contributing to the Ethereum consensus API
 
-The eth2 API implemented by Prysm is maintained as a separate repository than Prysm. You can read more about how to contribute specifically to the API [here](/docs/how-prysm-works/prysm-public-api#contributing).
+The Ethereum consensus API implemented by Prysm is maintained as a separate repository than Prysm. You can read more about how to contribute specifically to the API [here](/docs/how-prysm-works/prysm-public-api#contributing).
 
 ### Making your first contribution
 

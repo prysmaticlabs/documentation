@@ -1,14 +1,14 @@
 ---
 id: phase0
-title: Phase 0 Audits
-sidebar_label: Phase 0
+title: Prysm Audits
+sidebar_label: Security Audits
 ---
 
-Prysmatic Labs' ETH2 implementation for Phase 0 has received the following audits.
+Prysmatic Labs' implementation for Phase 0 of Ethereum proof-of-stake has received the following audits.
 
 ## Quantstamp
 
-Quantstamp has reviewed the whole codebase of the Prysm ETH 2.0 client implementation. We have found a number of issues spanning all severity levels. Some of the high severity issues
+Quantstamp has reviewed the whole codebase of the Prysm client implementation. We have found a number of issues spanning all severity levels. Some of the high severity issues
 were resolved before completion of the review. Overall the code is well-written. There are many ways, however, in which it can be improved to follow best practices. For example, code
 clones are relatively common. Furthermore, despite being mostly self-documenting, inline code documentation is lacking. We have no doubt that it would be useful for future contributors.
 Despite being accompanied by the official ETH 2.0 documentation, the implementation is very nuanced and complex. The code does not always follow the specification (or it is not clear
@@ -43,11 +43,11 @@ manual review of the slashing code. We also inspected the results from the previ
 tools with deeper scrutiny.
 
 Week three Trail of Bits continued assessing the slashing and slashing protection code. We
-began mapping Eth2.0 specs against the project and manual code reading of the
+began mapping specs against the project and manual code reading of the
 beacon-chain/core package. Finally, week three encompassed manual checks for best Go
 practices and known libraries whose misuse could produce bugs.
 
-During the fourth week, we continued to review the Eth2.0 specification, looking for areas
+During the fourth week, we continued to review the specification, looking for areas
 where Prysm may have diverged. We focused on the p2p and sync packages for potential
 denial of service attacks. Finally, we revisited the copy-on-write mechanism used for
 beacon-chain states.
