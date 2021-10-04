@@ -1,14 +1,12 @@
 ---
 id: block-explorers
-title: ETH2 block explorers
+title: Block explorers
 sidebar_label: Block explorers
 ---
 
-Below is a list of third-party block explorer services displaying statistics about the ETH2 testnet.
+Below is a list of third-party block explorer services displaying statistics about Ethereum proof-of-stake.
 
 ## [beacon.etherscan.io](https://beacon.etherscan.io)
-
-beacon.etherscan.io is a beacon chain explorer specific to the Prysm 'Sapphire' testnet.
 
 ## [beaconcha.in](https://beaconcha.in/)
 

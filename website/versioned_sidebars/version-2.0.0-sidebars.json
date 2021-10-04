@@ -130,10 +130,6 @@
         {
           "type": "doc",
           "id": "version-2.0.0/wallet/exiting-a-validator"
-        },
-        {
-          "type": "doc",
-          "id": "version-2.0.0/wallet/ethdo"
         }
       ]
     },
@@ -166,6 +162,10 @@
         {
           "type": "doc",
           "id": "version-2.0.0/devtools/net-design"
+        },
+        {
+          "type": "doc",
+          "id": "version-2.0.0/devtools/api-middleware"
         },
         {
           "type": "doc",

@@ -6,7 +6,7 @@ sidebar_label: HD wallet
 
 ## Background
 
-An HD wallet provides the ability to create new validator private keys deterministically from a seed phrase, shown as an english mnemonic following the [BIP-39 standard](https://en.bitcoin.it/wiki/Seed_phrase) upon wallet creation. If you created a deposit using the official [eth2 launchpad](https://launchpad.ethereum.org/) and want to run Prysm using it, see our dedicated instructions [here](/docs/mainnet/joining-eth2).
+An HD wallet provides the ability to create new validator private keys deterministically from a seed phrase, shown as an english mnemonic following the [BIP-39 standard](https://en.bitcoin.it/wiki/Seed_phrase) upon wallet creation. If you created a deposit using the official [Ethereum launchpad](https://launchpad.ethereum.org/) and want to run Prysm using it, see our dedicated instructions [here](/docs/install/install-with-script).
 
 Validator private keys are encrypted with the wallet's password using the [EIP-2335](https://eips.ethereum.org/EIPS/eip-2335) keystore.json standard for storing BLS12-381 private keys. This keystore.json file, along with its derivation path, comprises an **account** in an HD wallet.
 
@@ -91,7 +91,7 @@ personally-conscious-echidna
 [created at] 16 minutes ago
 ```
 
-You can view the `deposit_data` needed to send 32ETH to the eth2 deposit contract for your validator accounts by optionally passing in a `--show-deposit-data` flag as follows.
+You can view the `deposit_data` needed to send 32ETH to the Ethereum validator deposit contract for your validator accounts by optionally passing in a `--show-deposit-data` flag as follows.
 
 ```bash
 ./prysm.sh validator accounts list --show-deposit-data

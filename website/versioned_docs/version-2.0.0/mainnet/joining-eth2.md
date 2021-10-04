@@ -4,7 +4,7 @@ title: Joining Eth2 Mainnet
 sidebar_label: Mainnet launchpad onboarding
 ---
 
-This section outlines the step-by-step process for how to join [eth2 mainnet](https://launchpad.ethereum.org/) to run a Prysm eth2 beacon node and validator.
+This section outlines the step-by-step process for how to join [Ethereum proof-of-stake mainnet](https://launchpad.ethereum.org/) to run a Prysm eth2 beacon node and validator.
 
 ![image](/img/mainnetlaunchpad.png)
 
@@ -143,12 +143,12 @@ bazel run //beacon-chain --config=release -- --http-web3provider=<YOUR_ETH1_NODE
 </Tabs>
 
 :::tip Syncing your node
-The beacon-chain node you are using should be **completely synced** before submitting your deposit. You may **incur minor inactivity balance penalties** if the validator is unable to perform its duties by the time the deposit is processed and activated by the ETH2 network. You do not need to worry about this if the chain has not started yet.
+The beacon-chain node you are using should be **completely synced** before submitting your deposit. You may **incur minor inactivity balance penalties** if the validator is unable to perform its duties by the time the deposit is processed and activated by the Ethereum beacon chain network. You do not need to worry about this if the chain has not started yet.
 :::
 
 ## Step 3: Complete the onboarding process in the official eth2 launchpad
 
-The [Official Eth2 Launchpad](https://launchpad.ethereum.org/summary) is the easiest way to go through a step-by-step process to deposit your 32 ETH to become a validator. Throughout the process, you'll be asked to generate new validator credentials using the official Ethereum deposit command-line-tool [here](https://github.com/ethereum/eth2.0-deposit-cli). Make sure you use the `mainnet` option when generating keys with the deposit CLI. During the process, you will have generated a `validator_keys` folder under the `eth2.0-deposit-cli` directory. You can import all of your validator accounts into Prysm from that folder in the next step.
+The [Official Ethereum Launchpad](https://launchpad.ethereum.org/summary) is the easiest way to go through a step-by-step process to deposit your 32 ETH to become a validator. Throughout the process, you'll be asked to generate new validator credentials using the official Ethereum deposit command-line-tool [here](https://github.com/ethereum/eth2.0-deposit-cli). Make sure you use the `mainnet` option when generating keys with the deposit CLI. During the process, you will have generated a `validator_keys` folder under the `eth2.0-deposit-cli` directory. You can import all of your validator accounts into Prysm from that folder in the next step.
 
 ## Step 4: Import your validator accounts into Prysm
 
