@@ -91,7 +91,7 @@ $ bazel test //beacon-chain/node:go_default_test
 For running a specific test, for example, a test called `TestNode_GetPeers` inside of `beacon-chain/node/node_test.go`, you can use Bazel to filter it out:
 
 ```text
-$ bazel test //beacon-chain/node:go_default_test --test_output=streamed --test_filter=TestNode_GetPeers
+$ bazel test //beacon-chain/rpc/prysm/v1alpha1/node:go_default_test --test_output=streamed --test_filter=TestNode_GetPeers
 ```
 
 For the list of all available flags to the `bazel test` command, you can see the reference documentation [here](https://docs.bazel.build/versions/master/command-line-reference.html#test).
