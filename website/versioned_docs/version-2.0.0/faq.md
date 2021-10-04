@@ -60,9 +60,9 @@ If that still does not help, please file an issue with our team on Github [here]
 
 #### I got slashed! Why? How can I avoid getting slashed?
 
-Slashing is a way for the network to penalize validator actions that can be harmful to the eth2 network. At a high level, a single validator proposing two conflicting blocks or votes or trying to rewrite the history of the chain is considered malicious and such validators will get slashed. Unfortunately, there is no way for the protocol to detect between malicious validators or validators who simply had some faulty configuration that led them to create a slashable offense.
+Slashing is a way for the network to penalize validator actions that can be harmful to the Ethereum proof-of-stake network. At a high level, a single validator proposing two conflicting blocks or votes or trying to rewrite the history of the chain is considered malicious and such validators will get slashed. Unfortunately, there is no way for the protocol to detect between malicious validators or validators who simply had some faulty configuration that led them to create a slashable offense.
 
-The most common way validators get slashed is by **running the same validator key in two separate validator client processes at the same time**. This will absolutely get you slashed. Some stakers try to create complicated failover scenarios without realizing the risk this entails, do not do this. If you already got slashed, you will leak funds for a while until you are forcefully exited from the validator registry. Thankfully, slashing penalties in phase 0 are quite small. If you are slashed, you should keep performing your validator duties until you are exited. You will be able to then withdraw your validator balance in future phases of eth2 and will miss out on all the rewards until then.
+The most common way validators get slashed is by **running the same validator key in two separate validator client processes at the same time**. This will absolutely get you slashed. Some stakers try to create complicated failover scenarios without realizing the risk this entails, do not do this. If you already got slashed, you will leak funds for a while until you are forcefully exited from the validator registry. Thankfully, slashing penalties in phase 0 are quite small. If you are slashed, you should keep performing your validator duties until you are exited. You will be able to then withdraw your validator balance until after Ethereum is fully proof-of-stake (ETA 2022) and will miss out on all the rewards until then.
 
 Our team prepared a blog post on [slashing prevention tips](https://medium.com/prysmatic-labs/eth2-slashing-prevention-tips-f6faa5025f50) you can read to avoid slashings in the future.
 
@@ -138,10 +138,6 @@ It's always good to keep offline backups of important files such as the original
 
 For help with running geth specifically, the [go-ethereum discord](https://discord.com/invite/nthXNEv) is the most reliable source of help.
 
-#### Where can I find the Prysm API documentation?
-
-Prysm uses its own API schema at the moment, called eth/v1alpha1 maintained open source at [github.com/prysmaticlabs/ethereumapis](https://github.com/prysmaticlabs/ethereumapis). However, there is also a standard eth2 API that all eth2 teams are working on implementing and aligning with. Prysm is still in the process of aligning to this specification and will likely be complete by end of Q1 2021. You can browse the API documentation for this new standard [here](https://ethereum.github.io/eth2.0-APIs/). Note: Prysm still does not implement this standard but it is priority for our team.
-
 #### How often should I perform database backups?
 
 The Prysm beacon node and validator allow performing database backups in case your machine gets corrupted and you need to restore it from some checkpoint. You can read our instructions on performing backups [here](/docs/prysm-usage/database-backups). Briefly, the frequency at which you should perform backups really depends on your personal preference. If you want to perform backups once a day or once every week, ther is no harm nor bigger difference in doing so. Losing your beacon chain database is not a big deal aside from the fact that you will need to sync again from genesis. Losing your validator db can be problematic but if you wait several epochs before starting your validator, ensure your computer's clock is synced, the risk of slashing is low.
@@ -170,21 +166,21 @@ Your node is running the popular [prometheus](https://prometheus.io/) server for
 
 #### Can I run this on a raspberry pi? What are the instructions?
 
-Yes we currently support arm 64-bit architectures such as the raspberry pi 4 and they go out as part of our pre-compiled binary releases [here](https://github.com/prysmaticlabs/prysm/releases). Our documentation portal has instructions on how to run the entire installation process [here](http://localhost:3000/docs/mainnet/joining-eth2). However, we recommend using more powerful hardware in mainnet conditions. 
+Yes we currently support arm 64-bit architectures such as the raspberry pi 4 and they go out as part of our pre-compiled binary releases [here](https://github.com/prysmaticlabs/prysm/releases). Our documentation portal has instructions on how to run the entire installation process [here](/docs/install/install-with-script). However, we recommend using more powerful hardware in mainnet conditions. 
 
 ## Validator keys and validator deposits
 
 #### I sent my deposit and so much time has passed but my validator is not active yet
 
-Depositing into eth2 is a multi-step process that can require quite a bit of waiting. As a comprehensive reference, we recommend reading Jim McDee's excellent post on the matter [here](https://www.attestant.io/posts/understanding-the-validator-lifecycle/#:~:text=Active%20%2D%20the%20validator%20is%20attesting,blocks%2C%20having%20been%20caught%20cheating). If you sent your deposit, we recommend tracking its progress in one of the block explorers such as [beaconcha.in](https://beaconcha.in) or [beaconscan](https://beaconscan.io). If your deposit is pending and it has still been a while, it is likely because there are a lot of validators in the pending queue ahead of you. There are approximately 4 validators activated every 6.4 minutes, and with thousands in the queue, your wait time can take days or even weeks. You can check how many validators are in the queue in the front page of [beaconcha.in](https://beaconcha.in).
+Depositing into Ethereum as a validator is a multi-step process that can require quite a bit of waiting. As a comprehensive reference, we recommend reading Jim McDee's excellent post on the matter [here](https://www.attestant.io/posts/understanding-the-validator-lifecycle/#:~:text=Active%20%2D%20the%20validator%20is%20attesting,blocks%2C%20having%20been%20caught%20cheating). If you sent your deposit, we recommend tracking its progress in one of the block explorers such as [beaconcha.in](https://beaconcha.in) or [beaconscan](https://beaconscan.io). If your deposit is pending and it has still been a while, it is likely because there are a lot of validators in the pending queue ahead of you. There are approximately 4 validators activated every 6.4 minutes, and with thousands in the queue, your wait time can take days or even weeks. You can check how many validators are in the queue in the front page of [beaconcha.in](https://beaconcha.in).
 
 #### I made a correct deposit and my validator status in Prysm is still UNKNOWN, what’s going on?
 
-There are a few possibilities. (1) your deposit has not yet been processed by beacon nodes. It takes a while for the beacon node to be able to process logs from the eth1 chain by design. If you have already waited a few hours and no luck, there is a chance that (2) your deposit did not verify (that is, you used some other method of creating the deposit than our recommended, standard way on the eth2 launchpad), or (3) you never actually sent a deposit to the right contract address
+There are a few possibilities. (1) your deposit has not yet been processed by beacon nodes. It takes a while for the beacon node to be able to process logs from the eth1 chain by design. If you have already waited a few hours and no luck, there is a chance that (2) your deposit did not verify (that is, you used some other method of creating the deposit than our recommended, standard way on the Ethereum launchpad), or (3) you never actually sent a deposit to the right contract address
 
 #### How can I move my validator to a different computer without getting slashed?
 
-Prysm will soon implement the slashing protection [standard format](https://eips.ethereum.org/EIPS/eip-3076), meaning that you can export your slashing protection history and import it easily into another machine running any eth2 client, not just Prysm! In the meantime, however, migrating machines can be a little tricky and we prepared the following set of tips to help keep you safe.
+Prysm will soon implement the slashing protection [standard format](https://eips.ethereum.org/EIPS/eip-3076), meaning that you can export your slashing protection history and import it easily into another machine running any Ethereum consensus client, not just Prysm! In the meantime, however, migrating machines can be a little tricky and we prepared the following set of tips to help keep you safe.
 
 1. Turn off your beacon node and validator on machine 1, make sure it is not running as a system process. You can check this using the process monitor tools of your OS, or a command line tool such as top or htop and check for anything containing the name “prysm” “validator” or “beacon”
 2. Note the location of your wallet directory. If you used the default when you started Prysm, you can view its path at the top of the output of `validator accounts list`, which varies based on your operating system
@@ -195,15 +191,15 @@ Prysm will soon implement the slashing protection [standard format](https://eips
 
 #### Can I use testnet validators keys on mainnet?
 
-While this is possible, we highly recommend against it. Given there are so many things that can go wrong when generating keys and when sending deposits to eth2, we absolutely recommend starting on a clean slate and not reusing any data you used for your testnet runs. Messing something up is not worth the risk.
+While this is possible, we highly recommend against it. Given there are so many things that can go wrong when generating keys and when sending deposits to Ethereum proof-of-stake, we absolutely recommend starting on a clean slate and not reusing any data you used for your testnet runs. Messing something up is not worth the risk.
 
 #### Can I send validator deposits using different ETH1 accounts or should it all be from a single metamask?
 
-Yes this is possible however we recommend against it. We recommend you deposit all within the same eth2 launchpad session from a single metamask instance to keep things simple as it is possible a step could get messed up along the way.
+Yes this is possible however we recommend against it. We recommend you deposit all within the same Ethereum consensus launchpad session from a single metamask instance to keep things simple as it is possible a step could get messed up along the way.
 
 #### Can I add more validators after I am already running one with Prysm?
 
-Adding new validators to your already-running Prysm instance is quite simple! Go through the launchpad process again, generate a new deposit keystore using the eth2 deposit cli, then run the `validator accounts import` command again as you used when you added your first validator key. You can then confirm your validator was added by running `validator accounts list`. Let us know on [discord](https://discord.gg/prysmaticlabs) if you still have issues.
+Adding new validators to your already-running Prysm instance is quite simple! Go through the launchpad process again, generate a new deposit keystore using the Ethereum validator deposit cli, then run the `validator accounts import` command again as you used when you added your first validator key. You can then confirm your validator was added by running `validator accounts list`. Let us know on [discord](https://discord.gg/prysmaticlabs) if you still have issues.
 
 Please note you will need to **restart the validator client** after importing the new one for the changes to take effect.
 
@@ -212,7 +208,7 @@ Please note you will need to **restart the validator client** after importing th
 Our current faucet only gives out increments of 32.5 Goerli test ETH at any given time and prevents sending out to the same address too often. 
 If you'd like more Goerli ETH, please use our [Discord](https://discord.gg/CTYGPUJ) faucet. If you need a larger amount of test ETH, please reach out to us on discord [here](https://discord.gg/CTYGPUJ).
 
-## Eth2 specific questions
+## Ethereum proof-of-stake specific questions
 
 #### Why are some validators making a lot more money than others?
 
@@ -226,12 +222,12 @@ Proposing a block is a factor of random chance depending on the number of active
 
 #### Can I get back my ETH? How can I withdraw my validator gains?
 
-Deposits into eth2 are one-way in the beginning. Functionality of withdrawing gains transferring ETH won’t be available until later phases of the project. You can read more about the phases of eth2 [here](https://docs.ethhub.io/ethereum-roadmap/ethereum-2.0/eth-2.0-phases/).
+Deposits into Ethereum proof-of-stake are one-way in the beginning. Functionality of withdrawing gains transferring ETH won’t be available until Ethereum is fully using proof-of-stake (ETA 2022).
 
-#### Where can I read more about the incentive model in eth2?
+#### Where can I read more about the incentive model in Ethereum proof-of-stake?
 
 [This resource](https://blog.ethereum.org/2020/01/13/validated-staking-on-eth2-1-incentives/) from the Ethereum blog is an excellent example.
 
 #### What is balance and what is effective balance?
 
-Your validator balance is the actual amount of ETH you have from being a validator in eth2. It can go up or down every epoch depending on your participation. Effective balance is a bit different. It is a value that lags behind your actual balance and is used exclusively to determine rewards and penalties for your validator. It has a max value of 32ETH, but your regular balance is uncapped. You can read more about the purpose of effective balance in this excellent post by Attestant [here](https://www.attestant.io/posts/understanding-validator-effective-balance/).
+Your validator balance is the actual amount of ETH you have from being a validator in Ethereum. It can go up or down every epoch depending on your participation. Effective balance is a bit different. It is a value that lags behind your actual balance and is used exclusively to determine rewards and penalties for your validator. It has a max value of 32ETH, but your regular balance is uncapped. You can read more about the purpose of effective balance in this excellent post by Attestant [here](https://www.attestant.io/posts/understanding-validator-effective-balance/).

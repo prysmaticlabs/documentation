@@ -4,7 +4,7 @@ title: Prysm's validator client
 sidebar_label: Validator client
 ---
 
-Although [beacon nodes](./beacon-node) handle network synchronisation, drawing consensus and performing several other low-level functions, the role of [validators](/docs/terminology#validator) whom stake ETH to in order to perform block [proposals](/docs/terminology#propose) and [attestations](/docs/terminology#attest) are an equally critical component of the Ethereum 2.0 network.
+Although [beacon nodes](./beacon-node) handle network synchronisation, drawing consensus and performing several other low-level functions, the role of [validators](/docs/terminology#validator) whom stake ETH to in order to perform block [proposals](/docs/terminology#propose) and [attestations](/docs/terminology#attest) are an equally critical component of the Ethereum beacon chain.
 
 As mentioned, validators have two responsibilities: to [propose](/docs/terminology#propose) \(or produce\) blocks known as beacon blocks, which contain consensus information about shards across the network, or to [attest](/docs/terminology#attest) \(or vote on\) the validity of blocks that have already been produced.
 
@@ -14,7 +14,7 @@ As mentioned, validators have two responsibilities: to [propose](/docs/terminolo
 
 A validator instance is permitted to begin participating in the network once 32 ETH is locked up in a [validator deposit contract](./validator-deposit-contract). Validators are tasked with correctly [proposing](/docs/terminology#propose) or [attesting](/docs/terminology#attest) to blocks on the beacon chain, and receive either rewards or penalties to the initial deposit based upon their overall performance.
 
-If validators act against the protocol, their locked up deposit will be cut in a process known as 'slashing'. Validators that are intermittently offline or do not have reliable uptime will gradually lose their deposit, eventually leaking enough to be automatically removed from the network entirely. More on this topic can be found in the [Ethereum 2.0 economics](https://docs.ethhub.io/ethereum-roadmap/ethereum-2.0/eth-2.0-economics/) outline.
+If validators act against the protocol, their locked up deposit will be cut in a process known as 'slashing'. Validators that are intermittently offline or do not have reliable uptime will gradually lose their deposit, eventually leaking enough to be automatically removed from the network entirely. More on this topic can be found in the [Ethereum proof-of-stake economics](https://docs.ethhub.io/ethereum-roadmap/ethereum-2.0/eth-2.0-economics/) outline.
 
 ## Validator client functionality
 

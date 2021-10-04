@@ -6,7 +6,7 @@ sidebar_label: Checking if Prysm runs as expected
 
 ## Running the beacon node
 
-When running a beacon node for the first time, it will attempt to process deposits from the eth1 chain's deposit contract. These are all the validators that have deposited 32 ETH to join the eth2 beacon chain. This process may take a few minutes.
+When running a beacon node for the first time, it will attempt to process deposits from the eth1 chain's deposit contract. These are all the validators that have deposited 32 ETH to join the Ethereum beacon chain. This process may take a few minutes.
 
 ![image](/img/processingdeposits.png)
 
