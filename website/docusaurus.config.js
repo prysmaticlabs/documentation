@@ -1,9 +1,9 @@
 module.exports = {
     title: 'Prysm',
-    tagline: 'Ethereum 2.0 implementation written entirely in Go.',
+    tagline: 'Ethereum consensus implementation written entirely in Go.',
     url: 'https://docs.prylabs.network',
     baseUrl: '/',
-    onBrokenLinks: 'throw',
+    onBrokenLinks: 'warn',
     favicon: 'img/Prysm.svg',
     organizationName: 'Prysmatic Labs',
     projectName: 'prysm-docs',
@@ -13,7 +13,7 @@ module.exports = {
     scripts: ['https://buttons.github.io/buttons.js'],
     themeConfig: {
         navbar: {
-            title: "Prysm Eth2 Docs",
+            title: "Prysm Documentation",
             logo: {
                 alt: "Prysm logo",
                 src: 'img/logo2.png',
@@ -21,13 +21,13 @@ module.exports = {
             },
             items: [
                 {
-                    to: 'docs/mainnet/joining-eth2',
-                    label: 'Stake on Eth2',
-                    position: 'right',
+                    type: 'docsVersionDropdown',
+                    position: 'left',
+                    dropdownActiveClassDisabled: true,
                 },
                 {
-                    label: 'Updating/Downgrading Versions',
-                    to: 'docs/prysm-usage/staying-up-to-date',
+                    to: 'docs/install/install-with-script',
+                    label: 'Quick Install',
                     position: 'right',
                 },
                 {
@@ -36,13 +36,8 @@ module.exports = {
                     position: 'right',
                 },
                 {
-                    href: 'https://api.prylabs.network',
-                    label: 'API',
-                    position: 'right',
-                },
-                {
-                    to: 'docs/faq',
-                    label: 'FAQ',
+                    href: 'https://discord.gg/prysmaticlabs',
+                    label: 'Discord',
                     position: 'right',
                 },
             ],
@@ -84,7 +79,6 @@ module.exports = {
                     customCss: require.resolve('./src/css/custom.css'),
                 },
                 sitemap: {
-                    cacheTime: 600 * 1000,
                     changefreq: 'weekly',
                     priority: 0.5,
                 },
