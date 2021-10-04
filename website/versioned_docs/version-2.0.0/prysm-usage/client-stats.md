@@ -1,7 +1,7 @@
 ---
 id: client-stats
-title: Using client-stats to collect beaconcha.in metrics
-sidebar_label: Using client-stats
+title: Running client stats to collect process metrics
+sidebar_label: Client stats service
 ---
 
 :::danger Alpha testing

@@ -1,13 +1,34 @@
 ---
 id: slasher
 title: Running a slasher
-sidebar_label: Running a slasher
+sidebar_label: Running slasher
 ---
 This section provides instructions on how to run [slasher](https://github.com/prysmaticlabs/prysm/tree/master/slasher) as an **optional** process to report slashable offenses on Ethereum proof-of-stake.  If slasher detects a slashable offense, proof is sent to the [beacon-chain node](https://docs.prylabs.network/docs/how-prysm-works/beacon-node/) for inclusion in a block.  [Validators](https://docs.prylabs.network/docs/how-prysm-works/prysm-validator-client/) earn a small whistleblower reward for including this proof into a block.  
 
 :::tip Slasher Requires Significant Disk Space
-Slasher is essentially a beacon node with **superpowers**. It might use over 70Gb of disk space when running on mainnet (*estimated disk usage, April 2021*). We recommend running a slasher with at least the **recommended** system specifications as stated in our [installation guides](/docs/install/install-with-script). 
+Slasher is essentially a beacon node with **superpowers**. It uses significantly more disk space when running on mainnet.
 :::
+
+## System requirements
+
+### Minimum specifications
+
+These specifications must be met in order to successfully run a Prysm beacon node in `--slasher` mode
+
+* Operating System: 64-bit Linux, Mac OS X 10.14+, Windows 64-bit
+* Processor: Intel Core i5–760 or AMD FX-8100 or better
+* Memory: 8GB RAM
+* Storage: 200GB available space SSD
+* Internet: Broadband connection
+
+### Recommended specifications
+
+These hardware specifications are recommended, but not required to run the Prysm client.
+
+* Processor: Intel Core i7–4770 or AMD FX-8310 or better
+* Memory: 16GB RAM
+* Storage: 200GB available space SSD
+* Internet: Broadband connection
 
 ## What is Slashing
 
