@@ -1,7 +1,7 @@
 ---
 id: ethereum-public-api
 title: Ethereum Standard Beacon API
-sidebar_label: Ethereum standard API 
+sidebar_label: Ethereum standard beacon API 
 description: This section contains information about the official Ethereum standard beacon API
 ---
 
