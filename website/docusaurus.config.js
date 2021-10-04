@@ -3,7 +3,7 @@ module.exports = {
     tagline: 'Ethereum 2.0 implementation written entirely in Go.',
     url: 'https://docs.prylabs.network',
     baseUrl: '/',
-    onBrokenLinks: 'throw',
+    onBrokenLinks: 'warn',
     favicon: 'img/Prysm.svg',
     organizationName: 'Prysmatic Labs',
     projectName: 'prysm-docs',
@@ -85,7 +85,6 @@ module.exports = {
                     customCss: require.resolve('./src/css/custom.css'),
                 },
                 sitemap: {
-                    cacheTime: 600 * 1000,
                     changefreq: 'weekly',
                     priority: 0.5,
                 },
