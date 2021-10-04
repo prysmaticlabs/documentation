@@ -6,7 +6,7 @@ sidebar_label: Parameters
 
 This section lists the various flags used to customise the startup process of Prysm
 
-import {FetchCLIHelp} from '../../../src/fetchCliHelp.js';
+import {FetchCLIHelp} from '../../src/fetchCliHelp.js';
 
 ## Beacon Node Configuration 
 
