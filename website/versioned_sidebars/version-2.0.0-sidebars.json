@@ -177,6 +177,10 @@
         },
         {
           "type": "doc",
+          "id": "version-2.0.0/devtools/api-middleware"
+        },
+        {
+          "type": "doc",
           "id": "version-2.0.0/how-prysm-works/architecture-overview"
         },
         {
