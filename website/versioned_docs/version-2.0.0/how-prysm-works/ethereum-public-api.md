@@ -39,3 +39,7 @@ While Prysm would like to support all endpoints from the official specification,
 | v1 & v2.0.0 | Events | Full support |
 | v1 & v2.0.0 | Node | Full support |
 | v1 & v2.0.0 | Validator | Full support |
+
+## Tips and Recommendations
+
+- If you are experiencing timeouts when using endpoints that require passing a `state_id`, such as `/eth/v1/beacon/states/{state_id}/validators`, and you pass in a state more than a few epochs in the past, consider lowering the value of the `--slots-per-archive-point` flag. The smaller the value, the faster it is to fetch states. For historical state fetching we recommend setting the value to `64` or even `32`. Mind you that decreasing the value will result in the beacon DB taking much more space. Unfortunately there's a trade-off between speed and storage size.
