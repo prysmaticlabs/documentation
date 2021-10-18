@@ -17,7 +17,7 @@
     "react-dom": "16.13.1"
   },
   "dependencies": {
-    "@docusaurus/theme-search-algolia": "^2.0.0-alpha.32",
+    "@docusaurus/theme-search-algolia": "^2.0.0-beta.7",
     "clsx": "1.1.1"
   }
 }
