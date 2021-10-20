@@ -8,7 +8,7 @@ description: This section contains information about the official Ethereum stand
 Prysm supports the official [Eth Beacon Node API specification](https://ethereum.github.io/beacon-APIs/), the official API standard developed by the Ethereum R&D team. The specification describes a RESTful set of endpoints which should be implemented by an Eth beacon node or a third-party service. This reduces the overhead of having to learn a new set of APIs when trying out a different client, and it allows network participants to reliably talk to each other over HTTP. As an example of an external service implementing the spec, Infura's beacon chain API is described [here](https://infura.io/docs/eth2#tag/Beacon).
 
 :::caution The official Ethereum specification contains multiple definitions
-As of the time of writing, there are three definitions: [v1](https://ethereum.github.io/beacon-APIs/?urls.primaryName=v1), [v2.0.0](https://ethereum.github.io/beacon-APIs/) and [dev](https://ethereum.github.io/beacon-APIs/?urls.primaryName=dev). `dev` is an unstable version and supporting it is **not** to be expected.
+As of the time of writing, there are three definitions: [v1](https://ethereum.github.io/beacon-APIs/?urls.primaryName=v1), [v2.0.0](https://ethereum.github.io/beacon-APIs/?urls.primaryName=v2.0.0), [v2.1.0](https://ethereum.github.io/beacon-APIs/?urls.primaryName=v2.1.0)  and [dev](https://ethereum.github.io/beacon-APIs/?urls.primaryName=dev). `dev` is an unstable version and supporting it is **not** to be expected.
 :::
 
 ## Performing requests against a local Prysm node
