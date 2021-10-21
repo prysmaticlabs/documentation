@@ -20,19 +20,32 @@ By the end of the documentation, you should have a functioning beacon node and v
 
 To launch the web interface, you will need to restart your validator client from step 1 with the `--web` flag. This will allow you to access the web interface by default on `http://localhost:7500` if running on the same computer as your validator client and using `prysm.sh`, `prysm.bat` or building from source. For more advanced configurations, keep reading below in step (3).
 
+Prysm protects web users with a special URL for authentication instead of requiring the user to remember a password. The URL can be retreived in the terminal logs where the `validator --web` command was run. please copy it into a web browser to intialize the website with authentication. The base url `http://127.0.0.1:7500` or `http://localhost:7500` may differ based on your own validator settings.
+
+example of URL in logs
+
+```
+[2021-10-21 14:07:28]  INFO rpc: Once your validator process is runinng, navigate to the link below to authenticate with the Prysm web interface
+[2021-10-21 14:07:28]  INFO rpc: http://127.0.0.1:7500/initialize?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MzQzMzIyOTJ9.EgkawrXjxSkO26FcwuiB6IFI-KUMyLAc9FKkuLOTHl8&expiration=1634332292
+```
+
+:::tip 3rd party tools
+Third party tools such as Dappnode will intialize the user without use of the cli commands and will automatically redirect users to the dashboard.
+:::
+
+:::tip Print your unique authentication URL again
+Sometimes your browser cache gets cleared requiring you to reauthenticate, or you want to retrieve a new URL with token without restarting the validator.
+In that case, you can run the following command `validator web generate-auth-token`
+:::
+
 If it is the first time you have ran your Prysm validator and have not yet created a wallet, you will be faced with a wallet creation screen allowing you to import the keystores generated from the Ethereum deposit-cli.
 
 ![Image](/img/walletcreate.png)
 
-If you have _already created a wallet_, you will instead be faced with a signup page where you must set a password for your web interface.
+upon completion of onboarding, your web page should always redirect you to the main dashboard.
 
-![Image](/img/createwebpass.png)
+![Dashboard](/img/webdashboard.png "Main Dashboard")
 
-:::tip The password for the web interface
-For security reasons, the password for the Prysm web interface is different from your wallet password. We wouldn't want you typing your precious wallet password every time you login via a browser!
-:::
-
-After you signup, you'll be able to access your dashboard and login any future times to the web interface.
 
 ## Step 3: Configuration and common issues
 
@@ -48,6 +61,30 @@ The available parameters to customize are:
 | ------------- |:-------------|
 |`--grpc-gateway-host` | The host for the validator client's JSON-HTTP API, default `127.0.0.1`
 |`--grpc-gateway-port` | The port for the validator client's JSON-HTTP API, default `7500`
+
+If your browser cache was cleared, you're running on a new browser, or validator was restarted you may be stuck on the initalize page. All you need to do is retreive the special URL again and you should be reauthenticated which will redirect you to the main dashboard. 
+
+![Initialize-Alert](/img/initialize-alert.png "intialize alert")
+
+### common errors 
+
+toaster errors represent some sort of notification, something isn't working completely correctly but doesn't limit the user on core functionality. 
+
+example:
+
+![Toaster](/img/toaster-error.png "toaster error")
+
+As a dialog box 
+
+
+```
+"message": "Http failure response for http://127.0.0.1:7500/api/v2/validator/health/version: 503 Service Unavailable",
+  "error": {
+    "code": 14,
+    "message": "connection error: desc = \"transport: Error while dialing dial tcp 127.0.0.1:4000: connect: connection refused\"",
+    "details": []
+  }
+```
 
 ## Step 4: Accessing the web interface from a remote computer
 
