@@ -28,14 +28,13 @@ example of URL in logs
 [2021-10-21 14:07:28]  INFO rpc: Once your validator process is runinng, navigate to the link below to authenticate with the Prysm web interface
 [2021-10-21 14:07:28]  INFO rpc: http://127.0.0.1:7500/initialize?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MzQzMzIyOTJ9.EgkawrXjxSkO26FcwuiB6IFI-KUMyLAc9FKkuLOTHl8&expiration=1634332292
 ```
-
-:::tip 3rd party tools
-Third party tools such as Dappnode will intialize the user without use of the cli commands and will automatically redirect users to the dashboard.
-:::
-
 :::tip Print your unique authentication URL again
 Sometimes your browser cache gets cleared requiring you to reauthenticate, or you want to retrieve a new URL with token without restarting the validator.
 In that case, you can run the following command `validator web generate-auth-token`
+:::
+
+:::tip 3rd party tools
+Third party tools such as Dappnode will intialize the user without use of the cli commands and will automatically redirect users to the dashboard. These tools will typically use the generated auth-token file located in the Prysm Wallet Directory.
 :::
 
 If it is the first time you have ran your Prysm validator and have not yet created a wallet, you will be faced with a wallet creation screen allowing you to import the keystores generated from the Ethereum deposit-cli.
