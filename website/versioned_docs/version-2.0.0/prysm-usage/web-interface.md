@@ -34,7 +34,7 @@ In that case, you can run the following command `validator web generate-auth-tok
 :::
 
 :::tip 3rd party tools
-Third party tools such as Dappnode will intialize the user without use of the cli commands and will automatically redirect users to the dashboard. These tools will typically use the generated auth-token file located in the Prysm Wallet Directory.
+Third party tools such as Dappnode will intialize the user without use of the cli commands and will automatically redirect users to the dashboard. These tools will typically use the generated `auth-token` file located in the Prysm Wallet Directory.
 :::
 
 If it is the first time you have ran your Prysm validator and have not yet created a wallet, you will be faced with a wallet creation screen allowing you to import the keystores generated from the Ethereum deposit-cli.
