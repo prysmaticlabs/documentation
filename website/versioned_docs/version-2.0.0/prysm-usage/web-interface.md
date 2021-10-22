@@ -68,23 +68,28 @@ If your browser cache was cleared, you're running on a new browser, or validator
 
 ### common errors 
 
-toaster errors represent some sort of notification, something isn't working completely correctly but doesn't limit the user on core functionality. 
+Toaster errors represent some sort of notification, something isn't working completely correctly but doesn't limit the user on core functionality. 
 
 example:
 
 ![Toaster](/img/toaster-error.png "toaster error")
 
-As a dialog box 
+Dialog box errors are used for HTTP errors with the validator API. It will provide a summary on what the problem is and for next steps to either review our docs for anything commonly tracked as well as a link for creating an issue for the team to look into. 
 
+![Dialog](/img/dialog-error.png "dialog error")
 
-```
-"message": "Http failure response for http://127.0.0.1:7500/api/v2/validator/health/version: 503 Service Unavailable",
-  "error": {
-    "code": 14,
-    "message": "connection error: desc = \"transport: Error while dialing dial tcp 127.0.0.1:4000: connect: connection refused\"",
-    "details": []
-  }
-```
+The dialog can also be expanded to copy the error seen for further analysis
+
+![Dialog-expanded](/img/dialog-error-expanded.png "dialog error expanded")
+
+| Error Code         | Reason        |
+| ------------- |:-------------|
+| 503 or 0 | No server response, services having difficulty communicating, meaning network problems, or services being un available.
+| 401 | Unauthorized, requiring to reauthenticate with the special url
+| 500 | Internal Server Error, something failed internally in Prysm services
+| 404 | API endpoint is not found
+
+Please create a github issue or contact the team on Discord to report an issue
 
 ## Step 4: Accessing the web interface from a remote computer
 
