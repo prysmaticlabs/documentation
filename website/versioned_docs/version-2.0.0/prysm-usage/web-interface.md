@@ -101,10 +101,10 @@ Please create a [github issue](https://github.com/prysmaticlabs) or contact the 
 
 The web interface is open source and located at [github.com/prysmaticlabs/prysm-web-ui](https://github.com/prysmaticlabs/prysm-web-ui). It is an Angular application, and we always welcome your help!
 
-### prerequisites
+### Prerequisites
 
 - latest node
-- ide of choice (i.e. visual studio code)
+- ide (i.e. visual studio code)
 
 after cloning the repo navigate to where the `package.json` file and run `npm install` to retrieve the dependencies you will need.
 
