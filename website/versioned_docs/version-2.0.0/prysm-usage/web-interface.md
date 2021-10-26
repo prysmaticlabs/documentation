@@ -6,9 +6,9 @@ sidebar_label: Prysm web interface
 
 ## What is Prysm Web
 
-The Prysm Web UI is a locally hosted website that is launched from the validator client to provide users with a visual alertnative to the validator cli( command line interface).
+The Prysm Web UI is a locally hosted website that is launched from the validator client to provide users with a visual alternative to the validator cli( command-line interface).
 
-The website will provide users a visual way to set up their Prysm Wallet, manage their keys, and provide information on the current state of their validator. You will also be able to see a peer map for users who decide to share their location among the peers in their network.
+The website will provide users with a visual way to set up their Prysm Wallet, manage their keys, and provide information on the current state of their validator. You will also be able to see a peer map for users who decide to share their location among the peers in their network.
 
 The website at this time does not provide additional metrics over those that you would find on your grafana dashboards or beaconcha.in . 
 
@@ -21,12 +21,12 @@ To begin, follow the instructions to run Prysm in mainnet or testnet:
 
 To launch the web interface, you will need to restart your validator client from step 1 with the `--web` flag. This will allow you to access the web interface by default on `http://localhost:7500` if running on the same computer as your validator client and using `prysm.sh`, `prysm.bat` or building from source.
 
-Prysm protects web users with a special URL for authentication instead of requiring the user to remember a password. The URL can be retreived in the terminal logs where the `validator --web` command was run. please copy it into a web browser to intialize the website with authentication. The base url `http://127.0.0.1:7500` or `http://localhost:7500` may differ based on your own validator settings.
+Prysm protects web users with a special URL for authentication instead of requiring the user to remember a password. The URL can be retrieved in the terminal logs where the `validator --web` command was run. please copy it into a web browser to initialize the website with authentication. The base url `http://127.0.0.1:7500` or `http://localhost:7500` may differ based on your own validator settings.
 
 example of URL in logs
 
 ```
-[2021-10-21 14:07:28]  INFO rpc: Once your validator process is runinng, navigate to the link below to authenticate with the Prysm web interface
+[2021-10-21 14:07:28]  INFO rpc: Once your validator process is running, navigate to the link below to authenticate with the Prysm web interface
 [2021-10-21 14:07:28]  INFO rpc: http://127.0.0.1:7500/initialize?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MzQzMzIyOTJ9.EgkawrXjxSkO26FcwuiB6IFI-KUMyLAc9FKkuLOTHl8&expiration=1634332292
 ```
 :::tip Print your unique authentication URL again
@@ -35,7 +35,7 @@ In that case, you can run the following command `validator web generate-auth-tok
 :::
 
 :::tip 3rd party tools
-Third party tools such as Dappnode will intialize the user without use of the cli commands and will automatically redirect users to the dashboard. These tools will typically use the generated `auth-token` file located in the Prysm Wallet directory.
+Third party tools such as Dappnode will initialize the user without use of the cli commands and will automatically redirect users to the dashboard. These tools will typically use the generated `auth-token` file located in the Prysm Wallet directory.
 :::
 
 If it is the first time you have ran your Prysm validator and have not yet created a wallet, you will be faced with a wallet creation screen allowing you to import the keystores generated from the Ethereum deposit-cli.
@@ -75,11 +75,15 @@ ssh -L 7500:127.0.0.1:7500 user@host_ip
 
 where you replace `user@host_ip` with the user and host ip address of the remote machine you are trying to access. This will forward all requests from your home computer's localhost:7500 to the remote instance's localhost:7500, allowing you to visit `http://localhost:7500` from your favorite browser and then access the validator web interface! This is the safest approach to access it, as you are exposing the web interface to the open Internet.
 
+:::warning Please use HTTPS
+If you plan to expose the website to the open Internet, please look into protecting yourself with HTTPS. Prysm web does not come with certificates or HTTPS pre-configured. If you are running Prysm Web on the open internet without HTTPS you are running at your own risk. 
+:::
+
 ## Troubleshooting
 
 ### Issues logging in
 
-If your browser cache was cleared, you're running on a new browser, or validator was restarted you may be stuck on the initalize page. All you need to do is retreive the special URL again and you should be reauthenticated which will redirect you to the main dashboard. 
+If your browser cache was cleared, you're running on a new browser, or validator was restarted you may be stuck on the initialize page. All you need to do is retrieve the special URL again and you should be re-authenticated which will redirect you to the main dashboard. 
 
 ![Dialog-expanded](/img/dialog-error-expanded.png "dialog error expanded")
 
