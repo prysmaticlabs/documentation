@@ -87,9 +87,11 @@ If your browser cache was cleared, you're running on a new browser, or validator
 
 ![Dialog-expanded](/img/dialog-error-expanded.png "dialog error expanded")
 
+### HTTP Error Codes
+
 | Error Code         | Reason        |
 | ------------- |:-------------|
-| 503 or 0 | No server response, services having difficulty communicating, meaning network problems, or services being un available.
+| 503 or 0 | No server response, services having difficulty communicating, meaning network problems, or services being un available, or even firewalls or adblock settings.
 | 401 | Unauthorized, requiring to reauthenticate with the special url
 | 500 | Internal Server Error, something failed internally in Prysm services
 | 404 | API endpoint is not found
