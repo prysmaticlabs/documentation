@@ -120,6 +120,11 @@ run `npm start` in the folder path where package.josn lives and open the website
 The recommended way to run prysm web is from the validator client itself via the `--web` flag. If you are building the web UI from source and doing `npm start`, you **will be using fake, mock data!** Keep that in mind if you are trying to use real accounts with the web UI.
 :::
 
+:::tip Develop URL login
+for authentication in develop you may use any token in the url query parameter i.e. `localhost:4200/initialize?token=anytoken`
+:::
+
+
 ### Running in Staging
 
 run `npm run start:staging` will run a 'like' production build where the backend expects to be connected to `localhost:7500`. You will need to start the validator client with `--web` but interact with your angular application on `localhost:4200`.
