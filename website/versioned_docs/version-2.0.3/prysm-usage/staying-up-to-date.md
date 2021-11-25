@@ -196,7 +196,7 @@ After you finish editing both of the files, you need to reload the service unit
 sudo systemctl daemon-reload
 ```
 
-Once you do that, the version of prysm beacon and validator are locked in that version, so you need to always update it. If you want to go back to the automatic upgrades after reboot, you just need to remove the `Environment` key.
+Once you do that, the prysm beacon and validator are locked in that version, so you need to always update it. If you want to go back to the automatic upgrades after reboot, you just need to remove the `Environment` key.
 
 </TabItem>
 <TabItem value="win">
