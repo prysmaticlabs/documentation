@@ -170,7 +170,7 @@ To run our latest release with Bazel, you can look up our [releases page](https:
 
 **Using Systemd**
   
-Edit the systemd files for both validator (`/etc/systemd/system/beacon.service`) and beacon (`/etc/systemd/system/beacon.service`). The filename  depends on what you used when you installed, if you forgot the name, just `ls` that directory (`/etc/systemd/system/`) and edit them both. Add the `Environment` key under the `[Service]` group to have `Environment     =  USE_PRYSM_VERSION=v2.0.2`
+Edit the systemd files for both validator (`/etc/systemd/system/validator.service`) and beacon (`/etc/systemd/system/beacon.service`). The filename  depends on what you used when you installed, if you forgot the name, just `ls` that directory (`/etc/systemd/system/`) and edit them both. Add the `Environment` key under the `[Service]` group to have `Environment     =  USE_PRYSM_VERSION=v2.0.2`
   
 Example for the beacon chain:
 ```
