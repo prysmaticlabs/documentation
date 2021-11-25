@@ -191,7 +191,7 @@ Environment     = USE_PRYSM_VERSION=v2.0.2
 WantedBy    = multi-user.target
 ```
   
-After you finish editing both of the files, you need to restart systemd:
+After you finish editing both of the files, you need to reload the service unit
 ```
 sudo systemctl daemon-reload
 ```
