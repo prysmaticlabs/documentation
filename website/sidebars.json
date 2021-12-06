@@ -65,6 +65,10 @@
 				},
 				{
 					"type": "doc",
+					"id": "prysm-usage/individual-validator-monitoring"
+				},
+				{
+					"type": "doc",
 					"id": "prysm-usage/monitoring/grafana-dashboard"
 				},
 				{
