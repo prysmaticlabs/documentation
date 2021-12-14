@@ -149,7 +149,7 @@ bazel run //validator -- slashing-protection-history export --datadir=/path/to/y
 **Using the Prysm installation script**
 
 ```sh
-prysm.sh validator slashing-protection-history export --datadir=\path\to\your\wallet --slashing-protection-export-dir=\path\to\desired\outputdir
+prysm.sh validator slashing-protection-history export --datadir=/path/to/your/wallet --slashing-protection-export-dir=/path/to/desired/outputdir
 ```
 
 **Using Bazel**

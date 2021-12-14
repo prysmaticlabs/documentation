@@ -56,11 +56,6 @@ This page serves material necessary to catch up with the current state of Ethere
 * [Ethereum Blog](https://blog.ethereum.org/)
 * [News from Ben Edgington](https://hackmd.io/@benjaminion/eth2_news)
 
-### Pyrmont Testnet Blockchain
-
-* [Launchpad](https://pyrmont.launchpad.ethereum.org/en/)
-* [Beacon Chain Explorer](https://pyrmont.beaconcha.in/)
-
 ### Prater Testnet Blockchain
 
 * [Launchpad](https://prater.launchpad.ethereum.org/en/)
