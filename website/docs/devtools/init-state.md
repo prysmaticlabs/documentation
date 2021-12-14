@@ -210,7 +210,7 @@ func (f *blocksFetcher) findFork(..., slot uint64) (*forkData, error) {
 }
 
 ```
-Essentially, all we are doing is querying our peer list for peers with a non-finalized known slot higher than that which our node was able to progress to. Then, out of those peers, the peers list is randomized and they are queried to find a peer with blocks our node hasn’t as yet seen. Once such a peer is found, we need to backtrack (hence the name!) on that peer from the slot starting at our node’s head backwards in history until the common ancestor block is found (or until the predefined limit is reached, to avoid infinite/overly long loops). Once a common ancestor is found, node tries to build on top of that alternative fork. While seemingly trivial, this procedure has worked extremely well (last tested on Pyrmont network).
+Essentially, all we are doing is querying our peer list for peers with a non-finalized known slot higher than that which our node was able to progress to. Then, out of those peers, the peers list is randomized and they are queried to find a peer with blocks our node hasn’t as yet seen. Once such a peer is found, we need to backtrack (hence the name!) on that peer from the slot starting at our node’s head backwards in history until the common ancestor block is found (or until the predefined limit is reached, to avoid infinite/overly long loops). Once a common ancestor is found, node tries to build on top of that alternative fork. While seemingly trivial, this procedure has worked extremely well.
 
 ###   Handling skipped blocks
 At each slot a block can be proposed. If this doesn’t happen, the block is considered as skipped. There might be lots of consecutive skipped blocks, but our queue has only 8 FSMs (so, can look no further than 8x64 = 512 blocks “into the future”). How do you overcome such a limitation, where the normal queue range of vision is 512 next slots, and the first non-skipped block is 10K+ slots away?
@@ -418,10 +418,10 @@ Variations include: stopping and restarting, stopping for a long time and then r
 ```
 # Remove previous data:
 rm -r ~/prysm/beaconchaindata ~/prysm/network-keys
-# Assuming you have geth node running locally, run init-sync on pyrmont
+# Assuming you have geth node running locally, run init-sync on prater
 bazel run //beacon-chain -- --datadir=$HOME/prysm  \
   --verbosity=debug \
   --p2p-max-peers=500 \
   --http-web3provider=$HOME/Library/Ethereum/goerli/geth.ipc \ 
-  --enable-debug-rpc-endpoints --pyrmont
+  --enable-debug-rpc-endpoints --prater
 ```
