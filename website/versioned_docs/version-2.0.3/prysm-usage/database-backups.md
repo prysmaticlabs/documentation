@@ -14,7 +14,9 @@ If you perform backups by manually copying the validator database while the clie
 
 Both the beacon node and validator use an embedded key-value store as a database called [BoltDB](https://github.com/boltdb/bolt) to store all important information. Backing up your beacon node database is a good practice, although **not critical** to being able to validate in Ethereum consensus. if you want to perform a backup, here's the safest way to do it.
 
-### Add the backup webhook flags to your beacon node
+:::danger Backing up the database via the webhook can lead to an out of memory exception in the event your system memory is insufficient. The webhook performs the backup in-memory by copying all the separate buckets from the source database to the backup database. If the source database is large, performing the backup might take too long and lead to an inconsistent backup database. In the event the source database is large ( > 20 Gb), as in mainnet right now, it is recommended to not perform the backup via the webhook. Instead manual backups should be utilised where the beacon node is stopped and then the database file is copied via the filesystem.  :::
+
+### Backing up the Database via a Webhook
 
 Add the following flags to your beacon node:
 
