@@ -368,7 +368,7 @@ Please refer to the [above section](https://docs.prylabs.network/docs/advanced/m
 
 ### Step 1:   Sync the beacon node
 
-Regardless of which client you are switching to, the first step of the process will be to sync the beacon node. This may take days to complete. 
+Regardless of which client you are switching to, the first step of the process will be to sync the beacon node. This may take some time to complete. Some clients offer a feature known as "checkpoint sync" which allows you to sync a node within a few minutes. Without this, the process may take several hours to a few days.
 
 An aggregation of installation links for each client:
 
