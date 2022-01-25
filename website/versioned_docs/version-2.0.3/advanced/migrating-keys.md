@@ -350,7 +350,7 @@ In order to minimise slashing risk, it is recommended that the migrated validato
 :::
 
 
-## Switching Clients
+## Guidelines on Switching Between Ethereum Client Software
 
 This portion of the document will provide guidance on switching clients. These steps will be similar to the above steps in Migrating Computers with some key differences. A portion of this guide will be redundant to areas covered elsewhere in the documentation and will link to those places where it is relevant. 
 
