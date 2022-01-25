@@ -354,7 +354,7 @@ In order to minimise slashing risk, it is recommended that the migrated validato
 
 This portion of the document will provide guidance on switching between Prysm and other consensus clients, such as Teku, Lighthouse, or Nimbus. These steps will be similar to the above steps in Migrating Computers with some key differences. A portion of this guide will be redundant to areas covered elsewhere in the documentation and will link to those places where it is relevant. 
 
-Please see Pryms's note on the importance of client diversity [here.](https://medium.com/prysmatic-labs/prysmatic-labs-statement-on-client-diversity-c0e3c2f05671) 
+Regarding why one may wish to switch to a different client, see our team's note on the importance of client diversity [here](https://medium.com/prysmatic-labs/prysmatic-labs-statement-on-client-diversity-c0e3c2f05671).
 
 :::danger Important Note
 As there is a risk of slashing when switching clients, it is important to ensure the following key points are understood and followed: 
