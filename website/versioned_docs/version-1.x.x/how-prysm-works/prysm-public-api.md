@@ -1,26 +1,25 @@
 ---
-id: ethereum-2-public-api
-title: Ethereum 2.0 public API
-sidebar_label: Beacon node API 
-description: This section contains service definitions and gRPC instructions to interact with the public API.
+id: prysm-public-api
+title: Prysm public API
+sidebar_label: Prysm public API 
+description: This section contains service definitions and gRPC instructions to interact with the Prysm public API.
 ---
 
 :::info Our API documentation website is undergoing maintenance
 Our API documentation website [https://api.prylabs.network](https://api.prylabs.network) is currently down due to maintenance. In the meantime, you can browse our API schema here: [github.com/prysmaticlabs/ethereumapis](https://github.com/prysmaticlabs/ethereumapis/tree/master/eth/v1alpha1). Our current API version used in Prysm is `v1alpha1`. 
 :::
 
-One of the required components nodes in the Ethereum 2.0 network is to expose an API server for outside interaction. This API is critical for running validators on eth2, as validator clients can connect to nodes and query their API to figure out their assigned duties, to submit block proposals, and more. Prysm's eth2 API schema is maintained in its unique repository: [github.com/prysmaticlabs/ethereumapis](https://github.com/prysmaticlabs/ethereumapis) and is implemented by Prysm beacon nodes [here](https://github.com/prysmaticlabs/prysm/blob/master/beacon-chain/rpc/service.go). Note, this API is **only used by Prysm**. 
-
-
-:::tip Standard API conformance is underway
-There is an effort to standardize an eth2 API for all implementations [here](https://github.com/ethereum/eth2.0-apis), and we are currently working on implementing it into Prysm. In the meantime, `ethereumapis` is the only supported API schema by Prysm.
-:::
+One of the required components of nodes in the Ethereum 2.0 network is to expose an API server for outside interaction. This API is critical for running validators on eth2, as validator clients can connect to nodes and query their API to figure out their assigned duties, to submit block proposals, and more. Prysm's eth2 API schema is maintained in its unique repository: [github.com/prysmaticlabs/ethereumapis](https://github.com/prysmaticlabs/ethereumapis) and is implemented by Prysm beacon nodes [here](https://github.com/prysmaticlabs/prysm/blob/master/beacon-chain/rpc/service.go). Note, this API is **only used by Prysm**. 
 
 ![gRPC](/img/grpc-logo2.png)
 
 Prysm implements its API by using the popular [gRPC](https://grpc.io) project created by Google, providing highly advanced functionality for eth2. Interacting with the API requires the use of protocol buffers, also known as protobuf. These [protocol buffer](https://developers.google.com/protocol-buffers/). For information on the functionality of gRPC and protocol buffers more generally, see the [gRPC guide](https://grpc.io/docs/guides/).
 
 ## Calling the API on your local beacon node
+
+:::danger Do not publicly expose the API
+The API's purpose is a means of communication between your beacon node and your validator client. Because of this it is not protected against external malicious users. Some endpoints are vulnerable to Denial-of-Service attacks, while others may disclose information about your beacon node. The communication between the beacon node and the validator client should be done privately, either on the same machine or through an SSH connection.
+:::
 
 By default, the beacon node exposes a [gRPC](https://grpc.io) API on host `127.0.0.1:4000`, which is accessed by the validator client. This is not an HTTP endpoint, so you will not be able to perform API queries via HTTP on that port. However, we also expose a JSON-HTTP endpoint on `127.0.0.1:3500` by default for your needs. If you want to query information such as the chainhead from your local beacon node, you can call:
 
