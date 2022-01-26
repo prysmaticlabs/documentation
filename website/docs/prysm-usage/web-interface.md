@@ -4,39 +4,51 @@ title: Using the Prysm Web Interface
 sidebar_label: Prysm web interface
 ---
 
-This section outlines the step-by-step process for how to use Prysm with its built-in web interface.
+## What is Prysm Web
 
-![Dashboard](/img/webdashboard.png "Main Dashboard")
+The Prysm Web UI is a locally hosted website that is launched from the validator client to provide users with a visual alternative to the validator cli( command-line interface).
 
-## Step 1: Get Prysm and join Ethreum mainnet or testnet
+The website will provide users with a visual way to set up their Prysm Wallet, manage their keys, and provide information on the current state of their validator. You will also be able to see a peer map for users who decide to share their location among the peers in their network.
+
+The website at this time does not provide additional metrics over those that you would find on your grafana dashboards or beaconcha.in . 
+
+
+## Launching and Logging In
 
 To begin, follow the instructions to run Prysm in mainnet or testnet:
 
 - [Joining Mainnet](/docs/install/install-with-script)
 
-By the end of the documentation, you should have a functioning beacon node and validator client running!
+To launch the web interface, you will need to restart your validator client from step 1 with the `--web` flag. This will allow you to access the web interface by default on `http://localhost:7500` if running on the same computer as your validator client and using `prysm.sh`, `prysm.bat` or building from source.
 
-## Step 2: Restart your validator client with --web
+Prysm protects web users with a special URL for authentication instead of requiring the user to remember a password. The URL can be retrieved in the terminal logs where the `validator --web` command was run. please copy it into a web browser to initialize the website with authentication. The base url `http://127.0.0.1:7500` or `http://localhost:7500` may differ based on your own validator settings.
 
-To launch the web interface, you will need to restart your validator client from step 1 with the `--web` flag. This will allow you to access the web interface by default on `http://localhost:7500` if running on the same computer as your validator client and using `prysm.sh`, `prysm.bat` or building from source. For more advanced configurations, keep reading below in step (3).
+example of URL in logs
+
+```
+[2021-10-21 14:07:28]  INFO rpc: Once your validator process is running, navigate to the link below to authenticate with the Prysm web interface
+[2021-10-21 14:07:28]  INFO rpc: http://127.0.0.1:7500/initialize?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MzQzMzIyOTJ9.EgkawrXjxSkO26FcwuiB6IFI-KUMyLAc9FKkuLOTHl8&expiration=1634332292
+```
+:::tip Print your unique authentication URL again
+Sometimes your browser cache gets cleared requiring you to reauthenticate, or you want to retrieve a new URL with token without restarting the validator.
+In that case, you can run the following command `validator web generate-auth-token`
+:::
+
+:::tip 3rd party tools
+Third party tools such as Dappnode will initialize the user without use of the cli commands and will automatically redirect users to the dashboard. These tools will typically use the generated `auth-token` file located in the Prysm Wallet directory.
+:::
 
 If it is the first time you have ran your Prysm validator and have not yet created a wallet, you will be faced with a wallet creation screen allowing you to import the keystores generated from the Ethereum deposit-cli.
 
 ![Image](/img/walletcreate.png)
 
-If you have _already created a wallet_, you will instead be faced with a signup page where you must set a password for your web interface.
+upon completion of onboarding, your web page should always redirect you to the main dashboard.
 
-![Image](/img/createwebpass.png)
+## Configuration
 
-:::tip The password for the web interface
-For security reasons, the password for the Prysm web interface is different from your wallet password. We wouldn't want you typing your precious wallet password every time you login via a browser!
-:::
+### Managing Ports
 
-After you signup, you'll be able to access your dashboard and login any future times to the web interface.
-
-## Step 3: Configuration and common issues
-
-The web UI runs by default on port 7500 of the validator client if you are running with the --web flag. To customize this port, change the following flag to your liking:
+The web UI runs by default on port 7500 of the validator client if you are running with the `--web` flag. To customize this port, change the following flag to your liking:
 
 ```
 --grpc-gateway-port (default: 7500 for validator)
@@ -49,7 +61,11 @@ The available parameters to customize are:
 |`--grpc-gateway-host` | The host for the validator client's JSON-HTTP API, default `127.0.0.1`
 |`--grpc-gateway-port` | The port for the validator client's JSON-HTTP API, default `7500`
 
-## Step 4: Accessing the web interface from a remote computer
+### Wallet Directory
+
+the `--wallet-dir` flag will determine the location where your auth token as well as other related configurations are stored. you can provide this flag with a file director to change it from the default location.
+
+### Accessing the web interface from a remote computer
 
 If you are running your beacon node and validator on some server that you want to access from the outside, we recommend SSH local port forwarding to access it. For example, you would do the following from your home computer:
 
@@ -59,19 +75,59 @@ ssh -L 7500:127.0.0.1:7500 user@host_ip
 
 where you replace `user@host_ip` with the user and host ip address of the remote machine you are trying to access. This will forward all requests from your home computer's localhost:7500 to the remote instance's localhost:7500, allowing you to visit `http://localhost:7500` from your favorite browser and then access the validator web interface! This is the safest approach to access it, as you are exposing the web interface to the open Internet.
 
-## Step 5: Monitor your beacon node and validator client logs, accounts, and more
+:::warning Please use HTTPS
+If you plan to expose the website to the open Internet, please look into protecting yourself with HTTPS. Prysm web does not come with certificates or HTTPS pre-configured. If you are running Prysm Web on the open internet without HTTPS you are running at your own risk. 
+:::
 
-You can visualize your beacon node and validator client logs from the web interface easily by navigating to `System Process -> Logs` on the left-hand sidebar.  
-![Logs](/img/logs.png "Logs")
+## Troubleshooting
 
-- We recommend going through the ["imported wallet"](/docs/wallet/nondeterministic) route, and importing your keys you obtained during the [Ethereumlaunchpad deposit-cli](https://launchpad.ethereum.org/) process, as this is the most secure setup. Upon completing wallet creation, you will be redirected to your main dashboard, where you can see several important items such as your recent validating performance or your beacon node's sync status.  
+### Issues logging in
 
-This page is useful to monitor how your processes are doing without needing to navigate to your terminal! In addition, you can visit your `Wallet and Accounts -> Accounts` page to view all your validating keys in an ordered table, explore their historical performance on https://beaconcha.in, and import new ones.
+If your browser cache was cleared, you're running on a new browser, or validator was restarted you may be stuck on the initialize page. All you need to do is retrieve the special URL again and you should be re-authenticated which will redirect you to the main dashboard. 
 
-## Step 6: Contributing to the web interface code
+![Dialog-expanded](/img/dialog-error-expanded.png "dialog error expanded")
+
+### HTTP Error Codes
+
+| Error Code         | Reason        |
+| ------------- |:-------------|
+| 503 or 0 | No server response, services having difficulty communicating, meaning network problems, or services being un available, or even firewalls or adblock settings.
+| 401 | Unauthorized, requiring to reauthenticate with the special url
+| 500 | Internal Server Error, something failed internally in Prysm services
+| 404 | API endpoint is not found
+
+### Reporting Issues
+
+Please create a [github issue](https://github.com/prysmaticlabs) or contact the team on [Discord](https://discord.gg/YMVYzv6) to report an issue
+
+
+## Contributing
 
 The web interface is open source and located at [github.com/prysmaticlabs/prysm-web-ui](https://github.com/prysmaticlabs/prysm-web-ui). It is an Angular application, and we always welcome your help!
+
+### Prerequisites
+
+- latest node
+- ide (i.e. visual studio code)
+
+after cloning the repo navigate to where the `package.json` file and run `npm install` to retrieve the dependencies you will need.
+
+### Running in Develop
+
+run `npm start` in the folder path where package.josn lives and open the website on `localhost:4200`. 
 
 :::warning Web UI in development mode uses mock data by default
 The recommended way to run prysm web is from the validator client itself via the `--web` flag. If you are building the web UI from source and doing `npm start`, you **will be using fake, mock data!** Keep that in mind if you are trying to use real accounts with the web UI.
 :::
+
+:::tip Develop URL login
+for authentication in develop you may use any token in the url query parameter i.e. `localhost:4200/initialize?token=anytoken`
+:::
+
+
+### Running in Staging
+
+run `npm run start:staging` will run a 'like' production build where the backend expects to be connected to `localhost:7500`. You will need to start the validator client with `--web` but interact with your angular application on `localhost:4200`.
+
+
+

@@ -156,7 +156,7 @@ If you are downgrading between **patch versions**, which means only the last num
 
 If you are running `prysm.sh`, all it takes to downgrade to a previous release is to stop your beacon node and validator (wait for the process to close down gracefully). 
 
-Then, find the Prysm version you wish to run from our [releases page](https://github.com/prysmaticlabs/prysm/releases), such as v1.0.5, then run the command `set USE_PRYSM_VERSION=v1.0.5`.
+Then, find the Prysm version you wish to run from our [releases page](https://github.com/prysmaticlabs/prysm/releases), such as v1.0.5, then run the command `export USE_PRYSM_VERSION=v1.0.5`.
 
 Then, restart it with the same command you used to start the process. The script will automatically use the release you specified.
 
@@ -167,6 +167,36 @@ To run a previous Prysm version with Docker, choose the release you want to run,
 **Using Bazel**
 
 To run our latest release with Bazel, you can look up our [releases page](https://github.com/prysmaticlabs/prysm/releases), look at the release tag you want to run, such as v1.0.5, then do `git checkout v1.0.5`. Afterwards, you can re-run your beacon chain and validator as you ran them earlier with Bazel.
+
+**Using Systemd**
+  
+Edit the systemd files for both validator (`/etc/systemd/system/validator.service`) and beacon (`/etc/systemd/system/beacon.service`). The filename  depends on what you used when you installed, if you forgot the name, just `ls` that directory (`/etc/systemd/system/`) and edit them both. Add the `Environment` key under the `[Service]` group to have `Environment     =  USE_PRYSM_VERSION=v2.0.2`
+  
+Example for the beacon chain:
+```
+[Unit]
+Description     = Ethereum Beacon Chain Service
+Wants           = network-online.target
+After           = network-online.target
+
+[Service]
+Type            = simple
+User            = eth
+ExecStart       = /home/eth/prysm/prysm.sh beacon-chain --config-file=/etc/prysm/beacon-chain.yaml
+Restart         = on-failure
+TimeoutStopSec  = 900
+Environment     = USE_PRYSM_VERSION=v2.0.2
+
+[Install]
+WantedBy    = multi-user.target
+```
+  
+After you finish editing both of the files, you need to reload the service unit
+```
+sudo systemctl daemon-reload
+```
+
+Once you do that, the prysm beacon and validator are locked in that version, so you need to always update it. If you want to go back to the automatic upgrades after reboot, you just need to remove the `Environment` key.
 
 </TabItem>
 <TabItem value="win">
