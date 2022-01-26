@@ -4,7 +4,9 @@ title: Individual validator monitoring
 sidebar_label: Monitoring individual validator indices
 ---
 
-# Background
+# Detailed monitoring of validator indices
+
+## Background
 
 Prysm beacon nodes allow for monitoring of specific validator indices by tracking important metrics on the blockchain, including details about their rewards, attestation performance, sync committee participation, and more.
 
@@ -23,9 +25,9 @@ You can track any validators, not only yours. In fact, you don't even need to be
 
 The monitor emits both logs and metrics when it receives information about some event involving the tracked validators.
 
-# Available monitoring
+## Available monitoring
 
-## Attestations included in blocks
+### Attestations included in blocks
 
 This is the log that most users will want to keep track, the typical log reads as follows
 ```shell
@@ -41,14 +43,14 @@ Associated to this event, the monitor emits the following metrics
 
 These metrics are parametrized by validator index, not public key as you may be used from the validator client metrics.
 
-## Block proposed
+### Block proposed
 In case of a block proposed by a tracked validator the following is logged
 ```shell
 INFO monitor "Proposed block was included" BalanceChange=120343 BlockRoot=0x68656c6c6f2d NewBalance=323430000000 ParentRoot=0x68656c6c6f2d ProposerIndex=12 Slot=62394 Version=1
 ```
 And associated to this event the monitor emits the metric `proposed_slots_total` which is a counter.
 
-## Slashings
+### Slashings
 In the event that one of the tracked validators was slashed, the monitor will log as follows for proposer slashings
 ```shell
 INFO monitor "Proposer slashing was included" ProposerIndex=2 Root1=0xae219327ef71 Root2=0x92120efa2ae3 SlashingSlot=122931 Slot=122942
@@ -60,7 +62,7 @@ INFO monitor "Attester slashing was included" AttesterIndex=15 Root1=0x483eaf932
 ```
 Where we see a surround vote attestation for validator 15 that we are tracking.
 
-## Sync committee contributions
+### Sync committee contributions
 In the case one of the validators enters a sync committee, the following will be logged every slot:
 ```shell
 INFO monitor "Sync committee contribution included" BalanceChange=1293 Contributions=1 ExpectedContrib=2 NewBalance=32122384000 ValidatorIndex=1
@@ -69,7 +71,7 @@ This validator had two different indices in the committee and only contributed f
 
 Also the metric `sync_committee_contributions_total`, which is a counter, is emited.
 
-## Voluntary exits
+### Voluntary exits
 
 Voluntary exits are logged when they are included in a block
 ```shell
@@ -80,7 +82,7 @@ And also when they are seen in the P2P network
 INFO monitor "Voluntary exit was processed" ValidatorIndex=1
 ```
 
-## Attestations in the P2P network
+### Attestations in the P2P network
 
 The monitor logs events catched in the P2P network that not necessarily will be included in blocks. When one of our tracked validators is an aggregator:
 ```shell
@@ -95,7 +97,7 @@ INFO monitor "Processed unaggregated attestation" Head=0x68656c6c6f2d Slot=12123
 ```
 The above logs are quite verbose as typically the same aggregation is seen about 8 times per slot.
 
-## Aggregated logs
+### Aggregated logs
 
 In addition to the above logs, the monitor emits aggregated logs every 5 epochs
 ```shell
@@ -103,6 +105,6 @@ INFO monitor "Aggregated performance since launch" AttestationInclusion="80.00%"
 ```
 The field `AttestationInclusion` reports the percentage of attestations that have been included divided by the number of epochs since launch. The field `AverageInclusionDistance` only counts those attestations that have been included. So do the other fields that are percentages of the included attestations.
 
-## A remark on BalanceChange
+### A remark on BalanceChange
 
 The validator monitor does not keep a history of performance, it only tracks the *latest event* and keeps an aggregated total of performance. The *balance changing events* are attestation inclusion, proposed blocks inclusion and sync committee inclusion. When the monitor reports a field `BalanceChange` it means the difference between the balance right after processing the block that triggered the event, and the balance after the previous balance changing event. In particular, when an attestation is includedd the balance is not changed by the included attestation since attestation reward is given at epoch transition. Therefore the balance change reported, assuming no other events like sync committee contributions and block proposals were reported during the epoch, refers to the reward given by the *previous* attestation. 
