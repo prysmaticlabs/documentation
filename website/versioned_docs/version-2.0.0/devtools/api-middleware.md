@@ -30,6 +30,8 @@ type Endpoint struct {
     GetResponse        interface{}     // The struct corresponding to the JSON structure used in a GET response.
     PostRequest        interface{}     // The struct corresponding to the JSON structure used in a POST request.
     PostResponse       interface{}     // The struct corresponding to the JSON structure used in a POST response.
+    DeleteRequest      interface{}     // The struct corresponding to the JSON structure used in a DELETE request.
+    DeleteResponse     interface{}     // The struct corresponding to the JSON structure used in a DELETE response.
     RequestURLLiterals []string        // Names of URL parameters that should not be base64-encoded.
     RequestQueryParams []QueryParam    // Query parameters of the request.
     Err                ErrorJson       // The struct corresponding to the error that should be returned in case of a request failure.
