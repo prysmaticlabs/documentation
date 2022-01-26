@@ -13,6 +13,12 @@ The beacon node takes a flag `--monitor-indices` that takes as parameter a valid
 ```shell
 beacon-chain --monitor-indices 1 --monitor-indices 2 --monitor-indices 12 --monitor-indices 15
 ```
+Or you can pass a braced enclosed list as 
+
+```shell
+beacon-chain --monitor-indices 1 --monitor-indices={2,12,15}
+```
+
 You should see a message like the following in your logs at launch
 
 ```shell
