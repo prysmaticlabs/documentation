@@ -188,7 +188,7 @@ You can backup validator accounts from your wallet using the following command:
 ```sh
 prysm.bat validator accounts backup
 ```
-You will now be prompted for the wallet password. Once entered, you will be guided through the backup process where you will able to select individual or all accounts to backup and the location where the backup file is created. You will also be prompted for a **"password"** for the backup file, **it is important to keep a note of this for use during the import process**. 
+You will now be promted for the wallet password. Once entered, you will be guided through the backup process where you will able to select individual or all accounts to backup and the location where the backup file is created. You will also be prompted for a **"password"** for the backup file, **it is important to keep a note of this for use during the import process**. 
 
 You can also run the accounts backup command non-interactively by using the following command line flags, which are also viewable by appending --help to the command line listed above:
 
