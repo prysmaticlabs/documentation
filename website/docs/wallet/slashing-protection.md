@@ -66,6 +66,10 @@ Basically containing a simple history of the blocks and attestations your valida
 
 ## Exporting your validators' slashing protection history
 
+:::tip Stop the Validator
+Ensure that you stop Prysm before exporting slashing protection in order to capture all validator actions. 
+:::
+
 To export your slashing protection history, you can use Prysm's built in commands which will work with any installation method.
 
 import Tabs from '@theme/Tabs';
