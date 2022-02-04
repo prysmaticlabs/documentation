@@ -171,7 +171,7 @@ Note: <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `ht
 
 **Prater**
 
-Download the genesis state from [github.com/eth2-clients/eth2-networks/raw/master/shared/prater/genesis.ssz](https://github.com/eth2-clients/eth2-networks/raw/master/shared/prater/genesis.ssz) to a local file, then run
+Download the genesis state from [github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz](https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz) to a local file, then run
 
 ```text
 ./prysm.sh beacon-chain --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT> --prater --genesis-state=/path/to/genesis.ssz
@@ -190,7 +190,7 @@ prysm.bat beacon-chain --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
 
 **Prater**
 
-Download the genesis state from [github.com/eth2-clients/eth2-networks/raw/master/shared/prater/genesis.ssz](https://github.com/eth2-clients/eth2-networks/raw/master/shared/prater/genesis.ssz) to a local file, then run
+Download the genesis state from [github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz](https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz) to a local file, then run
 
 ```text
 prysm.bat beacon-chain --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT> --prater --genesis-state=\path\to\genesis.ssz
@@ -209,7 +209,7 @@ Note: <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `ht
 
 **Prater**
 
-Download the genesis state from [github.com/eth2-clients/eth2-networks/raw/master/shared/prater/genesis.ssz](https://github.com/eth2-clients/eth2-networks/raw/master/shared/prater/genesis.ssz) to a local file, then run
+Download the genesis state from [github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz](https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz) to a local file, then run
 
 ```text
 ./prysm.sh beacon-chain --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT> --prater --genesis-state=/path/to/genesis.ssz
@@ -228,7 +228,7 @@ Note: <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `ht
 
 **Prater**
 
-Download the genesis state from [github.com/eth2-clients/eth2-networks/raw/master/shared/prater/genesis.ssz](https://github.com/eth2-clients/eth2-networks/raw/master/shared/prater/genesis.ssz) to a local file, then run
+Download the genesis state from [github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz](https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz) to a local file, then run
 
 ```text
 ./prysm.sh beacon-chain --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT> --prater --genesis-state=/path/to/genesis.ssz
