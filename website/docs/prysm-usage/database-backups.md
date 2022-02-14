@@ -20,6 +20,8 @@ In event your system memory is insufficient performing a backup can lead to an o
 
 ### Backing up the Database via a Webhook
 
+As the note above describes, we highly recommend performing manual backups of the database while your beacon node and validator are stopped rather than using a webhook. Due to performance limitations, it is safer to take a manual approach while your software is stopped.
+
 Add the following flags to your beacon node:
 
 - `--enable-db-backup-webhook`: Serve an http server to initiate database backups. The handler is served on the beacon node's monitoring host and port. Default endpoint is `http://127.0.0.1:8080/db/backup` if the flag is enabled.
