@@ -18,6 +18,7 @@ Both the beacon node and validator use an embedded key-value store as a database
 In event your system memory is insufficient performing a backup can lead to an out of memory exception. The webhook performs the backup in-memory by copying all the separate buckets from the source database to the backup database. If the source database is large, performing the backup might take too long and lead to an inconsistent backup database. In the event the source database is large ( > 20 Gb), as in mainnet right now, it is recommended to not perform the backup via the webhook. Instead manual backups should be utilised where the beacon node is stopped and then the database file is copied via the filesystem.  
 :::
 
+As the note above describes, we highly recommend performing manual backups of the database while your beacon node and validator are stopped rather than using a webhook. Due to performance limitations, it is safer to take a manual approach while your software is stopped.
 ### Backing up the Database via a Webhook
 
 Add the following flags to your beacon node:
