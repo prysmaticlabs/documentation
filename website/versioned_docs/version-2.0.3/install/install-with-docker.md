@@ -269,7 +269,7 @@ docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/u
 
 **Prater**
 
-Download the genesis state from [github.com/eth2-clients/eth2-networks/raw/master/shared/prater/genesis.ssz](https://github.com/eth2-clients/eth2-networks/raw/master/shared/prater/genesis.ssz) to a local file, then run
+Download the genesis state from [github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz](https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz) to a local file, then run
 
 ```text
 docker run -it -v $HOME/.eth2:/data -v /path/to/genesis.ssz:/genesis/genesis.ssz -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node \
@@ -305,7 +305,7 @@ This will sync up the beacon node with the latest cannonical head block in the n
 
 **Prater**
 
-Download the genesis state from [github.com/eth2-clients/eth2-networks/raw/master/shared/prater/genesis.ssz](https://github.com/eth2-clients/eth2-networks/raw/master/shared/prater/genesis.ssz) to a local file, then run
+Download the genesis state from [github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz](https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz) to a local file, then run
 
 
 ```text
@@ -330,7 +330,7 @@ docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/u
 
 **Prater**
 
-Download the genesis state from [github.com/eth2-clients/eth2-networks/raw/master/shared/prater/genesis.ssz](https://github.com/eth2-clients/eth2-networks/raw/master/shared/prater/genesis.ssz) to a local file, then run
+Download the genesis state from [github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz](https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz) to a local file, then run
 
 ```text
 docker run -it -v $HOME/.eth2:/data -v /path/to/genesis.ssz:/genesis/genesis.ssz -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node \
