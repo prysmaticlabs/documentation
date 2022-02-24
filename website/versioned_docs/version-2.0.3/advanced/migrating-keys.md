@@ -66,7 +66,7 @@ prysm.sh validator slashing-protection-history export --datadir=/path/to/your/wa
 **Using Docker**
 
 ```sh
-docker run -it -v /path/to/outputdir:/output -v /path/to/wallet:/wallet gcr.io/prysmaticlabs/prysm/validator:stable -- slashing-protection export --datadir=/wallet --slashing-protection-export-dir=/output
+docker run -it -v /path/to/outputdir:/output -v /path/to/wallet:/wallet gcr.io/prysmaticlabs/prysm/validator:stable -- slashing-protection-history export --datadir=/wallet --slashing-protection-export-dir=/output
 ```
 
 **Using Bazel**
@@ -269,7 +269,7 @@ prysm.bat validator slashing-protection-history import --datadir=\path\to\your\w
 **Using Docker**
 
 ```sh
-docker run -it -v \path\to\desiredimportfile.json:/import/desiredimportfile.json -v \path\to\wallet:/wallet gcr.io/prysmaticlabs/prysm/validator:stable -- slashing-protection import --datadir=/wallet --slashing-protection-json-file=/import/desiredimportfile.json
+docker run -it -v \path\to\desiredimportfile.json:/import/desiredimportfile.json -v \path\to\wallet:/wallet gcr.io/prysmaticlabs/prysm/validator:stable -- slashing-protection-history import --datadir=/wallet --slashing-protection-json-file=/import/desiredimportfile.json
 ```
 
 </TabItem>

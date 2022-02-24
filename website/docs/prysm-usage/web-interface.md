@@ -34,6 +34,10 @@ Sometimes your browser cache gets cleared requiring you to reauthenticate, or yo
 In that case, you can run the following command `validator web generate-auth-token`
 :::
 
+:::warning Auth Token must be located inside the wallet directory you are running the validator on
+The `--wallet-dir` flag can also be added to the `validator web generate-auth-token` command to specify the specific location where the auth token would apply. This is important when running the validator with a wallet directory that is not in the default directory. When this happens the website may return an invalid token page.
+:::
+
 :::tip 3rd party tools
 Third party tools such as Dappnode will initialize the user without use of the cli commands and will automatically redirect users to the dashboard. These tools will typically use the generated `auth-token` file located in the Prysm Wallet directory.
 :::

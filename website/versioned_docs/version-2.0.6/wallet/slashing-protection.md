@@ -90,13 +90,13 @@ import TabItem from '@theme/TabItem';
 **Using the Prysm installation script**
 
 ```sh
-prysm.sh validator slashing-protection export --datadir=/path/to/your/wallet --slashing-protection-export-dir=/path/to/desired/outputdir
+prysm.sh validator slashing-protection-history export --datadir=/path/to/your/wallet --slashing-protection-export-dir=/path/to/desired/outputdir
 ```
 
 **Using Docker**
 
 ```sh
-docker run -it -v /path/to/outputdir:/output -v /path/to/wallet:/wallet gcr.io/prysmaticlabs/prysm/validator:stable -- slashing-protection export --datadir=/wallet --slashing-protection-export-dir=/output
+docker run -it -v /path/to/outputdir:/output -v /path/to/wallet:/wallet gcr.io/prysmaticlabs/prysm/validator:stable -- slashing-protection-history export --datadir=/wallet --slashing-protection-export-dir=/output
 ```
 
 You will then find the slashing protection JSON file in your specified /path/to/outputdir folder.
@@ -104,7 +104,7 @@ You will then find the slashing protection JSON file in your specified /path/to/
 **Using Bazel**
 
 ```sh
-bazel run //validator -- slashing-protection export --datadir=/path/to/your/wallet --slashing-protection-export-dir=/path/to/desired/outputdir
+bazel run //validator -- slashing-protection-history export --datadir=/path/to/your/wallet --slashing-protection-export-dir=/path/to/desired/outputdir
 ```
 
 </TabItem>
@@ -113,13 +113,13 @@ bazel run //validator -- slashing-protection export --datadir=/path/to/your/wall
 **Using the Prysm installation script**
 
 ```sh
-prysm.bat validator slashing-protection export --datadir=\path\to\your\wallet --slashing-protection-export-dir=\path\to\desired\outputdir
+prysm.bat validator slashing-protection-history export --datadir=\path\to\your\wallet --slashing-protection-export-dir=\path\to\desired\outputdir
 ```
 
 **Using Docker**
 
 ```sh
-docker run -it -v \path\to\outputdir:/output -v \path\to\wallet:/wallet gcr.io/prysmaticlabs/prysm/validator:stable -- slashing-protection export --datadir=/wallet --slashing-protection-export-dir=/output
+docker run -it -v \path\to\outputdir:/output -v \path\to\wallet:/wallet gcr.io/prysmaticlabs/prysm/validator:stable -- slashing-protection-history export --datadir=/wallet --slashing-protection-export-dir=/output
 ```
 
 You will then find the slashing protection JSON file in your specified \path\to\outputdir folder.
@@ -130,13 +130,13 @@ You will then find the slashing protection JSON file in your specified \path\to\
 **Using the Prysm installation script**
 
 ```sh
-prysm.sh validator slashing-protection export --datadir=/path/to/your/wallet --slashing-protection-export-dir=/path/to/desired/outputdir
+prysm.sh validator slashing-protection-history export --datadir=/path/to/your/wallet --slashing-protection-export-dir=/path/to/desired/outputdir
 ```
 
 **Using Docker**
 
 ```sh
-docker run -it -v /path/to/outputdir:/output -v /path/to/wallet:/wallet gcr.io/prysmaticlabs/prysm/validator:stable -- slashing-protection export --datadir=/wallet --slashing-protection-export-dir=/output
+docker run -it -v /path/to/outputdir:/output -v /path/to/wallet:/wallet gcr.io/prysmaticlabs/prysm/validator:stable -- slashing-protection-history export --datadir=/wallet --slashing-protection-export-dir=/output
 ```
 
 You will then find the slashing protection JSON file in your specified /path/to/outputdir folder.
@@ -144,7 +144,7 @@ You will then find the slashing protection JSON file in your specified /path/to/
 **Using Bazel**
 
 ```sh
-bazel run //validator -- slashing-protection export --datadir=/path/to/your/wallet --slashing-protection-export-dir=/path/to/desired/outputdir
+bazel run //validator -- slashing-protection-history export --datadir=/path/to/your/wallet --slashing-protection-export-dir=/path/to/desired/outputdir
 ```
 
 </TabItem>
@@ -153,13 +153,13 @@ bazel run //validator -- slashing-protection export --datadir=/path/to/your/wall
 **Using the Prysm installation script**
 
 ```sh
-prysm.sh validator slashing-protection export --datadir=/path/to/your/wallet --slashing-protection-export-dir=/path/to/desired/outputdir
+prysm.sh validator slashing-protection-history export --datadir=/path/to/your/wallet --slashing-protection-export-dir=/path/to/desired/outputdir
 ```
 
 **Using Bazel**
 
 ```sh
-bazel run //validator -- slashing-protection export --datadir=/path/to/your/wallet --slashing-protection-export-dir=/path/to/desired/outputdir
+bazel run //validator -- slashing-protection-history export --datadir=/path/to/your/wallet --slashing-protection-export-dir=/path/to/desired/outputdir
 ```
 
 </TabItem>
@@ -184,19 +184,19 @@ To import a slashing protection JSON file you obtained elsewhere, either from an
 **Using the Prysm installation script**
 
 ```sh
-prysm.sh validator slashing-protection import --datadir=/path/to/your/wallet --slashing-protection-json-file=/path/to/desiredimportfile
+prysm.sh validator slashing-protection-history import --datadir=/path/to/your/wallet --slashing-protection-json-file=/path/to/desiredimportfile
 ```
 
 **Using Docker**
 
 ```sh
-docker run -it -v /path/to/desiredimportfile.json:/import/desiredimportfile.json -v /path/to/wallet:/wallet gcr.io/prysmaticlabs/prysm/validator:stable -- slashing-protection import --datadir=/wallet --slashing-protection-json-file=/import/desiredimportfile.json
+docker run -it -v /path/to/desiredimportfile.json:/import/desiredimportfile.json -v /path/to/wallet:/wallet gcr.io/prysmaticlabs/prysm/validator:stable -- slashing-protection-history import --datadir=/wallet --slashing-protection-json-file=/import/desiredimportfile.json
 ```
 
 **Using Bazel**
 
 ```sh
-bazel run //validator -- slashing-protection import --datadir=/path/to/your/wallet --slashing-protection-json-file=/path/to/desiredimportfile
+bazel run //validator -- slashing-protection-history import --datadir=/path/to/your/wallet --slashing-protection-json-file=/path/to/desiredimportfile
 ```
 
 </TabItem>
@@ -205,12 +205,12 @@ bazel run //validator -- slashing-protection import --datadir=/path/to/your/wall
 **Using the Prysm installation script**
 
 ```sh
-prysm.bat validator slashing-protection import --datadir=\path\to\your\wallet --slashing-protection-json-file=\path\to\desiredimportfile
+prysm.bat validator slashing-protection-history import --datadir=\path\to\your\wallet --slashing-protection-json-file=\path\to\desiredimportfile
 ```
 **Using Docker**
 
 ```sh
-docker run -it -v \path\to\desiredimportfile.json:/import/desiredimportfile.json -v \path\to\wallet:/wallet gcr.io/prysmaticlabs/prysm/validator:stable -- slashing-protection import --datadir=/wallet --slashing-protection-json-file=/import/desiredimportfile.json
+docker run -it -v \path\to\desiredimportfile.json:/import/desiredimportfile.json -v \path\to\wallet:/wallet gcr.io/prysmaticlabs/prysm/validator:stable -- slashing-protection-history import --datadir=/wallet --slashing-protection-json-file=/import/desiredimportfile.json
 ```
 
 </TabItem>
@@ -219,19 +219,19 @@ docker run -it -v \path\to\desiredimportfile.json:/import/desiredimportfile.json
 **Using the Prysm installation script**
 
 ```sh
-prysm.sh validator slashing-protection import --datadir=/path/to/your/wallet --slashing-protection-json-file=/path/to/desiredimportfile
+prysm.sh validator slashing-protection-history import --datadir=/path/to/your/wallet --slashing-protection-json-file=/path/to/desiredimportfile
 ```
 
 **Using Docker**
 
 ```sh
-docker run -it -v /path/to/desiredimportfile.json:/import/desiredimportfile.json -v /path/to/wallet:/wallet gcr.io/prysmaticlabs/prysm/validator:stable -- slashing-protection import --datadir=/wallet --slashing-protection-json-file=/import/desiredimportfile.json
+docker run -it -v /path/to/desiredimportfile.json:/import/desiredimportfile.json -v /path/to/wallet:/wallet gcr.io/prysmaticlabs/prysm/validator:stable -- slashing-protection-history import --datadir=/wallet --slashing-protection-json-file=/import/desiredimportfile.json
 ```
 
 **Using Bazel**
 
 ```sh
-bazel run //validator -- slashing-protection import --datadir=/path/to/your/wallet --slashing-protection-json-file=/path/to/desiredimportfile
+bazel run //validator -- slashing-protection-history import --datadir=/path/to/your/wallet --slashing-protection-json-file=/path/to/desiredimportfile
 ```
 
 </TabItem>
@@ -240,13 +240,13 @@ bazel run //validator -- slashing-protection import --datadir=/path/to/your/wall
 **Using the Prysm installation script**
 
 ```sh
-prysm.sh validator slashing-protection import --datadir=/path/to/your/wallet --slashing-protection-json-file=/path/to/desiredimportfile
+prysm.sh validator slashing-protection-history import --datadir=/path/to/your/wallet --slashing-protection-json-file=/path/to/desiredimportfile
 ```
 
 **Using Bazel**
 
 ```sh
-bazel run //validator -- slashing-protection import --datadir=/path/to/your/wallet --slashing-protection-json-file=/path/to/desiredimportfile
+bazel run //validator -- slashing-protection-history import --datadir=/path/to/your/wallet --slashing-protection-json-file=/path/to/desiredimportfile
 ```
 
 </TabItem>
