@@ -54,9 +54,9 @@ This will build the project by downloading dependencies as Go modules.
 
 #### Running Go tests
 
-All code we check into our repo needs to have sufficient tests to ensure it is maintainable and works as expected. You can use Go run tests in Prysm. 
+All code we check into our repo needs to have sufficient tests to ensure it is maintainable and works as expected.
 
-Many tests are rely on the Bazel build system, thus testing with `go test` would not work.
+Many tests rely on the Bazel build system, thus testing with `go test` may not work.
 See the [next section](#building-and-tessting-prysm-with-bazel) for instructions on testing with prysm.
 
 ### Building and testing Prysm with Bazel
