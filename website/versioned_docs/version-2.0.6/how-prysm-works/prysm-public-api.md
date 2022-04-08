@@ -31,49 +31,6 @@ http://127.0.0.1:3500/eth/v1alpha1/beacon/chainhead
 
 By default the beacon node runs with all available set of APIs enabled. You might want to disable one or more APIs, for example for security reasons. The `--http-modules` flags allows fine-grained control over which APIs are available on your node.
 
-## Contributing
-
-Thanks for wanting to contribute to our Ethereum consensus API! Go and Java libraries may be generated from Prysm using [Bazel](https://bazel.build), making it easy to make changes to the schemas needed and generate Go files or Java packages from them. Here's what you need to get started:
-
-### Dependencies
-
-- A modern, UNIX operating system
-- The latest release of [Bazel](https://docs.bazel.build/versions/master/install.html) installed
-- The `cmake` package installed
-- The `git` package installed
-
-### Making API Schema Changes
-
-Say you want to add a new endpoint to the `BeaconChain` gRPC service in our API schema to retrieve orphaned blocks. Keep in mind making strict changes to the API schema can often times be difficult without a significant reason as this API is used by many different developers building on Ethereum consensus. If you are confident in your desired changes, you can proceed by modifying the protobuf schema:
-
-```go
-service BeaconChain {
-    // Retrieve orphaned blocks from the Ethereum consensus chain.
-    rpc GetOrphanedBlocks(OrphanedBlocksRequest) returns (OrphanedBlocksResponse) {
-        option (google.api.http) = {
-            get: "/eth/v1alpha1/beacon/blocks/orphaned"
-        };
-    }
-    ...
-}
-
-message OrphanedBlocksRequest {
-    uint64 slot = 1;
-}
-
-message OrphanedBlocksResponse {
-    repeated BeaconBlock blocks = 1;
-}
-```
-
-After making your changes, you can regenerate the Go libraries from the schema by running:
-
-```bash
-$ ./hack/update-go-pbs.sh
-```
-
-Then, open a pull request with your changes on https://github.com/prysmaticlabs/prysm. Next, you'll be ready to implement your new changes in Prysm itself.
-
 ## RESTful endpoints \(gRPC Transcoding\)
 
 All of the gRPC services should define JSON over HTTP endpoints by specifying [HTTPRules](https://github.com/googleapis/googleapis/blob/master/google/api/http.proto). Developers may choose to bundle a REST service of gRPC with their client implementation binaries, or alternatively, they may use a JSON encoding proxy such as [Envoy Proxy](https://www.envoyproxy.io/), [grpc-gateway](https://github.com/grpc-ecosystem/grpc-gateway), etc.
