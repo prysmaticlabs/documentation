@@ -71,7 +71,7 @@ Here we define our `ExampleService` interface and one function definition. It wi
 
 ## Step 3: Generate gRPC code
 
-So far we only have protocol buffer definitions for a service and for messages, but we don't have any Go code to back up these definitions. Generating everything we need is very easy. The only thing that we have to do is to run one script. Before we do that though we need to update the `BUILD.bazel` file next to our new proto files. Open the bazel file and add the following items to the `srcs` array of the `proto_library` rule:
+So far we only have protocol buffer definitions for a service and for messages, but we don't have any Go code to back up these definitions. Generating everything we need is very easy. The only thing that we have to do is to run one script. Before we do that, though, we need to update the `BUILD.bazel` file next to our new proto files. Open the bazel file and add the following items to the `srcs` array of the `proto_library` rule:
 
 ```
 "example_messages.proto",
@@ -97,7 +97,7 @@ proto/prysm/v1alpha1/example_service.pb.gw.go
 
 ## Step 4: Implement the generated interface
 
-Files generated in Step 3 provide all necessary building blocks to write a client-side or server-side gRPC functions. In our case the interfaces to implement contain only one function, `ExampleFunction`. For example, the server-side interface looks as follows:
+Files generated in Step 3 provide all necessary building blocks to write client-side or server-side gRPC functions. In our case the interfaces to implement contain only one function, `ExampleFunction`. For example, the server-side interface looks as follows:
 
 ```
 type ExampleServiceServer interface {
