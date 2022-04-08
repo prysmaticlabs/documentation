@@ -215,7 +215,12 @@ The first thing that has to be done for every endpoint is to add its path to the
 return []string{
     // all other endpoints
     "/eth/v1/beacon/random/{block_id}",
-}apimiddleware
+}
+```
+
+Once we have our path registered, we need to tell our factory what `Endpoint` to return once we hit this path in our proxy middleware. We add a new `case` statement at the bottom of the factory's `Create` method.
+
+```
 case "/eth/v1/beacon/random/{block_id}":
 ```
 
