@@ -11,7 +11,6 @@ Since Day 1 of the project Prysm has been using [gRPC](https://grpc.io/) as the 
 
 As time went on, users started asking if it would be possible to have a JSON-over-HTTP API, which users could query for information about the beacon node, the network state etc. Fortunately it is easy to expose HTTP endpoints for gRPC methods using the [grpc-gateway library](https://github.com/grpc-ecosystem/grpc-gateway). This gave birth to a Prysm-specific set of APIs, which we will call the Prysm API.
 
-
 At some point Ethereum researchers, in cooperation with client developer, decided it would be a good idea to have a standard set of HTTP APIs across the whole network. This led to the [official Beacon API specification](https://ethereum.github.io/beacon-APIs/), which we will call the Beacon API.
 
 ## Part 1: Extending protocol buffers and gRPC
