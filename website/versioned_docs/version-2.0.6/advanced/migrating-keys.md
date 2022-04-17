@@ -1,7 +1,7 @@
 ---
 id: migrating-keys
-title: Migrating validator keys between computers
-sidebar_label: Migrating between computers
+title: Migrating validator keys between computers or to a new client
+sidebar_label: Migrating computers or clients
 ---
 
 This document provides guidance on migrating Prysm validator keys from one host system to another whilst minimising the risk of slashing.  
@@ -66,7 +66,7 @@ prysm.sh validator slashing-protection-history export --datadir=/path/to/your/wa
 **Using Docker**
 
 ```sh
-docker run -it -v /path/to/outputdir:/output -v /path/to/wallet:/wallet gcr.io/prysmaticlabs/prysm/validator:stable -- slashing-protection export --datadir=/wallet --slashing-protection-export-dir=/output
+docker run -it -v /path/to/outputdir:/output -v /path/to/wallet:/wallet gcr.io/prysmaticlabs/prysm/validator:stable -- slashing-protection-history export --datadir=/wallet --slashing-protection-export-dir=/output
 ```
 
 **Using Bazel**
@@ -188,7 +188,7 @@ You can backup validator accounts from your wallet using the following command:
 ```sh
 prysm.bat validator accounts backup
 ```
-You will now be promted for the wallet password. Once entered, you will be guided through the backup process where you will able to select individual or all accounts to backup and the location where the backup file is created. You will also be prompted for a **"password"** for the backup file, **it is important to keep a note of this for use during the import process**. 
+You will now be prompted for the wallet password. Once entered, you will be guided through the backup process where you will able to select individual or all accounts to backup and the location where the backup file is created. You will also be prompted for a **"password"** for the backup file, **it is important to keep a note of this for use during the import process**. 
 
 You can also run the accounts backup command non-interactively by using the following command line flags, which are also viewable by appending --help to the command line listed above:
 
@@ -269,7 +269,7 @@ prysm.bat validator slashing-protection-history import --datadir=\path\to\your\w
 **Using Docker**
 
 ```sh
-docker run -it -v \path\to\desiredimportfile.json:/import/desiredimportfile.json -v \path\to\wallet:/wallet gcr.io/prysmaticlabs/prysm/validator:stable -- slashing-protection import --datadir=/wallet --slashing-protection-json-file=/import/desiredimportfile.json
+docker run -it -v \path\to\desiredimportfile.json:/import/desiredimportfile.json -v \path\to\wallet:/wallet gcr.io/prysmaticlabs/prysm/validator:stable -- slashing-protection-history import --datadir=/wallet --slashing-protection-json-file=/import/desiredimportfile.json
 ```
 
 </TabItem>
@@ -348,3 +348,147 @@ Once complete, verify the account removal using the validator accounts list comm
 :::danger Good Practice
 In order to minimise slashing risk, it is recommended that the migrated validator is not started until at least 1 epoch following the last action taken by the original validator. Epoch status can be monitored on multipe websites, however, typically a new epoch is created approximatley every 6.5 minutes, waiting 7.5 minutes after stopping the original validator should significantly reduce the risk of slashing.  
 :::
+
+
+## Guidelines on Switching Between Ethereum Client Software
+
+This portion of the document will provide guidance on switching between Prysm and other consensus clients, such as Teku, Lighthouse, or Nimbus. These steps will be similar to the above steps in Migrating Computers with some key differences. A portion of this guide will be redundant to areas covered elsewhere in the documentation and will link to those places where it is relevant. 
+
+Regarding why one may wish to switch to a different client, see our team's note on the importance of client diversity [here](https://medium.com/prysmatic-labs/prysmatic-labs-statement-on-client-diversity-c0e3c2f05671).
+
+:::danger Important Note
+As there is a risk of slashing when switching clients, it is important to ensure the following key points are understood and followed: 
+
+1.	Never run more than a single validator process with the same keys loaded
+2.	Maintain and utilize slashing protection
+3.	Accept downtime as part of a successful migration
+:::
+
+Please refer to the [above section](https://docs.prylabs.network/docs/advanced/migrating-keys#understanding-slashing) regarding the importance of mitigating slashing risk. 
+
+### Step 1:   Sync the beacon node
+
+Regardless of which client you are switching to, the first step of the process will be to sync the beacon node. This may take some time to complete. Some clients offer a feature known as "checkpoint sync" which allows you to sync a node within a few minutes. Without this, the process may take several hours to a few days.
+
+Installation documentation links for each client can be found below:
+
+Prysm: https://nimbus.guide/quick-start.html  
+Teku: https://docs.teku.consensys.net/en/latest/HowTo/Get-Started/Installation-Options/Install-Binaries/    
+Nimbus: https://nimbus.guide/quick-start.html  
+Lighthouse: https://lighthouse-book.sigmaprime.io/installation.html  
+Lodestar: https://chainsafe.github.io/lodestar/installation/  
+
+### Step 2:   Stop and Disable Prysm
+
+Ensuring you stop and disable Prysm is critical to avoiding slashing events before proceeding further. 
+
+Disabling Prysm prevents it from automatically starting up again after a reboot. 
+
+Remove Prysm's validator keys as an added protection by following [these](http://localhost:3000/docs/advanced/migrating-keys#step-5--verification-and-restarting-the-validator-client) instructions above.  
+
+### Step 3:   Export slashing protection history
+
+Ensure that you stop Prysm before exporting slashing protection in order to capture all validator actions. 
+
+We have a section dedicated to exporting and importing slashing protection history [here.](https://docs.prylabs.network/docs/wallet/slashing-protection) Follow the steps regarding exporting slashing protection history. 
+
+### Step 4:   Update port forwarding
+
+This step is not required for nodes which are running on a virtual public cloud, but keep in mind - nodes will be required to run a an execution client locally post merge!  
+
+By default, Prysm uses TCP/13000 and UDP/12000. Remove those two rules and replace them with the appropriate port forwards for the client you are switching to. The process will be very similar to the steps laid out [here.](https://docs.prylabs.network/docs/prysm-usage/p2p-host-ip#port-forwarding) 
+
+Teku, Nimbus, and Lighthouse all use port 9000 for both TCP and UDP. 
+
+### Step 5:   Import Validator Keys
+
+To minimise slashing risk, wait until at least 1 full epoch has elapsed between stopping prysm and importing your validator keys, approximately 6.5 minutes, before proceeding. The inactivity leak cost is negligible compared to the cost of getting slashed.  
+
+Once that amount of time has passed, import your validator keys into the respective validator client you wish to run.  
+ 
+<Tabs
+  groupId="importing keys"
+  defaultValue="nim"
+  values={[
+    {label: 'Nimbus', value: 'nim'},
+    {label: 'Lighthouse', value: 'lit'},
+    {label: 'Teku', value: 'tek'},
+    {label: 'Lodestar', value: 'lod'},
+  ]
+}>
+
+
+
+<TabItem value="nim">
+
+https://nimbus.guide/migration.html#step-3---import-your-validator-keys-into-nimbus
+
+</TabItem>
+
+<TabItem value="lit">
+
+https://lighthouse-book.sigmaprime.io/validator-import-launchpad.html#1-run-the-lighthouse-account-validator-import-command
+
+</TabItem>
+
+<TabItem value="tek">
+
+https://docs.teku.consensys.net/en/latest/HowTo/Get-Started/Connect/Connect-To-Mainnet/#run-the-validator-and-beacon-node-as-a-single-process
+
+</TabItem>
+
+<TabItem value="lod">
+
+https://chainsafe.github.io/lodestar/usage/key-management/#import-a-validator-keystore-from-deposit-launch-pad
+
+</TabItem>
+</Tabs>
+
+### Step 6:   Import Slashing Protection History
+
+Follow your new clients' instructions regarding importing slashing protection history. 
+
+<Tabs
+  groupId="importing slashing protection"
+  defaultValue="nim"
+  values={[
+    {label: 'Nimbus', value: 'nim'},
+    {label: 'Lighthouse', value: 'lit'},
+    {label: 'Teku', value: 'tek'},
+    {label: 'Lodestar', value: 'lod'},
+  ]
+}>
+
+
+
+<TabItem value="nim">
+
+https://nimbus.guide/migration.html?highlight=import%20slashing#step-4---import-your-slashing-protection-history
+
+</TabItem>
+
+<TabItem value="lit">
+
+https://lighthouse-book.sigmaprime.io/slashing-protection.html?highlight=import#import-and-export
+
+</TabItem>
+
+<TabItem value="tek">
+
+https://docs.teku.consensys.net/en/stable/HowTo/Prevent-Slashing/
+
+</TabItem>
+
+<TabItem value="lod">
+
+https://chainsafe.github.io/lodestar/reference/cli/#account-validator-slashing-protection
+
+</TabItem>
+</Tabs>
+
+
+### Step 7:   Start the New Validator
+
+Ensure your beacon node is fully synced with the network by checking your clients logs prior to starting your validator. Once it is fully synced, start the validator.  
+
+Search a block explorer like https://beaconcha.in/ with your validator's public key to confirm that your validator is now active!

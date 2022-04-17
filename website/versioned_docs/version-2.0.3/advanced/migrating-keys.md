@@ -66,7 +66,7 @@ prysm.sh validator slashing-protection-history export --datadir=/path/to/your/wa
 **Using Docker**
 
 ```sh
-docker run -it -v /path/to/outputdir:/output -v /path/to/wallet:/wallet gcr.io/prysmaticlabs/prysm/validator:stable -- slashing-protection export --datadir=/wallet --slashing-protection-export-dir=/output
+docker run -it -v /path/to/outputdir:/output -v /path/to/wallet:/wallet gcr.io/prysmaticlabs/prysm/validator:stable -- slashing-protection-history export --datadir=/wallet --slashing-protection-export-dir=/output
 ```
 
 **Using Bazel**
@@ -269,7 +269,7 @@ prysm.bat validator slashing-protection-history import --datadir=\path\to\your\w
 **Using Docker**
 
 ```sh
-docker run -it -v \path\to\desiredimportfile.json:/import/desiredimportfile.json -v \path\to\wallet:/wallet gcr.io/prysmaticlabs/prysm/validator:stable -- slashing-protection import --datadir=/wallet --slashing-protection-json-file=/import/desiredimportfile.json
+docker run -it -v \path\to\desiredimportfile.json:/import/desiredimportfile.json -v \path\to\wallet:/wallet gcr.io/prysmaticlabs/prysm/validator:stable -- slashing-protection-history import --datadir=/wallet --slashing-protection-json-file=/import/desiredimportfile.json
 ```
 
 </TabItem>
@@ -350,11 +350,11 @@ In order to minimise slashing risk, it is recommended that the migrated validato
 :::
 
 
-## Switching Clients
+## Guidelines on Switching Between Ethereum Client Software
 
-This portion of the document will provide guidance on switching clients. These steps will be similar to the above steps in Migrating Computers with some key differences. A portion of this guide will be redundant to areas covered elsewhere in the documentation and will link to those places where it is relevant. 
+This portion of the document will provide guidance on switching between Prysm and other consensus clients, such as Teku, Lighthouse, or Nimbus. These steps will be similar to the above steps in Migrating Computers with some key differences. A portion of this guide will be redundant to areas covered elsewhere in the documentation and will link to those places where it is relevant. 
 
-Please see Pryms's note on the importance of client diversity [here.](https://medium.com/prysmatic-labs/prysmatic-labs-statement-on-client-diversity-c0e3c2f05671) 
+Regarding why one may wish to switch to a different client, see our team's note on the importance of client diversity [here](https://medium.com/prysmatic-labs/prysmatic-labs-statement-on-client-diversity-c0e3c2f05671).
 
 :::danger Important Note
 As there is a risk of slashing when switching clients, it is important to ensure the following key points are understood and followed: 
@@ -368,9 +368,9 @@ Please refer to the [above section](https://docs.prylabs.network/docs/advanced/m
 
 ### Step 1:   Sync the beacon node
 
-Regardless of which client you are switching to, the first step of the process will be to sync the beacon node. This may take days to complete. 
+Regardless of which client you are switching to, the first step of the process will be to sync the beacon node. This may take some time to complete. Some clients offer a feature known as "checkpoint sync" which allows you to sync a node within a few minutes. Without this, the process may take several hours to a few days.
 
-An aggregation of installation links for each client:
+Installation documentation links for each client can be found below:
 
 Prysm: https://nimbus.guide/quick-start.html  
 Teku: https://docs.teku.consensys.net/en/latest/HowTo/Get-Started/Installation-Options/Install-Binaries/    
