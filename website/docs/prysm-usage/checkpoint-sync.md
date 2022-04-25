@@ -1,3 +1,9 @@
+---
+id: checkpoint-sync
+title: Checkpoint Sync
+sidebar_label: Checkpoint Sync
+---
+
 # Checkpoint Sync
 
 Prysm provides the ability to sync from a finalized checkpoint, as an alternative to replaying all history starting from Genesis. Checkpoint Sync is significantly faster than Genesis Sync, and is considered more secure thanks to the protections against long-range attacks afforded by [Weak Subjectivity](https://blog.ethereum.org/2014/11/25/proof-stake-learned-love-weak-subjectivity/).

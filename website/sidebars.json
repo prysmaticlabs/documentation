@@ -45,6 +45,10 @@
 				},
 				{
 					"type": "doc",
+					"id": "prysm-usage/checkpoint-sync"
+				},
+				{
+					"type": "doc",
 					"id": "prysm-usage/graffiti-file"
 				},
 				{
