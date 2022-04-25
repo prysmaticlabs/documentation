@@ -166,7 +166,12 @@
 				{
 					"type": "doc",
 					"id": "how-prysm-works/prysm-public-api"
+				},
+				{
+					"type": "doc",
+					"id": "how-prysm-works/keymanager-api"
 				}
+
 			]
 		},
 		{
