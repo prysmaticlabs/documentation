@@ -45,6 +45,10 @@
 				},
 				{
 					"type": "doc",
+					"id": "prysm-usage/checkpoint-sync"
+				},
+				{
+					"type": "doc",
 					"id": "prysm-usage/graffiti-file"
 				},
 				{
@@ -166,7 +170,12 @@
 				{
 					"type": "doc",
 					"id": "how-prysm-works/prysm-public-api"
+				},
+				{
+					"type": "doc",
+					"id": "how-prysm-works/keymanager-api"
 				}
+
 			]
 		},
 		{
