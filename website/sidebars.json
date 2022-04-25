@@ -74,6 +74,10 @@
 				{
 					"type": "doc",
 					"id": "prysm-usage/client-stats"
+				},
+				{
+					"type": "doc",
+					"id": "prysm-usage/fee-recipient"
 				}
 			]
 		},
