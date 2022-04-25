@@ -137,6 +137,10 @@
 				},
 				{
 					"type": "doc",
+					"id": "wallet/web3signer"
+				},
+				{
+					"type": "doc",
 					"id": "wallet/remote"
 				},
 				{
