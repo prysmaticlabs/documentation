@@ -487,7 +487,7 @@ https://chainsafe.github.io/lodestar/reference/cli/#account-validator-slashing-p
 </Tabs>
 
 
-### Step 7:   Start the New Validator
+### Step 7: Start the New Validator
 
 Ensure your beacon node is fully synced with the network by checking your clients logs prior to starting your validator. Once it is fully synced, start the validator.  
 
