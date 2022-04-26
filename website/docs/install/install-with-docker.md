@@ -110,7 +110,7 @@ To delete a corrupted container, issue the following command:
 docker rm beacon-node
 ```
 
-To recreate a deleted container and refresh the chain database, issue the start command with an additional `--clear-db` parameter where <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`:
+To recreate a deleted container and refresh the chain database, issue the start command with an additional `--clear-db` parameter where <YOUR_ETH_EXECUTION_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`:
 
 ```text
 docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node \
@@ -119,7 +119,7 @@ docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/u
   --clear-db \
   --rpc-host=0.0.0.0 \
   --monitoring-host=0.0.0.0 \
-  --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
+  --http-web3provider=<YOUR_ETH_EXECUTION_NODE_ENDPOINT>
 ```
 </TabItem>
 <TabItem value="win">
@@ -163,10 +163,10 @@ To delete a corrupted container, issue the following command:
 docker rm beacon-node
 ```
 
-To recreate a deleted container and refresh the chain database, issue the start command with an additional `--clear-db` parameter where <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`:
+To recreate a deleted container and refresh the chain database, issue the start command with an additional `--clear-db` parameter where <YOUR_ETH_EXECUTION_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`:
 
 ```text
-docker run -it -v %LOCALAPPDATA%\Eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node gcr.io/prysmaticlabs/prysm/beacon-chain:latest --datadir=/data --clear-db --monitoring-host=0.0.0.0 --rpc-host=0.0.0.0 --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
+docker run -it -v %LOCALAPPDATA%\Eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node gcr.io/prysmaticlabs/prysm/beacon-chain:latest --datadir=/data --clear-db --monitoring-host=0.0.0.0 --rpc-host=0.0.0.0 --http-web3provider=<YOUR_ETH_EXECUTION_NODE_ENDPOINT>
 ```
 
 </TabItem>
@@ -207,7 +207,7 @@ To delete a corrupted container, issue the following command:
 docker rm beacon-node
 ```
 
-To recreate a deleted container and refresh the chain database, issue the start command with an additional `--clear-db` parameter where <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`:
+To recreate a deleted container and refresh the chain database, issue the start command with an additional `--clear-db` parameter where <YOUR_ETH_EXECUTION_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`:
 
 ```text
 docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node \
@@ -216,7 +216,7 @@ docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/u
   --clear-db \
   --rpc-host=0.0.0.0 \
   --monitoring-host=0.0.0.0 \
-  --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
+  --http-web3provider=<YOUR_ETH_EXECUTION_NODE_ENDPOINT>
 ```
 
 </TabItem>
@@ -237,9 +237,9 @@ Mainnet is enabled by **default** in all Prysm commands. If you want to use the 
 Do not use `--prater` if you are using real funds and staking your ETH on mainnet. Testnets use testnet ETH to run the network and do not represent real value.
 :::
 
-### Step 1: Set up an Eth1 Endpoint
+### Step 1: Set up an execution node endpoint
 
-First, let's run a beacon node connected to the main eth2 network. To run a beacon node, you will need access to an eth1 node. We have dedicated instructions for this [here](/docs/prysm-usage/setup-eth1).
+First, let's run a beacon node connected to the main Ethereum network. To run a beacon node, you will need access to an execution client software. We have dedicated instructions for this [here](/docs/execution-node/configuring-for-prysm).
 
 ### Step 2: Sync your beacon node
 
@@ -254,7 +254,7 @@ First, let's run a beacon node connected to the main eth2 network. To run a beac
 }>
 <TabItem value="lin">
 
-Note: <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`.
+Note: <YOUR_ETH_EXECUTION_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`.
 
 **Mainnet**
 
@@ -264,7 +264,7 @@ docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/u
   --datadir=/data \
   --rpc-host=0.0.0.0 \
   --monitoring-host=0.0.0.0 \
-  --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
+  --http-web3provider=<YOUR_ETH_EXECUTION_NODE_ENDPOINT>
 ```
 
 **Prater**
@@ -277,7 +277,7 @@ docker run -it -v $HOME/.eth2:/data -v /path/to/genesis.ssz:/genesis/genesis.ssz
   --datadir=/data \
   --rpc-host=0.0.0.0 \
   --monitoring-host=0.0.0.0 \
-  --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT> \
+  --http-web3provider=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> \
   --genesis-state=/genesis/genesis.ssz \
   --prater
 ```
@@ -285,7 +285,7 @@ docker run -it -v $HOME/.eth2:/data -v /path/to/genesis.ssz:/genesis/genesis.ssz
 </TabItem>
 <TabItem value="win">
 
-Note: <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`.
+Note: <YOUR_ETH_EXECUTION_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`.
 
 1. You will need to share the local drive you wish to mount to to container \(e.g. C:\).
    1. Enter Docker settings \(right click the tray icon\)
@@ -293,12 +293,12 @@ Note: <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `ht
    3. Select a drive to share
    4. Click 'Apply'
 2. You will next need to create a directory named `/prysm/` within your selected shared Drive. This folder will be used as a local data directory for [beacon node](/docs/how-prysm-works/beacon-node) chain data as well as account and keystore information required by the validator. Docker **will not** create this directory if it does not exist already. For the purposes of these instructions, it is assumed that `C:` is your prior-selected shared Drive.
-3. To run the beacon node, issue the following command where <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`:
+3. To run the beacon node, issue the following command where <YOUR_ETH_EXECUTION_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`:
 
 **Mainnet**
 
 ```text
-docker run -it -v %LOCALAPPDATA%\Eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp gcr.io/prysmaticlabs/prysm/beacon-chain:stable --datadir=/data --rpc-host=0.0.0.0 --monitoring-host=0.0.0.0 --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
+docker run -it -v %LOCALAPPDATA%\Eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp gcr.io/prysmaticlabs/prysm/beacon-chain:stable --datadir=/data --rpc-host=0.0.0.0 --monitoring-host=0.0.0.0 --http-web3provider=<YOUR_ETH_EXECUTION_NODE_ENDPOINT>
 ```
 
 This will sync up the beacon node with the latest cannonical head block in the network. The Docker `-d` flag can be appended before the `-v` flag to launch the process in a detached terminal window.
@@ -309,13 +309,13 @@ Download the genesis state from [github.com/eth-clients/eth2-networks/raw/master
 
 
 ```text
-docker run -it -v %LOCALAPPDATA%\Eth2:/data -v \path\to\genesis.ssz:/genesis/genesis.ssz -p 4000:4000 -p 13000:13000 -p 12000:12000/udp gcr.io/prysmaticlabs/prysm/beacon-chain:stable --datadir=/data --rpc-host=0.0.0.0 --monitoring-host=0.0.0.0 --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT> --genesis-state=/genesis/genesis.ssz --prater
+docker run -it -v %LOCALAPPDATA%\Eth2:/data -v \path\to\genesis.ssz:/genesis/genesis.ssz -p 4000:4000 -p 13000:13000 -p 12000:12000/udp gcr.io/prysmaticlabs/prysm/beacon-chain:stable --datadir=/data --rpc-host=0.0.0.0 --monitoring-host=0.0.0.0 --http-web3provider=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> --genesis-state=/genesis/genesis.ssz --prater
 ```
 
 </TabItem>
 <TabItem value="mac">
 
-Note: <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`.
+Note: <YOUR_ETH_EXECUTION_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`.
 
 **Mainnet**
 
@@ -325,7 +325,7 @@ docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/u
   --datadir=/data \
   --rpc-host=0.0.0.0 \
   --monitoring-host=0.0.0.0 \
-  --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
+  --http-web3provider=<YOUR_ETH_EXECUTION_NODE_ENDPOINT>
 ```
 
 **Prater**
@@ -338,7 +338,7 @@ docker run -it -v $HOME/.eth2:/data -v /path/to/genesis.ssz:/genesis/genesis.ssz
   --datadir=/data \
   --rpc-host=0.0.0.0 \
   --monitoring-host=0.0.0.0 \
-  --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT> \
+  --http-web3provider=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> \
   --genesis-state=/genesis/genesis.ssz \
   --prater
 ```

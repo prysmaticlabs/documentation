@@ -97,18 +97,18 @@ Mainnet is enabled by **default** in all Prysm commands. If you want to use the 
 Do not use `--prater` if you are using real funds and staking your ETH on mainnet. Testnets use testnet ETH to run the network and do not represent real value.
 :::
 
-### Step 1: Set up an Eth1 Endpoint
+### Step 1: Set up an execution node endpoint
 
-First, let's run a beacon node connected to the main eth2 network. To run a beacon node, you will need access to an eth1 node. We have dedicated instructions for this [here](/docs/prysm-usage/setup-eth1).
+First, let's run a beacon node connected to the main Ethereum network. To run a beacon node, you will need access to an execution client software. We have dedicated instructions for this [here](/docs/execution-node/configuring-for-prysm).
 
 ### Step 2: Sync your beacon node
 
-Note: <YOUR_ETH1_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`.
+Note: <YOUR_ETH_EXECUTION_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`.
 
 **Mainnet**
 
 ```text
-bazel run //beacon-chain --config=release -- --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT>
+bazel run //beacon-chain --config=release -- --http-web3provider=<YOUR_ETH_EXECUTION_NODE_ENDPOINT>
 ```
 
 **Prater**
@@ -116,7 +116,7 @@ bazel run //beacon-chain --config=release -- --http-web3provider=<YOUR_ETH1_NODE
 Download the genesis state from [github.com/eth2-clients/eth2-networks/raw/master/shared/prater/genesis.ssz](https://github.com/eth2-clients/eth2-networks/raw/master/shared/prater/genesis.ssz) to a local file, then run
 
 ```text
-bazel run //beacon-chain --config=release -- --http-web3provider=<YOUR_ETH1_NODE_ENDPOINT> --prater --genesis-state=/path/to/genesis.ssz
+bazel run //beacon-chain --config=release -- --http-web3provider=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> --prater --genesis-state=/path/to/genesis.ssz
 ```
 
 ## Running a Validator
