@@ -22,7 +22,7 @@ Users are unable to set a default fee recipient through the validator client due
 
 :::warning Incorrectly configured Fee Recipient settings could lead to a loss of earnings.
 
-To ensure that your Fee Recipient settings are correctly configured, ___________________.
+To ensure that your Fee Recipient settings are correctly configured, please use the relevant flags listed below on the validator client and beacon node.
 
 If you don't configure your Fee Recipient settings, the Fee Recipient address will default to the burn address (`0x000....0`). Be sure to specify a valid Ethereum wallet address (that you own) as the fee recipient. 
 
