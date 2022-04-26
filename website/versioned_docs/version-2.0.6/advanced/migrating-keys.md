@@ -378,7 +378,7 @@ Nimbus: https://nimbus.guide/quick-start.html
 Lighthouse: https://lighthouse-book.sigmaprime.io/installation.html  
 Lodestar: https://chainsafe.github.io/lodestar/installation/  
 
-### Step 2:   Stop and Disable Prysm
+### Step 2: Stop and Disable Prysm
 
 Ensuring you stop and disable Prysm is critical to avoiding slashing events before proceeding further. 
 
