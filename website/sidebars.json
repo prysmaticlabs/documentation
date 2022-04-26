@@ -37,10 +37,6 @@
 				},
 				{
 					"type": "doc",
-					"id": "prysm-usage/setup-eth1"
-				},
-				{
-					"type": "doc",
 					"id": "prysm-usage/staying-up-to-date"
 				},
 				{
@@ -82,6 +78,22 @@
 				{
 					"type": "doc",
 					"id": "prysm-usage/fee-recipient"
+				}
+			]
+		},
+		{
+			"type": "category",
+			"collapsed": true,
+			"collapsible": true,
+			"label": "Running an Execution Node",
+			"items": [
+				{
+					"type": "doc",
+					"id": "execution-node/configuring-for-prysm"
+				},
+				{
+					"type": "doc",
+					"id": "execution-node/authentication"
 				}
 			]
 		},
