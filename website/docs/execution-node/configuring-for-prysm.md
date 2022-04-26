@@ -29,7 +29,7 @@ You cannot use a third-party provider for your execution client once the [Ethere
 
 ## Running your own execution node
 
-An execution node is required in order to run Prysm after the Ethereum merge. We'll be giving an example of running a go-ethereum node on mainnet.
+An execution node is required in order to run Prysm after the Ethereum merge. We'll be giving an example of running a go-ethereum node on mainnet. 
 
 First, install go-ethereum [here](https://geth.ethereum.org/docs/).
 
@@ -45,7 +45,11 @@ Next, in a separate terminal window, you can run a Prysm beacon node according t
 * [Using Docker](/docs/install/install-with-docker)
 * [Building from source with Bazel (Advanced)](/docs/install/install-with-bazel)
 
-then connect to your eth1 node with:
+:::tip
+By default, Prysm will try to connect to an execution node via http at `http://localhost:8545` if an endpoint is not configured via command-line flags. For HTTP connections, execution nodes also require **authentication**. You can find instructions on setting up authentication [here](/docs/execution-node/authentication).
+:::
+
+then connect to your execution node with:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
