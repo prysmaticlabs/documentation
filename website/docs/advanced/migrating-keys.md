@@ -444,7 +444,7 @@ https://chainsafe.github.io/lodestar/usage/key-management/#import-a-validator-ke
 </TabItem>
 </Tabs>
 
-### Step 6:   Import Slashing Protection History
+### Step 6: Import Slashing Protection History
 
 Follow your new clients' instructions regarding importing slashing protection history. 
 
