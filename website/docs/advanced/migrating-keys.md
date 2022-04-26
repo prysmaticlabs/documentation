@@ -392,7 +392,7 @@ Ensure that you stop Prysm before exporting slashing protection in order to capt
 
 We have a section dedicated to exporting and importing slashing protection history [here.](https://docs.prylabs.network/docs/wallet/slashing-protection) Follow the steps regarding exporting slashing protection history. 
 
-### Step 4:   Update port forwarding
+### Step 4: Update port forwarding
 
 This step is not required for nodes which are running on a virtual public cloud, but keep in mind - nodes will be required to run a an execution client locally post merge!  
 
