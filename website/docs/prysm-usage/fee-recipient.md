@@ -24,7 +24,7 @@ Setting a default fee recipient through the validator client is currently not wo
 
 To ensure that your Fee Recipient settings are correctly configured, ___________________.
 
-Fee Recipient settings will default to the burn address ( 0x000....0 ) so it is important to set it to a hex address where you can be paid this. 
+If you don't configure your Fee Recipient settings, the Fee Recipient address will default to the burn address (`0x000....0`). Be sure to specify a valid Ethereum wallet address (that you own) as the fee recipient. 
 
 Please also make sure the address is yours when it is set, otherwise it will be sent to someone else's address.
 :::
