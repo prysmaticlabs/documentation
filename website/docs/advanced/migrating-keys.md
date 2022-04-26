@@ -400,7 +400,7 @@ By default, Prysm uses TCP/13000 and UDP/12000. Remove those two rules and repla
 
 Teku, Nimbus, and Lighthouse all use port 9000 for both TCP and UDP. 
 
-### Step 5:   Import Validator Keys
+### Step 5: Import Validator Keys
 
 To minimise slashing risk, wait until at least 1 full epoch has elapsed between stopping prysm and importing your validator keys, approximately 6.5 minutes, before proceeding. The inactivity leak cost is negligible compared to the cost of getting slashed.  
 
