@@ -26,7 +26,6 @@ To ensure that your Fee Recipient settings are correctly configured, ___________
 
 If you don't configure your Fee Recipient settings, the Fee Recipient address will default to the burn address (`0x000....0`). Be sure to specify a valid Ethereum wallet address (that you own) as the fee recipient. 
 
-Please also make sure the address is yours when it is set, otherwise it will be sent to someone else's address.
 :::
 
 ## New Flags
