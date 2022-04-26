@@ -8,6 +8,8 @@ sidebar_label: fee recipient
 
 Validators don't currently receive any portion of the transaction fees paid by end-users when proposing new blocks.
 
+Fee Recipient is the feature that allows users receive gas fees when proposing blocks.
+
 **Fee Recipient** is a new feature that addresses this. With Fee Recipient configured, validators will receive a portion of transaction fees when proposing blocks. These gas fees are sometimes referred to as inclusion rewards.
 
 This document shows you how to configure Fee Recipient on your validator client instance. 
@@ -17,7 +19,7 @@ This feature will activate after [The Merge](https://ethereum.org/en/upgrades/me
 :::
 
 :::warning Known Release Bug
-Setting a default fee recipient through the validator client is currently not working in the upcoming branch a fix was created and merged into develop for the following release. please refer to [#10555](https://github.com/prysmaticlabs/prysm/pull/10555)
+Users are unable to set a default fee recipient through the validator client due to an implementation bug in release 2.0.7. This was fixed and merged into develop for the following release in pr [#10555](https://github.com/prysmaticlabs/prysm/pull/10555). Users can still set a default fee recipient through the beacon node if no fee recipient configurations are provided to the validator client.
 :::
 
 :::warning Incorrectly configured Fee Recipient settings could lead to a loss of earnings.
@@ -46,8 +48,14 @@ you can not use both the file and url flags at the same time.
 the validator client will send the fee recipient information at startup for all public keys that are active
 as well as when the public key becomes active. It does this by calling the beacon api `prepareBeaconProposer`
 
-### Fee Recipient Config File based on Teku Implementation
-JSON file for defining validator public key to eth address
+
+### Fee Recipient Config File 
+
+The following JSON file format will be used for defining validator public key to eth address.
+
+`fee-recipient-config-file` flag requires this json file provided through file path.
+`fee-recipient-config-url` flag requires this json format provided through url.
+
 This will allow you to map your validators to corresponding eth addresses or generally cover the remaining keys with a default.
 
 ```
