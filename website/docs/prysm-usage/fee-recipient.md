@@ -22,7 +22,7 @@ Setting a default fee recipient through the validator client is currently not wo
 
 :::warning Incorrectly configured Fee Recipient settings could lead to a loss of earnings.
 
-Protect and review your Fee Recipient settings.
+To ensure that your Fee Recipient settings are correctly configured, ___________________.
 
 Fee Recipient settings will default to the burn address ( 0x000....0 ) so it is important to set it to a hex address where you can be paid this. 
 
