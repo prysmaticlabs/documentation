@@ -366,7 +366,7 @@ As there is a risk of slashing when switching clients, it is important to ensure
 
 Please refer to the [above section](https://docs.prylabs.network/docs/advanced/migrating-keys#understanding-slashing) regarding the importance of mitigating slashing risk. 
 
-### Step 1:   Sync the beacon node
+### Step 1: Sync the beacon node
 
 Regardless of which client you are switching to, the first step of the process will be to sync the beacon node. This may take some time to complete. Some clients offer a feature known as "checkpoint sync" which allows you to sync a node within a few minutes. Without this, the process may take several hours to a few days.
 
@@ -378,7 +378,7 @@ Nimbus: https://nimbus.guide/quick-start.html
 Lighthouse: https://lighthouse-book.sigmaprime.io/installation.html  
 Lodestar: https://chainsafe.github.io/lodestar/installation/  
 
-### Step 2:   Stop and Disable Prysm
+### Step 2: Stop and Disable Prysm
 
 Ensuring you stop and disable Prysm is critical to avoiding slashing events before proceeding further. 
 
@@ -386,13 +386,13 @@ Disabling Prysm prevents it from automatically starting up again after a reboot.
 
 Remove Prysm's validator keys as an added protection by following [these](http://localhost:3000/docs/advanced/migrating-keys#step-5--verification-and-restarting-the-validator-client) instructions above.  
 
-### Step 3:   Export slashing protection history
+### Step 3: Export slashing protection history
 
 Ensure that you stop Prysm before exporting slashing protection in order to capture all validator actions. 
 
 We have a section dedicated to exporting and importing slashing protection history [here.](https://docs.prylabs.network/docs/wallet/slashing-protection) Follow the steps regarding exporting slashing protection history. 
 
-### Step 4:   Update port forwarding
+### Step 4: Update port forwarding
 
 This step is not required for nodes which are running on a virtual public cloud, but keep in mind - nodes will be required to run a an execution client locally post merge!  
 
@@ -400,7 +400,7 @@ By default, Prysm uses TCP/13000 and UDP/12000. Remove those two rules and repla
 
 Teku, Nimbus, and Lighthouse all use port 9000 for both TCP and UDP. 
 
-### Step 5:   Import Validator Keys
+### Step 5: Import Validator Keys
 
 To minimise slashing risk, wait until at least 1 full epoch has elapsed between stopping prysm and importing your validator keys, approximately 6.5 minutes, before proceeding. The inactivity leak cost is negligible compared to the cost of getting slashed.  
 
@@ -444,7 +444,7 @@ https://chainsafe.github.io/lodestar/usage/key-management/#import-a-validator-ke
 </TabItem>
 </Tabs>
 
-### Step 6:   Import Slashing Protection History
+### Step 6: Import Slashing Protection History
 
 Follow your new clients' instructions regarding importing slashing protection history. 
 
@@ -487,7 +487,7 @@ https://chainsafe.github.io/lodestar/reference/cli/#account-validator-slashing-p
 </Tabs>
 
 
-### Step 7:   Start the New Validator
+### Step 7: Start the New Validator
 
 Ensure your beacon node is fully synced with the network by checking your clients logs prior to starting your validator. Once it is fully synced, start the validator.  
 
