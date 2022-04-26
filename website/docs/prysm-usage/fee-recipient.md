@@ -1,7 +1,7 @@
 ---
 id: fee-recipient
-title: Fee Recipient
-sidebar_label: fee recipient
+title: Setting an Address for Receiving Transaction Fees
+sidebar_label: Setting an Address for Receiving Transaction Fees
 ---
 
 # Fee Recipient
@@ -40,13 +40,7 @@ The following configuration options are available:
 | `fee-recipient-config-file` | Sets the file location for the Fee Recipient JSON configuration.   Example: `--fee-recipient-config-file=./fee_recipient_config.json`                                                                                                                |
 | `fee-recipient-config-url`  | Sets a URL for a remote Fee Recipient JSON configuration.  Example: `--fee-recipient-config-url=http://example.com/api/getFeeRecipient`                                                                                                              |
 
-suggested fee recipient flag will override the configuration file.
-
-you can not use both the file and url flags at the same time.
-
-the validator client will send the fee recipient information at startup for all public keys that are active
-as well as when the public key becomes active. It does this by calling the beacon api `prepareBeaconProposer`
-
+**Note: suggested fee recipient flag will override the configuration file. Do not use these flags together, only use one of these flags to provide fee recipient information.**
 
 ### Fee Recipient Config File 
 
@@ -85,4 +79,5 @@ The following configuration options are available:
 The beacon node will cache fee recipient information locally to be persistent.
 
 ### No Flags
-by default Prysm uses the eth burn address (0x0000...) 
+If no fee recipient flags are provided Prysm uses the eth burn address by(0x0000...).
+**Note: this will result in validators receiving zero transaction fee rewards when proposing a block**
