@@ -386,7 +386,7 @@ Disabling Prysm prevents it from automatically starting up again after a reboot.
 
 Remove Prysm's validator keys as an added protection by following [these](http://localhost:3000/docs/advanced/migrating-keys#step-5--verification-and-restarting-the-validator-client) instructions above.  
 
-### Step 3:   Export slashing protection history
+### Step 3: Export slashing protection history
 
 Ensure that you stop Prysm before exporting slashing protection in order to capture all validator actions. 
 
