@@ -74,11 +74,8 @@
 				{
 					"type": "doc",
 					"id": "prysm-usage/client-stats"
-				},
-				{
-					"type": "doc",
-					"id": "prysm-usage/fee-recipient"
 				}
+				
 			]
 		},
 		{
@@ -94,6 +91,10 @@
 				{
 					"type": "doc",
 					"id": "execution-node/authentication"
+				},
+				{
+					"type": "doc",
+					"id": "execution-node/fee-recipient"
 				}
 			]
 		},
