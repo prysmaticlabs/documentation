@@ -8,10 +8,10 @@ sidebar_label: Setting Up a Node
 Running an execution node alongside Prysm will be **required** at the time of the Ethereum proof-of-stake transition
 :::
 
-Ethereum proof-of-stake is a massive upgrade to the Ethereum blockchain, which will start off as a proof of stake chain that runs in parallel to the current proof of work chain. In order to become a validator in Ethereum proof-of-stake, users have to do a one-way "burn" of their ETH into a smart contract on the proof of work chain. Ethereum beacon nodes will track the eth1 chain's logs to determine deposits and verify those deposits' data to onboard new, proof of stake validators.
+Ethereum proof-of-stake is a massive upgrade to the Ethereum blockchain, which will start off as a proof of stake chain that runs in parallel to the current proof of work chain. In order to become a validator in Ethereum proof-of-stake, users have to do a one-way "burn" of their ETH into a smart contract on the proof of work chain. The way the system works is through two pieces of software known as consensus and execution clients. Consensus clients are software, such as Prysm, that run proof-of-stake consensus. These clients communicate with execution clients, such as go-ethereum, which process smart contracts, transactions, and execute EVM code. **Both pieces of software are needed to run Ethereum**.
 
-As such, running a validator and a beacon node in Ethereum proof-of-stake entails also having a reliable connection to the eth1 chain. We recommend users to explore their own solutions such as those below:
-  
+The instructions below show information about which execution clients can be run with Prysm, and how to set one up yourself.
+
 ## Supported clients
 
 Prysm nodes can use any sort of Ethereum execution node as long as it supports reading smart contract logs. Users can choose either of the following execution clients.
