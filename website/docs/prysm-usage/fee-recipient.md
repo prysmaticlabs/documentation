@@ -8,7 +8,7 @@ sidebar_label: fee recipient
 
 Validators don't currently receive any portion of the transaction fees paid by end-users when proposing new blocks.
 
-**Fee Recipient** is a new feature that addresses this. With Fee Recipient configured, validators will receive a portion of transaction fees when proposing blocks.
+**Fee Recipient** is a feature that addresses this. With Fee Recipient configured, validators will receive a portion of transaction fees when proposing blocks.
 
 This document shows you how to configure Fee Recipient on your validator client instance. 
 
