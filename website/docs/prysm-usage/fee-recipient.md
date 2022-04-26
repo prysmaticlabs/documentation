@@ -13,7 +13,7 @@ Validators don't currently receive any portion of the transaction fees paid by e
 This document shows you how to configure Fee Recipient on your validator client instance. 
 
 :::tip Post-Merge
-This feature will only activate Post Bellatrix Fork. Currently stakers do not receice gas fees from proposing blocks.
+This feature will activate after [The Merge](https://ethereum.org/en/upgrades/merge/).
 :::
 
 :::warning Known Release Bug
