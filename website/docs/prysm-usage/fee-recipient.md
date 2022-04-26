@@ -8,9 +8,7 @@ sidebar_label: fee recipient
 
 Validators don't currently receive any portion of the transaction fees paid by end-users when proposing new blocks.
 
-Fee Recipient is the feature that allows users receive gas fees when proposing blocks.
-
-**Fee Recipient** is a new feature that addresses this. With Fee Recipient configured, validators will receive a portion of transaction fees when proposing blocks. These gas fees are sometimes referred to as inclusion rewards.
+**Fee Recipient** is a new feature that addresses this. With Fee Recipient configured, validators will receive a portion of transaction fees when proposing blocks.
 
 This document shows you how to configure Fee Recipient on your validator client instance. 
 
@@ -30,16 +28,17 @@ If you don't configure your Fee Recipient settings, the Fee Recipient address wi
 
 :::
 
-## New Flags
+## Configuring Fee Recipient on your validator client instance
 
+Fee Recipient is configured by either providing a Fee Recipient address, or the location of a JSON file that specifies your Fee Recipient address.
 
-## Validator Client
-- `suggested-fee-recipient` to set default eth address for ALL validators.
-( i.e. --suggested-fee-recipient=0x046Fb65722E6b0000012BFEBf6177F1D2e9758D9)
-- `fee-recipient-config-file` to set file location for fee recipient json. 
-( i.e. --fee-recipient-config-file=./fee_recipient_config.json)
-- `fee-recipient-config-url` to set URL for fee recipient json.
-( i.e. --fee-recipient-config-url=http://example.com/api/getFeeRecipient)
+The following configuration options are available:
+
+| Flag                        | Example                                                                                                                                                                                                                                              |   |   |   |
+|-----------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---|---|---|
+| `suggested-fee-recipient`   | Sets a default eth address for ALL validators.  Example: `--suggested-fee-recipient=0x046Fb65722E6b0000012BFEBf6177F1D2e9758D9`   Note: This setting overrides the two `config` options below. If you set this, the `config` options will be ignored |   |   |   |
+| `fee-recipient-config-file` | Sets the file location for the Fee Recipient JSON configuration.   Example: `--fee-recipient-config-file=./fee_recipient_config.json`                                                                                                                |   |   |   |
+| `fee-recipient-config-url`  | Sets a URL for a remote Fee Recipient JSON configuration.  Example: `--fee-recipient-config-url=http://example.com/api/getFeeRecipient`                                                                                                              |   |   |   |
 
 suggested fee recipient flag will override the configuration file.
 
@@ -75,11 +74,13 @@ This will allow you to map your validators to corresponding eth addresses or gen
 - `fee_recipient` is mandatory in each config
 
 
-## Beacon Node
-- `suggested-fee-recipient` to set default eth address from validator client cli 
-( i.e. --suggested-fee-recipient=0x046Fb65722E6b0000012BFEBf6177F1D2e9758D9)
+## Configuring Fee Recipient on your Beacon Node instance
+Fee Recipient is configured by either providing a Fee Recipient address. Note: this sets the fall back default fee recipient on the beacon node if the validator restarts without fee recipient flags set.
+The following configuration options are available:
 
-this sets the fall back default fee recipient on the beacon node if the validator restarts without fee recipient flags set
+| Flag                        | Example                                                                                                                                                                                                                                              |   |   |   |
+|-----------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---|---|---|
+| `suggested-fee-recipient`   | Sets a default eth address for ALL validators.  Example: `--suggested-fee-recipient=0x046Fb65722E6b0000012BFEBf6177F1D2e9758D9`  |   |   |   |
 
 The beacon node will cache fee recipient information locally to be persistent.
 
