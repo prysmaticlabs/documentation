@@ -20,7 +20,7 @@ This feature will activate after [The Merge](https://ethereum.org/en/upgrades/me
 Setting a default fee recipient through the validator client is currently not working in the upcoming branch a fix was created and merged into develop for the following release. please refer to [#10555](https://github.com/prysmaticlabs/prysm/pull/10555)
 :::
 
-:::warning Be aware of your Fee Recipient Settings!!
+:::warning Incorrectly configured Fee Recipient settings could lead to a loss of earnings.
 
 Protect and review your Fee Recipient settings.
 
