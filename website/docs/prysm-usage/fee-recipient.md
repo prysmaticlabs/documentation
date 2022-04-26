@@ -10,7 +10,7 @@ Validators don't currently receive any portion of the transaction fees paid by e
 
 **Fee Recipient** is a feature that addresses this. With Fee Recipient configured, validators will receive a portion of transaction fees when proposing blocks.
 
-This document shows you how to configure Fee Recipient on your validator client instance. 
+This document shows you how to configure a custom address to receive transaction fees using your Prysm validator client software. 
 
 :::tip Post-Merge
 This feature will activate after [The Merge](https://ethereum.org/en/upgrades/merge/).
