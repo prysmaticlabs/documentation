@@ -11,7 +11,7 @@ Even the best unit tests won't prevent bugs from creeping into the system. They 
 The below command will run E2E tests using the minimal E2E configuration. It will run for 10 epochs. We additionally specify a timeout value and declare `--test_output=streamed` to output logs for all tests in real time.
 
 ```
-bazel test //testing/endtoend:go_default_test --//proto:network=minimal --test_filter=TestEndToEnd_MinimalConfig --test_env=E2E_EPOCHS=10 --test_timeout=10000 --test_output=streamed
+bazel test //testing/endtoend:go_default_test --test_filter=TestEndToEnd_MinimalConfig --test_env=E2E_EPOCHS=10 --test_timeout=10000 --test_output=streamed
 ```
 
 ## How are E2E tests special?
