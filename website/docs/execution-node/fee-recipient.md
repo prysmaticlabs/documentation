@@ -12,7 +12,7 @@ sme: james-prysm
 **Fee Recipient** is a feature that lets you specify a priority fee recipient address on either your validator client instance or your beacon node. After [The Merge](https://ethereum.org/en/upgrades/merge/), execution clients will begin depositing priority fees (tips) into this address whenever validator clients propose blocks.
 
 ## Background
-When users pay gas to submit transactions to the Ethereum network, they can specify a **priority fee**. These priority fees are like tips that incentivize block proposers to prioritize the inclusion of particular transactions in the blocks that they propose.
+When users pay gas to submit transactions to the Ethereum network, they can specify a **priority fee**. Priority fees are like tips. End-users use priority fees to incentivize block proposers to prioritize the inclusion of particular transactions in the blocks that they propose.
 
 Miners currently collect these priority fees. Post-merge, proof-of-work consensus will be completely replaced with proof-of-stake consensus. At this point, validators will collect these priority fees [<a href='#footnote-1'>1</a>, <a href='#footnote-2'>2</a>].
 
