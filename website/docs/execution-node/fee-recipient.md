@@ -65,7 +65,7 @@ A fee recipient address can be configured on your validator client instance by u
     </td>
   </tr>
   <tr>
-    <td>`fee-recipient-config-url`</td>
+    <td><code>fee-recipient-config-url</code></td>
     <td>
     Sets a URL for a remote fee recipient JSON configuration.  <br /> 
     <strong>Example</strong>: <code>-fee-recipient-config-url=http://example.com/api/getFeeRecipient</code> <br /> 
