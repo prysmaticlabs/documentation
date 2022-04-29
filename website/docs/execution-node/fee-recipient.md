@@ -15,7 +15,7 @@ sme: james-prysm
 <!-- this long title feels out of place in the sidebar, and it's not very pleasant when rendered because docusaurus uses a very large font to render titles. Shortening for now, but future improvements could include standardizing "how to" in titles that are how tos, and updating the docusaurus rendering to make long titles render more beautifully. -->
 
 
-**Fee Recipient** is a feature that lets you specify a priority fee recipient address on either your validator client instance or your beacon node. After [The Merge](https://ethereum.org/en/upgrades/merge/), execution clients will begin depositing priority fees into this address whenever validator clients propose blocks.
+**Fee Recipient** is a feature that lets you specify a priority fee recipient address on your validator client instance and beacon node. After [The Merge](https://ethereum.org/en/upgrades/merge/), execution clients will begin depositing priority fees into this address whenever validator clients propose blocks.
 
 ## Background
 <!-- this content belongs in a concept doc, but we don't have a clear conceptual IA yet. We can either keep this here and move later, or stash this into a developer wiki doc and then align on IA later. -->
