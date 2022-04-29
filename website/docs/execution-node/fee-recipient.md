@@ -31,8 +31,9 @@ Your fee recipient address can be configured in two places: directly on your **v
 Release 2.0.7 contains a bug that prevents you from configuring a default fee recipient on your validator client instance. This was fixed in a [recent pull request](https://github.com/prysmaticlabs/prysm/pull/10555) and is available in the `develop` branch of the [Prysm repository](https://github.com/prysmaticlabs/prysm).
 :::
 
-:::warning An incorrectly configured fee recipient address will lead to a loss of priority fee earnings.
-
+:::warning
+An incorrectly configured fee recipient address will lead to a loss of priority fee earnings.
+:::
 
 ### Configuring Fee Recipient on your validator client instance
 
@@ -44,27 +45,27 @@ A fee recipient address can be configured on your validator client instance by u
     <th>Description</th>
   </tr>
   <tr>
-    <td>`suggested-fee-recipient`</td>
+    <td><code>suggested-fee-recipient</code></td>
     <td>
     Sets a default ETH address for all validator public keys. <br /> 
-    **Example**: `-suggested-fee-recipient=0x046Fb65722E6b0000012BFEBf6177F1D2e9758D9` <br /> 
-    **Note**: This setting overrides the two config options below. If you set this, the config options will be ignored.
+    <strong>Example</strong>: <code>-suggested-fee-recipient=0x046Fb65722E6b0000012BFEBf6177F1D2e9758D9</code> <br /> 
+    <strong>Note</strong>: This setting overrides the two config options below. If you set this, the config options will be ignored.
     </td>
   </tr>
   <tr>
-    <td>`fee-recipient-config-file`</td>
+    <td><code>fee-recipient-config-file</code></td>
     <td>
     Sets the local file location for the fee recipient JSON configuration. <br /> 
-    **Example**: `-fee-recipient-config-file=./fee_recipient_config.json` <br /> 
-    **Note**: This setting overrides the two config options below. If you set this, the config options will be ignored.
+    <strong>Example</strong>: <code>-fee-recipient-config-file=./fee_recipient_config.json</code> <br /> 
+    <strong>Note</strong>: This setting overrides the two config options below. If you set this, the config options will be ignored.
     </td>
   </tr>
   <tr>
     <td>`fee-recipient-config-url`</td>
     <td>
     Sets a URL for a remote fee recipient JSON configuration.  <br /> 
-    **Example**: `-fee-recipient-config-url=http://example.com/api/getFeeRecipient` <br /> 
-    **Note**: JSON should be delivered as a JSON payload, not as a JSON file. Your client will issue a GET request and expects the response `Content-Type` header to be `application/json`.
+    <strong>Example</strong>: <code>-fee-recipient-config-url=http://example.com/api/getFeeRecipient</code> <br /> 
+    <strong>Note</strong>: JSON should be delivered as a JSON payload, not as a JSON file. Your client will issue a GET request and expects the response <code>Content-Type</code> header to be <code>application/json</code>.
     </td>
   </tr>
 </table>
