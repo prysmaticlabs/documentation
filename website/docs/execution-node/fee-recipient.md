@@ -171,7 +171,6 @@ Note that when configuring fee recipient on your beacon node, the beacon node wi
 
 Footnotes:
 
-<strong id="footnote-1">1.</strong> The [Bellatrix -- Honest Validator spec](https://github.com/ethereum/consensus-specs/blob/master/specs/bellatrix/validator.md#block-proposal) contains Fee Recipient implementation details pertaining to validator clients.
-<strong id="footnote-2">2.</strong> The [Bellatrix -- The Beacon Chain spec](https://github.com/ethereum/consensus-specs/blob/master/specs/bellatrix/beacon-chain.md#executionpayload) contains Fee Recipient implementation details pertaining to beacon nodes.
-
-
+<!-- markdown links won't render alongside html elements - have to use anchors -->
+<strong id="footnote-1">1.</strong> The <a href='https://github.com/ethereum/consensus-specs/blob/master/specs/bellatrix/validator.md#block-proposal'>Bellatrix -- Honest Validator spec</a> contains Fee Recipient implementation details pertaining to validator clients.
+<strong id="footnote-2">2.</strong> The <a href='https://github.com/ethereum/consensus-specs/blob/master/specs/bellatrix/beacon-chain.md#executionpayload'>Bellatrix -- The Beacon Chain spec</a> contains Fee Recipient implementation details pertaining to beacon nodes.
