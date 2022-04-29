@@ -33,7 +33,7 @@ If you don't configure your fee recipient address before The Merge, priority fee
 
 ## Configuring Fee Recipient
 
-Your fee recipient address can be configured in two places: directly on your **validator client instance**, and on your **beacon node**. We recommend configuring it in both places. Your validator client instance configuration will override the beacon node configuration, but the beacon node configuration will function as a fallback in the event that your client instance configuration fails.
+Your fee recipient address can be configured in two places: directly on your **validator client instance**, and on your **beacon node**. We recommend configuring it in both places. Your validator client instance configuration will override the beacon node configuration, but the beacon node configuration will be treated like a backup in the event that your client instance configuration fails.
 
 :::warning Known Release Bug
 Release 2.0.7 contains a bug that prevents you from configuring a default fee recipient on your validator client instance. This was fixed in a [recent pull request](https://github.com/prysmaticlabs/prysm/pull/10555) and is available in the `develop` branch of the [Prysm repository](https://github.com/prysmaticlabs/prysm).
