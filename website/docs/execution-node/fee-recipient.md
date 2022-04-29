@@ -1,12 +1,12 @@
 ---
 id: fee-recipient
-title: How to configure Fee Recipient on Prysm
+title: How to configure Fee Recipient on your client instance and/or beacon node
 sidebar_label: Setting an Address for Receiving Transaction Fees
 doc_type: how-to
 sme: james-prysm
 ---
 
-# How to configure Fee Recipient on Prysm
+# How to configure Fee Recipient on your client instance and/or beacon node
 
 **Fee Recipient** is a feature that lets you specify a priority fee recipient address on either your validator client instance or your beacon node. After [The Merge](https://ethereum.org/en/upgrades/merge/), execution clients will begin depositing priority fees (tips) into this address whenever validator clients propose blocks.
 
