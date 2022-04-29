@@ -116,7 +116,7 @@ The above JSON demonstrates configuring two 1:1 mappings between `validator publ
     </td>
   </tr>
   <tr>
-    <td>`proposer_config.fee_recipient`</td>
+    <td><code>proposer_config.fee_recipient</code></td>
     <td>
     Optional. Required if validator instance public key is provided via <code>proposer_config</code>.  <br /> <br /> 
     <strong>Type:</strong> ETH address. 42 characters long. <br /> <br /> 
