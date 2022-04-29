@@ -166,7 +166,7 @@ Note that when configuring fee recipient on your beacon node, the beacon node wi
 
 Footnotes:
 
-<p id="footnote-1">1.</span> See the [todo](https://github.com/ethereum/consensus-specs/blob/master/specs/bellatrix/validator.md#block-proposal)
-<p id="footnote-2">2.</span> See the [todo](https://github.com/ethereum/consensus-specs/blob/master/specs/bellatrix/validator.md#block-proposal)
+<p id="footnote-1">1.</p> See the [todo](https://github.com/ethereum/consensus-specs/blob/master/specs/bellatrix/validator.md#block-proposal)
+<p id="footnote-2">2.</p> See the [todo](https://github.com/ethereum/consensus-specs/blob/master/specs/bellatrix/validator.md#block-proposal)
 
 
