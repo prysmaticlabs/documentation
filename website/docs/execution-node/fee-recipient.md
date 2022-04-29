@@ -22,12 +22,12 @@ sme: james-prysm
 
 When users pay gas to submit transactions to the Ethereum network, they can specify a **priority fee**. Priority fees are like tips. End-users use priority fees to incentivize block proposers to prioritize the inclusion of particular transactions in the blocks that they propose.
 
-Miners currently collect these priority fees. After The Merge, proof-of-work consensus will be completely replaced with proof-of-stake consensus. At this point, validators will collect these priority fees [<a href='#footnote-1'>1</a>, <a href='#footnote-2'>2</a>].
+Miners currently collect these priority fees. After The Merge, proof-of-work consensus will be replaced with proof-of-stake consensus. At this point, validators will collect these priority fees [<a href='#footnote-1'>1</a>, <a href='#footnote-2'>2</a>].
 
-Because priority fees are captured by execution clients in the execution layer, validator clients need to tell execution clients where to forward these priority fees. This priority fee “forwarding address” is referred to as your **fee recipient** address. This feature lets you configure that address.
+Because priority fees are captured by execution clients in the execution layer, validator clients need to tell execution clients where to forward these priority fees. This priority fee “forwarding address” is referred to as your **fee recipient** address.
 
 :::tip Configure this before The Merge
-If you don't configure your fee recipient address before The Merge, priority fees will be deposited into a burn address (0x000....0). Be sure to specify a valid Ethereum wallet address (that you own) as the fee recipient before [The Merge]([https://ethereum.org/en/upgrades/merge/](https://ethereum.org/en/upgrades/merge/)).
+If you don't configure your fee recipient address before The Merge, priority fees will be deposited into a burn address (`0x000....0`).
 :::
 
 
