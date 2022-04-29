@@ -141,7 +141,7 @@ The above JSON demonstrates configuring two 1:1 mappings between `validator publ
 
 ### Configuring Fee Recipient on your beacon node
 
-A fee recipient address can be configured on your Beacon Node instance by using the `suggested-fee-recipient` flag.
+A fee recipient address can be configured on your beacon node instance by using the `suggested-fee-recipient` flag.
 
 :::warning This is an additive flag
 When using this flag, be sure to include existing flags along with it.
