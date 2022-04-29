@@ -157,8 +157,8 @@ When using this flag, be sure to include existing flags along with it.
   <tr>
     <td><code>suggested-fee-recipient</code></td>
     <td>
-    Sets a default ETH address for all validator public keys. <br /> 
-    <strong>Example</strong>: <code>--suggested-fee-recipient=0x046Fb65722E6b0000012BFEBf6177F1D2e9758D9</code> <br /> 
+    Sets a default ETH address for all validator public keys. <br /> <br />
+    <strong>Example</strong>: <code>--suggested-fee-recipient=0x046Fb65722E6b0000012BFEBf6177F1D2e9758D9</code> <br /> <br />
     <strong>Note</strong>: When a fee recipient address is configured on both the validator client instance and beacon node, the validator client instance configuration will be prioritized, and the beacon node configuration will function as a fallback configuration.
     </td>
   </tr>
