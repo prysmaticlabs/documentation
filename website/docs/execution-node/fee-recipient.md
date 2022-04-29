@@ -1,13 +1,16 @@
 ---
 id: fee-recipient
-title: How to configure Fee Recipient on your client instance and/or beacon node
-sidebar_label: How to configure Fee Recipient on your client instance and/or beacon node
+title: Configuring Fee Recipient
+sidebar_label: Configuring Fee Recipient
 doc_type: how-to
 sme: james-prysm
 ---
 
+<!-- this long title feels out of place in the sidebar, and it's not very pleasant when rendered because docusaurus uses a very large font to render titles. Shortening for now, but future improvements could include standardizing "how to" in titles that are how tos, and updating the docusaurus rendering to make long titles render more beautifully. -->
 
-# How to configure Fee Recipient on your client instance and/or beacon node
+<!-- # How to configure Fee Recipient on your client instance and/or beacon node -->
+
+# Configuring Fee Recipient
 
 **Fee Recipient** is a feature that lets you specify a priority fee recipient address on either your validator client instance or your beacon node. After [The Merge](https://ethereum.org/en/upgrades/merge/), execution clients will begin depositing priority fees into this address whenever validator clients propose blocks.
 
