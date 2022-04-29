@@ -23,7 +23,7 @@ Miners currently collect these priority fees. After The Merge, proof-of-work con
 
 Because priority fees are captured by execution clients in the execution layer, validator clients need to tell execution clients where to forward these priority fees. This priority fee “forwarding address” is referred to as your **fee recipient** address. This feature lets you configure that address.
 
-:::tip Configure this before The Merge!
+:::tip Configure this before The Merge
 If you don't configure your fee recipient address before The Merge, priority fees will be deposited into a burn address (0x000....0). Be sure to specify a valid Ethereum wallet address (that you own) as the fee recipient before [The Merge]([https://ethereum.org/en/upgrades/merge/](https://ethereum.org/en/upgrades/merge/)).
 :::
 
