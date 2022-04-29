@@ -167,7 +167,6 @@ When using this flag, be sure to include existing flags along with it.
 Note that when configuring fee recipient on your beacon node, the beacon node will cache the fee recipient address locally.
 
 
-
 ------------------
 
 Footnotes:
