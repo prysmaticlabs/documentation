@@ -103,33 +103,33 @@ The above JSON demonstrates configuring two 1:1 mappings between `validator publ
     <th>Description</th>
   </tr>
   <tr>
-    <td>`proposer_config`</td>
+    <td><code>proposer_config</code></td>
     <td>
     Optional. Your validator client instance’s public key. <br /> 
-    **Type:** Validator public key. 98 characters long.<br /> 
-    **Note:** Use this to map a single validator instance public key to a single fee recipient ETH address.
+    <strong>Type:</strong> Validator public key. 98 characters long.<br /> 
+    <strong>Note:</strong> Use this to map a single validator instance public key to a single fee recipient ETH address.
     </td>
   </tr>
   <tr>
     <td>`proposer_config.fee_recipient`</td>
     <td>
-    Optional. Required if validator instance public key is provided via `proposer_config`.  <br /> 
-    **Type:** ETH address. 42 characters long. <br /> 
-    **Note:** Use this to map a single validator key to a single ETH fee recipient address.
+    Optional. Required if validator instance public key is provided via <code>proposer_config</code>.  <br /> 
+    <strong>Type:</strong> ETH address. 42 characters long. <br /> 
+    <strong>Note:</strong> Use this to map a single validator key to a single ETH fee recipient address.
     </td>
   </tr>
   <tr>
-    <td>`default_config`</td>
+    <td><code>default_config</code></td>
     <td>
     Required. 
     </td>
   </tr>
   <tr>
-    <td>`default_config.fee_recipient`</td>
+    <td><code>default_config.fee_recipient</code></td>
     <td>
     Required.<br /> 
-    **Type:** ETH address. 42 characters long. <br /> 
-    **Note:** This sets the default ETH address for all remaining validator public keys that don’t have 1:1 mapping already from the `proposer_config` member.
+    <strong>Type:</strong> ETH address. 42 characters long. <br /> 
+    <strong>Note:</strong> This sets the default ETH address for all remaining validator public keys that don’t have 1:1 mapping already from the <code>proposer_config</code> member.
     </td>
   </tr>
 </table>
@@ -150,11 +150,11 @@ When using this flag, be sure to include existing flags along with it.
     <th>Description</th>
   </tr>
   <tr>
-    <td>`suggested-fee-recipient`</td>
+    <td><code>suggested-fee-recipient</code></td>
     <td>
     Sets a default ETH address for all validator public keys. <br /> 
-    **Example**: `--suggested-fee-recipient=0x046Fb65722E6b0000012BFEBf6177F1D2e9758D9` <br /> 
-    **Note**: When a fee recipient address is configured on both the validator client instance and beacon node, the validator client instance configuration will be prioritized, and the beacon node configuration will function as a fallback configuration.
+    <strong>Example</strong>: <code>--suggested-fee-recipient=0x046Fb65722E6b0000012BFEBf6177F1D2e9758D9</code> <br /> 
+    <strong>Note</strong>: When a fee recipient address is configured on both the validator client instance and beacon node, the validator client instance configuration will be prioritized, and the beacon node configuration will function as a fallback configuration.
     </td>
   </tr>
 </table>
