@@ -51,24 +51,24 @@ A fee recipient address can be configured on your validator client instance by u
   <tr>
     <td><code>suggested-fee-recipient</code></td>
     <td>
-    Sets a default ETH address for all validator public keys. <br /> 
-    <strong>Example</strong>: <code>-suggested-fee-recipient=0x046Fb65722E6b0000012BFEBf6177F1D2e9758D9</code> <br /> 
+    Sets a default ETH address for all validator public keys. <br /> <br /> 
+    <strong>Example</strong>: <code>-suggested-fee-recipient=0x046Fb65722E6b0000012BFEBf6177F1D2e9758D9</code> <br /> <br /> 
     <strong>Note</strong>: This setting overrides the two config options below. If you set this, the config options will be ignored.
     </td>
   </tr>
   <tr>
     <td><code>fee-recipient-config-file</code></td>
     <td>
-    Sets the local file location for the fee recipient JSON configuration. <br /> 
-    <strong>Example</strong>: <code>-fee-recipient-config-file=./fee_recipient_config.json</code> <br /> 
+    Sets the local file location for the fee recipient JSON configuration. <br /> <br /> 
+    <strong>Example</strong>: <code>-fee-recipient-config-file=./fee_recipient_config.json</code> <br /> <br /> 
     <strong>Note</strong>: This setting overrides the two config options below. If you set this, the config options will be ignored.
     </td>
   </tr>
   <tr>
     <td><code>fee-recipient-config-url</code></td>
     <td>
-    Sets a URL for a remote fee recipient JSON configuration.  <br /> 
-    <strong>Example</strong>: <code>-fee-recipient-config-url=http://example.com/api/getFeeRecipient</code> <br /> 
+    Sets a URL for a remote fee recipient JSON configuration.  <br /> <br /> 
+    <strong>Example</strong>: <code>-fee-recipient-config-url=http://example.com/api/getFeeRecipient</code> <br /> <br /> 
     <strong>Note</strong>: JSON should be delivered as a JSON payload, not as a JSON file. Your client will issue a GET request and expects the response <code>Content-Type</code> header to be <code>application/json</code>.
     </td>
   </tr>
@@ -109,16 +109,16 @@ The above JSON demonstrates configuring two 1:1 mappings between `validator publ
   <tr>
     <td><code>proposer_config</code></td>
     <td>
-    Optional. Your validator client instance’s public key. <br /> 
-    <strong>Type:</strong> Validator public key. 98 characters long.<br /> 
+    Optional. Your validator client instance’s public key. <br /> <br /> 
+    <strong>Type:</strong> Validator public key. 98 characters long.<br /> <br /> 
     <strong>Note:</strong> Use this to map a single validator instance public key to a single fee recipient ETH address.
     </td>
   </tr>
   <tr>
     <td>`proposer_config.fee_recipient`</td>
     <td>
-    Optional. Required if validator instance public key is provided via <code>proposer_config</code>.  <br /> 
-    <strong>Type:</strong> ETH address. 42 characters long. <br /> 
+    Optional. Required if validator instance public key is provided via <code>proposer_config</code>.  <br /> <br /> 
+    <strong>Type:</strong> ETH address. 42 characters long. <br /> <br /> 
     <strong>Note:</strong> Use this to map a single validator key to a single ETH fee recipient address.
     </td>
   </tr>
@@ -131,8 +131,8 @@ The above JSON demonstrates configuring two 1:1 mappings between `validator publ
   <tr>
     <td><code>default_config.fee_recipient</code></td>
     <td>
-    Required.<br /> 
-    <strong>Type:</strong> ETH address. 42 characters long. <br /> 
+    Required.<br /> <br /> 
+    <strong>Type:</strong> ETH address. 42 characters long. <br /> <br /> 
     <strong>Note:</strong> This sets the default ETH address for all remaining validator public keys that don’t have 1:1 mapping already from the <code>proposer_config</code> member.
     </td>
   </tr>
