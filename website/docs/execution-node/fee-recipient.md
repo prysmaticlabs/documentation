@@ -1,7 +1,7 @@
 ---
 id: fee-recipient
 title: How to configure Fee Recipient on your client instance and/or beacon node
-sidebar_label: Setting an Address for Receiving Transaction Fees
+sidebar_label: How to configure Fee Recipient on your client instance and/or beacon node
 doc_type: how-to
 sme: james-prysm
 ---
