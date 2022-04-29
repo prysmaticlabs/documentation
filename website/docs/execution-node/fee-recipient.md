@@ -41,7 +41,7 @@ Release 2.0.7 contains a bug that prevents you from configuring a default fee re
 
 ### Configuring Fee Recipient on your validator client instance
 
-A fee recipient address can be configured on your validator client instance by using the Prysm CLI. Use one of the following flags to specifying the address either directly within your CLI command, or by specifying the location of a JSON file that contains your fee recipient address:
+A fee recipient address can be configured on your validator client instance by using the Prysm CLI. Use one of the following flags to specifying the fee recipient address either directly within your CLI command, or by specifying the location of a JSON file that contains your fee recipient address:
 
 <table>
   <tr>
@@ -99,7 +99,7 @@ If you use either `fee-recipient-config-file` or `fee-recipent-config-url` to sp
 }
 ```
 
-The above JSON demonstrates configuring two 1:1 mappings between `validator public key`:`fee_recipient` and a default `fee_recipient`. In this case, the `default_config` fee recipient address would apply to all validator public keys not specified in `proposer_config`. Details:
+The above JSON demonstrates configuring two 1:1 mappings between `validator public key`:`fee_recipient` and a default `fee_recipient`. In this case, the `default_config` fee recipient address would apply to all validator public keys not specified in `proposer_config`.
 
 <table>
   <tr>
