@@ -14,7 +14,7 @@ sme: james-prysm
 ## Background
 When users pay gas to submit transactions to the Ethereum network, they can specify a **priority fee**. Priority fees are like tips. End-users use priority fees to incentivize block proposers to prioritize the inclusion of particular transactions in the blocks that they propose.
 
-Miners currently collect these priority fees. Post-merge, proof-of-work consensus will be completely replaced with proof-of-stake consensus. At this point, validators will collect these priority fees [<a href='#footnote-1'>1</a>, <a href='#footnote-2'>2</a>].
+Miners currently collect these priority fees. After The Merge, proof-of-work consensus will be completely replaced with proof-of-stake consensus. At this point, validators will collect these priority fees [<a href='#footnote-1'>1</a>, <a href='#footnote-2'>2</a>].
 
 Because priority fees are captured by execution clients in the execution layer, validator clients need to tell execution clients where to forward these priority fees. This priority fee “forwarding address” is referred to as your **fee recipient** address. This feature lets you configure that address.
 
@@ -29,10 +29,6 @@ Your fee recipient address can be configured in two places: directly on your **v
 
 :::warning Known Release Bug
 Release 2.0.7 contains a bug that prevents you from configuring a default fee recipient on your validator client instance. This was fixed in a [recent pull request](https://github.com/prysmaticlabs/prysm/pull/10555) and is available in the `develop` branch of the [Prysm repository](https://github.com/prysmaticlabs/prysm).
-:::
-
-:::warning
-An incorrectly configured fee recipient address will lead to a loss of priority fee earnings.
 :::
 
 ### Configuring Fee Recipient on your validator client instance
