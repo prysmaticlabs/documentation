@@ -1,10 +1,10 @@
 ---
 id: security-best-practices
-title: Security Best Practices
+title: Staking with Prysm - Security Best Practices
 sidebar_label: Security Best Practices
 ---
 
-## Staking with Prysm: Security Best Practices
+# Staking with Prysm: Security Best Practices
 
 Ethereum's transition to proof-of-stake is made possible by validators who each stake 32 ETH into to the [validator deposit contract](https://docs.prylabs.network/docs/how-prysm-works/validator-deposit-contract/). These validators accept the responsibility to uphold the integrity of the Ethereum network in exchange for staking rewards.
 
