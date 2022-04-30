@@ -143,6 +143,8 @@ The above JSON demonstrates configuring two 1:1 mappings between `validator publ
   </tr>
 </table>
 
+<br />
+
 
 ### Configuring Fee Recipient on your beacon node
 
