@@ -48,9 +48,10 @@ A fee recipient address can be configured on your client instance by using one o
 
 <!-- I'm using HTML tables because maintaining markdown tables where cells contain multiple lines of content is unwieldy. Also note that with docusaurus, markdown doesn't render in (or even next to) HTML. -->
 
+<!-- using ad-hoc styles to improve readability. tested on mobile. -->
+
 <table>
   <tr>
-    <!-- using ad-hoc styles to improve readability. tested on mobile. -->
     <th style='min-width: 240px;'>Flag</th> 
     <th>Description</th>
   </tr>
