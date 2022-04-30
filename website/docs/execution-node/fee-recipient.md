@@ -52,7 +52,7 @@ A fee recipient address can be configured on your client instance by using one o
 
 <table>
   <tr>
-    <th style='min-width: 240px;'>Flag</th> 
+    <th style={{ minWidth: 240 + 'px' }}>Flag</th> 
     <th>Description</th>
   </tr>
   <tr>
