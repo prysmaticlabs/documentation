@@ -306,6 +306,11 @@
 		},
 		{
 			"type": "doc",
+			"label": "Security Best Practices",
+			"id": "security-best-practices"
+		},
+		{
+			"type": "doc",
 			"label": "Prysm License",
 			"id": "licenses/prysmatic-labs"
 		}
