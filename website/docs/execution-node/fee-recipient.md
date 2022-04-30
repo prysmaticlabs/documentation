@@ -47,7 +47,7 @@ A fee recipient address can be configured on your client instance by using one o
 
 <table>
   <tr>
-    <th>Flag</th>
+    <th style='min-width: 240px;'>Flag</th> <!-- using ad-hoc styles to improve readability -->
     <th>Description</th>
   </tr>
   <tr>
