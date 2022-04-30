@@ -76,9 +76,15 @@ A fee recipient address can be configured on your client instance by using one o
   </tr>
 </table>
 
+<br />
+
+
 An example invocation: `./prysm.sh validator --suggested-fee-recipient=0x046Fb65722E6b0000012BFEBf6177F1D2e9758D9`. 
 
 If you don't see any errors after issuing one of the above commands, your fee recipient address has been successfully configured.
+
+<br />
+<br />
 
 #### Fee Recipient JSON Config File
 
