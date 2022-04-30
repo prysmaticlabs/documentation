@@ -40,7 +40,6 @@ Release 2.0.7 contains a bug that prevents you from configuring a default fee re
 :::
 
 <br />
-<br />
 
 ### Configuring Fee Recipient on your validator client instance
 
@@ -89,7 +88,6 @@ An example invocation: `./prysm.sh validator --suggested-fee-recipient=0x046Fb65
 If you don't see any errors after issuing one of the above commands, your fee recipient address has been successfully configured.
 
 <br />
-<br />
 
 #### Fee Recipient JSON Config File
 
@@ -114,7 +112,6 @@ If you use either `fee-recipient-config-file` or `fee-recipent-config-url` to sp
 
 The above JSON demonstrates configuring two 1:1 mappings between `validator public key`:`fee_recipient` and a default `fee_recipient`. In this case, the `default_config` fee recipient address would apply to all validator public keys not specified in `proposer_config`. JSON configuration members are listed in the following table:
 
-<br />
 <br />
 
 <table>
@@ -186,7 +183,6 @@ When using this flag, be sure to include existing flags along with it.
 Note that when configuring fee recipient on your beacon node, the beacon node will cache the fee recipient address locally.
 
 
-<br />
 <br />
 
 ------------------
