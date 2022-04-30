@@ -168,7 +168,7 @@ When using this flag, be sure to include existing flags along with it.
 
 <table>
   <tr>
-    <th style='min-width: 240px;'>Flag</th>
+    <th style={{minWidth: 240 + 'px'}}>Flag</th>
     <th>Description</th>
   </tr>
   <tr>
