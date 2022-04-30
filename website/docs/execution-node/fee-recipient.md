@@ -15,7 +15,7 @@ sme: james-prysm
 <!-- The above long title feels out of place in the sidebar, and it's not very pleasant when rendered because docusaurus uses a very large font to render titles. Shortening for now, but future improvements could include standardizing "how to" in titles that are how tos, and updating the docusaurus rendering to make long titles render more beautifully. Eg How to Configure a Fee Recipient Address -->
 
 
-**Fee Recipient** is a feature that lets you specify a priority fee recipient address on your validator client instance and beacon node. After [The Merge](https://ethereum.org/en/upgrades/merge/), execution clients will begin depositing priority fees into this address whenever validator clients propose blocks.
+**Fee Recipient** is a feature that lets you specify a priority fee recipient address on your validator client instance and beacon node. After [The Merge](https://ethereum.org/en/upgrades/merge/), execution clients will begin depositing priority fees into this address whenever your validator client proposes a new block.
 
 ## Background
 <!-- this content belongs in a concept doc, but we don't have a clear conceptual IA yet. We can either keep this here and move later, or stash this into a developer wiki doc and then align on IA later. -->
@@ -33,7 +33,7 @@ If you don't configure your fee recipient address before The Merge, priority fee
 
 ## Configuring Fee Recipient
 
-Your fee recipient address can be configured in two places: directly on your **validator client instance**, and on your **beacon node**. We recommend configuring it in both places. Your validator client instance configuration will override the beacon node configuration, and the beacon node configuration will be treated like a backup in the event that your client instance configuration fails.
+Your fee recipient address can be configured in two places: on your **validator client instance** and on your **beacon node**. We recommend configuring it in both places. Your validator client instance configuration will override the beacon node configuration, while the beacon node configuration will be treated like a backup in the event that your client instance configuration fails.
 
 :::warning Known Release Bug
 Release 2.0.7 contains a bug that prevents you from configuring a default fee recipient on your validator client instance. This was fixed in a [recent pull request](https://github.com/prysmaticlabs/prysm/pull/10555) and is available in the `develop` branch of the [Prysm repository](https://github.com/prysmaticlabs/prysm).
@@ -43,7 +43,7 @@ Release 2.0.7 contains a bug that prevents you from configuring a default fee re
 
 A fee recipient address can be configured on your client instance by using one of the following flags in the Prysm CLI:
 
-<!-- I'm using HTML tables because maintaining markdown tables where cells contain multiple lines of content is unwieldy. And with docusaurus, markdown doesn't render in (or even next to) HTML. -->
+<!-- I'm using HTML tables because maintaining markdown tables where cells contain multiple lines of content is unwieldy. With docusaurus, markdown doesn't render in (or even next to) HTML. -->
 
 <table>
   <tr>
@@ -79,7 +79,6 @@ A fee recipient address can be configured on your client instance by using one o
 An example invocation: `./prysm.sh validator --suggested-fee-recipient=0x046Fb65722E6b0000012BFEBf6177F1D2e9758D9`. 
 
 If you don't see any errors after issuing one of the above commands, your fee recipient address has been successfully configured.
-
 
 #### Fee Recipient JSON Config File
 
