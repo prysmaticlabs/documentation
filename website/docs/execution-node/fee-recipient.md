@@ -12,7 +12,7 @@ sme: james-prysm
 
 <!-- # How to configure Fee Recipient on your client instance and/or beacon node -->
 
-<!-- this long title feels out of place in the sidebar, and it's not very pleasant when rendered because docusaurus uses a very large font to render titles. Shortening for now, but future improvements could include standardizing "how to" in titles that are how tos, and updating the docusaurus rendering to make long titles render more beautifully. Eg How to Configure a Fee Recipient Address -->
+<!-- The above long title feels out of place in the sidebar, and it's not very pleasant when rendered because docusaurus uses a very large font to render titles. Shortening for now, but future improvements could include standardizing "how to" in titles that are how tos, and updating the docusaurus rendering to make long titles render more beautifully. Eg How to Configure a Fee Recipient Address -->
 
 
 **Fee Recipient** is a feature that lets you specify a priority fee recipient address on your validator client instance and beacon node. After [The Merge](https://ethereum.org/en/upgrades/merge/), execution clients will begin depositing priority fees into this address whenever validator clients propose blocks.
