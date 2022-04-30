@@ -4,7 +4,7 @@ title: Security Best Practices
 sidebar_label: Security Best Practices
 ---
 
-# Staking with Prysm: Security Best Practices
+## Staking with Prysm: Security Best Practices
 
 Ethereum's transition to proof-of-stake is made possible by validators who each stake 32 ETH into to the [validator deposit contract](https://docs.prylabs.network/docs/how-prysm-works/validator-deposit-contract/). These validators accept the responsibility to uphold the integrity of the Ethereum network in exchange for staking rewards.
 
@@ -88,15 +88,15 @@ We recommend applying the following security best practices to the operating sys
  
 Best practices:
 
-**Essential**: Install only what you need.
-**Essential**: Install only trusted software.
-**Essential**: Keep your OS updated with the latest security patches. Filter your automatic updates down to security patches if possible.
-**Essential**: Ensure that your machine doesn't automatically shut down or restart.
-**Essential**: Be present for all updates and restarts.
-**Essential**: Enable your firewall and set it to the most restrictive configuration possible.
-**Essential**: Reboot occasionally, but manually.
-**Essential**: Start with a clean slate machine to minimize the risk of being exposed to malicious preloaded software.
-**Essential**: Never run the client software under “administrator” accounts. The account that runs your client software should be granted the permissions it needs, and only the permissions it needs.
+ - **Essential**: Install only what you need.
+ - **Essential**: Install only trusted software.
+ - **Essential**: Keep your OS updated with the latest security patches. Filter your automatic updates down to security patches if possible.
+ - **Essential**: Ensure that your machine doesn't automatically shut down or restart.
+ - **Essential**: Be present for all updates and restarts.
+ - **Essential**: Enable your firewall and set it to the most restrictive configuration possible.
+ - **Essential**: Reboot occasionally, but manually.
+ - **Essential**: Start with a clean slate machine to minimize the risk of being exposed to malicious preloaded software.
+ - **Essential**: Never run the client software under “administrator” accounts. The account that runs your client software should be granted the permissions it needs, and only the permissions it needs.
  
 Linux-specific best practices:
  
@@ -146,7 +146,7 @@ Best practices:
 
 ## Mitigation worksheet
 
-| If this happens...                                                          | I'll proactively minimize risk by... | I'll notice when... | I'll respond by... |
+| Risk event                                                                  | I'll proactively minimize risk by... | I'll notice when... | I'll respond by... |
 |-----------------------------------------------------------------------------|--------------------------------------|---------------------|--------------------|
 | My ISP goes offline.                                                        |                                      |                     |                    |
 | There's a power outage.                                                     |                                      |                     |                    |
@@ -162,16 +162,17 @@ Best practices:
 | My validator keys are stolen or exposed.                                    |                                      |                     |                    |
 | I have to migrate to another machine.                                       |                                      | n/a                 |                    |
 | I suddenly have to pack up and leave, leaving my validator instance behind. |                                      | n/a                 |                    |
-| I pass away.                                                                |                                      | n/a                 |                    |
+| I pass away.                                                                |                                      | n/a                 | n/a                |
+
 
 ## Learning resources
 
- - The [Prysm Discord server](https://discord.com/invite/XkyZSSk4My)
- - The [Ethereum launchpad](https://launchpad.ethereum.org/en/overview)
- - The [Ethereum launchpad FAQ](https://launchpad.ethereum.org/en/faq) 
- - The [Eth2 rewards and penalties calculator](https://docs.google.com/spreadsheets/d/15tmPOvOgi3wKxJw7KQJKoUe-uonbYR6HF7u83LR5Mj4/edit#gid=1018097491)
- - The [EthStaker Discord server](https://invite.gg/ethstaker)
- - The [EthStaker subreddit](https://reddit.com/r/ethstaker)
+ - [Prysm Discord server](https://discord.com/invite/XkyZSSk4My)
+ - [Ethereum launchpad](https://launchpad.ethereum.org/en/overview)
+ - [Ethereum launchpad FAQ](https://launchpad.ethereum.org/en/faq) 
+ - [Eth2 rewards and penalties calculator](https://docs.google.com/spreadsheets/d/15tmPOvOgi3wKxJw7KQJKoUe-uonbYR6HF7u83LR5Mj4/edit#gid=1018097491)
+ - [EthStaker Discord server](https://invite.gg/ethstaker)
+ - [EthStaker subreddit](https://reddit.com/r/ethstaker)
 
 
 ## Closing remarks
