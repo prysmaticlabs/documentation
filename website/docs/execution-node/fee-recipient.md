@@ -100,7 +100,9 @@ If you use either `fee-recipient-config-file` or `fee-recipent-config-url` to sp
 }
 ```
 <br />
+
 The above JSON demonstrates configuring two 1:1 mappings between `validator public key`:`fee_recipient` and a default `fee_recipient`. In this case, the `default_config` fee recipient address would apply to all validator public keys not specified in `proposer_config`. JSON configuration members are listed in the following table:
+
 <br />
 <br />
 
