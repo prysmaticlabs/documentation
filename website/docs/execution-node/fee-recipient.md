@@ -18,7 +18,7 @@ sme: james-prysm
 **Fee Recipient** is a feature that lets you specify a priority fee recipient address on your validator client instance and beacon node. After [The Merge](https://ethereum.org/en/upgrades/merge/), execution clients will begin depositing priority fees into this address whenever your validator client proposes a new block.
 
 ## Background
-<!-- this content belongs in a concept doc, but we don't have a clear conceptual IA yet. We can either keep this here and move later, or stash this into a developer wiki doc and then align on IA later. -->
+<!-- this content could be pushed into a concept doc and linked to from the intro, but we don't have a clear conceptual IA yet. We can either keep this here and move later, or stash this into a developer wiki doc and then align on IA later. -->
 
 When users pay gas to submit transactions to the Ethereum network, they can specify a **priority fee**. Priority fees are like tips. End-users use priority fees to incentivize block proposers to prioritize the inclusion of particular transactions in the blocks that they propose.
 
@@ -38,6 +38,9 @@ Your fee recipient address can be configured in two places: on your **validator 
 :::warning Known Release Bug
 Release 2.0.7 contains a bug that prevents you from configuring a default fee recipient on your validator client instance. This was fixed in a [recent pull request](https://github.com/prysmaticlabs/prysm/pull/10555) and is available in the `develop` branch of the [Prysm repository](https://github.com/prysmaticlabs/prysm).
 :::
+
+<br />
+<br />
 
 ### Configuring Fee Recipient on your validator client instance
 
