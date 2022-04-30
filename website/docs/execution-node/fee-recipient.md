@@ -43,6 +43,8 @@ Release 2.0.7 contains a bug that prevents you from configuring a default fee re
 
 A fee recipient address can be configured on your client instance by using one of the following flags in the Prysm CLI:
 
+<!-- I'm using HTML tables because maintaining markdown tables where cells contain multiple lines of content is unwieldy. And with docusaurus, markdown doesn't render in (or even next to) HTML. -->
+
 <table>
   <tr>
     <th>Flag</th>
