@@ -157,7 +157,7 @@ When using this flag, be sure to include existing flags along with it.
 
 <table>
   <tr>
-    <th>Flag</th>
+    <th style='min-width: 240px;'>Flag</th>
     <th>Description</th>
   </tr>
   <tr>
@@ -170,8 +170,13 @@ When using this flag, be sure to include existing flags along with it.
   </tr>
 </table>
 
+<br />
+
 Note that when configuring fee recipient on your beacon node, the beacon node will cache the fee recipient address locally.
 
+
+<br />
+<br />
 
 ------------------
 
