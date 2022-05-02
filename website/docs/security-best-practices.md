@@ -17,9 +17,9 @@ Note that this document is subject to the [Prysmatic Labs Terms of Service](http
 The following principles apply generally to staking security:
 
  - **Keep it simple**. Over-engineered solutions tend to increase risk.
- - **Stay up to date**. At a minimum, join the [prysm-dev Google Group](https://groups.google.com/g/prysm-dev) to receive important updates related to client security and maintenance. We encourage all stakers to join the Prysm discord and [r/ethstaker](https://www.reddit.com/r/ethstaker). Visit the [Learning Resources](todo) TODO section at the end of this guide for a short list of resources that we recommend visiting periodically.
- - **Testnet first**. Harden your configuration using testnet [1] TODO before staking with real ETH on mainnet.
- - **Simulate risk events**. For each of the aspects within this document, simulate risk events and document your own risk mitigation plans. You can use the [risk mitigation worksheet](todo) TODO located at the end of this guide.
+ - **Stay up to date**. At a minimum, join the [prysm-dev Google Group](https://groups.google.com/g/prysm-dev) to receive important updates related to client security and maintenance. We encourage all stakers to join the Prysm discord and [r/ethstaker](https://www.reddit.com/r/ethstaker). Visit the [Learning Resources](#learning-resources) section at the end of this guide for a short list of resources that we recommend visiting periodically.
+ - **Testnet first**. Harden your configuration using testnet [<a href='#footnote-1'>1</a>] before staking with real ETH on mainnet.
+ - **Simulate risk events**. For each of the aspects within this document, simulate risk events and document your own risk mitigation plans. You can use the [risk mitigation worksheet](#mitigation-worksheet) located at the end of this guide.
  - **Proactively manage risk** You can't completely eliminate risk, but you can minimize it by following the best practices within this guide.
  - **If you’re not sure, ask**. The Prysm Discord and [r/ethstaker](https://www.reddit.com/r/ethstaker) subreddit are full of people who genuinely enjoy helping out.
 
@@ -28,21 +28,21 @@ The following principles apply generally to staking security:
 ## Uptime management
 The security of the Ethereum blockchain relies on a **highly available** network of validators. Ethereum's proof-of-stake implementation incentivizes validators to remain online.
  
-If your validator goes offline, you can lose some of your staked ETH [2] TODO. As long as you're online most of the time, you'll be profitable. Losses incurred from occasional downtime are negligible [3] TODO.
+If your validator goes offline, you can lose some of your staked ETH [<a href='#footnote-2'>2</a>]. As long as you're online most of the time, you'll be profitable. Losses incurred from occasional downtime are negligible [<a href='#footnote-3'>3</a>].
  
-While it's possible to optimize your client instance architecture for high-availability and redundancy, we encourage validators to **keep it simple**. Complex validator architectures run the risk of accidentally engaging in malicious behavior. This can result in slashing [4] TODO, which is a far steeper price to pay than the occasional downtime penalty.
+While it's possible to optimize your client instance architecture for high-availability and redundancy, we encourage validators to **keep it simple**. Complex validator architectures run the risk of accidentally engaging in malicious behavior. This can result in slashing [<a href='#footnote-4'>4</a>], which is a far steeper price to pay than the occasional downtime penalty.
 
 Best practices:
 
  - **Essential**: Ensure that you have adequate disk space. [We recommend having 100GB of SSD storage available](https://docs.prylabs.network/docs/install/install-with-script#recommended-specifications). After [The Merge](https://ethereum.org/en/upgrades/merge/), this recommendation will increase to 1-2 TB.
  - **Essential**: Use SSDs, not spinning disks.
  - **Essential**: Periodically check your disk space to ensure that it's not being consumed by another application.
- - **Essential**: Use a network monitoring service [5] TODO to configure alerts when something isn't right with your validator.
+ - **Essential**: Use a network monitoring service [<a href='#footnote-5'>5</a>] to configure alerts when something isn't right with your validator.
  - **Advanced**: Use an uninterruptible power supply (UPS) to protect your computer from issues related to power outages.
  - **Advanced**: Configure automatic boot / AC auto-recovery in your BIOS.
  - **Advanced**: Ensure that your beacon node and/or validator automatically start running when you reboot your machine.
  - **Advanced**: Configure [Prometheus and Grafana](https://docs.prylabs.network/docs/prysm-usage/monitoring/grafana-dashboard/) to help you visualize real-time validator metrics.
- - **Advanced**: Use a web-based uptime monitoring solution to monitor your validator's uptime with periodic ping-response checks [6] TODO.
+ - **Advanced**: Use a web-based uptime monitoring solution to monitor your validator's uptime with periodic ping-response checks [<a href='#footnote-6'>6</a>].
  - **Advanced**: Configure your validator client's machine to periodically ping a secondary machine with your validator status. If the secondary machine doesn't receive an expected ping from your validator, raise an alert.
 
 Linux-specific best practices:
@@ -52,11 +52,11 @@ Linux-specific best practices:
 
 
 ## Slash avoidance
-The Ethereum network penalizes malicious behavior with a slashing mechanism that burns staked Ethereum [7] TODO. Generally speaking, unless you deliberately act maliciously or over-engineer for redundancy, you won’t be slashed. 
+The Ethereum network penalizes malicious behavior with a slashing mechanism that burns staked Ethereum [<a href='#footnote-7'>7</a>]. Generally speaking, unless you deliberately act maliciously or over-engineer for redundancy, you won’t be slashed. 
  
 It’s very important for you to understand that **simple setups that occasionally experience downtime** are far better for you - and for the network - than complex highly-available architectures.
  
-This is because **the easiest way to get slashed is to run your validating keys in two places at the same time**. This can happen if you don’t exercise extreme caution when configuring your validator client [8] TODO. This can also happen if you configure a “failover instance” that prematurely comes online, accidentally signaling malicious intent to the broader network.
+This is because **the easiest way to get slashed is to run your validating keys in two places at the same time**. This can happen if you don’t exercise extreme caution when configuring your validator client [<a href='#footnote-8'>8</a>]. This can also happen if you configure a “failover instance” that prematurely comes online, accidentally signaling malicious intent to the broader network.
  
 Put simply: Ethereum gently discourages downtime with paper cuts. But it uses a ruthless banhammer to punish clones, and it doesn’t have any way to distinguish between accidental clones and real, malicious clones. So it’s best to keep it simple and expect some paper cuts.
  
@@ -102,9 +102,9 @@ Linux-specific best practices:
  
 Essential: Don't use `root` unless you need to. Don't run anything as `root`.
 Essential: Configure time sync. The Ethereum Launchpad demonstrates this as part of their [validator checklist](https://launchpad.ethereum.org/en/checklist).
-Essential: Enable the UFW firewall [9]. 
-Advanced: Disable the root account, root account login, and password-based login [10].
-Advanced: Disable SSH password authentication. Use SSH keys only [11].
+Essential: Enable the UFW firewall [<a href='#footnote-9'>9</a>]. 
+Advanced: Disable the root account, root account login, and password-based login [<a href='#footnote-10'>10</a>].
+Advanced: Disable SSH password authentication. Use SSH keys only [<a href='#footnote-11'>11</a>].
 
 ## Wallet and key management
 You’ll be managing two types of keys: validator keys and withdrawal keys. Prysm only needs access to your validator keys. You can learn more about this [here on the Ethereum blog](https://blog.ethereum.org/2020/05/21/keys/).
@@ -118,7 +118,7 @@ Best practices:
  - **Essential**: Review [Prysm’s security considerations](https://docs.prylabs.network/docs/wallet/introduction#security-considerations) before generating your wallet and keys.
  - **Essential**: Keep your wallet mnemonic phrase and withdrawal keys physically separated from your validator client.
  - **Advanced**: Generate your wallet and keys using new, airgapped hardware that has never been - and will never be - connected to the internet.
- - **Advanced**: Use a metal wallet to protect your mnemonic phrase [12]. 
+ - **Advanced**: Use a metal wallet to protect your mnemonic phrase [<a href='#footnote-12'>12</a>]. 
  - **Advanced**: Build the key generation software from source - don’t trust third-party binaries.
  - **Advanced**: Use a [Web3Signer](https://docs.prylabs.network/docs/wallet/web3signer/) to maintain separation between your keys and client software.
 
@@ -176,7 +176,7 @@ Best practices:
 
 
 ## Closing remarks
-Participating as a validator can be rewarding public service [13], but it's not without risk. Following these security best practices will help you minimize risk. 
+Participating as a validator can be rewarding public service [<a href='#footnote-13'>13</a>], but it's not without risk. Following these security best practices will help you minimize risk. 
  
 If you have any questions, feel free to visit our [Discord](https://discord.com/invite/XkyZSSk4My).
 
@@ -185,17 +185,17 @@ If you have any questions, feel free to visit our [Discord](https://discord.com/
 
 Footnotes:
 
-<strong id='footnote-1'>1</strong>. Explain what testnet is, how prysm guides for testnet <br />
-<strong id='footnote-2'>2</strong>. Provide link to calculator, other resources that help predict losses in certain scenarios <br />
-<strong id='footnote-3'>3</strong>. Link to discussions and “proof” that demonstrate the truthiness of this claim <br />
-<strong id='footnote-4'>4</strong>. Explain what slashing is, provide learning resources <br />
-<strong id='footnote-5'>5</strong>. Something like beaconcha.in. BeaconChain has a mobile app that will alert you when your validator state changes. (explore other options). <br />
-<strong id='footnote-6'>6</strong>. like Google Cloud Mohamed Mansour has a demonstration of this solution on YouTube. <br />
-<strong id='footnote-7'>7</strong>. Raul Jordan has detailed slashing prevention tips here. <br />
-<strong id='footnote-8'>8</strong>. See this discussion on Reddit for an example of how an honest scripting mistake can result in slashing. The Ethereum ecosystem is growing quickly - this requires all participants to exercise an abundance of caution. <br />
-<strong id='footnote-9'>9</strong>. CoinCashew demonstrates this here. <br />
-<strong id='footnote-10'>10</strong>. CoinCashew demonstrates this here. <br />
-<strong id='footnote-11'>11</strong>. CoinCashew demonstrates this here. <br />
-<strong id='footnote-12'>12</strong>. Explain what steel wallets are for. We recommend the CryptoSteel Capsule, but many others are available. Link to jameson lopp’s review site on github. <br />
-<strong id='footnote-13'>13</strong>. https://www.stakingrewards.com/earn/ethereum-2-0/  <br />
+<strong id='footnote-1'>1</strong>. Learn more about the Prater testnet <a href='https://prater.launchpad.ethereum.org/en/'>here on Ethereum.org</a>. <br />
+<strong id='footnote-2'>2</strong>. BitMex recently posted research that provides hard numbers on penalties and rewards: <a href='https://blog.bitmex.com/ethereums-proof-of-stake-system-calculating-penalties-rewards/'>Ethereum's Proof of Stake System - Calculating Penalties and Rewards</a>. Collin Myers has also created an <a href='https://docs.google.com/spreadsheets/d/15tmPOvOgi3wKxJw7KQJKoUe-uonbYR6HF7u83LR5Mj4/edit#gid=1018097491'>Ethereum calculator</a>. <br />
+<strong id='footnote-3'>3</strong>. See <a href='https://www.reddit.com/r/ethstaker/comments/nnwfx1/why_you_should_stop_worrying_about_your/'>Why you should stop worrying about your validator's uptime and start embracing the chaos instead</a>. <br />
+<strong id='footnote-4'>4</strong>. See <a href='https://medium.com/prysmatic-labs/eth2-slashing-prevention-tips-f6faa5025f50'>Eth2 Slashing Prevention Tips</a> to learn more about slashing.<br />
+<strong id='footnote-5'>5</strong>. <a href='beaconcha.in'>BeaconChain</a> has a mobile app that will alert you when your validator state changes. <br />
+<strong id='footnote-6'>6</strong>. See <a href='https://www.youtube.com/watch?v=txgOVDTemPQ'>How to monitor your ETH 2 Validator with Google Cloud</a> for a demonstration of this type of solution. <br />
+<strong id='footnote-7'>7</strong>. See <a href='https://medium.com/prysmatic-labs/eth2-slashing-prevention-tips-f6faa5025f50'>Eth2 Slashing Prevention Tips</a> by Raul Jordan. <br />
+<strong id='footnote-8'>8</strong>. See <a href='https://www.reddit.com/r/ethstaker/comments/oa6m2o/my_validator_got_slashed/'>this discussion on Reddit</a> for an example of how an honest scripting mistake can result in slashing. The Ethereum ecosystem is growing quickly - this requires all participants to exercise an abundance of caution. <br />
+<strong id='footnote-9'>9</strong>. CoinCashew demonstrates firewall configuration best practices <a href='https://www.coincashew.com/coins/overview-eth/guide-or-how-to-setup-a-validator-on-eth2-mainnet/part-i-installation/guide-or-security-best-practices-for-a-eth2-validator-beaconchain-node#configure-your-firewall'>here</a>. <br />
+<strong id='footnote-10'>10</strong>. CoinCashew demonstrates root account administration <a href='https://www.coincashew.com/coins/overview-eth/guide-or-how-to-setup-a-validator-on-eth2-mainnet/part-i-installation/guide-or-security-best-practices-for-a-eth2-validator-beaconchain-node#disable-root-account'>here</a>. <br />
+<strong id='footnote-11'>11</strong>. CoinCashew demonstrates SSH authentication <a href='https://www.coincashew.com/coins/overview-eth/guide-or-how-to-setup-a-validator-on-eth2-mainnet/part-i-installation/guide-or-security-best-practices-for-a-eth2-validator-beaconchain-node#disable-ssh-password-authentication-and-use-ssh-keys-only'>here</a>. <br />
+<strong id='footnote-12'>12</strong>. See <a href='https://jlopp.github.io/metal-bitcoin-storage-reviews/'>Metal Bitcoin Seed Storage Reviews</a> by Jameson Lopp. <br />
+<strong id='footnote-13'>13</strong>. StakingRewards has a live rewards calculator <a href='https://www.stakingrewards.com/earn/ethereum-2-0/'>here</a>.   <br />
 
