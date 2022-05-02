@@ -240,6 +240,10 @@
 				{
 					"type": "doc",
 					"id": "how-prysm-works/bls-cryptography"
+				},
+				{
+					"type": "doc",
+					"id": "devtools/end-to-end"
 				}
 			]
 		},
