@@ -55,7 +55,7 @@ A fee recipient address can be configured on your client instance by using one o
     <td><code>suggested-fee-recipient</code></td>
     <td>
     Sets a default ETH address for all validator public keys. <br /> <br /> 
-    <strong>Example</strong>: <code>-suggested-fee-recipient=0x046Fb65722E6b0000012BFEBf6177F1D2e9758D9</code> <br /> <br /> 
+    <strong>Example</strong>: <code>-suggested-fee-recipient=0x0123456722E6b0000012BFEBf6177F1D2e9758D9</code> <br /> <br /> 
     <strong>Note</strong>: This setting overrides the two config options below. If you set this, the config options will be ignored.
     </td>
   </tr>
@@ -80,7 +80,7 @@ A fee recipient address can be configured on your client instance by using one o
 <br />
 
 
-An example invocation: `./prysm.sh validator --suggested-fee-recipient=0x046Fb65722E6b0000012BFEBf6177F1D2e9758D9`. 
+An example invocation: `./prysm.sh validator --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9`. 
 
 If you don't see any errors after issuing one of the above commands, your fee recipient address has been successfully configured.
 
@@ -93,15 +93,15 @@ If you use either `fee-recipient-config-file` or `fee-recipent-config-url` to sp
 ```
 {
   "proposer_config": {
-    "0xa057816155ad77931185101128655c0191bd0214c201ca48ed887f6c4c6adf334070efcd75140eada5ac83a92506dd7a": {
-      "fee_recipient": "0x50155530FCE8a85ec7055A5F8b2bE214B3DaeFd3",
+    "0x01234567155ad77931185101128655c0191bd0214c201ca48ed887f6c4c6adf334070efcd75140eada5ac83a92506dd7a": {
+      "fee_recipient": "0x012345670FCE8a85ec7055A5F8b2bE214B3DaeFd3",
     },
-    "0xac201ca48ed887f6c4c6adf334070efcd75140eada5ac83a92506dd7a057816155ad77931185101128655c0191bd0214": {
-      "fee_recipient": "0x5A5F8b2bE214B3DaeFd350155530FCE8a85ec705",
+    "0x0123456748ed887f6c4c6adf334070efcd75140eada5ac83a92506dd7a057816155ad77931185101128655c0191bd0214": {
+      "fee_recipient": "0x01234567bE214B3DaeFd350155530FCE8a85ec705",
     }
   },
   "default_config": {
-    "fee_recipient": "0x6e35733c5af9B61374A128e6F85f553aF09ff89A"
+    "fee_recipient": "0x01234567c5af9B61374A128e6F85f553aF09ff89A"
   }
 }
 ```
@@ -169,7 +169,7 @@ When using this flag, be sure to include existing flags along with it.
     <td><code>suggested-fee-recipient</code></td>
     <td>
     Sets a default ETH address for all validator public keys. <br /> <br />
-    <strong>Example</strong>: <code>--suggested-fee-recipient=0x046Fb65722E6b0000012BFEBf6177F1D2e9758D9</code> <br /> <br />
+    <strong>Example</strong>: <code>--suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code> <br /> <br />
     <strong>Note</strong>: When a fee recipient address is configured on both the validator client instance and beacon node, the validator client instance configuration will be prioritized, and the beacon node configuration will function as a fallback configuration.
     </td>
   </tr>
