@@ -32,8 +32,6 @@ If your validator goes offline, you can lose some of your staked ETH [<a href='#
  
 While it's possible to optimize your client instance architecture for high-availability and redundancy, we encourage validators to **keep it simple**. Complex validator architectures run the risk of accidentally engaging in malicious behavior. This can result in slashing [<a href='#footnote-4'>4</a>], which is a far steeper price to pay than the occasional downtime penalty.
 
-Best practices:
-
  - **Essential**: Ensure that you have adequate disk space. [We recommend having 100GB of SSD storage available](https://docs.prylabs.network/docs/install/install-with-script#recommended-specifications). After [The Merge](https://ethereum.org/en/upgrades/merge/), this recommendation will increase to 1-2 TB.
  - **Essential**: Use SSDs, not spinning disks.
  - **Essential**: Periodically check your disk space to ensure that it's not being consumed by another application.
@@ -60,8 +58,6 @@ This is because **the easiest way to get slashed is to run your validating keys 
  
 Put simply: Ethereum gently discourages downtime with paper cuts. But it uses a ruthless banhammer to punish clones, and it doesn’t have any way to distinguish between accidental clones and real, malicious clones. So it’s best to keep it simple and expect some paper cuts.
  
-Best practices:
-
  - **Essential**: Never run your validating keys in two places at the same time.
  - **Essential**: Avoid over-engineering your validator setup. Keep it simple so your validator doesn't accidentally behave maliciously.
  - **Essential**: If you migrate your validator client to another machine, don't migrate your keys without also [migrating your slashing protection history](https://docs.prylabs.network/docs/wallet/slashing-protection/). If you lose your slashing protection history, we recommend waiting few epochs before starting your validator.
@@ -70,8 +66,6 @@ Best practices:
 
 ## Operational security
 Operational security describes aspects of security related to your day-to-day procedures. Maintaining operational security is a critical component of risk management.
-
-Best practices:
  
  - **Essential**: Dedicate your validator machine to validating, and use it for nothing else.
  - **Essential**: Use long, unique passwords for everything. Consider using a password manager.
@@ -86,8 +80,6 @@ Best practices:
 ## Operating system security
 We recommend applying the following security best practices to the operating system (OS) that your client runs on.
  
-Best practices:
-
  - **Essential**: Install only what you need.
  - **Essential**: Install only trusted software.
  - **Essential**: Keep your OS updated with the latest security patches. Filter your automatic updates down to security patches if possible.
@@ -100,17 +92,15 @@ Best practices:
  
 Linux-specific best practices:
  
-Essential: Don't use `root` unless you need to. Don't run anything as `root`.
-Essential: Configure time sync. The Ethereum Launchpad demonstrates this as part of their [validator checklist](https://launchpad.ethereum.org/en/checklist).
-Essential: Enable the UFW firewall [<a href='#footnote-9'>9</a>]. 
-Advanced: Disable the root account, root account login, and password-based login [<a href='#footnote-10'>10</a>].
-Advanced: Disable SSH password authentication. Use SSH keys only [<a href='#footnote-11'>11</a>].
+ - **Essential**: Don't use `root` unless you need to. Don't run anything as `root`.
+ - **Essential**: Configure time sync. The Ethereum Launchpad demonstrates this as part of their [validator checklist](https://launchpad.ethereum.org/en/checklist).
+ - **Essential**: Enable the UFW firewall [<a href='#footnote-9'>9</a>]. 
+ - **Advanced**: Disable the root account, root account login, and password-based login [<a href='#footnote-10'>10</a>].
+ - **Advanced**: Disable SSH password authentication. Use SSH keys only [<a href='#footnote-11'>11</a>].
 
 ## Wallet and key management
 You’ll be managing two types of keys: validator keys and withdrawal keys. Prysm only needs access to your validator keys. You can learn more about this [here on the Ethereum blog](https://blog.ethereum.org/2020/05/21/keys/).
- 
-Best practices:
- 
+  
  - **Essential**: Keep your withdrawal keys secure, offline, and physically separated from your validator instance. Use your withdrawal keys only when withdrawing funds - otherwise these keys should never touch Prysm, or any other software.
  - **Essential**: Don't use external devices that you don't trust.
  - **Essential**: Keep your mnemonic phrase in a safe place, offline.
@@ -124,9 +114,7 @@ Best practices:
 
 ## Troubleshooting
 Ethereum and its client software are constantly improving. This constant change means that unexpected things may happen that require troubleshooting. 
- 
-Best practices:
- 
+  
  - **Essential**: Expect unexpected things to happen.
  - **Essential**: Be prepared to engage with the [Prysm Discord server](https://discord.com/invite/XkyZSSk4My), [r/ethstaker](https://www.reddit.com/r/ethstaker/), and the [EthStaker Discord server](https://discord.io/ethstaker) if you need help troubleshooting issues.
  - **Essential**: When sharing logs, be sure to redact personally identifiable information and metadata that can be used to identify your validator.
@@ -136,9 +124,7 @@ Best practices:
 
 ## Migration security
 Migrating your validator from one machine to another is a delicate process that requires attention to detail. Migrating between machines significantly increases the risk of slashing.
- 
-Best practices:
- 
+  
  - **Essential**: Review [Prysm's migration guidance](https://docs.prylabs.network/docs/advanced/migrating-keys) for a detailed overview of the process and considerations.
  - **Essential**: Never run more than a single validator process with the same keys loaded.
  - **Essential**: Accept downtime as part of a successful migration.
