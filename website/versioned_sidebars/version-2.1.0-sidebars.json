@@ -44,6 +44,10 @@
         },
         {
           "type": "doc",
+          "id": "version-2.1.0/execution-node/fee-recipient"
+        },
+        {
+          "type": "doc",
           "id": "version-2.1.0/prysm-usage/graffiti-file"
         },
         {
@@ -89,10 +93,6 @@
         {
           "type": "doc",
           "id": "version-2.1.0/execution-node/authentication"
-        },
-        {
-          "type": "doc",
-          "id": "version-2.1.0/execution-node/fee-recipient"
         }
       ]
     },
