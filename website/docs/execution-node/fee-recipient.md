@@ -94,10 +94,10 @@ If you use either `fee-recipient-config-file` or `fee-recipent-config-url` to sp
 {
   "proposer_config": {
     "0x01234567155ad77931185101128655c0191bd0214c201ca48ed887f6c4c6adf334070efcd75140eada5ac83a92506dd7a": {
-      "fee_recipient": "0x012345670FCE8a85ec7055A5F8b2bE214B3DaeFd3",
+      "fee_recipient": "0x012345670FCE8a85ec7055A5F8b2bE214B3DaeFd3"
     },
     "0x0123456748ed887f6c4c6adf334070efcd75140eada5ac83a92506dd7a057816155ad77931185101128655c0191bd0214": {
-      "fee_recipient": "0x01234567bE214B3DaeFd350155530FCE8a85ec705",
+      "fee_recipient": "0x01234567bE214B3DaeFd350155530FCE8a85ec705"
     }
   },
   "default_config": {
