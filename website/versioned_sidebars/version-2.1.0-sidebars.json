@@ -297,6 +297,11 @@
       ]
     },
     {
+			"type": "doc",
+			"label": "Security Best Practices",
+			"id": "security-best-practices"
+		},
+    {
       "type": "doc",
       "id": "version-2.1.0/audits/phase0"
     },
