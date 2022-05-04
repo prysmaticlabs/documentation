@@ -30,9 +30,9 @@ The security of the Ethereum blockchain relies on a **highly available** network
  
 If your validator goes offline, you can lose some of your staked ETH [<a href='#footnote-2'>2</a>]. As long as you're online most of the time, you'll be profitable. Losses incurred from occasional downtime are negligible [<a href='#footnote-3'>3</a>].
  
-While it's possible to optimize your client instance architecture for high-availability and redundancy, we encourage validators to **keep it simple**. Complex validator architectures run the risk of accidentally engaging in malicious behavior. This can result in slashing [<a href='#footnote-4'>4</a>], which is a far steeper price to pay than the occasional downtime penalty.
+While it's possible to optimize your client instance architecture for high-availability and redundancy, we encourage validators to **keep it simple**. Complex validator architectures run the risk of accidentally engaging in slashable behavior. This can result in slashing [<a href='#footnote-4'>4</a>], which is a far steeper price to pay than the occasional downtime penalty.
 
- - **Essential**: Ensure that you have adequate disk space. [We recommend having 100GB of SSD storage available](https://docs.prylabs.network/docs/install/install-with-script#recommended-specifications). After [The Merge](https://ethereum.org/en/upgrades/merge/), this recommendation will increase to 1-2 TB.
+ - **Essential**: Ensure that you have adequate disk space. [We recommend having 100GB of SSD storage available](https://docs.prylabs.network/docs/install/install-with-script#recommended-specifications). After [The Merge](https://ethereum.org/en/upgrades/merge/), this recommendation will increase to 1-2 TB if you're also running an [execution client](https://docs.prylabs.network/docs/execution-node/configuring-for-prysm) on the same computer.
  - **Essential**: Use SSDs, not spinning disks.
  - **Essential**: Periodically check your disk space to ensure that it's not being consumed by another application.
  - **Essential**: Use a network monitoring service [<a href='#footnote-5'>5</a>] to configure alerts when something isn't right with your validator.
@@ -82,7 +82,7 @@ We recommend applying the following security best practices to the operating sys
  
  - **Essential**: Install only what you need.
  - **Essential**: Install only trusted software.
- - **Essential**: Keep your OS updated with the latest security patches. Filter your automatic updates down to security patches if possible.
+ - **Essential**: Keep your OS updated with the latest firmware updates and security patches.
  - **Essential**: Ensure that your machine doesn't automatically shut down or restart.
  - **Essential**: Be present for all updates and restarts.
  - **Essential**: Enable your firewall and set it to the most restrictive configuration possible.
