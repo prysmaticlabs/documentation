@@ -55,7 +55,7 @@ A fee recipient address can be configured on your client instance by using one o
     <td><code>suggested-fee-recipient</code></td>
     <td>
     Sets a default ETH address for all validator public keys. <br /> <br /> 
-    <strong>Example</strong>: <code>-suggested-fee-recipient=0x0123456722E6b0000012BFEBf6177F1D2e9758D9</code> <br /> <br /> 
+    <strong>Example</strong>: <code>--suggested-fee-recipient=0x0123456722E6b0000012BFEBf6177F1D2e9758D9</code> <br /> <br /> 
     <strong>Note</strong>: This setting overrides the two config options below. If you set this, the config options will be ignored.
     </td>
   </tr>
@@ -63,7 +63,7 @@ A fee recipient address can be configured on your client instance by using one o
     <td><code>fee-recipient-config-file</code></td>
     <td>
     Sets the local file location for the fee recipient JSON configuration. <br /> <br /> 
-    <strong>Example</strong>: <code>-fee-recipient-config-file=./fee_recipient_config.json</code> <br /> <br /> 
+    <strong>Example</strong>: <code>--fee-recipient-config-file=./fee_recipient_config.json</code> <br /> <br /> 
     <strong>Note</strong>: This setting overrides the two config options below. If you set this, the config options will be ignored.
     </td>
   </tr>
@@ -71,7 +71,7 @@ A fee recipient address can be configured on your client instance by using one o
     <td><code>fee-recipient-config-url</code></td>
     <td>
     Sets a URL for a remote fee recipient JSON configuration.  <br /> <br /> 
-    <strong>Example</strong>: <code>-fee-recipient-config-url=http://example.com/api/getFeeRecipient</code> <br /> <br /> 
+    <strong>Example</strong>: <code>--fee-recipient-config-url=http://example.com/api/getFeeRecipient</code> <br /> <br /> 
     <strong>Note</strong>: JSON should be delivered as a JSON payload, not as a JSON file. Your client will issue a GET request and expects the response <code>Content-Type</code> header to be <code>application/json</code>.
     </td>
   </tr>
