@@ -1,14 +1,13 @@
 ---
 id: faq
-title: Frequently asked questions
-sidebar_label: Frequently asked questions (FAQ)
+title: Prysm - Frequently asked questions
+sidebar_label: Frequently asked questions
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-
-## Frequently asked questions (FAQ)
+# Frequently asked questions
 
 ### Troubleshooting Prysm
 
