@@ -1,31 +1,29 @@
 ---
 id: faq
 title: Frequently asked questions
-sidebar_label: Frequently asked questions
+sidebar_label: Troubleshooting FAQ
 ---
-
-## Troubleshooting Prysm
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-#### Help, I see this error and don't know what it means!
 
-If you have seen a scary ERROR log in your beacon node or validator, there are few things you should do first. Go to our [open issues](https://github.com/prysmaticlabs/prysm/issues) to see if someone has reported the same problem before. Otherwise, note the Prysm version you are running, your operating system, and file a bug report [here](https://github.com/prysmaticlabs/prysm/issues/new?assignees=&labels=&template=bug_report.md). You can also ask our community on [discord](https://discord.gg/prysmaticlabs) about your error and we will take a look as soon as possible.
+## Frequently asked questions
+
+### Troubleshooting Prysm
+
+#### How do I troubleshoot errors?
+
+If your beacon node or validator logs display an `ERROR`, go to our [open issues](https://github.com/prysmaticlabs/prysm/issues) to see if someone has reported the same problem before. If this doesn't help, note the **Prysm version you're running** and your **operating system**, and then file a bug report [here](https://github.com/prysmaticlabs/prysm/issues/new?assignees=&labels=&template=bug_report.md). You can also ask our community on [discord](https://discord.gg/prysmaticlabs) about your error and we'll take a look as soon as possible.
 
 #### My validator is losing money, what's going on?
 
-If your validators are performing poorly and losing money, there are few pieces of information we need to help you out.
-
-**Things you can do**
-
-1. Check if your node or validator client crashed. You can view the logs of the process to see if there were any ERROR logs. If so, please file a bug report or talk to our team on [discord](https://discord.gg/prysmaticlabs). A fatal crash is quite serious and something we will investigate right away. You can try restarting your processes in the meantime to see if you can be fully operational again.
+1. Try restarting your machine and associated processes.
+1. See if your node or validator client crashed. You can view the logs of the process to see if there were any `ERROR` logs. If so, please file a bug report or talk to our team on [discord](https://discord.gg/prysmaticlabs). A fatal crash is quite serious and something we'll investigate right away.
 2. Check your network connectivity. You can improve this by following our tips [here](/docs/prysm-usage/p2p-host-ip) which can help you find better peers, improve attestation effectiveness, and more.
 3. Check your system resource usage, perhaps your node is using excess CPU and RAM. Depending on your operating system, there are different ways to do this.
 
-**Things we can do**
-
-If your issue has not yet been resolved, please do the following. Note your Prysm version and operating system, ensure none of the issues are above were the root cause of your problem, then reach out to our team on [Discord](https://discord.gg/prysmaticlabs). We need as much information about error logs or other issues you may be seeing to effectively answer your questions and get you back to validating correctly.
+If you still need help, note your **Prysm version** and **operating system**, and then reach out to our team on [Discord](https://discord.gg/prysmaticlabs). Providing as much information as possible will help us troubleshoot your issue.
 
 #### My node suddenly lost peers, what can I do?
 
@@ -33,7 +31,7 @@ Losing peers can be due the following reasons:
 
 1. Your network connectivity has problems. You can check how to improve it with some of our tips [here](/docs/prysm-usage/p2p-host-ip).
 2. Prysm is using a ton of memory or system resources and perhaps you ran out of memory. Ensure you meet the minimum specifications for runnuing Prysm specified in our installation pages for your operating system.
-3. A bug in our software that can affect your p2p connectivity. It is known that certain versions have issues with peers on operating systems such as Windows, so you could try [downgrading](/docs/prysm-usage/staying-up-to-date) to see if your issue is resolved. If this is the case, talk to our team on [Discord](https://discord.gg/prysmaticlabs) letting us know you had this issue
+3. A bug in our software that can affect your p2p connectivity. It is known that certain versions have issues with peers on operating systems such as Windows, so you could try [downgrading](/docs/prysm-usage/staying-up-to-date) to see if your issue is resolved. If this is the case, talk to our team on [Discord](https://discord.gg/prysmaticlabs) letting us know you had this issue.
 
 #### I have an issue in the web UI, getting errors, what can I do?
 
@@ -66,11 +64,11 @@ The most common way validators get slashed is by **running the same validator ke
 
 Our team prepared a blog post on [slashing prevention tips](https://medium.com/prysmatic-labs/eth2-slashing-prevention-tips-f6faa5025f50) you can read to avoid slashings in the future.
 
-## Running Prysm
+### Running Prysm
 
 #### How can I check my Prysm version?
 
-Depending on your installation method, there are different ways to verify your prysm version:
+Depending on your installation method, there are different ways to verify your Prysm version:
 
 <Tabs
   groupId="method"
@@ -168,7 +166,7 @@ Your node is running the popular [prometheus](https://prometheus.io/) server for
 
 Yes we currently support arm 64-bit architectures such as the raspberry pi 4 and they go out as part of our pre-compiled binary releases [here](https://github.com/prysmaticlabs/prysm/releases). Our documentation portal has instructions on how to run the entire installation process [here](/docs/install/install-with-script). However, we recommend using more powerful hardware in mainnet conditions. 
 
-## Validator keys and validator deposits
+### Validator keys and validator deposits
 
 #### I sent my deposit and so much time has passed but my validator is not active yet
 
@@ -203,7 +201,14 @@ Adding new validators to your already-running Prysm instance is quite simple! Go
 
 Please note you will need to **restart the validator client** after importing the new one for the changes to take effect.
 
-## Ethereum proof-of-stake specific questions
+### Ethereum proof-of-stake specific questions
+
+#### How do I check my current validator balance?
+The easiest way to check your current validator account balance is to search for your validator public key in a blockchain explorer like [beaconchai.in](https://beaconcha.in/).
+
+<!--todo: explain how -->
+If you have a fully synced beacon node, you can fetch your account balance via the beacon node API.
+
 
 #### Why are some validators making a lot more money than others?
 
