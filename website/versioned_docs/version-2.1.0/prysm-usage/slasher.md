@@ -18,7 +18,7 @@ These specifications must be met in order to successfully run a Prysm beacon nod
 * Operating System: 64-bit Linux, Mac OS X 10.14+, Windows 64-bit
 * Processor: Intel Core i5–760 or AMD FX-8100 or better
 * Memory: 8GB RAM
-* Storage: 200GB available space SSD
+* Storage: 1TB available space SSD
 * Internet: Broadband connection
 
 ### Recommended specifications
@@ -27,7 +27,7 @@ These hardware specifications are recommended, but not required to run the Prysm
 
 * Processor: Intel Core i7–4770 or AMD FX-8310 or better
 * Memory: 16GB RAM
-* Storage: 200GB available space SSD
+* Storage: 2TB+ available space SSD
 * Internet: Broadband connection
 
 ## What is Slashing
@@ -48,11 +48,15 @@ Running a slasher is not meant to be profitable. Slashing is meant to be rare an
 
 ## Running Slasher
 
-Running a slasher is as simple as adding the `--slasher` flag to your **beacon node**. Doing this will enable your beacon node to perform slashing detection. Slasher is very heavy on database access and disk usage, you may see it using over an additional 70Gb of extra storage on disk than normal when running on mainnet. Given that slasher needs to store a lot of information about attestations and blocks within the network, this is to be expected.
+Running a slasher is as simple as adding the `--slasher` flag to your **beacon node**. Doing this will enable your beacon node to perform slashing detection. However, **home stakers are advised _not_ to run a slasher on personal hardware,** as it is a tremendously resource-hungry process. Slasher is very heavy on database access and disk usage, and the `slasher.db` will quickly grow to 1TB or more when running on mainnet. Given that slasher needs to store a lot of information about attestations and blocks within the network, this is to be expected.
 
 ### Whistleblower Rewards
 
 Running a slasher can also offer some profits to your validators given certain conditions. If slasher detects a slashable condition, it will **broadcast it to the network by default**. Some lucky validator will then package this slashing evidence into a block and be rewarded for doing so. You can **disable** this broadcast in Prysm using the `--disable-broadcast-slashings` option in your **beacon node**.
+
+### Who Should Run a Slasher
+
+As summarized above, the slasher process is likely to overwhelm most home validator setups. The incentives for running a slasher accumulate irregularly, at great cost, so home stakers are advised to run their beacon node without it. It is an entirely optional process. Beacon node operators should consider running the slasher if they are operating a **staking pool** or **data center**.
 
 ## Using Slasher for Advanced Slashing Protection
 
