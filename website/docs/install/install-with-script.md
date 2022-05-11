@@ -109,7 +109,9 @@ Next, select an execution client [<a href='#footnote-X'>TODO</a>].
   test 2
   </TabItem>
   <TabItem value="geth">
-  test 3
+  :::caution
+  Geth is currently the supermajority execution layer client. The security of Ethereum’s ecosystem depends on decentalization, so we recommend using a minority client.
+  :::
   </TabItem>
 </Tabs>
 
@@ -117,7 +119,7 @@ Next, select an execution client [<a href='#footnote-X'>TODO</a>].
 
 
 
-Geth is currently the supermajority execution layer client. The security of Ethereum’s ecosystem depends on decentalization, so we recommend using a minority client.
+
 
 ### Step 6: Wait for your validator assignment
 
