@@ -351,12 +351,18 @@ Congratulations! You’re now running a <strong>full Ethereum node</strong> and 
 
 diagram
 
+
+
+## Step 4: Wait for your validator assignment
+
 It will take some time for your validator to become enlisted within the network TODO: use correct terminology - see [this knowledge base](https://kb.beaconcha.in/ethereum-2.0-depositing). 
 
 In the meantime, leave both terminal windows open and running. Once your validator is activated, it will immediately begin proposing and validating blocks. 
 
 
 To check on the status of your validator, we recommend checking out the popular block explorers: [beaconcha.in](https://beaconcha.in) by Bitfly and [beacon.etherscan.io](https://beacon.etherscan.io) by the Etherscan team. TODO: how? what address do I use
+
+
 
 
 ---------------
