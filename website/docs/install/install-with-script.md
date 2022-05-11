@@ -109,9 +109,9 @@ Next, select an execution client [<a href='#footnote-X'>TODO</a>].
   test 2
   </TabItem>
   <TabItem value="geth">
-  :::caution
-  Geth is currently the supermajority execution layer client. The security of Ethereum’s ecosystem depends on decentalization, so we recommend using a minority client.
-  :::
+:::caution
+Geth is currently the supermajority execution layer client. The security of Ethereum’s ecosystem depends on decentalization, so we recommend using a minority client.
+:::
   </TabItem>
 </Tabs>
 
