@@ -17,13 +17,13 @@ This is a beginner-friendly guide. Familiarity with the command line is expected
     <tr>
         <th>Goal</th>
         <th>Benefits</th>
-        <th>Minimum requirements</th>
+        <th>Requirements</th>
     </tr>
     <tr>
       <td>Run an execution node + beacon node</td>
       <td>
       Post-merge, this combination will represent an “full Ethereum client”, or a “full node”. Full nodes require both consensus-layer client software and execution-layer client software. <br /><br />
-      Running a full node comes with the following benefits:
+      Running a full node comes with the following benefits: <br />
       <ul> 
         <li>It contributes to the security of Ethereum's ecosystem [<a href='#footnote-X'>TODO</a>].</li>    
         <li>It also lets you access Ethereum’s global state directly without having to trust a third party service [<a href='#footnote-X'>TODO</a>].</li> 
@@ -90,13 +90,17 @@ Next, select an execution client [<a href='#footnote-X'>TODO</a>].
     ]}>
       <TabItem value="mainnet">
         <pre><code>Nethermind.Runner --config mainnet --JsonRpc.Enabled true</code></pre>
-        - `--config mainnet` connects to Mainnet.
-        - `--JsonRpc.Enabled true` exposes an http endpoint that your beacon node can later connect to.
+        <ul>
+          <li><code>--config mainnet</code> connects to Mainnet.</li>
+          <li><code>--JsonRpc.Enabled true</code> exposes an http endpoint that your beacon node can later connect to.</li>
+        </ul>
       </TabItem>
       <TabItem value="testnet">
         <pre><code>Nethermind.Runner --config goerli --JsonRpc.Enabled true</code></pre>
-        - `--config goerli` connects to the Goerli execution-layer testnet.
-        - `--JsonRpc.Enabled true` exposes an http endpoint that your beacon node can later connect to.
+        <ul>
+          <li><code>--config goerli</code> connects to the Goerli execution-layer testnet.</li>
+          <li><code>--JsonRpc.Enabled true</code> exposes an http endpoint that your beacon node can later connect to.</li>
+        </ul>
       </TabItem>
     </Tabs>
     <p>Your Nethermind execution node will begin syncing after you issue this command. This should take about two hours to complete. [<a href='#footnote-X'>TODO: Detailed Nethermind installation guidance is available on Nethermind’s documentation portal</a>]</p>
