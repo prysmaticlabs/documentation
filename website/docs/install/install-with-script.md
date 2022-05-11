@@ -54,6 +54,7 @@ This is a beginner-friendly guide. Familiarity with the command line is expected
             <li>TODO</li> 
           </ul> 
         </td>
+    </tr>
 </table>
 
 :::caution
