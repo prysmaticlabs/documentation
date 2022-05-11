@@ -72,7 +72,7 @@ If you can’t run a full node, TODO.
 - Review all of our [published security best practices](https://docs.prylabs.network/docs/security-best-practices/).
 - Help is available - reach out to prysm discord, #ethstaker, r/ethstaker, or [invite.gg/ethstaker](http://invite.gg/ethstaker).
 
-## Install and configure an execution client
+## Step 1: Install and configure an execution client
 
 First, create a directory called `ExecutionLayer` on your SSD [<a href='#footnote-X'>TODO - can be anything</a>].
 
@@ -160,7 +160,7 @@ Next, select an execution client [<a href='#footnote-X'>TODO</a>].
 </Tabs>
 
 
-## Install and configure a beacon node using Prysm
+## Step 2: Install and configure a beacon node using Prysm
 
 You should have an execution node running locally on `http://localhost:8545` before proceeding.
 
@@ -224,6 +224,128 @@ Your beacon node will now begin syncing [todo: explain what happens]. This usual
 Congratulations! You’re now running a full Ethereum node. Your full node consists of an execution node in Ethereum’s execution layer, and a beacon node in Ethereum’s consensus layer:
 
 ![Full Ethereum node](../../static/img/beacon-node-and-execution-node.png)
+
+
+
+## Step 3: Install and configure a validator node using Prysm
+
+Before proceeding, ensure that your beacon node is fully synchronized by running the following command:
+
+<pre><code>curl http://localhost:3500/eth/v1alpha1/node/syncing</code></pre>
+
+
+If you see <code>{"syncing":false}%</code>, you’re ready to proceed.
+
+While you’re waiting for your beacon node to synchronize, review the latest Ethereum Foundation validator advisories. Testnet advisories are available on the [Prater Staking Launchpad](https://prater.launchpad.ethereum.org/en/overview). Mainnet advisories are on the [Mainnet Staking Launchpad](https://launchpad.ethereum.org/en/overview).
+
+Next, we’ll create an account with the [Ethereum Staking Deposit CLI](https://github.com/ethereum/staking-deposit-cli). We recommend doing this on a new, airgapped machine if possible [security best practices].
+
+Download the latest stable version of the deposit CLI for your operating system from the [Staking Deposit CLI Releases page](https://github.com/ethereum/staking-deposit-cli/releases).
+
+
+<Tabs groupId="network" defaultValue="mainnet" values={[
+    {label: 'Windows', value: 'win'},
+    {label: 'Linux, MacOS, Arm64', value: 'others'}
+]}>
+  <TabItem value="win">
+    <p>Issue the following command from an Administrator command prompt, replacing <code>&lt;YOUR_FOLDER_PATH&gt;</code> with the full path to your <code>ConsensusLayer</code> folder.</p>
+    <Tabs groupId="network" defaultValue="mainnet" values={[
+        {label: 'Mainnet', value: 'mainnet'},
+        {label: 'Testnet', value: 'testnet'}
+    ]}>
+      <TabItem value="mainnet">
+        <pre><code>deposit.exe new-mnemonic --num_validators=1 --mnemonic_language=english --folder=<YOUR_FOLDER_PATH></code></pre>
+      </TabItem>
+      <TabItem value="testnet">
+        <pre><code>deposit.exe new-mnemonic --num_validators=1 --mnemonic_language=english --chain=prater --folder=<YOUR_FOLDER_PATH></code></pre>
+      </TabItem>
+    </Tabs>
+    <p>Follow the CLI prompts to generate your keys. This will give you two artifacts:</p>
+    <ol>
+      <li>A <strong>new mnemonic seed phrase</strong>. This is highly sensitive and should be kept safe, secure, and airgapped.</li>
+      <li>A <code>validator_keys</strong> folder. This folder will contain two files:
+        <ol>
+          <li><code>deposit_data-*.json</code> - contains deposit data that you’ll later upload to the Ethereum launchpad.</li>
+          <li><code>keystore-m_*.json</code> - contains your public key and ___________.</li>
+        </ol>
+      </li>
+    </ol>
+    Issue the following command from your command prompt to import your keystores, replacing <code>&lt;YOUR_FOLDER_PATH&gt;</code> with the full path to your `ConsensusLayer` folder.
+    <Tabs groupId="network" defaultValue="mainnet" values={[
+        {label: 'Mainnet', value: 'mainnet'},
+        {label: 'Testnet', value: 'testnet'}
+    ]}>
+      <TabItem value="mainnet">
+        <pre><code>prysm.bat validator accounts import --keys-dir=<YOUR_FOLDER_PATH></code></pre>
+        <p>You’ll be prompted to specify a wallet directory twice. Provide the path to your <code>ConsensusLayer</code> folder for both prompts. You should see <code>Successfully imported 1 accounts, view all of them by running accounts list</code> when your account has been successfully imported into Prysm.</p>
+        <p>Next, go to the [Mainnet Launchpad’s deposit data upload page](https://launchpad.ethereum.org/en/upload-deposit-data) and upload your `deposit_data-*.json` file. You’ll be prompted to connect your wallet.</p>
+        <p>You can then proceed to deposit 32 ETH into the Mainnet deposit contract via the Launchpad page. Exercise extreme caution throughout this procedure. Finally, head back to your command prompt and run the following command:</p>
+        <pre><code>prysm.bat validator</code></pre>
+      </TabItem>
+      <TabItem value="testnet">
+        <pre><code>prysm.bat validator accounts import --keys-dir=<YOUR_FOLDER_PATH> --prater</code></pre>
+        <p>You’ll be prompted to specify a wallet directory twice. Provide the path to your <code>ConsensusLayer</code> folder for both prompts. You should see <code>Successfully imported 1 accounts, view all of them by running accounts list</code> when your account has been successfully imported into Prysm.</p>
+        <p>Next, go to the [Prater Launchpad’s deposit data upload page](https://prater.launchpad.ethereum.org/en/upload-deposit-data) and upload your `deposit_data-*.json` file. You’ll be prompted to connect your wallet.</p>
+        <p>If you need Goeth, head over to one of the following Discord servers:</p>
+        <ul>
+          <li>r/ethstaker discord</li>
+          <li>Prysm discord</li>
+        </ul>
+        <p>Someone should be able to give you the Goeth you need. You can then proceed to deposit 32 goeth into the Prater testnet’s deposit contract via the Launchpad page. Exercise extreme caution throughout this procedure. Finally, head back to your command prompt and run the following command:</p>
+        <pre><code>prysm.bat validator --prater</code></pre>      
+      </TabItem>
+    </Tabs>
+  </TabItem>
+  <TabItem value="others">
+    <p>Issue the following command from your terminal, replacing <code>&lt;YOUR_FOLDER_PATH&gt;</code> with the full path to your <code>ConsensusLayer</code> folder.</p>
+    <Tabs groupId="network" defaultValue="mainnet" values={[
+        {label: 'Mainnet', value: 'mainnet'},
+        {label: 'Testnet', value: 'testnet'}
+    ]}>
+      <TabItem value="mainnet">
+        <pre><code>./deposit new-mnemonic --num_validators=1 --mnemonic_language=english --folder=<YOUR_FOLDER_PATH></code></pre>
+      </TabItem>
+      <TabItem value="testnet">
+        <pre><code>./deposit new-mnemonic --num_validators=1 --mnemonic_language=english --chain=prater --folder=<YOUR_FOLDER_PATH></code></pre>
+      </TabItem>
+    </Tabs>
+    <p>Follow the CLI prompts to generate your keys. This will give you two artifacts:</p>
+    <ol>
+      <li>A <strong>new mnemonic seed phrase</strong>. This is highly sensitive and should be kept safe, secure, and airgapped.</li>
+      <li>A <code>validator_keys</strong> folder. This folder will contain two files:
+        <ol>
+          <li><code>deposit_data-*.json</code> - contains deposit data that you’ll later upload to the Ethereum launchpad.</li>
+          <li><code>keystore-m_*.json</code> - contains your public key and ___________.</li>
+        </ol>
+      </li>
+    </ol>
+    Issue the following command from your terminal to import your keystores, replacing <code>&lt;YOUR_FOLDER_PATH&gt;</code> with the full path to your `ConsensusLayer` folder.
+    <Tabs groupId="network" defaultValue="mainnet" values={[
+        {label: 'Mainnet', value: 'mainnet'},
+        {label: 'Testnet', value: 'testnet'}
+    ]}>
+      <TabItem value="mainnet">
+        <pre><code>./prysm.sh validator accounts import --keys-dir=<YOUR_FOLDER_PATH></code></pre>
+        <p>You’ll be prompted to specify a wallet directory twice. Provide the path to your <code>ConsensusLayer</code> folder for both prompts. You should see <code>Successfully imported 1 accounts, view all of them by running accounts list</code> when your account has been successfully imported into Prysm.</p>
+        <p>Next, go to the [Mainnet Launchpad’s deposit data upload page](https://launchpad.ethereum.org/en/upload-deposit-data) and upload your `deposit_data-*.json` file. You’ll be prompted to connect your wallet.</p>
+        <p>You can then proceed to deposit 32 ETH into the Mainnet deposit contract via the Launchpad page. Exercise extreme caution throughout this procedure. Finally, head back to your command prompt and run the following command:</p>
+        <pre><code>./prysm.sh validator</code></pre>
+      </TabItem>
+      <TabItem value="testnet">
+        <pre><code>./prysm.sh validator accounts import --keys-dir=<YOUR_FOLDER_PATH> --prater</code></pre>
+        <p>You’ll be prompted to specify a wallet directory twice. Provide the path to your <code>ConsensusLayer</code> folder for both prompts. You should see <code>Successfully imported 1 accounts, view all of them by running accounts list</code> when your account has been successfully imported into Prysm.</p>
+        <p>Next, go to the [Prater Launchpad’s deposit data upload page](https://prater.launchpad.ethereum.org/en/upload-deposit-data) and upload your `deposit_data-*.json` file. You’ll be prompted to connect your wallet.</p>
+        <p>If you need Goeth, head over to one of the following Discord servers:</p>
+        <ul>
+          <li>r/ethstaker discord</li>
+          <li>Prysm discord</li>
+        </ul>
+        <p>Someone should be able to give you the Goeth you need. You can then proceed to deposit 32 goeth into the Prater testnet’s deposit contract via the Launchpad page. Exercise extreme caution throughout this procedure. Finally, head back to your command prompt and run the following command:</p>
+        <pre><code>./prysm.sh validator --prater</code></pre>      
+      </TabItem>
+    </Tabs>
+  </TabItem>
+</Tabs>
 
 
 -----------
