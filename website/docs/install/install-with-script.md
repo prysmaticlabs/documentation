@@ -77,9 +77,9 @@ First, create a directory called `ExecutionLayer` on your SSD [<a href='#footnot
 Next, select an execution client [<a href='#footnote-X'>TODO</a>].
 
 <Tabs groupId="execution-clients" defaultValue="nethermind" values={[
-  {label: 'Nethermind', value: 'nethermind'},
-  {label: 'Besu', value: 'besu'},
-  {label: 'Geth', value: 'geth'}
+{label: 'Nethermind', value: 'nethermind'},
+{label: 'Besu', value: 'besu'},
+{label: 'Geth', value: 'geth'}
 ]}>
 
   <TabItem value="nethermind">
@@ -106,18 +106,91 @@ Next, select an execution client [<a href='#footnote-X'>TODO</a>].
     <p>Your Nethermind execution node will begin syncing after you issue this command. This should take about two hours to complete. [<a href='#footnote-X'>TODO: Detailed Nethermind installation guidance is available on Nethermind’s documentation portal</a>]</p>
   </TabItem>
   <TabItem value="besu">
-  test 2
+    <p>Install the latest stable release of Besu by following the instructions on the <a href='https://besu.hyperledger.org/en/stable/HowTo/Get-Started/Installation-Options/Install-Binaries/'>Besu binary distributions</a> page.</p>
+    <Tabs groupId="network" defaultValue="mainnet" values={[
+        {label: 'Mainnet', value: 'mainnet'},
+        {label: 'Testnet', value: 'testnet'}
+    ]}>
+      <TabItem value="mainnet">
+        <pre><code>besu --network=mainnet --rpc-http-enabled</code></pre>
+        <ul>
+          <li><code>--network=mainnet</code> connects to Mainnet.</li>
+          <li><code>--rpc-http-enabled</code> exposes an http endpoint that your beacon node can later connect to.</li>
+        </ul>
+      </TabItem>
+      <TabItem value="testnet">
+        <pre><code>besu --network=goerli --rpc-http-enabled</code></pre>
+        <ul>
+          <li><code>--network=goerli</code> connects to the Goerli execution-layer testnet.</li>
+          <li><code>--rpc-http-enabled</code> exposes an http endpoint that your beacon node can later connect to.</li>
+        </ul>
+      </TabItem>
+    </Tabs>
+    <p>Your Besu execution node will begin syncing after you issue this command. This should take about two hours to complete. [<a href='#footnote-X'>TODO: Detailed Besu installation guidance is available on [Besu’s documentation portal](https://besu.hyperledger.org/en/stable/HowTo/Get-Started/Starting-node/).</a>]</p>
   </TabItem>
   <TabItem value="geth">
     <Admonition type="caution">
       Geth is currently the supermajority execution layer client. The security of Ethereum’s ecosystem depends on decentalization, so we recommend using a minority client.
     </Admonition>
+    <p>Download and run the latest 64-bit stable release of the **Geth installer** for your operating system from the <a href='https://geth.ethereum.org/downloads/'>geth downloads page</a>. Run the following command from a terminal window:</p>
+    <Tabs groupId="network" defaultValue="mainnet" values={[
+        {label: 'Mainnet', value: 'mainnet'},
+        {label: 'Testnet', value: 'testnet'}
+    ]}>
+      <TabItem value="mainnet">
+        <pre><code>geth --http --datadir .</code></pre>
+        <ul>
+          <li><code>--http</code> exposes an http endpoint that your beacon node can later connect to.</li>
+          <li><code>--datadir .</code> specifies the current directory (ExecutionLayer) as the location for the execution layer database [<a href='#footnote-X'>TODO</a>].</li>
+        </ul>
+      </TabItem>
+      <TabItem value="testnet">
+        <pre><code>geth --goerli --http --datadir .</code></pre>
+        <ul>
+          <li><code>--goerli</code> connects to the Goerli execution-layer testnet.</li>
+          <li><code>--http</code> exposes an http endpoint that your beacon node can later connect to.</li>
+          <li><code>--datadir .</code> specifies the current directory (ExecutionLayer) as the location for the execution layer database [<a href='#footnote-X'>TODO</a>].</li>
+        </ul>
+      </TabItem>
+    </Tabs>
+    <p>Your geth execution node will begin syncing after you issue this command. This should take about two hours to complete. [<a href='#footnote-X'>TODO: Detailed geth installation guidance is available on geth’s documentation portal.</a>]</p>
   </TabItem>
 </Tabs>
 
 
+## Install and configure a beacon node using Prysm
+
+You should have an execution node running locally on `http://localhost:8545` before proceeding.
+
+To verify that your execution node is properly configured and running, TODO.
+
+Create a directory called `ConsensusLayer` on your SSD [todo: this can be anything]. Navigate to this directory from your terminal.
 
 
+<Tabs groupId="network" defaultValue="mainnet" values={[
+    {label: 'Windows', value: 'win'},
+    {label: 'Linux, MacOS, Arm64', value: 'others'}
+]}>
+  <TabItem value="win">
+    <pre><code>geth --http --datadir .</code></pre>
+    <ul>
+      <li><code>--http</code> exposes an http endpoint that your beacon node can later connect to.</li>
+      <li><code>--datadir .</code> specifies the current directory (ExecutionLayer) as the location for the execution layer database [<a href='#footnote-X'>TODO</a>].</li>
+    </ul>
+  </TabItem>
+  <TabItem value="others">
+    <pre><code>geth --goerli --http --datadir .</code></pre>
+    <ul>
+      <li><code>--goerli</code> connects to the Goerli execution-layer testnet.</li>
+      <li><code>--http</code> exposes an http endpoint that your beacon node can later connect to.</li>
+      <li><code>--datadir .</code> specifies the current directory (ExecutionLayer) as the location for the execution layer database [<a href='#footnote-X'>TODO</a>].</li>
+    </ul>
+  </TabItem>
+</Tabs>
+
+
+-----------
+<br /><br /><br /><br /><br /><br /><br />
 
 
 
