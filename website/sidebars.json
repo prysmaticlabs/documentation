@@ -11,7 +11,7 @@
         },
         {
             "type": "doc",
-            "label": "Run a Node and Stake ETH using Prysm",
+            "label": "Install Prysm, Run Node, Stake ETH",
             "id": "install/install-with-script"
         },
         {
@@ -21,10 +21,12 @@
             "label": "Other Installation Methods",
             "items": [{
                     "type": "doc",
+                    "label": "Install Prysm with Docker",
                     "id": "install/install-with-docker"
                 },
                 {
                     "type": "doc",
+                    "label": "Install Prysm from Source with Bazel",
                     "id": "install/install-with-bazel"
                 }
             ]
