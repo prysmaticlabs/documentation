@@ -78,7 +78,11 @@ First, create a directory called `ExecutionLayer` on your SSD (footnote: can be 
 
 Next, select an execution client (footnote - todo).
 
-<Tabs groupId="execution-clients" defaultValue="nethermind">
+<Tabs groupId="execution-clients" defaultValue="nethermind" values={[
+  {label: 'Nethermind', value: 'nethermind'},
+  {label: 'Besu', value: 'besu'},
+  {label: 'Geth', value: 'geth'}
+]}>
 
   <TabItem value="nethermind">
     <p>test 1 With html</p>
