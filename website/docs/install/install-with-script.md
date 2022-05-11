@@ -7,8 +7,6 @@ sidebar_label: Run an Ethereum Node and Stake ETH
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## How to Run an Ethereum Node and Stake ETH using Prysm
-
 Prysm is an implementation of the [Ethereum proof-of-stake consensus specification](https://github.com/ethereum/consensus-specs). In this guide, you’ll learn how to run a full Ethereum node [todo - footnote] using Prysm. This will allow you to participate in the Ethereum ecosystem as a beacon node operator [todo - definition] and optionally as a validator [TODO: link to below definition or glossary].
 
 This is a beginner-friendly guide. Familiarity with the command line is expected, but otherwise this guide makes no assumptions about your technical skills or prior knowledge.
