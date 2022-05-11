@@ -6,6 +6,12 @@
         },
         {
             "type": "doc",
+            "label": "Security Best Practices",
+            "id": "security-best-practices"
+        },
+        {
+            "type": "doc",
+            "label": "Run a Node and Stake ETH using Prysm",
             "id": "install/install-with-script"
         },
         {
@@ -296,11 +302,6 @@
             "type": "doc",
             "label": "Security Audits",
             "id": "audits/phase0"
-        },
-        {
-            "type": "doc",
-            "label": "Security Best Practices",
-            "id": "security-best-practices"
         },
         {
             "type": "doc",
