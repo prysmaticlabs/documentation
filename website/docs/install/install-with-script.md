@@ -11,7 +11,7 @@ Prysm is an implementation of the [Ethereum proof-of-stake consensus specificati
 
 This is a beginner-friendly guide. Familiarity with the command line is expected, but otherwise this guide makes no assumptions about your technical skills or prior knowledge.
 
-## Identify your goals and system requirements
+## Step 1: Identify your goals and system requirements
 
 <table>
     <tr>
@@ -63,17 +63,17 @@ This is a beginner-friendly guide. Familiarity with the command line is expected
 
 If you can’t run a full node, TODO.
 
-## Best practices
+## Step 2: Review best practices
 
-- This guide will show you **how to use Prysm**. If you aren't familiar with foundational concepts like **proof-of-stake**, **beacon nodes**, or **The Merge**, see [A Beginner's Introduction to Prysm and Prysmatic](todo).
-- Try this guide on **testnet first, then mainnet** [<a href='#footnote-X'>TODO</a>].
-- Keep things simple. This guidance assumes all client software will run on a single machine.
-- Review the latest advisories for both [testnet](https://prater.launchpad.ethereum.org/en/overview) and [mainnet](https://launchpad.ethereum.org/en/).
-- Inbound and outbound firewall rules should be configured on your machine. Keep TCP `8545` closed. Keep TCP and UDP `30303` open so that other execution nodes can connect to your execution node.
-- Review all of our [published security best practices](https://docs.prylabs.network/docs/security-best-practices/).
-- Help is available - reach out to prysm discord, #ethstaker, r/ethstaker, or [invite.gg/ethstaker](http://invite.gg/ethstaker).
+- **This is a no-frills procedure**. If you're new to Ethereum or proof-of-stake, read [A Beginner's Introduction to Prysm and Prysmatic](todo) before proceeding [TODO: importance of understanding how things work at a high-level].
+- **Try this guide on testnet first**, then mainnet [<a href='#footnote-X'>TODO</a>].
+- **Keep things simple**. This guidance assumes all client software will run on a single machine.
+- **Review the latest advisories** for both [testnet](https://prater.launchpad.ethereum.org/en/overview) and [mainnet](https://launchpad.ethereum.org/en/).
+- **Inbound and outbound firewall rules should be configured** on your machine. Keep TCP `8545` closed. Keep TCP and UDP `30303` open so that other execution nodes can connect to your execution node.
+- **Review all of our [published security best practices](https://docs.prylabs.network/docs/security-best-practices/)**.
+- **Help is available** - reach out to prysm discord, #ethstaker, r/ethstaker, or [invite.gg/ethstaker](http://invite.gg/ethstaker).
 
-## Step 1: Install and configure an execution client
+## Step 3: Install and configure an execution client
 
 First, create a directory called `ExecutionLayer` on your SSD [<a href='#footnote-X'>TODO - can be anything</a>].
 
@@ -161,7 +161,7 @@ Next, select an execution client [<a href='#footnote-X'>TODO</a>].
 </Tabs>
 
 
-## Step 2: Install and configure a beacon node using Prysm
+## Step 4: Install and configure a beacon node using Prysm
 
 You should have an execution node running locally on `http://localhost:8545` before proceeding.
 
@@ -230,7 +230,7 @@ Congratulations! You’re now running a <strong>full Ethereum node</strong>. You
 ![Full Ethereum node](../../static/img/beacon-node-and-execution-node.png)
 
 
-## Step 3: Install and configure a validator node using Prysm
+## Step 5: Install and configure a validator node using Prysm
 
 TODO: This requires 32 ETH to stake
 
@@ -364,7 +364,7 @@ In the meantime, leave both terminal windows open and running. Once your validat
 
 
 
-## Step 4: Configure monitoring and alerts
+## Step 6: Configure monitoring and alerts
 
 TODO
 
