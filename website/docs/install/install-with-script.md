@@ -175,25 +175,27 @@ Create a directory called `ConsensusLayer` on your SSD [todo: this can be anythi
 ]}>
   <TabItem value="win">
     <p>Navigate to your <code>ConsensusLayer</code> directory and run the following three commands from an Administrator command prompt:</p>
-    <pre>
-      mkdir prysm && cd prysm <br />
-      curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.bat --output prysm.bat
-      reg add HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1
-    </pre>
-    <p>This will download the Prysm client and update your registry to enable verbose logging.</p>
-    <Tabs groupId="network" defaultValue="mainnet" values={[
-        {label: 'Mainnet', value: 'mainnet'},
-        {label: 'Testnet', value: 'testnet'}
-    ]}>
-      <TabItem value="mainnet">
-        <p>Use the following command to start a beacon node that connects to your local execution node:</p>
-        <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8545</code></pre>
-      </TabItem>
-      <TabItem value="testnet">
-        <p>Download the genesis state from github into your ConsensusLayer directory. Then use the following command to start a beacon node that connects to your local execution node:</p>
-        <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8545 --prater --genesis-state=..\genesis.ssz</code></pre>
-      </TabItem>
-    </Tabs>
+
+```
+mkdir prysm && cd prysm <br />
+curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.bat --output prysm.bat
+reg add HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1
+```
+
+  <p>This will download the Prysm client and update your registry to enable verbose logging.</p>
+  <Tabs groupId="network" defaultValue="mainnet" values={[
+      {label: 'Mainnet', value: 'mainnet'},
+      {label: 'Testnet', value: 'testnet'}
+  ]}>
+    <TabItem value="mainnet">
+      <p>Use the following command to start a beacon node that connects to your local execution node:</p>
+      <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8545</code></pre>
+    </TabItem>
+    <TabItem value="testnet">
+      <p>Download the genesis state from github into your ConsensusLayer directory. Then use the following command to start a beacon node that connects to your local execution node:</p>
+      <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8545 --prater --genesis-state=..\genesis.ssz</code></pre>
+    </TabItem>
+  </Tabs>
   </TabItem>
   <TabItem value="others">
     <p>Navigate to your <code>ConsensusLayer</code> directory and run the following two commands from your terminal:</p>
