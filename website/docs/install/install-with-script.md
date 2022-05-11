@@ -91,16 +91,12 @@ Next, select an execution client (footnote - todo).
         {label: 'Testnet', value: 'testnet'}
     ]}>
       <TabItem value="mainnet">
-        ```terminal
-        Nethermind.Runner --config mainnet --JsonRpc.Enabled true
-        ```
+        <pre><code>Nethermind.Runner --config mainnet --JsonRpc.Enabled true</code></pre>
         - `--config mainnet` connects to Mainnet.
         - `--JsonRpc.Enabled true` exposes an http endpoint that your beacon node can later connect to.
       </TabItem>
       <TabItem value="testnet">
-        ```terminal
-        Nethermind.Runner --config goerli --JsonRpc.Enabled true
-        ```
+        <pre><code>Nethermind.Runner --config goerli --JsonRpc.Enabled true</code></pre>
         - `--config goerli` connects to the Goerli execution-layer testnet.
         - `--JsonRpc.Enabled true` exposes an http endpoint that your beacon node can later connect to.
       </TabItem>
