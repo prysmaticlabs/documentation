@@ -169,7 +169,7 @@ To verify that your execution node is properly configured and running, TODO.
 Create a directory called `ConsensusLayer` on your SSD [todo: this can be anything]. Navigate to this directory from your terminal.
 
 
-<Tabs groupId="network" defaultValue="mainnet" values={[
+<Tabs groupId="network" defaultValue="win" values={[
     {label: 'Windows', value: 'win'},
     {label: 'Linux, MacOS, Arm64', value: 'others'}
 ]}>
@@ -243,7 +243,7 @@ Next, we’ll create an account with the [Ethereum Staking Deposit CLI](https://
 Download the latest stable version of the deposit CLI for your operating system from the [Staking Deposit CLI Releases page](https://github.com/ethereum/staking-deposit-cli/releases).
 
 
-<Tabs groupId="network" defaultValue="mainnet" values={[
+<Tabs groupId="network" defaultValue="win" values={[
     {label: 'Windows', value: 'win'},
     {label: 'Linux, MacOS, Arm64', value: 'others'}
 ]}>
@@ -254,10 +254,10 @@ Download the latest stable version of the deposit CLI for your operating system 
         {label: 'Testnet', value: 'testnet'}
     ]}>
       <TabItem value="mainnet">
-        <pre><code>deposit.exe new-mnemonic --num_validators=1 --mnemonic_language=english --folder=<YOUR_FOLDER_PATH></code></pre>
+        <pre><code>deposit.exe new-mnemonic --num_validators=1 --mnemonic_language=english --folder=&lt;YOUR_FOLDER_PATH&gt;</code></pre>
       </TabItem>
       <TabItem value="testnet">
-        <pre><code>deposit.exe new-mnemonic --num_validators=1 --mnemonic_language=english --chain=prater --folder=<YOUR_FOLDER_PATH></code></pre>
+        <pre><code>deposit.exe new-mnemonic --num_validators=1 --mnemonic_language=english --chain=prater --folder=&lt;YOUR_FOLDER_PATH&gt;</code></pre>
       </TabItem>
     </Tabs>
     <p>Follow the CLI prompts to generate your keys. This will give you two artifacts:</p>
@@ -276,14 +276,14 @@ Download the latest stable version of the deposit CLI for your operating system 
         {label: 'Testnet', value: 'testnet'}
     ]}>
       <TabItem value="mainnet">
-        <pre><code>prysm.bat validator accounts import --keys-dir=<YOUR_FOLDER_PATH></code></pre>
+        <pre><code>prysm.bat validator accounts import --keys-dir=&lt;YOUR_FOLDER_PATH&gt;</code></pre>
         <p>You’ll be prompted to specify a wallet directory twice. Provide the path to your <code>ConsensusLayer</code> folder for both prompts. You should see <code>Successfully imported 1 accounts, view all of them by running accounts list</code> when your account has been successfully imported into Prysm.</p>
         <p>Next, go to the [Mainnet Launchpad’s deposit data upload page](https://launchpad.ethereum.org/en/upload-deposit-data) and upload your `deposit_data-*.json` file. You’ll be prompted to connect your wallet.</p>
         <p>You can then proceed to deposit 32 ETH into the Mainnet deposit contract via the Launchpad page. Exercise extreme caution throughout this procedure. Finally, head back to your command prompt and run the following command:</p>
         <pre><code>prysm.bat validator</code></pre>
       </TabItem>
       <TabItem value="testnet">
-        <pre><code>prysm.bat validator accounts import --keys-dir=<YOUR_FOLDER_PATH> --prater</code></pre>
+        <pre><code>prysm.bat validator accounts import --keys-dir=&lt;YOUR_FOLDER_PATH&gt; --prater</code></pre>
         <p>You’ll be prompted to specify a wallet directory twice. Provide the path to your <code>ConsensusLayer</code> folder for both prompts. You should see <code>Successfully imported 1 accounts, view all of them by running accounts list</code> when your account has been successfully imported into Prysm.</p>
         <p>Next, go to the [Prater Launchpad’s deposit data upload page](https://prater.launchpad.ethereum.org/en/upload-deposit-data) and upload your `deposit_data-*.json` file. You’ll be prompted to connect your wallet.</p>
         <p>If you need Goeth, head over to one of the following Discord servers:</p>
@@ -303,10 +303,10 @@ Download the latest stable version of the deposit CLI for your operating system 
         {label: 'Testnet', value: 'testnet'}
     ]}>
       <TabItem value="mainnet">
-        <pre><code>./deposit new-mnemonic --num_validators=1 --mnemonic_language=english --folder=<YOUR_FOLDER_PATH></code></pre>
+        <pre><code>./deposit new-mnemonic --num_validators=1 --mnemonic_language=english --folder=&lt;YOUR_FOLDER_PATH&gt;</code></pre>
       </TabItem>
       <TabItem value="testnet">
-        <pre><code>./deposit new-mnemonic --num_validators=1 --mnemonic_language=english --chain=prater --folder=<YOUR_FOLDER_PATH></code></pre>
+        <pre><code>./deposit new-mnemonic --num_validators=1 --mnemonic_language=english --chain=prater --folder=&lt;YOUR_FOLDER_PATH&gt;</code></pre>
       </TabItem>
     </Tabs>
     <p>Follow the CLI prompts to generate your keys. This will give you two artifacts:</p>
@@ -325,14 +325,14 @@ Download the latest stable version of the deposit CLI for your operating system 
         {label: 'Testnet', value: 'testnet'}
     ]}>
       <TabItem value="mainnet">
-        <pre><code>./prysm.sh validator accounts import --keys-dir=<YOUR_FOLDER_PATH></code></pre>
+        <pre><code>./prysm.sh validator accounts import --keys-dir=&lt;YOUR_FOLDER_PATH&gt;</code></pre>
         <p>You’ll be prompted to specify a wallet directory twice. Provide the path to your <code>ConsensusLayer</code> folder for both prompts. You should see <code>Successfully imported 1 accounts, view all of them by running accounts list</code> when your account has been successfully imported into Prysm.</p>
         <p>Next, go to the [Mainnet Launchpad’s deposit data upload page](https://launchpad.ethereum.org/en/upload-deposit-data) and upload your `deposit_data-*.json` file. You’ll be prompted to connect your wallet.</p>
         <p>You can then proceed to deposit 32 ETH into the Mainnet deposit contract via the Launchpad page. Exercise extreme caution throughout this procedure. Finally, head back to your command prompt and run the following command:</p>
         <pre><code>./prysm.sh validator</code></pre>
       </TabItem>
       <TabItem value="testnet">
-        <pre><code>./prysm.sh validator accounts import --keys-dir=<YOUR_FOLDER_PATH> --prater</code></pre>
+        <pre><code>./prysm.sh validator accounts import --keys-dir=&lt;YOUR_FOLDER_PATH&gt; --prater</code></pre>
         <p>You’ll be prompted to specify a wallet directory twice. Provide the path to your <code>ConsensusLayer</code> folder for both prompts. You should see <code>Successfully imported 1 accounts, view all of them by running accounts list</code> when your account has been successfully imported into Prysm.</p>
         <p>Next, go to the [Prater Launchpad’s deposit data upload page](https://prater.launchpad.ethereum.org/en/upload-deposit-data) and upload your `deposit_data-*.json` file. You’ll be prompted to connect your wallet.</p>
         <p>If you need Goeth, head over to one of the following Discord servers:</p>
