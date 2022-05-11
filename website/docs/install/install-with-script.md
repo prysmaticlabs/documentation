@@ -78,54 +78,30 @@ First, create a directory called `ExecutionLayer` on your SSD (footnote: can be 
 
 Next, select an execution client (footnote - todo).
 
-<Tabs
-groupId="group-id"
-defaultValue="default"
-values={[
-{label: 'Linux', value: 'lin'},
-{label: 'Windows', value: 'win'},
-{label: 'MacOS', value: 'mac'},
-{label: 'Arm64', value: 'arm'},
-]
-}>
+<Tabs groupId="execution-clients" defaultValue="nethermind" values={[
+  {label: 'Nethermind', value: 'nethermind'},
+  {label: 'Besu', value: 'besu'},
+  {label: 'Geth', value: 'geth'}
+]}>
 
-<TabItem value="lin">
-test 1 <p>With html</p>
-<Tabs
-  groupId="group-id2"
-  defaultValue="default"
-  values={[
-    {label: 'Linux', value: 'lin'},
-    {label: 'Windows', value: 'win'},
-    {label: 'MacOS', value: 'mac'},
-    {label: 'Arm64', value: 'arm'},
-  ]
-}>
-
-<TabItem value="lin">
-test 1 <p>With html</p>
-</TabItem>
-<TabItem value="win">
-test 2
-</TabItem>
-<TabItem value="mac">
-test 3
-</TabItem>
-<TabItem value="arm">
-test 4
-</TabItem>
-
-</Tabs>
-
-</TabItem>
-<TabItem value="win">
-test 2
-</TabItem>
-<TabItem value="mac">
-test 3
-</TabItem>
-<TabItem value="arm">
-test 4
-</TabItem>
-
+  <TabItem value="nethermind">
+    <p>test 1 With html</p>
+    <Tabs groupId="network" defaultValue="mainnet" values={[
+        {label: 'Mainnet', value: 'mainnet'},
+        {label: 'Testnet', value: 'testnet'}
+    ]}>
+      <TabItem value="mainnet">
+      test 1 <p>With html</p>
+      </TabItem>
+      <TabItem value="win">
+      test 2
+      </TabItem>
+    </Tabs>
+  </TabItem>
+  <TabItem value="besu">
+  test 2
+  </TabItem>
+  <TabItem value="geth">
+  test 3
+  </TabItem>
 </Tabs>
