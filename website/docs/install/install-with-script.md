@@ -199,25 +199,26 @@ reg add HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1
   </TabItem>
   <TabItem value="others">
     <p>Navigate to your <code>ConsensusLayer</code> directory and run the following two commands from your terminal:</p>
-    <pre><code>
-        <span class='token-line'>mkdir prysm && cd prysm</span>
-        <span class='token-line'>curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --output prysm.sh && chmod +x prysm.sh</span>
-    </code>
-    </pre>
-    <p>This will download the Prysm client and and make it executable.</p>
-    <Tabs groupId="network" defaultValue="mainnet" values={[
-        {label: 'Mainnet', value: 'mainnet'},
-        {label: 'Testnet', value: 'testnet'}
-    ]}>
-      <TabItem value="mainnet">
-        <p>Use the following command to start a beacon node that connects to your local execution node:</p>
-        <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8545</code></pre>
-      </TabItem>
-      <TabItem value="testnet">
-        <p>Download the genesis state from github into your ConsensusLayer directory. Then use the following command to start a beacon node that connects to your local execution node:</p>
-        <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8545 --prater --genesis-state=../genesis.ssz</code></pre>
-      </TabItem>
-    </Tabs>
+
+```
+mkdir prysm && cd prysm
+curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --output prysm.sh && chmod +x prysm.sh
+```
+
+  <p>This will download the Prysm client and and make it executable.</p>
+  <Tabs groupId="network" defaultValue="mainnet" values={[
+      {label: 'Mainnet', value: 'mainnet'},
+      {label: 'Testnet', value: 'testnet'}
+  ]}>
+    <TabItem value="mainnet">
+      <p>Use the following command to start a beacon node that connects to your local execution node:</p>
+      <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8545</code></pre>
+    </TabItem>
+    <TabItem value="testnet">
+      <p>Download the genesis state from github into your ConsensusLayer directory. Then use the following command to start a beacon node that connects to your local execution node:</p>
+      <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8545 --prater --genesis-state=../genesis.ssz</code></pre>
+    </TabItem>
+  </Tabs>
   </TabItem>
 </Tabs>
 
@@ -228,19 +229,17 @@ Congratulations! You’re now running a <strong>full Ethereum node</strong>. You
 ![Full Ethereum node](../../static/img/beacon-node-and-execution-node.png)
 
 
-
-
-
 ## Step 3: Install and configure a validator node using Prysm
 
 TODO: This requires 32 ETH to stake
 
 Before proceeding, ensure that your beacon node is fully synchronized by running the following command:
 
-<pre><code>curl http://localhost:3500/eth/v1alpha1/node/syncing</code></pre>
+```
+curl http://localhost:3500/eth/v1alpha1/node/syncing
+```
 
-
-If you see <code>{"syncing":false}%</code>, you’re ready to proceed.
+If you see `{"syncing":false}%`, you’re ready to proceed.
 
 While you’re waiting for your beacon node to synchronize, review the latest Ethereum Foundation validator advisories. Testnet advisories are available on the [Prater Staking Launchpad](https://prater.launchpad.ethereum.org/en/overview). Mainnet advisories are on the [Mainnet Staking Launchpad](https://launchpad.ethereum.org/en/overview).
 
