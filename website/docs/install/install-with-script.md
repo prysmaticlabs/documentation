@@ -129,9 +129,11 @@ Next, select an execution client [<a href='#footnote-X'>TODO</a>].
     <p>Your Besu execution node will begin syncing after you issue this command. This should take about two hours to complete. [<a href='#footnote-X'>TODO: Detailed Besu installation guidance is available on [Besu’s documentation portal](https://besu.hyperledger.org/en/stable/HowTo/Get-Started/Starting-node/).</a>]</p>
   </TabItem>
   <TabItem value="geth">
-    <Admonition type="caution">
-      Geth is currently the supermajority execution layer client. The security of Ethereum’s ecosystem depends on decentalization, so we recommend using a minority client.
-    </Admonition>
+
+    :::caution
+    Running an execution node will be required after The Merge. We strongly encourage you to begin running an execution client immediately.
+    :::
+
     <p>Download and run the latest 64-bit stable release of the **Geth installer** for your operating system from the <a href='https://geth.ethereum.org/downloads/'>geth downloads page</a>. Run the following command from a terminal window:</p>
     <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
