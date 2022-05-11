@@ -65,6 +65,7 @@ If you can’t run a full node, TODO.
 
 ## Best practices
 
+- This guide will show you **how to use Prysm**. If you aren't familiar with foundational concepts like **proof-of-stake**, **beacon nodes**, or **The Merge**, see [A Beginner's Introduction to Prysm](todo).
 - Try this guide on **testnet first, then mainnet** [<a href='#footnote-X'>TODO</a>].
 - Keep things simple. This guidance assumes all client software will run on a single machine.
 - Review the latest advisories for both [testnet](https://prater.launchpad.ethereum.org/en/overview) and [mainnet](https://launchpad.ethereum.org/en/).
