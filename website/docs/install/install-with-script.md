@@ -1,13 +1,13 @@
 ---
 id: install-with-script
-title: Installing Prysm with prysm.sh
-sidebar_label: Prysm Quickstart Script
+title: How to Run an Ethereum Node and Stake ETH using Prysm
+sidebar_label: Run an Ethereum Node and Stake ETH
 ---
-
-## test
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+
+## How to Run an Ethereum Node and Stake ETH using Prysm
 
 Prysm is an implementation of the [Ethereum proof-of-stake consensus specification](https://github.com/ethereum/consensus-specs). In this guide, you’ll learn how to run a full Ethereum node [todo - footnote] using Prysm. This will allow you to participate in the Ethereum ecosystem as a beacon node operator [todo - definition] and optionally as a validator [TODO: link to below definition or glossary].
 
@@ -24,7 +24,7 @@ This is a beginner-friendly guide. Familiarity with the command line is expected
     <tr>
       <td>Run an execution node + beacon node</td>
       <td>
-      Post-merge, this combination will represent an “full Ethereum client”, or a “full node”. Full nodes require both consensus-layer client software and execution-layer client software. <br />
+      Post-merge, this combination will represent an “full Ethereum client”, or a “full node”. Full nodes require both consensus-layer client software and execution-layer client software. <br /><br />
       Running a full node comes with the following benefits:
       <ul> 
         <li>It contributes to the security of Ethereum's ecosystem [todo: a note on how decentralization == security].</li>    
@@ -34,10 +34,10 @@ This is a beginner-friendly guide. Familiarity with the command line is expected
       </td>
       <td>
         <ul> 
-          <li>OS: 64-bit Linux, Mac OS X 10.14+, Windows 10+ 64-bit</li>    
-          <li>Memory: 16GB+ RAM</li> 
-          <li>Storage: SSD with at least 2TB free space</li> 
-          <li>Network: 8 MBit/sec download Internet service</li> 
+          <li><strong>OS</strong>: 64-bit Linux, Mac OS X 10.14+, Windows 10+ 64-bit</li>    
+          <li><strong>Memory</strong>: 16GB+ RAM</li> 
+          <li><strong>Storage</strong>: SSD with at least 2TB free space</li> 
+          <li><strong>Network</strong>: 8 MBit/sec download Internet service</li> 
           <li>TODO</li> 
         </ul> 
       </td>
@@ -49,8 +49,8 @@ This is a beginner-friendly guide. Familiarity with the command line is expected
         </td>
         <td>
           <ul> 
-            <li>A full node: Execution node + beacon node running locally.</li>    
-            <li>32 ETH</li> 
+            <li><strong>A full node</strong>: Execution node + beacon node running locally.</li>    
+            <li><strong>32 ETH</strong></li> 
             <li>TODO</li> 
           </ul> 
         </td>
@@ -78,11 +78,7 @@ First, create a directory called `ExecutionLayer` on your SSD (footnote: can be 
 
 Next, select an execution client (footnote - todo).
 
-<Tabs groupId="execution-clients" defaultValue="nethermind" values={[
-  {label: 'Nethermind', value: 'nethermind'},
-  {label: 'Besu', value: 'besu'},
-  {label: 'Geth', value: 'geth'}
-]}>
+<Tabs groupId="execution-clients" defaultValue="nethermind">
 
   <TabItem value="nethermind">
     <p>test 1 With html</p>
