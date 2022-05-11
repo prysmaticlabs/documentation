@@ -176,9 +176,9 @@ Create a directory called `ConsensusLayer` on your SSD [todo: this can be anythi
   <TabItem value="win">
     <p>Navigate to your <code>ConsensusLayer</code> directory and run the following three commands from an Administrator command prompt:</p>
     <pre><code>
-      mkdir prysm && cd prysm
-      curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.bat --output prysm.bat
-      reg add HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1
+      <span class='token-line'>mkdir prysm && cd prysm</span>
+      <span class='token-line'>curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.bat --output prysm.bat</span>
+      <span class='token-line'>reg add HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1</span>
     </code></pre>
     <p>This will download the Prysm client and update your registry to enable verbose logging.</p>
     <Tabs groupId="network" defaultValue="mainnet" values={[
@@ -197,9 +197,10 @@ Create a directory called `ConsensusLayer` on your SSD [todo: this can be anythi
   </TabItem>
   <TabItem value="others">
     <p>Navigate to your <code>ConsensusLayer</code> directory and run the following two commands from your terminal:</p>
-    <pre>
-      <code>mkdir prysm && cd prysm</code>
-      <code>curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --output prysm.sh && chmod +x prysm.sh</code>
+    <pre><code>
+        <span class='token-line'>mkdir prysm && cd prysm</span>
+        <span class='token-line'>curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --output prysm.sh && chmod +x prysm.sh</span>
+    </code>
     </pre>
     <p>This will download the Prysm client and and make it executable.</p>
     <Tabs groupId="network" defaultValue="mainnet" values={[
@@ -215,7 +216,6 @@ Create a directory called `ConsensusLayer` on your SSD [todo: this can be anythi
         <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8545 --prater --genesis-state=../genesis.ssz</code></pre>
       </TabItem>
     </Tabs>
-
   </TabItem>
 </Tabs>
 
