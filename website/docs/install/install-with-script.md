@@ -134,7 +134,7 @@ Next, select an execution client [<a href='#footnote-X'>TODO</a>].
     <div class="admonition admonition-caution alert alert--warning">
       <div class="admonition-content"><p>Geth is a supermajority execution-layer client. We strongly encourage you to consider using either Nethermind or Besu. [todo]</p></div>
     </div>
-    <p>Download and run the latest 64-bit stable release of the **Geth installer** for your operating system from the <a href='https://geth.ethereum.org/downloads/'>geth downloads page</a>. Run the following command from a terminal window:</p>
+    <p>Download and run the latest 64-bit stable release of the <strong>Geth installer</strong> for your operating system from the <a href='https://geth.ethereum.org/downloads/'>geth downloads page</a>. Run the following command from a terminal window:</p>
     <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
         {label: 'Testnet', value: 'testnet'}
