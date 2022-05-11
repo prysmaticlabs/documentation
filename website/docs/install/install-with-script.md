@@ -72,9 +72,11 @@ If you can’t run a full node, TODO.
 
 ## Install and configure an execution client
 
-First, create a directory called `ExecutionLayer` on your SSD [footnote: can be anything].
+First, create a directory called `ExecutionLayer` on your SSD (footnote: can be anything).
 
-Next, select an execution client [footnote - todo].
+Next, select an execution client (footnote - todo).
+
+space?
 
 <Tabs>
   <TabItem value="apple" label="Apple" default>
@@ -87,6 +89,9 @@ Next, select an execution client [footnote - todo].
     This is a banana 🍌
   </TabItem>
 </Tabs>
+
+
+space?
 
 <!--Download the latest stable release of Nethermind for your operating system from the <a href='https://downloads.nethermind.io/'>Nethermind downloads page</a>. Run the following command from a terminal window:-->
 
