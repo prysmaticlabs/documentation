@@ -4,23 +4,36 @@ title: Installing Prysm with prysm.sh
 sidebar_label: Prysm Quickstart Script
 ---
 
+## test
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 
+<Tabs
+  groupId="group-id"
+  defaultValue="default"
+  values={[
+    {label: 'Linux', value: 'lin'},
+    {label: 'Windows', value: 'win'},
+    {label: 'MacOS', value: 'mac'},
+    {label: 'Arm64', value: 'arm'},
+  ]
+}>
 
-<Tabs>
-  <TabItem value="apple" label="Apple" default>
-    This is an apple 🍎
-  </TabItem>
-  <TabItem value="orange" label="Orange">
-    This is an orange 🍊
-  </TabItem>
-  <TabItem value="banana" label="Banana">
-    This is a banana 🍌
-  </TabItem>
+<TabItem value="lin">
+
+</TabItem>
+<TabItem value="win">
+
+</TabItem>
+<TabItem value="mac">
+
+</TabItem>
+<TabItem value="arm">
+
+</TabItem>
 </Tabs>
-
 
 
 
