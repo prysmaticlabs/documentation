@@ -330,6 +330,7 @@ Download the latest stable version of the deposit CLI for your operating system 
         <p>Next, go to the [Mainnet Launchpad’s deposit data upload page](https://launchpad.ethereum.org/en/upload-deposit-data) and upload your `deposit_data-*.json` file. You’ll be prompted to connect your wallet.</p>
         <p>You can then proceed to deposit 32 ETH into the Mainnet deposit contract via the Launchpad page. Exercise extreme caution throughout this procedure. Finally, head back to your command prompt and run the following command:</p>
         <pre><code>./prysm.sh validator</code></pre>
+        Congratulations! You’re now running a <strong>full Ethereum node</strong> and a <strong>validator node</strong> on Mainnet:
       </TabItem>
       <TabItem value="testnet">
         <pre><code>./prysm.sh validator accounts import --keys-dir=&lt;YOUR_FOLDER_PATH&gt; --prater</code></pre>
@@ -341,13 +342,13 @@ Download the latest stable version of the deposit CLI for your operating system 
           <li>Prysm discord</li>
         </ul>
         <p>Someone should be able to give you the Goeth you need. You can then proceed to deposit 32 goeth into the Prater testnet’s deposit contract via the Launchpad page. Exercise extreme caution throughout this procedure. Finally, head back to your command prompt and run the following command:</p>
-        <pre><code>./prysm.sh validator --prater</code></pre>      
+        <pre><code>./prysm.sh validator --prater</code></pre>    
+        Congratulations! You’re now running a <strong>full Ethereum node</strong> and a <strong>validator node</strong> on Prater testnet:
       </TabItem>
     </Tabs>
   </TabItem>
 </Tabs>
 
-Congratulations! You’re now running a <strong>full Ethereum node</strong> and a <strong>validator node</strong>:
 
 diagram
 
