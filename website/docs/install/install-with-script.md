@@ -7,8 +7,6 @@ sidebar_label: Prysm Quickstart Script
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<!-- import styles from './styles.module.css'; -->
-
 Prysm is an implementation of the [Ethereum proof-of-stake consensus specification](https://github.com/ethereum/consensus-specs). In this guide, you’ll learn how to run a full Ethereum node [todo - footnote] using Prysm. This will allow you to participate in the Ethereum ecosystem as a beacon node operator [todo - definition] and optionally as a validator [TODO: link to below definition or glossary].
 
 This is a beginner-friendly guide. Familiarity with the command line is expected, but otherwise this guide makes no assumptions about your technical skills or prior knowledge.
@@ -58,12 +56,10 @@ This is a beginner-friendly guide. Familiarity with the command line is expected
 </table>
 
 :::caution
-
 Running an execution node will be required after The Merge. We strongly encourage you to begin running an execution client immediately.
-
 :::
 
-If you can’t run a full node, ********\_********.
+If you can’t run a full node, TODO.
 
 ## Best practices
 
@@ -80,12 +76,11 @@ First, create a directory called `ExecutionLayer` on your SSD [footnote: can be 
 
 Next, select an execution client [footnote].
 
-<Tabs groupId="execution-clients">
+<!-- <Tabs groupId="execution-clients">
   <TabItem value="Nethermind" label="Nethermind" default>
     <p>
     Download the latest stable release of Nethermind for your operating system from the <a href='https://downloads.nethermind.io/'>Nethermind downloads page</a>. Run the following command from a terminal window:
-    </p>  
-
+    </p>
   </TabItem>
   <TabItem value="Besu" label="Besu">
     This is an orange 🍊
@@ -93,7 +88,7 @@ Next, select an execution client [footnote].
   <TabItem value="Geth" label="Geth">
     This is a banana 🍌
   </TabItem>
-</Tabs>
+</Tabs> -->
 
 <!--<Tabs groupId="networks">
   <TabItem value="Mainnet" label="Mainnet" default>
@@ -108,7 +103,7 @@ Next, select an execution client [footnote].
   <TabItem value="Nethermind" label="Nethermind" default>
     <p>
     Download the latest stable release of Nethermind for your operating system from the <a href='https://downloads.nethermind.io/'>Nethermind downloads page</a>. Run the following command from a terminal window:
-    </p>  
+    </p>
     <Tabs groupId="networks">
       <TabItem value="Mainnet" label="Mainnet" default>
         <p>todo</p>
@@ -126,14 +121,9 @@ Next, select an execution client [footnote].
   </TabItem>
 </Tabs>-->
 
-
-
 Geth is currently the supermajority execution layer client. The security of Ethereum’s ecosystem depends on decentalization, so we recommend using a minority client.
 
-
-
-
------------
+---
 
 ### Step 6: Wait for your validator assignment
 
