@@ -12,7 +12,7 @@
             "type": "category",
             "collapsed": true,
             "collapsible": true,
-            "label": "Other installation methods",
+            "label": "Other Installation Methods",
             "items": [{
                     "type": "doc",
                     "id": "install/install-with-docker"
