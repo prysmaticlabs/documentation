@@ -7,7 +7,7 @@ sidebar_label: Run an Ethereum Node and Stake ETH
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Prysm is an implementation of the [Ethereum proof-of-stake consensus specification](https://github.com/ethereum/consensus-specs). In this guide, you’ll learn how to run a full Ethereum node [todo - footnote] using Prysm. This will allow you to participate in the Ethereum ecosystem as a beacon node operator [todo - definition] and optionally as a validator [TODO: link to below definition or glossary].
+Prysm is an implementation of the [Ethereum proof-of-stake consensus specification](https://github.com/ethereum/consensus-specs). In this guide, you’ll learn how to run a full Ethereum node [<a href='#footnote-X'>TODO</a>] using Prysm. This will allow you to participate in the Ethereum ecosystem as a beacon node operator [<a href='#footnote-X'>TODO</a>] and optionally as a validator [<a href='#footnote-X'>TODO</a>].
 
 This is a beginner-friendly guide. Familiarity with the command line is expected, but otherwise this guide makes no assumptions about your technical skills or prior knowledge.
 
@@ -25,9 +25,9 @@ This is a beginner-friendly guide. Familiarity with the command line is expected
       Post-merge, this combination will represent an “full Ethereum client”, or a “full node”. Full nodes require both consensus-layer client software and execution-layer client software. <br /><br />
       Running a full node comes with the following benefits:
       <ul> 
-        <li>It contributes to the security of Ethereum's ecosystem [todo: a note on how decentralization == security].</li>    
-        <li>It also lets you access Ethereum’s global state directly without having to trust a third party service [todo].</li> 
-        <li>It lets you run a validator node [todo]</li> 
+        <li>It contributes to the security of Ethereum's ecosystem [<a href='#footnote-X'>TODO</a>].</li>    
+        <li>It also lets you access Ethereum’s global state directly without having to trust a third party service [<a href='#footnote-X'>TODO</a>].</li> 
+        <li>It lets you run a validator node [<a href='#footnote-X'>TODO</a>]</li> 
       </ul> 
       </td>
       <td>
@@ -63,18 +63,18 @@ If you can’t run a full node, TODO.
 
 ## Best practices
 
-- Try this guide on **testnet first, then mainnet** [footnote link to security best practices].
+- Try this guide on **testnet first, then mainnet** [<a href='#footnote-X'>TODO</a>].
 - Keep things simple. This guidance assumes all client software will run on a single machine.
 - Review the latest advisories for both [testnet](https://prater.launchpad.ethereum.org/en/overview) and [mainnet](https://launchpad.ethereum.org/en/).
 - Inbound and outbound firewall rules should be configured on your machine. Keep TCP `8545` closed. Keep TCP and UDP `30303` open so that other execution nodes can connect to your execution node.
-- Review all of our published security best practices.
+- Review all of our [published security best practices](https://docs.prylabs.network/docs/security-best-practices/).
 - Help is available - reach out to prysm discord, #ethstaker, r/ethstaker, or [invite.gg/ethstaker](http://invite.gg/ethstaker).
 
 ## Install and configure an execution client
 
-First, create a directory called `ExecutionLayer` on your SSD (footnote: can be anything).
+First, create a directory called `ExecutionLayer` on your SSD [<a href='#footnote-X'>TODO - can be anything</a>].
 
-Next, select an execution client (footnote - todo).
+Next, select an execution client [<a href='#footnote-X'>TODO</a>].
 
 <Tabs groupId="execution-clients" defaultValue="nethermind" values={[
   {label: 'Nethermind', value: 'nethermind'},
@@ -99,7 +99,7 @@ Next, select an execution client (footnote - todo).
         - `--JsonRpc.Enabled true` exposes an http endpoint that your beacon node can later connect to.
       </TabItem>
     </Tabs>
-    <p>Your Nethermind execution node will begin syncing after you issue this command. This should take about two hours to complete. [todo: footnote: Detailed Nethermind installation guidance is available on Nethermind’s documentation portal.]</p>
+    <p>Your Nethermind execution node will begin syncing after you issue this command. This should take about two hours to complete. [<a href='#footnote-X'>TODO: Detailed Nethermind installation guidance is available on Nethermind’s documentation portal</a>]</p>
   </TabItem>
   <TabItem value="besu">
   test 2
