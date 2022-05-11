@@ -174,21 +174,56 @@ Create a directory called `ConsensusLayer` on your SSD [todo: this can be anythi
     {label: 'Linux, MacOS, Arm64', value: 'others'}
 ]}>
   <TabItem value="win">
-    <pre><code>geth --http --datadir .</code></pre>
-    <ul>
-      <li><code>--http</code> exposes an http endpoint that your beacon node can later connect to.</li>
-      <li><code>--datadir .</code> specifies the current directory (ExecutionLayer) as the location for the execution layer database [<a href='#footnote-X'>TODO</a>].</li>
-    </ul>
+    <p>Navigate to your <code>ConsensusLayer</code> directory and run the following three commands from an Administrator command prompt:</p>
+    <pre>
+      <code>mkdir prysm && cd prysm</code>
+      <code>curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.bat --output prysm.bat</code>
+      <code>reg add HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1</code>
+    </pre>
+    <p>This will download the Prysm client and update your registry to enable verbose logging.</p>
+    <Tabs groupId="network" defaultValue="mainnet" values={[
+        {label: 'Mainnet', value: 'mainnet'},
+        {label: 'Testnet', value: 'testnet'}
+    ]}>
+      <TabItem value="mainnet">
+        <p>Use the following command to start a beacon node that connects to your local execution node:</p>
+        <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8545</code></pre>
+      </TabItem>
+      <TabItem value="testnet">
+        <p>Download the genesis state from github into your ConsensusLayer directory. Then use the following command to start a beacon node that connects to your local execution node:</p>
+        <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8545 --prater --genesis-state=..\genesis.ssz</code></pre>
+      </TabItem>
+    </Tabs>
   </TabItem>
   <TabItem value="others">
-    <pre><code>geth --goerli --http --datadir .</code></pre>
-    <ul>
-      <li><code>--goerli</code> connects to the Goerli execution-layer testnet.</li>
-      <li><code>--http</code> exposes an http endpoint that your beacon node can later connect to.</li>
-      <li><code>--datadir .</code> specifies the current directory (ExecutionLayer) as the location for the execution layer database [<a href='#footnote-X'>TODO</a>].</li>
-    </ul>
+    <p>Navigate to your <code>ConsensusLayer</code> directory and run the following two commands from your terminal:</p>
+    <pre>
+      <code>mkdir prysm && cd prysm</code>
+      <code>curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --output prysm.sh && chmod +x prysm.sh</code>
+    </pre>
+    <p>This will download the Prysm client and and make it executable.</p>
+    <Tabs groupId="network" defaultValue="mainnet" values={[
+        {label: 'Mainnet', value: 'mainnet'},
+        {label: 'Testnet', value: 'testnet'}
+    ]}>
+      <TabItem value="mainnet">
+        <p>Use the following command to start a beacon node that connects to your local execution node:</p>
+        <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8545</code></pre>
+      </TabItem>
+      <TabItem value="testnet">
+        <p>Download the genesis state from github into your ConsensusLayer directory. Then use the following command to start a beacon node that connects to your local execution node:</p>
+        <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8545 --prater --genesis-state=../genesis.ssz</code></pre>
+      </TabItem>
+    </Tabs>
+
   </TabItem>
 </Tabs>
+
+Your beacon node will now begin syncing [todo: explain what happens]. This usually takes a couple days, but it can take longer depending on your network and hardware specs.
+
+Congratulations! You’re now running a full Ethereum node. Your full node consists of an execution node in Ethereum’s execution layer, and a beacon node in Ethereum’s consensus layer:
+
+![Full Ethereum node](../../static/img/beacon-node-and-execution-node.png)
 
 
 -----------
