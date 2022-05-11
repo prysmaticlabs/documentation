@@ -76,14 +76,14 @@ First, create a directory called `ExecutionLayer` on your SSD [footnote: can be 
 
 Next, select an execution client [footnote].
 
-<Tabs groupId="execution-clients">
-  <TabItem value="Nethermind" label="Nethermind" default>
-    No HTML in tabs?
+<Tabs>
+  <TabItem value="apple" label="Apple" default>
+    This is an apple 🍎
   </TabItem>
-  <TabItem value="Besu" label="Besu">
+  <TabItem value="orange" label="Orange">
     This is an orange 🍊
   </TabItem>
-  <TabItem value="Geth" label="Geth">
+  <TabItem value="banana" label="Banana">
     This is a banana 🍌
   </TabItem>
 </Tabs>
