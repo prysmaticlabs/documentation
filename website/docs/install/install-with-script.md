@@ -177,7 +177,7 @@ Create a directory called `ConsensusLayer` on your SSD [todo: this can be anythi
     <p>Navigate to your <code>ConsensusLayer</code> directory and run the following three commands from an Administrator command prompt:</p>
 
 ```
-mkdir prysm && cd prysm <br />
+mkdir prysm && cd prysm
 curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.bat --output prysm.bat
 reg add HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1
 ```
