@@ -81,14 +81,6 @@ Next, select an execution client [footnote].
     <p>
     Download the latest stable release of Nethermind for your operating system from the <a href='https://downloads.nethermind.io/'>Nethermind downloads page</a>. Run the following command from a terminal window:
     </p>
-    <Tabs groupId="networks">
-      <TabItem value="Mainnet" label="Mainnet" default>
-        <p>todo</p>
-      </TabItem>
-      <TabItem value="Testnet" label="Testnet">
-        <p>todo</p>
-      </TabItem>
-    </Tabs>
   </TabItem>
   <TabItem value="Besu" label="Besu">
     This is an orange 🍊
@@ -98,7 +90,14 @@ Next, select an execution client [footnote].
   </TabItem>
 </Tabs>
 
-<!---->
+<!--<Tabs groupId="networks">
+      <TabItem value="Mainnet" label="Mainnet" default>
+        <p>todo</p>
+      </TabItem>
+      <TabItem value="Testnet" label="Testnet">
+        <p>todo</p>
+      </TabItem>
+    </Tabs>-->
 
 <!--<Tabs groupId="execution-clients">
   <TabItem value="Nethermind" label="Nethermind" default>
