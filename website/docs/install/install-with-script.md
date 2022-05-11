@@ -85,7 +85,7 @@ Next, select an execution client (footnote - todo).
 ]}>
 
   <TabItem value="nethermind">
-    <p>test 1 With html</p>
+    <p>Download the latest stable release of Nethermind for your operating system from the <a href='https://downloads.nethermind.io/'>Nethermind downloads page</a>. Run the following command from a terminal window:</p>
     <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
         {label: 'Testnet', value: 'testnet'}
@@ -105,3 +105,25 @@ Next, select an execution client (footnote - todo).
   test 3
   </TabItem>
 </Tabs>
+
+
+
+
+
+Geth is currently the supermajority execution layer client. The security of Ethereum’s ecosystem depends on decentalization, so we recommend using a minority client.
+
+### Step 6: Wait for your validator assignment
+
+Please note it will take time for nodes in the network to process a deposit. To understand the timeline of becoming a validator and how long it takes on average, please read [this knowledge base](https://kb.beaconcha.in/ethereum-2.0-depositing). In the meantime, leave both terminal windows open and running; once the validator is activated by the ETH2 network, it will immediately begin receiving tasks and performing its responsibilities. If the eth2 chain has not yet started, the validator will be ready to start proposing blocks and signing votes as soon as the genesis time is reached.
+
+To check on the status of your validator, we recommend checking out the popular block explorers: [beaconcha.in](https://beaconcha.in) by Bitfly and [beacon.etherscan.io](https://beacon.etherscan.io) by the Etherscan team.
+
+![image](https://i.imgur.com/CDNc6Ft.png)
+
+## Advanced Configuration and Key Management
+
+For running an advanced wallet setups, our documentation includes comprehensive guides as to how to use the wallet built into Prysm to recover another wallet, use a remote signing server, and more. You can read more about it [here](https://docs.prylabs.network/docs/wallet/introduction).
+
+**Congratulations, you are now fully participating in Ethereum proof-of-stake**
+
+**Still have questions?** Stop by our [Discord](https://discord.gg/prysmaticlabs) for further assistance!
