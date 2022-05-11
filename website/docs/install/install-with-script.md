@@ -221,7 +221,7 @@ Create a directory called `ConsensusLayer` on your SSD [todo: this can be anythi
 
 Your beacon node will now begin syncing [todo: explain what happens]. This usually takes a couple days, but it can take longer depending on your network and hardware specs.
 
-Congratulations! You’re now running a full Ethereum node. Your full node consists of an execution node in Ethereum’s execution layer, and a beacon node in Ethereum’s consensus layer:
+Congratulations! You’re now running a <strong>full Ethereum node</strong>. Your full node consists of an <strong>execution node</strong> in Ethereum’s execution layer, and a <strong>beacon node</strong> in Ethereum’s consensus layer:
 
 ![Full Ethereum node](../../static/img/beacon-node-and-execution-node.png)
 
@@ -346,6 +346,10 @@ Download the latest stable version of the deposit CLI for your operating system 
     </Tabs>
   </TabItem>
 </Tabs>
+
+Congratulations! You’re now running a <strong>full Ethereum node</strong> and a <strong>validator node</strong>:
+
+diagram
 
 
 -----------
