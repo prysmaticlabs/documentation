@@ -97,10 +97,15 @@ Next, select an execution client (footnote - todo).
         - `--config mainnet` connects to Mainnet.
         - `--JsonRpc.Enabled true` exposes an http endpoint that your beacon node can later connect to.
       </TabItem>
-      <TabItem value="win">
-      test 2
+      <TabItem value="testnet">
+        ```terminal
+        Nethermind.Runner --config goerli --JsonRpc.Enabled true
+        ```
+        - `--config goerli` connects to the Goerli execution-layer testnet.
+        - `--JsonRpc.Enabled true` exposes an http endpoint that your beacon node can later connect to.
       </TabItem>
     </Tabs>
+    <p>Your Nethermind execution node will begin syncing after you issue this command. This should take about two hours to complete. [todo: footnote: Detailed Nethermind installation guidance is available on Nethermind’s documentation portal.]</p>
   </TabItem>
   <TabItem value="besu">
   test 2
