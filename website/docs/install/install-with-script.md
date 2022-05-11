@@ -263,7 +263,7 @@ Download the latest stable version of the deposit CLI for your operating system 
     <p>Follow the CLI prompts to generate your keys. This will give you two artifacts:</p>
     <ol>
       <li>A <strong>new mnemonic seed phrase</strong>. This is highly sensitive and should be kept safe, secure, and airgapped.</li>
-      <li>A <code>validator_keys</strong> folder. This folder will contain two files:
+      <li>A <code>validator_keys</code> folder. This folder will contain two files:
         <ol>
           <li><code>deposit_data-*.json</code> - contains deposit data that you’ll later upload to the Ethereum launchpad.</li>
           <li><code>keystore-m_*.json</code> - contains your public key and ___________.</li>
@@ -312,7 +312,7 @@ Download the latest stable version of the deposit CLI for your operating system 
     <p>Follow the CLI prompts to generate your keys. This will give you two artifacts:</p>
     <ol>
       <li>A <strong>new mnemonic seed phrase</strong>. This is highly sensitive and should be kept safe, secure, and airgapped.</li>
-      <li>A <code>validator_keys</strong> folder. This folder will contain two files:
+      <li>A <code>validator_keys</code> folder. This folder will contain two files:
         <ol>
           <li><code>deposit_data-*.json</code> - contains deposit data that you’ll later upload to the Ethereum launchpad.</li>
           <li><code>keystore-m_*.json</code> - contains your public key and ___________.</li>
