@@ -74,7 +74,7 @@ If you can’t run a full node, TODO.
 
 First, create a directory called `ExecutionLayer` on your SSD [footnote: can be anything].
 
-Next, select an execution client [footnote].
+Next, select an execution client [footnote - todo].
 
 <Tabs>
   <TabItem value="apple" label="Apple" default>
