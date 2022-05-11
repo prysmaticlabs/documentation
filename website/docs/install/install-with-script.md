@@ -65,13 +65,15 @@ If you can’t run a full node, TODO.
 
 ## Step 2: Review best practices
 
-- **This is a no-frills procedure**. If you're new to Ethereum or proof-of-stake, read [A Beginner's Introduction to Prysm and Prysmatic](todo) before proceeding [TODO: importance of understanding how things work at a high-level].
-- **Try this guide on testnet first**, then mainnet [<a href='#footnote-X'>TODO</a>].
+- **Ramp up on the foundations**. If you're new to Ethereum or proof-of-stake, read [A Beginner's Introduction to Prysm and Prysmatic](todo) before proceeding [TODO: importance of understanding how things work at a high-level].
+- **Try this guide on testnet first**, *then* mainnet [<a href='#footnote-X'>TODO</a>].
 - **Keep things simple**. This guidance assumes all client software will run on a single machine.
 - **Review the latest advisories** for both [testnet](https://prater.launchpad.ethereum.org/en/overview) and [mainnet](https://launchpad.ethereum.org/en/).
-- **Inbound and outbound firewall rules should be configured** on your machine. Keep TCP `8545` closed. Keep TCP and UDP `30303` open so that other execution nodes can connect to your execution node.
+- **Inbound and outbound firewall rules should be configured** on your machine before proceeding. Keep TCP `8545` closed. Keep TCP and UDP `30303` open so that other execution nodes can connect to your execution node.
 - **Review all of our [published security best practices](https://docs.prylabs.network/docs/security-best-practices/)**.
 - **Help is available** - reach out to prysm discord, #ethstaker, r/ethstaker, or [invite.gg/ethstaker](http://invite.gg/ethstaker).
+
+turn into checklist
 
 ## Step 3: Install and configure an execution client
 
