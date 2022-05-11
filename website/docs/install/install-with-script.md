@@ -23,7 +23,7 @@ This is a beginner-friendly guide. Familiarity with the command line is expected
       <td>Run an execution node + beacon node</td>
       <td>
       Post-merge, this combination will represent an “full Ethereum client”, or a “full node”. Full nodes require both consensus-layer client software and execution-layer client software. <br /><br />
-      Running a full node comes with the following benefits: <br />
+      Running a full node comes with the following benefits: <br /><br />
       <ul> 
         <li>It contributes to the security of Ethereum's ecosystem [<a href='#footnote-X'>TODO</a>].</li>    
         <li>It also lets you access Ethereum’s global state directly without having to trust a third party service [<a href='#footnote-X'>TODO</a>].</li> 
@@ -109,9 +109,9 @@ Next, select an execution client [<a href='#footnote-X'>TODO</a>].
   test 2
   </TabItem>
   <TabItem value="geth">
-:::caution
-Geth is currently the supermajority execution layer client. The security of Ethereum’s ecosystem depends on decentalization, so we recommend using a minority client.
-:::
+    <Admonition type="caution">
+      Geth is currently the supermajority execution layer client. The security of Ethereum’s ecosystem depends on decentalization, so we recommend using a minority client.
+    </Admonition>
   </TabItem>
 </Tabs>
 
