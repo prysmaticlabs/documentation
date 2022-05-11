@@ -22,16 +22,16 @@ import TabItem from '@theme/TabItem';
 }>
 
 <TabItem value="lin">
-
+test 1 <p>With html</p>
 </TabItem>
 <TabItem value="win">
-
+test 2
 </TabItem>
 <TabItem value="mac">
-
+test 3
 </TabItem>
 <TabItem value="arm">
-
+test 4
 </TabItem>
 </Tabs>
 
