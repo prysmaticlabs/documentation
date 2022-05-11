@@ -91,7 +91,11 @@ Next, select an execution client (footnote - todo).
         {label: 'Testnet', value: 'testnet'}
     ]}>
       <TabItem value="mainnet">
-      test 1 <p>With html</p>
+        ```terminal
+        Nethermind.Runner --config mainnet --JsonRpc.Enabled true
+        ```
+        - `--config mainnet` connects to Mainnet.
+        - `--JsonRpc.Enabled true` exposes an http endpoint that your beacon node can later connect to.
       </TabItem>
       <TabItem value="win">
       test 2
