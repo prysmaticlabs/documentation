@@ -55,9 +55,11 @@ This is a beginner-friendly guide. Familiarity with the command line is expected
     </tr>
 </table>
 
-:::caution
-Running an execution node will be required after The Merge. We strongly encourage you to begin running an execution client immediately.
-:::
+<div class="admonition admonition-caution alert alert--warning">
+  <div class="admonition-content">
+      <p>Running an execution node will be required after The Merge. We strongly encourage you to begin running an execution client immediately.</p>
+  </div>
+</div>
 
 If you can’t run a full node, TODO.
 
