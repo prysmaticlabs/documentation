@@ -351,17 +351,21 @@ Congratulations! You’re now running a <strong>full Ethereum node</strong> and 
 
 diagram
 
+It will take some time for your validator to become enlisted within the network TODO: use correct terminology - see [this knowledge base](https://kb.beaconcha.in/ethereum-2.0-depositing). 
 
------------
-<br /><br /><br /><br /><br /><br /><br />
+In the meantime, leave both terminal windows open and running. Once your validator is activated, it will immediately begin proposing and validating blocks. 
 
 
+To check on the status of your validator, we recommend checking out the popular block explorers: [beaconcha.in](https://beaconcha.in) by Bitfly and [beacon.etherscan.io](https://beacon.etherscan.io) by the Etherscan team. TODO: how? what address do I use
 
-### Step 6: Wait for your validator assignment
 
-Please note it will take time for nodes in the network to process a deposit. To understand the timeline of becoming a validator and how long it takes on average, please read [this knowledge base](https://kb.beaconcha.in/ethereum-2.0-depositing). In the meantime, leave both terminal windows open and running; once the validator is activated by the ETH2 network, it will immediately begin receiving tasks and performing its responsibilities. If the eth2 chain has not yet started, the validator will be ready to start proposing blocks and signing votes as soon as the genesis time is reached.
+---------------
 
-To check on the status of your validator, we recommend checking out the popular block explorers: [beaconcha.in](https://beaconcha.in) by Bitfly and [beacon.etherscan.io](https://beacon.etherscan.io) by the Etherscan team.
+<br />
+
+
+If the eth2 chain has not yet started, the validator will be ready to start proposing blocks and signing votes as soon as the genesis time is reached.
+
 
 ![image](https://i.imgur.com/CDNc6Ft.png)
 
