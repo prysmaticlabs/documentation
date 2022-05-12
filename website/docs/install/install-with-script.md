@@ -47,7 +47,8 @@ This is a beginner-friendly guide. Familiarity with the command line is expected
         </td>
         <td>
           <ul> 
-            <li><strong>Software:</strong> Full node (execution client + beacon node client), validator client, browser-based crypto wallet (instructions below)</li>    
+            <li><strong>Everything above, plus...</strong></li>    
+            <li><strong>Software:</strong> Validator client, browser-based crypto wallet (instructions below)</li>    
             <li><strong>32 ETH (Mainnet)</strong></li>
             <li><strong>32 GöETH (Testnet)</strong></li> 
           </ul> 
