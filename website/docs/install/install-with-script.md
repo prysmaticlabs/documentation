@@ -378,37 +378,37 @@ In the meantime, you should leave your **execution client**, **beacon node**, an
 
 ## Frequently asked questions
 
-**Why do you recommend putting everything on a single machine?** 
+**Why do you recommend putting everything on a single machine?** <br />
 Keeping all of your client software on a single machine keeps things simple, which aligns with our security best practices. [TODO: link to best practices].
 
-**I don't have a 2TB SSD, but I have multiple smaller SSDs. Will this work?**
+**I don't have a 2TB SSD, but I have multiple smaller SSDs. Will this work?** <br />
 Yes. You can tell your execution client to overflow into a specific drive by (TODO). You can tell your beacon node client to overflow into a specific drive by (TODO). You can tell your validator node client to overflow into a specific drive by (TODO).
 
-**Can I use an external SSD connected via USB?**
+**Can I use an external SSD connected via USB?** <br />
 Yes, but your USB connection introduces a possible point of failure. If you do this, avoid connecting your SSD to your computer through a USB hub - instead, connect it directly.
 
-**Can I use a light client as my local execution client so I don't have to download so much data?** 
+**Can I use a light client as my local execution client so I don't have to download so much data?**  <br />
 No, a full execution node is needed.
 
-**Why do I need to run my own execution client?**
+**Why do I need to run my own execution client?** <br />
 The Merge introduces a new Engine API that allows consensus-layer clients to communicate with execution-layer clients. TODO
 
-**What happens if my execution client goes down? Will I be penalized?**
+**What happens if my execution client goes down? Will I be penalized?** <br />
 Yes. Downtime penalties are minimal [TODO: footnote] but we recommend having uptime and downtime alerts configured for your execution, beacon, and validator nodes [TODO: footnote, add to security best practices].
 
-**Why are there two different testnets?**
+**Why are there two different testnets?** <br />
 This guide uses two different testnets: Prater and Goerli. Prater is the consensus-layer testnet. Goerli is the execution-layer testnet. The Prater testnet uses the Goerli testnet. Beacon nodes on Prater rely on Goerli execution nodes.
 
-**My beacon node is taking a long time to sync. Is there any way I can speed it up?**
+**My beacon node is taking a long time to sync. Is there any way I can speed it up?** <br />
 Yes - you can use [checkpoint sync](https://docs.prylabs.network/docs/prysm-usage/checkpoint-sync) to start your beacon node's synchronization from a checkpoint rather than from genesis.
 
-**My attestations are working, but proposals aren’t. Why not?**
+**My attestations are working, but proposals aren’t. Why not?** <br />
 This is usually an indication that your validator isn't able to communicate with your beacon node, or your beacon node isn't able to connect to your execution node. (TODO)
 
-**How long does it take for my validator node to be selected to propose a new block?**
+**How long does it take for my validator node to be selected to propose a new block?** <br />
 It can take up to a week.
 
-**Can I run a full node and validator client on a Raspberry Pi?**
+**Can I run a full node and validator client on a Raspberry Pi?** <br />
 TODO
 
 
