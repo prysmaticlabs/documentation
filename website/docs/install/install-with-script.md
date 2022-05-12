@@ -305,7 +305,7 @@ Download the latest stable version of the deposit CLI for your operating system 
           <li><a href='https://discord.io/ethstaker'>r/EthStaker Discord</a></li>
           <li><a href='https://discord.com/invite/XkyZSSk4My'>Prysm Discord server</a>Prysm discord</li>
         </ul>
-        <p>Someone should be able to give you the GöETH you need. You can then proceed to deposit 32 GöETH into the Prater testnet’s deposit contract via the Launchpad page. Exercise extreme caution throughout this procedure. Finally, head back to your command prompt and run the following command:</p>
+        <p>Someone should be able to give you the GöETH you need. You can then proceed to deposit 32 GöETH into the Prater testnet’s deposit contract via the Launchpad page. Exercise extreme caution throughout this procedure - **never send real ETH to the testnet deposit contract.** Finally, head back to your command prompt and run the following command:</p>
         <pre><code>prysm.bat validator --prater</code></pre>      
       </TabItem>
     </Tabs>
@@ -354,7 +354,7 @@ Download the latest stable version of the deposit CLI for your operating system 
           <li><a href='https://discord.io/ethstaker'>r/EthStaker Discord</a></li>
           <li><a href='https://discord.com/invite/XkyZSSk4My'>Prysm Discord server</a>Prysm discord</li>
         </ul>
-        <p>Someone should be able to give you the GöETH you need. You can then proceed to deposit 32 GöETH into the Prater testnet’s deposit contract via the Launchpad page. Exercise extreme caution throughout this procedure. Finally, head back to your command prompt and run the following command:</p>
+        <p>Someone should be able to give you the GöETH you need. You can then proceed to deposit 32 GöETH into the Prater testnet’s deposit contract via the Launchpad page. Exercise extreme caution throughout this procedure - **never send real ETH to the testnet deposit contract.** Finally, head back to your command prompt and run the following command:</p>
         <pre><code>./prysm.sh validator --prater</code></pre>    
       </TabItem>
     </Tabs>
