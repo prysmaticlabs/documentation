@@ -247,7 +247,7 @@ Before proceeding, ensure that your beacon node is fully synchronized by running
 curl http://localhost:3500/eth/v1alpha1/node/syncing
 ```
 
-(TODO: is that `v1alpha1` right?)
+(TODO: is that `v1alpha1` right? It worked when I tried it, but I wonder if a non-alpha alternative is available...)
 
 When you see `{"syncing":false}%`, you’re ready to proceed. (TODO: does this output also guarantee that the EL is fully synced?)
 
