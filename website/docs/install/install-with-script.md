@@ -368,19 +368,18 @@ You’re now running a <strong>full Ethereum node</strong> and a <strong>validat
 
 :::
 
-It will take some time for your validator to become enlisted within the network TODO: use correct terminology - see [this knowledge base](https://kb.beaconcha.in/ethereum-2.0-depositing). 
+It can take up to a day for your validator to become fully activated. To learn more about the validator activation process, see [Deposit Process](https://kb.beaconcha.in/ethereum-2.0-depositing). 
 
-In the meantime, leave both terminal windows open and running. Once your validator is activated, it will immediately begin proposing and validating blocks. 
-
-
-
-## Step 6: Configure monitoring and alerts
-
-TODO
-
-To check on the status of your validator, we recommend checking out the popular block explorers: [beaconcha.in](https://beaconcha.in) by Bitfly and [beacon.etherscan.io](https://beacon.etherscan.io) by the Etherscan team. TODO: how? what address do I use
+In the meantime, you should leave your **execution client**, **beacon node**, and **validator client** windows open and running. Once your validator is activated, it will immediately begin proposing and validating blocks. You can use a blockchain explorer like [beaconcha.in](https://beaconcha.in) or [beacon.etherscan.io](https://beacon.etherscan.io) to check the status of your validator. (TODO - elaborate)
 
 
+
+## Next steps
+
+ - Configure monitoring and alerts
+ - Review advanced configuration
+
+<br />
 
 -------
 
