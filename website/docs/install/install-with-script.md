@@ -237,7 +237,7 @@ You’re now running a <strong>full Ethereum node</strong>. Your full node consi
 
 :::info 33 ETH Required
 
-Running a validator requires 33 ETH (for Mainnet) or 33 GöETH (for Testnet). Instructions for acquiring GöETH are provided below.s
+Running a validator requires 32.1 ETH (for Mainnet) or 32.1 GöETH (for Testnet). Instructions for acquiring GöETH are provided below.
 
 :::
 
@@ -383,6 +383,12 @@ In the meantime, you should leave your **execution client**, **beacon node**, an
  - Configure monitoring and alerts
  - Review advanced configuration
  - TODO
+
+
+
+## Frequently asked questions
+
+ - 
 
 
 
