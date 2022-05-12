@@ -402,6 +402,17 @@ This guide uses two different testnets: Prater and Goerli. Prater is the consens
 **My beacon node is taking a long time to sync. Is there any way I can speed it up?**
 Yes - you can use [checkpoint sync](https://docs.prylabs.network/docs/prysm-usage/checkpoint-sync) to start your beacon node's synchronization from a checkpoint rather than from genesis.
 
+**My attestations are working, but proposals aren’t. Why not?**
+This is usually an indication that your validator isn't able to communicate with your beacon node, or your beacon node isn't able to connect to your execution node. (TODO)
+
+**How long does it take for my validator node to be selected to propose a new block?**
+It can take up to a week.
+
+**Can I run a full node and validator client on a Raspberry Pi?**
+TODO
+
+
+
 
 ## Next steps
 
