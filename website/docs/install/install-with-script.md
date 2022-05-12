@@ -36,7 +36,7 @@ This is a beginner-friendly guide. Familiarity with the command line is expected
           <li><strong>CPU</strong>: Something relatively modern. Intel Core i5-760 is a good min-bar.</li> 
           <li><strong>Memory</strong>: 16GB+ RAM</li> 
           <li><strong>Storage</strong>: SSD with at least 2TB free space</li> 
-          <li><strong>Network</strong>: A broadband connection with 8 MBit/sec download Internet service.</li> 
+          <li><strong>Network</strong>: 8 MBit/sec broadband</li> 
           <li>TODO</li> 
         </ul> 
       </td>
