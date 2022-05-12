@@ -383,8 +383,8 @@ To check on the status of your validator, we recommend checking out the popular 
 
 **Footnotes:**
 
-<strong id='footnote-1'>1</strong> TODO <br />
-<strong id='footnote-2'>2</strong> TODO <br />
+<strong id='footnote-1'>1</strong> In Prysm docs, a <strong>full ethereum node</strong> refers to a node that's running both an execution-layer execution client (like Nethermind, Besu, or Geth) and a consensus-layer beacon node client (like Prysm, Lighthouse, or Nimbus). <br />
+<strong id='footnote-2'>2</strong> A <strong>validator node</strong> is a particular type of Ethereum node that runs Ethereum's proof-of-stake consensus protocol. Validator client software like Prysm allows you to stake 32 ETH as collateral in an agreement with the Ethereum network to honestly propose and attest to blocks. Running a validator node makes you a validator. Post-merge, validators will replace miners, and proof-of-stake will replace proof-of-work. <br />
 <strong id='footnote-3'>3</strong> TODO <br />
 <strong id='footnote-4'>4</strong> TODO <br />
 <strong id='footnote-5'>5</strong> TODO <br />
