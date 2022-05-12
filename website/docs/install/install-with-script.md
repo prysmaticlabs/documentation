@@ -372,9 +372,9 @@ TODO
 
 To check on the status of your validator, we recommend checking out the popular block explorers: [beaconcha.in](https://beaconcha.in) by Bitfly and [beacon.etherscan.io](https://beacon.etherscan.io) by the Etherscan team. TODO: how? what address do I use
 
+<br /><br /><br /><br /><br />
 
-
-
+below this is old
 ---------------
 
 <br />
