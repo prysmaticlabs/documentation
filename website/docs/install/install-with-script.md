@@ -15,7 +15,7 @@ This is a beginner-friendly guide. Familiarity with the command line is expected
 
 <table>
     <tr>
-        <th>Goal</th>
+    <th style={{minWidth: 240 + 'px'}}>Goal</th> 
         <th>Benefits</th>
         <th>Requirements</th>
     </tr>
@@ -383,21 +383,21 @@ To check on the status of your validator, we recommend checking out the popular 
 
 **Footnotes:**
 
-<strong id='footnote-1'>1</strong> In Prysm docs, a <strong>full ethereum node</strong> refers to a node that's running both an execution-layer execution client (like Nethermind, Besu, or Geth) and a consensus-layer beacon node client (like Prysm, Lighthouse, or Nimbus). <br />
-<strong id='footnote-2'>2</strong> A <strong>validator node</strong> is a particular type of Ethereum node that runs Ethereum's proof-of-stake consensus protocol. Validator client software like Prysm allows you to stake 32 ETH as collateral in an agreement with the Ethereum network to honestly propose and attest to blocks. Running a validator node makes you a validator. Post-merge, validators will replace miners, and proof-of-stake will replace proof-of-work. <br />
-<strong id='footnote-3'>3</strong> Reducing our dependency on centralized cloud providers by "staking at home" increases the decentralization and security of the Ethereum ecosystem. It does come with risks. Read our <a href='./security-best-practices'>Security Best Practices</a> to learn how to minimize those risks. <br />
-<strong id='footnote-4'>4</strong> TODO <br />
-<strong id='footnote-5'>5</strong> TODO <br />
-<strong id='footnote-6'>6</strong> TODO <br />
-<strong id='footnote-7'>7</strong> TODO <br />
-<strong id='footnote-8'>8</strong> TODO <br />
-<strong id='footnote-9'>9</strong> TODO <br />
-<strong id='footnote-10'>10</strong> TODO <br />
-<strong id='footnote-11'>11</strong> TODO <br />
-<strong id='footnote-12'>12</strong> TODO <br />
-<strong id='footnote-13'>13</strong> TODO <br />
-<strong id='footnote-14'>14</strong> TODO <br />
-<strong id='footnote-15'>15</strong> TODO <br />
+<strong id='footnote-1'>1.</strong> In Prysm docs, a <strong>full ethereum node</strong> refers to a node that's running both an execution-layer execution client (like Nethermind, Besu, or Geth) and a consensus-layer beacon node client (like Prysm, Lighthouse, or Nimbus). <br />
+<strong id='footnote-2'>2.</strong> A <strong>validator node</strong> is a particular type of Ethereum node that runs Ethereum's proof-of-stake consensus protocol. Validator client software like Prysm allows you to stake 32 ETH as collateral in an agreement with the Ethereum network to honestly propose and attest to blocks. Running a validator node makes you a validator. Post-merge, validators will replace miners, and proof-of-stake will replace proof-of-work. <br />
+<strong id='footnote-3'>3.</strong> Reducing our dependency on centralized cloud providers by "staking at home" increases the decentralization and security of the Ethereum ecosystem. It does come with risks. Read our <a href='./security-best-practices'>Security Best Practices</a> to learn how to minimize those risks. <br />
+<strong id='footnote-4'>4.</strong> TODO <br />
+<strong id='footnote-5'>5.</strong> TODO <br />
+<strong id='footnote-6'>6.</strong> TODO <br />
+<strong id='footnote-7'>7.</strong> TODO <br />
+<strong id='footnote-8'>8.</strong> TODO <br />
+<strong id='footnote-9'>9.</strong> TODO <br />
+<strong id='footnote-10'>10.</strong> TODO <br />
+<strong id='footnote-11'>11.</strong> TODO <br />
+<strong id='footnote-12'>12.</strong> TODO <br />
+<strong id='footnote-13'>13.</strong> TODO <br />
+<strong id='footnote-14'>14.</strong> TODO <br />
+<strong id='footnote-15'>15.</strong> TODO <br />
 
 
 
