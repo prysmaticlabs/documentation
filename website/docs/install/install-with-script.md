@@ -1,7 +1,7 @@
 ---
 id: install-with-script
 title: How to Run an Ethereum Node and Stake ETH using Prysm
-sidebar_label: Run an Ethereum Node and Stake ETH
+sidebar_label: Install Prysm, Run Node, Stake ETH
 ---
 
 import Tabs from '@theme/Tabs';
