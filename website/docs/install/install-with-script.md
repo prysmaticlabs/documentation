@@ -15,7 +15,7 @@ This is a beginner-friendly guide. Familiarity with the command line is expected
 
 <table>
     <tr>
-    <th style={{minWidth: 240 + 'px'}}>Goal</th> 
+    <th style={{minWidth: 180 + 'px'}}>Goal</th> 
         <th>Benefits</th>
         <th>Requirements</th>
     </tr>
