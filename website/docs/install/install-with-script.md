@@ -241,6 +241,8 @@ Running a validator requires 33 ETH (for Mainnet) or 33 GöETH (for Testnet). In
 
 :::
 
+First, review the latest Ethereum Foundation validator advisories. Testnet advisories are available on the [Prater Staking Launchpad](https://prater.launchpad.ethereum.org/en/overview). Mainnet advisories are on the [Mainnet Staking Launchpad](https://launchpad.ethereum.org/en/overview).
+
 Before proceeding, ensure that your beacon node is fully synchronized by running the following command:
 
 ```
@@ -251,9 +253,7 @@ curl http://localhost:3500/eth/v1alpha1/node/syncing
 
 When you see `{"syncing":false}%`, you’re ready to proceed. (TODO: does this output also guarantee that the EL is fully synced?)
 
-While you’re waiting for your beacon node to sync, review the latest Ethereum Foundation validator advisories. Testnet advisories are available on the [Prater Staking Launchpad](https://prater.launchpad.ethereum.org/en/overview). Mainnet advisories are on the [Mainnet Staking Launchpad](https://launchpad.ethereum.org/en/overview).
-
-Next, we’ll create an account with the [Ethereum Staking Deposit CLI](https://github.com/ethereum/staking-deposit-cli). We recommend doing this on a new, airgapped machine if possible [security best practices].
+Create an account with the [Ethereum Staking Deposit CLI](https://github.com/ethereum/staking-deposit-cli). We recommend doing this on a new, airgapped machine if possible [security best practices].
 
 Download the latest stable version of the deposit CLI for your operating system from the [Staking Deposit CLI Releases page](https://github.com/ethereum/staking-deposit-cli/releases).
 
@@ -281,7 +281,7 @@ Download the latest stable version of the deposit CLI for your operating system 
       <li>A <code>validator_keys</code> folder. This folder will contain two files:
         <ol>
           <li><code>deposit_data-*.json</code> - contains deposit data that you’ll later upload to the Ethereum launchpad.</li>
-          <li><code>keystore-m_*.json</code> - contains your public key and (TODO).</li>
+          <li><code>keystore-m_*.json</code> - contains your keys [<a href='#footnote-11'>11</a>].</li>
         </ol>
       </li>
     </ol>
@@ -294,7 +294,7 @@ Download the latest stable version of the deposit CLI for your operating system 
         <pre><code>prysm.bat validator accounts import --keys-dir=&lt;YOUR_FOLDER_PATH&gt;</code></pre>
         <p>You’ll be prompted to specify a wallet directory twice. Provide the path to your <code>ConsensusLayer</code> folder for both prompts. You should see <code>Successfully imported 1 accounts, view all of them by running accounts list</code> when your account has been successfully imported into Prysm.</p>
         <p>Next, go to the <a href='https://launchpad.ethereum.org/en/upload-deposit-data'>Mainnet Launchpad’s deposit data upload page</a> and upload your <code>deposit_data-*.json</code> file. You’ll be prompted to connect your wallet.</p>
-        <p>You can then proceed to deposit 32 ETH into the Mainnet deposit contract via the Launchpad page. Exercise extreme caution throughout this procedure. Finally, head back to your command prompt and run the following command:</p>
+        <p>You can then proceed to deposit 32 ETH into the Mainnet deposit contract via the Launchpad page. Exercise extreme caution throughout this procedure.</p> <p>Finally, head back to your command prompt and run the following command:</p>
         <pre><code>prysm.bat validator</code></pre>
       </TabItem>
       <TabItem value="testnet">
@@ -330,7 +330,7 @@ Download the latest stable version of the deposit CLI for your operating system 
       <li>A <code>validator_keys</code> folder. This folder will contain two files:
         <ol>
           <li><code>deposit_data-*.json</code> - contains deposit data that you’ll later upload to the Ethereum launchpad.</li>
-          <li><code>keystore-m_*.json</code> - contains your public key and (TODO).</li>
+          <li><code>keystore-m_*.json</code> - contains your keys [<a href='#footnote-11'>11</a>].</li>
         </ol>
       </li>
     </ol>
@@ -400,7 +400,7 @@ In the meantime, you should leave your **execution client**, **beacon node**, an
 <strong id='footnote-8'>8.</strong> Previously, this step wasn't required. Post-merge, you'll need to run an execution client locally if you want to run a beacon node or validator node. Geth is currently the supermajority execution client, so we encourage you to use an alternative like Nethermind or Besu. See <a href='https://ethresear.ch/t/applying-the-five-whys-to-the-client-diversity-problem/7628'>Applying the "Five Why's" to the Client Diversity Problem</a> to learn more. <br />
 <strong id='footnote-9'>9.</strong> This guide uses a basic, default configuration for all clients, which should work well for most people. Detailed installation guidance is available for each client: <a href='https://docs.nethermind.io/nethermind/first-steps-with-nethermind/getting-started'>Nethermind</a>, <a href='https://besu.hyperledger.org/en/stable/HowTo/Get-Started/Installation-Options/Install-Binaries/'>Besu</a>, <a href='https://geth.ethereum.org/docs/getting-started'>Geth</a>. <br />
 <strong id='footnote-10'>10.</strong> Your execution client needs to download the entire blockchain - every block that's been produced after the genesis block.  <br />
-<strong id='footnote-11'>11.</strong> TODO <br />
+<strong id='footnote-11'>11.</strong> To learn more about how keystores work, see [What is an Ethereum keystore](https://julien-maffre.medium.com/what-is-an-ethereum-keystore-file-86c8c5917b97). <br />
 <strong id='footnote-12'>12.</strong> TODO <br />
 <strong id='footnote-13'>13.</strong> TODO <br />
 <strong id='footnote-14'>14.</strong> TODO <br />
