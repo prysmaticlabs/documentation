@@ -20,9 +20,9 @@ This is a beginner-friendly guide. Familiarity with the command line is expected
         <th>Requirements</th>
     </tr>
     <tr>
-      <td>Run an execution node + beacon node</td>
+      <td>Run a <strong>full node</strong></td>
       <td>
-      Post-merge, this combination will represent an “full Ethereum client”, or a “full node”. Running a full node comes with the following benefits: <br /><br />
+      Post-merge, a "full Ethereum client" or "full node" will refer to an <strong>execution node</strong> and <strong>beacon node</strong> working together. Running a full node comes with the following benefits: <br /><br />
       <ul> 
         <li>It contributes to the security of Ethereum's ecosystem [<a href='#footnote-X'>TODO</a>].</li>    
         <li>It also lets you access Ethereum’s global state directly without having to trust a third party service [<a href='#footnote-X'>TODO</a>].</li> 
@@ -41,7 +41,7 @@ This is a beginner-friendly guide. Familiarity with the command line is expected
       </td>
     </tr>
     <tr>
-        <td>Run a validator node</td>
+        <td>Run a <strong>validator node</strong></td>
         <td>
         Lets you stake ETH, propose + validate blocks, and earn staking rewards.
         </td>
