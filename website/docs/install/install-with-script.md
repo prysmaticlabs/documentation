@@ -143,7 +143,7 @@ First, create a directory called `ExecutionLayer` on your SSD [<a href='#footnot
         <pre><code>geth --http --datadir .</code></pre>
         <ul>
           <li><code>--http</code> exposes an http endpoint that your beacon node can later connect to.</li>
-          <li><code>--datadir .</code> specifies the current directory (ExecutionLayer) as the location for the execution layer database [<a href='#footnote-X'>TODO</a>].</li>
+          <li><code>--datadir .</code> specifies the current directory (<code>ExecutionLayer</code>) as the location for the execution layer database.</li>
         </ul>
       </TabItem>
       <TabItem value="testnet">
@@ -151,7 +151,7 @@ First, create a directory called `ExecutionLayer` on your SSD [<a href='#footnot
         <ul>
           <li><code>--goerli</code> connects to the Goerli execution-layer testnet.</li>
           <li><code>--http</code> exposes an http endpoint that your beacon node can later connect to.</li>
-          <li><code>--datadir .</code> specifies the current directory (ExecutionLayer) as the location for the execution layer database [<a href='#footnote-X'>TODO</a>].</li>
+          <li><code>--datadir .</code> specifies the current directory (<code>ExecutionLayer</code>) as the location for the execution layer database.</li>
         </ul>
       </TabItem>
     </Tabs>
