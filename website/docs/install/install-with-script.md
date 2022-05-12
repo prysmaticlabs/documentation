@@ -376,19 +376,37 @@ It can take up to a day for your validator to become fully activated. To learn m
 In the meantime, you should leave your **execution client**, **beacon node**, and **validator client** windows open and running. Once your validator is activated, it will immediately begin proposing and validating blocks. You can use a blockchain explorer like [beaconcha.in](https://beaconcha.in) or [beacon.etherscan.io](https://beacon.etherscan.io) to check the status of your validator. (TODO - elaborate)
 
 
+## Frequently asked questions
+
+**Why do you recommend putting everything on a single machine?** 
+Keeping all of your client software on a single machine keeps things simple, which aligns with our security best practices. [TODO: link to best practices].
+
+**I don't have a 2TB SSD, but I have multiple smaller SSDs. Will this work?**
+Yes. You can tell your execution client to overflow into a specific drive by (TODO). You can tell your beacon node client to overflow into a specific drive by (TODO). You can tell your validator node client to overflow into a specific drive by (TODO).
+
+**Can I use an external SSD connected via USB?**
+Yes, but your USB connection introduces a possible point of failure. If you do this, avoid connecting your SSD to your computer through a USB hub - instead, connect it directly.
+
+**Can I use a light client as my local execution client so I don't have to download so much data?** 
+No, a full execution node is needed.
+
+**Why do I need to run my own execution client?**
+The Merge introduces a new Engine API that allows consensus-layer clients to communicate with execution-layer clients. TODO
+
+**What happens if my execution client goes down? Will I be penalized?**
+Yes. Downtime penalties are minimal [TODO: footnote] but we recommend having uptime and downtime alerts configured for your execution, beacon, and validator nodes [TODO: footnote, add to security best practices].
+
+**Why are there two different testnets?**
+This guide uses two different testnets: Prater and Goerli. Prater is the consensus-layer testnet. Goerli is the execution-layer testnet. The Prater testnet uses the Goerli testnet. Beacon nodes on Prater rely on Goerli execution nodes.
+
+**My beacon node is taking a long time to sync. Is there any way I can speed it up?**
+Yes - you can use [checkpoint sync](https://docs.prylabs.network/docs/prysm-usage/checkpoint-sync) to start your beacon node's synchronization from a checkpoint rather than from genesis.
+
 
 ## Next steps
 
  - Configure monitoring and alerts
  - Review advanced configuration
- - TODO
-
-
-
-## Frequently asked questions
-
- - 
-
 
 
 <br />
@@ -412,26 +430,3 @@ In the meantime, you should leave your **execution client**, **beacon node**, an
 <strong id='footnote-13'>13.</strong> TODO <br />
 <strong id='footnote-14'>14.</strong> TODO <br />
 <strong id='footnote-15'>15.</strong> TODO <br />
-
-
-
-<br /><br /><br /><br /><br />
-
-below this is old
----------------
-
-<br />
-
-
-If the eth2 chain has not yet started, the validator will be ready to start proposing blocks and signing votes as soon as the genesis time is reached.
-
-
-![image](https://i.imgur.com/CDNc6Ft.png)
-
-## Advanced Configuration and Key Management
-
-For running an advanced wallet setups, our documentation includes comprehensive guides as to how to use the wallet built into Prysm to recover another wallet, use a remote signing server, and more. You can read more about it [here](https://docs.prylabs.network/docs/wallet/introduction).
-
-**Congratulations, you are now fully participating in Ethereum proof-of-stake**
-
-**Still have questions?** Stop by our [Discord](https://discord.gg/prysmaticlabs) for further assistance!
