@@ -165,7 +165,7 @@ First, create a directory called `ExecutionLayer` on your SSD [<a href='#footnot
 
 You should have an execution node running locally on `http://localhost:8545` before proceeding.
 
-To verify that your execution node is properly configured and running on port `8545`, TODO. (geth has checking connectivity here -> https://geth.ethereum.org/docs/interface/peer-to-peer )
+To verify that your execution node is properly configured and running on port `8545`, TODO. (geth has checking connectivity instuctions here -> https://geth.ethereum.org/docs/interface/peer-to-peer -> we can remove this if prysm's `curl` check verifies EL sync completion too)
 
 Create a directory called `ConsensusLayer` on your SSD [<a href='#footnote-7'>7</a>]. Navigate to this directory from your terminal.
 
