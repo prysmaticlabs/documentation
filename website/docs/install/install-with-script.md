@@ -48,9 +48,8 @@ This is a beginner-friendly guide. Familiarity with the command line is expected
         </td>
         <td>
           <ul> 
-            <li><strong>A full node</strong>: Execution node + beacon node running locally.</li>    
+            <li><strong>Software:</strong> A full node (execution client + beacon node client), a validator client (instructions below)</li>    
             <li><strong>32 ETH</strong></li> 
-            <li>TODO</li> 
           </ul> 
         </td>
     </tr>
