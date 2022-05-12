@@ -31,7 +31,7 @@ This is a beginner-friendly guide. Familiarity with the command line is expected
       </td>
       <td>
         <ul> 
-          <li><strong>Software</strong>: Execution client, beacon node client, browser-based crypto wallet (instructions below)</li>
+          <li><strong>Software</strong>: Execution client, beacon node client (instructions below)</li>
           <li><strong>OS</strong>: 64-bit Linux, Mac OS X 10.14+, Windows 10+ 64-bit</li>   
           <li><strong>CPU</strong>: Something relatively modern. Intel Core i5-760 is a good min-bar.</li> 
           <li><strong>Memory</strong>: 16GB+ RAM</li> 
@@ -47,7 +47,7 @@ This is a beginner-friendly guide. Familiarity with the command line is expected
         </td>
         <td>
           <ul> 
-            <li><strong>Software:</strong> A full node (execution client + beacon node client), a validator client (instructions below)</li>    
+            <li><strong>Software:</strong> Full node (execution client + beacon node client), validator client, browser-based crypto wallet (instructions below)</li>    
             <li><strong>32 ETH (Mainnet)</strong></li>
             <li><strong>32 GöETH (Testnet)</strong></li> 
           </ul> 
