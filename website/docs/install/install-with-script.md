@@ -362,6 +362,8 @@ Download the latest stable version of the deposit CLI for your operating system 
   </TabItem>
 </Tabs>
 
+<br />
+
 :::tip Congratulations! 
 
 You’re now running a <strong>full Ethereum node</strong> and a <strong>validator node</strong>.
