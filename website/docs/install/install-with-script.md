@@ -235,9 +235,9 @@ You’re now running a <strong>full Ethereum node</strong>. Your full node consi
 
 ## Step 5: Install and configure a validator node using Prysm
 
-:::info
+:::info 33 ETH Required
 
-This section requires 33 ETH (for Mainnet) or 33 GöETH (for Testnet).
+Running a validator requires 33 ETH (for Mainnet) or 33 GöETH (for Testnet). Instructions for acquiring GöETH are provided below.s
 
 :::
 
