@@ -1,7 +1,7 @@
 ---
 id: getting-started
 title:  Prysm Ethereum Client Documentation
-sidebar_label: A Beginner's Introduction to Prysm
+sidebar_label: Get Started
 ---
 
 ## What is Prysm?

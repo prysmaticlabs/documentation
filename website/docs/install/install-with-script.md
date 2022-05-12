@@ -58,7 +58,7 @@ This is a beginner-friendly guide. Familiarity with the command line is expected
 
 <div class="admonition admonition-caution alert alert--warning">
   <div class="admonition-content">
-      <p>Running an execution node will be required after The Merge. We strongly encourage you to begin running an execution client immediately.</p>
+      <p><strong>Running an execution node will be required after The Merge</strong>. We strongly encourage you to begin running an execution client immediately.</p>
   </div>
 </div>
 
@@ -66,7 +66,7 @@ If you can’t run a full node, TODO.
 
 ## Step 2: Review best practices
 
-- **Ramp up on the foundations**. If you're new to Ethereum or proof-of-stake, read [A Beginner's Introduction to Prysm and Prysmatic](todo) before proceeding [TODO: importance of understanding how things work at a high-level].
+- **Ramp up on the foundations**. If you're new to Ethereum or proof-of-stake, read [A Beginner's Introduction to Prysm](todo) before proceeding [TODO: importance of understanding how things work at a high-level].
 - **Try this guide on testnet first**, *then* mainnet [<a href='#footnote-X'>TODO</a>].
 - **Keep things simple**. This guidance assumes all client software will run on a single machine.
 - **Review the latest advisories** for both [testnet](https://prater.launchpad.ethereum.org/en/overview) and [mainnet](https://launchpad.ethereum.org/en/).
