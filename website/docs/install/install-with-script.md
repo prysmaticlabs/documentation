@@ -22,8 +22,7 @@ This is a beginner-friendly guide. Familiarity with the command line is expected
     <tr>
       <td>Run an execution node + beacon node</td>
       <td>
-      Post-merge, this combination will represent an “full Ethereum client”, or a “full node”. Full nodes require both consensus-layer client software and execution-layer client software. <br /><br />
-      Running a full node comes with the following benefits: <br /><br />
+      Post-merge, this combination will represent an “full Ethereum client”, or a “full node”. Running a full node comes with the following benefits: <br /><br />
       <ul> 
         <li>It contributes to the security of Ethereum's ecosystem [<a href='#footnote-X'>TODO</a>].</li>    
         <li>It also lets you access Ethereum’s global state directly without having to trust a third party service [<a href='#footnote-X'>TODO</a>].</li> 
@@ -32,6 +31,7 @@ This is a beginner-friendly guide. Familiarity with the command line is expected
       </td>
       <td>
         <ul> 
+          <li><strong>Software</strong>: Execution client, beacon node client (details below).
           <li><strong>OS</strong>: 64-bit Linux, Mac OS X 10.14+, Windows 10+ 64-bit</li>    
           <li><strong>Memory</strong>: 16GB+ RAM</li> 
           <li><strong>Storage</strong>: SSD with at least 2TB free space</li> 
