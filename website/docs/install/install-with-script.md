@@ -37,7 +37,6 @@ This is a beginner-friendly guide. Familiarity with the command line is expected
           <li><strong>Memory</strong>: 16GB+ RAM</li> 
           <li><strong>Storage</strong>: SSD with at least 2TB free space</li> 
           <li><strong>Network</strong>: 8 MBit/sec broadband</li> 
-          <li>TODO</li> 
         </ul> 
       </td>
     </tr>
@@ -65,15 +64,15 @@ If you can’t run a full node, TODO.
 
 ## Step 2: Review best practices
 
-- **Ramp up on the foundations**. If you're new to Ethereum or proof-of-stake, read [A Beginner's Introduction to Prysm](todo) before proceeding [TODO: importance of understanding how things work at a high-level].
-- **Try this guide on testnet first**, *then* mainnet [<a href='#footnote-X'>TODO</a>].
+- **Ramp up on the foundations**. If you're new to Ethereum or proof-of-stake, read [A Beginner's Introduction to Prysm](todo) before proceeding [<a href='#footnote-6'>6</a>].
+- **Try this guide on testnet first**, *then* mainnet.
 - **Keep things simple**. This guidance assumes all client software will run on a single machine.
 - **Review the latest advisories** for both [testnet](https://prater.launchpad.ethereum.org/en/overview) and [mainnet](https://launchpad.ethereum.org/en/).
 - **Inbound and outbound firewall rules should be configured** on your machine before proceeding. Keep TCP `8545` closed. Keep TCP and UDP `30303` open so that other execution nodes can connect to your execution node.
-- **Review all of our [published security best practices](https://docs.prylabs.network/docs/security-best-practices/)**.
-- **Help is available** - reach out to prysm discord, #ethstaker, r/ethstaker, or [invite.gg/ethstaker](http://invite.gg/ethstaker).
+- **Review all of our [published security best practices](./security-best-practices/)**.
+- **Help is available** - reach out to the [Prysm Discord server](https://discord.com/invite/XkyZSSk4My), [r/ethstaker](https://www.reddit.com/r/ethstaker/), or the [EthStaker Discord server](https://discord.io/ethstaker) if you need a hand.
 
-turn into checklist
+
 
 ## Step 3: Install and configure an execution client
 
@@ -388,7 +387,7 @@ To check on the status of your validator, we recommend checking out the popular 
 <strong id='footnote-3'>3.</strong> Reducing our dependency on centralized cloud providers by "staking at home" increases the decentralization and security of the Ethereum ecosystem. It does come with risks. Read our <a href='./security-best-practices'>Security Best Practices</a> to learn how to minimize those risks. <br />
 <strong id='footnote-4'>4.</strong> See <a href='https://ethereum.org/en/developers/docs/nodes-and-clients/'>Nodes and Clients: Why should I run an Ethereum node?</a> for a more detailed exploration of node-running benefits. <br />
 <strong id='footnote-5'>5.</strong> Self-sufficient participation in Ethereum aligns with the "Don't trust, verify" philosophy. <br />
-<strong id='footnote-6'>6.</strong> TODO <br />
+<strong id='footnote-6'>6.</strong> Understanding how and why things work the way that they work can help you communicate with others when discussing configurations and troubleshooting issues. This is why we identify continuous self-education as a <a href='./security-best-practices'>security best practice</a>. <br />
 <strong id='footnote-7'>7.</strong> TODO <br />
 <strong id='footnote-8'>8.</strong> TODO <br />
 <strong id='footnote-9'>9.</strong> TODO <br />
