@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 Prysm is an implementation of the [Ethereum proof-of-stake consensus specification](https://github.com/ethereum/consensus-specs). In this guide, you’ll use Prysm to run a full Ethereum node [<a href='#footnote-1'>1</a>] and optionally a validator node [<a href='#footnote-2'>2</a>]. This will let you stake 32 ETH using hardware that you manage [<a href='#footnote-3'>3</a>].
 
-This is a beginner-friendly guide. Familiarity with the command line is expected, but otherwise this guide makes no assumptions about your technical skills or prior knowledge.
+This is a beginner-friendly guide. Familiarity with the command line is expected, but otherwise this guide makes no assumptions about your technical skills or prior knowledge. Beginners are encouraged to **follow the footnotes** throughout this guide.
 
 ## Step 1: Identify your goals and system requirements
 
