@@ -48,7 +48,8 @@ This is a beginner-friendly guide. Familiarity with the command line is expected
         <td>
           <ul> 
             <li><strong>Software:</strong> A full node (execution client + beacon node client), a validator client (instructions below)</li>    
-            <li><strong>32 ETH</strong></li> 
+            <li><strong>32 ETH (Mainnet)</strong></li>
+            <li><strong>32 GöETH (Testnet)</strong></li> 
           </ul> 
         </td>
     </tr>
@@ -164,10 +165,9 @@ First, create a directory called `ExecutionLayer` on your SSD [<a href='#footnot
 
 You should have an execution node running locally on `http://localhost:8545` before proceeding.
 
-To verify that your execution node is properly configured and running, TODO.
+To verify that your execution node is properly configured and running on port `8545`, TODO. (geth has checking connectivity here -> https://geth.ethereum.org/docs/interface/peer-to-peer )
 
-Create a directory called `ConsensusLayer` on your SSD [todo: this can be anything]. Navigate to this directory from your terminal.
-
+Create a directory called `ConsensusLayer` on your SSD [<a href='#footnote-7'>7</a>]. Navigate to this directory from your terminal.
 
 <Tabs groupId="network" defaultValue="win" values={[
     {label: 'Windows', value: 'win'},
@@ -222,7 +222,7 @@ curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --out
   </TabItem>
 </Tabs>
 
-Your beacon node will now begin syncing [todo: explain what happens]. This usually takes a couple days, but it can take longer depending on your network and hardware specs.
+Your beacon node will now begin syncing [<a href='#footnote-7'>11</a>]. This usually takes a couple days, but it can take longer depending on your network and hardware specs.
 
 :::tip
 
@@ -235,7 +235,11 @@ Congratulations! You’re now running a <strong>full Ethereum node</strong>. You
 
 ## Step 5: Install and configure a validator node using Prysm
 
-TODO: This requires 32 ETH to stake
+:::info
+
+This section requires 33 ETH (for Mainnet) or 33 GöETH (for Testnet).
+
+:::
 
 Before proceeding, ensure that your beacon node is fully synchronized by running the following command:
 
@@ -243,9 +247,11 @@ Before proceeding, ensure that your beacon node is fully synchronized by running
 curl http://localhost:3500/eth/v1alpha1/node/syncing
 ```
 
-If you see `{"syncing":false}%`, you’re ready to proceed.
+(TODO: is that `v1alpha1` right?)
 
-While you’re waiting for your beacon node to synchronize, review the latest Ethereum Foundation validator advisories. Testnet advisories are available on the [Prater Staking Launchpad](https://prater.launchpad.ethereum.org/en/overview). Mainnet advisories are on the [Mainnet Staking Launchpad](https://launchpad.ethereum.org/en/overview).
+When you see `{"syncing":false}%`, you’re ready to proceed. (TODO: does this output also guarantee that the EL is fully synced?)
+
+While you’re waiting for your beacon node to sync, review the latest Ethereum Foundation validator advisories. Testnet advisories are available on the [Prater Staking Launchpad](https://prater.launchpad.ethereum.org/en/overview). Mainnet advisories are on the [Mainnet Staking Launchpad](https://launchpad.ethereum.org/en/overview).
 
 Next, we’ll create an account with the [Ethereum Staking Deposit CLI](https://github.com/ethereum/staking-deposit-cli). We recommend doing this on a new, airgapped machine if possible [security best practices].
 
@@ -275,7 +281,7 @@ Download the latest stable version of the deposit CLI for your operating system 
       <li>A <code>validator_keys</code> folder. This folder will contain two files:
         <ol>
           <li><code>deposit_data-*.json</code> - contains deposit data that you’ll later upload to the Ethereum launchpad.</li>
-          <li><code>keystore-m_*.json</code> - contains your public key and ___________.</li>
+          <li><code>keystore-m_*.json</code> - contains your public key and (TODO).</li>
         </ol>
       </li>
     </ol>
@@ -295,12 +301,12 @@ Download the latest stable version of the deposit CLI for your operating system 
         <pre><code>prysm.bat validator accounts import --keys-dir=&lt;YOUR_FOLDER_PATH&gt; --prater</code></pre>
         <p>You’ll be prompted to specify a wallet directory twice. Provide the path to your <code>ConsensusLayer</code> folder for both prompts. You should see <code>Successfully imported 1 accounts, view all of them by running accounts list</code> when your account has been successfully imported into Prysm.</p>
         <p>Next, go to the [Prater Launchpad’s deposit data upload page](https://prater.launchpad.ethereum.org/en/upload-deposit-data) and upload your `deposit_data-*.json` file. You’ll be prompted to connect your wallet.</p>
-        <p>If you need Goeth, head over to one of the following Discord servers:</p>
+        <p>If you need GöETH, head over to one of the following Discord servers:</p>
         <ul>
-          <li>r/ethstaker discord</li>
-          <li>Prysm discord</li>
+          <li><a href='https://discord.io/ethstaker'>r/EthStaker Discord</a></li>
+          <li><a href='https://discord.com/invite/XkyZSSk4My'>Prysm Discord server</a>Prysm discord</li>
         </ul>
-        <p>Someone should be able to give you the Goeth you need. You can then proceed to deposit 32 goeth into the Prater testnet’s deposit contract via the Launchpad page. Exercise extreme caution throughout this procedure. Finally, head back to your command prompt and run the following command:</p>
+        <p>Someone should be able to give you the GöETH you need. You can then proceed to deposit 32 GöETH into the Prater testnet’s deposit contract via the Launchpad page. Exercise extreme caution throughout this procedure. Finally, head back to your command prompt and run the following command:</p>
         <pre><code>prysm.bat validator --prater</code></pre>      
       </TabItem>
     </Tabs>
@@ -324,7 +330,7 @@ Download the latest stable version of the deposit CLI for your operating system 
       <li>A <code>validator_keys</code> folder. This folder will contain two files:
         <ol>
           <li><code>deposit_data-*.json</code> - contains deposit data that you’ll later upload to the Ethereum launchpad.</li>
-          <li><code>keystore-m_*.json</code> - contains your public key and ___________.</li>
+          <li><code>keystore-m_*.json</code> - contains your public key and (TODO).</li>
         </ol>
       </li>
     </ol>
@@ -336,20 +342,20 @@ Download the latest stable version of the deposit CLI for your operating system 
       <TabItem value="mainnet">
         <pre><code>./prysm.sh validator accounts import --keys-dir=&lt;YOUR_FOLDER_PATH&gt;</code></pre>
         <p>You’ll be prompted to specify a wallet directory twice. Provide the path to your <code>ConsensusLayer</code> folder for both prompts. You should see <code>Successfully imported 1 accounts, view all of them by running accounts list</code> when your account has been successfully imported into Prysm.</p>
-        <p>Next, go to the [Mainnet Launchpad’s deposit data upload page](https://launchpad.ethereum.org/en/upload-deposit-data) and upload your `deposit_data-*.json` file. You’ll be prompted to connect your wallet.</p>
+        <p>Next, go to the <a href='https://launchpad.ethereum.org/en/upload-deposit-data'>Mainnet Launchpad’s deposit data upload page</a> and upload your <code>deposit_data-*.json</code> file. You’ll be prompted to connect your wallet.</p>
         <p>You can then proceed to deposit 32 ETH into the Mainnet deposit contract via the Launchpad page. Exercise extreme caution throughout this procedure. Finally, head back to your command prompt and run the following command:</p>
         <pre><code>./prysm.sh validator</code></pre>
       </TabItem>
       <TabItem value="testnet">
         <pre><code>./prysm.sh validator accounts import --keys-dir=&lt;YOUR_FOLDER_PATH&gt; --prater</code></pre>
         <p>You’ll be prompted to specify a wallet directory twice. Provide the path to your <code>ConsensusLayer</code> folder for both prompts. You should see <code>Successfully imported 1 accounts, view all of them by running accounts list</code> when your account has been successfully imported into Prysm.</p>
-        <p>Next, go to the [Prater Launchpad’s deposit data upload page](https://prater.launchpad.ethereum.org/en/upload-deposit-data) and upload your `deposit_data-*.json` file. You’ll be prompted to connect your wallet.</p>
-        <p>If you need Goeth, head over to one of the following Discord servers:</p>
+        <p>Next, go to the <a href='https://prater.launchpad.ethereum.org/en/upload-deposit-data'>Prater Launchpad’s deposit data upload page</a> and upload your <code>deposit_data-*.json</code> file. You’ll be prompted to connect your wallet.</p>
+        <p>If you need GöETH, head over to one of the following Discord servers:</p>
         <ul>
-          <li>r/ethstaker discord</li>
-          <li>Prysm discord</li>
+          <li><a href='https://discord.io/ethstaker'>r/EthStaker Discord</a></li>
+          <li><a href='https://discord.com/invite/XkyZSSk4My'>Prysm Discord server</a>Prysm discord</li>
         </ul>
-        <p>Someone should be able to give you the Goeth you need. You can then proceed to deposit 32 goeth into the Prater testnet’s deposit contract via the Launchpad page. Exercise extreme caution throughout this procedure. Finally, head back to your command prompt and run the following command:</p>
+        <p>Someone should be able to give you the GöETH you need. You can then proceed to deposit 32 GöETH into the Prater testnet’s deposit contract via the Launchpad page. Exercise extreme caution throughout this procedure. Finally, head back to your command prompt and run the following command:</p>
         <pre><code>./prysm.sh validator --prater</code></pre>    
       </TabItem>
     </Tabs>
