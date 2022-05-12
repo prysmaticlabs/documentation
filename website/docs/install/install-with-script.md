@@ -227,9 +227,13 @@ curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --out
 
 Your beacon node will now begin syncing [todo: explain what happens]. This usually takes a couple days, but it can take longer depending on your network and hardware specs.
 
-Congratulations! You’re now running a <strong>full Ethereum node</strong>. Your full node consists of an <strong>execution node</strong> in Ethereum’s execution layer, and a <strong>beacon node</strong> in Ethereum’s consensus layer:
+:::tip
 
-![Full Ethereum node](../../static/img/beacon-node-and-execution-node.png)
+Congratulations! You’re now running a <strong>full Ethereum node</strong>. Your full node consists of an <strong>execution node</strong> in Ethereum’s execution layer, and a <strong>beacon node</strong> in Ethereum’s consensus layer.
+
+:::
+
+
 
 
 ## Step 5: Install and configure a validator node using Prysm
@@ -338,7 +342,6 @@ Download the latest stable version of the deposit CLI for your operating system 
         <p>Next, go to the [Mainnet Launchpad’s deposit data upload page](https://launchpad.ethereum.org/en/upload-deposit-data) and upload your `deposit_data-*.json` file. You’ll be prompted to connect your wallet.</p>
         <p>You can then proceed to deposit 32 ETH into the Mainnet deposit contract via the Launchpad page. Exercise extreme caution throughout this procedure. Finally, head back to your command prompt and run the following command:</p>
         <pre><code>./prysm.sh validator</code></pre>
-        Congratulations! You’re now running a <strong>full Ethereum node</strong> and a <strong>validator node</strong> on Mainnet:
       </TabItem>
       <TabItem value="testnet">
         <pre><code>./prysm.sh validator accounts import --keys-dir=&lt;YOUR_FOLDER_PATH&gt; --prater</code></pre>
@@ -351,14 +354,16 @@ Download the latest stable version of the deposit CLI for your operating system 
         </ul>
         <p>Someone should be able to give you the Goeth you need. You can then proceed to deposit 32 goeth into the Prater testnet’s deposit contract via the Launchpad page. Exercise extreme caution throughout this procedure. Finally, head back to your command prompt and run the following command:</p>
         <pre><code>./prysm.sh validator --prater</code></pre>    
-        Congratulations! You’re now running a <strong>full Ethereum node</strong> and a <strong>validator node</strong> on Prater testnet:
       </TabItem>
     </Tabs>
   </TabItem>
 </Tabs>
 
+:::tip
 
-diagram
+Congratulations! You’re now running a <strong>full Ethereum node</strong> and a <strong>validator node</strong>.
+
+:::
 
 It will take some time for your validator to become enlisted within the network TODO: use correct terminology - see [this knowledge base](https://kb.beaconcha.in/ethereum-2.0-depositing). 
 
