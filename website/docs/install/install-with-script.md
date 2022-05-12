@@ -7,7 +7,7 @@ sidebar_label: Install Prysm, Run Node, Stake ETH
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Prysm is an implementation of the [Ethereum proof-of-stake consensus specification](https://github.com/ethereum/consensus-specs). In this guide, you’ll use Prysm to run a full Ethereum node [<a href='#footnote-X'>TODO</a>] and optionally a validator node. This will let you stake 32 ETH using hardware that you manage [<a href='#footnote-X'>TODO</a>].
+Prysm is an implementation of the [Ethereum proof-of-stake consensus specification](https://github.com/ethereum/consensus-specs). In this guide, you’ll use Prysm to run a full Ethereum node [<a href='#footnote-1'>1</a>] and optionally a validator node [<a href='#footnote-2'>2</a>]. This will let you stake 32 ETH using hardware that you manage [<a href='#footnote-3'>3</a>].
 
 This is a beginner-friendly guide. Familiarity with the command line is expected, but otherwise this guide makes no assumptions about your technical skills or prior knowledge.
 
@@ -376,6 +376,30 @@ In the meantime, leave both terminal windows open and running. Once your validat
 TODO
 
 To check on the status of your validator, we recommend checking out the popular block explorers: [beaconcha.in](https://beaconcha.in) by Bitfly and [beacon.etherscan.io](https://beacon.etherscan.io) by the Etherscan team. TODO: how? what address do I use
+
+
+
+-------
+
+**Footnotes:**
+
+<strong id='footnote-1'>1</strong> TODO <br />
+<strong id='footnote-2'>2</strong> TODO <br />
+<strong id='footnote-3'>3</strong> TODO <br />
+<strong id='footnote-4'>4</strong> TODO <br />
+<strong id='footnote-5'>5</strong> TODO <br />
+<strong id='footnote-6'>6</strong> TODO <br />
+<strong id='footnote-7'>7</strong> TODO <br />
+<strong id='footnote-8'>8</strong> TODO <br />
+<strong id='footnote-9'>9</strong> TODO <br />
+<strong id='footnote-10'>10</strong> TODO <br />
+<strong id='footnote-11'>11</strong> TODO <br />
+<strong id='footnote-12'>12</strong> TODO <br />
+<strong id='footnote-13'>13</strong> TODO <br />
+<strong id='footnote-14'>14</strong> TODO <br />
+<strong id='footnote-15'>15</strong> TODO <br />
+
+
 
 <br /><br /><br /><br /><br />
 
