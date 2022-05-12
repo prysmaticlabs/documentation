@@ -76,7 +76,7 @@ If you can’t run a full node, TODO.
 
 ## Step 3: Install and configure an execution client
 
-First, create a directory called `ExecutionLayer` on your SSD [<a href='#footnote-7'>7</a>]. Next, select an execution client [<a href='#footnote-8'>8</a>].
+First, create a directory called `ExecutionLayer` on your SSD [<a href='#footnote-7'>7</a>]. Next, configure your execution client [<a href='#footnote-8'>8</a>].
 
 <Tabs groupId="execution-clients" defaultValue="nethermind" values={[
 {label: 'Nethermind', value: 'nethermind'},
@@ -387,7 +387,7 @@ To check on the status of your validator, we recommend checking out the popular 
 <strong id='footnote-5'>5.</strong> Self-sufficient participation in Ethereum aligns with the "Don't trust, verify" philosophy. <br />
 <strong id='footnote-6'>6.</strong> Understanding how and why things work the way that they work can help you communicate with others when discussing configurations and troubleshooting issues. This is why we identify continuous self-education as a <a href='./security-best-practices'>security best practice</a>. <br />
 <strong id='footnote-7'>7.</strong> Throughout this guide, we use <code>ConsensusLayer</code> and <code>ExecutionLayer</code> as directory names. Feel free to use your own directory names. <br />
-<strong id='footnote-8'>8.</strong> Geth is currently the supermajority execution-layer client, so we encourage you to use an alternative like Nethermind or Besu. See <a href='https://ethresear.ch/t/applying-the-five-whys-to-the-client-diversity-problem/7628'>Applying the "Five Why's" to the Client Diversity Problem</a> to learn more. <br />
+<strong id='footnote-8'>8.</strong> Previously, this step wasn't required. Post-merge, you'll need to run an execution client locally if you want to run a beacon node or validator node. Geth is currently the supermajority execution client, so we encourage you to use an alternative like Nethermind or Besu. See <a href='https://ethresear.ch/t/applying-the-five-whys-to-the-client-diversity-problem/7628'>Applying the "Five Why's" to the Client Diversity Problem</a> to learn more. <br />
 <strong id='footnote-9'>9.</strong> TODO <br />
 <strong id='footnote-10'>10.</strong> TODO <br />
 <strong id='footnote-11'>11.</strong> TODO <br />
