@@ -378,6 +378,9 @@ In the meantime, you should leave your **execution client**, **beacon node**, an
 
  - Configure monitoring and alerts
  - Review advanced configuration
+ - TODO
+
+
 
 <br />
 
