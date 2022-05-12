@@ -232,7 +232,6 @@ You’re now running a <strong>full Ethereum node</strong>. Your full node consi
 
 
 
-
 ## Step 5: Install and configure a validator node using Prysm
 
 :::info ETH Required
