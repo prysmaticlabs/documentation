@@ -128,7 +128,7 @@ First, create a directory called `ExecutionLayer` on your SSD [<a href='#footnot
         </ul>
       </TabItem>
     </Tabs>
-    <p>Your Besu execution node will begin syncing after you issue this command. This should take about two hours to complete. [<a href='#footnote-X'>TODO: Detailed Besu installation guidance is available on [Besu’s documentation portal](https://besu.hyperledger.org/en/stable/HowTo/Get-Started/Starting-node/).</a>]</p>
+    <p>Your Besu execution node will begin syncing after you issue this command [<a href='#footnote-10'>10</a>]. This should take about two hours to complete. You can proceed to the next step while Besu syncs.</p>
   </TabItem>
   <TabItem value="geth">
     <div class="admonition admonition-caution alert alert--warning">
@@ -155,7 +155,7 @@ First, create a directory called `ExecutionLayer` on your SSD [<a href='#footnot
         </ul>
       </TabItem>
     </Tabs>
-    <p>Your geth execution node will begin syncing after you issue this command. This should take about two hours to complete. [<a href='#footnote-X'>TODO: Detailed geth installation guidance is available on geth’s documentation portal.</a>]</p>
+    <p>Your geth execution node will begin syncing after you issue this command [<a href='#footnote-10'>10</a>]. This should take about two hours to complete. You can proceed to the next step while geth syncs.</p>
   </TabItem>
 </Tabs>
 
@@ -388,8 +388,8 @@ To check on the status of your validator, we recommend checking out the popular 
 <strong id='footnote-6'>6.</strong> Understanding how and why things work the way that they work can help you communicate with others when discussing configurations and troubleshooting issues. This is why we identify continuous self-education as a <a href='./security-best-practices'>security best practice</a>. <br />
 <strong id='footnote-7'>7.</strong> Throughout this guide, we use <code>ConsensusLayer</code> and <code>ExecutionLayer</code> as directory names. Feel free to use your own directory names. <br />
 <strong id='footnote-8'>8.</strong> Previously, this step wasn't required. Post-merge, you'll need to run an execution client locally if you want to run a beacon node or validator node. Geth is currently the supermajority execution client, so we encourage you to use an alternative like Nethermind or Besu. See <a href='https://ethresear.ch/t/applying-the-five-whys-to-the-client-diversity-problem/7628'>Applying the "Five Why's" to the Client Diversity Problem</a> to learn more. <br />
-<strong id='footnote-9'>9.</strong> Detailed installation guidance: <a href='https://docs.nethermind.io/nethermind/first-steps-with-nethermind/getting-started'>Nethermind</a>, <a href='https://besu.hyperledger.org/en/stable/HowTo/Get-Started/Installation-Options/Install-Binaries/'>Besu</a>, <a href='https://geth.ethereum.org/docs/getting-started'>Geth</a>. This guide uses a basic, default configuration for all clients, which should work well for most people. <br />
-<strong id='footnote-10'>10.</strong> TODO <br />
+<strong id='footnote-9'>9.</strong> This guide uses a basic, default configuration for all clients, which should work well for most people. Detailed installation guidance is available for each client: <a href='https://docs.nethermind.io/nethermind/first-steps-with-nethermind/getting-started'>Nethermind</a>, <a href='https://besu.hyperledger.org/en/stable/HowTo/Get-Started/Installation-Options/Install-Binaries/'>Besu</a>, <a href='https://geth.ethereum.org/docs/getting-started'>Geth</a>. <br />
+<strong id='footnote-10'>10.</strong> Your execution client needs to download the entire blockchain - every block that's been produced after the genesis block.  <br />
 <strong id='footnote-11'>11.</strong> TODO <br />
 <strong id='footnote-12'>12.</strong> TODO <br />
 <strong id='footnote-13'>13.</strong> TODO <br />
