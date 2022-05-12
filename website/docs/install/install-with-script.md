@@ -85,7 +85,7 @@ First, create a directory called `ExecutionLayer` on your SSD [<a href='#footnot
 ]}>
 
   <TabItem value="nethermind">
-    <p>Download the latest stable release of Nethermind for your operating system from the <a href='https://downloads.nethermind.io/'>Nethermind downloads page</a>. Run the following command from a terminal window:</p>
+    <p>Download the latest stable release of Nethermind for your operating system from the <a href='https://downloads.nethermind.io/'>Nethermind downloads page</a>. Run the following command from a terminal window [<a href='#footnote-9'>9</a>]:</p>
     <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
         {label: 'Testnet', value: 'testnet'}
@@ -105,7 +105,7 @@ First, create a directory called `ExecutionLayer` on your SSD [<a href='#footnot
         </ul>
       </TabItem>
     </Tabs>
-    <p>Your Nethermind execution node will begin syncing after you issue this command. This should take about two hours to complete. [<a href='#footnote-X'>TODO: Detailed Nethermind installation guidance is available on Nethermind’s documentation portal</a>]</p>
+    <p>Your Nethermind execution node will begin syncing after you issue this command [<a href='#footnote-10'>10</a>]. This should take about two hours to complete. You can proceed to the next step while Nethermind syncs.</p>
   </TabItem>
   <TabItem value="besu">
     <p>Install the latest stable release of Besu by following the instructions on the <a href='https://besu.hyperledger.org/en/stable/HowTo/Get-Started/Installation-Options/Install-Binaries/'>Besu binary distributions</a> page.</p>
@@ -388,7 +388,7 @@ To check on the status of your validator, we recommend checking out the popular 
 <strong id='footnote-6'>6.</strong> Understanding how and why things work the way that they work can help you communicate with others when discussing configurations and troubleshooting issues. This is why we identify continuous self-education as a <a href='./security-best-practices'>security best practice</a>. <br />
 <strong id='footnote-7'>7.</strong> Throughout this guide, we use <code>ConsensusLayer</code> and <code>ExecutionLayer</code> as directory names. Feel free to use your own directory names. <br />
 <strong id='footnote-8'>8.</strong> Previously, this step wasn't required. Post-merge, you'll need to run an execution client locally if you want to run a beacon node or validator node. Geth is currently the supermajority execution client, so we encourage you to use an alternative like Nethermind or Besu. See <a href='https://ethresear.ch/t/applying-the-five-whys-to-the-client-diversity-problem/7628'>Applying the "Five Why's" to the Client Diversity Problem</a> to learn more. <br />
-<strong id='footnote-9'>9.</strong> TODO <br />
+<strong id='footnote-9'>9.</strong> Detailed Nethermind installation guidance is available on Nethermind’s documentation portal. <br />
 <strong id='footnote-10'>10.</strong> TODO <br />
 <strong id='footnote-11'>11.</strong> TODO <br />
 <strong id='footnote-12'>12.</strong> TODO <br />
