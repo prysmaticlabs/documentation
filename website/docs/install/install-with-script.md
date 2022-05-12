@@ -370,6 +370,8 @@ You’re now running a <strong>full Ethereum node</strong> and a <strong>validat
 
 :::
 
+<br />
+
 It can take up to a day for your validator to become fully activated. To learn more about the validator activation process, see [Deposit Process](https://kb.beaconcha.in/ethereum-2.0-depositing). 
 
 In the meantime, you should leave your **execution client**, **beacon node**, and **validator client** windows open and running. Once your validator is activated, it will immediately begin proposing and validating blocks. You can use a blockchain explorer like [beaconcha.in](https://beaconcha.in) or [beacon.etherscan.io](https://beacon.etherscan.io) to check the status of your validator. (TODO - elaborate)
