@@ -192,7 +192,7 @@ reg add HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1
       <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8545</code></pre>
     </TabItem>
     <TabItem value="testnet">
-      <p>Download the genesis state from github into your ConsensusLayer directory. Then use the following command to start a beacon node that connects to your local execution node:</p>
+      <p>Download the genesis state from github into your <code>ConsensusLayer</code> directory. Then use the following command to start a beacon node that connects to your local execution node:</p>
       <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8545 --prater --genesis-state=..\genesis.ssz</code></pre>
     </TabItem>
   </Tabs>
@@ -215,7 +215,7 @@ curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --out
       <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8545</code></pre>
     </TabItem>
     <TabItem value="testnet">
-      <p>Download the genesis state from github into your ConsensusLayer directory. Then use the following command to start a beacon node that connects to your local execution node:</p>
+      <p>Download the genesis state from github into your <code>ConsensusLayer</code> directory. Then use the following command to start a beacon node that connects to your local execution node:</p>
       <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8545 --prater --genesis-state=../genesis.ssz</code></pre>
     </TabItem>
   </Tabs>
@@ -224,9 +224,9 @@ curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --out
 
 Your beacon node will now begin syncing [<a href='#footnote-7'>11</a>]. This usually takes a couple days, but it can take longer depending on your network and hardware specs.
 
-:::tip
+:::tip Congratulations!
 
-Congratulations! You’re now running a <strong>full Ethereum node</strong>. Your full node consists of an <strong>execution node</strong> in Ethereum’s execution layer, and a <strong>beacon node</strong> in Ethereum’s consensus layer.
+You’re now running a <strong>full Ethereum node</strong>. Your full node consists of an <strong>execution node</strong> in Ethereum’s execution layer, and a <strong>beacon node</strong> in Ethereum’s consensus layer.
 
 :::
 
@@ -362,9 +362,9 @@ Download the latest stable version of the deposit CLI for your operating system 
   </TabItem>
 </Tabs>
 
-:::tip
+:::tip Congratulations! 
 
-Congratulations! You’re now running a <strong>full Ethereum node</strong> and a <strong>validator node</strong>.
+You’re now running a <strong>full Ethereum node</strong> and a <strong>validator node</strong>.
 
 :::
 
