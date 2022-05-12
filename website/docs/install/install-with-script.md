@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 Prysm is an implementation of the [Ethereum proof-of-stake consensus specification](https://github.com/ethereum/consensus-specs). In this guide, you’ll use Prysm to run a full Ethereum node [<a href='#footnote-1'>1</a>] and optionally a validator node [<a href='#footnote-2'>2</a>]. This will let you stake 32 ETH using hardware that you manage [<a href='#footnote-3'>3</a>].
 
-This is a beginner-friendly guide. Familiarity with the command line is expected, but otherwise this guide makes no assumptions about your technical skills or prior knowledge. Beginners are encouraged to **follow the footnotes** throughout this guide.
+This is a beginner-friendly guide. Familiarity with the command line is expected, but otherwise this guide makes no assumptions about your technical skills or prior knowledge. Beginners are encouraged to **follow the footnotes** throughout this guide - the footnotes provide context and links to learning resources.
 
 ## Step 1: Identify your goals and system requirements
 
@@ -133,7 +133,7 @@ First, create a directory called `ExecutionLayer` on your SSD [<a href='#footnot
   </TabItem>
   <TabItem value="geth">
     <div class="admonition admonition-caution alert alert--warning">
-      <div class="admonition-content"><p>Geth is a supermajority execution-layer client. We strongly encourage you to consider using either Nethermind or Besu. [<a href='#footnote-8'>8</a>]</p></div>
+      <div class="admonition-content"><p><strong>Geth is a supermajority execution-layer client</strong>. We strongly encourage you to consider using either Nethermind or Besu. [<a href='#footnote-8'>8</a>]</p></div>
     </div>
     <p>Download and run the latest 64-bit stable release of the <strong>Geth installer</strong> for your operating system from the <a href='https://geth.ethereum.org/downloads/'>geth downloads page</a>. Run the following command from a terminal window [<a href='#footnote-9'>9</a>]:</p>
     <Tabs groupId="network" defaultValue="mainnet" values={[
