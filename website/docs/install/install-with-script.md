@@ -22,20 +22,21 @@ This is a beginner-friendly guide. Familiarity with the command line is expected
     <tr>
       <td>Run a <strong>full node</strong></td>
       <td>
-      Post-merge, a "full Ethereum client" or "full node" will refer to an <strong>execution node</strong> and <strong>beacon node</strong> working together. Running a full node comes with the following benefits: <br /><br />
+      Post-merge, a "full Ethereum client" or "full node" will refer to an <strong>execution node</strong> and <strong>beacon node</strong> working together. Running a full node comes with the following benefits [<a href='#footnote-4'>4</a>]: <br /><br />
       <ul> 
-        <li>It contributes to the security of Ethereum's ecosystem [<a href='#footnote-X'>TODO</a>].</li>    
-        <li>It also lets you access Ethereum’s global state directly without having to trust a third party service [<a href='#footnote-X'>TODO</a>].</li> 
-        <li>It lets you run a validator node [<a href='#footnote-X'>TODO</a>]</li> 
+        <li>It contributes to the security of Ethereum's ecosystem [<a href='#footnote-3'>3</a>].</li>    
+        <li>It lets you access the Ethereum network directly without having to trust a third party service [<a href='#footnote-5'>5</a>].</li> 
+        <li>It lets you run a validator node.</li> 
       </ul> 
       </td>
       <td>
         <ul> 
-          <li><strong>Software</strong>: Execution client, beacon node client (instructions below).</li>
-          <li><strong>OS</strong>: 64-bit Linux, Mac OS X 10.14+, Windows 10+ 64-bit</li>    
+          <li><strong>Software</strong>: Execution client, beacon node client, browser-based crypto wallet (instructions below)</li>
+          <li><strong>OS</strong>: 64-bit Linux, Mac OS X 10.14+, Windows 10+ 64-bit</li>   
+          <li><strong>CPU</strong>: Something relatively modern. Intel Core i5-760 is a good min-bar.</li> 
           <li><strong>Memory</strong>: 16GB+ RAM</li> 
           <li><strong>Storage</strong>: SSD with at least 2TB free space</li> 
-          <li><strong>Network</strong>: 8 MBit/sec download Internet service</li> 
+          <li><strong>Network</strong>: A broadband connection with 8 MBit/sec download Internet service.</li> 
           <li>TODO</li> 
         </ul> 
       </td>
@@ -386,8 +387,8 @@ To check on the status of your validator, we recommend checking out the popular 
 <strong id='footnote-1'>1.</strong> In Prysm docs, a <strong>full ethereum node</strong> refers to a node that's running both an execution-layer execution client (like Nethermind, Besu, or Geth) and a consensus-layer beacon node client (like Prysm, Lighthouse, or Nimbus). <br />
 <strong id='footnote-2'>2.</strong> A <strong>validator node</strong> is a particular type of Ethereum node that runs Ethereum's proof-of-stake consensus protocol. Validator client software like Prysm allows you to stake 32 ETH as collateral in an agreement with the Ethereum network to honestly propose and attest to blocks. Running a validator node makes you a validator. Post-merge, validators will replace miners, and proof-of-stake will replace proof-of-work. <br />
 <strong id='footnote-3'>3.</strong> Reducing our dependency on centralized cloud providers by "staking at home" increases the decentralization and security of the Ethereum ecosystem. It does come with risks. Read our <a href='./security-best-practices'>Security Best Practices</a> to learn how to minimize those risks. <br />
-<strong id='footnote-4'>4.</strong> TODO <br />
-<strong id='footnote-5'>5.</strong> TODO <br />
+<strong id='footnote-4'>4.</strong> See <a href='https://ethereum.org/en/developers/docs/nodes-and-clients/'>Nodes and Clients: Why should I run an Ethereum node?</a> for a more detailed exploration of node-running benefits. <br />
+<strong id='footnote-5'>5.</strong> Self-sufficient participation in Ethereum aligns with the "Don't trust, verify" philosophy. <br />
 <strong id='footnote-6'>6.</strong> TODO <br />
 <strong id='footnote-7'>7.</strong> TODO <br />
 <strong id='footnote-8'>8.</strong> TODO <br />
