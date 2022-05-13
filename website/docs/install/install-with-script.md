@@ -253,7 +253,7 @@ curl http://localhost:3500/eth/v1alpha1/node/syncing
 
 When you see `{"syncing":false}%`, you’re ready to proceed. (TODO: does this output also guarantee that the EL is fully synced?)
 
-Create an account with the [Ethereum Staking Deposit CLI](https://github.com/ethereum/staking-deposit-cli). We recommend doing this on a new, airgapped machine if possible [security best practices].
+Create an account with the [Ethereum Staking Deposit CLI](https://github.com/ethereum/staking-deposit-cli). We recommend doing this on a new, airgapped machine if possible [security best practices]. (TODO: It's not clear to me how keys could be genned on an airgapped machine and then moved into a networked machine... is it because the mnemonic is generated and then used to generate the keypair and keystore.... so we keep the mnemonic and private key airgapped, but the pub key and a hash of the private key are sent over to the networked machine in the keystore?)
 
 Download the latest stable version of the deposit CLI for your operating system from the [Staking Deposit CLI Releases page](https://github.com/ethereum/staking-deposit-cli/releases).
 
