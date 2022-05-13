@@ -128,7 +128,7 @@ Prysm supports [feature flags](https://github.com/prysmaticlabs/prysm/blob/devel
 
 ```
 var E2EBeaconChainFlags = []string{
-	"--dev",
-  "--my-feature",
+    "--dev",
+    "--my-feature",
 }
 ```
