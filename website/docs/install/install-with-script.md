@@ -379,6 +379,9 @@ In the meantime, you should leave your **execution client**, **beacon node**, an
 
 ## Frequently asked questions
 
+**I'm new to Ethereum, and I'm a visual learner. Can you show me how these things work?** <br />
+The Beginner's Introduction to Prysm uses diagrams to help you visualize Ethereum's architecture, and Prysm's too.
+
 **Why do you recommend putting everything on a single machine?** <br />
 Keeping all of your client software on a single machine keeps things simple, which aligns with our security best practices. [TODO: link to best practices].
 
