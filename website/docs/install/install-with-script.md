@@ -2,8 +2,6 @@
 id: install-with-script
 title: Quickstart - Run an Ethereum Node and Stake ETH using Prysm
 sidebar_label: Quickstart
-author: symbolpunk
-author_url: https://github.com/symbolpunk
 ---
 
 import Tabs from '@theme/Tabs';
