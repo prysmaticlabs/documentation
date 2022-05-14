@@ -124,7 +124,7 @@ Next, create a directory called `ExecutionLayer` [<a href='#footnote-9'>9</a>] o
         </ul>
       </TabItem>
     </Tabs>
-    <p>Your Nethermind execution node will begin syncing. This should take about two hours to complete. You can <a href='https://docs.nethermind.io/nethermind/ethereum-client/monitoring-node-health'>check your Nethermind execution node's sync status</a> by navigating to <a href='http://localhost:8545/healthchecks-ui'><code>http://localhost:8545/healthchecks-ui</code></a> or by running the following command from a separate terminal:</p>
+    <p>Your Nethermind execution node will begin syncing. This should take about two hours to complete. You can <a href='https://docs.nethermind.io/nethermind/ethereum-client/monitoring-node-health'>check your Nethermind execution node's sync status</a> by navigating to <a href='http://localhost:8545/healthchecks-ui'><code>http://localhost:8545/healthchecks-ui</code></a> or by running the following command from a separate terminal window:</p>
 
 ```
 curl localhost:8545/health
@@ -253,7 +253,7 @@ curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --out
 
 Your beacon node will now begin syncing [<a href='#footnote-7'>11</a>]. This usually takes a couple days, but it can take longer depending on your network and hardware specs.
 
-You can check your beacon node's sync status by running the following command (TODO: include other details - https://ethereum.github.io/beacon-APIs/?urls.primaryName=dev#/Node/getSyncingStatus):
+You can check your beacon node's <a href='https://ethereum.github.io/beacon-APIs/?urls.primaryName=dev#/Node/getSyncingStatus'>sync status</a> by running the following command from a separate terminal window:
 
 ```
 curl http://localhost:3500/eth/v1/node/syncing
