@@ -225,7 +225,7 @@ reg add HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1
   </TabItem>
   <TabItem value="others">
     <div class="admonition admonition-caution alert alert--warning">
-      <div class="admonition-content"><p><strong>Mac M1 ARM chips</strong> currently require users to run Prysm through Rosetta. See our <a href='https://github.com/prysmaticlabs/prysm/issues/9385'>open bug</a> for details.</p></div>
+      <div class="admonition-content"><p><strong>Mac M1 ARM chips</strong> currently require users to run Prysm through <a href='https://support.apple.com/en-us/HT211861'>Rosetta</a>. See our <a href='https://github.com/prysmaticlabs/prysm/issues/9385'>open bug</a> for details.</p></div>
     </div>
     <p>Navigate to your <code>ConsensusLayer</code> directory and run the following two commands:</p>
 
