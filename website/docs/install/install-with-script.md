@@ -104,17 +104,19 @@ Next, create a directory called `ExecutionLayer` [<a href='#footnote-9'>9</a>] o
         {label: 'Testnet', value: 'testnet'}
     ]}>
       <TabItem value="mainnet">
-        <pre><code>Nethermind.Runner --config mainnet --JsonRpc.Enabled true</code></pre>
+        <pre><code>Nethermind.Runner --config mainnet --JsonRpc.Enabled true --HealthChecks.Enabled true</code></pre>
         <ul>
           <li><code>--config mainnet</code> connects to Mainnet.</li>
           <li><code>--JsonRpc.Enabled true</code> exposes an http endpoint that your beacon node can later connect to.</li>
+          <li><code>--HealthChecks.Enabled true</code> exposes an http endpoint that you can use to query the health of your Nethermind node.</li>
         </ul>
       </TabItem>
       <TabItem value="testnet">
-        <pre><code>Nethermind.Runner --config goerli --JsonRpc.Enabled true</code></pre>
+        <pre><code>Nethermind.Runner --config goerli --JsonRpc.Enabled true --HealthChecks.Enabled true</code></pre>
         <ul>
           <li><code>--config goerli</code> connects to the Goerli execution-layer testnet.</li>
           <li><code>--JsonRpc.Enabled true</code> exposes an http endpoint that your beacon node can later connect to.</li>
+          <li><code>--HealthChecks.Enabled true</code> exposes an http endpoint that you can use to query the health of your Nethermind node.</li>
         </ul>
       </TabItem>
     </Tabs>
