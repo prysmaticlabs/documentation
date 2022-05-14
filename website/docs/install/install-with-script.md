@@ -217,7 +217,7 @@ reg add HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1
     </TabItem>
     <TabItem value="testnet">
       <p>Download the <a href='https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz'>genesis state from Github</a> into your <code>ConsensusLayer/prysm</code> directory. Then use the following command to start a beacon node that connects to your local execution node:</p>
-      <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8545 --prater --genesis-state=..\genesis.ssz</code></pre>
+      <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8545 --prater --genesis-state=genesis.ssz</code></pre>
     </TabItem>
   </Tabs>
   </TabItem>
