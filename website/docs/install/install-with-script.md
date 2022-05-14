@@ -122,7 +122,7 @@ Next, create a directory called `ExecutionLayer` [<a href='#footnote-9'>9</a>] o
         </ul>
       </TabItem>
     </Tabs>
-    <p>Your Nethermind execution node will begin syncing. This should take about two hours to complete. You can check your execution node's sync status by navigating to <a href='http://localhost:8545/healthchecks-ui'><code>http://localhost:8545/healthchecks-ui</code></a> or by running the following command from a separate terminal:
+    <p>Your Nethermind execution node will begin syncing. This should take about two hours to complete. You can <a href='https://docs.nethermind.io/nethermind/ethereum-client/monitoring-node-health'>check your Nethermind execution node's sync status</a> by navigating to <a href='http://localhost:8545/healthchecks-ui'><code>http://localhost:8545/healthchecks-ui</code></a> or by running the following command from a separate terminal:
 
 ```
 curl localhost:8545/health
