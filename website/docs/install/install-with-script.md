@@ -26,7 +26,7 @@ This is a beginner-friendly guide. Familiarity with the command line is expected
       <ul> 
         <li>It contributes to the security of Ethereum's ecosystem [<a href='#footnote-4'>4</a>].</li>    
         <li>It lets you access the Ethereum network directly without having to trust a third party service [<a href='#footnote-6'>6</a>].</li> 
-        <li>It lets you run a validator node.</li> 
+        <li>It lets you run a validator node post-Merge.</li> 
       </ul> 
       </td>
       <td>
@@ -80,6 +80,13 @@ If you don't have 32 ETH to stake, <a href='https://ethereum.org/en/staking/pool
 
 ## Step 3: Install and configure an execution client
 
+:::note
+
+When we say "run the following command", use a **terminal window** (if not on Windows) or **Administrator command prompt** (if on Windows).
+
+:::
+
+
 First, ensure that TCP port `8545` is closed. Consider keeping TCP and UDP ports `30303` open to support other execution nodes [<a href='#footnote-8'>8</a>].
 
 Next, create a directory called `ExecutionLayer` [<a href='#footnote-9'>9</a>] on your SSD. This is where your execution client will store its data.
@@ -91,7 +98,7 @@ Next, create a directory called `ExecutionLayer` [<a href='#footnote-9'>9</a>] o
 ]}>
 
   <TabItem value="nethermind">
-    <p>Download the latest stable release of Nethermind for your operating system from the <a href='https://downloads.nethermind.io/'>Nethermind downloads page</a>. Run the following command from a terminal window [<a href='#footnote-9'>9</a>]:</p>
+    <p>Download the latest stable release of Nethermind for your operating system from the <a href='https://downloads.nethermind.io/'>Nethermind downloads page</a>. Extract the contents into your <code>ExecutionLayer</code> folder. Run the following command to start your execution node:</p>
     <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
         {label: 'Testnet', value: 'testnet'}
@@ -111,10 +118,10 @@ Next, create a directory called `ExecutionLayer` [<a href='#footnote-9'>9</a>] o
         </ul>
       </TabItem>
     </Tabs>
-    <p>Your Nethermind execution node will begin syncing after you issue this command [<a href='#footnote-10'>10</a>]. This should take about two hours to complete. You can proceed to the next step while Nethermind syncs.</p>
+    <p>Your Nethermind execution node will begin syncing. This should take about two hours to complete. You can proceed to the next step while Nethermind syncs.</p>
   </TabItem>
   <TabItem value="besu">
-    <p>Install the latest stable release of Besu by following the instructions on the <a href='https://besu.hyperledger.org/en/stable/HowTo/Get-Started/Installation-Options/Install-Binaries/'>Besu binary distributions</a> page. Then, issue the following command from a terminal window [<a href='#footnote-9'>9</a>]:</p>
+    <p>Install the latest stable release of Besu from the <a href='https://github.com/hyperledger/besu/releases'>Besu releases</a> page. Run the following command to start your execution node:</p>
     <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
         {label: 'Testnet', value: 'testnet'}
@@ -134,13 +141,13 @@ Next, create a directory called `ExecutionLayer` [<a href='#footnote-9'>9</a>] o
         </ul>
       </TabItem>
     </Tabs>
-    <p>Your Besu execution node will begin syncing after you issue this command [<a href='#footnote-10'>10</a>]. This should take about two hours to complete. You can proceed to the next step while Besu syncs.</p>
+    <p>Your Besu execution node will begin syncing. This should take about two hours to complete. You can proceed to the next step while Besu syncs.</p>
   </TabItem>
   <TabItem value="geth">
     <div class="admonition admonition-caution alert alert--warning">
       <div class="admonition-content"><p><strong>Geth is a supermajority execution-layer client</strong>. This centralization poses an active risk to the security of Ethereum. If Geth's code contains a bug, a majority of nodes (and L2s, and users) will be impacted. We strongly encourage you to use either Nethermind or Besu to distribute this risk for the ecosystem. [<a href='#footnote-10'>10</a>]</p></div>
     </div>
-    <p>Download and run the latest 64-bit stable release of the <strong>Geth installer</strong> for your operating system from the <a href='https://geth.ethereum.org/downloads/'>geth downloads page</a>. Run the following command from a terminal window [<a href='#footnote-9'>9</a>]:</p>
+    <p>Download and run the latest 64-bit stable release of the <strong>Geth installer</strong> for your operating system from the <a href='https://geth.ethereum.org/downloads/'>geth downloads page</a>. Run the following command to start your execution node:</p>
     <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
         {label: 'Testnet', value: 'testnet'}
@@ -161,7 +168,7 @@ Next, create a directory called `ExecutionLayer` [<a href='#footnote-9'>9</a>] o
         </ul>
       </TabItem>
     </Tabs>
-    <p>Your geth execution node will begin syncing after you issue this command [<a href='#footnote-10'>10</a>]. This should take about two hours to complete. You can proceed to the next step while geth syncs.</p>
+    <p>Your geth execution node will begin syncing [<a href='#footnote-10'>10</a>]. This should take about two hours to complete. You can proceed to the next step while geth syncs.</p>
   </TabItem>
 </Tabs>
 
@@ -208,7 +215,7 @@ reg add HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1
     <div class="admonition admonition-caution alert alert--warning">
       <div class="admonition-content"><p><strong>Mac M1 ARM chips</strong> currently require users to run Prysm through Rosetta. See our <a href='https://github.com/prysmaticlabs/prysm/issues/9385'>open bug</a> for details.</p></div>
     </div>
-    <p>Navigate to your <code>ConsensusLayer</code> directory and run the following two commands from your terminal:</p>
+    <p>Navigate to your <code>ConsensusLayer</code> directory and run the following two commands:</p>
 
 ```
 mkdir prysm && cd prysm
@@ -273,7 +280,7 @@ Download the latest stable version of the deposit CLI from the [Staking Deposit 
     {label: 'Linux, MacOS, Arm64', value: 'others'}
 ]}>
   <TabItem value="win">
-    <p>Issue the following command from an Administrator command prompt:</p>
+    <p>Run the following command to create your mnemonic phrase and keys:</p>
     <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
         {label: 'Testnet', value: 'testnet'}
@@ -295,7 +302,7 @@ Download the latest stable version of the deposit CLI from the [Staking Deposit 
         </ol>
       </li>
     </ol>
-    Copy the <code>validator_keys</code> folder over to your primary machine's <code>ConsensusLayer</code> folder. Issue the following command from your command prompt to import your keystores, replacing <code>&lt;YOUR_FOLDER_PATH&gt;</code> with the full path to your <code>ConsensusLayer/validator_keys</code> folder:<br/>
+    Copy the <code>validator_keys</code> folder over to your primary machine's <code>ConsensusLayer</code> folder. Run the following command to import your keystores, replacing <code>&lt;YOUR_FOLDER_PATH&gt;</code> with the full path to your <code>ConsensusLayer/validator_keys</code> folder:<br/>
     <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
         {label: 'Testnet', value: 'testnet'}
@@ -322,7 +329,7 @@ Download the latest stable version of the deposit CLI from the [Staking Deposit 
     </Tabs>
   </TabItem>
   <TabItem value="others">
-    <p>Issue the following command from your terminal:</p>
+    <p>Run the following command to create your mnemonic phrase and keys:</p>
     <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
         {label: 'Testnet', value: 'testnet'}
@@ -344,7 +351,7 @@ Download the latest stable version of the deposit CLI from the [Staking Deposit 
         </ol>
       </li>
     </ol>
-    Copy the <code>validator_keys</code> folder over to your primary machine's <code>ConsensusLayer</code> folder. Issue the following command from your terminal to import your keystores, replacing <code>&lt;YOUR_FOLDER_PATH&gt;</code> with the full path to your <code>ConsensusLayer/validator_keys</code> folder:<br/>
+    Copy the <code>validator_keys</code> folder over to your primary machine's <code>ConsensusLayer</code> folder. Run the following command to import your keystores, replacing <code>&lt;YOUR_FOLDER_PATH&gt;</code> with the full path to your <code>ConsensusLayer/validator_keys</code> folder:<br/>
     <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
         {label: 'Testnet', value: 'testnet'}
@@ -438,6 +445,7 @@ TODO
 ## Next steps
 
  - Configure monitoring and alerts
+ - Keep your client software updated
  - Review advanced configuration
  - Configure Fee Recipient
 
