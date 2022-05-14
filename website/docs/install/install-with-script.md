@@ -422,6 +422,14 @@ Yes. You can tell your execution client to overflow into a specific drive by (TO
 **Can I use an external SSD connected via USB?** <br />
 Yes, but your USB connection introduces a possible point of failure. If you do this, avoid connecting your SSD to your computer through a USB hub - instead, connect it directly.
 
+**How much disk space will each of these clients require?** <br />
+
+| Client         | Space needed | Purpose |
+| -------------- | ------------ | ------- |
+| Execution node | todo         | todo    |
+| Beacon node    | todo         | todo    |
+| Validator node | todo         | todo    |
+
 **Can I use a light client as my local execution client so I don't have to download so much data?**  <br />
 No, a full execution node is needed.
 
