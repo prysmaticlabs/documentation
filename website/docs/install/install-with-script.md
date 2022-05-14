@@ -104,23 +104,32 @@ Next, create a directory called `ExecutionLayer` [<a href='#footnote-9'>9</a>] o
         {label: 'Testnet', value: 'testnet'}
     ]}>
       <TabItem value="mainnet">
-        <pre><code>Nethermind.Runner --config mainnet --JsonRpc.Enabled true --HealthChecks.Enabled true</code></pre>
+        <pre><code>Nethermind.Runner --config mainnet --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true</code></pre>
         <ul>
           <li><code>--config mainnet</code> connects to Mainnet.</li>
           <li><code>--JsonRpc.Enabled true</code> exposes an http endpoint that your beacon node can later connect to.</li>
           <li><code>--HealthChecks.Enabled true</code> exposes an http endpoint that you can use to query the health of your Nethermind node.</li>
+          <li><code>--HealthChecks.UIEnabled true</code> exposes a friendly UI that you can use to inspect the health of your Nethermind node.</li>
         </ul>
       </TabItem>
       <TabItem value="testnet">
-        <pre><code>Nethermind.Runner --config goerli --JsonRpc.Enabled true --HealthChecks.Enabled true</code></pre>
+        <pre><code>Nethermind.Runner --config goerli --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true</code></pre>
         <ul>
           <li><code>--config goerli</code> connects to the Goerli execution-layer testnet.</li>
           <li><code>--JsonRpc.Enabled true</code> exposes an http endpoint that your beacon node can later connect to.</li>
           <li><code>--HealthChecks.Enabled true</code> exposes an http endpoint that you can use to query the health of your Nethermind node.</li>
+          <li><code>--HealthChecks.UIEnabled true</code> exposes a friendly UI that you can use to inspect the health of your Nethermind node.</li>
         </ul>
       </TabItem>
     </Tabs>
-    <p>Your Nethermind execution node will begin syncing. This should take about two hours to complete. You can proceed to the next step while Nethermind syncs.</p>
+    <p>Your Nethermind execution node will begin syncing. This should take about two hours to complete. You can check your execution node's sync status by navigating to <a href='http://localhost:8545/healthchecks-ui'><code>http://localhost:8545/healthchecks-ui</code></a> or by running the following command from a separate terminal:
+
+```
+curl localhost:8545/health
+```
+
+  </p>
+  <p>You can proceed to the next step while Nethermind syncs.</p>
   </TabItem>
   <TabItem value="besu">
     <p>Install the latest stable release of Besu from the <a href='https://github.com/hyperledger/besu/releases'>Besu releases</a> page. Run the following command to start your execution node:</p>
@@ -149,7 +158,7 @@ Next, create a directory called `ExecutionLayer` [<a href='#footnote-9'>9</a>] o
     <div class="admonition admonition-caution alert alert--warning">
       <div class="admonition-content"><p><strong>Geth is a supermajority execution-layer client</strong>. This centralization poses an active risk to the security of Ethereum. If Geth's code contains a bug, a majority of nodes (and L2s, and users) will be impacted. We strongly encourage you to use either Nethermind or Besu to distribute this risk for the ecosystem. [<a href='#footnote-10'>10</a>]</p></div>
     </div>
-    <p>Download and run the latest 64-bit stable release of the <strong>Geth installer</strong> for your operating system from the <a href='https://geth.ethereum.org/downloads/'>geth downloads page</a>. Run the following command to start your execution node:</p>
+    <p>Download and run the latest 64-bit stable release of the <strong>Geth installer</strong> for your operating system from the <a href='https://geth.ethereum.org/downloads/'>Geth downloads page</a>. Run the following command to start your execution node:</p>
     <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
         {label: 'Testnet', value: 'testnet'}
@@ -170,18 +179,22 @@ Next, create a directory called `ExecutionLayer` [<a href='#footnote-9'>9</a>] o
         </ul>
       </TabItem>
     </Tabs>
-    <p>Your geth execution node will begin syncing [<a href='#footnote-10'>10</a>]. This should take about two hours to complete. You can proceed to the next step while geth syncs.</p>
+    <p>Your Geth execution node will begin syncing. This should take about two hours to complete. You can proceed to the next step while Geth syncs.</p>
   </TabItem>
 </Tabs>
 
+:::tip Congratulations!
 
+You’re now running an <strong>execution node</strong> in Ethereum’s execution layer.
 
-
-## Step 4: Install and configure a beacon node using Prysm
+:::
 
 You should have an execution node running locally on `http://localhost:8545` before proceeding.
 
-To verify that your execution node is properly configured and running on port `8545`, TODO. (geth has checking connectivity instuctions here -> https://geth.ethereum.org/docs/interface/peer-to-peer -> we can remove this if prysm's `curl` check verifies EL sync completion too)
+To verify that your execution node is properly configured and running on port `8545`, TODO. (Geth has checking connectivity instuctions here -> https://geth.ethereum.org/docs/interface/peer-to-peer -> we can remove this if prysm's `curl` check verifies EL sync completion too)
+
+
+## Step 4: Install and configure a beacon node using Prysm
 
 Create a directory called `ConsensusLayer` on your SSD [<a href='#footnote-7'>7</a>]. Then, install and configure your beacon node.
 
