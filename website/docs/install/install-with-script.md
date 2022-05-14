@@ -200,7 +200,7 @@ Create a directory called `ConsensusLayer` on your SSD [<a href='#footnote-7'>7<
     {label: 'Linux, MacOS, Arm64', value: 'others'}
 ]}>
   <TabItem value="win">
-    <p>Navigate to your <code>ConsensusLayer</code> directory and run the following three commands from an Administrator command prompt:</p>
+    <p>Navigate to your <code>ConsensusLayer</code> directory and run the following three commands:</p>
 
 ```
 mkdir prysm && cd prysm
