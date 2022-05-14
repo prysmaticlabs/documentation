@@ -1,13 +1,13 @@
 ---
 id: install-with-script
-title: How to Run an Ethereum Node and Stake ETH using Prysm
-sidebar_label: Install Prysm, Run Node, Stake ETH
+title: Quickstart - Run an Ethereum Node and Stake ETH using Prysm
+sidebar_label: Quickstart
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Prysm is an implementation of the [Ethereum proof-of-stake consensus specification](https://github.com/ethereum/consensus-specs). In this guide, you’ll use Prysm to run a full Ethereum node [<a href='#footnote-1'>1</a>] and optionally a validator node [<a href='#footnote-2'>2</a>]. This will let you stake 32 ETH using hardware that you manage [<a href='#footnote-3'>3</a>].
+Prysm is an implementation of the [Ethereum proof-of-stake consensus specification](https://github.com/ethereum/consensus-specs) [<a href='#footnote-A'>A</a>]. In this guide, you’ll use Prysm to run a full Ethereum node [<a href='#footnote-1'>1</a>] and optionally a validator node [<a href='#footnote-2'>2</a>]. This will let you stake 32 ETH using hardware that you manage [<a href='#footnote-3'>3</a>].
 
 This is a beginner-friendly guide. Familiarity with the command line is expected, but otherwise this guide makes no assumptions about your technical skills or prior knowledge. Beginners are encouraged to **follow the footnotes** throughout this guide - the footnotes provide context and links to learning resources.
 
@@ -37,6 +37,7 @@ This is a beginner-friendly guide. Familiarity with the command line is expected
           <li><strong>Memory</strong>: 16GB+ RAM</li> 
           <li><strong>Storage</strong>: SSD with at least 2TB free space</li> 
           <li><strong>Network</strong>: 8 MBit/sec broadband</li> 
+          <li><strong>Knowledge</strong>: <a>A Beginner's Guide to Prysm (TODO)</a></li> 
         </ul> 
       </td>
     </tr>
@@ -48,7 +49,8 @@ This is a beginner-friendly guide. Familiarity with the command line is expected
         <td>
           <ul> 
             <li><strong>Everything above, plus...</strong></li>    
-            <li><strong>Software:</strong> Validator client, browser-based crypto wallet (instructions below)</li>    
+            <li><strong>Software:</strong> Validator client, browser-based crypto wallet (instructions below)</li>   
+            <li><strong>Hardware:</strong> A new airgapped machine that you can use to securely generate your mnemonic phrase and keypair.</li>     
             <li><strong>32 ETH (Mainnet)</strong></li>
             <li><strong>32 GöETH (Testnet)</strong></li> 
           </ul> 
@@ -58,11 +60,12 @@ This is a beginner-friendly guide. Familiarity with the command line is expected
 
 <div class="admonition admonition-caution alert alert--warning">
   <div class="admonition-content">
-      <p><strong>Running an execution node will be required after The Merge</strong>. We strongly encourage you to begin running an execution client immediately.</p>
+      <p><strong>Running an execution node will be required after The Merge</strong>. We strongly encourage you to begin running an execution client (like Nethermind, Besu, or Geth) immediately.</p>
   </div>
 </div>
 
-If you can’t run a full node, TODO.
+If you don't have 32 ETH to stake, <a href='https://ethereum.org/en/staking/pools/'>pooled staking</a> gives you a way to stake with less than 32 ETH. If you can't run a full node, <a href='https://ethereum.org/en/staking/saas/'>staking as a service</a> lets you delegate hardware management to a third party.
+
 
 ## Step 2: Review best practices
 
@@ -70,15 +73,16 @@ If you can’t run a full node, TODO.
 - **Try this guide on testnet first**, *then* mainnet.
 - **Keep things simple**. This guidance assumes all client software will run on a single machine.
 - **Review the latest advisories** for both [testnet](https://prater.launchpad.ethereum.org/en/overview) and [mainnet](https://launchpad.ethereum.org/en/).
-- **Inbound and outbound firewall rules should be configured** on your machine before proceeding. Keep TCP `8545` closed. Keep TCP and UDP `30303` open so that other execution nodes can connect to your execution node.
 - **Review all of our [published security best practices](./security-best-practices/)**.
-- **Help is available** - reach out to the [Prysm Discord server](https://discord.com/invite/XkyZSSk4My), [r/ethstaker](https://www.reddit.com/r/ethstaker/), or the [EthStaker Discord server](https://discord.io/ethstaker) if you need a hand.
+- **Join the community** - join our [mailing list](https://groups.google.com/g/prysm-dev), the [Prysm Discord server](https://discord.com/invite/XkyZSSk4My), [r/ethstaker](https://www.reddit.com/r/ethstaker/), and the [EthStaker Discord server](https://discord.io/ethstaker) for updates and support.
 
 
 
 ## Step 3: Install and configure an execution client
 
-First, create a directory called `ExecutionLayer` on your SSD [<a href='#footnote-7'>7</a>]. Next, configure your execution client [<a href='#footnote-8'>8</a>].
+First, ensure that TCP port `8545` is closed. Consider keeping TCP and UDP ports `30303` open to support other execution nodes [<a href='#footnote-B'>B</a>].
+
+Next, create a directory called `ExecutionLayer` on your SSD [<a href='#footnote-7'>7</a>]. Next, configure your execution client [<a href='#footnote-8'>8</a>].
 
 <Tabs groupId="execution-clients" defaultValue="nethermind" values={[
 {label: 'Nethermind', value: 'nethermind'},
@@ -134,7 +138,7 @@ First, create a directory called `ExecutionLayer` on your SSD [<a href='#footnot
   </TabItem>
   <TabItem value="geth">
     <div class="admonition admonition-caution alert alert--warning">
-      <div class="admonition-content"><p><strong>Geth is a supermajority execution-layer client</strong>. We strongly encourage you to consider using either Nethermind or Besu. [<a href='#footnote-8'>8</a>]</p></div>
+      <div class="admonition-content"><p><strong>Geth is a supermajority execution-layer client</strong>. This centralization poses an active risk to the security of Ethereum. If Geth's code contains a bug, a majority of nodes (and L2s, and users) will be impacted. We strongly encourage you to use either Nethermind or Besu to distribute this risk for the ecosystem. [<a href='#footnote-8'>8</a>]</p></div>
     </div>
     <p>Download and run the latest 64-bit stable release of the <strong>Geth installer</strong> for your operating system from the <a href='https://geth.ethereum.org/downloads/'>geth downloads page</a>. Run the following command from a terminal window [<a href='#footnote-9'>9</a>]:</p>
     <Tabs groupId="network" defaultValue="mainnet" values={[
@@ -160,6 +164,8 @@ First, create a directory called `ExecutionLayer` on your SSD [<a href='#footnot
     <p>Your geth execution node will begin syncing after you issue this command [<a href='#footnote-10'>10</a>]. This should take about two hours to complete. You can proceed to the next step while geth syncs.</p>
   </TabItem>
 </Tabs>
+
+
 
 
 ## Step 4: Install and configure a beacon node using Prysm
@@ -199,6 +205,9 @@ reg add HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1
   </Tabs>
   </TabItem>
   <TabItem value="others">
+    <div class="admonition admonition-caution alert alert--warning">
+      <div class="admonition-content"><p><strong>Mac M1 ARM chips</strong> currently require users to run Prysm through Rosetta. See our <a href='https://github.com/prysmaticlabs/prysm/issues/9385'>open bug</a> for details.</p></div>
+    </div>
     <p>Navigate to your <code>ConsensusLayer</code> directory and run the following two commands from your terminal:</p>
 
 ```
@@ -225,6 +234,15 @@ curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --out
 
 Your beacon node will now begin syncing [<a href='#footnote-7'>11</a>]. This usually takes a couple days, but it can take longer depending on your network and hardware specs.
 
+You can check your beacon node's sync status by running the following command (TODO: include other details - https://ethereum.github.io/beacon-APIs/?urls.primaryName=dev#/Node/getSyncingStatus):
+
+```
+curl http://localhost:3500/eth/v1/node/syncing
+```
+
+When you see `{"syncing":false}%`, your beacon node is fully synchronized with the beacon chain. (TODO: explain beacon chain) 
+
+
 :::tip Congratulations!
 
 You’re now running a <strong>full Ethereum node</strong>. Your full node consists of an <strong>execution node</strong> in Ethereum’s execution layer, and a <strong>beacon node</strong> in Ethereum’s consensus layer.
@@ -241,21 +259,13 @@ Running a validator requires 32.1 ETH (for Mainnet) or 32.1 GöETH (for Testnet)
 
 :::
 
-First, review the latest Ethereum Foundation validator advisories. Testnet advisories are available on the [Prater Staking Launchpad](https://prater.launchpad.ethereum.org/en/overview). Mainnet advisories are on the [Mainnet Staking Launchpad](https://launchpad.ethereum.org/en/overview).
+Review the latest Ethereum Foundation validator advisories. Testnet advisories are available on the [Prater Staking Launchpad](https://prater.launchpad.ethereum.org/en/overview). Mainnet advisories are on the [Mainnet Staking Launchpad](https://launchpad.ethereum.org/en/overview).
 
-Before proceeding, ensure that your beacon node is fully synchronized by running the following command:
+Next, we'll create an account with the [Ethereum Staking Deposit CLI](https://github.com/ethereum/staking-deposit-cli). 
 
-```
-curl http://localhost:3500/eth/v1alpha1/node/syncing
-```
+At this point, we recommend temporarily moving over to a new, airgapped machine if possible. We'll move back to your primary machine in a moment. 
 
-(TODO: is that `v1alpha1` right? It worked when I tried it, but I wonder if a non-alpha alternative is available...)
-
-When you see `{"syncing":false}%`, you’re ready to proceed. (TODO: does this output also guarantee that the EL is fully synced?)
-
-Create an account with the [Ethereum Staking Deposit CLI](https://github.com/ethereum/staking-deposit-cli). We recommend doing this on a new, airgapped machine if possible [security best practices]. (TODO: It's not clear to me how keys could be genned on an airgapped machine and then moved into a networked machine... is it because the mnemonic is generated and then used to generate the keypair and keystore.... so we keep the mnemonic and private key airgapped, but the pub key and a hash of the private key are sent over to the networked machine in the keystore?)
-
-Download the latest stable version of the deposit CLI for your operating system from the [Staking Deposit CLI Releases page](https://github.com/ethereum/staking-deposit-cli/releases).
+Download the latest stable version of the deposit CLI from the [Staking Deposit CLI Releases page](https://github.com/ethereum/staking-deposit-cli/releases).
 
 
 <Tabs groupId="network" defaultValue="win" values={[
@@ -263,16 +273,16 @@ Download the latest stable version of the deposit CLI for your operating system 
     {label: 'Linux, MacOS, Arm64', value: 'others'}
 ]}>
   <TabItem value="win">
-    <p>Issue the following command from an Administrator command prompt, replacing <code>&lt;YOUR_FOLDER_PATH&gt;</code> with the full path to your <code>ConsensusLayer</code> folder.</p>
+    <p>Issue the following command from an Administrator command prompt:</p>
     <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
         {label: 'Testnet', value: 'testnet'}
     ]}>
       <TabItem value="mainnet">
-        <pre><code>deposit.exe new-mnemonic --num_validators=1 --mnemonic_language=english --folder=&lt;YOUR_FOLDER_PATH&gt;</code></pre>
+        <pre><code>deposit.exe new-mnemonic --num_validators=1 --mnemonic_language=english</code></pre>
       </TabItem>
       <TabItem value="testnet">
-        <pre><code>deposit.exe new-mnemonic --num_validators=1 --mnemonic_language=english --chain=prater --folder=&lt;YOUR_FOLDER_PATH&gt;</code></pre>
+        <pre><code>deposit.exe new-mnemonic --num_validators=1 --mnemonic_language=english --chain=prater</code></pre>
       </TabItem>
     </Tabs>
     <p>Follow the CLI prompts to generate your keys. This will give you two artifacts:</p>
@@ -285,7 +295,7 @@ Download the latest stable version of the deposit CLI for your operating system 
         </ol>
       </li>
     </ol>
-    Issue the following command from your command prompt to import your keystores, replacing <code>&lt;YOUR_FOLDER_PATH&gt;</code> with the full path to your <code>ConsensusLayer</code> folder:<br/>
+    Copy the <code>validator_keys</code> folder over to your primary machine's <code>ConsensusLayer</code> folder. Issue the following command from your command prompt to import your keystores, replacing <code>&lt;YOUR_FOLDER_PATH&gt;</code> with the full path to your <code>ConsensusLayer/validator_keys</code> folder:<br/>
     <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
         {label: 'Testnet', value: 'testnet'}
@@ -312,16 +322,16 @@ Download the latest stable version of the deposit CLI for your operating system 
     </Tabs>
   </TabItem>
   <TabItem value="others">
-    <p>Issue the following command from your terminal, replacing <code>&lt;YOUR_FOLDER_PATH&gt;</code> with the full path to your <code>ConsensusLayer</code> folder.</p>
+    <p>Issue the following command from your terminal:</p>
     <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
         {label: 'Testnet', value: 'testnet'}
     ]}>
       <TabItem value="mainnet">
-        <pre><code>./deposit new-mnemonic --num_validators=1 --mnemonic_language=english --folder=&lt;YOUR_FOLDER_PATH&gt;</code></pre>
+        <pre><code>./deposit new-mnemonic --num_validators=1 --mnemonic_language=english</code></pre>
       </TabItem>
       <TabItem value="testnet">
-        <pre><code>./deposit new-mnemonic --num_validators=1 --mnemonic_language=english --chain=prater --folder=&lt;YOUR_FOLDER_PATH&gt;</code></pre>
+        <pre><code>./deposit new-mnemonic --num_validators=1 --mnemonic_language=english --chain=prater</code></pre>
       </TabItem>
     </Tabs>
     <p>Follow the CLI prompts to generate your keys. This will give you two artifacts:</p>
@@ -334,7 +344,7 @@ Download the latest stable version of the deposit CLI for your operating system 
         </ol>
       </li>
     </ol>
-    Issue the following command from your terminal to import your keystores, replacing <code>&lt;YOUR_FOLDER_PATH&gt;</code> with the full path to your <code>ConsensusLayer</code> folder:<br/>
+    Copy the <code>validator_keys</code> folder over to your primary machine's <code>ConsensusLayer</code> folder. Issue the following command from your terminal to import your keystores, replacing <code>&lt;YOUR_FOLDER_PATH&gt;</code> with the full path to your <code>ConsensusLayer/validator_keys</code> folder:<br/>
     <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
         {label: 'Testnet', value: 'testnet'}
@@ -374,7 +384,11 @@ You’re now running a <strong>full Ethereum node</strong> and a <strong>validat
 
 It can take up to a day for your validator to become fully activated. To learn more about the validator activation process, see [Deposit Process](https://kb.beaconcha.in/ethereum-2.0-depositing). 
 
-In the meantime, you should leave your **execution client**, **beacon node**, and **validator client** windows open and running. Once your validator is activated, it will immediately begin proposing and validating blocks. You can use a blockchain explorer like [beaconcha.in](https://beaconcha.in) or [beacon.etherscan.io](https://beacon.etherscan.io) to check the status of your validator. (TODO - elaborate)
+In the meantime, you should leave your **execution client**, **beacon node**, and **validator client** windows open and running. Once your validator is activated, it will automatically begin proposing and validating blocks. You can paste your public key into a blockchain explorer to check the status of your validator:
+
+ - [Beaconcha.in (Mainnet)](https://beaconcha.in) 
+ - [Beaconchai.in (Testnet)](https://prater.beaconcha.in/)
+
 
 
 ## Frequently asked questions
@@ -415,6 +429,9 @@ It can take up to a week.
 **Can I run a full node and validator client on a Raspberry Pi?** <br />
 TODO
 
+**What are withdrawal keys and validator keys?** <br />
+TODO
+
 
 
 
@@ -422,6 +439,7 @@ TODO
 
  - Configure monitoring and alerts
  - Review advanced configuration
+ - Configure Fee Recipient
 
 
 <br />
@@ -430,6 +448,7 @@ TODO
 
 **Footnotes:**
 
+<strong id='footnote-A'>A.</strong> Prysm is written entirely in the [Go programming language](https://golang.org). It's under active development by <a href='https://prysmaticlabs.com'>Prysmatic Labs</a>, a grant-funded team working closely with a variety of teams across the Ethereum ecosystem including the [Ethereum Foundation](https://ethereum.org). <br />
 <strong id='footnote-1'>1.</strong> In Prysm docs, a <strong>full Ethereum node</strong> refers to a node that's running both an execution-layer execution client (like Nethermind, Besu, or Geth) and a consensus-layer beacon node client (like Prysm, Lighthouse, or Nimbus). <br />
 <strong id='footnote-2'>2.</strong> A <strong>validator node</strong> is a particular type of Ethereum node that runs Ethereum's proof-of-stake consensus protocol. Validator client software like Prysm allows you to stake 32 ETH as collateral in an agreement with the Ethereum network to honestly propose and attest to blocks. Running a validator node makes you a validator. Post-merge, validators will replace miners, and proof-of-stake will replace proof-of-work. <br />
 <strong id='footnote-3'>3.</strong> "Staking at home" with your own hardware reduces our dependency on centralized cloud providers and increases the decentralization and security of the Ethereum ecosystem. Staking at home is a serious responsibility that comes with serious risks. Read our <a href='./security-best-practices'>Security Best Practices</a> to learn how to minimize those risks. <br />
@@ -437,10 +456,11 @@ TODO
 <strong id='footnote-5'>5.</strong> Self-sufficient participation in Ethereum aligns with the "Don't trust, verify" mantra. Running your own node removes the need to trust another node operator, and allows you to directly verify the authenticity of blockchain data. <br />
 <strong id='footnote-6'>6.</strong> Understanding how things work can help you <strong>minimize risk</strong> and <strong>troubleshoot issues</strong>. Staking at home may one day be point-and-click. But until then, <strong>you should understand the major components</strong>, their relationships with each other, and their responsibilities over time. This understanding is currently a prerequisite to staking with Prysm, and it's why we identify continuous self-education as a <a href='./security-best-practices'>security best practice</a>. Visit A Beginner's Guide to Prysm for a visual introduction to these major components. <br />
 <strong id='footnote-7'>7.</strong> Throughout this guide, we use <code>ConsensusLayer</code> and <code>ExecutionLayer</code> as directory names that communicate logical separation. Feel free to use your own directory names. <br />
+<strong id='footnote-B'>B.</strong> Keeping TCP port <code>30303</code> is the Ethereum equivalent of seeding torrent data to peers. This will allow other execution nodes to fetch data from your node, and is a great way to support Ethereum's decentralization. <br />
 <strong id='footnote-8'>8.</strong> Post-merge, you'll need to run an execution client locally if you want to run a beacon node or validator node. Geth is currently the supermajority execution client, so we encourage you to use an alternative like Nethermind or Besu. See <a href='https://ethresear.ch/t/applying-the-five-whys-to-the-client-diversity-problem/7628'>Applying the "Five Why's" to the Client Diversity Problem</a> to learn more. <br />
 <strong id='footnote-9'>9.</strong> This guide uses a basic, default configuration for all execution clients, which should work well for most people. If you'd like to customize your configuration, detailed guidance is available for each client: <a href='https://docs.nethermind.io/nethermind/first-steps-with-nethermind/getting-started'>Nethermind</a>, <a href='https://besu.hyperledger.org/en/stable/HowTo/Get-Started/Installation-Options/Install-Binaries/'>Besu</a>, <a href='https://geth.ethereum.org/docs/getting-started'>Geth</a>. <br />
 <strong id='footnote-10'>10.</strong> Your execution client needs to download the entire blockchain - every block that's been produced after the genesis block.  <br />
-<strong id='footnote-11'>11.</strong> To learn more about how keystores work, see <a href='https://julien-maffre.medium.com/what-is-an-ethereum-keystore-file-86c8c5917b97'>What is an Ethereum keystore</a>. <br />
+<strong id='footnote-11'>11.</strong> Your keystore file contains your public key and your private key encrypted with a password. To learn more about how keystores work, see <a href='https://julien-maffre.medium.com/what-is-an-ethereum-keystore-file-86c8c5917b97'>What is an Ethereum keystore</a>. <br />
 <strong id='footnote-12'>12.</strong> TODO <br />
 <strong id='footnote-13'>13.</strong> TODO <br />
 <strong id='footnote-14'>14.</strong> TODO <br />

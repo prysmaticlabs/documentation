@@ -1,18 +1,13 @@
 {
     "docs": [{
             "type": "doc",
-            "label": "Get Started",
-            "id": "getting-started"
+            "label": "Quickstart",
+            "id": "install/install-with-script"
         },
         {
             "type": "doc",
             "label": "Security Best Practices",
             "id": "security-best-practices"
-        },
-        {
-            "type": "doc",
-            "label": "Install Prysm, Run Node, Stake ETH",
-            "id": "install/install-with-script"
         },
         {
             "type": "category",
