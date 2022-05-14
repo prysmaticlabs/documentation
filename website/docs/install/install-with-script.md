@@ -42,7 +42,7 @@ This is a beginner-friendly guide. Familiarity with the command line is expected
           <li><strong>Knowledge</strong>: <a>A Beginner's Guide to Prysm (TODO)</a></li> 
         </ul> 
       </td>
-    </tr>
+    </tr> 
     <tr>
         <td>Run a <strong>validator node</strong></td>
         <td>
