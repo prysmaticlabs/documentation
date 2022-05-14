@@ -80,7 +80,7 @@ If you don't have 32 ETH to stake, <a href='https://ethereum.org/en/staking/pool
 
 ## Step 3: Install and configure an execution client
 
-:::note
+:::tip
 
 When we say "run the following command", use a **terminal window** (if not on Windows) or **Administrator command prompt** (if on Windows).
 
