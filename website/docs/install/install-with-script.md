@@ -190,10 +190,6 @@ You’re now running an <strong>execution node</strong> in Ethereum’s executio
 
 :::
 
-You should have an execution node running locally on `http://localhost:8545` before proceeding.
-
-To verify that your execution node is properly configured and running on port `8545`, TODO. (Geth has checking connectivity instuctions here -> https://geth.ethereum.org/docs/interface/peer-to-peer -> we can remove this if prysm's `curl` check verifies EL sync completion too)
-
 
 ## Step 4: Install and configure a beacon node using Prysm
 
