@@ -72,6 +72,7 @@ module.exports = {
                     path: './docs',
                     routeBasePath: 'docs',
                     showLastUpdateTime: true,
+                    showLastUpdateAuthor: true,
                     sidebarPath: require.resolve('./sidebars.json'),
                     editUrl: 'https://github.com/prysmaticlabs/documentation/edit/master/website/',
                 },
