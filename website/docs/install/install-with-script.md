@@ -193,7 +193,7 @@ You’re now running an <strong>execution node</strong> in Ethereum’s executio
 
 ## Step 4: Install and configure a beacon node using Prysm
 
-Create a directory called `ConsensusLayer` on your SSD [<a href='#footnote-7'>7</a>]. Then, install and configure your beacon node.
+Create a directory called `ConsensusLayer` on your SSD [<a href='#footnote-7'>7</a>].
 
 <Tabs groupId="network" defaultValue="win" values={[
     {label: 'Windows', value: 'win'},
