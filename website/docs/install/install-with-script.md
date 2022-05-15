@@ -37,7 +37,7 @@ This is a beginner-friendly guide. Familiarity with the command line is expected
           <li><strong>Memory</strong>: 16GB+ RAM</li> 
           <li><strong>Storage</strong>: SSD with at least 2TB free space</li> 
           <li><strong>Network</strong>: 8 MBit/sec broadband</li> 
-          <li><strong>Knowledge</strong>: <a>A Beginner's Guide to Prysm (TODO)</a></li> 
+          <!--<li><strong>Knowledge</strong>: <a>A Beginner's Guide to Prysm (TODO)</a></li>-->
         </ul> 
       </td>
     </tr> 
@@ -69,7 +69,7 @@ If you don't have 32 ETH to stake, <a href='https://ethereum.org/en/staking/pool
 
 ## Step 2: Review best practices
 
-- **Ramp up on the foundations**. If you're new to Ethereum or proof-of-stake, read [A Beginner's Introduction to Prysm](todo) before proceeding [<a href='#footnote-7'>7</a>].
+<!-- - **Ramp up on the foundations**. If you're new to Ethereum or proof-of-stake, read [A Beginner's Introduction to Prysm](todo) before proceeding [<a href='#footnote-7'>7</a>]. -->
 - **Try this guide on testnet first**, *then* mainnet.
 - **Keep things simple**. This guidance assumes all client software will run on a single machine.
 - **Review the latest advisories** for both [testnet](https://prater.launchpad.ethereum.org/en/overview) and [mainnet](https://launchpad.ethereum.org/en/).
@@ -434,22 +434,22 @@ In the meantime, you should leave your **execution client**, **beacon node**, an
 
 ## Frequently asked questions
 
-**I'm new to Ethereum, and I'm a visual learner. Can you show me how these things work?** <br />
-The Beginner's Introduction to Prysm uses diagrams to help you visualize Ethereum's architecture, and Prysm's too. (TODO)
+<!-- **I'm new to Ethereum, and I'm a visual learner. Can you show me how these things work?** <br />
+The Beginner's Introduction to Prysm uses diagrams to help you visualize Ethereum's architecture, and Prysm's too. (TODO) -->
 
 **Why do you recommend putting everything on a single machine?** <br />
 Keeping all of your client software on a single machine keeps things simple, which aligns with our [security best practices](./../security-best-practices.md).
 
-**How much disk space will each of these clients require?** <br />
+<!-- **How much disk space will each of these clients require?** <br />
 
 | Client         | Space needed | Purpose |
 | -------------- | ------------ | ------- |
 | Execution node | todo         | todo    |
 | Beacon node    | todo         | todo    |
-| Validator node | todo         | todo    |
+| Validator node | todo         | todo    | --> 
 
-**I don't have a 2TB SSD, but I have multiple smaller SSDs. Will this work?** <br />
-Yes. You can tell your execution client to overflow into a specific drive by (TODO). You can tell your beacon node client to overflow into a specific drive by (TODO). You can tell your validator node client to overflow into a specific drive by (TODO).
+<!-- **I don't have a 2TB SSD, but I have multiple smaller SSDs. Will this work?** <br />
+Yes. You can tell your execution client to overflow into a specific drive by (TODO). You can tell your beacon node client to overflow into a specific drive by (TODO). You can tell your validator node client to overflow into a specific drive by (TODO). -->
 
 **Can I use an external SSD connected via USB?** <br />
 Yes, but your USB connection introduces a possible point of failure. If you do this, avoid connecting your SSD to your computer through a USB hub - instead, connect it directly.
@@ -458,7 +458,8 @@ Yes, but your USB connection introduces a possible point of failure. If you do t
 No, a full execution node is needed.
 
 **Why do I need to run my own execution client?** <br />
-The Merge introduces a new Engine API that allows consensus-layer clients to communicate with execution-layer clients. TODO
+The Merge introduces a new Engine API that allows consensus-layer clients to communicate with execution-layer clients. Teku docs contain a great explainer here: <a href='https://docs.teku.consensys.net/en/latest/Concepts/Merge/'>The Merge</a>.
+<!--TODO: develop our own knowledge base with conceptual content -->
 
 **What happens if my execution client goes down? Will I be penalized?** <br />
 Yes. Downtime penalties are minimal [<a href='#footnote-14'>14</a>] but we recommend having uptime and downtime alerts configured for your execution, beacon, and validator nodes [<a href='#footnote-15'>15</a>].
@@ -467,22 +468,24 @@ Yes. Downtime penalties are minimal [<a href='#footnote-14'>14</a>] but we recom
 This guide uses two different testnets: Prater and Goerli. Prater is the consensus-layer testnet. Goerli is the execution-layer testnet. The Prater testnet uses the Goerli testnet. Beacon nodes on Prater rely on Goerli execution nodes.
 
 **My beacon node is taking a long time to sync. Is there any way I can speed it up?** <br />
-Yes - you can use [checkpoint sync](https://docs.prylabs.network/docs/prysm-usage/checkpoint-sync) to start your beacon node's synchronization from a checkpoint rather than from genesis.
+Yes - you can use [checkpoint sync](https://docs.prylabs.network/docs/prysm-usage/checkpoint-sync) to start your beacon node's synchronization from a checkpoint rather than from genesis. This is actually a more secure way to run your beacon node.
+<!--TODO: explain why -->
+
 
 **My attestations are working, but proposals aren’t. Why not?** <br />
-This is usually an indication that your validator isn't able to communicate with your beacon node, or your beacon node isn't able to connect to your execution node. (TODO)
+This is usually an indication that your validator isn't able to communicate with your beacon node, or your beacon node isn't able to connect to your execution node.
 
-**How do I withdraw my 32ETH deposit?** <br />
-(TODO)
+<!-- **How do I withdraw my 32ETH deposit?** <br />
+(TODO) -->
 
 **How long does it take for my validator node to be selected to propose a new block?** <br />
 It can take up to a week.
 
-**Can I run a full node and validator client on a Raspberry Pi?** <br />
+<!-- **Can I run a full node and validator client on a Raspberry Pi?** <br />
 TODO
 
 **What are withdrawal keys and validator keys?** <br />
-TODO
+TODO: explain in context of this guide -->
 
 
 
