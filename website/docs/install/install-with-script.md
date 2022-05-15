@@ -185,7 +185,7 @@ curl -H "Content-Type: application/json" -X POST http://localhost:8545 -d "{""js
         </ul>
       </TabItem>
     </Tabs>
-    <p>Your Geth execution node will begin syncing. You can <a href='https://besu.hyperledger.org/en/stable/Reference/API-Methods/#eth_syncing'>check your Besu execution node's sync status</a> by running the following commands from a separate terminal window:</p>
+    <p>Your Geth execution node will begin syncing. You can <a href='https://besu.hyperledger.org/en/stable/Reference/API-Methods/#eth_syncing'>check your Geth execution node's sync status</a> by running the following commands from a separate terminal window:</p>
 
 ```
 geth attach // if you're not using Windows
