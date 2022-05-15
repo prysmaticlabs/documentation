@@ -402,7 +402,7 @@ Download the latest stable version of the deposit CLI from the [Staking Deposit 
 <br />
 
 ```
-TODO: `Slashing protection file E:\EthStaking\ConsensusLayer\direct\validator.db is missing. If you changed your --wallet-dir or --datadir, please copy your previous "validator.db" file into your current --datadir.`
+TODO: when starting my validator for the first time, I see `Slashing protection file E:\EthStaking\ConsensusLayer\direct\validator.db is missing. If you changed your --wallet-dir or --datadir, please copy your previous "validator.db" file into your current --datadir.`
 This message appears, but then `validator.db` is created in this directory anyways. This is a bit confusing and alarming, given the relationship between validator.db and slashing protection when migrating between machines.
 On this installation path, what does the user need to do, if anything? How do we improve CLI UX so they don't feel confused/alarmed?
 
