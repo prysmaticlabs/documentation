@@ -61,7 +61,7 @@ This is a beginner-friendly guide. Familiarity with the command line is expected
 
 <div class="admonition admonition-caution alert alert--warning">
   <div class="admonition-content">
-      <p><strong>Running an execution node will be required after The Merge</strong>. We strongly encourage you to begin running an execution client (like Nethermind, Besu, or Geth) immediately.</p>
+      <p><strong>Running an execution node will be required after The Merge</strong>. We strongly encourage you to <a href='#step-3-run-an-execution-client'>begin running an execution client</a> (like Nethermind, Besu, or Geth) immediately.</p>
   </div>
 </div>
 
