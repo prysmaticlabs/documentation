@@ -78,7 +78,7 @@ If you don't have 32 ETH to stake, <a href='https://ethereum.org/en/staking/pool
 
 
 
-## Step 3: Install and configure an execution client
+## Step 3: Run an execution client
 
 :::tip
 
@@ -189,7 +189,7 @@ You’re now running an <strong>execution node</strong> in Ethereum’s executio
 :::
 
 
-## Step 4: Install and configure a beacon node using Prysm
+## Step 4: Run a beacon node using Prysm
 
 Create a directory called `ConsensusLayer` on your SSD [<a href='#footnote-7'>7</a>].
 
@@ -281,7 +281,7 @@ You’re now running a <strong>full Ethereum node</strong>. Your full node consi
 
 
 
-## Step 5: Install and configure a validator node using Prysm
+## Step 5: Run a validator node using Prysm
 
 :::info ETH Required
 
