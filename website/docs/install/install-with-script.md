@@ -129,7 +129,7 @@ Next, create a directory called `ExecutionLayer` [<a href='#footnote-9'>9</a>] o
 curl localhost:8545/health
 ```
 
-  <p>A sync status of `false` indicates that your node is fully synced. You can proceed to the next step while Nethermind syncs.</p>
+  <p>A sync status of <code>false</code> indicates that your node is fully synced. You can proceed to the next step while Nethermind syncs.</p>
   </TabItem>
   <TabItem value="besu">
     <p>Ensure that the latest 64-bit version of the <a href='https://www.oracle.com/java/technologies/downloads/'>Java JDK</a> is installed. Download the latest stable release of Besu from the <a href='https://github.com/hyperledger/besu/releases'>Besu releases</a> page. OS-specific instructions are available on Besu's <a href='https://besu.hyperledger.org/en/stable/HowTo/Get-Started/Installation-Options/Install-Binaries/'>binary installation page</a>. Run the following command to start your execution node:</p>
@@ -158,7 +158,7 @@ curl localhost:8545/health
 curl -H "Content-Type: application/json" -X POST http://localhost:8545 -d "{""jsonrpc"":""2.0"",""method"":""eth_syncing"",""params"":[],""id"":51}" 
 ```
 
-  <p>A sync status of `false` indicates that your node is fully synced. You can proceed to the next step while Besu syncs.</p>
+  <p>A sync status of <code>false</code> indicates that your node is fully synced. You can proceed to the next step while Besu syncs.</p>
   </TabItem>
   <TabItem value="geth">
     <div class="admonition admonition-caution alert alert--warning">
@@ -193,7 +193,7 @@ geth attach ipc:\\.\pipe\geth.ipc // if you're using Windows
 eth.syncing
 ```
 
-  <p>A sync status of `false` indicates that your node is fully synced. You can proceed to the next step while Geth syncs.</p>
+  <p>A sync status of <code>false</code> indicates that your node is fully synced. You can proceed to the next step while Geth syncs.</p>
   </TabItem>
 </Tabs>
 
