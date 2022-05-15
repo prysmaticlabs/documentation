@@ -322,7 +322,7 @@ Download the latest stable version of the deposit CLI from the [Staking Deposit 
         </ol>
       </li>
     </ol>
-    Copy the <code>validator_keys</code> folder over to your primary machine's <code>ConsensusLayer</code> folder. Run the following command to import your keystores, replacing <code>&lt;YOUR_FOLDER_PATH&gt;</code> with the full path to your <code>ConsensusLayer/validator_keys</code> folder:<br/>
+    Copy the <code>validator_keys</code> folder to your primary machine's <code>ConsensusLayer</code> folder. Run the following command to import your keystores, replacing <code>&lt;YOUR_FOLDER_PATH&gt;</code> with the full path to your <code>ConsensusLayer/validator_keys</code> folder:<br/>
     <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
         {label: 'Testnet', value: 'testnet'}
@@ -371,7 +371,7 @@ Download the latest stable version of the deposit CLI from the [Staking Deposit 
         </ol>
       </li>
     </ol>
-    Copy the <code>validator_keys</code> folder over to your primary machine's <code>ConsensusLayer</code> folder. Run the following command to import your keystores, replacing <code>&lt;YOUR_FOLDER_PATH&gt;</code> with the full path to your <code>ConsensusLayer/validator_keys</code> folder:<br/>
+    Copy the <code>validator_keys</code> folder to your primary machine's <code>ConsensusLayer</code> folder. Run the following command to import your keystores, replacing <code>&lt;YOUR_FOLDER_PATH&gt;</code> with the full path to your <code>ConsensusLayer/validator_keys</code> folder:<br/>
     <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
         {label: 'Testnet', value: 'testnet'}
