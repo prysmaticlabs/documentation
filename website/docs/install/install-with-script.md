@@ -259,7 +259,13 @@ curl http://localhost:3500/eth/v1/node/syncing
 
 This will produce the following output:
 
-<!--INFO: is_optimistic is not yet implemented -> https://github.com/prysmaticlabs/prysm/pull/10692 -->
+
+```
+TODO: is_optimistic is not yet implemented -> https://github.com/prysmaticlabs/prysm/pull/10692 
+```
+
+
+
 ```
 {"data":{"head_slot":"6944","sync_distance":"3003133","is_syncing":true,"is_optimistic":true}}
 ```
@@ -422,6 +428,11 @@ In the meantime, you should leave your **execution client**, **beacon node**, an
 
  - [Beaconcha.in (Mainnet)](https://beaconcha.in) 
  - [Beaconchai.in (Testnet)](https://prater.beaconcha.in/)
+
+
+```
+TODO: "no matching results found" when pasting my testnet public key into prater.beaconcha.in... is this expected?
+```
 
 
 ## Frequently asked questions
