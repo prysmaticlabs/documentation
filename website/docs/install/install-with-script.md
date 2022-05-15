@@ -443,7 +443,7 @@ Keeping all of your client software on a single machine keeps things simple, whi
 
 <!-- **How much disk space will each of these clients require?** <br /> -->
 
-<!-- | Client         | Space needed | Purpose |
+<!--  Client         | Space needed | Purpose |
 | -------------- | ------------ | ------- |
 | Execution node | todo         | todo    |
 | Beacon node    | todo         | todo    |
