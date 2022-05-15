@@ -435,16 +435,10 @@ In the meantime, you should leave your **execution client**, **beacon node**, an
 ## Frequently asked questions
 
 **I'm new to Ethereum, and I'm a visual learner. Can you show me how these things work?** <br />
-The Beginner's Introduction to Prysm uses diagrams to help you visualize Ethereum's architecture, and Prysm's too.
+The Beginner's Introduction to Prysm uses diagrams to help you visualize Ethereum's architecture, and Prysm's too. (TODO)
 
 **Why do you recommend putting everything on a single machine?** <br />
-Keeping all of your client software on a single machine keeps things simple, which aligns with our security best practices. [TODO: link to best practices].
-
-**I don't have a 2TB SSD, but I have multiple smaller SSDs. Will this work?** <br />
-Yes. You can tell your execution client to overflow into a specific drive by (TODO). You can tell your beacon node client to overflow into a specific drive by (TODO). You can tell your validator node client to overflow into a specific drive by (TODO).
-
-**Can I use an external SSD connected via USB?** <br />
-Yes, but your USB connection introduces a possible point of failure. If you do this, avoid connecting your SSD to your computer through a USB hub - instead, connect it directly.
+Keeping all of your client software on a single machine keeps things simple, which aligns with our [security best practices](./../security-best-practices.md).
 
 **How much disk space will each of these clients require?** <br />
 
@@ -454,6 +448,12 @@ Yes, but your USB connection introduces a possible point of failure. If you do t
 | Beacon node    | todo         | todo    |
 | Validator node | todo         | todo    |
 
+**I don't have a 2TB SSD, but I have multiple smaller SSDs. Will this work?** <br />
+Yes. You can tell your execution client to overflow into a specific drive by (TODO). You can tell your beacon node client to overflow into a specific drive by (TODO). You can tell your validator node client to overflow into a specific drive by (TODO).
+
+**Can I use an external SSD connected via USB?** <br />
+Yes, but your USB connection introduces a possible point of failure. If you do this, avoid connecting your SSD to your computer through a USB hub - instead, connect it directly.
+
 **Can I use a light client as my local execution client so I don't have to download so much data?**  <br />
 No, a full execution node is needed.
 
@@ -461,7 +461,7 @@ No, a full execution node is needed.
 The Merge introduces a new Engine API that allows consensus-layer clients to communicate with execution-layer clients. TODO
 
 **What happens if my execution client goes down? Will I be penalized?** <br />
-Yes. Downtime penalties are minimal [TODO: footnote] but we recommend having uptime and downtime alerts configured for your execution, beacon, and validator nodes [TODO: footnote, add to security best practices].
+Yes. Downtime penalties are minimal [<a href='#footnote-14'>14</a>] but we recommend having uptime and downtime alerts configured for your execution, beacon, and validator nodes [<a href='#footnote-15'>15</a>].
 
 **Why are there two different testnets?** <br />
 This guide uses two different testnets: Prater and Goerli. Prater is the consensus-layer testnet. Goerli is the execution-layer testnet. The Prater testnet uses the Goerli testnet. Beacon nodes on Prater rely on Goerli execution nodes.
@@ -489,9 +489,8 @@ TODO
 
 ## Next steps
 
- - Configure monitoring and alerts
- - Keep your client software updated
- - Review advanced configuration
+ - Configure monitoring and alerts (TODO)
+ - Keep your client software updated (TODO)
  - Configure Fee Recipient
 
 
@@ -514,3 +513,5 @@ TODO
 <strong id='footnote-11'>11.</strong> This guide uses a basic, default configuration for all execution clients, which should work well for most people. If you'd like to customize your configuration, detailed guidance is available for each client: <a href='https://docs.nethermind.io/nethermind/first-steps-with-nethermind/getting-started'>Nethermind</a>, <a href='https://besu.hyperledger.org/en/stable/HowTo/Get-Started/Installation-Options/Install-Binaries/'>Besu</a>, <a href='https://geth.ethereum.org/docs/getting-started'>Geth</a>. <br />
 <strong id='footnote-12'>12.</strong> Your execution client needs to download the entire blockchain - every block that's been produced after the genesis block.  <br />
 <strong id='footnote-13'>13.</strong> Your keystore file contains your public key and your private key encrypted with a password. To learn more about how keystores work, see <a href='https://julien-maffre.medium.com/what-is-an-ethereum-keystore-file-86c8c5917b97'>What is an Ethereum keystore</a>. <br />
+<strong id='footnote-14'>14</strong>. BitMex recently posted research that provides hard numbers on penalties and rewards: <a href='https://blog.bitmex.com/ethereums-proof-of-stake-system-calculating-penalties-rewards/'>Ethereum's Proof of Stake System - Calculating Penalties and Rewards</a>. Collin Myers has also created an <a href='https://docs.google.com/spreadsheets/d/15tmPOvOgi3wKxJw7KQJKoUe-uonbYR6HF7u83LR5Mj4/edit#gid=1018097491'>Ethereum calculator</a>. <br />
+<strong id='footnote-15'>15</strong>. See Configure Monitoring and Alerts (TODO). <br />
