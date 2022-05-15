@@ -442,6 +442,7 @@ The Beginner's Introduction to Prysm uses diagrams to help you visualize Ethereu
 Keeping all of your client software on a single machine keeps things simple, which aligns with our [security best practices](./../security-best-practices.md).
 
 <!-- **How much disk space will each of these clients require?** <br /> -->
+
 <!-- | Client         | Space needed | Purpose |
 | -------------- | ------------ | ------- |
 | Execution node | todo         | todo    |
