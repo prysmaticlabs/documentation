@@ -249,7 +249,7 @@ curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --out
   </TabItem>
 </Tabs>
 
-Your beacon node will now begin syncing [<a href='#footnote-7'>11</a>]. This usually takes a couple days, but it can take longer depending on your network and hardware specs.
+Your beacon node will now begin syncing. This usually takes a couple days, but it can take longer depending on your network and hardware specs.
 
 You can check your beacon node's <a href='https://ethereum.github.io/beacon-APIs/?urls.primaryName=dev#/Node/getSyncingStatus'>sync status</a> by running the following command from a separate terminal window:
 
@@ -257,7 +257,13 @@ You can check your beacon node's <a href='https://ethereum.github.io/beacon-APIs
 curl http://localhost:3500/eth/v1/node/syncing
 ```
 
-When you see `{"syncing":false}%`, your beacon node is fully synchronized with the beacon chain. (TODO: explain beacon chain) 
+This will produce the following output:
+
+```
+{"data":{"head_slot":"6944","sync_distance":"3003133","is_syncing":true,"is_optimistic":true}}
+```
+
+When you see `"is_syncing":false`, your beacon node is fully synchronized with the beacon chain. When you see `"is_optimistic":false`, your execution node is fully synchronized with the execution-layer blockchain. 
 
 
 :::tip Congratulations!
@@ -278,12 +284,9 @@ Running a validator requires 32.1 ETH (for Mainnet) or 32.1 GöETH (for Testnet)
 
 Review the latest Ethereum Foundation validator advisories. Testnet advisories are available on the [Prater Staking Launchpad](https://prater.launchpad.ethereum.org/en/overview). Mainnet advisories are on the [Mainnet Staking Launchpad](https://launchpad.ethereum.org/en/overview).
 
-Next, we'll create an account with the [Ethereum Staking Deposit CLI](https://github.com/ethereum/staking-deposit-cli). 
-
-At this point, we recommend temporarily moving over to a new, airgapped machine if possible. We'll move back to your primary machine in a moment. 
+Next, we'll create an account with the [Ethereum Staking Deposit CLI](https://github.com/ethereum/staking-deposit-cli). Before proceeding, we recommend temporarily moving over to a new, <strong>airgapped machine</strong> if possible. This will reduce the risk that your private key is exposed to an adversary. We'll carry an encrypted version of your private key to your primary machine after creating your account on an airgapped machine.
 
 Download the latest stable version of the deposit CLI from the [Staking Deposit CLI Releases page](https://github.com/ethereum/staking-deposit-cli/releases).
-
 
 <Tabs groupId="network" defaultValue="win" values={[
     {label: 'Windows', value: 'win'},
@@ -308,7 +311,7 @@ Download the latest stable version of the deposit CLI from the [Staking Deposit 
       <li>A <code>validator_keys</code> folder. This folder will contain two files:
         <ol>
           <li><code>deposit_data-*.json</code> - contains deposit data that you’ll later upload to the Ethereum launchpad.</li>
-          <li><code>keystore-m_*.json</code> - contains your keys [<a href='#footnote-11'>11</a>].</li>
+          <li><code>keystore-m_*.json</code> - contains your public key and encrypted private key [<a href='#footnote-13'>13</a>].</li>
         </ol>
       </li>
     </ol>
@@ -333,7 +336,7 @@ Download the latest stable version of the deposit CLI from the [Staking Deposit 
           <li><a href='https://discord.io/ethstaker'>r/EthStaker Discord</a></li>
           <li><a href='https://discord.com/invite/XkyZSSk4My'>Prysm Discord server</a></li>
         </ul>
-        <p>Someone should be able to give you the GöETH you need. You can then deposit 32 GöETH into the Prater testnet’s deposit contract via the Launchpad page. Exercise extreme caution throughout this procedure - <strong>never send real ETH to the testnet deposit contract.</strong> Finally, head back to your command prompt and run the following command:</p>
+        <p>Someone should be able to give you the GöETH you need. You can then deposit 32 GöETH into the Prater testnet’s deposit contract via the Launchpad page. Exercise extreme caution throughout this procedure - <strong>never send real ETH to the testnet deposit contract.</strong> Finally, run the following command to start your validator node:</p>
         <pre><code>prysm.bat validator --prater</code></pre>      
       </TabItem>
     </Tabs>
@@ -357,7 +360,7 @@ Download the latest stable version of the deposit CLI from the [Staking Deposit 
       <li>A <code>validator_keys</code> folder. This folder will contain two files:
         <ol>
           <li><code>deposit_data-*.json</code> - contains deposit data that you’ll later upload to the Ethereum launchpad.</li>
-          <li><code>keystore-m_*.json</code> - contains your keys [<a href='#footnote-11'>11</a>].</li>
+          <li><code>keystore-m_*.json</code> - contains your public key and encrypted private key [<a href='#footnote-13'>13</a>].</li>
         </ol>
       </li>
     </ol>
@@ -382,7 +385,7 @@ Download the latest stable version of the deposit CLI from the [Staking Deposit 
           <li><a href='https://discord.io/ethstaker'>r/EthStaker Discord</a></li>
           <li><a href='https://discord.com/invite/XkyZSSk4My'>Prysm Discord server</a></li>
         </ul>
-        <p>Someone should be able to give you the GöETH you need. You can then deposit 32 GöETH into the Prater testnet’s deposit contract via the Launchpad page. Exercise extreme caution throughout this procedure - <strong>never send real ETH to the testnet deposit contract.</strong>  Finally, head back to your command prompt and run the following command:</p>
+        <p>Someone should be able to give you the GöETH you need. You can then deposit 32 GöETH into the Prater testnet’s deposit contract via the Launchpad page. Exercise extreme caution throughout this procedure - <strong>never send real ETH to the testnet deposit contract.</strong>  Finally, run the following command to start your validator node:</p>
         <pre><code>./prysm.sh validator --prater</code></pre>    
       </TabItem>
     </Tabs>
