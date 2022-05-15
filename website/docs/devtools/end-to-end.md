@@ -42,7 +42,7 @@ type ComponentRunner interface {
 
 There are several types that implement this interface and they can all be found in https://github.com/prysmaticlabs/prysm/tree/develop/testing/endtoend/components.
 
-E2E requires appropriate regular version updates for certain components that run on binary such as web3signer. Currently, E2E can only support 1 version  of a component at a time.
+E2E requires appropriate regular version updates for certain components that run on binary such as web3signer. Currently, E2E can only support 1 version of a component at a time.
 
 Running components correctly is not a simple task. We can't simply start up all components at the same time and expect the system to work. The beacon node requires a running boot node to be able to find peers, as well as an Eth1 node with blocks that include deposits for validators that will be used during the test. This means we need a combination of synchronous and asynchronous behavior. This is achieved by the use of goroutines and the `ComponentRunner` interface inside `run()` in https://github.com/prysmaticlabs/prysm/blob/develop/testing/endtoend/endtoend_test.go.
 
@@ -121,3 +121,14 @@ The uzipped output file contains a `eth1-init_miner.log` file with the following
 > Fatal: Failed to read genesis file: open /home/user/.cache/bazel/\_bazel\_user/ec3daeb6ce0cd7052bf7c79ca31f19c6/sandbox/linux-sandbox/1779/execroot/prysm/bazel-out/k8-fastbuild-ST-02d640e6fd05/bin/testing/endtoend/go\_default\_test\_/go\_default\_test.runfiles/com\_github\_ethereum\_go\_ethereum/cmd/geth/geth_/genesiss.json: no such file or directory
 
 The issue here is that our repo contains a static file named `genesis.json` that we want to use to initialize Geth, but issuing the command has a typo in the word `genesis` (there is a double `s` at the end).
+
+## Testing features
+
+Prysm supports [feature flags](https://github.com/prysmaticlabs/prysm/blob/develop/config/features/README.md), which are very useful when we want to test a particular feature before making it a standard in production. Sometimes you might want to run E2E with your feature flag enabled. To do this, go to https://github.com/prysmaticlabs/prysm/blob/develop/config/features/flags.go and append your flag to `E2EBeaconChainFlags`:
+
+```
+var E2EBeaconChainFlags = []string{
+    "--dev",
+    "--my-feature",
+}
+```
