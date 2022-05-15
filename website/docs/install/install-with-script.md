@@ -259,6 +259,7 @@ curl http://localhost:3500/eth/v1/node/syncing
 
 This will produce the following output:
 
+<!--INFO: is_optimistic is not yet implemented -> https://github.com/prysmaticlabs/prysm/pull/10692 -->
 ```
 {"data":{"head_slot":"6944","sync_distance":"3003133","is_syncing":true,"is_optimistic":true}}
 ```
