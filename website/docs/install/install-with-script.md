@@ -398,6 +398,8 @@ Download the latest stable version of the deposit CLI from the [Staking Deposit 
 ```
 TODO: `Slashing protection file E:\EthStaking\ConsensusLayer\direct\validator.db is missing. If you changed your --wallet-dir or --datadir, please copy your previous "validator.db" file into your current --datadir.`
 How do we specify a directory for the slashing protection history db? possible for this to auto-point to wallet-dir for more intuitive UX in this guide?
+
+TODO: We use `account` and `wallet` interchangably. Can/should we use one term consistently throughout docs, CLI, flags, directories?
 ```
 
 
