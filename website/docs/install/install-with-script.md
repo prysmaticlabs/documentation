@@ -24,7 +24,7 @@ This is a beginner-friendly guide. Familiarity with the command line is expected
     <tr>
       <td>Run a <strong>full node</strong></td>
       <td>
-      Post-merge, a "full Ethereum client" or "full node" will refer to an <strong>execution node</strong> and <strong>beacon node</strong> working together. Running a full node comes with the following benefits [<a href='#7'>7</a>]: <br /><br />
+      Post-merge, a "full Ethereum client" or "full node" will refer to an <strong>execution node</strong> and <strong>beacon node</strong> working together. Running a full node comes with the following benefits [<a href='#footnote-6'>6</a>]: <br /><br />
       <ul> 
         <li>It contributes to the security of Ethereum's ecosystem [<a href='#footnote-4'>4</a>].</li>    
         <li>It lets you access the Ethereum network directly without having to trust a third party service [<a href='#footnote-7'>7</a>].</li> 
