@@ -464,6 +464,9 @@ Yes - you can use [checkpoint sync](https://docs.prylabs.network/docs/prysm-usag
 **My attestations are working, but proposals aren’t. Why not?** <br />
 This is usually an indication that your validator isn't able to communicate with your beacon node, or your beacon node isn't able to connect to your execution node. (TODO)
 
+**How do I withdraw my 32ETH deposit?** <br />
+(TODO)
+
 **How long does it take for my validator node to be selected to propose a new block?** <br />
 It can take up to a week.
 
