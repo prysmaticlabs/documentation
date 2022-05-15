@@ -442,6 +442,9 @@ The Beginner's Introduction to Prysm uses diagrams to help you visualize Ethereu
 Keeping all of your client software on a single machine keeps things simple, which aligns with our [security best practices](./../security-best-practices.md).
 
 
+<!-- **I'm new to Ethereum, and I'm a visual learner. Can you show me how these things work?** <br />
+The Beginner's Introduction to Prysm uses diagrams to help you visualize Ethereum's architecture, and Prysm's too. (TODO) -->
+
 <!-- **How much disk space will each of these clients require?** <br /> --> 
 
 
