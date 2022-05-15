@@ -445,7 +445,8 @@ Keeping all of your client software on a single machine keeps things simple, whi
 <!-- **I'm new to Ethereum, and I'm a visual learner. Can you show me how these things work?** <br />
 The Beginner's Introduction to Prysm uses diagrams to help you visualize Ethereum's architecture, and Prysm's too. (TODO) -->
 
-<!-- **How much disk space will each of these clients require?** <br /> --> 
+<!-- **How much disk space will each of these clients require?** <br /> 
+--> 
 
 
 <!-- **I don't have a 2TB SSD, but I have multiple smaller SSDs. Will this work?** <br />
