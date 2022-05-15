@@ -157,7 +157,7 @@ curl localhost:8545/health
 curl -H "Content-Type: application/json" -X POST http://localhost:8545 -d "{""jsonrpc"":""2.0"",""method"":""eth_syncing"",""params"":[],""id"":51}"
 ```
 
-  <p>You can proceed to the next step while Nethermind syncs.</p>
+  <p>You can proceed to the next step while Besu syncs.</p>
   </TabItem>
   <TabItem value="geth">
     <div class="admonition admonition-caution alert alert--warning">
