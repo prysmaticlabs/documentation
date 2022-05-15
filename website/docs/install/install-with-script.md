@@ -441,13 +441,18 @@ The Beginner's Introduction to Prysm uses diagrams to help you visualize Ethereu
 **Why do you recommend putting everything on a single machine?** <br />
 Keeping all of your client software on a single machine keeps things simple, which aligns with our [security best practices](./../security-best-practices.md).
 
-<!-- **How much disk space will each of these clients require?** <br /> -->
+<!-- 
+**How much disk space will each of these clients require?** <br /> 
+-->
 
-<!--  Client         | Space needed | Purpose |
+
+<!-- 
+<span> Client         | Space needed | Purpose |
 | -------------- | ------------ | ------- |
 | Execution node | todo         | todo    |
 | Beacon node    | todo         | todo    |
-| Validator node | todo         | todo    | --> 
+| Validator node | todo         | todo    | </span>  
+--> 
 
 <!-- **I don't have a 2TB SSD, but I have multiple smaller SSDs. Will this work?** <br />
 Yes. You can tell your execution client to overflow into a specific drive by (TODO). You can tell your beacon node client to overflow into a specific drive by (TODO). You can tell your validator node client to overflow into a specific drive by (TODO). -->
