@@ -308,7 +308,7 @@ Download the latest stable version of the deposit CLI from the [Staking Deposit 
     </Tabs>
     <p>Follow the CLI prompts to generate your keys. This will give you two artifacts:</p>
     <ol>
-      <li>A <strong>new mnemonic seed phrase</strong>. This is highly sensitive and should be kept safe, secure, and airgapped.</li>
+      <li>A <strong>new mnemonic seed phrase</strong>. This is <strong>highly sensitive</strong> and should never be exposed to other people or networked hardware.</li>
       <li>A <code>validator_keys</code> folder. This folder will contain two files:
         <ol>
           <li><code>deposit_data-*.json</code> - contains deposit data that you’ll later upload to the Ethereum launchpad.</li>
@@ -338,7 +338,7 @@ Download the latest stable version of the deposit CLI from the [Staking Deposit 
           <li><a href='https://discord.com/invite/XkyZSSk4My'>Prysm Discord server</a></li>
         </ul>
         <p>Someone should be able to give you the GöETH you need. You can then deposit 32 GöETH into the Prater testnet’s deposit contract via the Launchpad page. Exercise extreme caution throughout this procedure - <strong>never send real ETH to the testnet deposit contract.</strong> Finally, run the following command to start your validator node:</p>
-        <pre><code>prysm.bat validator --prater</code></pre>      
+        <pre><code>prysm.bat validator --wallet-dir=&lt;YOUR_FOLDER_PATH&gt; --prater</code></pre>      
       </TabItem>
     </Tabs>
   </TabItem>
@@ -357,7 +357,7 @@ Download the latest stable version of the deposit CLI from the [Staking Deposit 
     </Tabs>
     <p>Follow the CLI prompts to generate your keys. This will give you two artifacts:</p>
     <ol>
-      <li>A <strong>new mnemonic seed phrase</strong>. This is highly sensitive and should be kept safe, secure, and airgapped.</li>
+      <li>A <strong>new mnemonic seed phrase</strong>. This is <strong>highly sensitive</strong> and should never be exposed to other people or networked hardware.</li>
       <li>A <code>validator_keys</code> folder. This folder will contain two files:
         <ol>
           <li><code>deposit_data-*.json</code> - contains deposit data that you’ll later upload to the Ethereum launchpad.</li>
@@ -374,8 +374,8 @@ Download the latest stable version of the deposit CLI from the [Staking Deposit 
         <pre><code>./prysm.sh validator accounts import --keys-dir=&lt;YOUR_FOLDER_PATH&gt;</code></pre>
         <p>You’ll be prompted to specify a wallet directory twice. Provide the path to your <code>ConsensusLayer</code> folder for both prompts. You should see <code>Successfully imported 1 accounts, view all of them by running accounts list</code> when your account has been successfully imported into Prysm.</p>
         <p>Next, go to the <a href='https://launchpad.ethereum.org/en/upload-deposit-data'>Mainnet Launchpad’s deposit data upload page</a> and upload your <code>deposit_data-*.json</code> file. You’ll be prompted to connect your wallet.</p>
-        <p>You can then deposit 32 ETH into the Mainnet deposit contract via the Launchpad page. Exercise extreme caution throughout this procedure. Finally, head back to your command prompt and run the following command:</p>
-        <pre><code>./prysm.sh validator</code></pre>
+        <p>You can then deposit 32 ETH into the Mainnet deposit contract via the Launchpad page. Exercise extreme caution throughout this procedure. Finally, run the following command to start your validator node, replacing <code>&lt;YOUR_FOLDER_PATH&gt;</code> with the full path to your <code>ConsensusLayer</code> folder:</p>
+        <pre><code>./prysm.sh validator --wallet-dir=&lt;YOUR_FOLDER_PATH&gt;</code></pre>
       </TabItem>
       <TabItem value="testnet">
         <pre><code>./prysm.sh validator accounts import --keys-dir=&lt;YOUR_FOLDER_PATH&gt; --prater</code></pre>
@@ -386,8 +386,8 @@ Download the latest stable version of the deposit CLI from the [Staking Deposit 
           <li><a href='https://discord.io/ethstaker'>r/EthStaker Discord</a></li>
           <li><a href='https://discord.com/invite/XkyZSSk4My'>Prysm Discord server</a></li>
         </ul>
-        <p>Someone should be able to give you the GöETH you need. You can then deposit 32 GöETH into the Prater testnet’s deposit contract via the Launchpad page. Exercise extreme caution throughout this procedure - <strong>never send real ETH to the testnet deposit contract.</strong>  Finally, run the following command to start your validator node:</p>
-        <pre><code>./prysm.sh validator --prater</code></pre>    
+        <p>Someone should be able to give you the GöETH you need. You can then deposit 32 GöETH into the Prater testnet’s deposit contract via the Launchpad page. Exercise extreme caution throughout this procedure - <strong>never send real ETH to the testnet deposit contract.</strong>  Finally, run the following command to start your validator node, replacing <code>&lt;YOUR_FOLDER_PATH&gt;</code> with the full path to your <code>ConsensusLayer</code> folder:</p>
+        <pre><code>./prysm.sh validator --wallet-dir=&lt;YOUR_FOLDER_PATH&gt; --prater</code></pre>    
       </TabItem>
     </Tabs>
   </TabItem>
@@ -395,11 +395,19 @@ Download the latest stable version of the deposit CLI from the [Staking Deposit 
 
 <br />
 
+```
+TODO: `Slashing protection file E:\EthStaking\ConsensusLayer\direct\validator.db is missing. If you changed your --wallet-dir or --datadir, please copy your previous "validator.db" file into your current --datadir.`
+How do we specify a directory for the slashing protection history db? possible for this to auto-point to wallet-dir for more intuitive UX in this guide?
+```
+
+
 :::tip Congratulations! 
 
 You’re now running a <strong>full Ethereum node</strong> and a <strong>validator node</strong>.
 
 :::
+
+
 
 <br />
 
