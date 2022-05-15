@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 Prysm is an implementation of the [Ethereum proof-of-stake consensus specification](https://github.com/ethereum/consensus-specs) [<a href='#footnote-1'>1</a>]. In this guide, you’ll use Prysm to run a full Ethereum node [<a href='#footnote-2'>2</a>] and optionally a validator node [<a href='#footnote-3'>3</a>]. This will let you stake 32 ETH using hardware that you manage [<a href='#footnote-4'>4</a>].
 
-This is a beginner-friendly guide. Familiarity with the command line is expected, but otherwise this guide makes no assumptions about your technical skills or prior knowledge. Beginners are encouraged to **follow the footnotes** throughout this guide - the footnotes provide context and links to learning resources.
+This is a beginner-friendly guide. Familiarity with the command line is expected, but otherwise this guide makes no assumptions about your technical skills or prior knowledge. Beginners are encouraged to **follow the footnotes** throughout this guide - the footnotes provide context and links to learning resources [<a href='#footnote-5'>5</a>].
 
 ## Step 1: Identify your goals and system requirements
 
@@ -24,10 +24,10 @@ This is a beginner-friendly guide. Familiarity with the command line is expected
     <tr>
       <td>Run a <strong>full node</strong></td>
       <td>
-      Post-merge, a "full Ethereum client" or "full node" will refer to an <strong>execution node</strong> and <strong>beacon node</strong> working together. Running a full node comes with the following benefits [<a href='#footnote-5'>5</a>]: <br /><br />
+      Post-merge, a "full Ethereum client" or "full node" will refer to an <strong>execution node</strong> and <strong>beacon node</strong> working together. Running a full node comes with the following benefits [<a href='#7'>7</a>]: <br /><br />
       <ul> 
         <li>It contributes to the security of Ethereum's ecosystem [<a href='#footnote-4'>4</a>].</li>    
-        <li>It lets you access the Ethereum network directly without having to trust a third party service [<a href='#footnote-6'>6</a>].</li> 
+        <li>It lets you access the Ethereum network directly without having to trust a third party service [<a href='#footnote-7'>7</a>].</li> 
         <li>It lets you run a validator node post-Merge.</li> 
       </ul> 
       </td>
@@ -506,9 +506,9 @@ TODO: explain in context of this guide -->
 <strong id='footnote-2'>2.</strong> In Prysm docs, a <strong>full Ethereum node</strong> refers to a node that's running both an execution-layer execution client (like Nethermind, Besu, or Geth) and a consensus-layer beacon node client (like Prysm, Lighthouse, or Nimbus). <br />
 <strong id='footnote-3'>3.</strong> A <strong>validator node</strong> is a particular type of Ethereum node that runs Ethereum's proof-of-stake consensus protocol. Validator client software like Prysm allows you to stake 32 ETH as collateral in an agreement with the Ethereum network to honestly propose and attest to blocks. Running a validator node makes you a validator. Post-merge, validators will replace miners, and proof-of-stake will replace proof-of-work. <br />
 <strong id='footnote-4'>4.</strong> "Staking at home" with your own hardware reduces our dependency on centralized cloud providers and increases the decentralization and security of the Ethereum ecosystem. Staking at home is a serious responsibility that comes with serious risks. Read our <a href='./security-best-practices'>Security Best Practices</a> to learn how to minimize those risks. <br />
-<strong id='footnote-5'>5.</strong> See <a href='https://ethereum.org/en/developers/docs/nodes-and-clients/'>Nodes and Clients: Why should I run an Ethereum node?</a> for a more detailed exploration of node-running benefits. <br />
-<strong id='footnote-6'>6.</strong> Self-sufficient participation in Ethereum aligns with the ecosystem's "don't trust, verify" mantra. Running your own node removes the need to trust another node operator, and allows you to directly verify the authenticity of blockchain data. <br />
-<strong id='footnote-7'>7.</strong> Understanding how things work can help you <strong>minimize risk</strong> and <strong>troubleshoot issues</strong>. Staking at home may one day be point-and-click. But until then, <strong>you should understand the major components</strong>, their relationships with each other, and their responsibilities over time. This understanding is currently a prerequisite to staking with Prysm, and it's why we identify continuous self-education as a <a href='./security-best-practices'>security best practice</a>. Visit A Beginner's Guide to Prysm for a breezy, visual introduction to these major components. <br />
+<strong id='footnote-5'>5.</strong> Understanding how things work can help you <strong>minimize risk</strong> and <strong>troubleshoot issues</strong>. Staking at home may one day be point-and-click. But until then, <strong>you should understand the major components</strong>, their relationships with each other, and their responsibilities over time. This understanding is currently a prerequisite to staking with Prysm, and it's why we identify continuous self-education as a <a href='./security-best-practices'>security best practice</a>. Visit A Beginner's Guide to Prysm for a breezy, visual introduction to these major components. <br />
+<strong id='footnote-6'>6.</strong> See <a href='https://ethereum.org/en/developers/docs/nodes-and-clients/'>Nodes and Clients: Why should I run an Ethereum node?</a> for a more detailed exploration of node-running benefits. <br />
+<strong id='footnote-7'>7.</strong> Self-sufficient participation in Ethereum aligns with the ecosystem's "don't trust, verify" mantra. Running your own node removes the need to trust another node operator, and allows you to directly verify the authenticity of blockchain data. <br />
 <strong id='footnote-8'>8.</strong> Keeping TCP port <code>30303</code> is the Ethereum equivalent of seeding torrent data to peers. This will allow other execution nodes to fetch data from your node, and is a great way to support Ethereum's decentralization. <br />
 <strong id='footnote-9'>9.</strong> Throughout this guide, we use <code>ConsensusLayer</code> and <code>ExecutionLayer</code> as directory names that communicate logical separation. Feel free to use your own directory names. <br />
 <strong id='footnote-10'>10.</strong> Post-merge, you'll need to run an execution client locally if you want to run a beacon node or validator node. Geth is currently the supermajority execution client, so we encourage you to use an alternative like Nethermind or Besu. See <a href='https://ethresear.ch/t/applying-the-five-whys-to-the-client-diversity-problem/7628'>Applying the "Five Why's" to the Client Diversity Problem</a> to learn more. <br />
