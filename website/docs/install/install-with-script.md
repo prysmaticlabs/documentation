@@ -424,11 +424,6 @@ In the meantime, you should leave your **execution client**, **beacon node**, an
  - [Beaconchai.in (Testnet)](https://prater.beaconcha.in/)
 
 
-```
-TODO: "no matching results found" when pasting my testnet public key into prater.beaconcha.in... is this expected?
-```
-
-
 ## Frequently asked questions
 
 **I'm new to Ethereum, and I'm a visual learner. Can you show me how these things work?** <br />
