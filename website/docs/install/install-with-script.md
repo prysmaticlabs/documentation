@@ -31,7 +31,7 @@ This is a beginner-friendly guide. Familiarity with the command line is expected
       </td>
       <td>
         <ul> 
-          <li><strong>Software</strong>: Execution client, beacon node client (instructions below)</li>
+          <li><strong>Software</strong>: Execution client, beacon node client (instructions below), <a href='https://curl.se/download.html'>curl</a></li>
           <li><strong>OS</strong>: 64-bit Linux, Mac OS X 10.14+, Windows 10+ 64-bit</li>   
           <li><strong>CPU</strong>: Something relatively modern. Intel Core i5-760 is a good min-bar.</li> 
           <li><strong>Memory</strong>: 16GB+ RAM</li> 
@@ -151,7 +151,13 @@ curl localhost:8545/health
         </ul>
       </TabItem>
     </Tabs>
-    <p>Your Besu execution node will begin syncing. This should take about two hours to complete. You can proceed to the next step while Besu syncs.</p>
+    <p>Your Besu execution node will begin syncing. You can <a href='https://besu.hyperledger.org/en/stable/Reference/API-Methods/#eth_syncing'>check your Besu execution node's sync status</a> by running the following command from a separate terminal window:</p>
+
+```
+curl -H "Content-Type: application/json" -X POST http://localhost:8545 -d "{""jsonrpc"":""2.0"",""method"":""eth_syncing"",""params"":[],""id"":51}"
+```
+
+  <p>You can proceed to the next step while Nethermind syncs.</p>
   </TabItem>
   <TabItem value="geth">
     <div class="admonition admonition-caution alert alert--warning">
