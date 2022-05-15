@@ -13,6 +13,8 @@ This is a beginner-friendly guide. Familiarity with the command line is expected
 
 ## Step 1: Identify your goals and system requirements
 
+<!--<li><strong>Knowledge</strong>: <a>A Beginner's Guide to Prysm (TODO)</a></li>-->
+
 <table>
     <tr>
     <th style={{minWidth: 180 + 'px'}}>Goal</th> 
@@ -37,7 +39,6 @@ This is a beginner-friendly guide. Familiarity with the command line is expected
           <li><strong>Memory</strong>: 16GB+ RAM</li> 
           <li><strong>Storage</strong>: SSD with at least 2TB free space</li> 
           <li><strong>Network</strong>: 8 MBit/sec broadband</li> 
-          <!--<li><strong>Knowledge</strong>: <a>A Beginner's Guide to Prysm (TODO)</a></li>-->
         </ul> 
       </td>
     </tr> 
