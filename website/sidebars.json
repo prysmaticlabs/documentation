@@ -127,10 +127,6 @@
 				{
 					"type": "doc",
 					"id": "prysm-usage/p2p-host-ip"
-				},
-				{
-					"type": "doc",
-					"id": "faq"
 				}
 			]
 		},
@@ -307,6 +303,11 @@
 			"type": "doc",
 			"label": "Security Audits",
 			"id": "audits/phase0"
+		},
+		{
+			"type": "doc",
+			"id": "faq",
+			"label": "FAQ"
 		},
 		{
 			"type": "doc",
