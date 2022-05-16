@@ -27,7 +27,7 @@ These hardware specifications are recommended, but not required to run the Prysm
 
 * Processor: Intel Core i7–4770 or AMD FX-8310 or better
 * Memory: 16GB RAM
-* Storage: 200GB available space SSD
+* Storage: 1TB available space SSD
 * Internet: Broadband connection
 
 ## What is Slashing
