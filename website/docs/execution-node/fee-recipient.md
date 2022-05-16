@@ -10,6 +10,13 @@ sme: james-prysm
 
 # Configuring a Fee Recipient Address 
 
+:::caution
+
+**This feature is currently in public preview** and may change significantly as we receive feedback from users like you. Join our [Discord server](https://discord.com/invite/XkyZSSk4My) to share your feedback.
+
+:::
+
+
 <!-- alt: ## How to configure Fee Recipient on your client instance and/or beacon node -->
 
 **Fee Recipient** is a feature that lets you specify a priority fee recipient address on your validator client instance and beacon node. After [The Merge](https://ethereum.org/en/upgrades/merge/), execution clients will begin depositing priority fees into this address whenever your validator client proposes a new block.
