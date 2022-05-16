@@ -48,11 +48,15 @@ Running a slasher is not meant to be profitable. Slashing is meant to be rare an
 
 ## Running Slasher
 
-Running a slasher is as simple as adding the `--slasher` flag to your **beacon node**. Doing this will enable your beacon node to perform slashing detection. Slasher is very heavy on database access and disk usage, you may see it using over an additional 70Gb of extra storage on disk than normal when running on mainnet. Given that slasher needs to store a lot of information about attestations and blocks within the network, this is to be expected.
+Running a slasher is as simple as adding the `--slasher` flag to your **beacon node**. Doing this will enable your beacon node to perform slashing detection. However, **home stakers are advised _not_ to run a slasher on personal hardware,** as it is a tremendously resource-hungry process. Slasher is very heavy on database access and disk usage, and the `slasher.db` will quickly grow to 1TB or more when running on mainnet. Given that slasher needs to store a lot of information about attestations and blocks within the network, this is to be expected.
 
 ### Whistleblower Rewards
 
 Running a slasher can also offer some profits to your validators given certain conditions. If slasher detects a slashable condition, it will **broadcast it to the network by default**. Some lucky validator will then package this slashing evidence into a block and be rewarded for doing so. You can **disable** this broadcast in Prysm using the `--disable-broadcast-slashings` option in your **beacon node**.
+
+### Who Should Run a Slasher
+
+As summarized above, the slasher process is likely to overwhelm most home validator setups. The incentives for running a slasher accumulate irregularly, at great cost, so home stakers are advised to run their beacon node without it. It is an entirely optional process. Beacon node operators should consider running the slasher if they are operating a **staking pool** or **data center**.
 
 ## Using Slasher for Advanced Slashing Protection
 
