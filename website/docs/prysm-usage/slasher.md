@@ -32,7 +32,7 @@ These hardware specifications are recommended, but not required to run the Prysm
 
 ## What is Slashing
 
-Slashing occurs when there is evidence a validator has acted against the Ethereum network. Ethereum proof of stake works on a penalty-based incentive mechanism to heavily discourage actions on the network that could cause instability, malicious forking and conflicting information from validators. Slashing does not need to have been the result of malicious intent, it could also happen accidently via misconfiguration. If a validator acts in a way that can confuse or disrupt the integrity of the system, the protocol removes, or **slashes**, a portion of the offending validators existing stake, causing a gradual loss of ETH over time until the validator is forcefully ejected from the network and marked as SLASHED. This is an **irreversible** process.
+Slashing occurs when there is evidence a validator has acted against the Ethereum network. Ethereum proof of stake works on a penalty-based incentive mechanism to heavily discourage actions on the network that could cause instability, malicious forking and conflicting information from validators. Slashing does not need to have been the result of malicious intent, it could also happen accidentally via misconfiguration. If a validator acts in a way that can confuse or disrupt the integrity of the system, the protocol removes, or **slashes**, a portion of the offending validator's existing stake, causing a gradual loss of ETH over time until the validator is forcefully ejected from the network and marked as SLASHED. This is an **irreversible** process.
 
 The main purpose of slashing is to discourage attacks against the Ethereum proof-of-stake network that might otherwise be cheap to perform such as trivially creating conflicting forks where validators attest on a different view of historical checkpoints.
 
@@ -57,8 +57,6 @@ Running a slasher can also offer some profits to your validators given certain c
 ## Using Slasher for Advanced Slashing Protection
 
 An alternative implementation for slashing prevention is the use of slasher itself as a middleware client between your beacon node and validator client. Before a validator client submits a block or an attestation, it asks the slasher if the object is slashable. If the check passes, the data will go through to the beacon node. This is the most advanced form of slashing protection as slasher is, ideally, aware of everything happening in the network and has a recorded history of blocks and attestations for every validator.
-
-You can enable remote slashing protection if you are running a beacon node with `--slasher` by adding the flag `--enable-external-slashing-protection` to your validator client.
 
 ## Further Reading
 
