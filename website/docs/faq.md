@@ -29,7 +29,7 @@ If you still need help, note your **Prysm version** and **operating system**, an
 Losing peers can be due the following reasons:
 
 1. Your network connectivity has problems. You can check how to improve it with some of our tips [here](/docs/prysm-usage/p2p-host-ip).
-2. Prysm is using a ton of memory or system resources and perhaps you ran out of memory. Ensure you meet the minimum specifications for runnuing Prysm specified in our installation pages for your operating system.
+2. Prysm is using a ton of memory or system resources and perhaps you ran out of memory. Ensure you meet the minimum specifications for running Prysm specified in our installation pages for your operating system.
 3. A bug in our software that can affect your p2p connectivity. It is known that certain versions have issues with peers on operating systems such as Windows, so you could try [downgrading](/docs/prysm-usage/staying-up-to-date) to see if your issue is resolved. If this is the case, talk to our team on [Discord](https://discord.gg/prysmaticlabs) letting us know you had this issue.
 
 #### I have an issue in the web UI, getting errors, what can I do?
@@ -97,7 +97,7 @@ prysm.bat beacon-chain --version
 </TabItem>
 <TabItem value="docker">
 
-If you are running using docker and the :stable tag for Prysm, stable will always point to our latest [release](https://github.com/prysmaticlabs/prysm/releases). Otherwise, you can run the command `docker ps` to see your running docker containers. The suffix of your image name after the colon is the version you are runnning.
+If you are running using docker and the :stable tag for Prysm, stable will always point to our latest [release](https://github.com/prysmaticlabs/prysm/releases). Otherwise, you can run the command `docker ps` to see your running docker containers. The suffix of your image name after the colon is the version you are running.
 
 ```
 CONTAINER ID        IMAGE                  COMMAND                  CREATED             STATUS              PORTS               NAMES
@@ -137,7 +137,7 @@ For help with running geth specifically, the [go-ethereum discord](https://disco
 
 #### How often should I perform database backups?
 
-The Prysm beacon node and validator allow performing database backups in case your machine gets corrupted and you need to restore it from some checkpoint. You can read our instructions on performing backups [here](/docs/prysm-usage/database-backups). Briefly, the frequency at which you should perform backups really depends on your personal preference. If you want to perform backups once a day or once every week, ther is no harm nor bigger difference in doing so. Losing your beacon chain database is not a big deal aside from the fact that you will need to sync again from genesis. Losing your validator db can be problematic but if you wait several epochs before starting your validator, ensure your computer's clock is synced, the risk of slashing is low.
+The Prysm beacon node and validator allow performing database backups in case your machine gets corrupted and you need to restore it from some checkpoint. You can read our instructions on performing backups [here](/docs/prysm-usage/database-backups). Briefly, the frequency at which you should perform backups really depends on your personal preference. If you want to perform backups once a day or once every week, there is no harm nor bigger difference in doing so. Losing your beacon chain database is not a big deal aside from the fact that you will need to sync again from genesis. Losing your validator db can be problematic but if you wait several epochs before starting your validator, ensure your computer's clock is synced, the risk of slashing is low.
 
 #### Seeing a warning regarding binary signature not being trusted when downloading Prysm, should I be worried?
 
@@ -182,7 +182,7 @@ Prysm will soon implement the slashing protection [standard format](https://eips
 1. Turn off your beacon node and validator on machine 1, make sure it is not running as a system process. You can check this using the process monitor tools of your OS, or a command line tool such as top or htop and check for anything containing the name “prysm” “validator” or “beacon”
 2. Note the location of your wallet directory. If you used the default when you started Prysm, you can view its path at the top of the output of `validator accounts list`, which varies based on your operating system
 3. Take that entire directory and move it over to your next machine
-4. If you modified your validators’ — datadir, also migrate that directory to your next machine
+4. If you modified your validators’ `— datadir`, also migrate that directory to your next machine
 5. Wait at least a few epochs, sync your beacon node on your second machine, then start your validator client on your second machine
 6. Ensure you never run the same keys again on machine 1 or anywhere else
 
@@ -211,7 +211,7 @@ If you have a fully synced beacon node, you can fetch your account balance via t
 
 #### Why are some validators making a lot more money than others?
 
-If you look at the [validator leaderboard](https://beaconcha.in/validators/leaderboard), there are some validators at the top that seem to be doing a lot better than others. The reason being that either they (a) got lucky with being assigned to propse more blocks than other validators, or (b) they caught slashable offenses in the network and packed them into their blocks. Slashings are meant to be rare, and Prysm's slasher by default broadcasts slashings it finds to the network so that validators do not selfishly hold on to them. You can actually disable this to selfishly withhold slashings with the `--disable-broadcast-slasings` flag in your beacon node, although don't expect to get rich from slashing other validators. 
+If you look at the [validator leaderboard](https://beaconcha.in/validators/leaderboard), there are some validators at the top that seem to be doing a lot better than others. The reason being that either they (a) got lucky with being assigned to propose more blocks than other validators, or (b) they caught slashable offenses in the network and packed them into their blocks. Slashings are meant to be rare, and Prysm's slasher by default broadcasts slashings it finds to the network so that validators do not selfishly hold on to them. You can actually disable this to selfishly withhold slashings with the `--disable-broadcast-slashings` flag in your beacon node, although don't expect to get rich from slashing other validators. 
 
 Overall, keep in mind that no one has an extra advantage as a validator compared to others. Block proposal opportunities are random and it does not matter how powerful your hardware is. A lot of the times the validators near the top simply got lucky.
 
