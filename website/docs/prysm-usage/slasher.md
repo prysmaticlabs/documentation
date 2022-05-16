@@ -18,7 +18,7 @@ These specifications must be met in order to successfully run a Prysm beacon nod
 * Operating System: 64-bit Linux, Mac OS X 10.14+, Windows 64-bit
 * Processor: Intel Core i5–760 or AMD FX-8100 or better
 * Memory: 8GB RAM
-* Storage: 200GB available space SSD
+* Storage: 1TB available space SSD
 * Internet: Broadband connection
 
 ### Recommended specifications
