@@ -24,7 +24,7 @@ Miners currently collect these priority fees. After The Merge, proof-of-work con
 Because priority fees are captured by execution clients in the execution layer, validator clients need to tell execution clients where to forward these priority fees. This priority fee “forwarding address” is referred to as your **fee recipient** address.
 
 :::tip Configure this before The Merge
-If you don't configure your fee recipient address before The Merge, your priority fee earnings will be deposited into a burn address (`0x0`).
+If you don't configure your fee recipient address before The Merge, your priority fee earnings will be deposited into a [burn address](https://etherscan.io/address/0x0000000000000000000000000000000000000000).
 :::
 
 
