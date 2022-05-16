@@ -14,7 +14,7 @@ The instructions below show information about which execution clients can be run
 
 ## Supported clients
 
-Prysm nodes can use any sort of Ethereum execution node as long as it supports reading smart contract logs. Users can choose either of the following execution clients.
+Prysm nodes can use any sort of Ethereum execution node as long as it supports reading smart contract logs. Users can choose one of the following execution clients:
 
 - [Go-Ethereum](https://github.com/ethereum/go-ethereum)
 - [Erigon](https://github.com/ledgerwatch/erigon)
