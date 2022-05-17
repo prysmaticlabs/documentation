@@ -4,7 +4,7 @@ title: Migrating validator keys between computers or to a new client
 sidebar_label: Migrating computers or clients
 ---
 
-This document provides guidance on migrating Prysm validator keys from one host system to another whilst minimising the risk of slashing.  
+This document provides guidance on migrating Prysm validator keys from one host system to another whilst minimizing the risk of slashing.  
 
 :::danger Important Note
 As there is a risk of slashing when undertaking migration, it is important to ensure the following key points are understood and followed: 
@@ -16,7 +16,7 @@ As there is a risk of slashing when undertaking migration, it is important to en
 
 ## Understanding Slashing
 
-Slashing is a mechanism designed to encourage good behaviour on the Ethereum network and discourage attacks and bad behaviour. Where a validator is found to have broken the rules it will be slashed and removed from the network. In addition to being removed from the network a significant part, up to the entire validator stake, may be removed. 
+Slashing is a mechanism designed to encourage good behavior on the Ethereum network and discourage attacks and bad behavior. Where a validator is found to have broken the rules it will be slashed and removed from the network. In addition to being removed from the network, the entire validator stake may be removed. 
 
 Being slashed is the result of a validator undertaking one of three “bad” actions: 
 

@@ -13,15 +13,17 @@
             "type": "category",
             "collapsed": true,
             "collapsible": true,
-            "label": "Other Installation Methods",
+            "label": "Installation Guide",
             "items": [{
                     "type": "doc",
-                    "label": "Install Prysm with Docker",
+                    "id": "install/install-with-script"
+                },
+                {
+                    "type": "doc",
                     "id": "install/install-with-docker"
                 },
                 {
                     "type": "doc",
-                    "label": "Install Prysm from Source with Bazel",
                     "id": "install/install-with-bazel"
                 }
             ]
@@ -124,10 +126,6 @@
                 {
                     "type": "doc",
                     "id": "prysm-usage/p2p-host-ip"
-                },
-                {
-                    "type": "doc",
-                    "id": "faq"
                 }
             ]
         },
@@ -299,6 +297,16 @@
             "type": "doc",
             "label": "Security Audits",
             "id": "audits/phase0"
+        },
+        {
+            "type": "doc",
+            "id": "faq",
+            "label": "FAQ"
+        },
+        {
+            "type": "doc",
+            "label": "Security Best Practices",
+            "id": "security-best-practices"
         },
         {
             "type": "doc",

@@ -39,7 +39,7 @@ Associated to this event, the monitor emits the following metrics
 - timely_target: a counter of correctly and timely voted target.
 - timely_source: a counter of correctly and timely voted source.
 
-These metrics are parametrized by validator index, not public key as you may be used from the validator client metrics.
+These metrics are parameterized by validator index, not public key as you may be used to from the validator client metrics.
 
 ## Block proposed
 In case of a block proposed by a tracked validator the following is logged
@@ -67,7 +67,7 @@ INFO monitor "Sync committee contribution included" BalanceChange=1293 Contribut
 ```
 This validator had two different indices in the committee and only contributed for one.
 
-Also the metric `sync_committee_contributions_total`, which is a counter, is emited.
+Also the metric `sync_committee_contributions_total`, which is a counter, is emitted.
 
 ## Voluntary exits
 
@@ -82,11 +82,11 @@ INFO monitor "Voluntary exit was processed" ValidatorIndex=1
 
 ## Attestations in the P2P network
 
-The monitor logs events catched in the P2P network that not necessarily will be included in blocks. When one of our tracked validators is an aggregator:
+The monitor logs events caught in the P2P network that not necessarily will be included in blocks. When one of our tracked validators is an aggregator:
 ```shell
 INFO monitor "Processed attestation aggregation" AggregatorIndex=2 BeaconBlockRoot=0x68656c6c6f2d Slot=1 SourceRoot=0x68656c6c6f2d TargetRoot=0x68656c6c6f2d
 ```
-The following logs are emited when an attestation by a tracked validator is seen in the P2P network, both in aggregated or unnagregated form:
+The following logs are emitted when an attestation by a tracked validator is seen in the P2P network, both in aggregated or unaggregated form:
 ```shell
 INFO monitor "Processed aggregated attestation" Head=0x68656c6c6f2d Slot=11293 Source=0x68656c6c6f2d Target=0x68656c6c6f2d ValidatorIndex=2
 ```
@@ -105,4 +105,4 @@ The field `AttestationInclusion` reports the percentage of attestations that hav
 
 ## A remark on BalanceChange
 
-The validator monitor does not keep a history of performance, it only tracks the *latest event* and keeps an aggregated total of performance. The *balance changing events* are attestation inclusion, proposed blocks inclusion and sync committee inclusion. When the monitor reports a field `BalanceChange` it means the difference between the balance right after processing the block that triggered the event, and the balance after the previous balance changing event. In particular, when an attestation is includedd the balance is not changed by the included attestation since attestation reward is given at epoch transition. Therefore the balance change reported, assuming no other events like sync committee contributions and block proposals were reported during the epoch, refers to the reward given by the *previous* attestation. 
+The validator monitor does not keep a history of performance, it only tracks the *latest event* and keeps an aggregated total of performance. The *balance changing events* are attestation inclusion, proposed blocks inclusion and sync committee inclusion. When the monitor reports a field `BalanceChange` it means the difference between the balance right after processing the block that triggered the event, and the balance after the previous balance changing event. In particular, when an attestation is included the balance is not changed by the included attestation since attestation reward is given at epoch transition. Therefore the balance change reported, assuming no other events like sync committee contributions and block proposals were reported during the epoch, refers to the reward given by the *previous* attestation. 

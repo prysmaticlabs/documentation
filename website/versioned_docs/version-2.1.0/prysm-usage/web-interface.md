@@ -10,8 +10,7 @@ The Prysm Web UI is a locally hosted website that is launched from the validator
 
 The website will provide users with a visual way to set up their Prysm Wallet, manage their keys, and provide information on the current state of their validator. You will also be able to see a peer map for users who decide to share their location among the peers in their network.
 
-The website at this time does not provide additional metrics over those that you would find on your grafana dashboards or beaconcha.in . 
-
+The website at this time does not provide additional metrics over those that you would find on your Grafana dashboards or beaconcha.in.
 
 ## Launching and Logging In
 
@@ -29,6 +28,7 @@ example of URL in logs
 [2021-10-21 14:07:28]  INFO rpc: Once your validator process is running, navigate to the link below to authenticate with the Prysm web interface
 [2021-10-21 14:07:28]  INFO rpc: http://127.0.0.1:7500/initialize?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MzQzMzIyOTJ9.EgkawrXjxSkO26FcwuiB6IFI-KUMyLAc9FKkuLOTHl8&expiration=1634332292
 ```
+
 :::tip Print your unique authentication URL again
 Sometimes your browser cache gets cleared requiring you to reauthenticate, or you want to retrieve a new URL with token without restarting the validator.
 In that case, you can run the following command `validator web generate-auth-token`
@@ -39,10 +39,10 @@ The `--wallet-dir` flag can also be added to the `validator web generate-auth-to
 :::
 
 :::tip 3rd party tools
-Third party tools such as Dappnode will initialize the user without use of the cli commands and will automatically redirect users to the dashboard. These tools will typically use the generated `auth-token` file located in the Prysm Wallet directory.
+Third party tools such as DAppNode will initialize the user without use of the cli commands and will automatically redirect users to the dashboard. These tools will typically use the generated `auth-token` file located in the Prysm Wallet directory.
 :::
 
-If it is the first time you have ran your Prysm validator and have not yet created a wallet, you will be faced with a wallet creation screen allowing you to import the keystores generated from the Ethereum deposit-cli.
+If it is the first time you have ran your Prysm validator and have not yet created a wallet, you will be faced with a wallet creation screen allowing you to import the keystores generated from the Ethereum `deposit-cli`.
 
 ![Image](/img/walletcreate.png)
 
@@ -60,10 +60,10 @@ The web UI runs by default on port 7500 of the validator client if you are runni
 
 The available parameters to customize are:
 
-| Flag          | Usage         |
-| ------------- |:-------------|
-|`--grpc-gateway-host` | The host for the validator client's JSON-HTTP API, default `127.0.0.1`
-|`--grpc-gateway-port` | The port for the validator client's JSON-HTTP API, default `7500`
+| Flag                  | Usage                                                                  |
+| --------------------- | :--------------------------------------------------------------------- |
+| `--grpc-gateway-host` | The host for the validator client's JSON-HTTP API, default `127.0.0.1` |
+| `--grpc-gateway-port` | The port for the validator client's JSON-HTTP API, default `7500`      |
 
 ### Wallet Directory
 
@@ -80,30 +80,29 @@ ssh -L 7500:127.0.0.1:7500 user@host_ip
 where you replace `user@host_ip` with the user and host ip address of the remote machine you are trying to access. This will forward all requests from your home computer's localhost:7500 to the remote instance's localhost:7500, allowing you to visit `http://localhost:7500` from your favorite browser and then access the validator web interface! This is the safest approach to access it, as you are exposing the web interface to the open Internet.
 
 :::warning Please use HTTPS
-If you plan to expose the website to the open Internet, please look into protecting yourself with HTTPS. Prysm web does not come with certificates or HTTPS pre-configured. If you are running Prysm Web on the open internet without HTTPS you are running at your own risk. 
+If you plan to expose the website to the open Internet, please look into protecting yourself with HTTPS. Prysm web does not come with certificates or HTTPS pre-configured. If you are running Prysm Web on the open internet without HTTPS you are running at your own risk.
 :::
 
 ## Troubleshooting
 
 ### Issues logging in
 
-If your browser cache was cleared, you're running on a new browser, or validator was restarted you may be stuck on the initialize page. All you need to do is retrieve the special URL again and you should be re-authenticated which will redirect you to the main dashboard. 
+If your browser cache was cleared, you're running on a new browser, or validator was restarted you may be stuck on the initialize page. All you need to do is retrieve the special URL again and you should be re-authenticated which will redirect you to the main dashboard.
 
 ![Dialog-expanded](/img/dialog-error-expanded.png "dialog error expanded")
 
 ### HTTP Error Codes
 
-| Error Code         | Reason        |
-| ------------- |:-------------|
-| 503 or 0 | No server response, services having difficulty communicating, meaning network problems, or services being un available, or even firewalls or adblock settings.
-| 401 | Unauthorized, requiring to reauthenticate with the special url
-| 500 | Internal Server Error, something failed internally in Prysm services
-| 404 | API endpoint is not found
+| Error Code | Reason                                                                                                                                                         |
+| ---------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 503 or 0   | No server response, services having difficulty communicating, meaning network problems, or services being un available, or even firewalls or adblock settings. |
+| 401        | Unauthorized, requiring to reauthenticate with the special url                                                                                                 |
+| 500        | Internal Server Error, something failed internally in Prysm services                                                                                           |
+| 404        | API endpoint is not found                                                                                                                                      |
 
 ### Reporting Issues
 
 Please create a [github issue](https://github.com/prysmaticlabs) or contact the team on [Discord](https://discord.gg/YMVYzv6) to report an issue
-
 
 ## Contributing
 
@@ -118,7 +117,7 @@ after cloning the repo navigate to where the `package.json` file and run `npm in
 
 ### Running in Develop
 
-run `npm start` in the folder path where package.josn lives and open the website on `localhost:4200`. 
+run `npm start` in the folder path where `package.json` lives and open the website on `localhost:4200`.
 
 :::warning Web UI in development mode uses mock data by default
 The recommended way to run prysm web is from the validator client itself via the `--web` flag. If you are building the web UI from source and doing `npm start`, you **will be using fake, mock data!** Keep that in mind if you are trying to use real accounts with the web UI.
@@ -128,10 +127,6 @@ The recommended way to run prysm web is from the validator client itself via the
 for authentication in develop you may use any token in the url query parameter i.e. `localhost:4200/initialize?token=anytoken`
 :::
 
-
 ### Running in Staging
 
 run `npm run start:staging` will run a 'like' production build where the backend expects to be connected to `localhost:7500`. You will need to start the validator client with `--web` but interact with your angular application on `localhost:4200`.
-
-
-

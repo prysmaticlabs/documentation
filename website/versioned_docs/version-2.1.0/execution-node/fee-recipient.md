@@ -10,6 +10,12 @@ sme: james-prysm
 
 # Configuring a Fee Recipient Address 
 
+:::caution
+
+**This feature is currently in public preview** and may change significantly as we receive feedback from users like you. Join our [Discord server](https://discord.com/invite/XkyZSSk4My) to share your feedback.
+
+:::
+
 <!-- alt: ## How to configure Fee Recipient on your client instance and/or beacon node -->
 
 **Fee Recipient** is a feature that lets you specify a priority fee recipient address on your validator client instance and beacon node. After [The Merge](https://ethereum.org/en/upgrades/merge/), execution clients will begin depositing priority fees into this address whenever your validator client proposes a new block.
@@ -24,17 +30,13 @@ Miners currently collect these priority fees. After The Merge, proof-of-work con
 Because priority fees are captured by execution clients in the execution layer, validator clients need to tell execution clients where to forward these priority fees. This priority fee “forwarding address” is referred to as your **fee recipient** address.
 
 :::tip Configure this before The Merge
-If you don't configure your fee recipient address before The Merge, your priority fee earnings will be deposited into a burn address (`0x000....0`).
+If you don't configure your fee recipient address before The Merge, your priority fee earnings will be deposited into a [burn address](https://etherscan.io/address/0x0000000000000000000000000000000000000000).
 :::
 
 
 ## Configuring Fee Recipient
 
 Your fee recipient address can be configured in two places: on your **validator client instance** and on your **beacon node**. We recommend configuring it in both places. Your validator client instance configuration will override the beacon node configuration, while the beacon node configuration will be treated like a backup in the event that your client instance configuration fails.
-
-:::warning Known Release Bug
-Release 2.0.7 contains a bug that prevents you from configuring a default fee recipient on your validator client instance. This was fixed in a [recent pull request](https://github.com/prysmaticlabs/prysm/pull/10555) and is available in the `develop` branch of the [Prysm repository](https://github.com/prysmaticlabs/prysm).
-:::
 
 <br />
 
