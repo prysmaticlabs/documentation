@@ -16,10 +16,6 @@
             "label": "Installation Guide",
             "items": [{
                     "type": "doc",
-                    "id": "install/install-with-script"
-                },
-                {
-                    "type": "doc",
                     "id": "install/install-with-docker"
                 },
                 {
@@ -302,11 +298,6 @@
             "type": "doc",
             "id": "faq",
             "label": "FAQ"
-        },
-        {
-            "type": "doc",
-            "label": "Security Best Practices",
-            "id": "security-best-practices"
         },
         {
             "type": "doc",
