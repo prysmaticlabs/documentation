@@ -284,8 +284,6 @@ TODO: `Checking DB database-path=C:\Users\newuser\AppData\Local\Eth2\beaconchain
 
 Congratulations - you’re now running a <strong>full Ethereum node</strong>. Your full node consists of an <strong>execution node</strong> in Ethereum’s execution layer, and a <strong>beacon node</strong> in Ethereum’s consensus layer.
 
-If you want to support Ethereum Mainnet, ensure that TCP port `8545` is closed. Consider keeping TCP and UDP ports `30303` open to support other execution nodes [<a href='#footnote-8'>8</a>].
-
 
 ## Step 5: Run a validator node using Prysm
 
@@ -432,6 +430,9 @@ The Beginner's Introduction to Prysm uses diagrams to help you visualize Ethereu
 **Why do you recommend putting everything on a single machine?** <br />
 Keeping all of your client software on a single machine keeps things simple, which aligns with our [security best practices](../security-best-practices.md).
 
+
+**Do I need to configure my firewall?** <br />
+We recommend **closing** TCP port `8545` to the internet and keeping TCP and UDP ports `30303` **open** to support other execution nodes [<a href='#footnote-8'>8</a>].
 
 <!-- **I'm new to Ethereum, and I'm a visual learner. Can you show me how these things work? How much disk space does each node type require?** <br />
 The Beginner's Introduction to Prysm uses diagrams to help you visualize Ethereum's architecture, and Prysm's too. (TODO) -->
