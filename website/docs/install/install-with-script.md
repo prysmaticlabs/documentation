@@ -1,6 +1,6 @@
 ---
 id: install-with-script
-title: Quickstart - Run an Ethereum Node and Stake ETH
+title: Run an Ethereum Node and Stake ETH
 sidebar_label: Quickstart
 ---
 
