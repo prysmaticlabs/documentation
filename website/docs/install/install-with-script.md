@@ -74,7 +74,7 @@ If you don't have 32 ETH to stake, <a href='https://ethereum.org/en/staking/pool
 - **Try this guide on testnet first**, *then* mainnet.
 - **Keep things simple**. This guidance assumes all client software will run on a single machine.
 - **Review the latest advisories** for both [testnet](https://prater.launchpad.ethereum.org/en/overview) and [mainnet](https://launchpad.ethereum.org/en/).
-- **Review all of our [published security best practices](./security-best-practices/)**.
+- **Review all of our [published security best practices](../security-best-practices.md)**.
 - **Join the community** - join our [mailing list](https://groups.google.com/g/prysm-dev), the [Prysm Discord server](https://discord.com/invite/XkyZSSk4My), [r/ethstaker](https://www.reddit.com/r/ethstaker/), and the [EthStaker Discord server](https://discord.io/ethstaker) for updates and support.
 
 
@@ -276,10 +276,12 @@ This will produce the following output:
 
 
 ```
-{"data":{"head_slot":"6944","sync_distance":"3003133","is_syncing":true,"is_optimistic":true}}
+{"data":{"head_slot":"6944","sync_distance":"3003133","is_syncing":true}}
 ```
 
-When you see `"is_syncing":false`, your beacon node is fully synchronized with the beacon chain. When you see `"is_optimistic":false`, your execution node is fully synchronized with the execution-layer blockchain. 
+When you see `"is_syncing":false`, your beacon node is fully synchronized with the beacon chain. 
+
+<!-- When you see `"is_optimistic":false`, your execution node is fully synchronized with the execution-layer blockchain. 
 
 ```
 TODO: is_optimistic is not yet implemented -> https://github.com/prysmaticlabs/prysm/pull/10692 
@@ -287,6 +289,7 @@ TODO: is_optimistic is not yet implemented -> https://github.com/prysmaticlabs/p
 TODO: `Checking DB database-path=C:\Users\newuser\AppData\Local\Eth2\beaconchaindata` <- how to configure this directory?
 ```
 
+-->
 
 :::tip Congratulations!
 
@@ -439,7 +442,7 @@ In the meantime, you should leave your **execution client**, **beacon node**, an
 The Beginner's Introduction to Prysm uses diagrams to help you visualize Ethereum's architecture, and Prysm's too. (TODO) -->
 
 **Why do you recommend putting everything on a single machine?** <br />
-Keeping all of your client software on a single machine keeps things simple, which aligns with our [security best practices](./../security-best-practices.md).
+Keeping all of your client software on a single machine keeps things simple, which aligns with our [security best practices](../security-best-practices.md).
 
 
 <!-- **I'm new to Ethereum, and I'm a visual learner. Can you show me how these things work? How much disk space does each node type require?** <br />
@@ -505,8 +508,8 @@ TODO: explain in context of this guide -->
 <strong id='footnote-1'>1.</strong> Prysm is written entirely in the <a href='https://golang.org'>Go programming language</a>. It's under active development by <a href='https://prysmaticlabs.com'>Prysmatic Labs</a>, a grant-funded team working closely with a variety of groups across the Ethereum ecosystem including the <a href='https://ethereum.org'>Ethereum Foundation</a>. <br />
 <strong id='footnote-2'>2.</strong> In Prysm docs, a <strong>full Ethereum node</strong> refers to a node that's running both an execution-layer execution client (like Nethermind, Besu, or Geth) and a consensus-layer beacon node client (like Prysm, Lighthouse, or Nimbus). <br />
 <strong id='footnote-3'>3.</strong> A <strong>validator node</strong> is a particular type of Ethereum node that runs Ethereum's proof-of-stake consensus protocol. Validator client software like Prysm allows you to stake 32 ETH as collateral in an agreement with the Ethereum network to honestly propose and attest to blocks. Running a validator node makes you a validator. Post-merge, validators will replace miners, and proof-of-stake will replace proof-of-work. <br />
-<strong id='footnote-4'>4.</strong> "Staking at home" with your own hardware reduces our dependency on centralized cloud providers and increases the decentralization and security of the Ethereum ecosystem. Staking at home is a serious responsibility that comes with serious risks. Read our <a href='./security-best-practices'>Security Best Practices</a> to learn how to minimize those risks. <br />
-<strong id='footnote-5'>5.</strong> Understanding how things work can help you <strong>minimize risk</strong> and <strong>troubleshoot issues</strong>. Staking at home may one day be point-and-click. But until then, <strong>you should understand the major components</strong>, their relationships with each other, and their responsibilities over time. This understanding is currently a prerequisite to staking with Prysm, and it's why we identify continuous self-education as a <a href='./security-best-practices'>security best practice</a>. Visit A Beginner's Guide to Prysm for a breezy, visual introduction to these major components. <br />
+<strong id='footnote-4'>4.</strong> "Staking at home" with your own hardware reduces our dependency on centralized cloud providers and increases the decentralization and security of the Ethereum ecosystem. Staking at home is a serious responsibility that comes with serious risks. Read our <a href='../security-best-practices.md'>Security Best Practices</a> to learn how to minimize those risks. <br />
+<strong id='footnote-5'>5.</strong> Understanding how things work can help you <strong>minimize risk</strong> and <strong>troubleshoot issues</strong>. Staking at home may one day be point-and-click. But until then, <strong>you should understand the major components</strong>, their relationships with each other, and their responsibilities over time. This understanding is currently a prerequisite to staking with Prysm, and it's why we identify continuous self-education as a <a href='../security-best-practices.md'>security best practice</a>. Visit A Beginner's Guide to Prysm for a breezy, visual introduction to these major components. <br />
 <strong id='footnote-6'>6.</strong> See <a href='https://ethereum.org/en/developers/docs/nodes-and-clients/'>Nodes and Clients: Why should I run an Ethereum node?</a> for a more detailed exploration of node-running benefits. <br />
 <strong id='footnote-7'>7.</strong> Self-sufficient participation in Ethereum aligns with the ecosystem's "don't trust, verify" mantra. Running your own node removes the need to trust another node operator, and allows you to directly verify the authenticity of blockchain data. <br />
 <strong id='footnote-8'>8.</strong> Keeping TCP port <code>30303</code> is the Ethereum equivalent of seeding torrent data to peers. This will allow other execution nodes to fetch data from your node, and is a great way to support Ethereum's decentralization. <br />
