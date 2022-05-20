@@ -182,8 +182,8 @@ curl -H "Content-Type: application/json" -X POST http://localhost:8545 -d "{""js
     <p>Your Geth execution node will begin syncing. You can check your Geth execution node's sync status by running the following commands from a separate terminal window:</p>
 
 ```
-geth attach // if you're not using Windows
-geth attach ipc:\\.\pipe\geth.ipc // if you're using Windows 
+geth attach ## if you're not using Windows
+geth attach ipc:\\.\pipe\geth.ipc ## if you're using Windows 
 eth.syncing
 ```
 
@@ -469,7 +469,7 @@ This is usually an indication that your validator isn't able to communicate with
 (TODO) -->
 
 **How long does it take for my validator node to be selected to propose a new block?** <br />
-It can take up to a week.
+At the time of this writing, a ballpark estimate is **around a week**. Every 12 seconds a new block is proposed, and your validator has a one in [total number of active validators] chance of being chosen, so this duration can vary significantly from one validator node to the next.
 
 <!-- **Can I run a full node and validator client on a Raspberry Pi?** <br />
 TODO
