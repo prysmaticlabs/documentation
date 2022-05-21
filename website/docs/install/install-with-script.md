@@ -7,7 +7,6 @@ sidebar_label: Quickstart
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<p style={{color: gray, fontSize: 11 + 'px'}}>Author: <a href='https://twitter.com/symbolpunk'>symbolpunk</a></p>
 
 Prysm is an implementation of the [Ethereum proof-of-stake consensus specification](https://github.com/ethereum/consensus-specs) [<a href='#footnote-1'>1</a>]. In this guide, you’ll use Prysm to run an Ethereum node [<a href='#footnote-2'>2</a>] and optionally a validator [<a href='#footnote-3'>3</a>]. This will let you stake 32 ETH using hardware that you manage [<a href='#footnote-4'>4</a>].
  
@@ -566,3 +565,5 @@ TODO: explain in context of this guide -->
 <strong id='footnote-13'>13.</strong> Your keystore file contains your public key and your private key encrypted with a password. To learn more about how keystores work, see <a href='https://julien-maffre.medium.com/what-is-an-ethereum-keystore-file-86c8c5917b97'>What is an Ethereum keystore</a>. <br />
 <strong id='footnote-14'>14</strong>. BitMex recently posted research that provides hard numbers on penalties and rewards: <a href='https://blog.bitmex.com/ethereums-proof-of-stake-system-calculating-penalties-rewards/'>Ethereum's Proof of Stake System - Calculating Penalties and Rewards</a>. Collin Myers has also created an <a href='https://docs.google.com/spreadsheets/d/15tmPOvOgi3wKxJw7KQJKoUe-uonbYR6HF7u83LR5Mj4/edit#gid=1018097491'>Ethereum calculator</a>. <br />
 <strong id='footnote-15'>15</strong>. See Configure Monitoring and Alerts (TODO). <br />
+
+<p style={{color: gray, fontSize: 11 + 'px'}}>Author: <a href='https://twitter.com/symbolpunk'>symbolpunk</a></p>
