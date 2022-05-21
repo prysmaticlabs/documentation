@@ -8,7 +8,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 Prysm is an implementation of the [Ethereum proof-of-stake consensus specification](https://github.com/ethereum/consensus-specs) [<a href='#footnote-1'>1</a>]. In this guide, you’ll use Prysm to run a full Ethereum node [<a href='#footnote-2'>2</a>] and optionally a validator node [<a href='#footnote-3'>3</a>]. This will let you stake 32 ETH using hardware that you manage [<a href='#footnote-4'>4</a>].
-
+ 
 This is a beginner-friendly guide. Familiarity with the command line is expected, but otherwise this guide makes no assumptions about your technical skills or prior knowledge. Beginners are encouraged to **follow the footnotes** throughout this guide - the footnotes provide context and links to learning resources [<a href='#footnote-5'>5</a>].
 
 ## Step 1: Goals and system requirements
@@ -73,18 +73,68 @@ If you don't have 32 ETH to stake, <a href='https://ethereum.org/en/staking/pool
 - **Join the community** - join our [mailing list](https://groups.google.com/g/prysm-dev), the [Prysm Discord server](https://discord.com/invite/XkyZSSk4My), [r/ethstaker](https://www.reddit.com/r/ethstaker/), and the [EthStaker Discord server](https://discord.io/ethstaker) for updates and support.
 
 
+## Step 3: Download Prysm, generate secret
 
-## Step 3: Run an execution client
+You need two different pieces of software to run an Ethereum node: an **execution-layer client** and a **consensus-layer client**. Prysm is a consensus-layer client that, like other consensus-layer clients, contains code for both **beacon node** and **validator** responsibilities. Execution client software includes Nethermind, Besu, and Geth.
 
-You need two different pieces of software to run an Ethereum node: an **execution-layer client** and a **consensus-layer client**. Prysm is a consensus-layer client that contains code for both beacon node and validator responsibilities. In this step, you'll install an execution-layer client that Prysm will use [<a href='#footnote-2'>2</a>].
+Validators connect to beacon nodes, and beacon nodes connect to execution nodes:
+
+<img style={{width: 100 + '%', maxWidth: 400 + 'px'}} src="img/client-stack.png"></img>
+
+In this guide, the connection between your beacon node and execution node will be formed using authenticated HTTP. A secret **JWT token** is needed to form this connection. Let's download Prysm and create that token.
+
+First, create a folder called `ethereum` on your SSD [<a href='#footnote-9'>9</a>], and then two subfolders within it: `consensus` and `execution`:
+
+```
+📂ethereum
+┣ 📂consensus
+┣ 📂execution
+```
 
 :::tip
 
-When we say "run the following command", use a **terminal window** (if not on Windows) or **command prompt** (if on Windows).
+Use a **terminal window** (if not on Windows) or **command prompt** (if on Windows) to run the commands throughout this quickstart.
 
 :::
 
-Create a directory called `execution` [<a href='#footnote-9'>9</a>] on your SSD. This is where your execution client will store its data.
+<Tabs groupId="network" defaultValue="others" values={[
+    {label: 'Windows', value: 'win'},
+    {label: 'Linux, MacOS, Arm64', value: 'others'}
+]}>
+  <TabItem value="win">
+    <p>Navigate to your <code>consensus</code> directory and run the following three commands:</p>
+
+```
+mkdir prysm && cd prysm
+curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.bat --output prysm.bat
+reg add HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1
+```
+
+  <p>This will download the Prysm client and update your registry to enable verbose logging. Use the following command to create your secret JWT token:</p>
+  <pre><code>prysm.bat beacon-chain -generate-jwt-secret</code></pre>
+  <p>Prysm will then output a <code>jwt-secret</code> file path. Record this - we'll use it in the next step.</p>
+  </TabItem>
+  <TabItem value="others">
+    <div class="admonition admonition-caution alert alert--warning">
+      <div class="admonition-content"><p><strong>Mac M1 ARM chips</strong> currently require users to run Prysm through <a href='https://support.apple.com/en-us/HT211861'>Rosetta</a>. See our <a href='https://github.com/prysmaticlabs/prysm/issues/9385'>open bug</a> for details.</p></div>
+    </div>
+    <p>Navigate to your <code>consensus</code> directory and run the following two commands:</p>
+
+```
+mkdir prysm && cd prysm
+curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --output prysm.sh && chmod +x prysm.sh
+```
+
+  <p>This will download the Prysm client and update your registry to enable verbose logging. Use the following command to create your secret JWT token:</p>
+  <pre><code>./prysm.sh beacon-chain -generate-jwt-secret</code></pre>
+  <p>Prysm will then output a <code>jwt-secret</code> file path. Record this - we'll use it in the next step.</p>
+  </TabItem>
+</Tabs>
+
+
+## Step 4: Run an execution client
+
+In this step, you'll install an execution-layer client that Prysm's beacon node will connect to [<a href='#footnote-2'>2</a>].
 
 <Tabs groupId="execution-clients" defaultValue="nethermind" values={[
 {label: 'Nethermind', value: 'nethermind'},
@@ -93,7 +143,7 @@ Create a directory called `execution` [<a href='#footnote-9'>9</a>] on your SSD.
 ]}>
 
   <TabItem value="nethermind">
-    <p>Download the latest stable release of Nethermind for your operating system from the <a href='https://downloads.nethermind.io/'>Nethermind downloads page</a>. Extract the contents into your <code>execution</code> folder. Run the following command to start your execution node:</p>
+    <p>Download the latest stable release of Nethermind for your operating system from the <a href='https://downloads.nethermind.io/'>Nethermind downloads page</a>. Extract the contents into your <code>execution</code> folder. Run the following command to start your execution node using your secret JWT file:</p>
     <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
         {label: 'Testnet', value: 'testnet'}
@@ -126,7 +176,7 @@ curl localhost:8545/health
   <p>A sync status of <code>false</code> indicates that your node is fully synced. You can proceed to the next step while Nethermind syncs.</p>
   </TabItem>
   <TabItem value="besu">
-    <p>Ensure that the latest 64-bit version of the <a href='https://www.oracle.com/java/technologies/downloads/'>Java JDK</a> is installed. Download the latest stable release of Besu from the <a href='https://github.com/hyperledger/besu/releases'>Besu releases</a> page. OS-specific instructions are available on Besu's <a href='https://besu.hyperledger.org/en/stable/HowTo/Get-Started/Installation-Options/Install-Binaries/'>binary installation page</a>. Run the following command to start your execution node:</p>
+    <p>Ensure that the latest 64-bit version of the <a href='https://www.oracle.com/java/technologies/downloads/'>Java JDK</a> is installed. Download the latest stable release of Besu from the <a href='https://github.com/hyperledger/besu/releases'>Besu releases</a> page. OS-specific instructions are available on Besu's <a href='https://besu.hyperledger.org/en/stable/HowTo/Get-Started/Installation-Options/Install-Binaries/'>binary installation page</a>. Run the following command to start your execution node using your secret JWT file:</p>
     <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
         {label: 'Testnet', value: 'testnet'}
@@ -158,7 +208,7 @@ curl -H "Content-Type: application/json" -X POST http://localhost:8545 -d "{""js
     <div class="admonition admonition-caution alert alert--warning">
       <div class="admonition-content"><p><strong>Geth is a supermajority execution-layer client</strong>. This centralization poses an active risk to the security of Ethereum. If Geth's code contains a bug, a majority of nodes (and L2s, and users) will be impacted. We strongly encourage you to use either Nethermind or Besu to distribute this risk for the ecosystem. [<a href='#footnote-10'>10</a>]</p></div>
     </div>
-    <p>Download and run the latest 64-bit stable release of the <strong>Geth installer</strong> for your operating system from the <a href='https://geth.ethereum.org/downloads/'>Geth downloads page</a>. Navigate to your <code>execution</code> directory and run the following command to start your execution node:</p>
+    <p>Download and run the latest 64-bit stable release of the <strong>Geth installer</strong> for your operating system from the <a href='https://geth.ethereum.org/downloads/'>Geth downloads page</a>. Navigate to your <code>execution</code> directory and run the following command to start your execution node using your secret JWT file:</p>
     <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
         {label: 'Testnet', value: 'testnet'}
@@ -191,40 +241,30 @@ eth.syncing
   </TabItem>
 </Tabs>
 
-
 Congratulations - you’re now running an <strong>execution node</strong> in Ethereum’s execution layer.
 
 
-## Step 4: Run a beacon node using Prysm
+## Step 5: Run a beacon node using Prysm
 
-Create a directory called `consensus` on your SSD [<a href='#footnote-7'>7</a>].
 
 <Tabs groupId="network" defaultValue="others" values={[
     {label: 'Windows', value: 'win'},
     {label: 'Linux, MacOS, Arm64', value: 'others'}
 ]}>
   <TabItem value="win">
-    <p>Navigate to your <code>consensus</code> directory and run the following three commands:</p>
-
-```
-mkdir prysm && cd prysm
-curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.bat --output prysm.bat
-reg add HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1
-```
-
-  <p>This will download the Prysm client and update your registry to enable verbose logging.</p>
-  <Tabs groupId="network" defaultValue="mainnet" values={[
-      {label: 'Mainnet', value: 'mainnet'},
-      {label: 'Testnet', value: 'testnet'}
-  ]}>
-    <TabItem value="mainnet">
-      <p>Use the following command to start a beacon node that connects to your local execution node:</p>
-      <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8545</code></pre>
-    </TabItem>
-    <TabItem value="testnet">
-      <p>Download the <a href='https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz'>genesis state from Github</a> into your <code>consensus/prysm</code> directory. Then use the following command to start a beacon node that connects to your local execution node:</p>
-      <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8545 --prater --genesis-state=genesis.ssz</code></pre>
-    </TabItem>
+    <p>Navigate to your <code>consensus</code> directory.</p>
+    <Tabs groupId="network" defaultValue="mainnet" values={[
+        {label: 'Mainnet', value: 'mainnet'},
+        {label: 'Testnet', value: 'testnet'}
+    ]}>
+      <TabItem value="mainnet">
+        <p>Use the following command to start a beacon node that connects to your local execution node using your secret JWT file:</p>
+        <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8545</code></pre>
+      </TabItem>
+      <TabItem value="testnet">
+        <p>Download the <a href='https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz'>genesis state from Github</a> into your <code>consensus/prysm</code> directory. Then use the following command to start a beacon node that connects to your local execution node using your secret JWT file:</p>
+        <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8545 --prater --genesis-state=genesis.ssz</code></pre>
+      </TabItem>
   </Tabs>
   </TabItem>
   <TabItem value="others">
@@ -414,7 +454,7 @@ You’re now running a <strong>full Ethereum node</strong> and a <strong>validat
 
 <br />
 
-It can a long time (days to months) for your validator to become fully activated. To learn more about the validator activation process, see [Deposit Process](https://kb.beaconcha.in/ethereum-2.0-depositing). You can paste your validator's public key (available in your `deposit_data-*.json` file) into a blockchain explorer to check the status of your validator:
+It can a long time (from days to months) for your validator to become fully activated. To learn more about the validator activation process, see [Deposit Process](https://kb.beaconcha.in/ethereum-2.0-depositing). You can paste your validator's public key (available in your `deposit_data-*.json` file) into a blockchain explorer to check the status of your validator:
 
  - [Beaconcha.in (Mainnet)](https://beaconcha.in) 
  - [Beaconchai.in (Testnet)](https://prater.beaconcha.in/)
@@ -502,7 +542,7 @@ TODO: explain in context of this guide -->
 <strong id='footnote-6'>6.</strong> See <a href='https://ethereum.org/en/developers/docs/nodes-and-clients/'>Nodes and Clients: Why should I run an Ethereum node?</a> for a more detailed exploration of node-running benefits. <br />
 <strong id='footnote-7'>7.</strong> Self-sufficient participation in Ethereum aligns with the ecosystem's "don't trust, verify" mantra. Running your own node removes the need to trust another node operator, and allows you to directly verify the authenticity of blockchain data. <br />
 <strong id='footnote-8'>8.</strong> Keeping TCP port <code>30303</code> open is the Ethereum equivalent of seeding torrent data to peers. This will allow other execution nodes to fetch data from your node, and is a great way to support Ethereum's decentralization. Consult the documentation for your firewall, operating system, and/or device for port configuration instructions.<br />
-<strong id='footnote-9'>9.</strong> Throughout this guide, we use <code>consensus</code> and <code>execution</code> as directory names that communicate logical separation. Feel free to use your own directory names. <br />
+<strong id='footnote-9'>9.</strong> Throughout this guide, we use <code>ethereum</code>, <code>consensus</code> and <code>execution</code> as directory names that reflect the logical separation between client software components. Feel free to use your own directory names. <br />
 <strong id='footnote-10'>10.</strong> Post-merge, you'll need to run an execution client locally if you want to run a beacon node or validator node. Geth is currently the supermajority execution client, so we encourage you to use an alternative like Nethermind or Besu. See <a href='https://ethresear.ch/t/applying-the-five-whys-to-the-client-diversity-problem/7628'>Applying the "Five Why's" to the Client Diversity Problem</a> to learn more. <br />
 <strong id='footnote-11'>11.</strong> This guide uses a basic, default configuration for all execution clients, which should work well for most people. If you'd like to customize your configuration, detailed guidance is available for each client: <a href='https://docs.nethermind.io/nethermind/first-steps-with-nethermind/getting-started'>Nethermind</a>, <a href='https://besu.hyperledger.org/en/stable/HowTo/Get-Started/Installation-Options/Install-Binaries/'>Besu</a>, <a href='https://geth.ethereum.org/docs/getting-started'>Geth</a>. <br />
 <strong id='footnote-12'>12.</strong> Your execution client needs to download the entire blockchain - every block that's been produced after the genesis block.  <br />
