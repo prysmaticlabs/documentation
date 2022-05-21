@@ -6,8 +6,6 @@ doc_type: how-to
 sme: james-prysm
 ---
 
-
-
 # Configuring a Fee Recipient Address 
 
 <p style={{color: gray, fontSize: 11 + 'px'}}>Authors: <a href='https://twitter.com/hesatprylabs'>hesatprylabs</a>, <a href='https://twitter.com/symbolpunk'>symbolpunk</a></p>
