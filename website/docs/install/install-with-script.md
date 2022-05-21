@@ -7,7 +7,9 @@ sidebar_label: Quickstart
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Prysm is an implementation of the [Ethereum proof-of-stake consensus specification](https://github.com/ethereum/consensus-specs) [<a href='#footnote-1'>1</a>]. In this guide, you’ll use Prysm to run a full Ethereum node [<a href='#footnote-2'>2</a>] and optionally a validator node [<a href='#footnote-3'>3</a>]. This will let you stake 32 ETH using hardware that you manage [<a href='#footnote-4'>4</a>].
+<p style={{color: gray, fontSize: 11 + 'px'}}>Author: <a href='https://twitter.com/symbolpunk'>symbolpunk</a></p>
+
+Prysm is an implementation of the [Ethereum proof-of-stake consensus specification](https://github.com/ethereum/consensus-specs) [<a href='#footnote-1'>1</a>]. In this guide, you’ll use Prysm to run an Ethereum node [<a href='#footnote-2'>2</a>] and optionally a validator [<a href='#footnote-3'>3</a>]. This will let you stake 32 ETH using hardware that you manage [<a href='#footnote-4'>4</a>].
  
 This is a beginner-friendly guide. Familiarity with the command line is expected, but otherwise this guide makes no assumptions about your technical skills or prior knowledge. Beginners are encouraged to **follow the footnotes** throughout this guide - the footnotes provide context and links to learning resources [<a href='#footnote-5'>5</a>].
 
@@ -22,9 +24,9 @@ This is a beginner-friendly guide. Familiarity with the command line is expected
         <th>Requirements</th>
     </tr>
     <tr>
-      <td>Run a <strong>full node</strong></td>
+      <td>Run a <strong>node</strong></td>
       <td>
-      Post-merge, a "full Ethereum client" or "full node" will refer to an <strong>execution node</strong> and <strong>beacon node</strong> working together. Running a full node comes with the following benefits [<a href='#footnote-6'>6</a>]: <br /><br />
+      A node is an <strong>execution client</strong> and <strong>beacon node client</strong> working together. Running a node comes with the following benefits [<a href='#footnote-6'>6</a>]: <br /><br />
       <ul> 
         <li>It contributes to the security of Ethereum's ecosystem [<a href='#footnote-4'>4</a>].</li>    
         <li>It lets you access the Ethereum network directly without having to trust a third party service [<a href='#footnote-7'>7</a>].</li> 
@@ -43,7 +45,7 @@ This is a beginner-friendly guide. Familiarity with the command line is expected
       </td>
     </tr> 
     <tr>
-        <td>Run a <strong>validator node</strong></td>
+        <td>Run a <strong>validator</strong></td>
         <td>
         Lets you stake ETH, propose + validate blocks, and earn staking rewards.
         </td>
@@ -60,7 +62,7 @@ This is a beginner-friendly guide. Familiarity with the command line is expected
 </table>
 
 
-If you don't have 32 ETH to stake, <a href='https://ethereum.org/en/staking/pools/'>pooled staking</a> gives you a way to stake with less than 32 ETH. If you can't run a full node, <a href='https://ethereum.org/en/staking/saas/'>staking as a service</a> lets you delegate hardware management to a third party.
+If you don't have 32 ETH to stake, <a href='https://ethereum.org/en/staking/pools/'>pooled staking</a> gives you a way to stake with less than 32 ETH. If you can't run a node, <a href='https://ethereum.org/en/staking/saas/'>staking as a service</a> lets you delegate hardware management to a third party.
 
 
 ## Step 2: Review best practices
@@ -75,7 +77,7 @@ If you don't have 32 ETH to stake, <a href='https://ethereum.org/en/staking/pool
 
 ## Step 3: Download Prysm, generate secret
 
-You need two different pieces of software to run an Ethereum node: an **execution-layer client** and a **consensus-layer client**. Prysm is a consensus-layer client that, like other consensus-layer clients, contains code for both **beacon node** and **validator** responsibilities. Execution client software contains code for execution node responsibilities. Examples of execution client software include Nethermind, Besu, and Geth.
+You need two different pieces of software to run an Ethereum node: an **execution-layer client** and a **consensus-layer client**. Prysm is a consensus-layer client that, like other consensus-layer clients, contains code for both **beacon node** and **validator** responsibilities. Execution client software contains code that allows nodes to process transactions. Examples of execution client software include Nethermind, Besu, and Geth.
 
 Validators connect to beacon nodes, and beacon nodes connect to execution nodes:
 

@@ -6,6 +6,8 @@ sidebar_label: Security Best Practices
 
 # Staking with Prysm: Security Best Practices
 
+<p style={{color: gray, fontSize: 11 + 'px'}}>Author: <a href='https://twitter.com/symbolpunk'>symbolpunk</a></p>
+
 Ethereum's transition to proof-of-stake is made possible by validators who each stake 32 ETH into the [validator deposit contract](https://docs.prylabs.network/docs/how-prysm-works/validator-deposit-contract/). These validators accept the responsibility to uphold the integrity of the Ethereum network in exchange for staking rewards.
 
 Validators are rewarded for maintaining highly available, trustworthy validator client instances. The security best practices in this guide will help you fulfill this responsibility by helping you minimize risk across a variety of security aspects. Within each aspect, you'll find **recommended**, **advanced**, and **Linux-specific** guidance.

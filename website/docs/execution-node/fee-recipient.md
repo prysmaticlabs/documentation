@@ -10,6 +10,8 @@ sme: james-prysm
 
 # Configuring a Fee Recipient Address 
 
+<p style={{color: gray, fontSize: 11 + 'px'}}>Authors: <a href='https://twitter.com/hesatprylabs'>hesatprylabs</a>, <a href='https://twitter.com/symbolpunk'>symbolpunk</a></p>
+
 :::caution
 
 **This feature is currently in public preview** and may change significantly as we receive feedback from users like you. Join our [Discord server](https://discord.com/invite/XkyZSSk4My) to share your feedback.
