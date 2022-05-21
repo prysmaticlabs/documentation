@@ -318,6 +318,15 @@ This will produce the following output:
 
 When you see `"is_syncing":false`, your beacon node is fully synchronized with the beacon chain. 
 
+You can verify that your beacon node has successfully connected to your execution node by running the following command from a separate terminal window:
+
+```
+curl http://localhost:3500/eth/v1/node/eth1/connections
+```
+
+You should see TODO.
+
+
 <!-- When you see `"is_optimistic":false`, your execution node is fully synchronized with the execution-layer blockchain. 
 
 ```
