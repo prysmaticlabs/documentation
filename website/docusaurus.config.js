@@ -19,8 +19,7 @@ module.exports = {
                 src: 'img/logo2.png',
                 href: '/docs/getting-started',
             },
-            items: [
-                {
+            items: [{
                     type: 'docsVersionDropdown',
                     position: 'left',
                     dropdownActiveClassDisabled: true,
@@ -72,6 +71,8 @@ module.exports = {
                 docs: {
                     path: './docs',
                     routeBasePath: 'docs',
+                    showLastUpdateTime: true,
+                    showLastUpdateAuthor: true,
                     sidebarPath: require.resolve('./sidebars.json'),
                     editUrl: 'https://github.com/prysmaticlabs/documentation/edit/master/website/',
                 },
