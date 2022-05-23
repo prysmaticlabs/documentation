@@ -21,7 +21,7 @@ To begin, follow the instructions to fetch and install Prysm for your operating 
 
 ## Step 2: Get Test ETH
 
-To participate in eth2, you'll need to stake 32 testnet ETH. For the Pyrmont eth2 testnet, we use test ETH from the Görli eth1 testnet. You can request this testnet ETH by joining our [discord server](https://discord.gg/hmq4y2P).
+To participate in eth2, you'll need to stake 32 testnet ETH. For the Pyrmont eth2 testnet, we use test ETH from the Görli eth1 testnet. You can request this testnet ETH by joining our [discord server](https://discord.gg/prysmaticlabs).
 
 ## Step 3: Run your beacon node
 
@@ -399,4 +399,4 @@ For running an advanced wallet setups, our documentation includes comprehensive 
 
 **Congratulations, you are now fully participating in the Prysm ETH 2.0 Phase 0 testnet!**
 
-**Still have questions?**  Stop by our [Discord](https://discord.gg/KSA7rPr) for further assistance!
+**Still have questions?**  Stop by our [Discord](https://discord.gg/prysmaticlabs) for further assistance!
