@@ -101,7 +101,7 @@ If you are running a **remote signer wallet**, we do not store anything on disk 
 
 #### Why is my validator losing ETH despite my setup appearing ok?
 
-If your validator client is running fine without errors but you're seeing your validator balance decrease, it is typically a sign your beacon node is either (a) crashed, (b) not synced to the chain head. This might also mean your beacon node doesn't have any peers and is likely not connected to anyone. To debug this problem, please read our guide on checking [everything is running as expected](/docs/prysm-usage/is-everything-fine). If this still does not resolve your issue, you can get in touch with our team on [Discord](https://discord.gg/hmq4y2P) anytime.
+If your validator client is running fine without errors but you're seeing your validator balance decrease, it is typically a sign your beacon node is either (a) crashed, (b) not synced to the chain head. This might also mean your beacon node doesn't have any peers and is likely not connected to anyone. To debug this problem, please read our guide on checking [everything is running as expected](/docs/prysm-usage/is-everything-fine). If this still does not resolve your issue, you can get in touch with our team on [Discord](https://discord.gg/prysmaticlabs) anytime.
 
 #### How can I use a hardware wallet with my validator?
 
@@ -109,7 +109,7 @@ At the moment, there is no built-in hardware wallet support for validators, but 
 
 #### Help! Something is messed up with the validator and I can't start it
 
-If you're encountering an unexpected issue that causes your client to crash or throw errors you cannot understand, you can always talk to your team on [Discord](https://discord.gg/hmq4y2P).
+If you're encountering an unexpected issue that causes your client to crash or throw errors you cannot understand, you can always talk to your team on [Discord](https://discord.gg/prysmaticlabs).
 
 #### How can I stop being a validator?
 

@@ -48,7 +48,7 @@ Your validator might also be in the status **DEPOSITED** and the info message sa
 
 #### Everything seems fine, but my balance is going down
 
-If your validator client is running fine without errors but you're seeing your validator balance decrease, it is typically a sign your beacon node is either (a) crashed, (b) not synced to the chain head. Check your beacon node logs to see if there are any strange errors or crashes, and please notify us. This might also mean your beacon node doesn't have any peers and is likely not connected to anyone or server time is not synchronized. If this still does not resolve your issue, you can get in touch with our team on [Discord](https://discord.gg/hmq4y2P) anytime.
+If your validator client is running fine without errors but you're seeing your validator balance decrease, it is typically a sign your beacon node is either (a) crashed, (b) not synced to the chain head. Check your beacon node logs to see if there are any strange errors or crashes, and please notify us. This might also mean your beacon node doesn't have any peers and is likely not connected to anyone or server time is not synchronized. If this still does not resolve your issue, you can get in touch with our team on [Discord](https://discord.gg/prysmaticlabs) anytime.
 
 ## Keeping your validator always online using systemd or Docker
 

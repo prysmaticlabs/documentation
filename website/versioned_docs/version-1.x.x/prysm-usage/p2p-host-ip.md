@@ -82,7 +82,7 @@ Participants on home networks will need to configure their router to perform por
     - Protocol: UDP
     - IP Address: Private IP address of the computer running beacon-chain
 
-There are many websites available with more detailed instructions on how to perform the steps above on your specific router. A quick search should help get you started.  Feel free to ask for help in our [Discord](https://discord.gg/YMVYzv6).
+There are many websites available with more detailed instructions on how to perform the steps above on your specific router. A quick search should help get you started.  Feel free to ask for help in our [Discord](https://discord.gg/prysmaticlabs).
 
 To determine the IP address for your home router, run the appropriate command for your OS:
 
