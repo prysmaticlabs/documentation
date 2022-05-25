@@ -51,7 +51,7 @@ This is a beginner-friendly guide. Familiarity with the command line is expected
           <ul> 
             <li><strong>Everything above, plus...</strong></li>    
             <li><strong>Software:</strong> Validator client, browser-based crypto wallet (instructions below)</li>   
-            <li><strong>Hardware:</strong> A new airgapped machine that you can use to securely generate your mnemonic phrase and keypair</li>     
+            <li><strong>Hardware:</strong> (Recommended) A new machine that has never been connected to the internet. You'll use this to securely generate your mnemonic phrase and keypair.</li>     
             <li><strong>32 ETH (Mainnet)</strong></li>
             <li><strong>32 GöETH (Testnet)</strong></li> 
           </ul> 
@@ -74,16 +74,15 @@ If you don't have 32 ETH to stake, <a href='https://ethereum.org/en/staking/pool
 - **Try this guide on testnet first**, *then* mainnet.
 - **Keep things simple**. This guidance assumes all client software will run on a single machine.
 - **Review the latest advisories** for both [testnet](https://prater.launchpad.ethereum.org/en/overview) and [mainnet](https://launchpad.ethereum.org/en/).
-- **Review all of our [published security best practices](./security-best-practices/)**.
+- Review all of our [published security best practices](./security-best-practices/).
 - **Join the community** - join our [mailing list](https://groups.google.com/g/prysm-dev), the [Prysm Discord server](https://discord.com/invite/XkyZSSk4My), [r/ethstaker](https://www.reddit.com/r/ethstaker/), and the [EthStaker Discord server](https://discord.io/ethstaker) for updates and support.
-
 
 
 ## Step 3: Run an execution client
 
 :::tip
 
-When we say "run the following command", use a **terminal window** (if not on Windows) or **Administrator command prompt** (if on Windows).
+If you'd like to run your execution client on the Ropsten test network, replace `goerli` with `ropsten` in the Testnet guidance below.
 
 :::
 
@@ -207,6 +206,12 @@ You’re now running an <strong>execution node</strong> in Ethereum’s executio
 ## Step 4: Run a beacon node using Prysm
 
 Create a directory called `ConsensusLayer` on your SSD [<a href='#footnote-7'>7</a>].
+
+:::tip
+
+If you'd like to run your beacon node on the Ropsten test network, use <a href='https://github.com/prysmaticlabs/prysm/releases/v2.1.3-rc.0'>Prysm v2.1.3-rc.0</a> and replace `prater` with `bopsten` in the Testnet guidance below.
+
+:::
 
 <Tabs groupId="network" defaultValue="win" values={[
     {label: 'Windows', value: 'win'},
