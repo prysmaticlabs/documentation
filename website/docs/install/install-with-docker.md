@@ -230,7 +230,6 @@ When running Prysm, you can choose to run in the **main network** which has real
 
 * [Mainnet](https://launchpad.ethereum.org) which is the current, live version of Ethereum proof-of-stake with billions of dollars worth of real ETH
 * [Prater testnet](https://prater.launchpad.ethereum.org) which is a useful staging testnet for development and users that want to try things out before hopping into the real mainnet
-* **Bopsten testnet**, a new consensus-layer test network that you can use to test proof-of-stake before The Merge. When using Bopsten, you'll have to run a local execution node on the Ropsten execution-layer test network.
 
 Mainnet is enabled by **default** in all Prysm commands. If you want to use the **Prater** testnet, just add `--prater` to _all_ your Prysm commands.
 
@@ -270,7 +269,7 @@ docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/u
 
 **Prater**
 
-Download the genesis state from [https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz](https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz) to a local file, then run
+Download the genesis state from [github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz](https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz) to a local file, then run
 
 ```text
 docker run -it -v $HOME/.eth2:/data -v /path/to/genesis.ssz:/genesis/genesis.ssz -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node \
