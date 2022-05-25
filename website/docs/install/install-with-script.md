@@ -305,7 +305,7 @@ You’re now running a <strong>full Ethereum node</strong>. Your full node consi
 
 :::info ETH Required
 
-Running a validator requires 32.1 ETH (for Mainnet) or 32.1 GöETH (for Testnet). Instructions for acquiring GöETH are provided below.
+Running a validator requires 32.1 ETH (for Mainnet), 32.1 GöETH (for Goerli testnet), and 32.1 Ropsten-ETH (for Ropsten testnet). Instructions for acquiring testnet ETH are provided below. This section will be updated to provide Ropsten test network guidance soon.
 
 :::
 
