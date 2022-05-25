@@ -80,9 +80,9 @@ If you don't have 32 ETH to stake, <a href='https://ethereum.org/en/staking/pool
 
 ## Step 3: Run an execution client
 
-:::tip
+:::info
 
-If you'd like to run your execution client on the Ropsten test network, replace `goerli` with `ropsten` in the Testnet guidance below.
+If you'd like to run your execution client on the **Ropsten** test network, replace `goerli` with `ropsten` in the Testnet guidance below. This is required if you'd like to run a beacon node on the **Bopsten** test network.
 
 :::
 
@@ -207,9 +207,9 @@ You’re now running an <strong>execution node</strong> in Ethereum’s executio
 
 Create a directory called `ConsensusLayer` on your SSD [<a href='#footnote-7'>7</a>].
 
-:::tip
+:::info
 
-If you'd like to run your beacon node on the Ropsten test network, use [https://github.com/prysmaticlabs/prysm/releases/v2.1.3-rc.0](Prysm v2.1.3-rc.0), replace `prater` with `bopsten` in the Testnet guidance below, and use the [https://github.com/eth-clients/merge-testnets/blob/main/ropsten-beacon-chain/genesis.ssz](Ropsten genesis state) instead of the Prater genesis state.
+If you'd like to run your beacon node on the **Bopsten** test network, use [https://github.com/prysmaticlabs/prysm/releases/v2.1.3-rc.0](Prysm v2.1.3-rc.0), replace `prater` with `bopsten` in the Testnet guidance below, and use the [https://github.com/eth-clients/merge-testnets/blob/main/ropsten-beacon-chain/genesis.ssz](Ropsten genesis state) instead of the Prater genesis state.
 
 :::
 
