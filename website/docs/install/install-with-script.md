@@ -52,7 +52,7 @@ This is a beginner-friendly guide. Familiarity with the command line is expected
           <ul> 
             <li><strong>Everything above, plus...</strong></li>    
             <li><strong>Software:</strong> Validator client, browser-based crypto wallet (instructions below)</li>   
-            <li><strong>Hardware:</strong> A new airgapped machine that you can use to securely generate your mnemonic phrase and keypair</li>     
+            <li><strong>Hardware:</strong> (Recommended) A new machine that has never been connected to the internet that you can use to securely generate your mnemonic phrase and keypair</li>     
             <li><strong>32 ETH (Mainnet)</strong></li>
             <li><strong>32 GöETH (Testnet)</strong></li> 
           </ul> 
@@ -76,7 +76,7 @@ If you don't have 32 ETH to stake, <a href='https://ethereum.org/en/staking/pool
 
 ## Step 3: Download Prysm, generate secret
 
-You need two different pieces of software to run an Ethereum node: an **execution-layer client** and a **consensus-layer client**. Prysm is a consensus-layer client that, like other consensus-layer clients, contains code for both **beacon node** and **validator** responsibilities. Execution client software contains code that allows nodes to process transactions. Examples of execution client software include Nethermind, Besu, and Geth.
+You need two different pieces of software to run an Ethereum node: an **execution-layer client** and a **consensus-layer client**. Execution client software contains code that allows nodes to process transactions. Examples of execution client software include Nethermind, Besu, and Geth. Prysm is a consensus-layer client that, like other consensus-layer clients, contains code for both **beacon node** and **validator** responsibilities. 
 
 Validators connect to beacon nodes, and beacon nodes connect to execution nodes:
 
@@ -219,7 +219,7 @@ curl -H "Content-Type: application/json" -X POST http://localhost:8545 -d "{""js
         {label: 'Testnet', value: 'testnet'}
     ]}>
       <TabItem value="mainnet">
-        <pre><code>geth --http --authrpc.jwtsecret=../consensus/secret.jwt --datadir .</code></pre>
+        <pre><code>geth --http --authrpc.jwtsecret=E:\PRY\prysm\jwt.hex --datadir .</code></pre>
         <ul>
           <li><code>--http</code> exposes an http endpoint that your beacon node can later connect to.</li>
           <li><code>--datadir .</code> specifies the current directory (<code>execution</code>) as the location for the execution layer database.</li>
@@ -270,7 +270,7 @@ Congratulations - you’re now running an <strong>execution node</strong> in Eth
       </TabItem>
       <TabItem value="testnet">
         <p>Download the <a href='https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz'>genesis state from Github</a> into your <code>consensus/prysm</code> directory. Then use the following command to start a beacon node that connects to your local execution node using your secret JWT file:</p>
-        <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8545 --jwt-secret=secret.jwt --prater --genesis-state=genesis.ssz</code></pre>
+        <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8545 --jwt-secret=E:\PRY\prysm\jwt.hex --prater --genesis-state=genesis.ssz</code></pre>
       </TabItem>
   </Tabs>
   </TabItem>
@@ -322,7 +322,7 @@ When you see `"is_syncing":false`, your beacon node is fully synchronized with t
 You can verify that your beacon node has successfully connected to your execution node by running the following command from a separate terminal window:
 
 ```
-curl http://localhost:3500/eth/v1/node/eth1/connections
+curl http://localhost:3500/eth/v1alpha1/node/eth1/connections
 ```
 
 You should see TODO.
