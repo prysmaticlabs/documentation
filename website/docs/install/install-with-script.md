@@ -74,7 +74,7 @@ If you don't have 32 ETH to stake, <a href='https://ethereum.org/en/staking/pool
 - **Join the community** - join our [mailing list](https://groups.google.com/g/prysm-dev), the [Prysm Discord server](https://discord.com/invite/XkyZSSk4My), [r/ethstaker](https://www.reddit.com/r/ethstaker/), and the [EthStaker Discord server](https://discord.io/ethstaker) for updates and support.
 
 
-## Step 3: Download Prysm, generate secret
+## Step 3: Generate secret
 
 You need two different pieces of software to run an Ethereum node: an **execution-layer client** and a **consensus-layer client**. Execution client software contains code that allows nodes to process transactions. Examples of execution client software include Nethermind, Besu, and Geth. Prysm is a consensus-layer client that, like other consensus-layer clients, contains code for both **beacon node** and **validator** responsibilities. 
 
@@ -91,12 +91,6 @@ First, create a folder called `ethereum` on your SSD [<a href='#footnote-9'>9</a
 ┣ 📂consensus
 ┣ 📂execution
 ```
-
-:::tip
-
-Use a **terminal window** (if not on Windows) or **command prompt** (if on Windows) to run the commands throughout this quickstart.
-
-:::
 
 <Tabs groupId="network" defaultValue="others" values={[
     {label: 'Windows', value: 'win'},
