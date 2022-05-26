@@ -67,7 +67,6 @@ A fee recipient address can be configured on your client instance by using one o
     <td>
     Sets the local file location for the fee recipient JSON configuration. <br /> <br /> 
     <strong>Example</strong>: <code>--fee-recipient-config-file=./fee_recipient_config.json</code> <br /> <br /> 
-    <strong>Note</strong>: This setting overrides the two config options below. If you set this, the config options will be ignored.
     </td>
   </tr>
   <tr>
