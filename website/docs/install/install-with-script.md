@@ -209,7 +209,7 @@ Create a directory called `ConsensusLayer` on your SSD [<a href='#footnote-7'>7<
 
 :::info
 
-If you'd like to run your beacon node on the **Ropsten** consensus-layer test network, use <a href='https://github.com/prysmaticlabs/prysm/releases/v2.1.3-rc.0'>Prysm v2.1.3-rc.0</a>, replace `prater` with `ropsten` in the Testnet guidance below, and use the <a href='https://github.com/eth-clients/merge-testnets/blob/main/ropsten-beacon-chain/genesis.ssz'>Ropsten genesis state</a> instead of the Prater genesis state.
+If you'd like to run your beacon node on the **Ropsten** consensus-layer test network, use <a href='https://github.com/prysmaticlabs/prysm/releases/v2.1.3-rc.1'>Prysm v2.1.3-rc.1</a>, replace `prater` with `ropsten` in the Testnet guidance below, and use the <a href='https://github.com/eth-clients/merge-testnets/blob/main/ropsten-beacon-chain/genesis.ssz'>Ropsten genesis state</a> instead of the Prater genesis state.
 
 :::
 
