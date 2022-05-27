@@ -86,10 +86,9 @@ Bazel will automatically pull and install any dependencies as well, including Go
 
 When running Prysm, you can choose to run in the **main network** which has real assets at stake, or in a **test network** which is used by developers and stakers that might want to gain some confidence before depositing 32 ETH to validate. The currently supported networks in Prysm are:
 
-* [Mainnet](https://launchpad.ethereum.org): the current, live version of Ethereum
+* [Mainnet](https://launchpad.ethereum.org): the current, live version of Ethereum proof-of-stake with billions of dollars' worth of real ETH at stake
 * [Prater testnet](https://prater.launchpad.ethereum.org): a staging testnet for developers and validators who want to try things out before hopping into the real mainnet
-* [Ropsten testnet](https://ropsten.launchpad.ethereum.org): a staging testnet created specifically to help developers and validators test proof-of-stake infrastructure pre-Merge
-
+* [Ropsten testnet](https://ropsten.launchpad.ethereum.org): a consensus-layer staging testnet created specifically to help developers and validators test the Merge using execution-layer Ropsten testnet
 
 
 ## Running a Beacon Node
