@@ -244,6 +244,8 @@ When running a Prysm **beacon node** or **validator**, you can choose to run in 
 
 First, let's run a beacon node connected to the main Ethereum network. To run a beacon node, you will need access to an execution client software. We have dedicated instructions for this [here](/docs/execution-node/configuring-for-prysm).
 
+<!-- todo: RC links to gcr.io -->
+
 ### Step 2: Sync your beacon node
 
 <Tabs

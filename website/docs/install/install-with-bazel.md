@@ -219,6 +219,9 @@ bazel build //validator:image_bundle --config=release
 
 The tags for the images are specified [here](https://github.com/prysmaticlabs/prysm/blob/ff329df808ad68fbe79d11c73121fa6a7a0c0f29/cmd/beacon-chain/BUILD.bazel#L58) for the beacon-chain and [here](https://github.com/prysmaticlabs/prysm/blob/ff329df808ad68fbe79d11c73121fa6a7a0c0f29/cmd/validator/BUILD.bazel#L59) for the validator. The default image tags for these images are:
 
+
+<!-- todo: RC links to gcr.io -->
+
 ```text
 gcr.io/prysmaticlabs/prysm/beacon-chain:latest
 gcr.io/prysmaticlabs/prysm/validator:latest
