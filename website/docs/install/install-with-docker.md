@@ -529,7 +529,7 @@ docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
 </Tabs>
 
 
-### Step 6: Wait for your validator assignment
+### Step 5: Wait for your validator assignment
 
 Please note it will take time for nodes in the network to process a deposit. To understand the timeline of becoming a validator and how long it takes on average, please read [this knowledge base](https://kb.beaconcha.in/ethereum-2.0-depositing). In the meantime, leave both terminal windows open and running; once the validator is activated by the ETH2 network, it will immediately begin receiving tasks and performing its responsibilities. If the eth2 chain has not yet started, the validator will be ready to start proposing blocks and signing votes as soon as the genesis time is reached.
 
