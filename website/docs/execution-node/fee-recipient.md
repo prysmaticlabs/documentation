@@ -66,7 +66,7 @@ A fee recipient address can be configured on your client instance by using one o
     <td><code>proposer-settings-file</code></td>
     <td>
     Sets the local file location for your `proposer-settings` YAML or JSON configuration. This configuration lets you configure proposer settings for your validator keys. <br /> <br /> 
-    <strong>Example</strong>: <code>--proposer-settings-file=./fee_recipient_config.json</code> <br /> <br /> 
+    <strong>Example</strong>: <code>--proposer-settings-file=./proposer_settings.json</code> <br /> <br /> 
     </td>
   </tr>
   <tr>
