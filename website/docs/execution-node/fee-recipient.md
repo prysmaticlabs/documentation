@@ -59,21 +59,21 @@ A fee recipient address can be configured on your client instance by using one o
     <td>
     Sets a default ETH address for all validator public keys. <br /> <br /> 
     <strong>Example</strong>: <code>--suggested-fee-recipient=0x0123456722E6b0000012BFEBf6177F1D2e9758D9</code> <br /> <br /> 
-    <strong>Note</strong>: This setting overrides the two config options below. If you set this, the config options will be ignored.
+    <strong>Note</strong>: This setting is overwritten by the flags below and will act as a fallback catch all.
     </td>
   </tr>
   <tr>
-    <td><code>fee-recipient-config-file</code></td>
+    <td><code>proposer-settings-file</code></td>
     <td>
-    Sets the local file location for the fee recipient JSON configuration. <br /> <br /> 
-    <strong>Example</strong>: <code>--fee-recipient-config-file=./fee_recipient_config.json</code> <br /> <br /> 
+    Sets the local file location for the proposer-settings ( settings for your validator key when proposing a block) in YAML or JSON file formats. <br /> <br /> 
+    <strong>Example</strong>: <code>--proposer-settings-file=./fee_recipient_config.json</code> <br /> <br /> 
     </td>
   </tr>
   <tr>
-    <td><code>fee-recipient-config-url</code></td>
+    <td><code>proposer-settings-url</code></td>
     <td>
-    Sets a URL for a remote fee recipient JSON configuration.  <br /> <br /> 
-    <strong>Example</strong>: <code>--fee-recipient-config-url=http://example.com/api/getFeeRecipient</code> <br /> <br /> 
+    Sets a URL for remote proposer-settings( settings for your validator key when proposing a block).  <br /> <br /> 
+    <strong>Example</strong>: <code>--proposer-settings-url=http://example.com/api/getProposerSettings</code> <br /> <br /> 
     <strong>Note</strong>: JSON should be delivered as a JSON payload, not as a JSON file. Your client will issue a GET request and expects the response <code>Content-Type</code> header to be <code>application/json</code>.
     </td>
   </tr>
@@ -90,16 +90,35 @@ If you don't see any errors after issuing one of the above commands, your fee re
 
 #### Fee Recipient JSON Config File
 
-If you use either `fee-recipient-config-file` or `fee-recipent-config-url` to specify your fee recipient address, your JSON configuration should follow this schema:
+If you use either `proposer-settings-file` or `proposer-settings-url` to specify your fee recipient address, your YAML configuration should follow this schema:
+
+```
+---
+proposer_config:
+  '0x01234567155ad77931185101128655c0191bd0214c201ca48ed887f6c4c6adf334070efcd75140eada5ac83a92506dd7a':
+    fee_recipient: '0x012345670FCE8a85ec7055A5F8b2bE214B3DaeFd3'
+    gas_limit: 35000000
+  '0x0123456748ed887f6c4c6adf334070efcd75140eada5ac83a92506dd7a057816155ad77931185101128655c0191bd0214':
+    fee_recipient: '0x01234567bE214B3DaeFd350155530FCE8a85ec705'
+    gas_limit: 35000000
+default_config:
+  fee_recipient: '0x01234567c5af9B61374A128e6F85f553aF09ff89A'
+  gas_limit: 30000000
+
+```
+
+JSON format is also supported.
 
 ```
 {
   "proposer_config": {
     "0x01234567155ad77931185101128655c0191bd0214c201ca48ed887f6c4c6adf334070efcd75140eada5ac83a92506dd7a": {
-      "fee_recipient": "0x012345670FCE8a85ec7055A5F8b2bE214B3DaeFd3"
+      "fee_recipient": "0x012345670FCE8a85ec7055A5F8b2bE214B3DaeFd3",
+      "gas_limit": 35000000
     },
     "0x0123456748ed887f6c4c6adf334070efcd75140eada5ac83a92506dd7a057816155ad77931185101128655c0191bd0214": {
-      "fee_recipient": "0x01234567bE214B3DaeFd350155530FCE8a85ec705"
+      "fee_recipient": "0x01234567bE214B3DaeFd350155530FCE8a85ec705",
+      "gas_limit": 35000000
     }
   },
   "default_config": {
@@ -137,6 +156,15 @@ The above JSON demonstrates configuring two 1:1 mappings between `validator publ
     </td>
   </tr>
   <tr>
+    <td><code>proposer_config.gas_limit</code></td>
+    <td>
+    Optional. <code>proposer_config</code>.  <br /> <br /> 
+    <strong>Type:</strong> uint64 <br /> <br /> 
+    <strong>Note:</strong> Applicable when using custom block builders. sets a gas limit goal for block builders to target, block limits can only change a fixed amount per proposal. Default limit is 30M.
+    <strong>Example: 35000000</strong> <br /> <br /> 
+    </td>
+  </tr>
+  <tr>
     <td><code>default_config</code></td>
     <td>
     Required. 
@@ -149,6 +177,15 @@ The above JSON demonstrates configuring two 1:1 mappings between `validator publ
     <strong>Type:</strong> ETH address. 42 characters long hexstring. <br /> <br /> 
     <strong>Note:</strong> This sets the default ETH address for all remaining validator public keys that don’t have 1:1 mapping already from the <code>proposer_config</code> member.
     <strong>Example:</strong> "0x012345670FCE8a85ec7055A5F8b2bE214B3DaeFd3"<br /> <br /> 
+    </td>
+  </tr>
+   <tr>
+    <td><code>default_config.gas_limit</code></td>
+    <td>
+    Optional. <code>default_config</code>.  <br /> <br /> 
+    <strong>Type:</strong> uint64 <br /> <br /> 
+    <strong>Note:</strong> Applicable when using custom block builders. sets a gas limit goal for block builders to target, block limits can only change a fixed amount per proposal. Default limit is 30M.
+    <strong>Example: 35000000</strong> <br /> <br /> 
     </td>
   </tr>
 </table>
@@ -171,7 +208,7 @@ A fee recipient address can be configured on your beacon node instance by using 
     <td>
     Sets a default ETH address for all validator public keys. <br /> <br />
     <strong>Example</strong>: <code>--suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code> <br /> <br />
-    <strong>Note</strong>: When a fee recipient address is configured on both the validator client instance and beacon node, the validator client instance configuration will be prioritized, and the beacon node configuration will function as a fallback configuration.
+    <strong>Note</strong>: When a fee recipient address is configured on both the validator client instance and beacon node, the validator client instance configuration will be prioritized, and the beacon node configuration will function as a fallback configuration. 
     </td>
   </tr>
 </table>
