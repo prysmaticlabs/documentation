@@ -184,7 +184,7 @@ The above JSON demonstrates configuring two 1:1 mappings between `validator publ
     <td>
     Optional. <code>default_config</code>.  <br /> <br /> 
     <strong>Type:</strong> uint64 <br /> <br /> 
-    <strong>Note:</strong> Applicable when using custom block builders. sets a gas limit goal for block builders to target, block limits can only change a fixed amount per proposal. Default limit is 30M.
+    <strong>Note:</strong> Applicable only when using custom block builders. Sets a gas limit goal (in wei) for block builders to target. Block limits can only change a fixed amount per proposal - the default limit is 30M wei
     <strong>Example: 35000000</strong> <br /> <br /> 
     </td>
   </tr>
