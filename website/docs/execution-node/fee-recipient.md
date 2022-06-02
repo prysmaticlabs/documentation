@@ -72,7 +72,7 @@ A fee recipient address can be configured on your client instance by using one o
   <tr>
     <td><code>proposer-settings-url</code></td>
     <td>
-    Sets a URL for remote proposer-settings( settings for your validator key when proposing a block).  <br /> <br /> 
+    A remote `proposer-settings` configuration endpoint in URL format. <br /> <br /> 
     <strong>Example</strong>: <code>--proposer-settings-url=http://example.com/api/getProposerSettings</code> <br /> <br /> 
     <strong>Note</strong>: JSON should be delivered as a JSON payload, not as a JSON file. Your client will issue a GET request and expects the response <code>Content-Type</code> header to be <code>application/json</code>.
     </td>
