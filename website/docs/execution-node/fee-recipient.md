@@ -90,6 +90,10 @@ If you don't see any errors after issuing one of the above commands, your fee re
 
 #### Fee Recipient JSON Config File
 
+:::warning Breaking changes from 2.1.3 
+`fee-recipient-config-file` and `fee-recipient-config-url` flags have been deprecated and replaced with `proposer-settings-file` and `proposer-settings-url` flags.
+:::
+
 If you use either `proposer-settings-file` or `proposer-settings-url` to specify your fee recipient address, your YAML configuration should follow this schema:
 
 ```
