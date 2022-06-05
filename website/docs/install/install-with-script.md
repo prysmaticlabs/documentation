@@ -14,8 +14,6 @@ This is a beginner-friendly guide. Familiarity with the command line is expected
 
 ## Step 1: Goals and system requirements
 
-<!--<li><strong>Knowledge</strong>: <a>A Beginner's Guide to Prysm (TODO)</a></li>-->
-
 <table>
     <tr>
     <th style={{minWidth: 180 + 'px'}}>Goal</th> 
@@ -66,7 +64,6 @@ If you don't have 32 ETH to stake, <a href='https://ethereum.org/en/staking/pool
 
 ## Step 2: Review best practices
 
-<!-- - **Ramp up on the foundations**. If you're new to Ethereum or proof-of-stake, read [A Beginner's Introduction to Prysm](todo) before proceeding [<a href='#footnote-7'>7</a>]. -->
 - **Try this guide on testnet first**, *then* mainnet.
 - **Keep things simple**. This guidance assumes all client software will run on a single machine.
 - **Review the latest advisories** for both [testnet](https://prater.launchpad.ethereum.org/en/overview) and [mainnet](https://launchpad.ethereum.org/en/).
@@ -128,6 +125,11 @@ curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --out
 
 
 ## Step 4: Run an execution client
+
+:::info
+
+If you'd like to run your execution client on the **Ropsten** execution-layer test network, replace `goerli` with `ropsten` in the Testnet guidance below. This is required if you'd like to run a beacon node on the **Ropsten** consensus-layer test network, commonly referred to as **Bopsten**.
+:::
 
 In this step, you'll install an execution-layer client that Prysm's beacon node will connect to [<a href='#footnote-2'>2</a>].
 
@@ -247,6 +249,12 @@ Congratulations - you’re now running an <strong>execution node</strong> in Eth
 
 ## Step 5: Run a beacon node using Prysm
 
+:::info
+
+If you'd like to run your beacon node on the **Ropsten** consensus-layer test network, use <a href='https://github.com/prysmaticlabs/prysm/releases/v2.1.3-rc.2'>Prysm v2.1.3-rc.2</a>, replace `prater` with `ropsten` in the Testnet guidance below, and use the <a href='https://github.com/eth-clients/merge-testnets/blob/main/ropsten-beacon-chain/genesis.ssz'>Ropsten genesis state</a> instead of the Prater genesis state.
+
+:::
+
 
 <Tabs groupId="network" defaultValue="others" values={[
     {label: 'Windows', value: 'win'},
@@ -322,15 +330,15 @@ curl http://localhost:3500/eth/v1alpha1/node/eth1/connections
 You should see TODO.
 
 
-<!-- When you see `"is_optimistic":false`, your execution node is fully synchronized with the execution-layer blockchain. 
+When you see `"is_syncing":false`, your beacon node is fully synchronized with the beacon chain. When you see `"is_optimistic":false`, your execution node is fully synchronized with the execution-layer blockchain. 
 
-```
-TODO: is_optimistic is not yet implemented -> https://github.com/prysmaticlabs/prysm/pull/10692 
 
-TODO: `Checking DB database-path=C:\Users\newuser\AppData\Local\Eth2\beaconchaindata` <- how to configure this directory?
-```
+:::info
 
--->
+`is_optimistic` is currently not emitted by the latest stable release of Prysm, but this will soon be available.
+
+:::
+
 
 Congratulations - you’re now running a <strong>full Ethereum node</strong>. Your full node consists of an <strong>execution node</strong> in Ethereum’s execution layer, and a <strong>beacon node</strong> in Ethereum’s consensus layer.
 
@@ -529,15 +537,6 @@ TODO
 TODO: explain in context of this guide -->
 
 
-
-
-## Next steps
-
- - Configure monitoring and alerts (TODO)
- - Keep your client software updated (TODO)
- - Configure Fee Recipient
-
-
 <br />
 
 -------
@@ -559,5 +558,3 @@ TODO: explain in context of this guide -->
 <strong id='footnote-13'>13.</strong> Your keystore file contains your public key and your private key encrypted with a password. To learn more about how keystores work, see <a href='https://julien-maffre.medium.com/what-is-an-ethereum-keystore-file-86c8c5917b97'>What is an Ethereum keystore</a>. <br />
 <strong id='footnote-14'>14</strong>. BitMex recently posted research that provides hard numbers on penalties and rewards: <a href='https://blog.bitmex.com/ethereums-proof-of-stake-system-calculating-penalties-rewards/'>Ethereum's Proof of Stake System - Calculating Penalties and Rewards</a>. Collin Myers has also created an <a href='https://docs.google.com/spreadsheets/d/15tmPOvOgi3wKxJw7KQJKoUe-uonbYR6HF7u83LR5Mj4/edit#gid=1018097491'>Ethereum calculator</a>. <br />
 <strong id='footnote-15'>15</strong>. See Configure Monitoring and Alerts (TODO). <br />
-
-<p style={{color: gray, fontSize: 11 + 'px'}}>Author: <a href='https://twitter.com/symbolpunk'>symbolpunk</a></p>
