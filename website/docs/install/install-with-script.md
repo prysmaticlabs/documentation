@@ -13,8 +13,6 @@ This is a beginner-friendly guide. Familiarity with the command line is expected
 
 ## Step 1: Identify your goals and system requirements
 
-<!--<li><strong>Knowledge</strong>: <a>A Beginner's Guide to Prysm (TODO)</a></li>-->
-
 <table>
     <tr>
     <th style={{minWidth: 180 + 'px'}}>Goal</th> 
@@ -70,7 +68,6 @@ If you don't have 32 ETH to stake, <a href='https://ethereum.org/en/staking/pool
 
 ## Step 2: Review best practices
 
-<!-- - **Ramp up on the foundations**. If you're new to Ethereum or proof-of-stake, read [A Beginner's Introduction to Prysm](todo) before proceeding [<a href='#footnote-7'>7</a>]. -->
 - **Try this guide on testnet first**, *then* mainnet.
 - **Keep things simple**. This guidance assumes all client software will run on a single machine.
 - **Review the latest advisories** for both [testnet](https://prater.launchpad.ethereum.org/en/overview) and [mainnet](https://launchpad.ethereum.org/en/).
@@ -286,11 +283,12 @@ This will produce the following output:
 
 When you see `"is_syncing":false`, your beacon node is fully synchronized with the beacon chain. When you see `"is_optimistic":false`, your execution node is fully synchronized with the execution-layer blockchain. 
 
-```
-TODO: is_optimistic is not yet implemented -> https://github.com/prysmaticlabs/prysm/pull/10692 
 
-TODO: `Checking DB database-path=C:\Users\newuser\AppData\Local\Eth2\beaconchaindata` <- how to configure this directory?
-```
+:::info
+
+`is_optimistic` is currently not emitted by the latest stable release of Prysm, but this will soon be available.
+
+:::
 
 
 :::tip Congratulations!
@@ -305,7 +303,7 @@ You’re now running a <strong>full Ethereum node</strong>. Your full node consi
 
 :::info ETH Required
 
-Running a validator requires 32.1 ETH (for Mainnet), 32.1 GöETH (for Goerli testnet), and 32.1 Ropsten-ETH (for Ropsten testnet). Instructions for acquiring testnet ETH are provided below. This section will be updated to provide Ropsten test network guidance soon. TODO - rETH, launchpad guidance
+Running a validator requires 32.1 ETH (for Mainnet), 32.1 GöETH (for Goerli testnet), and 32.1 Ropsten-ETH (for Ropsten testnet). Instructions for acquiring testnet ETH are provided below. This section will be updated to provide Ropsten test network guidance soon.
 
 :::
 
