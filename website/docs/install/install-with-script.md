@@ -119,7 +119,7 @@ reg add HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1
 
   <p>This will download the Prysm client and update your registry to enable verbose logging. Use the following command to create your secret JWT token:</p>
   <pre><code>prysm.bat beacon-chain jwt generate-auth-secret</code></pre>
-  <p>Prysm will then output a <code>secret.jwt</code> file path. Record this - we'll use it in the next step.</p>
+  <p>Prysm will then output a <code>jwt.hex</code> file path. Record this - we'll use it in the next step.</p>
   </TabItem>
   <TabItem value="others">
     <div class="admonition admonition-caution alert alert--warning">
@@ -134,7 +134,7 @@ curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --out
 
   <p>This will download the Prysm client and update your registry to enable verbose logging. Use the following command to create your secret JWT token:</p>
   <pre><code>./prysm.sh beacon-chain jwt generate-jwt-secret</code></pre>
-  <p>Prysm will then output a <code>secret.jwt</code> file path. Record this - we'll use it in the next step.</p>
+  <p>Prysm will then output a <code>jwt.hex</code> file path. Record this - we'll use it in the next step.</p>
   </TabItem>
 </Tabs>
 
@@ -162,23 +162,23 @@ In this step, you'll install an execution-layer client that Prysm's beacon node 
         {label: 'Testnet', value: 'testnet'}
     ]}>
       <TabItem value="mainnet">
-        <pre><code>Nethermind.Runner --config mainnet --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.JwtSecretFile=../consensus/secret.jwt</code></pre>
+        <pre><code>Nethermind.Runner --config mainnet --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.JwtSecretFile=../consensus/jwt.hex</code></pre>
         <ul>
           <li><code>--config mainnet</code> connects to Mainnet.</li>
           <li><code>--JsonRpc.Enabled true</code> exposes an http endpoint that your beacon node can later connect to.</li>
           <li><code>--HealthChecks.Enabled true</code> exposes an http endpoint that you can use to query the health of your Nethermind node.</li>
           <li><code>--HealthChecks.UIEnabled true</code> exposes a friendly UI that you can use to inspect the health of your Nethermind node.</li>
-          <li><code>--JsonRpc.JwtSecretFile=../consensus/secret.jwt</code> points to the <code>secret.jwt</code> we created in Step 3.</li>
+          <li><code>--JsonRpc.JwtSecretFile=../consensus/jwt.hex</code> points to the <code>jwt.hex</code> we created in Step 3.</li>
         </ul>
       </TabItem>
       <TabItem value="testnet">
-        <pre><code>Nethermind.Runner --config goerli --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.JwtSecretFile=../consensus/secret.jwt</code></pre>
+        <pre><code>Nethermind.Runner --config goerli --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.JwtSecretFile=../consensus/jwt.hex</code></pre>
         <ul>
           <li><code>--config goerli</code> connects to the Goerli execution-layer testnet.</li>
           <li><code>--JsonRpc.Enabled true</code> exposes an http endpoint that your beacon node can later connect to.</li>
           <li><code>--HealthChecks.Enabled true</code> exposes an http endpoint that you can use to query the health of your Nethermind node.</li>
           <li><code>--HealthChecks.UIEnabled true</code> exposes a friendly UI that you can use to inspect the health of your Nethermind node.</li>
-          <li><code>--JsonRpc.JwtSecretFile=../consensus/secret.jwt</code> points to the <code>secret.jwt</code> we created in Step 3.</li>
+          <li><code>--JsonRpc.JwtSecretFile=../consensus/jwt.hex</code> points to the <code>jwt.hex</code> we created in Step 3.</li>
         </ul>
       </TabItem>
     </Tabs>
@@ -197,19 +197,19 @@ curl localhost:8545/health
         {label: 'Testnet', value: 'testnet'}
     ]}>
       <TabItem value="mainnet">
-        <pre><code>besu --network=mainnet --rpc-http-enabled --engine-jwt-enabled=true --engine-jwt-secret=../consensus/secret.jwt</code></pre>
+        <pre><code>besu --network=mainnet --rpc-http-enabled --engine-jwt-enabled=true --engine-jwt-secret=../consensus/jwt.hex</code></pre>
         <ul>
           <li><code>--network=mainnet</code> connects to Mainnet.</li>
           <li><code>--rpc-http-enabled</code> exposes an http endpoint that your beacon node can later connect to.</li>
-          <li><code>--engine-jwt-enabled=true --engine-jwt-secret=../consensus/secret.jwt</code> enables JWT and points to the <code>secret.jwt</code> we created in Step 3.</li>
+          <li><code>--engine-jwt-enabled=true --engine-jwt-secret=../consensus/jwt.hex</code> enables JWT and points to the <code>jwt.hex</code> we created in Step 3.</li>
         </ul>
       </TabItem>
       <TabItem value="testnet">
-        <pre><code>besu --network=goerli --rpc-http-enabled --engine-jwt-enabled=true --engine-jwt-secret=../consensus/secret.jwt</code></pre>
+        <pre><code>besu --network=goerli --rpc-http-enabled --engine-jwt-enabled=true --engine-jwt-secret=../consensus/jwt.hex</code></pre>
         <ul>
           <li><code>--network=goerli</code> connects to the Goerli execution-layer testnet.</li>
           <li><code>--rpc-http-enabled</code> exposes an http endpoint that your beacon node can later connect to.</li>
-          <li><code>--engine-jwt-enabled=true --engine-jwt-secret=../consensus/secret.jwt</code> enables JWT and points to the <code>secret.jwt</code> we created in Step 3.</li>
+          <li><code>--engine-jwt-enabled=true --engine-jwt-secret=../consensus/jwt.hex</code> enables JWT and points to the <code>jwt.hex</code> we created in Step 3.</li>
         </ul>
       </TabItem>
     </Tabs>
@@ -235,16 +235,16 @@ curl -H "Content-Type: application/json" -X POST http://localhost:8545 -d "{""js
         <ul>
           <li><code>--http</code> exposes an http endpoint that your beacon node can later connect to.</li>
           <li><code>--datadir .</code> specifies the current directory (<code>execution</code>) as the location for the execution layer database.</li>
-          <li><code>--authrpc.jwtsecret=../consensus/secret.jwt</code> points to the <code>secret.jwt</code> we created in Step 3.</li>
+          <li><code>--authrpc.jwtsecret=../consensus/jwt.hex</code> points to the <code>jwt.hex</code> we created in Step 3.</li>
         </ul>
       </TabItem>
       <TabItem value="testnet">
-        <pre><code>geth --goerli --http --authrpc.jwtsecret=../consensus/secret.jwt --datadir .</code></pre>
+        <pre><code>geth --goerli --http --authrpc.jwtsecret=../consensus/jwt.hex --datadir .</code></pre>
         <ul>
           <li><code>--goerli</code> connects to the Goerli execution-layer testnet.</li>
           <li><code>--http</code> exposes an http endpoint that your beacon node can later connect to.</li>
           <li><code>--datadir .</code> specifies the current directory (<code>execution</code>) as the location for the execution layer database.</li>
-          <li><code>--authrpc.jwtsecret=../consensus/secret.jwt</code> points to the <code>secret.jwt</code> we created in Step 3.</li>
+          <li><code>--authrpc.jwtsecret=../consensus/jwt.hex</code> points to the <code>jwt.hex</code> we created in Step 3.</li>
         </ul>
       </TabItem>
     </Tabs>
@@ -284,7 +284,7 @@ If you'd like to run your beacon node on the **Ropsten** consensus-layer test ne
     ]}>
       <TabItem value="mainnet">
         <p>Use the following command to start a beacon node that connects to your local execution node using your secret JWT file:</p>
-        <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8545 --jwt-secret=secret.jwt</code></pre>
+        <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8545 --jwt-secret=jwt.hex</code></pre>
       </TabItem>
       <TabItem value="testnet">
         <p>Download the <a href='https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz'>genesis state from Github</a> into your <code>consensus/prysm</code> directory. Then use the following command to start a beacon node that connects to your local execution node using your secret JWT file:</p>
