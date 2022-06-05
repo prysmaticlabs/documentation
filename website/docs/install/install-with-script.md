@@ -13,6 +13,8 @@ This is a beginner-friendly guide. Familiarity with the command line is expected
 
 ## Step 1: Identify your goals and system requirements
 
+<!--<li><strong>Knowledge</strong>: <a>A Beginner's Guide to Prysm (TODO)</a></li>-->
+
 <table>
     <tr>
     <th style={{minWidth: 180 + 'px'}}>Goal</th> 
@@ -68,6 +70,7 @@ If you don't have 32 ETH to stake, <a href='https://ethereum.org/en/staking/pool
 
 ## Step 2: Review best practices
 
+<!-- - **Ramp up on the foundations**. If you're new to Ethereum or proof-of-stake, read [A Beginner's Introduction to Prysm](todo) before proceeding [<a href='#footnote-7'>7</a>]. -->
 - **Try this guide on testnet first**, *then* mainnet.
 - **Keep things simple**. This guidance assumes all client software will run on a single machine.
 - **Review the latest advisories** for both [testnet](https://prater.launchpad.ethereum.org/en/overview) and [mainnet](https://launchpad.ethereum.org/en/).
@@ -283,12 +286,11 @@ This will produce the following output:
 
 When you see `"is_syncing":false`, your beacon node is fully synchronized with the beacon chain. When you see `"is_optimistic":false`, your execution node is fully synchronized with the execution-layer blockchain. 
 
+```
+TODO: is_optimistic is not yet implemented -> https://github.com/prysmaticlabs/prysm/pull/10692 
 
-:::info
-
-`is_optimistic` is currently not emitted by the latest stable release of Prysm, but this will soon be available.
-
-:::
+TODO: `Checking DB database-path=C:\Users\newuser\AppData\Local\Eth2\beaconchaindata` <- how to configure this directory?
+```
 
 
 :::tip Congratulations!
@@ -519,4 +521,4 @@ TODO: explain in context of this guide -->
 <strong id='footnote-12'>12.</strong> Your execution client needs to download the entire blockchain - every block that's been produced after the genesis block.  <br />
 <strong id='footnote-13'>13.</strong> Your keystore file contains your public key and your private key encrypted with a password. To learn more about how keystores work, see <a href='https://julien-maffre.medium.com/what-is-an-ethereum-keystore-file-86c8c5917b97'>What is an Ethereum keystore</a>. <br />
 <strong id='footnote-14'>14</strong>. BitMex recently posted research that provides hard numbers on penalties and rewards: <a href='https://blog.bitmex.com/ethereums-proof-of-stake-system-calculating-penalties-rewards/'>Ethereum's Proof of Stake System - Calculating Penalties and Rewards</a>. Collin Myers has also created an <a href='https://docs.google.com/spreadsheets/d/15tmPOvOgi3wKxJw7KQJKoUe-uonbYR6HF7u83LR5Mj4/edit#gid=1018097491'>Ethereum calculator</a>. <br />
-<strong id='footnote-15'>15</strong>. See Configure Monitoring and Alerts (TODO). <br />
+<strong id='footnote-15'>15</strong>. See Configure Monitoring and Alerts (TODO). <br /> 
