@@ -19,7 +19,7 @@
             "type": "category",
             "collapsed": true,
             "collapsible": true,
-            "label": "Installation Guide",
+            "label": "Advanced Installation Guides",
             "items": [
                 {
                     "type": "doc",
