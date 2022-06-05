@@ -77,7 +77,7 @@ You need two different pieces of software to run an Ethereum node: an **executio
 
 Validators connect to beacon nodes, and beacon nodes connect to execution nodes:
 
-<img style={{width: 100 + '%', maxWidth: 400 + 'px'}} src="./img/client-stack.png"></img>
+<img style={{width: 100 + '%', maxWidth: 400 + 'px'}} src="img/client-stack.png" /> 
 
 In this guide, your beacon node will connect to your execution node using authenticated HTTP. A secret **JWT token** is needed to form this connection. Let's download Prysm and create that token.
 
@@ -109,7 +109,7 @@ reg add HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1
 ```
 
   <p>This will download the Prysm client and update your registry to enable verbose logging. Use the following command to create your secret JWT token:</p>
-  <pre><code>prysm.bat beacon-chain jwt generate-jwt-secret</code></pre>
+  <pre><code>prysm.bat beacon-chain jwt generate-auth-secret</code></pre>
   <p>Prysm will then output a <code>secret.jwt</code> file path. Record this - we'll use it in the next step.</p>
   </TabItem>
   <TabItem value="others">
