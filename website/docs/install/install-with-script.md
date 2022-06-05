@@ -74,7 +74,7 @@ If you don't have 32 ETH to stake, <a href='https://ethereum.org/en/staking/pool
 
 ## Step 3: Generate secret
 
-You need two different pieces of software to run an Ethereum node: an **execution-layer client** and a **consensus-layer client**. Execution client software contains code that allows nodes to process transactions. Examples of execution client software include Nethermind, Besu, and Geth. Prysm is a consensus-layer client that, like other consensus-layer clients, contains code for both **beacon node** and **validator** responsibilities. 
+You need two different pieces of software to run an Ethereum node: an **execution-layer client** and a **consensus-layer client**. Execution client software contains code that allows nodes to process transactions. Examples of execution client software include Nethermind, Besu, and Geth. Prysm is a consensus-layer client that contains code for both **beacon node** and **validator** responsibilities.
 
 Validators connect to beacon nodes, and beacon nodes connect to execution nodes:
 
