@@ -78,7 +78,9 @@ You need two different pieces of software to run an Ethereum node: an **executio
 
 Validators connect to beacon nodes, and beacon nodes connect to execution nodes:
 
-<img style={{width: 100 + '%', margin: auto, maxWidth: 379 + 'px'}} src={ClientStackPng} /> 
+<img style={{width: 100 + '%', margin: auto, maxWidth: 581 + 'px'}} src={ClientStackPng} /> 
+
+<br>
 
 In this guide, your beacon node will connect to your execution node using authenticated HTTP. A secret **JWT token** is needed to form this connection. Let's download Prysm and create that token.
 
