@@ -372,4 +372,4 @@ For running an advanced wallet setups, our documentation includes comprehensive 
 
 **Congratulations, you are now fully participating in eth2**
 
-**Still have questions?**  Stop by our [Discord](https://discord.gg/KSA7rPr) for further assistance!
+**Still have questions?**  Stop by our [Discord](https://discord.gg/prysmaticlabs) for further assistance!

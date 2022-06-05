@@ -196,9 +196,9 @@ Yes this is possible however we recommend against it. We recommend you deposit a
 
 #### Can I add more validators after I am already running one with Prysm?
 
-Adding new validators to your already-running Prysm instance is quite simple! Go through the launchpad process again, generate a new deposit keystore using the Ethereum validator deposit cli, then run the `validator accounts import` command again as you used when you added your first validator key. You can then confirm your validator was added by running `validator accounts list`. Let us know on [discord](https://discord.gg/prysmaticlabs) if you still have issues.
+Adding new validators to your already-running Prysm instance is quite simple! Go through the launchpad process again, generate a new deposit keystore using the Ethereum validator deposit cli, then run the `validator accounts import` command again as you used when you added your first validator key. Note that **you don't need to create a new mnemonic** when you do this. **Restart the validator client** after importing the new keystore for the changes to take effect.
 
-Please note you will need to **restart the validator client** after importing the new one for the changes to take effect.
+You can then confirm your validator was added by running `validator accounts list`. Let us know on [discord](https://discord.gg/prysmaticlabs) if you still have issues.
 
 ### Ethereum proof-of-stake specific questions
 

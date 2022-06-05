@@ -66,7 +66,6 @@ A fee recipient address can be configured on your client instance by using one o
     <td>
     Sets the local file location for the fee recipient JSON configuration. <br /> <br /> 
     <strong>Example</strong>: <code>--fee-recipient-config-file=./fee_recipient_config.json</code> <br /> <br /> 
-    <strong>Note</strong>: This setting overrides the two config options below. If you set this, the config options will be ignored.
     </td>
   </tr>
   <tr>
@@ -82,7 +81,7 @@ A fee recipient address can be configured on your client instance by using one o
 <br />
 
 
-An example invocation: `./prysm.sh validator --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9`. 
+An example invocation: `./prysm.sh validator --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9`.
 
 If you don't see any errors after issuing one of the above commands, your fee recipient address has been successfully configured.
 
@@ -122,16 +121,18 @@ The above JSON demonstrates configuring two 1:1 mappings between `validator publ
     <td><code>proposer_config</code></td>
     <td>
     Optional. Your validator client instance’s public key. <br /> <br /> 
-    <strong>Type:</strong> Validator public key. 98 characters long.<br /> <br /> 
+    <strong>Type:</strong> Validator public key. 98 characters long hexstring.<br /> <br /> 
     <strong>Note:</strong> Use this to map a single validator instance public key to a single fee recipient ETH address.
+    <strong>Example:</strong> "0x01234567155ad77931185101128655c0191bd0214c201ca48ed887f6c4c6adf334070efcd75140eada5ac83a92506dd7a"<br /> <br /> 
     </td>
   </tr>
   <tr>
     <td><code>proposer_config.fee_recipient</code></td>
     <td>
     Optional. Required if validator instance public key is provided via <code>proposer_config</code>.  <br /> <br /> 
-    <strong>Type:</strong> ETH address. 42 characters long. <br /> <br /> 
+    <strong>Type:</strong> ETH address. 42 characters long hexstring. <br /> <br /> 
     <strong>Note:</strong> Use this to map a single validator key to a single ETH fee recipient address.
+    <strong>Example:</strong> "0x012345670FCE8a85ec7055A5F8b2bE214B3DaeFd3"<br /> <br /> 
     </td>
   </tr>
   <tr>
@@ -144,8 +145,9 @@ The above JSON demonstrates configuring two 1:1 mappings between `validator publ
     <td><code>default_config.fee_recipient</code></td>
     <td>
     Required.<br /> <br /> 
-    <strong>Type:</strong> ETH address. 42 characters long. <br /> <br /> 
+    <strong>Type:</strong> ETH address. 42 characters long hexstring. <br /> <br /> 
     <strong>Note:</strong> This sets the default ETH address for all remaining validator public keys that don’t have 1:1 mapping already from the <code>proposer_config</code> member.
+    <strong>Example:</strong> "0x012345670FCE8a85ec7055A5F8b2bE214B3DaeFd3"<br /> <br /> 
     </td>
   </tr>
 </table>
