@@ -99,7 +99,7 @@ First, create a folder called `ethereum` on your SSD [<a href='#footnote-9'>9</a
 
 :::info
 
-This is a **vNext** guide that requires you to [build from source](install-with-bazel.md) from the [develop](https://github.com/prysmaticlabs/prysm) branch.
+This is a **vNext** guide that requires you to [build from source](install-with-bazel.md) using Prysm's [develop](https://github.com/prysmaticlabs/prysm) branch.
 
 :::
 
