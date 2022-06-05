@@ -4,12 +4,10 @@ title: Installing Prysm with Docker
 sidebar_label: Using Docker
 ---
 
-Prysm can be installed on Windows, GNU/Linux, MacOS systems with Docker. This page includes instructions for performing this method.
-
-![Prysm Docker Setup](/img/prysm-basic-docker-setup.png)
+Prysm can be installed on Windows, GNU/Linux, and MacOS systems with Docker.
 
 :::tip Pro-Tip
-The Prysm installation script is the easiest and most efficient way of installing. Docker is mostly for advanced users. Instructions for using it can be found [here](/docs/install/install-with-script).
+The [Prysm Quickstart](/docs/install/install-with-script) is the easiest way to install Prysm. Docker is for advanced users.
 :::
 
 **Have questions?** Stop by the [#documentation](https://discord.gg/prysmaticlabs) channel on Discord and let us know.
