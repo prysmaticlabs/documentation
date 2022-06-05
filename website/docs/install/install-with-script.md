@@ -6,6 +6,7 @@ sidebar_label: Quickstart
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import ClientStackPng from '@site/static/img/client-stack.png';
 
 
 Prysm is an implementation of the [Ethereum proof-of-stake consensus specification](https://github.com/ethereum/consensus-specs) [<a href='#footnote-1'>1</a>]. In this guide, you’ll use Prysm to run an Ethereum node [<a href='#footnote-2'>2</a>] and optionally a validator [<a href='#footnote-3'>3</a>]. This will let you stake 32 ETH using hardware that you manage [<a href='#footnote-4'>4</a>].
@@ -77,7 +78,7 @@ You need two different pieces of software to run an Ethereum node: an **executio
 
 Validators connect to beacon nodes, and beacon nodes connect to execution nodes:
 
-<img style={{width: 100 + '%', maxWidth: 400 + 'px'}} src="img/client-stack.png" /> 
+<img style={{width: 100 + '%', maxWidth: 400 + 'px'}} src={ClientStackPng} /> 
 
 In this guide, your beacon node will connect to your execution node using authenticated HTTP. A secret **JWT token** is needed to form this connection. Let's download Prysm and create that token.
 
