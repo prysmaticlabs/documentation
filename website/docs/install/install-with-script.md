@@ -89,6 +89,12 @@ First, create a folder called `ethereum` on your SSD [<a href='#footnote-9'>9</a
 ┣ 📂execution
 ```
 
+:::info
+
+This is a **vNext** guide that requires you to [build from source](install-with-bazel.md) from the [develop](https://github.com/prysmaticlabs/prysm) branch.
+
+:::
+
 <Tabs groupId="network" defaultValue="others" values={[
     {label: 'Windows', value: 'win'},
     {label: 'Linux, MacOS, Arm64', value: 'others'}
@@ -129,6 +135,7 @@ curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --out
 :::info
 
 If you'd like to run your execution client on the **Ropsten** execution-layer test network, replace `goerli` with `ropsten` in the Testnet guidance below. This is required if you'd like to run a beacon node on the **Ropsten** consensus-layer test network, commonly referred to as **Bopsten**.
+
 :::
 
 In this step, you'll install an execution-layer client that Prysm's beacon node will connect to [<a href='#footnote-2'>2</a>].
