@@ -81,7 +81,7 @@ Validators connect to beacon nodes, and beacon nodes connect to execution nodes:
 <br />
 
 
-<img style={{width: 100 + '%', margin: auto, display: block, maxWidth: 581 + 'px'}} src={ClientStackPng} /> 
+<img style={{width: 100 + '%', margin: 'auto', display: 'block', maxWidth: 581 + 'px'}} src={ClientStackPng} /> 
 
 
 <br />
