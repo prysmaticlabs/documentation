@@ -207,6 +207,11 @@ In this step, you'll install an execution-layer client that Prysm's beacon node 
 ]}>
 
   <TabItem value="nethermind">
+:::info vNext Caveats
+
+TEMPORARY: If you'd like to run Nethermind on the **Ropsten** execution-layer test network, use Nethermind's <a href='https://github.com/NethermindEth/nethermind/tree/kiln'>Kiln branch</a>.
+
+:::
     <p>Download the latest stable release of Nethermind for your operating system from the <a href='https://downloads.nethermind.io/'>Nethermind downloads page</a>. Extract the contents into your <code>execution</code> folder. Run the following command to start your execution node using your secret JWT file:</p>
     <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
@@ -215,35 +220,20 @@ In this step, you'll install an execution-layer client that Prysm's beacon node 
     ]}>
       <TabItem value="mainnet">
         <pre><code>Nethermind.Runner --config mainnet --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.JwtSecretFile=../consensus/jwt.hex</code></pre>
-        <ul>
-          <li><code>--config mainnet</code> connects to Mainnet.</li>
-          <li><code>--JsonRpc.Enabled true</code> exposes an http endpoint that your beacon node can later connect to.</li>
-          <li><code>--HealthChecks.Enabled true</code> exposes an http endpoint that you can use to query the health of your Nethermind node.</li>
-          <li><code>--HealthChecks.UIEnabled true</code> exposes a friendly UI that you can use to inspect the health of your Nethermind node.</li>
-          <li><code>--JsonRpc.JwtSecretFile=../consensus/jwt.hex</code> points to the <code>jwt.hex</code> we created in Step 3.</li>
-        </ul>
       </TabItem>
       <TabItem value="goerli-prater">
         <pre><code>Nethermind.Runner --config goerli --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.JwtSecretFile=../consensus/jwt.hex</code></pre>
-        <ul>
-          <li><code>--config goerli</code> connects to the Goerli execution-layer testnet.</li>
-          <li><code>--JsonRpc.Enabled true</code> exposes an http endpoint that your beacon node can later connect to.</li>
-          <li><code>--HealthChecks.Enabled true</code> exposes an http endpoint that you can use to query the health of your Nethermind node.</li>
-          <li><code>--HealthChecks.UIEnabled true</code> exposes a friendly UI that you can use to inspect the health of your Nethermind node.</li>
-          <li><code>--JsonRpc.JwtSecretFile=../consensus/jwt.hex</code> points to the <code>jwt.hex</code> we created in Step 3.</li>
-        </ul>
       </TabItem>
       <TabItem value="ropsten">
-        <pre><code>Nethermind.Runner --config ropsten --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.JwtSecretFile=../consensus/jwt.hex</code></pre>
-        <ul>
-          <li><code>--config ropsten</code> connects to the Ropsten execution-layer testnet.</li>
-          <li><code>--JsonRpc.Enabled true</code> exposes an http endpoint that your beacon node can later connect to.</li>
-          <li><code>--HealthChecks.Enabled true</code> exposes an http endpoint that you can use to query the health of your Nethermind node.</li>
-          <li><code>--HealthChecks.UIEnabled true</code> exposes a friendly UI that you can use to inspect the health of your Nethermind node.</li>
-          <li><code>--JsonRpc.JwtSecretFile=../consensus/jwt.hex</code> points to the <code>jwt.hex</code> we created in Step 3.</li>
-        </ul>
+:::info
+
+Ropsten is currently being used to test The Merge, which is why this tab's commands are different.
+
+:::
+        <pre><code>Nethermind.Runner --config ropsten --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.JwtSecretFile=../consensus/jwt.hex --JsonRpc.Host=0.0.0.0 --Merge.TerminalTotalDifficulty 50000000000000000</code></pre>
       </TabItem>
     </Tabs>
+    <p>See Nethermind's <a href='https://docs.nethermind.io/nethermind/ethereum-client/configuration'>command-line options</a> for parameter definitions.</p>
     <p>Your Nethermind execution node will begin syncing. This can take a long time - from hours to days. You can <a href='https://docs.nethermind.io/nethermind/ethereum-client/monitoring-node-health'>check your Nethermind execution node's sync status</a> by navigating to <a href='http://localhost:8545/healthchecks-ui'><code>http://localhost:8545/healthchecks-ui</code></a> or by running the following command from a separate terminal window:</p>
 
 ```
@@ -261,29 +251,20 @@ curl localhost:8545/health
     ]}>
       <TabItem value="mainnet">
         <pre><code>besu --network=mainnet --rpc-http-enabled --engine-jwt-enabled=true --engine-jwt-secret=../consensus/jwt.hex</code></pre>
-        <ul>
-          <li><code>--network=mainnet</code> connects to Mainnet.</li>
-          <li><code>--rpc-http-enabled</code> exposes an http endpoint that your beacon node can later connect to.</li>
-          <li><code>--engine-jwt-enabled=true --engine-jwt-secret=../consensus/jwt.hex</code> enables JWT and points to the <code>jwt.hex</code> we created in Step 3.</li>
-        </ul>
       </TabItem>
       <TabItem value="goerli-prater">
         <pre><code>besu --network=goerli --rpc-http-enabled --engine-jwt-enabled=true --engine-jwt-secret=../consensus/jwt.hex</code></pre>
-        <ul>
-          <li><code>--network=goerli</code> connects to the Goerli execution-layer testnet.</li>
-          <li><code>--rpc-http-enabled</code> exposes an http endpoint that your beacon node can later connect to.</li>
-          <li><code>--engine-jwt-enabled=true --engine-jwt-secret=../consensus/jwt.hex</code> enables JWT and points to the <code>jwt.hex</code> we created in Step 3.</li>
-        </ul>
       </TabItem>
       <TabItem value="ropsten">
-        <pre><code>besu --network=ropsten --rpc-http-enabled --engine-jwt-enabled=true --engine-jwt-secret=../consensus/jwt.hex</code></pre>
-        <ul>
-          <li><code>--network=ropsten</code> connects to the Ropsten execution-layer testnet.</li>
-          <li><code>--rpc-http-enabled</code> exposes an http endpoint that your beacon node can later connect to.</li>
-          <li><code>--engine-jwt-enabled=true --engine-jwt-secret=../consensus/jwt.hex</code> enables JWT and points to the <code>jwt.hex</code> we created in Step 3.</li>
-        </ul>
+:::info
+
+Ropsten is currently being used to test The Merge, which is why this tab's commands are different.
+
+:::
+        <pre><code>besu --network=ropsten --rpc-http-enabled --engine-jwt-enabled=true --engine-jwt-secret=../consensus/jwt.hex --sync-mode="X_SNAP" --Xmerge-support=true --engine-rpc-enabled=true --engine-host-allowlist="*" --override-genesis-config="terminalTotalDifficulty=50000000000000000"  </code></pre>
       </TabItem>
     </Tabs>
+    <p>See Besu's <a href='https://besu.hyperledger.org/en/stable/Reference/CLI/CLI-Syntax/'>command-line options</a> for parameter definitions.</p>
     <p>Your Besu execution node will begin syncing. You can <a href='https://besu.hyperledger.org/en/stable/Reference/API-Methods/#eth_syncing'>check your Besu execution node's sync status</a> by running the following command from a separate terminal window:</p>
 
 ```
@@ -304,31 +285,21 @@ curl -H "Content-Type: application/json" -X POST http://localhost:8545 -d "{""js
     ]}>
       <TabItem value="mainnet">
         <pre><code>geth --http --authrpc.jwtsecret=../consensus/jwt.hex --datadir .</code></pre>
-        <ul>
-          <li><code>--http</code> exposes an http endpoint that your beacon node can later connect to.</li>
-          <li><code>--datadir .</code> specifies the current directory (<code>execution</code>) as the location for the execution layer database.</li>
-          <li><code>--authrpc.jwtsecret=../consensus/jwt.hex</code> points to the <code>jwt.hex</code> we created in Step 3.</li>
-        </ul>
       </TabItem>
       <TabItem value="goerli-prater">
         <pre><code>geth --goerli --http --authrpc.jwtsecret=../consensus/jwt.hex --datadir .</code></pre>
-        <ul>
-          <li><code>--goerli</code> connects to the Goerli execution-layer testnet.</li>
-          <li><code>--http</code> exposes an http endpoint that your beacon node can later connect to.</li>
-          <li><code>--datadir .</code> specifies the current directory (<code>execution</code>) as the location for the execution layer database.</li>
-          <li><code>--authrpc.jwtsecret=../consensus/jwt.hex</code> points to the <code>jwt.hex</code> we created in Step 3.</li>
-        </ul>
       </TabItem>
       <TabItem value="ropsten">
-        <pre><code>geth --ropsten --http --authrpc.jwtsecret=../consensus/jwt.hex --datadir .</code></pre>
-        <ul>
-          <li><code>--ropsten</code> connects to the Ropsten execution-layer testnet.</li>
-          <li><code>--http</code> exposes an http endpoint that your beacon node can later connect to.</li>
-          <li><code>--datadir .</code> specifies the current directory (<code>execution</code>) as the location for the execution layer database.</li>
-          <li><code>--authrpc.jwtsecret=../consensus/jwt.hex</code> points to the <code>jwt.hex</code> we created in Step 3.</li>
-        </ul>
+
+:::info
+
+Ropsten is currently being used to test The Merge, which is why this tab's commands are different.
+
+:::
+        <pre><code>geth --ropsten --http --authrpc.jwtsecret=../consensus/jwt.hex --datadir . --authrpc.addr localhost --authrpc.port 8551 --authrpc.vhosts localhost --http.api eth,net,engine --override.terminaltotaldifficulty 50000000000000000</code></pre>
       </TabItem>
     </Tabs>
+    <p>See Geth's <a href='https://geth.ethereum.org/docs/interface/command-line-options'>command-line options</a> for parameter definitions.</p>
     <p>Your Geth execution node will begin syncing. You can check your Geth execution node's sync status by running the following commands from a separate terminal window:</p>
 
 ```
@@ -368,7 +339,7 @@ Congratulations - you’re now running an <strong>execution node</strong> in Eth
       </TabItem>
       <TabItem value="ropsten">
         <p>Download the <a href='https://github.com/eth-clients/merge-testnets/blob/main/ropsten-beacon-chain/genesis.ssz'>Ropsten genesis state from Github</a> into your <code>consensus/prysm</code> directory. Then use the following command to start a beacon node that connects to your local execution node using your secret JWT file:</p>
-        <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8545 --jwt-secret=jwt.hex --ropsten --genesis-state=genesis.ssz</code></pre>
+        <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8551 --jwt-secret=jwt.hex --ropsten --genesis-state=genesis.ssz</code></pre>
       </TabItem>
   </Tabs>
   </TabItem>
@@ -399,7 +370,7 @@ curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --out
     </TabItem>
     <TabItem value="ropsten">
       <p>Download the Ropsten genesis state from GitHub into your <code>consensus</code> directory. Then use the following command to start a beacon node that connects to your local execution node:</p>
-      <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8545 --prater --genesis-state=../genesis.ssz</code></pre>
+      <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8551 --prater --genesis-state=../genesis.ssz</code></pre>
     </TabItem>
   </Tabs>
   </TabItem>
