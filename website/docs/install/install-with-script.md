@@ -23,20 +23,20 @@ Ethereum and its terminology are rapidly evolving, so it's important to align on
         <th>Description</th>
     </tr>
     <tr>
-      <td>Ethereum</td>
-      <td>An Ethereum node is an <strong>execution node</strong> and <strong>beacon node</strong> working together. We commonly refer to Ethereum nodes as just "nodes". Ethereum nodes communicate peer-to-peer to secure the Ethereum network, and require both <strong>execution-layer client software</strong> and <strong>consensus-layer client software</strong>.</td>
+      <td><strong>Ethereum node<strong><br />"Node"</td>
+      <td>An Ethereum node is an <strong>execution node</strong> and <strong>beacon node</strong> working together. Ethereum nodes communicate peer-to-peer to secure the Ethereum network, and require both <strong>execution-layer client software</strong> and <strong>consensus-layer client software</strong>.</td>
     </tr> 
     <tr>
-      <td>Execution</td>
+      <td><strong>Execution node</strong></td>
       <td>Execution nodes use execution client software to process transactions and smart contracts in Ethereum's execution layer. Examples of execution client software include Nethermind, Besu, and Geth. Execution nodes connect to each other, and to beacon nodes.</td>
     </tr>
     <tr>
-      <td>Beacon</td>
+      <td><strong>Beacon node</strong></td>
       <td>Beacon nodes use beacon node client software to coordinate Ethereum's proof-of-stake consensus mechanism in Ethereum's consensus layer. Prysm, Teku, Lighthouse, and Nimbus are examples of consensus-layer clients that contain both beacon node and validator node client software. Beacon nodes connect to each other, to execution nodes, and to validator nodes.</td>
     </tr>
     <tr>
-      <td>Validator</td>
-      <td>Validator nodes let people stake 32 ETH as collateral within Ethereum's consensus layer. We commonly refer to validator nodes as just "validators". Validator nodes are responsible for proposing blocks within Ethereum's proof-of-stake consensus mechanism, and will fully replace miners after The Merge. Validator nodes connect to each other, and to beacon nodes.</td>
+      <td><strong>Validator node</strong><br/> "Validator"</td>
+      <td>Validator nodes let people stake 32 ETH as collateral within Ethereum's consensus layer. Validator nodes are responsible for proposing blocks within Ethereum's proof-of-stake consensus mechanism, and will fully replace proof-of-stake miners after The Merge. Validator nodes connect to each other, and to beacon nodes.</td>
     </tr>
 </table>
 
