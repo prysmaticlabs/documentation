@@ -154,7 +154,7 @@ First, create a folder called `ethereum` on your SSD <a class='footnote' href='#
 
 :::info
 
-This is a **vNext** guide that requires you to [build from source](install-with-bazel.md) using Prysm's [develop](https://github.com/prysmaticlabs/prysm) branch.
+This is a **vNext** guide that requires you to [build from source](install-with-bazel.md) using Prysm's [develop](https://github.com/prysmaticlabs/prysm) branch. If you'd like to run your beacon node on the **Ropsten** consensus-layer test network, use <a href='https://github.com/prysmaticlabs/prysm/releases/v2.1.3-rc.2'>Prysm v2.1.3-rc.2</a>
 
 :::
 
@@ -196,12 +196,6 @@ curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --out
 
 ## Step 5: Run an execution client
 
-:::info
-
-If you'd like to run your execution client on the **Ropsten** execution-layer test network, replace `goerli` with `ropsten` in the Testnet guidance below. This is required if you'd like to run a beacon node on the **Ropsten** consensus-layer test network.
-
-:::
-
 In this step, you'll install an execution-layer client that Prysm's beacon node will connect to <a class='footnote' href='#footnote-2'>[2]</a>.
 
 <Tabs groupId="execution-clients" defaultValue="nethermind" values={[
@@ -238,9 +232,9 @@ In this step, you'll install an execution-layer client that Prysm's beacon node 
         </ul>
       </TabItem>
       <TabItem value="ropsten">
-        <pre><code>Nethermind.Runner --config goerli --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.JwtSecretFile=../consensus/jwt.hex</code></pre>
+        <pre><code>Nethermind.Runner --config ropsten --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.JwtSecretFile=../consensus/jwt.hex</code></pre>
         <ul>
-          <li><code>--config goerli</code> connects to the Goerli execution-layer testnet.</li>
+          <li><code>--config ropsten</code> connects to the Ropsten execution-layer testnet.</li>
           <li><code>--JsonRpc.Enabled true</code> exposes an http endpoint that your beacon node can later connect to.</li>
           <li><code>--HealthChecks.Enabled true</code> exposes an http endpoint that you can use to query the health of your Nethermind node.</li>
           <li><code>--HealthChecks.UIEnabled true</code> exposes a friendly UI that you can use to inspect the health of your Nethermind node.</li>
@@ -280,9 +274,9 @@ curl localhost:8545/health
         </ul>
       </TabItem>
       <TabItem value="ropsten">
-        <pre><code>besu --network=goerli --rpc-http-enabled --engine-jwt-enabled=true --engine-jwt-secret=../consensus/jwt.hex</code></pre>
+        <pre><code>besu --network=ropsten --rpc-http-enabled --engine-jwt-enabled=true --engine-jwt-secret=../consensus/jwt.hex</code></pre>
         <ul>
-          <li><code>--network=goerli</code> connects to the Goerli execution-layer testnet.</li>
+          <li><code>--network=ropsten</code> connects to the Ropsten execution-layer testnet.</li>
           <li><code>--rpc-http-enabled</code> exposes an http endpoint that your beacon node can later connect to.</li>
           <li><code>--engine-jwt-enabled=true --engine-jwt-secret=../consensus/jwt.hex</code> enables JWT and points to the <code>jwt.hex</code> we created in Step 3.</li>
         </ul>
@@ -324,9 +318,9 @@ curl -H "Content-Type: application/json" -X POST http://localhost:8545 -d "{""js
         </ul>
       </TabItem>
       <TabItem value="ropsten">
-        <pre><code>geth --goerli --http --authrpc.jwtsecret=../consensus/jwt.hex --datadir .</code></pre>
+        <pre><code>geth --ropsten --http --authrpc.jwtsecret=../consensus/jwt.hex --datadir .</code></pre>
         <ul>
-          <li><code>--goerli</code> connects to the Goerli execution-layer testnet.</li>
+          <li><code>--ropsten</code> connects to the Ropsten execution-layer testnet.</li>
           <li><code>--http</code> exposes an http endpoint that your beacon node can later connect to.</li>
           <li><code>--datadir .</code> specifies the current directory (<code>execution</code>) as the location for the execution layer database.</li>
           <li><code>--authrpc.jwtsecret=../consensus/jwt.hex</code> points to the <code>jwt.hex</code> we created in Step 3.</li>
@@ -350,12 +344,6 @@ Congratulations - you’re now running an <strong>execution node</strong> in Eth
 
 ## Step 6: Run a beacon node using Prysm
 
-:::info
-
-If you'd like to run your beacon node on the **Ropsten** consensus-layer test network, use <a href='https://github.com/prysmaticlabs/prysm/releases/v2.1.3-rc.2'>Prysm v2.1.3-rc.2</a>, replace `prater` with `ropsten` in the Testnet guidance below, and use the <a href='https://github.com/eth-clients/merge-testnets/blob/main/ropsten-beacon-chain/genesis.ssz'>Ropsten genesis state</a> instead of the Prater genesis state.
-
-:::
-
 
 <Tabs groupId="os" defaultValue="others" values={[
     {label: 'Windows', value: 'win'},
@@ -373,11 +361,11 @@ If you'd like to run your beacon node on the **Ropsten** consensus-layer test ne
         <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8545 --jwt-secret=jwt.hex</code></pre>
       </TabItem>
       <TabItem value="goerli-prater">
-        <p>Download the <a href='https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz'>genesis state from Github</a> into your <code>consensus/prysm</code> directory. Then use the following command to start a beacon node that connects to your local execution node using your secret JWT file:</p>
+        <p>Download the <a href='https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz'>Prater genesis state from Github</a> into your <code>consensus/prysm</code> directory. Then use the following command to start a beacon node that connects to your local execution node using your secret JWT file:</p>
         <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8545 --jwt-secret=E:\PRY\prysm\jwt.hex --prater --genesis-state=genesis.ssz</code></pre>
       </TabItem>
       <TabItem value="ropsten">
-        <p>Download the <a href='https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz'>genesis state from Github</a> into your <code>consensus/prysm</code> directory. Then use the following command to start a beacon node that connects to your local execution node using your secret JWT file:</p>
+        <p>Download the <a href='https://github.com/eth-clients/merge-testnets/blob/main/ropsten-beacon-chain/genesis.ssz'>Ropsten genesis state from Github</a> into your <code>consensus/prysm</code> directory. Then use the following command to start a beacon node that connects to your local execution node using your secret JWT file:</p>
         <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8545 --jwt-secret=E:\PRY\prysm\jwt.hex --prater --genesis-state=genesis.ssz</code></pre>
       </TabItem>
   </Tabs>
@@ -404,11 +392,11 @@ curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --out
       <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8545</code></pre>
     </TabItem>
     <TabItem value="goerli-prater">
-      <p>Download the genesis state from github into your <code>consensus</code> directory. Then use the following command to start a beacon node that connects to your local execution node:</p>
+      <p>Download the Prater genesis state from GitHub into your <code>consensus</code> directory. Then use the following command to start a beacon node that connects to your local execution node:</p>
       <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8545 --prater --genesis-state=../genesis.ssz</code></pre>
     </TabItem>
     <TabItem value="ropsten">
-      <p>Download the genesis state from github into your <code>consensus</code> directory. Then use the following command to start a beacon node that connects to your local execution node:</p>
+      <p>Download the Ropsten genesis state from GitHub into your <code>consensus</code> directory. Then use the following command to start a beacon node that connects to your local execution node:</p>
       <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8545 --prater --genesis-state=../genesis.ssz</code></pre>
     </TabItem>
   </Tabs>
@@ -620,8 +608,8 @@ You’re now running a <strong>full Ethereum node</strong> and a <strong>validat
 It can a long time (from days to months) for your validator to become fully activated. To learn more about the validator activation process, see [Deposit Process](https://kb.beaconcha.in/ethereum-2.0-depositing). You can paste your validator's public key (available in your `deposit_data-*.json` file) into a blockchain explorer to check the status of your validator:
 
  - [Beaconcha.in (Mainnet)](https://beaconcha.in) 
- - [Beaconchai.in (Prater)](https://prater.beaconcha.in/)
- - [Beaconchai.in (Ropsten)](https://ropsten.beaconcha.in/)
+ - [Beaconcha.in (Prater)](https://prater.beaconcha.in/)
+ - [Beaconcha.in (Ropsten)](https://ropsten.beaconcha.in/)
 
 In the meantime, you should leave your **execution client**, **beacon node**, and **validator client** terminal windows open and running. Once your validator is activated, it will automatically begin proposing and validating blocks.
 
@@ -635,8 +623,42 @@ The Beginner's Introduction to Prysm uses diagrams to help you visualize Ethereu
 Keeping all of your client software on a single machine keeps things simple, which aligns with our [security best practices](../security-best-practices.md).
 
 
+
 **Do I need to configure my firewall?** <br />
 We recommend **closing** TCP port `8545` to the internet and keeping TCP and UDP ports `30303` **open** to support other execution nodes <a href='#footnote-8'>[8]</a>.
+
+
+**Can you mix and match networks between execution layer and consensus layer?** <br />
+The combinations marked with a ✔️ are possible (EL up top, CL down the side):
+
+<table>
+  <tr>
+    <td>&nbsp;</td>
+    <td>Mainnet</td>
+    <td>Goerli</td>
+    <td>Ropsten</td>
+  </tr>
+  <tr>
+    <td>Mainnet</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td>Goerli</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td>Ropsten</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+</table>
+
+
 
 <!-- **I'm new to Ethereum, and I'm a visual learner. Can you show me how these things work? How much disk space does each node type require?** <br />
 The Beginner's Introduction to Prysm uses diagrams to help you visualize Ethereum's architecture, and Prysm's too. (TODO) -->
