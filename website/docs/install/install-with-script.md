@@ -49,7 +49,7 @@ Ethereum and its terminology are rapidly evolving, so it's important to align on
 
 <br /><br />
 
-When people refer to Ethereum, they're usually referring to Ethereum Mainnet, which refers to a pair of networks: execution-layer (EL) Mainnet and consensus-layer (CL) Mainnet (commonly referred to as the Beacon Chain). Test networks are available in both network layers. <strong>Every EL network has a corresponding partner CL network</strong>. In this quickstart, you'll learn how to run a node + validator on the following network pairs:
+<strong>Test networks</strong> are available in both the execution layer (EL) and consensus layer (CL). <strong>Every EL network has a corresponding partner CL network</strong>. In this quickstart, you'll learn how to run a node + validator on the following network pairs:
 
 <table>
     <tr>
@@ -60,7 +60,7 @@ When people refer to Ethereum, they're usually referring to Ethereum Mainnet, wh
     <tr>
       <td>Mainnet</td>
       <td>Mainnet</td>
-      <td>TODO</td>
+      <td>When people refer to Ethereum, they're usually referring to Ethereum Mainnet, which refers to a pair of networks: execution-layer (EL) Mainnet and consensus-layer (CL) Mainnet (commonly referred to as the Beacon Chain).</td>
     </tr> 
     <tr>
       <td>Goerli</td>
