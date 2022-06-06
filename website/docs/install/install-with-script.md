@@ -15,7 +15,7 @@ This is a beginner-friendly guide. Familiarity with the command line is expected
 
 ## Step 1: Familiarize yourself with nodes and networks
 
-Ethereum and its terminology is rapidly evolving. It's important to align on node type definitions before proceeding:
+Ethereum and its terminology are rapidly evolving, so it's important to align on some terminology definitions before proceeding:
 
 <table>
     <tr>
@@ -49,8 +49,7 @@ Ethereum and its terminology is rapidly evolving. It's important to align on nod
 
 <br />
 
-Execution-layer clients run on execution-layer (EL) networks, while consensus-layer clients run on consensus-layer (CL) networks. Every execution-layer network has a corresponding consensus-layer network. This guide tells you how to run a node + validator on the following network pairs:
-
+Execution-layer clients run on execution-layer (EL) networks, while consensus-layer clients run on consensus-layer (CL) networks. Every execution-layer network has a corresponding consensus-layer network. In this quickstart, you'll learn how to run a node + validator on the following network pairs:
 
 <table>
     <tr>
