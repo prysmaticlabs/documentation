@@ -640,7 +640,7 @@ TODO: explain in context of this guide -->
 
 <br /><br />
 
-<strong>Test networks</strong> are available in both the execution layer (EL) and consensus layer (CL). Every EL network has a corresponding partner CL network. In this quickstart, you'll learn how to run a node + validator on the following network pairs:
+<strong>Test networks</strong> are available in both the execution layer (EL) and consensus layer (CL). Every EL network has a corresponding partner CL network. This quickstart shows you how to run a node + validator on the following network pairs:
 
 <br /><br />
 
