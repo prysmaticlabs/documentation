@@ -185,7 +185,7 @@ TEMPORARY: If you'd like to run Nethermind on the **Ropsten** execution-layer te
     <p>Your Nethermind execution node will begin syncing. This can take a long time - from hours to days. You can <a href='https://docs.nethermind.io/nethermind/ethereum-client/monitoring-node-health'>check your Nethermind execution node's sync status</a> by navigating to <a href='http://localhost:8545/healthchecks-ui'><code>http://localhost:8545/healthchecks-ui</code></a> or by running the following command from a separate terminal window:</p>
 
 ```
-curl localhost:8545/health
+curl localhost:8545/health 
 ```
 
   <p>A sync status of <code>false</code> indicates that your node is fully synced. You can proceed to the next step while Nethermind syncs.</p>
