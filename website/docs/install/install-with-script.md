@@ -1,6 +1,6 @@
 ---
 id: install-with-script
-title: Run an Ethereum Node and Stake ETH using Prysm
+title: Quickstart - Run an Ethereum Node and Stake ETH using Prysm
 sidebar_label: Quickstart
 ---
 
