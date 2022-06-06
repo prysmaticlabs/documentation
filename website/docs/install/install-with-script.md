@@ -106,7 +106,7 @@ First, create a folder called `ethereum` on your SSD <a class='footnote' href='#
 
 TEMPORARY: This is a **vNext** guide that requires you to [build from source](install-with-bazel.md) using Prysm's [develop](https://github.com/prysmaticlabs/prysm) branch. 
 
-If you'd like to run your beacon node on the **Ropsten** consensus-layer test network, use <a href='https://github.com/prysmaticlabs/prysm/releases/v2.1.3-rc.2'>Prysm v2.1.3-rc.2</a>
+If you'd like to run your beacon node on the **Ropsten** consensus-layer test network, use <a href='https://github.com/prysmaticlabs/prysm/releases/v2.1.3-rc.2'>Prysm v2.1.3-rc.2</a>.
 
 :::
 
