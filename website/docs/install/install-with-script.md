@@ -19,7 +19,7 @@ Ethereum and its terminology are rapidly evolving, so it's important to align on
 
 <table>
     <tr>
-        <th style={{minWidth: 160 + 'px'}}>Node type</th> 
+        <th style={{minWidth: 170 + 'px'}}>Node type</th> 
         <th>Description</th>
     </tr>
     <tr>
