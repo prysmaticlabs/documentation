@@ -9,11 +9,11 @@ a {
     color: #ff30a0;
 }
 
-.footnote {
+a.footnote {
     color: #666;
 }
 
-.footnote:hover {
+a.footnote:hover {
     color: #ff30a0;
 }
 
