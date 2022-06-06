@@ -51,6 +51,8 @@ Ethereum and its terminology are rapidly evolving, so it's important to align on
 
 <strong>Test networks</strong> are available in both the execution layer (EL) and consensus layer (CL). <strong>Every EL network has a corresponding partner CL network</strong>. In this quickstart, you'll learn how to run a node + validator on the following network pairs:
 
+<br />
+
 <table>
     <tr>
         <th style={{minWidth: 160 + 'px'}}>EL network</th> 
@@ -115,7 +117,8 @@ Ethereum and its terminology are rapidly evolving, so it's important to align on
             <li><strong>Software:</strong> Validator client, browser-based crypto wallet (instructions below)</li>   
             <li><strong>Hardware:</strong> (Recommended) A new machine that has never been connected to the internet that you can use to securely generate your mnemonic phrase and keypair</li>     
             <li><strong>32 ETH (Mainnet)</strong></li>
-            <li><strong>32 GöETH (Testnet)</strong></li> 
+            <li><strong>32 GöETH (Goerli)</strong></li> 
+            <li><strong>32 Ropsten-ETH (Ropsten)</strong></li> 
           </ul> 
         </td>
     </tr>
