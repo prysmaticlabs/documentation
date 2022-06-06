@@ -51,7 +51,7 @@ Ethereum and its terminology are rapidly evolving, so it's important to align on
 
 <strong>Test networks</strong> are available in both the execution layer (EL) and consensus layer (CL). <strong>Every EL network has a corresponding partner CL network</strong>. In this quickstart, you'll learn how to run a node + validator on the following network pairs:
 
-<br />
+<br /><br />
 
 <table>
     <tr>
