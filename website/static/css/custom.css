@@ -13,10 +13,6 @@ a.footnote {
     color: #666;
 }
 
-a.footnote:hover {
-    color: #ff30a0;
-}
-
 /* Header elements */
 
 .mainContainer .wrapper .post .postHeaderTitle {
