@@ -9,6 +9,10 @@ a {
     color: var(--prysm-pink);
 }
 
+.footnote {
+    color: #666 !important;
+}
+
 header>h1 {
     font-size: 2rem !important;
 }
@@ -81,6 +85,7 @@ header>h1 {
         text-align: center;
         margin: auto;
     }
+
     .nav-home {
         margin: auto !important;
     }
