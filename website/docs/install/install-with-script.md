@@ -23,7 +23,7 @@ Ethereum and its terminology are rapidly evolving, so it's important to align on
         <th>Description</th>
     </tr>
     <tr>
-      <td><strong>Ethereum node</strong><br />"Node"</td>
+      <td><strong>Ethereum node</strong><br />aka "Node"</td>
       <td>An Ethereum node is an <strong>execution node</strong> and <strong>beacon node</strong> working together. Ethereum nodes communicate peer-to-peer to secure the Ethereum network, and require both <strong>execution-layer client software</strong> and <strong>consensus-layer client software</strong>.</td>
     </tr> 
     <tr>
@@ -35,7 +35,7 @@ Ethereum and its terminology are rapidly evolving, so it's important to align on
       <td>Beacon nodes use beacon node client software to coordinate Ethereum's proof-of-stake consensus mechanism in Ethereum's <strong>consensus layer</strong>. Prysm, Teku, Lighthouse, and Nimbus are consensus clients that contain both beacon node and validator node client software. <br /> <br />Beacon nodes connect to each other, to execution nodes, and to validator nodes.</td>
     </tr>
     <tr>
-      <td><strong>Validator node</strong><br/> "Validator"</td>
+      <td><strong>Validator node</strong><br/>aka "Validator"</td>
       <td>Validator nodes let people stake 32 ETH as collateral within Ethereum's <strong>consensus layer</strong>. Validator nodes are responsible for proposing blocks within Ethereum's proof-of-stake consensus mechanism, and will fully replace proof-of-stake miners after The Merge. <br /> <br />Validator nodes connect to each other, and to beacon nodes.</td>
     </tr>
 </table>
