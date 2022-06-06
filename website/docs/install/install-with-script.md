@@ -87,11 +87,10 @@ Execution-layer clients run on execution-layer (EL) networks, while consensus-la
     <tr>
       <td>Run a <strong>node</strong></td>
       <td>
-      A node is an <strong>execution client</strong> and <strong>beacon node client</strong> working together. Running a node comes with the following benefits <a class='footnote' href='#footnote-6'>[6]</a>: <br /><br />
       <ul> 
-        <li>It contributes to the security of Ethereum's ecosystem <a class='footnote' href='#footnote-4'>[4]</a>.</li>    
-        <li>It lets you access the Ethereum network directly without having to trust a third party service <a class='footnote' href='#footnote-7'>[7]</a>.</li> 
-        <li>It lets you run a validator node post-Merge.</li> 
+        <li>Contributes to the security of Ethereum's ecosystem <a class='footnote' href='#footnote-4'>[4]</a>.</li>    
+        <li>Lets you access the Ethereum network directly without having to trust a third party service <a class='footnote' href='#footnote-7'>[7]</a>.</li> 
+        <li>Lets you run a validator post-Merge <a class='footnote' href='#footnote-6'>[6]</a>.</li> 
       </ul> 
       </td>
       <td>
