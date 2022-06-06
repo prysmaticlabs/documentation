@@ -85,7 +85,7 @@ Execution-layer clients run on execution-layer (EL) networks, while consensus-la
         <th>Requirements</th>
     </tr>
     <tr>
-      <td>Run an <strong>Ethereum node</strong></td>
+      <td>Run a <strong>node</strong></td>
       <td>
       A node is an <strong>execution client</strong> and <strong>beacon node client</strong> working together. Running a node comes with the following benefits <a class='footnote' href='#footnote-6'>[6]</a>: <br /><br />
       <ul> 
