@@ -80,7 +80,7 @@ Execution-layer clients run on execution-layer (EL) networks, while consensus-la
 
 <table>
     <tr>
-        <th style={{minWidth: 180 + 'px'}}>Goal</th> 
+        <th style={{minWidth: 200 + 'px'}}>Goal</th> 
         <th>Benefits</th>
         <th>Requirements</th>
     </tr>
