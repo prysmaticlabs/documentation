@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 import ClientStackPng from '@site/static/img/client-stack.png';
 
 
-Prysm is an implementation of the [Ethereum proof-of-stake consensus specification](https://github.com/ethereum/consensus-specs) [<a href='#footnote-1'>1</a>]. In this guide, you’ll use Prysm to run an Ethereum node [<a href='#footnote-2'>2</a>] and optionally a validator [<a href='#footnote-3'>3</a>]. This will let you stake 32 ETH using hardware that you manage [<a href='#footnote-4'>4</a>].
+Prysm is an implementation of the [Ethereum proof-of-stake consensus specification](https://github.com/ethereum/consensus-specs) <a class='footnote' href='#footnote-1'>[1]</a>. In this guide, you’ll use Prysm to run an Ethereum node <a class='footnote' href='#footnote-2'>[2]</a> and optionally a validator <a class='footnote' href='#footnote-3'>[3]</a>. This will let you stake 32 ETH using hardware that you manage <a class='footnote' href='#footnote-4'>[4]</a>.
  
 This is a beginner-friendly guide. Familiarity with the command line is expected, but otherwise this guide makes no assumptions about your technical skills or prior knowledge. Beginners are encouraged to **follow the footnotes** throughout this guide - the footnotes provide context and links to learning resources <a class='footnote' href='#footnote-5'>[5]</a>.
 
@@ -88,10 +88,10 @@ Execution-layer clients run on execution-layer (EL) networks, while consensus-la
     <tr>
       <td>Run an <strong>Ethereum node</strong></td>
       <td>
-      A node is an <strong>execution client</strong> and <strong>beacon node client</strong> working together. Running a node comes with the following benefits [<a href='#footnote-6'>6</a>]: <br /><br />
+      A node is an <strong>execution client</strong> and <strong>beacon node client</strong> working together. Running a node comes with the following benefits <a class='footnote' href='#footnote-6'>[6]</a>: <br /><br />
       <ul> 
-        <li>It contributes to the security of Ethereum's ecosystem [<a href='#footnote-4'>4</a>].</li>    
-        <li>It lets you access the Ethereum network directly without having to trust a third party service [<a href='#footnote-7'>7</a>].</li> 
+        <li>It contributes to the security of Ethereum's ecosystem <a class='footnote' href='#footnote-4'>[4]</a>.</li>    
+        <li>It lets you access the Ethereum network directly without having to trust a third party service <a class='footnote' href='#footnote-7'>[7]</a>.</li> 
         <li>It lets you run a validator node post-Merge.</li> 
       </ul> 
       </td>
@@ -146,7 +146,7 @@ If you don't have 32 ETH to stake, <a href='https://ethereum.org/en/staking/pool
 
 In this guide, your beacon node will connect to your execution node using authenticated HTTP. A secret **JWT token** is needed to form this connection. Let's download Prysm and create that token.
 
-First, create a folder called `ethereum` on your SSD [<a href='#footnote-9'>9</a>], and then two subfolders within it: `consensus` and `execution`:
+First, create a folder called `ethereum` on your SSD <a class='footnote' href='#footnote-9'>[9]</a>, and then two subfolders within it: `consensus` and `execution`:
 
 ```
 📂ethereum
@@ -204,7 +204,7 @@ If you'd like to run your execution client on the **Ropsten** execution-layer te
 
 :::
 
-In this step, you'll install an execution-layer client that Prysm's beacon node will connect to [<a href='#footnote-2'>2</a>].
+In this step, you'll install an execution-layer client that Prysm's beacon node will connect to <a class='footnote' href='#footnote-2'>[2]</a>.
 
 <Tabs groupId="execution-clients" defaultValue="nethermind" values={[
 {label: 'Nethermind', value: 'nethermind'},
@@ -300,7 +300,7 @@ curl -H "Content-Type: application/json" -X POST http://localhost:8545 -d "{""js
   </TabItem>
   <TabItem value="geth">
     <div class="admonition admonition-caution alert alert--warning">
-      <div class="admonition-content"><p><strong>Geth is a supermajority execution-layer client</strong>. This centralization poses an active risk to the security of Ethereum. If Geth's code contains a bug, a majority of nodes (and L2s, and users) will be impacted. We strongly encourage you to use either Nethermind or Besu to distribute this risk for the ecosystem. [<a href='#footnote-10'>10</a>]</p></div>
+      <div class="admonition-content"><p><strong>Geth is a supermajority execution-layer client</strong>. This centralization poses an active risk to the security of Ethereum. If Geth's code contains a bug, a majority of nodes (and L2s, and users) will be impacted. We strongly encourage you to use either Nethermind or Besu to distribute this risk for the ecosystem <a class='footnote' href='#footnote-10'>[10]</a>.</p></div>
     </div>
     <p>Download and run the latest 64-bit stable release of the <strong>Geth installer</strong> for your operating system from the <a href='https://geth.ethereum.org/downloads/'>Geth downloads page</a>. Navigate to your <code>execution</code> directory and run the following command to start your execution node using your secret JWT file:</p>
     <Tabs groupId="network" defaultValue="mainnet" values={[
@@ -497,7 +497,7 @@ Download the latest stable version of the deposit CLI from the [Staking Deposit 
       <li>A <code>validator_keys</code> folder. This folder will contain two files:
         <ol>
           <li><code>deposit_data-*.json</code> - contains deposit data that you’ll later upload to the Ethereum launchpad.</li>
-          <li><code>keystore-m_*.json</code> - contains your public key and encrypted private key [<a href='#footnote-13'>13</a>].</li>
+          <li><code>keystore-m_*.json</code> - contains your public key and encrypted private key <a class='footnote' href='#footnote-13'>[13]</a>.</li>
         </ol>
       </li>
     </ol>
@@ -564,7 +564,7 @@ Download the latest stable version of the deposit CLI from the [Staking Deposit 
       <li>A <code>validator_keys</code> folder. This folder will contain two files:
         <ol>
           <li><code>deposit_data-*.json</code> - contains deposit data that you’ll later upload to the Ethereum launchpad.</li>
-          <li><code>keystore-m_*.json</code> - contains your public key and encrypted private key [<a href='#footnote-13'>13</a>].</li>
+          <li><code>keystore-m_*.json</code> - contains your public key and encrypted private key <a class='footnote' href='#footnote-13'>[13]</a>.</li>
         </ol>
       </li>
     </ol>
@@ -638,7 +638,7 @@ Keeping all of your client software on a single machine keeps things simple, whi
 
 
 **Do I need to configure my firewall?** <br />
-We recommend **closing** TCP port `8545` to the internet and keeping TCP and UDP ports `30303` **open** to support other execution nodes [<a href='#footnote-8'>8</a>].
+We recommend **closing** TCP port `8545` to the internet and keeping TCP and UDP ports `30303` **open** to support other execution nodes <a href='#footnote-8'>[8]</a>.
 
 <!-- **I'm new to Ethereum, and I'm a visual learner. Can you show me how these things work? How much disk space does each node type require?** <br />
 The Beginner's Introduction to Prysm uses diagrams to help you visualize Ethereum's architecture, and Prysm's too. (TODO) -->
@@ -659,7 +659,7 @@ The Merge introduces a new Engine API that allows consensus-layer clients to com
 <!--TODO: develop our own knowledge base with conceptual content -->
 
 **What happens if my execution client goes down? Will I be penalized?** <br />
-Yes. Downtime penalties are minimal [<a href='#footnote-14'>14</a>] but we recommend having uptime and downtime alerts configured for your execution, beacon, and validator nodes [<a href='#footnote-15'>15</a>].
+Yes. Downtime penalties are minimal <a class='footnote' href='#footnote-14'>[14]</a> but we recommend having uptime and downtime alerts configured for your execution, beacon, and validator nodes <a class='footnote' href='#footnote-15'>[15]</a>.
 
 **My beacon node is taking a long time to sync. Is there any way I can speed it up?** <br />
 Yes - you can use [checkpoint sync](https://docs.prylabs.network/docs/prysm-usage/checkpoint-sync) to start your beacon node's synchronization from a checkpoint rather than from genesis. This is actually a more secure way to run your beacon node.
