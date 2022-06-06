@@ -13,6 +13,70 @@ Prysm is an implementation of the [Ethereum proof-of-stake consensus specificati
  
 This is a beginner-friendly guide. Familiarity with the command line is expected, but otherwise this guide makes no assumptions about your technical skills or prior knowledge. Beginners are encouraged to **follow the footnotes** throughout this guide - the footnotes provide context and links to learning resources [<a href='#footnote-5'>5</a>].
 
+## Step 1: Familiarize yourself with nodes and networks
+
+Ethereum and its terminology is rapidly evolving. It's important to align on node type definitions before proceeding:
+
+<table>
+    <tr>
+        <th style={{minWidth: 180 + 'px'}}>Node type</th> 
+        <th>Description</th>
+    </tr>
+    <tr>
+      <td>Ethereum</td>
+      <td>An Ethereum node is an <strong>execution node</strong> and <strong>beacon node</strong> working together. We commonly refer to Ethereum nodes as just "nodes". Ethereum nodes communicate peer-to-peer to secure the Ethereum network, and require both <strong>execution-layer client software</strong> and <strong>consensus-layer client software</strong>.</td>
+    </tr> 
+    <tr>
+      <td>Execution</td>
+      <td>Execution nodes use execution client software to process transactions and smart contracts in Ethereum's execution layer. Examples of execution client software include Nethermind, Besu, and Geth. Execution nodes connect to each other, and to beacon nodes.</td>
+    </tr>
+    <tr>
+      <td>Beacon</td>
+      <td>Beacon nodes use beacon node client software to coordinate Ethereum's proof-of-stake consensus mechanism in Ethereum's consensus layer. Prysm, Teku, Lighthouse, and Nimbus are examples of consensus-layer clients that contain both beacon node and validator node client software. Beacon nodes connect to each other, to execution nodes, and to validator nodes.</td>
+    </tr>
+    <tr>
+      <td>Validator</td>
+      <td>Validator nodes let people stake 32 ETH as collateral within Ethereum's consensus layer. We commonly refer to validator nodes as just "validators". Validator nodes are responsible for proposing blocks within Ethereum's proof-of-stake consensus mechanism, and will fully replace miners after The Merge. Validator nodes connect to each other, and to beacon nodes.</td>
+    </tr>
+</table>
+
+
+<br />
+
+
+<img style={{width: 100 + '%', margin: 'auto', display: 'block', maxWidth: 651 + 'px'}} src={ClientStackPng} /> 
+
+
+<br />
+
+Execution-layer clients run on execution-layer (EL) networks, while consensus-layer clients run on consensus-layer (CL) networks. Every execution-layer network has a corresponding consensus-layer network. This guide tells you how to run a node + validator on the following network pairs:
+
+
+<table>
+    <tr>
+        <th style={{minWidth: 180 + 'px'}}>EL network</th> 
+        <th style={{minWidth: 180 + 'px'}}>CL network</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+      <td>Mainnet</td>
+      <td>Mainnet</td>
+      <td>TODO</td>
+    </tr> 
+    <tr>
+      <td>Goerli</td>
+      <td>Prater</td>
+      <td>TODO</td>
+    </tr>
+    <tr>
+      <td>Ropsten</td>
+      <td>Ropsten</td>
+      <td>Execution-layer Ropsten is deprecated, but is being used to test The Merge. Consensus-layer Ropsten is a new network that's helping us test The Merge with execution-layer Ropsten...</td>
+    </tr>
+</table>
+
+
+
 ## Step 1: Identify your goals and system requirements
 
 <table>
@@ -22,7 +86,7 @@ This is a beginner-friendly guide. Familiarity with the command line is expected
         <th>Requirements</th>
     </tr>
     <tr>
-      <td>Run a <strong>node</strong></td>
+      <td>Run an <strong>Ethereum node</strong></td>
       <td>
       A node is an <strong>execution client</strong> and <strong>beacon node client</strong> working together. Running a node comes with the following benefits [<a href='#footnote-6'>6</a>]: <br /><br />
       <ul> 
@@ -65,52 +129,13 @@ If you don't have 32 ETH to stake, <a href='https://ethereum.org/en/staking/pool
 
 ## Step 2: Review best practices
 
-- **Try this guide on testnet first**, *then* mainnet.
+- **If you're staking ETH as a validator, try this guide on a testnet first**, *then* mainnet.
 - **Keep things simple**. This guidance assumes all client software will run on a single machine.
 - **Review the latest advisories** for both [testnet](https://prater.launchpad.ethereum.org/en/overview) and [mainnet](https://launchpad.ethereum.org/en/).
 - **Review** our [published security best practices](../security-best-practices.md).
 - **Join the community** - join our [mailing list](https://groups.google.com/g/prysm-dev), the [Prysm Discord server](https://discord.com/invite/XkyZSSk4My), [r/ethstaker](https://www.reddit.com/r/ethstaker/), and the [EthStaker Discord server](https://discord.io/ethstaker) for updates and support.
 
 
-## Step 3: Review nodes and networks
-
-You need two different pieces of software to run an Ethereum node: an **execution-layer client** and a **consensus-layer client**. Execution client software contains code that allows nodes to process transactions. Examples of execution client software include Nethermind, Besu, and Geth. Prysm is a consensus-layer client. Consensus-layer clients contain code for both **beacon node** and **validator** responsibilities.
-
-Validators connect to beacon nodes, and beacon nodes connect to execution nodes:
-
-<br />
-
-
-<img style={{width: 100 + '%', margin: 'auto', display: 'block', maxWidth: 651 + 'px'}} src={ClientStackPng} /> 
-
-
-<br />
-
-Execution-layer clients run on execution-layer (EL) networks, while consensus-layer clients run on consensus-layer (CL) networks. Every execution-layer network has a corresponding consensus-layer network. This guide tells you how to run a node + validator on the following network pairs:
-
-
-<table>
-    <tr>
-        <th style={{minWidth: 180 + 'px'}}>EL network</th> 
-        <th>CL network</th>
-        <th>Description</th>
-    </tr>
-    <tr>
-      <td>Mainnet</td>
-      <td>Goerli</td>
-      <td>Ropsten</td>
-    </tr> 
-    <tr>
-      <td>Mainnet</td>
-      <td>Prater</td>
-      <td>Ropsten</td>
-    </tr>
-    <tr>
-      <td>TODO</td>
-      <td>TODO</td>
-      <td>Execution-layer Ropsten is deprecated, but is being used to test The Merge. Consensus-layer Ropsten is a new network that's helping us test The Merge with execution-layer Ropsten...</td>
-    </tr>
-</table>
 
 
 
