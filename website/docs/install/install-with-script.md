@@ -330,17 +330,6 @@ This will produce the following output:
 {"data":{"head_slot":"6944","sync_distance":"3003133","is_syncing":true}}
 ```
 
-When you see `"is_syncing":false`, your beacon node is fully synchronized with the beacon chain. 
-
-You can verify that your beacon node has successfully connected to your execution node by running the following command from a separate terminal window:
-
-```
-curl http://localhost:3500/eth/v1alpha1/node/eth1/connections
-```
-
-You should see TODO.
-
-
 When you see `"is_syncing":false`, your beacon node is fully synchronized with the beacon chain. When you see `"is_optimistic":false`, your execution node is fully synchronized with the execution-layer blockchain. 
 
 
@@ -349,6 +338,15 @@ When you see `"is_syncing":false`, your beacon node is fully synchronized with t
 `is_optimistic` is currently not emitted by the latest stable release of Prysm, but this will soon be available.
 
 :::
+
+
+You can verify that your beacon node has successfully connected to your execution node by running the following command from a separate terminal window:
+
+```
+curl http://localhost:3500/eth/v1alpha1/node/eth1/connections
+```
+
+<!-- You should see TODO. -->
 
 
 Congratulations - you’re now running a <strong>full Ethereum node</strong>. Your full node consists of an <strong>execution node</strong> in Ethereum’s execution layer, and a <strong>beacon node</strong> in Ethereum’s consensus layer.
