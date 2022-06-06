@@ -13,7 +13,7 @@ Prysm is an implementation of the [Ethereum proof-of-stake consensus specificati
  
 This is a beginner-friendly guide. Familiarity with the command line is expected, but otherwise this guide makes no assumptions about your technical skills or prior knowledge. Beginners are encouraged to **follow the footnotes** throughout this guide - the footnotes provide context and links to learning resources [<a href='#footnote-5'>5</a>].
 
-## Step 1: Goals and system requirements
+## Step 1: Identify your goals and system requirements
 
 <table>
     <tr>
