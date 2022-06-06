@@ -125,7 +125,7 @@ Ethereum and its terminology are rapidly evolving, so it's important to align on
 </table>
 
 
-If you don't have 32 ETH to stake, <a href='https://ethereum.org/en/staking/pools/'>pooled staking</a> gives you a way to stake with less than 32 ETH. If you can't run a node, <a href='https://ethereum.org/en/staking/saas/'>staking as a service</a> lets you delegate hardware management to a third party.
+<strong>Don't have 32 ETH?</strong> <a href='https://ethereum.org/en/staking/pools/'>Pooled staking</a> gives you a way to stake with less than 32 ETH. <strong>Can't run a node?</strong> <a href='https://ethereum.org/en/staking/saas/'>Staking as a service</a> lets you delegate hardware management to a third party.
 
 
 ## Step 3: Review best practices
