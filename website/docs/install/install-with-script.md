@@ -49,7 +49,7 @@ Ethereum and its terminology are rapidly evolving, so it's important to align on
 
 <br /><br />
 
-Execution-layer clients run on execution-layer (EL) networks, while consensus-layer clients run on consensus-layer (CL) networks. <strong>Every execution-layer network has a corresponding consensus-layer network</strong>. In this quickstart, you'll learn how to run a node + validator on the following network pairs:
+When people refer to Ethereum, they're usually referring to Ethereum Mainnet, which refers to a pair of networks: execution-layer (EL) Mainnet and consensus-layer (CL) Mainnet (commonly referred to as the Beacon Chain). Test networks are available in both network layers. <strong>Every EL network has a corresponding partner CL network</strong>. In this quickstart, you'll learn how to run a node + validator on the following network pairs:
 
 <table>
     <tr>
