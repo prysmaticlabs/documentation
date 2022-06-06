@@ -538,7 +538,7 @@ Keeping all of your client software on a single machine keeps things simple, whi
 
 
 **Do I need to configure my firewall?** <br />
-We recommend **closing** TCP port `8545` to the internet and keeping TCP and UDP ports `30303` **open** to support other execution nodes <a href='#footnote-8'>[8]</a>.
+We recommend **closing** TCP port `8545` to the internet and keeping TCP and UDP ports `30303` **open** to support other execution nodes <a class='footnote' href='#footnote-8'>[8]</a>.
 
 
 **Can you mix and match networks between execution layer and consensus layer?** <br />
