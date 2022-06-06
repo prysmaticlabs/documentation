@@ -76,7 +76,7 @@ Execution-layer clients run on execution-layer (EL) networks, while consensus-la
 
 
 
-## Step 1: Identify your goals and system requirements
+## Step 2: Identify your goals and system requirements
 
 <table>
     <tr>
@@ -126,7 +126,7 @@ Execution-layer clients run on execution-layer (EL) networks, while consensus-la
 If you don't have 32 ETH to stake, <a href='https://ethereum.org/en/staking/pools/'>pooled staking</a> gives you a way to stake with less than 32 ETH. If you can't run a node, <a href='https://ethereum.org/en/staking/saas/'>staking as a service</a> lets you delegate hardware management to a third party.
 
 
-## Step 2: Review best practices
+## Step 3: Review best practices
 
 - **If you're staking ETH as a validator, try this guide on a testnet first**, *then* mainnet.
 - **Keep things simple**. This guidance assumes all client software will run on a single machine.
@@ -139,9 +139,6 @@ If you don't have 32 ETH to stake, <a href='https://ethereum.org/en/staking/pool
 
 
 ## Step 4: Generate secret
-
-
-
 
 In this guide, your beacon node will connect to your execution node using authenticated HTTP. A secret **JWT token** is needed to form this connection. Let's download Prysm and create that token.
 
