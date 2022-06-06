@@ -303,7 +303,7 @@ curl -H "Content-Type: application/json" -X POST http://localhost:8545 -d "{""js
         {label: 'Ropsten', value: 'ropsten'}
     ]}>
       <TabItem value="mainnet">
-        <pre><code>geth --http --authrpc.jwtsecret=E:\PRY\prysm\jwt.hex --datadir .</code></pre>
+        <pre><code>geth --http --authrpc.jwtsecret=jwt.hex --datadir .</code></pre>
         <ul>
           <li><code>--http</code> exposes an http endpoint that your beacon node can later connect to.</li>
           <li><code>--datadir .</code> specifies the current directory (<code>execution</code>) as the location for the execution layer database.</li>
@@ -364,11 +364,11 @@ Congratulations - you’re now running an <strong>execution node</strong> in Eth
       </TabItem>
       <TabItem value="goerli-prater">
         <p>Download the <a href='https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz'>Prater genesis state from Github</a> into your <code>consensus/prysm</code> directory. Then use the following command to start a beacon node that connects to your local execution node using your secret JWT file:</p>
-        <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8545 --jwt-secret=E:\PRY\prysm\jwt.hex --prater --genesis-state=genesis.ssz</code></pre>
+        <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8545 --jwt-secret=jwt.hex --prater --genesis-state=genesis.ssz</code></pre>
       </TabItem>
       <TabItem value="ropsten">
         <p>Download the <a href='https://github.com/eth-clients/merge-testnets/blob/main/ropsten-beacon-chain/genesis.ssz'>Ropsten genesis state from Github</a> into your <code>consensus/prysm</code> directory. Then use the following command to start a beacon node that connects to your local execution node using your secret JWT file:</p>
-        <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8545 --jwt-secret=E:\PRY\prysm\jwt.hex --prater --genesis-state=genesis.ssz</code></pre>
+        <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8545 --jwt-secret=jwt.hex --prater --genesis-state=genesis.ssz</code></pre>
       </TabItem>
   </Tabs>
   </TabItem>
