@@ -13,72 +13,10 @@ Prysm is an implementation of the [Ethereum proof-of-stake consensus specificati
  
 This is a beginner-friendly guide. Familiarity with the command line is expected, but otherwise this guide makes no assumptions about your technical skills or prior knowledge. Beginners are encouraged to **follow the footnotes** throughout this guide <a class='footnote' href='#footnote-5'>[5]</a>.
 
-## Step 1: Familiarize yourself with nodes and networks
-
-Ethereum and its terminology are rapidly evolving, so it's important to align on some terminology definitions before proceeding:
-
-<table>
-    <tr>
-        <th style={{minWidth: 170 + 'px'}}>Node type</th> 
-        <th>Description</th>
-    </tr>
-    <tr>
-      <td><strong>Ethereum node</strong><br />aka "Node"</td>
-      <td>An Ethereum node is an <strong>execution node</strong> and <strong>beacon node</strong> working together. Ethereum nodes communicate peer-to-peer to secure the Ethereum network, and require both <strong>execution-layer client software</strong> and <strong>consensus-layer client software</strong>.</td>
-    </tr> 
-    <tr>
-      <td><strong>Execution node</strong></td>
-      <td>Execution nodes use execution client software to process transactions and smart contracts in Ethereum's <strong>execution layer</strong>. Nethermind, Besu, and Geth are execution clients.<br /> <br />Execution nodes talk to each other, and to beacon nodes.</td>
-    </tr>
-    <tr>
-      <td><strong>Beacon node</strong></td>
-      <td>Beacon nodes use beacon node client software to coordinate Ethereum's proof-of-stake consensus mechanism in Ethereum's <strong>consensus layer</strong>. Prysm, Teku, Lighthouse, and Nimbus are consensus clients that contain both beacon node and validator node client software. <br /> <br />Beacon nodes talk to each other, to execution nodes, and to validator nodes.</td>
-    </tr>
-    <tr>
-      <td><strong>Validator node</strong><br/>aka "Validator"</td>
-      <td>Validator nodes let people stake 32 ETH as collateral within Ethereum's <strong>consensus layer</strong>. Validator nodes are responsible for proposing blocks within Ethereum's proof-of-stake consensus mechanism, and will fully replace proof-of-stake miners after The Merge. <br /> <br />Validator nodes talk to each other, and to beacon nodes.</td>
-    </tr>
-</table>
+**Not familiar with nodes, networks, and related terminology?** See <a href='#appendix-a-nodes-and-networks'>Appendix A: Nodes and Networks</a>.
 
 
-<br />
-
-
-<img style={{width: 100 + '%', margin: 'auto', display: 'block', maxWidth: 651 + 'px'}} src={ClientStackPng} /> 
-
-
-<br /><br />
-
-<strong>Test networks</strong> are available in both the execution layer (EL) and consensus layer (CL). Every EL network has a corresponding partner CL network. In this quickstart, you'll learn how to run a node + validator on the following network pairs:
-
-<br /><br />
-
-<table>
-    <tr>
-        <th style={{minWidth: 160 + 'px'}}>EL network</th> 
-        <th style={{minWidth: 160 + 'px'}}>CL network</th>
-        <th>Description</th>
-    </tr>
-    <tr>
-      <td>Mainnet</td>
-      <td>Mainnet</td>
-      <td>When people refer to Ethereum, they're usually referring to Ethereum Mainnet, which refers to a pair of networks: execution-layer (EL) Mainnet and consensus-layer (CL) Mainnet (commonly referred to as the Beacon Chain).</td>
-    </tr> 
-    <tr>
-      <td>Goerli</td>
-      <td>Prater</td>
-      <td>The Goerli-Prater pair is what most people use when preparing to stake 32 ETH on Ethereum Mainnet. This will be the last test network pair that experiences The Merge before Mainnet networks merge.</td>
-    </tr>
-    <tr>
-      <td>Ropsten</td>
-      <td>Ropsten</td>
-      <td>Although execution-layer Ropsten is deprecated, core developers are using it to test The Merge. Consensus-layer Ropsten is a new network that lets us test The Merge across both of Ethereum's layers. This is the first network pair being tested for The Merge.</td>
-    </tr>
-</table>
-
-
-
-## Step 2: Identify your goals and system requirements
+## Step 1: Identify your goals and system requirements
 
 <table>
     <tr>
@@ -128,7 +66,7 @@ Ethereum and its terminology are rapidly evolving, so it's important to align on
 <strong>Don't have 32 ETH?</strong> <a href='https://ethereum.org/en/staking/pools/'>Pooled staking</a> gives you a way to stake with less than 32 ETH. <strong>Can't run a node?</strong> <a href='https://ethereum.org/en/staking/saas/'>Staking as a service</a> lets you delegate hardware management to a third party.
 
 
-## Step 3: Review best practices
+## Step 2: Review best practices
 
 - **If you're staking ETH as a validator, try this guide on a testnet first**, *then* mainnet.
 - **Keep things simple**. This guidance assumes all client software will run on a single machine.
@@ -138,9 +76,7 @@ Ethereum and its terminology are rapidly evolving, so it's important to align on
 
 
 
-
-
-## Step 4: Generate secret
+## Step 3: Generate secret
 
 In this guide, your beacon node will connect to your execution node using authenticated HTTP. A secret **JWT token** is needed to form this connection. Let's download Prysm and create that token.
 
@@ -196,7 +132,7 @@ curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --out
 </Tabs>
 
 
-## Step 5: Run an execution client
+## Step 4: Run an execution client
 
 In this step, you'll install an execution-layer client that Prysm's beacon node will connect to <a class='footnote' href='#footnote-2'>[2]</a>.
 
@@ -304,7 +240,7 @@ eth.syncing
 Congratulations - you’re now running an <strong>execution node</strong> in Ethereum’s execution layer.
 
 
-## Step 6: Run a beacon node using Prysm
+## Step 5: Run a beacon node using Prysm
 
 
 <Tabs groupId="os" defaultValue="others" values={[
@@ -404,7 +340,7 @@ When you see `"is_syncing":false`, your beacon node is fully synchronized with t
 Congratulations - you’re now running a <strong>full Ethereum node</strong>. Your full node consists of an <strong>execution node</strong> in Ethereum’s execution layer, and a <strong>beacon node</strong> in Ethereum’s consensus layer.
 
 
-## Step 7: Run a validator node using Prysm
+## Step 6: Run a validator node using Prysm
 
 :::info ETH Required
 
@@ -668,6 +604,72 @@ TODO: explain in context of this guide -->
 
 -------
 
+
+
+## Appendix A: Nodes and Networks
+
+<table>
+    <tr>
+        <th style={{minWidth: 170 + 'px'}}>Node type</th> 
+        <th>Description</th>
+    </tr>
+    <tr>
+      <td><strong>Ethereum node</strong><br />aka "Node"</td>
+      <td>An Ethereum node is an <strong>execution node</strong> and <strong>beacon node</strong> working together. Ethereum nodes communicate peer-to-peer to secure the Ethereum network, and require both <strong>execution-layer client software</strong> and <strong>consensus-layer client software</strong>.</td>
+    </tr> 
+    <tr>
+      <td><strong>Execution node</strong></td>
+      <td>Execution nodes use execution client software to process transactions and smart contracts in Ethereum's <strong>execution layer</strong>. Nethermind, Besu, and Geth are execution clients.<br /> <br />Execution nodes talk to each other, and to beacon nodes.</td>
+    </tr>
+    <tr>
+      <td><strong>Beacon node</strong></td>
+      <td>Beacon nodes use beacon node client software to coordinate Ethereum's proof-of-stake consensus mechanism in Ethereum's <strong>consensus layer</strong>. Prysm, Teku, Lighthouse, and Nimbus are consensus clients that contain both beacon node and validator node client software. <br /> <br />Beacon nodes talk to each other, to execution nodes, and to validator nodes.</td>
+    </tr>
+    <tr>
+      <td><strong>Validator node</strong><br/>aka "Validator"</td>
+      <td>Validator nodes let people stake 32 ETH as collateral within Ethereum's <strong>consensus layer</strong>. Validator nodes are responsible for proposing blocks within Ethereum's proof-of-stake consensus mechanism, and will fully replace proof-of-stake miners after The Merge. <br /> <br />Validator nodes talk to each other, and to beacon nodes.</td>
+    </tr>
+</table>
+
+
+<br />
+
+
+<img style={{width: 100 + '%', margin: 'auto', display: 'block', maxWidth: 651 + 'px'}} src={ClientStackPng} /> 
+
+
+<br /><br />
+
+<strong>Test networks</strong> are available in both the execution layer (EL) and consensus layer (CL). Every EL network has a corresponding partner CL network. In this quickstart, you'll learn how to run a node + validator on the following network pairs:
+
+<br /><br />
+
+<table>
+    <tr>
+        <th style={{minWidth: 160 + 'px'}}>EL network</th> 
+        <th style={{minWidth: 160 + 'px'}}>CL network</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+      <td>Mainnet</td>
+      <td>Mainnet</td>
+      <td>When people refer to Ethereum, they're usually referring to Ethereum Mainnet, which refers to a pair of networks: execution-layer (EL) Mainnet and consensus-layer (CL) Mainnet (commonly referred to as the Beacon Chain).</td>
+    </tr> 
+    <tr>
+      <td>Goerli</td>
+      <td>Prater</td>
+      <td>The Goerli-Prater pair is what most people use when preparing to stake 32 ETH on Ethereum Mainnet. This will be the last test network pair that experiences The Merge before Mainnet networks merge.</td>
+    </tr>
+    <tr>
+      <td>Ropsten</td>
+      <td>Ropsten</td>
+      <td>Although execution-layer Ropsten is deprecated, core developers are using it to test The Merge. Consensus-layer Ropsten is a new network that lets us test The Merge across both of Ethereum's layers. This is the first network pair being tested for The Merge.</td>
+    </tr>
+</table>
+
+
+-------
+
 **Footnotes:**
 
 <strong id='footnote-1'>1.</strong> Prysm is written entirely in the <a href='https://go.dev'>Go programming language</a>. It's under active development by <a href='https://prysmaticlabs.com'>Prysmatic Labs</a>, a grant-funded team working closely with a variety of groups across the Ethereum ecosystem including the <a href='https://ethereum.org'>Ethereum Foundation</a>. <br />
@@ -685,3 +687,4 @@ TODO: explain in context of this guide -->
 <strong id='footnote-13'>13.</strong> Your keystore file contains your public key and your private key encrypted with a password. To learn more about how keystores work, see <a href='https://julien-maffre.medium.com/what-is-an-ethereum-keystore-file-86c8c5917b97'>What is an Ethereum keystore</a>. <br />
 <strong id='footnote-14'>14</strong>. BitMex recently posted research that provides hard numbers on penalties and rewards: <a href='https://blog.bitmex.com/ethereums-proof-of-stake-system-calculating-penalties-rewards/'>Ethereum's Proof of Stake System - Calculating Penalties and Rewards</a>. Collin Myers has also created an <a href='https://docs.google.com/spreadsheets/d/15tmPOvOgi3wKxJw7KQJKoUe-uonbYR6HF7u83LR5Mj4/edit#gid=1018097491'>Ethereum calculator</a>. <br />
 <strong id='footnote-15'>15</strong>. See Configure Monitoring and Alerts (TODO). <br />
+
