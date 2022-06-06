@@ -17,7 +17,7 @@ This is a beginner-friendly guide. Familiarity with the command line is expected
 
 <table>
     <tr>
-    <th style={{minWidth: 180 + 'px'}}>Goal</th> 
+        <th style={{minWidth: 180 + 'px'}}>Goal</th> 
         <th>Benefits</th>
         <th>Requirements</th>
     </tr>
@@ -33,7 +33,7 @@ This is a beginner-friendly guide. Familiarity with the command line is expected
       </td>
       <td>
         <ul> 
-          <li><strong>Software</strong>: Execution client, beacon node client (instructions below), <a href='https://curl.se/download.html'>curl</a></li>
+          <li><strong>Software</strong>: Execution client, beacon node client (instructions for clients below), <a href='https://curl.se/download.html'>curl</a></li>
           <li><strong>OS</strong>: 64-bit Linux, Mac OS X 10.14+, Windows 10+ 64-bit</li>   
           <li><strong>CPU</strong>: Something relatively modern. Intel Core i5-760 is a good min-bar.</li> 
           <li><strong>Memory</strong>: 16GB+ RAM</li> 
@@ -72,9 +72,9 @@ If you don't have 32 ETH to stake, <a href='https://ethereum.org/en/staking/pool
 - **Join the community** - join our [mailing list](https://groups.google.com/g/prysm-dev), the [Prysm Discord server](https://discord.com/invite/XkyZSSk4My), [r/ethstaker](https://www.reddit.com/r/ethstaker/), and the [EthStaker Discord server](https://discord.io/ethstaker) for updates and support.
 
 
-## Step 3: Generate secret
+## Step 3: Review nodes and networks
 
-You need two different pieces of software to run an Ethereum node: an **execution-layer client** and a **consensus-layer client**. Execution client software contains code that allows nodes to process transactions. Examples of execution client software include Nethermind, Besu, and Geth. Prysm is a consensus-layer client that contains code for both **beacon node** and **validator** responsibilities.
+You need two different pieces of software to run an Ethereum node: an **execution-layer client** and a **consensus-layer client**. Execution client software contains code that allows nodes to process transactions. Examples of execution client software include Nethermind, Besu, and Geth. Prysm is a consensus-layer client. Consensus-layer clients contain code for both **beacon node** and **validator** responsibilities.
 
 Validators connect to beacon nodes, and beacon nodes connect to execution nodes:
 
@@ -85,6 +85,38 @@ Validators connect to beacon nodes, and beacon nodes connect to execution nodes:
 
 
 <br />
+
+Execution-layer clients run on execution-layer (EL) networks, while consensus-layer clients run on consensus-layer (CL) networks. Every execution-layer network has a corresponding consensus-layer network. This guide tells you how to run a node + validator on the following network pairs:
+
+
+<table>
+    <tr>
+        <th style={{minWidth: 180 + 'px'}}>EL network</th> 
+        <th>CL network</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+      <td>Mainnet</td>
+      <td>Goerli</td>
+      <td>Ropsten</td>
+    </tr> 
+    <tr>
+      <td>Mainnet</td>
+      <td>Prater</td>
+      <td>Ropsten</td>
+    </tr>
+    <tr>
+      <td>TODO</td>
+      <td>TODO</td>
+      <td>Execution-layer Ropsten is deprecated, but is being used to test The Merge. Consensus-layer Ropsten is a new network that's helping us test The Merge with execution-layer Ropsten...</td>
+    </tr>
+</table>
+
+
+
+## Step 4: Generate secret
+
+
 
 
 In this guide, your beacon node will connect to your execution node using authenticated HTTP. A secret **JWT token** is needed to form this connection. Let's download Prysm and create that token.
@@ -104,7 +136,7 @@ This is a **vNext** guide that requires you to [build from source](install-with-
 :::
 
 
-<Tabs groupId="network" defaultValue="others" values={[
+<Tabs groupId="os" defaultValue="others" values={[
     {label: 'Windows', value: 'win'},
     {label: 'Linux, MacOS, Arm64', value: 'others'}
 ]}>
@@ -139,11 +171,11 @@ curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --out
 </Tabs>
 
 
-## Step 4: Run an execution client
+## Step 5: Run an execution client
 
 :::info
 
-If you'd like to run your execution client on the **Ropsten** execution-layer test network, replace `goerli` with `ropsten` in the Testnet guidance below. This is required if you'd like to run a beacon node on the **Ropsten** consensus-layer test network, commonly referred to as **Bopsten**.
+If you'd like to run your execution client on the **Ropsten** execution-layer test network, replace `goerli` with `ropsten` in the Testnet guidance below. This is required if you'd like to run a beacon node on the **Ropsten** consensus-layer test network.
 
 :::
 
@@ -159,7 +191,8 @@ In this step, you'll install an execution-layer client that Prysm's beacon node 
     <p>Download the latest stable release of Nethermind for your operating system from the <a href='https://downloads.nethermind.io/'>Nethermind downloads page</a>. Extract the contents into your <code>execution</code> folder. Run the following command to start your execution node using your secret JWT file:</p>
     <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
-        {label: 'Testnet', value: 'testnet'}
+        {label: 'Goerli-Prater', value: 'goerli-prater'},
+        {label: 'Ropsten', value: 'ropsten'}
     ]}>
       <TabItem value="mainnet">
         <pre><code>Nethermind.Runner --config mainnet --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.JwtSecretFile=../consensus/jwt.hex</code></pre>
@@ -171,7 +204,17 @@ In this step, you'll install an execution-layer client that Prysm's beacon node 
           <li><code>--JsonRpc.JwtSecretFile=../consensus/jwt.hex</code> points to the <code>jwt.hex</code> we created in Step 3.</li>
         </ul>
       </TabItem>
-      <TabItem value="testnet">
+      <TabItem value="goerli-prater">
+        <pre><code>Nethermind.Runner --config goerli --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.JwtSecretFile=../consensus/jwt.hex</code></pre>
+        <ul>
+          <li><code>--config goerli</code> connects to the Goerli execution-layer testnet.</li>
+          <li><code>--JsonRpc.Enabled true</code> exposes an http endpoint that your beacon node can later connect to.</li>
+          <li><code>--HealthChecks.Enabled true</code> exposes an http endpoint that you can use to query the health of your Nethermind node.</li>
+          <li><code>--HealthChecks.UIEnabled true</code> exposes a friendly UI that you can use to inspect the health of your Nethermind node.</li>
+          <li><code>--JsonRpc.JwtSecretFile=../consensus/jwt.hex</code> points to the <code>jwt.hex</code> we created in Step 3.</li>
+        </ul>
+      </TabItem>
+      <TabItem value="ropsten">
         <pre><code>Nethermind.Runner --config goerli --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.JwtSecretFile=../consensus/jwt.hex</code></pre>
         <ul>
           <li><code>--config goerli</code> connects to the Goerli execution-layer testnet.</li>
@@ -194,7 +237,8 @@ curl localhost:8545/health
     <p>Ensure that the latest 64-bit version of the <a href='https://www.oracle.com/java/technologies/downloads/'>Java JDK</a> is installed. Download the latest stable release of Besu from the <a href='https://github.com/hyperledger/besu/releases'>Besu releases</a> page. OS-specific instructions are available on Besu's <a href='https://besu.hyperledger.org/en/stable/HowTo/Get-Started/Installation-Options/Install-Binaries/'>binary installation page</a>. Run the following command to start your execution node using your secret JWT file:</p>
     <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
-        {label: 'Testnet', value: 'testnet'}
+        {label: 'Goerli-Prater', value: 'goerli-prater'},
+        {label: 'Ropsten', value: 'ropsten'}
     ]}>
       <TabItem value="mainnet">
         <pre><code>besu --network=mainnet --rpc-http-enabled --engine-jwt-enabled=true --engine-jwt-secret=../consensus/jwt.hex</code></pre>
@@ -204,7 +248,15 @@ curl localhost:8545/health
           <li><code>--engine-jwt-enabled=true --engine-jwt-secret=../consensus/jwt.hex</code> enables JWT and points to the <code>jwt.hex</code> we created in Step 3.</li>
         </ul>
       </TabItem>
-      <TabItem value="testnet">
+      <TabItem value="goerli-prater">
+        <pre><code>besu --network=goerli --rpc-http-enabled --engine-jwt-enabled=true --engine-jwt-secret=../consensus/jwt.hex</code></pre>
+        <ul>
+          <li><code>--network=goerli</code> connects to the Goerli execution-layer testnet.</li>
+          <li><code>--rpc-http-enabled</code> exposes an http endpoint that your beacon node can later connect to.</li>
+          <li><code>--engine-jwt-enabled=true --engine-jwt-secret=../consensus/jwt.hex</code> enables JWT and points to the <code>jwt.hex</code> we created in Step 3.</li>
+        </ul>
+      </TabItem>
+      <TabItem value="ropsten">
         <pre><code>besu --network=goerli --rpc-http-enabled --engine-jwt-enabled=true --engine-jwt-secret=../consensus/jwt.hex</code></pre>
         <ul>
           <li><code>--network=goerli</code> connects to the Goerli execution-layer testnet.</li>
@@ -228,7 +280,8 @@ curl -H "Content-Type: application/json" -X POST http://localhost:8545 -d "{""js
     <p>Download and run the latest 64-bit stable release of the <strong>Geth installer</strong> for your operating system from the <a href='https://geth.ethereum.org/downloads/'>Geth downloads page</a>. Navigate to your <code>execution</code> directory and run the following command to start your execution node using your secret JWT file:</p>
     <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
-        {label: 'Testnet', value: 'testnet'}
+        {label: 'Goerli-Prater', value: 'goerli-prater'},
+        {label: 'Ropsten', value: 'ropsten'}
     ]}>
       <TabItem value="mainnet">
         <pre><code>geth --http --authrpc.jwtsecret=E:\PRY\prysm\jwt.hex --datadir .</code></pre>
@@ -238,7 +291,16 @@ curl -H "Content-Type: application/json" -X POST http://localhost:8545 -d "{""js
           <li><code>--authrpc.jwtsecret=../consensus/jwt.hex</code> points to the <code>jwt.hex</code> we created in Step 3.</li>
         </ul>
       </TabItem>
-      <TabItem value="testnet">
+      <TabItem value="goerli-prater">
+        <pre><code>geth --goerli --http --authrpc.jwtsecret=../consensus/jwt.hex --datadir .</code></pre>
+        <ul>
+          <li><code>--goerli</code> connects to the Goerli execution-layer testnet.</li>
+          <li><code>--http</code> exposes an http endpoint that your beacon node can later connect to.</li>
+          <li><code>--datadir .</code> specifies the current directory (<code>execution</code>) as the location for the execution layer database.</li>
+          <li><code>--authrpc.jwtsecret=../consensus/jwt.hex</code> points to the <code>jwt.hex</code> we created in Step 3.</li>
+        </ul>
+      </TabItem>
+      <TabItem value="ropsten">
         <pre><code>geth --goerli --http --authrpc.jwtsecret=../consensus/jwt.hex --datadir .</code></pre>
         <ul>
           <li><code>--goerli</code> connects to the Goerli execution-layer testnet.</li>
@@ -263,7 +325,7 @@ eth.syncing
 Congratulations - you’re now running an <strong>execution node</strong> in Ethereum’s execution layer.
 
 
-## Step 5: Run a beacon node using Prysm
+## Step 6: Run a beacon node using Prysm
 
 :::info
 
@@ -272,7 +334,7 @@ If you'd like to run your beacon node on the **Ropsten** consensus-layer test ne
 :::
 
 
-<Tabs groupId="network" defaultValue="others" values={[
+<Tabs groupId="os" defaultValue="others" values={[
     {label: 'Windows', value: 'win'},
     {label: 'Linux, MacOS, Arm64', value: 'others'}
 ]}>
@@ -280,13 +342,18 @@ If you'd like to run your beacon node on the **Ropsten** consensus-layer test ne
     <p>Navigate to your <code>consensus</code> directory.</p>
     <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
-        {label: 'Testnet', value: 'testnet'}
+        {label: 'Goerli-Prater', value: 'goerli-prater'},
+        {label: 'Ropsten', value: 'ropsten'}
     ]}>
       <TabItem value="mainnet">
         <p>Use the following command to start a beacon node that connects to your local execution node using your secret JWT file:</p>
         <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8545 --jwt-secret=jwt.hex</code></pre>
       </TabItem>
-      <TabItem value="testnet">
+      <TabItem value="goerli-prater">
+        <p>Download the <a href='https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz'>genesis state from Github</a> into your <code>consensus/prysm</code> directory. Then use the following command to start a beacon node that connects to your local execution node using your secret JWT file:</p>
+        <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8545 --jwt-secret=E:\PRY\prysm\jwt.hex --prater --genesis-state=genesis.ssz</code></pre>
+      </TabItem>
+      <TabItem value="ropsten">
         <p>Download the <a href='https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz'>genesis state from Github</a> into your <code>consensus/prysm</code> directory. Then use the following command to start a beacon node that connects to your local execution node using your secret JWT file:</p>
         <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8545 --jwt-secret=E:\PRY\prysm\jwt.hex --prater --genesis-state=genesis.ssz</code></pre>
       </TabItem>
@@ -305,14 +372,19 @@ curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --out
 
   <p>This will download the Prysm client and and make it executable.</p>
   <Tabs groupId="network" defaultValue="mainnet" values={[
-      {label: 'Mainnet', value: 'mainnet'},
-      {label: 'Testnet', value: 'testnet'}
-  ]}>
+        {label: 'Mainnet', value: 'mainnet'},
+        {label: 'Goerli-Prater', value: 'goerli-prater'},
+        {label: 'Ropsten', value: 'ropsten'}
+    ]}>
     <TabItem value="mainnet">
       <p>Use the following command to start a beacon node that connects to your local execution node:</p>
       <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8545</code></pre>
     </TabItem>
-    <TabItem value="testnet">
+    <TabItem value="goerli-prater">
+      <p>Download the genesis state from github into your <code>consensus</code> directory. Then use the following command to start a beacon node that connects to your local execution node:</p>
+      <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8545 --prater --genesis-state=../genesis.ssz</code></pre>
+    </TabItem>
+    <TabItem value="ropsten">
       <p>Download the genesis state from github into your <code>consensus</code> directory. Then use the following command to start a beacon node that connects to your local execution node:</p>
       <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8545 --prater --genesis-state=../genesis.ssz</code></pre>
     </TabItem>
@@ -359,7 +431,7 @@ When you see `"is_syncing":false`, your beacon node is fully synchronized with t
 Congratulations - you’re now running a <strong>full Ethereum node</strong>. Your full node consists of an <strong>execution node</strong> in Ethereum’s execution layer, and a <strong>beacon node</strong> in Ethereum’s consensus layer.
 
 
-## Step 5: Run a validator node using Prysm
+## Step 7: Run a validator node using Prysm
 
 :::info ETH Required
 
@@ -373,7 +445,7 @@ Next, we'll create your validator keys with the [Ethereum Staking Deposit CLI](h
 
 Download the latest stable version of the deposit CLI from the [Staking Deposit CLI Releases page](https://github.com/ethereum/staking-deposit-cli/releases).
 
-<Tabs groupId="network" defaultValue="others" values={[
+<Tabs groupId="os" defaultValue="others" values={[
     {label: 'Windows', value: 'win'},
     {label: 'Linux, MacOS, Arm64', value: 'others'}
 ]}>
@@ -381,12 +453,16 @@ Download the latest stable version of the deposit CLI from the [Staking Deposit 
     <p>Run the following command to create your mnemonic (a unique and <strong>highly sensitive</strong> 24-word phrase) and keys:</p>
     <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
-        {label: 'Testnet', value: 'testnet'}
+        {label: 'Goerli-Prater', value: 'goerli-prater'},
+        {label: 'Ropsten', value: 'ropsten'}
     ]}>
       <TabItem value="mainnet">
         <pre><code>deposit.exe new-mnemonic --num_validators=1 --mnemonic_language=english</code></pre>
       </TabItem>
-      <TabItem value="testnet">
+      <TabItem value="goerli-prater">
+        <pre><code>deposit.exe new-mnemonic --num_validators=1 --mnemonic_language=english --chain=prater</code></pre>
+      </TabItem>
+      <TabItem value="ropsten">
         <pre><code>deposit.exe new-mnemonic --num_validators=1 --mnemonic_language=english --chain=prater</code></pre>
       </TabItem>
     </Tabs>
@@ -403,7 +479,8 @@ Download the latest stable version of the deposit CLI from the [Staking Deposit 
     Copy the <code>validator_keys</code> folder to your primary machine's <code>consensus</code> folder. Run the following command to import your keystores, replacing <code>&lt;YOUR_FOLDER_PATH&gt;</code> with the full path to your <code>consensus/validator_keys</code> folder:<br/>
     <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
-        {label: 'Testnet', value: 'testnet'}
+        {label: 'Goerli-Prater', value: 'goerli-prater'},
+        {label: 'Ropsten', value: 'ropsten'}
     ]}>
       <TabItem value="mainnet">
         <pre><code>prysm.bat validator accounts import --keys-dir=&lt;YOUR_FOLDER_PATH&gt;</code></pre>
@@ -413,7 +490,19 @@ Download the latest stable version of the deposit CLI from the [Staking Deposit 
         <p>Finally, run the following command to start your validator node, replacing <code>&lt;YOUR_FOLDER_PATH&gt;</code> with the full path to your <code>consensus</code> folder:</p>
         <pre><code>prysm.bat validator --wallet-dir=&lt;YOUR_FOLDER_PATH&gt;</code></pre>
       </TabItem>
-      <TabItem value="testnet">
+      <TabItem value="goerli-prater">
+        <pre><code>prysm.bat validator accounts import --keys-dir=&lt;YOUR_FOLDER_PATH&gt; --prater</code></pre>
+        <p>You’ll be prompted to specify a wallet directory twice. Provide the path to your <code>consensus</code> folder for both prompts. You should see <code>Successfully imported 1 accounts, view all of them by running accounts list</code> when your account has been successfully imported into Prysm.</p>
+        <p>Next, go to the <a href='https://prater.launchpad.ethereum.org/en/upload-deposit-data'>Prater Launchpad’s deposit data upload page</a> and upload your <code>deposit_data-*.json</code> file. You’ll be prompted to connect your wallet.</p>
+        <p>If you need GöETH, head over to one of the following Discord servers:</p>
+        <ul>
+          <li><a href='https://discord.io/ethstaker'>r/EthStaker Discord</a></li>
+          <li><a href='https://discord.com/invite/XkyZSSk4My'>Prysm Discord server</a></li>
+        </ul>
+        <p>Someone should be able to give you the GöETH you need. You can then deposit 32 GöETH into the Prater testnet’s deposit contract via the Launchpad page. Exercise extreme caution throughout this procedure - <strong>never send real ETH to the testnet deposit contract.</strong> Finally, run the following command to start your validator node, replacing <code>&lt;YOUR_FOLDER_PATH&gt;</code> with the full path to your <code>consensus</code> folder:</p>
+        <pre><code>prysm.bat validator --wallet-dir=&lt;YOUR_FOLDER_PATH&gt; --prater</code></pre>      
+      </TabItem>
+      <TabItem value="ropsten">
         <pre><code>prysm.bat validator accounts import --keys-dir=&lt;YOUR_FOLDER_PATH&gt; --prater</code></pre>
         <p>You’ll be prompted to specify a wallet directory twice. Provide the path to your <code>consensus</code> folder for both prompts. You should see <code>Successfully imported 1 accounts, view all of them by running accounts list</code> when your account has been successfully imported into Prysm.</p>
         <p>Next, go to the <a href='https://prater.launchpad.ethereum.org/en/upload-deposit-data'>Prater Launchpad’s deposit data upload page</a> and upload your <code>deposit_data-*.json</code> file. You’ll be prompted to connect your wallet.</p>
@@ -431,12 +520,16 @@ Download the latest stable version of the deposit CLI from the [Staking Deposit 
     <p>Run the following command to create your mnemonic phrase and keys:</p>
     <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
-        {label: 'Testnet', value: 'testnet'}
+        {label: 'Goerli-Prater', value: 'goerli-prater'},
+        {label: 'Ropsten', value: 'ropsten'}
     ]}>
       <TabItem value="mainnet">
         <pre><code>./deposit new-mnemonic --num_validators=1 --mnemonic_language=english</code></pre>
       </TabItem>
-      <TabItem value="testnet">
+      <TabItem value="goerli-prater">
+        <pre><code>./deposit new-mnemonic --num_validators=1 --mnemonic_language=english --chain=prater</code></pre>
+      </TabItem>
+      <TabItem value="ropsten">
         <pre><code>./deposit new-mnemonic --num_validators=1 --mnemonic_language=english --chain=prater</code></pre>
       </TabItem>
     </Tabs>
@@ -453,7 +546,8 @@ Download the latest stable version of the deposit CLI from the [Staking Deposit 
     Copy the <code>validator_keys</code> folder to your primary machine's <code>consensus</code> folder. Run the following command to import your keystores, replacing <code>&lt;YOUR_FOLDER_PATH&gt;</code> with the full path to your <code>consensus/validator_keys</code> folder:<br/>
     <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
-        {label: 'Testnet', value: 'testnet'}
+        {label: 'Goerli-Prater', value: 'goerli-prater'},
+        {label: 'Ropsten', value: 'ropsten'}
     ]}>
       <TabItem value="mainnet">
         <pre><code>./prysm.sh validator accounts import --keys-dir=&lt;YOUR_FOLDER_PATH&gt;</code></pre>
@@ -462,7 +556,19 @@ Download the latest stable version of the deposit CLI from the [Staking Deposit 
         <p>You can then deposit 32 ETH into the Mainnet deposit contract via the Launchpad page. Exercise extreme caution throughout this procedure. Finally, run the following command to start your validator node, replacing <code>&lt;YOUR_FOLDER_PATH&gt;</code> with the full path to your <code>consensus</code> folder:</p>
         <pre><code>./prysm.sh validator --wallet-dir=&lt;YOUR_FOLDER_PATH&gt;</code></pre>
       </TabItem>
-      <TabItem value="testnet">
+      <TabItem value="goerli-prater">
+        <pre><code>./prysm.sh validator accounts import --keys-dir=&lt;YOUR_FOLDER_PATH&gt; --prater</code></pre>
+        <p>You’ll be prompted to specify a wallet directory twice. Provide the path to your <code>consensus</code> folder for both prompts. You should see <code>Successfully imported 1 accounts, view all of them by running accounts list</code> when your account has been successfully imported into Prysm.</p>
+        <p>Next, go to the <a href='https://prater.launchpad.ethereum.org/en/upload-deposit-data'>Prater Launchpad’s deposit data upload page</a> and upload your <code>deposit_data-*.json</code> file. You’ll be prompted to connect your wallet.</p>
+        <p>If you need GöETH, head over to one of the following Discord servers:</p>
+        <ul>
+          <li><a href='https://discord.io/ethstaker'>r/EthStaker Discord</a></li>
+          <li><a href='https://discord.com/invite/XkyZSSk4My'>Prysm Discord server</a></li>
+        </ul>
+        <p>Someone should be able to give you the GöETH you need. You can then deposit 32 GöETH into the Prater testnet’s deposit contract via the Launchpad page. Exercise extreme caution throughout this procedure - <strong>never send real ETH to the testnet deposit contract.</strong>  Finally, run the following command to start your validator node, replacing <code>&lt;YOUR_FOLDER_PATH&gt;</code> with the full path to your <code>consensus</code> folder:</p>
+        <pre><code>./prysm.sh validator --wallet-dir=&lt;YOUR_FOLDER_PATH&gt; --prater</code></pre>    
+      </TabItem>
+      <TabItem value="ropsten">
         <pre><code>./prysm.sh validator accounts import --keys-dir=&lt;YOUR_FOLDER_PATH&gt; --prater</code></pre>
         <p>You’ll be prompted to specify a wallet directory twice. Provide the path to your <code>consensus</code> folder for both prompts. You should see <code>Successfully imported 1 accounts, view all of them by running accounts list</code> when your account has been successfully imported into Prysm.</p>
         <p>Next, go to the <a href='https://prater.launchpad.ethereum.org/en/upload-deposit-data'>Prater Launchpad’s deposit data upload page</a> and upload your <code>deposit_data-*.json</code> file. You’ll be prompted to connect your wallet.</p>
@@ -491,9 +597,10 @@ You’re now running a <strong>full Ethereum node</strong> and a <strong>validat
 It can a long time (from days to months) for your validator to become fully activated. To learn more about the validator activation process, see [Deposit Process](https://kb.beaconcha.in/ethereum-2.0-depositing). You can paste your validator's public key (available in your `deposit_data-*.json` file) into a blockchain explorer to check the status of your validator:
 
  - [Beaconcha.in (Mainnet)](https://beaconcha.in) 
- - [Beaconchai.in (Testnet)](https://prater.beaconcha.in/)
+ - [Beaconchai.in (Prater)](https://prater.beaconcha.in/)
+ - [Beaconchai.in (Ropsten)](https://ropsten.beaconcha.in/)
 
-In the meantime, you should leave your **execution client**, **beacon node**, and **validator client** windows open and running. Once your validator is activated, it will automatically begin proposing and validating blocks. 
+In the meantime, you should leave your **execution client**, **beacon node**, and **validator client** terminal windows open and running. Once your validator is activated, it will automatically begin proposing and validating blocks.
 
 
 ## Frequently asked questions
@@ -528,9 +635,6 @@ The Merge introduces a new Engine API that allows consensus-layer clients to com
 
 **What happens if my execution client goes down? Will I be penalized?** <br />
 Yes. Downtime penalties are minimal [<a href='#footnote-14'>14</a>] but we recommend having uptime and downtime alerts configured for your execution, beacon, and validator nodes [<a href='#footnote-15'>15</a>].
-
-**Why are there two different testnets?** <br />
-This guide uses two different testnets: Prater and Goerli. Prater is the consensus-layer testnet. Goerli is the execution-layer testnet. The Prater testnet uses the Goerli testnet. Beacon nodes on Prater rely on Goerli execution nodes.
 
 **My beacon node is taking a long time to sync. Is there any way I can speed it up?** <br />
 Yes - you can use [checkpoint sync](https://docs.prylabs.network/docs/prysm-usage/checkpoint-sync) to start your beacon node's synchronization from a checkpoint rather than from genesis. This is actually a more secure way to run your beacon node.
