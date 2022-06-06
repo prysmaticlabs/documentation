@@ -65,12 +65,12 @@ Ethereum and its terminology are rapidly evolving, so it's important to align on
     <tr>
       <td>Goerli</td>
       <td>Prater</td>
-      <td>TODO</td>
+      <td>The Goerli-Prater pair is what most people use when preparing to stake 32 ETH on Ethereum Mainnet. This will be the last test network pair that experiences The Merge before Mainnet networks merge.</td>
     </tr>
     <tr>
       <td>Ropsten</td>
       <td>Ropsten</td>
-      <td>Execution-layer Ropsten is deprecated, but is being used to test The Merge. Consensus-layer Ropsten is a new network that's helping us test The Merge with execution-layer Ropsten...</td>
+      <td>Although execution-layer Ropsten is deprecated, core developers are using it to test The Merge. Consensus-layer Ropsten is a new network that lets us test The Merge across both of Ethereum's layers. This is the first network pair being tested for The Merge.</td>
     </tr>
 </table>
 
