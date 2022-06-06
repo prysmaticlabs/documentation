@@ -629,29 +629,29 @@ We recommend **closing** TCP port `8545` to the internet and keeping TCP and UDP
 
 
 **Can you mix and match networks between execution layer and consensus layer?** <br />
-The combinations marked with a ✔️ are possible (EL up top, CL down the side):
+The pairs marked with a ✔️ are compatible:
 
 <table>
   <tr>
     <td>&nbsp;</td>
-    <td>Mainnet</td>
-    <td>Goerli</td>
-    <td>Ropsten</td>
+    <td>EL-Mainnet</td>
+    <td>EL-Goerli</td>
+    <td>EL-Ropsten</td>
   </tr>
   <tr>
-    <td>Mainnet</td>
-    <td>✔️</td>
-    <td>✔️</td>
-    <td>✔️</td>
-  </tr>
-  <tr>
-    <td>Goerli</td>
+    <td>CL-Mainnet</td>
     <td>✔️</td>
     <td>✔️</td>
     <td>✔️</td>
   </tr>
   <tr>
-    <td>Ropsten</td>
+    <td>CL-Prater</td>
+    <td>✔️</td>
+    <td>✔️</td>
+    <td>✔️</td>
+  </tr>
+  <tr>
+    <td>CL-Ropsten</td>
     <td>✔️</td>
     <td>✔️</td>
     <td>✔️</td>
