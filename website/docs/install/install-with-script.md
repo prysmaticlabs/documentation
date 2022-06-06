@@ -512,6 +512,9 @@ It can a long time (from days to months) for your validator to become fully acti
 In the meantime, you should leave your **execution client**, **beacon node**, and **validator client** terminal windows open and running. Once your validator is activated, it will automatically begin proposing and validating blocks.
 
 
+-------
+
+
 ## Frequently asked questions
 
 <!-- **I'm new to Ethereum, and I'm a visual learner. Can you show me how these things work?** <br />
