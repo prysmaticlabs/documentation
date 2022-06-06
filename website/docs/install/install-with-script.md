@@ -49,7 +49,7 @@ Ethereum and its terminology are rapidly evolving, so it's important to align on
 
 <br /><br />
 
-Execution-layer clients run on execution-layer (EL) networks, while consensus-layer clients run on consensus-layer (CL) networks. Every execution-layer network has a corresponding consensus-layer network. In this quickstart, you'll learn how to run a node + validator on the following network pairs:
+Execution-layer clients run on execution-layer (EL) networks, while consensus-layer clients run on consensus-layer (CL) networks. <strong>Every execution-layer network has a corresponding consensus-layer network</strong>. In this quickstart, you'll learn how to run a node + validator on the following network pairs:
 
 <table>
     <tr>
