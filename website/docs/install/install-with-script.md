@@ -629,7 +629,7 @@ We recommend **closing** TCP port `8545` to the internet and keeping TCP and UDP
 
 
 **Can you mix and match networks between execution layer and consensus layer?** <br />
-The pairs marked with a ✔️ are compatible:
+Yes. The pairs marked with a ✔️ are compatible. Those marked with 🏆 are recommended.
 
 <table>
   <tr>
@@ -640,21 +640,21 @@ The pairs marked with a ✔️ are compatible:
   </tr>
   <tr>
     <td>CL-Mainnet</td>
-    <td>✔️</td>
+    <td>🏆</td>
     <td>✔️</td>
     <td>✔️</td>
   </tr>
   <tr>
     <td>CL-Prater</td>
     <td>✔️</td>
-    <td>✔️</td>
+    <td>🏆</td>
     <td>✔️</td>
   </tr>
   <tr>
     <td>CL-Ropsten</td>
     <td>✔️</td>
     <td>✔️</td>
-    <td>✔️</td>
+    <td>🏆</td>
   </tr>
 </table>
 
