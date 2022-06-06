@@ -23,7 +23,7 @@ Ethereum and its terminology are rapidly evolving, so it's important to align on
         <th>Description</th>
     </tr>
     <tr>
-      <td><strong>Ethereum node<strong><br />"Node"</td>
+      <td><strong>Ethereum node</strong><br />"Node"</td>
       <td>An Ethereum node is an <strong>execution node</strong> and <strong>beacon node</strong> working together. Ethereum nodes communicate peer-to-peer to secure the Ethereum network, and require both <strong>execution-layer client software</strong> and <strong>consensus-layer client software</strong>.</td>
     </tr> 
     <tr>
