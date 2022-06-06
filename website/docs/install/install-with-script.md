@@ -14,7 +14,7 @@ Prysm is an implementation of the [Ethereum proof-of-stake consensus specificati
 This is a beginner-friendly guide. Familiarity with the command line is expected, but otherwise this guide makes no assumptions about your technical skills or prior knowledge. Beginners are encouraged to **follow the footnotes** throughout this guide <a class='footnote' href='#footnote-5'>[5]</a>.
 
 
-:::tip Knowledge Check
+:::info Knowledge Check
 
 **Not familiar with nodes, networks, and related terminology?** See <a href='#appendix-a-nodes-and-networks'>Appendix A: Nodes and Networks</a>.
 
@@ -71,7 +71,7 @@ This is a beginner-friendly guide. Familiarity with the command line is expected
 <br />
 
 
-:::tip Other options
+:::info Other options
 
 <strong>Don't have 32 ETH?</strong> <a href='https://ethereum.org/en/staking/pools/'>Pooled staking</a> gives you a way to stake with less than 32 ETH. <strong>Can't run a node?</strong> <a href='https://ethereum.org/en/staking/saas/'>Staking as a service</a> lets you delegate hardware management to a third party.
 
