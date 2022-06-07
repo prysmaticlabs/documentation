@@ -177,10 +177,10 @@ TEMPORARY: If you'd like to run Nethermind on the **Ropsten** execution-layer te
       </TabItem>
       <TabItem value="ropsten">
         <pre><code>Nethermind.Runner --config ropsten --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.JwtSecretFile=../consensus/jwt.hex --JsonRpc.Host=0.0.0.0 --Merge.TerminalTotalDifficulty 50000000000000000</code></pre>
-        <p>See the <a href='https://blog.ethereum.org/'>Ethereum blog</a> for the latest Ropsten config recommendations.</p>
+        <span>See the <a href='https://blog.ethereum.org/'>Ethereum blog</a> for the latest Ropsten config recommendations.</span>
       </TabItem>
     </Tabs>
-    <p>See Nethermind's <a href='https://docs.nethermind.io/nethermind/ethereum-client/configuration'>command-line options</a> for parameter definitions.</p>
+    <span>See Nethermind's <a href='https://docs.nethermind.io/nethermind/ethereum-client/configuration'>command-line options</a> for parameter definitions.</span> <br />
     <p>Your Nethermind execution node will begin syncing. This can take a long time - from hours to days. You can <a href='https://docs.nethermind.io/nethermind/ethereum-client/monitoring-node-health'>check your Nethermind execution node's sync status</a> by navigating to <a href='http://localhost:8545/healthchecks-ui'><code>http://localhost:8545/healthchecks-ui</code></a> or by running the following command from a separate terminal window:</p>
 
 ```
