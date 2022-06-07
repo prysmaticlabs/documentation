@@ -26,7 +26,7 @@ sme: james-prysm
 
 When users pay gas to submit transactions to the Ethereum network, they can specify a **priority fee**. Priority fees are like tips. End-users use priority fees to incentivize block proposers to prioritize the inclusion of particular transactions in the blocks that they propose.
 
-Miners currently collect these priority fees. After The Merge, proof-of-work consensus will be replaced with proof-of-stake consensus. At this point, validators will collect these priority fees [<a href='#footnote-1'>1</a>, <a href='#footnote-2'>2</a>].
+Miners currently collect these priority fees. After The Merge, proof-of-work consensus will be replaced with proof-of-stake consensus. At this point, validators will collect these priority fees <a class="footnote" href='#footnote-1'>[1]</a>, <a class="footnote" href='#footnote-2'>[2]</a>.
 
 Because priority fees are captured by execution clients in the execution layer, validator clients need to tell execution clients where to forward these priority fees. This priority fee “forwarding address” is referred to as your **fee recipient** address.
 
@@ -59,20 +59,20 @@ A fee recipient address can be configured on your client instance by using one o
     <td>
     Sets a default ETH address for all validator public keys. <br /> <br /> 
     <strong>Example</strong>: <code>--suggested-fee-recipient=0x0123456722E6b0000012BFEBf6177F1D2e9758D9</code> <br /> <br /> 
-    <strong>Note</strong>: This setting is overwritten by the flags below. If you don't configure Fee Recipient addresses using the flags below, this address will be mapped to all validator public keys.
+    <strong>Note</strong>: This setting is overwritten by the flags below. If you don't configure a Fee Recipient addresses using one of the flags below, this address will be mapped to all validator public keys.
     </td>
   </tr>
   <tr>
     <td><code>proposer-settings-file</code></td>
     <td>
-    Sets the local file location for your `proposer-settings` YAML or JSON configuration. This configuration lets you configure proposer settings for your validator keys. <br /> <br /> 
+    Sets the local file location for your <code>proposer-settings</code> YAML or JSON configuration. This lets you configure proposer settings like <code>fee_recipient</code> and <code>gas_limit</code> for your validator keys. This lets you override the ETH address specified by <code>suggested-fee-recipient</code> for any number of public keys. <br /> <br /> 
     <strong>Example</strong>: <code>--proposer-settings-file=./proposer_settings.json</code> <br /> <br /> 
     </td>
   </tr>
   <tr>
     <td><code>proposer-settings-url</code></td>
     <td>
-    A remote `proposer-settings` configuration endpoint in URL format. <br /> <br /> 
+    A remote <code>proposer-settings</code> configuration endpoint in URL format. This lets you override the ETH address specified by <code>suggested-fee-recipient</code> for any number of public keys. <br /> <br /> 
     <strong>Example</strong>: <code>--proposer-settings-url=http://example.com/api/getProposerSettings</code> <br /> <br /> 
     <strong>Note</strong>: JSON should be delivered as a JSON payload, not as a JSON file. Your client will issue a GET request and expects the response <code>Content-Type</code> header to be <code>application/json</code>.
     </td>
@@ -91,10 +91,10 @@ If you don't see any errors after issuing one of the above commands, your fee re
 #### Fee Recipient JSON Config File
 
 :::warning Breaking changes from 2.1.3 
-`fee-recipient-config-file` and `fee-recipient-config-url` flags have been deprecated and replaced with `proposer-settings-file` and `proposer-settings-url` flags.
+`fee-recipient-config-file` and `fee-recipient-config-url` flags are deprecated and have been replaced with `proposer-settings-file` and `proposer-settings-url` flags.
 :::
 
-If you use either `proposer-settings-file` or `proposer-settings-url` to specify your fee recipient address, your YAML configuration should follow this schema:
+If you use either `proposer-settings-file` or `proposer-settings-url` to specify your fee recipient address, your YAML/JSON configuration should follow this schema:
 
 ```
 ---
@@ -111,7 +111,7 @@ default_config:
 
 ```
 
-JSON format is also supported.
+JSON example:
 
 ```
 {
