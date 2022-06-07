@@ -37,7 +37,9 @@ If you don't configure your fee recipient address before The Merge, your priorit
 
 ## Configuring Fee Recipient
 
-Your fee recipient address can be configured in two places: on your **validator client instance** and on your **beacon node**. We recommend configuring it in both places. Your validator client instance configuration will override the beacon node configuration, while the beacon node configuration will be treated like a backup in the event that your client instance configuration fails.
+Your fee recipient address can be configured in two places: on your **validator client instance** and on your **beacon node**. Configuring fee recipient on your validator client instance lets you configure a different fee recipient address for each validator public key.
+
+We recommend configuring it in both places, even if you only have one validator public key. Your validator client instance configuration will override the beacon node configuration, while the beacon node configuration will be treated like a backup in the event that your client instance configuration fails.
 
 <br />
 
