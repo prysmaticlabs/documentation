@@ -60,8 +60,7 @@ This is a beginner-friendly guide. Familiarity with the command line is expected
             <li><strong>Software:</strong> Validator client, browser-based crypto wallet (instructions below)</li>   
             <li><strong>Hardware:</strong> (Recommended) A new machine that has never been connected to the internet that you can use to securely generate your mnemonic phrase and keypair</li>     
             <li><strong>32 ETH (Mainnet)</strong></li>
-            <li><strong>32 GöETH (Goerli)</strong></li> 
-            <li><strong>32 Ropsten-ETH (Ropsten)</strong></li> 
+            <li><strong>32 GöETH / rETH (Testnets - instructions for acquiring testnet ETH are provided below)</strong></li> 
           </ul> 
         </td>
     </tr>
