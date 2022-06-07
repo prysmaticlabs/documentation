@@ -138,7 +138,7 @@ mkdir prysm && cd prysm
 curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --output prysm.sh && chmod +x prysm.sh
 ```
 
-  <p>This will download the Prysm client and update your registry to enable verbose logging. Use the following command to create your secret JWT token:</p>
+  <p>This will download the Prysm client and make it executable. Use the following command to create your secret JWT token:</p>
   <pre><code>./prysm.sh beacon-chain jwt generate-jwt-secret</code></pre>
   <p>Prysm will then output a <code>jwt.hex</code> file path. Record this - we'll use it in the next step.</p>
   </TabItem>
