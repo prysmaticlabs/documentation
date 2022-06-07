@@ -82,7 +82,7 @@ If you don't have 32 ETH to stake, <a href='https://ethereum.org/en/staking/pool
 
 :::info
 
-If you'd like to run your execution client on the **Ropsten** execution-layer test network, replace `goerli` with `ropsten` in the Testnet guidance below. This is required if you'd like to run a beacon node on the **Ropsten** consensus-layer test network, commonly referred to as **Bopsten**.
+If you'd like to run your execution client on the **Ropsten** execution-layer test network, replace `goerli` with `ropsten` in the Testnet guidance below and apply the TTD configuration specified in the latest <a href='https://blog.ethereum.org/2022/06/03/ropsten-merge-ttd/'>Ropsten TTD Announcement</a>. This is required if you'd like to run a beacon node on the **Ropsten** consensus-layer test network.
 
 :::
 
