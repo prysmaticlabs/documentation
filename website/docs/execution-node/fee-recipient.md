@@ -59,7 +59,7 @@ A fee recipient address can be configured on your client instance by using one o
     <td>
     Sets a default ETH address for all validator public keys. <br /> <br /> 
     <strong>Example</strong>: <code>--suggested-fee-recipient=0x0123456722E6b0000012BFEBf6177F1D2e9758D9</code> <br /> <br /> 
-    <strong>Note</strong>: This setting is overwritten by the flags below. If you don't configure a Fee Recipient addresses using one of the flags below, this address will be mapped to all validator public keys.
+    <strong>Note</strong>: This setting is overwritten by the flags below. If you don't configure a Fee Recipient address using one of the flags below, this address will be mapped to all validator public keys.
     </td>
   </tr>
   <tr>
