@@ -9,6 +9,14 @@ a {
     color: var(--prysm-pink);
 }
 
+.footnote {
+    color: #aaa !important;
+}
+
+.footnote:hover {
+    color: #000 !important;
+}
+
 header>h1 {
     font-size: 2rem !important;
 }
@@ -81,6 +89,7 @@ header>h1 {
         text-align: center;
         margin: auto;
     }
+
     .nav-home {
         margin: auto !important;
     }
