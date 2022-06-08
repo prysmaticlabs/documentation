@@ -6,8 +6,10 @@ sidebar_label: Building from Source
 
 Prysm can be installed on GNU/Linux, MacOS, and Arm64 using our build tool, [Bazel](https://bazel.build). This page includes instructions for performing this method.
 
-:::tip Pro-Tip
-**NOTICE:** We recommend users install Bazelisk, the user-friendly launcher for Bazel. It identifies and manages the required Bazel version for any repository you want to build.
+:::info Ropsten
+
+This guide will soon be revised with an updated structure that makes it easier for you to use build from source using release candidates, which will allow you to use new consensus-layer test networks like Ropsten. Until then, visit our [quickstart](install-with-script.md) for the latest Ropsten instructions.
+
 :::
 
 **Have questions?** Stop by the [#documentation](https://discord.gg/prysmaticlabs) channel on Discord and let us know.
