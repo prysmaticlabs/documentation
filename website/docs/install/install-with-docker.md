@@ -231,7 +231,7 @@ When running a Prysm **beacon node** or **validator**, you can choose to run in 
 
 :::tip Using testnets
 
-**Mainnet** is enabled by default in all Prysm commands. If you want to use a **testnet**, add `--prater` or `--ropsten` to all Prysm commands within this document. If you'd like to use the **Ropsten** consensus-layer test network, use <a href='https://github.com/prysmaticlabs/prysm/releases/v2.1.3-rc.2'>Prysm v2.1.3-rc.2</a>
+**Mainnet** is enabled by default in all Prysm commands. If you want to use a **testnet**, add `--prater` or `--ropsten` to all Prysm commands within this document. If you'd like to use the **Ropsten** consensus-layer test network, use <a href='https://github.com/prysmaticlabs/prysm/releases/v2.1.3-rc.3'>Prysm v2.1.3-rc.3</a>
 
 :::
 
