@@ -217,6 +217,14 @@ docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/u
   --http-web3provider=<YOUR_ETH_EXECUTION_NODE_ENDPOINT>
 ```
 
+:::tip Ropsten
+
+If you want to use the Ropsten test network, use the <a href='https://console.cloud.google.com/gcr/images/prysmaticlabs/global/prysm/beacon-chain@sha256:bf9b95661c71ad60f633ee14cf352a668d550076471154cf80dfef8fce0bb41e/details'>Prysm v2.1.3-rc.3</a> Docker image.
+
+:::
+
+
+
 </TabItem>
 </Tabs>
 
@@ -231,7 +239,7 @@ When running a Prysm **beacon node** or **validator**, you can choose to run in 
 
 :::tip Using testnets
 
-**Mainnet** is enabled by default in all Prysm commands. If you want to use a **testnet**, add `--prater` or `--ropsten` to all Prysm commands within this document. If you'd like to use the **Ropsten** consensus-layer test network, use <a href='https://github.com/prysmaticlabs/prysm/releases/v2.1.3-rc.3'>Prysm v2.1.3-rc.3</a>
+**Mainnet** is enabled by default in all Prysm commands. If you want to use a **testnet**, add `--prater` or `--ropsten` to all Prysm commands within this document. If you'd like to use the **Ropsten** consensus-layer test network, use <a href='https://github.com/prysmaticlabs/prysm/releases/v2.1.3-rc.3'>Prysm v2.1.3-rc.3</a>.
 
 :::
 
