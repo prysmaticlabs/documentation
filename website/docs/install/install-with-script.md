@@ -103,7 +103,7 @@ First, create a folder called `ethereum` on your SSD <a class='footnote' href='#
 
 :::info vNext Caveats
 
-If you'd like to use the **Ropsten** execution-layer test network, use <a href='https://github.com/prysmaticlabs/prysm/releases/v2.1.3-rc.4'>Prysm v2.1.3-rc.4</a>. 
+If you'd like to use the **Ropsten** execution-layer test network, use <a href='https://github.com/prysmaticlabs/prysm/releases/v2.1.3-rc.4'>Prysm v2.1.3-rc.4</a> and add the following environment variable before proceeding: `USE_PRYSM_VERSION=v2.1.3-rc.4`. 
 
 :::
 
@@ -144,6 +144,7 @@ curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --out
 
 
 ## Step 4: Run an execution client
+
 
 :::info vNext Caveats
 
@@ -258,7 +259,6 @@ Congratulations - you’re now running an <strong>execution node</strong> in Eth
 
 
 ## Step 5: Run a beacon node using Prysm
-
 
 
 <Tabs groupId="os" defaultValue="others" values={[
