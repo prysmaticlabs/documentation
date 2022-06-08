@@ -436,7 +436,8 @@ It can take up to a day for your validator to become fully activated. To learn m
 In the meantime, you should leave your **execution client**, **beacon node**, and **validator client** windows open and running. Once your validator is activated, it will automatically begin proposing and validating blocks. You can paste your validator's public key (available in your `deposit_data-*.json` file) into a blockchain explorer to check the status of your validator:
 
  - [Beaconcha.in (Mainnet)](https://beaconcha.in) 
- - [Beaconchai.in (Testnet)](https://prater.beaconcha.in/)
+ - [Beaconchai.in (Prater)](https://prater.beaconcha.in/)
+ - [Beaconchai.in (Ropsten)](https://ropsten.beaconcha.in/)
 
 
 ## Frequently asked questions
