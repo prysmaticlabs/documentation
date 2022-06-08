@@ -82,7 +82,7 @@ If you don't have 32 ETH to stake, <a href='https://ethereum.org/en/staking/pool
 
 :::info
 
-If you'd like to run your execution client on the **Ropsten** execution-layer test network, replace `goerli` with `ropsten` in the Testnet guidance below. This is required if you'd like to run a beacon node on the **Ropsten** consensus-layer test network, commonly referred to as **Bopsten**.
+If you'd like to run your execution client on the **Ropsten** execution-layer test network, replace `goerli` with `ropsten` in the Testnet guidance below and apply the TTD configuration specified in the latest <a href='https://blog.ethereum.org/2022/06/03/ropsten-merge-ttd/'>Ropsten TTD Announcement</a>. Execution layer clients will require JWT and Engine API parameters to be configured as well. This quickstart will soon be updated to incorporate Ropsten-specific configuration details across EL clients - in the meantime, be sure to visit your execution client's documentation for the latest Ropsten-specific guidance. 
 
 :::
 
@@ -207,9 +207,10 @@ You’re now running an <strong>execution node</strong> in Ethereum’s executio
 
 Create a directory called `ConsensusLayer` on your SSD [<a href='#footnote-7'>7</a>].
 
+
 :::info
 
-If you'd like to run your beacon node on the **Ropsten** consensus-layer test network, use <a href='https://github.com/prysmaticlabs/prysm/releases/v2.1.3-rc.3'>Prysm v2.1.3-rc.3</a>, replace `prater` with `ropsten` in the Testnet guidance below, and use the <a href='https://github.com/eth-clients/merge-testnets/blob/main/ropsten-beacon-chain/genesis.ssz'>Ropsten genesis state</a> instead of the Prater genesis state.
+If you'd like to run your beacon node on the **Ropsten** consensus-layer test network, use <a href='https://github.com/prysmaticlabs/prysm/releases/v2.1.3-rc.3'>Prysm v2.1.3-rc.3</a>, replace `prater` with `ropsten` in the Testnet guidance below, use the <a href='https://github.com/eth-clients/merge-testnets/blob/main/ropsten-beacon-chain/genesis.ssz'>Ropsten genesis state</a> instead of the Prater genesis state, add an environment variable for `USE_PRYSM_VERSION=v2.1.3-rc.3`, and apply the TTD configuration specified in the latest <a href='https://blog.ethereum.org/2022/06/03/ropsten-merge-ttd/'>Ropsten TTD Announcement</a>. Be sure to target port `8551` as the `http-web3provider`. This quickstart will soon be updated with improved Ropsten-specific configuration details.
 
 :::
 
