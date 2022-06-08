@@ -103,9 +103,7 @@ First, create a folder called `ethereum` on your SSD <a class='footnote' href='#
 
 :::info vNext Caveats
 
-TEMPORARY: This is a **vNext** guide that requires you to [build from source](install-with-bazel.md) using Prysm's [develop](https://github.com/prysmaticlabs/prysm) branch. 
-
-If you'd like to run your beacon node on the **Ropsten** consensus-layer test network, use <a href='https://github.com/prysmaticlabs/prysm/releases/v2.1.3-rc.2'>Prysm v2.1.3-rc.2</a>.
+If you'd like to use the **Ropsten** execution-layer test network, use <a href='https://github.com/prysmaticlabs/prysm/releases/v2.1.3-rc.4'>Prysm v2.1.3-rc.4</a>. 
 
 :::
 
@@ -146,6 +144,12 @@ curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --out
 
 
 ## Step 4: Run an execution client
+
+:::info vNext Caveats
+
+Execution clients will require JWT and Engine API parameters to be configured when using the **Ropsten** test network. This quickstart will soon be updated to incorporate Ropsten-specific configuration details across EL clients - in the meantime, be sure to visit your execution client's documentation for the latest Ropsten-specific guidance. 
+
+:::
 
 In this step, you'll install an execution-layer client that Prysm's beacon node will connect to <a class='footnote' href='#footnote-2'>[2]</a>.
 
@@ -254,6 +258,7 @@ Congratulations - you’re now running an <strong>execution node</strong> in Eth
 
 
 ## Step 5: Run a beacon node using Prysm
+
 
 
 <Tabs groupId="os" defaultValue="others" values={[
