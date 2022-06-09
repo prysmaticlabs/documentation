@@ -313,7 +313,7 @@ curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --out
     </TabItem>
     <TabItem value="ropsten">
       <p>Download the Ropsten genesis state from GitHub into your <code>consensus</code> directory. Then use the following command to start a beacon node that connects to your local execution node:</p>
-      <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8551 --prater --genesis-state=../genesis.ssz</code></pre>
+      <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8551 --jwt-secret=jwt.hex --ropsten --genesis-state=genesis.ssz</code></pre>
     </TabItem>
   </Tabs>
   </TabItem>
