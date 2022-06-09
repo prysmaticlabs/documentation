@@ -103,8 +103,12 @@ First, create a folder called `ethereum` on your SSD <a class='footnote' href='#
 
 :::info vNext Caveats
 
-If you'd like to use the **Ropsten** execution-layer test network, use <a href='https://github.com/prysmaticlabs/prysm/releases/v2.1.3-rc.4'>Prysm v2.1.3-rc.4</a> and add the following environment variable before proceeding: `USE_PRYSM_VERSION=v2.1.3-rc.4`. 
+If you'd like to use the **Ropsten** execution-layer test network:
 
+ - Use <a href='https://github.com/prysmaticlabs/prysm/releases/v2.1.3-rc.4'>Prysm v2.1.3-rc.4</a> and extract the contents of the `Source` archive (located at the bottom of the page). 
+ - Add the following environment variable before proceeding: `USE_PRYSM_VERSION=v2.1.3-rc.4`. 
+ - Skip to <a href='#create-jwt'>create your secret JWT token</a>.
+ 
 :::
 
 
@@ -121,7 +125,7 @@ curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.bat --ou
 reg add HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1
 ```
 
-  <p>This will download the Prysm client and update your registry to enable verbose logging. Use the following command to create your secret JWT token:</p>
+  <p>This will download the Prysm client and update your registry to enable verbose logging. Use the following command to <strong id='create-jwt'>create your secret JWT token</strong>:</p>
   <pre><code>prysm.bat beacon-chain jwt generate-auth-secret</code></pre>
   <p>Prysm will then output a <code>jwt.hex</code> file path. Record this - we'll use it in the next step.</p>
   </TabItem>
@@ -136,7 +140,7 @@ mkdir prysm && cd prysm
 curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --output prysm.sh && chmod +x prysm.sh
 ```
 
-  <p>This will download the Prysm client and make it executable. Use the following command to create your secret JWT token:</p>
+  <p>This will download the Prysm client and make it executable. Use the following command to <strong id='create-jwt'>create your secret JWT token</strong>:</p>
   <pre><code>./prysm.sh beacon-chain jwt generate-jwt-secret</code></pre>
   <p>Prysm will then output a <code>jwt.hex</code> file path. Record this - we'll use it in the next step.</p>
   </TabItem>
