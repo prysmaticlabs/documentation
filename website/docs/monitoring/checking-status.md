@@ -1,7 +1,7 @@
 ---
 id: checking-status
 title: How to check the status of your node and validator
-sidebar_label: Check Node and Validator Status
+sidebar_label: Check Software Status
 ---
 
 ## Check status: Execution client
@@ -47,8 +47,6 @@ eth.syncing
 </Tabs>
 
 
-
-
 ## Check status: Beacon node
 
 You can check your beacon node's <a href='https://ethereum.github.io/beacon-APIs/?urls.primaryName=dev#/Node/getSyncingStatus'>sync status</a> by running the following command from a separate terminal window:
@@ -65,9 +63,6 @@ This should produce the following output:
 ```
 
 When you see `"is_syncing":false`, your beacon node is fully synchronized with the beacon chain. When you see `"is_optimistic":false`, your execution node is fully synchronized with the execution-layer blockchain. 
-
-
-
 
 
 ## Check status: Validator node

@@ -4,36 +4,19 @@ title: Maintain validator uptime with systemd or Docker
 sidebar_label: Maintain Validator Uptime
 ---
 
-Validators are expected to maintain connectivity with the Ethereum network 24/7. If you're running your validator on a cloud server, or if you want your validator to automatically start running when the host machine restarts, consider running your client software as a background service. Docker and systemd let you run Prysm as a background service. 
+Validators should be online as much as possible. If you're running your validator on a cloud server, or if you want your validator to automatically start running when the host machine restarts, consider running your client software as a background service through either Docker or systemd. 
 
-This may be overkill for at-home stakers who use the `prysm.sh` script to run Prysm. To those users, we recommend keeping an eye on your validator. The penalties for occasional downtime are generally negligible. Learn more by reading our [Security Best Practices](../security-best-practices.md).
+:::caution
 
-<Tabs
-  groupId="service"
-  defaultValue="docker"
-  values={[
-    {label: 'Docker', value: 'docker'},
-    {label: 'Systemd', value: 'systemd'},
-  ]
-}>
-<TabItem value="docker">
+This may be overkill for at-home stakers who use the `prysm.sh` script to run Prysm. To those users, we recommend **keeping it simple** by periodically checking the status of your validator. See [Check Software Status](../monitoring/checking-status) to learn more.
 
-You can use Docker to run your beacon node and validators as background services.
+:::
 
-```text
-docker run -it -d -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node gcr.io/prysmaticlabs/prysm/beacon-chain:latest --datadir=/data --rpc-host=0.0.0.0 --monitoring-host=0.0.0.0
-```
+### Docker
 
-The `-d` option will run the node in the background. Likewise, for the validator client:
+You can use Docker to run your beacon node and validators as background services. See [Install with Docker](../install/install-with-docker). You can monitor and view your running Docker containers using `docker ps`.
 
-```text
-docker run -it -d -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet --network="host" gcr.io/prysmaticlabs/prysm/validator:latest --beacon-rpc-provider=127.0.0.1:4000 --wallet-dir=/wallet
-```
-
-You can monitor and view your running containers using `docker ps`.
-
-</TabItem>
-<TabItem value="systemd">
+### Systemd (Linux)
 
 Linux systems allow for easy running of services in the background through a daemon process called [systemd](https://www.digitalocean.com/community/tutorials/systemd-essentials-working-with-services-units-and-the-journal). You can follow the tutorial posted by [Digital Ocean](https://www.digitalocean.com/community/tutorials/systemd-essentials-working-with-services-units-and-the-journal) on setting up systemd services.
 
@@ -69,6 +52,3 @@ User=YOUR_USER
 [Install]
 WantedBy=multi-user.target
 ```
-
-</TabItem>
-</Tabs>
