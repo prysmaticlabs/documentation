@@ -39,5 +39,3 @@ This usually means that your execution client isn't yet synchronized. Visit [Che
 ### Everything seems fine, but my validator balance is going down
 
 If your validator client is running fine without errors but you're seeing your validator balance decrease, your beacon node may be experiencing issues with connectivity, stability, or synchronization. Check your beacon node logs to see if there are any errors or crashes. Feel free to reach out to us on [Discord](https://discord.gg/prysmaticlabs) if you need any troubleshooting assistance.
-
-
