@@ -29,8 +29,6 @@ INFO p2p: peer connected
 
 Note that peers will be continuously disconnecting and connecting. If you notice anything concerning or have any questions, feel free to get in touch with us on [Discord](https://discord.gg/prysmaticlabs).
 
-
-
 ## Expected behavior: Validator client
 
 Validators are generally in one of the following states: `Unknown`, `Deposited`, `Pending`, `Active`, `Exiting`, `Slashing`, or `Exited`. To learn more about these states, visit [Validator Lifecycle](../how-prysm-works/validator-lifecycle.md).
