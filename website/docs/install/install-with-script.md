@@ -326,7 +326,7 @@ You can check your beacon node's <a href='https://ethereum.github.io/beacon-APIs
 curl http://localhost:3500/eth/v1/node/syncing
 ```
 
-This will produce the following output:
+This should produce the following output:
 
 
 ```
@@ -334,7 +334,6 @@ This will produce the following output:
 ```
 
 When you see `"is_syncing":false`, your beacon node is fully synchronized with the beacon chain. When you see `"is_optimistic":false`, your execution node is fully synchronized with the execution-layer blockchain. 
-
 
 :::info
 
@@ -527,7 +526,6 @@ In the meantime, you should leave your **execution client**, **beacon node**, an
 
 
 -------
-
 
 ## Frequently asked questions
 

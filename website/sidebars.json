@@ -116,6 +116,26 @@
                 {
                     "type": "doc",
                     "id": "advanced/beacon_node_api"
+                },
+                {
+                    "type": "doc",
+                    "id": "advanced/maintaining-uptime"
+                }
+            ]
+        },
+        {
+            "type": "category",
+            "collapsed": true,
+            "collapsible": true,
+            "label": "Status and Monitoring",
+            "items": [
+                {
+                    "type": "doc",
+                    "id": "monitoring/is-everything-fine"
+                },
+                {
+                    "type": "doc",
+                    "id": "monitoring/checking-status"
                 }
             ]
         },
@@ -127,7 +147,7 @@
             "items": [
                 {
                     "type": "doc",
-                    "id": "prysm-usage/is-everything-fine"
+                    "id": "troubleshooting/issues-errors"
                 },
                 {
                     "type": "doc",
