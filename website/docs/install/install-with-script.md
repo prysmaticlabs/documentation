@@ -288,7 +288,7 @@ You can check your beacon node's <a href='https://ethereum.github.io/beacon-APIs
 curl http://localhost:3500/eth/v1/node/syncing
 ```
 
-This will produce the following output:
+This should produce the following output:
 
 
 ```
@@ -296,12 +296,6 @@ This will produce the following output:
 ```
 
 When you see `"is_syncing":false`, your beacon node is fully synchronized with the beacon chain. When you see `"is_optimistic":false`, your execution node is fully synchronized with the execution-layer blockchain. 
-
-```
-TODO: is_optimistic is not yet implemented -> https://github.com/prysmaticlabs/prysm/pull/10692 
-
-TODO: `Checking DB database-path=C:\Users\newuser\AppData\Local\Eth2\beaconchaindata` <- how to configure this directory?
-```
 
 
 :::tip Congratulations!
@@ -446,8 +440,8 @@ It can take up to a day for your validator to become fully activated. To learn m
 In the meantime, you should leave your **execution client**, **beacon node**, and **validator client** windows open and running. Once your validator is activated, it will automatically begin proposing and validating blocks. You can paste your validator's public key (available in your `deposit_data-*.json` file) into a blockchain explorer to check the status of your validator:
 
  - [Beaconcha.in (Mainnet)](https://beaconcha.in) 
- - [Beaconchai.in (Prater)](https://prater.beaconcha.in/)
- - [Beaconchai.in (Ropsten)](https://ropsten.beaconcha.in/)
+ - [Beaconcha.in (Prater)](https://prater.beaconcha.in/)
+ - [Beaconcha.in (Ropsten)](https://ropsten.beaconcha.in/)
 
 
 ## Frequently asked questions

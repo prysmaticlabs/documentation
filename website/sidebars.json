@@ -1,5 +1,6 @@
 {
-    "docs": [{
+    "docs": [
+        {
             "type": "doc",
             "label": "Quickstart",
             "id": "install/install-with-script"
@@ -14,7 +15,8 @@
             "collapsed": true,
             "collapsible": true,
             "label": "Installation Guide",
-            "items": [{
+            "items": [
+                {
                     "type": "doc",
                     "id": "install/install-with-docker"
                 },
@@ -29,7 +31,8 @@
             "collapsed": true,
             "collapsible": true,
             "label": "Configuration Guide",
-            "items": [{
+            "items": [
+                {
                     "type": "doc",
                     "id": "prysm-usage/parameters"
                 },
@@ -77,7 +80,6 @@
                     "type": "doc",
                     "id": "prysm-usage/client-stats"
                 }
-
             ]
         },
         {
@@ -85,7 +87,8 @@
             "collapsed": true,
             "collapsible": true,
             "label": "Running an Execution Node",
-            "items": [{
+            "items": [
+                {
                     "type": "doc",
                     "id": "execution-node/configuring-for-prysm"
                 },
@@ -100,13 +103,30 @@
             "collapsed": true,
             "collapsible": true,
             "label": "Advanced Usage",
-            "items": [{
+            "items": [
+                {
                     "type": "doc",
                     "id": "advanced/migrating-keys"
                 },
                 {
                     "type": "doc",
                     "id": "advanced/beacon_node_api"
+                },
+                {
+                    "type": "doc",
+                    "id": "advanced/maintaining-uptime"
+                }
+            ]
+        },
+        {
+            "type": "category",
+            "collapsed": true,
+            "collapsible": true,
+            "label": "Status and Monitoring",
+            "items": [
+                {
+                    "type": "doc",
+                    "id": "monitoring/is-everything-fine"
                 }
             ]
         },
@@ -115,9 +135,10 @@
             "collapsed": true,
             "collapsible": true,
             "label": "Troubleshooting",
-            "items": [{
+            "items": [
+                {
                     "type": "doc",
-                    "id": "prysm-usage/is-everything-fine"
+                    "id": "troubleshooting/issues-errors"
                 },
                 {
                     "type": "doc",
@@ -130,7 +151,8 @@
             "collapsed": true,
             "collapsible": true,
             "label": "Validator Key Management",
-            "items": [{
+            "items": [
+                {
                     "type": "doc",
                     "id": "wallet/introduction"
                 },
@@ -165,7 +187,8 @@
             "collapsed": true,
             "collapsible": true,
             "label": "API Usage",
-            "items": [{
+            "items": [
+                {
                     "type": "doc",
                     "id": "how-prysm-works/ethereum-public-api"
                 },
@@ -177,7 +200,6 @@
                     "type": "doc",
                     "id": "how-prysm-works/keymanager-api"
                 }
-
             ]
         },
         {
@@ -185,7 +207,8 @@
             "collapsed": true,
             "collapsible": true,
             "label": "Developer Wiki",
-            "items": [{
+            "items": [
+                {
                     "type": "doc",
                     "id": "devtools/init-state"
                 },
@@ -240,7 +263,8 @@
             "collapsed": true,
             "collapsible": true,
             "label": "Contribution Guidelines",
-            "items": [{
+            "items": [
+                {
                     "type": "doc",
                     "id": "contribute/doc-standards"
                 },
@@ -263,7 +287,8 @@
             "collapsed": true,
             "collapsible": true,
             "label": "Miscellaneous",
-            "items": [{
+            "items": [
+                {
                     "type": "doc",
                     "id": "terminology"
                 },
