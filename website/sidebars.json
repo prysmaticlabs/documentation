@@ -2,6 +2,10 @@
     "docs": [
         {
             "type": "doc",
+            "id": "getting-started"
+        },
+        {
+            "type": "doc",
             "label": "Quickstart",
             "id": "install/install-with-script"
         },
