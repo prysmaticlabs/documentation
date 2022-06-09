@@ -4,8 +4,6 @@ title: Maintain validator uptime with systemd or Docker
 sidebar_label: Maintain Validator Uptime
 ---
 
-## Maintain validator uptime using systemd or Docker
-
 Validators are expected to maintain connectivity with the Ethereum network 24/7. If you're running your validator on a cloud server, or if you want your validator to automatically start running when the host machine restarts, consider running your client software as a background service. Docker and systemd let you run Prysm as a background service. 
 
 This may be overkill for at-home stakers who use the `prysm.sh` script to run Prysm. To those users, we recommend keeping an eye on your validator. The penalties for occasional downtime are generally negligible. Learn more by reading our [Security Best Practices](../security-best-practices.md).
