@@ -253,6 +253,8 @@ Congratulations - you’re now running an <strong>execution node</strong> in Eth
 
 ## Step 5: Run a beacon node using Prysm
 
+In this step, you'll run a beacon node using Prysm. We'll configure your beacon node to connect to your local execution client.
+
 <Tabs groupId="os" defaultValue="others" values={[
     {label: 'Windows', value: 'win'},
     {label: 'Linux, MacOS, Arm64', value: 'others'}
