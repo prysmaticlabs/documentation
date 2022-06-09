@@ -43,18 +43,18 @@ The web UI is still in beta meaning there are bound to be UI bugs or other issue
 
 Memory management is an ongoing process for our team - we are constantly working on improving the experience of running a node itself. For now, these are the specs we recommend (these values will go down over time):
 
-Recommended Hardware
-Processor: Intel Core i7–4770 or AMD FX-8310 or better
-Memory: 16GB RAM
-Storage: 100GB available space SSD
-Internet: Broadband connection
+**Recommended Hardware**:  
+* _Processor_: Intel Core i7–4770 or AMD FX-8310 or better  
+* _Memory_: 16 GB RAM  
+* _Storage_: 100 GB available space SSD  
+* _Internet_: Broadband connection  
 
-Minimum Hardware:
-Operating System: 64-bit Linux, Mac OS X, Windows
-Processor: Intel Core i5–760 or AMD FX-8100 or better
-Memory: 8GB RAM
-Storage: 20GB available space SSD
-Internet: Broadband connection
+**Minimum Hardware**:  
+* _Operating System_: 64-bit Linux, Mac OS X, Windows  
+* _Processor_: Intel Core i5–760 or AMD FX-8100 or better  
+* _Memory_: 8 GB RAM  
+* _Storage_: 20 GB available space SSD  
+* _Internet_: Broadband connection  
 
 If that still does not help, please file an issue with our team on Github [here](https://github.com/prysmaticlabs/prysm/issues/new?template=bug_report.md).
 
