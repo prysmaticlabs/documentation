@@ -80,9 +80,9 @@ If you don't have 32 ETH to stake, <a href='https://ethereum.org/en/staking/pool
 
 ## Step 3: Run an execution client
 
-:::info
+:::info Ropsten
 
-If you'd like to run your execution client on the **Ropsten** execution-layer test network, replace `goerli` with `ropsten` in the Testnet guidance below and apply the TTD configuration specified in the latest <a href='https://blog.ethereum.org/2022/06/03/ropsten-merge-ttd/'>Ropsten TTD Announcement</a>. Execution layer clients will require JWT and Engine API parameters to be configured as well. This quickstart will soon be updated to incorporate Ropsten-specific configuration details across EL clients - in the meantime, be sure to visit your execution client's documentation for the latest Ropsten-specific guidance. 
+Execution layer clients will require JWT and Engine API parameters to be configured when running on Ropsten. This quickstart will soon be updated to incorporate Ropsten-specific configuration details across EL clients. In the meantime, Visit your execution client's documentation for the latest Ropsten-specific guidance. 
 
 :::
 
