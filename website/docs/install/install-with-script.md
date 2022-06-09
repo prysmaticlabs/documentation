@@ -210,7 +210,17 @@ Create a directory called `ConsensusLayer` on your SSD [<a href='#footnote-7'>7<
 
 :::info
 
-If you'd like to run your beacon node on the **Ropsten** consensus-layer test network, use <a href='https://github.com/prysmaticlabs/prysm/releases/v2.1.3-rc.3'>Prysm v2.1.3-rc.3</a>, replace `prater` with `ropsten` in the Testnet guidance below, and use the <a href='https://github.com/eth-clients/merge-testnets/blob/main/ropsten-beacon-chain/genesis.ssz'>Ropsten genesis state</a> instead of the Prater genesis state, add an environment variable for `USE_PRYSM_VERSION=v2.1.3-rc.3`. Be sure to target port `8551` as the `http-web3provider`. This quickstart will soon be updated with improved Ropsten-specific configuration details.
+If you'd like to run your beacon node on the **Ropsten** consensus-layer test network:
+
+ - Use <a href='https://github.com/prysmaticlabs/prysm/releases/v2.1.3-rc.3'>Prysm v2.1.3-rc.3</a>
+ - Replace `prater` with `ropsten` in the Testnet guidance below
+ - Use the <a href='https://github.com/eth-clients/merge-testnets/blob/main/ropsten-beacon-chain/genesis.ssz'>Ropsten genesis state</a> instead of the Prater genesis state
+ - Add an environment variable for `USE_PRYSM_VERSION=v2.1.3-rc.3`
+ - Target port `8551` as the `http-web3provider`
+ - Generate a JWT secret using the instructions in <a href='https://docs.prylabs.network/docs/execution-node/authentication'>Authenticating Execution Node Connections</a>
+ - Use the following parameters: `--http-web3provider=http://localhost:8551 --jwt-secret=jwt.hex --ropsten --genesis-state=genesis.ssz`
+ 
+This quickstart will soon be updated with improved Ropsten-specific configuration details.
 
 :::
 
