@@ -1,5 +1,5 @@
 ---
-id: maintain-uptime
+id: maintaining-uptime
 title: Maintain validator uptime with systemd or Docker
 sidebar_label: Maintain Validator Uptime
 ---
