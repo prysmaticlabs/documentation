@@ -1,0 +1,1 @@
+This directory is the `vNext` directory. When we update content, we make changes in both this directory and the `versioned_docs` directory (and corresponding sidebars).
