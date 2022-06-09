@@ -108,7 +108,7 @@ If you'd like to use the **Ropsten** execution-layer test network:
  - Use <a href='https://github.com/prysmaticlabs/prysm/releases/v2.1.3-rc.4'>Prysm v2.1.3-rc.4</a> and extract the contents of the `Source` archive (located at the bottom of the page). 
  - Add the following environment variable before proceeding: `USE_PRYSM_VERSION=v2.1.3-rc.4`. 
  - Skip to <a href='#create-jwt'>create your secret JWT token</a>.
- 
+
 :::
 
 
@@ -258,23 +258,6 @@ Congratulations - you’re now running an <strong>execution node</strong> in Eth
 ## Step 5: Run a beacon node using Prysm
 
 In this step, you'll run a beacon node using Prysm. We'll configure your beacon node to connect to your local execution client.
-
-:::info Ropsten
-
-If you'd like to run your beacon node on the **Ropsten** consensus-layer test network:
-
- - Ensure that your execution client is running on `ropsten`.
- - Use <a href='https://github.com/prysmaticlabs/prysm/releases/v2.1.3-rc.3'>Prysm v2.1.3-rc.3</a>. Extract the contents of the `Source code` asset at the bottom of the release page.
- - Replace `prater` with `ropsten` in the Testnet guidance below.
- - Use the <a href='https://github.com/eth-clients/merge-testnets/blob/main/ropsten-beacon-chain/genesis.ssz'>Ropsten genesis state</a> instead of the Prater genesis state.
- - Add an environment variable for `USE_PRYSM_VERSION=v2.1.3-rc.3`.
- - Generate a JWT secret using the instructions in <a href='https://docs.prylabs.network/docs/execution-node/authentication'>Authenticating Execution Node Connections</a>.
- - Use the following parameters: `--http-web3provider=http://localhost:8551 --jwt-secret=jwt.hex --ropsten --genesis-state=genesis.ssz`.
-
-This quickstart will soon be updated with improved Ropsten-specific configuration details.
-
-:::
-
 
 <Tabs groupId="os" defaultValue="others" values={[
     {label: 'Windows', value: 'win'},
