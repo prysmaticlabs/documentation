@@ -127,6 +127,10 @@
                 {
                     "type": "doc",
                     "id": "monitoring/is-everything-fine"
+                },
+                {
+                    "type": "doc",
+                    "id": "monitoring/checking-status"
                 }
             ]
         },
