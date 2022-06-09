@@ -145,13 +145,6 @@ curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --out
 
 ## Step 4: Run an execution client
 
-
-:::info vNext Caveats
-
-Execution clients will require JWT and Engine API parameters to be configured when using the **Ropsten** test network. This quickstart will soon be updated to incorporate Ropsten-specific configuration details across EL clients - in the meantime, be sure to visit your execution client's documentation for the latest Ropsten-specific guidance. 
-
-:::
-
 In this step, you'll install an execution-layer client that Prysm's beacon node will connect to <a class='footnote' href='#footnote-2'>[2]</a>.
 
 <Tabs groupId="execution-clients" defaultValue="nethermind" values={[
