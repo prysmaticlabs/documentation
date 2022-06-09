@@ -89,6 +89,7 @@ This is a beginner-friendly guide. Familiarity with the command line is expected
 
 
 
+
 ## Step 3: Generate secret
 
 In this guide, your beacon node will connect to your execution node using authenticated HTTP. A secret **JWT token** is needed to form this connection. Let's download Prysm and create that token.
