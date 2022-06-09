@@ -208,7 +208,7 @@ You’re now running an <strong>execution node</strong> in Ethereum’s executio
 Create a directory called `ConsensusLayer` on your SSD [<a href='#footnote-7'>7</a>].
 
 
-:::info
+:::info Ropsten
 
 If you'd like to run your beacon node on the **Ropsten** consensus-layer test network:
 
