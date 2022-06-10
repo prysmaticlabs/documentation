@@ -656,11 +656,11 @@ Ethereum is a peer-to-peer network of **nodes** that communicate with one anothe
     </tr>
 </table>
 
-<br /><br />
+<br />
 
 Ethereum Mainnet is supported by a number of <strong>test networks</strong>. These test networks let developers, node runners, and validators test new functionality before using real ETH on mainnet. Test networks are available in both the execution layer (EL) and consensus layer (CL). Every EL network has a corresponding partner CL network. EL-CL network pairs work together to run Ethereum proof-of-stake. This quickstart shows you how to run a node + validator on the following network pairs:
 
-<br /><br />
+<br />
 
 <table>
     <tr>
