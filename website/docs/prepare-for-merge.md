@@ -63,6 +63,9 @@ Yes.
 
 **How do I configure my beacon node client to use multiple hard drives?**
 
+**How do I monitor my hard drive utilization?**
+
+**How do I monitor the health of my setup?**
 
 
 
