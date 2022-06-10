@@ -681,7 +681,7 @@ Ethereum Mainnet is supported by a number of <strong>test networks</strong>. The
     <tr>
       <td>Ropsten</td>
       <td>Ropsten</td>
-      <td>Although execution-layer Ropsten is deprecated, core developers are using it to test The Merge. Consensus-layer Ropsten is a new network that lets us test The Merge across both of Ethereum's layers. This is the first network pair being tested for The Merge.</td>
+      <td>Although execution-layer Ropsten is deprecated, core developers are using it to test The Merge. Consensus-layer Ropsten is a new network that lets us test The Merge across both of Ethereum's layers. This network pair was one of the first pairs that was Merge-tested (see <a href='https://www.youtube.com/watch?v=2OfRuKSPjjw'>Ethereum Merge: Stage 1 - Ropsten Network Upgrade</a> for a livestream of the event).</td>
     </tr>
 </table>
 
