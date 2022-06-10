@@ -89,8 +89,6 @@ At a high level, we'll walk through the following flow:
 :::
 
 
-
-
 ## Step 2: Review best practices
 
 - **If you're staking ETH as a validator, try this guide on a testnet first**, *then* mainnet.
@@ -98,8 +96,6 @@ At a high level, we'll walk through the following flow:
 - **Review the latest advisories** for both [testnet](https://prater.launchpad.ethereum.org/en/overview) and [mainnet](https://launchpad.ethereum.org/en/).
 - **Review** our [published security best practices](../security-best-practices.md).
 - **Join the community** - join our [mailing list](https://groups.google.com/g/prysm-dev), the [Prysm Discord server](https://discord.com/invite/XkyZSSk4My), [r/ethstaker](https://www.reddit.com/r/ethstaker/), and the [EthStaker Discord server](https://discord.io/ethstaker) for updates and support.
-
-
 
 
 ## Step 3: Generate secret
@@ -631,13 +627,11 @@ TODO: explain in context of this guide -->
 
 -------
 
-
-
 ## Appendix A: Nodes and Networks
 
 Ethereum is a peer-to-peer network of **nodes** that communicate with one another in a decentralized fashion. There are several types of nodes:
 
-<br /><br />
+<br />
 
 <table>
     <tr>
