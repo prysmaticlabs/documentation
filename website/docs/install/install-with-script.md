@@ -623,8 +623,6 @@ TODO
 TODO: explain in context of this guide -->
 
 
-<br />
-
 -------
 
 ## Appendix A: Nodes and Networks
