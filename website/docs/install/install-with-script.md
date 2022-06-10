@@ -13,6 +13,18 @@ Prysm is an implementation of the [Ethereum proof-of-stake consensus specificati
  
 This is a beginner-friendly guide. Familiarity with the command line is expected, but otherwise this guide makes no assumptions about your technical skills or prior knowledge. Beginners are encouraged to **follow the footnotes** throughout this guide <a class='footnote' href='#footnote-5'>[5]</a>.
 
+<br />
+
+At a high level, we'll walk through the following flow:
+
+ 1. Configure an **execution node** using an execution-layer client.
+ 2. Configure a **beacon node** using Prysm, a consensus-layer client.
+ 3. Configure a **validator node** and stake ETH using Prysm (optional).
+
+
+<img style={{width: 100 + '%', margin: 'auto', display: 'block', maxWidth: 651 + 'px'}} src={ClientStackPng} /> 
+
+<br />
 
 :::info Knowledge Check
 
@@ -645,13 +657,6 @@ TODO: explain in context of this guide -->
       <td>Validator nodes let people stake 32 ETH as collateral within Ethereum's <strong>consensus layer</strong>. Validator nodes are responsible for proposing blocks within Ethereum's proof-of-stake consensus mechanism, and will fully replace proof-of-stake miners after The Merge. <br /> <br />Validator nodes talk to each other, and to beacon nodes.</td>
     </tr>
 </table>
-
-
-<br />
-
-
-<img style={{width: 100 + '%', margin: 'auto', display: 'block', maxWidth: 651 + 'px'}} src={ClientStackPng} /> 
-
 
 <br /><br />
 
