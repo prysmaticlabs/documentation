@@ -9,7 +9,7 @@ Connecting Prysm to an execution node is a requirement for Ethereum at the time 
 ## Setting up Authentication
 
 :::info
-Go-ethereum currently does not require authentication for Prysm to connect with it via HTTP. Authentication is mandatory for other execution clients, however.
+Authentication will be required for all execution clients after The Merge. We recommend configuring authentication now.
 :::
 
 ### Step 1: Generate a secret key used for authenticating your connection
