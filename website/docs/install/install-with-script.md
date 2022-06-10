@@ -19,7 +19,7 @@ At a high level, we'll walk through the following flow:
 
  1. Configure an **execution node** using an execution-layer client.
  2. Configure a **beacon node** using Prysm, a consensus-layer client.
- 3. Configure a **validator node** and stake ETH using Prysm (optional).
+ 3. Configure a **validator** and stake ETH using Prysm (optional).
 
 <br />
 
