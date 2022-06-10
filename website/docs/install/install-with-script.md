@@ -637,6 +637,10 @@ TODO: explain in context of this guide -->
 
 ## Appendix A: Nodes and Networks
 
+Ethereum is a peer-to-peer network of **nodes** that communicate with one another in a decentralized fashion. There are several types of nodes:
+
+<br /><br />
+
 <table>
     <tr>
         <th style={{minWidth: 170 + 'px'}}>Node type</th> 
@@ -662,7 +666,7 @@ TODO: explain in context of this guide -->
 
 <br /><br />
 
-<strong>Test networks</strong> are available in both the execution layer (EL) and consensus layer (CL). Every EL network has a corresponding partner CL network. This quickstart shows you how to run a node + validator on the following network pairs:
+Ethereum Mainnet is supported by a number of <strong>test networks</strong>. These test networks let developers, node runners, and validators test new functionality before using real ETH on mainnet. Test networks are available in both the execution layer (EL) and consensus layer (CL). Every EL network has a corresponding partner CL network. EL-CL network pairs work together to run Ethereum proof-of-stake. This quickstart shows you how to run a node + validator on the following network pairs:
 
 <br /><br />
 
