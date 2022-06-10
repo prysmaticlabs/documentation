@@ -13,8 +13,6 @@ Prysm is an implementation of the [Ethereum proof-of-stake consensus specificati
  
 This is a beginner-friendly guide. Familiarity with the command line is expected, but otherwise this guide makes no assumptions about your technical skills or prior knowledge. Beginners are encouraged to **follow the footnotes** throughout this guide <a class='footnote' href='#footnote-5'>[5]</a>.
 
-<br />
-
 At a high level, we'll walk through the following flow:
 
  1. Configure an **execution node** using an execution-layer client.
