@@ -292,10 +292,10 @@ This should produce the following output:
 
 
 ```
-{"data":{"head_slot":"6944","sync_distance":"3003133","is_syncing":true,"is_optimistic":true}}
+{"data":{"head_slot":"6944","sync_distance":"3003133","is_syncing":true}}
 ```
 
-When you see `"is_syncing":false`, your beacon node is fully synchronized with the beacon chain. When you see `"is_optimistic":false`, your execution node is fully synchronized with the execution-layer blockchain. 
+When you see `"is_syncing":false`, your beacon node is fully synchronized with the beacon chain. 
 
 
 :::tip Congratulations!
