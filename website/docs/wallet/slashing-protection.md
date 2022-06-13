@@ -285,6 +285,6 @@ TODO
 
 **What's the worst-case scenario if I don't export/import my slashing protection DB?**
 
-Clock synchronization issues can (TODO - cause what types of issues precisely?) if you move machines without exporting/importing your slashing protection DB, even if you wait 2 epochs.
+Migrating from one machine to another without migrating your slashing protection DB can lead to issues (TODO - cause what types of issues precisely?) if your new machine's clock isn't properly synchronized (TODO - how to ensure clock is synced across all supported operating systems?), even if you wait 2 epochs.
 
 
