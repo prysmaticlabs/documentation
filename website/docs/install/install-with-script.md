@@ -162,7 +162,7 @@ In this step, you'll install an execution-layer client that Prysm's beacon node 
 
 :::info
 
-Prysm is a consensus-layer client that depends on execution-layer clients. Although we provide execution-layer guidance in this quickstart for convenience, this guidance is not an endorsement or recommendation of any particular client.
+Prysm is a consensus-layer client that depends on execution-layer clients. Although we provide execution-layer guidance for your convenience, this guidance is not an official endorsement or recommendation.
 
 :::
 
@@ -172,15 +172,7 @@ Prysm is a consensus-layer client that depends on execution-layer clients. Altho
 {label: 'Besu', value: 'besu'},
 {label: 'Geth', value: 'geth'}
 ]}>
-
   <TabItem value="nethermind">
-
-:::info vNext Caveats
-
-TEMPORARY: If you'd like to run Nethermind on the **Ropsten** execution-layer test network, use Nethermind's <a href='https://github.com/NethermindEth/nethermind/tree/kiln'>Kiln branch</a>.
-
-:::
-
    <p>Download the latest stable release of Nethermind for your operating system from the <a href='https://downloads.nethermind.io/'>Nethermind downloads page</a>. Extract the contents into your <code>execution</code> folder. Run the following command to start your execution node using your secret JWT file:</p>
     <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
