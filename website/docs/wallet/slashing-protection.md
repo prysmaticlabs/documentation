@@ -20,7 +20,6 @@ To protect itself from accidentally being slashed due to some software bug or ot
 
 ## How to use slashing protection
 
-
 Basic slashing protection is **enabled** by default using a database that keeps track of objects your validator has previously signed in order to prevent it from signing the same message again causing a violation and getting slashed. If you want to use a more advanced, *remote* slashing protection, see our section on how to use **slasher** [here](/docs/prysm-usage/slasher).
 
 
@@ -256,35 +255,26 @@ bazel run //validator -- slashing-protection-history import --datadir=/path/to/y
 ## Frequently asked questions
 
 
-**Can I just wait 2 epochs instead of exporting/importing my slashing protection DB?**
+**Can I just wait 2 epochs instead of exporting/importing my slashing protection history when I move from one machine to another?**
 
-We strongly recommend exporting/importing your slashing protection DB instead of waiting. Waiting for 2 epochs reduces the probability that you'll be slashed because of your slashing protection database, while importing/exporting eliminates that possibility.
+Validator nodes use their slashing protection history database to constantly audit their own blocks, attestations, and other network behavior. This slashing protection functionality is designed to protect validators from accidental slashable events caused by software bugs and clock synchronization issues. Maintaining the same slashing protection history database throughout the life of your validator node reduces the risk of accidental slashable events.
 
-TODO - audit
+Waiting for a certain number of epochs to pass is a commonly recommended alternative to exporting/importing your slashing protection history. In most cases, this will be enough. But this strategy doesn't reduce risk as much as exporting/importing your slashing protection history. So we recommend exporting/importing instead of waiting.
 
 
 **Why do some people recommend waiting instead of importing/exporting the slashing protection DB?**
 
-Many people are comfortable waiting a couple epochs instead of exporting and importing their slashing protection database. This often works because TODO.
+Waiting for a couple epochs to pass reduces the risk that your validator accidentally uses the same validator key to propose or attest to two conflicting blocks at the same slot. Waiting allows the network to "flush" incoming proposals and attestations from the network's validators, ensuring that when your validator comes back online, it won't be able to accidentally commit a slashable proposal or attestation.
 
 
-**How will I know if I've imported a bad slashing protection DB?**
+**How will I know if I've successfully imported my slashing protection history?**
 
-TODO
-
-
-**How will I know if I've imported a good slashing protection DB?**
-
-TODO
+Prysm will output a success message upon successful import. An error message will be displayed if your slashing protection history is either empty or corrupt.
 
 
-**What's the worst-case scenario if I import a bad slashing protection DB?**
+**I'm nervous about this procedure... can I have some help?**
 
-TODO
+Absolutely - feel free to send us a message on [Discord](https://discord.com/invite/prysmaticlabs) and someone from our team will be happy to help.
 
-
-**What's the worst-case scenario if I don't export/import my slashing protection DB?**
-
-Migrating from one machine to another without migrating your slashing protection DB can lead to issues (TODO - cause what types of issues precisely?) if your new machine's clock isn't properly synchronized (TODO - how to ensure clock is synced across all supported operating systems?), even if you wait 2 epochs.
 
 
