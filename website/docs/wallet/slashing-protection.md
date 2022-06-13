@@ -257,20 +257,17 @@ bazel run //validator -- slashing-protection-history import --datadir=/path/to/y
 
 **Can I just wait 2 epochs instead of exporting/importing my slashing protection history when I move from one machine to another?**
 
-Validator nodes use their slashing protection history database to constantly audit their own blocks, attestations, and other network behavior. This slashing protection functionality is designed to protect validators from accidental slashable events caused by software bugs and clock synchronization issues. Maintaining the same slashing protection history database throughout the life of your validator node reduces the risk of accidental slashable events.
+We recommend exporting/importing instead of waiting. Waiting will reduce risk, but exporting/importing gives you even more protection than waiting.
 
-Waiting for a certain number of epochs to pass is a commonly recommended alternative to exporting/importing your slashing protection history. In most cases, this will be enough. But this strategy doesn't reduce risk as much as exporting/importing your slashing protection history. So we recommend exporting/importing instead of waiting.
-
+Validators are constantly reading from and writing to their slashing protection history database, which lets validator nodes continuously audit their own blocks, attestations, and other network behavior. This functionality is designed to protect validators from accidental slashable events caused by conflicting proposals and attestations, software bugs, clock synchronization issues, and other edge cases. Exporting/importing your history will protect you from these risks.
 
 **Why do some people recommend waiting instead of importing/exporting the slashing protection DB?**
 
-Waiting for a couple epochs to pass reduces the risk that your validator accidentally uses the same validator key to propose or attest to two conflicting blocks at the same slot. Waiting allows the network to "flush" incoming proposals and attestations from the network's validators, ensuring that when your validator comes back online, it won't be able to accidentally commit a slashable proposal or attestation.
-
+Waiting for a couple epochs to pass reduces the risk that your validator accidentally uses the same validator key to propose or attest to two conflicting blocks at the same slot. Waiting allows the network to "flush" incoming proposals and attestations from the network's validators, ensuring that when your validator comes back online, it won't be able to accidentally commit a slashable proposal or attestation. Although this reduces some risk, exporting/importing your history reduces more risk.
 
 **How will I know if I've successfully imported my slashing protection history?**
 
 Prysm will output a success message upon successful import. An error message will be displayed if your slashing protection history is either empty or corrupt.
-
 
 **I'm nervous about this procedure... can I have some help?**
 
