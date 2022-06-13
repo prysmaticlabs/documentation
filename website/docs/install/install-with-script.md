@@ -82,7 +82,7 @@ If you don't have 32 ETH to stake, <a href='https://ethereum.org/en/staking/pool
 
 :::info Ropsten
 
-Execution layer clients will require JWT and Engine API parameters to be configured when running on Ropsten. This quickstart will soon be updated to incorporate Ropsten-specific configuration details across EL clients. In the meantime, Visit your execution client's documentation for the latest Ropsten-specific guidance. 
+Execution layer clients will require JWT and Engine API parameters to be configured when running on Ropsten. This quickstart will soon be updated to incorporate Ropsten-specific configuration details across EL clients. In the meantime, visit your execution client's documentation for the latest Ropsten-specific guidance. 
 
 :::
 
