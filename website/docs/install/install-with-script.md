@@ -162,7 +162,7 @@ In this step, you'll install an execution-layer client that Prysm's beacon node 
 
 :::info
 
-Prysm is a consensus-layer client that depends on execution-layer clients. Although we provide execution-layer guidance in this quickstart, this guidance is not an endorsement or recommendation of any particular client.
+Prysm is a consensus-layer client that depends on execution-layer clients. Although we provide execution-layer guidance in this quickstart for convenience, this guidance is not an endorsement or recommendation of any particular client.
 
 :::
 
