@@ -12,7 +12,7 @@ sme: james-prysm
 
 :::caution
 
-**This feature is currently in public preview** and may change significantly as we receive feedback from users like you. Join our [Discord server](https://discord.com/invite/XkyZSSk4My) to share your feedback.
+**This feature is currently in public preview** and may change significantly as we receive feedback from users like you. Join our [Discord server](https://discord.gg/prysmaticlabs) to share your feedback.
 
 :::
 

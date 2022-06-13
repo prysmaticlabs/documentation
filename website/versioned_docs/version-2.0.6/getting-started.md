@@ -22,4 +22,4 @@ To participate in the Ethereum network as a validator in proof-of-stake, read ou
 
 ## Need assistance?
 
-If you have questions about this documentation, feel free to stop by either the [Prysmatic Discord](https://discord.com/invite/XkyZSSk4My)'s **#documentation** channel and a member of the team or our community will be happy to assist you.
+If you have questions about this documentation, feel free to stop by either the [Prysmatic Discord](https://discord.gg/prysmaticlabs)'s **#documentation** channel and a member of the team or our community will be happy to assist you.

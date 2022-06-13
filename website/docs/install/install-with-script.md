@@ -75,7 +75,7 @@ If you don't have 32 ETH to stake, <a href='https://ethereum.org/en/staking/pool
 - **Keep things simple**. This guidance assumes all client software will run on a single machine.
 - **Review the latest advisories** for both [testnet](https://prater.launchpad.ethereum.org/en/overview) and [mainnet](https://launchpad.ethereum.org/en/).
 - Review all of our [published security best practices](./security-best-practices/).
-- **Join the community** - join our [mailing list](https://groups.google.com/g/prysm-dev), the [Prysm Discord server](https://discord.com/invite/XkyZSSk4My), [r/ethstaker](https://www.reddit.com/r/ethstaker/), and the [EthStaker Discord server](https://discord.io/ethstaker) for updates and support.
+- **Join the community** - join our [mailing list](https://groups.google.com/g/prysm-dev), the [Prysm Discord server](https://discord.gg/prysmaticlabs), [r/ethstaker](https://www.reddit.com/r/ethstaker/), and the [EthStaker Discord server](https://discord.io/ethstaker) for updates and support.
 
 
 ## Step 3: Run an execution client
@@ -367,7 +367,7 @@ Download the latest stable version of the deposit CLI from the [Staking Deposit 
         <p>If you need GöETH, head over to one of the following Discord servers:</p>
         <ul>
           <li><a href='https://discord.io/ethstaker'>r/EthStaker Discord</a></li>
-          <li><a href='https://discord.com/invite/XkyZSSk4My'>Prysm Discord server</a></li>
+          <li><a href='https://discord.gg/prysmaticlabs'>Prysm Discord server</a></li>
         </ul>
         <p>Someone should be able to give you the GöETH you need. You can then deposit 32 GöETH into the Prater testnet’s deposit contract via the Launchpad page. Exercise extreme caution throughout this procedure - <strong>never send real ETH to the testnet deposit contract.</strong> Finally, run the following command to start your validator node, replacing <code>&lt;YOUR_FOLDER_PATH&gt;</code> with the full path to your <code>ConsensusLayer</code> folder:</p>
         <pre><code>prysm.bat validator --wallet-dir=&lt;YOUR_FOLDER_PATH&gt; --prater</code></pre>      
@@ -416,7 +416,7 @@ Download the latest stable version of the deposit CLI from the [Staking Deposit 
         <p>If you need GöETH, head over to one of the following Discord servers:</p>
         <ul>
           <li><a href='https://discord.io/ethstaker'>r/EthStaker Discord</a></li>
-          <li><a href='https://discord.com/invite/XkyZSSk4My'>Prysm Discord server</a></li>
+          <li><a href='https://discord.gg/prysmaticlabs'>Prysm Discord server</a></li>
         </ul>
         <p>Someone should be able to give you the GöETH you need. You can then deposit 32 GöETH into the Prater testnet’s deposit contract via the Launchpad page. Exercise extreme caution throughout this procedure - <strong>never send real ETH to the testnet deposit contract.</strong>  Finally, run the following command to start your validator node, replacing <code>&lt;YOUR_FOLDER_PATH&gt;</code> with the full path to your <code>ConsensusLayer</code> folder:</p>
         <pre><code>./prysm.sh validator --wallet-dir=&lt;YOUR_FOLDER_PATH&gt; --prater</code></pre>    
