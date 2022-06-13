@@ -258,7 +258,7 @@ bazel run //validator -- slashing-protection-history import --datadir=/path/to/y
 
 **Can I just wait 2 epochs instead of exporting/importing my slashing protection DB?**
 
-We strongly recommend exporting/importing your slashing protection DB instead of waiting. Waiting for 2 epochs reduces the probability that you'll be slashed because of your slashing protection database, while importing/exporting eliminates that possibility. 
+We strongly recommend exporting/importing your slashing protection DB instead of waiting. Waiting for 2 epochs reduces the probability that you'll be slashed because of your slashing protection database, while importing/exporting eliminates that possibility.
 
 TODO - audit
 

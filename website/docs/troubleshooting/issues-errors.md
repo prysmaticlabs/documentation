@@ -16,7 +16,7 @@ msg="Peer disconnected" active=0
 Troubleshooting tips:
 
  - Your beacon node might be suffering from connectivity problems. Visit [Improve P2P connectivity](/docs/prysm-usage/p2p-host-ip) for connectivity troubleshooting guidance.
- - You may be using an incorrect genesis state or network flag. Every consensus-layer test network requires its own genesis state and network flag. Visit our [Quickstart](../install/install-with-script.md) for the latest test network parameters.
+ - You may be using an incorrect genesis state or network flag. Every test network requires its own genesis state and network flag. Visit our [Quickstart](../install/install-with-script.md) for the latest test network parameters.
 
 
 ### Beacon node stuck during sync
