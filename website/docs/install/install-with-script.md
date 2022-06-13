@@ -1,6 +1,6 @@
 ---
 id: install-with-script
-title: Quickstart - Run an Ethereum Node and Stake ETH using Prysm
+title: Run a Node and Stake ETH using Prysm
 sidebar_label: Quickstart
 ---
 
@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 import ClientStackPng from '@site/static/img/client-stack.png';
 
 
-Prysm is an implementation of the [Ethereum proof-of-stake consensus specification](https://github.com/ethereum/consensus-specs) <a class='footnote' href='#footnote-1'>[1]</a>. In this guide, you’ll use Prysm to run an Ethereum node <a class='footnote' href='#footnote-2'>[2]</a> and optionally a validator <a class='footnote' href='#footnote-3'>[3]</a>. This will let you stake 32 ETH using hardware that you manage <a class='footnote' href='#footnote-4'>[4]</a>.
+Prysm is an implementation of the [Ethereum proof-of-stake consensus specification](https://github.com/ethereum/consensus-specs) <a class='footnote' href='#footnote-1'>[1]</a>. In this quickstart, you’ll use Prysm to run an Ethereum node <a class='footnote' href='#footnote-2'>[2]</a> and optionally a validator <a class='footnote' href='#footnote-3'>[3]</a>. This will let you stake 32 ETH using hardware that you manage <a class='footnote' href='#footnote-4'>[4]</a>.
  
 This is a beginner-friendly guide. Familiarity with the command line is expected, but otherwise this guide makes no assumptions about your technical skills or prior knowledge. Beginners are encouraged to **follow the footnotes** throughout this guide <a class='footnote' href='#footnote-5'>[5]</a>.
 
@@ -33,16 +33,16 @@ At a high level, we'll walk through the following flow:
 :::
 
 
-## Step 1: Identify your goals and system requirements
+## Step 1: Review prerequisites
 
 <table>
     <tr>
-        <th style={{minWidth: 180 + 'px'}}>Goal</th> 
+        <th style={{minWidth: 180 + 'px'}}>Node type</th> 
         <th>Benefits</th>
         <th>Requirements</th>
     </tr>
     <tr>
-      <td>Run a <strong>node</strong></td>
+      <td><strong>Execution + beacon</strong></td>
       <td>
       <ul> 
         <li>Contributes to the security of Ethereum's ecosystem <a class='footnote' href='#footnote-4'>[4]</a>.</li>    
@@ -62,7 +62,7 @@ At a high level, we'll walk through the following flow:
       </td>
     </tr> 
     <tr>
-        <td>Run a <strong>validator</strong></td>
+        <td><strong>Validator</strong></td>
         <td>
         Lets you stake ETH, propose + validate blocks, and earn staking rewards.
         </td>
@@ -159,6 +159,13 @@ curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --out
 ## Step 4: Run an execution client
 
 In this step, you'll install an execution-layer client that Prysm's beacon node will connect to <a class='footnote' href='#footnote-2'>[2]</a>.
+
+:::info
+
+Prysm is a consensus-layer client that depends on execution-layer clients. Although we provide execution-layer guidance in this quickstart, this guidance is not an endorsement or recommendation of any particular client.
+
+:::
+
 
 <Tabs groupId="execution-clients" defaultValue="nethermind" values={[
 {label: 'Nethermind', value: 'nethermind'},
