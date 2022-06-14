@@ -265,6 +265,11 @@ Validators are constantly reading from and writing to their slashing protection 
 
 Waiting for a couple epochs to pass reduces the risk that your validator accidentally uses the same validator key to propose or attest to two conflicting blocks at the same slot. Waiting allows the network to "flush" incoming proposals and attestations from the network's validators, ensuring that when your validator comes back online, it won't be able to accidentally commit a slashable proposal or attestation. Although this reduces some risk, exporting/importing your history reduces more risk.
 
+**What should I do if I can't export/import my slashing history?**
+
+We recommend waiting a couple epochs and running your validator node with the `--enable-doppelganger` flag set. This flag tells your validator client to try to detect duplicate instances of your validator on the network. This isn't foolproof, but it will reduce risk.
+
+
 **How will I know if I've successfully imported my slashing protection history?**
 
 Prysm will output a success message upon successful import. An error message will be displayed if your slashing protection history is either empty or corrupt.
