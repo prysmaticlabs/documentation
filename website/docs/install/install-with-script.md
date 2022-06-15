@@ -342,12 +342,6 @@ This should produce the following output:
 
 When you see `"is_syncing":false`, your beacon node is fully synchronized with the beacon chain. When you see `"is_optimistic":false`, your execution node is fully synchronized with the execution-layer blockchain. 
 
-:::info
-
-`is_optimistic` is currently not emitted by the latest stable release of Prysm, but this will soon be available.
-
-:::
-
 
 You can verify that your beacon node has successfully connected to your execution node by running the following command from a separate terminal window:
 
