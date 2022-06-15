@@ -14,7 +14,7 @@ To voluntarily exit your validator from the Ethereum network, you'll follow this
  2. Select the account(s) that should be exited. This step can be skipped by specifying the account(s) via the `--public-keys` flag when issuing the `voluntary-exit` command.
  3. Confirm your understanding of the consequences of exiting your validator by typing `Exit my validator` when prompted.
 
-After providing confirmation, your validator node will initiate the voluntary exit by broadcasting the request through your beacon node. By default, your validator node will try to access a beacon node running on `127.0.0.1:4000`. Learn how to update this and other settings via the `--help` flag (for example: `./prysm.sh validator accounts voluntary-exit --help`). Alternatively, visit our [Parameters documentation](../prysm-usage/parameters).
+After providing confirmation, your validator node will initiate the voluntary exit by broadcasting your request through your beacon node. By default, your validator node will try to access a beacon node running on `127.0.0.1:4000`. Learn how to update this and other settings via the `--help` flag (for example: `./prysm.sh validator accounts voluntary-exit --help`). Alternatively, visit our [Parameters documentation](../prysm-usage/parameters).
 
 :::caution 
 
