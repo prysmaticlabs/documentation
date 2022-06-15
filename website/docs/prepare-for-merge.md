@@ -32,7 +32,11 @@ Let's step through each of these changes.
 
 ### Execution node changes
 
-The following command will start an execution node that satisfies post-Merge requirements:
+First, you'll want to generate a JWT secret. Prysm can do this for you:
+
+
+
+Ensure that you've updated to the latest release of your selected execution client software. The following command will start an execution node that satisfies post-Merge requirements:
 
 <Tabs groupId="execution-clients" defaultValue="nethermind" values={[
 {label: 'Nethermind', value: 'nethermind'},
@@ -79,7 +83,6 @@ The following command will start an execution node that satisfies post-Merge req
     <div class="admonition admonition-caution alert alert--warning">
       <div class="admonition-content"><p><strong>Geth is a supermajority execution-layer client</strong>. This centralization poses an active risk to the security of Ethereum. If Geth's code contains a bug, a majority of nodes (and L2s, and users) will be impacted. Consider using another execution-layer client to distribute this risk for the ecosystem <a class='footnote' href='#footnote-10'>[10]</a>.</p></div>
     </div>
-    <p>Download and run the latest 64-bit stable release of the <strong>Geth installer</strong> for your operating system from the <a href='https://geth.ethereum.org/downloads/'>Geth downloads page</a>. Navigate to your <code>execution</code> directory and run the following command to start your execution node using your secret JWT file:</p>
     <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
         {label: 'Goerli-Prater', value: 'goerli-prater'},
@@ -97,19 +100,8 @@ The following command will start an execution node that satisfies post-Merge req
       </TabItem>
     </Tabs>
     <p>See Geth's <a href='https://geth.ethereum.org/docs/interface/command-line-options'>command-line options</a> for parameter definitions.</p>
-    <p>Your Geth execution node will begin syncing. You can check your Geth execution node's sync status by running the following commands from a separate terminal window:</p>
-
-```
-geth attach ## if you're not using Windows
-geth attach ipc:\\.\pipe\geth.ipc ## if you're using Windows 
-eth.syncing
-```
-
-  <p>A sync status of <code>false</code> indicates that your node is fully synced. You can proceed to the next step while Geth syncs.</p>
   </TabItem>
 </Tabs>
-
-
 
 
 Engine API endpoint
