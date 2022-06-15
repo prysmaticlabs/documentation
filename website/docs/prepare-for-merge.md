@@ -6,7 +6,7 @@ sidebar_label: Prepare for The Merge
 
 [The Merge](https://ethereum.org/en/upgrades/merge/) will fully transition Ethereum's consensus mechanism from proof-of-work to proof-of-stake. This is made possible by the [Beacon Chain](https://ethereum.org/en/upgrades/beacon-chain/), a new Ethereum network layer that implements proof-of-stake consensus. After The Merge, this consensus layer will be fully "merged" with Ethereum's execution layer, and miners will be fully replaced by validators on Ethereum Mainnet.
 
-Before The Merge can happen on Mainnet, core developers need to test the procedure on a series of test networks. This guide will help you prepare for The Merge and participate in Merge testing. We encourage everyone to make these changes immediately, even on Mainnet.
+Before The Merge can happen on Mainnet, core developers need to test the procedure on a series of test networks. This guide will help you prepare for The Merge on Mainnet and participate in Merge testing on testnets. We encourage everyone to make these changes immediately, even on Mainnet.
 
 :::info
 
@@ -48,9 +48,10 @@ First, you'll need to generate a JWT token. This will let your beacon node form 
 
 Prysm will output a `jwt.hex` file path. Record this - we'll use it in the next step.
 
+
 ## Run an execution node
 
-Next, we'll configure your execution node to consume this JWT token, and to expose an engine API endpoint: 
+Upgrade your execution client software to the latest version. Use the following command to configure your execution node to consume your JWT token, and to expose an engine API endpoint: 
 
 <Tabs groupId="execution-clients" defaultValue="nethermind" values={[
 {label: 'Nethermind', value: 'nethermind'},
