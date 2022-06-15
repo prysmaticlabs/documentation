@@ -8,9 +8,9 @@ sidebar_label: Prepare for The Merge
 
 Before The Merge can happen on Mainnet, core developers need to test the procedure on a series of test networks. This guide will help you prepare for The Merge on Mainnet and participate in Merge testing on testnets. We encourage everyone to make these changes immediately, even on Mainnet.
 
-:::info
+:::info New users
 
-If you're starting from scratch, our [Quickstart](./install/install-with-script.md) will show you how to configure a Merge-ready node from start to finish.
+This guidance is targeted at people who are already running Prysm. If you're starting from scratch, our [Quickstart](./install/install-with-script.md) will help you configure a Merge-ready node from start to finish.
 
 :::
 
