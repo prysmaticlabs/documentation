@@ -103,14 +103,13 @@ Next, we'll configure your execution node to consume this JWT token, and to expo
         {label: 'Ropsten', value: 'ropsten'}
     ]}>
       <TabItem value="mainnet">
-        <pre><code>geth --http --authrpc.jwtsecret=../consensus/jwt.hex --datadir .</code></pre>
+        <pre><code>geth --http --authrpc.vhosts="localhost" --authrpc.jwtsecret=../consensus/jwt.hex</code></pre>
       </TabItem>
       <TabItem value="goerli-prater">
-        <pre><code>geth --goerli --http --authrpc.jwtsecret=../consensus/jwt.hex --datadir .</code></pre>
+        <pre><code>geth --goerli --http --authrpc.vhosts="localhost" --authrpc.jwtsecret=../consensus/jwt.hex</code></pre>
       </TabItem>
       <TabItem value="ropsten">
-        <pre><code>geth --ropsten --http --authrpc.jwtsecret=../consensus/jwt.hex --datadir . --authrpc.addr localhost --authrpc.port 8551 --authrpc.vhosts localhost --http.api eth,net,engine --override.terminaltotaldifficulty 50000000000000000</code></pre>
-        <p>See the <a href='https://blog.ethereum.org/'>Ethereum blog</a> for the latest Ropsten config recommendations.</p>
+        <pre><code>geth --ropsten --http --authrpc.jwtsecret=../consensus/jwt.hex --authrpc.vhosts localhost --http.api eth,net,engine --override.terminaltotaldifficulty 50000000000000000</code></pre>
       </TabItem>
     </Tabs>
     <p>See Geth's <a href='https://geth.ethereum.org/docs/interface/command-line-options'>command-line options</a> for parameter definitions.</p>
@@ -120,7 +119,7 @@ Next, we'll configure your execution node to consume this JWT token, and to expo
 
 ### Beacon node changes
 
-Next, we'll configure your beacon node to consume this JWT token so it can securely connect to your execution node's engine API endpoint: 
+Next, we'll configure your beacon node to consume your JWT token so it can securely connect to your execution node's engine API endpoint. If you're running a validator, specifying a `suggested-fee-recipient` wallet address will allow you to earn what were previously miner tips:
 
 <Tabs groupId="os" defaultValue="others" values={[
     {label: 'Windows', value: 'win'},
@@ -134,15 +133,15 @@ Next, we'll configure your beacon node to consume this JWT token so it can secur
         {label: 'Ropsten', value: 'ropsten'}
     ]}>
       <TabItem value="mainnet">
-        <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8551 --jwt-secret=jwt.hex</code></pre>
+        <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8551 --jwt-secret=jwt.hex --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
       </TabItem>
       <TabItem value="goerli-prater">
         <p>Download the <a href='https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz'>Prater genesis state from Github</a>.</p>
-        <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8551 --jwt-secret=jwt.hex --prater --genesis-state=genesis.ssz</code></pre>
+        <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8551 --jwt-secret=jwt.hex --prater --genesis-state=genesis.ssz --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
       </TabItem>
       <TabItem value="ropsten">
         <p>Download the <a href='https://github.com/eth-clients/merge-testnets/blob/main/ropsten-beacon-chain/genesis.ssz'>Ropsten genesis state from Github</a>.</p>
-        <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8551 --jwt-secret=jwt.hex --ropsten --genesis-state=genesis.ssz</code></pre>
+        <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8551 --jwt-secret=jwt.hex --ropsten --genesis-state=genesis.ssz --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
       </TabItem>
     </Tabs>
   </TabItem>
@@ -153,47 +152,37 @@ Next, we'll configure your beacon node to consume this JWT token so it can secur
         {label: 'Ropsten', value: 'ropsten'}
     ]}>
     <TabItem value="mainnet">
-      <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8551 --jwt-secret=jwt.hex</code></pre>
+      <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8551 --jwt-secret=jwt.hex --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
     </TabItem>
     <TabItem value="goerli-prater">
       <p>Download the Prater genesis state from GitHub into your <code>consensus</code> directory.</p>
-      <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8551 --jwt-secret=jwt.hex --prater --genesis-state=../genesis.ssz </code></pre>
+      <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8551 --jwt-secret=jwt.hex --prater --genesis-state=../genesis.ssz --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
     </TabItem>
     <TabItem value="ropsten">
       <p>Download the Ropsten genesis state from GitHub into your <code>consensus</code> directory.</p>
-      <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8551 --jwt-secret=jwt.hex --ropsten --genesis-state=genesis.ssz </code></pre>
+      <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8551 --jwt-secret=jwt.hex --ropsten --genesis-state=genesis.ssz --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
     </TabItem>
   </Tabs>
   </TabItem>
 </Tabs>
 
 
-
 ### Validator node changes
 
-
+Validator client configuration doesn't need to be updated for The Merge. Fee recipient can optionally be configured on your validator node if you want redundancy or multiple fee recipient addresses. See [Configuring a Fee Recipient Address](./execution-node/fee-recipient.md) to learn more.
 
 
 ### Hardware changes
 
-
+We recommend updating your hard drive to a 2TB+ SSD as soon as possible.
 
 
 ### Frequently asked questions
 
 **I'm currently running a validator on Ethereum Mainnet. When should I make changes?**
-dkdk
 
-**Instead of buying a 2TB SSD, can I use multiple smaller SSDs?**
-Yes.
+We recommend making these changes immediately, even on Mainnet.
 
-**How do I configure my execution client to use multiple hard drives?**
-
-**How do I configure my beacon node client to use multiple hard drives?**
-
-**How do I monitor my hard drive utilization?**
-
-**How do I monitor the health of my setup?**
 
 
 
