@@ -105,6 +105,8 @@ netstat -nr | grep default
 
 Many computers have a local firewall that blocks incoming connections. Ensure that you have configured the firewall to allow incoming connections on TCP/13000 and UDP/12000 from all source IP addresses.
 
+Note that Prysm uses a randomly selected outbound port when forming TCP connections with peers. You should block inbound connections to ports other than TCP/13000 and UDP/12000, but you shouldn't restrict outbound ports for Prysm.
+
 ## Setting the `--p2p-host-ip` or `--p2p-host-dns` flag
 
 The [beacon node](/docs/how-prysm-works/beacon-node) needs to know what your **public** IP address is so that it can inform other peers how to reach your node.  Do this by including either the `--p2p-host-ip=<your public IP>` or, if you have a valid DNS record `--p2p-host-dns="host.domain.com"` flag when you start up the `beacon-chain`.

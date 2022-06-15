@@ -492,3 +492,10 @@ https://chainsafe.github.io/lodestar/reference/cli/#account-validator-slashing-p
 Ensure your beacon node is fully synced with the network by checking your clients logs prior to starting your validator. Once it is fully synced, start the validator.  
 
 Search a block explorer like https://beaconcha.in/ with your validator's public key to confirm that your validator is now active!
+
+
+## Frequently asked questions
+
+**When I migrate my slashing protection history from Machine A -> Machine B, or Client A -> Client B, do I need to retain A's slashing protection history after importing to B?**
+
+No. After successfully importing your slashing protection history from A -> B, you can discard A. If you need to migrate from B -> C, B's slashing protection history is all you need to export/import.
