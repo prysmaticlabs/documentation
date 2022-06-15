@@ -6,6 +6,12 @@ sidebar_label: Checkpoint Sync
 
 # Checkpoint Sync
 
+:::caution
+
+**This feature is currently in public preview** and may change significantly as we receive feedback from users like you. Join our [Discord server](https://discord.gg/prysmaticlabs) to share your feedback.
+
+:::
+
 Prysm provides the ability to sync from a finalized checkpoint, as an alternative to replaying all history starting from Genesis. Checkpoint Sync is significantly faster than Genesis Sync, and is considered more secure thanks to the protections against long-range attacks afforded by [Weak Subjectivity](https://blog.ethereum.org/2014/11/25/proof-stake-learned-love-weak-subjectivity/).
 
 Checkpoint Sync uses a `BeaconState` and `SignedBeaconBlock` from the first Epoch of the current [Weak Subjectivity Period](https://github.com/ethereum/consensus-specs/blob/dev/specs/phase0/weak-subjectivity.md) ([additional background](https://notes.ethereum.org/@adiasg/weak-subjectvity-eth2)). Due to implementation details within prysm, we also require the genesis state to be provided. It is recommended that a server synced via Checkpoint Sync also specify the `--weak-subjectivity-checkpoint` flag, which causes the server to halt syncing at the Checkpoint Epoch unless the chain includes the specified block. This document will explain how to:
