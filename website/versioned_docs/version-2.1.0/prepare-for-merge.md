@@ -27,6 +27,9 @@ This guidance is targeted at people who are already running Prysm. If you're sta
 | A 1TB hard drive is enough.                                                                | A 2TB+ SSD is required.                                                                         |
 
 
+<br />
+
+
 Let's step through each of these changes. 
 
 
