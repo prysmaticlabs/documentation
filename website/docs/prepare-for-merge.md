@@ -27,16 +27,30 @@ If you're starting from scratch, our Quickstart will show you how to configure a
 | A 1TB hard drive is enough.                                                                | A 2TB+ SSD is required.                                                                         |
 
 
-Let's step through each of these changes.
+Let's step through each of these changes. 
 
 
-### Execution node changes
+## Generate JWT token
 
-First, you'll want to generate a JWT secret. Prysm can do this for you:
+First, you'll need to generate a JWT token. This will let your beacon node form a secure HTTP connection with your execution node, which is required post-Merge. Upgrade Prysm to [Prysm v2.1.3-rc.4](https://github.com/prysmaticlabs/prysm/releases/tag/v2.1.3-rc.3) and issue the following command:
 
+<Tabs groupId="os" defaultValue="others" values={[
+    {label: 'Windows', value: 'win'},
+    {label: 'Linux, MacOS, Arm64', value: 'others'}
+]}>
+  <TabItem value="win">
+  <pre><code>prysm.bat beacon-chain jwt generate-auth-secret</code></pre>
+  </TabItem>
+  <TabItem value="others">
+  <pre><code>./prysm.sh beacon-chain jwt generate-jwt-secret</code></pre>
+  </TabItem>
+</Tabs>
 
+Prysm will output a `jwt.hex` file path. Record this - we'll use it in the next step.
 
-Ensure that you've updated to the latest release of your selected execution client software. The following command will start an execution node that satisfies post-Merge requirements:
+## Run an execution node
+
+Next, we'll configure your execution node to consume this JWT token, and to expose an engine API endpoint: 
 
 <Tabs groupId="execution-clients" defaultValue="nethermind" values={[
 {label: 'Nethermind', value: 'nethermind'},
@@ -104,16 +118,11 @@ Ensure that you've updated to the latest release of your selected execution clie
 </Tabs>
 
 
-Engine API endpoint
-
-JWT token
-
-
 ### Beacon node changes
 
-Engine API endpoint
+Next, we'll configure your beacon node to consume this JWT token so it can securely connect to your execution node's engine API endpoint: 
 
-JWT token
+
 
 
 ### Validator node changes
