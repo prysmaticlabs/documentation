@@ -105,7 +105,7 @@ netstat -nr | grep default
 
 Many computers have a local firewall that blocks incoming connections. Ensure that you have configured the firewall to allow incoming connections on TCP/13000 and UDP/12000 from all source IP addresses.
 
-Note that Prysm uses a randomly selected outbound port when forming TCP connections with peers. You should block inbound connections to ports other than TCP/13000 and UDP/12000, but you shouldn't restrict outbound ports for Prysm.
+Note that Prysm uses a randomly selected outbound port when forming TCP connections with peers. You should block inbound connections to local ports other than TCP/13000 and UDP/12000, but you shouldn't restrict outbound connections from any local ports for Prysm. You may need to add a rule specifically to grant Prysm outbound access via all local TCP/UDP ports.
 
 ## Setting the `--p2p-host-ip` or `--p2p-host-dns` flag
 
