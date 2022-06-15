@@ -122,6 +122,50 @@ Next, we'll configure your execution node to consume this JWT token, and to expo
 
 Next, we'll configure your beacon node to consume this JWT token so it can securely connect to your execution node's engine API endpoint: 
 
+<Tabs groupId="os" defaultValue="others" values={[
+    {label: 'Windows', value: 'win'},
+    {label: 'Linux, MacOS, Arm64', value: 'others'}
+]}>
+  <TabItem value="win">
+    <p>Navigate to your <code>consensus</code> directory.</p>
+    <Tabs groupId="network" defaultValue="mainnet" values={[
+        {label: 'Mainnet', value: 'mainnet'},
+        {label: 'Goerli-Prater', value: 'goerli-prater'},
+        {label: 'Ropsten', value: 'ropsten'}
+    ]}>
+      <TabItem value="mainnet">
+        <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8551 --jwt-secret=jwt.hex</code></pre>
+      </TabItem>
+      <TabItem value="goerli-prater">
+        <p>Download the <a href='https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz'>Prater genesis state from Github</a>.</p>
+        <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8551 --jwt-secret=jwt.hex --prater --genesis-state=genesis.ssz</code></pre>
+      </TabItem>
+      <TabItem value="ropsten">
+        <p>Download the <a href='https://github.com/eth-clients/merge-testnets/blob/main/ropsten-beacon-chain/genesis.ssz'>Ropsten genesis state from Github</a>.</p>
+        <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8551 --jwt-secret=jwt.hex --ropsten --genesis-state=genesis.ssz</code></pre>
+      </TabItem>
+    </Tabs>
+  </TabItem>
+  <TabItem value="others">
+    <Tabs groupId="network" defaultValue="mainnet" values={[
+        {label: 'Mainnet', value: 'mainnet'},
+        {label: 'Goerli-Prater', value: 'goerli-prater'},
+        {label: 'Ropsten', value: 'ropsten'}
+    ]}>
+    <TabItem value="mainnet">
+      <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8551 --jwt-secret=jwt.hex</code></pre>
+    </TabItem>
+    <TabItem value="goerli-prater">
+      <p>Download the Prater genesis state from GitHub into your <code>consensus</code> directory.</p>
+      <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8551 --jwt-secret=jwt.hex --prater --genesis-state=../genesis.ssz </code></pre>
+    </TabItem>
+    <TabItem value="ropsten">
+      <p>Download the Ropsten genesis state from GitHub into your <code>consensus</code> directory.</p>
+      <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8551 --jwt-secret=jwt.hex --ropsten --genesis-state=genesis.ssz </code></pre>
+    </TabItem>
+  </Tabs>
+  </TabItem>
+</Tabs>
 
 
 
