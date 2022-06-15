@@ -7,8 +7,6 @@ sidebar_label: Exiting a validator
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## Performing a voluntary exit
-
 To voluntarily exit your validator from the Ethereum network, you'll follow this procedure:
 
  1. Ensure that a beacon node is running locally. 
