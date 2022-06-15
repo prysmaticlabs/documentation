@@ -9,17 +9,18 @@ import TabItem from '@theme/TabItem';
 
 ## Performing a voluntary exit
 
-Exiting one or more validator accounts is possible in Prysm via the command line, but you **will need to have a running beacon node** for the voluntary exit to be submitted and broadcasted to the network. With a beacon node running, the following procedure will volunarily exit your validator:
+To voluntarily exit your validator from the Ethereum network, you'll follow this procedure:
 
- 1. Issue the `voluntary-exit` command to your validator.
+ 1. Ensure that a beacon node is running locally. 
+ 1. Issue the `voluntary-exit` command to your validator (examples provided below).
  2. Select the account(s) that should be exited. This step can be skipped by specifying the account(s) via the `--public-keys` flag when issuing the `voluntary-exit` command.
- 3. Confirm your understanding of the consequences of performing a voluntary exit on a validator by typing `Exit my validator` when prompted.
+ 3. Confirm your understanding of the consequences of exiting your validator by typing `Exit my validator` when prompted.
 
-After providing confirmation, the exit process will be initiated.
+After providing confirmation, your validator node will initiate the voluntary exit by broadcasting the request through your beacon node. By default, your validator node will try to access a beacon node running on `127.0.0.1:4000`. Learn how to update this and other settings via the `--help` flag (for example: `./prysm.sh validator accounts voluntary-exit --help`). Alternatively, visit our [Parameters documentation](../prysm-usage/parameters).
 
 :::caution 
 
-Although validator nodes can voluntarily exit, you won't be able to withdraw your staked funds until withdrawal functionality is implemented. This should be possible after The Merge. Visit the [Ethereum Validator FAQ](https://launchpad.ethereum.org/en/faq) to learn more.
+Although validator nodes can voluntarily exit, you won't be able to withdraw your staked funds or re-enroll your validator until withdrawal functionality is implemented, which will likely happen soon after The Merge. Visit the [Ethereum Validator FAQ](https://launchpad.ethereum.org/en/faq) to learn more.
 
 :::
 
@@ -102,10 +103,3 @@ bazel run //validator --config=release -- accounts voluntary-exit
 
 </TabItem>
 </Tabs>
-
-:::info
-Your validator client will need to establish a connection with a running beacon node in order to submit a voluntary exit request. By default, your validator node will try to access a beacon node running on `127.0.0.1:4000`. Learn how to update this and other settings via the `--help` flag. Alternatively, visit our [Parameters](../prysm-usage/parameters) document.
-:::
-
-
-
