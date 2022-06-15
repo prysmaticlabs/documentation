@@ -34,6 +34,7 @@ msg="Peer disconnected" active=0
 Peers will continuously disconnect and reconnect, so don't worry about `Peer disconnected` messages. If your beacon node is struggling to find peers:
 
  - Your beacon node might be suffering from connectivity problems. Visit [Improve P2P connectivity](/docs/prysm-usage/p2p-host-ip) for connectivity troubleshooting guidance.
+ - Make sure that your firewall isn't restricting any **outbound** ports for Prysm.
  - You may be using an incorrect genesis state or network flag. Every test network requires its own genesis state and network flag. Visit our [Quickstart](../install/install-with-script.md) for the latest test network parameters.
 
 
