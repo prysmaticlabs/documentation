@@ -4,13 +4,13 @@ title: Prepare for The Merge
 sidebar_label: Prepare for The Merge
 ---
 
-The Merge is an upcoming event that migrates Ethereum's consensus mechanism from proof-of-work to proof-of-stake. This is made possible by the Beacon Chain, a new network layer that implements proof-of-stake consensus. After The Merge, this consensus layer will be fully "merged" with Ethereum's execution layer, and validators will replace miners on Ethereum Mainnet.
+[The Merge](https://ethereum.org/en/upgrades/merge/) will fully transition Ethereum's consensus mechanism from proof-of-work to proof-of-stake. This is made possible by the [Beacon Chain](https://ethereum.org/en/upgrades/beacon-chain/), a new Ethereum network layer that implements proof-of-stake consensus. After The Merge, this consensus layer will be fully "merged" with Ethereum's execution layer, and miners will be fully replaced by validators on Ethereum Mainnet.
 
-Before The Merge can happen on Mainnet, core developers need to test the procedure on a series of test networks. This guide will help current node operators and validators participate in these tests and prepare for The Merge. We encourage everyone to make these changes immediately, even on Mainnet.
+Before The Merge can happen on Mainnet, core developers need to test the procedure on a series of test networks. This guide will help you prepare for The Merge and participate in Merge testing. We encourage everyone to make these changes immediately, even on Mainnet.
 
-::: info
+:::info
 
-If you're starting from scratch, our Quickstart will show you how to configure a Merge-ready node from start to finish.
+If you're starting from scratch, our [Quickstart](./install/install-with-script.md) will show you how to configure a Merge-ready node from start to finish.
 
 :::
 
@@ -182,8 +182,3 @@ We recommend updating your hard drive to a 2TB+ SSD as soon as possible.
 **I'm currently running a validator on Ethereum Mainnet. When should I make changes?**
 
 We recommend making these changes immediately, even on Mainnet.
-
-
-
-
-
