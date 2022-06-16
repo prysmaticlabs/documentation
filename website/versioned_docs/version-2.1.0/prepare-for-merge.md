@@ -181,7 +181,7 @@ Next, we'll configure your beacon node to consume your JWT token so it can secur
         <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8551 --jwt-secret=path/to/jwt.hex --ropsten --genesis-state=genesis.ssz --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
       </TabItem>
       <TabItem value="sepolia">
-        <p>Download the <a href='https://github.com/eth-clients/merge-testnets/blob/main/sepolia-beacon-chain/genesis.ssz'>Sepolia genesis state from Github</a>.</p>
+      <p>Download the <a href='https://github.com/eth-clients/merge-testnets/blob/main/sepolia/genesis.ssz'>Sepolia genesis state from Github</a>.</p>
         <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8551 --jwt-secret=path/to/jwt.hex --sepolia --genesis-state=genesis.ssz --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
       </TabItem>
       <TabItem value="goerli-prater">
@@ -199,7 +199,7 @@ Next, we'll configure your beacon node to consume your JWT token so it can secur
         {label: 'Sepolia', value: 'sepolia'},
         {label: 'Goerli-Prater', value: 'goerli-prater'},
         {label: 'Mainnet', value: 'mainnet'}
-    ]}>
+    ]}> 
     <TabItem value="ropsten">
       <p>Download the <a href='https://github.com/eth-clients/merge-testnets/blob/main/ropsten-beacon-chain/genesis.ssz'>Ropsten genesis state from Github</a>.</p>
       <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8551 --jwt-secret=path/to/jwt.hex --ropsten --genesis-state=genesis.ssz --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
