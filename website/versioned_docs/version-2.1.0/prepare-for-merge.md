@@ -184,7 +184,7 @@ We recommend updating your hard drive to a 2TB+ SSD as soon as possible.
 
 :::tip Congratulations!
 
-You’re now ready for The Merge.
+You’re now ready for The Merge. If you have any questions, feel free ask them on our [Discord](https://discord.gg/prysmaticlabs).
 
 :::
 
