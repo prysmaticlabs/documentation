@@ -45,7 +45,7 @@ Let's step through each of these changes.
 
 ## Generate JWT token
 
-Your beacon node needs a JWT token to form a secure HTTP connection with your execution node. Upgrade Prysm to [Prysm v2.1.3-rc.4](https://github.com/prysmaticlabs/prysm/releases/tag/v2.1.3-rc.4) and issue the following command to generate this token:
+Your beacon node needs a JWT token to form a secure HTTP connection with your execution node. Using [Prysm v2.1.3-rc.4](https://github.com/prysmaticlabs/prysm/releases/tag/v2.1.3-rc.4), issue the following command to generate this token:
 
 <Tabs groupId="os" defaultValue="others" values={[
     {label: 'Windows', value: 'win'},
@@ -64,7 +64,7 @@ Prysm will output a `jwt.hex` file path. Record this - we'll use it in the next 
 
 ## Configure execution node
 
-Upgrade your execution client software to the latest version. Use the following command to configure your execution node to consume your JWT token, and to expose an engine API endpoint: 
+Using the latest version of your execution client software, issue the following command to configure your execution node to consume your JWT token, and to expose an engine API endpoint: 
 
 <Tabs groupId="execution-clients" defaultValue="nethermind" values={[
 {label: 'Nethermind', value: 'nethermind'},
