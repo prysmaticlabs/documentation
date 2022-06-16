@@ -68,7 +68,8 @@ Upgrade your execution client software to the latest version. Use the following 
     <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
         {label: 'Goerli-Prater', value: 'goerli-prater'},
-        {label: 'Ropsten', value: 'ropsten'}
+        {label: 'Ropsten', value: 'ropsten'},
+        {label: 'Sepolia', value: 'sepolia'}
     ]}>
       <TabItem value="mainnet">
         <div class="admonition admonition-caution alert alert--warning">
@@ -82,6 +83,9 @@ Upgrade your execution client software to the latest version. Use the following 
         </div>
         <pre><code>Nethermind.Runner --config goerli --JsonRpc.JwtSecretFile=path/to/jwt.hex</code></pre>
       </TabItem>
+      <TabItem value="sepolia">
+        <pre><code>Nethermind.Runner --config sepolia --JsonRpc.JwtSecretFile=path/to/jwt.hex --Merge.TerminalTotalDifficulty 50000000000000000</code></pre>
+      </TabItem>
       <TabItem value="ropsten">
         <pre><code>Nethermind.Runner --config ropsten --JsonRpc.JwtSecretFile=path/to/jwt.hex --Merge.TerminalTotalDifficulty 50000000000000000</code></pre>
       </TabItem>
@@ -92,7 +96,8 @@ Upgrade your execution client software to the latest version. Use the following 
     <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
         {label: 'Goerli-Prater', value: 'goerli-prater'},
-        {label: 'Ropsten', value: 'ropsten'}
+        {label: 'Ropsten', value: 'ropsten'},
+        {label: 'Sepolia', value: 'sepolia'}
     ]}>
       <TabItem value="mainnet">
         <div class="admonition admonition-caution alert alert--warning">
@@ -105,6 +110,9 @@ Upgrade your execution client software to the latest version. Use the following 
           <div class="admonition-content"><p><strong>Goerli/Prater aren't being merged yet</strong>, but you can configure JWT and engine API now.</p></div>
         </div>
         <pre><code>besu --network=goerli --rpc-http-enabled --engine-jwt-enabled=true --engine-rpc-http-port=8551 --engine-jwt-secret=path/to/jwt.hex --engine-rpc-enabled=true --engine-host-allowlist="*"</code></pre>
+      </TabItem>
+      <TabItem value="sepolia">
+        <pre><code>besu --network=sepolia --rpc-http-enabled --engine-jwt-enabled=true --engine-rpc-http-port=8551 --engine-jwt-secret=path/to/jwt.hex --engine-rpc-enabled=true --engine-host-allowlist="*" --Xmerge-support=true --override-genesis-config="terminalTotalDifficulty=50000000000000000"  </code></pre>
       </TabItem>
       <TabItem value="ropsten">
         <pre><code>besu --network=ropsten --rpc-http-enabled --engine-jwt-enabled=true --engine-rpc-http-port=8551 --engine-jwt-secret=path/to/jwt.hex --engine-rpc-enabled=true --engine-host-allowlist="*" --Xmerge-support=true --override-genesis-config="terminalTotalDifficulty=50000000000000000"  </code></pre>
@@ -119,7 +127,8 @@ Upgrade your execution client software to the latest version. Use the following 
     <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
         {label: 'Goerli-Prater', value: 'goerli-prater'},
-        {label: 'Ropsten', value: 'ropsten'}
+        {label: 'Ropsten', value: 'ropsten'},
+        {label: 'Sepolia', value: 'sepolia'}
     ]}>
       <TabItem value="mainnet">
         <div class="admonition admonition-caution alert alert--warning">
@@ -132,6 +141,9 @@ Upgrade your execution client software to the latest version. Use the following 
           <div class="admonition-content"><p><strong>Goerli/Prater aren't being merged yet</strong> and Geth requires TTD to be configured in order for JWT to work, so for now, we'll just tell Geth to use port <code>8551</code>. This will allow Prysm to connect to Geth in the next step.</p></div>
         </div>
         <pre><code>geth --goerli --http --http.api eth,net,engine --http.port 8551</code></pre>
+      </TabItem>
+      <TabItem value="sepolia">
+        <pre><code>geth --sepolia --http --http.api eth,net,engine --authrpc.vhosts="localhost" --authrpc.jwtsecret=path/to/jwt.hex  --override.terminaltotaldifficulty 50000000000000000</code></pre>
       </TabItem>
       <TabItem value="ropsten">
         <pre><code>geth --ropsten --http --http.api eth,net,engine --authrpc.vhosts="localhost" --authrpc.jwtsecret=path/to/jwt.hex  --override.terminaltotaldifficulty 50000000000000000</code></pre>
@@ -154,7 +166,8 @@ Next, we'll configure your beacon node to consume your JWT token so it can secur
     <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
         {label: 'Goerli-Prater', value: 'goerli-prater'},
-        {label: 'Ropsten', value: 'ropsten'}
+        {label: 'Ropsten', value: 'ropsten'},
+        {label: 'Sepolia', value: 'sepolia'}
     ]}>
       <TabItem value="mainnet">
         <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8551 --jwt-secret=path/to/jwt.hex --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
@@ -162,6 +175,10 @@ Next, we'll configure your beacon node to consume your JWT token so it can secur
       <TabItem value="goerli-prater">
         <p>Download the <a href='https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz'>Prater genesis state from Github</a>.</p>
         <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8551 --jwt-secret=path/to/jwt.hex --prater --genesis-state=genesis.ssz --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
+      </TabItem>
+      <TabItem value="sepolia">
+        <p>Download the <a href='https://github.com/eth-clients/merge-testnets/blob/main/sepolia-beacon-chain/genesis.ssz'>Sepolia genesis state from Github</a>.</p>
+        <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8551 --jwt-secret=path/to/jwt.hex --sepolia --genesis-state=genesis.ssz --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
       </TabItem>
       <TabItem value="ropsten">
         <p>Download the <a href='https://github.com/eth-clients/merge-testnets/blob/main/ropsten-beacon-chain/genesis.ssz'>Ropsten genesis state from Github</a>.</p>
@@ -173,17 +190,22 @@ Next, we'll configure your beacon node to consume your JWT token so it can secur
     <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
         {label: 'Goerli-Prater', value: 'goerli-prater'},
-        {label: 'Ropsten', value: 'ropsten'}
+        {label: 'Ropsten', value: 'ropsten'},
+        {label: 'Sepolia', value: 'sepolia'}
     ]}>
     <TabItem value="mainnet">
       <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8551 --jwt-secret=path/to/jwt.hex --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
     </TabItem>
     <TabItem value="goerli-prater">
-      <p>Download the Prater genesis state from GitHub into your <code>consensus</code> directory.</p>
-      <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8551 --jwt-secret=path/to/jwt.hex --prater --genesis-state=../genesis.ssz --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
+      <p>Download the <a href='https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz'>Prater genesis state from Github</a>.</p>
+      <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8551 --jwt-secret=path/to/jwt.hex --prater --genesis-state=genesis.ssz --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
+    </TabItem>
+    <TabItem value="sepolia">
+      <p>Download the <a href='https://github.com/eth-clients/merge-testnets/blob/main/sepolia-beacon-chain/genesis.ssz'>Sepolia genesis state from Github</a>.</p>
+      <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8551 --jwt-secret=path/to/jwt.hex --sepolia --genesis-state=genesis.ssz --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
     </TabItem>
     <TabItem value="ropsten">
-      <p>Download the Ropsten genesis state from GitHub into your <code>consensus</code> directory.</p>
+      <p>Download the <a href='https://github.com/eth-clients/merge-testnets/blob/main/ropsten-beacon-chain/genesis.ssz'>Ropsten genesis state from Github</a>.</p>
       <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8551 --jwt-secret=path/to/jwt.hex --ropsten --genesis-state=genesis.ssz --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
     </TabItem>
   </Tabs>
