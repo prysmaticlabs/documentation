@@ -240,4 +240,4 @@ You’re now ready for The Merge. If you have any questions, feel free ask them 
 
 **I'm currently running a validator on Ethereum Mainnet. When should I make changes?**
 
-You can make the above changes now. Note that Geth requires `TTD` to be specified when using its engine API endpoint, so we recommend waiting to modify Geth configuration on all networks but Ropsten and Sepolia. Otherwise, the configuration provided within this document can be interpreted as "currently recommended".
+You can make the above changes now. This document will be continuously updated with the latest recommended configuration.
