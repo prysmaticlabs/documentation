@@ -174,12 +174,12 @@ Next, we'll configure your beacon node to consume your JWT token so it can secur
 </Tabs>
 
 
-### Configure validator node
+## Configure validator node
 
 Validator client configuration doesn't need to be updated for The Merge. Fee recipient can optionally be configured on your validator node if you want redundancy or multiple fee recipient addresses. See [Configuring a Fee Recipient Address](./execution-node/fee-recipient.md) to learn more.
 
 
-### Upgrade hardware
+## Upgrade hardware
 
 We recommend updating your hard drive to a 2TB+ SSD as soon as possible.
 
@@ -192,7 +192,7 @@ You’re now ready for The Merge.
 
 
 
-### Frequently asked questions
+## Frequently asked questions
 
 **I'm currently running a validator on Ethereum Mainnet. When should I make changes?**
 
