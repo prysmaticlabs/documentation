@@ -4,6 +4,9 @@ title: Prepare for The Merge
 sidebar_label: Prepare for The Merge
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 [The Merge](https://ethereum.org/en/upgrades/merge/) will fully transition Ethereum's consensus mechanism from proof-of-work to proof-of-stake. This is made possible by the [Beacon Chain](https://ethereum.org/en/upgrades/beacon-chain/), a new Ethereum network layer that implements proof-of-stake consensus. After The Merge, this consensus layer will be fully "merged" with Ethereum's execution layer, and miners will be fully replaced by validators on Ethereum Mainnet.
 
 Before The Merge can happen on Mainnet, core developers need to test the procedure on a series of test networks. This guide will help you prepare for The Merge on Mainnet and participate in Merge testing on testnets. We encourage everyone to make these changes immediately, even on Mainnet.
