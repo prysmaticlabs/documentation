@@ -71,13 +71,13 @@ Upgrade your execution client software to the latest version. Use the following 
         {label: 'Ropsten', value: 'ropsten'}
     ]}>
       <TabItem value="mainnet">
-        <pre><code>Nethermind.Runner --config mainnet --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.JwtSecretFile=../consensus/jwt.hex</code></pre>
+        <pre><code>Nethermind.Runner --config mainnet --JsonRpc.Enabled true --JsonRpc.JwtSecretFile=../consensus/jwt.hex --JsonRpc.Host=0.0.0.0</code></pre>
       </TabItem>
       <TabItem value="goerli-prater">
-        <pre><code>Nethermind.Runner --config goerli --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.JwtSecretFile=../consensus/jwt.hex</code></pre>
+        <pre><code>Nethermind.Runner --config goerli --JsonRpc.Enabled true --JsonRpc.JwtSecretFile=../consensus/jwt.hex --JsonRpc.Host=0.0.0.0</code></pre>
       </TabItem>
       <TabItem value="ropsten">
-        <pre><code>Nethermind.Runner --config ropsten --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.JwtSecretFile=../consensus/jwt.hex --JsonRpc.Host=0.0.0.0 --Merge.TerminalTotalDifficulty 50000000000000000</code></pre>
+        <pre><code>Nethermind.Runner --config ropsten --JsonRpc.Enabled true --JsonRpc.JwtSecretFile=../consensus/jwt.hex --JsonRpc.Host=0.0.0.0 --Merge.TerminalTotalDifficulty 50000000000000000</code></pre>
       </TabItem>
     </Tabs>
     <p>See Nethermind's <a href='https://docs.nethermind.io/nethermind/ethereum-client/configuration'>command-line options</a> for parameter definitions.</p>
@@ -89,13 +89,13 @@ Upgrade your execution client software to the latest version. Use the following 
         {label: 'Ropsten', value: 'ropsten'}
     ]}>
       <TabItem value="mainnet">
-        <pre><code>besu --network=mainnet --rpc-http-enabled --engine-jwt-enabled=true --engine-jwt-secret=../consensus/jwt.hex</code></pre>
+        <pre><code>besu --network=mainnet --rpc-http-enabled --engine-jwt-enabled=true --engine-jwt-secret=../consensus/jwt.hex --engine-rpc-enabled=true --engine-host-allowlist="*"</code></pre>
       </TabItem>
       <TabItem value="goerli-prater">
-        <pre><code>besu --network=goerli --rpc-http-enabled --engine-jwt-enabled=true --engine-jwt-secret=../consensus/jwt.hex</code></pre>
+        <pre><code>besu --network=goerli --rpc-http-enabled --engine-jwt-enabled=true --engine-jwt-secret=../consensus/jwt.hex --engine-rpc-enabled=true --engine-host-allowlist="*"</code></pre>
       </TabItem>
       <TabItem value="ropsten">
-        <pre><code>besu --network=ropsten --rpc-http-enabled --engine-jwt-enabled=true --engine-jwt-secret=../consensus/jwt.hex --sync-mode="X_SNAP" --Xmerge-support=true --engine-rpc-enabled=true --engine-host-allowlist="*" --override-genesis-config="terminalTotalDifficulty=50000000000000000"  </code></pre>
+        <pre><code>besu --network=ropsten --rpc-http-enabled --engine-jwt-enabled=true --engine-jwt-secret=../consensus/jwt.hex --engine-rpc-enabled=true --engine-host-allowlist="*" --override-genesis-config="terminalTotalDifficulty=50000000000000000"  </code></pre>
       </TabItem>
     </Tabs>
     <p>See Besu's <a href='https://besu.hyperledger.org/en/stable/Reference/CLI/CLI-Syntax/'>command-line options</a> for parameter definitions.</p>
@@ -110,13 +110,13 @@ Upgrade your execution client software to the latest version. Use the following 
         {label: 'Ropsten', value: 'ropsten'}
     ]}>
       <TabItem value="mainnet">
-        <pre><code>geth --http --authrpc.vhosts="localhost" --authrpc.jwtsecret=../consensus/jwt.hex</code></pre>
+        <pre><code>geth --http --authrpc.vhosts="localhost" --authrpc.jwtsecret=../consensus/jwt.hex --http.api eth,net,engine</code></pre>
       </TabItem>
       <TabItem value="goerli-prater">
-        <pre><code>geth --goerli --http --authrpc.vhosts="localhost" --authrpc.jwtsecret=../consensus/jwt.hex</code></pre>
+        <pre><code>geth --goerli --http --authrpc.vhosts="localhost" --authrpc.jwtsecret=../consensus/jwt.hex --http.api eth,net,engine</code></pre>
       </TabItem>
       <TabItem value="ropsten">
-        <pre><code>geth --ropsten --http --authrpc.jwtsecret=../consensus/jwt.hex --authrpc.vhosts localhost --http.api eth,net,engine --override.terminaltotaldifficulty 50000000000000000</code></pre>
+        <pre><code>geth --ropsten --http --authrpc.vhosts="localhost" --authrpc.jwtsecret=../consensus/jwt.hex --http.api eth,net,engine --override.terminaltotaldifficulty 50000000000000000</code></pre>
       </TabItem>
     </Tabs>
     <p>See Geth's <a href='https://geth.ethereum.org/docs/interface/command-line-options'>command-line options</a> for parameter definitions.</p>
