@@ -133,7 +133,6 @@ Next, we'll configure your beacon node to consume your JWT token so it can secur
     {label: 'Linux, MacOS, Arm64', value: 'others'}
 ]}>
   <TabItem value="win">
-    <p>Navigate to your <code>consensus</code> directory.</p>
     <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
         {label: 'Goerli-Prater', value: 'goerli-prater'},
