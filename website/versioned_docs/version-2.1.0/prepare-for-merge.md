@@ -38,7 +38,7 @@ Let's step through each of these changes.
 
 ## Generate JWT token
 
-First, you'll need to generate a JWT token. This will let your beacon node form a secure HTTP connection with your execution node, which is required post-Merge. Upgrade Prysm to [Prysm v2.1.3-rc.4](https://github.com/prysmaticlabs/prysm/releases/tag/v2.1.3-rc.3) and issue the following command:
+Your beacon node needs a JWT token to form a secure HTTP connection with your execution node. Upgrade Prysm to [Prysm v2.1.3-rc.4](https://github.com/prysmaticlabs/prysm/releases/tag/v2.1.3-rc.3) and issue the following command to generate a JWT token:
 
 <Tabs groupId="os" defaultValue="others" values={[
     {label: 'Windows', value: 'win'},
