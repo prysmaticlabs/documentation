@@ -183,13 +183,11 @@ Validator client configuration doesn't need to be updated for The Merge. Fee rec
 
 We recommend updating your hard drive to a 2TB+ SSD as soon as possible.
 
-
 :::tip Congratulations!
 
 You’re now ready for The Merge.
 
 :::
-
 
 
 ## Frequently asked questions
