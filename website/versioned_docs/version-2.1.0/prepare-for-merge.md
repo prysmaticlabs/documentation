@@ -73,10 +73,10 @@ Upgrade your execution client software to the latest version. Use the following 
 ]}>
   <TabItem value="nethermind">
     <Tabs groupId="network" defaultValue="mainnet" values={[
-        {label: 'Mainnet', value: 'mainnet'},
-        {label: 'Goerli-Prater', value: 'goerli-prater'},
         {label: 'Ropsten', value: 'ropsten'},
-        {label: 'Sepolia', value: 'sepolia'}
+        {label: 'Sepolia', value: 'sepolia'},
+        {label: 'Goerli-Prater', value: 'goerli-prater'},
+        {label: 'Mainnet', value: 'mainnet'}
     ]}>
       <TabItem value="ropsten">
         <pre><code>Nethermind.Runner --config ropsten --JsonRpc.JwtSecretFile=path/to/jwt.hex --Merge.TerminalTotalDifficulty 50000000000000000</code></pre>
@@ -101,10 +101,10 @@ Upgrade your execution client software to the latest version. Use the following 
   </TabItem>
   <TabItem value="besu">
     <Tabs groupId="network" defaultValue="mainnet" values={[
-        {label: 'Mainnet', value: 'mainnet'},
-        {label: 'Goerli-Prater', value: 'goerli-prater'},
         {label: 'Ropsten', value: 'ropsten'},
-        {label: 'Sepolia', value: 'sepolia'}
+        {label: 'Sepolia', value: 'sepolia'},
+        {label: 'Goerli-Prater', value: 'goerli-prater'},
+        {label: 'Mainnet', value: 'mainnet'}
     ]}>
       <TabItem value="ropsten">
         <pre><code>besu --network=ropsten --rpc-http-enabled --engine-jwt-enabled=true --engine-rpc-http-port=8551 --engine-jwt-secret=path/to/jwt.hex --engine-rpc-enabled=true --engine-host-allowlist="*" --Xmerge-support=true --override-genesis-config="terminalTotalDifficulty=50000000000000000"  </code></pre>
@@ -132,10 +132,10 @@ Upgrade your execution client software to the latest version. Use the following 
       <div class="admonition-content"><p><strong>Geth is a supermajority execution-layer client</strong>. This centralization poses an active risk to the security of Ethereum. Consider using a minority execution-layer client to distribute this risk for the ecosystem <a class='footnote' href='#footnote-10'>[10]</a>.</p></div>
     </div>
     <Tabs groupId="network" defaultValue="mainnet" values={[
-        {label: 'Mainnet', value: 'mainnet'},
-        {label: 'Goerli-Prater', value: 'goerli-prater'},
         {label: 'Ropsten', value: 'ropsten'},
-        {label: 'Sepolia', value: 'sepolia'}
+        {label: 'Sepolia', value: 'sepolia'},
+        {label: 'Goerli-Prater', value: 'goerli-prater'},
+        {label: 'Mainnet', value: 'mainnet'}
     ]}>
       <TabItem value="ropsten">
         <pre><code>geth --ropsten --http --http.api eth,net,engine --authrpc.vhosts="localhost" --authrpc.jwtsecret=path/to/jwt.hex  --override.terminaltotaldifficulty 50000000000000000</code></pre>
@@ -171,10 +171,10 @@ Next, we'll configure your beacon node to consume your JWT token so it can secur
 ]}>
   <TabItem value="win">
     <Tabs groupId="network" defaultValue="mainnet" values={[
-        {label: 'Mainnet', value: 'mainnet'},
-        {label: 'Goerli-Prater', value: 'goerli-prater'},
         {label: 'Ropsten', value: 'ropsten'},
-        {label: 'Sepolia', value: 'sepolia'}
+        {label: 'Sepolia', value: 'sepolia'},
+        {label: 'Goerli-Prater', value: 'goerli-prater'},
+        {label: 'Mainnet', value: 'mainnet'}
     ]}>
       <TabItem value="ropsten">
         <p>Download the <a href='https://github.com/eth-clients/merge-testnets/blob/main/ropsten-beacon-chain/genesis.ssz'>Ropsten genesis state from Github</a>.</p>
@@ -195,10 +195,10 @@ Next, we'll configure your beacon node to consume your JWT token so it can secur
   </TabItem>
   <TabItem value="others">
     <Tabs groupId="network" defaultValue="mainnet" values={[
-        {label: 'Mainnet', value: 'mainnet'},
-        {label: 'Goerli-Prater', value: 'goerli-prater'},
         {label: 'Ropsten', value: 'ropsten'},
-        {label: 'Sepolia', value: 'sepolia'}
+        {label: 'Sepolia', value: 'sepolia'},
+        {label: 'Goerli-Prater', value: 'goerli-prater'},
+        {label: 'Mainnet', value: 'mainnet'}
     ]}>
     <TabItem value="ropsten">
       <p>Download the <a href='https://github.com/eth-clients/merge-testnets/blob/main/ropsten-beacon-chain/genesis.ssz'>Ropsten genesis state from Github</a>.</p>
