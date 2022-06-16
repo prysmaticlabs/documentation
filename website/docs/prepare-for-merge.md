@@ -11,7 +11,7 @@ import TabItem from '@theme/TabItem';
 
 This guide will walk you through the changes that you need to make in preparation for The Merge.
 
-:::info New users - Visit our Quickstart!
+:::info New user?
 
 This guidance is targeted at people who are already running Prysm. If you're starting from scratch, our [Quickstart](./install/install-with-script.md) will help you configure a Merge-ready node from start to finish.
 
