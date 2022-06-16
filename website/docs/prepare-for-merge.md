@@ -55,7 +55,7 @@ Your beacon node needs a JWT token to form a secure HTTP connection with your ex
 Prysm will output a `jwt.hex` file path. Record this - we'll use it in the next step.
 
 
-## Run an execution node
+## Configure execution node
 
 Upgrade your execution client software to the latest version. Use the following command to configure your execution node to consume your JWT token, and to expose an engine API endpoint: 
 
@@ -124,7 +124,7 @@ Upgrade your execution client software to the latest version. Use the following 
 </Tabs>
 
 
-### Beacon node changes
+## Configure beacon node
 
 Next, we'll configure your beacon node to consume your JWT token so it can securely connect to your execution node's engine API endpoint. If you're running a validator, specifying a `suggested-fee-recipient` wallet address will allow you to earn what were previously miner tips:
 
@@ -174,14 +174,22 @@ Next, we'll configure your beacon node to consume your JWT token so it can secur
 </Tabs>
 
 
-### Validator node changes
+### Configure validator node
 
 Validator client configuration doesn't need to be updated for The Merge. Fee recipient can optionally be configured on your validator node if you want redundancy or multiple fee recipient addresses. See [Configuring a Fee Recipient Address](./execution-node/fee-recipient.md) to learn more.
 
 
-### Hardware changes
+### Upgrade hardware
 
 We recommend updating your hard drive to a 2TB+ SSD as soon as possible.
+
+
+:::tip Congratulations!
+
+You’re now ready for The Merge.
+
+:::
+
 
 
 ### Frequently asked questions
