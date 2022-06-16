@@ -24,6 +24,7 @@ This guidance is targeted at users who are already running Prysm. If you're star
 | You don't need to run a local execution client. You can use a service like Infura instead. | You **do** need to run an execution client. You **can't** use a service like Infura.            |
 | Execution clients don't need to use the engine API.                                        | Execution clients **do** need to use the engine API.                                            |
 | Execution clients don't need to connect to beacon node clients using JWT.                  | Execution clients **do** need to connect to beacon node clients using JWT.                      |
+| Execution clients don't need to specify a TTD value.                                       | Execution clients **do** need to specify a TTD value.                                           |
 | Miners receive tips.                                                                       | Validators receive tips.                                                                        |
 | Beacon nodes don't need to use the engine API when connecting to execution nodes.          | Beacon nodes <strong>do</strong> need to use the engine API when connecting to execution nodes. |
 | A 1TB hard drive is enough.                                                                | A 2TB+ SSD is required.                                                                         |
@@ -71,13 +72,13 @@ Upgrade your execution client software to the latest version. Use the following 
     ]}>
       <TabItem value="mainnet">
         <div class="admonition admonition-caution alert alert--warning">
-          <div class="admonition-content"><p><strong>Mainnet isn't being merged yet</strong>, but you can configure JWT now on Mainnet. Nethermind automatically enables engine API over port <code>8551</code> when a JWT file is provided.</p></div>
+          <div class="admonition-content"><p><strong>Mainnet isn't being merged yet</strong>, but you can configure JWT now. Nethermind automatically enables engine API over port <code>8551</code> when a JWT file is provided.</p></div>
         </div>
         <pre><code>Nethermind.Runner --config mainnet --JsonRpc.JwtSecretFile=path/to/jwt.hex</code></pre>
       </TabItem>
       <TabItem value="goerli-prater">
         <div class="admonition admonition-caution alert alert--warning">
-          <div class="admonition-content"><p><strong>Goerli/Prater aren't being merged yet</strong>, but you can configure JWT now on Goerli/Prater. Nethermind automatically enables engine API over port <code>8551</code> when a JWT file is provided.</p></div>
+          <div class="admonition-content"><p><strong>Goerli/Prater aren't being merged yet</strong>, but you can configure JWT now. Nethermind automatically enables engine API over port <code>8551</code> when a JWT file is provided.</p></div>
         </div>
         <pre><code>Nethermind.Runner --config goerli --JsonRpc.JwtSecretFile=path/to/jwt.hex</code></pre>
       </TabItem>
@@ -95,13 +96,13 @@ Upgrade your execution client software to the latest version. Use the following 
     ]}>
       <TabItem value="mainnet">
         <div class="admonition admonition-caution alert alert--warning">
-          <div class="admonition-content"><p><strong>Mainnet isn't being merged yet</strong>, but you can configure JWT and engine API now on Mainnet.</p></div>
+          <div class="admonition-content"><p><strong>Mainnet isn't being merged yet</strong>, but you can configure JWT and engine API now.</p></div>
         </div>
         <pre><code>besu --network=mainnet --rpc-http-enabled --engine-jwt-enabled=true --engine-rpc-http-port=8551 --engine-jwt-secret=path/to/jwt.hex --engine-rpc-enabled=true --engine-host-allowlist="*"</code></pre>
       </TabItem>
       <TabItem value="goerli-prater">
         <div class="admonition admonition-caution alert alert--warning">
-          <div class="admonition-content"><p><strong>Goerli/Prater aren't being merged yet</strong>, but you can configure JWT and engine API now on Mainnet.</p></div>
+          <div class="admonition-content"><p><strong>Goerli/Prater aren't being merged yet</strong>, but you can configure JWT and engine API now.</p></div>
         </div>
         <pre><code>besu --network=goerli --rpc-http-enabled --engine-jwt-enabled=true --engine-rpc-http-port=8551 --engine-jwt-secret=path/to/jwt.hex --engine-rpc-enabled=true --engine-host-allowlist="*"</code></pre>
       </TabItem>
@@ -122,13 +123,13 @@ Upgrade your execution client software to the latest version. Use the following 
     ]}>
       <TabItem value="mainnet">
         <div class="admonition admonition-caution alert alert--warning">
-          <div class="admonition-content"><p><strong>Mainnet isn't being merged yet</strong> and Geth requires TTD to be configured in order for JWT to work, so for now, we'll just tell Geth to use port `8551`.</p></div>
+          <div class="admonition-content"><p><strong>Mainnet isn't being merged yet</strong> and Geth requires TTD to be configured in order for JWT to work, so for now, we'll just tell Geth to use port <code>8551</code>. This will allow Prysm to connect to Geth in the next step.</p></div>
         </div>
         <pre><code>geth --http --http.api eth,net,engine --http.port 8551</code></pre>
       </TabItem>
       <TabItem value="goerli-prater">
         <div class="admonition admonition-caution alert alert--warning">
-          <div class="admonition-content"><p><strong>Goerli/Prater aren't being merged yet</strong> and Geth requires TTD to be configured in order for JWT to work, so for now, we'll just tell Geth to use port `8551`.</p></div>
+          <div class="admonition-content"><p><strong>Goerli/Prater aren't being merged yet</strong> and Geth requires TTD to be configured in order for JWT to work, so for now, we'll just tell Geth to use port <code>8551</code>. This will allow Prysm to connect to Geth in the next step.</p></div>
         </div>
         <pre><code>geth --goerli --http --http.api eth,net,engine --http.port 8551</code></pre>
       </TabItem>
@@ -210,4 +211,4 @@ You’re now ready for The Merge. If you have any questions, feel free ask them 
 
 **I'm currently running a validator on Ethereum Mainnet. When should I make changes?**
 
-We recommend making these changes immediately, even on Mainnet.
+You can make the above changes now. Note that Geth requires `TTD` to be specified when using its engine API endpoint, so we recommend waiting to modify Geth configuration on all networks but Ropsten and Sepolia. Otherwise, the configuration provided within this document can be interpreted as "currently recommended".
