@@ -8,6 +8,12 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import ClientStackPng from '@site/static/img/client-stack.png';
 
+:::caution DRAFT
+
+**This document is being actively developed** and may change as we receive feedback from users like you. Join our [Discord server](https://discord.gg/prysmaticlabs) to share your feedback.
+
+:::
+
 
 Prysm is an implementation of the [Ethereum proof-of-stake consensus specification](https://github.com/ethereum/consensus-specs) <a class='footnote' href='#footnote-1'>[1]</a>. In this quickstart, you’ll use Prysm to run an Ethereum node <a class='footnote' href='#footnote-2'>[2]</a> and optionally a validator <a class='footnote' href='#footnote-3'>[3]</a>. This will let you stake 32 ETH using hardware that you manage <a class='footnote' href='#footnote-4'>[4]</a>.
  
@@ -155,7 +161,6 @@ Prysm is a consensus-layer client that depends on execution-layer clients. Altho
 
 :::
 
-
 <Tabs groupId="execution-clients" defaultValue="nethermind" values={[
 {label: 'Nethermind', value: 'nethermind'},
 {label: 'Besu', value: 'besu'},
@@ -166,6 +171,7 @@ Prysm is a consensus-layer client that depends on execution-layer clients. Altho
     <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
         {label: 'Goerli-Prater', value: 'goerli-prater'},
+        {label: 'Sepolia', value: 'sepolia'},
         {label: 'Ropsten', value: 'ropsten'}
     ]}>
       <TabItem value="mainnet">
@@ -174,9 +180,11 @@ Prysm is a consensus-layer client that depends on execution-layer clients. Altho
       <TabItem value="goerli-prater">
         <pre><code>Nethermind.Runner --config goerli --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.JwtSecretFile=../consensus/jwt.hex</code></pre>
       </TabItem>
+      <TabItem value="sepolia">
+        <pre><code>Nethermind.Runner --config sepolia --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.JwtSecretFile=../consensus/jwt.hex --JsonRpc.Host=0.0.0.0 --Merge.TerminalTotalDifficulty 50000000000000000</code></pre>
+      </TabItem>
       <TabItem value="ropsten">
         <pre><code>Nethermind.Runner --config ropsten --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.JwtSecretFile=../consensus/jwt.hex --JsonRpc.Host=0.0.0.0 --Merge.TerminalTotalDifficulty 50000000000000000</code></pre>
-        <p>See the <a href='https://blog.ethereum.org/'>Ethereum blog</a> for the latest Ropsten config recommendations.</p>
       </TabItem>
     </Tabs>
     <p>See Nethermind's <a href='https://docs.nethermind.io/nethermind/ethereum-client/configuration'>command-line options</a> for parameter definitions.</p>
@@ -193,6 +201,7 @@ curl localhost:8545/health
     <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
         {label: 'Goerli-Prater', value: 'goerli-prater'},
+        {label: 'Sepolia', value: 'sepolia'},
         {label: 'Ropsten', value: 'ropsten'}
     ]}>
       <TabItem value="mainnet">
@@ -201,9 +210,11 @@ curl localhost:8545/health
       <TabItem value="goerli-prater">
         <pre><code>besu --network=goerli --rpc-http-enabled --engine-jwt-enabled=true --engine-jwt-secret=../consensus/jwt.hex</code></pre>
       </TabItem>
+      <TabItem value="sepolia">
+        <pre><code>besu --network=sepolia --rpc-http-enabled --engine-jwt-enabled=true --engine-jwt-secret=../consensus/jwt.hex --sync-mode="X_SNAP" --Xmerge-support=true --engine-rpc-enabled=true --engine-host-allowlist="*" --override-genesis-config="terminalTotalDifficulty=50000000000000000"  </code></pre>
+      </TabItem>
       <TabItem value="ropsten">
         <pre><code>besu --network=ropsten --rpc-http-enabled --engine-jwt-enabled=true --engine-jwt-secret=../consensus/jwt.hex --sync-mode="X_SNAP" --Xmerge-support=true --engine-rpc-enabled=true --engine-host-allowlist="*" --override-genesis-config="terminalTotalDifficulty=50000000000000000"  </code></pre>
-        <p>See the <a href='https://blog.ethereum.org/'>Ethereum blog</a> for the latest Ropsten config recommendations.</p>
       </TabItem>
     </Tabs>
     <p>See Besu's <a href='https://besu.hyperledger.org/en/stable/Reference/CLI/CLI-Syntax/'>command-line options</a> for parameter definitions.</p>
@@ -223,6 +234,7 @@ curl -H "Content-Type: application/json" -X POST http://localhost:8545 -d "{""js
     <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
         {label: 'Goerli-Prater', value: 'goerli-prater'},
+        {label: 'Sepolia', value: 'sepolia'},
         {label: 'Ropsten', value: 'ropsten'}
     ]}>
       <TabItem value="mainnet">
@@ -231,17 +243,23 @@ curl -H "Content-Type: application/json" -X POST http://localhost:8545 -d "{""js
       <TabItem value="goerli-prater">
         <pre><code>geth --goerli --http --authrpc.jwtsecret=../consensus/jwt.hex --datadir .</code></pre>
       </TabItem>
+      <TabItem value="sepolia">
+        <pre><code>geth --sepolia --http --authrpc.jwtsecret=../consensus/jwt.hex --datadir . --authrpc.addr localhost --authrpc.port 8551 --authrpc.vhosts localhost --http.api eth,net,engine --override.terminaltotaldifficulty 50000000000000000</code></pre>
+      </TabItem>
       <TabItem value="ropsten">
         <pre><code>geth --ropsten --http --authrpc.jwtsecret=../consensus/jwt.hex --datadir . --authrpc.addr localhost --authrpc.port 8551 --authrpc.vhosts localhost --http.api eth,net,engine --override.terminaltotaldifficulty 50000000000000000</code></pre>
-        <p>See the <a href='https://blog.ethereum.org/'>Ethereum blog</a> for the latest Ropsten config recommendations.</p>
       </TabItem>
     </Tabs>
     <p>See Geth's <a href='https://geth.ethereum.org/docs/interface/command-line-options'>command-line options</a> for parameter definitions.</p>
     <p>Your Geth execution node will begin syncing. You can check your Geth execution node's sync status by running the following commands from a separate terminal window:</p>
 
 ```
-geth attach ## if you're not using Windows
-geth attach ipc:\\.\pipe\geth.ipc ## if you're using Windows 
+## if you're not using Windows
+geth attach 
+
+
+## if you're using Windows
+geth attach ipc:\\.\pipe\geth.ipc
 eth.syncing
 ```
 
@@ -254,18 +272,18 @@ Congratulations - you’re now running an <strong>execution node</strong> in Eth
 
 ## Step 5: Run a beacon node using Prysm
 
-In this step, you'll run a beacon node using Prysm. We'll configure your beacon node to connect to your local execution client.
+In this step, you'll run a beacon node using Prysm. We'll configure your beacon node to connect to your local execution client using your JWT token. First, navigate to your <code>consensus</code> directory.
 
 <Tabs groupId="os" defaultValue="others" values={[
     {label: 'Windows', value: 'win'},
     {label: 'Linux, MacOS, Arm64', value: 'others'}
 ]}>
   <TabItem value="win">
-    <p>Navigate to your <code>consensus</code> directory.</p>
     <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
         {label: 'Goerli-Prater', value: 'goerli-prater'},
-        {label: 'Ropsten', value: 'ropsten'}
+        {label: 'Sepolia', value: 'sepolia'},
+        {label: 'Ropsten', value: 'ropsten'}s
     ]}>
       <TabItem value="mainnet">
         <p>Use the following command to start a beacon node that connects to your local execution node using your secret JWT file:</p>
@@ -274,6 +292,10 @@ In this step, you'll run a beacon node using Prysm. We'll configure your beacon 
       <TabItem value="goerli-prater">
         <p>Download the <a href='https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz'>Prater genesis state from Github</a> into your <code>consensus/prysm</code> directory. Then use the following command to start a beacon node that connects to your local execution node using your secret JWT file:</p>
         <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8545 --jwt-secret=jwt.hex --prater --genesis-state=genesis.ssz</code></pre>
+      </TabItem>
+      <TabItem value="sepolia">
+        <p>Download the <a href='https://github.com/eth-clients/merge-testnets/blob/main/sepolia/genesis.ssz'>Sepolia genesis state from Github</a> into your <code>consensus/prysm</code> directory. Then use the following command to start a beacon node that connects to your local execution node using your secret JWT file:</p>
+        <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8551 --jwt-secret=jwt.hex --sepolia --genesis-state=genesis.ssz</code></pre>
       </TabItem>
       <TabItem value="ropsten">
         <p>Download the <a href='https://github.com/eth-clients/merge-testnets/blob/main/ropsten-beacon-chain/genesis.ssz'>Ropsten genesis state from Github</a> into your <code>consensus/prysm</code> directory. Then use the following command to start a beacon node that connects to your local execution node using your secret JWT file:</p>
@@ -285,32 +307,29 @@ In this step, you'll run a beacon node using Prysm. We'll configure your beacon 
     <div class="admonition admonition-caution alert alert--warning">
       <div class="admonition-content"><p><strong>Mac M1 ARM chips</strong> currently require users to run Prysm through <a href='https://support.apple.com/en-us/HT211861'>Rosetta</a>. See our <a href='https://github.com/prysmaticlabs/prysm/issues/9385'>open bug</a> for details.</p></div>
     </div>
-    <p>Navigate to your <code>consensus</code> directory and run the following two commands:</p>
-
-```
-mkdir prysm && cd prysm
-curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --output prysm.sh && chmod +x prysm.sh
-```
-
-  <p>This will download the Prysm client and and make it executable.</p>
-  <Tabs groupId="network" defaultValue="mainnet" values={[
+    <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
         {label: 'Goerli-Prater', value: 'goerli-prater'},
+        {label: 'Sepolia', value: 'sepolia'},
         {label: 'Ropsten', value: 'ropsten'}
     ]}>
-    <TabItem value="mainnet">
-      <p>Use the following command to start a beacon node that connects to your local execution node:</p>
-      <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8545</code></pre>
-    </TabItem>
-    <TabItem value="goerli-prater">
-      <p>Download the Prater genesis state from GitHub into your <code>consensus</code> directory. Then use the following command to start a beacon node that connects to your local execution node:</p>
-      <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8545 --prater --genesis-state=../genesis.ssz</code></pre>
-    </TabItem>
-    <TabItem value="ropsten">
-      <p>Download the Ropsten genesis state from GitHub into your <code>consensus</code> directory. Then use the following command to start a beacon node that connects to your local execution node:</p>
-      <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8551 --jwt-secret=jwt.hex --ropsten --genesis-state=genesis.ssz</code></pre>
-    </TabItem>
-  </Tabs>
+      <TabItem value="mainnet">
+        <p>Use the following command to start a beacon node that connects to your local execution node using your secret JWT file:</p>
+        <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8551 --jwt-secret=jwt.hex</code></pre>
+      </TabItem>
+      <TabItem value="goerli-prater">
+        <p>Download the <a href='https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz'>Prater genesis state from Github</a> into your <code>consensus/prysm</code> directory. Then use the following command to start a beacon node that connects to your local execution node using your secret JWT file:</p>
+        <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8551 --jwt-secret=jwt.hex --prater --genesis-state=../genesis.ssz</code></pre>
+      </TabItem>
+      <TabItem value="sepolia">
+        <p>Download the <a href='https://github.com/eth-clients/merge-testnets/blob/main/sepolia/genesis.ssz'>Sepolia genesis state from Github</a> into your <code>consensus/prysm</code> directory. Then use the following command to start a beacon node that connects to your local execution node using your secret JWT file:</p>
+        <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8551 --jwt-secret=jwt.hex --ropsten --genesis-state=genesis.ssz</code></pre>
+      </TabItem>
+      <TabItem value="ropsten">
+        <p>Download the <a href='https://github.com/eth-clients/merge-testnets/blob/main/ropsten-beacon-chain/genesis.ssz'>Ropsten genesis state from Github</a> into your <code>consensus/prysm</code> directory. Then use the following command to start a beacon node that connects to your local execution node using your secret JWT file:</p>
+        <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8551 --jwt-secret=jwt.hex --ropsten --genesis-state=genesis.ssz</code></pre>
+      </TabItem>
+    </Tabs>
   </TabItem>
 </Tabs>
 
@@ -326,10 +345,10 @@ This should produce the following output:
 
 
 ```
-{"data":{"head_slot":"6944","sync_distance":"3003133","is_syncing":true}}
+{"data":{"head_slot":"6944","sync_distance":"3003133","is_syncing":true,"is_optimistic":true}}
 ```
 
-When you see `"is_syncing":false`, your beacon node is fully synchronized with the beacon chain. 
+When you see `"is_syncing":false`, your beacon node is fully synchronized. When you see `"is_optimistic":false`, your execution node is fully synchronized. 
 
 
 You can verify that your beacon node has successfully connected to your execution node by running the following command from a separate terminal window:
@@ -347,13 +366,11 @@ Congratulations - you’re now running a <strong>full Ethereum node</strong>. Yo
 
 :::info ETH Required
 
-Running a validator requires 32.1 ETH (for Mainnet) or 32.1 GöETH / rETH (for Testnets). Instructions for acquiring GöETH / rETH are provided below.
+Running a validator requires 32.1 ETH (for Mainnet) or 32.1 GöETH / rETH / SepplETH (for Testnets). Instructions for acquiring testnet ETH are provided below.
 
 :::
 
-Review the latest Ethereum Foundation validator advisories. Testnet advisories are available on the [Prater Staking Launchpad](https://prater.launchpad.ethereum.org/en/overview) and [Prater Staking Launchpad](https://ropsten.launchpad.ethereum.org/en/overview). Mainnet advisories are on the [Mainnet Staking Launchpad](https://launchpad.ethereum.org/en/overview).
-
-Next, we'll create your validator keys with the [Ethereum Staking Deposit CLI](https://github.com/ethereum/staking-deposit-cli). Before proceeding, we recommend temporarily moving over to a **new machine that has never been connected to the internet** if possible. This will reduce the risk that your validator private key is exposed to an adversary. We'll carry an encrypted version of your private key to your primary machine after creating your account on this "airgapped" machine.
+Next, we'll create your validator keys with the [Ethereum Staking Deposit CLI](https://github.com/ethereum/staking-deposit-cli). Before proceeding, we recommend temporarily moving over to a **new machine that has never been connected to the internet** if possible. This will reduce the risk that your validator private key is exposed to an adversary. We'll carry an encrypted version of your private key to your primary machine after creating your keys on this "airgapped" machine.
 
 Download the latest stable version of the deposit CLI from the [Staking Deposit CLI Releases page](https://github.com/ethereum/staking-deposit-cli/releases).
 
@@ -366,6 +383,7 @@ Download the latest stable version of the deposit CLI from the [Staking Deposit 
     <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
         {label: 'Goerli-Prater', value: 'goerli-prater'},
+        {label: 'Sepolia', value: 'sepolia'},
         {label: 'Ropsten', value: 'ropsten'}
     ]}>
       <TabItem value="mainnet">
@@ -374,11 +392,14 @@ Download the latest stable version of the deposit CLI from the [Staking Deposit 
       <TabItem value="goerli-prater">
         <pre><code>deposit.exe new-mnemonic --num_validators=1 --mnemonic_language=english --chain=prater</code></pre>
       </TabItem>
+      <TabItem value="sepolia">
+        <pre><code>deposit.exe new-mnemonic --num_validators=1 --mnemonic_language=english --chain=sepolia</code></pre>
+      </TabItem>
       <TabItem value="ropsten">
         <pre><code>deposit.exe new-mnemonic --num_validators=1 --mnemonic_language=english --chain=ropsten</code></pre>
       </TabItem>
     </Tabs>
-    <p>Follow the CLI prompts to generate your keys. This will give you two artifacts:</p>
+    <p>Follow the CLI prompts to generate your keys. This will give you the following artifacts:</p>
     <ol>
       <li>A <strong>new mnemonic seed phrase</strong>. This is <strong>highly sensitive</strong> and should never be exposed to other people or networked hardware.</li>
       <li>A <code>validator_keys</code> folder. This folder will contain two files:
@@ -392,6 +413,7 @@ Download the latest stable version of the deposit CLI from the [Staking Deposit 
     <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
         {label: 'Goerli-Prater', value: 'goerli-prater'},
+        {label: 'Sepolia', value: 'sepolia'},
         {label: 'Ropsten', value: 'ropsten'}
     ]}>
       <TabItem value="mainnet">
@@ -414,14 +436,26 @@ Download the latest stable version of the deposit CLI from the [Staking Deposit 
         <p>Someone should be able to give you the GöETH you need. You can then deposit 32 GöETH into the Prater testnet’s deposit contract via the Launchpad page. Exercise extreme caution throughout this procedure - <strong>never send real ETH to the testnet deposit contract.</strong> Finally, run the following command to start your validator node, replacing <code>&lt;YOUR_FOLDER_PATH&gt;</code> with the full path to your <code>consensus</code> folder:</p>
         <pre><code>prysm.bat validator --wallet-dir=&lt;YOUR_FOLDER_PATH&gt; --prater</code></pre>      
       </TabItem>
+      <TabItem value="sepolia">
+        <pre><code>prysm.bat validator accounts import --keys-dir=&lt;YOUR_FOLDER_PATH&gt; --sepolia</code></pre>
+        <p>You’ll be prompted to specify a wallet directory twice. Provide the path to your <code>consensus</code> folder for both prompts. You should see <code>Successfully imported 1 accounts, view all of them by running accounts list</code> when your account has been successfully imported into Prysm.</p>
+        <p>Next, go to the <a href='https://sepolia.launchpad.ethereum.org/en/upload-deposit-data'>Sepolia Launchpad’s deposit data upload page</a> and upload your <code>deposit_data-*.json</code> file. You’ll be prompted to connect your wallet.</p>
+        <p>If you need SepplETH, head over to one of the following Discord servers:</p>
+        <ul>
+          <li><a href='https://discord.io/ethstaker'>r/EthStaker Discord</a></li>
+          <li><a href='https://discord.gg/prysmaticlabs'>Prysm Discord server</a></li>
+        </ul>
+        <p>Someone should be able to give you the SepplETH you need. You can then deposit 32 SepplETH into the Sepolia testnet’s deposit contract via the Launchpad page. Exercise extreme caution throughout this procedure - <strong>never send real ETH to the testnet deposit contract.</strong> Finally, run the following command to start your validator node, replacing <code>&lt;YOUR_FOLDER_PATH&gt;</code> with the full path to your <code>consensus</code> folder:</p>
+        <pre><code>prysm.bat validator --wallet-dir=&lt;YOUR_FOLDER_PATH&gt; --sepolia</code></pre>      
+      </TabItem>
       <TabItem value="ropsten">
         <pre><code>prysm.bat validator accounts import --keys-dir=&lt;YOUR_FOLDER_PATH&gt; --ropsten</code></pre>
         <p>You’ll be prompted to specify a wallet directory twice. Provide the path to your <code>consensus</code> folder for both prompts. You should see <code>Successfully imported 1 accounts, view all of them by running accounts list</code> when your account has been successfully imported into Prysm.</p>
-        <p>Next, go to the <a href='https://code.launchpad.ethereum.org/en/upload-deposit-data'>Ropsten Launchpad’s deposit data upload page</a> and upload your <code>deposit_data-*.json</code> file. You’ll be prompted to connect your wallet.</p>
+        <p>Next, go to the <a href='https://ropsten.launchpad.ethereum.org/en/upload-deposit-data'>Ropsten Launchpad’s deposit data upload page</a> and upload your <code>deposit_data-*.json</code> file. You’ll be prompted to connect your wallet.</p>
         <p>If you need rEth, head over to one of the following Discord servers:</p>
         <ul>
           <li><a href='https://discord.io/ethstaker'>r/EthStaker Discord</a></li>
-          <li><a href='https://discord.com/invite/XkyZSSk4My'>Prysm Discord server</a></li>
+          <li><a href='https://discord.gg/prysmaticlabs'>Prysm Discord server</a></li>
         </ul>
         <p>Someone should be able to give you the rETH you need. You can then deposit 32 rETH into the Ropsten testnet’s deposit contract via the Launchpad page. Exercise extreme caution throughout this procedure - <strong>never send real ETH to the testnet deposit contract.</strong> Finally, run the following command to start your validator node, replacing <code>&lt;YOUR_FOLDER_PATH&gt;</code> with the full path to your <code>consensus</code> folder:</p>
         <pre><code>prysm.bat validator --wallet-dir=&lt;YOUR_FOLDER_PATH&gt; --ropsten</code></pre>      
@@ -433,6 +467,7 @@ Download the latest stable version of the deposit CLI from the [Staking Deposit 
     <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
         {label: 'Goerli-Prater', value: 'goerli-prater'},
+        {label: 'Sepolia', value: 'sepolia'},
         {label: 'Ropsten', value: 'ropsten'}
     ]}>
       <TabItem value="mainnet">
@@ -441,11 +476,14 @@ Download the latest stable version of the deposit CLI from the [Staking Deposit 
       <TabItem value="goerli-prater">
         <pre><code>./deposit new-mnemonic --num_validators=1 --mnemonic_language=english --chain=prater</code></pre>
       </TabItem>
+      <TabItem value="sepolia">
+        <pre><code>./deposit new-mnemonic --num_validators=1 --mnemonic_language=english --chain=sepolia</code></pre>
+      </TabItem>
       <TabItem value="ropsten">
         <pre><code>./deposit new-mnemonic --num_validators=1 --mnemonic_language=english --chain=ropsten</code></pre>
       </TabItem>
     </Tabs>
-    <p>Follow the CLI prompts to generate your keys. This will give you two artifacts:</p>
+    <p>Follow the CLI prompts to generate your keys. This will give you the following artifacts:</p>
     <ol>
       <li>A <strong>new mnemonic seed phrase</strong>. This is <strong>highly sensitive</strong> and should never be exposed to other people or networked hardware.</li>
       <li>A <code>validator_keys</code> folder. This folder will contain two files:
@@ -459,6 +497,7 @@ Download the latest stable version of the deposit CLI from the [Staking Deposit 
     <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
         {label: 'Goerli-Prater', value: 'goerli-prater'},
+        {label: 'Sepolia', value: 'sepolia'},
         {label: 'Ropsten', value: 'ropsten'}
     ]}>
       <TabItem value="mainnet">
@@ -480,6 +519,18 @@ Download the latest stable version of the deposit CLI from the [Staking Deposit 
         <p>Someone should be able to give you the GöETH you need. You can then deposit 32 GöETH into the Prater testnet’s deposit contract via the Launchpad page. Exercise extreme caution throughout this procedure - <strong>never send real ETH to the testnet deposit contract.</strong>  Finally, run the following command to start your validator node, replacing <code>&lt;YOUR_FOLDER_PATH&gt;</code> with the full path to your <code>consensus</code> folder:</p>
         <pre><code>./prysm.sh validator --wallet-dir=&lt;YOUR_FOLDER_PATH&gt; --prater</code></pre>    
       </TabItem>
+      <TabItem value="sepolia">
+        <pre><code>./prysm.sh validator accounts import --keys-dir=&lt;YOUR_FOLDER_PATH&gt; --sepolia</code></pre>
+        <p>You’ll be prompted to specify a wallet directory twice. Provide the path to your <code>consensus</code> folder for both prompts. You should see <code>Successfully imported 1 accounts, view all of them by running accounts list</code> when your account has been successfully imported into Prysm.</p>
+        <p>Next, go to the <a href='https://sepolia.launchpad.ethereum.org/en/upload-deposit-data'>Sepolia Launchpad’s deposit data upload page</a> and upload your <code>deposit_data-*.json</code> file. You’ll be prompted to connect your wallet.</p>
+        <p>If you need SepplETH, head over to one of the following Discord servers:</p>
+        <ul>
+          <li><a href='https://discord.io/ethstaker'>r/EthStaker Discord</a></li>
+          <li><a href='https://discord.gg/prysmaticlabs'>Prysm Discord server</a></li>
+        </ul>
+        <p>Someone should be able to give you the SepplETH you need. You can then deposit 32 SepplETH into the Sepolia testnet’s deposit contract via the Launchpad page. Exercise extreme caution throughout this procedure - <strong>never send real ETH to the testnet deposit contract.</strong>  Finally, run the following command to start your validator node, replacing <code>&lt;YOUR_FOLDER_PATH&gt;</code> with the full path to your <code>consensus</code> folder:</p>
+        <pre><code>./prysm.sh validator --wallet-dir=&lt;YOUR_FOLDER_PATH&gt; --sepolia</code></pre>    
+      </TabItem>
       <TabItem value="ropsten">
         <pre><code>./prysm.sh validator accounts import --keys-dir=&lt;YOUR_FOLDER_PATH&gt; --ropsten</code></pre>
         <p>You’ll be prompted to specify a wallet directory twice. Provide the path to your <code>consensus</code> folder for both prompts. You should see <code>Successfully imported 1 accounts, view all of them by running accounts list</code> when your account has been successfully imported into Prysm.</p>
@@ -487,7 +538,7 @@ Download the latest stable version of the deposit CLI from the [Staking Deposit 
         <p>If you need rETH, head over to one of the following Discord servers:</p>
         <ul>
           <li><a href='https://discord.io/ethstaker'>r/EthStaker Discord</a></li>
-          <li><a href='https://discord.com/invite/XkyZSSk4My'>Prysm Discord server</a></li>
+          <li><a href='https://discord.gg/prysmaticlabs'>Prysm Discord server</a></li>
         </ul>
         <p>Someone should be able to give you the rETH you need. You can then deposit 32 rETH into the Ropsten testnet’s deposit contract via the Launchpad page. Exercise extreme caution throughout this procedure - <strong>never send real ETH to the testnet deposit contract.</strong>  Finally, run the following command to start your validator node, replacing <code>&lt;YOUR_FOLDER_PATH&gt;</code> with the full path to your <code>consensus</code> folder:</p>
         <pre><code>./prysm.sh validator --wallet-dir=&lt;YOUR_FOLDER_PATH&gt; --ropsten</code></pre>    
@@ -511,6 +562,7 @@ It can a long time (from days to months) for your validator to become fully acti
  - [Beaconcha.in (Mainnet)](https://beaconcha.in) 
  - [Beaconcha.in (Prater)](https://prater.beaconcha.in/)
  - [Beaconcha.in (Ropsten)](https://ropsten.beaconcha.in/)
+ - [Beaconcha.in (Sepolia)](https://sepolia.beaconcha.in/)
 
 In the meantime, you should leave your **execution client**, **beacon node**, and **validator client** terminal windows open and running. Once your validator is activated, it will automatically begin proposing and validating blocks.
 
@@ -532,18 +584,20 @@ We recommend **closing** TCP port `8545` to the internet and keeping TCP and UDP
 
 
 **Can you mix and match networks between execution layer and consensus layer?** <br />
-The network pairs marked with a ✔️ are compatible.
+The network pairs marked with a ✔️ are compatible. See <a href='#appendix-a-nodes-and-networks'>Appendix A: Nodes and Networks</a> for more information.
 
 <table>
   <tr>
     <td>&nbsp;</td>
     <td>EL-Mainnet</td>
     <td>EL-Goerli</td>
+    <td>EL-Sepolia</td>
     <td>EL-Ropsten</td>
   </tr>
   <tr>
     <td>CL-Mainnet</td>
     <td>✔️</td>
+    <td>❌</td>
     <td>❌</td>
     <td>❌</td>
   </tr>
@@ -552,9 +606,18 @@ The network pairs marked with a ✔️ are compatible.
     <td>❌</td>
     <td>✔️</td>
     <td>❌</td>
+    <td>❌</td>
+  </tr>
+  <tr>
+    <td>CL-Sepolia</td>
+    <td>❌</td>
+    <td>❌</td>
+    <td>✔️</td>
+    <td>❌</td>
   </tr>
   <tr>
     <td>CL-Ropsten</td>
+    <td>❌</td>
     <td>❌</td>
     <td>❌</td>
     <td>✔️</td>
@@ -651,12 +714,17 @@ Ethereum Mainnet is supported by a number of <strong>test networks</strong>. The
     <tr>
       <td>Mainnet</td>
       <td>Mainnet</td>
-      <td>When people refer to Ethereum, they're usually referring to Ethereum Mainnet, which refers to a pair of networks: execution-layer (EL) Mainnet and consensus-layer (CL) Mainnet (commonly referred to as the Beacon Chain).</td>
+      <td>When people refer to Ethereum, they're usually referring to Ethereum Mainnet, which refers to a pair of networks: execution-layer (EL) Mainnet and consensus-layer (CL) Mainnet. CL Mainnet is commonly referred to as the Beacon Chain.</td>
     </tr> 
     <tr>
       <td>Goerli</td>
       <td>Prater</td>
-      <td>The Goerli-Prater pair is what most people use when preparing to stake 32 ETH on Ethereum Mainnet. This will be the last test network pair that experiences The Merge before Mainnet networks merge.</td>
+      <td>The Goerli-Prater pair is the test network that most people use learning how to configure their validator for the first time. After this network pair is tested, Mainnet networks will merge, and proof-of-work miners will be fully replaced by proof-of-stake validators.</td>
+    </tr>
+    <tr>
+      <td>Sepolia</td>
+      <td>Sepolia</td>
+      <td>After Ropsten, Sepolia will be Merge-tested. Then Goerli-Prater will be Merge-tested.</td>
     </tr>
     <tr>
       <td>Ropsten</td>
