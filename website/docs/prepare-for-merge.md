@@ -45,7 +45,7 @@ Let's step through each of these changes.
 
 ## Generate JWT token
 
-Your beacon node needs a JWT token to form a secure HTTP connection with your execution node. Using [Prysm v2.1.3-rc.4](https://github.com/prysmaticlabs/prysm/releases/tag/v2.1.3-rc.4), issue the following command to generate this token:
+Your beacon node needs a JWT token to form a secure HTTP connection with your execution node. Otherwise, using [Prysm v2.1.3-rc.4](https://github.com/prysmaticlabs/prysm/releases/tag/v2.1.3-rc.4), issue the following command to generate this token:
 
 <Tabs groupId="os" defaultValue="others" values={[
     {label: 'Windows', value: 'win'},
@@ -241,3 +241,7 @@ You’re now ready for The Merge. If you have any questions, feel free ask them 
 **I'm currently running a validator on Ethereum Mainnet. When should I make changes?**
 
 You can make the above changes now. This document will be continuously updated with the latest recommended configuration.
+
+**Can I use IPC post-Merge?**
+
+Yes. You also won't have to worry about JWT if you use IPC. Refer to your clients' command-line documentation for IPC configuration parameters.
