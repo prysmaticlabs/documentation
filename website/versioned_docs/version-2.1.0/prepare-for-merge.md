@@ -71,13 +71,13 @@ Upgrade your execution client software to the latest version. Use the following 
         {label: 'Ropsten', value: 'ropsten'}
     ]}>
       <TabItem value="mainnet">
-        <pre><code>Nethermind.Runner --config mainnet --JsonRpc.Enabled true --JsonRpc.JwtSecretFile=../consensus/jwt.hex --JsonRpc.Host=0.0.0.0</code></pre>
+        <pre><code>Nethermind.Runner --config mainnet --JsonRpc.Enabled true --JsonRpc.JwtSecretFile=path/to/jwt.hex --JsonRpc.Host=0.0.0.0</code></pre>
       </TabItem>
       <TabItem value="goerli-prater">
-        <pre><code>Nethermind.Runner --config goerli --JsonRpc.Enabled true --JsonRpc.JwtSecretFile=../consensus/jwt.hex --JsonRpc.Host=0.0.0.0</code></pre>
+        <pre><code>Nethermind.Runner --config goerli --JsonRpc.Enabled true --JsonRpc.JwtSecretFile=path/to/jwt.hex --JsonRpc.Host=0.0.0.0</code></pre>
       </TabItem>
       <TabItem value="ropsten">
-        <pre><code>Nethermind.Runner --config ropsten --JsonRpc.Enabled true --JsonRpc.JwtSecretFile=../consensus/jwt.hex --JsonRpc.Host=0.0.0.0 --Merge.TerminalTotalDifficulty 50000000000000000</code></pre>
+        <pre><code>Nethermind.Runner --config ropsten --JsonRpc.Enabled true --JsonRpc.JwtSecretFile=path/to/jwt.hex --JsonRpc.Host=0.0.0.0 --Merge.TerminalTotalDifficulty 50000000000000000</code></pre>
       </TabItem>
     </Tabs>
     <p>See Nethermind's <a href='https://docs.nethermind.io/nethermind/ethereum-client/configuration'>command-line options</a> for parameter definitions.</p>
@@ -89,13 +89,13 @@ Upgrade your execution client software to the latest version. Use the following 
         {label: 'Ropsten', value: 'ropsten'}
     ]}>
       <TabItem value="mainnet">
-        <pre><code>besu --network=mainnet --rpc-http-enabled --engine-jwt-enabled=true --engine-jwt-secret=../consensus/jwt.hex --engine-rpc-enabled=true --engine-host-allowlist="*"</code></pre>
+        <pre><code>besu --network=mainnet --rpc-http-enabled --engine-jwt-enabled=true --engine-jwt-secret=path/to/jwt.hex --engine-rpc-enabled=true --engine-host-allowlist="*"</code></pre>
       </TabItem>
       <TabItem value="goerli-prater">
-        <pre><code>besu --network=goerli --rpc-http-enabled --engine-jwt-enabled=true --engine-jwt-secret=../consensus/jwt.hex --engine-rpc-enabled=true --engine-host-allowlist="*"</code></pre>
+        <pre><code>besu --network=goerli --rpc-http-enabled --engine-jwt-enabled=true --engine-jwt-secret=path/to/jwt.hex --engine-rpc-enabled=true --engine-host-allowlist="*"</code></pre>
       </TabItem>
       <TabItem value="ropsten">
-        <pre><code>besu --network=ropsten --rpc-http-enabled --engine-jwt-enabled=true --engine-jwt-secret=../consensus/jwt.hex --engine-rpc-enabled=true --engine-host-allowlist="*" --override-genesis-config="terminalTotalDifficulty=50000000000000000"  </code></pre>
+        <pre><code>besu --network=ropsten --rpc-http-enabled --engine-jwt-enabled=true --engine-jwt-secret=path/to/jwt.hex --engine-rpc-enabled=true --engine-host-allowlist="*" --override-genesis-config="terminalTotalDifficulty=50000000000000000"  </code></pre>
       </TabItem>
     </Tabs>
     <p>See Besu's <a href='https://besu.hyperledger.org/en/stable/Reference/CLI/CLI-Syntax/'>command-line options</a> for parameter definitions.</p>
@@ -110,13 +110,13 @@ Upgrade your execution client software to the latest version. Use the following 
         {label: 'Ropsten', value: 'ropsten'}
     ]}>
       <TabItem value="mainnet">
-        <pre><code>geth --http --authrpc.vhosts="localhost" --authrpc.jwtsecret=../consensus/jwt.hex --http.api eth,net,engine</code></pre>
+        <pre><code>geth --http --authrpc.vhosts="localhost" --authrpc.jwtsecret=path/to/jwt.hex --http.api eth,net,engine</code></pre>
       </TabItem>
       <TabItem value="goerli-prater">
-        <pre><code>geth --goerli --http --authrpc.vhosts="localhost" --authrpc.jwtsecret=../consensus/jwt.hex --http.api eth,net,engine</code></pre>
+        <pre><code>geth --goerli --http --authrpc.vhosts="localhost" --authrpc.jwtsecret=path/to/jwt.hex --http.api eth,net,engine</code></pre>
       </TabItem>
       <TabItem value="ropsten">
-        <pre><code>geth --ropsten --http --authrpc.vhosts="localhost" --authrpc.jwtsecret=../consensus/jwt.hex --http.api eth,net,engine --override.terminaltotaldifficulty 50000000000000000</code></pre>
+        <pre><code>geth --ropsten --http --authrpc.vhosts="localhost" --authrpc.jwtsecret=path/to/jwt.hex --http.api eth,net,engine --override.terminaltotaldifficulty 50000000000000000</code></pre>
       </TabItem>
     </Tabs>
     <p>See Geth's <a href='https://geth.ethereum.org/docs/interface/command-line-options'>command-line options</a> for parameter definitions.</p>
@@ -139,15 +139,15 @@ Next, we'll configure your beacon node to consume your JWT token so it can secur
         {label: 'Ropsten', value: 'ropsten'}
     ]}>
       <TabItem value="mainnet">
-        <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8551 --jwt-secret=jwt.hex --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
+        <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8551 --jwt-secret=path/to/jwt.hex --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
       </TabItem>
       <TabItem value="goerli-prater">
         <p>Download the <a href='https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz'>Prater genesis state from Github</a>.</p>
-        <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8551 --jwt-secret=jwt.hex --prater --genesis-state=genesis.ssz --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
+        <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8551 --jwt-secret=path/to/jwt.hex --prater --genesis-state=genesis.ssz --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
       </TabItem>
       <TabItem value="ropsten">
         <p>Download the <a href='https://github.com/eth-clients/merge-testnets/blob/main/ropsten-beacon-chain/genesis.ssz'>Ropsten genesis state from Github</a>.</p>
-        <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8551 --jwt-secret=jwt.hex --ropsten --genesis-state=genesis.ssz --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
+        <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8551 --jwt-secret=path/to/jwt.hex --ropsten --genesis-state=genesis.ssz --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
       </TabItem>
     </Tabs>
   </TabItem>
@@ -158,15 +158,15 @@ Next, we'll configure your beacon node to consume your JWT token so it can secur
         {label: 'Ropsten', value: 'ropsten'}
     ]}>
     <TabItem value="mainnet">
-      <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8551 --jwt-secret=jwt.hex --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
+      <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8551 --jwt-secret=path/to/jwt.hex --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
     </TabItem>
     <TabItem value="goerli-prater">
       <p>Download the Prater genesis state from GitHub into your <code>consensus</code> directory.</p>
-      <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8551 --jwt-secret=jwt.hex --prater --genesis-state=../genesis.ssz --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
+      <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8551 --jwt-secret=path/to/jwt.hex --prater --genesis-state=../genesis.ssz --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
     </TabItem>
     <TabItem value="ropsten">
       <p>Download the Ropsten genesis state from GitHub into your <code>consensus</code> directory.</p>
-      <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8551 --jwt-secret=jwt.hex --ropsten --genesis-state=genesis.ssz --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
+      <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8551 --jwt-secret=path/to/jwt.hex --ropsten --genesis-state=genesis.ssz --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
     </TabItem>
   </Tabs>
   </TabItem>
