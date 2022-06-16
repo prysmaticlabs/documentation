@@ -19,7 +19,6 @@ This guidance is targeted at users who are already running Prysm. If you're star
 
 ## The Merge: Before and after
 
-
 | Before The Merge                                                                           | After The Merge                                                                                 |
 |--------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
 | You don't need to run a local execution client. You can use a service like Infura instead. | You **do** need to run an execution client. You **can't** use a service like Infura.            |
@@ -38,7 +37,7 @@ Let's step through each of these changes.
 
 ## Generate JWT token
 
-Your beacon node needs a JWT token to form a secure HTTP connection with your execution node. Upgrade Prysm to [Prysm v2.1.3-rc.4](https://github.com/prysmaticlabs/prysm/releases/tag/v2.1.3-rc.3) and issue the following command to generate a JWT token:
+Your beacon node needs a JWT token to form a secure HTTP connection with your execution node. Upgrade Prysm to [Prysm v2.1.3-rc.4](https://github.com/prysmaticlabs/prysm/releases/tag/v2.1.3-rc.4) and issue the following command to generate this token:
 
 <Tabs groupId="os" defaultValue="others" values={[
     {label: 'Windows', value: 'win'},
@@ -71,16 +70,22 @@ Upgrade your execution client software to the latest version. Use the following 
         {label: 'Ropsten', value: 'ropsten'}
     ]}>
       <TabItem value="mainnet">
-        <pre><code>Nethermind.Runner --config mainnet --JsonRpc.Enabled true --JsonRpc.JwtSecretFile=path/to/jwt.hex --JsonRpc.Host=0.0.0.0</code></pre>
+        <div class="admonition admonition-caution alert alert--warning">
+          <div class="admonition-content"><p><strong>Mainnet isn't being merged yet</strong>, but you can configure JWT now on Mainnet. Nethermind automatically enables engine API over port <code>8551</code> when a JWT file is provided.</p></div>
+        </div>
+        <pre><code>Nethermind.Runner --config mainnet --JsonRpc.JwtSecretFile=path/to/jwt.hex</code></pre>
       </TabItem>
       <TabItem value="goerli-prater">
-        <pre><code>Nethermind.Runner --config goerli --JsonRpc.Enabled true --JsonRpc.JwtSecretFile=path/to/jwt.hex --JsonRpc.Host=0.0.0.0</code></pre>
+        <div class="admonition admonition-caution alert alert--warning">
+          <div class="admonition-content"><p><strong>Goerli/Prater aren't being merged yet</strong>, but you can configure JWT now on Goerli/Prater. Nethermind automatically enables engine API over port <code>8551</code> when a JWT file is provided.</p></div>
+        </div>
+        <pre><code>Nethermind.Runner --config goerli --JsonRpc.JwtSecretFile=path/to/jwt.hex</code></pre>
       </TabItem>
       <TabItem value="ropsten">
-        <pre><code>Nethermind.Runner --config ropsten --JsonRpc.Enabled true --JsonRpc.JwtSecretFile=path/to/jwt.hex --JsonRpc.Host=0.0.0.0 --Merge.TerminalTotalDifficulty 50000000000000000</code></pre>
+        <pre><code>Nethermind.Runner --config ropsten --JsonRpc.JwtSecretFile=path/to/jwt.hex --Merge.TerminalTotalDifficulty 50000000000000000</code></pre>
       </TabItem>
     </Tabs>
-    <p>See Nethermind's <a href='https://docs.nethermind.io/nethermind/ethereum-client/configuration'>command-line options</a> for parameter definitions.</p>
+    <p>See Nethermind's <a href='https://docs.nethermind.io/nethermind/first-steps-with-nethermind/running-nethermind-post-merge'>Running Nethermind Post Merge</a> for more information.</p>
   </TabItem>
   <TabItem value="besu">
     <Tabs groupId="network" defaultValue="mainnet" values={[
@@ -89,20 +94,26 @@ Upgrade your execution client software to the latest version. Use the following 
         {label: 'Ropsten', value: 'ropsten'}
     ]}>
       <TabItem value="mainnet">
-        <pre><code>besu --network=mainnet --rpc-http-enabled --engine-jwt-enabled=true --engine-jwt-secret=path/to/jwt.hex --engine-rpc-enabled=true --engine-host-allowlist="*"</code></pre>
+        <div class="admonition admonition-caution alert alert--warning">
+          <div class="admonition-content"><p><strong>Mainnet isn't being merged yet</strong>, but you can configure JWT and engine API now on Mainnet.</p></div>
+        </div>
+        <pre><code>besu --network=mainnet --rpc-http-enabled --engine-jwt-enabled=true --engine-rpc-http-port=8551 --engine-jwt-secret=path/to/jwt.hex --engine-rpc-enabled=true --engine-host-allowlist="*"</code></pre>
       </TabItem>
       <TabItem value="goerli-prater">
-        <pre><code>besu --network=goerli --rpc-http-enabled --engine-jwt-enabled=true --engine-jwt-secret=path/to/jwt.hex --engine-rpc-enabled=true --engine-host-allowlist="*"</code></pre>
+        <div class="admonition admonition-caution alert alert--warning">
+          <div class="admonition-content"><p><strong>Goerli/Prater aren't being merged yet</strong>, but you can configure JWT and engine API now on Mainnet.</p></div>
+        </div>
+        <pre><code>besu --network=goerli --rpc-http-enabled --engine-jwt-enabled=true --engine-rpc-http-port=8551 --engine-jwt-secret=path/to/jwt.hex --engine-rpc-enabled=true --engine-host-allowlist="*"</code></pre>
       </TabItem>
       <TabItem value="ropsten">
-        <pre><code>besu --network=ropsten --rpc-http-enabled --engine-jwt-enabled=true --engine-jwt-secret=path/to/jwt.hex --engine-rpc-enabled=true --engine-host-allowlist="*" --override-genesis-config="terminalTotalDifficulty=50000000000000000"  </code></pre>
+        <pre><code>besu --network=ropsten --rpc-http-enabled --engine-jwt-enabled=true --engine-rpc-http-port=8551 --engine-jwt-secret=path/to/jwt.hex --engine-rpc-enabled=true --engine-host-allowlist="*" --Xmerge-support=true --override-genesis-config="terminalTotalDifficulty=50000000000000000"  </code></pre>
       </TabItem>
     </Tabs>
     <p>See Besu's <a href='https://besu.hyperledger.org/en/stable/Reference/CLI/CLI-Syntax/'>command-line options</a> for parameter definitions.</p>
   </TabItem>
   <TabItem value="geth">
     <div class="admonition admonition-caution alert alert--warning">
-      <div class="admonition-content"><p><strong>Geth is a supermajority execution-layer client</strong>. This centralization poses an active risk to the security of Ethereum. If Geth's code contains a bug, a majority of nodes (and L2s, and users) will be impacted. Consider using another execution-layer client to distribute this risk for the ecosystem <a class='footnote' href='#footnote-10'>[10]</a>.</p></div>
+      <div class="admonition-content"><p><strong>Geth is a supermajority execution-layer client</strong>. This centralization poses an active risk to the security of Ethereum. Consider using a minority execution-layer client to distribute this risk for the ecosystem <a class='footnote' href='#footnote-10'>[10]</a>.</p></div>
     </div>
     <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
@@ -110,13 +121,19 @@ Upgrade your execution client software to the latest version. Use the following 
         {label: 'Ropsten', value: 'ropsten'}
     ]}>
       <TabItem value="mainnet">
-        <pre><code>geth --http --authrpc.vhosts="localhost" --authrpc.jwtsecret=path/to/jwt.hex --http.api eth,net,engine</code></pre>
+        <div class="admonition admonition-caution alert alert--warning">
+          <div class="admonition-content"><p><strong>Mainnet isn't being merged yet</strong> and Geth requires TTD to be configured in order for JWT to work, so for now, we'll just tell Geth to use port `8551`.</p></div>
+        </div>
+        <pre><code>geth --http --http.api eth,net,engine --http.port 8551</code></pre>
       </TabItem>
       <TabItem value="goerli-prater">
-        <pre><code>geth --goerli --http --authrpc.vhosts="localhost" --authrpc.jwtsecret=path/to/jwt.hex --http.api eth,net,engine</code></pre>
+        <div class="admonition admonition-caution alert alert--warning">
+          <div class="admonition-content"><p><strong>Goerli/Prater aren't being merged yet</strong> and Geth requires TTD to be configured in order for JWT to work, so for now, we'll just tell Geth to use port `8551`.</p></div>
+        </div>
+        <pre><code>geth --goerli --http --http.api eth,net,engine --http.port 8551</code></pre>
       </TabItem>
       <TabItem value="ropsten">
-        <pre><code>geth --ropsten --http --authrpc.vhosts="localhost" --authrpc.jwtsecret=path/to/jwt.hex --http.api eth,net,engine --override.terminaltotaldifficulty 50000000000000000</code></pre>
+        <pre><code>geth --ropsten --http --http.api eth,net,engine --authrpc.vhosts="localhost" --authrpc.jwtsecret=path/to/jwt.hex  --override.terminaltotaldifficulty 50000000000000000</code></pre>
       </TabItem>
     </Tabs>
     <p>See Geth's <a href='https://geth.ethereum.org/docs/interface/command-line-options'>command-line options</a> for parameter definitions.</p>
