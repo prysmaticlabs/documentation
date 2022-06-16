@@ -94,8 +94,8 @@ At a high level, we'll walk through the following flow:
 - **If you're staking ETH as a validator, try this guide on a testnet first**, *then* mainnet.
 - **Keep things simple**. This guidance assumes all client software will run on a single machine.
 - **Review the latest advisories** for both [testnet](https://prater.launchpad.ethereum.org/en/overview) and [mainnet](https://launchpad.ethereum.org/en/).
-- **Review** our [published security best practices](../security-best-practices.md).
-- **Join the community** - join our [mailing list](https://groups.google.com/g/prysm-dev), the [Prysm Discord server](https://discord.com/invite/XkyZSSk4My), [r/ethstaker](https://www.reddit.com/r/ethstaker/), and the [EthStaker Discord server](https://discord.io/ethstaker) for updates and support.
+- Review all of our [published security best practices](./security-best-practices/).
+- **Join the community** - join our [mailing list](https://groups.google.com/g/prysm-dev), the [Prysm Discord server](https://discord.gg/prysmaticlabs), [r/ethstaker](https://www.reddit.com/r/ethstaker/), and the [EthStaker Discord server](https://discord.io/ethstaker) for updates and support.
 
 
 ## Step 3: Generate secret
@@ -110,17 +110,6 @@ First, create a folder called `ethereum` on your SSD <a class='footnote' href='#
 ┣ 📂execution
 ```
 
-:::info Ropsten
-
-If you'd like to use the **Ropsten** execution-layer test network:
-
- - Use <a href='https://github.com/prysmaticlabs/prysm/releases/v2.1.3-rc.4'>Prysm v2.1.3-rc.4</a> and extract the contents of the `Source` archive (located at the bottom of the page). 
- - Add the following environment variable before proceeding: `USE_PRYSM_VERSION=v2.1.3-rc.4`. 
- - Skip to <a href='#create-jwt'>create your secret JWT token</a>.
-
-:::
-
-
 <Tabs groupId="os" defaultValue="others" values={[
     {label: 'Windows', value: 'win'},
     {label: 'Linux, MacOS, Arm64', value: 'others'}
@@ -130,7 +119,7 @@ If you'd like to use the **Ropsten** execution-layer test network:
 
 ```
 mkdir prysm && cd prysm
-curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.bat --output prysm.bat
+curl https://raw.githubusercontent.com/prysmaticlabs/prysm/v2.1.3-rc.4/prysm.bat --output prysm.bat
 reg add HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1
 ```
 
@@ -146,7 +135,7 @@ reg add HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1
 
 ```
 mkdir prysm && cd prysm
-curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --output prysm.sh && chmod +x prysm.sh
+curl https://raw.githubusercontent.com/prysmaticlabs/prysm/v2.1.3-rc.4/prysm.sh --output prysm.sh && chmod +x prysm.sh
 ```
 
   <p>This will download the Prysm client and make it executable. Use the following command to <strong id='create-jwt'>create your secret JWT token</strong>:</p>
@@ -340,7 +329,7 @@ This should produce the following output:
 {"data":{"head_slot":"6944","sync_distance":"3003133","is_syncing":true}}
 ```
 
-When you see `"is_syncing":false`, your beacon node is fully synchronized with the beacon chain. When you see `"is_optimistic":false`, your execution node is fully synchronized with the execution-layer blockchain. 
+When you see `"is_syncing":false`, your beacon node is fully synchronized with the beacon chain. 
 
 
 You can verify that your beacon node has successfully connected to your execution node by running the following command from a separate terminal window:
@@ -420,7 +409,7 @@ Download the latest stable version of the deposit CLI from the [Staking Deposit 
         <p>If you need GöETH, head over to one of the following Discord servers:</p>
         <ul>
           <li><a href='https://discord.io/ethstaker'>r/EthStaker Discord</a></li>
-          <li><a href='https://discord.com/invite/XkyZSSk4My'>Prysm Discord server</a></li>
+          <li><a href='https://discord.gg/prysmaticlabs'>Prysm Discord server</a></li>
         </ul>
         <p>Someone should be able to give you the GöETH you need. You can then deposit 32 GöETH into the Prater testnet’s deposit contract via the Launchpad page. Exercise extreme caution throughout this procedure - <strong>never send real ETH to the testnet deposit contract.</strong> Finally, run the following command to start your validator node, replacing <code>&lt;YOUR_FOLDER_PATH&gt;</code> with the full path to your <code>consensus</code> folder:</p>
         <pre><code>prysm.bat validator --wallet-dir=&lt;YOUR_FOLDER_PATH&gt; --prater</code></pre>      
@@ -486,7 +475,7 @@ Download the latest stable version of the deposit CLI from the [Staking Deposit 
         <p>If you need GöETH, head over to one of the following Discord servers:</p>
         <ul>
           <li><a href='https://discord.io/ethstaker'>r/EthStaker Discord</a></li>
-          <li><a href='https://discord.com/invite/XkyZSSk4My'>Prysm Discord server</a></li>
+          <li><a href='https://discord.gg/prysmaticlabs'>Prysm Discord server</a></li>
         </ul>
         <p>Someone should be able to give you the GöETH you need. You can then deposit 32 GöETH into the Prater testnet’s deposit contract via the Launchpad page. Exercise extreme caution throughout this procedure - <strong>never send real ETH to the testnet deposit contract.</strong>  Finally, run the following command to start your validator node, replacing <code>&lt;YOUR_FOLDER_PATH&gt;</code> with the full path to your <code>consensus</code> folder:</p>
         <pre><code>./prysm.sh validator --wallet-dir=&lt;YOUR_FOLDER_PATH&gt; --prater</code></pre>    
