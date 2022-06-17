@@ -106,7 +106,7 @@ At a high level, we'll walk through the following flow:
 
 ## Step 3: Generate secret
 
-Your beacon node will soon need to connect to your execution node using authenticated HTTP. A secret **JWT token** is needed to form this connection. Although only Ropsten and Sepolia are the only networks that currently require authenticated HTTP, it will soon be required on Goerli-Prater and Mainnet. We recommend doing this now regardless of the network you're running on. Let's download Prysm and create the JWT token.
+A secret **JWT token** will allow your beacon node to form an authenticated HTTP connection with your execution node. Although Ropsten and Sepolia are the only networks that currently require authenticated HTTP, it will soon be required on Goerli-Prater and Mainnet. We recommend doing this now regardless of the network you're running on. Let's download Prysm and create the JWT token.
 
 First, create a folder called `ethereum` on your SSD <a class='footnote' href='#footnote-9'>[9]</a>, and then two subfolders within it: `consensus` and `execution`:
 
