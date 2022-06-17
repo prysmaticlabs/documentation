@@ -10,7 +10,7 @@ import ClientStackPng from '@site/static/img/client-stack.png';
 
 :::caution DRAFT
 
-**This document is being actively developed** and may change as we receive feedback from users like you. Join our [Discord server](https://discord.gg/prysmaticlabs) to share your feedback.
+**This document is being actively developed alongside [Prysm v2.1.3](https://github.com/prysmaticlabs/prysm/releases/tag/v2.1.3-rc.4)** and may change as we receive feedback from users like you. Join our [Discord server](https://discord.gg/prysmaticlabs) to share your feedback.
 
 :::
 
