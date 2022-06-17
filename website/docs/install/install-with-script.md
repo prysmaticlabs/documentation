@@ -106,7 +106,7 @@ At a high level, we'll walk through the following flow:
 
 ## Step 3: Generate secret
 
-In this guide, your beacon node will connect to your execution node using authenticated HTTP. A secret **JWT token** is needed to form this connection. Let's download Prysm and create that token.
+Your beacon node will soon need to connect to your execution node using authenticated HTTP. A secret **JWT token** is needed to form this connection. Although only Ropsten and Sepolia are the only networks that currently require authenticated HTTP, it will soon be required on Goerli-Prater and Mainnet. We recommend doing this now regardless of the network you're running on. Let's download Prysm and create the JWT token.
 
 First, create a folder called `ethereum` on your SSD <a class='footnote' href='#footnote-9'>[9]</a>, and then two subfolders within it: `consensus` and `execution`:
 
@@ -286,20 +286,20 @@ In this step, you'll run a beacon node using Prysm. We'll configure your beacon 
         {label: 'Ropsten', value: 'ropsten'}s
     ]}>
       <TabItem value="mainnet">
-        <p>Use the following command to start a beacon node that connects to your local execution node using your secret JWT file:</p>
-        <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8545</code></pre>
+        <p>Use the following command to start a beacon node that connects to your local execution node:</p>
+        <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8545 --mainnet --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
       </TabItem>
       <TabItem value="goerli-prater">
-        <p>Download the <a href='https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz'>Prater genesis state from Github</a> into your <code>consensus/prysm</code> directory. Then use the following command to start a beacon node that connects to your local execution node using your secret JWT file:</p>
-        <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8545 --prater --genesis-state=genesis.ssz</code></pre>
+        <p>Download the <a href='https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz'>Prater genesis state from Github</a> into your <code>consensus/prysm</code> directory. Then use the following command to start a beacon node that connects to your local execution node:</p>
+        <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8545 --prater --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9 --genesis-state=genesis.ssz</code></pre>
       </TabItem>
       <TabItem value="sepolia">
         <p>Download the <a href='https://github.com/eth-clients/merge-testnets/blob/main/sepolia/genesis.ssz'>Sepolia genesis state from Github</a> into your <code>consensus/prysm</code> directory. Then use the following command to start a beacon node that connects to your local execution node using your secret JWT file:</p>
-        <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8551 --sepolia --jwt-secret=jwt.hex --genesis-state=genesis.ssz</code></pre>
+        <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8551 --sepolia --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9 --jwt-secret=jwt.hex --genesis-state=genesis.ssz</code></pre>
       </TabItem>
       <TabItem value="ropsten">
         <p>Download the <a href='https://github.com/eth-clients/merge-testnets/blob/main/ropsten-beacon-chain/genesis.ssz'>Ropsten genesis state from Github</a> into your <code>consensus/prysm</code> directory. Then use the following command to start a beacon node that connects to your local execution node using your secret JWT file:</p>
-        <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8551 --ropsten --jwt-secret=jwt.hex --genesis-state=genesis.ssz</code></pre>
+        <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8551 --ropsten --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9 --jwt-secret=jwt.hex --genesis-state=genesis.ssz</code></pre>
       </TabItem>
   </Tabs>
   </TabItem>
@@ -314,26 +314,26 @@ In this step, you'll run a beacon node using Prysm. We'll configure your beacon 
         {label: 'Ropsten', value: 'ropsten'}
     ]}>
       <TabItem value="mainnet">
-        <p>Use the following command to start a beacon node that connects to your local execution node using your secret JWT file:</p>
-        <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8545</code></pre>
+        <p>Use the following command to start a beacon node that connects to your local execution node:</p>
+        <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8545 --mainnet --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
       </TabItem>
       <TabItem value="goerli-prater">
-        <p>Download the <a href='https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz'>Prater genesis state from Github</a> into your <code>consensus/prysm</code> directory. Then use the following command to start a beacon node that connects to your local execution node using your secret JWT file:</p>
-        <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8545 --prater --genesis-state=../genesis.ssz</code></pre>
+        <p>Download the <a href='https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz'>Prater genesis state from Github</a> into your <code>consensus/prysm</code> directory. Then use the following command to start a beacon node that connects to your local execution node:</p>
+        <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8545 --prater --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9 --genesis-state=../genesis.ssz</code></pre>
       </TabItem>
       <TabItem value="sepolia">
         <p>Download the <a href='https://github.com/eth-clients/merge-testnets/blob/main/sepolia/genesis.ssz'>Sepolia genesis state from Github</a> into your <code>consensus/prysm</code> directory. Then use the following command to start a beacon node that connects to your local execution node using your secret JWT file:</p>
-        <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8551 --sepolia --jwt-secret=jwt.hex --genesis-state=genesis.ssz</code></pre>
+        <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8551 --sepolia --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9 --jwt-secret=jwt.hex --genesis-state=genesis.ssz</code></pre>
       </TabItem>
       <TabItem value="ropsten">
         <p>Download the <a href='https://github.com/eth-clients/merge-testnets/blob/main/ropsten-beacon-chain/genesis.ssz'>Ropsten genesis state from Github</a> into your <code>consensus/prysm</code> directory. Then use the following command to start a beacon node that connects to your local execution node using your secret JWT file:</p>
-        <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8551 --ropsten --jwt-secret=jwt.hex --genesis-state=genesis.ssz</code></pre>
+        <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8551 --ropsten --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9 --jwt-secret=jwt.hex --genesis-state=genesis.ssz</code></pre>
       </TabItem>
     </Tabs>
   </TabItem>
 </Tabs>
 
-Your beacon node will now begin syncing. This usually takes a couple days, but it can take longer depending on your network and hardware specs.
+**Be sure to replace the `--suggested-fee-recipient` wallet address with a real address.** Your beacon node will now begin syncing. This usually takes a couple days, but it can take longer depending on your network and hardware specs.
 
 You can check your beacon node's <a href='https://ethereum.github.io/beacon-APIs/?urls.primaryName=dev#/Node/getSyncingStatus'>sync status</a> by running the following command from a separate terminal window:
 
