@@ -79,22 +79,22 @@ Using the latest version of your execution client software, issue the following 
         {label: 'Mainnet', value: 'mainnet'}
     ]}>
       <TabItem value="ropsten">
-        <pre><code>Nethermind.Runner --config ropsten --JsonRpc.JwtSecretFile=path/to/jwt.hex --Merge.TerminalTotalDifficulty 50000000000000000</code></pre>
+        <pre><code>Nethermind.Runner --config ropsten --JsonRpc.Enabled true --JsonRpc.JwtSecretFile=path/to/jwt.hex --Merge.TerminalTotalDifficulty 50000000000000000</code></pre>
       </TabItem>
        <TabItem value="sepolia">
-        <pre><code>Nethermind.Runner --config sepolia --JsonRpc.JwtSecretFile=path/to/jwt.hex --Merge.TerminalTotalDifficulty 50000000000000000</code></pre>
+        <pre><code>Nethermind.Runner --config sepolia --JsonRpc.Enabled true --JsonRpc.JwtSecretFile=path/to/jwt.hex --Merge.TerminalTotalDifficulty 50000000000000000</code></pre>
       </TabItem>
       <TabItem value="goerli-prater">
         <div class="admonition admonition-caution alert alert--warning">
-          <div class="admonition-content"><p><strong>Goerli/Prater aren't being merged yet</strong>, but you can configure JWT now. Nethermind automatically enables engine API over port <code>8551</code> when a JWT file is provided.</p></div>
+          <div class="admonition-content"><p><strong>Goerli</strong> isn't ready for Merge configuration yet, so no changes are needed.</p></div>
         </div>
-        <pre><code>Nethermind.Runner --config goerli --JsonRpc.JwtSecretFile=path/to/jwt.hex</code></pre>
+        <pre><code>Nethermind.Runner --config goerli --JsonRpc.Enabled true</code></pre>
       </TabItem>
       <TabItem value="mainnet">
         <div class="admonition admonition-caution alert alert--warning">
-          <div class="admonition-content"><p><strong>Mainnet isn't being merged yet</strong>, but you can configure JWT now. Nethermind automatically enables engine API over port <code>8551</code> when a JWT file is provided.</p></div>
+          <div class="admonition-content"><p><strong>Mainnet</strong> isn't ready for Merge configuration yet, so no changes are needed.</p></div>
         </div>
-        <pre><code>Nethermind.Runner --config mainnet --JsonRpc.JwtSecretFile=path/to/jwt.hex</code></pre>
+        <pre><code>Nethermind.Runner --config mainnet --JsonRpc.Enabled true</code></pre>
       </TabItem>
     </Tabs>
     <p>See Nethermind's <a href='https://docs.nethermind.io/nethermind/first-steps-with-nethermind/running-nethermind-post-merge'>Running Nethermind Post Merge</a> for more information.</p>
@@ -107,22 +107,22 @@ Using the latest version of your execution client software, issue the following 
         {label: 'Mainnet', value: 'mainnet'}
     ]}>
       <TabItem value="ropsten">
-        <pre><code>besu --network=ropsten --rpc-http-enabled --engine-jwt-enabled=true --engine-rpc-http-port=8551 --engine-jwt-secret=path/to/jwt.hex --engine-rpc-enabled=true --engine-host-allowlist="*" --Xmerge-support=true --override-genesis-config="terminalTotalDifficulty=50000000000000000"  </code></pre>
+        <pre><code>besu --network=ropsten --rpc-http-enabled --engine-jwt-enabled=true --engine-jwt-secret=path/to/jwt.hex  --engine-host-allowlist="*" --override-genesis-config="terminalTotalDifficulty=50000000000000000"</code></pre>
       </TabItem>
       <TabItem value="sepolia">
-        <pre><code>besu --network=sepolia --rpc-http-enabled --engine-jwt-enabled=true --engine-rpc-http-port=8551 --engine-jwt-secret=path/to/jwt.hex --engine-rpc-enabled=true --engine-host-allowlist="*" --Xmerge-support=true --override-genesis-config="terminalTotalDifficulty=50000000000000000"  </code></pre>
+        <pre><code>besu --network=sepolia --rpc-http-enabled --engine-jwt-enabled=true --engine-jwt-secret=path/to/jwt.hex  --engine-host-allowlist="*" --override-genesis-config="terminalTotalDifficulty=50000000000000000"</code></pre>
       </TabItem>
       <TabItem value="goerli-prater">
         <div class="admonition admonition-caution alert alert--warning">
-          <div class="admonition-content"><p><strong>Goerli/Prater aren't being merged yet</strong>, but you can configure JWT and engine API now.</p></div>
+          <div class="admonition-content"><p><strong>Goerli</strong> isn't ready for Merge configuration yet, so no changes are needed.</p></div>
         </div>
-        <pre><code>besu --network=goerli --rpc-http-enabled --engine-jwt-enabled=true --engine-rpc-http-port=8551 --engine-jwt-secret=path/to/jwt.hex --engine-rpc-enabled=true --engine-host-allowlist="*"</code></pre>
+        <pre><code>besu --network=goerli --rpc-http-enabled</code></pre>
       </TabItem>
       <TabItem value="mainnet">
         <div class="admonition admonition-caution alert alert--warning">
-          <div class="admonition-content"><p><strong>Mainnet isn't being merged yet</strong>, but you can configure JWT and engine API now.</p></div>
+          <div class="admonition-content"><p><strong>Mainnet</strong> isn't ready for Merge configuration yet, so no changes are needed.</p></div>
         </div>
-        <pre><code>besu --network=mainnet --rpc-http-enabled --engine-jwt-enabled=true --engine-rpc-http-port=8551 --engine-jwt-secret=path/to/jwt.hex --engine-rpc-enabled=true --engine-host-allowlist="*"</code></pre>
+        <pre><code>besu --network=mainnet --rpc-http-enabled</code></pre>
       </TabItem>
     </Tabs>
     <p>See Besu's <a href='https://besu.hyperledger.org/en/stable/Reference/CLI/CLI-Syntax/'>command-line options</a> for parameter definitions.</p>
@@ -138,22 +138,22 @@ Using the latest version of your execution client software, issue the following 
         {label: 'Mainnet', value: 'mainnet'}
     ]}>
       <TabItem value="ropsten">
-        <pre><code>geth --ropsten --http --http.api eth,net,engine --authrpc.vhosts="localhost" --authrpc.jwtsecret=path/to/jwt.hex  --override.terminaltotaldifficulty 50000000000000000</code></pre>
+        <pre><code>geth --ropsten --http --http.api eth,net,engine,admin --authrpc.vhosts="localhost" --authrpc.jwtsecret=path/to/jwt.hex --override.terminaltotaldifficulty 50000000000000000</code></pre>
       </TabItem>
       <TabItem value="sepolia">
-        <pre><code>geth --sepolia --http --http.api eth,net,engine --authrpc.vhosts="localhost" --authrpc.jwtsecret=path/to/jwt.hex  --override.terminaltotaldifficulty 50000000000000000</code></pre>
+        <pre><code>geth --sepolia --http --http.api eth,net,engine,admin --authrpc.vhosts="localhost" --authrpc.jwtsecret=path/to/jwt.hex --override.terminaltotaldifficulty 50000000000000000</code></pre>
       </TabItem>
       <TabItem value="goerli-prater">
         <div class="admonition admonition-caution alert alert--warning">
-          <div class="admonition-content"><p><strong>Goerli/Prater aren't being merged yet</strong> and Geth requires TTD to be configured in order for JWT to work, so for now, we'll just tell Geth to use port <code>8551</code>. This will allow Prysm to connect to Geth in the next step.</p></div>
+          <div class="admonition-content"><p><strong>Goerli</strong> isn't ready for Merge configuration yet, so no changes are needed.</p></div>
         </div>
-        <pre><code>geth --goerli --http --http.api eth,net,engine --http.port 8551</code></pre>
+        <pre><code>geth --goerli --http --http.api eth,net,engine,admin</code></pre>
       </TabItem>
       <TabItem value="mainnet">
         <div class="admonition admonition-caution alert alert--warning">
-          <div class="admonition-content"><p><strong>Mainnet isn't being merged yet</strong> and Geth requires TTD to be configured in order for JWT to work, so for now, we'll just tell Geth to use port <code>8551</code>. This will allow Prysm to connect to Geth in the next step.</p></div>
+          <div class="admonition-content"><p><strong>Mainnet</strong> isn't ready for Merge configuration yet, so no changes are needed.</p></div>
         </div>
-        <pre><code>geth --http --http.api eth,net,engine --http.port 8551</code></pre>
+        <pre><code>geth --mainnet --http --http.api eth,net,engine,admin</code></pre>
       </TabItem>
     </Tabs>
     <p>See Geth's <a href='https://geth.ethereum.org/docs/interface/command-line-options'>command-line options</a> for parameter definitions.</p>
@@ -178,18 +178,24 @@ Next, we'll configure your beacon node to consume your JWT token so it can secur
     ]}>
       <TabItem value="ropsten">
         <p>Download the <a href='https://github.com/eth-clients/merge-testnets/blob/main/ropsten-beacon-chain/genesis.ssz'>Ropsten genesis state from Github</a>.</p>
-        <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8551 --jwt-secret=path/to/jwt.hex --ropsten --genesis-state=genesis.ssz --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
+        <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8551 --ropsten --jwt-secret=path/to/jwt.hex --genesis-state=genesis.ssz --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
       </TabItem>
       <TabItem value="sepolia">
       <p>Download the <a href='https://github.com/eth-clients/merge-testnets/blob/main/sepolia/genesis.ssz'>Sepolia genesis state from Github</a>.</p>
-        <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8551 --jwt-secret=path/to/jwt.hex --sepolia --genesis-state=genesis.ssz --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
+        <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8551 --sepolia --jwt-secret=path/to/jwt.hex --genesis-state=genesis.ssz --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
       </TabItem>
       <TabItem value="goerli-prater">
+        <div class="admonition admonition-caution alert alert--warning">
+          <div class="admonition-content"><p><strong>Prater</strong> isn't ready for Merge configuration yet, so no changes are needed.</p></div>
+        </div>
         <p>Download the <a href='https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz'>Prater genesis state from Github</a>.</p>
-        <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8551 --jwt-secret=path/to/jwt.hex --prater --genesis-state=genesis.ssz --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
+        <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8545 --prater --genesis-state=genesis.ssz --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
       </TabItem>
       <TabItem value="mainnet">
-        <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8551 --jwt-secret=path/to/jwt.hex --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
+        <div class="admonition admonition-caution alert alert--warning">
+          <div class="admonition-content"><p><strong>Mainnet</strong> isn't ready for Merge configuration yet, so no changes are needed.</p></div>
+        </div>
+        <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8545 --mainnet --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
       </TabItem>
     </Tabs>
   </TabItem>
