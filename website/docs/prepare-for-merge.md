@@ -45,7 +45,9 @@ Let's step through each of these changes.
 
 ## Generate JWT token
 
-Your beacon node needs a JWT token to form a secure HTTP connection with your execution node. Otherwise, using [Prysm v2.1.3-rc.4](https://github.com/prysmaticlabs/prysm/releases/tag/v2.1.3-rc.4), issue the following command to generate this token:
+A secret **JWT token** will allow your beacon node to form an authenticated HTTP connection with your execution node. Although Ropsten and Sepolia are the only networks that currently require authenticated HTTP, it will soon be required on Goerli-Prater and Mainnet. We recommend doing this now regardless of the network you're running on.
+
+Using [Prysm v2.1.3-rc.4](https://github.com/prysmaticlabs/prysm/releases/tag/v2.1.3-rc.4), issue the following command to generate this token:
 
 <Tabs groupId="os" defaultValue="others" values={[
     {label: 'Windows', value: 'win'},
@@ -59,7 +61,7 @@ Your beacon node needs a JWT token to form a secure HTTP connection with your ex
   </TabItem>
 </Tabs>
 
-Prysm will output a `jwt.hex` file path. Record this - we'll use it in the next step.
+Prysm will output a `jwt.hex` file path. If you're running on Ropsten or Sepolia, record this - we'll use it in the next step. If you're running on Mainnet or Goerli-Prater, you won't use this now, but be prepared to use when these networks are Merged.
 
 
 ## Configure execution node
