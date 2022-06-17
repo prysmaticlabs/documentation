@@ -283,7 +283,7 @@ In this step, you'll run a beacon node using Prysm. We'll configure your beacon 
         {label: 'Mainnet', value: 'mainnet'},
         {label: 'Goerli-Prater', value: 'goerli-prater'},
         {label: 'Sepolia', value: 'sepolia'},
-        {label: 'Ropsten', value: 'ropsten'}s
+        {label: 'Ropsten', value: 'ropsten'}
     ]}>
       <TabItem value="mainnet">
         <p>Use the following command to start a beacon node that connects to your local execution node:</p>
