@@ -27,7 +27,6 @@ At a high level, we'll walk through the following flow:
 
 <br />
 
-
 <img style={{width: 100 + '%', margin: 'auto', display: 'block', maxWidth: 651 + 'px'}} src={ClientStackPng} /> 
 
 <br />
