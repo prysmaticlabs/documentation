@@ -210,18 +210,24 @@ Next, we'll configure your beacon node to consume your JWT token so it can secur
     ]}> 
     <TabItem value="ropsten">
       <p>Download the <a href='https://github.com/eth-clients/merge-testnets/blob/main/ropsten-beacon-chain/genesis.ssz'>Ropsten genesis state from Github</a>.</p>
-      <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8551 --jwt-secret=path/to/jwt.hex --ropsten --genesis-state=genesis.ssz --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
+      <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8551 --ropsten --jwt-secret=path/to/jwt.hex --genesis-state=genesis.ssz --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
     </TabItem>
     <TabItem value="sepolia">
       <p>Download the <a href='https://github.com/eth-clients/merge-testnets/blob/main/sepolia/genesis.ssz'>Sepolia genesis state from Github</a>.</p>
-      <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8551 --jwt-secret=path/to/jwt.hex --sepolia --genesis-state=genesis.ssz --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
+      <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8551 --sepolia --jwt-secret=path/to/jwt.hex --genesis-state=genesis.ssz --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
     </TabItem>
     <TabItem value="goerli-prater">
+      <div class="admonition admonition-caution alert alert--warning">
+          <div class="admonition-content"><p><strong>Prater</strong> isn't ready for Merge configuration yet, so no changes are needed.</p></div>
+      </div>
       <p>Download the <a href='https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz'>Prater genesis state from Github</a>.</p>
-      <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8551 --jwt-secret=path/to/jwt.hex --prater --genesis-state=genesis.ssz --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
+      <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8545 --prater --genesis-state=genesis.ssz --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
     </TabItem>
     <TabItem value="mainnet">
-      <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8551 --jwt-secret=path/to/jwt.hex --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
+      <div class="admonition admonition-caution alert alert--warning">
+          <div class="admonition-content"><p><strong>Mainnet</strong> isn't ready for Merge configuration yet, so no changes are needed.</p></div>
+      </div>
+      <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8545 --mainnet --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
     </TabItem>
   </Tabs>
   </TabItem>
