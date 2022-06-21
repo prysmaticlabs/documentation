@@ -2,6 +2,7 @@
     "docs": [
         {
             "type": "doc",
+            "label": "Getting started",
             "id": "getting-started"
         },
         {
@@ -18,7 +19,7 @@
             "type": "category",
             "collapsed": true,
             "collapsible": true,
-            "label": "Installation Guide",
+            "label": "Advanced Installation Guides",
             "items": [
                 {
                     "type": "doc",

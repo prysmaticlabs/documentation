@@ -6,7 +6,7 @@
 /* General elements */
 
 a {
-	color: #ff30a0;
+    color: #ff30a0;
 }
 
 /* Header elements */
@@ -14,14 +14,17 @@ a {
 .mainContainer .wrapper .post .postHeaderTitle {
     margin-top: 10px;
 }
+
 .toc .toggleNav ul li a {
     font-size: 15px;
     padding: 2px 0;
 
 }
+
 .fixedHeaderContainer {
     border-bottom: 3px solid #ff30a0;
 }
+
 .toc .toggleNav .navGroup .navGroupCategoryTitle {
     font-size: 17px;
     color: #22292f;
@@ -32,10 +35,12 @@ a {
 .onPageNav a:hover {
     color: #ff30a0;
 }
+
 .toc .toggleNav ul li a:hover {
     color: #ff30a0;
 
 }
+
 .toc .toggleNav ul li.navListItemActive a {
     color: #22292f;
     font-weight: 600;
@@ -44,26 +49,21 @@ a {
 @media (max-width: 736px) {
     .nav-footer {
         text-align: center;
-        margin:auto;
+        margin: auto;
     }
 
     .nav-home {
-        margin:auto !important; 
+        margin: auto !important;
     }
 
 }
 
-@media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
-}
+@media only screen and (min-device-width: 360px) and (max-device-width: 736px) {}
 
-@media only screen and (min-width: 1024px) {
-}
+@media only screen and (min-width: 1024px) {}
 
-@media only screen and (max-width: 1023px) {
-}
+@media only screen and (max-width: 1023px) {}
 
-@media only screen and (min-width: 1400px) {
-}
+@media only screen and (min-width: 1400px) {}
 
-@media only screen and (min-width: 1500px) {
-}
+@media only screen and (min-width: 1500px) {}
