@@ -20,25 +20,26 @@ module.exports = {
                 href: '/docs/getting-started',
             },
             items: [{
-                    type: 'docsVersionDropdown',
-                    position: 'left',
-                    dropdownActiveClassDisabled: true,
-                },
-                {
-                    to: 'docs/install/install-with-script',
-                    label: 'Quick Install',
-                    position: 'right',
-                },
-                {
-                    href: 'https://github.com/prysmaticlabs/prysm',
-                    label: 'GitHub',
-                    position: 'right',
-                },
-                {
-                    href: 'https://discord.gg/prysmaticlabs',
-                    label: 'Discord',
-                    position: 'right',
-                },
+                type: 'docsVersion',
+                position: 'left',
+                to: 'https://github.com/prysmaticlabs/prysm/releases/tag/v2.1.2',
+                label: 'v2.1.2',
+            },
+            {
+                to: 'docs/install/install-with-script',
+                label: 'Quick Install',
+                position: 'right',
+            },
+            {
+                href: 'https://github.com/prysmaticlabs/prysm',
+                label: 'GitHub',
+                position: 'right',
+            },
+            {
+                href: 'https://discord.gg/prysmaticlabs',
+                label: 'Discord',
+                position: 'right',
+            },
             ],
         },
         footer: {
