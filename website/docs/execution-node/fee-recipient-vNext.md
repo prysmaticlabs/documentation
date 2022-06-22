@@ -1,5 +1,5 @@
 ---
-id: fee-recipient
+id: fee-recipient-vNext
 title: Configuring a Fee Recipient Address 
 sidebar_label: Configuring a Fee Recipient Address 
 doc_type: how-to
