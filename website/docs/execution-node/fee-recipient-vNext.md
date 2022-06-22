@@ -88,7 +88,6 @@ An example invocation: `./prysm.sh validator --suggested-fee-recipient=0x0123456
 
 If you don't see any errors after issuing one of the above commands, your fee recipient address has been successfully configured.
 
-<br />
 
 #### Fee Recipient JSON Config File
 
@@ -196,8 +195,6 @@ The above JSON demonstrates configuring two 1:1 mappings between `validator publ
   </tr>
 </table>
 
-<br />
-
 
 ### Configuring Fee Recipient on your beacon node
 
@@ -223,8 +220,6 @@ A fee recipient address can be configured on your beacon node instance by using 
 
 Note that when configuring fee recipient on your beacon node, the beacon node will cache the fee recipient address locally.
 
-
-<br />
 
 ------------------
 
