@@ -7,8 +7,11 @@
         },
         {
             "type": "doc",
-            "label": "Quickstart",
             "id": "install/install-with-script"
+        },
+        {
+            "type": "doc",
+            "id": "install/install-with-script-vNext"
         },
         {
             "type": "doc",
@@ -51,7 +54,15 @@
                 },
                 {
                     "type": "doc",
+                    "id": "prysm-usage/checkpoint-sync-vNext"
+                },
+                {
+                    "type": "doc",
                     "id": "execution-node/fee-recipient"
+                },
+                {
+                    "type": "doc",
+                    "id": "execution-node/fee-recipient-vNext"
                 },
                 {
                     "type": "doc",
