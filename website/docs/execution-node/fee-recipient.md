@@ -16,9 +16,9 @@ sme: james-prysm
 
 :::
 
-:::caution using Sepolia?
+:::caution Merge Testnet Users
 
-If you're testing Sepolia's Merge, use [Prysm v2.1.3-rc.4](https://github.com/prysmaticlabs/prysm/releases/tag/v2.1.3-rc.4) with the [vNext Fee Recipient guidance](./fee-recipient-vNext.md).
+If you're running on a Merge Testnet, use [Prysm v2.1.3-rc.4](https://github.com/prysmaticlabs/prysm/releases/tag/v2.1.3-rc.4) with the [vNext Fee Recipient guidance](./fee-recipient-vNext.md), as some options have changed.
 
 :::
 
