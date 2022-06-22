@@ -55,6 +55,10 @@
                 },
                 {
                     "type": "doc",
+                    "id": "execution-node/fee-recipient-vNext"
+                },
+                {
+                    "type": "doc",
                     "id": "prysm-usage/graffiti-file"
                 },
                 {
