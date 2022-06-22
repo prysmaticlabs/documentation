@@ -12,6 +12,11 @@
         },
         {
             "type": "doc",
+            "label": "Quickstart (vNext)",
+            "id": "install/install-with-script"
+        },
+        {
+            "type": "doc",
             "label": "Security Best Practices",
             "id": "security-best-practices"
         },
