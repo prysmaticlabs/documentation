@@ -42,7 +42,6 @@ Your fee recipient address can be configured in two places: on your **validator 
 
 We recommend configuring it in both places, even if you only have one validator public key. Your validator client instance configuration will override the beacon node configuration, while the beacon node configuration will be treated like a backup in the event that your client instance configuration fails.
 
-<br />
 
 ### Configuring Fee Recipient on your validator client instance
 
