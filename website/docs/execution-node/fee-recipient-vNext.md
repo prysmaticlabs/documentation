@@ -10,11 +10,12 @@ sme: james-prysm
 
 # Configuring a Fee Recipient Address 
 
-:::caution
+:::caution Prysm v2.1.3-rc.4
 
-**This feature is currently in public preview** and may change significantly as we receive feedback from users like you. Join our [Discord server](https://discord.gg/prysmaticlabs) to share your feedback.
+**This feature is currently in public preview** and may change significantly as we receive feedback from users like you. This guide is targeted at [Prysm v2.1.3-rc.4](https://github.com/prysmaticlabs/prysm/releases/tag/v2.1.3-rc.4). Join our [Discord server](https://discord.gg/prysmaticlabs) to share your feedback.
 
 :::
+
 
 
 <!-- alt: ## How to configure Fee Recipient on your client instance and/or beacon node -->
