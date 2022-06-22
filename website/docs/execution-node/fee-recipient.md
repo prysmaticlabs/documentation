@@ -16,9 +16,9 @@ sme: james-prysm
 
 :::
 
-:::caution Sepolia
+:::caution using Sepolia?
 
-If you're testing Sepolia, use [Prysm v2.1.3-rc.4](https://github.com/prysmaticlabs/prysm/releases/tag/v2.1.3-rc.4) with the [vNext Fee Recipient guidance](./fee-recipient-vNext.md).
+If you're testing Sepolia's Merge, use [Prysm v2.1.3-rc.4](https://github.com/prysmaticlabs/prysm/releases/tag/v2.1.3-rc.4) with the [vNext Fee Recipient guidance](./fee-recipient-vNext.md).
 
 :::
 
