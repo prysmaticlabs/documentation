@@ -644,7 +644,7 @@ The Merge introduces a new Engine API that allows consensus-layer clients to com
 <!--TODO: develop our own knowledge base with conceptual content -->
 
 **What happens if my execution client goes down? Will I be penalized?** <br />
-Yes. Downtime penalties are minimal <a class='footnote' href='#footnote-14'>[14]</a> but we recommend having uptime and downtime alerts configured for your execution, beacon, and validator nodes <a class='footnote' href='#footnote-15'>[15]</a>.
+Yes. Downtime penalties are minimal <a class='footnote' href='#footnote-14'>[14]</a> but we recommend having uptime and downtime alerts configured for your execution, beacon, and validator nodes if possible.
 
 **My beacon node is taking a long time to sync. Is there any way I can speed it up?** <br />
 Yes - you can use [checkpoint sync](https://docs.prylabs.network/docs/prysm-usage/checkpoint-sync) to start your beacon node's synchronization from a checkpoint rather than from genesis. This is actually a more secure way to run your beacon node.
@@ -750,6 +750,5 @@ Ethereum Mainnet is supported by a number of <strong>test networks</strong>. The
 <strong id='footnote-11'>11.</strong> This guide uses a basic, default configuration for all execution clients, which should work well for most people. If you'd like to customize your configuration, detailed guidance is available for each client: <a href='https://docs.nethermind.io/nethermind/first-steps-with-nethermind/getting-started'>Nethermind</a>, <a href='https://besu.hyperledger.org/en/stable/HowTo/Get-Started/Installation-Options/Install-Binaries/'>Besu</a>, <a href='https://geth.ethereum.org/docs/getting-started'>Geth</a>. <br />
 <strong id='footnote-12'>12.</strong> Your execution client needs to download the entire blockchain - every block that's been produced after the genesis block.  <br />
 <strong id='footnote-13'>13.</strong> Your keystore file contains your public key and your private key encrypted with a password. To learn more about how keystores work, see <a href='https://julien-maffre.medium.com/what-is-an-ethereum-keystore-file-86c8c5917b97'>What is an Ethereum keystore</a>. <br />
-<strong id='footnote-14'>14</strong>. BitMex recently posted research that provides hard numbers on penalties and rewards: <a href='https://blog.bitmex.com/ethereums-proof-of-stake-system-calculating-penalties-rewards/'>Ethereum's Proof of Stake System - Calculating Penalties and Rewards</a>. Collin Myers has also created an <a href='https://docs.google.com/spreadsheets/d/15tmPOvOgi3wKxJw7KQJKoUe-uonbYR6HF7u83LR5Mj4/edit#gid=1018097491'>Ethereum calculator</a>. <br />
-<strong id='footnote-15'>15</strong>. See Configure Monitoring and Alerts (TODO). <br />
+<strong id='footnote-14'>14</strong>. BitMex recently posted research that provides hard numbers on penalties and rewards: <a href='https://blog.bitmex.com/ethereums-proof-of-stake-system-calculating-penalties-rewards/'>Ethereum's Proof of Stake System - Calculating Penalties and Rewards</a>. Collin Myers has also created an <a href='https://docs.google.com/spreadsheets/d/15tmPOvOgi3wKxJw7KQJKoUe-uonbYR6HF7u83LR5Mj4/edit#gid=1018097491'>Ethereum calculator</a>. 
 
