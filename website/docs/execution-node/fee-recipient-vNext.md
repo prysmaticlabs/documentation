@@ -16,7 +16,7 @@ sme: james-prysm
 
 :::
 
-
+<br/>
 
 <!-- alt: ## How to configure Fee Recipient on your client instance and/or beacon node -->
 

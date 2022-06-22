@@ -25,6 +25,8 @@ If you're testing Sepolia's Merge, use [Prysm v2.1.3-rc.4](https://github.com/pr
 
 <!-- alt: ## How to configure Fee Recipient on your client instance and/or beacon node -->
 
+<br/>
+
 **Fee Recipient** is a feature that lets you specify a priority fee recipient address on your validator client instance and beacon node. After [The Merge](https://ethereum.org/en/upgrades/merge/), execution clients will begin depositing priority fees into this address whenever your validator client proposes a new block.
 
 ## Background
