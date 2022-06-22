@@ -1,12 +1,10 @@
 ---
 id: fee-recipient
 title: Configure a Fee Recipient Address  
-sidebar_label: Configure Fee Recipient
+sidebar_label: Fee Recipient
 doc_type: how-to
 sme: james-prysm
 ---
-
-
 
 # Configure a Fee Recipient Address 
 
