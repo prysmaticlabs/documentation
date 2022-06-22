@@ -1,7 +1,7 @@
 ---
 id: install-with-script
 title: Installing Prysm with prysm.sh 
-sidebar_label: Prysm Quickstart Script
+sidebar_label: Quickstart
 ---
 
 :::caution Merge Testnet Users
