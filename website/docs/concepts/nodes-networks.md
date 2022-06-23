@@ -21,6 +21,8 @@ An Ethereum **node** is a running instance of Ethereum client software. There ar
 
 When users stake 32 ETH to participate in Ethereum's proof-of-stake consensus mechanism, they use validator client software like Prysm to stake their ETH and run a validator. Validators depend on nodes:
 
+<br />
+
 <img style={{width: 100 + '%', margin: 'auto', display: 'block', maxWidth: 651 + 'px'}} src={ClientStackPng} /> 
 
 <br />
