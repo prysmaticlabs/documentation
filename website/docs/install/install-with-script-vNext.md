@@ -162,12 +162,6 @@ curl https://raw.githubusercontent.com/prysmaticlabs/prysm/v2.1.3-rc.5/prysm.sh 
 
 In this step, you'll install an execution-layer client that Prysm's beacon node will connect to <a class='footnote' href='#footnote-2'>[2]</a>.
 
-:::info
-
-Prysm is a consensus-layer client that depends on execution-layer clients. Although we provide execution-layer guidance for your convenience, this guidance is not an official endorsement or recommendation.
-
-:::
-
 <Tabs groupId="execution-clients" defaultValue="nethermind" values={[
 {label: 'Nethermind', value: 'nethermind'},
 {label: 'Besu', value: 'besu'},
@@ -741,7 +735,7 @@ Ethereum Mainnet is supported by a number of <strong>test networks</strong>. The
 **Footnotes:**
 
 <strong id='footnote-1'>1.</strong> Prysm is written entirely in the <a href='https://go.dev'>Go programming language</a>. It's under active development by <a href='https://prysmaticlabs.com'>Prysmatic Labs</a>, a grant-funded team working closely with a variety of groups across the Ethereum ecosystem including the <a href='https://ethereum.org'>Ethereum Foundation</a>. <br />
-<strong id='footnote-2'>2.</strong> In Prysm docs, a <strong>full Ethereum node</strong> refers to a node that's running both an execution-layer execution client (like Nethermind, Besu, or Geth) and a consensus-layer beacon node client (like Prysm, Lighthouse, or Nimbus). Execution clients process transactions, while beacon node clients manage the <a href='https://ethereum.org/en/upgrades/beacon-chain/'>Beacon Chain</a>. Validators use another piece of software - a validator client - that requires both execution client and beacon node client software. <br />
+<strong id='footnote-2'>2.</strong> In Prysm docs, a <strong>full Ethereum node</strong> refers to a node that's running both an execution-layer execution client (like Nethermind, Besu, or Geth) and a consensus-layer beacon node client (like Prysm, Lighthouse, or Nimbus). Execution clients process transactions, while beacon node clients manage the <a href='https://ethereum.org/en/upgrades/beacon-chain/'>Beacon Chain</a>. Validators use another piece of software - a validator client - that requires both execution client and beacon node client software. Although we provide execution-layer guidance for your convenience, this guidance is not an official endorsement or recommendation. <br />
 <strong id='footnote-3'>3.</strong> A <strong>validator node</strong> is a particular type of Ethereum node that runs Ethereum's proof-of-stake consensus protocol. Validator client software like Prysm allows you to stake 32 ETH as collateral in an agreement with the Ethereum network to honestly propose and attest to blocks. Running a validator node makes you a validator. Post-merge, validators will replace miners, and proof-of-stake will replace proof-of-work. <br />
 <strong id='footnote-4'>4.</strong> "Staking at home" with your own hardware reduces our dependency on centralized cloud providers and increases the decentralization and security of the Ethereum ecosystem. Staking at home is a serious responsibility that comes with serious risks. Read our <a href='../security-best-practices.md'>Security Best Practices</a> to learn how to minimize those risks. <br />
 <strong id='footnote-5'>5.</strong> Understanding how things work can help you <strong>minimize risk</strong> and <strong>troubleshoot issues</strong>. Staking at home may one day be point-and-click. But until then, <strong>you should understand the major components</strong>, their relationships with each other, and their responsibilities over time. This understanding is currently a prerequisite to staking with Prysm, and it's why we identify continuous self-education as a <a href='../security-best-practices.md'>security best practice</a>. <br />
