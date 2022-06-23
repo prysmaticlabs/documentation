@@ -64,9 +64,9 @@ Every Ethereum network is divided into two layers: **execution layer** (EL) and 
 
 <br />
 
-Every Ethereum node contains software for both layers: execution-layer client software (like Nethermind, Besu, Geth, and Erigon), and consensus-layer client software (like Prysm, Teku, Lighthouse, Nimbus, and Lodestar).
+Every Ethereum node contains software for both layers: **execution-layer** client software (like Nethermind, Besu, Geth, and Erigon), and **consensus-layer** client software (like Prysm, Teku, Lighthouse, Nimbus, and Lodestar).
 
-Like Ethereum Mainnet, test networks have both an execution layer and consensus layer. Every network's EL has a corresponding partner CL. EL-CL network pairs work together to run Ethereum proof-of-stake.
+Every network's execution layer has a corresponding partner consensus layer. EL-CL network pairs work together to run Ethereum proof-of-stake.
 
 <br />
 
