@@ -109,4 +109,4 @@ No. Although this is possible pre-Merge, all Ethereum network participants will 
 
 **What happened to miners?**
 
-The concept of mining exists only in the domain of proof-of-work consensus. After The Merge, Ethereum will have fully transitioned to proof-of-stake consensus, where validators replace miners.
+The concept of mining exists only in the domain of proof-of-work consensus. After The Merge, Ethereum's consensus will be managed by a proof-of-stake mechanism, which replaces miners with validators.
