@@ -1,7 +1,7 @@
 ---
 id: install-with-script-vNext
 title: Run a Node and Stake ETH using Prysm
-sidebar_label: Quickstart (vNext)
+sidebar_label: Quickstart (v2.1.3-rc.5)
 ---
 
 import Tabs from '@theme/Tabs';
@@ -10,7 +10,7 @@ import ClientStackPng from '@site/static/img/client-stack.png';
 
 :::caution vNext
 
-**This quickstart will be published alongside Prysm v2.1.3-rc.5**. Please refer to the [current Quickstart](./install-with-script.md) for the latest recommended guidance. Join our [Discord server](https://discord.gg/prysmaticlabs) to share your feedback.
+**This quickstart will be published alongside Prysm v2.1.3-rc.5**. Please refer to the [current Quickstart](./install-with-script.md) for the latest recommended guidance, which includes instructions for v2.1.3-rc.4. Join our [Discord server](https://discord.gg/prysmaticlabs) to share your feedback.
 
 :::
 

@@ -11,10 +11,6 @@
         },
         {
             "type": "doc",
-            "id": "install/install-with-script-vNext"
-        },
-        {
-            "type": "doc",
             "label": "Security Best Practices",
             "id": "security-best-practices"
         },
