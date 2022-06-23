@@ -678,8 +678,6 @@ TODO: explain in context of this guide -->
 
 Ethereum is a peer-to-peer network of **nodes** that communicate with one another in a decentralized fashion. There are several types of nodes:
 
-<br />
-
 <table>
     <tr>
         <th style={{minWidth: 170 + 'px'}}>Node type</th> 
