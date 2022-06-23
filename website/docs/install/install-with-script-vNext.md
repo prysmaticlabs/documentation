@@ -8,11 +8,6 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import ClientStackPng from '@site/static/img/client-stack.png';
 
-:::caution Under Construction
-
-This quickstart is being actively updated as we receive feedback from users like you. Join our [Discord server](https://discord.gg/prysmaticlabs) to share your feedback.
-
-:::
 
 Prysm is an implementation of the [Ethereum proof-of-stake consensus specification](https://github.com/ethereum/consensus-specs) <a class='footnote' href='#footnote-1'>[1]</a>. In this quickstart, you’ll use Prysm to run an Ethereum node <a class='footnote' href='#footnote-2'>[2]</a> and optionally a validator <a class='footnote' href='#footnote-3'>[3]</a>. This will let you stake 32 ETH using hardware that you manage <a class='footnote' href='#footnote-4'>[4]</a>.
  
