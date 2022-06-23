@@ -105,14 +105,50 @@ At a high level, we'll walk through the following flow:
 
 ## Step 3: Generate secret (Ropsten/Sepolia)
 
-A secret **JWT token** will allow your beacon node to form an authenticated HTTP connection with your execution node. Although Ropsten and Sepolia are the only networks that currently require authenticated HTTP, it will soon be required on Goerli-Prater and Mainnet. We recommend doing this now regardless of the network you're running on.
+A secret **JWT token** will allow your beacon node to form an authenticated HTTP connection with your execution node. Although Ropsten and Sepolia are the only networks that currently require authenticated HTTP, it will soon be required on Goerli-Prater and Mainnet. We recommend doing this now regardless of the network you're running on. Let's download Prysm and create the JWT token.
 
-There are many ways to generate this token:
+First, create a folder called `ethereum` on your SSD <a class='footnote' href='#footnote-9'>[9]</a>, and then two subfolders within it: `consensus` and `execution`:
 
- - Use an online generator like [this](https://seanwasere.com/generate-random-hex/). Copy and paste this value into a `jwt.hex` file.
- - Use a utility like OpenSSL to create the token via command: `openssl rand -hex 32 | tr -d "\n" > "jwt.hex"`
+```
+📂ethereum
+┣ 📂consensus
+┣ 📂execution
+```
 
-Record the location of your `jwt.hex` file - we'll use it in the next step.
+<Tabs groupId="os" defaultValue="others" values={[
+    {label: 'Windows', value: 'win'},
+    {label: 'Linux, MacOS, Arm64', value: 'others'}
+]}>
+  <TabItem value="win">
+    <p>Navigate to your <code>consensus</code> directory and run the following commands:</p>
+
+```
+mkdir prysm && cd prysm
+curl https://raw.githubusercontent.com/prysmaticlabs/prysm/v2.1.3-rc.4/prysm.bat --output prysm.bat
+reg add HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1
+set USE_PRYSM_VERSION=v2.1.3-rc.4
+```
+
+  <p>This will download the Prysm client and update your registry to enable verbose logging. The <code>USE_PRYSM_VERSION</code> environment variable tells Prysm to use the release candidate. If you're using Powershell, you may need to use <code>$env:USE_PRYSM_VERSION="v2.1.3-rc.4"</code> instead of the <code>set</code> command. Use the following command to <strong id='create-jwt'>create your secret JWT token</strong>:</p>
+  <pre><code>prysm.bat beacon-chain jwt generate-auth-secret</code></pre>
+  <p>Prysm will then output a <code>jwt.hex</code> file path. Record this - we'll use it in the next step.</p>
+  </TabItem>
+  <TabItem value="others">
+    <div class="admonition admonition-caution alert alert--warning">
+      <div class="admonition-content"><p><strong>Mac M1 ARM chips</strong> currently require users to run Prysm through <a href='https://support.apple.com/en-us/HT211861'>Rosetta</a>. See our <a href='https://github.com/prysmaticlabs/prysm/issues/9385'>open bug</a> for details.</p></div>
+    </div>
+    <p>Navigate to your <code>consensus</code> directory and run the following two commands:</p>
+
+```
+mkdir prysm && cd prysm
+curl https://raw.githubusercontent.com/prysmaticlabs/prysm/v2.1.3-rc.4/prysm.sh --output prysm.sh && chmod +x prysm.sh
+```
+
+  <p>This will download the Prysm client and make it executable. Tell Prysm to use the release candidate by setting a new environment variable as follows: <code>USE_PRYSM_VERSION=v2.1.3-rc.4</code>. Use the following command to <strong id='create-jwt'>create your secret JWT token</strong>:</p>
+  <pre><code>./prysm.sh beacon-chain jwt generate-jwt-secret</code></pre>
+  <p>Prysm will then output a <code>jwt.hex</code> file path. Record this - we'll use it in the next step.</p>
+  </TabItem>
+</Tabs>
 
 
 ## Step 4: Run an execution client
@@ -124,14 +160,6 @@ In this step, you'll install an execution-layer client that Prysm's beacon node 
 Prysm is a consensus-layer client that depends on execution-layer clients. Although we provide execution-layer guidance for your convenience, this guidance is not an official endorsement or recommendation.
 
 :::
-
-First, create a folder called `ethereum` on your SSD <a class='footnote' href='#footnote-9'>[9]</a>, and then two subfolders within it: `consensus` and `execution`:
-
-```
-📂ethereum
-┣ 📂consensus
-┣ 📂execution
-```
 
 <Tabs groupId="execution-clients" defaultValue="nethermind" values={[
 {label: 'Nethermind', value: 'nethermind'},
@@ -244,7 +272,7 @@ Congratulations - you’re now running an <strong>execution node</strong> in Eth
 
 ## Step 5: Run a beacon node using Prysm
 
-In this step, you'll run a beacon node using Prysm. 
+In this step, you'll run a beacon node using Prysm. First, navigate to your <code>consensus</code> directory.
 
 <Tabs groupId="os" defaultValue="others" values={[
     {label: 'Windows', value: 'win'},
@@ -258,55 +286,18 @@ In this step, you'll run a beacon node using Prysm.
         {label: 'Ropsten', value: 'ropsten'}
     ]}>
       <TabItem value="mainnet">
-        <p>Navigate to your <code>consensus</code> directory and run the following commands:</p>
-
-```
-mkdir prysm && cd prysm
-curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.bat --output prysm.bat
-reg add HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1
-```
-
-  <p>This will download the Prysm client and update your registry to enable verbose logging. Use the following command to start a beacon node that connects to your local execution node:</p>
+        <p>Use the following command to start a beacon node that connects to your local execution node:</p>
         <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8545 --mainnet --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
       </TabItem>
       <TabItem value="goerli-prater">
-        <p>Navigate to your <code>consensus</code> directory and run the following commands:</p>
-
-```
-mkdir prysm && cd prysm
-curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.bat --output prysm.bat
-reg add HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1
-```
-
-  <p>This will download the Prysm client and update your registry to enable verbose logging.</p>
         <p>Download the <a href='https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz'>Prater genesis state from Github</a> into your <code>consensus/prysm</code> directory. Then use the following command to start a beacon node that connects to your local execution node:</p>
         <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8545 --prater --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9 --genesis-state=genesis.ssz</code></pre>
       </TabItem>
       <TabItem value="sepolia">
-        <p>Navigate to your <code>consensus</code> directory and run the following commands:</p>
-
-```
-mkdir prysm && cd prysm
-curl https://raw.githubusercontent.com/prysmaticlabs/prysm/v2.1.3-rc.4/prysm.bat --output prysm.bat
-reg add HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1
-set USE_PRYSM_VERSION=v2.1.3-rc.4
-```
-
-  <p>This will download the Prysm client and update your registry to enable verbose logging. The <code>USE_PRYSM_VERSION</code> environment variable tells Prysm to use the release candidate. If you're using Powershell, you may need to use <code>$env:USE_PRYSM_VERSION="v2.1.3-rc.4"</code> instead of the <code>set</code> command.</p>
         <p>Download the <a href='https://github.com/eth-clients/merge-testnets/blob/main/sepolia/genesis.ssz'>Sepolia genesis state from Github</a> into your <code>consensus/prysm</code> directory. Then use the following command to start a beacon node that connects to your local execution node using your secret JWT file:</p>
         <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8551 --sepolia --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9 --jwt-secret=jwt.hex --genesis-state=genesis.ssz</code></pre>
       </TabItem>
       <TabItem value="ropsten">
-      <p>Navigate to your <code>consensus</code> directory and run the following commands:</p>
-
-```
-mkdir prysm && cd prysm
-curl https://raw.githubusercontent.com/prysmaticlabs/prysm/v2.1.3-rc.4/prysm.bat --output prysm.bat
-reg add HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1
-set USE_PRYSM_VERSION=v2.1.3-rc.4
-```
-
-  <p>This will download the Prysm client and update your registry to enable verbose logging. The <code>USE_PRYSM_VERSION</code> environment variable tells Prysm to use the release candidate. If you're using Powershell, you may need to use <code>$env:USE_PRYSM_VERSION="v2.1.3-rc.4"</code> instead of the <code>set</code> command.</p>
         <p>Download the <a href='https://github.com/eth-clients/merge-testnets/blob/main/ropsten-beacon-chain/genesis.ssz'>Ropsten genesis state from Github</a> into your <code>consensus/prysm</code> directory. Then use the following command to start a beacon node that connects to your local execution node using your secret JWT file:</p>
         <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8551 --ropsten --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9 --jwt-secret=jwt.hex --genesis-state=genesis.ssz</code></pre>
       </TabItem>
@@ -323,50 +314,18 @@ set USE_PRYSM_VERSION=v2.1.3-rc.4
         {label: 'Ropsten', value: 'ropsten'}
     ]}>
       <TabItem value="mainnet">
-        <p>Navigate to your <code>consensus</code> directory and run the following two commands:</p>
-
-```
-mkdir prysm && cd prysm
-curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --output prysm.sh && chmod +x prysm.sh
-```
-
-  <p>This will download the Prysm client and make it executable.</p>
         <p>Use the following command to start a beacon node that connects to your local execution node:</p>
         <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8545 --mainnet --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
       </TabItem>
       <TabItem value="goerli-prater">
-        <p>Navigate to your <code>consensus</code> directory and run the following two commands:</p>
-
-```
-mkdir prysm && cd prysm
-curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --output prysm.sh && chmod +x prysm.sh
-```
-
-  <p>This will download the Prysm client and make it executable.</p>
         <p>Download the <a href='https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz'>Prater genesis state from Github</a> into your <code>consensus/prysm</code> directory. Then use the following command to start a beacon node that connects to your local execution node:</p>
         <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8545 --prater --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9 --genesis-state=../genesis.ssz</code></pre>
       </TabItem>
       <TabItem value="sepolia">
-        <p>Navigate to your <code>consensus</code> directory and run the following two commands:</p>
-
-```
-mkdir prysm && cd prysm
-curl https://raw.githubusercontent.com/prysmaticlabs/prysm/v2.1.3-rc.4/prysm.sh --output prysm.sh && chmod +x prysm.sh
-```
-
-  <p>This will download the Prysm client and make it executable. Tell Prysm to use the release candidate by setting a new environment variable as follows: <code>USE_PRYSM_VERSION=v2.1.3-rc.4</code>.</p>
         <p>Download the <a href='https://github.com/eth-clients/merge-testnets/blob/main/sepolia/genesis.ssz'>Sepolia genesis state from Github</a> into your <code>consensus/prysm</code> directory. Then use the following command to start a beacon node that connects to your local execution node using your secret JWT file:</p>
         <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8551 --sepolia --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9 --jwt-secret=jwt.hex --genesis-state=genesis.ssz</code></pre>
       </TabItem>
       <TabItem value="ropsten">
-        <p>Navigate to your <code>consensus</code> directory and run the following two commands:</p>
-
-```
-mkdir prysm && cd prysm
-curl https://raw.githubusercontent.com/prysmaticlabs/prysm/v2.1.3-rc.4/prysm.sh --output prysm.sh && chmod +x prysm.sh
-```
-
-  <p>This will download the Prysm client and make it executable. Tell Prysm to use the release candidate by setting a new environment variable as follows: <code>USE_PRYSM_VERSION=v2.1.3-rc.4</code>.</p>
         <p>Download the <a href='https://github.com/eth-clients/merge-testnets/blob/main/ropsten-beacon-chain/genesis.ssz'>Ropsten genesis state from Github</a> into your <code>consensus/prysm</code> directory. Then use the following command to start a beacon node that connects to your local execution node using your secret JWT file:</p>
         <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8551 --ropsten --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9 --jwt-secret=jwt.hex --genesis-state=genesis.ssz</code></pre>
       </TabItem>
@@ -389,7 +348,7 @@ This should produce the following output:
 {"data":{"head_slot":"6944","sync_distance":"3003133","is_syncing":true,"is_optimistic":true}}
 ```
 
-When you see `"is_syncing":false`, your beacon node is fully synchronized. 
+When you see `"is_syncing":false`, your beacon node is fully synchronized. When you see `"is_optimistic":false`, your execution node is fully synchronized. 
 
 
 You can verify that your beacon node has successfully connected to your execution node by running the following command from a separate terminal window:
