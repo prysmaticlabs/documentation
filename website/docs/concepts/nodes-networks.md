@@ -10,14 +10,14 @@ import ClientStackPng from '@site/static/img/client-stack.png';
 import NetworkPng from '@site/static/img/network.png';
 
 
-Ethereum is a decentralized network of **nodes** that communicate peer-to-peer:
+Ethereum is powered by a large number of **nodes** that communicate peer-to-peer, forming a decentralized **network**:
 
 <img style={{width: 100 + '%', margin: 'auto', display: 'block', maxWidth: 561 + 'px'}} src={NetworkPng} /> 
 
 
 ## Nodes
 
-A node is a running instance of client software. There are three primary types of nodes: execution nodes, beacon nodes, and validators: 
+A node is a running instance of client software. There are three primary types of nodes: execution nodes, beacon nodes, and validators. Colloquially, a "node" refers to an execution node and beacon node working together to support the broader Ethereum network. When users decide to stake 32 ETH to participate in Ethereum's proof-of-stake consensus mechanism, they use validator client software like Prysm to run a validator. Validators depend on nodes:
 
 <img style={{width: 100 + '%', margin: 'auto', display: 'block', maxWidth: 651 + 'px'}} src={ClientStackPng} /> 
 
@@ -45,7 +45,7 @@ A node is a running instance of client software. There are three primary types o
 </table>
 
 
-### Networks
+## Networks
 
 Ethereum Mainnet is supported by a number of <strong>test networks</strong>. These test networks let developers, node runners, and validators test new functionality before using real ETH on mainnet. Test networks are available in both the execution layer (EL) and consensus layer (CL). Every EL network has a corresponding partner CL network. EL-CL network pairs work together to run Ethereum proof-of-stake. This quickstart shows you how to run a node + validator on the following network pairs:
 
