@@ -54,7 +54,9 @@ When users stake 32 ETH to participate in Ethereum's proof-of-stake consensus me
 
 ## Networks
 
-The Ethereum network that we all know and love is more precisely referred to as **Ethereum Mainnet**. Ethereum Mainnet is the live, **production** instance of Ethereum that mints and manages real Ethereum (ETH) tokens that hold **real** monetary value. There are other live, **test** instances of Ethereum that mint and manage **test** Ethereum. Each test network is compatible with (and only with) its own type of test ETH. These test networks let developers, node runners, and validators test new functionality before using real ETH on Mainnet.
+The Ethereum network that we all know and love is more precisely referred to as **Ethereum Mainnet**. Ethereum Mainnet is the live, **production** instance of Ethereum that mints and manages real Ethereum (ETH) tokens that hold **real** monetary value. 
+
+There are other live, **test** instances of Ethereum that mint and manage **test** Ethereum. Each test network is compatible with (and only with) its own type of test ETH. These test networks let developers, node runners, and validators test new functionality before using real ETH on Mainnet.
 
 Every Ethereum network is divided into two layers: **execution layer** (EL) and **consensus layer** (CL):
 
