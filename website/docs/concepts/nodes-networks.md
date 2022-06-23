@@ -58,7 +58,11 @@ The Ethereum network that we all know and love is more precisely referred to as 
 
 Every Ethereum network is divided into two layers: **execution layer** (EL) and **consensus layer** (CL):
 
-<img style={{width: 100 + '%', margin: 'auto', display: 'block', maxWidth: 600 + 'px'}} src={NetworkLayersPng} /> 
+<br />
+
+<img style={{width: 100 + '%', margin: 'auto', display: 'block', maxWidth: 323 + 'px'}} src={NetworkLayersPng} /> 
+
+<br />
 
 Every Ethereum node contains software for both layers: execution-layer client software (like Nethermind, Besu, Geth, and Erigon), and consensus-layer client software (like Prysm, Teku, Lighthouse, Nimbus, and Lodestar).
 
