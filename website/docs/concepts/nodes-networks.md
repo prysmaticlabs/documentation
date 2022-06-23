@@ -12,7 +12,7 @@ import NetworkPng from '@site/static/img/network.png';
 
 Ethereum is powered by a large number of **nodes** that communicate peer-to-peer, forming a decentralized **network**:
 
-<img style={{width: 100 + '%', margin: 'auto', display: 'block', maxWidth: 561 + 'px'}} src={NetworkPng} /> 
+<img style={{width: 100 + '%', margin: 'auto', display: 'block', maxWidth: 461 + 'px'}} src={NetworkPng} /> 
 
 
 ## Nodes
