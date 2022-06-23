@@ -17,9 +17,13 @@ Ethereum is a decentralized **network** of **nodes** that communicate peer-to-pe
 
 ## Nodes
 
-A node is a running instance of client software. There are three primary types of nodes: execution nodes, beacon nodes, and validators. Colloquially, a "node" refers to an execution node and beacon node working together to support the broader Ethereum network. When users decide to stake 32 ETH to participate in Ethereum's proof-of-stake consensus mechanism, they use validator client software like Prysm to run a validator. Validators depend on nodes:
+An Ethereum **node** is a running instance of Ethereum client software. There are three primary types of nodes in Ethereum: **execution nodes**, **beacon nodes**, and **validators**. Colloquially, a "node" refers to an execution node and beacon node working together. 
+
+When users stake 32 ETH to participate in Ethereum's proof-of-stake consensus mechanism, they use validator client software like Prysm to stake their ETH and run a validator. Validators depend on nodes:
 
 <img style={{width: 100 + '%', margin: 'auto', display: 'block', maxWidth: 651 + 'px'}} src={ClientStackPng} /> 
+
+<br />
 
 <table>
     <tr>
