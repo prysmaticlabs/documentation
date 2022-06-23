@@ -1,19 +1,18 @@
 ---
 id: install-with-script-vNext
 title: Run a Node and Stake ETH using Prysm
-sidebar_label: Quickstart (vNext)
+sidebar_label: Quickstart (v2.1.3-rc.5)
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import ClientStackPng from '@site/static/img/client-stack.png';
 
-:::caution Prysm v2.1.3-rc.4
+:::caution Prysm v2.1.3-rc.5
 
-**This quickstart uses [Prysm v2.1.3-rc.4](https://github.com/prysmaticlabs/prysm/releases/tag/v2.1.3-rc.4)** and may change significantly as we receive feedback from users like you. Join our [Discord server](https://discord.gg/prysmaticlabs) to share your feedback.
+**This quickstart will be published alongside Prysm v2.1.3-rc.5**. Please refer to the [current Quickstart](./install-with-script.md) for the latest recommended guidance, which includes instructions for v2.1.3-rc.4. Join our [Discord server](https://discord.gg/prysmaticlabs) to share your feedback.
 
 :::
-
 
 Prysm is an implementation of the [Ethereum proof-of-stake consensus specification](https://github.com/ethereum/consensus-specs) <a class='footnote' href='#footnote-1'>[1]</a>. In this quickstart, you’ll use Prysm to run an Ethereum node <a class='footnote' href='#footnote-2'>[2]</a> and optionally a validator <a class='footnote' href='#footnote-3'>[3]</a>. This will let you stake 32 ETH using hardware that you manage <a class='footnote' href='#footnote-4'>[4]</a>.
  
@@ -69,7 +68,7 @@ At a high level, we'll walk through the following flow:
     <tr>
         <td><strong>Validator</strong></td>
         <td>
-        Lets you stake ETH, propose + validate blocks, and earn staking rewards.
+        Lets you stake ETH, propose + validate blocks, and earn staking rewards + transaction fees.
         </td>
         <td>
           <ul> 
@@ -103,9 +102,7 @@ At a high level, we'll walk through the following flow:
 - **Join the community** - join our [mailing list](https://groups.google.com/g/prysm-dev), the [Prysm Discord server](https://discord.gg/prysmaticlabs), [r/ethstaker](https://www.reddit.com/r/ethstaker/), and the [EthStaker Discord server](https://discord.io/ethstaker) for updates and support.
 
 
-## Step 3: Generate secret
-
-A secret **JWT token** will allow your beacon node to form an authenticated HTTP connection with your execution node. Although Ropsten and Sepolia are the only networks that currently require authenticated HTTP, it will soon be required on Goerli-Prater and Mainnet. We recommend doing this now regardless of the network you're running on. Let's download Prysm and create the JWT token.
+## Step 3: Create directories, generate secret
 
 First, create a folder called `ethereum` on your SSD <a class='footnote' href='#footnote-9'>[9]</a>, and then two subfolders within it: `consensus` and `execution`:
 
@@ -115,20 +112,31 @@ First, create a folder called `ethereum` on your SSD <a class='footnote' href='#
 ┣ 📂execution
 ```
 
+:::info Ropsten/Sepolia HTTP only
+
+**Ropsten** and **Sepolia** are the only networks that currently require JWT-authenticated HTTP. You can skip the rest of this step if you're running on Goerli-Prater or Mainnet. Note that these networks **will soon require JWT**. You can also skip the rest of this step if you're connecting your beacon node to your execution node over IPC instead of HTTP (this quickstart uses HTTP).
+
+:::
+
+
+A secret **JWT token** will allow your beacon node to form an authenticated HTTP connection with your execution node. Let's download Prysm and create the JWT token.
+
+
 <Tabs groupId="os" defaultValue="others" values={[
     {label: 'Windows', value: 'win'},
     {label: 'Linux, MacOS, Arm64', value: 'others'}
 ]}>
   <TabItem value="win">
-    <p>Navigate to your <code>consensus</code> directory and run the following three commands:</p>
+    <p>Navigate to your <code>consensus</code> directory and run the following commands:</p>
 
 ```
 mkdir prysm && cd prysm
-curl https://raw.githubusercontent.com/prysmaticlabs/prysm/v2.1.3-rc.4/prysm.bat --output prysm.bat
+curl https://raw.githubusercontent.com/prysmaticlabs/prysm/v2.1.3-rc.5/prysm.bat --output prysm.bat
 reg add HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1
+set USE_PRYSM_VERSION=v2.1.3-rc.5
 ```
 
-  <p>This will download the Prysm client and update your registry to enable verbose logging. Use the following command to <strong id='create-jwt'>create your secret JWT token</strong>:</p>
+  <p>This will download the Prysm client and update your registry to enable verbose logging. The <code>USE_PRYSM_VERSION</code> environment variable tells Prysm to use the release candidate. If you're using Powershell, you may need to use <code>$env:USE_PRYSM_VERSION="v2.1.3-rc.5"</code> instead of the <code>set</code> command. Use the following command to <strong id='create-jwt'>create your secret JWT token</strong>:</p>
   <pre><code>prysm.bat beacon-chain jwt generate-auth-secret</code></pre>
   <p>Prysm will then output a <code>jwt.hex</code> file path. Record this - we'll use it in the next step.</p>
   </TabItem>
@@ -140,10 +148,10 @@ reg add HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1
 
 ```
 mkdir prysm && cd prysm
-curl https://raw.githubusercontent.com/prysmaticlabs/prysm/v2.1.3-rc.4/prysm.sh --output prysm.sh && chmod +x prysm.sh
+curl https://raw.githubusercontent.com/prysmaticlabs/prysm/v2.1.3-rc.5/prysm.sh --output prysm.sh && chmod +x prysm.sh
 ```
 
-  <p>This will download the Prysm client and make it executable. Use the following command to <strong id='create-jwt'>create your secret JWT token</strong>:</p>
+  <p>This will download the Prysm client and make it executable. Tell Prysm to use the release candidate by setting a new environment variable as follows: <code>USE_PRYSM_VERSION=v2.1.3-rc.5</code>. Use the following command to <strong id='create-jwt'>create your secret JWT token</strong>:</p>
   <pre><code>./prysm.sh beacon-chain jwt generate-jwt-secret</code></pre>
   <p>Prysm will then output a <code>jwt.hex</code> file path. Record this - we'll use it in the next step.</p>
   </TabItem>
@@ -153,12 +161,6 @@ curl https://raw.githubusercontent.com/prysmaticlabs/prysm/v2.1.3-rc.4/prysm.sh 
 ## Step 4: Run an execution client
 
 In this step, you'll install an execution-layer client that Prysm's beacon node will connect to <a class='footnote' href='#footnote-2'>[2]</a>.
-
-:::info
-
-Prysm is a consensus-layer client that depends on execution-layer clients. Although we provide execution-layer guidance for your convenience, this guidance is not an official endorsement or recommendation.
-
-:::
 
 <Tabs groupId="execution-clients" defaultValue="nethermind" values={[
 {label: 'Nethermind', value: 'nethermind'},
@@ -271,7 +273,7 @@ Congratulations - you’re now running an <strong>execution node</strong> in Eth
 
 ## Step 5: Run a beacon node using Prysm
 
-In this step, you'll run a beacon node using Prysm. We'll configure your beacon node to connect to your local execution client using your JWT token. First, navigate to your <code>consensus</code> directory.
+In this step, you'll run a beacon node using Prysm. First, navigate to your <code>consensus</code> directory.
 
 <Tabs groupId="os" defaultValue="others" values={[
     {label: 'Windows', value: 'win'},
@@ -303,9 +305,6 @@ In this step, you'll run a beacon node using Prysm. We'll configure your beacon 
   </Tabs>
   </TabItem>
   <TabItem value="others">
-    <div class="admonition admonition-caution alert alert--warning">
-      <div class="admonition-content"><p><strong>Mac M1 ARM chips</strong> currently require users to run Prysm through <a href='https://support.apple.com/en-us/HT211861'>Rosetta</a>. See our <a href='https://github.com/prysmaticlabs/prysm/issues/9385'>open bug</a> for details.</p></div>
-    </div>
     <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
         {label: 'Goerli-Prater', value: 'goerli-prater'},
@@ -347,7 +346,7 @@ This should produce the following output:
 {"data":{"head_slot":"6944","sync_distance":"3003133","is_syncing":true,"is_optimistic":true}}
 ```
 
-When you see `"is_syncing":false`, your beacon node is fully synchronized. When you see `"is_optimistic":false`, your execution node is fully synchronized. 
+When you see `"is_syncing":false`, your beacon node is fully synchronized. When you see `"is_optimistic":false`, your execution node is fully synchronized. Note that only Prysm v2.1.3-rc.4+ displays `is_optimistic`.
 
 
 You can verify that your beacon node has successfully connected to your execution node by running the following command from a separate terminal window:
@@ -673,8 +672,6 @@ TODO: explain in context of this guide -->
 
 Ethereum is a peer-to-peer network of **nodes** that communicate with one another in a decentralized fashion. There are several types of nodes:
 
-<br />
-
 <table>
     <tr>
         <th style={{minWidth: 170 + 'px'}}>Node type</th> 
@@ -738,7 +735,7 @@ Ethereum Mainnet is supported by a number of <strong>test networks</strong>. The
 **Footnotes:**
 
 <strong id='footnote-1'>1.</strong> Prysm is written entirely in the <a href='https://go.dev'>Go programming language</a>. It's under active development by <a href='https://prysmaticlabs.com'>Prysmatic Labs</a>, a grant-funded team working closely with a variety of groups across the Ethereum ecosystem including the <a href='https://ethereum.org'>Ethereum Foundation</a>. <br />
-<strong id='footnote-2'>2.</strong> In Prysm docs, a <strong>full Ethereum node</strong> refers to a node that's running both an execution-layer execution client (like Nethermind, Besu, or Geth) and a consensus-layer beacon node client (like Prysm, Lighthouse, or Nimbus). Execution clients process transactions, while beacon node clients manage the <a href='https://ethereum.org/en/upgrades/beacon-chain/'>Beacon Chain</a>. Validators use another piece of software - a validator client - that requires both execution client and beacon node client software. <br />
+<strong id='footnote-2'>2.</strong> In Prysm docs, a <strong>full Ethereum node</strong> refers to a node that's running both an execution-layer execution client (like Nethermind, Besu, or Geth) and a consensus-layer beacon node client (like Prysm, Lighthouse, or Nimbus). Execution clients process transactions, while beacon node clients manage the <a href='https://ethereum.org/en/upgrades/beacon-chain/'>Beacon Chain</a>. Validators use another piece of software - a validator client - that requires both execution client and beacon node client software. Although we provide execution-layer guidance for your convenience, this guidance is not an official endorsement or recommendation. <br />
 <strong id='footnote-3'>3.</strong> A <strong>validator node</strong> is a particular type of Ethereum node that runs Ethereum's proof-of-stake consensus protocol. Validator client software like Prysm allows you to stake 32 ETH as collateral in an agreement with the Ethereum network to honestly propose and attest to blocks. Running a validator node makes you a validator. Post-merge, validators will replace miners, and proof-of-stake will replace proof-of-work. <br />
 <strong id='footnote-4'>4.</strong> "Staking at home" with your own hardware reduces our dependency on centralized cloud providers and increases the decentralization and security of the Ethereum ecosystem. Staking at home is a serious responsibility that comes with serious risks. Read our <a href='../security-best-practices.md'>Security Best Practices</a> to learn how to minimize those risks. <br />
 <strong id='footnote-5'>5.</strong> Understanding how things work can help you <strong>minimize risk</strong> and <strong>troubleshoot issues</strong>. Staking at home may one day be point-and-click. But until then, <strong>you should understand the major components</strong>, their relationships with each other, and their responsibilities over time. This understanding is currently a prerequisite to staking with Prysm, and it's why we identify continuous self-education as a <a href='../security-best-practices.md'>security best practice</a>. <br />
