@@ -99,9 +99,17 @@ At a high level, we'll walk through the following flow:
 
 ## Step 3: Generate secret
 
+First, create a folder called `ethereum` on your SSD <a class='footnote' href='#footnote-9'>[9]</a>, and then two subfolders within it: `consensus` and `execution`:
+
+```
+📂ethereum
+┣ 📂consensus
+┣ 📂execution
+```
+
 :::info Ropsten/Sepolia HTTP only
 
-**Ropsten** and **Sepolia** are the only networks that currently require JWT-authenticated HTTP. You can skip this step if you're running on Goerli-Prater or Mainnet. Note that these networks **will soon require JWT**. You can also skip this step if you're connecting your beacon node to your execution node over IPC instead of HTTP (this quickstart uses HTTP).
+**Ropsten** and **Sepolia** are the only networks that currently require JWT-authenticated HTTP. You can skip the rest of this step if you're running on Goerli-Prater or Mainnet. Note that these networks **will soon require JWT**. You can also skip the rest of this step if you're connecting your beacon node to your execution node over IPC instead of HTTP (this quickstart uses HTTP).
 
 :::
 
@@ -111,7 +119,7 @@ A secret **JWT token** will allow your beacon node to form an authenticated HTTP
  - Use a utility like OpenSSL to create the token via command: `openssl rand -hex 32 | tr -d "\n" > "jwt.hex"`.
  - Use an execution client to generate the `jwt.hex` token.
 
-Record the location of your `jwt.hex` file - we'll use it in the next step.
+Place your `jwt.hex` file in your `consensus` directory.
 
 
 ## Step 4: Run an execution client
@@ -124,13 +132,7 @@ Prysm is a consensus-layer client that depends on execution-layer clients. Altho
 
 :::
 
-First, create a folder called `ethereum` on your SSD <a class='footnote' href='#footnote-9'>[9]</a>, and then two subfolders within it: `consensus` and `execution`:
 
-```
-📂ethereum
-┣ 📂consensus
-┣ 📂execution
-```
 
 <Tabs groupId="execution-clients" defaultValue="nethermind" values={[
 {label: 'Nethermind', value: 'nethermind'},
@@ -138,7 +140,7 @@ First, create a folder called `ethereum` on your SSD <a class='footnote' href='#
 {label: 'Geth', value: 'geth'}
 ]}>
   <TabItem value="nethermind">
-   <p>Download the latest stable release of Nethermind for your operating system from the <a href='https://downloads.nethermind.io/'>Nethermind downloads page</a>. Extract the contents into your <code>execution</code> folder. Run the following command to start your execution node using your secret JWT file:</p>
+   <p>Download the latest stable release of Nethermind for your operating system from the <a href='https://downloads.nethermind.io/'>Nethermind downloads page</a>. Extract the contents into your <code>execution</code> folder. Run the following command to start your execution node:</p>
     <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
         {label: 'Goerli-Prater', value: 'goerli-prater'},
@@ -168,7 +170,7 @@ curl localhost:8545/health
   <p>A sync status of <code>false</code> indicates that your node is fully synced. You can proceed to the next step while Nethermind syncs.</p>
   </TabItem>
   <TabItem value="besu">
-    <p>Ensure that the latest 64-bit version of the <a href='https://www.oracle.com/java/technologies/downloads/'>Java JDK</a> is installed. Download the latest stable release of Besu from the <a href='https://github.com/hyperledger/besu/releases'>Besu releases</a> page. OS-specific instructions are available on Besu's <a href='https://besu.hyperledger.org/en/stable/HowTo/Get-Started/Installation-Options/Install-Binaries/'>binary installation page</a>. Run the following command to start your execution node using your secret JWT file:</p>
+    <p>Ensure that the latest 64-bit version of the <a href='https://www.oracle.com/java/technologies/downloads/'>Java JDK</a> is installed. Download the latest stable release of Besu from the <a href='https://github.com/hyperledger/besu/releases'>Besu releases</a> page. OS-specific instructions are available on Besu's <a href='https://besu.hyperledger.org/en/stable/HowTo/Get-Started/Installation-Options/Install-Binaries/'>binary installation page</a>. Run the following command to start your execution node:</p>
     <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
         {label: 'Goerli-Prater', value: 'goerli-prater'},
@@ -201,7 +203,7 @@ curl -H "Content-Type: application/json" -X POST http://localhost:8545 -d "{""js
     <div class="admonition admonition-caution alert alert--warning">
       <div class="admonition-content"><p><strong>Geth is a supermajority execution-layer client</strong>. This centralization poses an active risk to the security of Ethereum. If Geth's code contains a bug, a majority of nodes will be impacted. Consider using another execution-layer client to distribute this risk for the ecosystem <a class='footnote' href='#footnote-10'>[10]</a>.</p></div>
     </div>
-    <p>Download and run the latest 64-bit stable release of the <strong>Geth installer</strong> for your operating system from the <a href='https://geth.ethereum.org/downloads/'>Geth downloads page</a>. Navigate to your <code>execution</code> directory and run the following command to start your execution node using your secret JWT file:</p>
+    <p>Download and run the latest 64-bit stable release of the <strong>Geth installer</strong> for your operating system from the <a href='https://geth.ethereum.org/downloads/'>Geth downloads page</a>. Navigate to your <code>execution</code> directory and run the following command to start your execution node:</p>
     <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
         {label: 'Goerli-Prater', value: 'goerli-prater'},
