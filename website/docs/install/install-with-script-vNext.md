@@ -8,7 +8,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import ClientStackPng from '@site/static/img/client-stack.png';
 
-:::caution vNext
+:::caution Prysm v2.1.3-rc.5
 
 **This quickstart will be published alongside Prysm v2.1.3-rc.5**. Please refer to the [current Quickstart](./install-with-script.md) for the latest recommended guidance, which includes instructions for v2.1.3-rc.4. Join our [Discord server](https://discord.gg/prysmaticlabs) to share your feedback.
 
