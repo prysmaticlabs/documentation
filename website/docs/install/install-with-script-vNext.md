@@ -8,9 +8,9 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import ClientStackPng from '@site/static/img/client-stack.png';
 
-:::caution Prysm v2.1.3-rc.4
+:::caution Under Construction
 
-**This quickstart uses [Prysm v2.1.3-rc.4](https://github.com/prysmaticlabs/prysm/releases/tag/v2.1.3-rc.4)** and may change significantly as we receive feedback from users like you. Join our [Discord server](https://discord.gg/prysmaticlabs) to share your feedback.
+This quickstart is being actively updated as we receive feedback from users like you. Join our [Discord server](https://discord.gg/prysmaticlabs) to share your feedback.
 
 :::
 
@@ -105,12 +105,11 @@ At a high level, we'll walk through the following flow:
 
 ## Step 3: Generate secret (Ropsten/Sepolia)
 
-A secret **JWT token** will allow your beacon node to form an authenticated HTTP connection with your execution node. Although Ropsten and Sepolia are the only networks that currently require authenticated HTTP, it will soon be required on Goerli-Prater and Mainnet. We recommend doing this now regardless of the network you're running on.
-
-There are many ways to generate this token:
+A secret **JWT token** will allow your beacon node to form an authenticated HTTP connection with your execution node. Although Ropsten and Sepolia are the only networks that currently require JWT-authenticated HTTP, it will soon be required on Goerli-Prater and Mainnet. There are several ways to generate this JWT token:
 
  - Use an online generator like [this](https://seanwasere.com/generate-random-hex/). Copy and paste this value into a `jwt.hex` file.
- - Use a utility like OpenSSL to create the token via command: `openssl rand -hex 32 | tr -d "\n" > "jwt.hex"`
+ - Use a utility like OpenSSL to create the token via command: `openssl rand -hex 32 | tr -d "\n" > "jwt.hex"`.
+ - Use an execution client to generate the `jwt.hex` token.
 
 Record the location of your `jwt.hex` file - we'll use it in the next step.
 
