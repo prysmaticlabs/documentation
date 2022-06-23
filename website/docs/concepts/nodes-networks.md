@@ -8,6 +8,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import ClientStackPng from '@site/static/img/client-stack.png';
 import NetworkPng from '@site/static/img/network.png';
+import NetworkLayersPng from '@site/static/img/network-layers.png';
 
 
 Ethereum is a decentralized **network** of **nodes** that communicate peer-to-peer:
@@ -53,7 +54,15 @@ When users stake 32 ETH to participate in Ethereum's proof-of-stake consensus me
 
 ## Networks
 
-Ethereum Mainnet is supported by a number of <strong>test networks</strong>. These test networks let developers, node runners, and validators test new functionality before using real ETH on mainnet. Test networks are available in both the execution layer (EL) and consensus layer (CL). Every EL network has a corresponding partner CL network. EL-CL network pairs work together to run Ethereum proof-of-stake. This quickstart shows you how to run a node + validator on the following network pairs:
+The Ethereum network that we all know and love is more precisely referred to as **Ethereum Mainnet**. Ethereum Mainnet is the live, **production** instance of Ethereum that mints and manages real Ethereum (ETH) tokens that hold **real** monetary value. There are other live, **test** instances of Ethereum that mint and manage **test** Ethereum. Each test network is compatible with (and only with) its own type of test ETH. These test networks let developers, node runners, and validators test new functionality before using real ETH on Mainnet.
+
+Every Ethereum network is divided into two layers: **execution layer** (EL) and **consensus layer** (CL):
+
+<img style={{width: 100 + '%', margin: 'auto', display: 'block', maxWidth: 600 + 'px'}} src={NetworkLayersPng} /> 
+
+Every Ethereum node contains software for both layers: execution-layer client software (like Nethermind, Besu, Geth, and Erigon), and consensus-layer client software (like Prysm, Teku, Lighthouse, Nimbus, and Lodestar).
+
+Like Ethereum Mainnet, test networks have both an execution layer and consensus layer. Every network's EL has a corresponding partner CL. EL-CL network pairs work together to run Ethereum proof-of-stake.
 
 <br />
 
