@@ -101,7 +101,7 @@ At a high level, we'll walk through the following flow:
 
 :::info Ropsten/Sepolia HTTP only
 
-Ropsten and Sepolia are the only networks that currently require JWT-authenticated HTTP. You can skip this if you're running on Goerli-Prater or Mainnet, but these networks will soon require JWT. You can also skip this if you're connecting your beacon node to your execution node over IPC instead of HTTP (this quickstart uses HTTP).
+**Ropsten** and **Sepolia** are the only networks that currently require JWT-authenticated HTTP. You can skip this step if you're running on Goerli-Prater or Mainnet. Note that these networks **will soon require JWT**. You can also skip this step if you're connecting your beacon node to your execution node over IPC instead of HTTP (this quickstart uses HTTP).
 
 :::
 
