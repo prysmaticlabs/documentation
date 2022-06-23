@@ -68,7 +68,7 @@ At a high level, we'll walk through the following flow:
     <tr>
         <td><strong>Validator</strong></td>
         <td>
-        Lets you stake ETH, propose + validate blocks, and earn staking rewards.
+        Lets you stake ETH, propose + validate blocks, earn staking rewards + transaction fees.
         </td>
         <td>
           <ul> 
@@ -102,9 +102,15 @@ At a high level, we'll walk through the following flow:
 - **Join the community** - join our [mailing list](https://groups.google.com/g/prysm-dev), the [Prysm Discord server](https://discord.gg/prysmaticlabs), [r/ethstaker](https://www.reddit.com/r/ethstaker/), and the [EthStaker Discord server](https://discord.io/ethstaker) for updates and support.
 
 
-## Step 3: Generate secret (Ropsten/Sepolia)
+## Step 3: Generate secret
 
-A secret **JWT token** will allow your beacon node to form an authenticated HTTP connection with your execution node. Although Ropsten and Sepolia are the only networks that currently require JWT-authenticated HTTP, it will soon be required on Goerli-Prater and Mainnet. There are several ways to generate this JWT token:
+:::info Ropsten/Sepolia HTTP only
+
+Ropsten and Sepolia are the only networks that currently require JWT-authenticated HTTP. You can skip this if you're running on Goerli-Prater or Mainnet, but these networks will soon require JWT. You can also skip this if you're connecting your beacon node to your execution node over IPC instead of HTTP (this quickstart uses HTTP).
+
+:::
+
+A secret **JWT token** will allow your beacon node to form an authenticated HTTP connection with your execution node. There are several ways to generate this JWT token:
 
  - Use an online generator like [this](https://seanwasere.com/generate-random-hex/). Copy and paste this value into a `jwt.hex` file.
  - Use a utility like OpenSSL to create the token via command: `openssl rand -hex 32 | tr -d "\n" > "jwt.hex"`.
