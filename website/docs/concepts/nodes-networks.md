@@ -89,12 +89,12 @@ Every network's execution layer works with (and only with) its corresponding "pa
     <tr>
       <td>Sepolia</td>
       <td>Sepolia</td>
-      <td>After Ropsten, Sepolia will be Merge-tested.</td>
+      <td>After Ropsten, Sepolia will be Merge-tested. The <a href='../install/install-with-script'>Prysm Quickstart</a> shows you how to configure a Merge-ready node on Sepolia.</td>
     </tr>
     <tr>
       <td>Ropsten</td>
       <td>Ropsten</td>
-      <td>Although execution-layer Ropsten is deprecated, core developers are using it to test The Merge. Consensus-layer Ropsten is a new network that lets us test The Merge across both of Ethereum's layers. This network pair was one of the first pairs that was Merge-tested (see <a href='https://www.youtube.com/watch?v=2OfRuKSPjjw'>Ethereum Merge: Stage 1 - Ropsten Network Upgrade</a> for a livestream of the event).</td>
+      <td>Consensus-layer Ropsten is a new network that allowed us to test The Merge across both of Ethereum's layers. This network pair was one of the first pairs that was Merge-tested (see <a href='https://www.youtube.com/watch?v=2OfRuKSPjjw'>Ethereum Merge: Stage 1 - Ropsten Network Upgrade</a> for a livestream of the event).</td>
     </tr>
 </table>
 
