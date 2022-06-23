@@ -80,12 +80,12 @@ Like Ethereum Mainnet, test networks have both an execution layer and consensus 
     <tr>
       <td>Goerli</td>
       <td>Prater</td>
-      <td>The Goerli-Prater pair is the test network that most people use learning how to configure their validator for the first time. After this network pair is tested, Mainnet networks will merge, and proof-of-work miners will be fully replaced by proof-of-stake validators.</td>
+      <td>The Goerli-Prater pair is the test network that most people use when learning how to configure their validator for the first time. After Sepolia, Goerli-Prater will be Merge-tested.</td>
     </tr>
     <tr>
       <td>Sepolia</td>
       <td>Sepolia</td>
-      <td>After Ropsten, Sepolia will be Merge-tested. Then Goerli-Prater will be Merge-tested.</td>
+      <td>After Ropsten, Sepolia will be Merge-tested.</td>
     </tr>
     <tr>
       <td>Ropsten</td>
