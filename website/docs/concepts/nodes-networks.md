@@ -1,17 +1,28 @@
 ---
 id: nodes-networks
-title: Nodes and Networks
-sidebar_label: Nodes and Networks
+title: Nodes and networks
+sidebar_label: Nodes and networks
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import ClientStackPng from '@site/static/img/client-stack.png';
+import NetworkPng from '@site/static/img/network.png';
+
+
+Ethereum is a peer-to-peer network of **nodes** that communicate with one another to form a **decentralized network**.
+
+<img style={{width: 100 + '%', margin: 'auto', display: 'block', maxWidth: 651 + 'px'}} src={NetworkPng} /> 
 
 
 ### Nodes
 
-Ethereum is a peer-to-peer network of **nodes** that communicate with one another in a decentralized fashion. There are several types of nodes:
+<img style={{width: 100 + '%', margin: 'auto', display: 'block', maxWidth: 651 + 'px'}} src={ClientStackPng} /> 
+
+The term "node" is ambiguous because there are three primary types of nodes in Ethereum.
+
+
+There are several types of nodes:
 
 <table>
     <tr>
