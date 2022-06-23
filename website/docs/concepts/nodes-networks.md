@@ -18,9 +18,9 @@ Ethereum is a decentralized **network** of **nodes** that communicate peer-to-pe
 
 ## Nodes
 
-An Ethereum **node** is a running instance of Ethereum client software. There are three primary types of nodes in Ethereum: **execution nodes**, **beacon nodes**, and **validators**. Colloquially, a "node" refers to an execution node and beacon node working together. 
+An Ethereum **node** is a running instance of Ethereum client software. There are two primary types of nodes in Ethereum: **execution nodes** and **beacon nodes**. Colloquially, a "node" refers to an execution node and beacon node working together.
 
-When users stake 32 ETH to participate in Ethereum's proof-of-stake consensus mechanism, they use validator client software like Prysm to stake their ETH and run a validator. Validators depend on nodes:
+When users stake 32 ETH to participate in Ethereum's proof-of-stake consensus mechanism, they use validator client software like Prysm to stake their ETH and run a **validator**. Validators are not nodes - a validator can be thought of as an extension of a beacon node that handles validator key management and validator duty management. Validators depend on beacon nodes, which depend on execution nodes:
 
 <br />
 
@@ -30,7 +30,7 @@ When users stake 32 ETH to participate in Ethereum's proof-of-stake consensus me
 
 <table>
     <tr>
-        <th style={{minWidth: 170 + 'px'}}>Node type</th> 
+        <th style={{minWidth: 170 + 'px'}}>Component</th> 
         <th>Description</th>
     </tr>
     <tr>
@@ -43,11 +43,11 @@ When users stake 32 ETH to participate in Ethereum's proof-of-stake consensus me
     </tr>
     <tr>
       <td><strong>Beacon node</strong></td>
-      <td>Beacon nodes use beacon node client software to coordinate Ethereum's proof-of-stake consensus mechanism in Ethereum's <strong>consensus layer</strong>. Prysm, Teku, Lighthouse, and Nimbus are consensus clients that contain both beacon node and validator node client software. <br /> <br />Beacon nodes talk to each other, to execution nodes, and to validator nodes.</td>
+      <td>Beacon nodes use beacon node client software to coordinate Ethereum's proof-of-stake consensus mechanism in Ethereum's <strong>consensus layer</strong>. Prysm, Teku, Lighthouse, and Nimbus are consensus clients that contain both beacon node and validator client software. <br /> <br />Beacon nodes talk to each other, to execution nodes, and to validators.</td>
     </tr>
     <tr>
-      <td><strong>Validator node</strong><br/>aka "Validator"</td>
-      <td>Validator nodes let people stake 32 ETH as collateral within Ethereum's <strong>consensus layer</strong>. Validator nodes are responsible for proposing blocks within Ethereum's proof-of-stake consensus mechanism, and will fully replace proof-of-stake miners after The Merge. <br /> <br />Validator nodes talk to each other, and to beacon nodes.</td>
+      <td><strong>Validator</strong></td>
+      <td>Validators let people stake 32 ETH as collateral within Ethereum's <strong>consensus layer</strong>. Validators are responsible for proposing blocks within Ethereum's proof-of-stake consensus mechanism, and will fully replace proof-of-stake miners after The Merge. <br /> <br />Validators talk only to local beacon nodes. Beacon nodes are responsible for pulling and broadcasting data from/to the Ethereum network as validators perform their duties.</td>
     </tr>
 </table>
 
