@@ -10,19 +10,16 @@ import ClientStackPng from '@site/static/img/client-stack.png';
 import NetworkPng from '@site/static/img/network.png';
 
 
-Ethereum is a peer-to-peer network of **nodes** that communicate with one another to form a **decentralized network**.
+Ethereum is a decentralized network of **nodes** that communicate peer-to-peer:
 
-<img style={{width: 100 + '%', margin: 'auto', display: 'block', maxWidth: 651 + 'px'}} src={NetworkPng} /> 
+<img style={{width: 100 + '%', margin: 'auto', display: 'block', maxWidth: 561 + 'px'}} src={NetworkPng} /> 
 
 
-### Nodes
+## Nodes
+
+A node is a running instance of client software. There are three primary types of nodes: execution nodes, beacon nodes, and validators: 
 
 <img style={{width: 100 + '%', margin: 'auto', display: 'block', maxWidth: 651 + 'px'}} src={ClientStackPng} /> 
-
-The term "node" is ambiguous because there are three primary types of nodes in Ethereum.
-
-
-There are several types of nodes:
 
 <table>
     <tr>
