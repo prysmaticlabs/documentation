@@ -2,11 +2,11 @@
     "docs": [
         {
             "type": "doc",
+            "label": "Getting started",
             "id": "getting-started"
         },
         {
             "type": "doc",
-            "label": "Quickstart",
             "id": "install/install-with-script"
         },
         {
@@ -23,7 +23,7 @@
             "type": "category",
             "collapsed": true,
             "collapsible": true,
-            "label": "Installation Guide",
+            "label": "Advanced Installation Guides",
             "items": [
                 {
                     "type": "doc",
@@ -55,7 +55,15 @@
                 },
                 {
                     "type": "doc",
+                    "id": "prysm-usage/checkpoint-sync-vNext"
+                },
+                {
+                    "type": "doc",
                     "id": "execution-node/fee-recipient"
+                },
+                {
+                    "type": "doc",
+                    "id": "execution-node/fee-recipient-vNext"
                 },
                 {
                     "type": "doc",
