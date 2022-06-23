@@ -1,5 +1,5 @@
 ---
-id: install-with-script-vNext
+id: install-with-script-vNext-rc5
 title: Run a Node and Stake ETH using Prysm
 sidebar_label: Quickstart (vNext)
 ---
