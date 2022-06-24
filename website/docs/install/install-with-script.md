@@ -258,7 +258,7 @@ reg add HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1
 ```
 
   <p>This will download the Prysm client and update your registry to enable verbose logging. Use the following command to start a beacon node that connects to your local execution node:</p>
-        <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8545 --mainnet --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
+        <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8545 --mainnet</code></pre>
       </TabItem>
       <TabItem value="goerli-prater">
         <p>Navigate to your <code>consensus</code> directory and run the following commands:</p>
@@ -271,7 +271,7 @@ reg add HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1
 
   <p>This will download the Prysm client and update your registry to enable verbose logging.</p>
         <p>Download the <a href='https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz'>Prater genesis state from Github</a> into your <code>consensus/prysm</code> directory. Then use the following command to start a beacon node that connects to your local execution node:</p>
-        <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8545 --prater --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9 --genesis-state=genesis.ssz</code></pre>
+        <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8545 --prater --genesis-state=genesis.ssz</code></pre>
       </TabItem>
       <TabItem value="sepolia">
         <p>Navigate to your <code>consensus</code> directory and run the following commands:</p>
@@ -286,6 +286,7 @@ set USE_PRYSM_VERSION=v2.1.3-rc.4
   <p>This will download the Prysm client and update your registry to enable verbose logging. The <code>USE_PRYSM_VERSION</code> environment variable tells Prysm to use the release candidate. If you're using Powershell, you may need to use <code>$env:USE_PRYSM_VERSION="v2.1.3-rc.4"</code> instead of the <code>set</code> command.</p>
         <p>Download the <a href='https://github.com/eth-clients/merge-testnets/blob/main/sepolia/genesis.ssz'>Sepolia genesis state from Github</a> into your <code>consensus/prysm</code> directory. Then use the following command to start a beacon node that connects to your local execution node using your secret JWT file:</p>
         <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8551 --sepolia --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9 --jwt-secret=jwt.hex --genesis-state=genesis.ssz</code></pre>
+        <p>If you're running a validator, specifying a <code>suggested-fee-recipient</code> wallet address will allow you to earn what were previously miner transaction fees.</p>
       </TabItem>
       <TabItem value="ropsten">
       <p>Navigate to your <code>consensus</code> directory and run the following commands:</p>
@@ -300,6 +301,7 @@ set USE_PRYSM_VERSION=v2.1.3-rc.4
   <p>This will download the Prysm client and update your registry to enable verbose logging. The <code>USE_PRYSM_VERSION</code> environment variable tells Prysm to use the release candidate. If you're using Powershell, you may need to use <code>$env:USE_PRYSM_VERSION="v2.1.3-rc.4"</code> instead of the <code>set</code> command.</p>
         <p>Download the <a href='https://github.com/eth-clients/merge-testnets/blob/main/ropsten-beacon-chain/genesis.ssz'>Ropsten genesis state from Github</a> into your <code>consensus/prysm</code> directory. Then use the following command to start a beacon node that connects to your local execution node using your secret JWT file:</p>
         <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8551 --ropsten --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9 --jwt-secret=jwt.hex --genesis-state=genesis.ssz</code></pre>
+        <p>If you're running a validator, specifying a <code>suggested-fee-recipient</code> wallet address will allow you to earn what were previously miner transaction fees.</p>
       </TabItem>
   </Tabs>
   </TabItem>
@@ -323,7 +325,7 @@ curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --out
 
   <p>This will download the Prysm client and make it executable.</p>
         <p>Use the following command to start a beacon node that connects to your local execution node:</p>
-        <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8545 --mainnet --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
+        <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8545 --mainnet</code></pre>
       </TabItem>
       <TabItem value="goerli-prater">
         <p>Navigate to your <code>consensus</code> directory and run the following two commands:</p>
@@ -335,7 +337,7 @@ curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --out
 
   <p>This will download the Prysm client and make it executable.</p>
         <p>Download the <a href='https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz'>Prater genesis state from Github</a> into your <code>consensus/prysm</code> directory. Then use the following command to start a beacon node that connects to your local execution node:</p>
-        <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8545 --prater --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9 --genesis-state=../genesis.ssz</code></pre>
+        <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8545 --prater --genesis-state=../genesis.ssz</code></pre>
       </TabItem>
       <TabItem value="sepolia">
         <p>Navigate to your <code>consensus</code> directory and run the following two commands:</p>
@@ -348,6 +350,7 @@ curl https://raw.githubusercontent.com/prysmaticlabs/prysm/v2.1.3-rc.4/prysm.sh 
   <p>This will download the Prysm client and make it executable. Tell Prysm to use the release candidate by setting a new environment variable as follows: <code>USE_PRYSM_VERSION=v2.1.3-rc.4</code>.</p>
         <p>Download the <a href='https://github.com/eth-clients/merge-testnets/blob/main/sepolia/genesis.ssz'>Sepolia genesis state from Github</a> into your <code>consensus/prysm</code> directory. Then use the following command to start a beacon node that connects to your local execution node using your secret JWT file:</p>
         <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8551 --sepolia --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9 --jwt-secret=jwt.hex --genesis-state=genesis.ssz</code></pre>
+        <p>If you're running a validator, specifying a <code>suggested-fee-recipient</code> wallet address will allow you to earn what were previously miner transaction fees.</p>
       </TabItem>
       <TabItem value="ropsten">
         <p>Navigate to your <code>consensus</code> directory and run the following two commands:</p>
@@ -360,12 +363,13 @@ curl https://raw.githubusercontent.com/prysmaticlabs/prysm/v2.1.3-rc.4/prysm.sh 
   <p>This will download the Prysm client and make it executable. Tell Prysm to use the release candidate by setting a new environment variable as follows: <code>USE_PRYSM_VERSION=v2.1.3-rc.4</code>.</p>
         <p>Download the <a href='https://github.com/eth-clients/merge-testnets/blob/main/ropsten-beacon-chain/genesis.ssz'>Ropsten genesis state from Github</a> into your <code>consensus/prysm</code> directory. Then use the following command to start a beacon node that connects to your local execution node using your secret JWT file:</p>
         <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8551 --ropsten --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9 --jwt-secret=jwt.hex --genesis-state=genesis.ssz</code></pre>
+        <p>If you're running a validator, specifying a <code>suggested-fee-recipient</code> wallet address will allow you to earn what were previously miner transaction fees.</p>
       </TabItem>
     </Tabs>
   </TabItem>
 </Tabs>
 
-**Be sure to replace the `--suggested-fee-recipient` wallet address with a real address.** Your beacon node will now begin syncing. This usually takes a couple days, but it can take longer depending on your network and hardware specs.
+Your beacon node will now begin syncing. This usually takes a couple days, but it can take longer depending on your network and hardware specs.
 
 You can check your beacon node's <a href='https://ethereum.github.io/beacon-APIs/?urls.primaryName=dev#/Node/getSyncingStatus'>sync status</a> by running the following command from a separate terminal window:
 
@@ -393,7 +397,7 @@ curl http://localhost:3500/eth/v1alpha1/node/eth1/connections
 Congratulations - you’re now running a <strong>full Ethereum node</strong>. Your full node consists of an <strong>execution node</strong> in Ethereum’s execution layer, and a <strong>beacon node</strong> in Ethereum’s consensus layer.
 
 
-## Step 6: Run a validator node using Prysm
+## Step 6: Run a validator using Prysm
 
 :::info ETH Required
 
@@ -447,7 +451,7 @@ Download the latest stable version of the deposit CLI from the [Staking Deposit 
         <p>You’ll be prompted to specify a wallet directory twice. Provide the path to your <code>consensus</code> folder for both prompts. You should see <code>Successfully imported 1 accounts, view all of them by running accounts list</code> when your account has been successfully imported into Prysm.</p>
         <p>Next, go to the <a href='https://launchpad.ethereum.org/en/upload-deposit-data'>Mainnet Launchpad’s deposit data upload page</a> and upload your <code>deposit_data-*.json</code> file. You’ll be prompted to connect your wallet.</p>
         <p>You can then deposit 32 ETH into the Mainnet deposit contract via the Launchpad page. Exercise extreme caution throughout this procedure.</p> 
-        <p>Finally, run the following command to start your validator node, replacing <code>&lt;YOUR_FOLDER_PATH&gt;</code> with the full path to your <code>consensus</code> folder:</p>
+        <p>Finally, run the following command to start your validator, replacing <code>&lt;YOUR_FOLDER_PATH&gt;</code> with the full path to your <code>consensus</code> folder:</p>
         <pre><code>prysm.bat validator --wallet-dir=&lt;YOUR_FOLDER_PATH&gt;</code></pre>
       </TabItem>
       <TabItem value="goerli-prater">
@@ -459,7 +463,7 @@ Download the latest stable version of the deposit CLI from the [Staking Deposit 
           <li><a href='https://discord.io/ethstaker'>r/EthStaker Discord</a></li>
           <li><a href='https://discord.gg/prysmaticlabs'>Prysm Discord server</a></li>
         </ul>
-        <p>Someone should be able to give you the GöETH you need. You can then deposit 32 GöETH into the Prater testnet’s deposit contract via the Launchpad page. Exercise extreme caution throughout this procedure - <strong>never send real ETH to the testnet deposit contract.</strong> Finally, run the following command to start your validator node, replacing <code>&lt;YOUR_FOLDER_PATH&gt;</code> with the full path to your <code>consensus</code> folder:</p>
+        <p>Someone should be able to give you the GöETH you need. You can then deposit 32 GöETH into the Prater testnet’s deposit contract via the Launchpad page. Exercise extreme caution throughout this procedure - <strong>never send real ETH to the testnet deposit contract.</strong> Finally, run the following command to start your validator, replacing <code>&lt;YOUR_FOLDER_PATH&gt;</code> with the full path to your <code>consensus</code> folder:</p>
         <pre><code>prysm.bat validator --wallet-dir=&lt;YOUR_FOLDER_PATH&gt; --prater</code></pre>      
       </TabItem>
       <TabItem value="ropsten">
@@ -471,7 +475,7 @@ Download the latest stable version of the deposit CLI from the [Staking Deposit 
           <li><a href='https://discord.io/ethstaker'>r/EthStaker Discord</a></li>
           <li><a href='https://discord.gg/prysmaticlabs'>Prysm Discord server</a></li>
         </ul>
-        <p>Someone should be able to give you the rETH you need. You can then deposit 32 rETH into the Ropsten testnet’s deposit contract via the Launchpad page. Exercise extreme caution throughout this procedure - <strong>never send real ETH to the testnet deposit contract.</strong> Finally, run the following command to start your validator node, replacing <code>&lt;YOUR_FOLDER_PATH&gt;</code> with the full path to your <code>consensus</code> folder:</p>
+        <p>Someone should be able to give you the rETH you need. You can then deposit 32 rETH into the Ropsten testnet’s deposit contract via the Launchpad page. Exercise extreme caution throughout this procedure - <strong>never send real ETH to the testnet deposit contract.</strong> Finally, run the following command to start your validator, replacing <code>&lt;YOUR_FOLDER_PATH&gt;</code> with the full path to your <code>consensus</code> folder:</p>
         <pre><code>prysm.bat validator --wallet-dir=&lt;YOUR_FOLDER_PATH&gt; --ropsten</code></pre>      
       </TabItem>
     </Tabs>
@@ -513,7 +517,7 @@ Download the latest stable version of the deposit CLI from the [Staking Deposit 
         <pre><code>./prysm.sh validator accounts import --keys-dir=&lt;YOUR_FOLDER_PATH&gt;</code></pre>
         <p>You’ll be prompted to specify a wallet directory twice. Provide the path to your <code>consensus</code> folder for both prompts. You should see <code>Successfully imported 1 accounts, view all of them by running accounts list</code> when your account has been successfully imported into Prysm.</p>
         <p>Next, go to the <a href='https://launchpad.ethereum.org/en/upload-deposit-data'>Mainnet Launchpad’s deposit data upload page</a> and upload your <code>deposit_data-*.json</code> file. You’ll be prompted to connect your wallet.</p>
-        <p>You can then deposit 32 ETH into the Mainnet deposit contract via the Launchpad page. Exercise extreme caution throughout this procedure. Finally, run the following command to start your validator node, replacing <code>&lt;YOUR_FOLDER_PATH&gt;</code> with the full path to your <code>consensus</code> folder:</p>
+        <p>You can then deposit 32 ETH into the Mainnet deposit contract via the Launchpad page. Exercise extreme caution throughout this procedure. Finally, run the following command to start your validator, replacing <code>&lt;YOUR_FOLDER_PATH&gt;</code> with the full path to your <code>consensus</code> folder:</p>
         <pre><code>./prysm.sh validator --wallet-dir=&lt;YOUR_FOLDER_PATH&gt;</code></pre>
       </TabItem>
       <TabItem value="goerli-prater">
@@ -525,7 +529,7 @@ Download the latest stable version of the deposit CLI from the [Staking Deposit 
           <li><a href='https://discord.io/ethstaker'>r/EthStaker Discord</a></li>
           <li><a href='https://discord.gg/prysmaticlabs'>Prysm Discord server</a></li>
         </ul>
-        <p>Someone should be able to give you the GöETH you need. You can then deposit 32 GöETH into the Prater testnet’s deposit contract via the Launchpad page. Exercise extreme caution throughout this procedure - <strong>never send real ETH to the testnet deposit contract.</strong>  Finally, run the following command to start your validator node, replacing <code>&lt;YOUR_FOLDER_PATH&gt;</code> with the full path to your <code>consensus</code> folder:</p>
+        <p>Someone should be able to give you the GöETH you need. You can then deposit 32 GöETH into the Prater testnet’s deposit contract via the Launchpad page. Exercise extreme caution throughout this procedure - <strong>never send real ETH to the testnet deposit contract.</strong>  Finally, run the following command to start your validator, replacing <code>&lt;YOUR_FOLDER_PATH&gt;</code> with the full path to your <code>consensus</code> folder:</p>
         <pre><code>./prysm.sh validator --wallet-dir=&lt;YOUR_FOLDER_PATH&gt; --prater</code></pre>    
       </TabItem>
       <TabItem value="ropsten">
@@ -537,7 +541,7 @@ Download the latest stable version of the deposit CLI from the [Staking Deposit 
           <li><a href='https://discord.io/ethstaker'>r/EthStaker Discord</a></li>
           <li><a href='https://discord.gg/prysmaticlabs'>Prysm Discord server</a></li>
         </ul>
-        <p>Someone should be able to give you the rETH you need. You can then deposit 32 rETH into the Ropsten testnet’s deposit contract via the Launchpad page. Exercise extreme caution throughout this procedure - <strong>never send real ETH to the testnet deposit contract.</strong>  Finally, run the following command to start your validator node, replacing <code>&lt;YOUR_FOLDER_PATH&gt;</code> with the full path to your <code>consensus</code> folder:</p>
+        <p>Someone should be able to give you the rETH you need. You can then deposit 32 rETH into the Ropsten testnet’s deposit contract via the Launchpad page. Exercise extreme caution throughout this procedure - <strong>never send real ETH to the testnet deposit contract.</strong>  Finally, run the following command to start your validator, replacing <code>&lt;YOUR_FOLDER_PATH&gt;</code> with the full path to your <code>consensus</code> folder:</p>
         <pre><code>./prysm.sh validator --wallet-dir=&lt;YOUR_FOLDER_PATH&gt; --ropsten</code></pre>    
       </TabItem>
     </Tabs>
@@ -548,7 +552,7 @@ Download the latest stable version of the deposit CLI from the [Staking Deposit 
 
 :::tip Congratulations! 
 
-You’re now running a <strong>full Ethereum node</strong> and a <strong>validator node</strong>.
+You’re now running a <strong>full Ethereum node</strong> and a <strong>validator</strong>.
 
 :::
 
@@ -628,7 +632,7 @@ The Beginner's Introduction to Prysm uses diagrams to help you visualize Ethereu
 
 
 <!-- **I don't have a 2TB SSD, but I have multiple smaller SSDs. Will this work?** <br />
-Yes. You can tell your execution client to overflow into a specific drive by (TODO). You can tell your beacon node client to overflow into a specific drive by (TODO). You can tell your validator node client to overflow into a specific drive by (TODO). -->
+Yes. You can tell your execution client to overflow into a specific drive by (TODO). You can tell your beacon node client to overflow into a specific drive by (TODO). You can tell your validator client to overflow into a specific drive by (TODO). -->
 
 **Can I use an external SSD connected via USB?** <br />
 Yes, but your USB connection introduces a possible point of failure. If you do this, avoid connecting your SSD to your computer through a USB hub - instead, connect it directly.
@@ -641,7 +645,7 @@ The Merge introduces a new Engine API that allows consensus-layer clients to com
 <!--TODO: develop our own knowledge base with conceptual content -->
 
 **What happens if my execution client goes down? Will I be penalized?** <br />
-Yes. Downtime penalties are minimal <a class='footnote' href='#footnote-14'>[14]</a> but we recommend having uptime and downtime alerts configured for your execution, beacon, and validator nodes if possible.
+Yes. Downtime penalties are minimal <a class='footnote' href='#footnote-14'>[14]</a> but we recommend having uptime and downtime alerts configured for your execution node, beacon node, and validator if possible.
 
 **My beacon node is taking a long time to sync. Is there any way I can speed it up?** <br />
 Yes - you can use [checkpoint sync](https://docs.prylabs.network/docs/prysm-usage/checkpoint-sync) to start your beacon node's synchronization from a checkpoint rather than from genesis. This is actually a more secure way to run your beacon node.
@@ -654,8 +658,8 @@ This is usually an indication that your validator isn't able to communicate with
 <!-- **How do I withdraw my 32ETH deposit?** <br />
 (TODO) -->
 
-**How long does it take for my validator node to be selected to propose a new block?** <br />
-At the time of this writing, a ballpark estimate is **around a week**. Every 12 seconds a new block is proposed, and your validator has a one in [total number of active validators] chance of being chosen, so this duration can vary significantly from one validator node to the next.
+**How long does it take for my validator to be selected to propose a new block?** <br />
+At the time of this writing, a ballpark estimate is **around a week**. Every 12 seconds a new block is proposed, and your validator has a one in [total number of active validators] chance of being chosen, so this duration can vary significantly from one validator to the next.
 
 <!-- **Can I run a full node and validator client on a Raspberry Pi?** <br />
 TODO
@@ -685,11 +689,11 @@ Ethereum is a peer-to-peer network of **nodes** that communicate with one anothe
     </tr>
     <tr>
       <td><strong>Beacon node</strong></td>
-      <td>Beacon nodes use beacon node client software to coordinate Ethereum's proof-of-stake consensus mechanism in Ethereum's <strong>consensus layer</strong>. Prysm, Teku, Lighthouse, and Nimbus are consensus clients that contain both beacon node and validator node client software. <br /> <br />Beacon nodes talk to each other, to execution nodes, and to validator nodes.</td>
+      <td>Beacon nodes use beacon node client software to coordinate Ethereum's proof-of-stake consensus mechanism in Ethereum's <strong>consensus layer</strong>. Prysm, Teku, Lighthouse, and Nimbus are consensus clients that contain both beacon node and validator node client software. <br /> <br />Beacon nodes talk to each other, to execution nodes, and to validators.</td>
     </tr>
     <tr>
       <td><strong>Validator node</strong><br/>aka "Validator"</td>
-      <td>Validator nodes let people stake 32 ETH as collateral within Ethereum's <strong>consensus layer</strong>. Validator nodes are responsible for proposing blocks within Ethereum's proof-of-stake consensus mechanism, and will fully replace proof-of-stake miners after The Merge. <br /> <br />Validator nodes talk to each other, and to beacon nodes.</td>
+      <td>Validator nodes let people stake 32 ETH as collateral within Ethereum's <strong>consensus layer</strong>. Validators are responsible for proposing blocks within Ethereum's proof-of-stake consensus mechanism, and will fully replace proof-of-stake miners after The Merge. <br /> <br />Validator nodes talk to each other, and to beacon nodes.</td>
     </tr>
 </table>
 
@@ -734,14 +738,14 @@ Ethereum Mainnet is supported by a number of <strong>test networks</strong>. The
 
 <strong id='footnote-1'>1.</strong> Prysm is written entirely in the <a href='https://go.dev'>Go programming language</a>. It's under active development by <a href='https://prysmaticlabs.com'>Prysmatic Labs</a>, a grant-funded team working closely with a variety of groups across the Ethereum ecosystem including the <a href='https://ethereum.org'>Ethereum Foundation</a>. <br />
 <strong id='footnote-2'>2.</strong> In Prysm docs, a <strong>full Ethereum node</strong> refers to a node that's running both an execution-layer execution client (like Nethermind, Besu, or Geth) and a consensus-layer beacon node client (like Prysm, Lighthouse, or Nimbus). Execution clients process transactions, while beacon node clients manage the <a href='https://ethereum.org/en/upgrades/beacon-chain/'>Beacon Chain</a>. Validators use another piece of software - a validator client - that requires both execution client and beacon node client software. Although we provide execution-layer guidance for your convenience, this guidance is not an official endorsement or recommendation. <br />
-<strong id='footnote-3'>3.</strong> A <strong>validator node</strong> is a particular type of Ethereum node that runs Ethereum's proof-of-stake consensus protocol. Validator client software like Prysm allows you to stake 32 ETH as collateral in an agreement with the Ethereum network to honestly propose and attest to blocks. Running a validator node makes you a validator. Post-merge, validators will replace miners, and proof-of-stake will replace proof-of-work. <br />
+<strong id='footnote-3'>3.</strong> A <strong>validator</strong> is a particular type of Ethereum node that runs Ethereum's proof-of-stake consensus protocol. Validator client software like Prysm allows you to stake 32 ETH as collateral in an agreement with the Ethereum network to honestly propose and attest to blocks. Post-merge, validators will replace miners, and proof-of-stake will replace proof-of-work. <br />
 <strong id='footnote-4'>4.</strong> "Staking at home" with your own hardware reduces our dependency on centralized cloud providers and increases the decentralization and security of the Ethereum ecosystem. Staking at home is a serious responsibility that comes with serious risks. Read our <a href='../security-best-practices.md'>Security Best Practices</a> to learn how to minimize those risks. <br />
 <strong id='footnote-5'>5.</strong> Understanding how things work can help you <strong>minimize risk</strong> and <strong>troubleshoot issues</strong>. Staking at home may one day be point-and-click. But until then, <strong>you should understand the major components</strong>, their relationships with each other, and their responsibilities over time. This understanding is currently a prerequisite to staking with Prysm, and it's why we identify continuous self-education as a <a href='../security-best-practices.md'>security best practice</a>. <br />
 <strong id='footnote-6'>6.</strong> See <a href='https://ethereum.org/en/developers/docs/nodes-and-clients/'>Nodes and Clients: Why should I run an Ethereum node?</a> for a more detailed exploration of node-running benefits. <br />
 <strong id='footnote-7'>7.</strong> Self-sufficient participation in Ethereum aligns with the ecosystem's "don't trust, verify" mantra. Running your own node removes the need to trust another node operator, and allows you to directly verify the authenticity of blockchain data. <br />
 <strong id='footnote-8'>8.</strong> Keeping TCP port <code>30303</code> open is the Ethereum equivalent of seeding torrent data to peers. This will allow other execution nodes to fetch data from your node, and is a great way to support Ethereum's decentralization. Consult the documentation for your firewall, operating system, and/or device for port configuration instructions.<br />
 <strong id='footnote-9'>9.</strong> Throughout this guide, we use <code>ethereum</code>, <code>consensus</code> and <code>execution</code> as directory names that reflect the logical separation between client software components. Feel free to use your own directory names. <br />
-<strong id='footnote-10'>10.</strong> Post-merge, you'll need to run an execution client locally if you want to run a beacon node or validator node. Geth is currently the supermajority execution client, so we encourage you to use an alternative like Nethermind or Besu. See <a href='https://ethresear.ch/t/applying-the-five-whys-to-the-client-diversity-problem/7628'>Applying the "Five Why's" to the Client Diversity Problem</a> to learn more. <br />
+<strong id='footnote-10'>10.</strong> Post-merge, you'll need to run an execution client locally if you want to run a beacon node or validator. Geth is currently the supermajority execution client, so we encourage you to use an alternative like Nethermind or Besu. See <a href='https://ethresear.ch/t/applying-the-five-whys-to-the-client-diversity-problem/7628'>Applying the "Five Why's" to the Client Diversity Problem</a> to learn more. <br />
 <strong id='footnote-11'>11.</strong> This guide uses a basic, default configuration for all execution clients, which should work well for most people. If you'd like to customize your configuration, detailed guidance is available for each client: <a href='https://docs.nethermind.io/nethermind/first-steps-with-nethermind/getting-started'>Nethermind</a>, <a href='https://besu.hyperledger.org/en/stable/HowTo/Get-Started/Installation-Options/Install-Binaries/'>Besu</a>, <a href='https://geth.ethereum.org/docs/getting-started'>Geth</a>. <br />
 <strong id='footnote-12'>12.</strong> Your execution client needs to download the entire blockchain - every block that's been produced after the genesis block.  <br />
 <strong id='footnote-13'>13.</strong> Your keystore file contains your public key and your private key encrypted with a password. To learn more about how keystores work, see <a href='https://julien-maffre.medium.com/what-is-an-ethereum-keystore-file-86c8c5917b97'>What is an Ethereum keystore</a>. <br />
