@@ -559,7 +559,6 @@ It can a long time (from days to months) for your validator to become fully acti
  - [Beaconcha.in (Mainnet)](https://beaconcha.in) 
  - [Beaconcha.in (Prater)](https://prater.beaconcha.in/)
  - [Beaconcha.in (Ropsten)](https://ropsten.beaconcha.in/)
- - [Beaconcha.in (Sepolia)](https://sepolia.beaconcha.in/)
 
 In the meantime, you should leave your **execution client**, **beacon node**, and **validator client** terminal windows open and running. Once your validator is activated, it will automatically begin proposing and validating blocks.
 
