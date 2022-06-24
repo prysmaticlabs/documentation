@@ -19,13 +19,13 @@ This guidance is targeted at users who are already running Prysm. If you're star
 
 ## The Merge: Before and after
 
-| Before The Merge                                                                            | After The Merge                                                                              |
-|---------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|
-| You don't need to run a local execution client. You can use a service like Infura instead.  | You **do** need to run an execution client. You **can't** use a service like Infura.         |
-| The HTTP connection between beacon node <> execution node doesn't need to be authenticated. | The HTTP connection between beacon node <> execution node **does** need to be authenticated. |
-| Execution clients don't need to specify a TTD value.                                        | Execution clients **do** need to specify a TTD value.                                        |
-| Miners receive transaction fees.                                                            | **Validators** receive transaction fees.                                                     |
-| A 1TB hard drive is enough.                                                                 | A **2TB+ SSD** is required.                                                                  |
+| Before The Merge                                                                                     | After The Merge                                                                                       |
+|------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------|
+| You don't need to run a local execution client. You can use a service like Infura instead.           | You **do** need to run an execution client. You **can't** use a service like Infura.                  |
+| The HTTP connection between beacon node and execution node doesn't need to be authenticated via JWT. | The HTTP connection between beacon node and execution node **does** need to be authenticated via JWT. |
+| Execution clients don't need to specify a TTD value.                                                 | Execution clients **do** need to specify a TTD value.                                                 |
+| Miners receive transaction fees.                                                                     | **Validators** receive transaction fees.                                                              |
+| A 1TB hard drive is enough.                                                                          | A **2TB+ SSD** is required.                                                                           |
 
 
 <br />
@@ -163,7 +163,7 @@ Using the latest version of your execution client software, issue the following 
 
 ## Configure beacon node
 
-Next, we'll configure your beacon node to consume your JWT token so it form an authenticated HTTP connection with your execution node's engine API endpoint. If you're running a validator, specifying a `suggested-fee-recipient` wallet address will allow you to earn what were previously miner transaction fees:
+Next, we'll configure your beacon node to consume your JWT token so it can form an authenticated HTTP connection with your execution node's engine API endpoint. If you're running a validator, specifying a `suggested-fee-recipient` wallet address will allow you to earn what were previously miner transaction fees:
 
 <Tabs groupId="os" defaultValue="others" values={[
     {label: 'Windows', value: 'win'},
