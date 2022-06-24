@@ -7,13 +7,6 @@ sidebar_label: Prepare for The Merge
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-:::caution DRAFT
-
-**This document is being actively developed** and may change as we receive feedback from users like you. Join our [Discord server](https://discord.gg/prysmaticlabs) to share your feedback.
-
-:::
-
-
 [The Merge](https://ethereum.org/en/upgrades/merge/) will fully transition Ethereum's consensus mechanism from proof-of-work to proof-of-stake. This is made possible by the [Beacon Chain](https://ethereum.org/en/upgrades/beacon-chain/), a new Ethereum network layer that implements proof-of-stake consensus. After The Merge, this consensus layer will be fully "merged" with Ethereum's execution layer, and miners will be fully replaced by validators on Ethereum Mainnet.
 
 This guide will walk you through the changes that you need to make in preparation for The Merge.
@@ -26,15 +19,13 @@ This guidance is targeted at users who are already running Prysm. If you're star
 
 ## The Merge: Before and after
 
-| Before The Merge                                                                           | After The Merge                                                                                 |
-|--------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
-| You don't need to run a local execution client. You can use a service like Infura instead. | You **do** need to run an execution client. You **can't** use a service like Infura.            |
-| Execution clients don't need to use the engine API.                                        | Execution clients **do** need to use the engine API.                                            |
-| Execution clients don't need to connect to beacon node clients using JWT.                  | Execution clients **do** need to connect to beacon node clients using JWT.                      |
-| Execution clients don't need to specify a TTD value.                                       | Execution clients **do** need to specify a TTD value.                                           |
-| Miners receive tips.                                                                       | Validators receive tips.                                                                        |
-| Beacon nodes don't need to use the engine API when connecting to execution nodes.          | Beacon nodes <strong>do</strong> need to use the engine API when connecting to execution nodes. |
-| A 1TB hard drive is enough.                                                                | A 2TB+ SSD is required.                                                                         |
+| Before The Merge                                                                            | After The Merge                                                                              |
+|---------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|
+| You don't need to run a local execution client. You can use a service like Infura instead.  | You **do** need to run an execution client. You **can't** use a service like Infura.         |
+| The HTTP connection between beacon node <> execution node doesn't need to be authenticated. | The HTTP connection between beacon node <> execution node **does** need to be authenticated. |
+| Execution clients don't need to specify a TTD value.                                        | Execution clients **do** need to specify a TTD value.                                        |
+| Miners receive transaction fees.                                                            | **Validators** receive transaction fees.                                                     |
+| A 1TB hard drive is enough.                                                                 | A **2TB+ SSD** is required.                                                                  |
 
 
 <br />
@@ -45,9 +36,16 @@ Let's step through each of these changes.
 
 ## Generate JWT token
 
-A secret **JWT token** will allow your beacon node to form an authenticated HTTP connection with your execution node's engine API. Although Ropsten and Sepolia are the only networks that currently require authenticated HTTP, it will soon be required on Goerli-Prater and Mainnet. We recommend doing this now regardless of the network you're running on.
+A **JWT token** will allow your beacon node to form an authenticated HTTP connection with your execution node's engine API, a new API that facilitates The Merge. Although Ropsten and Sepolia are the only networks that currently require authenticated HTTP, it will soon be required on Goerli-Prater and Mainnet. We recommend doing this now regardless of the network you're running on. 
 
-Using [Prysm v2.1.3-rc.4](https://github.com/prysmaticlabs/prysm/releases/tag/v2.1.3-rc.4), issue the following command to generate this token:
+There are several ways to generate this JWT token:
+
+ - Use an online generator like [this](https://seanwasere.com/generate-random-hex/). Copy and paste this value into a `jwt.hex` file.
+ - Use a utility like OpenSSL to create the token via command: `openssl rand -hex 32 | tr -d "\n" > "jwt.hex"`.
+ - Use an execution client to generate the `jwt.hex` token.
+
+<!--
+An upcoming Prysm release will allow you to generate this token using the following command:
 
 <Tabs groupId="os" defaultValue="others" values={[
     {label: 'Windows', value: 'win'},
@@ -62,11 +60,11 @@ Using [Prysm v2.1.3-rc.4](https://github.com/prysmaticlabs/prysm/releases/tag/v2
 </Tabs>
 
 Prysm will output a `jwt.hex` file path. If you're running on **Ropsten** or **Sepolia**, record this - we'll use it in the next step. If you're running on **Mainnet** or **Goerli-Prater**, you won't use this now, but be prepared to use when these networks are Merged.
-
+-->
 
 ## Configure execution node
 
-Using the latest version of your execution client software, issue the following command to configure your execution node to consume your JWT token, and to expose an engine API endpoint: 
+Using the latest version of your execution client software, issue the following command to configure your execution node's JWT token and engine API endpoint: 
 
 <Tabs groupId="execution-clients" defaultValue="nethermind" values={[
 {label: 'Nethermind', value: 'nethermind'},
@@ -83,7 +81,7 @@ Using the latest version of your execution client software, issue the following 
       <TabItem value="ropsten">
         <pre><code>Nethermind.Runner --config ropsten --JsonRpc.Enabled true --JsonRpc.JwtSecretFile=path/to/jwt.hex --Merge.TerminalTotalDifficulty 50000000000000000</code></pre>
       </TabItem>
-       <TabItem value="sepolia">
+      <TabItem value="sepolia">
         <pre><code>Nethermind.Runner --config sepolia --JsonRpc.Enabled true --JsonRpc.JwtSecretFile=path/to/jwt.hex --Merge.TerminalTotalDifficulty 50000000000000000</code></pre>
       </TabItem>
       <TabItem value="goerli-prater">
@@ -165,7 +163,7 @@ Using the latest version of your execution client software, issue the following 
 
 ## Configure beacon node
 
-Next, we'll configure your beacon node to consume your JWT token so it can securely connect to your execution node's engine API endpoint. If you're running a validator, specifying a `suggested-fee-recipient` wallet address will allow you to earn what were previously miner tips:
+Next, we'll configure your beacon node to consume your JWT token so it form an authenticated HTTP connection with your execution node's engine API endpoint. If you're running a validator, specifying a `suggested-fee-recipient` wallet address will allow you to earn what were previously miner transaction fees:
 
 <Tabs groupId="os" defaultValue="others" values={[
     {label: 'Windows', value: 'win'},
