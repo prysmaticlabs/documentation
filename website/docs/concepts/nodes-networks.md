@@ -79,22 +79,22 @@ Every network's execution layer works with (and only with) its corresponding "pa
     <tr>
       <td>Mainnet</td>
       <td>Mainnet</td>
-      <td>When people refer to Ethereum, they're usually referring to Ethereum Mainnet, which refers to a pair of networks: execution-layer (EL) Mainnet and consensus-layer (CL) Mainnet. CL Mainnet is commonly referred to as the Beacon Chain.</td>
+      <td>When people refer to Ethereum, they're usually referring to Ethereum Mainnet, which refers to a pair of networks: execution-layer (EL) Mainnet and consensus-layer (CL) Mainnet. CL Mainnet is commonly referred to as the Beacon Chain.<br/></br>This network pair mints and manages real <strong>ETH</strong>.</td>
     </tr> 
     <tr>
       <td>Goerli</td>
       <td>Prater</td>
-      <td>The Goerli-Prater pair is the test network that most people use when learning how to configure their validator for the first time. After Sepolia, Goerli-Prater will be Merge-tested.</td>
+      <td>The Goerli-Prater pair is the test network that most people use when learning how to configure their validator for the first time. After Sepolia, Goerli-Prater will be Merge-tested.<br/></br>This network pair mints and manages <strong>Goerli ETH</strong>, a type of testnet ETH used exclusively within this network pair.</td>
     </tr>
     <tr>
       <td>Sepolia</td>
       <td>Sepolia</td>
-      <td>Consensus-layer Sepolia is a new network that was created to facilitate Merge testing, similar to consensus-layer Ropsten. Sepolia is the next network that will be Merge-tested. The <a href='../../install/install-with-script'>Prysm Quickstart</a> shows you how to configure a Merge-ready node on Sepolia. Note that this is a permissioned network, so you can run a node on Sepolia, but not a validator.</td>
+      <td>Consensus-layer Sepolia is a new network that was created to facilitate Merge testing, similar to consensus-layer Ropsten. Sepolia is the next network that will be Merge-tested. The <a href='../../install/install-with-script'>Prysm Quickstart</a> shows you how to configure a Merge-ready node on Sepolia. Note that this is a permissioned network, so you can run a node on Sepolia, but not a validator.<br/></br>This network pair mints and manages <strong>SepplETH</strong>, a type of testnet ETH used exclusively within this network pair.</td>
     </tr>
     <tr>
       <td>Ropsten</td>
       <td>Ropsten</td>
-      <td>Consensus-layer Ropsten is a new network that was created to facilitate Merge testing. This network pair was one of the first pairs that was Merge-tested (see <a href='https://www.youtube.com/watch?v=2OfRuKSPjjw'>Ethereum Merge: Stage 1 - Ropsten Network Upgrade</a> for a livestream of the event).</td>
+      <td>Consensus-layer Ropsten is a new network that was created to facilitate Merge testing. This network pair was one of the first pairs that was Merge-tested (see <a href='https://www.youtube.com/watch?v=2OfRuKSPjjw'>Ethereum Merge: Stage 1 - Ropsten Network Upgrade</a> for a livestream of the event).<br/></br>This network pair mints and manages <strong>SepplETH</strong>, a type of testnet ETH used exclusively within this network pair.</td>
     </tr>
 </table>
 
@@ -109,3 +109,11 @@ No. Although this is possible pre-Merge, all Ethereum network participants will 
 **What happened to miners?**
 
 The concept of mining exists only in the domain of proof-of-work consensus. After The Merge, Ethereum's consensus will be managed by a proof-of-stake mechanism, which replaces miners with validators.
+
+**Where do slashers come into play?**
+
+Slashers, like validators, use specialized pieces of consensus-layer client software to fulfill a critical responsibility for the Ethereum network. Slashers attempt to detect and punish malicious validators. Learn more by reading our [Slasher documentation](../prysm-usage/slasher.md).
+
+**How do I get testnet ETH?**
+
+Your best bet is to ask the community for testnet ETH on either the [Prysm Discord server](https://discord.gg/prysmaticlabs) or on [r/ethstaker](https://www.reddit.com/r/ethstaker).
