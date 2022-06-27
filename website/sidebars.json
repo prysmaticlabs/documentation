@@ -227,6 +227,18 @@
             "type": "category",
             "collapsed": true,
             "collapsible": true,
+            "label": "Concepts",
+            "items": [
+                {
+                    "type": "doc",
+                    "id": "concepts/nodes-networks"
+                }
+            ]
+        },
+        {
+            "type": "category",
+            "collapsed": true,
+            "collapsible": true,
             "label": "Developer Wiki",
             "items": [
                 {
