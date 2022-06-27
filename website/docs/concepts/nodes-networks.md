@@ -54,7 +54,7 @@ When users stake 32 ETH to participate in Ethereum's proof-of-stake consensus me
 
 ## Networks
 
-The Ethereum network that hosts real-world applications is referred to as **Ethereum Mainnet**. Ethereum Mainnet is the live, **production** instance of Ethereum that mints and manages real Ethereum (ETH) and holds **real** monetary value. 
+The Ethereum network that hosts real-world applications is referred to as **Ethereum Mainnet**. Ethereum Mainnet is the live, **production** instance of Ethereum that mints and manages real Ethereum (ETH) and holds **real** monetary value.
 
 There are other live, **test** instances of Ethereum that mint and manage **test** Ethereum. Each test network is compatible with (and only with) its own type of test ETH. These test networks let developers, node runners, and validators test new functionality before using real ETH on Mainnet.
 
