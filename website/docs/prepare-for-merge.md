@@ -137,7 +137,7 @@ Using the latest version of your execution client software, issue the following 
   </TabItem>
   <TabItem value="geth">
     <div class="admonition admonition-caution alert alert--warning">
-      <div class="admonition-content"><p><strong>Geth is a supermajority execution-layer client</strong>. This centralization poses an active risk to the security of Ethereum. Consider using a minority execution-layer client to distribute this risk for the ecosystem <a class='footnote' href='#footnote-10'>[10]</a>.</p></div>
+      <div class="admonition-content"><p><strong>Geth is a supermajority execution-layer client</strong>. This centralization poses an active risk to the security of Ethereum. Consider using a minority execution-layer client to distribute this risk for the ecosystem.</p></div>
     </div>
     <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Ropsten', value: 'ropsten'},
