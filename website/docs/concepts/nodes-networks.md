@@ -47,7 +47,7 @@ When users stake 32 ETH to participate in Ethereum's proof-of-stake consensus me
     </tr>
     <tr>
       <td><strong>Validator</strong></td>
-      <td>Validators let people stake 32 ETH as collateral within Ethereum's <strong>consensus layer</strong>. Validators are responsible for proposing blocks within Ethereum's proof-of-stake consensus mechanism, and will fully replace proof-of-stake miners after The Merge. <br /> <br />Any given validator talks only to the one beacon node that it's connected to. A validator's beacon node tells the validator what work to do, and broadcasts the validator's work to the Ethereum network as the validator performs its duties.</td>
+      <td>Validator clients are specialized software that let people stake 32 ETH as collateral within Ethereum's <strong>consensus layer</strong>. Validators are responsible for proposing blocks within Ethereum's proof-of-stake consensus mechanism, and will fully replace proof-of-stake miners after <a href='https://ethereum.org/en/upgrades/merge/'>The Merge</a>. <br /> <br />Any given validator talks only to the one beacon node that it's connected to. A validator's beacon node tells the validator what work to do, and broadcasts the validator's work to the Ethereum network as the validator performs its duties.</td>
     </tr>
 </table>
 
