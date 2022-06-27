@@ -13,9 +13,9 @@ This guide will walk you through the changes that you need to make in preparatio
 
 :::info New user?
 
-This guidance is targeted at users who are already running Prysm. If you're starting from scratch, our [Quickstart](../install/install-with-script) will help you configure a Merge-ready node from start to finish.
+This guidance is targeted at users who are already running Prysm. If you're starting from scratch, our [Quickstart](./install/install-with-script.md) will help you configure a Merge-ready node from start to finish.
 
-**Not familiar with nodes, networks, and related terminology?** Consider reading [Nodes and networks](../concepts/nodes-networks) before proceeding.
+**Not familiar with nodes, networks, and related terminology?** Consider reading [Nodes and networks](./concepts/nodes-networks.md) before proceeding.
 
 :::
 
