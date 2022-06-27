@@ -94,7 +94,7 @@ Every network's execution layer works with (and only with) its corresponding "pa
     <tr>
       <td>Ropsten</td>
       <td>Ropsten</td>
-      <td>Consensus-layer Ropsten is a new network that was created to facilitate Merge testing. This network pair was one of the first pairs that was Merge-tested (see <a href='https://www.youtube.com/watch?v=2OfRuKSPjjw'>Ethereum Merge: Stage 1 - Ropsten Network Upgrade</a> for a livestream of the event).<br/><br/>This network pair mints and manages <strong>SepplETH</strong>, a type of testnet ETH used exclusively within this network pair.</td>
+      <td>Consensus-layer Ropsten is a new network that was created to facilitate Merge testing. This network pair was one of the first pairs that was Merge-tested (see <a href='https://www.youtube.com/watch?v=2OfRuKSPjjw'>Ethereum Merge: Stage 1 - Ropsten Network Upgrade</a> for a livestream of the event).<br/><br/>This network pair mints and manages <strong>Ropsten ETH</strong>, a type of testnet ETH used exclusively within this network pair.</td>
     </tr>
 </table>
 
