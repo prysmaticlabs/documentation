@@ -38,7 +38,7 @@ This guidance is targeted at users who are already running Prysm. If you're star
 Let's step through each of these changes. 
 
 
-## Authenticate the connection between beacon node / execution node
+## Create JWT token
 
 The connection between your beacon node and execution node will soon need to be authenticated when formed over HTTP. Although Ropsten and Sepolia are the only networks that currently require authenticated HTTP, it will soon be required on Goerli-Prater and Mainnet.
 
