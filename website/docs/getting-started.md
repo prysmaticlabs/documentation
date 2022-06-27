@@ -6,9 +6,9 @@ sidebar_label: Welcome!
 
 [Prysm](https://github.com/prysmaticlabs/prysm) is a Ethereum proof-of-stake client written in [Go](https://golang.org). Use the following table of contents to find what you're looking for:
 
- - [Quickstart](./install/install-with-script.md): Learn how to get started with Prysm.
- - [Security best practices](./security-best-practices.md): Learn how to responsibly stake and validate. 
- - [Prepare for The Merge](./prepare-for-merge.md): Learn how to prepare for The Merge, an ongoing event that transitions Ethereum from proof-of-work to proof-of-stake.
+ - **[Quickstart](./install/install-with-script.md)**: Get started with Prysm.
+ - **[Security best practices](./security-best-practices.md)**: Learn how to responsibly stake and validate. 
+ - **[Prepare for The Merge](./prepare-for-merge.md)**: Prepare for The Merge, an ongoing event that transitions Ethereum from proof-of-work to proof-of-stake.
  - Command-line options
  - Troubleshooting
  - Status, monitoring, and alerts
@@ -64,10 +64,9 @@ sidebar_label: Welcome!
    - Security audits
    - Prysm license
  - File a bug report
- - Get support
 
 
 
 ## Need assistance?
 
-If you have questions about this documentation, feel free to stop by either the [Prysmatic Discord](https://discord.gg/prysmaticlabs)'s **#documentation** channel and a member of the team or our community will be happy to assist you.
+Join our [Discord](https://discord.gg/prysmaticlabs) server - a member of the team or our community will be happy to help.
