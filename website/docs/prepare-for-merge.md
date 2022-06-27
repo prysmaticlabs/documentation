@@ -22,13 +22,14 @@ This guidance is targeted at users who are already running Prysm. If you're star
 
 ## The Merge: Before and after
 
-| Before The Merge                                                                                     | After The Merge                                                                                       |
-|------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------|
-| You don't need to run a local execution client. You can use a service like Infura instead.           | You **do** need to run an execution client. You **can't** use a service like Infura.                  |
-| The HTTP connection between beacon node and execution node doesn't need to be authenticated via JWT. | The HTTP connection between beacon node and execution node **does** need to be authenticated via JWT. |
-| Execution clients don't need to specify a TTD value.                                                 | Execution clients **do** need to specify a TTD value.                                                 |
-| Miners receive transaction fees.                                                                     | **Validators** receive transaction fees.                                                              |
-| A 1TB hard drive is enough.                                                                          | A **2TB+ SSD** is highly recommended.                                                                           |
+| Before The Merge                                                                             | After The Merge                                                                                                                          |
+|----------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|
+| You don't need to run a local execution client. You can use a service like Infura instead.   | You **do** need to run an execution client. You **can't** use a service like Infura.                                                     |
+| The HTTP connection between beacon node and execution node doesn't need to be authenticated. | The HTTP connection between beacon node and execution node **does** need to be authenticated.                                            |
+| Beacon nodes don't need to connect to execution nodes' Engine API endpoint on port `8551`.   | Beacon nodes **do** need to connect to execution nodes' Engine API endpoint on port `8551`.                                              |
+| Miners receive transaction fee tips.                                                         | **Validators** receive transaction fee tips. The "fee" is now a base fee that's burned - block producers earn only transaction fee tips. |
+| A fee recipient address does not need to be specified.                                       | A fee recipient address **does** need to be specified.                                                                                   |
+| A 1TB hard drive is enough.                                                                  | A **2TB+ SSD** is highly recommended.                                                                                                    |
 
 
 <br />
@@ -37,9 +38,11 @@ This guidance is targeted at users who are already running Prysm. If you're star
 Let's step through each of these changes. 
 
 
-## Generate JWT token
+## Authenticate the connection between beacon node / execution node
 
-A **JWT token** will allow your beacon node to form an authenticated HTTP connection with your execution node's engine API, a new API that facilitates The Merge. Although Ropsten and Sepolia are the only networks that currently require authenticated HTTP, it will soon be required on Goerli-Prater and Mainnet. We recommend doing this now regardless of the network you're running on. 
+The connection between your beacon node and execution node will soon need to be authenticated when formed over HTTP. Although Ropsten and Sepolia are the only networks that currently require authenticated HTTP, it will soon be required on Goerli-Prater and Mainnet.
+
+To authenticate the HTTP connection between beacon node / execution node, a **JWT token** is needed. [JWT tokens](https://jwt.io/) are an industry-standard way to form secure connections between components. Generating a JWT token will allow your beacon node to form an authenticated HTTP connection with your execution node. 
 
 There are several ways to generate this JWT token:
 
@@ -67,7 +70,9 @@ Prysm will output a `jwt.hex` file path. If you're running on **Ropsten** or **S
 
 ## Configure execution node
 
-Using the latest version of your execution client software, issue the following command to configure your execution node's JWT token and engine API endpoint: 
+Your execution node will soon need to make two changes: it will need to **use the JWT token**, and it will need to **expose a new endpoint on a new port**. This endpoint exposes your execution node's **Engine API**, which is a new API that facilitates Ethereum's transition to a proof-of-stake consensus mechanism.
+
+Using the latest version of your execution client software, issue the following command to configure your execution node's JWT token and Engine API endpoint:
 
 <Tabs groupId="execution-clients" defaultValue="nethermind" values={[
 {label: 'Nethermind', value: 'nethermind'},
@@ -166,7 +171,9 @@ Using the latest version of your execution client software, issue the following 
 
 ## Configure beacon node
 
-Next, we'll configure your beacon node to consume your JWT token so it can form an authenticated HTTP connection with your execution node's engine API endpoint. If you're running a validator, specifying a `suggested-fee-recipient` wallet address will allow you to earn what were previously miner transaction fees:
+Next, we'll configure your beacon node to consume your JWT token so it can form an authenticated HTTP connection with your execution node's engine API endpoint. 
+
+If you're running a validator, specifying a `suggested-fee-recipient` wallet address will allow you to earn what were previously miner transaction fees. Note that transaction fee tips are forwarded to a Ethereum Mainnet address (liquid, withdrawable), not to your validator's account balance (illiquid, not yet withdrawable). This `suggested-fee-recipient` address **must** be specified if you're running a validator, otherwise the transaction fee tips that you earn will be permanently lost. See [Configuring a Fee Recipient Address](./execution-node/fee-recipient.md) to learn more about this feature.
 
 <Tabs groupId="os" defaultValue="others" values={[
     {label: 'Windows', value: 'win'},
