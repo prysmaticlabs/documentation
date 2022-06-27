@@ -16,7 +16,7 @@ sidebar_label: Welcome!
  - Glossary
  - How-tos
    - Update Prysm
-   - Manage versions
+   - Use release candidates
    - Configure checkpoint sync
    - Configure fee recipient
    - Add graffiti to blocks
