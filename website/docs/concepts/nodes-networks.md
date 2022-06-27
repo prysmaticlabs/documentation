@@ -43,7 +43,7 @@ When users stake 32 ETH to participate in Ethereum's proof-of-stake consensus me
     </tr>
     <tr>
       <td><strong>Beacon node</strong></td>
-      <td>Beacon nodes use beacon node client software to coordinate Ethereum's proof-of-stake consensus mechanism in Ethereum's <strong>consensus layer</strong>. Prysm, Teku, Lighthouse, and Nimbus are consensus clients that contain both beacon node and validator client software. <br /> <br />Beacon nodes talk to each other, to execution nodes, and to validators.</td>
+      <td>Beacon nodes use beacon node client software to coordinate Ethereum's proof-of-stake consensus. Prysm, Teku, Lighthouse, and Nimbus are consensus clients that contain both beacon node and validator client software. <br /> <br />Beacon nodes talk to each other via peer-to-peer networking, to execution nodes, and to validators.</td>
     </tr>
     <tr>
       <td><strong>Validator</strong></td>
