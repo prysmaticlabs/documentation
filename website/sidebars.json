@@ -15,11 +15,181 @@
             "id": "security-best-practices"
         },
         {
+            "type": "doc",
+            "id": "prysm-usage/parameters",
+            "label": "Command-line options"
+        },
+        {
+            "type": "doc",
+            "id": "faq",
+            "label": "FAQ"
+        },
+        {
             "type": "category",
             "collapsed": true,
             "collapsible": true,
-            "label": "Advanced Installation Guides",
+            "label": "How-tos",
             "items": [
+                {
+                    "type": "category",
+                    "collapsed": true,
+                    "collapsible": true,
+                    "label": "Configure Prysm",
+                    "items": [
+                        {
+                            "type": "doc",
+                            "id": "prysm-usage/staying-up-to-date"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "prysm-usage/checkpoint-sync"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "prysm-usage/checkpoint-sync-vNext"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "execution-node/fee-recipient"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "execution-node/fee-recipient-vNext"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "prysm-usage/graffiti-file"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "prysm-usage/database-backups"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "prysm-usage/web-interface"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "prysm-usage/secure-grpc"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "prysm-usage/slasher"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "prysm-usage/individual-validator-monitoring"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "prysm-usage/monitoring/grafana-dashboard"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "prysm-usage/client-stats"
+                        }
+                    ]
+                },
+                {
+                    "type": "category",
+                    "collapsed": true,
+                    "collapsible": true,
+                    "label": "Configure execution node",
+                    "items": [
+                        {
+                            "type": "doc",
+                            "id": "execution-node/configuring-for-prysm"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "execution-node/authentication"
+                        }
+                    ]
+                },
+                {
+                    "type": "category",
+                    "collapsed": true,
+                    "collapsible": true,
+                    "label": "Advanced",
+                    "items": [
+                        {
+                            "type": "doc",
+                            "id": "advanced/migrating-keys"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "advanced/beacon_node_api"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "advanced/maintaining-uptime"
+                        }
+                    ]
+                },
+                {
+                    "type": "category",
+                    "collapsed": true,
+                    "collapsible": true,
+                    "label": "Validator Key Management",
+                    "items": [
+                        {
+                            "type": "doc",
+                            "id": "wallet/introduction"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "wallet/deterministic"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "wallet/nondeterministic"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "wallet/web3signer"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "wallet/remote"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "wallet/slashing-protection"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "wallet/exiting-a-validator"
+                        }
+                    ]
+                },
+                {
+                    "type": "category",
+                    "collapsed": true,
+                    "collapsible": true,
+                    "label": "API Usage",
+                    "items": [
+                        {
+                            "type": "doc",
+                            "id": "how-prysm-works/ethereum-public-api"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "how-prysm-works/prysm-public-api"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "how-prysm-works/keymanager-api"
+                        }
+                    ]
+                },
+                {
+                    "type": "doc",
+                    "id": "troubleshooting/issues-errors"
+                },
+                {
+                    "type": "doc",
+                    "id": "monitoring/is-everything-fine"
+                },
                 {
                     "type": "doc",
                     "id": "install/install-with-docker"
@@ -34,187 +204,55 @@
             "type": "category",
             "collapsed": true,
             "collapsible": true,
-            "label": "Configuration Guide",
+            "label": "Concepts",
             "items": [
                 {
                     "type": "doc",
-                    "id": "prysm-usage/parameters"
+                    "id": "devtools/init-state"
                 },
                 {
                     "type": "doc",
-                    "id": "prysm-usage/staying-up-to-date"
+                    "id": "devtools/net-design"
                 },
                 {
                     "type": "doc",
-                    "id": "prysm-usage/checkpoint-sync"
+                    "id": "devtools/api-middleware"
                 },
                 {
                     "type": "doc",
-                    "id": "prysm-usage/checkpoint-sync-vNext"
+                    "id": "how-prysm-works/architecture-overview"
                 },
                 {
                     "type": "doc",
-                    "id": "execution-node/fee-recipient"
+                    "id": "how-prysm-works/beacon-node"
                 },
                 {
                     "type": "doc",
-                    "id": "execution-node/fee-recipient-vNext"
+                    "id": "how-prysm-works/prysm-validator-client"
                 },
                 {
                     "type": "doc",
-                    "id": "prysm-usage/graffiti-file"
+                    "id": "how-prysm-works/validator-lifecycle"
                 },
                 {
                     "type": "doc",
-                    "id": "prysm-usage/database-backups"
+                    "id": "how-prysm-works/validator-deposit-contract"
                 },
                 {
                     "type": "doc",
-                    "id": "prysm-usage/web-interface"
+                    "id": "how-prysm-works/database-backend-boltdb"
                 },
                 {
                     "type": "doc",
-                    "id": "prysm-usage/secure-grpc"
+                    "id": "how-prysm-works/p2p-networking"
                 },
                 {
                     "type": "doc",
-                    "id": "prysm-usage/slasher"
+                    "id": "how-prysm-works/bls-cryptography"
                 },
                 {
                     "type": "doc",
-                    "id": "prysm-usage/individual-validator-monitoring"
-                },
-                {
-                    "type": "doc",
-                    "id": "prysm-usage/monitoring/grafana-dashboard"
-                },
-                {
-                    "type": "doc",
-                    "id": "prysm-usage/client-stats"
-                }
-            ]
-        },
-        {
-            "type": "category",
-            "collapsed": true,
-            "collapsible": true,
-            "label": "Running an Execution Node",
-            "items": [
-                {
-                    "type": "doc",
-                    "id": "execution-node/configuring-for-prysm"
-                },
-                {
-                    "type": "doc",
-                    "id": "execution-node/authentication"
-                }
-            ]
-        },
-        {
-            "type": "category",
-            "collapsed": true,
-            "collapsible": true,
-            "label": "Advanced Usage",
-            "items": [
-                {
-                    "type": "doc",
-                    "id": "advanced/migrating-keys"
-                },
-                {
-                    "type": "doc",
-                    "id": "advanced/beacon_node_api"
-                },
-                {
-                    "type": "doc",
-                    "id": "advanced/maintaining-uptime"
-                }
-            ]
-        },
-        {
-            "type": "category",
-            "collapsed": true,
-            "collapsible": true,
-            "label": "Status and Monitoring",
-            "items": [
-                {
-                    "type": "doc",
-                    "id": "monitoring/is-everything-fine"
-                },
-                {
-                    "type": "doc",
-                    "id": "monitoring/checking-status"
-                }
-            ]
-        },
-        {
-            "type": "category",
-            "collapsed": true,
-            "collapsible": true,
-            "label": "Troubleshooting",
-            "items": [
-                {
-                    "type": "doc",
-                    "id": "troubleshooting/issues-errors"
-                },
-                {
-                    "type": "doc",
-                    "id": "prysm-usage/p2p-host-ip"
-                }
-            ]
-        },
-        {
-            "type": "category",
-            "collapsed": true,
-            "collapsible": true,
-            "label": "Validator Key Management",
-            "items": [
-                {
-                    "type": "doc",
-                    "id": "wallet/introduction"
-                },
-                {
-                    "type": "doc",
-                    "id": "wallet/deterministic"
-                },
-                {
-                    "type": "doc",
-                    "id": "wallet/nondeterministic"
-                },
-                {
-                    "type": "doc",
-                    "id": "wallet/web3signer"
-                },
-                {
-                    "type": "doc",
-                    "id": "wallet/remote"
-                },
-                {
-                    "type": "doc",
-                    "id": "wallet/slashing-protection"
-                },
-                {
-                    "type": "doc",
-                    "id": "wallet/exiting-a-validator"
-                }
-            ]
-        },
-        {
-            "type": "category",
-            "collapsed": true,
-            "collapsible": true,
-            "label": "API Usage",
-            "items": [
-                {
-                    "type": "doc",
-                    "id": "how-prysm-works/ethereum-public-api"
-                },
-                {
-                    "type": "doc",
-                    "id": "how-prysm-works/prysm-public-api"
-                },
-                {
-                    "type": "doc",
-                    "id": "how-prysm-works/keymanager-api"
+                    "id": "devtools/end-to-end"
                 }
             ]
         },
@@ -278,7 +316,7 @@
             "type": "category",
             "collapsed": true,
             "collapsible": true,
-            "label": "Contribution Guidelines",
+            "label": "Contribution guidelines",
             "items": [
                 {
                     "type": "doc",
@@ -327,23 +365,18 @@
                 {
                     "type": "doc",
                     "id": "devtools/block-explorers"
+                },
+                {
+                    "type": "doc",
+                    "label": "Security Audits",
+                    "id": "audits/phase0"
+                },
+                {
+                    "type": "doc",
+                    "label": "Prysm License",
+                    "id": "licenses/prysmatic-labs"
                 }
             ]
-        },
-        {
-            "type": "doc",
-            "label": "Security Audits",
-            "id": "audits/phase0"
-        },
-        {
-            "type": "doc",
-            "id": "faq",
-            "label": "FAQ"
-        },
-        {
-            "type": "doc",
-            "label": "Prysm License",
-            "id": "licenses/prysmatic-labs"
         }
     ]
 }
