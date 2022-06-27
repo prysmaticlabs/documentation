@@ -11,7 +11,7 @@ import NetworkPng from '@site/static/img/network.png';
 import NetworkLayersPng from '@site/static/img/network-layers.png';
 
 
-Ethereum is a decentralized **network** of **nodes** that communicate peer-to-peer:
+Ethereum is a decentralized **network** of computers running specialized software known as **Ethereum nodes** that communicate via peer-to-peer connections:
 
 <img style={{width: 100 + '%', margin: 'auto', display: 'block', maxWidth: 461 + 'px'}} src={NetworkPng} /> 
 
