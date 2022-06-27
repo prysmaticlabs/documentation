@@ -1,24 +1,72 @@
 ---
 id: getting-started
-title:  Prysm Ethereum Client Documentation
-sidebar_label: Getting Started
+title:  Welcome to Prysm Documentation
+sidebar_label: Welcome!
 ---
 
-## What is Prysm?
+[Prysm](https://github.com/prysmaticlabs/prysm) is a Ethereum proof-of-stake client written in [Go](https://golang.org). Use the following table of contents to find what you're looking for:
 
-The [Prysm](https://github.com/prysmaticlabs/prysm) project is a full-featured implementation for the Ethereum proof-of-stake network written entirely in the [Go programming language](https://golang.org). Created by [Prysmatic Labs](https://prysmaticlabs.com), Prysm implements the official [Ethereum consensus specification](https://github.com/ethereum/consensus-specs), which is the product of an ongoing collective research and development effort by various teams across the Ethereum ecosystem including the [Ethereum Foundation](https://ethereum.org).
+ - [Quickstart](./install/install-with-script.md): Learn how to get started with Prysm.
+ - [Security best practices](./security-best-practices.md): Learn how to responsibly stake and validate. 
+ - [Prepare for The Merge](./prepare-for-merge.md): Learn how to prepare for The Merge, an ongoing event that transitions Ethereum from proof-of-work to proof-of-stake.
+ - Command-line options
+ - Troubleshooting
+ - Status, monitoring, and alerts
+ - Frequently asked questions
+ - Glossary
+ - How-tos
+   - Update Prysm
+   - Manage versions
+   - Configure checkpoint sync
+   - Configure fee recipient
+   - Add graffiti to blocks
+   - Back up your data
+   - Use the Prysm Web UI
+   - Configure JWT authentication
+   - Move to a new machine
+   - Switch to a new client
+   - Exit your validator
+   - Advanced installation
+     - Install using Docker
+     - Build from source
+   - Advanced usage
+     - Secure gRPC
+     - Run a slasher
+     - Run an archive node
+     - Monitor other validators
+     - Collect client stats
+     - Maintain uptime with systemd or Docker
+     - Configure Web3Signer
+ - Concepts
+   - Nodes and networks
+   - Slashing
+   - The Merge
+   - Danksharding
+   - Checkpoint sync
+   - Validator state
+   - Keys and wallets
+   - JWT
+   - Proof-of-work
+   - Proof-of-stake
+   - Forkchoice
+   - Engine API
+ - Community updates
+   - June 2022
+ - Developer wiki
+   - Contribute
+   - APIs
+     - Beacon node API
+     - Prysm's API
+     - Keymanager API
+   - Concepts
+     - (all docs)
+ - Misc
+   - Security audits
+   - Prysm license
+ - File a bug report
+ - Get support
 
-## This documentation
 
-This manual is aimed at developers interested in participating in Ethereum consensus, which involves locking up a 32 ETH deposit to vote and produce blocks using our software. For more detailed information on the most recent research developments and understanding **what Ethereum consensus is**, it is recommended to review the official [Ethereum consensus specification](https://github.com/ethereum/consensus-specs) repository.
-
-## Communications
-
-Prysm has two official channels for release updates: our [Discord](https://discord.gg/prysmaticlabs) and our [mailing list](https://groups.google.com/g/prysm-dev). All releases will be notified via those channels.
-
-## Staking in Ethereum
-
-To participate in the Ethereum network as a validator in proof-of-stake, read our comprehensive guidelines [here](/docs/install/install-with-script).
 
 ## Need assistance?
 

@@ -2,7 +2,6 @@
     "docs": [
         {
             "type": "doc",
-            "label": "Welcome!",
             "id": "getting-started"
         },
         {
@@ -11,12 +10,10 @@
         },
         {
             "type": "doc",
-            "label": "Security Best Practices",
             "id": "security-best-practices"
         },
         {
             "type": "doc",
-            "label": "Prepare for The Merge",
             "id": "prepare-for-merge"
         },
         {
@@ -349,17 +346,14 @@
         },
         {
             "type": "doc",
-            "label": "Security Audits",
             "id": "audits/phase0"
         },
         {
             "type": "doc",
-            "id": "faq",
-            "label": "FAQ"
+            "id": "faq"
         },
         {
             "type": "doc",
-            "label": "Prysm License",
             "id": "licenses/prysmatic-labs"
         }
     ]
