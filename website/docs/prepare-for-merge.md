@@ -42,7 +42,7 @@ Let's step through each of these changes.
 
 The connection between your beacon node and execution node will soon need to be authenticated when formed over HTTP. Although Ropsten and Sepolia are the only networks that currently require authenticated HTTP, it will soon be required on Goerli-Prater and Mainnet.
 
-To authenticate the HTTP connection between beacon node / execution node, a **JWT token** is needed. [JWT tokens](https://jwt.io/) are an industry-standard way to form secure connections between components. Generating a JWT token will allow your beacon node to form an authenticated HTTP connection with your execution node. 
+To authenticate the HTTP connection between beacon node / execution node, a **JWT token** is needed. [JWT tokens](https://jwt.io/) are an industry-standard way to form a secure connection between two parties. Generating a JWT token will allow your beacon node to form an authenticated HTTP connection with your execution node. 
 
 There are several ways to generate this JWT token:
 
