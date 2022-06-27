@@ -39,7 +39,7 @@ When users stake 32 ETH to participate in Ethereum's proof-of-stake consensus me
     </tr> 
     <tr>
       <td><strong>Execution node</strong></td>
-      <td>Execution nodes use execution client software to process transactions and smart contracts in Ethereum's <strong>execution layer</strong>. Nethermind, Besu, and Geth are execution clients.<br /> <br />Execution nodes talk to each other, and to beacon nodes.</td>
+      <td>Execution nodes use execution client software to process transactions and smart contracts in Ethereum's <strong>execution layer</strong>. Nethermind, Besu, and Go Ethereum (Geth) are examples of execution client software.<br /> <br />Execution nodes talk to each other over peer-to-peer networking.</td>
     </tr>
     <tr>
       <td><strong>Beacon node</strong></td>
