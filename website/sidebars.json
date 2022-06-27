@@ -15,6 +15,11 @@
             "id": "security-best-practices"
         },
         {
+            "type": "doc",
+            "label": "Prepare for The Merge",
+            "id": "prepare-for-merge"
+        },
+        {
             "type": "category",
             "collapsed": true,
             "collapsible": true,
