@@ -7,7 +7,7 @@ sidebar_label: Prepare for The Merge
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-[The Merge](https://ethereum.org/en/upgrades/merge/) will fully transition Ethereum's consensus mechanism from proof-of-work to proof-of-stake. This is made possible by the [Beacon Chain](https://ethereum.org/en/upgrades/beacon-chain/), a new Ethereum network layer that implements proof-of-stake consensus. After The Merge, this consensus layer will be fully "merged" with Ethereum's execution layer, and miners will be fully replaced by validators on Ethereum Mainnet.
+[The Merge](https://ethereum.org/en/upgrades/merge/) will fully transition Ethereum's consensus mechanism from proof-of-work to proof-of-stake. This is made possible by the [Beacon Chain](https://ethereum.org/en/upgrades/beacon-chain/), a new Ethereum network layer that implements proof-of-stake consensus. After The Merge, this consensus layer will be combined with Ethereum's execution layer, and miners will be fully replaced by proof-of-stake validators on Ethereum Mainnet.
 
 This guide will walk you through the changes that you need to make in preparation for The Merge.
 
@@ -28,7 +28,7 @@ This guidance is targeted at users who are already running Prysm. If you're star
 | The HTTP connection between beacon node and execution node doesn't need to be authenticated via JWT. | The HTTP connection between beacon node and execution node **does** need to be authenticated via JWT. |
 | Execution clients don't need to specify a TTD value.                                                 | Execution clients **do** need to specify a TTD value.                                                 |
 | Miners receive transaction fees.                                                                     | **Validators** receive transaction fees.                                                              |
-| A 1TB hard drive is enough.                                                                          | A **2TB+ SSD** is required.                                                                           |
+| A 1TB hard drive is enough.                                                                          | A **2TB+ SSD** is highly recommended.                                                                           |
 
 
 <br />
