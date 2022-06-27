@@ -70,7 +70,7 @@ Prysm will output a `jwt.hex` file path. If you're running on **Ropsten** or **S
 
 ## Configure execution node
 
-Your execution node will soon need to make two changes: it will need to **use the JWT token**, and it will need to **expose a new port**. This port exposes your execution node's **Engine API**, which is a new API that facilitates Ethereum's transition to a proof-of-stake consensus mechanism.
+Your execution node will need to **use the JWT token** from the previous step, and it will need to **expose a new port**. This new port exposes your execution node's **Engine API**, which is a new API that facilitates Ethereum's transition to a proof-of-stake consensus mechanism.
 
 Using the latest version of your execution client software, issue the following command to configure your execution node's JWT token and Engine API endpoint:
 
