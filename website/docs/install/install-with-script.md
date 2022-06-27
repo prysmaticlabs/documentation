@@ -20,13 +20,9 @@ At a high level, we'll walk through the following flow:
 
 <br />
 
-<img style={{width: 100 + '%', margin: 'auto', display: 'block', maxWidth: 651 + 'px'}} src={ClientStackPng} /> 
-
-<br />
-
 :::info Knowledge Check
 
-**Not familiar with nodes, networks, and related terminology?** See <a href='#appendix-a-nodes-and-networks'>Appendix A: Nodes and Networks</a>.
+**Not familiar with nodes, networks, and related terminology?** Consider reading [Nodes and networks](../concepts/nodes-networks.md) before proceeding.
 
 :::
 
@@ -584,7 +580,7 @@ We recommend **closing** TCP port `8545` to the internet and keeping TCP and UDP
 
 
 **Can you mix and match networks between execution layer and consensus layer?** <br />
-The network pairs marked with a ✔️ are compatible. See <a href='#appendix-a-nodes-and-networks'>Appendix A: Nodes and Networks</a> for more information.
+The network pairs marked with a ✔️ are compatible. See [Nodes and networks](../concepts/nodes-networks.md) for more information.
 
 <table>
   <tr>
@@ -667,71 +663,6 @@ TODO
 **What are withdrawal keys and validator keys?** <br />
 TODO: explain in context of this guide -->
 
-
--------
-
-## Appendix A: Nodes and Networks
-
-Ethereum is a peer-to-peer network of **nodes** that communicate with one another in a decentralized fashion. There are several types of nodes:
-
-<table>
-    <tr>
-        <th style={{minWidth: 170 + 'px'}}>Node type</th> 
-        <th>Description</th>
-    </tr>
-    <tr>
-      <td><strong>Ethereum node</strong><br />aka "Node"</td>
-      <td>An Ethereum node is an <strong>execution node</strong> and <strong>beacon node</strong> working together. Ethereum nodes communicate peer-to-peer to secure the Ethereum network, and require both <strong>execution-layer client software</strong> and <strong>consensus-layer client software</strong>.</td>
-    </tr> 
-    <tr>
-      <td><strong>Execution node</strong></td>
-      <td>Execution nodes use execution client software to process transactions and smart contracts in Ethereum's <strong>execution layer</strong>. Nethermind, Besu, and Geth are execution clients.<br /> <br />Execution nodes talk to each other, and to beacon nodes.</td>
-    </tr>
-    <tr>
-      <td><strong>Beacon node</strong></td>
-      <td>Beacon nodes use beacon node client software to coordinate Ethereum's proof-of-stake consensus mechanism in Ethereum's <strong>consensus layer</strong>. Prysm, Teku, Lighthouse, and Nimbus are consensus clients that contain both beacon node and validator node client software. <br /> <br />Beacon nodes talk to each other, to execution nodes, and to validators.</td>
-    </tr>
-    <tr>
-      <td><strong>Validator node</strong><br/>aka "Validator"</td>
-      <td>Validator nodes let people stake 32 ETH as collateral within Ethereum's <strong>consensus layer</strong>. Validators are responsible for proposing blocks within Ethereum's proof-of-stake consensus mechanism, and will fully replace proof-of-stake miners after The Merge. <br /> <br />Validator nodes talk to each other, and to beacon nodes.</td>
-    </tr>
-</table>
-
-<br />
-
-Ethereum Mainnet is supported by a number of <strong>test networks</strong>. These test networks let developers, node runners, and validators test new functionality before using real ETH on mainnet. Test networks are available in both the execution layer (EL) and consensus layer (CL). Every EL network has a corresponding partner CL network. EL-CL network pairs work together to run Ethereum proof-of-stake. This quickstart shows you how to run a node + validator on the following network pairs:
-
-<br />
-
-<table>
-    <tr>
-        <th style={{minWidth: 160 + 'px'}}>EL network</th> 
-        <th style={{minWidth: 160 + 'px'}}>CL network</th>
-        <th>Description</th>
-    </tr>
-    <tr>
-      <td>Mainnet</td>
-      <td>Mainnet</td>
-      <td>When people refer to Ethereum, they're usually referring to Ethereum Mainnet, which refers to a pair of networks: execution-layer (EL) Mainnet and consensus-layer (CL) Mainnet. CL Mainnet is commonly referred to as the Beacon Chain.</td>
-    </tr> 
-    <tr>
-      <td>Goerli</td>
-      <td>Prater</td>
-      <td>The Goerli-Prater pair is the test network that most people use learning how to configure their validator for the first time. After this network pair is tested, Mainnet networks will merge, and proof-of-work miners will be fully replaced by proof-of-stake validators.</td>
-    </tr>
-    <tr>
-      <td>Sepolia</td>
-      <td>Sepolia</td>
-      <td>After Ropsten, Sepolia will be Merge-tested. Then Goerli-Prater will be Merge-tested.</td>
-    </tr>
-    <tr>
-      <td>Ropsten</td>
-      <td>Ropsten</td>
-      <td>Although execution-layer Ropsten is deprecated, core developers are using it to test The Merge. Consensus-layer Ropsten is a new network that lets us test The Merge across both of Ethereum's layers. This network pair was one of the first pairs that was Merge-tested (see <a href='https://www.youtube.com/watch?v=2OfRuKSPjjw'>Ethereum Merge: Stage 1 - Ropsten Network Upgrade</a> for a livestream of the event).</td>
-    </tr>
-</table>
-
-
 -------
 
 **Footnotes:**
@@ -750,4 +681,3 @@ Ethereum Mainnet is supported by a number of <strong>test networks</strong>. The
 <strong id='footnote-12'>12.</strong> Your execution client needs to download the entire blockchain - every block that's been produced after the genesis block.  <br />
 <strong id='footnote-13'>13.</strong> Your keystore file contains your public key and your private key encrypted with a password. To learn more about how keystores work, see <a href='https://julien-maffre.medium.com/what-is-an-ethereum-keystore-file-86c8c5917b97'>What is an Ethereum keystore</a>. <br />
 <strong id='footnote-14'>14</strong>. BitMex recently posted research that provides hard numbers on penalties and rewards: <a href='https://blog.bitmex.com/ethereums-proof-of-stake-system-calculating-penalties-rewards/'>Ethereum's Proof of Stake System - Calculating Penalties and Rewards</a>. Collin Myers has also created an <a href='https://docs.google.com/spreadsheets/d/15tmPOvOgi3wKxJw7KQJKoUe-uonbYR6HF7u83LR5Mj4/edit#gid=1018097491'>Ethereum calculator</a>. 
-
