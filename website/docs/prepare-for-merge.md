@@ -26,7 +26,7 @@ This guidance is targeted at users who are already running Prysm. If you're star
 |----------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|
 | You don't need to run a local execution client. You can use a service like Infura instead.   | You **do** need to run an execution client. You **can't** use a service like Infura.                                                     |
 | The HTTP connection between beacon node and execution node doesn't need to be authenticated. | The HTTP connection between beacon node and execution node **does** need to be authenticated.                                            |
-| Beacon nodes don't need to connect to a local execution node's Engine API endpoint.          | Beacon nodes **do** need to connect to a local execution node's Engine API endpoint. This is port `8551` by default.                     |
+| Beacon nodes connect to execution nodes on port `8545` by default.                           | Beacon nodes connect to execution nodes on port `8551` by default.                                                                       |
 | Miners receive transaction fee tips.                                                         | **Validators** receive transaction fee tips. The "fee" is now a base fee that's burned - block producers earn only transaction fee tips. |
 | A fee recipient address does not need to be specified.                                       | A fee recipient address **does** need to be specified.                                                                                   |
 | A 1TB hard drive is enough.                                                                  | A **2TB+ SSD** is highly recommended.                                                                                                    |
@@ -70,7 +70,7 @@ Prysm will output a `jwt.hex` file path. If you're running on **Ropsten** or **S
 
 ## Configure execution node
 
-Your execution node will soon need to make two changes: it will need to **use the JWT token**, and it will need to **expose a new endpoint on a new port**. This endpoint exposes your execution node's **Engine API**, which is a new API that facilitates Ethereum's transition to a proof-of-stake consensus mechanism.
+Your execution node will soon need to make two changes: it will need to **use the JWT token**, and it will need to **expose a new port**. This port exposes your execution node's **Engine API**, which is a new API that facilitates Ethereum's transition to a proof-of-stake consensus mechanism.
 
 Using the latest version of your execution client software, issue the following command to configure your execution node's JWT token and Engine API endpoint:
 
@@ -171,7 +171,7 @@ Using the latest version of your execution client software, issue the following 
 
 ## Configure beacon node
 
-Next, we'll configure your beacon node to consume your JWT token so it can form an authenticated HTTP connection with your execution node's engine API endpoint. 
+Next, we'll configure your beacon node to consume your JWT token so it can form an authenticated HTTP connection with your execution node. 
 
 If you're running a validator, specifying a `suggested-fee-recipient` wallet address will allow you to earn what were previously miner transaction fees. Note that transaction fee tips are forwarded to a Ethereum Mainnet address (liquid, withdrawable), not to your validator's account balance (illiquid, not yet withdrawable). This `suggested-fee-recipient` address **must** be specified if you're running a validator, otherwise the transaction fee tips that you earn will be permanently lost. See [Configuring a Fee Recipient Address](./execution-node/fee-recipient.md) to learn more about this feature.
 
