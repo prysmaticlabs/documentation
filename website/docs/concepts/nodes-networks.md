@@ -18,7 +18,7 @@ Ethereum is a decentralized **network** of computers running specialized softwar
 
 ## Nodes
 
-An Ethereum **node** is a running instance of Ethereum client software. There are two primary types of nodes in Ethereum: **execution nodes** and **beacon nodes**. Colloquially, a "node" refers to an execution node and beacon node working together.
+An Ethereum **node** is a running instance of specialized software that "runs" the Ethereum blockchain on a computer. There are two primary types of nodes in Ethereum: **execution nodes** and **beacon nodes**. Colloquially, a "node" refers to an execution node and beacon node working together. This software establishes connections with other computers running the same software to process Ethereum blocks and transactions as they are received.
 
 When users stake 32 ETH to participate in Ethereum's proof-of-stake consensus mechanism, they use validator client software like Prysm to stake their ETH and run a **validator**. Validators are not nodes - a validator can be thought of as an extension of a beacon node that manages validator keys and duties. Validators depend on beacon nodes, which depend on execution nodes:
 
