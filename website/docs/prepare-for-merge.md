@@ -25,7 +25,7 @@ This guidance is targeted at users who are already running Prysm. If you're star
 | The HTTP connection between beacon node and execution node doesn't need to be authenticated via JWT. | The HTTP connection between beacon node and execution node **does** need to be authenticated via JWT. |
 | Execution clients don't need to specify a TTD value.                                                 | Execution clients **do** need to specify a TTD value.                                                 |
 | Miners receive transaction fees.                                                                     | **Validators** receive transaction fees.                                                              |
-| A 1TB hard drive is enough.                                                                          | A **2TB+ SSD** is required.                                                                           |
+| A 1TB hard drive is enough.                                                                          | A **2TB+ SSD** is highly recommended.                                                                           |
 
 
 <br />
