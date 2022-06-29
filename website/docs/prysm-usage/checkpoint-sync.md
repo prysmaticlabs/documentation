@@ -28,7 +28,7 @@ Checkpoint Sync uses a `BeaconState` and `SignedBeaconBlock` from the first Epoc
 
 ## Checkpoint Sync - via network
 
-The easiest way to initiate Checkpoint Sync is to start your prysm Beacon Node with the `--checkpoint-sync-url` flag set to the URL of a Beacon Node API backed by a synced Becaon Node. To also obtain the genesis state from this node, set the `--genesis-beacon-api-url` flag to the same URL.
+The easiest way to initiate Checkpoint Sync is to start your prysm Beacon Node with the `--checkpoint-sync-url` flag set to the Beacon Node API URL of a to a local node that's already synced, or a fully synced remote node that you trust. To also obtain the genesis state from this node, set the `--genesis-beacon-api-url` flag to the same URL.
 
 *note: the [Beacon Node API for retrieving a BeaconState](https://ethereum.github.io/beacon-APIs/#/Debug/getStateV2) is a debug endpoint, so a prysm server *providing* the checkpoint state and block must be started with the flags `--enable-debug-rpc-endpoints` and a sufficiently large value for `--grpc-max-msg-size`. States are currently upwards of 40MB in size, so `--grpc-max-msg-size=65568081` should be large enough for the forseeable future. The server *retrieving* the checkpoint state does not need these flags.*
 
@@ -77,7 +77,7 @@ $ curl -H "Accept: application/octet-stream"  http://localhost:3500/eth/v1/debug
 
 ## Checkpoint Sync - via file
 
-With the BeaconState and SignedBeaconBlock files from `prysmctl cpt save` in the current directory, alongside the `genesis.ssz` genesis state downloaded via curl, and the Weak Subjectivity Checkpoint from `prysmctl cpt latest`, the following command line will start a prysm Beacon Node, using the local files and ensuring the Weak Subjectivity Checkpoint is enforced:
+Checkpoint sync can also be initiated using files generated through the fully synced beacon node.  Run`prysmctl cpt save` in the current directory for the BeaconState and SignedBeaconBlock files, alongside the `genesis.ssz` genesis state downloaded via curl, and the Weak Subjectivity Checkpoint from `prysmctl cpt latest`; the following command line will initiate checkpoint sync on an unsynced prysm Beacon Node, using the local files and ensuring the Weak Subjectivity Checkpoint is enforced:
 
 ```bash
 ./prysm.sh beacon-chain \ 
