@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 [The Merge](https://ethereum.org/en/upgrades/merge/) will fully transition Ethereum's consensus mechanism from proof-of-work to proof-of-stake. This is made possible by the [Beacon Chain](https://ethereum.org/en/upgrades/beacon-chain/), a new Ethereum network layer that implements proof-of-stake consensus. After The Merge, this consensus layer will be combined with Ethereum's execution layer, and miners will be fully replaced by proof-of-stake validators on Ethereum Mainnet.
 
-This guide will walk you through the changes that you need to make in preparation for The Merge.
+This guide will walk you through the changes that you need to make in preparation for The Merge. Note that these instructions need to be followed **only if you're running on Ropsten or Sepolia**. After Sepolia has been Merged, client software and documentation will be updated for Goerli-Prater, and then Mainnet.
 
 :::info New user?
 
@@ -40,7 +40,7 @@ Let's step through each of these changes.
 
 ## Create JWT token
 
-The connection between your beacon node and execution node will soon need to be authenticated when formed over HTTP. Although Ropsten and Sepolia are the only networks that currently require authenticated HTTP, it will soon be required on Goerli-Prater and Mainnet.
+The connection between your beacon node and execution node needs to be authenticated when formed over HTTP. Although this requirement currently applies only to nodes running on Ropsten and Sepolia, it will soon apply to Goerli-Prater and then Mainnet.
 
 To authenticate the HTTP connection between beacon node / execution node, a **JWT token** is needed. [JWT tokens](https://jwt.io/) are an industry-standard way to form a secure connection between two parties. Generating a JWT token will allow your beacon node to form an authenticated HTTP connection with your execution node. 
 
@@ -70,7 +70,7 @@ Prysm will output a `jwt.hex` file path. If you're running on **Ropsten** or **S
 
 ## Configure execution node
 
-Your execution node will need to **use the JWT token** from the previous step, and it will need to **expose a new port**. This new port exposes your execution node's **Engine API**, which is a new API that facilitates Ethereum's transition to a proof-of-stake consensus mechanism.
+Your execution node will need to **use the JWT token** from the previous step, and it will need to **expose a new port**. This new port exposes your execution node's **Engine API**, a new API that facilitates Ethereum's transition to a proof-of-stake consensus mechanism.
 
 Using the latest version of your execution client software, issue the following command to configure your execution node's JWT token and Engine API endpoint:
 
@@ -136,9 +136,6 @@ Using the latest version of your execution client software, issue the following 
     <p>See Besu's <a href='https://besu.hyperledger.org/en/stable/Reference/CLI/CLI-Syntax/'>command-line options</a> for parameter definitions.</p>
   </TabItem>
   <TabItem value="geth">
-    <div class="admonition admonition-caution alert alert--warning">
-      <div class="admonition-content"><p><strong>Geth is a supermajority execution-layer client</strong>. This centralization poses an active risk to the security of Ethereum. Consider using a minority execution-layer client to distribute this risk for the ecosystem.</p></div>
-    </div>
     <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Ropsten', value: 'ropsten'},
         {label: 'Sepolia', value: 'sepolia'},
@@ -173,7 +170,7 @@ Using the latest version of your execution client software, issue the following 
 
 Next, we'll configure your beacon node to consume your JWT token so it can form an authenticated HTTP connection with your execution node. 
 
-If you're running a validator, specifying a `suggested-fee-recipient` wallet address will allow you to earn what were previously miner transaction fees. Note that transaction fee tips are forwarded to a Ethereum Mainnet address (liquid, withdrawable), not to your validator's account balance (illiquid, not yet withdrawable). This `suggested-fee-recipient` address **must** be specified if you're running a validator, otherwise the transaction fee tips that you earn will be permanently lost. See [Configuring a Fee Recipient Address](./execution-node/fee-recipient.md) to learn more about this feature.
+If you're running a validator, specifying a `suggested-fee-recipient` wallet address will allow you to earn what were previously miner transaction fee tips. Note that transaction fee tips are forwarded to a Ethereum Mainnet address (liquid, withdrawable), not to your validator's account balance (illiquid, not yet withdrawable). This `suggested-fee-recipient` address **must** be specified if you're running a validator, otherwise the transaction fee tips that you earn will be permanently lost. See [Configuring a Fee Recipient Address](./execution-node/fee-recipient.md) to learn more about this feature.
 
 <Tabs groupId="os" defaultValue="others" values={[
     {label: 'Windows', value: 'win'},
