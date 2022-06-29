@@ -56,7 +56,7 @@ At a high level, we'll walk through the following flow:
         <ul> 
           <li><strong>Software</strong>: Execution client, beacon node client (instructions for clients below), <a href='https://curl.se/download.html'>curl</a></li>
           <li><strong>OS</strong>: 64-bit Linux, Mac OS X 10.14+, Windows 10+ 64-bit</li>   
-          <li><strong>CPU</strong>: Something relatively modern. Intel Core i5-760 is a good min-bar.</li> 
+          <li><strong>CPU</strong>: 4+ cores @ 2.8+ GHz</li> 
           <li><strong>Memory</strong>: 16GB+ RAM</li> 
           <li><strong>Storage</strong>: SSD with at least 2TB free space</li> 
           <li><strong>Network</strong>: 8 MBit/sec broadband</li> 
@@ -111,11 +111,13 @@ First, create a folder called `ethereum` on your SSD <a class='footnote' href='#
 
 :::info Ropsten/Sepolia HTTP only
 
-**Ropsten** and **Sepolia** are the only networks that currently require JWT-authenticated HTTP. You can skip the rest of this step if you're running on Goerli-Prater or Mainnet. Note that these networks **will soon require JWT**. You can also skip the rest of this step if you're connecting your beacon node to your execution node over IPC instead of HTTP (this quickstart uses HTTP).
+You can skip the rest of this step if you're using IPC instead of HTTP, or if you're running on Goerli-Prater or Mainnet.
 
 :::
 
-A secret **JWT token** will allow your beacon node to form an authenticated HTTP connection with your execution node. There are several ways to generate this JWT token:
+The connection between your beacon node and execution needs to be authenticated when formed over HTTP on either Ropsten or Sepolia. This will soon be required on Goerli-Prater and Mainnet.
+
+To authenticate the HTTP connection between beacon node / execution node, a **JWT token** is needed. [JWT tokens](https://jwt.io/) are an industry-standard way to form a secure connection between two parties. Generating a JWT token will allow your beacon node to form an authenticated HTTP connection with your execution node.
 
  - Use an online generator like [this](https://seanwasere.com/generate-random-hex/). Copy and paste this value into a `jwt.hex` file.
  - Use a utility like OpenSSL to create the token via command: `openssl rand -hex 32 | tr -d "\n" > "jwt.hex"`.
@@ -194,9 +196,6 @@ curl -H "Content-Type: application/json" -X POST http://localhost:8545 -d "{""js
   <p>A sync status of <code>false</code> indicates that your node is fully synced. You can proceed to the next step while Besu syncs.</p>
   </TabItem>
   <TabItem value="geth">
-    <div class="admonition admonition-caution alert alert--warning">
-      <div class="admonition-content"><p><strong>Geth is a supermajority execution-layer client</strong>. This centralization poses an active risk to the security of Ethereum. If Geth's code contains a bug, a majority of nodes will be impacted. Consider using another execution-layer client to distribute this risk for the ecosystem <a class='footnote' href='#footnote-10'>[10]</a>.</p></div>
-    </div>
     <p>Download and run the latest 64-bit stable release of the <strong>Geth installer</strong> for your operating system from the <a href='https://geth.ethereum.org/downloads/'>Geth downloads page</a>. Navigate to your <code>execution</code> directory and run the following command to start your execution node:</p>
     <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
