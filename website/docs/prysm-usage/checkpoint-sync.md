@@ -28,7 +28,7 @@ Checkpoint Sync uses a `BeaconState` and `SignedBeaconBlock` from the first Epoc
 
 ## Checkpoint Sync - via network
 
-The easiest way to initiate Checkpoint Sync is to start your prysm Beacon Node with the `--checkpoint-sync-url` flag set to the Beacon Node API URL of a to a local node that's already synced, or a fully synced remote node that you trust. To also obtain the genesis state from this node, set the `--genesis-beacon-api-url` flag to the same URL.
+The easiest way to initiate Checkpoint Sync is to start your prysm Beacon Node with the `--checkpoint-sync-url` flag set to the Beacon Node API URL of a local node that's already synced, or a fully synced remote node that you trust. To also obtain the genesis state from this node, set the `--genesis-beacon-api-url` flag to the same URL.
 
 *note: the [Beacon Node API for retrieving a BeaconState](https://ethereum.github.io/beacon-APIs/#/Debug/getStateV2) is a debug endpoint, so a prysm server *providing* the checkpoint state and block must be started with the flags `--enable-debug-rpc-endpoints` and a sufficiently large value for `--grpc-max-msg-size`. States are currently upwards of 40MB in size, so `--grpc-max-msg-size=65568081` should be large enough for the forseeable future. The server *retrieving* the checkpoint state does not need these flags.*
 
