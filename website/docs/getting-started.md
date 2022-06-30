@@ -47,7 +47,7 @@ The following **descriptive table of contents** maps to the way that our content
      - [Configure Web3Signer](./wallet/we3signer.md)
      - [Import an existing wallet via keystore](./wallet/nondeterministic.md)
  - Concepts
-   - Nodes and networks
+   - [Nodes and networks](./concepts/nodes-networks.md)
    - Slashing
    - The Merge
    - Danksharding
