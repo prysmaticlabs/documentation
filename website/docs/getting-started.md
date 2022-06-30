@@ -4,7 +4,9 @@ title:  Welcome to Prysm Documentation
 sidebar_label: Welcome!
 ---
 
-Welcome to Prysm's docs! [Prysm](https://github.com/prysmaticlabs/prysm) is an [Ethereum](https://ethereum.org/en/developers/docs/intro-to-ethereum/) [proof-of-stake](https://ethereum.org/en/developers/docs/consensus-mechanisms/pos/) client written in [Go](https://golang.org). You can use Prysm to participate in Ethereum's [decentralized economy](https://ethereum.org/en/developers/docs/web2-vs-web3/) by [running a node](./install/install-with-script.md) and, if you have [32 ETH to stake](https://ethereum.org/en/staking/), a [validator](./install/install-with-script.md#step-6-run-a-validator-using-prysm).
+Welcome to Prysm's docs! 
+
+[Prysm](https://github.com/prysmaticlabs/prysm) is an [Ethereum](https://ethereum.org/en/developers/docs/intro-to-ethereum/) [proof-of-stake](https://ethereum.org/en/developers/docs/consensus-mechanisms/pos/) client written in [Go](https://golang.org). You can use Prysm to participate in Ethereum's [decentralized economy](https://ethereum.org/en/developers/docs/web2-vs-web3/) by [running a node](./install/install-with-script.md) and, if you have [32 ETH to stake](https://ethereum.org/en/staking/), a [validator](./install/install-with-script.md#step-6-run-a-validator-using-prysm).
 
 The following **descriptive table of contents** maps to the way that our content is organized within the sidebar. Use it to quickly explore our docs and find what you're looking for:
 
@@ -99,3 +101,12 @@ The following **descriptive table of contents** maps to the way that our content
 ## Need assistance?
 
 Join our [Discord](https://discord.gg/prysmaticlabs) server - a member of the team or our community will be happy to help.
+
+
+:::note Metadata
+
+Status: This page is **up to date** as of June 30th, 2022.
+
+Author: [Mick](https://twitter.com/symbolpunk)
+
+:::
