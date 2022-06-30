@@ -105,7 +105,7 @@ Join our [Discord](https://discord.gg/prysmaticlabs) server - a member of the te
 <br />
 <div class="admonition admonition-caution alert alert--secondary">
 <div class="admonition-content">
-<strong>Freshness</strong>: This page is <strong>up to date</strong> as of June 30th, 2022.
-<strong>Author</strong>: <a href='https://twitter.com/symbolpunk'>Mick</a>
+<p><strong>Freshness</strong>: This page is <strong>up to date</strong> as of June 30th, 2022.</p>
+<p><strong>Author</strong>: <a href='https://twitter.com/symbolpunk'>Mick</a></p>
 </div>
 </div>
