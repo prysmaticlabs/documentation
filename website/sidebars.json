@@ -299,10 +299,6 @@
             "items": [
                 {
                     "type": "doc",
-                    "id": "contribute/doc-standards"
-                },
-                {
-                    "type": "doc",
                     "id": "contribute/contribution-guidelines"
                 },
                 {
