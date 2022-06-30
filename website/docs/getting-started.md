@@ -6,7 +6,7 @@ sidebar_label: Welcome!
 
 Welcome to Prysm's documentation! [Prysm](https://github.com/prysmaticlabs/prysm) is a Ethereum proof-of-stake client written in [Go](https://golang.org). 
 
-The following **descriptive table of contents** maps to the way that our content is organized within the sidebar. Use it to quickly explore our content set and find what you're looking for:
+The following descriptive table of contents maps to the way that our content is organized within the sidebar. Use it to quickly explore our content set and find what you're looking for:
 
  - [Quickstart](./install/install-with-script.md): New Prysm users can follow this guidance to get started with Prysm.
  - [Security best practices](./security-best-practices.md): Learn how to responsibly stake and validate. 
@@ -14,7 +14,7 @@ The following **descriptive table of contents** maps to the way that our content
  - [Command-line options](./prysm-usage/parameters.md): Learn how to configure Prysm's beacon node, validator, and more through its command-line interface.
  - [Troubleshooting](./troubleshooting/issues-errors.md): Review common troubleshooting scenarios and solutions.
  - [Frequently asked questions](faq.md): Review frequently asked questions and answers.
- - **How-tos**
+ - How-tos
    - [Update Prysm's version](./prysm-usage/staying-up-to-date.md): Learn how to update and downgrade Prysm's version, and how to use release candidates.
    - [Use Checkpoint Sync](./prysm-usage/checkpoint-sync.md): Checkpoint sync significantly reduces the time it takes for Prysm's beacon node to sync by piggypacking off of another fully-synced node.
    - [Configure Fee Recipient](./execution-node/fee-recipient.md): Learn how to specify a Fee Recipient wallet address that collects transaction fee tips post-Merge.
@@ -28,15 +28,15 @@ The following **descriptive table of contents** maps to the way that our content
    - [Improve network connectivity](./prysm-usage/p2p-host-ip.md): 
    - [Check node and validator status](./monitoring/checking-status.md)
    - [Create a wallet using Prysm](./wallet/deterministic.md)
-   - **Monitoring, metrics, and alerts**
+   - Monitoring, metrics, and alerts
       - [Monitor Prysm for expected behavior](./monitoring/is-everything-fine.md)
       - [Monitor validators by index](./prysm-usage/individual-validator-monitoring.md)
       - [Configure monitoring and alerts with Grafana](./prysm-usage/monitoring/grafana-dashboard.md)
       - [Collect metrics with client-stats](./prysm-usage/client-stats.md)
-   - **Advanced installation**
+   - Advanced installation
      - [Install using Docker](./install/install-with-docker.md)
      - [Build from source](./install/install-with-bazel.md)
-   - **Advanced usage**
+   - Advanced usage
      - [Secure gRPC](./prysm-usage/secure-grpc.md)
      - [Run a slasher](./prysm-usage/slasher.md)
      - [Add graffiti to blocks](./prysm-usage/graffiti-file.md)
@@ -46,29 +46,29 @@ The following **descriptive table of contents** maps to the way that our content
      - [Configure remote signing wallet](./wallet/remote.md)
      - [Configure Web3Signer](./wallet/we3signer.md)
      - [Import an existing wallet via keystore](./wallet/nondeterministic.md)
- - **Concepts**
-   - **Nodes and networks**
-   - **Slashing**
-   - **The Merge**
-   - **Danksharding**
-   - **Checkpoint sync**
-   - **Validator state**
+ - Concepts
+   - Nodes and networks
+   - Slashing
+   - The Merge
+   - Danksharding
+   - Checkpoint sync
+   - Validator state
    - [Keys and wallets](./wallet/introduction.md)
-   - **JWT**
-   - **Proof-of-work**
-   - **Proof-of-stake**
-   - **Forkchoice**
-   - **Engine API**
- - **Community updates**
-   - **June 2022**
- - **Developer wiki**
+   - JWT
+   - Proof-of-work
+   - Proof-of-stake
+   - Forkchoice
+   - Engine API
+ - Community updates
+   - June 2022
+ - Developer wiki
    - [Contribute](./contribute/contribution-guidelines.md)
    - [Golang principles](./contribute/prysms-golang-principles.md)
-   - **APIs**
+   - APIs
      - [Beacon node API](./how-prysm-works/ethereum-public-api.md)
      - [Prysm-specific API](./how-prysm-works/prysm-public-api.md)
      - [Keymanager API](./how-prysm-works/keymanager-api.md)
-   - **Concepts**
+   - Concepts
      - [Initial synchronization](./devtools/init-state.md)
      - [Network design](./devtools/net-design.md)
      - [API middleware](./devtools/api-middleware.md)
@@ -81,7 +81,7 @@ The following **descriptive table of contents** maps to the way that our content
      - [P2P networking](./how-prysm-works/p2p-networking.md)
      - [BLS cryptography](./how-prysm-works/bls-signature-aggregation-and-cryptography.md)
      - [End-to-end tests](./devtools/end-to-end.md)
- - **Misc**
+ - Misc
    - [Security audits](./audits/phase0.md)
    - [Prysm license](./licenses/prysmatic-labs.md)
    - [Ethereum learning resources](./reading/eth2.md)
@@ -89,7 +89,7 @@ The following **descriptive table of contents** maps to the way that our content
    - [Why Bazel?](./reading/bazel.md)
    - [Testnet portmortems](./reading/testnet_postmortems.md)
    - [Block explorers](./devtools/block-explorers.md)
- - **vNext**
+ - vNext
    - [Use Checkpoint Sync (vNext)](./prysm-usage/checkpoint-sync-vNext.md)
    - [Configure Fee Recipient (vNext)](./execution-node/fee-recipient-vNext.md)
  - [Glossary](terminology.md)
