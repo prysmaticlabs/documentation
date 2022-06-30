@@ -101,10 +101,11 @@ The following **descriptive table of contents** maps to the way that our content
 Join our [Discord](https://discord.gg/prysmaticlabs) server - a member of the team or our community will be happy to help.
 
 
-:::note Metadata
 
-Status: This page is **up to date** as of June 30th, 2022.
-
-Author: [Mick](https://twitter.com/symbolpunk)
-
-:::
+<br />
+<div class="admonition admonition-caution alert alert--secondary">
+<div class="admonition-content">
+<strong>Freshness</strong>: This page is <strong>up to date</strong> as of June 30th, 2022.
+<strong>Author</strong>: <a href='https://twitter.com/symbolpunk'>Mick</a>
+</div>
+</div>
