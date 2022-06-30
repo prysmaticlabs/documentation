@@ -4,7 +4,9 @@ title:  Welcome to Prysm Documentation
 sidebar_label: Welcome!
 ---
 
-[Prysm](https://github.com/prysmaticlabs/prysm) is a Ethereum proof-of-stake client written in [Go](https://golang.org). Use the following table of contents to find what you're looking for:
+Welcome to Prysm's documentation! [Prysm](https://github.com/prysmaticlabs/prysm) is a Ethereum proof-of-stake client written in [Go](https://golang.org). 
+
+The following **descriptive table of contents** maps to the way that our content is organized within the sidebar. Use it to find what you're looking for:
 
  - [Quickstart](./install/install-with-script.md): New Prysm users can follow this guidance to get started with Prysm.
  - [Security best practices](./security-best-practices.md): Learn how to responsibly stake and validate. 
