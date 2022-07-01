@@ -53,9 +53,18 @@ The following index of pages provides a descriptive overview of Prysm's document
 <p>Learn how to back up and restore your beacon node and validator databases so you can minimize downtime in the event of a system failure.</p>
 </div>
 <div class='primary-panel'>
-<a href='../wallet/slashing-protection.md'>Import & export slashing protection history</a>
+<a href='../wallet/slashing-protection'>Import & export slashing protection history</a>
 <p>Learn how to import and export your <strong>slashing protection history database</strong>, a special-purpose database that protects your validator from slashable events.</p>
 </div>
+<div class='primary-panel'>
+<a href='../prysm-usage/web-interface'>Use Prysm's Web UI</a>
+<p>Prysm's Web UI can be used to monitor and configure your beacon node and validator on <code>localhost</code> using an app-like interface.</p>
+</div>
+<div class='primary-panel'>
+<a href='../execution-node/authentication'>Configure JWT authentication</a>
+<p>After The Merge, Prysm will need to securely connect to a local execution node. This how-to shows you how to use JWT tokens to form this secure connection.</p>
+</div>
+
 
 
 <br/>
@@ -66,8 +75,6 @@ The following index of pages provides a descriptive overview of Prysm's document
 
 
  - How-tos
-   - [Use the Prysm Web UI](./prysm-usage/web-interface.md): Prysm's Web UI can be used to monitor and configure your beacon node and validator on localhost using a pleasant app-like interface.
-   - [Configure JWT authentication](./execution-node/authentication.md): Execution nodes will need to form authenticated connections with beacon nodes when connecting over HTTP post-Merge. JWT tokens facilitate this authentication.
    - [Move to a new machine](./advanced/migrating-keys.md): Learn how to migrate from one host system to another while minimizing risk of slashing and downtime.
    - [Switch to a new client](./advanced/migrating-keys.md): Learn how to migrate from one client to another while minimizing risk of slashing and downtime.
    - [Exit your validator](./wallet/exiting-a-validator.md): Learn how to voluntarily exit your validator from Ethereum's consensus layer Beacon Chain network.
