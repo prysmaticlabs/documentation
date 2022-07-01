@@ -47,6 +47,8 @@ header>h1 {
     font-size: 20px;
     letter-spacing: 1px;
     font-weight: 500;
+    margin-bottom: 0;
+    line-height: 33px;
 }
 
 .primary-panel>p {
