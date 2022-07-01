@@ -11,6 +11,10 @@ sidebar_label: Welcome!
 <a href='./install/install-with-script.md'>Quickstart</a>
 <p>New Prysm users can follow this guidance to get started with Prysm.</p>
 </div>
+<div class='primary-panel'>
+<a href='./prepare-for-merge.md'>Prepare for The Merge</a>
+<p>Current node runners and validators can follow this guidance to prepare for The Merge, an ongoing event that transitions Ethereum from proof-of-work to proof-of-stake.</p>
+</div>
 
 
 
@@ -24,7 +28,6 @@ sidebar_label: Welcome!
 The following **descriptive table of contents** maps to the way that our content is organized within the sidebar:
 
  - [Security best practices](./security-best-practices.md): Learn how to responsibly stake and validate. 
- - [Prepare for The Merge](./prepare-for-merge.md): Current node runners and validators can follow this guidance to prepare for The Merge, an ongoing event that transitions Ethereum from proof-of-work to proof-of-stake.
  - [Command-line options](./prysm-usage/parameters.md): Learn how to configure Prysm's beacon node, validator, and more through its command-line interface.
  - [Troubleshooting](./troubleshooting/issues-errors.md): Review common troubleshooting scenarios and solutions.
  - [Frequently asked questions](faq.md): Review frequently asked questions and answers.
