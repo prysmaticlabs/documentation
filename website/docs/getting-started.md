@@ -90,7 +90,7 @@ The following index of pages provides a descriptive overview of Prysm's document
 
 ### Monitoring, metrics, and alerts
 
-<p>This section contains How-Tos that help you maintain validator uptime.</p>
+<p>This subsection contains How-Tos that help you maintain validator uptime.</p>
 </div>
 <div class='panel'>
 <a href='../monitoring/is-everything-fine'>Monitor Prysm for expected behavior</a>
@@ -112,7 +112,7 @@ The following index of pages provides a descriptive overview of Prysm's document
 
 ### Advanced installation
 
-<p>This section contains How-Tos that help you install Prysm using Bazel (building from source) or Docker.</p>
+<p>This subsection contains How-Tos that help you install Prysm using Bazel (building from source) or Docker.</p>
 </div>
 <div class='panel'>
 <a href='../install/install-with-docker'>Install using Docker</a>
@@ -126,7 +126,7 @@ The following index of pages provides a descriptive overview of Prysm's document
 
 ### Advanced usage
 
-<p>This section contains advanced How-Tos that our <strong>power users</strong> may find interesting.</p>
+<p>This subsection contains advanced How-Tos that our <strong>power users</strong> may find interesting.</p>
 </div>
 <div class='panel'>
 <a href='../prysm-usage/secure-grpc'>Secure gRPC</a>
@@ -200,7 +200,7 @@ The following index of pages provides a descriptive overview of Prysm's document
 
 ### APIs
 
-<p>This section contains...</p>
+<p>This subsection contains...</p>
 </div>
 <div class='panel'>
 <a href='../how-prysm-works/ethereum-public-api'>Beacon node API</a>
@@ -218,7 +218,7 @@ The following index of pages provides a descriptive overview of Prysm's document
 
 ### Developer Concepts
 
-<p>This section contains...</p>
+<p>This subsection contains...</p>
 </div>
 <div class='panel'>
 <a href='../devtools/init-state'>Initial synchronization</a>
