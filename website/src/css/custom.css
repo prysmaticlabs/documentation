@@ -29,25 +29,13 @@ header>h1 {
     font-size: 1.2rem !important;
 }
 
-.primary-panel {
+.panel {
     border-top: 2px solid #ddd;
     padding: 20px 20px 25px 20px;
 }
 
-.primary-section-title {
-    background-color: #f9f9f9;
-    border-left: 2px solid #ddd;
-    border-right: 2px solid #ddd;
-}
-
-.secondary-section-title {
-    background-color: #fbfbfb;
-    border-left: 2px solid #ddd;
-    border-right: 2px solid #ddd;
-}
-
-.primary-panel>a,
-.primary-panel>h2 {
+.panel>a,
+.panel>h2 {
     display: block;
     text-transform: uppercase;
     font-size: 20px;
@@ -57,7 +45,7 @@ header>h1 {
     line-height: 33px;
 }
 
-.primary-panel>h3 {
+.panel>h3 {
     display: block;
     text-transform: uppercase;
     font-size: 17px;
@@ -67,9 +55,25 @@ header>h1 {
     line-height: 28px;
 }
 
-.primary-panel>p {
+.panel>p {
     font-size: 15px;
     margin-bottom: 0;
+}
+
+.panel.section-title {
+    background-color: #f9f9f9;
+    border-left: 2px solid #ddd;
+    border-right: 2px solid #ddd;
+}
+
+.panel.secondary-panel.section-title {
+    background-color: #fbfbfb;
+    border-left: 2px solid #ddd;
+    border-right: 2px solid #ddd;
+}
+
+.panel.secondary-panel {
+    padding: 15px 15px 20px 15px;
 }
 
 .navbar {
