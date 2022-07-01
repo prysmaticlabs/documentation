@@ -75,16 +75,12 @@ The following index of pages provides a descriptive overview of Prysm's document
 <p>Learn how to migrate from one client to another while minimizing risk of slashing and downtime.</p>
 </div>
 <div class='panel'>
-<a href='../wallet/exiting-a-validator'>Exit your validator</a>
-<p>Learn how to voluntarily exit your validator from Ethereum's consensus layer Beacon Chain network.</p>
-</div>
-<div class='panel'>
-<a href='../prysm-usage/p2p-host-ip'>Improve network connectivity</a>
-<p>Learn how to configure ports, firewalls, and other configuration for improved peer-to-peer connectivity.</p>
-</div>
-<div class='panel'>
 <a href='../monitoring/checking-status'>Check node and validator status</a>
 <p>Learn how to check the status of your execution node, beacon node, and validator.</p>
+</div>
+<div class='panel'>
+<a href='../wallet/exiting-a-validator'>Exit your validator</a>
+<p>Learn how to voluntarily exit your validator from Ethereum's consensus layer Beacon Chain network.</p>
 </div>
 <div class='panel secondary-panel section-title'>
 
@@ -92,6 +88,7 @@ The following index of pages provides a descriptive overview of Prysm's document
 
 <p>This subsection contains How-Tos that help you maintain validator uptime.</p>
 </div>
+
 <div class='panel'>
 <a href='../monitoring/is-everything-fine'>Monitor Prysm for expected behavior</a>
 <p>Learn how to assess the health of your Prysm beacon node and/or validator by analyzing output logs.</p>
@@ -153,6 +150,10 @@ The following index of pages provides a descriptive overview of Prysm's document
 <p>Learn how to...</p>
 </div>
 <div class='panel'>
+<a href='../prysm-usage/p2p-host-ip'>Improve network connectivity</a>
+<p>Learn how to configure ports, firewalls, and other configuration for improved peer-to-peer connectivity.</p>
+</div>
+<div class='panel'>
 <a href='../wallet/remote'>Configure remote signing wallet</a>
 <p>Learn how to...</p>
 </div>
@@ -194,6 +195,14 @@ The following index of pages provides a descriptive overview of Prysm's document
 </div>
 <div class='panel'>
 <a href='../contribute/prysms-golang-principles'>Golang principles</a>
+<p>Learn how to...</p>
+</div>
+<div class='panel'>
+<a href='../reading/golang'>Golang resources</a>
+<p>Learn how to...</p>
+</div>
+<div class='panel'>
+<a href='../reading/bazel'>Why Bazel?</a>
 <p>Learn how to...</p>
 </div>
 <div class='panel secondary-panel section-title'>
@@ -284,14 +293,6 @@ The following index of pages provides a descriptive overview of Prysm's document
 </div>
 <div class='panel'>
 <a href='../reading/eth2'>Ethereum learning resources</a>
-<p>Learn how to...</p>
-</div>
-<div class='panel'>
-<a href='../reading/golang'>Golang resources</a>
-<p>Learn how to...</p>
-</div>
-<div class='panel'>
-<a href='../reading/bazel'>Why Bazel?</a>
 <p>Learn how to...</p>
 </div>
 <div class='panel'>
