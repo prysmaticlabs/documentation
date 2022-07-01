@@ -172,7 +172,7 @@ The following index of pages provides a descriptive overview of Prysm's document
 
 ## Concepts
 
-<p>This section contains 100-level <strong>conceptual guidance</strong> authored for readers who are new to Prysm and/or Ethereum.</p>
+<p>This section contains beginner-friendly <strong>conceptual guidance</strong> authored for readers who are new to Prysm and/or Ethereum.</p>
 </div>
 <div class='panel'>
 <a href='../concepts/nodes-networks'>Nodes and networks</a>
