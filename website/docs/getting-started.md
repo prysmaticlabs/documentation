@@ -12,13 +12,26 @@ sidebar_label: Welcome!
 <p><strong>New Prysm users</strong> can follow this guidance to get started with Prysm.</p>
 </div>
 <div class='primary-panel'>
-<a href='../prepare-for-merge.md'>Prepare for The Merge</a>
+<a href='../prepare-for-merge'>Prepare for The Merge</a>
 <p><strong>Current node runners</strong> and validators can follow this guidance to prepare for The Merge, an ongoing event that transitions Ethereum from proof-of-work to proof-of-stake.</p>
 </div>
 <div class='primary-panel'>
-<a href='../security-best-practices.md'>Security Best Practices</a>
+<a href='../security-best-practices'>Security best practices</a>
 <p>Learn how to <strong>minimize risk</strong> as a validator. The guidelines provided in this document are client-agnostic (they apply to Prysm and other clients, too).</p>
 </div>
+<div class='primary-panel'>
+<a href='../prysm-usage/parameters'>Command-line options</a>
+<p>Learn how to configure Prysm's beacon node client, validator client, and more through its command-line interface.</p>
+</div>
+<div class='primary-panel'>
+<a href='../troubleshooting/issues-errors'>Troubleshooting</a>
+<p>Review common troubleshooting scenarios and solutions.</p>
+</div>
+<div class='primary-panel'>
+<a href='../faq'>Frequently asked questions</a>
+<p>Review frequently asked questions and answers.</p>
+</div>
+
 
 
 <br/>
@@ -27,11 +40,7 @@ sidebar_label: Welcome!
 ------
 
 
-The following **descriptive table of contents** maps to the way that our content is organized within the sidebar:
 
- - [Command-line options](./prysm-usage/parameters.md): Learn how to configure Prysm's beacon node, validator, and more through its command-line interface.
- - [Troubleshooting](./troubleshooting/issues-errors.md): Review common troubleshooting scenarios and solutions.
- - [Frequently asked questions](faq.md): Review frequently asked questions and answers.
  - How-tos
    - [Update Prysm's version](./prysm-usage/staying-up-to-date.md): Learn how to update and downgrade Prysm's version, and how to use release candidates.
    - [Use Checkpoint Sync](./prysm-usage/checkpoint-sync.md): Checkpoint sync significantly reduces the time it takes for Prysm's beacon node to sync by piggypacking off of another fully-synced node.
