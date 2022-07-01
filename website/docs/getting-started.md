@@ -122,82 +122,214 @@ The following index of pages provides a descriptive overview of Prysm's document
 <a href='../install/install-with-bazel'>Build from source</a>
 <p>Learn how to build Prysm from source using Bazel.</p>
 </div>
+<div class='primary-panel section-title'>
 
+### Advanced usage
 
+<p>This section contains advanced How-Tos that our <strong>power users</strong> may find interesting.</p>
+</div>
+<div class='primary-panel'>
+<a href='../prysm-usage/secure-grpc'>Secure gRPC</a>
+<p>Learn how to...</p>
+</div>
+<div class='primary-panel'>
+<a href='../prysm-usage/slasher'>Run a slasher</a>
+<p>Learn how to...</p>
+</div>
+<div class='primary-panel'>
+<a href='../prysm-usage/graffiti-file'>Add graffiti to blocks</a>
+<p>Learn how to...</p>
+</div>
+<div class='primary-panel'>
+<a href='../advanced/beacon_node_api'>Run an archive node</a>
+<p>Learn how to...</p>
+</div>
+<div class='primary-panel'>
+<a href='../execution-node/configuring-for-prysm'>Configure fallback execution nodes</a>
+<p>Learn how to...</p>
+</div>
+<div class='primary-panel'>
+<a href='../advanced/maintaining-uptime'>Maintain validator uptime with systemd or Docker</a>
+<p>Learn how to...</p>
+</div>
+<div class='primary-panel'>
+<a href='../wallet/remote'>Configure remote signing wallet</a>
+<p>Learn how to...</p>
+</div>
+<div class='primary-panel'>
+<a href='../wallet/we3signer'>Configure Web3Signer</a>
+<p>Learn how to...</p>
+</div>
+<div class='primary-panel'>
+<a href='../wallet/nondeterministic'>Import an existing wallet via keystore</a>
+<p>Learn how to...</p>
+</div>
+<div class='primary-panel'>
+<a href='../wallet/deterministic'>Create a wallet using Prysm</a>
+<p>Learn how to...</p>
+</div>
+<div class='primary-panel section-title'>
 
+## Concepts
 
+<p>This section contains 100-level <strong>conceptual guidance</strong> authored for readers who are new to Prysm and/or Ethereum.</p>
+</div>
+<div class='primary-panel'>
+<a href='../concepts/nodes-networks'>Nodes and networks</a>
+<p>Learn how to...</p>
+</div>
+<div class='primary-panel'>
+<a href='../wallet/introduction'>Keys and Wallets</a>
+<p>Learn how to...</p>
+</div>
+<div class='primary-panel section-title'>
+
+## Developer Wiki
+
+<p>This section contains...</p>
+</div>
+<div class='primary-panel'>
+<a href='../contribute/contribution-guidelines'>Contribute</a>
+<p>Learn how to...</p>
+</div>
+<div class='primary-panel'>
+<a href='../contribute/prysms-golang-principles'>Golang principles</a>
+<p>Learn how to...</p>
+</div>
+<div class='primary-panel section-title'>
+
+### APIs
+
+<p>This section contains...</p>
+</div>
+<div class='primary-panel'>
+<a href='../how-prysm-works/ethereum-public-api'>Beacon node API</a>
+<p>Learn how to...</p>
+</div>
+<div class='primary-panel'>
+<a href='../how-prysm-works/prysm-public-api'>Prysm-specific API</a>
+<p>Learn how to...</p>
+</div>
+<div class='primary-panel'>
+<a href='../how-prysm-works/keymanager-api'>Keymanager API</a>
+<p>Learn how to...</p>
+</div>
+<div class='primary-panel section-title'>
+
+### Developer Concepts
+
+<p>This section contains...</p>
+</div>
+<div class='primary-panel'>
+<a href='../devtools/init-state'>Initial synchronization</a>
+<p>Learn how to...</p>
+</div>
+<div class='primary-panel'>
+<a href='../devtools/net-design'>Network design</a>
+<p>Learn how to...</p>
+</div>
+<div class='primary-panel'>
+<a href='../devtools/api-middleware'>API middleware</a>
+<p>Learn how to...</p>
+</div>
+<div class='primary-panel'>
+<a href='../how-prysm-works/overview-technical'>Architecture overview</a>
+<p>Learn how to...</p>
+</div>
+<div class='primary-panel'>
+<a href='../how-prysm-works/beacon-node'>Beacon node</a>
+<p>Learn how to...</p>
+</div>
+<div class='primary-panel'>
+<a href='../how-prysm-works/validator-clients'>Validator client</a>
+<p>Learn how to...</p>
+</div>
+<div class='primary-panel'>
+<a href='../how-prysm-works/validator-lifecycle'>Validator lifecycle</a>
+<p>Learn how to...</p>
+</div>
+<div class='primary-panel'>
+<a href='../how-prysm-works/validator-deposit-contract'>Validator deposit contract</a>
+<p>Learn how to...</p>
+</div>
+<div class='primary-panel'>
+<a href='../how-prysm-works/database-backend-boltdb'>BoltDB database</a>
+<p>Learn how to...</p>
+</div>
+<div class='primary-panel'>
+<a href='../how-prysm-works/p2p-networking'>P2P networking</a>
+<p>Learn how to...</p>
+</div>
+<div class='primary-panel'>
+<a href='../how-prysm-works/bls-signature-aggregation-and-cryptography'>BLS cryptography</a>
+<p>Learn how to...</p>
+</div>
+<div class='primary-panel'>
+<a href='../devtools/end-to-end'>End-to-end tests</a>
+<p>Learn how to...</p>
+</div>
+<div class='primary-panel section-title'>
+
+## Misc
+
+<p>This section contains...</p>
+</div>
+<div class='primary-panel'>
+<a href='../audits/phase0'>Security audits</a>
+<p>Learn how to...</p>
+</div>
+<div class='primary-panel'>
+<a href='../licenses/prysmatic-labs'>Prysm license</a>
+<p>Learn how to...</p>
+</div>
+<div class='primary-panel'>
+<a href='../reading/eth2'>Ethereum learning resources</a>
+<p>Learn how to...</p>
+</div>
+<div class='primary-panel'>
+<a href='../reading/golang'>Golang resources</a>
+<p>Learn how to...</p>
+</div>
+<div class='primary-panel'>
+<a href='../reading/bazel'>Why Bazel?</a>
+<p>Learn how to...</p>
+</div>
+<div class='primary-panel'>
+<a href='../reading/testnet_postmortems'>Testnet postmortems</a>
+<p>Learn how to...</p>
+</div>
+<div class='primary-panel'>
+<a href='../devtools/block-explorers'>Block explorers</a>
+<p>Learn how to...</p>
+</div>
+<div class='primary-panel section-title'>
+
+## vNext
+
+<p>This section contains...</p>
+</div>
+<div class='primary-panel'>
+<a href='../prysm-usage/checkpoint-sync-vNext'>Use Checkpoint Sync (vNext)</a>
+<p>Learn how to...</p>
+</div>
+<div class='primary-panel'>
+<a href='../execution-node/fee-recipient-vNext'>Configure Fee Recipient (vNext)</a>
+<p>Learn how to...</p>
+</div>
+<div class='primary-panel'>
+<a href='../terminology'>Glossary</a>
+<p>Learn how to...</p>
+</div>
+<div class='primary-panel'>
+<a href='../contribute/bugreports'>File a bug report</a>
+<p>Learn how to...</p>
+</div>
 
 <br/>
-<br/>
-
-------
-
-   - Advanced usage
-     - [Secure gRPC](./prysm-usage/secure-grpc.md)
-     - [Run a slasher](./prysm-usage/slasher.md)
-     - [Add graffiti to blocks](./prysm-usage/graffiti-file.md)
-     - [Run an archive node](./advanced/beacon_node_api.md)
-     - [Configure fallback execution nodes](./execution-node/configuring-for-prysm.md)
-     - [Maintain validator uptime with systemd or Docker](./advanced/maintaining-uptime.md)
-     - [Configure remote signing wallet](./wallet/remote.md)
-     - [Configure Web3Signer](./wallet/we3signer.md)
-     - [Import an existing wallet via keystore](./wallet/nondeterministic.md)
-     - [Create a wallet using Prysm](./wallet/deterministic.md)
- - Concepts
-   - [Nodes and networks](./concepts/nodes-networks.md)
-   - Slashing
-   - The Merge
-   - Danksharding
-   - Checkpoint sync
-   - Validator state
-   - [Keys and wallets](./wallet/introduction.md)
-   - JWT
-   - Proof-of-work
-   - Proof-of-stake
-   - Forkchoice
-   - Engine API
- - Community updates
-   - June 2022
- - Developer wiki
-   - [Contribute](./contribute/contribution-guidelines.md)
-   - [Golang principles](./contribute/prysms-golang-principles.md)
-   - APIs
-     - [Beacon node API](./how-prysm-works/ethereum-public-api.md)
-     - [Prysm-specific API](./how-prysm-works/prysm-public-api.md)
-     - [Keymanager API](./how-prysm-works/keymanager-api.md)
-   - Concepts
-     - [Initial synchronization](./devtools/init-state.md)
-     - [Network design](./devtools/net-design.md)
-     - [API middleware](./devtools/api-middleware.md)
-     - [Architecture overview](./how-prysm-works/overview-technical.md)
-     - [Beacon node](./how-prysm-works/beacon-node.md)
-     - [Validator client](./how-prysm-works/validator-clients.md)
-     - [Validator lifecycle](./how-prysm-works/validator-lifecycle.md)
-     - [Validator deposit contract](./how-prysm-works/validator-deposit-contract.md)
-     - [BoltDB database](./how-prysm-works/database-backend-boltdb.md)
-     - [P2P networking](./how-prysm-works/p2p-networking.md)
-     - [BLS cryptography](./how-prysm-works/bls-signature-aggregation-and-cryptography.md)
-     - [End-to-end tests](./devtools/end-to-end.md)
- - Misc
-   - [Security audits](./audits/phase0.md)
-   - [Prysm license](./licenses/prysmatic-labs.md)
-   - [Ethereum learning resources](./reading/eth2.md)
-   - [Golang resources](./reading/golang.md)
-   - [Why Bazel?](./reading/bazel.md)
-   - [Testnet portmortems](./reading/testnet_postmortems.md)
-   - [Block explorers](./devtools/block-explorers.md)
- - vNext
-   - [Use Checkpoint Sync (vNext)](./prysm-usage/checkpoint-sync-vNext.md)
-   - [Configure Fee Recipient (vNext)](./execution-node/fee-recipient-vNext.md)
- - [Glossary](terminology.md)
- - [File a bug report](./contribute/bugreports.md)
-
 
 ## Need assistance?
 
 Join our [Discord](https://discord.gg/prysmaticlabs) server - a member of the team or our community will be happy to help.
-
-
 
 <br />
 <div class="admonition admonition-caution alert alert--secondary">
