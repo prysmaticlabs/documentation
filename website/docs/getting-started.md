@@ -62,9 +62,28 @@ The following index of pages provides a descriptive overview of Prysm's document
 </div>
 <div class='primary-panel'>
 <a href='../execution-node/authentication'>Configure JWT authentication</a>
-<p>After The Merge, Prysm will need to securely connect to a local execution node. This how-to shows you how to use JWT tokens to form this secure connection.</p>
+<p>After The Merge, Prysm will need to securely connect to a local execution node. This how-to shows you how to form this secure connection using a JWT token.</p>
 </div>
-
+<div class='primary-panel'>
+<a href='../advanced/migrating-keys'>Move to a new machine</a>
+<p>Learn how to migrate from one host system to another while minimizing risk of slashing and downtime.</p>
+</div>
+<div class='primary-panel'>
+<a href='../advanced/migrating-keys'>Switch to a new client</a>
+<p>Learn how to migrate from one client to another while minimizing risk of slashing and downtime.</p>
+</div>
+<div class='primary-panel'>
+<a href='../wallet/exiting-a-validator'>Exit your validator</a>
+<p>Learn how to voluntarily exit your validator from Ethereum's consensus layer Beacon Chain network.</p>
+</div>
+<div class='primary-panel'>
+<a href='../prysm-usage/p2p-host-ip'>Improve network connectivity</a>
+<p>Learn how to configure ports, firewalls, and other configuration for improved peer-to-peer connectivity.</p>
+</div>
+<div class='primary-panel'>
+<a href='../monitoring/checking-status'>Check node and validator status</a>
+<p>Learn how to check the status of your execution node, beacon node, and validator.</p>
+</div>
 
 
 <br/>
@@ -75,10 +94,6 @@ The following index of pages provides a descriptive overview of Prysm's document
 
 
  - How-tos
-   - [Move to a new machine](./advanced/migrating-keys.md): Learn how to migrate from one host system to another while minimizing risk of slashing and downtime.
-   - [Switch to a new client](./advanced/migrating-keys.md): Learn how to migrate from one client to another while minimizing risk of slashing and downtime.
-   - [Exit your validator](./wallet/exiting-a-validator.md): Learn how to voluntarily exit your validator from Ethereum's consensus layer Beacon Chain network.
-   - [Improve network connectivity](./prysm-usage/p2p-host-ip.md): 
    - [Check node and validator status](./monitoring/checking-status.md)
    - [Create a wallet using Prysm](./wallet/deterministic.md)
    - Monitoring, metrics, and alerts
