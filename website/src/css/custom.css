@@ -34,15 +34,20 @@ header>h1 {
     padding: 20px 20px 25px 20px;
 }
 
-.section-title {
+.primary-section-title {
     background-color: #f9f9f9;
     border-left: 2px solid #ddd;
     border-right: 2px solid #ddd;
 }
 
+.secondary-section-title {
+    background-color: #fbfbfb;
+    border-left: 2px solid #ddd;
+    border-right: 2px solid #ddd;
+}
+
 .primary-panel>a,
-.primary-panel>h2,
-.primary-panel>h3 {
+.primary-panel>h2 {
     display: block;
     text-transform: uppercase;
     font-size: 20px;
@@ -50,6 +55,16 @@ header>h1 {
     font-weight: 500;
     margin-bottom: 0;
     line-height: 33px;
+}
+
+.primary-panel>h3 {
+    display: block;
+    text-transform: uppercase;
+    font-size: 17px;
+    letter-spacing: 0.7px;
+    font-weight: 500;
+    margin-bottom: 0;
+    line-height: 28px;
 }
 
 .primary-panel>p {

@@ -32,7 +32,7 @@ The following index of pages provides a descriptive overview of Prysm's document
 <a href='../faq'>Frequently asked questions</a>
 <p>Review frequently asked questions and answers.</p>
 </div>
-<div class='primary-panel section-title'>
+<div class='primary-panel primary-section-title'>
 
 ## How-tos
 
@@ -86,7 +86,7 @@ The following index of pages provides a descriptive overview of Prysm's document
 <a href='../monitoring/checking-status'>Check node and validator status</a>
 <p>Learn how to check the status of your execution node, beacon node, and validator.</p>
 </div>
-<div class='primary-panel section-title'>
+<div class='primary-panel secondary-section-title'>
 
 ### Monitoring, metrics, and alerts
 
@@ -108,7 +108,7 @@ The following index of pages provides a descriptive overview of Prysm's document
 <a href='../prysm-usage/client-stats'>Collect metrics with client-stats</a>
 <p>Learn how to collect beacon node and validator metrics using Prysm's <code>client-stats</code> utility. This can be used to relay metrics data to the beaconcha.in stats service.</p>
 </div>
-<div class='primary-panel section-title'>
+<div class='primary-panel secondary-section-title'>
 
 ### Advanced installation
 
@@ -122,7 +122,7 @@ The following index of pages provides a descriptive overview of Prysm's document
 <a href='../install/install-with-bazel'>Build from source</a>
 <p>Learn how to build Prysm from source using Bazel.</p>
 </div>
-<div class='primary-panel section-title'>
+<div class='primary-panel secondary-section-title'>
 
 ### Advanced usage
 
@@ -168,7 +168,7 @@ The following index of pages provides a descriptive overview of Prysm's document
 <a href='../wallet/deterministic'>Create a wallet using Prysm</a>
 <p>Learn how to...</p>
 </div>
-<div class='primary-panel section-title'>
+<div class='primary-panel primary-section-title'>
 
 ## Concepts
 
@@ -182,7 +182,7 @@ The following index of pages provides a descriptive overview of Prysm's document
 <a href='../wallet/introduction'>Keys and Wallets</a>
 <p>Learn how to...</p>
 </div>
-<div class='primary-panel section-title'>
+<div class='primary-panel primary-section-title'>
 
 ## Developer Wiki
 
@@ -196,7 +196,7 @@ The following index of pages provides a descriptive overview of Prysm's document
 <a href='../contribute/prysms-golang-principles'>Golang principles</a>
 <p>Learn how to...</p>
 </div>
-<div class='primary-panel section-title'>
+<div class='primary-panel secondary-section-title'>
 
 ### APIs
 
@@ -214,7 +214,7 @@ The following index of pages provides a descriptive overview of Prysm's document
 <a href='../how-prysm-works/keymanager-api'>Keymanager API</a>
 <p>Learn how to...</p>
 </div>
-<div class='primary-panel section-title'>
+<div class='primary-panel secondary-section-title'>
 
 ### Developer Concepts
 
@@ -268,7 +268,7 @@ The following index of pages provides a descriptive overview of Prysm's document
 <a href='../devtools/end-to-end'>End-to-end tests</a>
 <p>Learn how to...</p>
 </div>
-<div class='primary-panel section-title'>
+<div class='primary-panel primary-section-title'>
 
 ## Misc
 
@@ -302,7 +302,7 @@ The following index of pages provides a descriptive overview of Prysm's document
 <a href='../devtools/block-explorers'>Block explorers</a>
 <p>Learn how to...</p>
 </div>
-<div class='primary-panel section-title'>
+<div class='primary-panel primary-section-title'>
 
 ## vNext
 
