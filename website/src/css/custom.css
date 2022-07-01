@@ -1,5 +1,5 @@
 :root {
-    --prysm-pink: #ff30a0;
+    --prysm-pink: #c72a7d;
 }
 
 
@@ -27,6 +27,20 @@ header>h1 {
 
 .markdown>h3 {
     font-size: 1.2rem !important;
+}
+
+.primary-panel {
+    border-top: 2px solid #bbb;
+}
+
+.primary-panel>a {
+    display: block;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+.primary-panel>p {
+    font-size: 12px;
 }
 
 .navbar {

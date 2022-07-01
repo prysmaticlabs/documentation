@@ -6,9 +6,23 @@ sidebar_label: Welcome!
 
 [Prysm](https://github.com/prysmaticlabs/prysm) is an [Ethereum](https://ethereum.org/en/developers/docs/intro-to-ethereum/) [proof-of-stake](https://ethereum.org/en/developers/docs/consensus-mechanisms/pos/) client written in [Go](https://golang.org). You can use Prysm to participate in Ethereum's [decentralized economy](https://ethereum.org/en/developers/docs/web2-vs-web3/) by [running a node](./install/install-with-script.md) and, if you have [32 ETH to stake](https://ethereum.org/en/staking/), a [validator](./install/install-with-script.md#step-6-run-a-validator-using-prysm).
 
+
+<div class='primary-panel'>
+<a href='./install/install-with-script.md'>Quickstart</a>
+<p>New Prysm users can follow this guidance to get started with Prysm.</p>
+</div>
+
+
+
+
+<br/>
+<br/>
+
+------
+
+
 The following **descriptive table of contents** maps to the way that our content is organized within the sidebar:
 
- - [Quickstart](./install/install-with-script.md): New Prysm users can follow this guidance to get started with Prysm.
  - [Security best practices](./security-best-practices.md): Learn how to responsibly stake and validate. 
  - [Prepare for The Merge](./prepare-for-merge.md): Current node runners and validators can follow this guidance to prepare for The Merge, an ongoing event that transitions Ethereum from proof-of-work to proof-of-stake.
  - [Command-line options](./prysm-usage/parameters.md): Learn how to configure Prysm's beacon node, validator, and more through its command-line interface.
