@@ -86,6 +86,18 @@ The following index of pages provides a descriptive overview of Prysm's document
 <a href='../monitoring/checking-status'>Check node and validator status</a>
 <p>Learn how to check the status of your execution node, beacon node, and validator.</p>
 </div>
+<div class='primary-panel'>
+<a href='../monitoring/checking-status'>Check node and validator status</a>
+<p>Learn how to check the status of your execution node, beacon node, and validator.</p>
+</div>
+<div class='primary-panel section-title'>
+
+### Monitoring, metrics, and alerts
+
+<p>This section contains How-Tos related to monitoring, metrics, and alerts.</p>
+</div>
+
+
 
 
 <br/>
@@ -94,10 +106,7 @@ The following index of pages provides a descriptive overview of Prysm's document
 ------
 
 
-
  - How-tos
-   - [Check node and validator status](./monitoring/checking-status.md)
-   - [Create a wallet using Prysm](./wallet/deterministic.md)
    - Monitoring, metrics, and alerts
       - [Monitor Prysm for expected behavior](./monitoring/is-everything-fine.md)
       - [Monitor validators by index](./prysm-usage/individual-validator-monitoring.md)
@@ -116,6 +125,7 @@ The following index of pages provides a descriptive overview of Prysm's document
      - [Configure remote signing wallet](./wallet/remote.md)
      - [Configure Web3Signer](./wallet/we3signer.md)
      - [Import an existing wallet via keystore](./wallet/nondeterministic.md)
+     - [Create a wallet using Prysm](./wallet/deterministic.md)
  - Concepts
    - [Nodes and networks](./concepts/nodes-networks.md)
    - Slashing
