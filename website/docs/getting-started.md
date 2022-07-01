@@ -196,7 +196,7 @@ The following index of pages provides a descriptive overview of Prysm's document
 <a href='../contribute/prysms-golang-principles'>Golang principles</a>
 <p>Learn how to...</p>
 </div>
-<div class='secondary-panel section-title'>
+<div class='panel secondary-panel section-title'>
 
 ### APIs
 
