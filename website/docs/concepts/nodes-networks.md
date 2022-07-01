@@ -11,16 +11,18 @@ import NetworkPng from '@site/static/img/network.png';
 import NetworkLayersPng from '@site/static/img/network-layers.png';
 
 
-Ethereum is a decentralized **network** of computers running specialized software known as **Ethereum nodes** that communicate via peer-to-peer connections:
+Ethereum is a decentralized **network** of **nodes** that communicate via peer-to-peer connections. These connections are formed by computers running Ethereum's specialized client software:
 
 <img style={{width: 100 + '%', margin: 'auto', display: 'block', maxWidth: 461 + 'px'}} src={NetworkPng} /> 
 
 
 ## Nodes
 
-An Ethereum **node** is a running instance of Ethereum's client software. This software is responsible for running the Ethereum blockchain. There are two primary types of nodes in Ethereum: **execution nodes** and **beacon nodes**. Colloquially, a "node" refers to an execution node and beacon node working together. This pair of nodes establishes connections with other pairs of nodes on other computers. This forms a network of nodes, each running the same software to process Ethereum blocks and transactions.
+An Ethereum **node** is a running instance of Ethereum's client software. This software is responsible for running the Ethereum blockchain. 
 
-When users stake 32 ETH to participate in Ethereum's proof-of-stake consensus mechanism, they use a separate piece of software called a **validator client**, which connects to their Prysm beacon node. This is special software that manages validator keys and duties such as producing new blocks and voting on others' proposed blocks. An individual validator client depends on a beacon node, which depends on an execution node:
+There are two primary types of nodes in Ethereum: **execution nodes** and **beacon nodes**. Colloquially, a "node" refers to an execution node and beacon node working together. Nodes establish connections with other nodes running on other computers, forming a decentralized peer-to-peer network that processes Ethereum blocks and transactions.
+
+When users stake 32 ETH to participate in Ethereum's proof-of-stake consensus mechanism, they use a separate piece of software called a **validator client**, which connects to their Prysm beacon node. This is special piece of software that manages validator keys and duties such as producing new blocks and voting on others' proposed blocks. Validator clients connect to the Ethereum network through beacon nodes, which depend on execution nodes:
 
 <br />
 
