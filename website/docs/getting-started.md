@@ -36,7 +36,7 @@ The following index of pages provides a descriptive overview of Prysm's document
 
 ## How-tos
 
-<p>This section contains <strong>procedural documentation</strong> that helps you accomplish specific tasks related to Prysm.</p>
+<p>This section contains <strong>procedural documentation</strong> that walks you through specific tasks related to Prysm.</p>
 </div>
 <div class='primary-panel'>
 <a href='../prysm-usage/staying-up-to-date'>Update and downgrade Prysm</a>
