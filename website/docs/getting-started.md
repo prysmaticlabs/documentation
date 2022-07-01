@@ -63,7 +63,6 @@ The following **index of pages** provides a descriptive overview of Prysm's docu
 
 
  - How-tos
-   - [](): ...
    - [Import & export slashing protection history](./wallet/slashing-protection.md): Prysm uses slashing protection history to protect your validator from slashable events. This shows you how to import/export this history when migrating between machines.
    - [Use the Prysm Web UI](./prysm-usage/web-interface.md): Prysm's Web UI can be used to monitor and configure your beacon node and validator on localhost using a pleasant app-like interface.
    - [Configure JWT authentication](./execution-node/authentication.md): Execution nodes will need to form authenticated connections with beacon nodes when connecting over HTTP post-Merge. JWT tokens facilitate this authentication.
