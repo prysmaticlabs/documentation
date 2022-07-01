@@ -32,7 +32,10 @@ This page provides a descriptive **index of pages** that maps to the sidebar:
 <a href='../faq'>Frequently asked questions</a>
 <p>Review frequently asked questions and answers.</p>
 </div>
-
+<div class='primary-panel'>
+<span>How-Tos</span>
+<p>This section contains <strong>procedural documentation</strong> that helps you accomplish specific tasks related to Prysm.</p>
+</div>
 
 
 <br/>
