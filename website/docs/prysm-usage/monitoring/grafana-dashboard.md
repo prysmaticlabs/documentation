@@ -1,7 +1,7 @@
 ---
 id: grafana-dashboard
 title: Monitoring and alerts with Grafana
-sidebar_label: Monitoring with Prometheus
+sidebar_label: Configure dashboarding and alerts with Prometheus and Grafana
 ---
 
 [Grafana](https://grafana.com/) is an open-source data metrics tool that is used to aggregate large amounts of data into a comprehensive visual dashboard for easy analysis. This section includes instructions for installing Grafana on the local machine and configuring Telegram or Discord alerts for monitoring validator status on-the-go.

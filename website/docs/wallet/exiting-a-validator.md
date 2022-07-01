@@ -1,7 +1,7 @@
 ---
 id: exiting-a-validator
 title: Exiting a validator
-sidebar_label: Exiting a validator
+sidebar_label: Exit your validator
 ---
 
 import Tabs from '@theme/Tabs';

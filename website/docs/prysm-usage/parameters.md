@@ -1,7 +1,7 @@
 ---
 id: parameters
 title: Available parameters
-sidebar_label: Parameters
+sidebar_label: Command-line options
 ---
 
 This section lists the various flags used to customise the startup process of Prysm

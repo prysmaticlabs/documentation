@@ -1,7 +1,7 @@
 ---
 id: issues-errors
 title: How to resolve issues and errors
-sidebar_label: Issues and Errors
+sidebar_label: Troubleshooting
 ---
 
 ## Validator node

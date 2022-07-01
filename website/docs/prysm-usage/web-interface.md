@@ -1,7 +1,7 @@
 ---
 id: web-interface
 title: Using the Prysm Web Interface
-sidebar_label: Prysm web interface
+sidebar_label: Use Prysm's web UI
 ---
 
 ## What is Prysm Web

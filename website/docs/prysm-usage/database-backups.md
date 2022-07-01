@@ -1,7 +1,7 @@
 ---
 id: database-backups
 title: Database backups
-sidebar_label: Database backups
+sidebar_label: Back up & restore database
 ---
 
 This section outlines how to perform database backups for your beacon node and validator client. Both services expose an **HTTP backup endpoint** which is the **safest way** to trigger a database backup.

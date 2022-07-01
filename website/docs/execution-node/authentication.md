@@ -1,7 +1,7 @@
 ---
 id: authentication
 title: Authenticating Execution Node Connections
-sidebar_label: Authenticating Connections
+sidebar_label: Configure JWT authentication
 ---
 
 Connecting Prysm to an execution node is a requirement for Ethereum at the time of the proof-of-stake merge. For many execution clients, this connection **requires authentication**. Here is how to setup an authenticated connection to an execution node in Prysm.

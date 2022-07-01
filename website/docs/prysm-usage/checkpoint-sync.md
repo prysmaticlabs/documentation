@@ -1,7 +1,7 @@
 ---
 id: checkpoint-sync
 title: Checkpoint Sync
-sidebar_label: Checkpoint Sync
+sidebar_label: Use Checkpoint Sync
 ---
 
 # Checkpoint Sync

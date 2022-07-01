@@ -1,7 +1,7 @@
 ---
 id: checkpoint-sync-vNext
 title: Checkpoint Sync
-sidebar_label: Checkpoint Sync (vNext)
+sidebar_label: Use Checkpoint Sync (vNext)
 ---
 
 # Checkpoint Sync

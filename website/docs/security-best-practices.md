@@ -1,7 +1,7 @@
 ---
 id: security-best-practices
 title: Staking with Prysm - Security Best Practices
-sidebar_label: Security Best Practices
+sidebar_label: Security best practices
 ---
 
 # Staking with Prysm: Security Best Practices

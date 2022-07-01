@@ -1,9 +1,7 @@
 ---
 id: fee-recipient-vNext
 title: Configure a Fee Recipient Address 
-sidebar_label: Fee Recipient (vNext)
-doc_type: how-to
-sme: james-prysm
+sidebar_label: Configure Fee Recipient (vNext)
 ---
 
 # Configure a Fee Recipient Address 

@@ -1,7 +1,7 @@
 ---
 id: checking-status
 title: How to check the status of your node and validator
-sidebar_label: Check Software Status
+sidebar_label: Check node and validator status
 ---
 
 ## Check status: Execution client

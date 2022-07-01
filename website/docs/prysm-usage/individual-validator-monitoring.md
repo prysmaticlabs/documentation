@@ -1,7 +1,7 @@
 ---
 id: individual-validator-monitoring
 title: Individual validator monitoring
-sidebar_label: Monitoring individual validator indices
+sidebar_label: Monitor validators by index
 ---
 
 # Background

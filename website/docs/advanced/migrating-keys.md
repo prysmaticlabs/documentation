@@ -1,7 +1,7 @@
 ---
 id: migrating-keys
 title: Migrating validator keys between computers or to a new client
-sidebar_label: Migrating computers or clients
+sidebar_label: Move to a new machine (todo)
 ---
 
 This document provides guidance on migrating Prysm validator keys from one host system to another whilst minimizing the risk of slashing.  
