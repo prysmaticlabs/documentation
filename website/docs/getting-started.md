@@ -22,7 +22,7 @@ This page provides a descriptive **index of pages** that maps to the sidebar:
 </div>
 <div class='primary-panel'>
 <a href='../prysm-usage/parameters'>Command-line options</a>
-<p>Learn how to configure Prysm's beacon node client, validator client, and more through its command-line interface.</p>
+<p>Learn how to configure Prysm's beacon node client, validator client, and more through its <strong>command-line interface</strong>.</p>
 </div>
 <div class='primary-panel'>
 <a href='../troubleshooting/issues-errors'>Troubleshooting</a>
@@ -36,6 +36,17 @@ This page provides a descriptive **index of pages** that maps to the sidebar:
 <span>How-Tos</span>
 <p>This section contains <strong>procedural documentation</strong> that helps you accomplish specific tasks related to Prysm.</p>
 </div>
+<div class='primary-panel'>
+<a href='../prysm-usage/staying-up-to-date'>Update Prysm's version</a>
+<p>Learn how to keep Prysm updated, how to downgrade Prysm's version, and how to use release candidates.</p>
+</div>
+<div class='primary-panel'>
+<a href='../prysm-usage/checkpoint-sync'>Use Checkpoint Sync</a>
+<p>Checkpoint Sync significantly reduces the time it takes for Prysm's beacon node to sync by piggypacking off of another fully-synced node.</p>
+</div>
+
+
+
 
 
 <br/>
@@ -46,8 +57,6 @@ This page provides a descriptive **index of pages** that maps to the sidebar:
 
 
  - How-tos
-   - [Update Prysm's version](./prysm-usage/staying-up-to-date.md): Learn how to update and downgrade Prysm's version, and how to use release candidates.
-   - [Use Checkpoint Sync](./prysm-usage/checkpoint-sync.md): Checkpoint sync significantly reduces the time it takes for Prysm's beacon node to sync by piggypacking off of another fully-synced node.
    - [Configure Fee Recipient](./execution-node/fee-recipient.md): Learn how to specify a Fee Recipient wallet address that collects transaction fee tips post-Merge.
    - [Backup & restore database](./prysm-usage/database-backups.md): Learn how to back up and restore your...
    - [Import & export slashing protection history](./wallet/slashing-protection.md): Prysm uses slashing protection history to protect your validator from slashable events. This shows you how to import/export this history when migrating between machines.
