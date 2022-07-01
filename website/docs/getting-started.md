@@ -38,11 +38,11 @@ The following **index of pages** provides a descriptive overview of Prysm's docu
 </div>
 <div class='primary-panel'>
 <a href='../prysm-usage/staying-up-to-date'>Update and downgrade Prysm</a>
-<p>Learn how to keep Prysm updated, how to downgrade Prysm, and how to use release candidates.</p>
+<p>Learn how to <strong>keep Prysm updated</strong>, how to downgrade Prysm, and how to use release candidates.</p>
 </div>
 <div class='primary-panel'>
 <a href='../prysm-usage/checkpoint-sync'>Use Checkpoint Sync</a>
-<p>Checkpoint Sync significantly reduces the time it takes for Prysm's beacon node to sync by piggypacking off of another fully-synced node.</p>
+<p><strong>Checkpoint Sync</strong> significantly reduces the time it takes for Prysm's beacon node to sync by piggypacking off of another fully-synced node.</p>
 </div>
 <div class='primary-panel'>
 <a href='../execution-node/fee-recipient'>Configure Fee Recipient</a>
