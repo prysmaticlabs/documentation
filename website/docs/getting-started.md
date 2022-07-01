@@ -6,7 +6,7 @@ sidebar_label: Welcome!
 
 [Prysm](https://github.com/prysmaticlabs/prysm) is an [Ethereum](https://ethereum.org/en/developers/docs/intro-to-ethereum/) [proof-of-stake](https://ethereum.org/en/developers/docs/consensus-mechanisms/pos/) client written in [Go](https://golang.org). You can use Prysm to participate in Ethereum's [decentralized economy](https://ethereum.org/en/developers/docs/web2-vs-web3/) by [running a node](./install/install-with-script.md) and, if you have [32 ETH to stake](https://ethereum.org/en/staking/), a [validator](./install/install-with-script.md#step-6-run-a-validator-using-prysm).
 
-This page provides a descriptive **index of pages** that maps to the sidebar:
+The following **index of pages** provides a descriptive overview of Prysm's documentation:
 
 <div class='primary-panel'>
 <a href='../install/install-with-script'>Quickstart</a>
