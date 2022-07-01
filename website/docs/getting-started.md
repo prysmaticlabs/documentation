@@ -8,15 +8,15 @@ sidebar_label: Welcome!
 
 
 <div class='primary-panel'>
-<a href='./install/install-with-script'>Quickstart</a>
+<a href='/install/install-with-script'>Quickstart</a>
 <p><strong>New Prysm users</strong> can follow this guidance to get started with Prysm.</p>
 </div>
 <div class='primary-panel'>
-<a href='./prepare-for-merge'>Prepare for The Merge</a>
+<a href='/prepare-for-merge'>Prepare for The Merge</a>
 <p><strong>Current node runners</strong> and validators can follow this guidance to prepare for The Merge, an ongoing event that transitions Ethereum from proof-of-work to proof-of-stake.</p>
 </div>
 <div class='primary-panel'>
-<a href='./security-best-practices'>Security Best Practices</a>
+<a href='/security-best-practices'>Security Best Practices</a>
 <p>Learn how to responsibly stake and validate. The guidelines provided in this document are client-agnostic (they apply to Prysm and other clients, too).</p>
 </div>
 
