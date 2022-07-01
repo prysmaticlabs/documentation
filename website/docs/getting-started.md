@@ -86,10 +86,6 @@ The following index of pages provides a descriptive overview of Prysm's document
 <a href='../monitoring/checking-status'>Check node and validator status</a>
 <p>Learn how to check the status of your execution node, beacon node, and validator.</p>
 </div>
-<div class='primary-panel'>
-<a href='../monitoring/checking-status'>Check node and validator status</a>
-<p>Learn how to check the status of your execution node, beacon node, and validator.</p>
-</div>
 <div class='primary-panel section-title'>
 
 ### Monitoring, metrics, and alerts
