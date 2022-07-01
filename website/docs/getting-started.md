@@ -14,7 +14,7 @@ The following index of pages provides a descriptive overview of Prysm's document
 </div>
 <div class='panel'>
 <a href='../prepare-for-merge'>Prepare for The Merge</a>
-<p><strong>Current node runners</strong> and validators can follow this guidance to prepare for The Merge, an ongoing event that transitions Ethereum from proof-of-work to proof-of-stake.</p>
+<p><strong>Current Prysm users</strong> can follow this guidance to prepare their nodes and validators for <a href='https://ethereum.org/en/upgrades/merge/'>The Merge</a>, an ongoing event that transitions Ethereum from proof-of-work to proof-of-stake.</p>
 </div>
 <div class='panel'>
 <a href='../security-best-practices'>Security best practices</a>
