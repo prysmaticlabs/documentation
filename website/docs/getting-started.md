@@ -94,10 +94,24 @@ The following index of pages provides a descriptive overview of Prysm's document
 
 ### Monitoring, metrics, and alerts
 
-<p>This section contains How-Tos related to monitoring, metrics, and alerts.</p>
+<p>This section contains How-Tos that help you maintain validator uptime.</p>
 </div>
-
-
+<div class='primary-panel'>
+<a href='../monitoring/is-everything-fine'>Monitor Prysm for expected behavior</a>
+<p>Learn how to assess the health of your Prysm beacon node and/or validator by analyzing output logs.</p>
+</div>
+<div class='primary-panel'>
+<a href='../prysm-usage/individual-validator-monitoring'>Monitor validators by index</a>
+<p>Learn how to use Prysm to monitor block proposals, attestations, slashings, and more for any number of validators.</p>
+</div>
+<div class='primary-panel'>
+<a href='../prysm-usage/monitoring/grafana-dashboard'>Configure dashboarding and alerts with Prometheus and Grafana</a>
+<p>Learn how to configure dashboarding and alerts for your node, validator, and slasher using Prometheus (to aggregate data) and Grafana (to display it within a dashboard).</p>
+</div>
+<div class='primary-panel'>
+<a href='../prysm-usage/client-stats'>Collect metrics with client-stats</a>
+<p>Learn how to....</p>
+</div>
 
 
 <br/>
@@ -107,11 +121,6 @@ The following index of pages provides a descriptive overview of Prysm's document
 
 
  - How-tos
-   - Monitoring, metrics, and alerts
-      - [Monitor Prysm for expected behavior](./monitoring/is-everything-fine.md)
-      - [Monitor validators by index](./prysm-usage/individual-validator-monitoring.md)
-      - [Configure monitoring and alerts with Grafana](./prysm-usage/monitoring/grafana-dashboard.md)
-      - [Collect metrics with client-stats](./prysm-usage/client-stats.md)
    - Advanced installation
      - [Install using Docker](./install/install-with-docker.md)
      - [Build from source](./install/install-with-bazel.md)
