@@ -46,13 +46,16 @@ The following **index of pages** provides a descriptive overview of Prysm's docu
 </div>
 <div class='primary-panel'>
 <a href='../execution-node/fee-recipient'>Configure Fee Recipient</a>
-<p>Learn how to specify a Fee Recipient wallet address that collects <strong>transaction fee tips</strong> post-Merge.</p>
+<p>Learn how to specify a Fee Recipient wallet address that allows validators to earn <strong>transaction fee tips</strong> post-Merge.</p>
 </div>
 <div class='primary-panel'>
-<a href='../prysm-usage/database-backups'>Backup & restore database</a>
-<p>Learn how to back up and restore your...</p>
+<a href='../prysm-usage/database-backups'>Back up & restore database</a>
+<p>Learn how to back up and restore your beacon node and validator databases so you can minimize downtime in the event of a system failure.</p>
 </div>
-
+<div class='primary-panel'>
+<a href='../wallet/slashing-protection.md'>Import & export slashing protection history</a>
+<p>Learn how to import and export your <strong>slashing protection history database</strong>, a special-purpose database that protects your validator from slashable events.</p>
+</div>
 
 
 <br/>
@@ -63,7 +66,6 @@ The following **index of pages** provides a descriptive overview of Prysm's docu
 
 
  - How-tos
-   - [Import & export slashing protection history](./wallet/slashing-protection.md): Prysm uses slashing protection history to protect your validator from slashable events. This shows you how to import/export this history when migrating between machines.
    - [Use the Prysm Web UI](./prysm-usage/web-interface.md): Prysm's Web UI can be used to monitor and configure your beacon node and validator on localhost using a pleasant app-like interface.
    - [Configure JWT authentication](./execution-node/authentication.md): Execution nodes will need to form authenticated connections with beacon nodes when connecting over HTTP post-Merge. JWT tokens facilitate this authentication.
    - [Move to a new machine](./advanced/migrating-keys.md): Learn how to migrate from one host system to another while minimizing risk of slashing and downtime.
