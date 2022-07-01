@@ -41,7 +41,7 @@ header>h1 {
 }
 
 .primary-panel>a,
-.primary-panel>span {
+.primary-panel>h2 {
     display: block;
     text-transform: uppercase;
     font-size: 20px;

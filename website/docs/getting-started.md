@@ -33,7 +33,7 @@ The following index of pages provides a descriptive overview of Prysm's document
 <p>Review frequently asked questions and answers.</p>
 </div>
 <div class='primary-panel section-title'>
-<span>How-Tos</span>
+<h2>How-Tos</h2>
 <p>This section contains <strong>procedural documentation</strong> that helps you accomplish specific tasks related to Prysm.</p>
 </div>
 <div class='primary-panel'>
