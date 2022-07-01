@@ -310,7 +310,6 @@ The following index of pages provides a descriptive overview of Prysm's document
 <a href='../contribute/bugreports'>File a bug report</a>
 <p>Learn how to...</p>
 </div>
-
 <div class='panel section-title'>
 
 ## vNext
@@ -325,7 +324,6 @@ The following index of pages provides a descriptive overview of Prysm's document
 <a href='../execution-node/fee-recipient-vNext'>Configure Fee Recipient (vNext)</a>
 <p>Learn how to...</p>
 </div>
-
 
 <br/>
 
