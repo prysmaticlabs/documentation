@@ -37,15 +37,21 @@ The following **index of pages** provides a descriptive overview of Prysm's docu
 <p>This section contains <strong>procedural documentation</strong> that helps you accomplish specific tasks related to Prysm.</p>
 </div>
 <div class='primary-panel'>
-<a href='../prysm-usage/staying-up-to-date'>Update Prysm's version</a>
-<p>Learn how to keep Prysm updated, how to downgrade Prysm's version, and how to use release candidates.</p>
+<a href='../prysm-usage/staying-up-to-date'>Update and downgrade Prysm</a>
+<p>Learn how to keep Prysm updated, how to downgrade Prysm, and how to use release candidates.</p>
 </div>
 <div class='primary-panel'>
 <a href='../prysm-usage/checkpoint-sync'>Use Checkpoint Sync</a>
 <p>Checkpoint Sync significantly reduces the time it takes for Prysm's beacon node to sync by piggypacking off of another fully-synced node.</p>
 </div>
-
-
+<div class='primary-panel'>
+<a href='../execution-node/fee-recipient'>Configure Fee Recipient</a>
+<p>Learn how to specify a Fee Recipient wallet address that collects <strong>transaction fee tips</strong> post-Merge.</p>
+</div>
+<div class='primary-panel'>
+<a href='../prysm-usage/database-backups'>Backup & restore database</a>
+<p>Learn how to back up and restore your...</p>
+</div>
 
 
 
@@ -57,8 +63,7 @@ The following **index of pages** provides a descriptive overview of Prysm's docu
 
 
  - How-tos
-   - [Configure Fee Recipient](./execution-node/fee-recipient.md): Learn how to specify a Fee Recipient wallet address that collects transaction fee tips post-Merge.
-   - [Backup & restore database](./prysm-usage/database-backups.md): Learn how to back up and restore your...
+   - [](): ...
    - [Import & export slashing protection history](./wallet/slashing-protection.md): Prysm uses slashing protection history to protect your validator from slashable events. This shows you how to import/export this history when migrating between machines.
    - [Use the Prysm Web UI](./prysm-usage/web-interface.md): Prysm's Web UI can be used to monitor and configure your beacon node and validator on localhost using a pleasant app-like interface.
    - [Configure JWT authentication](./execution-node/authentication.md): Execution nodes will need to form authenticated connections with beacon nodes when connecting over HTTP post-Merge. JWT tokens facilitate this authentication.
