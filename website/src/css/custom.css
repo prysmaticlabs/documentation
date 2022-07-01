@@ -34,6 +34,12 @@ header>h1 {
     padding: 20px 20px 25px 20px;
 }
 
+.section-title {
+    background-color: #f9f9f9;
+    border-left: 2px solid #ddd;
+    border-right: 2px solid #ddd;
+}
+
 .primary-panel>a,
 .primary-panel>span {
     display: block;
