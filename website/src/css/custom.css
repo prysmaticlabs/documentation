@@ -36,13 +36,17 @@ header>h1 {
 
 .panel>a,
 .panel>h2 {
-    display: block;
     text-transform: uppercase;
     font-size: 20px;
     letter-spacing: 0.7px;
     font-weight: 500;
     margin-bottom: 0;
     line-height: 33px;
+}
+
+.panel>a,
+.panel>h2 {
+    display: inline-block;
 }
 
 .panel>h3 {
@@ -58,10 +62,6 @@ header>h1 {
 .panel>p {
     font-size: 15px;
     margin-bottom: 0;
-}
-
-.panel>a {
-    display: inline-block;
 }
 
 .panel.section-title {
