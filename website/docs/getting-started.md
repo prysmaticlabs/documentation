@@ -119,7 +119,7 @@ The following index of pages provides a descriptive overview of Prysm's document
 </div>
 <div class='panel'>
 <a href='../prysm-usage/secure-grpc'>Secure gRPC connections</a>
-<p>Learn how to...</p>
+<p>Learn how to create and configure TLS certificates to allow for secure gRPC connections to your beacon node.</p>
 </div>
 <div class='panel'>
 <a href='../execution-node/authentication'>Configure JWT authentication</a>
