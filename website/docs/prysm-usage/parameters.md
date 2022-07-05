@@ -1,6 +1,6 @@
 ---
 id: parameters
-title: Available parameters
+title: Command-line options
 sidebar_label: Command-line options
 ---
 
