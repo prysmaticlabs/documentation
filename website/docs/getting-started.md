@@ -143,7 +143,7 @@ The following index of pages provides a descriptive overview of Prysm's document
 </div>
 <div class='panel'>
 <a href='../advanced/maintaining-uptime'>Maintain validator uptime with systemd or Docker</a>
-<p>Learn how to...</p>
+<p>Learn how to minimize validator downtime by running your validator as a background service through either Docker or <code>systemd</code>. </p>
 </div>
 <div class='panel'>
 <a href='../prysm-usage/p2p-host-ip'>Configure ports and firewalls for improved network connectivity</a>
