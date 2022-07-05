@@ -1,7 +1,7 @@
 ---
 id: p2p-host-ip
-title: Improve peer-to-peer connectivity
-sidebar_label: Improve P2P connectivity
+title: Configure ports and firewalls for improved network connectivity
+sidebar_label: Configure ports and firewalls for improved network connectivity
 ---
 
 The Ethereum proof-of-stake [architecture](/docs/how-prysm-works/architecture-overview/) is designed to be a fully peer to peer (P2P) network.  This section describes how to configure the Prysm [beacon node](/docs/how-prysm-works/beacon-node) and your network to optimise the number of peers that you communicate with on the Ethereum proof-of-stake etwork.  Increasing peers helps improve the health, performance and stablity of nodes and the overall network.

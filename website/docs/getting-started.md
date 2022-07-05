@@ -9,7 +9,7 @@ sidebar_label: Welcome!
 The following index of pages provides a descriptive overview of Prysm's documentation:  
 
 <div class='panel'>
-<a href='../install/install-with-script'>Quickstart</a>
+<a href='./install/install-with-script'>Quickstart</a>
 <p><strong>New Prysm users</strong> can follow this guidance to get started with Prysm.</p>
 </div>
 <div class='panel'>
@@ -126,7 +126,7 @@ The following index of pages provides a descriptive overview of Prysm's document
 <p>This subsection contains advanced How-Tos that our <strong>power users</strong> may find interesting.</p>
 </div>
 <div class='panel'>
-<a href='../prysm-usage/secure-grpc'>Secure gRPC</a>
+<a href='../prysm-usage/secure-grpc'>Secure gRPC connections</a>
 <p>Learn how to...</p>
 </div>
 <div class='panel'>
@@ -138,11 +138,11 @@ The following index of pages provides a descriptive overview of Prysm's document
 <p>Learn how to...</p>
 </div>
 <div class='panel'>
-<a href='../advanced/beacon_node_api'>Run an archive node</a>
+<a href='../advanced/beacon_node_api'>Run an archival node</a>
 <p>Learn how to...</p>
 </div>
 <div class='panel'>
-<a href='../execution-node/configuring-for-prysm'>Configure fallback execution nodes</a>
+<a href='../execution-node/configuring-for-prysm'>Configure primary and fallback execution nodes</a>
 <p>Learn how to...</p>
 </div>
 <div class='panel'>
@@ -150,8 +150,8 @@ The following index of pages provides a descriptive overview of Prysm's document
 <p>Learn how to...</p>
 </div>
 <div class='panel'>
-<a href='../prysm-usage/p2p-host-ip'>Improve network connectivity</a>
-<p>Learn how to configure ports, firewalls, and other configuration for improved peer-to-peer connectivity.</p>
+<a href='../prysm-usage/p2p-host-ip'>Configure ports and firewalls for improved network connectivity</a>
+<p>Learn how to configure ports and firewalls so your node can build stronger connections with more peers.</p>
 </div>
 <div class='panel'>
 <a href='../wallet/remote'>Configure remote signing wallet</a>

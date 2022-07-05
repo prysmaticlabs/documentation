@@ -1,7 +1,7 @@
 ---
 id: configuring-for-prysm
 title: Setting Up a Node
-sidebar_label: Setting Up a Node
+sidebar_label: Configure primary and fallback execution nodes
 ---
 
 :::caution
