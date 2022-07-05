@@ -80,7 +80,7 @@
                 },
                 {
                     "type": "category",
-                    "collapsed": true,
+                    "collapsed": false,
                     "collapsible": true,
                     "label": "Monitoring, metrics, and alerts",
                     "items": [
@@ -104,7 +104,7 @@
                 },
                 {
                     "type": "category",
-                    "collapsed": true,
+                    "collapsed": false,
                     "collapsible": true,
                     "label": "Advanced installation",
                     "items": [
