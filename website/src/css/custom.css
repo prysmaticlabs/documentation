@@ -60,6 +60,10 @@ header>h1 {
     margin-bottom: 0;
 }
 
+.panel>a {
+    display: inline-block;
+}
+
 .panel.section-title {
     background-color: #f9f9f9;
     border-left: 2px solid #ddd;
