@@ -1,7 +1,7 @@
 ---
 id: secure-grpc
 title: Securing your gRPC connections
-sidebar_label: Securing gRPC 
+sidebar_label: Secure gRPC connections
 ---
 
 This section will help advanced users create and setup TLS certificates to allow for secure gRPC connections to their beacon nodes.

@@ -1,7 +1,7 @@
 ---
 id: beacon_node_api
 title: Archival beacon node usage
-sidebar_label: Archival node setup
+sidebar_label: Run an archival node
 ---
 
 ## Using archival beacon nodes for API retrieval

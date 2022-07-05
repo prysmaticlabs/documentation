@@ -1,8 +1,9 @@
 ---
 id: slasher
 title: Running a slasher
-sidebar_label: Running slasher
+sidebar_label: Run a slasher
 ---
+
 This section provides instructions on how to run [slasher](https://github.com/prysmaticlabs/prysm/tree/master/slasher) as an **optional** process to report slashable offenses on Ethereum proof-of-stake.  If slasher detects a slashable offense, proof is sent to the [beacon-chain node](https://docs.prylabs.network/docs/how-prysm-works/beacon-node/) for inclusion in a block.  [Validators](https://docs.prylabs.network/docs/how-prysm-works/prysm-validator-client/) earn a small whistleblower reward for including this proof into a block.  
 
 :::tip Slasher Requires Significant Disk Space
