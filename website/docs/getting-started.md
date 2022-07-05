@@ -119,7 +119,7 @@ The following index of pages provides a descriptive overview of Prysm's document
 </div>
 <div class='panel'>
 <a href='../prysm-usage/secure-grpc'>Secure gRPC connections</a>
-<p>Learn how to create and configure TLS certificates to allow for secure gRPC connections to your beacon node.</p>
+<p>Learn how to create and configure TLS certificates that enable secure gRPC connections to your beacon node.</p>
 </div>
 <div class='panel'>
 <a href='../execution-node/authentication'>Configure JWT authentication</a>
@@ -127,11 +127,11 @@ The following index of pages provides a descriptive overview of Prysm's document
 </div>
 <div class='panel'>
 <a href='../prysm-usage/slasher'>Run a slasher</a>
-<p>Learn how to...</p>
+<p>Learn how to run [slasher](https://github.com/prysmaticlabs/prysm/tree/master/slasher), an optional process that detects and reports slashable offenses on the Ethereum proof-of-stake network.</p>
 </div>
 <div class='panel'>
 <a href='../prysm-usage/graffiti-file'>Add graffiti to blocks</a>
-<p>Learn how to...</p>
+<p>Learn how to configure your validator to add graffiti to the blocks that it proposes.</p>
 </div>
 <div class='panel'>
 <a href='../advanced/beacon_node_api'>Run an archival node</a>
