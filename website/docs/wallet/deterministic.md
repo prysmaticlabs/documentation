@@ -1,7 +1,7 @@
 ---
 id: deterministic
-title: Deterministic, HD wallet 
-sidebar_label: HD wallet
+title: Create a wallet using Prysm
+sidebar_label: Create a wallet using Prysm
 ---
 
 ## Background

@@ -1,7 +1,7 @@
 ---
 id: nondeterministic
-title: Imported wallet 
-sidebar_label: Imported wallet
+title: Import an existing wallet via keystore
+sidebar_label: Import an existing wallet via keystore
 ---
 
 ## Background
