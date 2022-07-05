@@ -17,7 +17,7 @@ The following index of pages provides a descriptive overview of Prysm's document
 <p><strong>Current Prysm users</strong> can follow this guidance to prepare their nodes and validators for <a href='https://ethereum.org/en/upgrades/merge/'>The Merge</a>, an ongoing event that transitions Ethereum from proof-of-work to proof-of-stake.</p>
 </div>
 <div class='panel'>
-<a href='../security-best-practices'>Staking with Prysm: Security Best Practices</a>
+<a href='../security-best-practices'>Security best practices</a>
 <p>Learn how to <strong>minimize risk</strong> as a validator. The guidelines provided in this document are client-agnostic (they apply to Prysm and other clients, too).</p>
 </div>
 <div class='panel'>

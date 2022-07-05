@@ -1,8 +1,9 @@
 ---
 id: issues-errors
-title: How to resolve issues and errors
+title: Troubleshooting Prysm
 sidebar_label: Troubleshooting
 ---
+
 
 ## Validator node
 
