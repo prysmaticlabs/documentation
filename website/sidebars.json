@@ -60,10 +60,6 @@
                 },
                 {
                     "type": "doc",
-                    "id": "execution-node/authentication"
-                },
-                {
-                    "type": "doc",
                     "id": "advanced/migrating-keys"
                 },
                 {
@@ -127,6 +123,10 @@
                         {
                             "type": "doc",
                             "id": "prysm-usage/secure-grpc"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "execution-node/authentication"
                         },
                         {
                             "type": "doc",

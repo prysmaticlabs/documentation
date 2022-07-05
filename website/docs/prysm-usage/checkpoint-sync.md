@@ -1,10 +1,8 @@
 ---
 id: checkpoint-sync
-title: Checkpoint Sync
+title: Use Checkpoint Sync
 sidebar_label: Use Checkpoint Sync
 ---
-
-# Checkpoint Sync
 
 :::caution
 

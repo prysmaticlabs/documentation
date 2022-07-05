@@ -1,10 +1,8 @@
 ---
 id: checkpoint-sync-vNext
-title: Checkpoint Sync
+title: Use Checkpoint Sync
 sidebar_label: Use Checkpoint Sync (vNext)
 ---
-
-# Checkpoint Sync
 
 :::caution Prysm v2.1.3-rc.4
 

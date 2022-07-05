@@ -1,6 +1,6 @@
 ---
 id: staying-up-to-date
-title: Upgrading and downgrading Prysm
+title: Update and downgrade Prysm
 sidebar_label: Update and downgrade Prysm
 ---
 

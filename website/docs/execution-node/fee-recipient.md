@@ -1,10 +1,10 @@
 ---
 id: fee-recipient
-title: Configure a Fee Recipient Address  
+title: Configure Fee Recipient 
 sidebar_label: Configure Fee Recipient
 ---
 
-# Configure a Fee Recipient Address 
+# Configure Fee Recipient
 
 :::caution
 

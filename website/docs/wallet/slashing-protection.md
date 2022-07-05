@@ -1,6 +1,6 @@
 ---
 id: slashing-protection
-title: Importing and exporting your validators' slashing protection history
+title: Import & export slashing protection history
 sidebar_label: Import & export slashing protection history
 ---
 

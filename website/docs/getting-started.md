@@ -63,10 +63,6 @@ The following index of pages provides a descriptive overview of Prysm's document
 <p>Prysm's Web UI can be used to monitor and configure your beacon node and validator on <code>localhost</code> using an app-like interface.</p>
 </div>
 <div class='panel'>
-<a href='../execution-node/authentication'>Configure JWT authentication</a>
-<p>After The Merge, Prysm will need to securely connect to a local execution node. This how-to shows you how to form this secure connection using a JWT token.</p>
-</div>
-<div class='panel'>
 <a href='../advanced/migrating-keys'>Move to a new machine</a>
 <p>Learn how to migrate from one host system to another while minimizing risk of slashing and downtime.</p>
 </div>
@@ -128,6 +124,10 @@ The following index of pages provides a descriptive overview of Prysm's document
 <div class='panel'>
 <a href='../prysm-usage/secure-grpc'>Secure gRPC connections</a>
 <p>Learn how to...</p>
+</div>
+<div class='panel'>
+<a href='../execution-node/authentication'>Configure JWT authentication</a>
+<p>After The Merge, Prysm will need to securely connect to a local execution node. This how-to shows you how to form this secure connection using a JWT token.</p>
 </div>
 <div class='panel'>
 <a href='../prysm-usage/slasher'>Run a slasher</a>

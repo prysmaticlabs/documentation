@@ -1,10 +1,10 @@
 ---
 id: web-interface
-title: Using the Prysm Web Interface
+title: Use Prysm's web UI
 sidebar_label: Use Prysm's web UI
 ---
 
-## What is Prysm Web
+## What is Prysm's web UI?
 
 The Prysm Web UI is a locally hosted website that is launched from the validator client to provide users with a visual alternative to the validator cli( command-line interface).
 

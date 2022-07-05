@@ -1,6 +1,6 @@
 ---
 id: database-backups
-title: Database backups
+title: Back up & restore database
 sidebar_label: Back up & restore database
 ---
 
