@@ -9,7 +9,7 @@ sidebar_label: Welcome!
 The following index of pages provides a descriptive overview of Prysm's documentation:  
 
 <div class='panel'>
-<a href='../install/install-with-script'>Quickstart</a>
+<a href='../install/install-with-script'>Quickstart: Run a Node and Stake ETH using Prysm</a>
 <p><strong>New Prysm users</strong> can follow this guidance to get started with Prysm.</p>
 </div>
 <div class='panel'>
