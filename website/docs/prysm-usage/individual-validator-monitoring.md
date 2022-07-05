@@ -1,10 +1,8 @@
 ---
 id: individual-validator-monitoring
-title: Individual validator monitoring
+title: Monitor validators by index
 sidebar_label: Monitor validators by index
 ---
-
-# Background
 
 Prysm beacon nodes allow for monitoring of specific validator indices by tracking important metrics on the blockchain, including details about their rewards, attestation performance, sync committee participation, and more.
 

@@ -1,6 +1,6 @@
 ---
 id: grafana-dashboard
-title: Monitoring and alerts with Grafana
+title: Configure dashboarding and alerts with Prometheus and Grafana
 sidebar_label: Configure dashboarding and alerts with Prometheus and Grafana
 ---
 

@@ -1,6 +1,6 @@
 ---
 id: install-with-docker
-title: Installing Prysm with Docker
+title: Install Prysm with Docker
 sidebar_label: Install using Docker
 ---
 

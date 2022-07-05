@@ -101,11 +101,13 @@ The following index of pages provides a descriptive overview of Prysm's document
 <a href='../prysm-usage/client-stats'>Collect metrics with client-stats</a>
 <p>Learn how to collect beacon node and validator metrics using Prysm's <code>client-stats</code> utility. This can be used to relay metrics data to the beaconcha.in stats service.</p>
 </div>
+
+
 <div class='panel secondary-panel section-title'>
 
-### Advanced installation
+### Advanced usage
 
-<p>This subsection contains How-Tos that help you install Prysm using Bazel (building from source) or Docker.</p>
+<p>This subsection contains advanced How-Tos that our <strong>power users</strong> may find interesting.</p>
 </div>
 <div class='panel'>
 <a href='../install/install-with-docker'>Install using Docker</a>
@@ -114,12 +116,6 @@ The following index of pages provides a descriptive overview of Prysm's document
 <div class='panel'>
 <a href='../install/install-with-bazel'>Build from source</a>
 <p>Learn how to build Prysm from source using Bazel.</p>
-</div>
-<div class='panel secondary-panel section-title'>
-
-### Advanced usage
-
-<p>This subsection contains advanced How-Tos that our <strong>power users</strong> may find interesting.</p>
 </div>
 <div class='panel'>
 <a href='../prysm-usage/secure-grpc'>Secure gRPC connections</a>

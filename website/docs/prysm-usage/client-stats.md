@@ -1,6 +1,6 @@
 ---
 id: client-stats
-title: Running client stats to collect process metrics
+title: Collect metrics with client-stats
 sidebar_label: Collect metrics with client-stats
 ---
 

@@ -1,6 +1,6 @@
 ---
 id: checking-status
-title: How to check the status of your node and validator
+title: Check node and validator status
 sidebar_label: Check node and validator status
 ---
 

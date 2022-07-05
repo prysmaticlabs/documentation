@@ -102,7 +102,7 @@
                     "type": "category",
                     "collapsed": true,
                     "collapsible": true,
-                    "label": "Advanced installation",
+                    "label": "Advanced usage",
                     "items": [
                         {
                             "type": "doc",
@@ -111,15 +111,7 @@
                         {
                             "type": "doc",
                             "id": "install/install-with-bazel"
-                        }
-                    ]
-                },
-                {
-                    "type": "category",
-                    "collapsed": true,
-                    "collapsible": true,
-                    "label": "Advanced usage",
-                    "items": [
+                        },
                         {
                             "type": "doc",
                             "id": "prysm-usage/secure-grpc"

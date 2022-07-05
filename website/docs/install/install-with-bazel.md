@@ -1,6 +1,6 @@
 ---
 id: install-with-bazel
-title: Building Prysm from Source
+title: Build Prysm from Source
 sidebar_label: Build from source
 ---
 

@@ -1,6 +1,6 @@
 ---
 id: exiting-a-validator
-title: Exiting a validator
+title: Exit your validator
 sidebar_label: Exit your validator
 ---
 
