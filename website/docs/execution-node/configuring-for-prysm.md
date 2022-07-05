@@ -1,128 +1,18 @@
 ---
 id: configuring-for-prysm
-title: Setting Up a Node
-sidebar_label: Configure primary and fallback execution nodes
+title: Configure a fallback execution node
+sidebar_label: Configure a fallback execution node
 ---
 
-:::caution
-Running an execution node alongside Prysm will be **required** at the time of the Ethereum proof-of-stake transition
+:::info
+
+Running an execution node will be **required** post-Merge. See [Prepare for The Merge](../prepare-for-merge.md) for the latest Merge preparation guidance.
+
+New to Prysm? See our [Quickstart](../install/install-with-script.md) for step-by-step instructions that help you configure an execution node, beacon node, and validator.
+
 :::
 
-Ethereum proof-of-stake is a massive upgrade to the Ethereum blockchain, which will start off as a proof of stake chain that runs in parallel to the current proof of work chain. In order to become a validator in Ethereum proof-of-stake, users have to do a one-way "burn" of their ETH into a smart contract on the proof of work chain. The way the system works is through two pieces of software known as consensus and execution clients. Consensus clients are software, such as Prysm, that run proof-of-stake consensus. These clients communicate with execution clients, such as go-ethereum, which process smart contracts, transactions, and execute EVM code. **Both pieces of software are needed to run Ethereum**.
-
-The instructions below show information about which execution clients can be run with Prysm, and how to set one up yourself.
-
-## Supported clients
-
-Prysm nodes can use any sort of Ethereum execution node as long as it supports reading smart contract logs. Users can choose one of the following execution clients:
-
-- [Go-Ethereum](https://github.com/ethereum/go-ethereum)
-- [Erigon](https://github.com/ledgerwatch/erigon)
-- [Nethermind](https://github.com/NethermindEth/nethermind)
-- [Besu](https://github.com/hyperledger/besu)
-
-## Using a third-party provider
-
-:::danger
-You cannot use a third-party provider for your execution client once the [Ethereum merge](https://ethereum.org/en/upgrades/merge/) goes live.
-:::
-
-## Running your own execution node
-
-An execution node is required in order to run Prysm after the Ethereum merge. We'll be giving an example of running a go-ethereum node on mainnet. 
-
-First, install go-ethereum [here](https://geth.ethereum.org/docs/).
-
-```text
-geth --datadir="$HOME/Mainnet" --http
-```
-
-You should wait for your node to sync and then will be able to access its endpoint via `http://localhost:8545` by default.
-
-Next, in a separate terminal window, you can run a Prysm beacon node according to our installation instructions for your operating system:
-
-* [Using the Prysm installation script (Recommended)](/docs/install/install-with-script)
-* [Using Docker](/docs/install/install-with-docker)
-* [Building from source with Bazel (Advanced)](/docs/install/install-with-bazel)
-
-:::tip
-By default, Prysm will try to connect to an execution node via http at `http://localhost:8545` if an endpoint is not configured via command-line flags. For HTTP connections, execution nodes also require **authentication**. You can find instructions on setting up authentication [here](/docs/execution-node/authentication).
-:::
-
-then connect to your execution node with:
-
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-<Tabs
-  groupId="operating-systems"
-  defaultValue="lin"
-  values={[
-    {label: 'Linux', value: 'lin'},
-    {label: 'Windows', value: 'win'},
-    {label: 'MacOS', value: 'mac'},
-    {label: 'Arm64', value: 'arm'},
-  ]
-}>
-<TabItem value="lin">
-
-**Using Prysm.sh**
-
-```bash
-./prysm.sh beacon-chain --http-web3provider=$HOME/Mainnet/geth.ipc
-```
-
-**Using Bazel**
-
-```bash
-bazel run //beacon-chain --config=release -- --http-web3provider=$HOME/Mainnet/geth.ipc
-```
-
-</TabItem>
-<TabItem value="win">
-
-**Using Prysm.bat**
-
-```bash
-prysm.bat beacon-chain --http-web3provider=\\.\pipe\geth.ipc
-```
-
-</TabItem>
-<TabItem value="mac">
-
-**Using Prysm.sh**
-
-```bash
-./prysm.sh beacon-chain --http-web3provider=$HOME/Mainnet/geth.ipc
-```
-
-**Using Bazel**
-
-```bash
-bazel run //beacon-chain --config=release -- --http-web3provider=$HOME/Mainnet/geth.ipc
-```
-
-</TabItem>
-<TabItem value="arm">
-
-**Using Prysm.sh**
-
-```bash
-./prysm.sh beacon-chain --http-web3provider=$HOME/Mainnet/geth.ipc
-```
-
-**Using Bazel**
-
-```bash
-bazel run //beacon-chain --config=release -- --http-web3provider=$HOME/Mainnet/geth.ipc
-```
-
-</TabItem>
-</Tabs>
-
-## Adding fallback execution nodes
-
-In case your execution node unexpectedly goes down, you can specify a list of fallback eth1 nodes that your beacon node can always reach out to. To use this functionality, you can add the following flag to the beacon node:
+Prysm's beacon node allows you to specify fallback execution nodes. These fallback nodes will be used in the event that your primary node fails. This feature can be configured using flags or a config file.
 
 #### Using regular flags
 
@@ -130,24 +20,24 @@ In case your execution node unexpectedly goes down, you can specify a list of fa
 --http-web3provider=<YOUR MAIN ENDPOINT> --fallback-web3provider=<PROVIDER 1> --fallback-web3provider=<PROVIDER 2>
 ```
 
-You can specify your main provider and as many --fallback-web3provider as you need. Here's what a real setup could look like:
+You can specify your primary execution node endpoint and as many `--fallback-web3provider`s as you need. For example:
 
 ```
---http-web3provider=http://localhost:8545 --fallback-web3provider=http://localhost:8546
+--http-web3provider=http://localhost:8545 --fallback-web3provider=http://localhost:8546 --fallback-web3provider=http://localhost:8547
 ```
 
-Where your main provider is your local go-ethereum node running on port 8545, then you can fallback to another provider if needed.
 
-:::tip Prysm will automatically use your main provider always
-In case your main provider comes back from the dead, Prysm will detect that and switch over to it for primary usage automatically. This will save you any costs on your fallback providers.
+:::tip Prysm will resume using your primary
+Prysm will automatically switch back to your primary execution node whenever it comes back online.
 :::
 
 #### Using a config file
 
-If you are running Prysm and specifying command line flags via a config.yaml file, you can do the following:
+If you're configuring Prysm via a `config.yaml` file, use the following configuration:
 
 ```yaml
 http-web3provider: http://localhost:8545
 fallback-web3provider:
-- http://localhost:8546
+ - http://localhost:8546
+ - http://localhost:8547
 ```

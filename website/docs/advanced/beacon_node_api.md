@@ -14,7 +14,6 @@ By default, the Prysm beacon node saves the state of the chain locally in a data
 In addition to having to download the slot/epoch data there will be an increased local storage requirement, potentially by a multiple of 32 should all data be requested. 
 :::
 
-
 The default setting will store one state per epoch, each being ~ 1Mb (or more) of data, setting the beacon node to capture all slots per epoch will increase the storage requirements to ~ 32Mb (or more) per epoch. 
 
 ## Rationale
