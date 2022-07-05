@@ -11,7 +11,7 @@ import ClientStackPng from '@site/static/img/client-stack.png';
 
 :::info Already running a node?
 
-This guidance is targeted at new users. If you're already running a node, see [Prepare for The Merge](../prepare-for-merge.md) for guidance targeted at current users.
+This guidance is targeted at new users. If you're already running a node, see [Prepare for The Merge](../prepare-for-merge.md).
 
 :::
 
