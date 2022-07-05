@@ -1,6 +1,6 @@
 ---
 id: slasher
-title: Running a slasher
+title: Run a slasher
 sidebar_label: Run a slasher
 ---
 
