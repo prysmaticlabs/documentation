@@ -150,12 +150,12 @@ The following index of pages provides a descriptive overview of Prysm's document
 <p>Learn how to configure ports and firewalls so your node can build stronger connections with more peers.</p>
 </div>
 <div class='panel'>
-<a href='../wallet/remote'>Configure remote signing wallet</a>
+<a href='../wallet/remote'>Configure a remote signing wallet</a>
 <p>Learn how to configure a <strong>remote signing wallet</strong>, a special type of wallet that lets your validator connect to a remote server to retrieve the keys you need to process signing requests via a secure gRPC connection. This guidance is targeted at power users who are willing to increase complexity in exchange for increased validator key security.</p>
 </div>
 <div class='panel'>
-<a href='../wallet/we3signer'>Configure Web3Signer</a>
-<p>Learn how to...</p>
+<a href='../wallet/we3signer'>Use Web3Signer</a>
+<p>Learn how to use <a href='https://github.com/ConsenSys/web3signer'>Web3Signer</a>, an open-source remote signing service that allows you to store your validator keys remotely instead of locally.</p>
 </div>
 <div class='panel'>
 <a href='../wallet/nondeterministic'>Import an existing wallet via keystore</a>

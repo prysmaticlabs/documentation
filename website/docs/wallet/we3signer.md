@@ -1,10 +1,8 @@
 ---
 id: web3signer
-title: Using Web3Signer
-sidebar_label: Web3Signer
+title: Use Web3Signer
+sidebar_label: Use Web3Signer
 ---
-
-## Using Web3Signer with Prysm
 
 [Web3Signer](https://github.com/ConsenSys/web3signer) is an open-source remote signing service developed by Consensys. Prysm users can use this tool as an alternative to storing keys locally. Web3Signer uses REST APIs.
 
