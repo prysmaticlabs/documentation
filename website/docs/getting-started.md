@@ -139,7 +139,7 @@ The following index of pages provides a descriptive overview of Prysm's document
 </div>
 <div class='panel'>
 <a href='../execution-node/configuring-for-prysm'>Configure a fallback execution node</a>
-<p>Learn how to configure a fallback execution node that your beacon node will fall back to in the event that your primary node fails.</p>
+<p>Learn how to configure a fallback execution node that your beacon node will automatically switch to in the event that your primary execution node fails.</p>
 </div>
 <div class='panel'>
 <a href='../advanced/maintaining-uptime'>Maintain validator uptime with systemd or Docker</a>
