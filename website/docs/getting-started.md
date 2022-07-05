@@ -127,7 +127,7 @@ The following index of pages provides a descriptive overview of Prysm's document
 </div>
 <div class='panel'>
 <a href='../prysm-usage/slasher'>Run a slasher</a>
-<p>Learn how to run [slasher](https://github.com/prysmaticlabs/prysm/tree/master/slasher), an optional process that detects and reports slashable offenses on the Ethereum proof-of-stake network.</p>
+<p>Learn how to run a slasher, an optional beacon node process that detects and reports slashable offenses on the Ethereum proof-of-stake network.</p>
 </div>
 <div class='panel'>
 <a href='../prysm-usage/graffiti-file'>Add graffiti to blocks</a>
