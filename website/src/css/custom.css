@@ -7,7 +7,7 @@
 
 /* This is used to override docusarus's assignment of `height` to collapsible sidebar elements - without this, expanding sidebar sections that contain many children results in buggy behavior that hides docs */
 .menu__list {
-    height: auto !important;
+    height: auto;
 }
 
 a {
