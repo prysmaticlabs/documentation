@@ -135,7 +135,7 @@ The following index of pages provides a descriptive overview of Prysm's document
 </div>
 <div class='panel'>
 <a href='../advanced/beacon_node_api'>Run an archival node</a>
-<p>Learn how to...</p>
+<p>Learn how to run your beacon node as an archival node. Archival nodes are like regular beacon nodes that are configured to store more blockchain data locally, increasing data retrieval performance in exchange for increased data storage requirements.</p>
 </div>
 <div class='panel'>
 <a href='../execution-node/configuring-for-prysm'>Configure primary and fallback execution nodes</a>
