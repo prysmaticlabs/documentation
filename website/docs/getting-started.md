@@ -138,8 +138,8 @@ The following index of pages provides a descriptive overview of Prysm's document
 <p>Learn how to run your beacon node as an archival node. Archival nodes are like regular beacon nodes that are configured to store more blockchain data locally, increasing data retrieval performance in exchange for increased data storage requirements.</p>
 </div>
 <div class='panel'>
-<a href='../execution-node/configuring-for-prysm'>Configure primary and fallback execution nodes</a>
-<p>Learn how to...</p>
+<a href='../execution-node/configuring-for-prysm'>Configure a fallback execution node</a>
+<p>Learn how to configure a fallback execution node that your beacon node will fall back to in the event that your primary node fails.</p>
 </div>
 <div class='panel'>
 <a href='../advanced/maintaining-uptime'>Maintain validator uptime with systemd or Docker</a>
