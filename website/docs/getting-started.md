@@ -67,7 +67,7 @@ The following index of pages provides a descriptive overview of Prysm's document
 <p>Learn how to migrate from one host system to another while minimizing risk of slashing and downtime.</p>
 </div>
 <div class='panel'>
-<a href='../advanced/migrating-keys'>Switch to a new client</a>
+<a href='../advanced/switch-clients'>Switch to a new client</a>
 <p>Learn how to migrate from one client to another while minimizing risk of slashing and downtime.</p>
 </div>
 <div class='panel'>
@@ -180,7 +180,11 @@ The following index of pages provides a descriptive overview of Prysm's document
 <p>Learn how to...</p>
 </div>
 <div class='panel'>
-<a href='../wallet/introduction'>Keys and Wallets</a>
+<a href='../wallet/introduction'>Keys and wallets</a>
+<p>Learn how to...</p>
+</div>
+<div class='panel'>
+<a href='../concepts/slashing'>Slashing</a>
 <p>Learn how to...</p>
 </div>
 <div class='panel section-title'>
