@@ -14,6 +14,14 @@ sme: james-prysm
 
 :::
 
+:::caution Develop Update
+
+features related to validator registration have been added to develop which include breaking changes. 
+- `gaslimit` field for proposer settings file has been replaced with an optional `validator_registration` object.
+- `suggested-fee-recipient` flag must now be used with `enable-validator-registration` flag to enable MEV Builder API use from the validator client
+
+:::
+
 <br/>
 
 <!-- alt: ## How to configure Fee Recipient on your client instance and/or beacon node -->
@@ -77,6 +85,14 @@ A fee recipient address can be configured on your client instance by using one o
     <strong>Note</strong>: JSON should be delivered as a JSON payload, not as a JSON file. Your client will issue a GET request and expects the response <code>Content-Type</code> header to be <code>application/json</code>.
     </td>
   </tr>
+  <tr>
+    <td><code>enable-validator-registration</code></td>
+    <td>
+    This flag enables the periodic calling of Validator Registration API <a href="https://github.com/ethereum/builder-specs">(a Builder API)</a> while using the <code>suggested-fee-recipient</code> flag. <br /> <br /> 
+    <strong>Example</strong>: <code>--enable-validator-registration</code> <br /> <br /> 
+    <strong>Note</strong>: this flag will not affect proposer settings file. The proposer settings can specify validator registration use through its own fields.
+    </td>
+  </tr>
 </table>
 
 <br />
@@ -100,13 +116,19 @@ If you use either `proposer-settings-file` or `proposer-settings-url` to specify
 proposer_config:
   '0x01234567155ad77931185101128655c0191bd0214c201ca48ed887f6c4c6adf334070efcd75140eada5ac83a92506dd7a':
     fee_recipient: '0x012345670FCE8a85ec7055A5F8b2bE214B3DaeFd3'
-    gas_limit: 35000000
+    validator_registration:
+      enable: true
+      gas_limit: 30000000
   '0x0123456748ed887f6c4c6adf334070efcd75140eada5ac83a92506dd7a057816155ad77931185101128655c0191bd0214':
     fee_recipient: '0x01234567bE214B3DaeFd350155530FCE8a85ec705'
-    gas_limit: 35000000
+    validator_registration:
+      enable: true
+      gas_limit: 35000000
 default_config:
   fee_recipient: '0x01234567c5af9B61374A128e6F85f553aF09ff89A'
-  gas_limit: 30000000
+  validator_registration:
+      enable: true
+      gas_limit: 30000000
 
 ```
 
@@ -117,15 +139,25 @@ JSON example:
   "proposer_config": {
     "0x01234567155ad77931185101128655c0191bd0214c201ca48ed887f6c4c6adf334070efcd75140eada5ac83a92506dd7a": {
       "fee_recipient": "0x012345670FCE8a85ec7055A5F8b2bE214B3DaeFd3",
-      "gas_limit": 35000000
+      "validator_registration": {
+        "enable": true,
+        "gas_limit": 30000000
+      }
     },
     "0x0123456748ed887f6c4c6adf334070efcd75140eada5ac83a92506dd7a057816155ad77931185101128655c0191bd0214": {
       "fee_recipient": "0x01234567bE214B3DaeFd350155530FCE8a85ec705",
-      "gas_limit": 35000000
+      "validator_registration": {
+        "enable": false,
+        "gas_limit": 35000000
+      }
     }
   },
   "default_config": {
     "fee_recipient": "0x01234567c5af9B61374A128e6F85f553aF09ff89A"
+    "validator_registration": {
+      "enable": true,
+      "gas_limit": 30000000
+    }
   }
 }
 ```
@@ -159,9 +191,28 @@ The above JSON demonstrates configuring two 1:1 mappings between `validator publ
     </td>
   </tr>
   <tr>
-    <td><code>proposer_config.gas_limit</code></td>
+    <td><code>proposer_config.validator_registration</code></td>
     <td>
     Optional. <code>proposer_config</code>.  <br /> <br /> 
+    <strong>Type:</strong> Object<br /> <br /> 
+    <strong>Note:</strong> Applicable only when using custom block builders. Contains the following properties:
+    enable, gas_limit.
+    <br /> <br /> 
+    </td>
+  </tr>
+  <tr>
+    <td><code>proposer_config.validator_registration.gas_limit</code></td>
+    <td>
+    Optional. <code>validator_registration</code>.  <br /> <br /> 
+    <strong>Type:</strong> bool <br /> <br /> 
+    <strong>Note:</strong> Applicable only when using custom block builders. Sets whether or not the validator registration is enabled or not.
+    <strong>Example: true</strong> <br /> <br /> 
+    </td>
+  </tr>
+  <tr>
+    <td><code>proposer_config.validator_registration.gas_limit</code></td>
+    <td>
+    Optional. <code>validator_registration</code>.  <br /> <br /> 
     <strong>Type:</strong> uint64 <br /> <br /> 
     <strong>Note:</strong> Applicable only when using custom block builders. Sets a gas limit upper limit (in gwei) for block builders. Block limits can only change a fixed amount per proposal - the default limit is 30M gwei.
     <strong>Example: 35000000</strong> <br /> <br /> 
@@ -183,12 +234,37 @@ The above JSON demonstrates configuring two 1:1 mappings between `validator publ
     </td>
   </tr>
    <tr>
-    <td><code>default_config.gas_limit</code></td>
+    <td><code>default_config.validator_registration</code></td>
     <td>
     Optional. <code>default_config</code>.  <br /> <br /> 
+    <strong>Type:</strong> Object<br /> <br /> 
+    <strong>Note:</strong> Applicable only when using custom block builders. Contains the following properties:
+    enable, gas_limit.
+    <br /> <br /> 
+    </td>
+  </tr>
+  <tr>
+    <td><code>default_config.validator_registration.gas_limit</code></td>
+    <td>
+    Optional. <code>validator_registration</code>.  <br /> <br /> 
+    <strong>Type:</strong> bool <br /> <br /> 
+    <strong>Note:</strong> Applicable only when using custom block builders. Sets whether or not the validator registration is enabled or not.
+    <strong>Example: true</strong> <br /> <br /> 
+    </td>
+  </tr>
+  <tr>
+    <td><code>default_config.validator_registration.gas_limit</code></td>
+    <td>
+    Optional. <code>validator_registration</code>.  <br /> <br /> 
     <strong>Type:</strong> uint64 <br /> <br /> 
-    <strong>Note:</strong> Applicable only when using custom block builders. Sets a gas limit goal (in gwei) for block builders to target. Block limits can only change a fixed amount per proposal - the default limit is 30M gwei.
+    <strong>Note:</strong> Applicable only when using custom block builders. Sets a gas limit upper limit (in gwei) for block builders. Block limits can only change a fixed amount per proposal - the default limit is 30M gwei.
     <strong>Example: 35000000</strong> <br /> <br /> 
+    </td>
+  </tr>
+  <tr>
+    <td><code>default_config</code></td>
+    <td>
+    Required. 
     </td>
   </tr>
 </table>
