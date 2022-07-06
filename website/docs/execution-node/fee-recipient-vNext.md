@@ -14,22 +14,20 @@ sme: james-prysm
 
 :::
 
-:::caution Develop Update
+:::caution Breaking changes
 
-features related to validator registration have been added to develop which include breaking changes. 
-- `gaslimit` field for proposer settings file has been replaced with an optional `validator_registration` object.
-- `suggested-fee-recipient` flag must now be used with `enable-validator-registration` flag to enable MEV Builder API use from the validator client
+Breaking changes have been introduced within the [`develop` branch](https://github.com/prysmaticlabs/prysm/tree/develop). These changes introduce new configuration schema and properties related to Fee Recipient and validator registration:
+
+- The existing `gaslimit` property within the proposer settings file has been replaced with an optional `validator_registration` object that contains the `gaslimit` property.
+- The existing `suggested-fee-recipient` flag must now be used with the new `enable-validator-registration` flag. This allows your validator client to use the MEV Builder API.
 
 :::
 
 <br/>
 
-<!-- alt: ## How to configure Fee Recipient on your client instance and/or beacon node -->
-
 **Fee Recipient** is a feature that lets you specify a priority fee recipient address on your validator client instance and beacon node. After [The Merge](https://ethereum.org/en/upgrades/merge/), execution clients will begin depositing priority fees into this address whenever your validator client proposes a new block.
 
 ## Background
-<!-- this content could be pushed into a concept doc and linked to from the intro, but we don't have a clear conceptual IA yet. We can either keep this here and move later, or stash this into a developer wiki doc and then align on IA later. -->
 
 When users pay gas to submit transactions to the Ethereum network, they can specify a **priority fee**. Priority fees are like tips. End-users use priority fees to incentivize block proposers to prioritize the inclusion of particular transactions in the blocks that they propose.
 
@@ -52,10 +50,6 @@ We recommend configuring it in both places, even if you only have one validator 
 ### Configuring Fee Recipient on your validator client instance
 
 A fee recipient address can be configured on your client instance by using one of the following flags in the Prysm CLI:
-
-<!-- I'm using HTML tables because maintaining markdown tables where cells contain multiple lines of content is unwieldy. Also note that with docusaurus, markdown doesn't render in (or even next to) HTML. -->
-
-<!-- using ad-hoc styles to improve readability. tested on mobile. -->
 
 <table>
   <tr>
@@ -299,7 +293,6 @@ Note that when configuring fee recipient on your beacon node, the beacon node wi
 
 Footnotes:
 
-<!-- markdown links won't render alongside html elements - have to use anchors -->
 <strong id="footnote-1">1.</strong> The <a href='https://github.com/ethereum/consensus-specs/blob/master/specs/bellatrix/validator.md#block-proposal'>Bellatrix -- Honest Validator spec</a> contains Fee Recipient implementation details pertaining to validator clients. <br />
 
 <strong id="footnote-2">2.</strong> The <a href='https://github.com/ethereum/consensus-specs/blob/master/specs/bellatrix/beacon-chain.md#executionpayload'>Bellatrix -- The Beacon Chain spec</a> contains Fee Recipient implementation details pertaining to beacon nodes.
