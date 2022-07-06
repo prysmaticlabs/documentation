@@ -1,5 +1,5 @@
 ---
-id: fee-recipient-vNext
+id: fee-recipient
 title: Configure a Fee Recipient Address 
 sidebar_label: Fee Recipient (vNext)
 ---

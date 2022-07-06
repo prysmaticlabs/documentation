@@ -1,5 +1,5 @@
 ---
-id: checkpoint-sync-vNext
+id: checkpoint-sync
 title: Checkpoint Sync
 sidebar_label: Checkpoint Sync
 ---
