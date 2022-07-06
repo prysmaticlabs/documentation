@@ -6,7 +6,7 @@ doc_type: how-to
 sme: james-prysm
 ---
 
-# Configure a Fee Recipient Address 
+# Configure a Fee Recipient Address (vNext)
 
 :::caution Prysm develop branch
 
