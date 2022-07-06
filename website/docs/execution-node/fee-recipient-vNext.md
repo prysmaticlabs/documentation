@@ -171,8 +171,8 @@ The above JSON demonstrates configuring two 1:1 mappings between `validator publ
     <td>
     Optional. Your validator client instance’s public key. <br /> <br /> 
     <strong>Type:</strong> Validator public key. 98 characters long hexstring.<br /> <br /> 
-    <strong>Note:</strong> Use this to map a single validator instance public key to a single fee recipient ETH address.
-    <strong>Example:</strong> "0x01234567155ad77931185101128655c0191bd0214c201ca48ed887f6c4c6adf334070efcd75140eada5ac83a92506dd7a"<br /> <br /> 
+    <strong>Note:</strong> Use this to map a single validator instance public key to a single fee recipient ETH address. <br /> <br /> 
+    <strong>Example:</strong> <code>"0x01234567155ad77931185101128655c0191bd0214c201ca48ed887f6c4c6adf334070efcd75140eada5ac83a92506dd7a"</code>
     </td>
   </tr>
   <tr>
@@ -180,35 +180,34 @@ The above JSON demonstrates configuring two 1:1 mappings between `validator publ
     <td>
     Optional. Required if validator instance public key is provided via <code>proposer_config</code>.  <br /> <br /> 
     <strong>Type:</strong> ETH address. 42 characters long hexstring. <br /> <br /> 
-    <strong>Note:</strong> Use this to map a single validator key to a single ETH fee recipient address.
-    <strong>Example:</strong> "0x012345670FCE8a85ec7055A5F8b2bE214B3DaeFd3"<br /> <br /> 
+    <strong>Note:</strong> Use this to map a single validator key to a single ETH fee recipient address.  <br /> <br /> 
+    <strong>Example:</strong> <code>"0x012345670FCE8a85ec7055A5F8b2bE214B3DaeFd3"</code><br /> <br /> 
     </td>
   </tr>
   <tr>
     <td><code>proposer_config.validator_registration</code></td>
     <td>
-    Optional. <code>proposer_config</code>.  <br /> <br /> 
+    Optional. A configuration object that contains <code>enable</code> and <code>gas_limit</code> properties.<br /> <br /> 
     <strong>Type:</strong> Object<br /> <br /> 
-    <strong>Note:</strong> Applicable only when using custom block builders. Contains the following properties:
-    enable, gas_limit.
+    <strong>Note:</strong> Applicable only when using custom block builders.
     <br /> <br /> 
     </td>
   </tr>
   <tr>
     <td><code>..validator_registration.gas_limit</code></td>
     <td>
-    Optional. <code>validator_registration</code>.  <br /> <br /> 
+    Optional. Sets whether or not the validator registration is enabled or not.<br /> <br /> 
     <strong>Type:</strong> bool <br /> <br /> 
-    <strong>Note:</strong> Applicable only when using custom block builders. Sets whether or not the validator registration is enabled or not.
+    <strong>Note:</strong> Applicable only when using custom block builders.
     <strong>Example: true</strong> <br /> <br /> 
     </td>
   </tr>
   <tr>
     <td><code>..validator_registration.gas_limit</code></td>
     <td>
-    Optional. <code>validator_registration</code>.  <br /> <br /> 
+    Optional. Sets an upper gas limit (in gwei) for block builders.<br /> <br /> 
     <strong>Type:</strong> uint64 <br /> <br /> 
-    <strong>Note:</strong> Applicable only when using custom block builders. Sets a gas limit upper limit (in gwei) for block builders. Block limits can only change a fixed amount per proposal - the default limit is 30M gwei.
+    <strong>Note:</strong> Applicable only when using custom block builders. Block limits can only change a fixed amount per proposal - the default limit is 30M gwei.
     <strong>Example: 35000000</strong> <br /> <br /> 
     </td>
   </tr>
@@ -230,17 +229,16 @@ The above JSON demonstrates configuring two 1:1 mappings between `validator publ
    <tr>
     <td><code>default_config.validator_registration</code></td>
     <td>
-    Optional. <code>default_config</code>.  <br /> <br /> 
+    Optional. A configuration object that contains <code>enable</code> and <code>gas_limit</code> properties.<br /> <br /> 
     <strong>Type:</strong> Object<br /> <br /> 
-    <strong>Note:</strong> Applicable only when using custom block builders. Contains the following properties:
-    enable, gas_limit.
+    <strong>Note:</strong> Applicable only when using custom block builders.
     <br /> <br /> 
     </td>
   </tr>
   <tr>
     <td><code>..validator_registration.gas_limit</code></td>
     <td>
-    Optional. <code>validator_registration</code>.  <br /> <br /> 
+    Optional.<br /> <br /> 
     <strong>Type:</strong> bool <br /> <br /> 
     <strong>Note:</strong> Applicable only when using custom block builders. Sets whether or not the validator registration is enabled or not.
     <strong>Example: true</strong> <br /> <br /> 
@@ -249,7 +247,7 @@ The above JSON demonstrates configuring two 1:1 mappings between `validator publ
   <tr>
     <td><code>..validator_registration.gas_limit</code></td>
     <td>
-    Optional. <code>validator_registration</code>.  <br /> <br /> 
+    Optional.<br /> <br /> 
     <strong>Type:</strong> uint64 <br /> <br /> 
     <strong>Note:</strong> Applicable only when using custom block builders. Sets a gas limit upper limit (in gwei) for block builders. Block limits can only change a fixed amount per proposal - the default limit is 30M gwei.
     <strong>Example: 35000000</strong> <br /> <br /> 
