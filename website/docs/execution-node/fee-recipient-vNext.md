@@ -181,7 +181,7 @@ The above JSON demonstrates configuring two 1:1 mappings between `validator publ
     Optional. Required if validator instance public key is provided via <code>proposer_config</code>.  <br /> <br /> 
     <strong>Type:</strong> ETH address. 42 characters long hexstring. <br /> <br /> 
     <strong>Note:</strong> Use this to map a single validator key to a single ETH fee recipient address.  <br /> <br /> 
-    <strong>Example:</strong> <code>"0x012345670FCE8a85ec7055A5F8b2bE214B3DaeFd3"</code><br /> <br /> 
+    <strong>Example:</strong> <code>"0x012345670FCE8a85ec7055A5F8b2bE214B3DaeFd3"</code>
     </td>
   </tr>
   <tr>
@@ -194,12 +194,12 @@ The above JSON demonstrates configuring two 1:1 mappings between `validator publ
     </td>
   </tr>
   <tr>
-    <td><code>..validator_registration.gas_limit</code></td>
+    <td><code>..validator_registration.enable</code></td>
     <td>
     Optional. Sets whether or not the validator registration is enabled or not.<br /> <br /> 
     <strong>Type:</strong> bool <br /> <br /> 
-    <strong>Note:</strong> Applicable only when using custom block builders.
-    <strong>Example: true</strong> <br /> <br /> 
+    <strong>Note:</strong> Applicable only when using custom block builders.<br /> <br /> 
+    <strong>Example:</strong> <code>true</code> 
     </td>
   </tr>
   <tr>
@@ -207,8 +207,8 @@ The above JSON demonstrates configuring two 1:1 mappings between `validator publ
     <td>
     Optional. Sets an upper gas limit (in gwei) for block builders.<br /> <br /> 
     <strong>Type:</strong> uint64 <br /> <br /> 
-    <strong>Note:</strong> Applicable only when using custom block builders. Block limits can only change a fixed amount per proposal - the default limit is 30M gwei.
-    <strong>Example: 35000000</strong> <br /> <br /> 
+    <strong>Note:</strong> Applicable only when using custom block builders. Block limits can only change a fixed amount per proposal - the default limit is 30M gwei. <br /> <br /> 
+    <strong>Example:</strong> <code>35000000</code>
     </td>
   </tr>
   <tr>
@@ -222,8 +222,8 @@ The above JSON demonstrates configuring two 1:1 mappings between `validator publ
     <td>
     Required.<br /> <br /> 
     <strong>Type:</strong> ETH address. 42 characters long hexstring. <br /> <br /> 
-    <strong>Note:</strong> This sets the default ETH address for all remaining validator public keys that don’t have 1:1 mapping already from the <code>proposer_config</code> member.
-    <strong>Example:</strong> "0x012345670FCE8a85ec7055A5F8b2bE214B3DaeFd3"<br /> <br /> 
+    <strong>Note:</strong> This sets the default ETH address for all remaining validator public keys that don’t have 1:1 mapping already from the <code>proposer_config</code> member. <br /> <br />
+    <strong>Example:</strong> <code>"0x012345670FCE8a85ec7055A5F8b2bE214B3DaeFd3"</code> 
     </td>
   </tr>
    <tr>
@@ -232,25 +232,24 @@ The above JSON demonstrates configuring two 1:1 mappings between `validator publ
     Optional. A configuration object that contains <code>enable</code> and <code>gas_limit</code> properties.<br /> <br /> 
     <strong>Type:</strong> Object<br /> <br /> 
     <strong>Note:</strong> Applicable only when using custom block builders.
-    <br /> <br /> 
     </td>
   </tr>
   <tr>
-    <td><code>..validator_registration.gas_limit</code></td>
+    <td><code>..validator_registration.enable</code></td>
     <td>
     Optional.<br /> <br /> 
     <strong>Type:</strong> bool <br /> <br /> 
-    <strong>Note:</strong> Applicable only when using custom block builders. Sets whether or not the validator registration is enabled or not.
-    <strong>Example: true</strong> <br /> <br /> 
+    <strong>Note:</strong> Applicable only when using custom block builders. Sets whether or not the validator registration is enabled or not. <br /> <br /> 
+    <strong>Example:</strong> <code>true</code> 
     </td>
   </tr>
   <tr>
     <td><code>..validator_registration.gas_limit</code></td>
     <td>
-    Optional.<br /> <br /> 
+    Optional. Sets a gas limit upper limit (in gwei) for block builders. <br /> <br /> 
     <strong>Type:</strong> uint64 <br /> <br /> 
-    <strong>Note:</strong> Applicable only when using custom block builders. Sets a gas limit upper limit (in gwei) for block builders. Block limits can only change a fixed amount per proposal - the default limit is 30M gwei.
-    <strong>Example: 35000000</strong> <br /> <br /> 
+    <strong>Note:</strong> Applicable only when using custom block builders. Block limits can only change a fixed amount per proposal - the default limit is 30M gwei.<br /> <br />
+    <strong>Example:</strong> <code>35000000</code>  
     </td>
   </tr>
   <tr>
