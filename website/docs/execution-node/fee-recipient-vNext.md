@@ -68,7 +68,7 @@ A fee recipient address can be configured on your client instance by using one o
     <td><code>proposer-settings-file</code></td>
     <td>
     Sets the local file location for your <code>proposer-settings</code> YAML or JSON configuration. This lets you configure proposer settings like <code>fee_recipient</code> and <code>gas_limit</code> for your validator keys. This lets you override the ETH address specified by <code>suggested-fee-recipient</code> for any number of public keys. <br /> <br /> 
-    <strong>Example</strong>: <code>--proposer-settings-file=./proposer_settings.json</code> <br /> <br /> 
+    <strong>Example</strong>: <code>--proposer-settings-file=./proposer_settings.json</code> 
     </td>
   </tr>
   <tr>
@@ -190,7 +190,6 @@ The above JSON demonstrates configuring two 1:1 mappings between `validator publ
     Optional. A configuration object that contains <code>enable</code> and <code>gas_limit</code> properties.<br /> <br /> 
     <strong>Type:</strong> Object<br /> <br /> 
     <strong>Note:</strong> Applicable only when using custom block builders.
-    <br /> <br /> 
     </td>
   </tr>
   <tr>
@@ -250,12 +249,6 @@ The above JSON demonstrates configuring two 1:1 mappings between `validator publ
     <strong>Type:</strong> uint64 <br /> <br /> 
     <strong>Note:</strong> Applicable only when using custom block builders. Block limits can only change a fixed amount per proposal - the default limit is 30M gwei.<br /> <br />
     <strong>Example:</strong> <code>35000000</code>  
-    </td>
-  </tr>
-  <tr>
-    <td><code>default_config</code></td>
-    <td>
-    Required. 
     </td>
   </tr>
 </table>
