@@ -10,7 +10,7 @@ sme: james-prysm
 
 :::caution Prysm develop branch
 
- **This guide reflects functionality currently available in Prysm's [`develop` branch](https://github.com/prysmaticlabs/prysm/tree/develop) and may change significantly as we receive feedback from users like you. Join our [Discord server](https://discord.gg/prysmaticlabs) to share your feedback.
+ This guidance reflects functionality that exists only in Prysm's [`develop` branch](https://github.com/prysmaticlabs/prysm/tree/develop) and may change significantly as we receive feedback from users like you. Join our [Discord server](https://discord.gg/prysmaticlabs) to share your feedback.
 
 :::
 
