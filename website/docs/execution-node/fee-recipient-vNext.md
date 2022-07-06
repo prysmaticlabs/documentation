@@ -16,7 +16,7 @@ sme: james-prysm
 
 :::caution Breaking changes
 
-Breaking changes have been introduced within the [`develop` branch](https://github.com/prysmaticlabs/prysm/tree/develop). These changes introduce new configuration schema and properties related to Fee Recipient and validator registration:
+Breaking changes have been introduced within the [`develop` branch](https://github.com/prysmaticlabs/prysm/tree/develop). These changes introduce a new Fee Recipient and validator registration configuration schema:
 
 - The existing `gaslimit` property within the proposer settings file has been replaced with an optional `validator_registration` object that contains the `gaslimit` property.
 - The existing `suggested-fee-recipient` flag must now be used with the new `enable-validator-registration` flag. This allows your validator client to use the MEV Builder API.
