@@ -8,9 +8,9 @@ sme: james-prysm
 
 # Configure a Fee Recipient Address 
 
-:::caution Prysm v2.1.3-rc.4
+:::caution Prysm develop branch
 
- **This guide uses [Prysm v2.1.3-rc.4](https://github.com/prysmaticlabs/prysm/releases/tag/v2.1.3-rc.4)** and may change significantly as we receive feedback from users like you. Join our [Discord server](https://discord.gg/prysmaticlabs) to share your feedback.
+ This guidance reflects functionality that exists only in Prysm's [`develop` branch](https://github.com/prysmaticlabs/prysm/tree/develop) and may change significantly as we receive feedback from users like you. Join our [Discord server](https://discord.gg/prysmaticlabs) to share your feedback.
 
 :::
 
