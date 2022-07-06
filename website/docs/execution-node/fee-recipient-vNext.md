@@ -195,7 +195,7 @@ The above JSON demonstrates configuring two 1:1 mappings between `validator publ
     </td>
   </tr>
   <tr>
-    <td><code>proposer_config.validator_registration.gas_limit</code></td>
+    <td><code>..validator_registration.gas_limit</code></td>
     <td>
     Optional. <code>validator_registration</code>.  <br /> <br /> 
     <strong>Type:</strong> bool <br /> <br /> 
@@ -204,7 +204,7 @@ The above JSON demonstrates configuring two 1:1 mappings between `validator publ
     </td>
   </tr>
   <tr>
-    <td><code>proposer_config.validator_registration.gas_limit</code></td>
+    <td><code>..validator_registration.gas_limit</code></td>
     <td>
     Optional. <code>validator_registration</code>.  <br /> <br /> 
     <strong>Type:</strong> uint64 <br /> <br /> 
@@ -238,7 +238,7 @@ The above JSON demonstrates configuring two 1:1 mappings between `validator publ
     </td>
   </tr>
   <tr>
-    <td><code>default_config.validator_registration.gas_limit</code></td>
+    <td><code>..validator_registration.gas_limit</code></td>
     <td>
     Optional. <code>validator_registration</code>.  <br /> <br /> 
     <strong>Type:</strong> bool <br /> <br /> 
@@ -247,7 +247,7 @@ The above JSON demonstrates configuring two 1:1 mappings between `validator publ
     </td>
   </tr>
   <tr>
-    <td><code>default_config.validator_registration.gas_limit</code></td>
+    <td><code>..validator_registration.gas_limit</code></td>
     <td>
     Optional. <code>validator_registration</code>.  <br /> <br /> 
     <strong>Type:</strong> uint64 <br /> <br /> 
