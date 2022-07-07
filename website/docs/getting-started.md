@@ -304,5 +304,5 @@ Join our [Discord](https://discord.gg/prysmaticlabs) server - a member of the te
 <p><strong class="status-meta">Content author(s):</strong> <a href='https://github.com/symbolpunk'>Mick</a></p>
 </div>
 <div class="update-request">
-<a href="https://github.com/prysmaticlabs/documentation/issues/new?title=Content%20Update%20Request&body=Please%20update%20this%20page:%20Getting%20Started">🐼 Request an update</a>
+<a href="https://github.com/prysmaticlabs/documentation/issues/new?title=Content%20Update%20Request:%20Getting%20Started">🐼 Request an update</a>
 </div>
