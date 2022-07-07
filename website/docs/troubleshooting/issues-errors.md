@@ -74,5 +74,5 @@ Feel free to reach out to us on [Discord](https://discord.gg/prysmaticlabs) and 
 <p><strong class="status-meta">Content freshness:</strong> 🟠 This content is <strong>stale</strong> and is pending revision.</p>
 </div>
 <div class="update-request">
-<a href="https://github.com/prysmaticlabs/documentation/issues/new?title=Content%20Update%20Request:%20Quickstart">🐼 Request an update</a>
+<a href="https://github.com/prysmaticlabs/documentation/issues/new?title=Content%20Update%20Request:%20Issues%20and%20errors">🐼 Request an update</a>
 </div>
