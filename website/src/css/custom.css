@@ -91,6 +91,15 @@ header>h1 {
     float: right;
 }
 
+.content-status>p {
+    margin-bottom: 0;
+}
+
+.content-status .status-meta {
+    display: inline-block;
+    width: 130px;
+}
+
 footer.docusaurus-mt-lg {
     margin-top: 0 !important;
 }
@@ -100,14 +109,6 @@ footer.docusaurus-mt-lg {
     max-height: 30px;
 }
 
-.content-status>p {
-    margin-bottom: 0;
-}
-
-.content-status strong {
-    display: inline-block;
-    width: 130px;
-}
 
 .navbar {
     background-color: #22292f;
