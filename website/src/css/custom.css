@@ -95,6 +95,8 @@ header>h1 {
 
 .update-request {
     margin-left: auto;
+    display: block;
+    text-align: right;
 }
 
 .content-status>p {
@@ -123,8 +125,6 @@ footer>.col {
     padding-right: 6px !important;
     padding-top: 9px !important;
 }
-
-
 
 footer>.col a,
 .update-request>a {
