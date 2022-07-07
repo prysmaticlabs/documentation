@@ -97,9 +97,9 @@ A green notification saying “Datasource updated” should now be visible on th
 
 ## Enabling mobile alerts
 
-:::warn stale content
+:::caution stale content
 
-This section is currently out of date. Refer to Grafana's [The new unified alerting system for Grafana](https://grafana.com/blog/2021/06/14/the-new-unified-alerting-system-for-grafana-everything-you-need-to-know/) for the latest guidance while we update this content.
+This section is currently out of date. Refer to Grafana's [The new unified alerting system for Grafana](https://grafana.com/blog/2021/06/14/the-new-unified-alerting-system-for-grafana-everything-you-need-to-know/) for the latest alert configuration guidance while we update this content.
 
 :::
 
