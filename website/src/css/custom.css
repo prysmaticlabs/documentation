@@ -102,13 +102,21 @@ header>h1 {
     width: 130px;
 }
 
+footer {
+    padding: 10px;
+}
+
 footer.docusaurus-mt-lg {
     margin-top: 0 !important;
 }
 
 .footer__logo {
-    max-width: 30px;
-    max-height: 30px;
+    max-width: 25px;
+    max-height: 25px;
+}
+
+.footer__copyright {
+    font-size: 13px;
 }
 
 
