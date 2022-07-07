@@ -129,7 +129,7 @@ footer>.col a {
     margin-top: 10px;
     text-decoration: none;
     transition-property: all;
-    transition-duration: 0.3s;
+    transition-duration: 0.2s;
 }
 
 footer>.col a:hover {
