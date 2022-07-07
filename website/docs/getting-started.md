@@ -303,4 +303,3 @@ Join our [Discord](https://discord.gg/prysmaticlabs) server - a member of the te
 <p>This content is <strong>fresh</strong> as of July 2022.</p>
 <p><strong>Content author(s)</strong>: <a href='https://github.com/symbolpunk'>Mick</a></p>
 </div>
-</div>
