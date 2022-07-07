@@ -106,6 +106,10 @@ header>h1 {
     display: none;
 }
 
+nav.pagination-nav {
+    margin-top: 10px;
+}
+
 footer {
     padding: 10px;
 }
