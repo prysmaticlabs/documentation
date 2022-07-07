@@ -97,6 +97,12 @@ A green notification saying “Datasource updated” should now be visible on th
 
 ## Enabling mobile alerts
 
+:::warn stale content
+
+This section is currently out of date. Refer to Grafana's [The new unified alerting system for Grafana](https://grafana.com/blog/2021/06/14/the-new-unified-alerting-system-for-grafana-everything-you-need-to-know/) for the latest guidance while we update this content.
+
+:::
+
 1. On the left menu of Grafana, select **Notification channels** under the bell icon. 
 
 2. Click on **New channel**.
