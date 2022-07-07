@@ -90,7 +90,7 @@ header>h1 {
     font-size: 14px;
     float: right;
     border-radius: 5px;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .content-status>p {
@@ -116,6 +116,7 @@ footer {
 
 footer>.col {
     text-align: right;
+    padding-right: 0;
 }
 
 footer>.col a {
@@ -135,8 +136,8 @@ footer>.col a:hover {
 }
 
 footer>.col a svg {
-    height: 17;
-    margin-bottom: 3px;
+    height: 17px;
+    margin-bottom: 1px;
 }
 
 
