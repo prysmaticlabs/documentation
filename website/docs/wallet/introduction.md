@@ -1,7 +1,7 @@
 ---
 id: introduction
-title: Wallets and validator accounts
-sidebar_label: Introduction
+title: Keys, wallets, and accounts
+sidebar_label: Keys, wallets, and accounts
 ---
 
 This section explains everything about how to manage validator accounts using Prysm's built-in wallet, as well as setup instructions for different types of wallets including HD (hierarchical deterministic), non-HD, and remote signing wallets. If you created a wallet using the official [Ethereum launchpad](https://launchpad.ethereum.org/) and want to run Prysm using it, see our dedicated instructions [here](/docs/mainnet/joining-eth2).

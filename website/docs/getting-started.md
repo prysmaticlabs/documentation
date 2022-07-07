@@ -176,8 +176,8 @@ The following table of contents provides a descriptive overview of Prysm's docum
 <p>Learn about the various node types, networks, network layers, and how it all relates.</p>
 </div>
 <div class='panel'>
-<a href='../wallet/introduction'>Keys and wallets</a>
-<p>Learn how keys and wallets work on Ethereum, and how they relate to Prysm.</p>
+<a href='../wallet/introduction'>Keys, wallets, and accounts</a>
+<p>Learn how keys, wallets, and accounts relate to each other within the context of Prysm and Ethereum.</p>
 </div>
 <div class='panel'>
 <a href='../concepts/slashing'>Slashing</a>
@@ -190,16 +190,16 @@ The following table of contents provides a descriptive overview of Prysm's docum
 <p>This section contains documents targeted at developers.</p>
 </div>
 <div class='panel'>
-<a href='../contribute/contribution-guidelines'>Contribute</a>
+<a href='../contribute/contribution-guidelines'>Contribute to Prysm's codebase</a>
 </div>
 <div class='panel'>
-<a href='../contribute/prysms-golang-principles'>Golang principles</a>
+<a href='../contribute/golang-principles'>Golang principles</a>
 </div>
 <div class='panel'>
 <a href='../reading/golang'>Golang resources</a>
 </div>
 <div class='panel'>
-<a href='../reading/bazel'>Why Bazel?</a>
+<a href='../reading/bazel'>About Bazel</a>
 </div>
 <div class='panel secondary-panel section-title'>
 
@@ -230,13 +230,13 @@ The following table of contents provides a descriptive overview of Prysm's docum
 <a href='../devtools/api-middleware'>API middleware</a>
 </div>
 <div class='panel'>
-<a href='../how-prysm-works/overview-technical'>Architecture overview</a>
+<a href='../how-prysm-works/architecture-overview'>Architecture overview</a>
 </div>
 <div class='panel'>
 <a href='../how-prysm-works/beacon-node'>Beacon node</a>
 </div>
 <div class='panel'>
-<a href='../how-prysm-works/validator-clients'>Validator client</a>
+<a href='../how-prysm-works/prysm-validator-client'>Validator client</a>
 </div>
 <div class='panel'>
 <a href='../how-prysm-works/validator-lifecycle'>Validator lifecycle</a>
@@ -251,7 +251,7 @@ The following table of contents provides a descriptive overview of Prysm's docum
 <a href='../how-prysm-works/p2p-networking'>P2P networking</a>
 </div>
 <div class='panel'>
-<a href='../how-prysm-works/bls-signature-aggregation-and-cryptography'>BLS cryptography</a>
+<a href='../how-prysm-works/bls-cryptography'>BLS cryptography</a>
 </div>
 <div class='panel'>
 <a href='../devtools/end-to-end'>End-to-end tests</a>
@@ -271,7 +271,7 @@ The following table of contents provides a descriptive overview of Prysm's docum
 <a href='../reading/eth2'>Ethereum learning resources</a>
 </div>
 <div class='panel'>
-<a href='../reading/testnet_postmortems'>Testnet postmortems</a>
+<a href='../reading/testnet-postmortems'>Testnet postmortems</a>
 </div>
 <div class='panel'>
 <a href='../devtools/block-explorers'>Block explorers</a>
@@ -287,9 +287,6 @@ The following table of contents provides a descriptive overview of Prysm's docum
 ## vNext
 
 <p>This section contains documentation that applies to vNext versions of Prysm.</p>
-</div>
-<div class='panel'>
-<a href='../prysm-usage/checkpoint-sync-vNext'>Use Checkpoint Sync (vNext)</a>
 </div>
 <div class='panel'>
 <a href='../execution-node/fee-recipient-vNext'>Configure Fee Recipient (vNext)</a>
