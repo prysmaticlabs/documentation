@@ -299,9 +299,8 @@ The following table of contents provides a descriptive overview of Prysm's docum
 Join our [Discord](https://discord.gg/prysmaticlabs) server - a member of the team or our community will be happy to help.
 
 <br />
-<div class="admonition admonition-caution alert alert--secondary">
-<div class="admonition-content">
-<p><strong>Page freshness</strong>: This page is <strong>up to date</strong> as of June 30th, 2022.</p>
-<p><strong>Content author</strong>: <a href='https://twitter.com/symbolpunk'>Mick</a></p>
+<div class="content-status">
+<p>This content is <strong>fresh</strong> as of July 2022.</p>
+<p><strong>Content author(s)</strong>: <a href='https://github.com/symbolpunk'>Mick</a></p>
 </div>
 </div>

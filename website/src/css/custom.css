@@ -80,7 +80,15 @@ header>h1 {
     padding: 15px 20px 20px 20px;
 }
 
-
+.content-status {
+    display: block;
+    width: auto;
+    max-width: 200px;
+    padding: 10px;
+    border: 1px solid #f3f4f5;
+    background-color: #fcfcfc;
+    font-size: 14px;
+}
 
 .navbar {
     background-color: #22292f;
