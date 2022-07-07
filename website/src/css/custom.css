@@ -118,7 +118,7 @@ nav.pagination-nav {
 }
 
 footer {
-    padding: 10px;
+    padding: 10px !important;
 }
 
 footer>.col {
