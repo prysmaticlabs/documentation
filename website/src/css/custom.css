@@ -90,6 +90,7 @@ header>h1 {
     font-size: 14px;
     float: right;
     border-radius: 5px;
+    margin-top: 10px;
 }
 
 .content-status>p {
