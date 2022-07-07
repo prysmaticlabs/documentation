@@ -102,8 +102,25 @@ header>h1 {
     width: 130px;
 }
 
+.lastUpdated_3DPF {
+    display: none;
+}
+
 footer {
     padding: 10px;
+}
+
+footer>.col {
+    text-align: right;
+}
+
+footer>.col a {
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-color: #fcfcfc;
+    font-size: 14px;
+    border-radius: 5px;
+    margin-top: 10px;
 }
 
 footer.docusaurus-mt-lg {
