@@ -1,12 +1,12 @@
 ---
 id: getting-started
-title:  Welcome to Prysm Documentation
-sidebar_label: Welcome!
+title:  Prysm documentation - table of contents
+sidebar_label: Table of contents
 ---
 
 [Prysm](https://github.com/prysmaticlabs/prysm) is an [Ethereum](https://ethereum.org/en/developers/docs/intro-to-ethereum/) [proof-of-stake](https://ethereum.org/en/developers/docs/consensus-mechanisms/pos/) client written in [Go](https://golang.org). You can use Prysm to participate in Ethereum's [decentralized economy](https://ethereum.org/en/developers/docs/web2-vs-web3/) by [running a node](./install/install-with-script.md) and, if you have [32 ETH to stake](https://ethereum.org/en/staking/), a [validator](./install/install-with-script.md#step-6-run-a-validator-using-prysm).
 
-The following index of pages provides a descriptive overview of Prysm's documentation:  
+The following table of contents provides a descriptive overview of Prysm's documentation:
 
 <div class='panel'>
 <a href='../install/install-with-script'>Quickstart: Run a Node and Stake ETH using Prysm</a>
@@ -36,7 +36,7 @@ The following index of pages provides a descriptive overview of Prysm's document
 
 ## How-tos
 
-<p>This section contains <strong>procedural documentation</strong> that walks you through specific tasks related to Prysm.</p>
+<p>This section contains procedural documentation that walks you through <strong>specific tasks related to Prysm</strong>.</p>
 </div>
 <div class='panel'>
 <a href='../prysm-usage/staying-up-to-date'>Update and downgrade Prysm</a>
@@ -154,7 +154,7 @@ The following index of pages provides a descriptive overview of Prysm's document
 <p>Learn how to configure a <strong>remote signing wallet</strong>, a special type of wallet that lets your validator connect to a remote server to retrieve the keys you need to process signing requests via a secure gRPC connection. This guidance is targeted at power users who are willing to increase complexity in exchange for increased validator key security.</p>
 </div>
 <div class='panel'>
-<a href='../wallet/we3signer'>Use Web3Signer</a>
+<a href='../wallet/web3signer'>Use Web3Signer</a>
 <p>Learn how to use <a href='https://github.com/ConsenSys/web3signer'>Web3Signer</a>, an open-source remote signing service that allows you to store your validator keys remotely instead of locally.</p>
 </div>
 <div class='panel'>
