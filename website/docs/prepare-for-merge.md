@@ -266,3 +266,11 @@ You can make the above changes now. This document will be continuously updated w
 **Can I use IPC post-Merge?**
 
 Yes. You also won't have to worry about JWT if you use IPC. Refer to your clients' command-line documentation for IPC configuration parameters.
+
+<div class="content-status">
+<p><strong class="status-meta">Content freshness:</strong> 🟢 This content is <strong>fresh</strong> as of July 2022.</p>
+<p><strong class="status-meta">Content author(s):</strong> <a href='https://github.com/symbolpunk'>Mick</a></p>
+</div>
+<div class="update-request">
+<a href="https://github.com/prysmaticlabs/documentation/issues/new?title=Content%20Update%20Request:%20Quickstart">🐼 Request an update</a>
+</div>

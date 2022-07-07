@@ -75,3 +75,11 @@ or for a validator like so:
 ```
 
 It is possible to provide additional flags alongside the `.yaml` file, though if conflicting flags are provided, the flag defined in the`.yaml` file will take priority. For example, if the flag `--datadir=/data2` is specified and `datadir: "/data1"` is in the `.yaml` file, Prysm would prioritise writing to `/data1`.
+
+<div class="content-status">
+<p><strong class="status-meta">Content freshness:</strong> 🟢 This content is <strong>fresh</strong> as of July 2022.</p>
+<p><strong class="status-meta">Content author(s):</strong> <a href='https://github.com/rauljordan'>Raul</a></p>
+</div>
+<div class="update-request">
+<a href="https://github.com/prysmaticlabs/documentation/issues/new?title=Content%20Update%20Request:%20Quickstart">🐼 Request an update</a>
+</div>
