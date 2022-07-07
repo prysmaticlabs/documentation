@@ -82,7 +82,7 @@ header>h1 {
 
 .content-status {
     display: block;
-    width: auto;
+    width: 425px;
     max-width: 100%;
     padding: 10px;
     border: 1px solid #ddd;
@@ -97,6 +97,7 @@ header>h1 {
     margin-left: auto;
     display: block;
     text-align: right;
+    margin-top: 10px;
 }
 
 .content-status>p {
@@ -137,6 +138,7 @@ footer>.col a,
     text-decoration: none;
     transition-property: all;
     transition-duration: 0.2s;
+    display: inline-block;
 }
 
 footer>.col a:hover,
