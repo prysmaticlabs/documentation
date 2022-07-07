@@ -81,5 +81,5 @@ It is possible to provide additional flags alongside the `.yaml` file, though if
 <p><strong class="status-meta">Content author(s):</strong> <a href='https://github.com/rauljordan'>Raul</a></p>
 </div>
 <div class="update-request">
-<a href="https://github.com/prysmaticlabs/documentation/issues/new?title=Content%20Update%20Request:%20Quickstart">🐼 Request an update</a>
+<a href="https://github.com/prysmaticlabs/documentation/issues/new?title=Content%20Update%20Request:%20Parameters">🐼 Request an update</a>
 </div>
