@@ -300,6 +300,6 @@ Join our [Discord](https://discord.gg/prysmaticlabs) server - a member of the te
 
 <br />
 <div class="content-status">
-<p><strong class="status-meta">Page freshness:</strong> 🟢 This content is <strong>fresh</strong> as of July 2022.</p>
+<p><strong class="status-meta">Content freshness:</strong> 🟢 This content is <strong>fresh</strong> as of July 2022.</p>
 <p><strong class="status-meta">Content author(s):</strong> <a href='https://github.com/symbolpunk'>Mick</a></p>
 </div>
