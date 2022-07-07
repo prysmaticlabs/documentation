@@ -121,7 +121,20 @@ footer>.col a {
     font-size: 14px;
     border-radius: 5px;
     margin-top: 10px;
+    text-decoration: none;
+    transition: background-color 0.3s;
 }
+
+footer>.col a:hover {
+    text-decoration: none;
+    background-color: #f8f8f8;
+}
+
+footer>.col a svg {
+    height: 17;
+    margin-bottom: 3px;
+}
+
 
 footer.docusaurus-mt-lg {
     margin-top: 0 !important;
