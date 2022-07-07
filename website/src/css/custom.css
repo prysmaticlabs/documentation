@@ -128,12 +128,14 @@ footer>.col a {
     border-radius: 5px;
     margin-top: 10px;
     text-decoration: none;
-    transition: background-color 0.3s;
+    transition-property: all;
+    transition-duration: 0.3s;
 }
 
 footer>.col a:hover {
     text-decoration: none;
     background-color: #f8f8f8;
+    border: 1px solid #3578e5;
 }
 
 footer>.col a svg {
