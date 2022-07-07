@@ -89,6 +89,7 @@ header>h1 {
     background-color: #fcfcfc;
     font-size: 14px;
     float: right;
+    border-radius: 5px;
 }
 
 .content-status>p {
