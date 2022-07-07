@@ -83,11 +83,20 @@ header>h1 {
 .content-status {
     display: block;
     width: auto;
-    max-width: 200px;
+    max-width: 320px;
     padding: 10px;
-    border: 1px solid #f3f4f5;
+    border: 1px solid #ddd;
     background-color: #fcfcfc;
     font-size: 14px;
+}
+
+.content-status>p {
+    margin-bottom: 0;
+}
+
+.content-status strong {
+    display: inline-block;
+    width: 130px;
 }
 
 .navbar {
