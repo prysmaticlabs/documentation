@@ -88,9 +88,13 @@ header>h1 {
     border: 1px solid #ddd;
     background-color: #fcfcfc;
     font-size: 14px;
-    float: right;
     border-radius: 5px;
     margin-top: 20px;
+    margin-left: auto;
+}
+
+.update-request {
+    margin-left: auto;
 }
 
 .content-status>p {
