@@ -123,7 +123,7 @@ footer>.col {
 
 
 footer>.col a,
-.update-request {
+.update-request>a {
     padding: 10px;
     border: 1px solid #ddd;
     background-color: #fcfcfc;
@@ -136,7 +136,7 @@ footer>.col a,
 }
 
 footer>.col a:hover,
-.update-request:hover {
+.update-request>a:hover {
     text-decoration: none;
     background-color: #f8f8f8;
     border: 1px solid #3578e5;
