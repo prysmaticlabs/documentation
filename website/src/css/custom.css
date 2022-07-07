@@ -88,6 +88,16 @@ header>h1 {
     border: 1px solid #ddd;
     background-color: #fcfcfc;
     font-size: 14px;
+    float: right;
+}
+
+footer.docusaurus-mt-lg {
+    margin-top: 0 !important;
+}
+
+.footer__logo {
+    max-width: 30px;
+    max-height: 30px;
 }
 
 .content-status>p {
