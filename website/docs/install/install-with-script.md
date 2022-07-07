@@ -281,12 +281,11 @@ reg add HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1
 
 ```
 mkdir prysm && cd prysm
-curl https://raw.githubusercontent.com/prysmaticlabs/prysm/v2.1.3-rc.4/prysm.bat --output prysm.bat
+curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.bat --output prysm.bat
 reg add HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1
-set USE_PRYSM_VERSION=v2.1.3-rc.4
 ```
 
-  <p>This will download the Prysm client and update your registry to enable verbose logging. The <code>USE_PRYSM_VERSION</code> environment variable tells Prysm to use the release candidate. If you're using Powershell, you may need to use <code>$env:USE_PRYSM_VERSION="v2.1.3-rc.4"</code> instead of the <code>set</code> command.</p>
+  <p>This will download the Prysm client and update your registry to enable verbose logging.</p>
         <p>Download the <a href='https://github.com/eth-clients/merge-testnets/blob/main/sepolia/genesis.ssz'>Sepolia genesis state from Github</a> into your <code>consensus/prysm</code> directory. Then use the following command to start a beacon node that connects to your local execution node using your secret JWT file:</p>
         <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8551 --sepolia --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9 --jwt-secret=jwt.hex --genesis-state=genesis.ssz</code></pre>
         <p>If you're running a validator, specifying a <code>suggested-fee-recipient</code> wallet address will allow you to earn what were previously miner transaction fee tips.</p>
@@ -296,12 +295,11 @@ set USE_PRYSM_VERSION=v2.1.3-rc.4
 
 ```
 mkdir prysm && cd prysm
-curl https://raw.githubusercontent.com/prysmaticlabs/prysm/v2.1.3-rc.4/prysm.bat --output prysm.bat
+curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.bat --output prysm.bat
 reg add HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1
-set USE_PRYSM_VERSION=v2.1.3-rc.4
 ```
 
-  <p>This will download the Prysm client and update your registry to enable verbose logging. The <code>USE_PRYSM_VERSION</code> environment variable tells Prysm to use the release candidate. If you're using Powershell, you may need to use <code>$env:USE_PRYSM_VERSION="v2.1.3-rc.4"</code> instead of the <code>set</code> command.</p>
+  <p>This will download the Prysm client and update your registry to enable verbose logging.</p>
         <p>Download the <a href='https://github.com/eth-clients/merge-testnets/blob/main/ropsten-beacon-chain/genesis.ssz'>Ropsten genesis state from Github</a> into your <code>consensus/prysm</code> directory. Then use the following command to start a beacon node that connects to your local execution node using your secret JWT file:</p>
         <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8551 --ropsten --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9 --jwt-secret=jwt.hex --genesis-state=genesis.ssz</code></pre>
         <p>If you're running a validator, specifying a <code>suggested-fee-recipient</code> wallet address will allow you to earn what were previously miner transaction fee tips.</p>
@@ -347,10 +345,10 @@ curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --out
 
 ```
 mkdir prysm && cd prysm
-curl https://raw.githubusercontent.com/prysmaticlabs/prysm/v2.1.3-rc.4/prysm.sh --output prysm.sh && chmod +x prysm.sh
+curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --output prysm.sh && chmod +x prysm.sh
 ```
 
-  <p>This will download the Prysm client and make it executable. Tell Prysm to use the release candidate by setting a new environment variable as follows: <code>USE_PRYSM_VERSION=v2.1.3-rc.4</code>.</p>
+  <p>This will download the Prysm client and make it executable.</p>
         <p>Download the <a href='https://github.com/eth-clients/merge-testnets/blob/main/sepolia/genesis.ssz'>Sepolia genesis state from Github</a> into your <code>consensus/prysm</code> directory. Then use the following command to start a beacon node that connects to your local execution node using your secret JWT file:</p>
         <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8551 --sepolia --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9 --jwt-secret=jwt.hex --genesis-state=genesis.ssz</code></pre>
         <p>If you're running a validator, specifying a <code>suggested-fee-recipient</code> wallet address will allow you to earn what were previously miner transaction fee tips.</p>
@@ -360,10 +358,10 @@ curl https://raw.githubusercontent.com/prysmaticlabs/prysm/v2.1.3-rc.4/prysm.sh 
 
 ```
 mkdir prysm && cd prysm
-curl https://raw.githubusercontent.com/prysmaticlabs/prysm/v2.1.3-rc.4/prysm.sh --output prysm.sh && chmod +x prysm.sh
+curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --output prysm.sh && chmod +x prysm.sh
 ```
 
-  <p>This will download the Prysm client and make it executable. Tell Prysm to use the release candidate by setting a new environment variable as follows: <code>USE_PRYSM_VERSION=v2.1.3-rc.4</code>.</p>
+  <p>This will download the Prysm client and make it executable.</p>
         <p>Download the <a href='https://github.com/eth-clients/merge-testnets/blob/main/ropsten-beacon-chain/genesis.ssz'>Ropsten genesis state from Github</a> into your <code>consensus/prysm</code> directory. Then use the following command to start a beacon node that connects to your local execution node using your secret JWT file:</p>
         <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8551 --ropsten --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9 --jwt-secret=jwt.hex --genesis-state=genesis.ssz</code></pre>
         <p>If you're running a validator, specifying a <code>suggested-fee-recipient</code> wallet address will allow you to earn what were previously miner transaction fee tips.</p>
@@ -387,7 +385,7 @@ This should produce the following output:
 {"data":{"head_slot":"6944","sync_distance":"3003133","is_syncing":true,"is_optimistic":true}}
 ```
 
-When you see `"is_syncing":false`, your beacon node is fully synchronized. When you see `"is_optimistic":false`, your execution node is fully synchronized. Note that only Prysm v2.1.3-rc.4+ displays `is_optimistic`.
+When you see `"is_syncing":false`, your beacon node is fully synchronized. When you see `"is_optimistic":false`, your execution node is fully synchronized.
 
 You can verify that your beacon node has successfully connected to your execution node by running the following command from a separate terminal window:
 

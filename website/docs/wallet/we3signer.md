@@ -37,10 +37,6 @@ Most Prysm keymanager types require a corresponding Prysm wallet for storing key
 The `--wallet-dir` flag will still be needed if using the Remote Keymanager API for `auth-token` purposes.
 :::
 
-:::warning Web3Signer is currently only supported until Altair Fork
-Bellatrix( The Merge ) it not yet supported by Web3Signer from both Prysm nor Web3Signer sides. Development is underway.
-:::
-
 ## Remote Keymanager API 
 
 [Keymanager APIs](https://github.com/ethereum/keymanager-APIs) is a recommended set of REST APIs that validator clients have agreed upon for managing keys.
