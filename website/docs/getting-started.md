@@ -1,6 +1,6 @@
 ---
 id: getting-started
-title:  Prysm documentation - table of contents
+title:  Table of contents
 sidebar_label: Table of contents
 ---
 
