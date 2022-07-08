@@ -117,7 +117,7 @@ Ethereum and its client software are constantly improving. This constant change 
  - **Essential**: Expect unexpected things to happen.
  - **Essential**: Be prepared to engage with the [Prysm Discord server](https://discord.gg/prysmaticlabs), [r/ethstaker](https://www.reddit.com/r/ethstaker/), and the [EthStaker Discord server](https://discord.io/ethstaker) if you need help troubleshooting issues.
  - **Essential**: When sharing logs, be sure to redact personally identifiable information and metadata that can be used to identify your validator.
- - **Essential**: Learn how to [inspect Prysm's performance](https://docs.prylabs.network/docs/prysm-usage/is-everything-fine).
+ - **Essential**: Learn how to [inspect Prysm's performance](https://docs.prylabs.network/docs/monitoring/is-everything-fine).
  - **Essential**: Familiarize yourself with [Prysm's P2P connectivity guidance](https://docs.prylabs.network/docs/prysm-usage/p2p-host-ip).
  - **Essential**: Review [the Prysm FAQ](https://docs.prylabs.network/docs/faq).
 
