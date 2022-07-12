@@ -32,7 +32,7 @@
             "type": "category",
             "collapsed": true,
             "collapsible": true,
-            "label": "How-Tos",
+            "label": "How-tos",
             "items": [
                 {
                     "type": "doc",
@@ -188,7 +188,7 @@
             "type": "category",
             "collapsed": true,
             "collapsible": true,
-            "label": "Developer Wiki",
+            "label": "Developer wiki",
             "items": [
                 {
                     "type": "doc",
