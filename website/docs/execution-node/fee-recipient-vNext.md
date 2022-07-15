@@ -18,8 +18,8 @@ sme: james-prysm
 
 Breaking changes have been introduced within the [`develop` branch](https://github.com/prysmaticlabs/prysm/tree/develop). These changes introduce a new Fee Recipient and validator registration configuration schema:
 
-- The existing `gaslimit` property within the proposer settings file has been replaced with an optional `validator_registration` object that contains the `gaslimit` property.
-- The existing `suggested-fee-recipient` flag must now be used with the new `enable-validator-registration` flag. This allows your validator client to use the MEV Builder API.
+- The existing `gaslimit` property within the proposer settings file has been replaced with an optional `builder` object that contains the `gaslimit` property.
+- The existing `suggested-fee-recipient` flag must now be used with the new `enable-builder` flag. This allows your validator client to use the MEV Builder API.
 
 :::
 
@@ -80,11 +80,11 @@ A fee recipient address can be configured on your client instance by using one o
     </td>
   </tr>
   <tr>
-    <td><code>enable-validator-registration</code></td>
+    <td><code>enable-builder</code></td>
     <td>
     This flag enables the periodic calling of Validator Registration API <a href="https://github.com/ethereum/builder-specs">(a Builder API)</a> while using the <code>suggested-fee-recipient</code> flag. <br /> <br /> 
-    <strong>Example</strong>: <code>--enable-validator-registration</code> <br /> <br /> 
-    <strong>Note</strong>: this flag will not affect proposer settings file. The proposer settings can specify validator registration use through its own fields.
+    <strong>Example</strong>: <code>--enable-builder</code> <br /> <br /> 
+    <strong>Note</strong>: this flag will not affect proposer settings file. The proposer settings can specify builder config use through its own fields.
     </td>
   </tr>
 </table>
@@ -110,18 +110,18 @@ If you use either `proposer-settings-file` or `proposer-settings-url` to specify
 proposer_config:
   '0x01234567155ad77931185101128655c0191bd0214c201ca48ed887f6c4c6adf334070efcd75140eada5ac83a92506dd7a':
     fee_recipient: '0x012345670FCE8a85ec7055A5F8b2bE214B3DaeFd3'
-    validator_registration:
-      enable: true
+    builder:
+      enabled: true
       gas_limit: 30000000
   '0x0123456748ed887f6c4c6adf334070efcd75140eada5ac83a92506dd7a057816155ad77931185101128655c0191bd0214':
     fee_recipient: '0x01234567bE214B3DaeFd350155530FCE8a85ec705'
-    validator_registration:
-      enable: true
+    builder:
+      enabled: true
       gas_limit: 35000000
 default_config:
   fee_recipient: '0x01234567c5af9B61374A128e6F85f553aF09ff89A'
-  validator_registration:
-      enable: true
+  builder:
+      enabled: true
       gas_limit: 30000000
 
 ```
@@ -133,23 +133,23 @@ JSON example:
   "proposer_config": {
     "0x01234567155ad77931185101128655c0191bd0214c201ca48ed887f6c4c6adf334070efcd75140eada5ac83a92506dd7a": {
       "fee_recipient": "0x012345670FCE8a85ec7055A5F8b2bE214B3DaeFd3",
-      "validator_registration": {
-        "enable": true,
+      "builder": {
+        "enabled": true,
         "gas_limit": 30000000
       }
     },
     "0x0123456748ed887f6c4c6adf334070efcd75140eada5ac83a92506dd7a057816155ad77931185101128655c0191bd0214": {
       "fee_recipient": "0x01234567bE214B3DaeFd350155530FCE8a85ec705",
-      "validator_registration": {
-        "enable": false,
+      "builder": {
+        "enabled": false,
         "gas_limit": 35000000
       }
     }
   },
   "default_config": {
     "fee_recipient": "0x01234567c5af9B61374A128e6F85f553aF09ff89A"
-    "validator_registration": {
-      "enable": true,
+    "builder": {
+      "enabled": true,
       "gas_limit": 30000000
     }
   }
@@ -185,7 +185,7 @@ The above JSON demonstrates configuring two 1:1 mappings between `validator publ
     </td>
   </tr>
   <tr>
-    <td><code>proposer_config.validator_registration</code></td>
+    <td><code>proposer_config.builder</code></td>
     <td>
     Optional. A configuration object that contains <code>enable</code> and <code>gas_limit</code> properties.<br /> <br /> 
     <strong>Type:</strong> Object<br /> <br /> 
@@ -193,7 +193,7 @@ The above JSON demonstrates configuring two 1:1 mappings between `validator publ
     </td>
   </tr>
   <tr>
-    <td><code>..validator_registration.enable</code></td>
+    <td><code>..builder.enabled</code></td>
     <td>
     Optional. Sets whether or not the validator registration is enabled or not.<br /> <br /> 
     <strong>Type:</strong> bool <br /> <br /> 
@@ -202,7 +202,7 @@ The above JSON demonstrates configuring two 1:1 mappings between `validator publ
     </td>
   </tr>
   <tr>
-    <td><code>..validator_registration.gas_limit</code></td>
+    <td><code>..builder.gas_limit</code></td>
     <td>
     Optional. Sets an upper gas limit (in gwei) for block builders.<br /> <br /> 
     <strong>Type:</strong> uint64 <br /> <br /> 
@@ -226,7 +226,7 @@ The above JSON demonstrates configuring two 1:1 mappings between `validator publ
     </td>
   </tr>
    <tr>
-    <td><code>default_config.validator_registration</code></td>
+    <td><code>default_config.builder</code></td>
     <td>
     Optional. A configuration object that contains <code>enable</code> and <code>gas_limit</code> properties.<br /> <br /> 
     <strong>Type:</strong> Object<br /> <br /> 
@@ -234,16 +234,16 @@ The above JSON demonstrates configuring two 1:1 mappings between `validator publ
     </td>
   </tr>
   <tr>
-    <td><code>..validator_registration.enable</code></td>
+    <td><code>..builder.enabled</code></td>
     <td>
     Optional.<br /> <br /> 
     <strong>Type:</strong> bool <br /> <br /> 
-    <strong>Note:</strong> Applicable only when using custom block builders. Sets whether or not the validator registration is enabled or not. <br /> <br /> 
+    <strong>Note:</strong> Applicable only when using custom block builders. Sets whether or not the MEV builder validator registration is enabled or not. <br /> <br /> 
     <strong>Example:</strong> <code>true</code> 
     </td>
   </tr>
   <tr>
-    <td><code>..validator_registration.gas_limit</code></td>
+    <td><code>..builder.gas_limit</code></td>
     <td>
     Optional. Sets a gas limit upper limit (in gwei) for block builders. <br /> <br /> 
     <strong>Type:</strong> uint64 <br /> <br /> 
