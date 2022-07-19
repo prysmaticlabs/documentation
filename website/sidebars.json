@@ -59,10 +59,6 @@
                     "id": "install/install-with-bazel"
                 },
                 {
-                    "type": "doc",
-                    "id": "prysm-usage/web-interface"
-                },
-                {
                     "type": "category",
                     "collapsed": true,
                     "collapsible": true,
@@ -143,6 +139,10 @@
                         {
                             "type": "doc",
                             "id": "prysm-usage/client-stats"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "prysm-usage/web-interface"
                         }
                     ]
                 },
