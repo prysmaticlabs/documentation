@@ -48,10 +48,6 @@
                 },
                 {
                     "type": "doc",
-                    "id": "prysm-usage/web-interface"
-                },
-                {
-                    "type": "doc",
                     "id": "monitoring/checking-status"
                 },
                 {
@@ -61,6 +57,10 @@
                 {
                     "type": "doc",
                     "id": "install/install-with-bazel"
+                },
+                {
+                    "type": "doc",
+                    "id": "prysm-usage/web-interface"
                 },
                 {
                     "type": "category",
