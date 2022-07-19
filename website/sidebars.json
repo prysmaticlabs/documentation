@@ -30,6 +30,22 @@
         },
         {
             "type": "category",
+            "collapsed": false,
+            "collapsible": true,
+            "label": "Advanced installation guides",
+            "items": [
+                {
+                    "type": "doc",
+                    "id": "install/install-with-docker"
+                },
+                {
+                    "type": "doc",
+                    "id": "install/install-with-bazel"
+                }
+            ]
+        },
+        {
+            "type": "category",
             "collapsed": true,
             "collapsible": true,
             "label": "How-tos",
@@ -49,14 +65,6 @@
                 {
                     "type": "doc",
                     "id": "monitoring/checking-status"
-                },
-                {
-                    "type": "doc",
-                    "id": "install/install-with-docker"
-                },
-                {
-                    "type": "doc",
-                    "id": "install/install-with-bazel"
                 },
                 {
                     "type": "category",
