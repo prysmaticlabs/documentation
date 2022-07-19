@@ -1,6 +1,6 @@
 ---
 id: install-with-script
-title: "Quickstart: Run a Node and Stake ETH using Prysm"
+title: "Quickstart: Run a node and (optionally) stake ETH using Prysm"
 sidebar_label: "Quickstart: Run a node"
 ---
 
