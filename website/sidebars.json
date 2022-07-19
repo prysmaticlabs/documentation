@@ -162,7 +162,7 @@
                     "type": "category",
                     "collapsed": true,
                     "collapsible": true,
-                    "label": "Advanced usage",
+                    "label": "For power users",
                     "items": [
                         {
                             "type": "doc",
