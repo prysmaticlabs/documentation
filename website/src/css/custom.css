@@ -119,6 +119,8 @@ nav.pagination-nav {
 
 footer {
     padding: 10px !important;
+    display: none !important;
+    /* can remove display style if we want to reintroduce */
 }
 
 footer>.col {
