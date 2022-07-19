@@ -81,33 +81,11 @@ header>h1 {
     padding: 15px 20px 20px 20px;
 }
 
-.content-status {
-    display: block;
-    width: 425px;
-    max-width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    background-color: #fcfcfc;
-    font-size: 14px;
-    border-radius: 5px;
-    margin-top: 50px;
-    margin-left: auto;
-}
-
 .update-request {
     margin-left: auto;
     display: block;
     text-align: right;
     margin-top: 10px;
-}
-
-.content-status>p {
-    margin-bottom: 0;
-}
-
-.content-status .status-meta {
-    display: inline-block;
-    width: 130px;
 }
 
 .lastUpdated_3DPF {
