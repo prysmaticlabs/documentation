@@ -99,7 +99,6 @@ header>h1 {
     display: block;
     text-align: right;
     margin-top: 10px;
-    margin-bottom: 10px !important;
 }
 
 .content-status>p {
@@ -143,6 +142,10 @@ footer>.col a,
     transition-property: all;
     transition-duration: 0.2s;
     display: inline-block;
+}
+
+.update-request>a {
+    margin-bottom: 10px;
 }
 
 footer>.col a:hover,
