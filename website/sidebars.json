@@ -25,10 +25,6 @@
             "id": "troubleshooting/issues-errors"
         },
         {
-            "type": "doc",
-            "id": "faq"
-        },
-        {
             "type": "category",
             "collapsed": false,
             "collapsible": true,
@@ -348,13 +344,17 @@
                 },
                 {
                     "type": "doc",
-                    "id": "terminology"
-                },
-                {
-                    "type": "doc",
                     "id": "contribute/bugreports"
                 }
             ]
+        },
+        {
+            "type": "doc",
+            "id": "faq"
+        },
+        {
+            "type": "doc",
+            "id": "terminology"
         }
     ]
 }
