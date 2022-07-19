@@ -158,7 +158,7 @@
                     "type": "category",
                     "collapsed": true,
                     "collapsible": true,
-                    "label": "For power users",
+                    "label": "Advanced",
                     "items": [
                         {
                             "type": "doc",
