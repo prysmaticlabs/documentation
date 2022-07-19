@@ -26,7 +26,7 @@
         },
         {
             "type": "category",
-            "collapsed": false,
+            "collapsed": true,
             "collapsible": true,
             "label": "Advanced installation guides",
             "items": [
