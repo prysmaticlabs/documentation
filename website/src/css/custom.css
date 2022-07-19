@@ -19,6 +19,7 @@ a {
 
 header>h1 {
     font-size: 2rem !important;
+    margin-top: 30px;
 }
 
 .markdown>h2 {
