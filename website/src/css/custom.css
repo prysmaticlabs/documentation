@@ -119,6 +119,10 @@ nav.pagination-nav {
     margin-bottom: 20px;
 }
 
+.markdown {
+    margin-bottom: 30px !important;
+}
+
 footer {
     padding: 10px !important;
     display: none !important;
