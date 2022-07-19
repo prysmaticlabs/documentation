@@ -52,15 +52,19 @@
             "items": [
                 {
                     "type": "doc",
+                    "id": "execution-node/fee-recipient"
+                },
+                {
+                    "type": "doc",
+                    "id": "execution-node/authentication"
+                },
+                {
+                    "type": "doc",
                     "id": "prysm-usage/staying-up-to-date"
                 },
                 {
                     "type": "doc",
                     "id": "prysm-usage/checkpoint-sync"
-                },
-                {
-                    "type": "doc",
-                    "id": "execution-node/fee-recipient"
                 },
                 {
                     "type": "doc",
@@ -163,10 +167,6 @@
                         {
                             "type": "doc",
                             "id": "prysm-usage/secure-grpc"
-                        },
-                        {
-                            "type": "doc",
-                            "id": "execution-node/authentication"
                         },
                         {
                             "type": "doc",
