@@ -688,10 +688,6 @@ TODO: explain in context of this guide -->
 <strong id='footnote-14'>14</strong>. BitMex recently posted research that provides hard numbers on penalties and rewards: <a href='https://blog.bitmex.com/ethereums-proof-of-stake-system-calculating-penalties-rewards/'>Ethereum's Proof of Stake System - Calculating Penalties and Rewards</a>. Collin Myers has also created an <a href='https://docs.google.com/spreadsheets/d/15tmPOvOgi3wKxJw7KQJKoUe-uonbYR6HF7u83LR5Mj4/edit#gid=1018097491'>Ethereum calculator</a>. 
 
 
-<div class="content-status">
-<p><strong class="status-meta">Content freshness:</strong> 🟢 This content is <strong>fresh</strong> as of July 2022.</p>
-<p><strong class="status-meta">Content author(s):</strong> <a href='https://github.com/symbolpunk'>Mick</a></p>
-</div>
 <div class="update-request">
 <a href="https://github.com/prysmaticlabs/documentation/issues/new?title=Content%20Update%20Request:%20Quickstart">🐼 Request an update</a>
 </div>

@@ -299,10 +299,6 @@ The following table of contents provides a descriptive overview of Prysm's docum
 Join our [Discord](https://discord.gg/prysmaticlabs) server - a member of the team or our community will be happy to help.
 
 
-<div class="content-status">
-<p><strong class="status-meta">Content freshness:</strong> 🟢 This content is <strong>fresh</strong> as of July 2022.</p>
-<p><strong class="status-meta">Content author(s):</strong> <a href='https://github.com/symbolpunk'>Mick</a></p>
-</div>
 <div class="update-request">
 <a href="https://github.com/prysmaticlabs/documentation/issues/new?title=Content%20Update%20Request:%20Getting%20Started">🐼 Request an update</a>
 </div>
