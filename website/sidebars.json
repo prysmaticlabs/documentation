@@ -72,7 +72,47 @@
                 },
                 {
                     "type": "doc",
-                    "id": "wallet/exiting-a-validator"
+                    "id": "install/install-with-docker"
+                },
+                {
+                    "type": "doc",
+                    "id": "install/install-with-bazel"
+                },
+                {
+                    "type": "category",
+                    "collapsed": true,
+                    "collapsible": true,
+                    "label": "Validator and wallet management",
+                    "items": [
+                        {
+                            "type": "doc",
+                            "id": "wallet/exiting-a-validator"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "wallet/remote"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "wallet/web3signer"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "wallet/nondeterministic"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "wallet/deterministic"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "advanced/maintaining-uptime"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "prysm-usage/graffiti-file"
+                        }
+                    ]
                 },
                 {
                     "type": "category",
@@ -106,14 +146,6 @@
                     "items": [
                         {
                             "type": "doc",
-                            "id": "install/install-with-docker"
-                        },
-                        {
-                            "type": "doc",
-                            "id": "install/install-with-bazel"
-                        },
-                        {
-                            "type": "doc",
                             "id": "prysm-usage/secure-grpc"
                         },
                         {
@@ -126,10 +158,6 @@
                         },
                         {
                             "type": "doc",
-                            "id": "prysm-usage/graffiti-file"
-                        },
-                        {
-                            "type": "doc",
                             "id": "advanced/beacon_node_api"
                         },
                         {
@@ -138,27 +166,7 @@
                         },
                         {
                             "type": "doc",
-                            "id": "advanced/maintaining-uptime"
-                        },
-                        {
-                            "type": "doc",
                             "id": "prysm-usage/p2p-host-ip"
-                        },
-                        {
-                            "type": "doc",
-                            "id": "wallet/remote"
-                        },
-                        {
-                            "type": "doc",
-                            "id": "wallet/web3signer"
-                        },
-                        {
-                            "type": "doc",
-                            "id": "wallet/nondeterministic"
-                        },
-                        {
-                            "type": "doc",
-                            "id": "wallet/deterministic"
                         }
                     ]
                 }
