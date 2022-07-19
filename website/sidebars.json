@@ -48,23 +48,7 @@
                 },
                 {
                     "type": "doc",
-                    "id": "prysm-usage/database-backups"
-                },
-                {
-                    "type": "doc",
-                    "id": "wallet/slashing-protection"
-                },
-                {
-                    "type": "doc",
                     "id": "prysm-usage/web-interface"
-                },
-                {
-                    "type": "doc",
-                    "id": "advanced/migrating-keys"
-                },
-                {
-                    "type": "doc",
-                    "id": "advanced/switch-clients"
                 },
                 {
                     "type": "doc",
@@ -77,6 +61,30 @@
                 {
                     "type": "doc",
                     "id": "install/install-with-bazel"
+                },
+                {
+                    "type": "category",
+                    "collapsed": true,
+                    "collapsible": true,
+                    "label": "Backups and migrations",
+                    "items": [
+                        {
+                            "type": "doc",
+                            "id": "prysm-usage/database-backups"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "wallet/slashing-protection"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "advanced/migrating-keys"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "advanced/switch-clients"
+                        }
+                    ]
                 },
                 {
                     "type": "category",
