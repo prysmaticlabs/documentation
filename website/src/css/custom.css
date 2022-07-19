@@ -86,7 +86,10 @@ header>h1 {
     display: block;
     text-align: right;
     margin-top: 10px;
-    margin-bottom: -30px;
+}
+
+.update-request>a {
+    margin-bottom: -30px !important;
     /*janky tempfix, can address this and other "style debt" as part of a dedicated styling updates PR */
 }
 
