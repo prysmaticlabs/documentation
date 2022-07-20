@@ -95,6 +95,7 @@ header>h1 {
 
 .menu__list-item>.menu__list {
     height: auto !important;
+    /*this was added because with nested collapsable sections in the sidebar, docusaurus rendering sometimes cuts off the last item. It seems like it uses viewheight to determine the height of nested sections. This override seems to work consistently across viewport sizes and devices. */
 }
 
 .lastUpdated_3DPF {
