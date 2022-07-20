@@ -34,9 +34,31 @@ The following table of contents provides a descriptive overview of Prysm's docum
 </div>
 <div class='panel section-title'>
 
+## Advanced installation guides
+
+<p>This section contains alternatives to the script-based installation guidance provided within our <a href='install/install-with-script'>Quickstart</a>.</p>
+</div>
+<div class='panel'>
+<a href='install/install-with-docker'>Install using Docker</a>
+<p>Learn how to install Prysm using preconfigured Docker images that ship with every Prysm release.</p>
+</div>
+<div class='panel'>
+<a href='install/install-with-bazel'>Build from source</a>
+<p>Learn how to build Prysm from source using Bazel.</p>
+</div>
+<div class='panel section-title'>
+
 ## How-tos
 
 <p>This section contains procedural documentation that walks you through <strong>specific tasks related to Prysm</strong>.</p>
+</div>
+<div class='panel'>
+<a href='execution-node/fee-recipient'>Configure Fee Recipient</a>
+<p>Learn how to specify a Fee Recipient wallet address that allows validators to earn <strong>transaction fee tips</strong> post-Merge.</p>
+</div>
+<div class='panel'>
+<a href='execution-node/authentication'>Configure JWT authentication</a>
+<p>After The Merge, Prysm will need to securely connect to a local execution node. This how-to shows you how to form this secure connection using a JWT token.</p>
 </div>
 <div class='panel'>
 <a href='prysm-usage/staying-up-to-date'>Update and downgrade Prysm</a>
@@ -47,8 +69,22 @@ The following table of contents provides a descriptive overview of Prysm's docum
 <p>Syncing from a checkpoint significantly reduces the time it takes for Prysm's beacon node to sync by piggypacking off of another fully-synced node.</p>
 </div>
 <div class='panel'>
-<a href='execution-node/fee-recipient'>Configure Fee Recipient</a>
-<p>Learn how to specify a Fee Recipient wallet address that allows validators to earn <strong>transaction fee tips</strong> post-Merge.</p>
+<a href='monitoring/checking-status'>Check node and validator status</a>
+<p>Learn how to check the status of your execution node, beacon node, and validator.</p>
+</div>
+<div class='panel'>
+<a href='prysm-usage/slasher'>Run a slasher</a>
+<p>Learn how to run a slasher, an optional beacon node process that detects and reports slashable offenses on the Ethereum proof-of-stake network.</p>
+</div>
+<div class='panel'>
+<a href='advanced/beacon_node_api'>Run an archival node</a>
+<p>Learn how to run your beacon node as an archival node. Archival nodes are like regular beacon nodes that are configured to store more blockchain data locally, increasing data retrieval performance in exchange for increased data storage requirements.</p>
+</div>
+<div class='panel secondary-panel section-title'>
+
+### Backups and migrations
+
+<p>This subsection contains how-tos that help you back up and migrate Prysm's data.</p>
 </div>
 <div class='panel'>
 <a href='prysm-usage/database-backups'>Back up & restore database</a>
@@ -59,10 +95,6 @@ The following table of contents provides a descriptive overview of Prysm's docum
 <p>Learn how to import and export your <strong>slashing protection history database</strong>, a special-purpose database that protects your validator from slashable events.</p>
 </div>
 <div class='panel'>
-<a href='prysm-usage/web-interface'>Use Prysm's Web UI</a>
-<p>Prysm's Web UI can be used to monitor and configure your beacon node and validator on <code>localhost</code> using an app-like interface.</p>
-</div>
-<div class='panel'>
 <a href='advanced/migrating-keys'>Move to a new machine</a>
 <p>Learn how to migrate from one host system to another while minimizing risk of slashing and downtime.</p>
 </div>
@@ -70,80 +102,15 @@ The following table of contents provides a descriptive overview of Prysm's docum
 <a href='advanced/switch-clients'>Switch to a new client</a>
 <p>Learn how to migrate from one client to another while minimizing risk of slashing and downtime.</p>
 </div>
-<div class='panel'>
-<a href='monitoring/checking-status'>Check node and validator status</a>
-<p>Learn how to check the status of your execution node, beacon node, and validator.</p>
+<div class='panel secondary-panel section-title'>
+
+### Validator and wallet management
+
+<p>This subsection contains how-tos that help you manage your validator and associated keys/wallets.</p>
 </div>
 <div class='panel'>
 <a href='wallet/exiting-a-validator'>Exit your validator</a>
 <p>Learn how to voluntarily exit your validator from Ethereum's consensus layer Beacon Chain network.</p>
-</div>
-<div class='panel secondary-panel section-title'>
-
-### Monitoring, metrics, and alerts
-
-<p>This subsection contains How-Tos that help you maintain validator uptime.</p>
-</div>
-
-<div class='panel'>
-<a href='monitoring/is-everything-fine'>Monitor Prysm for expected behavior</a>
-<p>Learn how to assess the health of your Prysm beacon node and/or validator by analyzing output logs.</p>
-</div>
-<div class='panel'>
-<a href='prysm-usage/individual-validator-monitoring'>Monitor validators by index</a>
-<p>Learn how to use Prysm to monitor block proposals, attestations, slashings, and more for any number of validators.</p>
-</div>
-<div class='panel'>
-<a href='prysm-usage/monitoring/grafana-dashboard'>Configure dashboarding and alerts with Prometheus and Grafana</a>
-<p>Learn how to configure dashboarding and alerts for your node, validator, and slasher using Prometheus (to aggregate data) and Grafana (to display it within a dashboard).</p>
-</div>
-<div class='panel'>
-<a href='prysm-usage/client-stats'>Collect metrics with client-stats</a>
-<p>Learn how to collect beacon node and validator metrics using Prysm's <code>client-stats</code> utility. This can be used to relay metrics data to the beaconcha.in stats service.</p>
-</div>
-
-
-<div class='panel secondary-panel section-title'>
-
-### Advanced usage
-
-<p>This subsection contains advanced How-Tos that our <strong>power users</strong> may find interesting.</p>
-</div>
-<div class='panel'>
-<a href='install/install-with-docker'>Install using Docker</a>
-<p>Learn how to install Prysm using preconfigured Docker images that ship with every Prysm release.</p>
-</div>
-<div class='panel'>
-<a href='install/install-with-bazel'>Build from source</a>
-<p>Learn how to build Prysm from source using Bazel.</p>
-</div>
-<div class='panel'>
-<a href='prysm-usage/secure-grpc'>Secure gRPC connections</a>
-<p>Learn how to create and configure TLS certificates that enable secure gRPC connections to your beacon node.</p>
-</div>
-<div class='panel'>
-<a href='execution-node/authentication'>Configure JWT authentication</a>
-<p>After The Merge, Prysm will need to securely connect to a local execution node. This how-to shows you how to form this secure connection using a JWT token.</p>
-</div>
-<div class='panel'>
-<a href='prysm-usage/slasher'>Run a slasher</a>
-<p>Learn how to run a slasher, an optional beacon node process that detects and reports slashable offenses on the Ethereum proof-of-stake network.</p>
-</div>
-<div class='panel'>
-<a href='prysm-usage/graffiti-file'>Add graffiti to blocks</a>
-<p>Learn how to configure your validator to add graffiti to the blocks that it proposes.</p>
-</div>
-<div class='panel'>
-<a href='advanced/beacon_node_api'>Run an archival node</a>
-<p>Learn how to run your beacon node as an archival node. Archival nodes are like regular beacon nodes that are configured to store more blockchain data locally, increasing data retrieval performance in exchange for increased data storage requirements.</p>
-</div>
-<div class='panel'>
-<a href='advanced/maintaining-uptime'>Maintain validator uptime with systemd or Docker</a>
-<p>Learn how to minimize validator downtime by running your validator as a background service through either Docker or <code>systemd</code>. </p>
-</div>
-<div class='panel'>
-<a href='prysm-usage/p2p-host-ip'>Configure ports and firewalls for improved network connectivity</a>
-<p>Learn how to configure ports and firewalls so your node can build stronger connections with more peers.</p>
 </div>
 <div class='panel'>
 <a href='wallet/remote'>Configure a remote signing wallet</a>
@@ -160,6 +127,54 @@ The following table of contents provides a descriptive overview of Prysm's docum
 <div class='panel'>
 <a href='wallet/deterministic'>Create a Prysm wallet</a>
 <p>Learn how to create a wallet using Prysm.</p>
+</div>
+<div class='panel'>
+<a href='advanced/maintaining-uptime'>Maintain validator uptime with systemd or Docker</a>
+<p>Learn how to minimize validator downtime by running your validator as a background service through either Docker or <code>systemd</code>. </p>
+</div>
+<div class='panel'>
+<a href='prysm-usage/graffiti-file'>Add graffiti to blocks</a>
+<p>Learn how to configure your validator to add graffiti to the blocks that it proposes.</p>
+</div>
+<div class='panel secondary-panel section-title'>
+
+### Monitoring, metrics, and alerts
+
+<p>This subsection contains how-tos that help you configure monitoring and alerts for Prysm.</p>
+</div>
+<div class='panel'>
+<a href='monitoring/is-everything-fine'>Monitor Prysm for expected behavior</a>
+<p>Learn how to assess the health of your Prysm beacon node and/or validator by analyzing output logs.</p>
+</div>
+<div class='panel'>
+<a href='prysm-usage/individual-validator-monitoring'>Monitor validators by index</a>
+<p>Learn how to use Prysm to monitor block proposals, attestations, slashings, and more for any number of validators.</p>
+</div>
+<div class='panel'>
+<a href='prysm-usage/monitoring/grafana-dashboard'>Configure dashboarding and alerts with Prometheus and Grafana</a>
+<p>Learn how to configure dashboarding and alerts for your node, validator, and slasher using Prometheus (to aggregate data) and Grafana (to display it within a dashboard).</p>
+</div>
+<div class='panel'>
+<a href='prysm-usage/client-stats'>Collect metrics with client-stats</a>
+<p>Learn how to collect beacon node and validator metrics using Prysm's <code>client-stats</code> utility. This can be used to relay metrics data to the beaconcha.in stats service.</p>
+</div>
+<div class='panel'>
+<a href='prysm-usage/web-interface'>Use Prysm's Web UI</a>
+<p>Prysm's Web UI can be used to monitor and configure your beacon node and validator on <code>localhost</code> using an app-like interface.</p>
+</div>
+<div class='panel secondary-panel section-title'>
+
+### Managing connections
+
+<p>This subsection contains how-tos that will help you manage your gRPC and P2P connectivity.</p>
+</div>
+<div class='panel'>
+<a href='prysm-usage/secure-grpc'>Secure gRPC connections</a>
+<p>Learn how to create and configure TLS certificates that enable secure gRPC connections to your beacon node.</p>
+</div>
+<div class='panel'>
+<a href='prysm-usage/p2p-host-ip'>Configure ports and firewalls for improved network connectivity</a>
+<p>Learn how to configure ports and firewalls so your node can build stronger connections with more peers.</p>
 </div>
 <div class='panel section-title'>
 
@@ -181,9 +196,9 @@ The following table of contents provides a descriptive overview of Prysm's docum
 </div>
 <div class='panel section-title'>
 
-## Developer Wiki
+## Developer wiki
 
-<p>This section contains documents targeted at developers.</p>
+<p>This section contains documents targeted at developers who want to contribute to Prysm's codebase.</p>
 </div>
 <div class='panel'>
 <a href='contribute/contribution-guidelines'>Contribute to Prysm's codebase</a>
@@ -213,7 +228,7 @@ The following table of contents provides a descriptive overview of Prysm's docum
 </div>
 <div class='panel secondary-panel section-title'>
 
-### Developer Concepts
+### Developer concepts
 
 </div>
 <div class='panel'>
