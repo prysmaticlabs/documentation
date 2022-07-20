@@ -88,6 +88,14 @@ header>h1 {
     margin-top: 10px;
 }
 
+/* see: https://github.com/facebook/docusaurus/pull/7134/files  */
+/* referenced by: https://github.com/facebook/docusaurus/pull/7134 */
+/* as a fix for wrapping sidebar titles causing buggy behavior (in our case, docs were getting cut off in nested sidebar expandos because after expanding the nested section, a scrollbar appears, which pushes the sidebar content over, but only after docusaurus reads the inner element height, causing the inner sidebar section to expand its height a little less than it needs to, causing bottom sidebar entries to appear cut off. */
+.menu {
+    padding: 0.5rem 0 0.5rem 0.5rem;
+    scrollbar-gutter: stable;
+}
+
 .update-request>a {
     margin-bottom: -30px !important;
     /*janky tempfix, can address this and other "style debt" as part of a dedicated styling updates PR */
