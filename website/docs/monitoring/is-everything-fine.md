@@ -1,7 +1,7 @@
 ---
 id: is-everything-fine
-title: How to monitor Prysm for expected behavior
-sidebar_label: Monitor Prysm for Expected Behavior
+title: Monitor Prysm for expected behavior
+sidebar_label: Monitor Prysm for expected behavior
 ---
 
 ## Expected behavior: Beacon node

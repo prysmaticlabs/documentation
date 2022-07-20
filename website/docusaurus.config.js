@@ -10,6 +10,7 @@ module.exports = {
     customFields: {
         image: 'img/Prysm.svg',
     },
+    trailingSlash: false,
     scripts: ['https://buttons.github.io/buttons.js'],
     themeConfig: {
         navbar: {
@@ -72,8 +73,8 @@ module.exports = {
                 docs: {
                     path: './docs',
                     routeBasePath: 'docs',
-                    showLastUpdateTime: true,
-                    showLastUpdateAuthor: true,
+                    showLastUpdateTime: false,
+                    showLastUpdateAuthor: false,
                     sidebarPath: require.resolve('./sidebars.json'),
                     editUrl: 'https://github.com/prysmaticlabs/documentation/edit/master/website/',
                 },

@@ -1,7 +1,7 @@
 ---
 id: nondeterministic
-title: Imported wallet 
-sidebar_label: Imported wallet
+title: Import keys into a Prysm wallet
+sidebar_label: Import keys into a Prysm wallet
 ---
 
 ## Background

@@ -1,7 +1,7 @@
 ---
 id: terminology
-title: Terminology
-sidebar_label: Terminology
+title: Glossary
+sidebar_label: Glossary
 ---
 This page houses definitions to the various technical terms found throughout this documentation portal. See a word or phrase that should be here? Let us know!
 ## General terms
