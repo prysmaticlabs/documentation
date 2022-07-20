@@ -271,6 +271,10 @@
                 },
                 {
                     "type": "doc",
+                    "id": "how-prysm-works/optimistic-sync"
+                },
+                {
+                    "type": "doc",
                     "id": "how-prysm-works/database-backend-boltdb"
                 },
                 {
