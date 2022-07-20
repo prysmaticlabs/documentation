@@ -1,7 +1,7 @@
 ---
 id: nondeterministic
-title: Import an existing wallet via keystore
-sidebar_label: Import an existing wallet via keystore
+title: Import keys into a Prysm wallet
+sidebar_label: Import keys into a Prysm wallet
 ---
 
 ## Background

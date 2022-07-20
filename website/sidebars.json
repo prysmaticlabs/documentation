@@ -67,6 +67,14 @@
                     "id": "monitoring/checking-status"
                 },
                 {
+                    "type": "doc",
+                    "id": "prysm-usage/slasher"
+                },
+                {
+                    "type": "doc",
+                    "id": "advanced/beacon_node_api"
+                },
+                {
                     "type": "category",
                     "collapsed": true,
                     "collapsible": true,
@@ -158,23 +166,11 @@
                     "type": "category",
                     "collapsed": true,
                     "collapsible": true,
-                    "label": "Advanced",
+                    "label": "Managing connections",
                     "items": [
                         {
                             "type": "doc",
                             "id": "prysm-usage/secure-grpc"
-                        },
-                        {
-                            "type": "doc",
-                            "id": "prysm-usage/slasher"
-                        },
-                        {
-                            "type": "doc",
-                            "id": "advanced/beacon_node_api"
-                        },
-                        {
-                            "type": "doc",
-                            "id": "execution-node/configuring-for-prysm"
                         },
                         {
                             "type": "doc",
