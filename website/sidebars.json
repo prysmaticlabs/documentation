@@ -76,7 +76,7 @@
                 },
                 {
                     "type": "category",
-                    "collapsed": false,
+                    "collapsed": true,
                     "collapsible": true,
                     "label": "Backups and migrations",
                     "items": [
@@ -100,7 +100,7 @@
                 },
                 {
                     "type": "category",
-                    "collapsed": false,
+                    "collapsed": true,
                     "collapsible": true,
                     "label": "Validator and wallet management",
                     "items": [
@@ -136,7 +136,7 @@
                 },
                 {
                     "type": "category",
-                    "collapsed": false,
+                    "collapsed": true,
                     "collapsible": true,
                     "label": "Monitoring, metrics, and alerts",
                     "items": [
@@ -164,7 +164,7 @@
                 },
                 {
                     "type": "category",
-                    "collapsed": false,
+                    "collapsed": true,
                     "collapsible": true,
                     "label": "Managing connections",
                     "items": [

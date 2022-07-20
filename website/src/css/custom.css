@@ -93,6 +93,10 @@ header>h1 {
     /*janky tempfix, can address this and other "style debt" as part of a dedicated styling updates PR */
 }
 
+.menu__list-item>.menu__list {
+    height: auto !important;
+}
+
 .lastUpdated_3DPF {
     display: none;
 }
