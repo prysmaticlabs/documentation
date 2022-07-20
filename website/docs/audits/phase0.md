@@ -1,7 +1,7 @@
 ---
 id: phase0
-title: Prysm Audits
-sidebar_label: Security Audits
+title: Security audits
+sidebar_label: Security audits
 ---
 
 Prysmatic Labs' implementation for Phase 0 of Ethereum proof-of-stake has received the following audits.

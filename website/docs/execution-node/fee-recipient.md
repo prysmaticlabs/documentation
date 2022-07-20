@@ -1,12 +1,16 @@
 ---
 id: fee-recipient
-title: Configure a Fee Recipient Address 
-sidebar_label: Fee Recipient
+title: Configure Fee Recipient 
+sidebar_label: Configure Fee Recipient
 ---
+
+# Configure Fee Recipient
 
 :::caution
 
 **This feature is currently in public preview** and may change significantly as we receive feedback from users like you. Join our [Discord server](https://discord.gg/prysmaticlabs) to share your feedback.
+
+See [Fee Recipient - vNext](./fee-recipient-vNext.md) to review documentation supporting the vNext implementation of this feature.
 
 :::
 

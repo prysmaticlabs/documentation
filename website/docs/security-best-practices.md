@@ -1,10 +1,10 @@
 ---
 id: security-best-practices
-title: Staking with Prysm - Security Best Practices
-sidebar_label: Security Best Practices
+title: Staking with Prysm - Security best practices
+sidebar_label: Security best practices
 ---
 
-# Staking with Prysm: Security Best Practices
+# Staking with Prysm: Security best practices
 
 Ethereum's transition to proof-of-stake is made possible by validators who each stake 32 ETH into the [validator deposit contract](https://docs.prylabs.network/docs/how-prysm-works/validator-deposit-contract/). These validators accept the responsibility to uphold the integrity of the Ethereum network in exchange for staking rewards.
 
@@ -183,3 +183,8 @@ Footnotes:
 <strong id='footnote-11'>11</strong>. CoinCashew demonstrates SSH authentication <a href='https://www.coincashew.com/coins/overview-eth/guide-or-how-to-setup-a-validator-on-eth2-mainnet/part-i-installation/guide-or-security-best-practices-for-a-eth2-validator-beaconchain-node#disable-ssh-password-authentication-and-use-ssh-keys-only'>here</a>. <br />
 <strong id='footnote-12'>12</strong>. See <a href='https://jlopp.github.io/metal-bitcoin-storage-reviews/'>Metal Bitcoin Seed Storage Reviews</a> by Jameson Lopp. <br />
 <strong id='footnote-13'>13</strong>. StakingRewards has a live rewards calculator <a href='https://www.stakingrewards.com/earn/ethereum-2-0/'>here</a>.   <br />
+
+
+<div class="update-request">
+<a href="https://github.com/prysmaticlabs/documentation/issues/new?title=Content%20Update%20Request:%20Security%20best%20practices">🐼 Request an update</a>
+</div>

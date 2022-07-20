@@ -1,10 +1,10 @@
 ---
 id: bazel
-title: Prysm's Build System, Bazel
-sidebar_label: Why Bazel
+title: About Bazel
+sidebar_label: About Bazel
 ---
 
-This page explains why Prysm uses a special build system, called [Bazel](https://bazel.build) to compile everything in our monorepository.
+This page explains why Prysm uses a special build system called [Bazel](https://bazel.build) to compile everything in our monorepository.
 
 ## Why Bazel?
 

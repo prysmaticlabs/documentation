@@ -1,7 +1,7 @@
 ---
 id: slashing-protection
-title: Importing and exporting your validators' slashing protection history
-sidebar_label: Importing/exporting slashing protection history
+title: Import & export slashing protection history
+sidebar_label: Import & export slashing protection history
 ---
 
 This section explains how to import a slashing protection history file into Prysm as well as how to export your validators' slashing protection history to move between computers or between Ethereum consensus client implementations.
