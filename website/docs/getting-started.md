@@ -311,7 +311,7 @@ Join our [Discord](https://discord.gg/prysmaticlabs) server - a member of the te
 
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
-<RequestUpdateWidget color="#25c2a0">Docusaurus green</RequestUpdateWidget>
+<RequestUpdateWidget color={"#25c2a0"}/>
 
 <!--
 <div class="update-request">
