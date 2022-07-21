@@ -39,6 +39,7 @@ This guidance is targeted at users who are already running Prysm. If you're star
 
 Let's step through each of these changes. 
 
+## Create JWT token
 
 <JwtGuidancePartial />
 
