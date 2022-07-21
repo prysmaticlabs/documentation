@@ -1,16 +1,10 @@
 ---
 id: graffiti-file
-title: Using graffiti-file flag
-sidebar_label: Adding graffiti to blocks
+title: Add graffiti to blocks
+sidebar_label: Add graffiti to blocks
 ---
 
-`--graffiti-file` flag for the validator client enables the wonderful feature where validators 
-could use different graffiti for different validators running in the same running process.
-
-Reasons may include:
-
-* Privacy (same graffiti may link validators)
-* Fun (graffiti wall, etc)
+The `--graffiti-file` flag for the Prysm validator client allows you to add graffiti to blocks. Different graffiti may be configured for different validators running in the same process.
 
 ## Usages
 

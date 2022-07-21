@@ -1,7 +1,7 @@
 ---
 id: remote
-title: Remote signing wallet
-sidebar_label: Remote signing wallet
+title: Configure a remote signing wallet
+sidebar_label: Configure a remote signing wallet
 ---
 
 ## Background

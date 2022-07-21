@@ -1,7 +1,7 @@
 ---
 id: client-stats
-title: Running client stats to collect process metrics
-sidebar_label: Client stats service
+title: Collect metrics with client-stats
+sidebar_label: Collect metrics with client-stats
 ---
 
 :::danger Alpha testing

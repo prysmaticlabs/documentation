@@ -1,6 +1,6 @@
 ---
 id: install-with-script-vNext
-title: Run a Node and Stake ETH using Prysm
+title: Run a node and (optionally) stake ETH using Prysm
 sidebar_label: Quickstart (v2.1.3-rc.5)
 ---
 
