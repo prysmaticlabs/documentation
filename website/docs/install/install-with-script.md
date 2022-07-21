@@ -7,7 +7,7 @@ sidebar_label: "Quickstart: Run a node"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import ClientStackPng from '@site/static/img/client-stack.png';
-
+import JwtGenerationPartial from '@site/docs/partials/_jwt-generation-partial.md';
 
 :::info Already running a node?
 
@@ -115,15 +115,11 @@ You can skip the rest of this step if you're using IPC instead of HTTP, or if yo
 
 :::
 
-The connection between your beacon node and execution needs to be authenticated when formed over HTTP on either Ropsten or Sepolia. This will soon be required on Goerli-Prater and Mainnet.
+After The Merge, beacon nodes will require a locally-running execution node.
 
-To authenticate the HTTP connection between beacon node / execution node, a **JWT token** is needed. [JWT tokens](https://jwt.io/) are an industry-standard way to form a secure connection between two parties. Generating a JWT token will allow your beacon node to form an authenticated HTTP connection with your execution node.
+<JwtGenerationPartial />
 
- - Use an online generator like [this](https://seanwasere.com/generate-random-hex/). Copy and paste this value into a `jwt.hex` file.
- - Use a utility like OpenSSL to create the token via command: `openssl rand -hex 32 | tr -d "\n" > "jwt.hex"`.
- - Use an execution client to generate the `jwt.hex` token.
-
-Place your `jwt.hex` file in your `consensus` directory.
+This guide assumes that you've placed your `jwt.hex` file in your `consensus` directory, but you can place it anywhere and revise the below commands as needed.
 
 
 ## Step 4: Run an execution client
