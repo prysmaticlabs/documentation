@@ -52,8 +52,11 @@ When Prysm receives a block, after the pubsub validation, and assuming regular s
 
 Dealing with each one of them requires a different set of careful considerations, roughly ordered by level of difficulty. When we receive `VALID` as a reply, we can simply import the block, this block is not optimistic as it has been fully validated. 
 
-When we receive `INVALID` a series of checks need to be carried out, we will go over them in the following sections of this document. It suffices to say that for a non-optimistic node (ie. a node that has been syncing in lockstep) when it receives an `INVALID` response from this call, its processing is very simple: we just do not import this block, it has failed validation, we mark the block as invalid and `onBlock` (and subsequently [ReceiveBlock](https://github.com/prysmaticlabs/prysm/blob/develop/beacon-chain/blockchain/receive_block.go#L380)) will return with an error, without affecting core logic. What triggers optimistic sync is the response in 3) ACCEPTED/SYNCING. Both replies are treated in the exact same way by Prysm, but it is useful to understand the different semantics from the point of view of the ELC. Suppose we are following a chain that is following like
+When we receive `INVALID` a series of checks need to be carried out, we will go over them in the following sections of this document. It suffices to say that for a non-optimistic node (ie. a node that has been syncing in lockstep) when it receives an `INVALID` response from this call, its processing is very simple: we just do not import this block, it has failed validation, we mark the block as invalid and `onBlock` (and subsequently [ReceiveBlock](https://github.com/prysmaticlabs/prysm/blob/develop/beacon-chain/blockchain/receive_block.go#L380)) will return with an error, without affecting core logic. What triggers optimistic sync is the response in 3) ACCEPTED/SYNCING. Both replies are treated in the exact same way by Prysm, but it is useful to understand the different semantics from the point of view of the ELC. Suppose we are following a chain that is following like this:
 
+![](https://i.imgur.com/wMobZC2.png)
+
+<!-- 
 ```graphviz
 digraph first {
 rankdir=RL
@@ -61,10 +64,15 @@ D -> C -> B -> A
 E -> B
 }
 ```
+-->
+
 
 Our head is `D`, and the ELC has returned `VALID`  for it when we called
 `notifyForkchoiceUpdated`  to inform that our head had changed to `D`. We now receive a block in a side chain, orphaning `D` and `C`:
 
+![](https://i.imgur.com/sYz9uRQ.png)
+
+<!-- 
 ```graphviz
 digraph second {
 rankdir=RL
@@ -72,6 +80,8 @@ D -> C -> B -> A
 F -> E -> B
 }
 ```
+-->
+
 
 Regardless of what happened to our forkchoice, as we first call `notifyNewPayload`  before making any head considerations, our head will still be `D`  at the moment of calling `notifyNewPayload`. Different ELC will return different replies here. They are not required to execute and validate the block `F` as it does not extend their canonical chain. Some will do anyway, and thus can return VALID / INVALID if they executed the payload completely. Others will simply check that the timestamps, parent block hash and similar header numbers are consistent and will return ACCEPTED, indicating that the block `F` is ready to be executed but hasn't been fully validated yet. Another option is if the ELC does not have the execution payload of the block `E`  for some reason. In this case the ELC will return SYNCING and it may or may not trigger a request for this block. Either way, a reply of ACCEPTED or SYNCING means that there is nothing evidently wrong with the block, that we may go ahead and import it optimistically, and we will eventually validate it if it is necessary. 
 
