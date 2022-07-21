@@ -138,3 +138,7 @@ This will generate an output like so:
     ```text
     [2020-06-15 17:09:13]  INFO validator: Established secure gRPC connection
     ```
+
+import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
+
+<RequestUpdateWidget docTitleToUse="Secure gRPC connections"/>

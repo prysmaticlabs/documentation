@@ -52,3 +52,7 @@ INFO validator: Submitted new attestations...
 ```
 
 If you notice anything concerning or have any questions, feel free to get in touch with us on [Discord](https://discord.gg/prysmaticlabs).
+
+import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
+
+<RequestUpdateWidget docTitleToUse="Monitor Prysm for expected behavior"/>

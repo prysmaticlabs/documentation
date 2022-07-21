@@ -24,3 +24,7 @@ Their respective Github repositories are:
 - [nobd/ethscan-org](https://github.com/nobd/ethscan-org)
 - [eth2-redot-com](https://github.com/AtlantPlatform/eth2-redot-com)
 
+
+import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
+
+<RequestUpdateWidget docTitleToUse="Block explorers"/>

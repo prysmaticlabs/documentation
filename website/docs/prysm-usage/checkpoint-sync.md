@@ -65,3 +65,7 @@ With the BeaconState and SignedBeaconBlock files from `prysmctl cpt save` in the
 --checkpoint-state=$PWD/state_prater_altair_3041920-0x34ebc10f191706afbbccb0c3c39679632feef0453fe842bda264e432e9e31011.ssz \
 --genesis-state=$PWD/genesis.ssz
 ```
+
+import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
+
+<RequestUpdateWidget docTitleToUse="Sync from a checkpoint"/>

@@ -80,3 +80,7 @@ It is possible to provide additional flags alongside the `.yaml` file, though if
 <div class="update-request">
 <a href="https://github.com/prysmaticlabs/documentation/issues/new?title=Content%20Update%20Request:%20Parameters">🐼 Request an update</a>
 </div>
+
+import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
+
+<RequestUpdateWidget docTitleToUse="Command-line options"/>

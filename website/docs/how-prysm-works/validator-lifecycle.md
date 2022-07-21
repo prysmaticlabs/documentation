@@ -39,3 +39,6 @@ In the case that the validator has reached the exited state voluntarily, the fun
 > **NOTICE:** Funds will not be able to be withdrawn from validators until transactions are introduced after Ethereum proof-of-stake merges with the current Ethereum chain
 
 
+import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
+
+<RequestUpdateWidget docTitleToUse="Validator lifecycle"/>

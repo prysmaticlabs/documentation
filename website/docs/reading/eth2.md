@@ -132,3 +132,8 @@ This page serves material necessary to catch up with the current state of Ethere
 * [Why eWASM? by Alex Beregszaszi](https://www.youtube.com/watch?v=VF7f_s2P3U0)
 * [Panel: entire eWASM team discussion and Q&A](https://youtu.be/ThvForkdPyc?t=119)
 * [Ewasm community meetup at ETHBuenosAires](https://www.youtube.com/watch?v=qDzrbj7dtyU)
+
+
+import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
+
+<RequestUpdateWidget docTitleToUse="Ethereum readings"/>

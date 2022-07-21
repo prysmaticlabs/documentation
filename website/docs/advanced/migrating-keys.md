@@ -343,3 +343,6 @@ In order to minimise slashing risk, it is recommended that the migrated validato
 No. After successfully importing your slashing protection history from A -> B, you can discard A. If you need to migrate from B -> C, B's slashing protection history is all you need to export/import.
 
 
+import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
+
+<RequestUpdateWidget docTitleToUse="Move to a new machine"/>

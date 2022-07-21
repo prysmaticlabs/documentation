@@ -70,3 +70,8 @@ Paste your validator's public key (available in your `deposit_data-*.json` file)
  - [Beaconcha.in (Mainnet)](https://beaconcha.in) 
  - [Beaconcha.in (Prater)](https://prater.beaconcha.in/)
  - [Beaconcha.in (Ropsten)](https://ropsten.beaconcha.in/)
+
+
+import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
+
+<RequestUpdateWidget docTitleToUse="Check node and validator status"/>

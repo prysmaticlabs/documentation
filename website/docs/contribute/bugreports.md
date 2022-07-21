@@ -1,7 +1,7 @@
 ---
 id: bugreports
-title: Filing a bug report
-sidebar_label: Filing a bug report
+title: File a bug report
+sidebar_label: File a bug report
 ---
 
 Bug reports are critical to the rapid development of the Prysm client. In order to make the process quick and efficient for all parties, it is best to follow some common reporting etiquette when filing to avoid double issues or miscommunications.
@@ -58,3 +58,7 @@ Version(s) used:
 ## Further Information
 <!--- Anything else to add?
 ```
+
+import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
+
+<RequestUpdateWidget docTitleToUse="File a bug report"/>
