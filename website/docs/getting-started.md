@@ -246,6 +246,9 @@ The following table of contents provides a descriptive overview of Prysm's docum
 <a href='how-prysm-works/architecture-overview'>Architecture overview</a>
 </div>
 <div class='panel'>
+<a href='how-prysm-works/optimistic-sync'>Optimistic sync</a>
+</div>
+<div class='panel'>
 <a href='how-prysm-works/beacon-node'>Beacon node</a>
 </div>
 <div class='panel'>
