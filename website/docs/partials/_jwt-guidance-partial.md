@@ -1,3 +1,6 @@
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 ## Create JWT token
 
 The connection between your beacon node and execution node needs to be authenticated when formed over HTTP. Although this requirement currently applies only to nodes running on Ropsten and Sepolia, it will soon apply to Goerli-Prater and then Mainnet.
