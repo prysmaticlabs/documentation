@@ -345,4 +345,4 @@ No. After successfully importing your slashing protection history from A -> B, y
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateWidget docTitle="Move to a new machine"/>
+<RequestUpdateWidget />

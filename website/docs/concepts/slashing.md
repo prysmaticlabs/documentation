@@ -20,4 +20,4 @@ Basic slashing protection is enabled by default using a database that keeps trac
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateWidget docTitle="Slashing"/>
+<RequestUpdateWidget />

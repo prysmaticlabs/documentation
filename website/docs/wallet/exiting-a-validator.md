@@ -104,4 +104,4 @@ bazel run //validator --config=release -- accounts voluntary-exit
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateWidget docTitle="Exit your validator"/>
+<RequestUpdateWidget />

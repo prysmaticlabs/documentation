@@ -58,4 +58,4 @@ To get a detailed picture of exactly what client-stats collects, try running the
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateWidget docTitle="Collect metrics with client-stats"/>
+<RequestUpdateWidget />

@@ -147,4 +147,4 @@ For those running their node and validators on separate machines, simply modify 
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateWidget docTitle="Configure Prometheus and Grafana"/>
+<RequestUpdateWidget />

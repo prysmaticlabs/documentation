@@ -141,4 +141,4 @@ This will generate an output like so:
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateWidget docTitle="Secure gRPC connections"/>
+<RequestUpdateWidget />

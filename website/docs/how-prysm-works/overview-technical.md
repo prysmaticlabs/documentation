@@ -32,4 +32,4 @@ Each of these components and their roles in the Prysm client are explained withi
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateWidget docTitle="Architecture overview"/>
+<RequestUpdateWidget />

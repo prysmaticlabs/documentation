@@ -79,4 +79,4 @@ It is possible to provide additional flags alongside the `.yaml` file, though if
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateWidget docTitle="Command-line options"/>
+<RequestUpdateWidget />

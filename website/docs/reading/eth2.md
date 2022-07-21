@@ -136,4 +136,4 @@ This page serves material necessary to catch up with the current state of Ethere
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateWidget docTitle="Ethereum readings"/>
+<RequestUpdateWidget />

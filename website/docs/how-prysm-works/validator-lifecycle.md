@@ -41,4 +41,4 @@ In the case that the validator has reached the exited state voluntarily, the fun
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateWidget docTitle="Validator lifecycle"/>
+<RequestUpdateWidget />

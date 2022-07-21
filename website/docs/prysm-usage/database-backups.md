@@ -187,4 +187,4 @@ bazel run //validator -- db restore --restore-source-file=/path/to/backup --rest
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateWidget docTitle="Back up and restore database"/>
+<RequestUpdateWidget />

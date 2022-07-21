@@ -433,4 +433,4 @@ For **major version bumps** such as from `v1.0.0` to `v2.0.0`, you cannot downgr
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateWidget docTitle="Staying up to date"/>
+<RequestUpdateWidget />

@@ -122,4 +122,4 @@ We recommend using [Paradigm's MultiFaucet](https://faucet.paradigm.xyz/). If th
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateWidget docTitle="Nodes and networks"/>
+<RequestUpdateWidget />

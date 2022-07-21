@@ -30,4 +30,4 @@ Prysm comes with some client specific edge cases and usages. These cases will be
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateWidget docTitle="Keymanager APIs"/>
+<RequestUpdateWidget />

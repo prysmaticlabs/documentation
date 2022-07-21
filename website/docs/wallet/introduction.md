@@ -118,4 +118,4 @@ You can stop being a validator by issuing a **voluntary exit**, which is a speci
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateWidget docTitle="Keys, wallets, and accounts"/>
+<RequestUpdateWidget />

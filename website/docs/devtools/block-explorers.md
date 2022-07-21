@@ -27,4 +27,4 @@ Their respective Github repositories are:
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateWidget docTitle="Block explorers"/>
+<RequestUpdateWidget />

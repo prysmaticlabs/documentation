@@ -74,4 +74,4 @@ Paste your validator's public key (available in your `deposit_data-*.json` file)
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateWidget docTitle="Check node and validator status"/>
+<RequestUpdateWidget />

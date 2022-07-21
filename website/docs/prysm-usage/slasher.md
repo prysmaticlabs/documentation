@@ -69,4 +69,4 @@ We recommend reading our piece on [slashing prevention tips](https://medium.com/
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateWidget docTitle="Run a slasher"/>
+<RequestUpdateWidget />

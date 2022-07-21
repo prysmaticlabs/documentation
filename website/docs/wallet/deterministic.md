@@ -128,4 +128,4 @@ You can also run the `accounts list` command **non-interactively** by using the 
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateWidget docTitle="Create a Prysm wallet"/>
+<RequestUpdateWidget />

@@ -52,5 +52,4 @@ slots-per-archive-point: 1
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateWidget docTitle="Run an archival node"/>
-
+<RequestUpdateWidget />

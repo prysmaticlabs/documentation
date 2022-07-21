@@ -690,4 +690,4 @@ TODO: explain in context of this guide -->
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateWidget docTitle="Quickstart"/>
+<RequestUpdateWidget />

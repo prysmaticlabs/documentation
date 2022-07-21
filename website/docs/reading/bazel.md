@@ -86,4 +86,4 @@ Building Prysm with Go is possible, but it will use precompiled cryptography to 
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateWidget docTitle="About Bazel"/>
+<RequestUpdateWidget />

@@ -14,4 +14,4 @@ For more information and current developments, see the [official Ethereum consen
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateWidget docTitle="P2P networking"/>
+<RequestUpdateWidget />

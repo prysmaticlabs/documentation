@@ -107,4 +107,4 @@ The validator monitor does not keep a history of performance, it only tracks the
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateWidget docTitle="Monitor validators by index"/>
+<RequestUpdateWidget />

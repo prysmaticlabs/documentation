@@ -281,4 +281,4 @@ Absolutely - feel free to send us a message on [Discord](https://discord.com/inv
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateWidget docTitle="Import and export slashing protection history"/>
+<RequestUpdateWidget />
