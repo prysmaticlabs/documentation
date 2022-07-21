@@ -1,7 +1,7 @@
 ---
 id: api-middleware
-title: API Middleware
-sidebar_label: API Middleware
+title: API middleware
+sidebar_label: API middleware
 ---
 
 ## Objective
@@ -187,3 +187,7 @@ The example above did not cover everything that is possible with the library. Th
 - Currently only a few hooks are possible to implement. This is to prevent the `HookCollection` from having a lot of fields with most of them never used. If you need a new pre or post hook, either create a new wrapped version of the middleware function (in case it has no hooks yet) or amend the existing wrapped function (in case it already has either a pre or post hook). See `(...)Wrapped` in `api_middleware.go` for examples.
 - Instead of implementing single hooks we can replace the whole response/request with one or more custom handlers, which we register in the factory. See `custom_handlers.go` for examples. This may be tricky to get right, but essentially allows to manipulate the request in any desirable way.
 - `ProcessRequestContainerFields`, `ProcessMiddlewareResponseFields` and `process_field.go` are responsible for field translations e.g. hex to base64 and vice versa. If you need to process a field in a new way, you will need to register the struct tag and the processing function in one of the aforementioned functions. Notice that this is a global change, but it does not matter as long as you use a new tag. Because none of the existing structs contain this tag, their fields will not be processed in this new way.
+
+import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
+
+<RequestUpdateWidget />

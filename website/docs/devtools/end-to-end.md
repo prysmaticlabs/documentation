@@ -132,3 +132,7 @@ var E2EBeaconChainFlags = []string{
     "--my-feature",
 }
 ```
+
+import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
+
+<RequestUpdateWidget />

@@ -267,6 +267,6 @@ You can make the above changes now. This document will be continuously updated w
 
 Yes. You also won't have to worry about JWT if you use IPC. Refer to your clients' command-line documentation for IPC configuration parameters.
 
-<div class="update-request">
-<a href="https://github.com/prysmaticlabs/documentation/issues/new?title=Content%20Update%20Request:%20Prepare%20for%20the%20Merge">🐼 Request an update</a>
-</div>
+import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
+
+<RequestUpdateWidget />

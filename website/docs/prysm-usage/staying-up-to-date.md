@@ -1,10 +1,10 @@
 ---
 id: staying-up-to-date
-title: Update and downgrade Prysm
-sidebar_label: Update and downgrade Prysm
+title: Stay up to date
+sidebar_label: Stay up to date
 ---
 
-This section outlines the step-by-step process for how to keep Prysm up-to-date, how to downgrade versions, and some security recommendations for stakers regarding updates. 
+This section outlines the step-by-step process for how to keep Prysm up to date, how to downgrade versions, and some security recommendations for stakers regarding updates.
 
 ## Installing Prysm
 
@@ -429,3 +429,8 @@ Then change all your docker run commands to use that version tag. For example, i
 ### Downgrading between major version bumps
 
 For **major version bumps** such as from `v1.0.0` to `v2.0.0`, you cannot downgrade as these are meant to be backwards incompatible changes.
+
+
+import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
+
+<RequestUpdateWidget />

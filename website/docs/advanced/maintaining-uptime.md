@@ -52,3 +52,7 @@ User=YOUR_USER
 [Install]
 WantedBy=multi-user.target
 ```
+
+import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
+
+<RequestUpdateWidget />

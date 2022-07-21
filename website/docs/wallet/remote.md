@@ -141,3 +141,8 @@ You can view all available options to run the `list` command by typing `./prysm.
 | Flag          | Usage         |
 | ------------- |:-------------|
 | `--wallet-dir` | Path to a wallet directory (default: "$HOME/Eth2Validators/prysm-wallet-v2")
+
+
+import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
+
+<RequestUpdateWidget />

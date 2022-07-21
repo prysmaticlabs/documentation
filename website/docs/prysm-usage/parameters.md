@@ -77,6 +77,6 @@ or for a validator like so:
 It is possible to provide additional flags alongside the `.yaml` file, though if conflicting flags are provided, the flag defined in the`.yaml` file will take priority. For example, if the flag `--datadir=/data2` is specified and `datadir: "/data1"` is in the `.yaml` file, Prysm would prioritise writing to `/data1`.
 
 
-<div class="update-request">
-<a href="https://github.com/prysmaticlabs/documentation/issues/new?title=Content%20Update%20Request:%20Parameters">🐼 Request an update</a>
-</div>
+import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
+
+<RequestUpdateWidget />

@@ -17,3 +17,7 @@ Being slashed is the result of a validator undertaking one of three “bad” ac
 ## Slashing protection
 
 Basic slashing protection is enabled by default using a database that keeps track of objects your validator has previously signed, ensuring the validator does not sign the same message again, causing a violation and getting slashed. 
+
+import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
+
+<RequestUpdateWidget />

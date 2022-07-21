@@ -560,3 +560,7 @@ For running an advanced wallet setups, our documentation includes comprehensive 
 **Congratulations, you are now fully participating in Ethereum proof-of-stake**
 
 **Still have questions?**  Stop by our [Discord](https://discord.gg/prysmaticlabs) for further assistance!
+
+import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
+
+<RequestUpdateWidget />

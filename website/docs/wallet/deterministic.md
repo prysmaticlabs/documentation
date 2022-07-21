@@ -125,3 +125,7 @@ You can also run the `accounts list` command **non-interactively** by using the 
 | `--show-deposit-data` | Display raw eth1 tx deposit data for validator accounts.
 | `--show-private-keys` | Display the private keys for validator accounts.
 
+
+import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
+
+<RequestUpdateWidget />

@@ -70,6 +70,7 @@ This usually means that your execution client needs more time to "catch up". If 
 
 Feel free to reach out to us on [Discord](https://discord.gg/prysmaticlabs) and we'll help you troubleshoot.
 
-<div class="update-request">
-<a href="https://github.com/prysmaticlabs/documentation/issues/new?title=Content%20Update%20Request:%20Issues%20and%20errors">🐼 Request an update</a>
-</div>
+
+import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
+
+<RequestUpdateWidget />

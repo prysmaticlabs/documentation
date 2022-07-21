@@ -96,11 +96,6 @@ header>h1 {
     scrollbar-gutter: stable;
 }
 
-.update-request>a {
-    margin-bottom: -30px !important;
-    /*janky tempfix, can address this and other "style debt" as part of a dedicated styling updates PR */
-}
-
 .lastUpdated_3DPF {
     display: none;
 }
@@ -111,10 +106,10 @@ nav.pagination-nav {
 }
 
 article {
-    margin-bottom: 30px !important;
+    margin-bottom: 10px !important;
 }
 
-footer {
+.footer {
     padding: 10px !important;
     display: none !important;
     /* can remove display style if we want to reintroduce */
@@ -122,7 +117,6 @@ footer {
 
 footer>.col {
     text-align: right;
-    padding-right: 6px !important;
 }
 
 footer>.col a,
