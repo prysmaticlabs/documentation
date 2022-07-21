@@ -36,7 +36,7 @@ This leaves only a merge block itself unaccounted for, that is a block which doe
 
 - If the block's slot is old enough, it is allowed to be imported. Here *old enough* means that the block slot is lower than the current wall time slot by at least `SAFE_SLOTS_TO_IMPORT_OPTIMISTICALLY` which in the current spec defaults to 128 slots. 
 
-This last rule, which is the only rule from the consensus layer side preventing a node from importing a block, is to mitigate an attack known as the *forkchoice poisoning attack* which we will cover below in section [2.4](#forkchoice-poisoning)
+This last rule, which is the only rule from the consensus layer side preventing a node from importing a block, is to mitigate an attack known as the *forkchoice poisoning attack* which we will cover below in section [2.4](#24-forkchoice-poisoning)
 
 ### 2.2 The engine API
 
@@ -85,7 +85,7 @@ F -> E -> B
 
 Regardless of what happened to our forkchoice, as we first call `notifyNewPayload`  before making any head considerations, our head will still be `D`  at the moment of calling `notifyNewPayload`. Different ELC will return different replies here. They are not required to execute and validate the block `F` as it does not extend their canonical chain. Some will do anyway, and thus can return VALID / INVALID if they executed the payload completely. Others will simply check that the timestamps, parent block hash and similar header numbers are consistent and will return ACCEPTED, indicating that the block `F` is ready to be executed but hasn't been fully validated yet. Another option is if the ELC does not have the execution payload of the block `E`  for some reason. In this case the ELC will return SYNCING and it may or may not trigger a request for this block. Either way, a reply of ACCEPTED or SYNCING means that there is nothing evidently wrong with the block, that we may go ahead and import it optimistically, and we will eventually validate it if it is necessary. 
 
-If the block `F` is therefore ACCEPTED or SYNCING, we will run the checks in section [2.1](#which-blocks-can-be-imported-optimistically) and import it if it satisfies those conditions. 
+If the block `F` is therefore ACCEPTED or SYNCING, we will run the checks in section [2.1](#21-which-blocks-can-be-imported-optimistically) and import it if it satisfies those conditions. 
 
 ### 2.3 Optimistic Node
 
@@ -190,7 +190,7 @@ The return type of `notifyNewPayload` is
 ```go
 func (s *Service) notifyNewPayload(...) (bool, error)
 ```
-it returns `true` when the payload has been fully validated and is VALID. It returns `false, nil` when the payload has not been fully validated and the block can be optimistically synced (that is, the engine has returned ACCEPTED / SYNCING and the block passes the checks in section [2.1](#which-blocks-can-be-imported-optimistically)
+it returns `true` when the payload has been fully validated and is VALID. It returns `false, nil` when the payload has not been fully validated and the block can be optimistically synced (that is, the engine has returned ACCEPTED / SYNCING and the block passes the checks in section [2.1](#21-which-blocks-can-be-imported-optimistically)
 
 The function returns an error if either the block was deemed INVALID or an unhandled execution engine error was returned. 
 
@@ -232,7 +232,7 @@ It is important to keep this path in mind when considering forkchoice changes, t
 
 #### 3.2.4 Init sync
 
-The path for init sync is very similar to sections [3.2.1](#notify-new-payload) and [3.2.2](#notify-forkchice-update). The main block processing function during init sync is the function [onBlockBatch](https://github.com/prysmaticlabs/prysm/blob/develop/beacon-chain/blockchain/process_block.go#L282). This function does essentially the same processing as `onBlock` but it takes consecutive batches of blocks to do signature verification by aggregation. In what regards to optimistic syncing the behavior is the same as in regular sync: for each block a call to  `notifyNewPayload` is made. However only after the full batch has been processed and verified, it is inserted in forkchoice. Only the last block inserted is considered for optimistic sync, namely if this block is VALID, then the whole batch is considered VALID, otherwise the whole batch is considered optimistic. Since the batch is linear, we only call `notifyForkchoiceUpdate` in the last block of the batch. 
+The path for init sync is very similar to sections [3.2.1](#321-notify-new-payload) and [3.2.2](#322-notify-forkchoice-update). The main block processing function during init sync is the function [onBlockBatch](https://github.com/prysmaticlabs/prysm/blob/develop/beacon-chain/blockchain/process_block.go#L282). This function does essentially the same processing as `onBlock` but it takes consecutive batches of blocks to do signature verification by aggregation. In what regards to optimistic syncing the behavior is the same as in regular sync: for each block a call to  `notifyNewPayload` is made. However only after the full batch has been processed and verified, it is inserted in forkchoice. Only the last block inserted is considered for optimistic sync, namely if this block is VALID, then the whole batch is considered VALID, otherwise the whole batch is considered optimistic. Since the batch is linear, we only call `notifyForkchoiceUpdate` in the last block of the batch. 
 
 ### 3.3 (g)RPC API
 
@@ -253,7 +253,7 @@ It is important, and dangerous to not act in optimistic node. From a network per
 
 ### 3.4 Database
 
-We have described in section [3.1](#forkchoice-package) that the forkchoice package is responsible for tracking the optimistic status of imported nodes. Forkchoice however prunes nodes after finalization and we can finalize during optimistic mode. If we require optimistic information about an ancient block we request this information from the database. The database tracks the last *validated checkpoint*. This is a checkpoint by which any canonical block older than it is considered VALID, and any block that is not in forkchoice and that is newer than the last validated checkpoint, is optimistic. The function to obtain this information is [LastValidatedCheckpoint](https://github.com/prysmaticlabs/prysm/blob/develop/beacon-chain/db/kv/validated_checkpoint.go#L13). 
+We have described in section [3.1](#31-forkchoice-package) that the forkchoice package is responsible for tracking the optimistic status of imported nodes. Forkchoice however prunes nodes after finalization and we can finalize during optimistic mode. If we require optimistic information about an ancient block we request this information from the database. The database tracks the last *validated checkpoint*. This is a checkpoint by which any canonical block older than it is considered VALID, and any block that is not in forkchoice and that is newer than the last validated checkpoint, is optimistic. The function to obtain this information is [LastValidatedCheckpoint](https://github.com/prysmaticlabs/prysm/blob/develop/beacon-chain/db/kv/validated_checkpoint.go#L13). 
 
 Notice that any orphaned block in the database, even those older than the last validated checkpoint, will be served as  optimistic, even though they may have been fully validated. This is a compromise to avoid complicated setups as we [previously had designed](https://www.notion.so/prysmaticlabs/Optimistic-blocks-storage-05d0832243ce46b4bd36e422e8f8e15f#85e6baf047eb4d16b9d0fc2ca6ad8569). 
 
