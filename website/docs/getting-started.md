@@ -4,6 +4,9 @@ title:  Table of contents
 sidebar_label: Table of contents
 ---
 
+import {RequestUpdateWidget} from '../src/components/RequestUpdateWidget.js';
+
+
 [Prysm](https://github.com/prysmaticlabs/prysm) is an [Ethereum](https://ethereum.org/en/developers/docs/intro-to-ethereum/) [proof-of-stake](https://ethereum.org/en/developers/docs/consensus-mechanisms/pos/) client written in [Go](https://golang.org). You can use Prysm to participate in Ethereum's [decentralized economy](https://ethereum.org/en/developers/docs/web2-vs-web3/) by [running a node](./install/install-with-script.md) and, if you have [32 ETH to stake](https://ethereum.org/en/staking/), a [validator](./install/install-with-script.md#step-6-run-a-validator-using-prysm). If you're new to Ethereum, you may enjoy our beginner-friendly [Nodes and networks](./concepts/nodes-networks.md) explainer.
 
 The following table of contents provides a descriptive overview of Prysm's documentation:
@@ -310,7 +313,7 @@ The following table of contents provides a descriptive overview of Prysm's docum
 Join our [Discord](https://discord.gg/prysmaticlabs) server - a member of the team or our community will be happy to help.
 
 
-import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
+
 <RequestUpdateWidget color="#25c2a0">Docusaurus green</RequestUpdateWidget> and <RequestUpdateWidget color="#1877F2">Facebook blue</RequestUpdateWidget> are my favorite colors.
 
 
