@@ -27,7 +27,7 @@ From the user's perspective, the overwhelming majority of nodes that are  optimi
 
 ### 2.1 Which blocks can be imported optimistically?
 
-The specification of optimistic sync is fairly simple. A node makes the following validations on a beacon block to decide if it can be imported or not into its forkchoice/database. If the block fails consensus validation (signature, operations, right proposer, etc, but excluding execution payload validation), then reject the block and do not import it. Assuming that we have a beacon block that passes this validation. The following blocks are allowed to be imported 
+The specification of optimistic sync is fairly simple. A node makes the following validations on a beacon block to decide if it can be imported or not into its forkchoice/database. If the block fails consensus validation (signature, operations, right proposer, etc, but excluding execution payload validation), then reject the block and do not import it. Assuming that we have a beacon block that passes this validation. The following blocks are allowed to be imported:
 
 - If the block is pre-merge (ie. it does not include an execution payload). 
 - If the parent of the block is post-merge (ie. it does include an execution payload).
@@ -36,7 +36,7 @@ This leaves only a merge block itself unaccounted for, that is a block which doe
 
 - If the block's slot is old enough, it is allowed to be imported. Here *old enough* means that the block slot is lower than the current wall time slot by at least `SAFE_SLOTS_TO_IMPORT_OPTIMISTICALLY` which in the current spec defaults to 128 slots. 
 
-This last rule, which is the only rule from the consensus layer side preventing a node from importing a block, is to mitigate an attack known as the *forkchoice poisoning attack* which we will cover below in section [2.4](#24-forkchoice-poisoning)
+This last rule, which is the only rule from the consensus layer side preventing a node from importing a block, is to mitigate an attack known as the *forkchoice poisoning attack* which we will cover below in section [2.4](#24-forkchoice-poisoning).
 
 ### 2.2 The engine API
 
@@ -124,7 +124,7 @@ func (f *ForkChoice) SetOptimisticToValid(ctx context.Context, root [fieldparams
 
 This function simply takes the HTR of the block and it sets its optimistic status to VALID. It also sets the optimistic status of any ancestor to VALID since a block cannot be fully validated if its ancestors weren't. 
 
-If a block that was imported optimistically later becomes INVALID, this can be notified with the function [SetOptimisticToInvalid](https://github.com/prysmaticlabs/prysm/blob/develop/beacon-chain/forkchoice/doubly-linked-tree/optimistic_sync.go#L10)
+If a block that was imported optimistically later becomes INVALID, this can be notified with the function [SetOptimisticToInvalid](https://github.com/prysmaticlabs/prysm/blob/develop/beacon-chain/forkchoice/doubly-linked-tree/optimistic_sync.go#L10):
 
 ```go
 func (s *Store) setOptimisticToInvalid(ctx context.Context, root, parentRoot, payloadHash [32]byte) ([][32]byte, error)
@@ -133,7 +133,7 @@ func (s *Store) setOptimisticToInvalid(ctx context.Context, root, parentRoot, pa
 The reader will notice that the signature of this function is different. The reason is that when the ELC returns INVALID from `notifyNewPayload` , it also returns the latest valid hash (LVH), that is, the payload hash of the unique execution block that satisfies the following two conditions:
 
 - It is a VALID ancestor of the INVALID payload
-- Any ancestor of the INVALID payload, with a higher `blockNumber` is INVALID. 
+- Any ancestor of the INVALID payload, with a higher `blockNumber`, is INVALID
 
 The INVALID payload itself may or may not be in the forkchoice store, in fact, it will **almost never** be, since we only call `notifyNewPayload` with new blocks before we insert them to forkchoice. The function `setOptimisticToInvalid` takes as parameters the root of the INVALID block, the root of its parent block, and the LVH. It works by first finding the unique block satisfying the following conditions:
 
@@ -142,7 +142,7 @@ The INVALID payload itself may or may not be in the forkchoice store, in fact, i
 
 And then it removes that block and **every descentant** of it. This is strictly true in the `doubly-linked-tree`  implementation of forkchoice. But this is not the case in the `protoarray` implementation. Removing nodes from the `protoarray` implementation is complicated. Thus what we do in this case is mark the nodes as INVALID instead. After removal of the nodes, the weights of the remaining forkchoice tree needs to be readjusted. The function returns the blockroots of all the removed nodes (or those nodes marked as invalid in the `protoarray` implementation).
 
-The `doublylinkedtree.Node` structure has a boolean `optimistic` 
+The `doublylinkedtree.Node` structure has a boolean `optimistic`:
 
 ```go
 type Node struct {
@@ -173,7 +173,7 @@ const (
 
 <mark>Besides tracking their optimistic status, an optimistic forkchoice node does not have any difference with fully validated nodes. They count for justification/finalization and head computations just like a fully validated node.</mark>
 
-Finally, forkchoice returns the optimistic status of a blockroot via the exposed self-described function
+Finally, forkchoice returns the optimistic status of a blockroot via the exposed self-described function:
 
 ```go
 	IsOptimistic(root [32]byte) (bool, error)
@@ -190,7 +190,7 @@ The return type of `notifyNewPayload` is
 ```go
 func (s *Service) notifyNewPayload(...) (bool, error)
 ```
-it returns `true` when the payload has been fully validated and is VALID. It returns `false, nil` when the payload has not been fully validated and the block can be optimistically synced (that is, the engine has returned ACCEPTED / SYNCING and the block passes the checks in section [2.1](#21-which-blocks-can-be-imported-optimistically)
+it returns `true` when the payload has been fully validated and is VALID. It returns `false, nil` when the payload has not been fully validated and the block can be optimistically synced (that is, the engine has returned ACCEPTED / SYNCING and the block passes the checks in section [2.1](#21-which-blocks-can-be-imported-optimistically).
 
 The function returns an error if either the block was deemed INVALID or an unhandled execution engine error was returned. 
 
@@ -237,10 +237,10 @@ The path for init sync is very similar to sections [3.2.1](#321-notifynewpayload
 ### 3.3 (g)RPC API
 
 A CLC is required to respond to requests for blocks, state information, head information, etc. The node is required to provide optimistic status information in its reply. Many of the endpoints simply add a JSON field `is_optimistic` that results `true` when the corresponding block has been inserted optimistically or `false` when it has been fully validated. The beacon node ultimately calls the two functions [IsOptimistic](https://github.com/prysmaticlabs/prysm/blob/develop/beacon-chain/blockchain/chain_info.go#L301) and [IsOptimisticForRoot](https://github.com/prysmaticlabs/prysm/blob/develop/beacon-chain/blockchain/chain_info.go#L322).
-The former is just a wrapper around the latter, it fetches the head root of the node and calls the latter. The latter returns whether the block with the given
-root is optimistic. It does so by calling first forkchoice's `IsOptimistic` and if it fails it checks with the database as explained in the next section. 
 
-Perhaps the most important impact that optmistic sync has on the API section, is that when the validator calls `GetBlock` to obtain a new block to propose, or when it calls `GetAttestationData` to obtain an attestation and so forth, for each of the validator duties, the corresponding RPC calls include a call to check the optimistic status of the node as follows 
+The former is just a wrapper around the latter, it fetches the head root of the node and calls the latter. The latter returns whether the block with the given root is optimistic. It does so by calling first forkchoice's `IsOptimistic` and if it fails it checks with the database as explained in the next section.
+
+Perhaps the most important impact that optmistic sync has on the API section, is that when the validator calls `GetBlock` to obtain a new block to propose, or when it calls `GetAttestationData` to obtain an attestation and so forth, for each of the validator duties, the corresponding RPC calls include a call to check the optimistic status of the node as follows:
 
 ```go
 // An optimistic validator MUST NOT participate in attestation. (i.e., sign across the DOMAIN_BEACON_ATTESTER, DOMAIN_SELECTION_PROOF or DOMAIN_AGGREGATE_AND_PROOF domains).
