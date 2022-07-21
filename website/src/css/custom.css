@@ -114,7 +114,7 @@ article {
     margin-bottom: 30px !important;
 }
 
-footer {
+.footer {
     padding: 10px !important;
     display: none !important;
     /* can remove display style if we want to reintroduce */
