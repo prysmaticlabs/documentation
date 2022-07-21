@@ -310,7 +310,7 @@ The following table of contents provides a descriptive overview of Prysm's docum
 Join our [Discord](https://discord.gg/prysmaticlabs) server - a member of the team or our community will be happy to help.
 
 
-import {RequestUpdateWidget} from '../../src/components/RequestUpdateWidget.js';
+import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 <RequestUpdateWidget color="#25c2a0">Docusaurus green</RequestUpdateWidget>
 
 <!--
