@@ -207,6 +207,7 @@ The complicated case is when the result is INVALID. In this case the function `n
 #### 3.2.3 Attestation processing
 
 Another path that triggers a call to `notifyForkchoiceUpdate`, although not strictly speaking involved with optimistic sync is when processing attestation. Prysm runs the following on every slot with a time ticker:
+
 ```go
 st := slots.NewSlotTicker(s.genesisTime, params.BeaconConfig().SecondsPerSlot)
         for {
@@ -226,6 +227,7 @@ st := slots.NewSlotTicker(s.genesisTime, params.BeaconConfig().SecondsPerSlot)
                 }
         }
 ```
+
 It is important to keep this path in mind when considering forkchoice changes, the function `NewSlot` updates the justification and finalization of forkchoice when called at the beginning of an epoch. The function `UpdateHead` will process attestations and then update head if necessary, calling `notifyForkchoiceUpdate` in the process if the head as been updated due to new attestations. 
 
 #### 3.2.4 Init sync
