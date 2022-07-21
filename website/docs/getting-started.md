@@ -314,4 +314,4 @@ Join our [Discord](https://discord.gg/prysmaticlabs) server - a member of the te
 
 
 
-<RequestUpdateWidget color="#25c2a0">Docusaurus green</RequestUpdateWidget>
+<RequestUpdateWidget docTitleToUse="Docusaurus green"/>
