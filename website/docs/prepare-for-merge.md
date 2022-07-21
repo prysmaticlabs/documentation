@@ -6,7 +6,7 @@ sidebar_label: Prepare for The Merge
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import JwtPartial from '@site/docs/partials/_jwt-guidance-partial.md';
+import JwtGuidancePartial from '@site/docs/partials/_jwt-guidance-partial.md';
 
 
 [The Merge](https://ethereum.org/en/upgrades/merge/) will fully transition Ethereum's consensus mechanism from proof-of-work to proof-of-stake. This is made possible by the [Beacon Chain](https://ethereum.org/en/upgrades/beacon-chain/), a new Ethereum network layer that implements proof-of-stake consensus. After The Merge, this consensus layer will be combined with Ethereum's execution layer, and miners will be fully replaced by proof-of-stake validators on Ethereum Mainnet.
@@ -40,7 +40,7 @@ This guidance is targeted at users who are already running Prysm. If you're star
 Let's step through each of these changes. 
 
 
-<JwtPartial />
+<JwtGuidancePartial />
 
 
 ## Configure validator node
