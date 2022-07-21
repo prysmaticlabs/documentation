@@ -24,4 +24,4 @@ There are several ways to generate this JWT token:
   </TabItem>
 </Tabs>
 
-Prysm will output a `jwt.hex` file path. If you're running on **Ropsten** or **Sepolia**, record this - we'll use it in the next step. If you're running on **Mainnet** or **Goerli-Prater**, you won't use this now, but be prepared to use it when these networks are Merged.
+Prysm will output a `jwt.hex` file path. If you're running on **Ropsten** or **Sepolia**, we'll use this in the next step. If you're running on **Mainnet** or **Goerli-Prater**, you won't use this now, but be prepared to use it when these networks are Merged.
