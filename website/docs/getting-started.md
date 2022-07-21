@@ -315,10 +315,3 @@ Join our [Discord](https://discord.gg/prysmaticlabs) server - a member of the te
 
 
 <RequestUpdateWidget color="#25c2a0">Docusaurus green</RequestUpdateWidget>
-
-
-<!--
-<div class="update-request">
-<a href="https://github.com/prysmaticlabs/documentation/issues/new?title=Content%20Update%20Request:%20Getting%20Started">🐼 Request an update</a>
-</div>
--->
