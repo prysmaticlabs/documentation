@@ -10,7 +10,7 @@ module.exports = {
     customFields: {
         image: 'img/Prysm.svg',
     },
-    trailingSlash: false,
+    trailingSlash: true,
     scripts: ['https://buttons.github.io/buttons.js'],
     themeConfig: {
         navbar: {
