@@ -144,5 +144,7 @@ For those running their node and validators on separate machines, simply modify 
 
 > **NOTICE:** In case of public IPs, [port forwarding](/docs/prysm-usage/p2p-host-ip/#port-forwarding) may need to be configured.
 
-## Activate currency converter feature
-A specific [guide](/docs/prysm-usage/monitoring/currency-converter/) has been designed for adding currency conversion.
+
+import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
+
+<RequestUpdateWidget />

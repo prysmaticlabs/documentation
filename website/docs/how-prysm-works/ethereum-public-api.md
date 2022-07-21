@@ -38,3 +38,7 @@ While Prysm would like to support all endpoints from the official specification,
 | v1 & v2.0.0 | Events    | Full support |
 | v1 & v2.0.0 | Node      | Full support |
 | v1 & v2.0.0 | Validator | Full support |
+
+import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
+
+<RequestUpdateWidget />
