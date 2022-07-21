@@ -1,7 +1,7 @@
 import React from 'react';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 
-export const RequestUpdateWidget = ({ docTitle }) => (
+export const RequestUpdateWidget = ({ }) => (
 	<BrowserOnly>
 		{() =>
 			<div class="update-request">
@@ -9,4 +9,4 @@ export const RequestUpdateWidget = ({ docTitle }) => (
 			</div>
 		}
 	</BrowserOnly>
-); 654
+);
