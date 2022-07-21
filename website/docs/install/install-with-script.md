@@ -115,7 +115,7 @@ You can skip the rest of this step if you're using IPC instead of HTTP, or if yo
 
 :::
 
-After The Merge, beacon nodes will require a locally-running execution node. The connection between your beacon node and execution node will require JWT authentication. This how-to shows you how to create and configure your JWT token.
+After The Merge, beacon nodes will require a locally-running execution node.
 
 <JwtGenerationPartial />
 
