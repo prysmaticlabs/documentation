@@ -4,11 +4,9 @@ title: Configure JWT authentication
 sidebar_label: Configure JWT authentication
 ---
 
-:::info
+import JwtPartial from './partials/_jwt-guidance-partial.md';
 
-This content has moved. See [Prepare for The Merge](../prepare-for-merge.md) for the latest JWT authentication guidance.
-
-:::
+<JwtPartial />;
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
