@@ -311,7 +311,8 @@ Join our [Discord](https://discord.gg/prysmaticlabs) server - a member of the te
 
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
-<RequestUpdateWidget color={"#25c2a0"}/>
+<RequestUpdateWidget color="#25c2a0">Docusaurus green</RequestUpdateWidget> and <RequestUpdateWidget color="#1877F2">Facebook blue</RequestUpdateWidget> are my favorite colors.
+
 
 <!--
 <div class="update-request">
