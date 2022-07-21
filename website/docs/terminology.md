@@ -43,4 +43,4 @@ A function evaluated by the client that takes, as input, the set of blocks and o
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateWidget docTitleToUse="Glossary"/>
+<RequestUpdateWidget docTitle="Glossary"/>

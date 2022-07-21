@@ -140,4 +140,4 @@ If the results are as below, then the settings are correct:
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateWidget docTitleToUse="Configure ports and firewalls"/>
+<RequestUpdateWidget docTitle="Configure ports and firewalls"/>

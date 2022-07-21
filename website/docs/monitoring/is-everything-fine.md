@@ -55,4 +55,4 @@ If you notice anything concerning or have any questions, feel free to get in tou
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateWidget docTitleToUse="Monitor Prysm for expected behavior"/>
+<RequestUpdateWidget docTitle="Monitor Prysm for expected behavior"/>

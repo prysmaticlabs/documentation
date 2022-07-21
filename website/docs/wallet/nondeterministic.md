@@ -116,4 +116,4 @@ You can also run the `accounts backup` command **non-interactively** by using th
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateWidget docTitleToUse="Import keys into Prysm wallet"/>
+<RequestUpdateWidget docTitle="Import keys into Prysm wallet"/>

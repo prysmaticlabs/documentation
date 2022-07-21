@@ -145,4 +145,4 @@ You can view all available options to run the `list` command by typing `./prysm.
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateWidget docTitleToUse="Configure a remote signing wallet"/>
+<RequestUpdateWidget docTitle="Configure a remote signing wallet"/>

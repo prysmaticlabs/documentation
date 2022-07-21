@@ -428,4 +428,4 @@ bazel run //beacon-chain -- --datadir=$HOME/prysm  \
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateWidget docTitleToUse="Initial synchronization"/>
+<RequestUpdateWidget docTitle="Initial synchronization"/>

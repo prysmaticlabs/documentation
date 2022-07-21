@@ -61,4 +61,4 @@ Version(s) used:
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateWidget docTitleToUse="File a bug report"/>
+<RequestUpdateWidget docTitle="File a bug report"/>

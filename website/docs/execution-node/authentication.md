@@ -12,4 +12,4 @@ This content has moved. See [Prepare for The Merge](../prepare-for-merge.md) for
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateWidget docTitleToUse="Configure JWT authentication"/>
+<RequestUpdateWidget docTitle="Configure JWT authentication"/>

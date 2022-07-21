@@ -190,4 +190,4 @@ The example above did not cover everything that is possible with the library. Th
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateWidget docTitleToUse="API middleware"/>
+<RequestUpdateWidget docTitle="API middleware"/>

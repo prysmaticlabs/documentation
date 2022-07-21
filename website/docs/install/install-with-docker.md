@@ -563,4 +563,4 @@ For running an advanced wallet setups, our documentation includes comprehensive 
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateWidget docTitleToUse="Install with docker"/>
+<RequestUpdateWidget docTitle="Install with docker"/>

@@ -154,4 +154,4 @@ After reading the sharding material for part-time contributors, it is important 
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateWidget docTitleToUse="Golang - external reading"/>
+<RequestUpdateWidget docTitle="Golang - external reading"/>

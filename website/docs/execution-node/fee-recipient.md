@@ -222,4 +222,4 @@ Footnotes:
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateWidget docTitleToUse="Configure Fee Recipient"/>
+<RequestUpdateWidget docTitle="Configure Fee Recipient"/>

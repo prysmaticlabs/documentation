@@ -120,4 +120,4 @@ For more details on JSON mapping for other types, view the relevant section in t
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateWidget docTitleToUse="Prysm-specific API"/>
+<RequestUpdateWidget docTitle="Prysm-specific API"/>

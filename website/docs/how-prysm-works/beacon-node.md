@@ -53,4 +53,4 @@ The public RPC server is one of the most critical components of the beacon node.
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateWidget docTitleToUse="Beacon node"/>
+<RequestUpdateWidget docTitle="Beacon node"/>

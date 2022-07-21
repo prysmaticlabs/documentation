@@ -314,4 +314,4 @@ Join our [Discord](https://discord.gg/prysmaticlabs) server - a member of the te
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateWidget docTitleToUse="Table of contents"/>
+<RequestUpdateWidget docTitle="Table of contents"/>

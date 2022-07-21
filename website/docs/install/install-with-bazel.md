@@ -308,4 +308,4 @@ By default, this will deploy to Prysmatic Labs' Google Container Registry namesp
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateWidget docTitleToUse="Install with bazel"/>
+<RequestUpdateWidget docTitle="Install with bazel"/>

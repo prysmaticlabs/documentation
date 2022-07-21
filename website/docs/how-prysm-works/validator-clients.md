@@ -57,4 +57,4 @@ A [block proposal](/docs/terminology#propose) must include several items to meet
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateWidget docTitleToUse="Validator client"/>
+<RequestUpdateWidget docTitle="Validator client"/>

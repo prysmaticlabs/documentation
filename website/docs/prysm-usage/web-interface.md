@@ -134,4 +134,4 @@ run `npm run start:staging` will run a 'like' production build where the backend
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateWidget docTitleToUse="Use Prysm's Web UI"/>
+<RequestUpdateWidget docTitle="Use Prysm's Web UI"/>

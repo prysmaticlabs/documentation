@@ -99,4 +99,4 @@ Example output:
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateWidget docTitleToUse="Add graffiti to blocks"/>
+<RequestUpdateWidget docTitle="Add graffiti to blocks"/>

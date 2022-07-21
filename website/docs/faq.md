@@ -233,4 +233,4 @@ Your validator balance is the actual amount of ETH you have from being a validat
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateWidget docTitleToUse="Frequently asked questions"/>
+<RequestUpdateWidget docTitle="Frequently asked questions"/>

@@ -55,4 +55,4 @@ WantedBy=multi-user.target
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateWidget docTitleToUse="Maintain validator uptime"/>
+<RequestUpdateWidget docTitle="Maintain validator uptime"/>

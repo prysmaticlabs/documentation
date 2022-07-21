@@ -269,4 +269,4 @@ Yes. You also won't have to worry about JWT if you use IPC. Refer to your client
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateWidget docTitleToUse="Prepare for The Merge"/>
+<RequestUpdateWidget docTitle="Prepare for The Merge"/>

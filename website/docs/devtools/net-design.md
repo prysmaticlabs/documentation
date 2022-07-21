@@ -457,4 +457,4 @@ Similar to the sync migration, the existing mapping will be prefixed with deprec
   
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateWidget docTitleToUse="Network design"/>
+<RequestUpdateWidget docTitle="Network design"/>

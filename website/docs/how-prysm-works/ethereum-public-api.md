@@ -41,4 +41,4 @@ While Prysm would like to support all endpoints from the official specification,
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateWidget docTitleToUse="Ethereum standard beacon API"/>
+<RequestUpdateWidget docTitle="Ethereum standard beacon API"/>

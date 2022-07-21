@@ -147,4 +147,4 @@ Search a block explorer like https://beaconcha.in/ with your validator's public 
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateWidget docTitleToUse="Switch to a new client"/>
+<RequestUpdateWidget docTitle="Switch to a new client"/>

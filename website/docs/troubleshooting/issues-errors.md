@@ -73,4 +73,4 @@ Feel free to reach out to us on [Discord](https://discord.gg/prysmaticlabs) and 
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateWidget docTitleToUse="Troubleshooting"/>
+<RequestUpdateWidget docTitle="Troubleshooting"/>

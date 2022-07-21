@@ -68,4 +68,4 @@ With the BeaconState and SignedBeaconBlock files from `prysmctl cpt save` in the
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateWidget docTitleToUse="Sync from a checkpoint"/>
+<RequestUpdateWidget docTitle="Sync from a checkpoint"/>

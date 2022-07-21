@@ -135,4 +135,4 @@ var E2EBeaconChainFlags = []string{
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateWidget docTitleToUse="End-to-end tests"/>
+<RequestUpdateWidget docTitle="End-to-end tests"/>

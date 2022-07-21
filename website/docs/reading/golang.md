@@ -16,4 +16,4 @@ sidebar_label: Golang resources
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateWidget docTitleToUse="Golang resources"/>
+<RequestUpdateWidget docTitle="Golang resources"/>

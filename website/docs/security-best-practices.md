@@ -187,4 +187,4 @@ Footnotes:
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateWidget docTitleToUse="Security best practices"/>
+<RequestUpdateWidget docTitle="Security best practices"/>

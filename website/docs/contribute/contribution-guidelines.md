@@ -192,4 +192,4 @@ Core developers may ask questions and request that you make edits. If you set no
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateWidget docTitleToUse="Contribute to Prysm's codebase"/>
+<RequestUpdateWidget docTitle="Contribute to Prysm's codebase"/>
