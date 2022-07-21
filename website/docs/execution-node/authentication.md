@@ -4,7 +4,7 @@ title: Configure JWT authentication
 sidebar_label: Configure JWT authentication
 ---
 
-import JwtPartial from './partials/_jwt-guidance-partial.md';
+import JwtPartial from '@site/docs/partials/_jwt-guidance-partial.md';
 
 <JwtPartial />;
 
