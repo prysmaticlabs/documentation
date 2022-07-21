@@ -87,8 +87,5 @@ module.exports = {
                 },
             },
         ],
-    ],
-    plugins: [
-        './src/plugins/request-update-plugin'
     ]
 };
