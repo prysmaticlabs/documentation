@@ -8,7 +8,7 @@ After The Merge, beacon nodes will require a locally-running execution node. The
 
 ## Configure execution node
 
-Your execution node will need to **use the JWT token** from the previous step, and it will need to **expose a new port**. This new port exposes your execution node's **Engine API**, a new API that facilitates Ethereum's transition to a proof-of-stake consensus mechanism.
+Your execution node will need to **expose a new port** and then **use the JWT token** to authenticate your beacon node's connection to that port. This new port exposes your execution node's **Engine API**, a new API that facilitates Ethereum's transition to a proof-of-stake consensus mechanism.
 
 Using the latest version of your execution client software, issue the following command to configure your execution node's JWT token and Engine API endpoint:
 
@@ -31,14 +31,14 @@ Using the latest version of your execution client software, issue the following 
         <pre><code>Nethermind.Runner --config sepolia --JsonRpc.Enabled true --JsonRpc.JwtSecretFile=path/to/jwt.hex --Merge.TerminalTotalDifficulty 17000000000000000</code></pre>
       </TabItem>
       <TabItem value="goerli-prater">
-        <div class="admonition admonition-caution alert alert--warning">
-          <div class="admonition-content"><p><strong>Goerli</strong> isn't ready for Merge configuration yet, so no changes are needed.</p></div>
-        </div>
+        With JWT configured (when Merge-testing):
+        <pre><code>Nethermind.Runner --config goerli --JsonRpc.Enabled true --JsonRpc.Enabled true --JsonRpc.JwtSecretFile=path/to/jwt.hex</code></pre>
+        Without JWT configured:
         <pre><code>Nethermind.Runner --config goerli --JsonRpc.Enabled true</code></pre>
       </TabItem>
       <TabItem value="mainnet">
         <div class="admonition admonition-caution alert alert--warning">
-          <div class="admonition-content"><p><strong>Mainnet</strong> isn't ready for Merge configuration yet, so no changes are needed.</p></div>
+          <div class="admonition-content"><p><strong>Mainnet</strong> isn't ready for Merge configuration yet, so JWT configuration isn't available.</p></div>
         </div>
         <pre><code>Nethermind.Runner --config mainnet --JsonRpc.Enabled true</code></pre>
       </TabItem>
@@ -59,9 +59,9 @@ Using the latest version of your execution client software, issue the following 
         <pre><code>besu --network=sepolia --rpc-http-enabled --engine-jwt-enabled=true --engine-jwt-secret=path/to/jwt.hex  --engine-host-allowlist="*" --override-genesis-config="terminalTotalDifficulty=17000000000000000"</code></pre>
       </TabItem>
       <TabItem value="goerli-prater">
-        <div class="admonition admonition-caution alert alert--warning">
-          <div class="admonition-content"><p><strong>Goerli</strong> isn't ready for Merge configuration yet, so no changes are needed.</p></div>
-        </div>
+        When Merge-testing:
+        <pre><code>besu --network=goerli --rpc-http-enabled --engine-jwt-enabled=true --engine-jwt-secret=path/to/jwt.hex  --engine-host-allowlist="*" 
+        When not Merge-testing:
         <pre><code>besu --network=goerli --rpc-http-enabled</code></pre>
       </TabItem>
       <TabItem value="mainnet">
@@ -87,9 +87,9 @@ Using the latest version of your execution client software, issue the following 
         <pre><code>geth --sepolia --http --http.api eth,net,engine,admin --authrpc.vhosts="localhost" --authrpc.jwtsecret=path/to/jwt.hex --override.terminaltotaldifficulty 17000000000000000</code></pre>
       </TabItem>
       <TabItem value="goerli-prater">
-        <div class="admonition admonition-caution alert alert--warning">
-          <div class="admonition-content"><p><strong>Goerli</strong> isn't ready for Merge configuration yet, so no changes are needed.</p></div>
-        </div>
+        When Merge-testing:
+        <pre><code>geth --goerli --http --http.api eth,net,engine,admin --authrpc.vhosts="localhost" --authrpc.jwtsecret=path/to/jwt.hex</code></pre>
+        When not Merge-testing:
         <pre><code>geth --goerli --http --http.api eth,net,engine,admin</code></pre>
       </TabItem>
       <TabItem value="mainnet">
@@ -130,10 +130,10 @@ If you're running a validator, specifying a `suggested-fee-recipient` wallet add
         <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8551 --sepolia --jwt-secret=path/to/jwt.hex --genesis-state=genesis.ssz --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
       </TabItem>
       <TabItem value="goerli-prater">
-        <div class="admonition admonition-caution alert alert--warning">
-          <div class="admonition-content"><p><strong>Prater</strong> isn't ready for Merge configuration yet, so no changes are needed.</p></div>
-        </div>
         <p>Download the <a href='https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz'>Prater genesis state from Github</a>.</p>
+        <p>If you're Merge-testing:</p>
+        <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8551 --prater --jwt-secret=path/to/jwt.hex --genesis-state=genesis.ssz --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
+        <p>If you're not Merge-testing:</p>
         <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8545 --prater --genesis-state=genesis.ssz --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
       </TabItem>
       <TabItem value="mainnet">
@@ -160,10 +160,10 @@ If you're running a validator, specifying a `suggested-fee-recipient` wallet add
       <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8551 --sepolia --jwt-secret=path/to/jwt.hex --genesis-state=genesis.ssz --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
     </TabItem>
     <TabItem value="goerli-prater">
-      <div class="admonition admonition-caution alert alert--warning">
-          <div class="admonition-content"><p><strong>Prater</strong> isn't ready for Merge configuration yet, so no changes are needed.</p></div>
-      </div>
       <p>Download the <a href='https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz'>Prater genesis state from Github</a>.</p>
+      If you're Merge-testing:
+      <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8551 --prater --jwt-secret=path/to/jwt.hex --genesis-state=genesis.ssz --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
+      If you're not Merge-testing:
       <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8545 --prater --genesis-state=genesis.ssz --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
     </TabItem>
     <TabItem value="mainnet">
