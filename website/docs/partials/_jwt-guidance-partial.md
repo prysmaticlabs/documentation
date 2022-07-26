@@ -60,7 +60,7 @@ Using the latest version of your execution client software, issue the following 
       </TabItem>
       <TabItem value="goerli-prater">
         When Merge-testing:
-        <pre><code>besu --network=goerli --rpc-http-enabled --engine-jwt-enabled=true --engine-jwt-secret=path/to/jwt.hex  --engine-host-allowlist="*" 
+        <pre><code>besu --network=goerli --rpc-http-enabled --engine-jwt-enabled=true --engine-jwt-secret=path/to/jwt.hex  --engine-host-allowlist="*"</code></pre>
         When not Merge-testing:
         <pre><code>besu --network=goerli --rpc-http-enabled</code></pre>
       </TabItem>
