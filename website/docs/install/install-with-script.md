@@ -99,7 +99,8 @@ At a high level, we'll walk through the following flow:
 - Review all of our [published security best practices](./security-best-practices/).
 - **Join the community** - join our [mailing list](https://groups.google.com/g/prysm-dev), the [Prysm Discord server](https://discord.gg/prysmaticlabs), [r/ethstaker](https://www.reddit.com/r/ethstaker/), and the [EthStaker Discord server](https://discord.io/ethstaker) for updates and support.
 
-## Step 3: Create directories, install Prysm, generate secret
+
+## Step 3: Install Prysm, generate secret
 
 First, create a folder called `ethereum` on your SSD <a class='footnote' href='#footnote-9'>[9]</a>, and then two subfolders within it: `consensus` and `execution`:
 
