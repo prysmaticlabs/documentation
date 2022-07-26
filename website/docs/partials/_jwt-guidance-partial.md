@@ -29,7 +29,7 @@ Using the latest version of your execution client software, issue the following 
         <pre><code>Nethermind.Runner --config sepolia --JsonRpc.Enabled true --JsonRpc.JwtSecretFile=path/to/jwt.hex --Merge.TerminalTotalDifficulty 17000000000000000</code></pre>
       </TabItem>
       <TabItem value="goerli-prater">
-        <p>With JWT configured (see <a href='../vNext/prepare-for-merge'>our v2.1.4-rc0 guide</a>):</p>
+        <p>With JWT configured (see <a href='./vNext/prepare-for-merge'>our v2.1.4-rc0 guide</a>):</p>
         <pre><code>Nethermind.Runner --config goerli --JsonRpc.Enabled true --JsonRpc.Enabled true --JsonRpc.JwtSecretFile=path/to/jwt.hex</code></pre>
         <p>Without JWT configured:</p>
         <pre><code>Nethermind.Runner --config goerli --JsonRpc.Enabled true</code></pre>
