@@ -73,8 +73,8 @@ At a high level, we'll walk through the following flow:
             <li><strong>Everything above, plus...</strong></li>    
             <li><strong>Software:</strong> Validator client, browser-based crypto wallet (instructions below)</li>   
             <li><strong>Hardware:</strong> (Recommended) A new machine that has never been connected to the internet that you can use to securely generate your mnemonic phrase and keypair</li>     
-            <li><strong>32 ETH (Mainnet)</strong></li>
-            <li><strong>32 GöETH / rETH (Testnets - instructions for acquiring testnet ETH are provided below)</strong></li> 
+            <li><strong>32 ETH</strong> (Mainnet)</li>
+            <li><strong>32 testnet ETH</strong> (Testnets)</li> 
           </ul> 
         </td>
     </tr>
