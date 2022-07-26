@@ -5,8 +5,8 @@ The HTTP connection between your beacon node and execution node will need to be 
 
  - Use an online generator like [this](https://seanwasere.com/generate-random-hex/). Copy and paste this value into a `jwt.hex` file.
  - Use a utility like OpenSSL to create the token via command: `openssl rand -hex 32 | tr -d "\n" > "jwt.hex"`.
- - Use an execution client to generate the `jwt.hex` token.
- - Use Prysm to generate the `jwt.hex` token:
+ - Use an execution client to generate the `jwt.hex` file.
+ - Use Prysm to generate the `jwt.hex` file:
 
 <Tabs groupId="os" defaultValue="others" values={[
     {label: 'Windows', value: 'win'},
