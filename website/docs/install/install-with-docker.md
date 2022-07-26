@@ -534,7 +534,7 @@ docker run -it -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet -v %LOCA
 ```text
 docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \ 
   -v $HOME/Eth2:/validatorDB \
-  --network="host" --name validator \
+  --network="host" --name validator-import \
   gcr.io/prysmaticlabs/prysm/validator:stable \
   --beacon-rpc-provider=127.0.0.1:4000 \
   --wallet-dir=/wallet \
