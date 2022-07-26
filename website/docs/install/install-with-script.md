@@ -154,7 +154,7 @@ In this step, you'll install an execution-layer client that Prysm's beacon node 
         <pre><code>Nethermind.Runner --config mainnet --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true</code></pre>
       </TabItem>
       <TabItem value="goerli-prater">
-        <p>With JWT configured (see <a href='./vNext/214-rc'>our v2.1.4-rc0 guide</a>):</p>
+        <p>With JWT configured (see <a href='../vNext/214-rc'>our v2.1.4-rc0 guide</a>):</p>
         <pre><code>Nethermind.Runner --config goerli --JsonRpc.Enabled true --JsonRpc.Enabled true --JsonRpc.JwtSecretFile=path/to/jwt.hex</code></pre>
         <p>Without JWT configured:</p>
         <pre><code>Nethermind.Runner --config goerli --JsonRpc.Enabled true</code></pre>
@@ -187,7 +187,7 @@ curl localhost:8545/health
         <pre><code>besu --network=mainnet --rpc-http-enabled</code></pre>
       </TabItem>
       <TabItem value="goerli-prater">
-        <p>With JWT configured (see <a href='./vNext/214-rc'>our v2.1.4-rc0 guide</a>):</p>
+        <p>With JWT configured (see <a href='../vNext/214-rc'>our v2.1.4-rc0 guide</a>):</p>
         <pre><code>besu --network=goerli --rpc-http-enabled --engine-jwt-enabled=true --engine-jwt-secret=path/to/jwt.hex  --engine-host-allowlist="*"</code></pre>
         <p>Without JWT configured:</p>
         <pre><code>besu --network=goerli --rpc-http-enabled</code></pre>
@@ -220,7 +220,7 @@ curl -H "Content-Type: application/json" -X POST http://localhost:8545 -d "{""js
         <pre><code>geth --mainnet --http --http.api eth,net,engine,admin</code></pre>
       </TabItem>
       <TabItem value="goerli-prater">
-        <p>With JWT configured (see <a href='./vNext/214-rc'>our v2.1.4-rc0 guide</a>):</p>
+        <p>With JWT configured (see <a href='../vNext/214-rc'>our v2.1.4-rc0 guide</a>):</p>
         <pre><code>geth --goerli --http --http.api eth,net,engine,admin --authrpc.vhosts="localhost" --authrpc.jwtsecret=path/to/jwt.hex</code></pre>
         <p>Without JWT configured:</p>
         <pre><code>geth --goerli --http --http.api eth,net,engine,admin</code></pre>
@@ -273,7 +273,7 @@ In this step, you'll run a beacon node using Prysm.
       </TabItem>
       <TabItem value="goerli-prater">
         <p>Download the <a href='https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz'>Prater genesis state from Github</a> into your <code>consensus/prysm</code> directory. Then use the following command to start a beacon node that connects to your local execution node.</p>
-        <p>With JWT configured (see <a href='./vNext/214-rc'>our v2.1.4-rc0 guide</a>):</p>
+        <p>With JWT configured (see <a href='../vNext/214-rc'>our v2.1.4-rc0 guide</a>):</p>
         <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8551 --prater --jwt-secret=path/to/jwt.hex --genesis-state=genesis.ssz --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
         <p>Without JWT configured:</p>
         <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8545 --prater --genesis-state=genesis.ssz --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>      </TabItem>
@@ -302,7 +302,7 @@ In this step, you'll run a beacon node using Prysm.
       </TabItem>
       <TabItem value="goerli-prater">
         <p>Download the <a href='https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz'>Prater genesis state from Github</a> into your <code>consensus/prysm</code> directory. Then use the following command to start a beacon node that connects to your local execution node.</p>
-       <p>With JWT configured (see <a href='./vNext/214-rc'>our v2.1.4-rc0 guide</a>):</p>
+       <p>With JWT configured (see <a href='../vNext/214-rc'>our v2.1.4-rc0 guide</a>):</p>
       <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8551 --prater --jwt-secret=path/to/jwt.hex --genesis-state=genesis.ssz --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
       <p>Without JWT configured:</p>
       <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8545 --prater --genesis-state=genesis.ssz --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
