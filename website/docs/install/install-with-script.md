@@ -128,8 +128,6 @@ curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --out
   </TabItem>
 </Tabs>
 
-After The Merge, beacon nodes will require a locally-running execution node.
-
 <JwtGenerationPartial />
 
 This guide assumes that you've placed your `jwt.hex` file in your `consensus` directory, but you can place it anywhere and revise the below commands as needed.

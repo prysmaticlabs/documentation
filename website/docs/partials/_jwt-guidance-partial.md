@@ -2,7 +2,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import JwtGenerationPartial from '@site/docs/partials/_jwt-generation-partial.md';
 
-After The Merge, beacon nodes will require a locally-running execution node. The connection between your beacon node and execution node will require JWT authentication. This how-to shows you how to create and configure your JWT token.
+After The Merge, beacon nodes will require a locally-running execution node. The connection between your beacon node and execution node will require **JWT authentication**. This how-to shows you how to create and configure your JWT token.
 
 <JwtGenerationPartial />
 
