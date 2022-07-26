@@ -168,9 +168,6 @@ reg add HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1
   </Tabs>
   </TabItem>
   <TabItem value="others">
-    <div class="admonition admonition-caution alert alert--warning">
-      <div class="admonition-content"><p><strong>Mac M1 ARM chips</strong> currently require users to run Prysm through <a href='https://support.apple.com/en-us/HT211861'>Rosetta</a>. See our <a href='https://github.com/prysmaticlabs/prysm/issues/9385'>open bug</a> for details.</p></div>
-    </div>
     <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
         {label: 'Goerli-Prater', value: 'goerli-prater'},
@@ -613,12 +610,14 @@ The Beginner's Introduction to Prysm uses diagrams to help you visualize Ethereu
 **Why do you recommend putting everything on a single machine?** <br />
 Keeping all of your client software on a single machine keeps things simple, which aligns with our [security best practices](../security-best-practices.md).
 
+**Can I use Prysm on a Mac M1 ARM chip?**
+Mac M1 ARM chips currently require users to run Prysm through <a href='https://support.apple.com/en-us/HT211861'>Rosetta</a>. See our <a href='https://github.com/prysmaticlabs/prysm/issues/9385'>open bug</a> for details.
+
 **Do I need to configure JWT if I'm using IPC instead of HTTP?** <br />
 No.
 
 **Do I need to configure my firewall?** <br />
 We recommend **closing** TCP port `8545` to the internet and keeping TCP and UDP ports `30303` **open** to support other execution nodes <a class='footnote' href='#footnote-8'>[8]</a>.
-
 
 **Can you mix and match networks between execution layer and consensus layer?** <br />
 No. See [Nodes and networks](../concepts/nodes-networks.md) for more information.
