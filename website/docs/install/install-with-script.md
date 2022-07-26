@@ -99,7 +99,7 @@ At a high level, we'll walk through the following flow:
 - Review all of our [published security best practices](./security-best-practices/).
 - **Join the community** - join our [mailing list](https://groups.google.com/g/prysm-dev), the [Prysm Discord server](https://discord.gg/prysmaticlabs), [r/ethstaker](https://www.reddit.com/r/ethstaker/), and the [EthStaker Discord server](https://discord.io/ethstaker) for updates and support.
 
-## Step 3: Create directories, generate secret
+## Step 3: Create directories, install Prysm, generate secret
 
 First, create a folder called `ethereum` on your SSD <a class='footnote' href='#footnote-9'>[9]</a>, and then two subfolders within it: `consensus` and `execution`:
 
@@ -109,11 +109,116 @@ First, create a folder called `ethereum` on your SSD <a class='footnote' href='#
 ┣ 📂execution
 ```
 
-:::info Ropsten/Sepolia HTTP only
+<Tabs groupId="os" defaultValue="others" values={[
+    {label: 'Windows', value: 'win'},
+    {label: 'Linux, MacOS, Arm64', value: 'others'}
+]}>
+  <TabItem value="win">
+    <Tabs groupId="network" defaultValue="mainnet" values={[
+        {label: 'Mainnet', value: 'mainnet'},
+        {label: 'Goerli-Prater', value: 'goerli-prater'},
+        {label: 'Sepolia', value: 'sepolia'},
+        {label: 'Ropsten', value: 'ropsten'}
+    ]}>
+      <TabItem value="mainnet">
+        <p>Navigate to your <code>consensus</code> directory and run the following commands:</p>
 
-You can skip the rest of this step if you're using IPC instead of HTTP, or if you're running on Goerli-Prater or Mainnet.
+```
+mkdir prysm && cd prysm
+curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.bat --output prysm.bat
+reg add HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1
+```
 
-:::
+  <p>This will download the Prysm client and update your registry to enable verbose logging.</p>
+      </TabItem>
+      <TabItem value="goerli-prater">
+        <p>Navigate to your <code>consensus</code> directory and run the following commands:</p>
+
+```
+mkdir prysm && cd prysm
+curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.bat --output prysm.bat
+reg add HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1
+```
+
+  <p>This will download the Prysm client and update your registry to enable verbose logging.</p>
+      </TabItem>
+      <TabItem value="sepolia">
+        <p>Navigate to your <code>consensus</code> directory and run the following commands:</p>
+
+```
+mkdir prysm && cd prysm
+curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.bat --output prysm.bat
+reg add HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1
+```
+
+  <p>This will download the Prysm client and update your registry to enable verbose logging.</p>
+      </TabItem>
+      <TabItem value="ropsten">
+      <p>Navigate to your <code>consensus</code> directory and run the following commands:</p>
+
+```
+mkdir prysm && cd prysm
+curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.bat --output prysm.bat
+reg add HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1
+```
+
+  <p>This will download the Prysm client and update your registry to enable verbose logging.</p>
+      </TabItem>
+  </Tabs>
+  </TabItem>
+  <TabItem value="others">
+    <div class="admonition admonition-caution alert alert--warning">
+      <div class="admonition-content"><p><strong>Mac M1 ARM chips</strong> currently require users to run Prysm through <a href='https://support.apple.com/en-us/HT211861'>Rosetta</a>. See our <a href='https://github.com/prysmaticlabs/prysm/issues/9385'>open bug</a> for details.</p></div>
+    </div>
+    <Tabs groupId="network" defaultValue="mainnet" values={[
+        {label: 'Mainnet', value: 'mainnet'},
+        {label: 'Goerli-Prater', value: 'goerli-prater'},
+        {label: 'Sepolia', value: 'sepolia'},
+        {label: 'Ropsten', value: 'ropsten'}
+    ]}>
+      <TabItem value="mainnet">
+        <p>Navigate to your <code>consensus</code> directory and run the following two commands:</p>
+
+```
+mkdir prysm && cd prysm
+curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --output prysm.sh && chmod +x prysm.sh
+```
+
+  <p>This will download the Prysm client and make it executable.</p>
+      </TabItem>
+      <TabItem value="goerli-prater">
+        <p>Navigate to your <code>consensus</code> directory and run the following two commands:</p>
+
+```
+mkdir prysm && cd prysm
+curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --output prysm.sh && chmod +x prysm.sh
+```
+
+  <p>This will download the Prysm client and make it executable.</p>
+      </TabItem>
+      <TabItem value="sepolia">
+        <p>Navigate to your <code>consensus</code> directory and run the following two commands:</p>
+
+```
+mkdir prysm && cd prysm
+curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --output prysm.sh && chmod +x prysm.sh
+```
+
+  <p>This will download the Prysm client and make it executable.</p>
+      </TabItem>
+      <TabItem value="ropsten">
+        <p>Navigate to your <code>consensus</code> directory and run the following two commands:</p>
+
+```
+mkdir prysm && cd prysm
+curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --output prysm.sh && chmod +x prysm.sh
+```
+
+  <p>This will download the Prysm client and make it executable.</p>
+      </TabItem>
+    </Tabs>
+  </TabItem>
+</Tabs>
 
 After The Merge, beacon nodes will require a locally-running execution node.
 
@@ -247,55 +352,20 @@ In this step, you'll run a beacon node using Prysm.
         {label: 'Sepolia', value: 'sepolia'},
         {label: 'Ropsten', value: 'ropsten'}
     ]}>
-      <TabItem value="mainnet">
-        <p>Navigate to your <code>consensus</code> directory and run the following commands:</p>
-
-```
-mkdir prysm && cd prysm
-curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.bat --output prysm.bat
-reg add HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1
-```
-
-  <p>This will download the Prysm client and update your registry to enable verbose logging. Use the following command to start a beacon node that connects to your local execution node:</p>
+      <TabItem value="mainnet">  
+        <p>Use the following command to start a beacon node that connects to your local execution node:</p>
         <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8545 --mainnet</code></pre>
       </TabItem>
       <TabItem value="goerli-prater">
-        <p>Navigate to your <code>consensus</code> directory and run the following commands:</p>
-
-```
-mkdir prysm && cd prysm
-curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.bat --output prysm.bat
-reg add HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1
-```
-
-  <p>This will download the Prysm client and update your registry to enable verbose logging.</p>
         <p>Download the <a href='https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz'>Prater genesis state from Github</a> into your <code>consensus/prysm</code> directory. Then use the following command to start a beacon node that connects to your local execution node:</p>
         <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8545 --prater --genesis-state=genesis.ssz</code></pre>
       </TabItem>
       <TabItem value="sepolia">
-        <p>Navigate to your <code>consensus</code> directory and run the following commands:</p>
-
-```
-mkdir prysm && cd prysm
-curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.bat --output prysm.bat
-reg add HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1
-```
-
-  <p>This will download the Prysm client and update your registry to enable verbose logging.</p>
         <p>Download the <a href='https://github.com/eth-clients/merge-testnets/blob/main/sepolia/genesis.ssz'>Sepolia genesis state from Github</a> into your <code>consensus/prysm</code> directory. Then use the following command to start a beacon node that connects to your local execution node using your secret JWT file:</p>
         <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8551 --sepolia --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9 --jwt-secret=jwt.hex --genesis-state=genesis.ssz</code></pre>
         <p>If you're running a validator, specifying a <code>suggested-fee-recipient</code> wallet address will allow you to earn what were previously miner transaction fee tips.</p>
       </TabItem>
       <TabItem value="ropsten">
-      <p>Navigate to your <code>consensus</code> directory and run the following commands:</p>
-
-```
-mkdir prysm && cd prysm
-curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.bat --output prysm.bat
-reg add HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1
-```
-
-  <p>This will download the Prysm client and update your registry to enable verbose logging.</p>
         <p>Download the <a href='https://github.com/eth-clients/merge-testnets/blob/main/ropsten-beacon-chain/genesis.ssz'>Ropsten genesis state from Github</a> into your <code>consensus/prysm</code> directory. Then use the following command to start a beacon node that connects to your local execution node using your secret JWT file:</p>
         <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8551 --ropsten --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9 --jwt-secret=jwt.hex --genesis-state=genesis.ssz</code></pre>
         <p>If you're running a validator, specifying a <code>suggested-fee-recipient</code> wallet address will allow you to earn what were previously miner transaction fee tips.</p>
@@ -313,51 +383,19 @@ reg add HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1
         {label: 'Ropsten', value: 'ropsten'}
     ]}>
       <TabItem value="mainnet">
-        <p>Navigate to your <code>consensus</code> directory and run the following two commands:</p>
-
-```
-mkdir prysm && cd prysm
-curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --output prysm.sh && chmod +x prysm.sh
-```
-
-  <p>This will download the Prysm client and make it executable.</p>
         <p>Use the following command to start a beacon node that connects to your local execution node:</p>
         <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8545 --mainnet</code></pre>
       </TabItem>
       <TabItem value="goerli-prater">
-        <p>Navigate to your <code>consensus</code> directory and run the following two commands:</p>
-
-```
-mkdir prysm && cd prysm
-curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --output prysm.sh && chmod +x prysm.sh
-```
-
-  <p>This will download the Prysm client and make it executable.</p>
         <p>Download the <a href='https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz'>Prater genesis state from Github</a> into your <code>consensus/prysm</code> directory. Then use the following command to start a beacon node that connects to your local execution node:</p>
         <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8545 --prater --genesis-state=../genesis.ssz</code></pre>
       </TabItem>
       <TabItem value="sepolia">
-        <p>Navigate to your <code>consensus</code> directory and run the following two commands:</p>
-
-```
-mkdir prysm && cd prysm
-curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --output prysm.sh && chmod +x prysm.sh
-```
-
-  <p>This will download the Prysm client and make it executable.</p>
         <p>Download the <a href='https://github.com/eth-clients/merge-testnets/blob/main/sepolia/genesis.ssz'>Sepolia genesis state from Github</a> into your <code>consensus/prysm</code> directory. Then use the following command to start a beacon node that connects to your local execution node using your secret JWT file:</p>
         <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8551 --sepolia --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9 --jwt-secret=jwt.hex --genesis-state=genesis.ssz</code></pre>
         <p>If you're running a validator, specifying a <code>suggested-fee-recipient</code> wallet address will allow you to earn what were previously miner transaction fee tips.</p>
       </TabItem>
       <TabItem value="ropsten">
-        <p>Navigate to your <code>consensus</code> directory and run the following two commands:</p>
-
-```
-mkdir prysm && cd prysm
-curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --output prysm.sh && chmod +x prysm.sh
-```
-
-  <p>This will download the Prysm client and make it executable.</p>
         <p>Download the <a href='https://github.com/eth-clients/merge-testnets/blob/main/ropsten-beacon-chain/genesis.ssz'>Ropsten genesis state from Github</a> into your <code>consensus/prysm</code> directory. Then use the following command to start a beacon node that connects to your local execution node using your secret JWT file:</p>
         <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8551 --ropsten --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9 --jwt-secret=jwt.hex --genesis-state=genesis.ssz</code></pre>
         <p>If you're running a validator, specifying a <code>suggested-fee-recipient</code> wallet address will allow you to earn what were previously miner transaction fee tips.</p>
@@ -574,53 +612,15 @@ The Beginner's Introduction to Prysm uses diagrams to help you visualize Ethereu
 **Why do you recommend putting everything on a single machine?** <br />
 Keeping all of your client software on a single machine keeps things simple, which aligns with our [security best practices](../security-best-practices.md).
 
-
+**Do I need to configure JWT if I'm using IPC instead of HTTP?** <br />
+No.
 
 **Do I need to configure my firewall?** <br />
 We recommend **closing** TCP port `8545` to the internet and keeping TCP and UDP ports `30303` **open** to support other execution nodes <a class='footnote' href='#footnote-8'>[8]</a>.
 
 
 **Can you mix and match networks between execution layer and consensus layer?** <br />
-The network pairs marked with a ✔️ are compatible. See [Nodes and networks](../concepts/nodes-networks.md) for more information.
-
-<table>
-  <tr>
-    <td>&nbsp;</td>
-    <td>EL-Mainnet</td>
-    <td>EL-Goerli</td>
-    <td>EL-Sepolia</td>
-    <td>EL-Ropsten</td>
-  </tr>
-  <tr>
-    <td>CL-Mainnet</td>
-    <td>✔️</td>
-    <td>❌</td>
-    <td>❌</td>
-    <td>❌</td>
-  </tr>
-  <tr>
-    <td>CL-Prater</td>
-    <td>❌</td>
-    <td>✔️</td>
-    <td>❌</td>
-    <td>❌</td>
-  </tr>
-  <tr>
-    <td>CL-Sepolia</td>
-    <td>❌</td>
-    <td>❌</td>
-    <td>✔️</td>
-    <td>❌</td>
-  </tr>
-  <tr>
-    <td>CL-Ropsten</td>
-    <td>❌</td>
-    <td>❌</td>
-    <td>❌</td>
-    <td>✔️</td>
-  </tr>
-</table>
-
+No. See [Nodes and networks](../concepts/nodes-networks.md) for more information.
 
 
 <!-- **I'm new to Ethereum, and I'm a visual learner. Can you show me how these things work? How much disk space does each node type require?** <br />
