@@ -154,7 +154,10 @@ In this step, you'll install an execution-layer client that Prysm's beacon node 
         <pre><code>Nethermind.Runner --config mainnet --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true</code></pre>
       </TabItem>
       <TabItem value="goerli-prater">
-        <pre><code>Nethermind.Runner --config goerli --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true</code></pre>
+        <p>With JWT configured (see <a href='./vNext/214-rc'>our v2.1.4-rc0 guide</a>):</p>
+        <pre><code>Nethermind.Runner --config goerli --JsonRpc.Enabled true --JsonRpc.Enabled true --JsonRpc.JwtSecretFile=path/to/jwt.hex</code></pre>
+        <p>Without JWT configured:</p>
+        <pre><code>Nethermind.Runner --config goerli --JsonRpc.Enabled true</code></pre>
       </TabItem>
       <TabItem value="sepolia">
         <pre><code>Nethermind.Runner --config sepolia --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.JwtSecretFile=../consensus/jwt.hex --JsonRpc.Host=0.0.0.0 --Merge.TerminalTotalDifficulty 17000000000000000</code></pre>
@@ -184,6 +187,9 @@ curl localhost:8545/health
         <pre><code>besu --network=mainnet --rpc-http-enabled</code></pre>
       </TabItem>
       <TabItem value="goerli-prater">
+        <p>With JWT configured (see <a href='./vNext/214-rc'>our v2.1.4-rc0 guide</a>):</p>
+        <pre><code>besu --network=goerli --rpc-http-enabled --engine-jwt-enabled=true --engine-jwt-secret=path/to/jwt.hex  --engine-host-allowlist="*"</code></pre>
+        <p>Without JWT configured:</p>
         <pre><code>besu --network=goerli --rpc-http-enabled</code></pre>
       </TabItem>
       <TabItem value="sepolia">
@@ -214,6 +220,9 @@ curl -H "Content-Type: application/json" -X POST http://localhost:8545 -d "{""js
         <pre><code>geth --mainnet --http --http.api eth,net,engine,admin</code></pre>
       </TabItem>
       <TabItem value="goerli-prater">
+        <p>With JWT configured (see <a href='./vNext/214-rc'>our v2.1.4-rc0 guide</a>):</p>
+        <pre><code>geth --goerli --http --http.api eth,net,engine,admin --authrpc.vhosts="localhost" --authrpc.jwtsecret=path/to/jwt.hex</code></pre>
+        <p>Without JWT configured:</p>
         <pre><code>geth --goerli --http --http.api eth,net,engine,admin</code></pre>
       </TabItem>
       <TabItem value="sepolia">
