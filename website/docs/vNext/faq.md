@@ -1,0 +1,35 @@
+---
+id: prysm-214rc
+title: Use Prysm v2.1.4-rc.0 to Merge-test Goerli-Prater
+sidebar_label: Use Prysm v2.1.4-rc.0 to Merge-test Goerli-Prater
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+[Prysm v2.1.4-rc.0](https://github.com/prysmaticlabs/prysm/releases/tag/v2.1.4-rc.0) can be used to run a node on Goerli-Prater using Merge-ready configuration. 
+
+The following documents will help you configure a node:
+
+ - [Quickstart](../install/install-with-script.md): For users who are starting from scratch.
+ - [Prepare for The Merge](../prepare-for-merge.md): For users who are already running a node.
+
+If you'd like to Merge-test the Goerli-Prater [network pair](../concepts/nodes-networks.md), follow either of the above-linked guides with the following adjustments:
+
+ - Prepend invocations of `prysm.sh` (Linux) or `prysm.bat` (Windows) with `set USE_PRYSM_VERSION=v2.1.4-rc.0` to ensure that Prysm uses the release candidate. For example: `set USE_PRYSM_VERSION=v2.1.4-rc.0 ./prysm.sh beacon-chain`.
+ - Ensure that both your execution node and beacon node are configured to use JWT authentication.
+ - Verify that Prysm is using the release candidate by issuing the following command: `prysm.sh beacon-chain --version`
+
+
+When installing Prysm, specify `v2.1.4-rc.0` using the following command:
+
+
+
+USE_PRYSM_VERSION=v2.1.3-rc.4
+
+
+
+
+import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
+
+<RequestUpdateWidget />
