@@ -115,14 +115,7 @@ First, create a folder called `ethereum` on your SSD <a class='footnote' href='#
     {label: 'Linux, MacOS, Arm64', value: 'others'}
 ]}>
   <TabItem value="win">
-    <Tabs groupId="network" defaultValue="mainnet" values={[
-        {label: 'Mainnet', value: 'mainnet'},
-        {label: 'Goerli-Prater', value: 'goerli-prater'},
-        {label: 'Sepolia', value: 'sepolia'},
-        {label: 'Ropsten', value: 'ropsten'}
-    ]}>
-      <TabItem value="mainnet">
-        <p>Navigate to your <code>consensus</code> directory and run the following commands:</p>
+    <p>Navigate to your <code>consensus</code> directory and run the following commands:</p>
 
 ```
 mkdir prysm && cd prysm
@@ -131,51 +124,9 @@ reg add HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1
 ```
 
   <p>This will download the Prysm client and update your registry to enable verbose logging.</p>
-      </TabItem>
-      <TabItem value="goerli-prater">
-        <p>Navigate to your <code>consensus</code> directory and run the following commands:</p>
-
-```
-mkdir prysm && cd prysm
-curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.bat --output prysm.bat
-reg add HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1
-```
-
-  <p>This will download the Prysm client and update your registry to enable verbose logging.</p>
-      </TabItem>
-      <TabItem value="sepolia">
-        <p>Navigate to your <code>consensus</code> directory and run the following commands:</p>
-
-```
-mkdir prysm && cd prysm
-curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.bat --output prysm.bat
-reg add HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1
-```
-
-  <p>This will download the Prysm client and update your registry to enable verbose logging.</p>
-      </TabItem>
-      <TabItem value="ropsten">
-      <p>Navigate to your <code>consensus</code> directory and run the following commands:</p>
-
-```
-mkdir prysm && cd prysm
-curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.bat --output prysm.bat
-reg add HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1
-```
-
-  <p>This will download the Prysm client and update your registry to enable verbose logging.</p>
-      </TabItem>
-  </Tabs>
   </TabItem>
   <TabItem value="others">
-    <Tabs groupId="network" defaultValue="mainnet" values={[
-        {label: 'Mainnet', value: 'mainnet'},
-        {label: 'Goerli-Prater', value: 'goerli-prater'},
-        {label: 'Sepolia', value: 'sepolia'},
-        {label: 'Ropsten', value: 'ropsten'}
-    ]}>
-      <TabItem value="mainnet">
-        <p>Navigate to your <code>consensus</code> directory and run the following two commands:</p>
+    <p>Navigate to your <code>consensus</code> directory and run the following two commands:</p>
 
 ```
 mkdir prysm && cd prysm
@@ -183,38 +134,6 @@ curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --out
 ```
 
   <p>This will download the Prysm client and make it executable.</p>
-      </TabItem>
-      <TabItem value="goerli-prater">
-        <p>Navigate to your <code>consensus</code> directory and run the following two commands:</p>
-
-```
-mkdir prysm && cd prysm
-curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --output prysm.sh && chmod +x prysm.sh
-```
-
-  <p>This will download the Prysm client and make it executable.</p>
-      </TabItem>
-      <TabItem value="sepolia">
-        <p>Navigate to your <code>consensus</code> directory and run the following two commands:</p>
-
-```
-mkdir prysm && cd prysm
-curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --output prysm.sh && chmod +x prysm.sh
-```
-
-  <p>This will download the Prysm client and make it executable.</p>
-      </TabItem>
-      <TabItem value="ropsten">
-        <p>Navigate to your <code>consensus</code> directory and run the following two commands:</p>
-
-```
-mkdir prysm && cd prysm
-curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --output prysm.sh && chmod +x prysm.sh
-```
-
-  <p>This will download the Prysm client and make it executable.</p>
-      </TabItem>
-    </Tabs>
   </TabItem>
 </Tabs>
 
