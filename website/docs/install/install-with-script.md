@@ -35,7 +35,7 @@ At a high level, we'll walk through the following flow:
 :::
 
 
-## Step 1: Review prerequisites
+## Step 1: Review prerequisites and best practices
 
 <table>
     <tr>
@@ -91,7 +91,7 @@ At a high level, we'll walk through the following flow:
 :::
 
 
-## Step 2: Review best practices
+### Best practices
 
 - **If you're staking ETH as a validator, try this guide on a testnet first**, *then* mainnet.
 - **Keep things simple**. This guidance assumes all client software will run on a single machine.
@@ -100,7 +100,7 @@ At a high level, we'll walk through the following flow:
 - **Join the community** - join our [mailing list](https://groups.google.com/g/prysm-dev), the [Prysm Discord server](https://discord.gg/prysmaticlabs), [r/ethstaker](https://www.reddit.com/r/ethstaker/), and the [EthStaker Discord server](https://discord.io/ethstaker) for updates and support.
 
 
-## Step 3: Install Prysm, generate secret
+## Step 2: Install Prysm, generate secret
 
 First, create a folder called `ethereum` on your SSD <a class='footnote' href='#footnote-9'>[9]</a>, and then two subfolders within it: `consensus` and `execution`:
 
@@ -225,7 +225,7 @@ After The Merge, beacon nodes will require a locally-running execution node.
 This guide assumes that you've placed your `jwt.hex` file in your `consensus` directory, but you can place it anywhere and revise the below commands as needed.
 
 
-## Step 4: Run an execution client
+## Step 3: Run an execution client
 
 In this step, you'll install an execution-layer client that Prysm's beacon node will connect to <a class='footnote' href='#footnote-2'>[2]</a>.
 
@@ -335,7 +335,7 @@ eth.syncing
 Congratulations - you’re now running an <strong>execution node</strong> in Ethereum’s execution layer.
 
 
-## Step 5: Run a beacon node using Prysm
+## Step 4: Run a beacon node using Prysm
 
 In this step, you'll run a beacon node using Prysm.
 
@@ -430,7 +430,7 @@ curl http://localhost:3500/eth/v1alpha1/node/eth1/connections
 Congratulations - you’re now running a <strong>full Ethereum node</strong>. Your full node consists of an <strong>execution node</strong> in Ethereum’s execution layer, and a <strong>beacon node</strong> in Ethereum’s consensus layer.
 
 
-## Step 6: Run a validator using Prysm
+## Step 5: Run a validator using Prysm
 
 :::info ETH Required
 
