@@ -29,9 +29,9 @@ Using the latest version of your execution client software, issue the following 
         <pre><code>Nethermind.Runner --config sepolia --JsonRpc.Enabled true --JsonRpc.JwtSecretFile=path/to/jwt.hex --Merge.TerminalTotalDifficulty 17000000000000000</code></pre>
       </TabItem>
       <TabItem value="goerli-prater">
-        With JWT configured (when Merge-testing):
+        <p>With JWT configured (see <a href='../vNext/prepare-for-merge'>our v2.1.4-rc0 guide</a>):</p>
         <pre><code>Nethermind.Runner --config goerli --JsonRpc.Enabled true --JsonRpc.Enabled true --JsonRpc.JwtSecretFile=path/to/jwt.hex</code></pre>
-        Without JWT configured:
+        <p>Without JWT configured:</p>
         <pre><code>Nethermind.Runner --config goerli --JsonRpc.Enabled true</code></pre>
       </TabItem>
       <TabItem value="mainnet">
@@ -57,9 +57,9 @@ Using the latest version of your execution client software, issue the following 
         <pre><code>besu --network=sepolia --rpc-http-enabled --engine-jwt-enabled=true --engine-jwt-secret=path/to/jwt.hex  --engine-host-allowlist="*" --override-genesis-config="terminalTotalDifficulty=17000000000000000"</code></pre>
       </TabItem>
       <TabItem value="goerli-prater">
-        When Merge-testing:
+        <p>With JWT configured (see <a href='../vNext/prepare-for-merge'>our v2.1.4-rc0 guide</a>):</p>
         <pre><code>besu --network=goerli --rpc-http-enabled --engine-jwt-enabled=true --engine-jwt-secret=path/to/jwt.hex  --engine-host-allowlist="*"</code></pre>
-        When not Merge-testing:
+        <p>Without JWT configured:</p>
         <pre><code>besu --network=goerli --rpc-http-enabled</code></pre>
       </TabItem>
       <TabItem value="mainnet">
@@ -85,9 +85,9 @@ Using the latest version of your execution client software, issue the following 
         <pre><code>geth --sepolia --http --http.api eth,net,engine,admin --authrpc.vhosts="localhost" --authrpc.jwtsecret=path/to/jwt.hex --override.terminaltotaldifficulty 17000000000000000</code></pre>
       </TabItem>
       <TabItem value="goerli-prater">
-        When Merge-testing:
+        <p>With JWT configured (see <a href='../vNext/prepare-for-merge'>our v2.1.4-rc0 guide</a>):</p>
         <pre><code>geth --goerli --http --http.api eth,net,engine,admin --authrpc.vhosts="localhost" --authrpc.jwtsecret=path/to/jwt.hex</code></pre>
-        When not Merge-testing:
+        <p>Without JWT configured:</p>
         <pre><code>geth --goerli --http --http.api eth,net,engine,admin</code></pre>
       </TabItem>
       <TabItem value="mainnet">
@@ -129,9 +129,9 @@ If you're running a validator, specifying a `suggested-fee-recipient` wallet add
       </TabItem>
       <TabItem value="goerli-prater">
         <p>Download the <a href='https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz'>Prater genesis state from Github</a>.</p>
-        <p>If you're Merge-testing:</p>
+        <p>With JWT configured (see <a href='../vNext/prepare-for-merge'>our v2.1.4-rc0 guide</a>):</p>
         <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8551 --prater --jwt-secret=path/to/jwt.hex --genesis-state=genesis.ssz --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
-        <p>If you're not Merge-testing:</p>
+        <p>Without JWT configured:</p>
         <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8545 --prater --genesis-state=genesis.ssz --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
       </TabItem>
       <TabItem value="mainnet">
@@ -159,9 +159,9 @@ If you're running a validator, specifying a `suggested-fee-recipient` wallet add
     </TabItem>
     <TabItem value="goerli-prater">
       <p>Download the <a href='https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz'>Prater genesis state from Github</a>.</p>
-      If you're Merge-testing:
+      <p>With JWT configured (see <a href='../vNext/prepare-for-merge'>our v2.1.4-rc0 guide</a>):</p>
       <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8551 --prater --jwt-secret=path/to/jwt.hex --genesis-state=genesis.ssz --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
-      If you're not Merge-testing:
+      <p>Without JWT configured:</p>
       <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8545 --prater --genesis-state=genesis.ssz --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
     </TabItem>
     <TabItem value="mainnet">
