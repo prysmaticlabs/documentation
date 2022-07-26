@@ -279,9 +279,6 @@ In this step, you'll run a beacon node using Prysm.
   </Tabs>
   </TabItem>
   <TabItem value="others">
-    <div class="admonition admonition-caution alert alert--warning">
-      <div class="admonition-content"><p><strong>Mac M1 ARM chips</strong> currently require users to run Prysm through <a href='https://support.apple.com/en-us/HT211861'>Rosetta</a>. See our <a href='https://github.com/prysmaticlabs/prysm/issues/9385'>open bug</a> for details.</p></div>
-    </div>
     <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
         {label: 'Goerli-Prater', value: 'goerli-prater'},
