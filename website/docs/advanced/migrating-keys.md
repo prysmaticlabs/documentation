@@ -10,9 +10,10 @@ This document provides guidance on migrating Prysm and your validator keys from 
 
 The following best practices will help minimize the risk of [slashing](../concepts/slashing.md) while migrating between machines:
 
-1.	Never run more than a single validator process with the same keys loaded
-2.	Maintain and utilize slashing protection
-3.	Accept downtime as part of a successful migration
+1.	Never run more than a single validator process with the same keys loaded.
+2.  Delete your keys from the old machine before starting your new machine.
+3.	Maintain and utilize slashing protection.
+4.	Accept some downtime as part of a successful migration.
 
 :::
 
