@@ -106,7 +106,7 @@
                     "items": [
                         {
                             "type": "doc",
-                            "id": "wallet/exiting-a-validator"
+                            "id": "wallet/deterministic"
                         },
                         {
                             "type": "doc",
@@ -114,15 +114,7 @@
                         },
                         {
                             "type": "doc",
-                            "id": "wallet/web3signer"
-                        },
-                        {
-                            "type": "doc",
                             "id": "wallet/nondeterministic"
-                        },
-                        {
-                            "type": "doc",
-                            "id": "wallet/deterministic"
                         },
                         {
                             "type": "doc",
@@ -130,7 +122,15 @@
                         },
                         {
                             "type": "doc",
+                            "id": "wallet/web3signer"
+                        },
+                        {
+                            "type": "doc",
                             "id": "prysm-usage/graffiti-file"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "wallet/exiting-a-validator"
                         }
                     ]
                 },
