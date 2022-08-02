@@ -72,9 +72,10 @@ header>h1 {
 }
 
 html[data-theme='dark'] .panel.section-title {
-    background-color: #191919;
-    border-left: 2px solid #333;
-    border-right: 2px solid #333;
+    background-color: #292929;
+    border-top: 2px solid #555;
+    border-left: 2px solid #555;
+    border-right: 2px solid #555;
 }
 
 .panel.secondary-panel.section-title {
@@ -84,9 +85,10 @@ html[data-theme='dark'] .panel.section-title {
 }
 
 html[data-theme='dark'] .panel.secondary-panel.section-title {
-    background-color: #1e1e1e;
-    border-left: 2px solid #333;
-    border-right: 2px solid #333;
+    background-color: #2e2e2e;
+    border-top: 2px solid #555;
+    border-left: 2px solid #555;
+    border-right: 2px solid #555;
 }
 
 .panel.secondary-panel {
