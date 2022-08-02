@@ -71,10 +71,22 @@ header>h1 {
     border-right: 2px solid #ddd;
 }
 
+html[data-theme='dark'] .panel.section-title {
+    background-color: #191919;
+    border-left: 2px solid #333;
+    border-right: 2px solid #333;
+}
+
 .panel.secondary-panel.section-title {
     background-color: #fefefe;
     border-left: 2px solid #ddd;
     border-right: 2px solid #ddd;
+}
+
+html[data-theme='dark'] .panel.secondary-panel.section-title {
+    background-color: #1e1e1e;
+    border-left: 2px solid #333;
+    border-right: 2px solid #333;
 }
 
 .panel.secondary-panel {
@@ -87,6 +99,8 @@ header>h1 {
     text-align: right;
     margin-top: 10px;
 }
+
+
 
 /* see: https://github.com/facebook/docusaurus/pull/7134/files  */
 /* referenced by: https://github.com/facebook/docusaurus/pull/7134 */
