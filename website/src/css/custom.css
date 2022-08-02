@@ -2,6 +2,10 @@
     --prysm-pink: #c72a7d;
 }
 
+html[data-theme='dark'] {
+    --prysm-pink: #da77ab;
+}
+
 
 /* General elements */
 
@@ -33,6 +37,10 @@ header>h1 {
 .panel {
     border-top: 2px solid #ddd;
     padding: 20px 20px 25px 20px;
+}
+
+html[data-theme='dark'] .panel {
+    border-top: 2px solid #555;
 }
 
 .panel>a,
@@ -71,10 +79,24 @@ header>h1 {
     border-right: 2px solid #ddd;
 }
 
+html[data-theme='dark'] .panel.section-title {
+    background-color: #292929;
+    border-top: 2px solid #555;
+    border-left: 2px solid #555;
+    border-right: 2px solid #555;
+}
+
 .panel.secondary-panel.section-title {
     background-color: #fefefe;
     border-left: 2px solid #ddd;
     border-right: 2px solid #ddd;
+}
+
+html[data-theme='dark'] .panel.secondary-panel.section-title {
+    background-color: #2e2e2e;
+    border-top: 2px solid #555;
+    border-left: 2px solid #555;
+    border-right: 2px solid #555;
 }
 
 .panel.secondary-panel {
@@ -87,6 +109,10 @@ header>h1 {
     text-align: right;
     margin-top: 10px;
 }
+
+
+
+
 
 /* see: https://github.com/facebook/docusaurus/pull/7134/files  */
 /* referenced by: https://github.com/facebook/docusaurus/pull/7134 */
@@ -137,12 +163,25 @@ footer>.col a,
     margin-bottom: 10px;
 }
 
+html[data-theme='dark'] .update-request>a,
+html[data-theme='dark'] footer>.col a {
+    background-color: #111;
+    color: var(--prysm-pink);
+}
+
 footer>.col a:hover,
 .update-request>a:hover {
     text-decoration: none;
     background-color: #f8f8f8;
     border: 1px solid #3578e5;
 }
+
+html[data-theme='dark'] .update-request>a:hover,
+html[data-theme='dark'] footer>.col a:hover {
+    background-color: #333;
+    color: var(--prysm-pink);
+}
+
 
 footer>.col a svg {
     height: 17px;
