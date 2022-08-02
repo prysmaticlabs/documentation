@@ -165,8 +165,8 @@ footer>.col a,
 
 html[data-theme='dark'] .update-request>a,
 html[data-theme='dark'] footer>.col a {
-    background-color: #666;
-    color: white;
+    background-color: #111;
+    color: var(--prysm-pink);
 }
 
 footer>.col a:hover,
@@ -178,8 +178,8 @@ footer>.col a:hover,
 
 html[data-theme='dark'] .update-request>a:hover,
 html[data-theme='dark'] footer>.col a:hover {
-    background-color: #888;
-    color: white;
+    background-color: #333;
+    color: var(--prysm-pink);
 }
 
 
