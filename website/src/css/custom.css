@@ -35,6 +35,10 @@ header>h1 {
     padding: 20px 20px 25px 20px;
 }
 
+html[data-theme='dark'] .panel {
+    border-top: 2px solid #555;
+}
+
 .panel>a,
 .panel>h2 {
     text-transform: uppercase;
@@ -104,6 +108,8 @@ html[data-theme='dark'] .panel.secondary-panel.section-title {
 
 
 
+
+
 /* see: https://github.com/facebook/docusaurus/pull/7134/files  */
 /* referenced by: https://github.com/facebook/docusaurus/pull/7134 */
 /* as a fix for wrapping sidebar titles causing buggy behavior (in our case, docs were getting cut off in nested sidebar expandos because after expanding the nested section, a scrollbar appears, which pushes the sidebar content over, but only after docusaurus reads the inner element height, causing the inner sidebar section to expand its height a little less than it needs to, causing bottom sidebar entries to appear cut off. */
@@ -153,12 +159,23 @@ footer>.col a,
     margin-bottom: 10px;
 }
 
+html[data-theme='dark'] .update-request>a,
+html[data-theme='dark'] footer>.col a {
+    background-color: #666;
+}
+
 footer>.col a:hover,
 .update-request>a:hover {
     text-decoration: none;
     background-color: #f8f8f8;
     border: 1px solid #3578e5;
 }
+
+html[data-theme='dark'] .update-request>a:hover,
+html[data-theme='dark'] footer>.col a:hover {
+    background-color: #888;
+}
+
 
 footer>.col a svg {
     height: 17px;
