@@ -19,6 +19,14 @@ You'll usually see this message when your beacon node is trying to interact with
 
 If your validator client is running fine without errors but you're seeing your validator balance decrease, your beacon node may be experiencing issues with connectivity, stability, or synchronization. Check your beacon node logs to see if there are any errors or crashes. 
 
+### Can't import accounts, stuck in a loop
+
+```
+Could not import accounts: could not write accounts: file already exists without proper 0600 permissions
+```
+
+This usually happens when the account you're using doesn't have permission to read and write to the target directory. See [this GitHub issue](https://github.com/prysmaticlabs/prysm/issues/11130#issuecomment-1199984124) for a workaround.
+
 
 ## Beacon node
 
