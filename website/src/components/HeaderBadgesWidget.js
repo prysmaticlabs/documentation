@@ -22,7 +22,10 @@ export const HeaderBadgesWidget = ({ authors }) => {
 			{() =>
 				<div class="header-badges">
 					{authors.split(',').map(buildAuthorBadge)}
-					<a class="header-badge" href={`https://github.com/prysmaticlabs/documentation/issues/new?title=Docs update request: ${new URL(window.location.href).pathname}&body=Source: ${window.location.href}%0A%0ARequest: (how can we help?)`}><span class="badge-label">Request an update</span></a>
+					<a class="header-badge" href={`https://github.com/prysmaticlabs/documentation/issues/new?title=Docs update request: ${new URL(window.location.href).pathname}&body=Source: ${window.location.href}%0A%0ARequest: (how can we help?)`}>
+						<span class="badge-avatar" style={{ backgroundImage: "url('https://avatars.githubusercontent.com/github')" }}></span>
+						<span class="badge-label">Request an update</span>
+					</a>
 				</div>
 			}
 		</BrowserOnly>
