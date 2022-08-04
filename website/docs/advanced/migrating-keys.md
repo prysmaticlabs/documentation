@@ -320,13 +320,13 @@ It is highly recommended that the validator process on the original, migrated va
 
 On the original system, with the validator process stopped, remove the account(s) using the process below: 
 
-***Using Linux/MacOS based systems***
+**Using Linux/MacOS based systems**
 
 ```sh
 ./prysm.sh validator accounts delete 
 ```
 
-***Using Windows based systems***
+**Using Windows based systems**
 
 ```sh
 prysm.bat validator accounts delete
