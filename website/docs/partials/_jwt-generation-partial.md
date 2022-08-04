@@ -13,10 +13,20 @@ The HTTP connection between your beacon node and execution node needs to be auth
     {label: 'Linux, MacOS, Arm64', value: 'others'}
 ]}>
   <TabItem value="win">
-  <pre><code>prysm.bat beacon-chain jwt generate-auth-secret</code></pre>
+
+```
+SET USE_PRYSM_VERSION=v2.1.4-rc.0
+prysm.bat beacon-chain generate-auth-secret
+```
+  
   </TabItem>
   <TabItem value="others">
-  <pre><code>./prysm.sh beacon-chain jwt generate-jwt-secret</code></pre>
+
+```
+USE_PRYSM_VERSION=v2.1.4-rc.0
+./prysm.sh beacon-chain generate-auth-secret
+```
+
   </TabItem>
 </Tabs>
 
