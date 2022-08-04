@@ -288,6 +288,10 @@ footer.docusaurus-mt-lg {
     opacity: 1;
 }
 
+.header-badge:hover>.badge-avatar {
+    opacity: 1;
+}
+
 .header-badge>.badge-avatar {
     display: inline-block;
     border-radius: 30px;
@@ -299,6 +303,7 @@ footer.docusaurus-mt-lg {
     vertical-align: top;
     line-height: 23px;
     padding-left: 8px;
+    opacity: 0.8;
 }
 
 .header-badge>.badge-label {
