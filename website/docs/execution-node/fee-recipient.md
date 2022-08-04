@@ -4,7 +4,9 @@ title: Configure Fee Recipient
 sidebar_label: Configure Fee Recipient
 ---
 
-# Configure Fee Recipient
+import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
+
+<HeaderBadgesWidget authors="James,Mick" />
 
 :::caution
 
