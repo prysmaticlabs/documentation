@@ -6,10 +6,6 @@ export const HeaderBadgesWidget = ({ authors }) => {
 		Mick: "symbolpunk"
 	}
 
-	let githubAvatars = {
-		Mick: "symbolpunk"
-	}
-
 	let buildAuthorBadge = function (author) {
 		return (
 			<a class="header-badge" href={`https://github.com/${githubUsernames[author]}`}>
@@ -19,14 +15,6 @@ export const HeaderBadgesWidget = ({ authors }) => {
 		)
 	}
 
-	let buildRequestAnUpdateWidget = function () {
-		<BrowserOnly>
-			{() =>
-				<a class="header-badge" href={`https://github.com/prysmaticlabs/documentation/issues/new?title=Docs update request: ${new URL(window.location.href).pathname}&body=Source: ${window.location.href}%0A%0ARequest: (how can we help?)`}>Request an update</a>
-			}
-		</BrowserOnly>
-	}
-
-	return <div class="header-badges">{authors.split(',').map(buildAuthorBadge)}{buildRequestAnUpdateWidget()}</div>;
+	return <div class="header-badges">{authors.split(',').map(buildAuthorBadge)}</div>;
 };
 
