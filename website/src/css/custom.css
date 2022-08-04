@@ -264,12 +264,14 @@ footer.docusaurus-mt-lg {
 
 .author-attributions {
     display: block;
+    margin-top: -15px;
+    /*pragmatism over perfection*/
 }
 
 .author-attribution {
     display: inline-block;
-    border-radius: 5px;
-    background-color: #bbb;
+    border-radius: 10px;
+    background-color: #ddd;
     padding: 5px 10px;
 }
 
@@ -280,6 +282,11 @@ footer.docusaurus-mt-lg {
     height: 30px;
     background-size: cover;
 }
+
+.author-attribution>.author-name {
+    font-size: 12px;
+}
+
 
 @media (max-width: 736px) {
     .nav-footer {
