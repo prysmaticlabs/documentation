@@ -272,14 +272,14 @@ footer.docusaurus-mt-lg {
 .author-attribution {
     display: inline-block;
     border-radius: 20px;
-    background-color: #e4e4e4;
+    background-color: #ebebeb;
     padding: 3px 20px 3px 3px;
     height: 31px;
 }
 
 .author-attribution:hover {
     text-decoration: none;
-    background-color: #dadada;
+    background-color: #e6e6e6;
 }
 
 .author-attribution>.author-avatar {
