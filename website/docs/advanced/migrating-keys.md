@@ -13,7 +13,7 @@ The following best practices will help minimize the risk of [slashing](../concep
 1.	Never run more than a single validator process with the same keys loaded.
 2.  Delete your keys from the old machine before starting your new machine.
 3.	Maintain and utilize slashing protection.
-4.	Accept some downtime as part of a successful migration.
+4.	Accept some downtime as part of a successful migration. We recommend waiting at least 1 epoch (roughly 10 minutes) between "old machine off" and "new machine on".
 
 :::
 
@@ -346,10 +346,6 @@ Using the arrow keys (up-down-left-right) navigate to the Validator(s) that has 
 Once complete, verify the account removal using the validator accounts list command outlined above in [Identify Accounts](#identify-accounts). 
 
 **When removal of the account has been confirmed, the new, migrated validator process can be started.**  
-
-:::danger Best Practice
-To reduce slashing risk, we recommend waiting at least 1 epoch following the last action taken by the original validator. This usually takes about ten minutes. 
-:::
 
 
 ## Frequently asked questions
