@@ -84,6 +84,6 @@ Everything in Prysm can be built with Bazel using `bazel build //...`. For examp
 Building Prysm with Go is possible, but it will use precompiled cryptography to build the final executable. Additionally, it will not perform the compile-time optimizations Bazel does, and can have unexpected issues as you are relinquishing reproducible, hermetic builds which Bazel provides. We always recommend Bazel as the only way to run Prysm if you are planning on running it.
 
 
-import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
+import {RequestUpdateFooterWidget} from '@site/src/components/RequestUpdateFooterWidget.js';
 
-<RequestUpdateWidget />
+<RequestUpdateFooterWidget />

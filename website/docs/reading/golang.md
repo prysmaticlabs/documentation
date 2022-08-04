@@ -14,6 +14,6 @@ sidebar_label: Golang resources
 * [Go Official Website](https://golang.org/)
 
 
-import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
+import {RequestUpdateFooterWidget} from '@site/src/components/RequestUpdateFooterWidget.js';
 
-<RequestUpdateWidget />
+<RequestUpdateFooterWidget />

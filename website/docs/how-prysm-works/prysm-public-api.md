@@ -118,6 +118,6 @@ For more details on JSON mapping for other types, view the relevant section in t
 * [Protocol Buffer Basics: Go](https://developers.google.com/protocol-buffers/docs/gotutorial)
 * [Transcoding gRPC to JSON/HTTP using Envoy](https://blog.jdriven.com/2018/11/transcoding-grpc-to-http-json-using-envoy/)
 
-import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
+import {RequestUpdateFooterWidget} from '@site/src/components/RequestUpdateFooterWidget.js';
 
-<RequestUpdateWidget />
+<RequestUpdateFooterWidget />

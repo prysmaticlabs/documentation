@@ -105,6 +105,6 @@ The field `AttestationInclusion` reports the percentage of attestations that hav
 
 The validator monitor does not keep a history of performance, it only tracks the *latest event* and keeps an aggregated total of performance. The *balance changing events* are attestation inclusion, proposed blocks inclusion and sync committee inclusion. When the monitor reports a field `BalanceChange` it means the difference between the balance right after processing the block that triggered the event, and the balance after the previous balance changing event. In particular, when an attestation is included the balance is not changed by the included attestation since attestation reward is given at epoch transition. Therefore the balance change reported, assuming no other events like sync committee contributions and block proposals were reported during the epoch, refers to the reward given by the *previous* attestation. 
 
-import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
+import {RequestUpdateFooterWidget} from '@site/src/components/RequestUpdateFooterWidget.js';
 
-<RequestUpdateWidget />
+<RequestUpdateFooterWidget />

@@ -72,6 +72,6 @@ Paste your validator's public key (available in your `deposit_data-*.json` file)
  - [Beaconcha.in (Ropsten)](https://ropsten.beaconcha.in/)
 
 
-import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
+import {RequestUpdateFooterWidget} from '@site/src/components/RequestUpdateFooterWidget.js';
 
-<RequestUpdateWidget />
+<RequestUpdateFooterWidget />

@@ -1,5 +1,5 @@
 import React from 'react';
-import BrowserOnly from '@docusaurus/BrowserOnly';
+import RequestUpdateHeaderWidget from '@site/src/components/RequestUpdateHeaderWidget.js';
 
 export const HeaderBadgesWidget = ({ authors }) => {
 	let githubUsernames = {
@@ -15,6 +15,6 @@ export const HeaderBadgesWidget = ({ authors }) => {
 		)
 	}
 
-	return <div class="header-badges">{authors.split(',').map(buildAuthorBadge)}</div>;
+	return <div class="header-badges">{authors.split(',').map(buildAuthorBadge)}{RequestUpdateHeaderWidget()}</div>;
 };
 

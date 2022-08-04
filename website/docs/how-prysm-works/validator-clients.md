@@ -55,6 +55,6 @@ A [block proposal](/docs/terminology#propose) must include several items to meet
 4. The attestation key is then signed with a [validator](/docs/terminology#validator)'s private key.
 5. Halfway through the slot duration, the attestation is sent to the beacon node via [gRPC](./prysm-public-api).
 
-import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
+import {RequestUpdateFooterWidget} from '@site/src/components/RequestUpdateFooterWidget.js';
 
-<RequestUpdateWidget />
+<RequestUpdateFooterWidget />

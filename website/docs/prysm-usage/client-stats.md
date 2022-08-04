@@ -56,6 +56,6 @@ or
 
 To get a detailed picture of exactly what client-stats collects, try running the commands without a `--clientstats-api-url` argument. In this "debug" mode, client-stats will print the json messages to stdout, so you can look at exactly what data would be sent to the remote server.
 
-import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
+import {RequestUpdateFooterWidget} from '@site/src/components/RequestUpdateFooterWidget.js';
 
-<RequestUpdateWidget />
+<RequestUpdateFooterWidget />

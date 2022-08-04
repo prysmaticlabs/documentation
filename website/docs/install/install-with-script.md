@@ -591,6 +591,6 @@ TODO
 **What are withdrawal keys and validator keys?** <br />
 TODO: explain in context of this guide -->
 
-import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
+import {RequestUpdateFooterWidget} from '@site/src/components/RequestUpdateFooterWidget.js';
 
-<RequestUpdateWidget />
+<RequestUpdateFooterWidget />

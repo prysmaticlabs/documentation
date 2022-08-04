@@ -145,6 +145,6 @@ For those running their node and validators on separate machines, simply modify 
 > **NOTICE:** In case of public IPs, [port forwarding](/docs/prysm-usage/p2p-host-ip/#port-forwarding) may need to be configured.
 
 
-import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
+import {RequestUpdateFooterWidget} from '@site/src/components/RequestUpdateFooterWidget.js';
 
-<RequestUpdateWidget />
+<RequestUpdateFooterWidget />

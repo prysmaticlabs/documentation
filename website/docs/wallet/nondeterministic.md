@@ -114,6 +114,6 @@ You can also run the `accounts backup` command **non-interactively** by using th
 |`--backup-public-keys`| Comma-separated list of public key hex strings to specify which validator accounts to backup.
 |`--backup-password-file`| Path to a plain-text, .txt file containing the desired password for your backed up accounts.
 
-import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
+import {RequestUpdateFooterWidget} from '@site/src/components/RequestUpdateFooterWidget.js';
 
-<RequestUpdateWidget />
+<RequestUpdateFooterWidget />

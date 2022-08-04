@@ -426,6 +426,6 @@ bazel run //beacon-chain -- --datadir=$HOME/prysm  \
   --enable-debug-rpc-endpoints --prater
 ```
 
-import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
+import {RequestUpdateFooterWidget} from '@site/src/components/RequestUpdateFooterWidget.js';
 
-<RequestUpdateWidget />
+<RequestUpdateFooterWidget />

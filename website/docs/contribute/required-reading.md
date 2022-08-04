@@ -152,6 +152,6 @@ After reading the sharding material for part-time contributors, it is important 
 * [Go Official Website](https://golang.org/)
 
 
-import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
+import {RequestUpdateFooterWidget} from '@site/src/components/RequestUpdateFooterWidget.js';
 
-<RequestUpdateWidget />
+<RequestUpdateFooterWidget />
