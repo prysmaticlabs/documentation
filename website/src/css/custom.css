@@ -265,22 +265,28 @@ footer.docusaurus-mt-lg {
 .author-attributions {
     display: block;
     margin-top: -15px !important;
+    margin-bottom: 10px;
     /*pragmatism over perfection*/
 }
 
 .author-attribution {
     display: inline-block;
     border-radius: 20px;
+    background-color: #dadada;
+    padding: 3px 15px 3px 3px;
+    height: 31px;
+}
+
+.author-attribution:hover {
+    text-decoration: none;
     background-color: #d3d3d3;
-    padding: 2px 10px 2px 2px;
-    height: 24px;
 }
 
 .author-attribution>.author-avatar {
     display: inline-block;
     border-radius: 10px;
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
     background-size: cover;
     margin-right: 10px;
 }
@@ -290,6 +296,7 @@ footer.docusaurus-mt-lg {
     line-height: 22px;
     color: #333;
     display: inline-block;
+    vertical-align: top;
 }
 
 
