@@ -306,6 +306,10 @@ footer.docusaurus-mt-lg {
     opacity: 0.8;
 }
 
+.header-badge>.emoji-avatar {
+    margin-right: 5px !important;
+}
+
 .header-badge>.badge-label {
     font-size: 13px;
     line-height: 24px;
