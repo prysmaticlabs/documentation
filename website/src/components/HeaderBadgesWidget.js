@@ -1,5 +1,5 @@
 import React from 'react';
-import RequestUpdateHeaderWidget from '@site/src/components/RequestUpdateHeaderWidget.js';
+import BrowserOnly from '@docusaurus/BrowserOnly';
 
 export const HeaderBadgesWidget = ({ authors }) => {
 	let githubUsernames = {
@@ -17,9 +17,14 @@ export const HeaderBadgesWidget = ({ authors }) => {
 		)
 	}
 
-	return (<div>
-		<div class="header-badges">{authors.split(',').map(buildAuthorBadge)}</div>
+	return (
+		<BrowserOnly>
+			<div>
+				<div class="header-badges">{authors.split(',').map(buildAuthorBadge)}</div>
+				<a href={`https://github.com/prysmaticlabs/documentation/issues/new?title=Docs update request: ${new URL(window.location.href).pathname}&body=Source: ${window.location.href}%0A%0ARequest: (how can we help?)`}>🐼 Request an update</a>
 
-	</div>);
+			</div>
+		</BrowserOnly>
+	);
 };
 
