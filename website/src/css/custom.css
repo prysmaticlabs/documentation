@@ -278,9 +278,10 @@ footer.docusaurus-mt-lg {
 .author-attribution>.author-avatar {
     display: inline-block;
     border-radius: 10px;
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     background-size: cover;
+    margin-right: 5px;
 }
 
 .author-attribution>.author-name {
