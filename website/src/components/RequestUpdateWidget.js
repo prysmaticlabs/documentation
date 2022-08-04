@@ -1,7 +1,7 @@
 import React from 'react';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 
-export const RequestUpdateFooterWidget = ({ }) => (
+export const RequestUpdateWidget = ({ }) => (
 	<BrowserOnly>
 		{() =>
 			<div class="update-request">

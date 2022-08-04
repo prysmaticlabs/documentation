@@ -132,6 +132,6 @@ for authentication in develop you may use any token in the url query parameter i
 run `npm run start:staging` will run a 'like' production build where the backend expects to be connected to `localhost:7500`. You will need to start the validator client with `--web` but interact with your angular application on `localhost:4200`.
 
 
-import {RequestUpdateFooterWidget} from '@site/src/components/RequestUpdateFooterWidget.js';
+import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateFooterWidget />
+<RequestUpdateWidget />

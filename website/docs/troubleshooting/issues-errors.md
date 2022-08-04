@@ -79,6 +79,6 @@ This usually means that your execution client needs more time to "catch up". If 
 Feel free to reach out to us on [Discord](https://discord.gg/prysmaticlabs) and we'll help you troubleshoot.
 
 
-import {RequestUpdateFooterWidget} from '@site/src/components/RequestUpdateFooterWidget.js';
+import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateFooterWidget />
+<RequestUpdateWidget />

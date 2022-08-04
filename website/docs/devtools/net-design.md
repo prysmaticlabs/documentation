@@ -455,6 +455,6 @@ Similar to the sync migration, the existing mapping will be prefixed with deprec
 16*1240 (deposit) = 19840  
 16*112 (voluntaryexit) = 1792  
   
-import {RequestUpdateFooterWidget} from '@site/src/components/RequestUpdateFooterWidget.js';
+import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateFooterWidget />
+<RequestUpdateWidget />

@@ -185,6 +185,6 @@ Footnotes:
 <strong id='footnote-13'>13</strong>. StakingRewards has a live rewards calculator <a href='https://www.stakingrewards.com/earn/ethereum-2-0/'>here</a>.   <br />
 
 
-import {RequestUpdateFooterWidget} from '@site/src/components/RequestUpdateFooterWidget.js';
+import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateFooterWidget />
+<RequestUpdateWidget />

@@ -8,8 +8,8 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import ClientStackPng from '@site/static/img/client-stack.png';
 import JwtGenerationPartial from '@site/docs/partials/_jwt-generation-partial.md';
-
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
+
 
 <HeaderBadgesWidget authors="Mick" />
 
@@ -591,6 +591,6 @@ TODO
 **What are withdrawal keys and validator keys?** <br />
 TODO: explain in context of this guide -->
 
-import {RequestUpdateFooterWidget} from '@site/src/components/RequestUpdateFooterWidget.js';
+import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateFooterWidget />
+<RequestUpdateWidget />

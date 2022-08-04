@@ -102,6 +102,6 @@ bazel run //validator --config=release -- accounts voluntary-exit
 </TabItem>
 </Tabs>
 
-import {RequestUpdateFooterWidget} from '@site/src/components/RequestUpdateFooterWidget.js';
+import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateFooterWidget />
+<RequestUpdateWidget />

@@ -139,6 +139,6 @@ This will generate an output like so:
     [2020-06-15 17:09:13]  INFO validator: Established secure gRPC connection
     ```
 
-import {RequestUpdateFooterWidget} from '@site/src/components/RequestUpdateFooterWidget.js';
+import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateFooterWidget />
+<RequestUpdateWidget />

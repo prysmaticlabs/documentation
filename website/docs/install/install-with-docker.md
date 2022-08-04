@@ -561,6 +561,6 @@ For running an advanced wallet setups, our documentation includes comprehensive 
 
 **Still have questions?**  Stop by our [Discord](https://discord.gg/prysmaticlabs) for further assistance!
 
-import {RequestUpdateFooterWidget} from '@site/src/components/RequestUpdateFooterWidget.js';
+import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateFooterWidget />
+<RequestUpdateWidget />

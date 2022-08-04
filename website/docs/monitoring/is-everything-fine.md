@@ -53,6 +53,6 @@ INFO validator: Submitted new attestations...
 
 If you notice anything concerning or have any questions, feel free to get in touch with us on [Discord](https://discord.gg/prysmaticlabs).
 
-import {RequestUpdateFooterWidget} from '@site/src/components/RequestUpdateFooterWidget.js';
+import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateFooterWidget />
+<RequestUpdateWidget />

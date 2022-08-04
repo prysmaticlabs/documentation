@@ -126,6 +126,6 @@ You can also run the `accounts list` command **non-interactively** by using the 
 | `--show-private-keys` | Display the private keys for validator accounts.
 
 
-import {RequestUpdateFooterWidget} from '@site/src/components/RequestUpdateFooterWidget.js';
+import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateFooterWidget />
+<RequestUpdateWidget />

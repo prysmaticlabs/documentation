@@ -282,6 +282,6 @@ This problem was found independently by many and there are different ad-hoc impl
 Another common themes for bugs with optimistic sync is the handling of timeouts and unhandled errors from the ELC. When the ELC timesout on a call to `notifyNewPayload`, it has not replied neither saying that it has fully validated the block nor that it is SYNCING. Ironically, this means that a node that was previously lock-stepping is not to be considered optimistic and can actually attest to its previous head, and propose a block based on its previous head. We are not allowed however to import a block which the ELC has not returned of of VALID, INVALID, ACCEPTED or SYNCING. The following situation has happened in a couple of merged networks and shadow forks: the ELC timesout the CLC does not send any new payload since it can't import any block. The CLC should consider resending either `notifyNewPayload`  or `notifyForkchoiceUpdate` to the ELC if it has timedout and the CLC is not importing a new block because of this. 
 
 
-import {RequestUpdateFooterWidget} from '@site/src/components/RequestUpdateFooterWidget.js';
+import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateFooterWidget />
+<RequestUpdateWidget />

@@ -12,6 +12,6 @@ Libp2p is a full featured and highly maintained next-generation library. By impl
 
 For more information and current developments, see the [official Ethereum consensus P2P specification](https://github.com/ethereum/eth2.0-specs/blob/dev/specs/phase0/p2p-interface.md).
 
-import {RequestUpdateFooterWidget} from '@site/src/components/RequestUpdateFooterWidget.js';
+import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateFooterWidget />
+<RequestUpdateWidget />

@@ -25,6 +25,6 @@ Their respective Github repositories are:
 - [eth2-redot-com](https://github.com/AtlantPlatform/eth2-redot-com)
 
 
-import {RequestUpdateFooterWidget} from '@site/src/components/RequestUpdateFooterWidget.js';
+import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateFooterWidget />
+<RequestUpdateWidget />

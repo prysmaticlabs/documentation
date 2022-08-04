@@ -50,6 +50,6 @@ If you are running Prysm and specifying command line flags via a configuration f
 slots-per-archive-point: 1 
 ```
 
-import {RequestUpdateFooterWidget} from '@site/src/components/RequestUpdateFooterWidget.js';
+import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateFooterWidget />
+<RequestUpdateWidget />

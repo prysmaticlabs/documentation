@@ -185,6 +185,6 @@ bazel run //validator -- db restore --restore-source-file=/path/to/backup --rest
 </Tabs>
 
 
-import {RequestUpdateFooterWidget} from '@site/src/components/RequestUpdateFooterWidget.js';
+import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateFooterWidget />
+<RequestUpdateWidget />

@@ -8,6 +8,6 @@ import JwtGuidancePartial from '@site/docs/partials/_jwt-guidance-partial.md';
 
 <JwtGuidancePartial />
 
-import {RequestUpdateFooterWidget} from '@site/src/components/RequestUpdateFooterWidget.js';
+import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateFooterWidget />
+<RequestUpdateWidget />

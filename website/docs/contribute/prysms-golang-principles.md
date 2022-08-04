@@ -95,6 +95,6 @@ func UpdateBeaconState(currentState *pb.BeaconState, blockCh chan<- *types.Block
 }
 ```
 
-import {RequestUpdateFooterWidget} from '@site/src/components/RequestUpdateFooterWidget.js';
+import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateFooterWidget />
+<RequestUpdateWidget />

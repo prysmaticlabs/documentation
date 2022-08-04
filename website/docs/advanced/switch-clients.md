@@ -145,6 +145,6 @@ Ensure your beacon node is fully synced with the network by checking your client
 Search a block explorer like https://beaconcha.in/ with your validator's public key to confirm that your validator is now active!
 
 
-import {RequestUpdateFooterWidget} from '@site/src/components/RequestUpdateFooterWidget.js';
+import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateFooterWidget />
+<RequestUpdateWidget />
