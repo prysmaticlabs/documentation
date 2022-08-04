@@ -1,11 +1,15 @@
 import React from 'react';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 
-export const AuthorAttributionWidget = ({ author }) => {
-	let convertNameToGithubHandle = function (name) {
+export const AuthorAttributionWidget = ({ authors }) => {
+	let convertNameToGithubHandle = function (author) {
 		return "symbolpunk";
 	}
 
-	return (<a class="author-attribution" href={`https://github.com/${(convertNameToGithubHandle)}`}>{author}</a>)
+	let buildAuthorBadge = function (author) {
+		return (<a class="author-attribution" href={`https://github.com/${(convertNameToGithubHandle(author))}`}><span>{author}</span></a>)
+	}
+
+	return <div>{authors.split(',').map(buildAuthorBadge)}</div>;
 };
 
