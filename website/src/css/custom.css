@@ -282,7 +282,7 @@ footer.docusaurus-mt-lg {
     background-color: #e6e6e6;
 }
 
-.header-badge>.author-avatar {
+.header-badge>.badge-avatar {
     display: inline-block;
     border-radius: 30px;
     width: 25px;
@@ -291,7 +291,7 @@ footer.docusaurus-mt-lg {
     margin-right: 12px;
 }
 
-.header-badge>.author-name {
+.header-badge>.badge-label {
     font-size: 13px;
     line-height: 24px;
     color: #333;
