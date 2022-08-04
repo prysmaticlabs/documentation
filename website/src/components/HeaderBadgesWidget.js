@@ -5,7 +5,8 @@ export const HeaderBadgesWidget = ({ authors }) => {
 	let githubUsernames = {
 		Mick: "symbolpunk",
 		Raul: "rauljordan",
-		Terence: "terencechain"
+		Terence: "terencechain",
+		James: "james-prysm"
 	}
 
 	let buildAuthorBadge = function (author) {
