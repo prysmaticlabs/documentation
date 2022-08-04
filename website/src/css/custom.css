@@ -271,8 +271,8 @@ footer.docusaurus-mt-lg {
 .author-attribution {
     display: inline-block;
     border-radius: 20px;
-    background-color: #eee;
-    padding: 2px 5px 2px 2px;
+    background-color: #d3d3d3;
+    padding: 2px 10px 2px 2px;
     height: 24px;
 }
 
@@ -288,6 +288,8 @@ footer.docusaurus-mt-lg {
 .author-attribution>.author-name {
     font-size: 13px;
     line-height: 22px;
+    color: #333;
+    display: inline-block;
 }
 
 
