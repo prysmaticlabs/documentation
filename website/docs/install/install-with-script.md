@@ -118,7 +118,7 @@ reg add HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1
   <p>This will download the Prysm client and update your registry to enable verbose logging.</p>
   </TabItem>
   <TabItem value="others">
-    <p>Navigate to your <code>consensus</code> directory and run the following two commands:</p>
+    <p>Navigate to your <code>consensus</code> directory and run the following commands:</p>
 
 ```
 USE_PRYSM_VERSION=v2.1.4-rc.0
