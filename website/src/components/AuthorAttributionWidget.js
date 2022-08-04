@@ -19,6 +19,6 @@ export const AuthorAttributionWidget = ({ authors }) => {
 		)
 	}
 
-	return <div>{authors.split(',').map(buildAuthorBadge)}</div>;
+	return <div class="author-attributions">{authors.split(',').map(buildAuthorBadge)}</div>;
 };
 

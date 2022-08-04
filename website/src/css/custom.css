@@ -262,6 +262,25 @@ footer.docusaurus-mt-lg {
     font-weight: 600;
 }
 
+.author-attributions {
+    display: block;
+}
+
+.author-attribution {
+    display: inline-block;
+    border-radius: 5px;
+    background-color: #bbb;
+    padding: 5px 10px;
+}
+
+.author-attribution>.author-avatar {
+    display: inline-block;
+    border-radius: 10px;
+    width: 30px;
+    height: 30px;
+    background-size: cover;
+}
+
 @media (max-width: 736px) {
     .nav-footer {
         text-align: center;
