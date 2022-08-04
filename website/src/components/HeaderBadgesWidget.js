@@ -19,7 +19,7 @@ export const HeaderBadgesWidget = ({ authors }) => {
 
 	return (<div>
 		<div class="header-badges">{authors.split(',').map(buildAuthorBadge)}</div>
-		<RequestUpdateHeaderWidget></RequestUpdateHeaderWidget>
+
 	</div>);
 };
 
