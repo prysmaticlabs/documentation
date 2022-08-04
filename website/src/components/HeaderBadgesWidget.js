@@ -3,7 +3,9 @@ import RequestUpdateHeaderWidget from '@site/src/components/RequestUpdateHeaderW
 
 export const HeaderBadgesWidget = ({ authors }) => {
 	let githubUsernames = {
-		Mick: "symbolpunk"
+		Mick: "symbolpunk",
+		Raul: "rauljordan",
+		Terence: "terencechain"
 	}
 
 	let buildAuthorBadge = function (author) {
