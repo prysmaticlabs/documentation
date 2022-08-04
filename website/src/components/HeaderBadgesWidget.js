@@ -1,5 +1,5 @@
 import React from 'react';
-import RequestUpdateWidget from '@site/src/components/RequestUpdateWidget.js';
+import RequestUpdateHeaderWidget from '@site/src/components/RequestUpdateHeaderWidget.js';
 
 export const HeaderBadgesWidget = ({ authors }) => {
 	let githubUsernames = {
@@ -17,6 +17,9 @@ export const HeaderBadgesWidget = ({ authors }) => {
 		)
 	}
 
-	return <div class="header-badges">{authors.split(',').map(buildAuthorBadge)}<RequestUpdateWidget></RequestUpdateWidget></div>;
+	return (<div>
+		<div class="header-badges">{authors.split(',').map(buildAuthorBadge)}</div>
+		<RequestUpdateHeaderWidget></RequestUpdateHeaderWidget>
+	</div>);
 };
 
