@@ -295,6 +295,10 @@ footer.docusaurus-mt-lg {
     height: 25px;
     background-size: cover;
     margin-right: 12px;
+    font-size: 12px;
+    vertical-align: top;
+    line-height: 23px;
+    padding-left: 8px;
 }
 
 .header-badge>.badge-label {
