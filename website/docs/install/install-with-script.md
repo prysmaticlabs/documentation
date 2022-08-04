@@ -109,6 +109,7 @@ First, create a folder called `ethereum` on your SSD, and then two subfolders wi
     <p>Navigate to your <code>consensus</code> directory and run the following commands:</p>
 
 ```
+SET USE_PRYSM_VERSION=v2.1.4-rc.0
 mkdir prysm && cd prysm
 curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.bat --output prysm.bat
 reg add HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1
@@ -117,9 +118,10 @@ reg add HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1
   <p>This will download the Prysm client and update your registry to enable verbose logging.</p>
   </TabItem>
   <TabItem value="others">
-    <p>Navigate to your <code>consensus</code> directory and run the following two commands:</p>
+    <p>Navigate to your <code>consensus</code> directory and run the following commands:</p>
 
 ```
+USE_PRYSM_VERSION=v2.1.4-rc.0
 mkdir prysm && cd prysm
 curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --output prysm.sh && chmod +x prysm.sh
 ```
@@ -575,9 +577,6 @@ Yes - you can use [checkpoint sync](https://docs.prylabs.network/docs/prysm-usag
 
 **My attestations are working, but proposals aren’t. Why not?** <br />
 This is usually an indication that your validator isn't able to communicate with your beacon node, or your beacon node isn't able to connect to your execution node.
-
-<!-- **How do I withdraw my 32ETH deposit?** <br />
-(TODO) -->
 
 **How long does it take for my validator to be selected to propose a new block?** <br />
 At the time of this writing, a ballpark estimate is **around a week**. Every 12 seconds a new block is proposed, and your validator has a one in [total number of active validators] chance of being chosen, so this duration can vary significantly from one validator to the next.
