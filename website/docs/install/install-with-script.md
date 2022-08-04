@@ -9,6 +9,8 @@ import TabItem from '@theme/TabItem';
 import ClientStackPng from '@site/static/img/client-stack.png';
 import JwtGenerationPartial from '@site/docs/partials/_jwt-generation-partial.md';
 
+import {AuthorAttributionWidget} from '@site/src/components/AuthorAttributionWidget.js';
+
 <AuthorAttributionWidget author="mick" />
 
 :::info Already running a node?
