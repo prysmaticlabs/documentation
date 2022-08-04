@@ -275,12 +275,11 @@ footer.docusaurus-mt-lg {
     transition-duration: 0.2s;
     display: inline-block;
     border-radius: 20px;
-    background-color: #ebebeb;
+    background-color: #efefef;
     padding: 3px 20px 3px 3px;
     height: 31px;
     margin-right: 10px;
     vertical-align: top;
-    opacity: 0.7;
 }
 
 .header-badge:hover {
