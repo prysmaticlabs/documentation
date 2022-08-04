@@ -347,8 +347,8 @@ Once complete, verify the account removal using the validator accounts list comm
 
 **When removal of the account has been confirmed, the new, migrated validator process can be started.**  
 
-:::danger Good Practice
-In order to minimise slashing risk, it is recommended that the migrated validator is not started until at least 1 epoch following the last action taken by the original validator. Epoch status can be monitored on multipe websites, however, typically a new epoch is created approximatley every 6.5 minutes, waiting 7.5 minutes after stopping the original validator should significantly reduce the risk of slashing.  
+:::danger Best Practice
+To reduce slashing risk, we recommend waiting at least 1 epoch following the last action taken by the original validator. This usually takes about ten minutes. 
 :::
 
 
