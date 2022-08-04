@@ -17,6 +17,6 @@ export const HeaderBadgesWidget = ({ authors }) => {
 		)
 	}
 
-	return <div class="header-badges">{authors.split(',').map(buildAuthorBadge)}{RequestUpdateHeaderWidget()}</div>;
+	return <div class="header-badges">{authors.split(',').map(buildAuthorBadge)}<RequestUpdateHeaderWidget></RequestUpdateHeaderWidget></div>;
 };
 
