@@ -91,7 +91,7 @@ At a high level, we'll walk through the following flow:
 - **Join the community** - join our [mailing list](https://groups.google.com/g/prysm-dev), the [Prysm Discord server](https://discord.gg/prysmaticlabs), [r/ethstaker](https://www.reddit.com/r/ethstaker/), and the [EthStaker Discord server](https://discord.io/ethstaker) for updates and support.
 
 
-## Step 2: Install Prysm, generate secret
+## Step 2: Install Prysm
 
 First, create a folder called `ethereum` on your SSD, and then two subfolders within it: `consensus` and `execution`:
 
@@ -127,6 +127,14 @@ curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --out
   <p>This will download the Prysm client and make it executable.</p>
   </TabItem>
 </Tabs>
+
+### Generate JWT secret (testnets only)
+
+:::info Running on Mainnet? Skip to Step 3.
+
+Mainnet doesn't yet require JWT. If you're running on Mainnet, you can skip the rest of this step.
+
+:::
 
 <JwtGenerationPartial />
 
@@ -542,10 +550,12 @@ We recommend **closing** TCP port `8545` to the internet and keeping TCP and UDP
 No. See [Nodes and networks](../concepts/nodes-networks.md) for more information.
 
 **Can I stake with less than 32 ETH?**
-<a href='https://ethereum.org/en/staking/pools/'>Pooled staking</a> lets you stake with less than 32 ETH. 
+Yes! <a href='https://ethereum.org/en/staking/pools/'>Pooled staking</a> lets you stake with less than 32 ETH. 
+
 
 **What should I do if I can't run a node using my own hardware?**
-<a href='https://ethereum.org/en/staking/saas/'>Staking as a service</a> lets you delegate hardware management to a third party.
+You can delegate hardware management to <a href='https://ethereum.org/en/staking/saas/'>staking as a service</a> providers.
+
 
 <!-- **I'm new to Ethereum, and I'm a visual learner. Can you show me how these things work? How much disk space does each node type require?** <br />
 The Beginner's Introduction to Prysm uses diagrams to help you visualize Ethereum's architecture, and Prysm's too. (TODO) -->
@@ -573,7 +583,7 @@ Yes - you can use [checkpoint sync](https://docs.prylabs.network/docs/prysm-usag
 <!--TODO: explain why -->
 
 
-**My attestations are working, but proposals aren’t. Why not?** <br />
+**My proposals aren't working, but my attestations are. What's going on?** <br />
 This is usually an indication that your validator isn't able to communicate with your beacon node, or your beacon node isn't able to connect to your execution node.
 
 **How long does it take for my validator to be selected to propose a new block?** <br />

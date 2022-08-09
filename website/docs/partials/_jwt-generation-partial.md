@@ -1,7 +1,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-If you're using a testnet (like Goerli-Prater, Ropsten, or Sepolia) the HTTP connection between your beacon node and execution node needs to be authenticated using a [JWT token](https://jwt.io/). There are several ways to generate this JWT token:
+If you're using a testnet (like Goerli-Prater, Ropsten, or Sepolia), the HTTP connection between your beacon node and execution node needs to be authenticated using a [JWT token](https://jwt.io/). There are several ways to generate this JWT token:
 
  - Use an online generator like [this](https://seanwasere.com/generate-random-hex/). Copy and paste this value into a `jwt.hex` file.
  - Use a utility like OpenSSL to create the token via command: `openssl rand -hex 32 | tr -d "\n" > "jwt.hex"`.
@@ -15,6 +15,7 @@ If you're using a testnet (like Goerli-Prater, Ropsten, or Sepolia) the HTTP con
   <TabItem value="win">
 
 ```
+## do not use this on mainnet
 SET USE_PRYSM_VERSION=v2.1.4-rc.1
 prysm.bat beacon-chain generate-auth-secret
 ```
@@ -23,6 +24,7 @@ prysm.bat beacon-chain generate-auth-secret
   <TabItem value="others">
 
 ```
+## do not use this on mainnet
 USE_PRYSM_VERSION=v2.1.4-rc.1
 ./prysm.sh beacon-chain generate-auth-secret
 ```
