@@ -128,6 +128,12 @@ curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --out
   </TabItem>
 </Tabs>
 
+:::info Running on Mainnet? Skip to Step 3.
+
+Mainnet doesn't yet require JWT, so you can skip the rest of this section.
+
+:::
+
 <JwtGenerationPartial />
 
 This guide assumes that you've placed your `jwt.hex` file in your `consensus` directory, but you can place it anywhere and revise the below commands as needed.
