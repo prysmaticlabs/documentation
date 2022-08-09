@@ -550,10 +550,12 @@ We recommend **closing** TCP port `8545` to the internet and keeping TCP and UDP
 No. See [Nodes and networks](../concepts/nodes-networks.md) for more information.
 
 **Can I stake with less than 32 ETH?**
-<a href='https://ethereum.org/en/staking/pools/'>Pooled staking</a> lets you stake with less than 32 ETH. 
+Yes! <a href='https://ethereum.org/en/staking/pools/'>Pooled staking</a> lets you stake with less than 32 ETH. 
+
 
 **What should I do if I can't run a node using my own hardware?**
-<a href='https://ethereum.org/en/staking/saas/'>Staking as a service</a> lets you delegate hardware management to a third party.
+You can delegate hardware management to <a href='https://ethereum.org/en/staking/saas/'>staking as a service</a> providers.
+
 
 <!-- **I'm new to Ethereum, and I'm a visual learner. Can you show me how these things work? How much disk space does each node type require?** <br />
 The Beginner's Introduction to Prysm uses diagrams to help you visualize Ethereum's architecture, and Prysm's too. (TODO) -->
