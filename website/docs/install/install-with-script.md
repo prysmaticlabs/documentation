@@ -583,7 +583,7 @@ Yes - you can use [checkpoint sync](https://docs.prylabs.network/docs/prysm-usag
 <!--TODO: explain why -->
 
 
-**My attestations are working, but proposals aren’t. Why not?** <br />
+**My proposals aren't working, but my attestations are. What's going on?** <br />
 This is usually an indication that your validator isn't able to communicate with your beacon node, or your beacon node isn't able to connect to your execution node.
 
 **How long does it take for my validator to be selected to propose a new block?** <br />
