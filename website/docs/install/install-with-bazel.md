@@ -89,7 +89,7 @@ Bazel will automatically pull and install any dependencies as well, including Go
 When running Prysm, you can choose to run in the **main network** which has real assets at stake, or in a **test network** which is used by developers and stakers that might want to gain some confidence before depositing 32 ETH to validate. The currently supported networks in Prysm are:
 
 * [Mainnet](https://launchpad.ethereum.org): the current, live version of Ethereum proof-of-stake with billions of dollars' worth of real ETH at stake
-* [Prater testnet](https://prater.launchpad.ethereum.org): a staging testnet for developers and validators who want to try things out before hopping into the real mainnet
+* [Goerli-Prater testnet](https://goerli.launchpad.ethereum.org/en/): a staging testnet for developers and validators who want to try things out before hopping into the real mainnet
 * [Ropsten testnet](https://ropsten.launchpad.ethereum.org): a consensus-layer staging testnet created specifically to help developers and validators test the Merge using execution-layer Ropsten testnet
 
 
@@ -165,7 +165,7 @@ If your node is done synchronizing, you will see the response:
 The correct address for the launchpad is https://launchpad.ethereum.org and the only, official validator deposit contract is [0x00000000219ab540356cbb839cbe05303d7705fa](https://etherscan.io/address/0x00000000219ab540356cbb839cbe05303d7705fa). Do not send ETH directly to the contract, and only join by using the Ethereum.org launchpad.
 :::
 
-The [Mainnet Launchpad](https://launchpad.ethereum.org/summary) is the most secure way to deposit your 32 ETH to become a validator. If you want to participate in the **testnet**, you can navigate to the [Prater](https://prater.launchpad.ethereum.org/summary) or [Ropsten](https://ropsten.launchpad.ethereum.org/summary) launchpads.
+The [Mainnet Launchpad](https://launchpad.ethereum.org/summary) is the most secure way to deposit your 32 ETH to become a validator. If you want to participate in the **testnet**, you can navigate to the [Goerli-Prater](https://goerli.launchpad.ethereum.org/summary/) or [Ropsten](https://ropsten.launchpad.ethereum.org/summary) launchpads.
 
 Throughout the process, you'll be asked to generate new validator credentials using the official Ethereum deposit command-line-tool [here](https://github.com/ethereum/eth2.0-deposit-cli). Make sure you use the `mainnet` option when generating keys with the deposit CLI. During the process, you will have generated a `validator_keys` folder under the `eth2.0-deposit-cli` directory. You can import all of your validator keys into Prysm from that folder in the next step.
 

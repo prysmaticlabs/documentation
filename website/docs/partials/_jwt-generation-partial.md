@@ -15,7 +15,7 @@ The HTTP connection between your beacon node and execution node needs to be auth
   <TabItem value="win">
 
 ```
-SET USE_PRYSM_VERSION=v2.1.4-rc.0
+SET USE_PRYSM_VERSION=v2.1.4-rc.1
 prysm.bat beacon-chain generate-auth-secret
 ```
   
@@ -23,7 +23,7 @@ prysm.bat beacon-chain generate-auth-secret
   <TabItem value="others">
 
 ```
-USE_PRYSM_VERSION=v2.1.4-rc.0
+USE_PRYSM_VERSION=v2.1.4-rc.1
 ./prysm.sh beacon-chain generate-auth-secret
 ```
 
