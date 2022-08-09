@@ -6,7 +6,7 @@ If you're using a testnet (like Goerli-Prater, Ropsten, or Sepolia) the HTTP con
  - Use an online generator like [this](https://seanwasere.com/generate-random-hex/). Copy and paste this value into a `jwt.hex` file.
  - Use a utility like OpenSSL to create the token via command: `openssl rand -hex 32 | tr -d "\n" > "jwt.hex"`.
  - Use an execution client to generate the `jwt.hex` file.
- - Use Prysm to generate the `jwt.hex` file:
+ - Use Prysm [v2.1.3-rc.1](https://github.com/prysmaticlabs/prysm/releases/tag/v2.1.4-rc.1) to generate the `jwt.hex` file:
 
 <Tabs groupId="os" defaultValue="others" values={[
     {label: 'Windows', value: 'win'},
