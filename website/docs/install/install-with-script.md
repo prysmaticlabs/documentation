@@ -128,7 +128,7 @@ curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --out
   </TabItem>
 </Tabs>
 
-### Generate JWT secret
+### Generate JWT secret (testnets only)
 
 :::info Running on Mainnet? Skip to Step 3.
 
