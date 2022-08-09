@@ -130,7 +130,7 @@ curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --out
 
 :::info Running on Mainnet? Skip to Step 3.
 
-Mainnet doesn't yet require JWT. If you're running on Mainnet, you can skip the rest of this section.
+Mainnet doesn't yet require JWT. If you're running on Mainnet, you can skip the rest of this step.
 
 :::
 
