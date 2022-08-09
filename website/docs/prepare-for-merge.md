@@ -11,7 +11,7 @@ import JwtGuidancePartial from '@site/docs/partials/_jwt-guidance-partial.md';
 
 [The Merge](https://ethereum.org/en/upgrades/merge/) will fully transition Ethereum's consensus mechanism from proof-of-work to proof-of-stake. This is made possible by the [Beacon Chain](https://ethereum.org/en/upgrades/beacon-chain/), a new Ethereum network layer that implements proof-of-stake consensus. After The Merge, this consensus layer will be combined with Ethereum's execution layer, and miners will be fully replaced by proof-of-stake validators on Ethereum Mainnet.
 
-This guide will walk you through the changes that you need to make in preparation for The Merge. Note that these instructions need to be followed **only if you're running on Ropsten or Sepolia**. After Sepolia has been Merged, client software and documentation will be updated for Goerli-Prater, and then Mainnet.
+This guide will walk you through the changes that you need to make in preparation for The Merge. Note that these instructions need to be followed **only if you're running on a testnet**. After the Goerli-Prater test network has been merged, this guidance will be updated with Mainnet guidance.
 
 :::info New user?
 
