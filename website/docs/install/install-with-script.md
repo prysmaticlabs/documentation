@@ -91,7 +91,7 @@ At a high level, we'll walk through the following flow:
 - **Join the community** - join our [mailing list](https://groups.google.com/g/prysm-dev), the [Prysm Discord server](https://discord.gg/prysmaticlabs), [r/ethstaker](https://www.reddit.com/r/ethstaker/), and the [EthStaker Discord server](https://discord.io/ethstaker) for updates and support.
 
 
-## Step 2: Install Prysm, generate secret
+## Step 2: Install Prysm
 
 First, create a folder called `ethereum` on your SSD, and then two subfolders within it: `consensus` and `execution`:
 
@@ -127,6 +127,8 @@ curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --out
   <p>This will download the Prysm client and make it executable.</p>
   </TabItem>
 </Tabs>
+
+### Generate JWT secret
 
 :::info Running on Mainnet? Skip to Step 3.
 
