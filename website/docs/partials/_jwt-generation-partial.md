@@ -15,6 +15,7 @@ If you're using a testnet (like Goerli-Prater, Ropsten, or Sepolia) the HTTP con
   <TabItem value="win">
 
 ```
+## do not use this on mainnet
 SET USE_PRYSM_VERSION=v2.1.4-rc.1
 prysm.bat beacon-chain generate-auth-secret
 ```
@@ -23,6 +24,7 @@ prysm.bat beacon-chain generate-auth-secret
   <TabItem value="others">
 
 ```
+## do not use this on mainnet
 USE_PRYSM_VERSION=v2.1.4-rc.1
 ./prysm.sh beacon-chain generate-auth-secret
 ```
