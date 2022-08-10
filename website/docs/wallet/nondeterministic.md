@@ -22,7 +22,7 @@ Your password to unlock this file is **not** stored on disk by Prysm, but you wi
 
 :::tip Running Windows?
 
-The guidance in this document uses `prysm.sh`, a convenient script built for Linux and MacOS environments. Replace `prysm.sh` with `prysm.bat` if you're on Windows.
+The commands in this document use `prysm.sh`, a convenient script built for Linux and MacOS environments. Replace `prysm.sh` with `prysm.bat` if you're on Windows.
 
 :::
 
