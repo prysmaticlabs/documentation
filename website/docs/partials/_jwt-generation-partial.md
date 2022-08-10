@@ -6,7 +6,7 @@ If you're using a testnet (like Goerli-Prater, Ropsten, or Sepolia), the HTTP co
  - Use an online generator like [this](https://seanwasere.com/generate-random-hex/). Copy and paste this value into a `jwt.hex` file.
  - Use a utility like OpenSSL to create the token via command: `openssl rand -hex 32 | tr -d "\n" > "jwt.hex"`.
  - Use an execution client to generate the `jwt.hex` file.
- - Use Prysm [v2.1.3-rc.1](https://github.com/prysmaticlabs/prysm/releases/tag/v2.1.4-rc.1) to generate the `jwt.hex` file:
+ - Use Prysm [v2.1.4](https://github.com/prysmaticlabs/prysm/releases/tag/v2.1.4) to generate the `jwt.hex` file:
 
 <Tabs groupId="os" defaultValue="others" values={[
     {label: 'Windows', value: 'win'},
@@ -15,8 +15,10 @@ If you're using a testnet (like Goerli-Prater, Ropsten, or Sepolia), the HTTP co
   <TabItem value="win">
 
 ```
-## do not use this on mainnet
-SET USE_PRYSM_VERSION=v2.1.4-rc.1
+## Optional. This command is necessary only if you've previously configured USE_PRYSM_VERSION
+SET USE_PRYSM_VERSION=v2.1.4
+
+## Required.
 prysm.bat beacon-chain generate-auth-secret
 ```
   
@@ -24,8 +26,10 @@ prysm.bat beacon-chain generate-auth-secret
   <TabItem value="others">
 
 ```
-## do not use this on mainnet
+## Optional. This command is necessary only if you've previously configured USE_PRYSM_VERSION
 USE_PRYSM_VERSION=v2.1.4-rc.1
+
+## Required.
 ./prysm.sh beacon-chain generate-auth-secret
 ```
 
