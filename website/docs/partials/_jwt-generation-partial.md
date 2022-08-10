@@ -27,7 +27,7 @@ prysm.bat beacon-chain generate-auth-secret
 
 ```
 ## Optional. This command is necessary only if you've previously configured USE_PRYSM_VERSION
-USE_PRYSM_VERSION=v2.1.4-rc.1
+USE_PRYSM_VERSION=v2.1.4
 
 ## Required.
 ./prysm.sh beacon-chain generate-auth-secret
