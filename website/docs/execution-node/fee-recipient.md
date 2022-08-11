@@ -189,7 +189,6 @@ The above JSON demonstrates configuring two 1:1 mappings between `validator publ
 
 A fee recipient wallet address can be configured on your beacon node instance by using the `suggested-fee-recipient` flag.
 
-
 <table>
   <tr>
     <th style={{minWidth: 240 + 'px'}}>Flag</th>
