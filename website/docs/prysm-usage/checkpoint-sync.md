@@ -119,6 +119,9 @@ Use the following command to **import** your exported `BeaconState`, `SignedBeac
 **Is checkpoint sync less secure than syncing from genesis?**
 No. It's actually considered more secure thanks to the protections against long-range attacks afforded by [Weak Subjectivity](https://blog.ethereum.org/2014/11/25/proof-stake-learned-love-weak-subjectivity/).
 
+<!--meta: think about what readers are likely to be asking as they read this for the first time -->
+
+
 <!--todo:
 **Can I use checkpoint sync on any network?**
 TODO
