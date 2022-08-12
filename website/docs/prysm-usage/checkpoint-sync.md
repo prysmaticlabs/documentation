@@ -10,32 +10,73 @@ sidebar_label: Sync from a checkpoint
 
 :::
 
-Prysm provides the ability to sync from a finalized checkpoint, as an alternative to replaying all history starting from Genesis. Checkpoint Sync is significantly faster than Genesis Sync, and is considered more secure thanks to the protections against long-range attacks afforded by [Weak Subjectivity](https://blog.ethereum.org/2014/11/25/proof-stake-learned-love-weak-subjectivity/).
+<!--meta: start by concisely communicating the user value using terms that most readers will be familiar with -->
 
-Checkpoint Sync begins syncing from the latest finalized `BeaconState`, and the `SignedBeaconBlock` that was integrated into that state. These are obtained by querying a trusted Beacon Node API endpoint. Due to implementation details within Prysm, we also require the genesis state to be provided. This document will explain how to:
+**Checkpoint sync** is a feature that significantly reduces the time it takes for your beacon node to sync with the beacon chain. With checkpoint sync configured, your beacon node will begin syncing from a recently finalized checkpoint instead of syncing from genesis. This how-to walks you through two ways to configure checkpoint sync: syncing via **network**, and syncing via **file**.
 
-- Start a new Beacon Node server that obtains the Checkpoint BeaconState and SignedBeaconBlock over the network.
-- Download the Checkpoint BeaconState and SignedBeaconBlock from a Beacon Node API.
-- Start a new Beacon Node server with Checkpoint BeaconState and SignedBeaconBlock provided as local ssz-encoded files.
 
-## Checkpoint Sync - via network
+## Background
 
-The easiest way to initiate Checkpoint Sync is to start your Prysm Beacon Node with the `--checkpoint-sync-url` flag set to the URL of a Beacon Node API backed by a synced Becaon Node. To also obtain the genesis state from this node, set the `--genesis-beacon-api-url` flag to the same URL.
+<!--meta: background foundations - can move to dedicated conceptual docs if needed. See quickstart for an example of using the `Knowledge Check` pattern: https://docs.prylabs.network/docs/install/install-with-script -->
 
-*note: the [Beacon Node API for retrieving a BeaconState](https://ethereum.github.io/beacon-APIs/#/Debug/getStateV2) is a debug endpoint, so a Prysm Beacon Node API server *providing* the checkpoint state and block must be started with the flags `--enable-debug-rpc-endpoints` and a sufficiently large value for `--grpc-max-msg-size`. States are currently upwards of 40MB in size, so `--grpc-max-msg-size=65568081` should be large enough for the forseeable future. The server *retrieving* the checkpoint state does not need these flags.*
+Beacon nodes are responsible for maintaining a local copy of the Ethereum's beacon chain, the consensus-layer blockchain network that facilitates Ethereum's transition to proof-of-stake. When you tell Prysm's beacon node to start running for the first time, Prysm will fetch the very first block (called the genesis block). It will then "replay" the history of the beacon chain, fetching one block at a time until the entire chain has been downloaded. Once your beacon node is fully synced with the beacon chain, it will listen to peers (and optionally a locally-connected validator) to determine when and how to update the head of its local blockchain data structure:
 
-You will need to determine the hostname and port for the other server; the default port for the Prysm Beacon Node API is `3500`. Here's an example `prysm.sh` command to sync from a remote server, using `localhost` as the hostname for the synced Beacon Node:
+<!--meta: a simple diagram can be orders of magnitude more memorable and accessible than the most finely crafted paragraph -->
+
+image
+
+This sync process can take a long time. Checkpoint sync lets you skip over the majority of the beacon chain's history, piggybacking off of a trusted peer node to instead sync from a recent finalized checkpoint:
+
+image
+
+Note that currently, Prysm's implementation syncs forward-only. The process of syncing backwards towards the genesis block is called "backfilling", and will be supported in a future Prysm release.
+
+To sync from a checkpoint, your Prysm beacon node needs three pieces of information: the latest finalized `BeaconState`, the `SignedBeaconBlock`, and the **genesis state** for the network you're running on. This information can be acquired either via **network**, or via **file**.
+
+
+
+
+## Configure checkpoint sync via network
+
+<!--todo: prerequisites -->
+
+<!--meta: we can be precise about the endpoint type so users have something to search for when troubleshooting / researching. We can also reorganize / reduce copy to keep it crisp and actionable. -->
+
+The easiest way to configure checkpoint sync is to start your Prysm beacon node with the `--checkpoint-sync-url` flag set to a trusted, fully synced beacon node's RPC gateway provider endpoint. By default, this endpoint is exposed on port `3500`. Set the `--genesis-beacon-api-url` flag to the same URL in order to fetch the genesis state along with the `BeaconState` and `SignedBeaconBlock`. The following example demonstrates configuring checkpoint sync against a local beacon node: 
+
+<!--todo:  this seems awkward because 1) it's a circular reference by default, 2) it doesn't allow the reader to copy/paste the endpoint URL. Not sure if (2) is addressable. If we maintain this sample, should we at least specify that local nodes will each need their own unique RPC gateway provider endpoint? --> 
+
+<!--todo: use tabs to support multiple operating systems following established conventions -->
 
 ```bash
 $ ./prysm.sh beacon-chain --checkpoint-sync-url=http://localhost:3500 --genesis-beacon-api-url=http://localhost:3500
 ```
 
-## Downloading Checkpoint data from the Beacon Node API
+<!--todo: this is how you know it's succeeded -->
+<!--todo: this how it might fail, and how to troubleshoot -->
 
-`prysmctl` provides a tool for downloading the ssz-encoded BeaconState and SignedBeaconBlock to be used for Checkpoint Sync. This tool can be used to share files without publicly exposing an API endpoint, or by a block explorer or client team who wants to host the files statically as a trusted source.
 
+<!--meta: "beacon node api" makes me wonder if we're talking about an individual beacon node, or some SaaS endpoint. We can try to keep it simple with the file vs network dichotomy. -->
+## Configure checkpoint sync via file
+
+<!--todo: prerequisites - go, curl? -->
+
+When you sync via network, the `BeaconState`, `SignedBeaconBlock`, and genesis state files are delivered from one beacon node to another using a peer-to-peer connection. When you sync via file, you manually export these files from one beacon node and import them into another. This can be a useful alternative to syncing via network if you don't want to publicly expose an RPC gateway provider endpoint. Block explorers and client teams can also host these files statically as a trusted checkpoint sync source.
+
+<!--meta: "export" seems more precise + accurate than "download". Colloquially, "download" implies network connectivity, fetching from a remote machine, etc. -->
+Prysm's beacon node includes `prysmctl`, a tool that lets you export the `BeaconState` and `SignedBeaconBlock` from a fully synced beacon node that you control. 
+
+To **export** your checkpoint sync artifacts from a local beacon node that you control, issue the following command:
+
+<!--todo: is go needed? possible to use prysm.bat/sh? -->
+<!--todo: use tabs to support multiple operating systems following established conventions -->
 ```bash
 $ go run github.com/prysmaticlabs/prysm/cmd/prysmctl checkpoint save --beacon-node-host=http://localhost:3500
+```
+
+You should see the following output upon successful export:
+
+```bash
 INFO[0000] requesting http://localhost:3500/eth/v2/debug/beacon/states/finalized
 INFO[0001] detected supported config in remote finalized state, name=prater, fork=altair
 INFO[0001] requesting http://localhost:3500/eth/v2/beacon/blocks/0x766bdce4c70b6ee991bd68f8065d73e3990895b1953f6b931baae0502d8cbfcf
@@ -46,18 +87,20 @@ INFO[0001] saved ssz-encoded block to to block_prater_altair_3041920-0x766bdce4c
 INFO[0001] saved ssz-encoded state to to state_prater_altair_3041920-0x34ebc10f191706afbbccb0c3c39679632feef0453fe842bda264e432e9e31011.ssz
 ```
 
-For human-friendliness, the file name includes the ssz type (`state`, `block`), the network (`prater`), the fork name (`altair`), the slot (`2397120`) and the state or block root in hex encoding. The checkpoint save command does not download the required genesis state at this time, but this can be easily downloaded via `curl` or `wget` using the `genesis` named state identifier:
+<!--meta: I imagine most readers don't know what ssz means, and won't care. We can elaborate on the technical details in dev wiki > dev concepts if/when needed.-->
+<!--meta: contractions can make guidance a bit friendlier/natural, which can make content more readable, which can reduce the cognitive cost of learning/doing -->
+<!--meta: in general we want to avoid claiming that a task is "easy" - some readers may not find it easy at all. -->
 
+The exported file name includes the file type (`state`, `block`), the network (`prater`), the fork name (`altair`), the slot (`2397120`) and the state or block root in hex encoding. The checkpoint save command doesn't export the required genesis state, but this can be downloaded via `curl` or `wget` using the following command syntax:
+
+<!--meta: we can remove the output so the user has something clear and unambiguous to copy/paste -->
+<!--todo: would it be easier to just direct users to hosted genesis states on github? -->
 ```
 $ curl -H "Accept: application/octet-stream"  http://localhost:3500/eth/v1/debug/beacon/states/genesis > genesis.ssz
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100 28.3M  100 28.3M    0     0  43.3M      0 --:--:-- --:--:-- --:--:-- 43.3M
 ```
 
-## Checkpoint Sync - via file
-
-With the BeaconState and SignedBeaconBlock files from `prysmctl cpt save` in the current directory, alongside the `genesis.ssz` genesis state downloaded via curl, the following command line will start a Prysm Beacon Node:
+<!--meta: we can refer to these three files always as a triple, just to beat the drum that these all go together in the context of checkpoint sync -->
+Use the following command to **import** your exported `BeaconState`, `SignedBeaconBlock`, and genesis state files and **start** your beacon node with checkpoint sync enabled:  
 
 ```bash
 ./prysm.sh beacon-chain \
@@ -65,6 +108,31 @@ With the BeaconState and SignedBeaconBlock files from `prysmctl cpt save` in the
 --checkpoint-state=$PWD/state_prater_altair_3041920-0x34ebc10f191706afbbccb0c3c39679632feef0453fe842bda264e432e9e31011.ssz \
 --genesis-state=$PWD/genesis.ssz
 ```
+
+<!--todo: this is how you know it's succeeded -->
+<!--todo: this how it might fail, and how to troubleshoot -->
+
+
+## Frequently asked questions
+
+**Is checkpoint sync less secure than syncing from genesis?**
+No. It's actually considered more secure thanks to the protections against long-range attacks afforded by [Weak Subjectivity](https://blog.ethereum.org/2014/11/25/proof-stake-learned-love-weak-subjectivity/).
+
+
+**Can I use checkpoint sync on any network?**
+TODO
+
+**Are there any publicly available, trustworthy checkpoint sync endpoints that I can use?**
+TODO
+
+**Does the Prysm team host checkpoint sync files that I can use?**
+TODO
+
+**How do I expose my beacon node's RPC gateway provider for checkpoint sync?**
+<!--meta: this note appears to be targeted at users who want to expose an endpoint, which is a distinct task/step. We can isolate this down into the FAQ to keep the reader in flow along the primary task. One task at a time. -->
+The [Beacon Node API for retrieving a BeaconState](https://ethereum.github.io/beacon-APIs/#/Debug/getStateV2) is a debug endpoint, so if you want your fully synced beacon node to serve checkpoint sync requests, it should be started with the flags `--enable-debug-rpc-endpoints` and `--grpc-max-msg-size=65568081`. Note that the beacon node *retrieving* the checkpoint state from this node doesn't need these flags.
+
+
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
