@@ -4,6 +4,9 @@ title: Sync from a checkpoint
 sidebar_label: Sync from a checkpoint
 ---
 
+import CheckpointSyncPresent from '@site/static/img/checkpoint-sync-present.png';
+import CheckpointSyncAbsent from '@site/static/img/checkpoint-sync-absent.png';
+
 :::caution
 
 **This feature is currently in public preview** and may change significantly as we receive feedback from users like you. Join our [Discord server](https://discord.gg/prysmaticlabs) to share your feedback.
@@ -21,18 +24,18 @@ sidebar_label: Sync from a checkpoint
 
 Beacon nodes maintain a local copy of the Ethereum's beacon chain, the consensus-layer blockchain network that facilitates Ethereum's transition to proof-of-stake. When you tell Prysm's beacon node to start running for the first time, Prysm will fetch the very first beacon chain block (called the genesis block). It will then "replay" the history of the beacon chain, fetching one block at a time until the entire chain has been downloaded. 
 
-<!--todo: a simple diagram can be orders of magnitude more memorable and accessible than the most finely crafted paragraph -->
+<img style={{width: 100 + '%', margin: 'auto', display: 'block', maxWidth: 461 + 'px'}} src={CheckpointSyncAbsent} /> 
 
 This sync process can take a long time. Checkpoint sync lets you skip over the majority of the beacon chain's history, piggybacking off of a trusted peer node to instead sync from a recent finalized checkpoint.
 
-<!--todo: diagram -->
+<img style={{width: 100 + '%', margin: 'auto', display: 'block', maxWidth: 461 + 'px'}} src={CheckpointSyncPresent} /> 
 
 Note that currently, Prysm's implementation syncs forward-only. The process of syncing backwards towards the genesis block is called "backfilling", and will be supported in a future Prysm release.
 
-To sync from a checkpoint, your Prysm beacon node needs three pieces of information: the latest finalized `BeaconState`, the `SignedBeaconBlock`, and the **genesis state** for the network you're running on. This information can be acquired either via **network**, or via **file**.
+To sync from a checkpoint, your Prysm beacon node needs three pieces of information: the latest finalized `BeaconState`, the `SignedBeaconBlock`, and the **genesis state** for the network you're running on. This information can be pulled from a trusted peer node either via a **network request**, or via exporting/importing **files**.
 
 
-## Configure checkpoint sync via network
+## Configure checkpoint sync via network request
 
 <!--todo: prerequisites -->
 
@@ -53,7 +56,7 @@ $ ./prysm.sh beacon-chain --checkpoint-sync-url=http://localhost:3500 --genesis-
 
 
 <!--meta: "beacon node api" makes me wonder - are we talking about an individual beacon node, or some SaaS endpoint. We can try to keep it simple with the file vs network dichotomy. -->
-## Configure checkpoint sync via file
+## Configure checkpoint sync via file export/import
 
 <!--todo: prerequisites - go, curl? -->
 
