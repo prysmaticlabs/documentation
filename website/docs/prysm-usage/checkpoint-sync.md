@@ -24,11 +24,11 @@ import CheckpointSyncAbsent from '@site/static/img/checkpoint-sync-absent.png';
 
 Beacon nodes maintain a local copy of the Ethereum's beacon chain, the consensus-layer blockchain network that facilitates Ethereum's transition to proof-of-stake. When you tell Prysm's beacon node to start running for the first time, Prysm will fetch the very first beacon chain block (called the genesis block). It will then "replay" the history of the beacon chain, fetching one block at a time until the entire chain has been downloaded. 
 
-<img style={{width: 100 + '%', margin: 'auto', display: 'block', maxWidth: 635 + 'px'}} src={CheckpointSyncAbsent} /> 
+<img style={{width: 100 + '%', margin: 'auto', marginBottom: 20 + 'px', display: 'block', maxWidth: 635 + 'px'}} src={CheckpointSyncAbsent} /> 
 
 This sync process can take a long time. Checkpoint sync lets you skip over the majority of the beacon chain's history, piggybacking off of a trusted peer node to instead sync from a recent finalized checkpoint.
 
-<img style={{width: 100 + '%', margin: 'auto', display: 'block', maxWidth: 635 + 'px'}} src={CheckpointSyncPresent} /> 
+<img style={{width: 100 + '%', margin: 'auto', marginBottom: 20 + 'px', display: 'block', maxWidth: 635 + 'px'}} src={CheckpointSyncPresent} /> 
 
 Note that currently, Prysm's implementation syncs forward-only. The process of syncing backwards towards the genesis block is called "backfilling", and will be supported in a future Prysm release.
 
