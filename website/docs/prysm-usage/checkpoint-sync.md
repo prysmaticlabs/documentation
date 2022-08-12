@@ -26,7 +26,7 @@ Beacon nodes maintain a local copy of the Ethereum's beacon chain, the consensus
 
 <img style={{width: 100 + '%', margin: 'auto', marginBottom: 20 + 'px', display: 'block', maxWidth: 623 + 'px'}} src={CheckpointSyncAbsent} /> 
 
-This sync process can take a long time. Checkpoint sync lets you skip over the majority of the beacon chain's history, piggybacking off of a trusted peer node to instead sync from a recently finalized checkpoint:
+This sync process can take a long time. Checkpoint sync speeds things up by telling your beacon node to piggyback off of a trusted peer node, skipping over the majority of the beacon chain's history and syncing from a recently finalized checkpoint:
 
 <img style={{width: 100 + '%', margin: 'auto', marginBottom: 20 + 'px', display: 'block', maxWidth: 635 + 'px'}} src={CheckpointSyncPresent} /> 
 
