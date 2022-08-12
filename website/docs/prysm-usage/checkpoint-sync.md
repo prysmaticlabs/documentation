@@ -101,10 +101,12 @@ $ curl -H "Accept: application/octet-stream"  http://localhost:3500/eth/v1/debug
 <!--meta: we can refer to these three files always as a triple, just to beat the drum that these all go together in the context of checkpoint sync -->
 Use the following command to **import** your exported `BeaconState`, `SignedBeaconBlock`, and genesis state files and **start** your beacon node with checkpoint sync enabled:  
 
+<!--todo: use tabs to support multiple operating systems following established conventions -->
+
 ```bash
 ./prysm.sh beacon-chain \
---checkpoint-block=$PWD/block_prater_altair_3041920-0x766bdce4c70b6ee991bd68f8065d73e3990895b1953f6b931baae0502d8cbfcf.ssz \
---checkpoint-state=$PWD/state_prater_altair_3041920-0x34ebc10f191706afbbccb0c3c39679632feef0453fe842bda264e432e9e31011.ssz \
+--checkpoint-block=$PWD/block_goerli_bellatrix_3041920-0x766bdce4c70b6ee991bd68f8065d73e3990895b1953f6b931baae0502d8cbfcf.ssz \
+--checkpoint-state=$PWD/state_goerli_bellatrix_3041920-0x34ebc10f191706afbbccb0c3c39679632feef0453fe842bda264e432e9e31011.ssz \
 --genesis-state=$PWD/genesis.ssz
 ```
 
