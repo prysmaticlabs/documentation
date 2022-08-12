@@ -38,7 +38,7 @@ To sync from a checkpoint, your Prysm beacon node needs three pieces of informat
 
 The easiest way to configure checkpoint sync is to start your Prysm beacon node with the `--checkpoint-sync-url` flag set to a trusted, fully synced beacon node's RPC gateway provider endpoint. By default, this endpoint is exposed on port `3500`. Set the `--genesis-beacon-api-url` flag to the same URL in order to fetch the genesis state along with the `BeaconState` and `SignedBeaconBlock`. The following example demonstrates configuring checkpoint sync against a local beacon node: 
 
-<!--todo: this seems awkward because port 3500 is the default, and this snippet doesn't allow the reader to copy paste the endpoint URL. If we use this snippet, should we at least specify that local nodes will each need their own unique RPC gateway provider endpoint? --> 
+<!--todo: this seems awkward because port 3500 is the default, and this snippet doesnt [sic - html comments are wack on docusaurus, build fails when comments contain single quotes] allow the reader to copy paste the endpoint URL. If we use this snippet, should we at least specify that local nodes will each need their own unique RPC gateway provider endpoint? --> 
 
 <!--todo: use tabs to support multiple operating systems following established conventions. -->
 
@@ -46,11 +46,11 @@ The easiest way to configure checkpoint sync is to start your Prysm beacon node 
 $ ./prysm.sh beacon-chain --checkpoint-sync-url=http://localhost:3500 --genesis-beacon-api-url=http://localhost:3500
 ```
 
-<!--todo: this is how you know it's succeeded -->
+<!--todo: this is how you know it succeeded -->
 <!--todo: this how it might fail, and how to troubleshoot -->
 
 
-<!--meta: "beacon node api" makes me wonder if we're talking about an individual beacon node, or some SaaS endpoint. We can try to keep it simple with the file vs network dichotomy. -->
+<!--meta: "beacon node api" makes me wonder - are we talking about an individual beacon node, or some SaaS endpoint. We can try to keep it simple with the file vs network dichotomy. -->
 ## Configure checkpoint sync via file
 
 <!--todo: prerequisites - go, curl? -->
