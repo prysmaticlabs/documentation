@@ -15,7 +15,7 @@ import CheckpointSyncAbsent from '@site/static/img/checkpoint-sync-absent.png';
 
 <!--meta: start by concisely communicating the user value using terms that most readers will be familiar with -->
 
-**Checkpoint sync** is a feature that significantly reduces the time it takes for your beacon node to sync with the beacon chain. With checkpoint sync configured, your beacon node will begin syncing from a recently finalized checkpoint instead of syncing from genesis. This can make installations, validator migrations, validator onboarding, recoveries, and testnet deployments way faster.
+**Checkpoint sync** is a feature that significantly speeds up the initial sync between your beacon node and the Beacon Chain. With checkpoint sync configured, your beacon node will begin syncing from a recently finalized checkpoint instead of syncing from genesis. This can make installations, validator migrations, validator onboarding, recoveries, and testnet deployments way faster.
 
 
 This how-to walks you through two ways to configure checkpoint sync: syncing via **network**, and syncing via **file**.
@@ -25,11 +25,11 @@ This how-to walks you through two ways to configure checkpoint sync: syncing via
 
 <!--meta: background foundations - can move to dedicated conceptual docs if needed. See quickstart for an example of using the `Knowledge Check` pattern: https://docs.prylabs.network/docs/install/install-with-script -->
 
-Beacon nodes maintain a local copy of the Ethereum's beacon chain, the consensus-layer blockchain network that facilitates Ethereum's transition to proof-of-stake. When you tell Prysm's beacon node to start running for the first time, Prysm will fetch the very first beacon chain block - the beacon chain's **genesis block**. Your beacon node will then "replay" the history of the beacon chain, fetching the oldest blocks from peers until the entire chain has been downloaded:
+Beacon nodes maintain a local copy of the Ethereum's Beacon Chain, the consensus-layer blockchain network that facilitates Ethereum's transition to proof-of-stake. When you tell Prysm's beacon node to start running for the first time, Prysm will fetch the very first Beacon Chain block - the Beacon Chain's **genesis block**. Your beacon node will then "replay" the history of the Beacon Chain, fetching the oldest blocks from peers until the entire chain has been downloaded:
 
 <img style={{width: 100 + '%', margin: 'auto', marginBottom: 20 + 'px', display: 'block', maxWidth: 623 + 'px'}} src={CheckpointSyncAbsent} /> 
 
-This sync process can take a long time. Checkpoint sync speeds things up by telling your beacon node to piggyback off of a trusted peer node, skipping over the majority of the beacon chain's history and syncing from a recently finalized checkpoint:
+This sync process can take a long time. Checkpoint sync speeds things up by telling your beacon node to piggyback off of a trusted peer node, skipping over the majority of the Beacon Chain's history and syncing from a recently finalized checkpoint:
 
 <img style={{width: 100 + '%', margin: 'auto', marginBottom: 20 + 'px', display: 'block', maxWidth: 635 + 'px'}} src={CheckpointSyncPresent} /> 
 
