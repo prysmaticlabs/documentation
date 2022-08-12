@@ -41,7 +41,7 @@ To sync from a checkpoint, your Prysm beacon node needs three pieces of informat
 
 <!--meta: we can be precise about the endpoint type so users have something to search for when troubleshooting / researching. We can also reorganize / reduce copy to keep it crisp and actionable. -->
 
-Start your Prysm beacon node with the `--checkpoint-sync-url` flag set to a trusted, fully synced beacon node's RPC gateway provider endpoint. By default, this endpoint is exposed on port `3500`. Set the `--genesis-beacon-api-url` flag to the same URL in order to fetch the genesis state along with the `BeaconState` and `SignedBeaconBlock`. The following example demonstrates configuring checkpoint sync against a local beacon node: 
+Start your Prysm beacon node with the `--checkpoint-sync-url` flag set to a trusted, fully synced beacon node's RPC gateway provider endpoint. By default, this endpoint is exposed on port `3500`. Set the `--genesis-beacon-api-url` flag to the same URL in order to fetch the genesis state along with the `BeaconState` and `SignedBeaconBlock`. The following command demonstrates configuring checkpoint sync against a local beacon node: 
 
 [//]: # (todo: this seems awkward because port 3500 is the default, and this snippet doesn't allow the reader to copy paste the endpoint URL. If we use this snippet, should we at least specify that local nodes will each need their own unique RPC gateway provider endpoint?)
 
