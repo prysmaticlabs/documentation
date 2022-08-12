@@ -93,7 +93,7 @@ INFO[0001] saved ssz-encoded block to to block_goerli_bellatrix_3041920-0x766bdc
 INFO[0001] saved ssz-encoded state to to state_goerli_bellatrix_3041920-0x34ebc10f191706afbbccb0c3c39679632feef0453fe842bda264e432e9e31011.ssz
 ```
 
-<!--meta: I imagine most readers don't know what ssz means, so we can just refer to it as nothing more than a file extension for now. We can elaborate on the technical details in dev wiki > dev concepts if/when needed. Target demographic for this guide is user more than developer. -->
+<!--meta: I imagine most readers don't know what ssz means, and don't need to know at this point, so we can just refer to it as nothing more than a file extension for now. We can elaborate on the technical details in dev wiki > dev concepts if/when needed. -->
 <!--meta: contractions can make guidance sound more natural, which can make content more readable, which can reduce the cognitive cost of learning/doing -->
 <!--meta: in general we want to avoid claiming that a task is "easy" - some readers may not find it easy at all. -->
 
