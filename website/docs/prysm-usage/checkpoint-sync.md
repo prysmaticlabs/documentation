@@ -105,7 +105,7 @@ The exported file name includes the file type (`state`, `block`), the network (`
 curl -H "Accept: application/octet-stream"  http://localhost:3500/eth/v1/debug/beacon/states/genesis > genesis.ssz
 ```
 
-<!--meta: we can refer to these three files always as a triple, just to beat the drum that these all go together in the context of checkpoint sync -->
+<!--meta: we can always refer to these three files as a triple, just to reiterate that these all go together in the context of checkpoint sync, a very important detail -->
 Use the following command to **import** your exported `BeaconState`, `SignedBeaconBlock`, and genesis state files and **start** your beacon node with checkpoint sync enabled:  
 
 <!--todo: use tabs to support multiple operating systems following established conventions -->
@@ -126,7 +126,7 @@ Use the following command to **import** your exported `BeaconState`, `SignedBeac
 **Is checkpoint sync less secure than syncing from genesis?**
 No. It's actually considered more secure thanks to the protections against long-range attacks afforded by [Weak Subjectivity](https://blog.ethereum.org/2014/11/25/proof-stake-learned-love-weak-subjectivity/).
 
-<!--meta: think about what readers are likely to be asking as they read this for the first time -->
+<!--meta: we want to think about what readers are likely to be asking/wondering as they read this for the first time - how can we make their life easier as they learn the ropes? -->
 
 <!--todo:
 
