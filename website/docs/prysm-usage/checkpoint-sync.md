@@ -131,6 +131,7 @@ No. It's actually considered more secure thanks to the protections against long-
 <!--todo:
 
 **How and when are checkpoints created?**
+TODO
 
 **Can I use checkpoint sync on any network?**
 TODO
