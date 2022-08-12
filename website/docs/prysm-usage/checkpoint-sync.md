@@ -19,21 +19,15 @@ sidebar_label: Sync from a checkpoint
 
 <!--meta: background foundations - can move to dedicated conceptual docs if needed. See quickstart for an example of using the `Knowledge Check` pattern: https://docs.prylabs.network/docs/install/install-with-script -->
 
-Beacon nodes are responsible for maintaining a local copy of the Ethereum's beacon chain, the consensus-layer blockchain network that facilitates Ethereum's transition to proof-of-stake. When you tell Prysm's beacon node to start running for the first time, Prysm will fetch the very first block (called the genesis block). It will then "replay" the history of the beacon chain, fetching one block at a time until the entire chain has been downloaded. Once your beacon node is fully synced with the beacon chain, it will listen to peers (and optionally a locally-connected validator) to determine when and how to update the head of its local blockchain data structure:
+Beacon nodes are responsible for maintaining a local copy of the Ethereum's beacon chain, the consensus-layer blockchain network that facilitates Ethereum's transition to proof-of-stake. When you tell Prysm's beacon node to start running for the first time, Prysm will fetch the very first block (called the genesis block). It will then "replay" the history of the beacon chain, fetching one block at a time until the entire chain has been downloaded. Once your beacon node is fully synced with the beacon chain, it will listen to peers (and optionally a locally-connected validator) to determine when and how to update the head of its local blockchain data structure.
 
-<!--meta: a simple diagram can be orders of magnitude more memorable and accessible than the most finely crafted paragraph -->
-
-image
+<!--todo: a simple diagram can be orders of magnitude more memorable and accessible than the most finely crafted paragraph -->
 
 This sync process can take a long time. Checkpoint sync lets you skip over the majority of the beacon chain's history, piggybacking off of a trusted peer node to instead sync from a recent finalized checkpoint:
-
-image
 
 Note that currently, Prysm's implementation syncs forward-only. The process of syncing backwards towards the genesis block is called "backfilling", and will be supported in a future Prysm release.
 
 To sync from a checkpoint, your Prysm beacon node needs three pieces of information: the latest finalized `BeaconState`, the `SignedBeaconBlock`, and the **genesis state** for the network you're running on. This information can be acquired either via **network**, or via **file**.
-
-
 
 
 ## Configure checkpoint sync via network
@@ -118,7 +112,7 @@ Use the following command to **import** your exported `BeaconState`, `SignedBeac
 **Is checkpoint sync less secure than syncing from genesis?**
 No. It's actually considered more secure thanks to the protections against long-range attacks afforded by [Weak Subjectivity](https://blog.ethereum.org/2014/11/25/proof-stake-learned-love-weak-subjectivity/).
 
-
+<!--todo:
 **Can I use checkpoint sync on any network?**
 TODO
 
@@ -127,6 +121,7 @@ TODO
 
 **Does the Prysm team host checkpoint sync files that I can use?**
 TODO
+-->
 
 **How do I expose my beacon node's RPC gateway provider for checkpoint sync?**
 <!--meta: this note appears to be targeted at users who want to expose an endpoint, which is a distinct task/step. We can isolate this down into the FAQ to keep the reader in flow along the primary task. One task at a time. -->
