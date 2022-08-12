@@ -77,20 +77,20 @@ You should see the following output upon successful export:
 
 ```bash
 INFO[0000] requesting http://localhost:3500/eth/v2/debug/beacon/states/finalized
-INFO[0001] detected supported config in remote finalized state, name=prater, fork=altair
+INFO[0001] detected supported config in remote finalized state, name=goerli, fork=bellatrix
 INFO[0001] requesting http://localhost:3500/eth/v2/beacon/blocks/0x766bdce4c70b6ee991bd68f8065d73e3990895b1953f6b931baae0502d8cbfcf
 INFO[0001] BeaconState slot=3041920, Block slot=3041920
 INFO[0001] BeaconState htr=0x34ebc10f191706afbbccb0c3c39679632feef0453fe842bda264e432e9e31011d, Block state_root=0x34ebc10f191706afbbccb0c3c39679632feef0453fe842bda264e432e9e31011
 INFO[0001] BeaconState latest_block_header htr=0x766bdce4c70b6ee991bd68f8065d73e3990895b1953f6b931baae0502d8cbfcfd, block htr=0x766bdce4c70b6ee991bd68f8065d73e3990895b1953f6b931baae0502d8cbfcf
-INFO[0001] saved ssz-encoded block to to block_prater_altair_3041920-0x766bdce4c70b6ee991bd68f8065d73e3990895b1953f6b931baae0502d8cbfcf.ssz
-INFO[0001] saved ssz-encoded state to to state_prater_altair_3041920-0x34ebc10f191706afbbccb0c3c39679632feef0453fe842bda264e432e9e31011.ssz
+INFO[0001] saved ssz-encoded block to to block_goerli_bellatrix_3041920-0x766bdce4c70b6ee991bd68f8065d73e3990895b1953f6b931baae0502d8cbfcf.ssz
+INFO[0001] saved ssz-encoded state to to state_goerli_bellatrix_3041920-0x34ebc10f191706afbbccb0c3c39679632feef0453fe842bda264e432e9e31011.ssz
 ```
 
 <!--meta: I imagine most readers don't know what ssz means, and won't care. We can elaborate on the technical details in dev wiki > dev concepts if/when needed.-->
 <!--meta: contractions can make guidance a bit friendlier/natural, which can make content more readable, which can reduce the cognitive cost of learning/doing -->
 <!--meta: in general we want to avoid claiming that a task is "easy" - some readers may not find it easy at all. -->
 
-The exported file name includes the file type (`state`, `block`), the network (`prater`), the fork name (`altair`), the slot (`2397120`) and the state or block root in hex encoding. The checkpoint save command doesn't export the required genesis state, but this can be downloaded via `curl` or `wget` using the following command syntax:
+The exported file name includes the file type (`state`, `block`), the network (`goerli`), the fork name (`bellatrix`), the slot (`2397120`) and the state or block root in hex encoding. The checkpoint save command doesn't export the required genesis state, but this can be downloaded via `curl` or `wget` using the following command syntax:
 
 <!--meta: we can remove the output so the user has something clear and unambiguous to copy/paste -->
 <!--todo: would it be easier to just direct users to hosted genesis states on github? -->
