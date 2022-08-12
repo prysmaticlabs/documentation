@@ -22,7 +22,7 @@ import CheckpointSyncAbsent from '@site/static/img/checkpoint-sync-absent.png';
 
 <!--meta: background foundations - can move to dedicated conceptual docs if needed. See quickstart for an example of using the `Knowledge Check` pattern: https://docs.prylabs.network/docs/install/install-with-script -->
 
-Beacon nodes maintain a local copy of the Ethereum's beacon chain, the consensus-layer blockchain network that facilitates Ethereum's transition to proof-of-stake. When you tell Prysm's beacon node to start running for the first time, Prysm will fetch the very first beacon chain block (called the genesis block). It will then "replay" the history of the beacon chain, fetching one block at a time until the entire chain has been downloaded:
+Beacon nodes maintain a local copy of the Ethereum's beacon chain, the consensus-layer blockchain network that facilitates Ethereum's transition to proof-of-stake. When you tell Prysm's beacon node to start running for the first time, Prysm will fetch the very first beacon chain block - the beacon chain's **genesis block**. Your beacon node will then "replay" the history of the beacon chain, fetching blocks one at a time until the entire chain has been downloaded:
 
 <img style={{width: 100 + '%', margin: 'auto', marginBottom: 20 + 'px', display: 'block', maxWidth: 623 + 'px'}} src={CheckpointSyncAbsent} /> 
 
@@ -90,7 +90,7 @@ INFO[0001] saved ssz-encoded state to to state_goerli_bellatrix_3041920-0x34ebc1
 <!--meta: contractions can make guidance a bit friendlier/natural, which can make content more readable, which can reduce the cognitive cost of learning/doing -->
 <!--meta: in general we want to avoid claiming that a task is "easy" - some readers may not find it easy at all. -->
 
-The exported file name includes the file type (`state`, `block`), the network (`goerli`), the fork name (`bellatrix`), the slot (`2397120`) and the state or block root in hex encoding. The checkpoint save command doesn't export the required genesis state, but this can be downloaded via `curl` or `wget` using the following command syntax:
+The exported file name includes the file type (`state`, `block`), the network (`goerli`), the fork name (`bellatrix`), the slot (`2397120`) and the state or block root in hex encoding. The checkpoint save command doesn't export the required genesis state, but this can be downloaded via `curl` or `wget` using the following command:
 
 <!--meta: we can remove the output so the user has something clear and unambiguous to copy/paste -->
 <!--todo: would it be easier to just direct users to hosted genesis states on github? -->
@@ -121,8 +121,10 @@ No. It's actually considered more secure thanks to the protections against long-
 
 <!--meta: think about what readers are likely to be asking as they read this for the first time -->
 
-
 <!--todo:
+
+**How and when are checkpoints created?**
+
 **Can I use checkpoint sync on any network?**
 TODO
 
