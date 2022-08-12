@@ -44,14 +44,18 @@ To sync from a checkpoint, your Prysm beacon node needs three pieces of informat
 
 <!--meta: we can be precise about the endpoint type so users have something to search for when troubleshooting / researching. We can also reorganize / reduce copy to keep it crisp and actionable. -->
 
-Start your Prysm beacon node with the `--checkpoint-sync-url` flag set to a trusted, fully synced beacon node's RPC gateway provider endpoint. By default, this endpoint is exposed on port `3500`. Set the `--genesis-beacon-api-url` flag to the same URL in order to fetch the genesis state along with the `BeaconState` and `SignedBeaconBlock`. The following command demonstrates configuring checkpoint sync against a local beacon node: 
+Start your Prysm beacon node with the `--checkpoint-sync-url` flag set to a trusted, fully synced beacon node's RPC gateway provider endpoint. By default, this endpoint is exposed on port `3500`. Set the `--genesis-beacon-api-url` flag to the same URL in order to fetch the genesis state along with the `BeaconState` and `SignedBeaconBlock`. 
+
+The following command demonstrates configuring checkpoint sync against a local beacon node: 
 
 [//]: # (todo: this seems awkward because port 3500 is the default, and this snippet doesn't allow the reader to copy paste the endpoint URL. If we use this snippet, should we at least specify that local nodes will each need their own unique RPC gateway provider endpoint?)
 
 <!--todo: use tabs to support multiple operating systems following established conventions. -->
 
+<!--meta: removing the $ makes it easier for readers to copy/paste -->
+
 ```bash
-$ ./prysm.sh beacon-chain --checkpoint-sync-url=http://localhost:3500 --genesis-beacon-api-url=http://localhost:3500
+./prysm.sh beacon-chain --checkpoint-sync-url=http://localhost:3500 --genesis-beacon-api-url=http://localhost:3500
 ```
 
 <!--todo: this is how you know it succeeded -->
@@ -73,7 +77,7 @@ To **export** your checkpoint sync artifacts from a local beacon node that you c
 <!--todo: is go needed? possible to use prysm.bat/sh? -->
 <!--todo: use tabs to support multiple operating systems following established conventions -->
 ```bash
-$ go run github.com/prysmaticlabs/prysm/cmd/prysmctl checkpoint save --beacon-node-host=http://localhost:3500
+go run github.com/prysmaticlabs/prysm/cmd/prysmctl checkpoint save --beacon-node-host=http://localhost:3500
 ```
 
 You should see the following output upon successful export:
@@ -98,7 +102,7 @@ The exported file name includes the file type (`state`, `block`), the network (`
 <!--meta: we can remove the output so the user has something clear and unambiguous to copy/paste -->
 <!--todo: would it be easier to just direct users to hosted genesis states on github? -->
 ```
-$ curl -H "Accept: application/octet-stream"  http://localhost:3500/eth/v1/debug/beacon/states/genesis > genesis.ssz
+curl -H "Accept: application/octet-stream"  http://localhost:3500/eth/v1/debug/beacon/states/genesis > genesis.ssz
 ```
 
 <!--meta: we can refer to these three files always as a triple, just to beat the drum that these all go together in the context of checkpoint sync -->
