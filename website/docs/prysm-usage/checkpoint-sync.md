@@ -15,7 +15,7 @@ import CheckpointSyncAbsent from '@site/static/img/checkpoint-sync-absent.png';
 
 <!--meta: start by concisely communicating the user value using terms that most readers will be familiar with -->
 
-**Checkpoint sync** is a feature that significantly speeds up the initial sync between your beacon node and the Beacon Chain. With checkpoint sync configured, your beacon node will begin syncing from a recently finalized checkpoint instead of syncing from genesis. This can make installations, validator migrations, validator onboarding, recoveries, and testnet deployments way faster.
+**Checkpoint sync** is a feature that significantly speeds up the initial sync between your beacon node and the Beacon Chain. With checkpoint sync configured, your beacon node will begin syncing from a recently finalized checkpoint instead of syncing from genesis. This can make **installations**, **validator migrations**, **validator onboarding**, **recoveries**, and **testnet deployments** *way* faster.
 
 
 This how-to walks you through two ways to configure checkpoint sync: syncing via **network**, and syncing via **file**.
