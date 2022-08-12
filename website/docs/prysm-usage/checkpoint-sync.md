@@ -22,11 +22,11 @@ import CheckpointSyncAbsent from '@site/static/img/checkpoint-sync-absent.png';
 
 <!--meta: background foundations - can move to dedicated conceptual docs if needed. See quickstart for an example of using the `Knowledge Check` pattern: https://docs.prylabs.network/docs/install/install-with-script -->
 
-Beacon nodes maintain a local copy of the Ethereum's beacon chain, the consensus-layer blockchain network that facilitates Ethereum's transition to proof-of-stake. When you tell Prysm's beacon node to start running for the first time, Prysm will fetch the very first beacon chain block (called the genesis block). It will then "replay" the history of the beacon chain, fetching one block at a time until the entire chain has been downloaded. 
+Beacon nodes maintain a local copy of the Ethereum's beacon chain, the consensus-layer blockchain network that facilitates Ethereum's transition to proof-of-stake. When you tell Prysm's beacon node to start running for the first time, Prysm will fetch the very first beacon chain block (called the genesis block). It will then "replay" the history of the beacon chain, fetching one block at a time until the entire chain has been downloaded:
 
 <img style={{width: 100 + '%', margin: 'auto', marginBottom: 20 + 'px', display: 'block', maxWidth: 623 + 'px'}} src={CheckpointSyncAbsent} /> 
 
-This sync process can take a long time. Checkpoint sync lets you skip over the majority of the beacon chain's history, piggybacking off of a trusted peer node to instead sync from a recent finalized checkpoint.
+This sync process can take a long time. Checkpoint sync lets you skip over the majority of the beacon chain's history, piggybacking off of a trusted peer node to instead sync from a recently finalized checkpoint:
 
 <img style={{width: 100 + '%', margin: 'auto', marginBottom: 20 + 'px', display: 'block', maxWidth: 635 + 'px'}} src={CheckpointSyncPresent} /> 
 
