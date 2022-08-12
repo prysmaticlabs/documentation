@@ -35,7 +35,7 @@ This sync process can take a long time. Checkpoint sync speeds things up by tell
 
 Note that currently, Prysm's implementation syncs forward-only. The process of syncing backwards towards the genesis block is called "backfilling", and will be supported in a future Prysm release.
 
-To sync from a checkpoint, your Prysm beacon node needs three pieces of information: the latest finalized `BeaconState`, the `SignedBeaconBlock`, and the **genesis state** for the network you're using. Your node can fetch this information from a trusted peer node either via a **network request**, or via **file export/import**.
+To sync from a checkpoint, your Prysm beacon node needs three pieces of information: the latest finalized `BeaconState`, the `SignedBeaconBlock`, and the **genesis state** for the network you're using. Your node can import this information from a trusted peer node either via a **network request**, or via **file export/import**.
 
 
 ## Configure checkpoint sync via network request
@@ -44,7 +44,7 @@ To sync from a checkpoint, your Prysm beacon node needs three pieces of informat
 
 <!--meta: we can be precise about the endpoint type so users have something to search for when troubleshooting / researching. We can also reorganize / reduce copy to keep it crisp and actionable. -->
 
-Start your Prysm beacon node with the `--checkpoint-sync-url` flag set to a trusted, fully synced beacon node's RPC gateway provider endpoint. By default, this endpoint is exposed on port `3500`. Set the `--genesis-beacon-api-url` flag to the same URL in order to fetch the genesis state along with the `BeaconState` and `SignedBeaconBlock`. 
+Start your Prysm beacon node with the `--checkpoint-sync-url` flag set to a trusted, fully synced beacon node's RPC gateway provider endpoint. By default, this endpoint is exposed on port `3500`. Set the `--genesis-beacon-api-url` flag to the same URL in order to fetch the genesis state along with the `BeaconState` and `SignedBeaconBlock`.
 
 The following command demonstrates configuring checkpoint sync against a local beacon node: 
 
