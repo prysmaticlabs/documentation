@@ -60,7 +60,7 @@ $ ./prysm.sh beacon-chain --checkpoint-sync-url=http://localhost:3500 --genesis-
 
 <!--todo: prerequisites - go, curl? -->
 
-When you sync via network, the `BeaconState`, `SignedBeaconBlock`, and genesis state files are delivered from one beacon node to another using a peer-to-peer connection. When you sync via file, you manually export these files from one beacon node and import them into another. This can be a useful alternative to syncing via network if you don't want to publicly expose an RPC gateway provider endpoint. Block explorers and client teams can also host these files statically as a trusted checkpoint sync source.
+When you sync via **network request**, the `BeaconState`, `SignedBeaconBlock`, and genesis state files are delivered from one beacon node to another using a peer-to-peer connection. When you sync via **file export/import**, you manually export these files from one beacon node and import them into another. This gives you an alternative to syncing via network if you don't want to publicly expose an RPC gateway provider endpoint. Block explorers and client teams can also host these files statically as a trusted checkpoint sync source.
 
 <!--meta: "export" seems more precise + accurate than "download". Colloquially, "download" implies network connectivity, fetching from a remote machine, etc. -->
 Prysm's beacon node includes `prysmctl`, a tool that lets you export the `BeaconState` and `SignedBeaconBlock` from a fully synced beacon node that you control. 
