@@ -99,7 +99,7 @@ INFO[0001] saved ssz-encoded state to to state_goerli_bellatrix_3041920-0x34ebc1
 
 The two exported `*.ssz` file names include the file type (`state`, `block`), the network (`goerli`), the fork name (`bellatrix`), the slot (`2397120`) and the state or block root in hex encoding. The checkpoint save command doesn't export the required genesis state, but the genesis state can be downloaded via `curl` or `wget` using the following command:
 
-<!--meta: we can remove the output so the user has something clear and unambiguous to copy/paste -->
+<!--meta: we can remove the output so the user has something minimal and straightforward to copy/paste -->
 <!--todo: would it be easier to just direct users to hosted genesis states on github? -->
 ```
 curl -H "Accept: application/octet-stream"  http://localhost:3500/eth/v1/debug/beacon/states/genesis > genesis.ssz
