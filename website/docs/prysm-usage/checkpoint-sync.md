@@ -94,7 +94,7 @@ INFO[0001] saved ssz-encoded state to to state_goerli_bellatrix_3041920-0x34ebc1
 ```
 
 <!--meta: I imagine most readers don't know what ssz means, and won't care. We can elaborate on the technical details in dev wiki > dev concepts if/when needed.-->
-<!--meta: contractions can make guidance a bit friendlier/natural, which can make content more readable, which can reduce the cognitive cost of learning/doing -->
+<!--meta: contractions can make guidance sound more natural, which can make content more readable, which can reduce the cognitive cost of learning/doing -->
 <!--meta: in general we want to avoid claiming that a task is "easy" - some readers may not find it easy at all. -->
 
 The exported file name includes the file type (`state`, `block`), the network (`goerli`), the fork name (`bellatrix`), the slot (`2397120`) and the state or block root in hex encoding. The checkpoint save command doesn't export the required genesis state, but this can be downloaded via `curl` or `wget` using the following command:
