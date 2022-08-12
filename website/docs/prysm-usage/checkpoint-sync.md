@@ -134,7 +134,7 @@ TODO
 -->
 
 **How do I expose my beacon node's RPC gateway provider for checkpoint sync?**
-The [Beacon Node API for retrieving a BeaconState](https://ethereum.github.io/beacon-APIs/#/Debug/getStateV2) is a debug endpoint, so if you want your fully synced beacon node to serve checkpoint sync requests, it should be started with the flags `--enable-debug-rpc-endpoints` and `--grpc-max-msg-size=65568081`. Note that the beacon node *retrieving* the checkpoint state from this node doesn't need these flags.
+The [Beacon Node API for retrieving a BeaconState](https://ethereum.github.io/beacon-APIs/#/Debug/getStateV2) is a debug endpoint. If you want your fully synced beacon node to serve checkpoint sync requests, include the `--enable-debug-rpc-endpoints` and `--grpc-max-msg-size=65568081` flags. Note that the beacon node *requesting* the checkpoint state from this node doesn't need these flags.
 <!--meta: this note appears to be targeted at users who want to expose an endpoint, which is a distinct task/step. We can isolate this down into the FAQ to keep the reader in flow along the primary task. One task at a time. -->
 
 
