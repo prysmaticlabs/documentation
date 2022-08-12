@@ -22,7 +22,7 @@ import CheckpointSyncAbsent from '@site/static/img/checkpoint-sync-absent.png';
 
 <!--meta: background foundations - can move to dedicated conceptual docs if needed. See quickstart for an example of using the `Knowledge Check` pattern: https://docs.prylabs.network/docs/install/install-with-script -->
 
-Beacon nodes maintain a local copy of the Ethereum's beacon chain, the consensus-layer blockchain network that facilitates Ethereum's transition to proof-of-stake. When you tell Prysm's beacon node to start running for the first time, Prysm will fetch the very first beacon chain block - the beacon chain's **genesis block**. Your beacon node will then "replay" the history of the beacon chain, fetching blocks one at a time until the entire chain has been downloaded:
+Beacon nodes maintain a local copy of the Ethereum's beacon chain, the consensus-layer blockchain network that facilitates Ethereum's transition to proof-of-stake. When you tell Prysm's beacon node to start running for the first time, Prysm will fetch the very first beacon chain block - the beacon chain's **genesis block**. Your beacon node will then "replay" the history of the beacon chain, fetching the oldest blocks from peers until the entire chain has been downloaded:
 
 <img style={{width: 100 + '%', margin: 'auto', marginBottom: 20 + 'px', display: 'block', maxWidth: 623 + 'px'}} src={CheckpointSyncAbsent} /> 
 
