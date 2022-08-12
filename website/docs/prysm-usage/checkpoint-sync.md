@@ -35,7 +35,7 @@ This sync process can take a long time. Checkpoint sync speeds things up by tell
 
 Note that currently, Prysm's implementation syncs forward-only. The process of syncing backwards towards the genesis block is called "backfilling", and will be supported in a future Prysm release.
 
-To sync from a checkpoint, your Prysm beacon node needs three pieces of information: the latest finalized `BeaconState`, the `SignedBeaconBlock`, and the **genesis state** for the network you're using. This information can be pulled from a trusted peer node either via a **network request**, or via **file export/import**.
+To sync from a checkpoint, your Prysm beacon node needs three pieces of information: the latest finalized `BeaconState`, the `SignedBeaconBlock`, and the **genesis state** for the network you're using. Your node can fetch this information from a trusted peer node either via a **network request**, or via **file export/import**.
 
 
 ## Configure checkpoint sync via network request
@@ -97,7 +97,7 @@ INFO[0001] saved ssz-encoded state to to state_goerli_bellatrix_3041920-0x34ebc1
 <!--meta: contractions can make guidance sound more natural, which can make content more readable, which can reduce the cognitive cost of learning/doing -->
 <!--meta: in general we want to avoid claiming that a task is "easy" - some readers may not find it easy at all. -->
 
-The exported file name includes the file type (`state`, `block`), the network (`goerli`), the fork name (`bellatrix`), the slot (`2397120`) and the state or block root in hex encoding. The checkpoint save command doesn't export the required genesis state, but this can be downloaded via `curl` or `wget` using the following command:
+The two exported `*.ssz` file names include the file type (`state`, `block`), the network (`goerli`), the fork name (`bellatrix`), the slot (`2397120`) and the state or block root in hex encoding. The checkpoint save command doesn't export the required genesis state, but the genesis state can be downloaded via `curl` or `wget` using the following command:
 
 <!--meta: we can remove the output so the user has something clear and unambiguous to copy/paste -->
 <!--todo: would it be easier to just direct users to hosted genesis states on github? -->
@@ -124,7 +124,7 @@ Use the following command to **import** your exported `BeaconState`, `SignedBeac
 ## Frequently asked questions
 
 **Is checkpoint sync less secure than syncing from genesis?**
-No. It's actually considered more secure thanks to the protections against long-range attacks afforded by [Weak Subjectivity](https://blog.ethereum.org/2014/11/25/proof-stake-learned-love-weak-subjectivity/).
+No. It's actually considered *more* secure thanks to the protections against long-range attacks afforded by [Weak Subjectivity](https://blog.ethereum.org/2014/11/25/proof-stake-learned-love-weak-subjectivity/).
 
 <!--meta: we want to think about what readers are likely to be asking/wondering as they read this for the first time - how can we make their life easier as they learn the ropes? -->
 
