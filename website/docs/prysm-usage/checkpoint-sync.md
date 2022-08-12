@@ -72,7 +72,7 @@ When you sync via **network request**, the `BeaconState`, `SignedBeaconBlock`, a
 <!--meta: "export" seems more precise + accurate than "download". Colloquially, "download" implies network connectivity, fetching from a remote machine, etc. -->
 Prysm's beacon node includes `prysmctl`, a tool that lets you export the `BeaconState` and `SignedBeaconBlock` from a fully synced beacon node that you control. 
 
-To **export** your checkpoint sync artifacts from a local beacon node that you control, issue the following command:
+To **export** these files from a local beacon node that you control, issue the following command:
 
 <!--todo: is go needed? possible to use prysm.bat/sh? -->
 <!--todo: use tabs to support multiple operating systems following established conventions -->
@@ -97,7 +97,7 @@ INFO[0001] saved ssz-encoded state to to state_goerli_bellatrix_3041920-0x34ebc1
 <!--meta: contractions can make guidance sound more natural, which can make content more readable, which can reduce the cognitive cost of learning/doing -->
 <!--meta: in general we want to avoid claiming that a task is "easy" - some readers may not find it easy at all. -->
 
-The two exported `*.ssz` file names include the file type (`state`, `block`), the network (`goerli`), the fork name (`bellatrix`), the slot (`2397120`) and the state or block root in hex encoding. The checkpoint save command doesn't export the required genesis state, but the genesis state can be downloaded via `curl` or `wget` using the following command:
+The two exported `*.ssz` files are your `BeaconState` and `SignedBeaconBlock` files. They represent a single **checkpoint state**. Their filenames combine their file type (`state`, `block`), the network (`goerli`), the fork name (`bellatrix`), the slot (`2397120`) and the state or block root in hex encoding. The `checkpoint save` command doesn't export the required genesis state, but the genesis state can be downloaded via `curl` or `wget` using the following command:
 
 <!--meta: we can remove the output so the user has something minimal and straightforward to copy/paste -->
 <!--todo: would it be easier to just direct users to hosted genesis states on github? I imagine some will be first-time `curl` users, and for those folks, downloading a file is way simpler than installing a strange tool and typing hieroglyphics -->
@@ -106,7 +106,7 @@ curl -H "Accept: application/octet-stream"  http://localhost:3500/eth/v1/debug/b
 ```
 
 <!--meta: we can always refer to these three files as a triple, just to reiterate that these all go together in the context of checkpoint sync, a very important detail -->
-Use the following command to **import** your exported `BeaconState`, `SignedBeaconBlock`, and genesis state files and **start** your beacon node with checkpoint sync enabled:  
+Use the following command to **import** these three files and **start** your beacon node with checkpoint sync enabled:  
 
 <!--todo: use tabs to support multiple operating systems following established conventions -->
 
