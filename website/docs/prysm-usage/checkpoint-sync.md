@@ -195,8 +195,9 @@ TODO
 
  - [Checkpoint Sync Safety](https://www.symphonious.net/2022/05/21/checkpoint-sync-safety/) by Adrian Sutton
  - [How to: Checkpoint Sync](https://notes.ethereum.org/@launchpad/checkpoint-sync) by members of the Ethereum Foundation. 
+ - [WS sync in practice](https://notes.ethereum.org/@djrtwo/ws-sync-in-practice) by Danny Ryan.
  
-Special thanks to the authors of the latter for providing the endpoints and verification procedure used in this guide.
+Special thanks to the authors of *How to: Checkpoint Sync* for providing the endpoints and verification procedure used in this guide.
 
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
