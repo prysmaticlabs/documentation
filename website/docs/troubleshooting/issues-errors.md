@@ -33,6 +33,10 @@ This document provides a list of common troubleshooting scenarios and solutions.
 
 <table>
     <tr>
+        <th style={{minWidth: 180 + 'px'}}>Scenario</th> 
+        <th>Solution</th>
+    </tr>
+    <tr>
       <td>Waiting for peers / peer disconnected / no active peers: <code>Waiting for enough suitable peers before syncing...</code> <code>msg="Peer disconnected" active=0</code></td>
       <td>Peers will continuously disconnect and reconnect, so don't worry about <code>Peer disconnected</code> messages. If your beacon node is struggling to find peers: <br/>
       <ul>
@@ -56,6 +60,10 @@ This document provides a list of common troubleshooting scenarios and solutions.
 ## Execution node
 
 <table>
+    <tr>
+        <th style={{minWidth: 180 + 'px'}}>Scenario</th> 
+        <th>Solution</th>
+    </tr>
     <tr>
       <td><code>chain not synced beyond EIP-155</code></td>
       <td>This usually means that your execution client needs more time to "catch up", which you don't need to worry about. If you see that your node is connected to peers and is importing data, your node is healthy.</td>
