@@ -59,7 +59,7 @@ import TabItem from '@theme/TabItem';
 **Using the Prysm installation script**
 
 ```sh
-prysm.sh validator slashing-protection-history export --datadir=/path/to/validatorDb --slashing-protection-export-dir=/path/to/desired/outputdir
+./prysm.sh validator slashing-protection-history export --datadir=/path/to/validatorDb --slashing-protection-export-dir=/path/to/desired/outputdir
 ```
 
 **Using Docker**
@@ -102,7 +102,7 @@ The first time you run the process you will be asked to accept or decline the te
 **Using the Prysm installation script**
 
 ```sh
-prysm.sh validator slashing-protection-history export --datadir=/path/to/validatorDb --slashing-protection-export-dir=/path/to/desired/outputdir
+./prysm.sh validator slashing-protection-history export --datadir=/path/to/validatorDb --slashing-protection-export-dir=/path/to/desired/outputdir
 ```
 
 **Using Docker**
@@ -125,7 +125,7 @@ The first time you run the process you will be asked to accept or decline the te
 **Using the Prysm installation script**
 
 ```sh
-prysm.sh validator slashing-protection-history export --datadir=\path\to\validatorDb --slashing-protection-export-dir=\path\to\desired\outputdir
+./prysm.sh validator slashing-protection-history export --datadir=\path\to\validatorDb --slashing-protection-export-dir=\path\to\desired\outputdir
 ```
 
 **Using Bazel**
