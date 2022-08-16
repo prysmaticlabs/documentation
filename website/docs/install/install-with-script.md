@@ -523,7 +523,7 @@ The Beginner's Introduction to Prysm uses diagrams to help you visualize Ethereu
 **Why do you recommend putting everything on a single machine?** <br />
 Keeping all of your client software on a single machine keeps things simple, which aligns with our [security best practices](../security-best-practices.md).
 
-**Can I use Prysm on a Mac M1 ARM chip?**
+**Can I use Prysm on a Mac M1 ARM chip?** <br />
 Mac M1 ARM chips currently require users to run Prysm through <a href='https://support.apple.com/en-us/HT211861'>Rosetta</a>. See our <a href='https://github.com/prysmaticlabs/prysm/issues/9385'>open bug</a> for details.
 
 **Do I need to configure JWT if I'm using IPC instead of HTTP?** <br />
@@ -535,11 +535,11 @@ We recommend **closing** TCP port `8545` to the internet and keeping TCP and UDP
 **Can you mix and match networks between execution layer and consensus layer?** <br />
 No. See [Nodes and networks](../concepts/nodes-networks.md) for more information.
 
-**Can I stake with less than 32 ETH?**
+**Can I stake with less than 32 ETH?** <br />
 Yes! <a href='https://ethereum.org/en/staking/pools/'>Pooled staking</a> lets you stake with less than 32 ETH. 
 
 
-**What should I do if I can't run a node using my own hardware?**
+**What should I do if I can't run a node using my own hardware?** <br />
 You can delegate hardware management to <a href='https://ethereum.org/en/staking/saas/'>staking as a service</a> providers.
 
 
