@@ -7,13 +7,23 @@ sidebar_label: Troubleshooting
 
 ## Validator node
 
+<table>
+    <tr>
+        <th style={{minWidth: 180 + 'px'}}>Scenario</th> 
+        <th>Solution</th>
+    </tr>
+    <tr>
+      <td><code>Waiting for keymanager to initialize validator client with web UI...</code></td>
+      <td>You'll usually see this message when your beacon node is trying to interact with a validator client instance before the beacon node is fully synced. This is a known limitation. When your beacon node is finished syncing, this message should go away. Visit <a href='../monitoring/checking-status.md'>Check Node and Validator Status</a> to learn how to check the sync status of your beacon node.</td>
+    </tr>
+</table>
+
+
 ### Waiting for keymanager
 
-```
-Waiting for keymanager to initialize validator client with web UI...
-```
 
-You'll usually see this message when your beacon node is trying to interact with a validator client before the beacon node is fully synced. This is a known limitation. When your beacon node is finished syncing, this message should go away. Visit [Check Node and Validator Status](../monitoring/checking-status.md) to learn how to check the sync status of your beacon node. If your beacon node is reporting that it's synchronized and you're still seeing this message, reach out to us on [Discord](https://discord.gg/prysmaticlabs) and we'll help you troubleshoot.
+
+
 
 ### Everything seems fine, but my validator balance is going down
 
@@ -70,6 +80,14 @@ chain not synced beyond EIP-155
 ```
 
 This usually means that your execution client needs more time to "catch up". If you see that your node is connected to peers and is importing data, your node is healthy. If you're still seeing this error after a few hours, let us know on [Discord](https://discord.gg/prysmaticlabs).
+
+### Genesis not found
+
+```
+Fatal: Failed to register the Ethereum service: genesis not found in chain
+```
+
+This can happen when your execution client tries to use an old data directory. Try running
 
 
 ## General
