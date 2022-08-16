@@ -32,7 +32,9 @@ This sync process can take a long time. Checkpoint sync speeds things up by tell
 
 Note that currently, Prysm's implementation syncs forward-only. The process of syncing backwards towards the genesis block is called "backfilling", and will be supported in a future Prysm release. Backfilling isn't required to run a validator - it's only required if you want to run an archive node or query chain history through your beacon node.
 
-To sync from a checkpoint, your Prysm beacon node needs three pieces of information: the latest finalized `BeaconState`, the `SignedBeaconBlock`, and the **genesis state** for the network you're using. Together, the `BeaconState` and `SignedBeaconBlock` represent a single **checkpoint state**. This information can be retrieved from another fully-synced peer node either via a **network request**, or via **file export/import**.
+To sync from a checkpoint, your Prysm beacon node needs three pieces of information: the latest finalized `BeaconState`, the `SignedBeaconBlock`, and the **genesis state** for the network you're using. Together, the `BeaconState` and `SignedBeaconBlock` represent a single **checkpoint state**. 
+
+This information can be retrieved either via a **network request**, or via **file export/import**.
 
 
 ## Option 1: Configure checkpoint sync via network request
