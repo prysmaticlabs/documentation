@@ -4,7 +4,7 @@ title: Troubleshooting Prysm
 sidebar_label: Troubleshooting
 ---
 
-This document provides a list of common troubleshooting scenarios and solutions. Feel free reach out to us on [Discord](https://discord.gg/prysmaticlabs) for additional troubleshooting support.
+Common troubleshooting scenarios and solutions are detailed below. Feel free reach out to us on [Discord](https://discord.gg/prysmaticlabs) for additional troubleshooting support.
 
 
 ## Validator node
