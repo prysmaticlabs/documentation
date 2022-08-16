@@ -77,7 +77,7 @@ Note that **this is entirely optional**. The beacon node *requesting* the checkp
 
 ## Option 2 (Advanced): Configure checkpoint sync via file export/import
 
-:::note
+:::info
 
 This method requires `go` to be installed on the machine that hosts your synced beacon node.
 
@@ -171,7 +171,6 @@ TODO
 No - checkpoint sync requires a fresh, unused data directory.
 
 **Are there any publicly available, trustworthy checkpoint sync endpoints that I can use?** <br/>
-
 The Ethereum Foundation DevOps team runs a handful of checkpoint sync endpoints that can be used for testnets:
 
  - Goerli/Prater: https://goerli.checkpoint-sync.ethdevops.io
@@ -184,9 +183,6 @@ TODO
 
 **Do I need to provide a genesis state when using checkpoint sync on Mainnet?** <br/>
 TODO
-
-**How do I know that the file / endpoint I'm using for checkpoint sync is trustworthy?**
-A commonly misunderstood aspect of checkpoint sync 
 
 **Will I be able to use Infura as a checkpoint state provider after The Merge?** <br/>
 TODO
