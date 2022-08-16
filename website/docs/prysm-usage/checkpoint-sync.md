@@ -6,6 +6,8 @@ sidebar_label: Sync from a checkpoint
 
 import CheckpointSyncPresent from '@site/static/img/checkpoint-sync-present.png';
 import CheckpointSyncAbsent from '@site/static/img/checkpoint-sync-absent.png';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 :::caution
 
