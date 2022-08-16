@@ -65,7 +65,7 @@ You’re now ready for The Merge. If you have any questions, feel free ask them 
 ## Frequently asked questions
 
 **I'm currently running a validator on Ethereum Mainnet. When should I make changes?** <br />
-You can make the above changes now. This document will be continuously updated with the latest recommended configuration.
+You can make the above changes now if you're running on a testnet. This document will be continuously updated with the latest instructions as we approach Mainnet Merge.
 
 **Can I use IPC post-Merge?** <br />
 Yes. You also won't have to worry about JWT if you use IPC. Refer to your clients' command-line documentation for IPC configuration parameters.
