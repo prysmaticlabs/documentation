@@ -11,7 +11,7 @@ This document provides a list of common troubleshooting scenarios and solutions.
 
 <table>
     <tr>
-        <th style={{minWidth: 180 + 'px', maxWidth: 400 + 'px'}}>Scenario</th> 
+        <th style={{minWidth: 180 + 'px'}}>Scenario</th> 
         <th>Solution</th>
     </tr>
     <tr>
@@ -33,7 +33,7 @@ This document provides a list of common troubleshooting scenarios and solutions.
 
 <table>
     <tr>
-        <th style={{minWidth: 180 + 'px', maxWidth: 400 + 'px'}}>Scenario</th> 
+        <th style={{minWidth: 180 + 'px'}}>Scenario</th> 
         <th>Solution</th>
     </tr>
     <tr>
@@ -61,7 +61,7 @@ This document provides a list of common troubleshooting scenarios and solutions.
 
 <table>
     <tr>
-        <th style={{minWidth: 180 + 'px', maxWidth: 400 + 'px'}}>Scenario</th> 
+        <th style={{minWidth: 180 + 'px'}}>Scenario</th> 
         <th>Solution</th>
     </tr>
     <tr>
