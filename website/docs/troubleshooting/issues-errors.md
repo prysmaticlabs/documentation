@@ -14,10 +14,10 @@ sidebar_label: Troubleshooting
     </tr>
     <tr>
       <td>You see <code>Waiting for keymanager to initialize validator client with web UI...</code></td>
-      <td>You'll usually see this message when your beacon node is trying to interact with a validator client instance before the beacon node is fully synced. This is a known limitation. When your beacon node is finished syncing, this message should go away. Visit <a href='../monitoring/checking-status.md'>Check Node and Validator Status</a> to learn how to check the sync status of your beacon node.</td>
+      <td>You'll usually see this message when your beacon node is trying to interact with a validator client instance before the beacon node is fully synced. This is a known limitation. When your beacon node is finished syncing, this message should go away. Visit <a href='../monitoring/checking-status'>Check Node and Validator Status</a> to learn how to check the sync status of your beacon node.</td>
     </tr>
     <tr>
-      <td>Everything seems fine, but my validator balance is going down.</td>
+      <td>Everything seems fine, but your validator balance is going down.</td>
       <td>If your validator client is running fine without errors but you're seeing your validator balance decrease, your beacon node may be experiencing issues with connectivity, stability, or synchronization. Check your beacon node logs to see if there are any errors or crashes.</td>
     </tr>
     <tr>
@@ -41,7 +41,7 @@ sidebar_label: Troubleshooting
       </td>
     </tr>
     <tr>
-      <td>Stuck during sync</td>
+      <td>Stuck during sync.</td>
       <td>If your node seems stuck (either doing nothing, or stuck in a loop) while syncing, a restart will usually resolve the problem. If you're on Windows, try selecting your console output window and hitting <code>ENTER</code> to "unpause" a paused console output stream.</td>
     </tr>
     <tr>
