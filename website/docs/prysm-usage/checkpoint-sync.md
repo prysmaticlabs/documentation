@@ -26,7 +26,7 @@ Beacon nodes maintain a local copy of the Ethereum's [Beacon Chain](https://ethe
 
 This sync process can take a long time. Checkpoint sync speeds things up by telling your beacon node to piggyback off of a peer beacon node, skipping over the majority of the Beacon Chain's history and syncing from a recently finalized checkpoint:
 
-<img style={{width: 100 + '%', margin: 'auto', marginBottom: 20 + 'px', display: 'block', maxWidth: 635 + 'px'}} src={CheckpointSyncPresent} /> 
+<img style={{width: 100 + '%', margin: 'auto', marginBottom: 20 + 'px', display: 'block', maxWidth: 631 + 'px'}} src={CheckpointSyncPresent} /> 
 
 Note that currently, Prysm's implementation syncs forward-only. The process of syncing backwards towards the genesis block is called "backfilling", and will be supported in a future Prysm release.
 
