@@ -24,18 +24,6 @@ sidebar_label: Troubleshooting
       <td>Can't import accounts, stuck in a loop. <code>Could not import accounts: could not write accounts: file already exists without proper 0600 permissions</code></td>
       <td>This usually happens when the account you're using doesn't have permission to read and write to the target directory. See [this GitHub issue](https://github.com/prysmaticlabs/prysm/issues/11130#issuecomment-1199984124) for a workaround.</td>
     </tr>
-    <tr>
-      <td>todo</td>
-      <td>todo</td>
-    </tr>
-    <tr>
-      <td>todo</td>
-      <td>todo</td>
-    </tr>
-    <tr>
-      <td>todo</td>
-      <td>todo</td>
-    </tr>
 </table>
 
 
@@ -45,11 +33,11 @@ sidebar_label: Troubleshooting
     <tr>
       <td>Waiting for peers / peer disconnected / no active peers: <code>Waiting for enough suitable peers before syncing...</code> <code>msg="Peer disconnected" active=0</code></td>
       <td>Peers will continuously disconnect and reconnect, so don't worry about <code>Peer disconnected</code> messages. If your beacon node is struggling to find peers:
-
- - Your beacon node might be suffering from connectivity problems. Visit [Improve P2P connectivity](/docs/prysm-usage/p2p-host-ip) for connectivity troubleshooting guidance.
- - Make sure that your firewall isn't restricting any **outbound** ports for Prysm.
- - You may be using an incorrect genesis state or network flag. Every test network requires its own genesis state and network flag. Visit our [Quickstart](../install/install-with-script.md) for the latest test network parameters.
-
+      <ul>
+          <li>Your beacon node might be suffering from connectivity problems. Visit [Improve P2P connectivity](/docs/prysm-usage/p2p-host-ip) for connectivity troubleshooting guidance.</li>
+          <li>Make sure that your firewall isn't restricting any **outbound** ports for Prysm.</li>
+          <li>You may be using an incorrect genesis state or network flag. Every test network requires its own genesis state and network flag. Visit our [Quickstart](../install/install-with-script.md) for the latest test network parameters.</li>
+      </ul>
       </td>
     </tr>
     <tr>
