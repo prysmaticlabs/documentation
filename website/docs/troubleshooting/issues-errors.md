@@ -34,10 +34,9 @@ This document provides a list of common troubleshooting scenarios and solutions.
 <table>
     <tr>
       <td>Waiting for peers / peer disconnected / no active peers: <code>Waiting for enough suitable peers before syncing...</code> <code>msg="Peer disconnected" active=0</code></td>
-      <td>Peers will continuously disconnect and reconnect, so don't worry about <code>Peer disconnected</code> messages. If your beacon node is struggling to find peers:
+      <td>Peers will continuously disconnect and reconnect, so don't worry about <code>Peer disconnected</code> messages. If your beacon node is struggling to find peers: <br/>
       <ul>
-          <li>Your beacon node might be suffering from connectivity problems. Visit <a href='/docs/prysm-usage/p2p-host-ip'>Improve P2P connectivity</a> for connectivity troubleshooting guidance.</li>
-          <li>Make sure that your firewall isn't restricting any <strong>outbound</strong> ports for Prysm.</li>
+          <li>Your beacon node might be suffering from connectivity problems. Visit <a href='/docs/prysm-usage/p2p-host-ip'>Improve P2P connectivity</a> for connectivity troubleshooting guidance. Ensure that your firewall isn't restricting any <strong>outbound</strong> ports for Prysm.</li>
           <li>You may be using an incorrect genesis state or network flag. Every test network requires its own genesis state and network flag. Visit our <a href='../install/install-with-script'>Quickstart</a> for the latest test network parameters.</li>
       </ul>
       </td>
@@ -56,28 +55,17 @@ This document provides a list of common troubleshooting scenarios and solutions.
 
 ## Execution node
 
-### Chain not synced
+<table>
+    <tr>
+      <td><code>chain not synced beyond EIP-155</code></td>
+      <td>This usually means that your execution client needs more time to "catch up", which you don't need to worry about. If you see that your node is connected to peers and is importing data, your node is healthy.</td>
+    </tr>
+    <tr>
+      <td><code>Fatal: Failed to register the Ethereum service: genesis not found in chain</code></td>
+      <td>This can happen when your Geth tries to use an old data directory. Try restarting Geth with a new data directory specified.</td>
+    </tr>
+</table>
 
-```
-chain not synced beyond EIP-155
-```
-
-This usually means that your execution client needs more time to "catch up". If you see that your node is connected to peers and is importing data, your node is healthy. If you're still seeing this error after a few hours, let us know on [Discord](https://discord.gg/prysmaticlabs).
-
-### Genesis not found
-
-```
-Fatal: Failed to register the Ethereum service: genesis not found in chain
-```
-
-This can happen when your execution client tries to use an old data directory. Try running
-
-
-## General
-
-### I couldn't find my issue here, or the above solutions didn't help
-
-Feel free to reach out to us on [Discord](https://discord.gg/prysmaticlabs) and we'll help you troubleshoot.
 
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
