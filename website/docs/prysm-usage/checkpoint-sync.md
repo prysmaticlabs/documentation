@@ -24,7 +24,7 @@ This how-to walks you through two ways to configure checkpoint sync: syncing via
 
 Beacon nodes maintain a local copy of the Ethereum's [Beacon Chain](https://ethereum.org/en/upgrades/beacon-chain/). When you tell Prysm's beacon node to start running for the first time, Prysm will fetch the very first Beacon Chain block (the Beacon Chain's [genesis block](https://beaconscan.com/slots?epoch=0)). Your beacon node will then "replay" the history of the Beacon Chain, fetching the oldest blocks from peers until the entire chain has been downloaded:
 
-<img style={{width: 100 + '%', margin: 'auto', marginBottom: 20 + 'px', display: 'block', maxWidth: 623 + 'px'}} src={CheckpointSyncAbsent} /> 
+<img style={{width: 100 + '%', margin: 'auto', marginBottom: 20 + 'px', display: 'block', maxWidth: 616 + 'px'}} src={CheckpointSyncAbsent} /> 
 
 This sync process can take a long time. Checkpoint sync speeds things up by telling your beacon node to piggyback off of a peer beacon node, skipping over the majority of the Beacon Chain's history and syncing from a recently finalized checkpoint:
 
