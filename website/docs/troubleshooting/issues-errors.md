@@ -4,6 +4,8 @@ title: Troubleshooting Prysm
 sidebar_label: Troubleshooting
 ---
 
+This document provides a list of common troubleshooting scenarios and solutions. Feel free reach out to us on [Discord](https://discord.gg/prysmaticlabs) for troubleshooting support.
+
 
 ## Validator node
 
@@ -22,7 +24,7 @@ sidebar_label: Troubleshooting
     </tr>
     <tr>
       <td>Can't import accounts, stuck in a loop. You see <code>Could not import accounts: could not write accounts: file already exists without proper 0600 permissions</code></td>
-      <td>This usually happens when the account you're using doesn't have permission to read and write to the target directory. See [this GitHub issue](https://github.com/prysmaticlabs/prysm/issues/11130#issuecomment-1199984124) for a workaround.</td>
+      <td>This usually happens when the account you're using doesn't have permission to read and write to the target directory. See <a href='https://github.com/prysmaticlabs/prysm/issues/11130#issuecomment-1199984124'>this GitHub issue</a> for a workaround.</td>
     </tr>
 </table>
 
@@ -34,23 +36,19 @@ sidebar_label: Troubleshooting
       <td>Waiting for peers / peer disconnected / no active peers: <code>Waiting for enough suitable peers before syncing...</code> <code>msg="Peer disconnected" active=0</code></td>
       <td>Peers will continuously disconnect and reconnect, so don't worry about <code>Peer disconnected</code> messages. If your beacon node is struggling to find peers:
       <ul>
-          <li>Your beacon node might be suffering from connectivity problems. Visit [Improve P2P connectivity](/docs/prysm-usage/p2p-host-ip) for connectivity troubleshooting guidance.</li>
-          <li>Make sure that your firewall isn't restricting any **outbound** ports for Prysm.</li>
-          <li>You may be using an incorrect genesis state or network flag. Every test network requires its own genesis state and network flag. Visit our [Quickstart](../install/install-with-script.md) for the latest test network parameters.</li>
+          <li>Your beacon node might be suffering from connectivity problems. Visit <a href='/docs/prysm-usage/p2p-host-ip'>Improve P2P connectivity</a> for connectivity troubleshooting guidance.</li>
+          <li>Make sure that your firewall isn't restricting any <strong>outbound</strong> ports for Prysm.</li>
+          <li>You may be using an incorrect genesis state or network flag. Every test network requires its own genesis state and network flag. Visit our <a href='../install/install-with-script'>Quickstart</a> for the latest test network parameters.</li>
       </ul>
       </td>
     </tr>
     <tr>
-      <td>Stuck during sync.</td>
-      <td>If your node seems stuck (either doing nothing, or stuck in a loop) while syncing, a restart will usually resolve the problem. If you're on Windows, try selecting your console output window and hitting <code>ENTER</code> to "unpause" a paused console output stream.</td>
+      <td>Beacon node is stuck during initial sync.</td>
+      <td>If your node seems stuck (either doing nothing, or stuck in a loop) while syncing, a restart will usually resolve the problem. If you're on Windows, try selecting your console output window and hitting <code>ENTER</code> - this can "unpause" a paused console output stream.</td>
     </tr>
     <tr>
       <td>Node is currently optimistic and cannot serve validators: <code>level=error msg="Could not request attestation to sign at slot" error="rpc error: code = Unavailable desc = the node is currently optimistic and cannot serve validators" prefix=validator pubKey=0x01234 slot=65740</code></td>
-      <td>
-      
-      This usually means that your execution client isn't yet synchronized. Visit [Check Node and Validator Status](../monitoring/checking-status.md) to learn how to check the sync status of your execution client. If your execution client is reporting that it's synchronized and you're still seeing this error, reach out to us on [Discord](https://discord.gg/prysmaticlabs).
-      
-      </td>
+      <td>This usually means that your execution client isn't yet synchronized. Visit <a href='../monitoring/checking-status'>Check Node and Validator Status</a> to learn how to check the sync status of your execution client.</td>
     </tr>
 </table>
 
