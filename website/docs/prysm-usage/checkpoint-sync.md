@@ -83,7 +83,7 @@ Note that **this is entirely optional**. The beacon node *requesting* the checkp
 
 :::info
 
-This method requires `go` to be installed on the machine that hosts your synced beacon node.
+`Go` needs to be installed on the machine that hosts your synced beacon node if you use this method. See [go.dev](https://go.dev/) for installation instructions.
 
 :::
 
@@ -95,7 +95,7 @@ Issue the following command to export the `BeaconState` and `SignedBeaconBlock` 
 go run github.com/prysmaticlabs/prysm/cmd/prysmctl checkpoint save --beacon-node-host=http://localhost:3500
 ```
 
-You should see the following output upon successful export:
+You should see the following output if your export was successful:
 
 ```bash
 INFO[0000] requesting http://localhost:3500/eth/v2/debug/beacon/states/finalized
@@ -114,7 +114,7 @@ The two exported `*.ssz` files are your `BeaconState` and `SignedBeaconBlock` fi
 curl -H "Accept: application/octet-stream"  http://localhost:3500/eth/v1/debug/beacon/states/genesis > genesis.ssz
 ```
 
-Alternatively, you can manually download the genesis state from GitHub: [Goerli-Prater](https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz) | [Sepolia](https://github.com/eth-clients/merge-testnets/blob/main/sepolia/genesis.ssz) | [Ropsten](https://github.com/eth-clients/merge-testnets/blob/main/ropsten-beacon-chain/genesis.ssz)
+You can also just manually download the genesis state from GitHub: [Goerli-Prater](https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz) | [Sepolia](https://github.com/eth-clients/merge-testnets/blob/main/sepolia/genesis.ssz) | [Ropsten](https://github.com/eth-clients/merge-testnets/blob/main/ropsten-beacon-chain/genesis.ssz)
 
 Use the following command to start your beacon node with checkpoint sync configured to use this checkpoint state:
 
