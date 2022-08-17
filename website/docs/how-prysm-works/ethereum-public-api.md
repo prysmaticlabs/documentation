@@ -26,3 +26,7 @@ Notice that in this example the `{state_id}` URL parameter has been replaced wit
 ## Disabling the API
 
 By default the beacon node runs with all available set of APIs enabled. You might want to disable one or more APIs, for example for security reasons. The `--http-modules` flags allows fine-grained control over which APIs are available on your node.
+
+import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
+
+<RequestUpdateWidget />
