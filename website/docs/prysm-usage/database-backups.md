@@ -1,7 +1,7 @@
 ---
 id: database-backups
-title: Database backups
-sidebar_label: Database backups
+title: Back up & restore database
+sidebar_label: Back up & restore database
 ---
 
 This section outlines how to perform database backups for your beacon node and validator client. Both services expose an **HTTP backup endpoint** which is the **safest way** to trigger a database backup.
@@ -183,3 +183,8 @@ bazel run //validator -- db restore --restore-source-file=/path/to/backup --rest
 
 </TabItem>
 </Tabs>
+
+
+import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
+
+<RequestUpdateWidget />

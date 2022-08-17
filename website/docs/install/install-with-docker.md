@@ -1,15 +1,13 @@
 ---
 id: install-with-docker
-title: Installing Prysm with Docker
-sidebar_label: Using Docker
+title: Install Prysm with Docker
+sidebar_label: Install using Docker
 ---
 
-Prysm can be installed on Windows, GNU/Linux, MacOS systems with Docker. This page includes instructions for performing this method.
-
-![Prysm Docker Setup](/img/prysm-basic-docker-setup.png)
+Prysm can be installed on Windows, GNU/Linux, and MacOS systems with Docker.
 
 :::tip Pro-Tip
-The Prysm installation script is the easiest and most efficient way of installing. Docker is mostly for advanced users. Instructions for using it can be found [here](/docs/install/install-with-script).
+The [Prysm Quickstart](/docs/install/install-with-script) is the easiest way to install Prysm. Docker is for advanced users.
 :::
 
 **Have questions?** Stop by the [#documentation](https://discord.gg/prysmaticlabs) channel on Discord and let us know.
@@ -84,6 +82,22 @@ docker pull gcr.io/prysmaticlabs/prysm/validator:stable
 docker pull gcr.io/prysmaticlabs/prysm/beacon-chain:stable
 ```
 
+
+:::info Ropsten
+
+If you want to use the **Ropsten** test network, replace the `gcr.io` links throughout this guide with links to the latest release candidate image:
+
+```text
+gcr.io/prysmaticlabs/prysm/validator@sha256:7ac120abe8732512ed9e8e193f00076ac05b75133ec3b04eca37921bad3ae07a
+gcr.io/prysmaticlabs/prysm/beacon-chain@sha256:bf9b95661c71ad60f633ee14cf352a668d550076471154cf80dfef8fce0bb41e
+```
+
+This guide will soon be revised with an updated structure that makes it easier for you to use docker with testnets and release candidates. Until then, visit our [quickstart](install-with-script.md) for the latest Ropsten instructions.
+
+:::
+
+
+
 This process will also install any related dependencies.
 
 :::tip Pro-Tip
@@ -121,6 +135,7 @@ docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/u
   --monitoring-host=0.0.0.0 \
   --http-web3provider=<YOUR_ETH_EXECUTION_NODE_ENDPOINT>
 ```
+
 </TabItem>
 <TabItem value="win">
 
@@ -219,23 +234,27 @@ docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/u
   --http-web3provider=<YOUR_ETH_EXECUTION_NODE_ENDPOINT>
 ```
 
+
 </TabItem>
 </Tabs>
 
-## Running a Beacon Node
-
 ### Before you begin: pick your network
 
-When running Prysm, you can choose to run in the **main network** which has real assets at stake, or in a **test network** which is used by developers and stakers that might want to gain some confidence before depositing 32 ETH to validate. The currently supported networks in Prysm are
+When running a Prysm **beacon node** or **validator**, you can choose to run in the **main network** which has real assets at stake, or in a **test network** which is used by developers and stakers that might want to gain some confidence before depositing 32 ETH to validate. The currently supported networks in Prysm are:
 
-* [Mainnet](https://launchpad.ethereum.org) which is the current, live version of Ethereum proof-of-stake with billions of dollars worth of real ETH
-* [Prater testnet](https://prater.launchpad.ethereum.org) which is a useful staging testnet for development and users that want to try things out before hopping into the real mainnet
+* [Mainnet](https://launchpad.ethereum.org): the current, live version of Ethereum proof-of-stake with billions of dollars' worth of real ETH at stake
+* [Goerli-Prater testnet](https://goerli.launchpad.ethereum.org/en/): a staging testnet for developers and validators who want to try things out before using the real mainnet
+* [Ropsten testnet](https://ropsten.launchpad.ethereum.org): a consensus-layer staging testnet created specifically to help developers and validators test the Merge using execution-layer Ropsten testnet
 
-Mainnet is enabled by **default** in all Prysm commands. If you want to use the **Prater** testnet, just add `--prater` to _all_ your Prysm commands.
 
-:::danger Make sure you are running on the main network (mainnet) if using real money! 
-Do not use `--prater` if you are using real funds and staking your ETH on mainnet. Testnets use testnet ETH to run the network and do not represent real value.
+:::tip Using testnets
+
+**Mainnet** is enabled by default in all Prysm commands. If you want to use a **testnet**, add `--prater` or `--ropsten` to all Prysm commands within this document.
+
 :::
+
+
+## Running a Beacon Node
 
 ### Step 1: Set up an execution node endpoint
 
@@ -282,6 +301,22 @@ docker run -it -v $HOME/.eth2:/data -v /path/to/genesis.ssz:/genesis/genesis.ssz
   --prater
 ```
 
+**Ropsten**
+
+Download the genesis state from [github.com/eth-clients/merge-testnets/blob/main/ropsten-beacon-chain/genesis.ssz](https://github.com/eth-clients/merge-testnets/blob/main/ropsten-beacon-chain/genesis.ssz) to a local file, then run
+
+```text
+docker run -it -v $HOME/.eth2:/data -v /path/to/genesis.ssz:/genesis/genesis.ssz -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node \
+  gcr.io/prysmaticlabs/prysm/beacon-chain@sha256:bf9b95661c71ad60f633ee14cf352a668d550076471154cf80dfef8fce0bb41e \
+  --datadir=/data \
+  --rpc-host=0.0.0.0 \
+  --monitoring-host=0.0.0.0 \
+  --http-web3provider=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> \
+  --genesis-state=/genesis/genesis.ssz \
+  --ropsten
+```
+
+
 </TabItem>
 <TabItem value="win">
 
@@ -310,6 +345,15 @@ Download the genesis state from [github.com/eth-clients/eth2-networks/raw/master
 
 ```text
 docker run -it -v %LOCALAPPDATA%\Eth2:/data -v \path\to\genesis.ssz:/genesis/genesis.ssz -p 4000:4000 -p 13000:13000 -p 12000:12000/udp gcr.io/prysmaticlabs/prysm/beacon-chain:stable --datadir=/data --rpc-host=0.0.0.0 --monitoring-host=0.0.0.0 --http-web3provider=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> --genesis-state=/genesis/genesis.ssz --prater
+```
+
+**Ropsten**
+
+Download the genesis state from [github.com/eth-clients/merge-testnets/blob/main/ropsten-beacon-chain/genesis.ssz](https://github.com/eth-clients/merge-testnets/blob/main/ropsten-beacon-chain/genesis.ssz) to a local file, then run
+
+
+```text
+docker run -it -v %LOCALAPPDATA%\Eth2:/data -v \path\to\genesis.ssz:/genesis/genesis.ssz -p 4000:4000 -p 13000:13000 -p 12000:12000/udp gcr.io/prysmaticlabs/prysm/beacon-chain@sha256:bf9b95661c71ad60f633ee14cf352a668d550076471154cf80dfef8fce0bb41e --datadir=/data --rpc-host=0.0.0.0 --monitoring-host=0.0.0.0 --http-web3provider=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> --genesis-state=/genesis/genesis.ssz --ropsten
 ```
 
 </TabItem>
@@ -343,6 +387,21 @@ docker run -it -v $HOME/.eth2:/data -v /path/to/genesis.ssz:/genesis/genesis.ssz
   --prater
 ```
 
+**Ropsten**
+
+Download the genesis state from [github.com/eth-clients/merge-testnets/blob/main/ropsten-beacon-chain/genesis.ssz](https://github.com/eth-clients/merge-testnets/blob/main/ropsten-beacon-chain/genesis.ssz) to a local file, then run
+
+```text
+docker run -it -v $HOME/.eth2:/data -v /path/to/genesis.ssz:/genesis/genesis.ssz -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node \
+  gcr.io/prysmaticlabs/prysm/beacon-chain@sha256:bf9b95661c71ad60f633ee14cf352a668d550076471154cf80dfef8fce0bb41e \
+  --datadir=/data \
+  --rpc-host=0.0.0.0 \
+  --monitoring-host=0.0.0.0 \
+  --http-web3provider=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> \
+  --genesis-state=/genesis/genesis.ssz \
+  --ropsten
+```
+
 </TabItem>
 </Tabs>
 
@@ -350,14 +409,11 @@ docker run -it -v $HOME/.eth2:/data -v /path/to/genesis.ssz:/genesis/genesis.ssz
 
 A validator is an optional process that can be attached to a running beacon node to stake your ETH and participate in the chain's consensus. It is the analogue of a **miner** from proof-of-work-based systems.
 
-### Before you begin: pick your network
+:::tip Using testnets
 
-When running Prysm, you can choose to run in the **main network** which has real assets at stake, or in a **test network** which is used by developers and stakers that might want to gain some confidence before depositing 32 ETH to validate. The currently supported networks in Prysm are
+**Never deposit real ETH into testnet deposit contracts!** Every testnet has its own test ETH that should be used instead.
 
-* [Mainnet](https://launchpad.ethereum.org) which is the current, live version of Ethereum proof-of-stake with billions of dollars worth of real ETH
-* [Prater testnet](https://prater.launchpad.ethereum.org) which is a useful staging testnet for development and users that want to try things out before hopping into the real mainnet
-
-Mainnet is enabled by **default** in all Prysm commands. If you want to use the **Prater** testnet, just add `--prater` to _all_ your Prysm commands.
+:::
 
 ### Step 1: Ensure your beacon node is synced
 
@@ -382,10 +438,10 @@ If your node is done synchronizing, you will see the response:
 ### Step 2: Send your validator deposit via the Ethereum validator launchpad
 
 :::danger Ensure You Are Not Being Scammed
-The correct address for the launchpad is https://launchpad.ethereum.org and the only, official validator deposit contract is [0x00000000219ab540356cbb839cbe05303d7705fa](https://etherscan.io/address/0x00000000219ab540356cbb839cbe05303d7705fa). Do not send ETH directly to the contract, and only join by using the eth2 launchpad.
+The correct address for the launchpad is https://launchpad.ethereum.org and the only, official validator deposit contract is [0x00000000219ab540356cbb839cbe05303d7705fa](https://etherscan.io/address/0x00000000219ab540356cbb839cbe05303d7705fa). Do not send ETH directly to the contract, and only join by using the Ethereum.org launchpad.
 :::
 
-The [Mainnet Eth2 Launchpad](https://launchpad.ethereum.org/summary) is the easiest way to go through a step-by-step process to deposit your 32 ETH to become a validator. If you want to participate in the **testnet**, you can navigte to the [Prater Eth2 Launchpad](https://prater.launchpad.ethereum.org/summary) instead
+The [Mainnet Launchpad](https://launchpad.ethereum.org/summary) is the most secure way to deposit your 32 ETH to become a validator. If you want to participate in the **testnet**, you can navigate to the [Goerli-Prater](https://goerli.launchpad.ethereum.org/en/) or [Ropsten](https://ropsten.launchpad.ethereum.org/summary) launchpads.
 
 Throughout the process, you'll be asked to generate new validator credentials using the official Ethereum deposit command-line-tool [here](https://github.com/ethereum/eth2.0-deposit-cli). Make sure you use the `mainnet` option when generating keys with the deposit CLI. During the process, you will have generated a `validator_keys` folder under the `eth2.0-deposit-cli` directory. You can import all of your validator keys into Prysm from that folder in the next step.
 
@@ -478,7 +534,7 @@ docker run -it -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet -v %LOCA
 ```text
 docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \ 
   -v $HOME/Eth2:/validatorDB \
-  --network="host" --name validator \
+  --network="host" --name validator-import \
   gcr.io/prysmaticlabs/prysm/validator:stable \
   --beacon-rpc-provider=127.0.0.1:4000 \
   --wallet-dir=/wallet \
@@ -489,7 +545,7 @@ docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
 </Tabs>
 
 
-### Step 6: Wait for your validator assignment
+### Step 5: Wait for your validator assignment
 
 Please note it will take time for nodes in the network to process a deposit. To understand the timeline of becoming a validator and how long it takes on average, please read [this knowledge base](https://kb.beaconcha.in/ethereum-2.0-depositing). In the meantime, leave both terminal windows open and running; once the validator is activated by the ETH2 network, it will immediately begin receiving tasks and performing its responsibilities. If the eth2 chain has not yet started, the validator will be ready to start proposing blocks and signing votes as soon as the genesis time is reached.
 
@@ -504,3 +560,7 @@ For running an advanced wallet setups, our documentation includes comprehensive 
 **Congratulations, you are now fully participating in Ethereum proof-of-stake**
 
 **Still have questions?**  Stop by our [Discord](https://discord.gg/prysmaticlabs) for further assistance!
+
+import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
+
+<RequestUpdateWidget />

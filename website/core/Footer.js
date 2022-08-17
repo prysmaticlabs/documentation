@@ -52,7 +52,7 @@ class Footer extends React.Component {
               rel="noreferrer noopener">
               Gitter
             </a>
-            <a href="https://discord.gg/KSA7rPr">Discord</a>
+            <a href="https://discord.com/invite/prysmaticlabs">Discord</a>
             <a
               href="https://twitter.com/prylabs"
               target="_blank"

@@ -1,10 +1,10 @@
 ---
 id: security-best-practices
-title: Staking with Prysm - Security Best Practices
-sidebar_label: Security Best Practices
+title: Staking with Prysm - Security best practices
+sidebar_label: Security best practices
 ---
 
-# Staking with Prysm: Security Best Practices
+# Staking with Prysm: Security best practices
 
 Ethereum's transition to proof-of-stake is made possible by validators who each stake 32 ETH into the [validator deposit contract](https://docs.prylabs.network/docs/how-prysm-works/validator-deposit-contract/). These validators accept the responsibility to uphold the integrity of the Ethereum network in exchange for staking rewards.
 
@@ -17,12 +17,11 @@ Note that this document is subject to the [Prysmatic Labs Terms of Service](http
 The following principles apply generally to staking security:
 
  - **Keep it simple**. Over-engineered solutions tend to increase risk.
- - **Stay up to date**. At a minimum, join the [prysm-dev Google Group](https://groups.google.com/g/prysm-dev) to receive important updates related to client security and maintenance. We encourage all stakers to join the Prysm discord and [r/ethstaker](https://www.reddit.com/r/ethstaker). Visit the [Learning Resources](#learning-resources) section at the end of this guide for a short list of resources that we recommend visiting periodically.
+ - **Stay up to date**. At a minimum, join the [prysm-dev Google Group](https://groups.google.com/g/prysm-dev) to receive important updates related to client security and maintenance. We encourage all stakers to join the [Prysm Discord server](https://discord.gg/prysmaticlabs) and [r/ethstaker](https://www.reddit.com/r/ethstaker). Visit the [Learning Resources](#learning-resources) section at the end of this guide for a short list of resources that we recommend visiting periodically.
  - **Testnet first**. Harden your configuration using testnet [<a href='#footnote-1'>1</a>] before staking with real ETH on mainnet.
  - **Simulate risk events**. For each of the aspects within this document, simulate risk events and document your own risk mitigation plans. You can use the [risk mitigation worksheet](#mitigation-worksheet) located at the end of this guide.
  - **Proactively manage risk** You can't completely eliminate risk, but you can minimize it by following the best practices within this guide.
- - **If you’re not sure, ask**. The Prysm Discord and [r/ethstaker](https://www.reddit.com/r/ethstaker) subreddit are full of people who genuinely enjoy helping out.
-
+ - **If you’re not sure, ask**. The [Prysm Discord server](https://discord.gg/prysmaticlabs) and [r/ethstaker](https://www.reddit.com/r/ethstaker) subreddit are full of people who genuinely enjoy helping out.
 
 
 ## Uptime management
@@ -116,9 +115,9 @@ You’ll be managing two types of keys: validator keys and withdrawal keys. Prys
 Ethereum and its client software are constantly improving. This constant change means that unexpected things may happen that require troubleshooting. 
   
  - **Essential**: Expect unexpected things to happen.
- - **Essential**: Be prepared to engage with the [Prysm Discord server](https://discord.com/invite/XkyZSSk4My), [r/ethstaker](https://www.reddit.com/r/ethstaker/), and the [EthStaker Discord server](https://discord.io/ethstaker) if you need help troubleshooting issues.
+ - **Essential**: Be prepared to engage with the [Prysm Discord server](https://discord.gg/prysmaticlabs), [r/ethstaker](https://www.reddit.com/r/ethstaker/), and the [EthStaker Discord server](https://discord.io/ethstaker) if you need help troubleshooting issues.
  - **Essential**: When sharing logs, be sure to redact personally identifiable information and metadata that can be used to identify your validator.
- - **Essential**: Learn how to [inspect Prysm's performance](https://docs.prylabs.network/docs/prysm-usage/is-everything-fine).
+ - **Essential**: Learn how to [inspect Prysm's performance](https://docs.prylabs.network/docs/monitoring/is-everything-fine).
  - **Essential**: Familiarize yourself with [Prysm's P2P connectivity guidance](https://docs.prylabs.network/docs/prysm-usage/p2p-host-ip).
  - **Essential**: Review [the Prysm FAQ](https://docs.prylabs.network/docs/faq).
 
@@ -153,7 +152,7 @@ Migrating your validator from one machine to another is a delicate process that 
 
 ## Learning resources
 
- - [Prysm Discord server](https://discord.com/invite/XkyZSSk4My)
+ - [Prysm Discord server](https://discord.gg/prysmaticlabs)
  - [Ethereum launchpad](https://launchpad.ethereum.org/en/overview)
  - [Ethereum launchpad FAQ](https://launchpad.ethereum.org/en/faq) 
  - [Eth2 rewards and penalties calculator](https://docs.google.com/spreadsheets/d/15tmPOvOgi3wKxJw7KQJKoUe-uonbYR6HF7u83LR5Mj4/edit#gid=1018097491)
@@ -164,14 +163,14 @@ Migrating your validator from one machine to another is a delicate process that 
 ## Closing remarks
 Participating as a validator can be rewarding public service [<a href='#footnote-13'>13</a>], but it's not without risk. Following these security best practices will help you minimize risk. 
  
-If you have any questions, feel free to visit our [Discord](https://discord.com/invite/XkyZSSk4My).
+If you have any questions, feel free to visit our [Discord](https://discord.gg/prysmaticlabs).
 
 
 -----------------------------------
 
 Footnotes:
 
-<strong id='footnote-1'>1</strong>. Learn more about the Prater testnet <a href='https://prater.launchpad.ethereum.org/en/'>here on Ethereum.org</a>. <br />
+<strong id='footnote-1'>1</strong>. Learn more about the Goerli-Prater testnet <a href='https://goerli.launchpad.ethereum.org/en/'>here on Ethereum.org</a>. <br />
 <strong id='footnote-2'>2</strong>. BitMex recently posted research that provides hard numbers on penalties and rewards: <a href='https://blog.bitmex.com/ethereums-proof-of-stake-system-calculating-penalties-rewards/'>Ethereum's Proof of Stake System - Calculating Penalties and Rewards</a>. Collin Myers has also created an <a href='https://docs.google.com/spreadsheets/d/15tmPOvOgi3wKxJw7KQJKoUe-uonbYR6HF7u83LR5Mj4/edit#gid=1018097491'>Ethereum calculator</a>. <br />
 <strong id='footnote-3'>3</strong>. See <a href='https://www.reddit.com/r/ethstaker/comments/nnwfx1/why_you_should_stop_worrying_about_your/'>Why you should stop worrying about your validator's uptime and start embracing the chaos instead</a>. <br />
 <strong id='footnote-4'>4</strong>. See <a href='https://medium.com/prysmatic-labs/eth2-slashing-prevention-tips-f6faa5025f50'>Eth2 Slashing Prevention Tips</a> to learn more about slashing.<br />
@@ -185,3 +184,7 @@ Footnotes:
 <strong id='footnote-12'>12</strong>. See <a href='https://jlopp.github.io/metal-bitcoin-storage-reviews/'>Metal Bitcoin Seed Storage Reviews</a> by Jameson Lopp. <br />
 <strong id='footnote-13'>13</strong>. StakingRewards has a live rewards calculator <a href='https://www.stakingrewards.com/earn/ethereum-2-0/'>here</a>.   <br />
 
+
+import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
+
+<RequestUpdateWidget />

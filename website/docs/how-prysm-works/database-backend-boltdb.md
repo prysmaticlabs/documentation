@@ -68,3 +68,7 @@ func NewDB(dirPath string) (*BeaconDB, error) {
     return db, err
 }
 ```
+
+import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
+
+<RequestUpdateWidget />

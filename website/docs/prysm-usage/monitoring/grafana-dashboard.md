@@ -1,7 +1,7 @@
 ---
 id: grafana-dashboard
-title: Monitoring and alerts with Grafana
-sidebar_label: Monitoring with Prometheus
+title: Configure dashboarding and alerts with Prometheus and Grafana
+sidebar_label: Configure dashboarding and alerts with Prometheus and Grafana
 ---
 
 [Grafana](https://grafana.com/) is an open-source data metrics tool that is used to aggregate large amounts of data into a comprehensive visual dashboard for easy analysis. This section includes instructions for installing Grafana on the local machine and configuring Telegram or Discord alerts for monitoring validator status on-the-go.
@@ -97,6 +97,12 @@ A green notification saying “Datasource updated” should now be visible on th
 
 ## Enabling mobile alerts
 
+:::caution stale content
+
+This section is currently out of date. Refer to Grafana's [The new unified alerting system for Grafana](https://grafana.com/blog/2021/06/14/the-new-unified-alerting-system-for-grafana-everything-you-need-to-know/) for the latest alert configuration guidance while we update this content.
+
+:::
+
 1. On the left menu of Grafana, select **Notification channels** under the bell icon. 
 
 2. Click on **New channel**.
@@ -138,5 +144,7 @@ For those running their node and validators on separate machines, simply modify 
 
 > **NOTICE:** In case of public IPs, [port forwarding](/docs/prysm-usage/p2p-host-ip/#port-forwarding) may need to be configured.
 
-## Activate currency converter feature
-A specific [guide](/docs/prysm-usage/monitoring/currency-converter/) has been designed for adding currency conversion.
+
+import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
+
+<RequestUpdateWidget />

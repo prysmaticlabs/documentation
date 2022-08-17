@@ -1,7 +1,7 @@
 ---
 id: contribution-guidelines
-title: Contribution guide
-sidebar_label: Contribution guide
+title: Contribute to Prysm's codebase
+sidebar_label: Contribute to Prysm's codebase
 ---
 
 There are a number of ways to help out the project for people of all skillsets and experience levels. If you are unsure where you may be best suited, stop by either our [**Discord**](https://discord.gg/prysmaticlabs) and a member of the team or community will be happy to answer questions and offer some direction.
@@ -15,7 +15,7 @@ Once you are a bit more familiar with the concepts behind Ethereum and are ready
 To develop Prysm, you'll need the following:
 
 - A modern windows, osx, or linux operating system
-- Go 1.16.x version installed, download and install [here](https://golang.org/dl/)
+- Go 1.18 version installed, download and install [here](https://golang.org/dl/)
 - The `git` package installed
 - A code editor such as [Visual Studio Code](https://code.visualstudio.com/download) or Jetbrains' [Goland IDE](https://www.jetbrains.com/go/) or your preferred one
 
@@ -189,3 +189,7 @@ After you complete the questionnaire, the pull request will appear in the list o
 #### Following up
 
 Core developers may ask questions and request that you make edits. If you set notifications at the top of the page to “not watching,” you will still be notified by email whenever someone comments on the page of a pull request you have created. If you are asked to modify your pull request, edit your local branch, push up your fixes, then leave a comment to notify the original reviewer that the pull request is ready for further review.
+
+import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
+
+<RequestUpdateWidget />

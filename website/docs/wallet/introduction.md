@@ -1,7 +1,7 @@
 ---
 id: introduction
-title: Wallets and validator accounts
-sidebar_label: Introduction
+title: Keys, wallets, and accounts
+sidebar_label: Keys, wallets, and accounts
 ---
 
 This section explains everything about how to manage validator accounts using Prysm's built-in wallet, as well as setup instructions for different types of wallets including HD (hierarchical deterministic), non-HD, and remote signing wallets. If you created a wallet using the official [Ethereum launchpad](https://launchpad.ethereum.org/) and want to run Prysm using it, see our dedicated instructions [here](/docs/mainnet/joining-eth2).
@@ -101,7 +101,7 @@ If you are running a **remote signer wallet**, we do not store anything on disk 
 
 #### Why is my validator losing ETH despite my setup appearing ok?
 
-If your validator client is running fine without errors but you're seeing your validator balance decrease, it is typically a sign your beacon node is either (a) crashed, (b) not synced to the chain head. This might also mean your beacon node doesn't have any peers and is likely not connected to anyone. To debug this problem, please read our guide on checking [everything is running as expected](/docs/prysm-usage/is-everything-fine). If this still does not resolve your issue, you can get in touch with our team on [Discord](https://discord.gg/prysmaticlabs) anytime.
+If your validator client is running fine without errors but you're seeing your validator balance decrease, it is typically a sign your beacon node is either (a) crashed, (b) not synced to the chain head. This might also mean your beacon node doesn't have any peers and is likely not connected to anyone. To debug this problem, please read our guide on checking [everything is running as expected](/docs/monitoring/is-everything-fine). If this still does not resolve your issue, you can get in touch with our team on [Discord](https://discord.gg/prysmaticlabs) anytime.
 
 #### How can I use a hardware wallet with my validator?
 
@@ -114,3 +114,8 @@ If you're encountering an unexpected issue that causes your client to crash or t
 #### How can I stop being a validator?
 
 You can stop being a validator by issuing a **voluntary exit**, which is a special type of object included in the Ethereum beacon chain that signifies your validator is ready to stop validating and securely exit the validator set. Although during phase 0 of Ethereum consensus, you will **not** be able to withdraw your staking rewards, you can still issue a voluntary exit. You can find instructions for this process [here](/docs/wallet/exiting-a-validator).
+
+
+import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
+
+<RequestUpdateWidget />

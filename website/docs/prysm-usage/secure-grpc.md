@@ -1,10 +1,10 @@
 ---
 id: secure-grpc
-title: Securing your gRPC connections
-sidebar_label: Securing gRPC 
+title: Secure gRPC connections
+sidebar_label: Secure gRPC connections
 ---
 
-This section will help advanced users create and setup TLS certificates to allow for secure gRPC connections to their beacon nodes.
+This document will help advanced users create and configure TLS certificates to allow for secure gRPC connections to their beacon nodes.
 
 :::tip Pro-Tip
 The only practical use for using secure gRPC is in the case of connecting a beacon node that is being hosted remotely. For configurations in which the beacon node and validator reside on the same host system, these steps are not required nor recommended.
@@ -138,3 +138,7 @@ This will generate an output like so:
     ```text
     [2020-06-15 17:09:13]  INFO validator: Established secure gRPC connection
     ```
+
+import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
+
+<RequestUpdateWidget />

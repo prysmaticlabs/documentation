@@ -10,6 +10,7 @@ module.exports = {
     customFields: {
         image: 'img/Prysm.svg',
     },
+    trailingSlash: false,
     scripts: ['https://buttons.github.io/buttons.js'],
     themeConfig: {
         navbar: {
@@ -20,25 +21,26 @@ module.exports = {
                 href: '/docs/getting-started',
             },
             items: [{
-                    type: 'docsVersionDropdown',
-                    position: 'left',
-                    dropdownActiveClassDisabled: true,
-                },
-                {
-                    to: 'docs/install/install-with-script',
-                    label: 'Quick Install',
-                    position: 'right',
-                },
-                {
-                    href: 'https://github.com/prysmaticlabs/prysm',
-                    label: 'GitHub',
-                    position: 'right',
-                },
-                {
-                    href: 'https://discord.gg/prysmaticlabs',
-                    label: 'Discord',
-                    position: 'right',
-                },
+                type: 'docsVersion',
+                position: 'left',
+                to: 'https://github.com/prysmaticlabs/prysm/releases/tag/v2.1.4',
+                label: 'v2.1.4',
+            },
+            {
+                to: 'docs/install/install-with-script',
+                label: 'Quick Install',
+                position: 'right',
+            },
+            {
+                href: 'https://github.com/prysmaticlabs/prysm',
+                label: 'GitHub',
+                position: 'right',
+            },
+            {
+                href: 'https://discord.gg/prysmaticlabs',
+                label: 'Discord',
+                position: 'right',
+            },
             ],
         },
         footer: {
@@ -71,8 +73,8 @@ module.exports = {
                 docs: {
                     path: './docs',
                     routeBasePath: 'docs',
-                    showLastUpdateTime: true,
-                    showLastUpdateAuthor: true,
+                    showLastUpdateTime: false,
+                    showLastUpdateAuthor: false,
                     sidebarPath: require.resolve('./sidebars.json'),
                     editUrl: 'https://github.com/prysmaticlabs/documentation/edit/master/website/',
                 },
@@ -85,5 +87,5 @@ module.exports = {
                 },
             },
         ],
-    ],
+    ]
 };

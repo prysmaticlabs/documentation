@@ -196,9 +196,9 @@ Yes this is possible however we recommend against it. We recommend you deposit a
 
 #### Can I add more validators after I am already running one with Prysm?
 
-Adding new validators to your already-running Prysm instance is quite simple! Go through the launchpad process again, generate a new deposit keystore using the Ethereum validator deposit cli, then run the `validator accounts import` command again as you used when you added your first validator key. You can then confirm your validator was added by running `validator accounts list`. Let us know on [discord](https://discord.gg/prysmaticlabs) if you still have issues.
+Adding new validators to your already-running Prysm instance is quite simple! Go through the launchpad process again, generate a new deposit keystore using the Ethereum validator deposit cli, then run the `validator accounts import` command again as you used when you added your first validator key. Note that **you don't need to create a new mnemonic** when you do this. **Restart the validator client** after importing the new keystore for the changes to take effect.
 
-Please note you will need to **restart the validator client** after importing the new one for the changes to take effect.
+You can then confirm your validator was added by running `validator accounts list`. Let us know on [discord](https://discord.gg/prysmaticlabs) if you still have issues.
 
 ### Ethereum proof-of-stake specific questions
 
@@ -230,3 +230,7 @@ Deposits into Ethereum proof-of-stake are one-way in the beginning. Functionalit
 #### What is balance and what is effective balance?
 
 Your validator balance is the actual amount of ETH you have from being a validator in Ethereum. It can go up or down every epoch depending on your participation. Effective balance is a bit different. It is a value that lags behind your actual balance and is used exclusively to determine rewards and penalties for your validator. It has a max value of 32ETH, but your regular balance is uncapped. You can read more about the purpose of effective balance in this excellent post by Attestant [here](https://www.attestant.io/posts/understanding-validator-effective-balance/).
+
+import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
+
+<RequestUpdateWidget />

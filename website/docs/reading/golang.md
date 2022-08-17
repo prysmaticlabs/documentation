@@ -12,3 +12,8 @@ sidebar_label: Golang resources
 * [The Go Programming Language Tour](http://tour.golang.org/)
 * [Getting Started With Go](http://www.youtube.com/watch?v=2KmHtgtEZ1s)
 * [Go Official Website](https://golang.org/)
+
+
+import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
+
+<RequestUpdateWidget />

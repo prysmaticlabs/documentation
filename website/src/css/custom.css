@@ -1,5 +1,9 @@
 :root {
-    --prysm-pink: #ff30a0;
+    --prysm-pink: #c72a7d;
+}
+
+html[data-theme='dark'] {
+    --prysm-pink: #da77ab;
 }
 
 
@@ -9,13 +13,195 @@ a {
     color: var(--prysm-pink);
 }
 
+.footnote {
+    color: #aaa !important;
+}
+
+.footnote:hover {
+    color: #000 !important;
+}
+
 header>h1 {
     font-size: 2rem !important;
+    margin-top: 20px !important;
 }
 
 .markdown>h2 {
     font-size: 1.5rem !important;
 }
+
+.markdown>h3 {
+    font-size: 1.2rem !important;
+}
+
+.panel {
+    border-top: 2px solid #ddd;
+    padding: 20px 20px 25px 20px;
+}
+
+html[data-theme='dark'] .panel {
+    border-top: 2px solid #555;
+}
+
+.panel>a,
+.panel>h2 {
+    text-transform: uppercase;
+    font-size: 20px;
+    letter-spacing: 0.7px;
+    font-weight: 500;
+    margin-bottom: 0;
+    line-height: 33px;
+}
+
+.panel>a,
+.panel>h2 {
+    display: inline-block;
+}
+
+.panel>h3 {
+    display: block;
+    text-transform: uppercase;
+    font-size: 17px;
+    letter-spacing: 0.6px;
+    font-weight: 500;
+    margin-bottom: 0;
+    line-height: 28px;
+}
+
+.panel>p {
+    font-size: 15px;
+    margin-bottom: 0;
+}
+
+.panel.section-title {
+    background-color: #f9f9f9;
+    border-left: 2px solid #ddd;
+    border-right: 2px solid #ddd;
+}
+
+html[data-theme='dark'] .panel.section-title {
+    background-color: #292929;
+    border-top: 2px solid #555;
+    border-left: 2px solid #555;
+    border-right: 2px solid #555;
+}
+
+.panel.secondary-panel.section-title {
+    background-color: #fefefe;
+    border-left: 2px solid #ddd;
+    border-right: 2px solid #ddd;
+}
+
+html[data-theme='dark'] .panel.secondary-panel.section-title {
+    background-color: #2e2e2e;
+    border-top: 2px solid #555;
+    border-left: 2px solid #555;
+    border-right: 2px solid #555;
+}
+
+.panel.secondary-panel {
+    padding: 15px 20px 20px 20px;
+}
+
+.update-request {
+    margin-left: auto;
+    display: block;
+    text-align: right;
+    margin-top: 10px;
+}
+
+
+
+
+
+/* see: https://github.com/facebook/docusaurus/pull/7134/files  */
+/* referenced by: https://github.com/facebook/docusaurus/pull/7134 */
+/* as a fix for wrapping sidebar titles causing buggy behavior (in our case, docs were getting cut off in nested sidebar expandos because after expanding the nested section, a scrollbar appears, which pushes the sidebar content over, but only after docusaurus reads the inner element height, causing the inner sidebar section to expand its height a little less than it needs to, causing bottom sidebar entries to appear cut off. */
+.menu {
+    padding: 0.5rem 0 0.5rem 0.5rem;
+    scrollbar-gutter: stable;
+}
+
+.lastUpdated_3DPF {
+    display: none;
+}
+
+nav.pagination-nav {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+article {
+    margin-bottom: 10px !important;
+}
+
+.footer {
+    padding: 10px !important;
+    display: none !important;
+    /* can remove display style if we want to reintroduce */
+}
+
+footer>.col {
+    text-align: right;
+}
+
+footer>.col a,
+.update-request>a {
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-color: #fcfcfc;
+    font-size: 14px;
+    border-radius: 5px;
+    margin-top: 10px;
+    text-decoration: none;
+    transition-property: all;
+    transition-duration: 0.2s;
+    display: inline-block;
+}
+
+.update-request>a {
+    margin-bottom: 10px;
+}
+
+html[data-theme='dark'] .update-request>a,
+html[data-theme='dark'] footer>.col a {
+    background-color: #111;
+    color: var(--prysm-pink);
+}
+
+footer>.col a:hover,
+.update-request>a:hover {
+    text-decoration: none;
+    background-color: #f8f8f8;
+    border: 1px solid #3578e5;
+}
+
+html[data-theme='dark'] .update-request>a:hover,
+html[data-theme='dark'] footer>.col a:hover {
+    background-color: #333;
+    color: var(--prysm-pink);
+}
+
+
+footer>.col a svg {
+    height: 17px;
+    margin-bottom: 1px;
+}
+
+
+footer.docusaurus-mt-lg {
+    margin-top: 0 !important;
+}
+
+.footer__logo {
+    max-width: 25px;
+    max-height: 25px;
+}
+
+.footer__copyright {
+    font-size: 13px;
+}
+
 
 .navbar {
     background-color: #22292f;
@@ -81,6 +267,7 @@ header>h1 {
         text-align: center;
         margin: auto;
     }
+
     .nav-home {
         margin: auto !important;
     }

@@ -1,10 +1,8 @@
 ---
 id: web3signer
-title: Using Web3Signer
-sidebar_label: Web3Signer
+title: Use Web3Signer
+sidebar_label: Use Web3Signer
 ---
-
-## Using Web3Signer with Prysm
 
 [Web3Signer](https://github.com/ConsenSys/web3signer) is an open-source remote signing service developed by Consensys. Prysm users can use this tool as an alternative to storing keys locally. Web3Signer uses REST APIs.
 
@@ -37,10 +35,6 @@ URLs will only pull once and does not poll. Additional keys can be added or remo
 :::tip Running Prysm with Web3Signer does not need Prysm Wallet Creation
 Most Prysm keymanager types require a corresponding Prysm wallet for storing keys, the web3signer type doesn't use any locally stored Prysm wallet.
 The `--wallet-dir` flag will still be needed if using the Remote Keymanager API for `auth-token` purposes.
-:::
-
-:::warning Web3Signer is currently only supported until Altair Fork
-Bellatrix( The Merge ) it not yet supported by Web3Signer from both Prysm nor Web3Signer sides. Development is underway.
 :::
 
 ## Remote Keymanager API 
@@ -79,3 +73,8 @@ the remote keymanager API only currently supports Web3Signer types, please use t
 :::tip Beacon Chain needs to be synced for use
 Both Keymanager APIs are only supported when the beacon chain syncs.
 :::
+
+
+import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
+
+<RequestUpdateWidget />

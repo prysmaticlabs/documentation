@@ -1,10 +1,10 @@
 ---
 id: bazel
-title: Prysm's Build System, Bazel
-sidebar_label: Why Bazel
+title: About Bazel
+sidebar_label: About Bazel
 ---
 
-This page explains why Prysm uses a special build system, called [Bazel](https://bazel.build) to compile everything in our monorepository.
+This page explains why Prysm uses a special build system called [Bazel](https://bazel.build) to compile everything in our monorepository.
 
 ## Why Bazel?
 
@@ -82,3 +82,8 @@ Everything in Prysm can be built with Bazel using `bazel build //...`. For examp
 ### With Go
 
 Building Prysm with Go is possible, but it will use precompiled cryptography to build the final executable. Additionally, it will not perform the compile-time optimizations Bazel does, and can have unexpected issues as you are relinquishing reproducible, hermetic builds which Bazel provides. We always recommend Bazel as the only way to run Prysm if you are planning on running it.
+
+
+import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
+
+<RequestUpdateWidget />

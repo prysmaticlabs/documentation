@@ -1,12 +1,12 @@
 ---
 id: deterministic
-title: Deterministic, HD wallet 
-sidebar_label: HD wallet
+title: Create a Prysm wallet
+sidebar_label: Create a Prysm wallet
 ---
 
 ## Background
 
-An HD wallet provides the ability to create new validator private keys deterministically from a seed phrase, shown as an english mnemonic following the [BIP-39 standard](https://en.bitcoin.it/wiki/Seed_phrase) upon wallet creation. If you created a deposit using the official [Ethereum launchpad](https://launchpad.ethereum.org/) and want to run Prysm using it, see our dedicated instructions [here](/docs/install/install-with-script).
+Prysm features a built-in hierarchical deterministic (HD) wallet. HD wallets let you create new validator private keys deterministically from a seed phrase, shown as an English mnemonic following the [BIP-39 standard](https://en.bitcoin.it/wiki/Seed_phrase) upon wallet creation. If you created a deposit using the official [Ethereum launchpad](https://launchpad.ethereum.org/) and want to run Prysm using it, see our dedicated instructions [here](/docs/install/install-with-script).
 
 Validator private keys are encrypted with the wallet's password using the [EIP-2335](https://eips.ethereum.org/EIPS/eip-2335) keystore.json standard for storing BLS12-381 private keys. This keystore.json file, along with its derivation path, comprises an **account** in an HD wallet.
 
@@ -125,3 +125,7 @@ You can also run the `accounts list` command **non-interactively** by using the 
 | `--show-deposit-data` | Display raw eth1 tx deposit data for validator accounts.
 | `--show-private-keys` | Display the private keys for validator accounts.
 
+
+import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
+
+<RequestUpdateWidget />
