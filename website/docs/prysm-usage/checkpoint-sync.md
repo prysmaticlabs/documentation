@@ -191,6 +191,10 @@ TODO
 **Will I be able to use Infura as a checkpoint state provider after The Merge?** <br/>
 TODO
 
+**I started a beacon node with checkpoint sync enabled. Can I have other nodes pull checkpoint state from this node right away, or do I need to wait for it to become fully synced?** <br/>
+TODO
+
+
 **Where can I learn more about checkpoint sync?** <br/>
 
  - [Checkpoint Sync Safety](https://www.symphonious.net/2022/05/21/checkpoint-sync-safety/) by Adrian Sutton
