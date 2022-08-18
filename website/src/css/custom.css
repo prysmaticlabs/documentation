@@ -284,7 +284,7 @@ footer.docusaurus-mt-lg {
 }
 
 html[data-theme='dark'] .header-badge {
-    background-color: #1f1f1f;
+    background-color: #333;
 }
 
 .header-badge:hover {
@@ -294,7 +294,7 @@ html[data-theme='dark'] .header-badge {
 }
 
 html[data-theme='dark'] .header-badge:hover {
-    background-color: #262626;
+    background-color: #444;
 }
 
 .header-badge:hover>.badge-avatar {

@@ -6,7 +6,7 @@ sidebar_label: Configure Fee Recipient
 
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
-<HeaderBadgesWidget authors="James,Mick" />
+<HeaderBadgesWidget />
 
 :::caution
 
