@@ -25,7 +25,7 @@ After configuring checkpoint sync, we strongly recommend [verifying the authenti
 
 :::info Knowledge Check
 
-**Not familiar with checkpoint sync?** Consider reading [Nodes and networks](../concepts/nodes-networks.md) before proceeding. 
+**Not familiar with checkpoint sync?** Consider reading [Checkpoint sync: Conceptual overview](../concepts/checkpoint-sync-concept.md) before proceeding. 
 
 :::
 
