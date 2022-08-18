@@ -11,7 +11,7 @@ import JwtGuidancePartial from '@site/docs/partials/_jwt-guidance-partial.md';
 
 [The Merge](https://ethereum.org/en/upgrades/merge/) will fully transition Ethereum's consensus mechanism from proof-of-work to proof-of-stake. This is made possible by the [Beacon Chain](https://ethereum.org/en/upgrades/beacon-chain/), a new Ethereum network layer that implements proof-of-stake consensus. After The Merge, this consensus layer will be combined with Ethereum's execution layer, and miners will be fully replaced by proof-of-stake validators on Ethereum Mainnet.
 
-This guide will walk you through the changes that you need to make in preparation for The Merge. Note that these instructions need to be followed **only if you're running on Ropsten or Sepolia**. After Sepolia has been Merged, client software and documentation will be updated for Goerli-Prater, and then Mainnet.
+This guide will walk you through the changes that you need to make in preparation for The Merge. Note that these instructions need to be followed **only if you're running on a testnet**. After the Goerli-Prater test network has been merged, this guidance will be updated with Mainnet guidance.
 
 :::info New user?
 
@@ -64,12 +64,10 @@ You’re now ready for The Merge. If you have any questions, feel free ask them 
 
 ## Frequently asked questions
 
-**I'm currently running a validator on Ethereum Mainnet. When should I make changes?**
+**I'm currently running a validator on Ethereum Mainnet. When should I make changes?** <br />
+You can make the above changes now if you're running on a testnet. This document will be continuously updated with the latest instructions as we approach Mainnet Merge.
 
-You can make the above changes now. This document will be continuously updated with the latest recommended configuration.
-
-**Can I use IPC post-Merge?**
-
+**Can I use IPC post-Merge?** <br />
 Yes. You also won't have to worry about JWT if you use IPC. Refer to your clients' command-line documentation for IPC configuration parameters.
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';

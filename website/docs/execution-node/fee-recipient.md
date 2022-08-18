@@ -16,31 +16,31 @@ See [Fee Recipient - vNext](./fee-recipient-vNext.md) to review documentation su
 
 :::
 
-**Fee Recipient** is a feature that lets you specify a priority fee recipient address on your validator client instance and beacon node. After [The Merge](https://ethereum.org/en/upgrades/merge/), execution clients will begin depositing priority fees into this address whenever your validator client proposes a new block.
+**Fee Recipient** is a feature that lets you specify a priority fee recipient **wallet address** on your validator client instance and beacon node. Your fee recipient wallet address is a **standard Ethereum wallet address**, just like the wallet address used when sending and receiving tokens from Metamask. After [The Merge](https://ethereum.org/en/upgrades/merge/), execution clients will begin depositing priority fees into this wallet address whenever your validator client proposes a new block. 
 
 ## Background
 
 When users pay gas to submit transactions to the Ethereum network, they can specify a **priority fee**. Priority fees are like tips. End-users use priority fees to incentivize block proposers to prioritize the inclusion of particular transactions in the blocks that they propose.
 
-Miners currently collect these priority fees. After The Merge, proof-of-work consensus will be replaced with proof-of-stake consensus. At this point, validators will collect these priority fees <a class="footnote" href='#footnote-1'>[1]</a>, <a class="footnote" href='#footnote-2'>[2]</a>.
+Miners currently collect these priority fees. After The Merge, proof-of-work consensus will be replaced with proof-of-stake consensus. At this point, validators will collect these priority fees <a class="footnote" href='#footnote-1'>[1]</a>.
 
-Because priority fees are captured by execution clients in the execution layer, validator clients need to tell execution clients where to forward these priority fees. This priority fee “forwarding address” is referred to as your **fee recipient** address.
+Because priority fees are captured by execution clients in the execution layer, validator clients need to tell execution clients where to forward these priority fees. This priority fee “forwarding address” is referred to as your **fee recipient** wallet address.
 
 :::tip Configure this before The Merge
-If you don't configure your fee recipient address before The Merge, your priority fee earnings will be deposited into a [burn address](https://etherscan.io/address/0x0000000000000000000000000000000000000000).
+If you don't configure your fee recipient wallet address before The Merge, your priority fee earnings will be deposited into a [burn address](https://etherscan.io/address/0x0000000000000000000000000000000000000000).
 :::
 
 
 ## Configuring Fee Recipient
 
-Your fee recipient address can be configured in two places: on your **validator client instance** and on your **beacon node**. Configuring fee recipient on your validator client instance lets you configure a different fee recipient address for each validator public key.
+Your fee recipient wallet address can be configured in two places: on your **validator client instance** and on your **beacon node**. Configuring fee recipient on your validator client instance lets you configure a different fee recipient address for each validator public key.
 
-We recommend configuring it in both places, even if you only have one validator public key. Your validator client instance configuration will override the beacon node configuration, while the beacon node configuration will be treated like a backup in the event that your client instance configuration fails.
+We recommend configuring a fee recipient wallet address on both your validator and beacon node, even if you only have one validator public key. Your validator client instance configuration will override the beacon node configuration, while the beacon node configuration will be treated like a backup in the event that your client instance configuration fails.
 
 
 ### Configuring Fee Recipient on your validator client instance
 
-A fee recipient address can be configured on your client instance by using one of the following flags in the Prysm CLI:
+A fee recipient wallet address can be configured on your client instance by using one of the following flags in the Prysm CLI:
 
 <table>
   <tr>
@@ -50,22 +50,22 @@ A fee recipient address can be configured on your client instance by using one o
   <tr>
     <td><code>suggested-fee-recipient</code></td>
     <td>
-    Sets a default ETH address for all validator public keys. <br /> <br /> 
+    Sets a default ETH wallet address for all validator public keys. <br /> <br /> 
     <strong>Example</strong>: <code>--suggested-fee-recipient=0x0123456722E6b0000012BFEBf6177F1D2e9758D9</code> <br /> <br /> 
-    <strong>Note</strong>: This setting is overwritten by the flags below. If you don't configure a Fee Recipient address using one of the flags below, this address will be mapped to all validator public keys.
+    <strong>Note</strong>: This setting is overwritten by the flags below. If you don't configure a fee recipient wallet address using one of the flags below, this wallet address will be mapped to all validator public keys.
     </td>
   </tr>
   <tr>
     <td><code>proposer-settings-file</code></td>
     <td>
-    Sets the local file location for your <code>proposer-settings</code> YAML or JSON configuration. This lets you configure proposer settings like <code>fee_recipient</code> and <code>gas_limit</code> for your validator keys. This lets you override the ETH address specified by <code>suggested-fee-recipient</code> for any number of public keys. <br /> <br /> 
+    Sets the local file location for your <code>proposer-settings</code> YAML or JSON configuration. This lets you configure proposer settings like <code>fee_recipient</code> and <code>gas_limit</code> for your validator keys. This lets you override the ETH wallet address specified by <code>suggested-fee-recipient</code> for any number of public keys. <br /> <br /> 
     <strong>Example</strong>: <code>--proposer-settings-file=./proposer_settings.json</code>
     </td>
   </tr>
   <tr>
     <td><code>proposer-settings-url</code></td>
     <td>
-    A remote <code>proposer-settings</code> configuration endpoint in URL format. This lets you override the ETH address specified by <code>suggested-fee-recipient</code> for any number of public keys. <br /> <br /> 
+    A remote <code>proposer-settings</code> configuration endpoint in URL format. This lets you override the ETH wallet address specified by <code>suggested-fee-recipient</code> for any number of public keys. <br /> <br /> 
     <strong>Example</strong>: <code>--proposer-settings-url=http://example.com/api/getProposerSettings</code> <br /> <br /> 
     <strong>Note</strong>: JSON should be delivered as a JSON payload, not as a JSON file. Your client will issue a GET request and expects the response <code>Content-Type</code> header to be <code>application/json</code>.
     </td>
@@ -77,16 +77,16 @@ A fee recipient address can be configured on your client instance by using one o
 
 An example invocation: `./prysm.sh validator --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9`. 
 
-If you don't see any errors after issuing one of the above commands, your fee recipient address has been successfully configured.
+If you don't see any errors after issuing one of the above commands, your fee recipient wallet address has been successfully configured.
 
 
 #### Fee Recipient JSON Config File
 
-:::warning Breaking changes from 2.1.3 
-`fee-recipient-config-file` and `fee-recipient-config-url` flags are deprecated and have been replaced with `proposer-settings-file` and `proposer-settings-url` flags.
+:::warning Breaking changes
+`fee-recipient-config-file` and `fee-recipient-config-url` flags are deprecated and have been replaced with `proposer-settings-file` and `proposer-settings-url` flags as of Prysm v2.1.3.
 :::
 
-If you use either `proposer-settings-file` or `proposer-settings-url` to specify your fee recipient address, your YAML/JSON configuration should follow this schema:
+If you use either `proposer-settings-file` or `proposer-settings-url` to specify your fee recipient wallet address, your YAML/JSON configuration should follow this schema:
 
 ```
 ---
@@ -124,7 +124,7 @@ JSON example:
 ```
 <br />
 
-The above JSON demonstrates configuring two 1:1 mappings between `validator public key`:`fee_recipient` and a default `fee_recipient`. In this case, the `default_config` fee recipient address would apply to all validator public keys not specified in `proposer_config`. JSON configuration members are listed in the following table:
+The above JSON demonstrates configuring two 1:1 mappings between `validator public key`:`fee_recipient` and a default `fee_recipient`. In this case, the `default_config` fee recipient wallet address would be mapped to all validator public keys not specified in `proposer_config`. JSON configuration members are listed in the following table:
 
 <br />
 
@@ -138,7 +138,7 @@ The above JSON demonstrates configuring two 1:1 mappings between `validator publ
     <td>
     Optional. Your validator client instance’s public key. <br /> <br /> 
     <strong>Type:</strong> Validator public key. 98 characters long hexstring.<br /> <br /> 
-    <strong>Note:</strong> Use this to map a single validator instance public key to a single fee recipient ETH address. <br /> <br /> 
+    <strong>Note:</strong> Use this to map a single validator instance public key to a single fee recipient ETH wallet address. <br /> <br /> 
     <strong>Example:</strong> <code>"0x01234567155ad77931185101128655c0191bd0214c201ca48ed887f6c4c6adf334070efcd75140eada5ac83a92506dd7a"</code>
     </td>
   </tr>
@@ -146,8 +146,8 @@ The above JSON demonstrates configuring two 1:1 mappings between `validator publ
     <td><code>proposer_config.fee_recipient</code></td>
     <td>
     Optional. Required if validator instance public key is provided via <code>proposer_config</code>.  <br /> <br /> 
-    <strong>Type:</strong> ETH address. 42 characters long hexstring. <br /> <br /> 
-    <strong>Note:</strong> Use this to map a single validator key to a single ETH fee recipient address.<br /> <br /> 
+    <strong>Type:</strong> ETH wallet address. 42 characters long hexstring. <br /> <br /> 
+    <strong>Note:</strong> Use this to map a single validator key to a single ETH fee recipient wallet address.<br /> <br /> 
     <strong>Example:</strong> <code>"0x012345670FCE8a85ec7055A5F8b2bE214B3DaeFd3"</code>
     </td>
   </tr>
@@ -170,8 +170,8 @@ The above JSON demonstrates configuring two 1:1 mappings between `validator publ
     <td><code>default_config.fee_recipient</code></td>
     <td>
     Required. Sets a default fee recipient ETH address. <br /> <br /> 
-    <strong>Type:</strong> ETH address. 42 characters long hexstring. <br /> <br /> 
-    <strong>Note:</strong> This sets the default ETH address for all remaining validator public keys that don’t have 1:1 mapping already from the <code>proposer_config</code> member.<br /> <br />
+    <strong>Type:</strong> ETH wallet address. 42 characters long, hexstring. <br /> <br /> 
+    <strong>Note:</strong> This sets the default ETH wallet address for all remaining validator public keys that don’t have 1:1 mapping already from the <code>proposer_config</code> member.<br /> <br />
     <strong>Example:</strong> <code>"0x012345670FCE8a85ec7055A5F8b2bE214B3DaeFd3"</code> 
     </td>
   </tr>
@@ -189,8 +189,7 @@ The above JSON demonstrates configuring two 1:1 mappings between `validator publ
 
 ### Configuring Fee Recipient on your beacon node
 
-A fee recipient address can be configured on your beacon node instance by using the `suggested-fee-recipient` flag.
-
+A fee recipient wallet address can be configured on your beacon node instance by using the `suggested-fee-recipient` flag.
 
 <table>
   <tr>
@@ -200,7 +199,7 @@ A fee recipient address can be configured on your beacon node instance by using 
   <tr>
     <td><code>suggested-fee-recipient</code></td>
     <td>
-    Sets a default ETH address for all validator public keys. <br /> <br />
+    Sets a default ETH wallet address for all validator public keys. <br /> <br />
     <strong>Example</strong>: <code>--suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code> <br /> <br />
     <strong>Note</strong>: When a fee recipient address is configured on both the validator client instance and beacon node, the validator client instance configuration will be prioritized, and the beacon node configuration will function as a fallback configuration. 
     </td>
@@ -217,9 +216,7 @@ Note that when configuring fee recipient on your beacon node, the beacon node wi
 Footnotes:
 
 <!-- markdown links won't render alongside html elements - have to use anchors -->
-<strong id="footnote-1">1.</strong> The <a href='https://github.com/ethereum/consensus-specs/blob/master/specs/bellatrix/validator.md#block-proposal'>Bellatrix -- Honest Validator spec</a> contains Fee Recipient implementation details pertaining to validator clients. <br />
-
-<strong id="footnote-2">2.</strong> The <a href='https://github.com/ethereum/consensus-specs/blob/master/specs/bellatrix/beacon-chain.md#executionpayload'>Bellatrix -- The Beacon Chain spec</a> contains Fee Recipient implementation details pertaining to beacon nodes.
+<strong id="footnote-1">1.</strong> The <a href='https://github.com/ethereum/consensus-specs/blob/master/specs/bellatrix/validator.md#block-proposal'>Bellatrix -- Honest Validator spec</a> contains Fee Recipient implementation details pertaining to validator clients. The <a href='https://github.com/ethereum/consensus-specs/blob/master/specs/bellatrix/beacon-chain.md#executionpayload'>Bellatrix -- The Beacon Chain spec</a> contains Fee Recipient implementation details pertaining to beacon nodes. <br />
 
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
