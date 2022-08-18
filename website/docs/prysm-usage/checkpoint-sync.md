@@ -19,9 +19,8 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 **Checkpoint sync** is a feature that significantly speeds up the initial sync between your beacon node and the Beacon Chain. With checkpoint sync configured, your beacon node will begin syncing from a recently finalized checkpoint instead of syncing from genesis. This can make installations, validator migrations, recoveries, and testnet deployments *way* faster.
 
-This how-to walks you through two checkpoint sync configuration methods: syncing via **network**, and syncing via **file**. Syncing via network is more straightforward, so we recommend using this method.
+This how-to walks you through two checkpoint sync configuration methods: syncing via **network**, and syncing via **file**. Syncing via network is the method we recommend to most users because it's more straightforward. After configuring checkpoint sync, we strongly recommend [verifying the authenticity of your beacon node's checkpoint](#verify-the-authenticity-of-your-beacon-nodes-checkpoint) as a way to "trust but verify" the integrity of your checkpoint data.
 
-After configuring checkpoint sync, we strongly recommend [verifying the authenticity of your beacon node's checkpoint](#verify-the-authenticity-of-your-beacon-nodes-checkpoint) as a way to "trust but verify" the integrity of your checkpoint data.
 
 :::info Knowledge Check
 
@@ -31,7 +30,7 @@ After configuring checkpoint sync, we strongly recommend [verifying the authenti
 
 ## Option 1: Configure checkpoint sync via network request
 
-Syncing via network is the method we recommend to nontechnical users. Start your Prysm beacon node with the `--checkpoint-sync-url` flag set to a fully synced beacon node's RPC gateway provider endpoint. This endpoint is usually exposed via port `3500`. Set the `--genesis-beacon-api-url` flag to the same URL if you want to fetch the genesis state along with the `BeaconState` and `SignedBeaconBlock`.
+Start your Prysm beacon node with the `--checkpoint-sync-url` flag set to a fully synced beacon node's RPC gateway provider endpoint. This endpoint is usually exposed via port `3500`. Set the `--genesis-beacon-api-url` flag to the same URL if you want to fetch the genesis state along with the `BeaconState` and `SignedBeaconBlock`.
 
 The following command starts a beacon node with checkpoint sync configured to pull checkpoint state from another local beacon node's RPC endpoint using port `3500`:
 
