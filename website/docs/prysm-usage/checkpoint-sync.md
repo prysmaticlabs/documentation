@@ -21,8 +21,9 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 **Checkpoint sync** is a feature that significantly speeds up the initial sync between your beacon node and the Beacon Chain. With checkpoint sync configured, your beacon node will begin syncing from a recently finalized checkpoint instead of syncing from genesis. This can make installations, validator migrations, recoveries, and testnet deployments *way* faster.
 
-This how-to walks you through two checkpoint sync configuration methods: syncing via **network**, and syncing via **file**. After configuring checkpoint sync, we strongly recommend [verifying the authenticity of your beacon node's checkpoint](#verify-the-authenticity-of-your-beacon-nodes-checkpoint) as a way to "trust but verify" the integrity of your checkpoint data.
+This how-to walks you through two checkpoint sync configuration methods: syncing via **network**, and syncing via **file**. Syncing via network is more straightforward, so we recommend using this method.
 
+After configuring checkpoint sync, we strongly recommend [verifying the authenticity of your beacon node's checkpoint](#verify-the-authenticity-of-your-beacon-nodes-checkpoint) as a way to "trust but verify" the integrity of your checkpoint data.
 
 ## Background
 
