@@ -86,11 +86,14 @@ Familiarity with this lifecycle can help conceptualize the difference between **
 
 Let's describe each of the above epochs:
 
-1. Epoch 1 is finalized.
-2. Epoch 2 is justified, but its first block is finalized. This block is Ethereum's most recently finalized checkpoint.
-3. Epoch 3 is justified, including the block in its first slot. This block could become the next checkpoint.
-4. Epoch 4 was just proposed. Its first block could also become the next checkpoint.
-5. Epoch 5 is in progress.
+1. **Epoch 1**: All blocks are finalized.
+2. **Epoch 2**: All blocks are justified, but its first block is finalized. This block is Ethereum's most recently finalized checkpoint.
+3. **Epoch 3**: All blocks are justified, including the block in its first slot. This block could become the next checkpoint.
+4. **Epoch 4**: All blocks are proposed, none are justified. Its first block could become the next checkpoint.
+5. **Epoch 5**: In progress - blocks are being proposed, none are justified. Its first block could become the next checkpoint.
+
+
+TODO: explain that epochs aren't units of review - nodes process one block at a time without caring about epoch metadata, except whether or not the block is on an epoch boundary
 
 TODO: explain the conditions that must be met for a checkpoint to be a candidate, vs justified, vs finalized
 
