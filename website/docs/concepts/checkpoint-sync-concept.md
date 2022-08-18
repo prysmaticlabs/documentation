@@ -64,7 +64,7 @@ It can be helpful to think of Ethereum as a "world computer" with a processor an
 
 ### Justification, finality, and checkpoints
 
-Ethereum's nodes are responsible for broadcasting, verifying, and finalizing transactions as they're submitted by users and apps. **Finality** describes a state in which the probability of transaction reversal is near-zero. Transactions become finalized when they're included within a block that gets finalized.
+Ethereum's nodes are responsible for proposing, verifying, and **finalizing** transactions as they're submitted by users and apps. **Finality** describes a state in which the probability of transaction reversal is near-zero. Transactions become finalized when they're included within a block that gets finalized.
 
 Let's imagine that Bob wants to send Alice some ETH. In the happy scenario, Bob's transaction would flow through the following (oversimplified) transaction lifecycle:
 
