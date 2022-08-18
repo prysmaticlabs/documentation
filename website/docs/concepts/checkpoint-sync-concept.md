@@ -28,7 +28,7 @@ This conceptual overview will help you understand how checkpoint sync works unde
 
 Ethereum is a decentralized **network** of **nodes** that communicate via peer-to-peer connections. These connections are formed by computers running Ethereum's specialized client software (like Prysm):
 
-<img style={{maxWidth: 461 + 'px'}} src={NetworkPng} />
+<img src={NetworkPng} />
 
 An Ethereum **node** is a running instance of Ethereum's client software. This software is responsible for running the Ethereum blockchain. There are two primary types of nodes in Ethereum: **execution nodes** and **beacon nodes**. Colloquially, a "node" refers to an execution node and beacon node working together:
 
@@ -41,7 +41,7 @@ If you're not familiar with the various types of nodes and networks that power t
 
 Ethereum's "world state" is stored in a blockchain data structure. At the most rudimentary level, a blockchain is a linked list with interesting properties. Like a linked list, Ethereum's blockchain has a head and a tail:
 
-<img style={{maxWidth: 461 + 'px'}} src={BlockchainSimplified} />
+<img style={{maxWidth: 616 + 'px'}} src={BlockchainSimplified} />
 
 Ethereum's tail is called its **genesis block** - it's the first block that was ever created. Its head is referred to as the "head of the chain". As users and applications submit transactions to the network, new blocks are proposed and ultimately finalized.
 
