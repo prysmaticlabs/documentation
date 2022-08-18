@@ -39,11 +39,11 @@ If you're not familiar with the various types of nodes and networks that power t
 
 ### Blockchain data structure
 
-Ethereum's "world state" is stored in a blockchain data structure. At the most rudimentary level, a blockchain is a linked list with interesting properties. Like a linked list, Ethereum's blockchain has a head and a tail:
+Ethereum's "world state" is stored in a blockchain data structure. At the most rudimentary level, a blockchain is a [linked list](https://en.wikipedia.org/wiki/Linked_list) on steroids. Like a linked list, Ethereum's blockchain is a sequence of blocks that starts with a "tail" and ends at its "head". Ethereum's tail is called its **genesis block** - the first block that was ever created. Its head is referred to as the "head of the chain".
 
 <img src={BlockchainSimplified} />
 
-Ethereum's tail is called its **genesis block** - it's the first block that was ever created. Its head is referred to as the "head of the chain". As users and applications submit transactions to the network, new blocks are proposed and ultimately finalized.
+Ethereum's nodes work together to process one batch of transactions at a time. These batches are Ethereum's blocks. As users and applications submit transactions to the network, new blocks are proposed and ultimately finalized.
 
 ### Finality and checkpoints
 
