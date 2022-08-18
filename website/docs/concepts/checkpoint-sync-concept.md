@@ -7,7 +7,7 @@ import CheckpointSyncPresent from '@site/static/img/checkpoint-sync-present.png'
 import CheckpointSyncAbsent from '@site/static/img/checkpoint-sync-absent.png';
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
-<HeaderBadgesWidget />
+<HeaderBadgesWidget commaDelimitedContributors="Kasey,Mick,James" lastVerifiedDateString="August 18th, 2022" lastVerifiedVersionString="v2.1.4" />
 
 :::info Looking for the how-to?
 
