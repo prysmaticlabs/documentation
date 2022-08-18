@@ -191,6 +191,10 @@ The following table of contents provides a descriptive overview of Prysm's docum
 <p>Learn about the various node types, networks, network layers, and how it all relates.</p>
 </div>
 <div class='panel'>
+<a href='concepts/checkpoint-sync-concept'>Checkpoint sync</a>
+<p>Look under the hood of checkpoint sync, a feature that lets beacon nodes sync from a recently finalized checkpoint instead of syncing from genesis.</p>
+</div>
+<div class='panel'>
 <a href='wallet/introduction'>Keys, wallets, and accounts</a>
 <p>Learn how keys, wallets, and accounts relate to each other within the context of Prysm and Ethereum.</p>
 </div>
