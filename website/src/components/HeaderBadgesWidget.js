@@ -22,15 +22,19 @@ export const HeaderBadgesWidget = ({ authors }) => {
 		<BrowserOnly>
 			{() =>
 				<div class="header-badges">
+					{/*
 					{authors.split(',').map(buildAuthorBadge)}
+					*/}
 					<a class="header-badge" href={`https://github.com/prysmaticlabs/documentation/issues/new?title=Docs update request: ${new URL(window.location.href).pathname}&body=Source: ${window.location.href}%0A%0ARequest: (how can we help?)`}>
 						<span class="badge-avatar emoji-avatar">✏️</span>
 						<span class="badge-label">Request an update</span>
 					</a>
+					{/*
 					<a class="header-badge" href="https://docs.prylabs.network/docs/vNext/214-rc">
 						<span class="badge-avatar emoji-avatar">✔️</span>
 						<span class="badge-label">Last verified on <strong>August 4th</strong> using Prysm v2.1.4-rc0</span>
 					</a>
+					*/}
 				</div>
 			}
 		</BrowserOnly>
