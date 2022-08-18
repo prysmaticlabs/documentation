@@ -47,9 +47,20 @@ Ethereum's "world state" is stored in a blockchain data structure. At the most r
 
 Ethereum's nodes work together to process one batch of transactions at a time. These batches are Ethereum's blocks. As users and applications submit transactions to the network, new blocks are proposed and ultimately finalized.
 
+
+### Blocks, epochs, and slots
+
+While transactions are grouped into blocks, blocks are grouped into **epochs**. An epoch is a fixed-length timespan lasting 384 seconds. Epochs are divided into 32 slots, each lasting 12 seconds. Every slot is an opportunity for one new block of transactions to be tentatively accepted by the Ethereum network. When a new epoch begins, the previous epoch and all of its blocks are marked as finalized.
+
+If you think of Ethereum as being a sort of "world computer", its processor makes tentative changes to its data once every slot, or once every 12 seconds. These tentative changes are finalized once every epoch, or once every 32 slots, or once every 384 seconds.
+
+
+
 ### Finality and checkpoints
 
-Ethereum's nodes are responsible for broadcasting, verifying, and finalizing transactions as they're submitted by users and apps. **Finality** describes a state in which the probability of transaction reversal is near-zero. To understand how Ethereum handles finality, let's imagine that Bob wants to send Alice some ETH. In the best case scenario, Bob's transaction would flow through the following (oversimplified) transaction lifecycle:
+Ethereum's nodes are responsible for broadcasting, verifying, and finalizing transactions as they're submitted by users and apps. **Finality** describes a state in which the probability of transaction reversal is near-zero. 
+
+To understand how Ethereum handles finality, let's imagine that Bob wants to send Alice some ETH. In the best case scenario, Bob's transaction would flow through the following (oversimplified) transaction lifecycle:
 
  1. **Transaction signed**: Bob signs a transaction that moves ETH from his wallet to Alice's wallet using the private key associated with his wallet.
  2. **Transaction submitted**: Bob submits this transaction to the Ethereum network. All nodes receive it.
@@ -86,6 +97,16 @@ Checkpoint sync speeds things up by telling your beacon node to sync from a rece
 <img src={CheckpointSyncPresent} /> 
 
 Note that currently, Prysm's implementation syncs forward-only. The process of syncing backwards towards the genesis block is called "backfilling", and will be supported in a future Prysm release. Backfilling isn't required to run a validator - it's only required if you want to run an archive node, serve peer node requests, or query chain history through your local beacon node.
+
+
+## Frequently asked questions
+
+**Where can I learn more about checkpoint sync and related concepts?** <br/>
+
+ - [Gasper](https://ethereum.org/en/developers/docs/consensus-mechanisms/pos/gasper/) describes the concept of finality in the context of Gasper, the consensus mechanism securing proof-of-stake Ethereum.
+ - [What happens after finality in Ethereum PoS](https://hackmd.io/@prysmaticlabs/finality) provides an in-depth explanation of finality.
+ - [Proof of Stake](https://ethereum.org/pt/developers/docs/consensus-mechanisms/pos/) is a great place to learn about Ethereum Proof of Stake.
+
 
 
 <RequestUpdateWidget />
