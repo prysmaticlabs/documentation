@@ -77,10 +77,11 @@ Let's imagine that Bob wants to send Alice some ETH. In the happy scenario, Bob'
  7. **Block justified**: After a sufficient number and percentage of committee members have attested to the legitimacy of the proposed block, the block is marked as "justified".
  8. **Block finalized**: After the next epoch is justified, the epoch containing the block containing Bob's transaction is "finalized".
 
-Familiarity with this lifecycle can help conceptualize the difference between **justified blocks**, **finalized blocks** and **checkpoints**. Ethereum uses checkpoints to set certain blocks "in stone". At any given time, Ethereum's current "candidate checkpoint" block is the first block in the first slot of the first epoch following the most recent checkpoint.
+Familiarity with this lifecycle can help conceptualize the difference between **justified blocks**, **finalized blocks** and **checkpoints**. Ethereum uses checkpoints to set certain blocks "in stone". At any given time, Ethereum's current "candidate checkpoint" block is located in the first slot of the first epoch following the most recent checkpoint:
 
 <img src={Finality} />
 
+In the above diagram, 
 
 Checkpoints are created...
 
