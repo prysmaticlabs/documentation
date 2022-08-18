@@ -84,7 +84,7 @@ Familiarity with this lifecycle can help conceptualize the difference between **
 Let's describe each of the above epochs:
 
 1. Epoch 1 is finalized.
-2. Epoch 2 is justified, but its first block is finalized. This is Ethereum's most recently finalized checkpoint.
+2. Epoch 2 is justified, but its first block is finalized. This block is Ethereum's most recently finalized checkpoint.
 3. Epoch 3 is justified, including the block in its first slot. This block could become the next checkpoint.
 4. Epoch 4 was just proposed. Its first block could also become the next checkpoint.
 5. Epoch 5 is in progress.
