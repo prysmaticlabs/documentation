@@ -11,7 +11,7 @@ import TabItem from '@theme/TabItem';
 
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
-<HeaderBadgesWidget authors="Kasey,Mick,James" />
+<HeaderBadgesWidget authors="Kasey,Mick,James" lastVerifiedDateString="August 18th, 2022" lastVerifiedVersionString="v2.1.4" />
 
 :::caution
 
