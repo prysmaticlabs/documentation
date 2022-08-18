@@ -10,7 +10,7 @@ import BlockchainSimplified from '@site/static/img/blockchain-simplified.png';
 import ClientStackPng from '@site/static/img/client-stack.png';
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
-<HeaderBadgesWidget commaDelimitedContributors="Kasey,Mick,James" lastVerifiedDateString="August 18th, 2022" lastVerifiedVersionString="v2.1.4" />
+<HeaderBadgesWidget commaDelimitedContributors="Kasey,Mick,James" />
 
 :::info Looking for the how-to?
 
