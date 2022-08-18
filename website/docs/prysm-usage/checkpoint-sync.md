@@ -201,10 +201,10 @@ No. Mainnet's genesis state is embedded within Prysm.
 Yes. You won't be able to use Infura as an execution node endpoint provider post-Merge (see: [Prepare for The Merge](../prepare-for-merge.md)), but you can use it as a checkpoint state provider post-Merge.
 
 **I started a beacon node with checkpoint sync enabled. Can I have other nodes pull checkpoint state from this node right away, or do I need to wait for it to become fully synced?** <br/>
-TODO
+Block and state are immediately finalized upon import, so your first node should be able to serve checkpoint sync requests to other clients without having to wait.
 
 **Does my execution client need to be fully synced before my beacon node can use checkpoint sync?** <br/>
-TODO
+Similar to what happens when you sync from genesis, if your execution client isn't fully synced, your beacon node will go into optimistic sync mode. You'll be able to follow the chain, but any validators connected to your beacon node won't be able to propose.
 
 **Where can I learn more about checkpoint sync?** <br/>
  - [Checkpoint Sync Safety](https://www.symphonious.net/2022/05/21/checkpoint-sync-safety/) by Adrian Sutton
