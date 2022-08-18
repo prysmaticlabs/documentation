@@ -41,7 +41,7 @@ If you're not familiar with the various types of nodes and networks that power t
 
 ### Blockchain data structure
 
-Ethereum's "world state" is stored in a blockchain data structure. At the most rudimentary level, a blockchain is a [linked list](https://en.wikipedia.org/wiki/Linked_list) on steroids. Like a linked list, Ethereum's blockchain is a sequence of blocks that starts with a "tail" and ends at its "head". Ethereum's tail is called its **genesis block** - the first block that was ever created. Its head is referred to as the "head of the chain":
+Ethereum's "world state" is stored in a blockchain data structure. At the most rudimentary level, a blockchain is a [linked list](https://en.wikipedia.org/wiki/Linked_list) on steroids. Like a linked list, Ethereum's blockchain is a sequence of items that starts with a "tail" and ends at its "head". Ethereum's tail is called its **genesis block** - the first block that was ever created. Its head is referred to as the "head of the chain":
 
 <img src={BlockchainSimplified} />
 
@@ -79,7 +79,7 @@ Beacon nodes maintain a local copy of the Ethereum's [Beacon Chain](https://ethe
 
 This sync process can take a very long time - on the magnitude of days to weeks. 
 
-## Syncing with checkpoint sync
+### Syncing with checkpoint sync
 
 Checkpoint sync speeds things up by telling your beacon node to sync from a recently finalized checkpoint, allowing it to skip over the majority of the Beacon Chain's history:
 
