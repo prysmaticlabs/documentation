@@ -29,7 +29,7 @@ When users stake 32 ETH to participate in Ethereum's proof-of-stake consensus me
 
 <br />
 
-<img style={{maxWidth: 651 + 'px'}} src={ClientStackPng} /> 
+<img src={ClientStackPng} /> 
 
 <br />
 
@@ -65,7 +65,7 @@ There are other live, **test** instances of Ethereum that mint and manage **test
 
 Every Ethereum network is divided into two layers: **execution layer** (EL) and **consensus layer** (CL):
 
-<img style={{maxWidth: 323 + 'px'}} src={NetworkLayersPng} /> 
+<img src={NetworkLayersPng} /> 
 
 <br />
 
