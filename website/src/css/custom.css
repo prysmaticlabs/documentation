@@ -266,7 +266,6 @@ footer.docusaurus-mt-lg {
     display: block;
     margin-top: -15px !important;
     margin-bottom: 30px;
-
     /*pragmatism over perfection*/
 }
 
@@ -279,7 +278,8 @@ footer.docusaurus-mt-lg {
     background-color: #efefef;
     padding: 3px 20px 3px 3px;
     height: 31px;
-    margin-right: 10px;
+    margin-right: 6px;
+    margin-bottom: 6px;
     vertical-align: top;
     white-space: nowrap;
     overflow: hidden;
@@ -358,6 +358,10 @@ html[data-theme='dark'] .header-badge:hover>.badge-label {
 
     .nav-home {
         margin: auto !important;
+    }
+
+    .header-badge {
+        max-width: 200px;
     }
 }
 
