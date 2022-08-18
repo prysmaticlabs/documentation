@@ -6,7 +6,7 @@ import JwtGenerationPartial from '@site/docs/partials/_jwt-generation-partial.md
 
 ## Configure execution node
 
-Your execution node will need to **expose a new port** and then **use the JWT token** to authenticate your beacon node's connection to that port. This new port exposes your execution node's **Engine API**, a new API that facilitates Ethereum's transition to a proof-of-stake consensus mechanism.
+If you're running on a testnet, your execution node will need to **expose a new port** and then **use the JWT token** to authenticate your beacon node's connection to that port. This new port exposes your execution node's **Engine API**, a new API that facilitates Ethereum's transition to a proof-of-stake consensus mechanism.
 
 Using the latest version of your execution client software, issue the following command to configure your execution node's JWT token and Engine API endpoint:
 
@@ -29,10 +29,7 @@ Using the latest version of your execution client software, issue the following 
         <pre><code>Nethermind.Runner --config sepolia --JsonRpc.Enabled true --JsonRpc.JwtSecretFile=path/to/jwt.hex --Merge.TerminalTotalDifficulty 17000000000000000</code></pre>
       </TabItem>
       <TabItem value="goerli-prater">
-        <p>With JWT configured (see <a href='https://docs.prylabs.network/docs/vNext/214-rc'>our v2.1.4-rc0 guide</a>):</p>
         <pre><code>Nethermind.Runner --config goerli --JsonRpc.Enabled true --JsonRpc.Enabled true --JsonRpc.JwtSecretFile=path/to/jwt.hex</code></pre>
-        <p>Without JWT configured:</p>
-        <pre><code>Nethermind.Runner --config goerli --JsonRpc.Enabled true</code></pre>
       </TabItem>
       <TabItem value="mainnet">
         <div class="admonition admonition-caution alert alert--warning">
@@ -57,10 +54,7 @@ Using the latest version of your execution client software, issue the following 
         <pre><code>besu --network=sepolia --rpc-http-enabled --engine-jwt-enabled=true --engine-jwt-secret=path/to/jwt.hex  --engine-host-allowlist="*" --override-genesis-config="terminalTotalDifficulty=17000000000000000"</code></pre>
       </TabItem>
       <TabItem value="goerli-prater">
-        <p>With JWT configured (see <a href='https://docs.prylabs.network/docs/vNext/214-rc'>our v2.1.4-rc0 guide</a>):</p>
         <pre><code>besu --network=goerli --rpc-http-enabled --engine-jwt-enabled=true --engine-jwt-secret=path/to/jwt.hex  --engine-host-allowlist="*"</code></pre>
-        <p>Without JWT configured:</p>
-        <pre><code>besu --network=goerli --rpc-http-enabled</code></pre>
       </TabItem>
       <TabItem value="mainnet">
         <div class="admonition admonition-caution alert alert--warning">
@@ -85,10 +79,7 @@ Using the latest version of your execution client software, issue the following 
         <pre><code>geth --sepolia --http --http.api eth,net,engine,admin --authrpc.vhosts="localhost" --authrpc.jwtsecret=path/to/jwt.hex --override.terminaltotaldifficulty 17000000000000000</code></pre>
       </TabItem>
       <TabItem value="goerli-prater">
-        <p>With JWT configured (see <a href='https://docs.prylabs.network/docs/vNext/214-rc'>our v2.1.4-rc0 guide</a>):</p>
         <pre><code>geth --goerli --http --http.api eth,net,engine,admin --authrpc.vhosts="localhost" --authrpc.jwtsecret=path/to/jwt.hex</code></pre>
-        <p>Without JWT configured:</p>
-        <pre><code>geth --goerli --http --http.api eth,net,engine,admin</code></pre>
       </TabItem>
       <TabItem value="mainnet">
         <div class="admonition admonition-caution alert alert--warning">
@@ -129,10 +120,7 @@ If you're running a validator, specifying a `suggested-fee-recipient` wallet add
       </TabItem>
       <TabItem value="goerli-prater">
         <p>Download the <a href='https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz'>Prater genesis state from Github</a>.</p>
-        <p>With JWT configured (see <a href='https://docs.prylabs.network/docs/vNext/214-rc'>our v2.1.4-rc0 guide</a>):</p>
         <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8551 --prater --jwt-secret=path/to/jwt.hex --genesis-state=genesis.ssz --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
-        <p>Without JWT configured:</p>
-        <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8545 --prater --genesis-state=genesis.ssz --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
       </TabItem>
       <TabItem value="mainnet">
         <div class="admonition admonition-caution alert alert--warning">
@@ -159,10 +147,7 @@ If you're running a validator, specifying a `suggested-fee-recipient` wallet add
     </TabItem>
     <TabItem value="goerli-prater">
       <p>Download the <a href='https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz'>Prater genesis state from Github</a>.</p>
-      <p>With JWT configured (see <a href='https://docs.prylabs.network/docs/vNext/214-rc'>our v2.1.4-rc0 guide</a>):</p>
       <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8551 --prater --jwt-secret=path/to/jwt.hex --genesis-state=genesis.ssz --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
-      <p>Without JWT configured:</p>
-      <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8545 --prater --genesis-state=genesis.ssz --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
     </TabItem>
     <TabItem value="mainnet">
       <div class="admonition admonition-caution alert alert--warning">

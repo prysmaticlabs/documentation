@@ -90,12 +90,12 @@ At a high level, we'll walk through the following flow:
 
 - **If you're staking ETH as a validator, try this guide on a testnet first**, *then* mainnet.
 - **Keep things simple**. This guidance assumes all client software will run on a single machine.
-- **Review the latest advisories** for both [testnet](https://prater.launchpad.ethereum.org/en/overview) and [mainnet](https://launchpad.ethereum.org/en/).
+- **Review the latest advisories** for the network(s) that you're using: [Goerli-Prater](https://goerli.launchpad.ethereum.org/en/), [Mainnet](https://launchpad.ethereum.org/en/).
 - Review all of our [published security best practices](./security-best-practices/).
 - **Join the community** - join our [mailing list](https://groups.google.com/g/prysm-dev), the [Prysm Discord server](https://discord.gg/prysmaticlabs), [r/ethstaker](https://www.reddit.com/r/ethstaker/), and the [EthStaker Discord server](https://discord.io/ethstaker) for updates and support.
 
 
-## Step 2: Install Prysm, generate secret
+## Step 2: Install Prysm
 
 First, create a folder called `ethereum` on your SSD, and then two subfolders within it: `consensus` and `execution`:
 
@@ -113,7 +113,6 @@ First, create a folder called `ethereum` on your SSD, and then two subfolders wi
     <p>Navigate to your <code>consensus</code> directory and run the following commands:</p>
 
 ```
-SET USE_PRYSM_VERSION=v2.1.4-rc.0
 mkdir prysm && cd prysm
 curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.bat --output prysm.bat
 reg add HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1
@@ -125,7 +124,6 @@ reg add HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1
     <p>Navigate to your <code>consensus</code> directory and run the following commands:</p>
 
 ```
-USE_PRYSM_VERSION=v2.1.4-rc.0
 mkdir prysm && cd prysm
 curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --output prysm.sh && chmod +x prysm.sh
 ```
@@ -133,6 +131,14 @@ curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --out
   <p>This will download the Prysm client and make it executable.</p>
   </TabItem>
 </Tabs>
+
+### Generate JWT secret (testnets only)
+
+:::info Running on Mainnet? Skip to Step 3.
+
+Mainnet doesn't yet require JWT. If you're running on Mainnet, you can skip the rest of this step.
+
+:::
 
 <JwtGenerationPartial />
 
@@ -160,10 +166,7 @@ In this step, you'll install an execution-layer client that Prysm's beacon node 
         <pre><code>Nethermind.Runner --config mainnet --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true</code></pre>
       </TabItem>
       <TabItem value="goerli-prater">
-        <p>With JWT configured (see <a href='https://docs.prylabs.network/docs/vNext/214-rc'>our v2.1.4-rc0 guide</a>):</p>
-        <pre><code>Nethermind.Runner --config goerli --JsonRpc.Enabled true --JsonRpc.Enabled true --JsonRpc.JwtSecretFile=path/to/jwt.hex</code></pre>
-        <p>Without JWT configured:</p>
-        <pre><code>Nethermind.Runner --config goerli --JsonRpc.Enabled true</code></pre>
+        <pre><code>Nethermind.Runner --config goerli --JsonRpc.Enabled true  --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.JwtSecretFile=../consensus/jwt.hex --JsonRpc.Host=0.0.0.0</code></pre>
       </TabItem>
       <TabItem value="sepolia">
         <pre><code>Nethermind.Runner --config sepolia --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.JwtSecretFile=../consensus/jwt.hex --JsonRpc.Host=0.0.0.0 --Merge.TerminalTotalDifficulty 17000000000000000</code></pre>
@@ -193,10 +196,7 @@ curl localhost:8545/health
         <pre><code>besu --network=mainnet --rpc-http-enabled</code></pre>
       </TabItem>
       <TabItem value="goerli-prater">
-        <p>With JWT configured (see <a href='https://docs.prylabs.network/docs/vNext/214-rc'>our v2.1.4-rc0 guide</a>):</p>
         <pre><code>besu --network=goerli --rpc-http-enabled --engine-jwt-enabled=true --engine-jwt-secret=path/to/jwt.hex  --engine-host-allowlist="*"</code></pre>
-        <p>Without JWT configured:</p>
-        <pre><code>besu --network=goerli --rpc-http-enabled</code></pre>
       </TabItem>
       <TabItem value="sepolia">
         <pre><code>besu --network=sepolia --rpc-http-enabled --engine-jwt-enabled=true --engine-jwt-secret=../consensus/jwt.hex --engine-host-allowlist="*" --override-genesis-config="terminalTotalDifficulty=17000000000000000"</code></pre>
@@ -226,10 +226,7 @@ curl -H "Content-Type: application/json" -X POST http://localhost:8545 -d "{""js
         <pre><code>geth --mainnet --http --http.api eth,net,engine,admin</code></pre>
       </TabItem>
       <TabItem value="goerli-prater">
-        <p>With JWT configured (see <a href='https://docs.prylabs.network/docs/vNext/214-rc'>our v2.1.4-rc0 guide</a>):</p>
         <pre><code>geth --goerli --http --http.api eth,net,engine,admin --authrpc.vhosts="localhost" --authrpc.jwtsecret=path/to/jwt.hex</code></pre>
-        <p>Without JWT configured:</p>
-        <pre><code>geth --goerli --http --http.api eth,net,engine,admin</code></pre>
       </TabItem>
       <TabItem value="sepolia">
         <pre><code>geth --sepolia --http --http.api eth,net,engine,admin --authrpc.jwtsecret ../consensus/jwt.hex --authrpc.vhosts localhost --override.terminaltotaldifficulty 17000000000000000</code></pre>
@@ -279,10 +276,8 @@ In this step, you'll run a beacon node using Prysm.
       </TabItem>
       <TabItem value="goerli-prater">
         <p>Download the <a href='https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz'>Prater genesis state from Github</a> into your <code>consensus/prysm</code> directory. Then use the following command to start a beacon node that connects to your local execution node.</p>
-        <p>With JWT configured (see <a href='https://docs.prylabs.network/docs/vNext/214-rc'>our v2.1.4-rc0 guide</a>):</p>
         <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8551 --prater --jwt-secret=path/to/jwt.hex --genesis-state=genesis.ssz --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
-        <p>Without JWT configured:</p>
-        <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8545 --prater --genesis-state=genesis.ssz --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>      </TabItem>
+      </TabItem>
       <TabItem value="sepolia">
         <p>Download the <a href='https://github.com/eth-clients/merge-testnets/blob/main/sepolia/genesis.ssz'>Sepolia genesis state from Github</a> into your <code>consensus/prysm</code> directory. Then use the following command to start a beacon node that connects to your local execution node using your secret JWT file:</p>
         <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8551 --sepolia --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9 --jwt-secret=jwt.hex --genesis-state=genesis.ssz</code></pre>
@@ -293,7 +288,7 @@ In this step, you'll run a beacon node using Prysm.
         <pre><code>prysm.bat beacon-chain --http-web3provider=http://localhost:8551 --ropsten --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9 --jwt-secret=jwt.hex --genesis-state=genesis.ssz</code></pre>
         <p>If you're running a validator, specifying a <code>suggested-fee-recipient</code> wallet address will allow you to earn what were previously miner transaction fee tips.</p>
       </TabItem>
-  </Tabs>
+    </Tabs>
   </TabItem>
   <TabItem value="others">
     <Tabs groupId="network" defaultValue="mainnet" values={[
@@ -308,10 +303,7 @@ In this step, you'll run a beacon node using Prysm.
       </TabItem>
       <TabItem value="goerli-prater">
         <p>Download the <a href='https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz'>Prater genesis state from Github</a> into your <code>consensus/prysm</code> directory. Then use the following command to start a beacon node that connects to your local execution node.</p>
-       <p>With JWT configured (see <a href='https://docs.prylabs.network/docs/vNext/214-rc'>our v2.1.4-rc0 guide</a>):</p>
-      <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8551 --prater --jwt-secret=path/to/jwt.hex --genesis-state=genesis.ssz --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
-      <p>Without JWT configured:</p>
-      <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8545 --prater --genesis-state=genesis.ssz --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
+        <pre><code>./prysm.sh beacon-chain --http-web3provider=http://localhost:8551 --prater --jwt-secret=path/to/jwt.hex --genesis-state=genesis.ssz --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
       </TabItem>
       <TabItem value="sepolia">
         <p>Download the <a href='https://github.com/eth-clients/merge-testnets/blob/main/sepolia/genesis.ssz'>Sepolia genesis state from Github</a> into your <code>consensus/prysm</code> directory. Then use the following command to start a beacon node that connects to your local execution node using your secret JWT file:</p>
@@ -415,7 +407,7 @@ Download the latest stable version of the deposit CLI from the [Staking Deposit 
       <TabItem value="goerli-prater">
         <pre><code>prysm.bat validator accounts import --keys-dir=&lt;YOUR_FOLDER_PATH&gt; --prater</code></pre>
         <p>You’ll be prompted to specify a wallet directory twice. Provide the path to your <code>consensus</code> folder for both prompts. You should see <code>Successfully imported 1 accounts, view all of them by running accounts list</code> when your account has been successfully imported into Prysm.</p>
-        <p>Next, go to the <a href='https://prater.launchpad.ethereum.org/en/upload-deposit-data'>Prater Launchpad’s deposit data upload page</a> and upload your <code>deposit_data-*.json</code> file. You’ll be prompted to connect your wallet.</p>
+        <p>Next, go to the <a href='https://goerli.launchpad.ethereum.org/en/upload-deposit-data'>Goerli-Prater Launchpad’s deposit data upload page</a> and upload your <code>deposit_data-*.json</code> file. You’ll be prompted to connect your wallet.</p>
         <p>If you need GöETH, head over to one of the following Discord servers:</p>
         <ul>
           <li><a href='https://discord.io/ethstaker'>r/EthStaker Discord</a></li>
@@ -481,7 +473,7 @@ Download the latest stable version of the deposit CLI from the [Staking Deposit 
       <TabItem value="goerli-prater">
         <pre><code>./prysm.sh validator accounts import --keys-dir=&lt;YOUR_FOLDER_PATH&gt; --prater</code></pre>
         <p>You’ll be prompted to specify a wallet directory twice. Provide the path to your <code>consensus</code> folder for both prompts. You should see <code>Successfully imported 1 accounts, view all of them by running accounts list</code> when your account has been successfully imported into Prysm.</p>
-        <p>Next, go to the <a href='https://prater.launchpad.ethereum.org/en/upload-deposit-data'>Prater Launchpad’s deposit data upload page</a> and upload your <code>deposit_data-*.json</code> file. You’ll be prompted to connect your wallet.</p>
+        <p>Next, go to the <a href='https://goerli.launchpad.ethereum.org/en/upload-deposit-data'>Goerli-Prater Launchpad’s deposit data upload page</a> and upload your <code>deposit_data-*.json</code> file. You’ll be prompted to connect your wallet.</p>
         <p>If you need GöETH, head over to one of the following Discord servers:</p>
         <ul>
           <li><a href='https://discord.io/ethstaker'>r/EthStaker Discord</a></li>
@@ -535,7 +527,7 @@ The Beginner's Introduction to Prysm uses diagrams to help you visualize Ethereu
 **Why do you recommend putting everything on a single machine?** <br />
 Keeping all of your client software on a single machine keeps things simple, which aligns with our [security best practices](../security-best-practices.md).
 
-**Can I use Prysm on a Mac M1 ARM chip?**
+**Can I use Prysm on a Mac M1 ARM chip?** <br />
 Mac M1 ARM chips currently require users to run Prysm through <a href='https://support.apple.com/en-us/HT211861'>Rosetta</a>. See our <a href='https://github.com/prysmaticlabs/prysm/issues/9385'>open bug</a> for details.
 
 **Do I need to configure JWT if I'm using IPC instead of HTTP?** <br />
@@ -547,11 +539,13 @@ We recommend **closing** TCP port `8545` to the internet and keeping TCP and UDP
 **Can you mix and match networks between execution layer and consensus layer?** <br />
 No. See [Nodes and networks](../concepts/nodes-networks.md) for more information.
 
-**Can I stake with less than 32 ETH?**
-<a href='https://ethereum.org/en/staking/pools/'>Pooled staking</a> lets you stake with less than 32 ETH. 
+**Can I stake with less than 32 ETH?** <br />
+Yes! <a href='https://ethereum.org/en/staking/pools/'>Pooled staking</a> lets you stake with less than 32 ETH. 
 
-**What should I do if I can't run a node using my own hardware?**
-<a href='https://ethereum.org/en/staking/saas/'>Staking as a service</a> lets you delegate hardware management to a third party.
+
+**What should I do if I can't run a node using my own hardware?** <br />
+You can delegate hardware management to <a href='https://ethereum.org/en/staking/saas/'>staking as a service</a> providers.
+
 
 <!-- **I'm new to Ethereum, and I'm a visual learner. Can you show me how these things work? How much disk space does each node type require?** <br />
 The Beginner's Introduction to Prysm uses diagrams to help you visualize Ethereum's architecture, and Prysm's too. (TODO) -->
@@ -579,7 +573,7 @@ Yes - you can use [checkpoint sync](https://docs.prylabs.network/docs/prysm-usag
 <!--TODO: explain why -->
 
 
-**My attestations are working, but proposals aren’t. Why not?** <br />
+**My proposals aren't working, but my attestations are. What's going on?** <br />
 This is usually an indication that your validator isn't able to communicate with your beacon node, or your beacon node isn't able to connect to your execution node.
 
 **How long does it take for my validator to be selected to propose a new block?** <br />

@@ -23,8 +23,8 @@ module.exports = {
             items: [{
                 type: 'docsVersion',
                 position: 'left',
-                to: 'https://github.com/prysmaticlabs/prysm/releases/tag/v2.1.3',
-                label: 'v2.1.3',
+                to: 'https://github.com/prysmaticlabs/prysm/releases/tag/v2.1.4',
+                label: 'v2.1.4',
             },
             {
                 to: 'docs/install/install-with-script',
