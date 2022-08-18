@@ -281,6 +281,9 @@ footer.docusaurus-mt-lg {
     height: 31px;
     margin-right: 10px;
     vertical-align: top;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 html[data-theme='dark'] .header-badge {
