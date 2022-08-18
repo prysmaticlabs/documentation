@@ -8,8 +8,8 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import ClientStackPng from '@site/static/img/client-stack.png';
 import JwtGenerationPartial from '@site/docs/partials/_jwt-generation-partial.md';
-import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
+import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <HeaderBadgesWidget />
 

@@ -10,6 +10,9 @@ import ClientStackPng from '@site/static/img/client-stack.png';
 import NetworkPng from '@site/static/img/network.png';
 import NetworkLayersPng from '@site/static/img/network-layers.png';
 
+import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
+
+<HeaderBadgesWidget />
 
 Ethereum is a decentralized **network** of **nodes** that communicate via peer-to-peer connections. These connections are formed by computers running Ethereum's specialized client software:
 

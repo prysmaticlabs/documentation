@@ -4,6 +4,10 @@ title: Troubleshooting Prysm
 sidebar_label: Troubleshooting
 ---
 
+import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
+
+<HeaderBadgesWidget />
+
 Common troubleshooting scenarios and solutions are detailed below. Feel free reach out to us on [Discord](https://discord.gg/prysmaticlabs) for additional troubleshooting support.
 
 
