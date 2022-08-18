@@ -53,7 +53,7 @@ Ethereum's nodes work together to process one batch of transactions at a time. T
 
 ### Blocks, epochs, and slots
 
-While transactions are grouped into blocks, blocks are grouped into **epochs**. An epoch is a fixed-length timespan lasting 384 seconds. Every epoch is divided into 32 slots, each slot lasting 12 seconds. Every slot is an opportunity for one new block of transactions to be tentatively accepted by the Ethereum network:
+While transactions are grouped into blocks, blocks are grouped into **epochs**. On Ethereum Mainnet, an epoch is a fixed-length timespan lasting 384 seconds. Every epoch is divided into 32 slots, each slot lasting 12 seconds. Every slot is an opportunity for one new block of transactions to be proposed and tentatively accepted by the Ethereum network:
 
 <img src={EpochsBlocks} />
 
@@ -64,20 +64,23 @@ It can be helpful to think of Ethereum as a "world computer" with a processor an
 
 ### Justification, finality, and checkpoints
 
-Ethereum's nodes are responsible for proposing, verifying, and **finalizing** transactions as they're submitted by users and apps. **Finality** describes a state in which the probability of transaction reversal is near-zero. Transactions become finalized when they're included within a block that gets finalized.
+**Finality** describes a state in which the probability of transaction reversal is near-zero. Transactions become finalized when they're included within a block that gets finalized. Blocks become finalized after either:
+
+ 1. The block is in the first slot of an epoch, has been justified, and then has been finalized or
+ 2. The block is justified and a future epoch's first block is finalized.
 
 Let's imagine that Bob wants to send Alice some ETH. In the happy scenario, Bob's transaction would flow through the following (oversimplified) transaction lifecycle:
 
  1. **Transaction signed**: Bob signs a transaction that moves ETH from his wallet to Alice's wallet using the private key associated with his wallet.
  2. **Transaction submitted**: Bob submits this transaction to the Ethereum network. Theoretically, all nodes receive it.
- 3. **Proposer selected**: The Ethereum network protocol randomly selects a validator node to fill the current epoch's current slot with a new block. This validator node will be the only node in the world that's allowed to propose a block into this slot.  
+ 3. **Proposer selected**: The Ethereum network randomly selects a validator node to fill the current epoch's current slot with a new block. This validator node will be the only node in the world that's allowed to propose a block into this slot.  
  4. **Block created**: This randomly selected block proposer pops a batch of transactions off of its internal queue, verifies their legitimacy, and builds a new block that contains Bob's transaction.
  5. **Block proposed**: The block proposer broadcasts this proposed new block to peer nodes.
- 6. **Attesters selected**: The Ethereum network protocol randomly selects a small committee of other validator nodes to attest to the legitimacy of the proposed block and the transactions it contains.
+ 6. **Attesters selected**: The Ethereum network randomly selects a small committee of other validator nodes to attest to the legitimacy of the proposed block and the transactions it contains.
  7. **Block justified**: After a sufficient number and percentage of committee members have attested to the legitimacy of the proposed block, the block is marked as "justified".
  8. **Block finalized**: After a future epoch's first block is finalized, the epoch containing the block containing Bob's transaction is finalized.
 
-Familiarity with this lifecycle can help conceptualize the difference between **justified blocks**, **finalized blocks** and **checkpoints**. Ethereum uses checkpoints to set certain blocks "in stone". At any given time, Ethereum's current "candidate checkpoint" block is located in the first slot of the first epoch following the most recent checkpoint:
+Familiarity with this lifecycle can help conceptualize the difference between **justified blocks**, **finalized blocks** and **checkpoints**. Ethereum uses checkpoints to set certain blocks "in stone". At any given time, Ethereum's current "candidate checkpoints" are located in the first slot of the first epoch following the most recent checkpoint:
 
 <img src={Finality} />
 
