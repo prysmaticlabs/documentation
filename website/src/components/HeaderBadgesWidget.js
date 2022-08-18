@@ -7,7 +7,8 @@ export const HeaderBadgesWidget = ({ commaDelimitedContributors, lastVerifiedDat
 		Raul: "rauljordan",
 		Terence: "terencechain",
 		James: "james-prysm",
-		Kasey: "kasey"
+		Kasey: "kasey",
+		Potuz: "potuz"
 	}
 
 	let buildAuthorBadge = function (authorNickname) {
