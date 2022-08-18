@@ -48,7 +48,7 @@ Ethereum's "world state" is stored in a blockchain data structure. At the most r
 
 <img src={BlockchainSimplified} />
 
-Ethereum's nodes work together to process one batch of transactions at a time. These batches are Ethereum's blocks. As users and applications submit transactions to the network, new blocks are proposed and ultimately finalized.
+Ethereum's nodes work together to process one batch of transactions at a time. These batches of transactions are Ethereum's blocks. As users and applications submit transactions to the network, new blocks are created to contain them. These blocks are tentatively appended to the head of the chain before becoming permanently enshrined in Ethereum Mainnet.
 
 
 ### Blocks, epochs, and slots
