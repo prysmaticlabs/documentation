@@ -97,7 +97,7 @@ Issue the following command to export the `BeaconState` and `SignedBeaconBlock` 
 
 :::info
 
-This command is currently available in [Prysm's `develop` branch](https://github.com/prysmaticlabs/prysm/tree/develop). It will be made available in an upcoming stable release.
+This command is currently available in [Prysm's `develop` branch](https://github.com/prysmaticlabs/prysm/tree/develop). An upcoming stable release will include this functionality.
 
 :::
 
