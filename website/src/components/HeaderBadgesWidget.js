@@ -33,7 +33,7 @@ export const HeaderBadgesWidget = ({ commaDelimitedAuthorNicknames, lastVerified
 		<BrowserOnly>
 			{() =>
 				<div class="header-badges">
-					{commaDelimitedAuthorNicknames.split(',').map(buildAuthorBadge)}
+					{commaDelimitedAuthorNicknames != null ? commaDelimitedAuthorNicknames.split(',').map(buildAuthorBadge) : ""}
 					<a class="header-badge" href={`https://github.com/prysmaticlabs/documentation/issues/new?title=Docs update request: ${new URL(window.location.href).pathname}&body=Source: ${window.location.href}%0A%0ARequest: (how can we help?)`}>
 						<span class="badge-avatar emoji-avatar">✏️</span>
 						<span class="badge-label">Request an update</span>
