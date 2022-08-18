@@ -1,7 +1,7 @@
 import React from 'react';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 
-export const HeaderBadgesWidget = ({ commaDelimitedAuthorNicknames, lastVerifiedDateString, lastVerifiedVersionString }) => {
+export const HeaderBadgesWidget = ({ commaDelimitedContributors, lastVerifiedDateString, lastVerifiedVersionString }) => {
 	let githubUsernames = {
 		Mick: "symbolpunk",
 		Raul: "rauljordan",
