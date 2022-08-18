@@ -300,16 +300,31 @@ html[data-theme='dark'] .header-badge:hover {
     background-color: #444;
 }
 
-.header-badge:hover>.badge-avatar {
-    opacity: 1;
+.header-badge>.badge-label {
+    transition-property: all;
+    transition-duration: 0.2s;
+    font-size: 13px;
+    line-height: 24px;
+    color: #333;
+    display: inline-block;
+    vertical-align: top;
+    height: 25px;
+}
+
+html[data-theme='dark'] .header-badge>.badge-label {
+    color: #ddd;
 }
 
 .header-badge:hover>.badge-label {
-    color: #222;
+    color: #000;
 }
 
 html[data-theme='dark'] .header-badge:hover>.badge-label {
     color: #d6d6d6;
+}
+
+.header-badge:hover>.badge-avatar {
+    opacity: 1;
 }
 
 .header-badge>.badge-avatar {
@@ -332,20 +347,7 @@ html[data-theme='dark'] .header-badge:hover>.badge-label {
     margin-right: 8px !important;
 }
 
-.header-badge>.badge-label {
-    transition-property: all;
-    transition-duration: 0.2s;
-    font-size: 13px;
-    line-height: 24px;
-    color: #666;
-    display: inline-block;
-    vertical-align: top;
-    height: 25px;
-}
 
-html[data-theme='dark'] .header-badge>.badge-label {
-    color: #ddd;
-}
 
 
 @media (max-width: 736px) {
