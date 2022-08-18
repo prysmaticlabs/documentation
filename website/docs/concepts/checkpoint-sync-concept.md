@@ -20,7 +20,7 @@ This is a conceptual overview. See [How to sync from a checkpoint](../prysm-usag
 
 **Checkpoint sync** is a feature that significantly speeds up the initial sync between your beacon node and the Beacon Chain. With checkpoint sync configured, your beacon node will begin syncing from a recently finalized checkpoint instead of syncing from genesis. This can make installations, validator migrations, recoveries, and testnet deployments *way* faster.
 
-This conceptual overview will help you understand how checkpoint sync works under the hood. We'll speed-run through a series of foundational concepts before digging into checkpoint sync.
+This conceptual overview will help you understand how checkpoint sync works under the hood. We'll speed-run through some foundational concepts before digging into checkpoint sync.
 
 ## Foundations
 
