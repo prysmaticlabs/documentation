@@ -39,7 +39,7 @@ If you're not familiar with the various types of nodes and networks that power t
 
 ### Blockchain data structure
 
-Ethereum's "world state" is stored in a blockchain data structure. At the most rudimentary level, a blockchain is a [linked list](https://en.wikipedia.org/wiki/Linked_list) on steroids. Like a linked list, Ethereum's blockchain is a sequence of blocks that starts with a "tail" and ends at its "head". Ethereum's tail is called its **genesis block** - the first block that was ever created. Its head is referred to as the "head of the chain".
+Ethereum's "world state" is stored in a blockchain data structure. At the most rudimentary level, a blockchain is a [linked list](https://en.wikipedia.org/wiki/Linked_list) on steroids. Like a linked list, Ethereum's blockchain is a sequence of blocks that starts with a "tail" and ends at its "head". Ethereum's tail is called its **genesis block** - the first block that was ever created. Its head is referred to as the "head of the chain":
 
 <img src={BlockchainSimplified} />
 
@@ -47,9 +47,7 @@ Ethereum's nodes work together to process one batch of transactions at a time. T
 
 ### Finality and checkpoints
 
-Ethereum's nodes are responsible for broadcasting, verifying, and **finalizing** transactions as they're submitted by users and apps. Finality describes a state in which the probability of transaction reversal is near-zero.
-
-Let's imagine that Bob wants to send Alice some ETH. Bob's transaction would flow through the following (oversimplified) transaction lifecycle:
+Ethereum's nodes are responsible for broadcasting, verifying, and finalizing transactions as they're submitted by users and apps. **Finality** describes a state in which the probability of transaction reversal is near-zero. To understand how Ethereum handles finality, let's imagine that Bob wants to send Alice some ETH. In the best case scenario, Bob's transaction would flow through the following (oversimplified) transaction lifecycle:
 
  1. Bob signs a transaction that moves ETH from his wallet to Alice's wallet using the private key associated with his wallet.
  2. Bob submits this transaction to the Ethereum network. All nodes receive it.
