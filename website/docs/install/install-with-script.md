@@ -9,6 +9,10 @@ import TabItem from '@theme/TabItem';
 import ClientStackPng from '@site/static/img/client-stack.png';
 import JwtGenerationPartial from '@site/docs/partials/_jwt-generation-partial.md';
 
+import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
+
+<HeaderBadgesWidget />
+
 :::info Already running a node?
 
 This guidance is targeted at new users. If you're already running a node, see [Prepare for The Merge](../prepare-for-merge.md).

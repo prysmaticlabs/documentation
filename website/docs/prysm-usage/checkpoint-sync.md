@@ -9,6 +9,10 @@ import CheckpointSyncAbsent from '@site/static/img/checkpoint-sync-absent.png';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
+
+<HeaderBadgesWidget />
+
 :::caution
 
 **This feature is currently in public preview** and may change significantly as we receive feedback from users like you. Join our [Discord server](https://discord.gg/prysmaticlabs) to share your feedback.

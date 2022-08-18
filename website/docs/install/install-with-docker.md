@@ -4,6 +4,10 @@ title: Install Prysm with Docker
 sidebar_label: Install using Docker
 ---
 
+import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
+
+<HeaderBadgesWidget />
+
 Prysm can be installed on Windows, GNU/Linux, and MacOS systems with Docker.
 
 :::tip Pro-Tip
