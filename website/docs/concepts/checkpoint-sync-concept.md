@@ -49,17 +49,16 @@ Ethereum's nodes work together to process one batch of transactions at a time. T
 
 Ethereum's nodes are responsible for broadcasting, verifying, and finalizing transactions as they're submitted by users and apps. **Finality** describes a state in which the probability of transaction reversal is near-zero. To understand how Ethereum handles finality, let's imagine that Bob wants to send Alice some ETH. In the best case scenario, Bob's transaction would flow through the following (oversimplified) transaction lifecycle:
 
- 1. Bob signs a transaction that moves ETH from his wallet to Alice's wallet using the private key associated with his wallet.
- 2. Bob submits this transaction to the Ethereum network. All nodes receive it.
- 3. The Ethereum network protocol randomly selects a validator node to propose the network's next block. 
- 4. This randomly selected block proposer verifies the legitimacy of Bob's transaction, and any other transactions it's received, before including Bob's transaction in a new block.
- 5. The block proposer broadcasts this proposed new block to peer nodes.
- 6. The Ethereum network protocol randomly selects a committee of other validator nodes to attest to the legitimacy of the proposed block and the transactions it contains.
- 7. After a sufficient number and percentage of selected attesters nodes have attested to the legitimacy of the proposed block, the block is marked as "justified".
- 8. After a sufficient number of additional blocks are justified, the block containing Bob's transaction is "finalized".
+ 1. **Transaction signed**: Bob signs a transaction that moves ETH from his wallet to Alice's wallet using the private key associated with his wallet.
+ 2. **Transaction submitted**: Bob submits this transaction to the Ethereum network. All nodes receive it.
+ 3. **Proposer selected**: The Ethereum network protocol randomly selects a validator node to propose the network's next block. 
+ 4. **Block created**: This randomly selected block proposer verifies the legitimacy of Bob's transaction, and any other transactions it's received, before including Bob's transaction in a new block.
+ 5. **Block proposed**: The block proposer broadcasts this proposed new block to peer nodes.
+ 6. **Attesters selected**: The Ethereum network protocol randomly selects a committee of other validator nodes to attest to the legitimacy of the proposed block and the transactions it contains.
+ 7. **Block justified**: After a sufficient number and percentage of selected attesters nodes have attested to the legitimacy of the proposed block, the block is marked as "justified".
+ 8. **Block finalized**: After a sufficient number of additional blocks are justified, the block containing Bob's transaction is "finalized".
 
-
-TODO: checkpoint
+Familiarity with this lifecycle will help you appreciate the difference between **finalized blocks** and **checkpoints**. 
 
 
 ### Peer-to-peer synchronization
