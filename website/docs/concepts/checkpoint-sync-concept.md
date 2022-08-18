@@ -93,7 +93,7 @@ TODO: explain the conditions that must be met for a checkpoint to be a candidate
 
 ## Checkpoint sync
 
-TODO: incorporate Kasey's recommended diagram adjustments for this section
+TODO: incorporate Kasey's recommended diagram adjustments for this section, possibly leveraging the above
 
 ### Syncing without checkpoint sync
 
