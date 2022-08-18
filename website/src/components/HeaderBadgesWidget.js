@@ -1,7 +1,7 @@
 import React from 'react';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 
-export const HeaderBadgesWidget = ({ authors }) => {
+export const HeaderBadgesWidget = ({ commaDelimitedAuthorNicknames, lastVerifiedDateString, lastVerifiedVersionString }) => {
 	let githubUsernames = {
 		Mick: "symbolpunk",
 		Raul: "rauljordan",
@@ -9,32 +9,36 @@ export const HeaderBadgesWidget = ({ authors }) => {
 		James: "james-prysm"
 	}
 
-	let buildAuthorBadge = function (author) {
+	let buildAuthorBadge = function (authorNickname) {
 		return (
-			<a class="header-badge" href={`https://github.com/${githubUsernames[author]}`}>
-				<span class="badge-avatar" style={{ backgroundImage: "url('https://avatars.githubusercontent.com/" + githubUsernames[author] + "')" }}></span>
-				<span class="badge-label">{author}</span>
+			<a class="header-badge" href={`https://github.com/${githubUsernames[authorNickname]}`}>
+				<span class="badge-avatar" style={{ backgroundImage: "url('https://avatars.githubusercontent.com/" + githubUsernames[authorNickname] + "')" }}></span>
+				<span class="badge-label">{authorNickname}</span>
 			</a>
 		)
+	}
+
+	let buildLastVerifiedBadge = function (dateString, versionString) {
+		if (dateString != null && versionString != null) {
+			return (
+				<a class="header-badge">
+					<span class="badge-avatar emoji-avatar">✔️</span>
+					<span class="badge-label">Last verified on <strong>{dateString}</strong> using Prysm {versionString}</span>
+				</a>
+			)
+		}
 	}
 
 	return (
 		<BrowserOnly>
 			{() =>
 				<div class="header-badges">
-					{/*
-					{authors.split(',').map(buildAuthorBadge)}
-					*/}
+					{commaDelimitedAuthorNicknames.split(',').map(buildAuthorBadge)}
 					<a class="header-badge" href={`https://github.com/prysmaticlabs/documentation/issues/new?title=Docs update request: ${new URL(window.location.href).pathname}&body=Source: ${window.location.href}%0A%0ARequest: (how can we help?)`}>
 						<span class="badge-avatar emoji-avatar">✏️</span>
 						<span class="badge-label">Request an update</span>
 					</a>
-					{/*
-					<a class="header-badge" href="https://docs.prylabs.network/docs/vNext/214-rc">
-						<span class="badge-avatar emoji-avatar">✔️</span>
-						<span class="badge-label">Last verified on <strong>August 4th</strong> using Prysm v2.1.4-rc0</span>
-					</a>
-					*/}
+					{buildLastVerifiedBadge(lastVerifiedDateString, lastVerifiedVersionString)}
 				</div>
 			}
 		</BrowserOnly>
