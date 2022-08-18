@@ -81,7 +81,12 @@ Familiarity with this lifecycle can help conceptualize the difference between **
 
 <img src={Finality} />
 
-In the above diagram, 
+Let's describe each of the above epochs:
+
+1. Epoch 1 is finalized.
+2. Epoch 2 is justified, and its first slot has been finalized.
+3. Epoch 3 is justified, but its first slot hasn't been finalized.
+4. Epoch 4 isn't yet justified, and its first slot isn't je
 
 Checkpoints are created...
 
