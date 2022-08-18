@@ -4,6 +4,10 @@ title: Monitor Prysm for expected behavior
 sidebar_label: Monitor Prysm for expected behavior
 ---
 
+import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
+
+<HeaderBadgesWidget />
+
 ## Expected behavior: Beacon node
 
 When running a beacon node for the first time, it will attempt to process deposits from the execution-layer deposit contract. This deposit contract contains 32ETH deposits from all validators that have joined Ethereum's beacon chain. This process may take a few minutes. While processing these deposits, your beacon chain output should display `INFO` logs that look like this:

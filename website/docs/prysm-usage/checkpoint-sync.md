@@ -4,6 +4,10 @@ title: Sync from a checkpoint
 sidebar_label: Sync from a checkpoint
 ---
 
+import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
+
+<HeaderBadgesWidget />
+
 :::caution
 
 **This feature is currently in public preview** and may change significantly as we receive feedback from users like you. Join our [Discord server](https://discord.gg/prysmaticlabs) to share your feedback.

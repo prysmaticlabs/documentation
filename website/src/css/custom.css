@@ -262,6 +262,92 @@ footer.docusaurus-mt-lg {
     font-weight: 600;
 }
 
+.header-badges {
+    display: block;
+    margin-top: -15px !important;
+    margin-bottom: 30px;
+
+    /*pragmatism over perfection*/
+}
+
+
+.header-badge {
+    transition-property: all;
+    transition-duration: 0.2s;
+    display: inline-block;
+    border-radius: 20px;
+    background-color: #efefef;
+    padding: 3px 20px 3px 3px;
+    height: 31px;
+    margin-right: 10px;
+    vertical-align: top;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+html[data-theme='dark'] .header-badge {
+    background-color: #333;
+}
+
+.header-badge:hover {
+    text-decoration: none;
+    background-color: #e6e6e6;
+    opacity: 1;
+}
+
+html[data-theme='dark'] .header-badge:hover {
+    background-color: #444;
+}
+
+.header-badge:hover>.badge-avatar {
+    opacity: 1;
+}
+
+.header-badge:hover>.badge-label {
+    color: #222;
+}
+
+html[data-theme='dark'] .header-badge:hover>.badge-label {
+    color: #d6d6d6;
+}
+
+.header-badge>.badge-avatar {
+    transition-property: all;
+    transition-duration: 0.2s;
+    display: inline-block;
+    border-radius: 30px;
+    width: 25px;
+    height: 25px;
+    background-size: cover;
+    margin-right: 12px;
+    font-size: 12px;
+    vertical-align: top;
+    line-height: 23px;
+    padding-left: 8px;
+    opacity: 0.7;
+}
+
+.header-badge>.emoji-avatar {
+    margin-right: 8px !important;
+}
+
+.header-badge>.badge-label {
+    transition-property: all;
+    transition-duration: 0.2s;
+    font-size: 13px;
+    line-height: 24px;
+    color: #666;
+    display: inline-block;
+    vertical-align: top;
+    height: 25px;
+}
+
+html[data-theme='dark'] .header-badge>.badge-label {
+    color: #ddd;
+}
+
+
 @media (max-width: 736px) {
     .nav-footer {
         text-align: center;

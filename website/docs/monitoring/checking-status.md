@@ -4,6 +4,10 @@ title: Check node and validator status
 sidebar_label: Check node and validator status
 ---
 
+import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
+
+<HeaderBadgesWidget />
+
 ## Check status: Execution client
 
 <Tabs groupId="execution-clients" defaultValue="nethermind" values={[

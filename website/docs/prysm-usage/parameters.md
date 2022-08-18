@@ -4,9 +4,13 @@ title: Command-line options
 sidebar_label: Command-line options
 ---
 
-This section lists the various flags used to customise the startup process of Prysm
-
 import {FetchCLIHelp} from '../../src/fetchCliHelp.js';
+
+import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
+
+<HeaderBadgesWidget />
+
+This section lists the various flags used to customise the startup process of Prysm.
 
 ## Beacon Node Configuration 
 
