@@ -11,7 +11,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <HeaderBadgesWidget commaDelimitedContributors="Kasey,Mick,James" lastVerifiedDateString="August 18th, 2022" lastVerifiedVersionString="v2.1.4" />
 
-:::caution
+:::caution Public Preview
 
 **This feature is currently in public preview** and may change significantly as we receive feedback from users like you. Join our [Discord server](https://discord.gg/prysmaticlabs) to share your feedback.
 
