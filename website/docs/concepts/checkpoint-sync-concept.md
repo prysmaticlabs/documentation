@@ -9,6 +9,7 @@ import NetworkPng from '@site/static/img/network.png';
 import BlockchainSimplified from '@site/static/img/blockchain-simplified.png';
 import ClientStackPng from '@site/static/img/client-stack.png';
 import EpochsBlocks from '@site/static/img/epochs-blocks.png';
+import Finality from '@site/static/img/finality.png';
 
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
@@ -61,22 +62,40 @@ The above diagram illustrates [Epoch 1](https://ethscan.org/epoch/1) on Ethereum
 It can be helpful to think of Ethereum as a "world computer" with a processor and hard drive. Its processor is the [Ethereum Virtual Machine](https://ethereum.org/en/developers/docs/evm/), and its hard drive is the blockchain underlying Ethereum Mainnet. Ethereum's processor makes tentative changes to its hard drive once every slot, or once every 12 seconds. These tentative changes are accepted as "canonical" (going from "truthy" to "truth") *at most* once every epoch, or once every 32 slots, or once every 384 seconds.
 
 
-### Finality and checkpoints
+### Justification, finality, and checkpoints
 
-Ethereum's nodes are responsible for broadcasting, verifying, and finalizing transactions as they're submitted by users and apps. **Finality** describes a state in which the probability of transaction reversal is near-zero. 
+We mentioned "tentative" and "canonical" in the previous section. Ethereum's nodes are responsible for broadcasting, verifying, and finalizing transactions as they're submitted by users and apps. **Finality** describes a state in which the probability of transaction reversal is near-zero. Transactions become finalized when they're included within a block that gets finalized.
 
-To understand how Ethereum handles finality, let's imagine that Bob wants to send Alice some ETH. In the best case scenario, Bob's transaction would flow through the following (oversimplified) transaction lifecycle:
+Let's imagine that Bob wants to send Alice some ETH. In the happy scenario, Bob's transaction would flow through the following (oversimplified) transaction lifecycle:
 
  1. **Transaction signed**: Bob signs a transaction that moves ETH from his wallet to Alice's wallet using the private key associated with his wallet.
- 2. **Transaction submitted**: Bob submits this transaction to the Ethereum network. All nodes receive it.
- 3. **Proposer selected**: The Ethereum network protocol randomly selects a validator node to propose the network's next block. 
- 4. **Block created**: This randomly selected block proposer verifies the legitimacy of Bob's transaction, and any other transactions it's received, before including Bob's transaction in a new block.
+ 2. **Transaction submitted**: Bob submits this transaction to the Ethereum network. Theoretically, all nodes receive it.
+ 3. **Proposer selected**: The Ethereum network protocol randomly selects a validator node to fill the current epoch's current slot with a new block. This validator node will be the only node in the world that's allowed to propose a block into this slot.  
+ 4. **Block created**: This randomly selected block proposer pops a batch of transactions off of its internal queue, verifies their legitimacy, and builds a new block that contains Bob's transaction.
  5. **Block proposed**: The block proposer broadcasts this proposed new block to peer nodes.
- 6. **Attesters selected**: The Ethereum network protocol randomly selects a committee of other validator nodes to attest to the legitimacy of the proposed block and the transactions it contains.
- 7. **Block justified**: After a sufficient number and percentage of selected attesters nodes have attested to the legitimacy of the proposed block, the block is marked as "justified".
- 8. **Block finalized**: After a sufficient number of additional blocks are justified, the block containing Bob's transaction is "finalized".
+ 6. **Attesters selected**: The Ethereum network protocol randomly selects a small committee of other validator nodes to attest to the legitimacy of the proposed block and the transactions it contains.
+ 7. **Block justified**: After a sufficient number and percentage of committee members have attested to the legitimacy of the proposed block, the block is marked as "justified".
+ 8. **Block finalized**: After the next epoch is justified, the epoch containing the block containing Bob's transaction is "finalized".
 
-Familiarity with this lifecycle will help you appreciate the difference between **finalized blocks** and **checkpoints**. 
+Familiarity with this lifecycle can help conceptualize the difference between **justified blocks**, **finalized blocks** and **checkpoints**. Ethereum uses checkpoints to set certain blocks "in stone". At any given time, Ethereum's current "candidate checkpoint" block is the first block in the first slot of the first epoch following the most recent checkpoint.
+
+<img src={Finality} />
+
+
+Checkpoints are created...
+
+
+
+As soon as this first block is justified, the previous epoch's first block is marked as a finalized checkpoint
+This is true if and only if the previous epoch was already justified
+
+candidate checkpoint is the last block that is either the block at slot 0 in that epoch or before that
+
+and all of the blocks within the previous epoch are also finalized. Is this right?
+No, this is a common mistake that is even in our codebase so for someone reading our database methods is easy to get confused by this: you finalize everything that is an ancestor of the finalized checkpoint, so that means all the blocks in the previous to the previous epoch in this case
+
+This is a very good question, I think the description above already answered this question since in fact the slots are only finalized 2 epochs before not 1, but still, there are a number of attacks that indeed happen because you are proposing the latest blocks in the Epoch. All of the known attacks (or at least the ones that I know) exploit the fact that the chain didn't have enough votes to justify before it was your turn to propose. And now you are proposing and you have the votes necessary to justify. In this case an evil proposer does not show his block, hoardes it and reveals it late. This is causing now 33 slot-reorgs on Goerli
+
 
 
 ### Peer-to-peer synchronization
