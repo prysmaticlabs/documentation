@@ -1,7 +1,7 @@
 ---
 id: checkpoint-sync-concept
 title: "Checkpoint sync: Conceptual overview"
-sidebar_label: "Checkpoint sync: Conceptual overview"
+sidebar_label: "Checkpoint sync"
 ---
 import CheckpointSyncPresent from '@site/static/img/checkpoint-sync-present.png';
 import CheckpointSyncAbsent from '@site/static/img/checkpoint-sync-absent.png';
@@ -9,6 +9,8 @@ import NetworkPng from '@site/static/img/network.png';
 import BlockchainSimplified from '@site/static/img/blockchain-simplified.png';
 import ClientStackPng from '@site/static/img/client-stack.png';
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
+
+# Checkpoint sync: Conceptual overview
 
 <HeaderBadgesWidget commaDelimitedContributors="Kasey,Mick,James" />
 
