@@ -95,6 +95,8 @@ Let's describe each of the above epochs:
 
 TODO: explain that epochs aren't units of review - nodes process one block at a time without caring about epoch metadata, except whether or not the block is on an epoch boundary
 
+TODO: grok "Not really, the candidate checkpoint is the last block that is either the block at slot 0 in that epoch or before that"
+
 TODO: explain how some epochs can have blocks of mixed states
 
 TODO: kasey discord feedback
