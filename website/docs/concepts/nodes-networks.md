@@ -16,7 +16,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 Ethereum is a decentralized **network** of **nodes** that communicate via peer-to-peer connections. These connections are formed by computers running Ethereum's specialized client software:
 
-<img style={{width: 100 + '%', margin: 'auto', display: 'block', maxWidth: 461 + 'px'}} src={NetworkPng} /> 
+<img style={{maxWidth: 461 + 'px'}} src={NetworkPng} /> 
 
 
 ## Nodes
@@ -29,7 +29,7 @@ When users stake 32 ETH to participate in Ethereum's proof-of-stake consensus me
 
 <br />
 
-<img style={{width: 100 + '%', margin: 'auto', display: 'block', maxWidth: 651 + 'px'}} src={ClientStackPng} /> 
+<img style={{maxWidth: 651 + 'px'}} src={ClientStackPng} /> 
 
 <br />
 
@@ -65,7 +65,7 @@ There are other live, **test** instances of Ethereum that mint and manage **test
 
 Every Ethereum network is divided into two layers: **execution layer** (EL) and **consensus layer** (CL):
 
-<img style={{width: 100 + '%', margin: 'auto', display: 'block', maxWidth: 323 + 'px'}} src={NetworkLayersPng} /> 
+<img style={{maxWidth: 323 + 'px'}} src={NetworkLayersPng} /> 
 
 <br />
 

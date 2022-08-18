@@ -34,6 +34,17 @@ header>h1 {
     font-size: 1.2rem !important;
 }
 
+.markdown>img {
+    display: block;
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 800px;
+}
+
 .panel {
     border-top: 2px solid #ddd;
     padding: 20px 20px 25px 20px;

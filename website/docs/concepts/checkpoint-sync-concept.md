@@ -28,11 +28,11 @@ This conceptual overview will help you understand how checkpoint sync works unde
 
 Ethereum is a decentralized **network** of **nodes** that communicate via peer-to-peer connections. These connections are formed by computers running Ethereum's specialized client software (like Prysm):
 
-<img style={{width: 100 + '%', margin: 'auto', display: 'block', maxWidth: 461 + 'px'}} src={NetworkPng} />
+<img style={{maxWidth: 461 + 'px'}} src={NetworkPng} />
 
 An Ethereum **node** is a running instance of Ethereum's client software. This software is responsible for running the Ethereum blockchain. There are two primary types of nodes in Ethereum: **execution nodes** and **beacon nodes**. Colloquially, a "node" refers to an execution node and beacon node working together:
 
-<img style={{width: 100 + '%', margin: 'auto', display: 'block', maxWidth: 651 + 'px'}} src={ClientStackPng} /> 
+<img style={{maxWidth: 651 + 'px'}} src={ClientStackPng} /> 
 
 If you're not familiar with the various types of nodes and networks that power the Ethereum ecosystem, see [Nodes and networks](nodes-networks.md) for a refresher.
 
@@ -41,7 +41,7 @@ If you're not familiar with the various types of nodes and networks that power t
 
 Ethereum's "world state" is stored in a blockchain data structure. At the most rudimentary level, a blockchain is a linked list with interesting properties. Like a linked list, Ethereum's blockchain has a head and a tail:
 
-<img style={{width: 100 + '%', margin: 'auto', display: 'block', maxWidth: 461 + 'px'}} src={BlockchainSimplified} />
+<img style={{maxWidth: 461 + 'px'}} src={BlockchainSimplified} />
 
 Ethereum's tail is called its **genesis block** - it's the first block that was ever created. Its head is referred to as the "head of the chain". As users and applications submit transactions to the network, new blocks are proposed and ultimately finalized.
 
@@ -76,7 +76,7 @@ When Ethereum's nodes first come online, they ask other peer nodes to provide
 
 Beacon nodes maintain a local copy of the Ethereum's [Beacon Chain](https://ethereum.org/en/upgrades/beacon-chain/). When you tell Prysm's beacon node to start running for the first time, Prysm will fetch the very first Beacon Chain block (the Beacon Chain's [genesis block](https://beaconscan.com/slots?epoch=0)). Your beacon node will then "replay" the history of the Beacon Chain, fetching the oldest blocks from peers until the entire chain has been downloaded:
 
-<img style={{width: 100 + '%', margin: 'auto', marginBottom: 20 + 'px', display: 'block', maxWidth: 616 + 'px'}} src={CheckpointSyncAbsent} /> 
+<img style={{maxWidth: 616 + 'px'}} src={CheckpointSyncAbsent} /> 
 
 This sync process can take a very long time - on the magnitude of days to weeks. 
 
@@ -84,7 +84,7 @@ This sync process can take a very long time - on the magnitude of days to weeks.
 
 Checkpoint sync speeds things up by telling your beacon node to sync from a recently finalized checkpoint, allowing it to skip over the majority of the Beacon Chain's history:
 
-<img style={{width: 100 + '%', margin: 'auto', marginBottom: 20 + 'px', display: 'block', maxWidth: 631 + 'px'}} src={CheckpointSyncPresent} /> 
+<img style={{maxWidth: 631 + 'px'}} src={CheckpointSyncPresent} /> 
 
 Note that currently, Prysm's implementation syncs forward-only. The process of syncing backwards towards the genesis block is called "backfilling", and will be supported in a future Prysm release. Backfilling isn't required to run a validator - it's only required if you want to run an archive node, serve peer node requests, or query chain history through your local beacon node.
 
