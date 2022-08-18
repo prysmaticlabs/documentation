@@ -89,14 +89,6 @@ Let's describe each of the above epochs:
 4. Epoch 4 was just proposed. Its first block could also become the next checkpoint.
 5. Epoch 5 is in progress.
 
-If Bob's transaction...
-
-
-
-### Peer-to-peer synchronization
-
-When Ethereum's nodes first come online, they ask other peer nodes to provide 
-
 
 
 ## Checkpoint sync
