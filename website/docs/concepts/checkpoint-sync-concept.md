@@ -97,6 +97,8 @@ TODO: explain that epochs aren't units of review - nodes process one block at a 
 
 TODO: explain how some epochs can have blocks of mixed states
 
+TODO: kasey discord feedback
+
 TODO: explain the conditions that must be met for a checkpoint to be a candidate, vs justified, vs finalized
 
 ## Checkpoint sync
