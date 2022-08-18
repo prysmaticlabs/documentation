@@ -52,10 +52,16 @@ Ethereum's nodes work together to process one batch of transactions at a time. T
 
 ### Blocks, epochs, and slots
 
-While transactions are grouped into blocks, blocks are grouped into **epochs**. An epoch is a fixed-length timespan lasting 384 seconds. Epochs are divided into 32 slots, each lasting 12 seconds. Every slot is an opportunity for one new block of transactions to be tentatively accepted by the Ethereum network. If you think of Ethereum as being a sort of "world computer", its processor makes tentative changes to its data once every slot, or once every 12 seconds. These tentative changes are accepted as "canonical" (going from "truthy" to "truth") *at most* once every epoch, or once every 32 slots, or once every 384 seconds:
-
+While transactions are grouped into blocks, blocks are grouped into **epochs**. An epoch is a fixed-length timespan lasting 384 seconds. Every epoch is divided into 32 slots, each slot lasting 12 seconds. Every slot is an opportunity for one new block of transactions to be tentatively accepted by the Ethereum network:
 
 <img src={EpochsBlocks} />
+
+The above diagram illustrates [Epoch 1](https://ethscan.org/epoch/1) on Ethereum Mainnet. This epoch, like all other epochs, contains 32 slots. 
+
+It can be helpful to think of Ethereum as a "world computer" with a processor and hard drive. Its processor is the Ethereum Virtual Machine, and its hard drive is the underlying blockchain. Ethereum's processor makes tentative changes to its hard drive once every slot, or once every 12 seconds. These tentative changes are accepted as "canonical" (going from "truthy" to "truth") *at most* once every epoch, or once every 32 slots, or once every 384 seconds.
+
+
+
 
 
 
