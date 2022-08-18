@@ -4,6 +4,10 @@ title: Back up & restore database
 sidebar_label: Back up & restore database
 ---
 
+import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
+
+<HeaderBadgesWidget />
+
 This section outlines how to perform database backups for your beacon node and validator client. Both services expose an **HTTP backup endpoint** which is the **safest way** to trigger a database backup.
 
 :::danger Doing manual folder backups is not safe
