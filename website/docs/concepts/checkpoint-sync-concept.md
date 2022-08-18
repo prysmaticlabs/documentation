@@ -89,9 +89,11 @@ Let's describe each of the above epochs:
 4. Epoch 4 was just proposed. Its first block could also become the next checkpoint.
 5. Epoch 5 is in progress.
 
-
+TODO: explain the conditions that must be met for a checkpoint to be a candidate, vs justified, vs finalized
 
 ## Checkpoint sync
+
+TODO: incorporate Kasey's recommended diagram adjustments for this section
 
 ### Syncing without checkpoint sync
 
