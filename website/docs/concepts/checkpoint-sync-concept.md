@@ -89,16 +89,7 @@ Let's describe each of the above epochs:
 4. Epoch 4 was just proposed. Its first block could also become the next checkpoint.
 5. Epoch 5 is in progress.
 
-
-As soon as this first block is justified, the previous epoch's first block is marked as a finalized checkpoint
-This is true if and only if the previous epoch was already justified
-
-candidate checkpoint is the last block that is either the block at slot 0 in that epoch or before that
-
-and all of the blocks within the previous epoch are also finalized. Is this right?
-No, this is a common mistake that is even in our codebase so for someone reading our database methods is easy to get confused by this: you finalize everything that is an ancestor of the finalized checkpoint, so that means all the blocks in the previous to the previous epoch in this case
-
-This is a very good question, I think the description above already answered this question since in fact the slots are only finalized 2 epochs before not 1, but still, there are a number of attacks that indeed happen because you are proposing the latest blocks in the Epoch. All of the known attacks (or at least the ones that I know) exploit the fact that the chain didn't have enough votes to justify before it was your turn to propose. And now you are proposing and you have the votes necessary to justify. In this case an evil proposer does not show his block, hoardes it and reveals it late. This is causing now 33 slot-reorgs on Goerli
+If Bob's transaction...
 
 
 
