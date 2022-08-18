@@ -36,7 +36,7 @@ An Ethereum **node** is a running instance of Ethereum's client software. This s
 
 <img src={ClientStackPng} /> 
 
-If you're not familiar with the various types of nodes and networks that power the Ethereum ecosystem, see [Nodes and networks](nodes-networks.md) for a refresher.
+Nodes can be configured to run on one of Ethereum's many networks. Production apps and real ETH live on Ethereum Mainnet, while test networks allow protocol and application developers to test new features using fake ETH. See [Nodes and networks](nodes-networks.md) for a more detailed refresher on Ethereum's nodes and networks.
 
 
 ### Blockchain data structure
