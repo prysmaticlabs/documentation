@@ -4,6 +4,10 @@ title: Stay up to date
 sidebar_label: Stay up to date
 ---
 
+import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
+
+<HeaderBadgesWidget />
+
 This section outlines the step-by-step process for how to keep Prysm up to date, how to downgrade versions, and some security recommendations for stakers regarding updates.
 
 ## Installing Prysm

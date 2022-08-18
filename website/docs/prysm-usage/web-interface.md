@@ -4,6 +4,10 @@ title: Use Prysm's web UI
 sidebar_label: Use Prysm's web UI
 ---
 
+import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
+
+<HeaderBadgesWidget />
+
 ## What is Prysm's web UI?
 
 The Prysm Web UI is a locally hosted website that is launched from the validator client to provide users with a visual alternative to the validator cli( command-line interface).
