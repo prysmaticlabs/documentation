@@ -270,6 +270,7 @@ footer.docusaurus-mt-lg {
     /*pragmatism over perfection*/
 }
 
+
 .header-badge {
     transition-property: all;
     transition-duration: 0.2s;
@@ -282,10 +283,18 @@ footer.docusaurus-mt-lg {
     vertical-align: top;
 }
 
+html[data-theme='dark'] .header-badge {
+    background-color: #1f1f1f;
+}
+
 .header-badge:hover {
     text-decoration: none;
     background-color: #e6e6e6;
     opacity: 1;
+}
+
+html[data-theme='dark'] .header-badge:hover {
+    background-color: #262626;
 }
 
 .header-badge:hover>.badge-avatar {
@@ -294,6 +303,10 @@ footer.docusaurus-mt-lg {
 
 .header-badge:hover>.badge-label {
     color: #222;
+}
+
+html[data-theme='dark'] .header-badge:hover>.badge-label {
+    color: #d6d6d6;
 }
 
 .header-badge>.badge-avatar {
@@ -325,6 +338,10 @@ footer.docusaurus-mt-lg {
     display: inline-block;
     vertical-align: top;
     height: 25px;
+}
+
+html[data-theme='dark'] .header-badge>.badge-label {
+    color: #ddd;
 }
 
 
