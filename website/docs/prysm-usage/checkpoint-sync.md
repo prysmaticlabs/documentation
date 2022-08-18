@@ -194,6 +194,8 @@ The Ethereum Foundation DevOps team runs a handful of checkpoint sync endpoints 
  - Ropsten: https://ropsten.checkpoint-sync.ethdevops.io
  - Sepolia: https://sepolia.checkpoint-sync.ethdevops.io
 
+Feel free to ask on our [Discord server](https://discord.gg/prysmaticlabs) if you need help identifying a **Mainnet** checkpoint state provider.
+
 **Do I need to provide a genesis state when using checkpoint sync on Mainnet?** <br/>
 No. Mainnet's genesis state is embedded within Prysm.
 
