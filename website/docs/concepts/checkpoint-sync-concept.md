@@ -74,7 +74,7 @@ Let's imagine that Bob wants to send Alice some ETH. In the happy scenario, Bob'
  1. **Transaction signed**: Bob signs a transaction that moves ETH from his wallet to Alice's wallet using the private key associated with his wallet.
  2. **Transaction submitted**: Bob submits this transaction to the Ethereum network. Theoretically, all nodes receive it.
  3. **Proposer selected**: The Ethereum network randomly selects a validator node to fill the current epoch's current slot with a new block. This validator node will be the only node in the world that's allowed to propose a block into this slot.  
- 4. **Block created**: This randomly selected block proposer pops a batch of transactions off of its internal queue, verifies their legitimacy, and builds a new block that contains Bob's transaction.
+ 4. **Block created**: This randomly selected block proposer dequeues a batch of transactions from its internal transaction queue, verifies their legitimacy, and builds a new block that contains Bob's transaction.
  5. **Block proposed**: The block proposer broadcasts this proposed new block to peer nodes.
  6. **Attesters selected**: The Ethereum network randomly selects a small committee of other validator nodes to attest to the legitimacy of the proposed block and the transactions it contains.
  7. **Block justified**: After a sufficient number and percentage of committee members have attested to the legitimacy of the proposed block, the block is marked as "justified".
