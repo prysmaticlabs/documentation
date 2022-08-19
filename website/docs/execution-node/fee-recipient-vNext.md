@@ -110,17 +110,17 @@ proposer_config:
     fee_recipient: '0x012345670FCE8a85ec7055A5F8b2bE214B3DaeFd3'
     builder:
       enabled: true
-      gas_limit: 30000000
+      gas_limit: '30000000'
   '0x0123456748ed887f6c4c6adf334070efcd75140eada5ac83a92506dd7a057816155ad77931185101128655c0191bd0214':
     fee_recipient: '0x01234567bE214B3DaeFd350155530FCE8a85ec705'
     builder:
       enabled: true
-      gas_limit: 35000000
+      gas_limit: '35000000'
 default_config:
   fee_recipient: '0x01234567c5af9B61374A128e6F85f553aF09ff89A'
   builder:
       enabled: true
-      gas_limit: 30000000
+      gas_limit: '30000000'
 
 ```
 
@@ -133,14 +133,14 @@ JSON example:
       "fee_recipient": "0x012345670FCE8a85ec7055A5F8b2bE214B3DaeFd3",
       "builder": {
         "enabled": true,
-        "gas_limit": 30000000
+        "gas_limit": "30000000"
       }
     },
     "0x0123456748ed887f6c4c6adf334070efcd75140eada5ac83a92506dd7a057816155ad77931185101128655c0191bd0214": {
       "fee_recipient": "0x01234567bE214B3DaeFd350155530FCE8a85ec705",
       "builder": {
         "enabled": false,
-        "gas_limit": 35000000
+        "gas_limit": "35000000"
       }
     }
   },
@@ -148,7 +148,7 @@ JSON example:
     "fee_recipient": "0x01234567c5af9B61374A128e6F85f553aF09ff89A"
     "builder": {
       "enabled": true,
-      "gas_limit": 30000000
+      "gas_limit": "30000000"
     }
   }
 }
@@ -203,9 +203,9 @@ The above JSON demonstrates configuring two 1:1 mappings between `validator publ
     <td><code>..builder.gas_limit</code></td>
     <td>
     Optional. Sets an upper gas limit (in gwei) for block builders.<br /> <br /> 
-    <strong>Type:</strong> uint64 <br /> <br /> 
+    <strong>Type:</strong> string(uint64) <br /> <br /> 
     <strong>Note:</strong> Applicable only when using custom block builders. Block limits can only change a fixed amount per proposal - the default limit is 30M gwei. <br /> <br /> 
-    <strong>Example:</strong> <code>35000000</code>
+    <strong>Example:</strong> <code>"35000000"</code>
     </td>
   </tr>
   <tr>
@@ -244,9 +244,9 @@ The above JSON demonstrates configuring two 1:1 mappings between `validator publ
     <td><code>..builder.gas_limit</code></td>
     <td>
     Optional. Sets a gas limit upper limit (in gwei) for block builders. <br /> <br /> 
-    <strong>Type:</strong> uint64 <br /> <br /> 
+    <strong>Type:</strong> string(uint64) <br /> <br /> 
     <strong>Note:</strong> Applicable only when using custom block builders. Block limits can only change a fixed amount per proposal - the default limit is 30M gwei.<br /> <br />
-    <strong>Example:</strong> <code>35000000</code>  
+    <strong>Example:</strong> <code>"35000000"</code>  
     </td>
   </tr>
 </table>
