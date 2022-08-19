@@ -78,7 +78,7 @@ So far we only have protocol buffer definitions for a service and for messages, 
 "example_service.proto",
 ```
 
-Now it's time to run the script mentioned before. Assuming we are in Prysm's top-level directory, we issue the following command:
+Now it's time to run the script mentioned before. Assuming we are in Prysm's top-level directory on a Linux system, we issue the following command:
 
 ```
 ./hack/update-go-pbs.sh
