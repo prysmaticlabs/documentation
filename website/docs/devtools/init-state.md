@@ -422,7 +422,7 @@ rm -r ~/prysm/beaconchaindata ~/prysm/network-keys
 bazel run //beacon-chain -- --datadir=$HOME/prysm  \
   --verbosity=debug \
   --p2p-max-peers=500 \
-  --http-web3provider=$HOME/Library/Ethereum/goerli/geth.ipc \ 
+  --execution-endpoint=$HOME/Library/Ethereum/goerli/geth.ipc \ 
   --enable-debug-rpc-endpoints --prater
 ```
 

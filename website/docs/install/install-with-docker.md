@@ -137,7 +137,7 @@ docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/u
   --clear-db \
   --rpc-host=0.0.0.0 \
   --monitoring-host=0.0.0.0 \
-  --http-web3provider=<YOUR_ETH_EXECUTION_NODE_ENDPOINT>
+  --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT>
 ```
 
 </TabItem>
@@ -185,7 +185,7 @@ docker rm beacon-node
 To recreate a deleted container and refresh the chain database, issue the start command with an additional `--clear-db` parameter where <YOUR_ETH_EXECUTION_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`:
 
 ```text
-docker run -it -v %LOCALAPPDATA%\Eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node gcr.io/prysmaticlabs/prysm/beacon-chain:latest --datadir=/data --clear-db --monitoring-host=0.0.0.0 --rpc-host=0.0.0.0 --http-web3provider=<YOUR_ETH_EXECUTION_NODE_ENDPOINT>
+docker run -it -v %LOCALAPPDATA%\Eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node gcr.io/prysmaticlabs/prysm/beacon-chain:latest --datadir=/data --clear-db --monitoring-host=0.0.0.0 --rpc-host=0.0.0.0 --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT>
 ```
 
 </TabItem>
@@ -235,7 +235,7 @@ docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/u
   --clear-db \
   --rpc-host=0.0.0.0 \
   --monitoring-host=0.0.0.0 \
-  --http-web3provider=<YOUR_ETH_EXECUTION_NODE_ENDPOINT>
+  --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT>
 ```
 
 
@@ -287,7 +287,7 @@ docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/u
   --datadir=/data \
   --rpc-host=0.0.0.0 \
   --monitoring-host=0.0.0.0 \
-  --http-web3provider=<YOUR_ETH_EXECUTION_NODE_ENDPOINT>
+  --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT>
 ```
 
 **Prater**
@@ -300,7 +300,7 @@ docker run -it -v $HOME/.eth2:/data -v /path/to/genesis.ssz:/genesis/genesis.ssz
   --datadir=/data \
   --rpc-host=0.0.0.0 \
   --monitoring-host=0.0.0.0 \
-  --http-web3provider=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> \
+  --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> \
   --genesis-state=/genesis/genesis.ssz \
   --prater
 ```
@@ -315,7 +315,7 @@ docker run -it -v $HOME/.eth2:/data -v /path/to/genesis.ssz:/genesis/genesis.ssz
   --datadir=/data \
   --rpc-host=0.0.0.0 \
   --monitoring-host=0.0.0.0 \
-  --http-web3provider=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> \
+  --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> \
   --genesis-state=/genesis/genesis.ssz \
   --ropsten
 ```
@@ -337,7 +337,7 @@ Note: <YOUR_ETH_EXECUTION_NODE_ENDPOINT> is in the format of an http endpoint su
 **Mainnet**
 
 ```text
-docker run -it -v %LOCALAPPDATA%\Eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp gcr.io/prysmaticlabs/prysm/beacon-chain:stable --datadir=/data --rpc-host=0.0.0.0 --monitoring-host=0.0.0.0 --http-web3provider=<YOUR_ETH_EXECUTION_NODE_ENDPOINT>
+docker run -it -v %LOCALAPPDATA%\Eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp gcr.io/prysmaticlabs/prysm/beacon-chain:stable --datadir=/data --rpc-host=0.0.0.0 --monitoring-host=0.0.0.0 --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT>
 ```
 
 This will sync up the beacon node with the latest cannonical head block in the network. The Docker `-d` flag can be appended before the `-v` flag to launch the process in a detached terminal window.
@@ -348,7 +348,7 @@ Download the genesis state from [github.com/eth-clients/eth2-networks/raw/master
 
 
 ```text
-docker run -it -v %LOCALAPPDATA%\Eth2:/data -v \path\to\genesis.ssz:/genesis/genesis.ssz -p 4000:4000 -p 13000:13000 -p 12000:12000/udp gcr.io/prysmaticlabs/prysm/beacon-chain:stable --datadir=/data --rpc-host=0.0.0.0 --monitoring-host=0.0.0.0 --http-web3provider=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> --genesis-state=/genesis/genesis.ssz --prater
+docker run -it -v %LOCALAPPDATA%\Eth2:/data -v \path\to\genesis.ssz:/genesis/genesis.ssz -p 4000:4000 -p 13000:13000 -p 12000:12000/udp gcr.io/prysmaticlabs/prysm/beacon-chain:stable --datadir=/data --rpc-host=0.0.0.0 --monitoring-host=0.0.0.0 --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> --genesis-state=/genesis/genesis.ssz --prater
 ```
 
 **Ropsten**
@@ -357,7 +357,7 @@ Download the genesis state from [github.com/eth-clients/merge-testnets/blob/main
 
 
 ```text
-docker run -it -v %LOCALAPPDATA%\Eth2:/data -v \path\to\genesis.ssz:/genesis/genesis.ssz -p 4000:4000 -p 13000:13000 -p 12000:12000/udp gcr.io/prysmaticlabs/prysm/beacon-chain@sha256:bf9b95661c71ad60f633ee14cf352a668d550076471154cf80dfef8fce0bb41e --datadir=/data --rpc-host=0.0.0.0 --monitoring-host=0.0.0.0 --http-web3provider=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> --genesis-state=/genesis/genesis.ssz --ropsten
+docker run -it -v %LOCALAPPDATA%\Eth2:/data -v \path\to\genesis.ssz:/genesis/genesis.ssz -p 4000:4000 -p 13000:13000 -p 12000:12000/udp gcr.io/prysmaticlabs/prysm/beacon-chain@sha256:bf9b95661c71ad60f633ee14cf352a668d550076471154cf80dfef8fce0bb41e --datadir=/data --rpc-host=0.0.0.0 --monitoring-host=0.0.0.0 --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> --genesis-state=/genesis/genesis.ssz --ropsten
 ```
 
 </TabItem>
@@ -373,7 +373,7 @@ docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/u
   --datadir=/data \
   --rpc-host=0.0.0.0 \
   --monitoring-host=0.0.0.0 \
-  --http-web3provider=<YOUR_ETH_EXECUTION_NODE_ENDPOINT>
+  --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT>
 ```
 
 **Prater**
@@ -386,7 +386,7 @@ docker run -it -v $HOME/.eth2:/data -v /path/to/genesis.ssz:/genesis/genesis.ssz
   --datadir=/data \
   --rpc-host=0.0.0.0 \
   --monitoring-host=0.0.0.0 \
-  --http-web3provider=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> \
+  --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> \
   --genesis-state=/genesis/genesis.ssz \
   --prater
 ```
@@ -401,7 +401,7 @@ docker run -it -v $HOME/.eth2:/data -v /path/to/genesis.ssz:/genesis/genesis.ssz
   --datadir=/data \
   --rpc-host=0.0.0.0 \
   --monitoring-host=0.0.0.0 \
-  --http-web3provider=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> \
+  --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> \
   --genesis-state=/genesis/genesis.ssz \
   --ropsten
 ```
