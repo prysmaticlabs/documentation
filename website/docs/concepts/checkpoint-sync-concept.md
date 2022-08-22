@@ -108,7 +108,7 @@ Beacon nodes maintain a local copy of the Ethereum's [Beacon Chain](https://ethe
 
 <img src={CheckpointSyncAbsent} /> 
 
-This sync process can take a very long time - on the magnitude of days to weeks. 
+This process can take a very long time - on the magnitude of days to weeks. 
 
 ### Syncing with checkpoint sync
 
@@ -116,7 +116,7 @@ Checkpoint sync speeds things up by telling your beacon node to sync from a **re
 
 <img src={CheckpointSyncPresent} /> 
 
-Note that currently, Prysm's implementation syncs forward-only. The process of retrieving historical blocks before the starting block is called "backfilling", and will be supported in a future Prysm release. Backfilling isn't required to run a validator - it's only required if you want to run an archive node, serve peer node requests, or query chain history through your local beacon node.
+The process of retrieving historical blocks before the starting block is called "backfilling", and will be supported in a future Prysm release. **Backfilling isn't required to run a validator** - it's only required if you want to run an archive node, serve peer node requests for historical blocks, or query chain history through your local beacon node's Beacon API.
 
 
 ## Frequently asked questions
