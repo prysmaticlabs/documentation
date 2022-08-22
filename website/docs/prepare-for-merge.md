@@ -12,17 +12,27 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <HeaderBadgesWidget />
 
-[The Merge](https://ethereum.org/en/upgrades/merge/) will fully transition Ethereum's consensus mechanism from proof-of-work to proof-of-stake. This is made possible by the [Beacon Chain](https://ethereum.org/en/upgrades/beacon-chain/), a new Ethereum network layer that implements proof-of-stake consensus. After The Merge, this consensus layer will be combined with Ethereum's execution layer, and miners will be fully replaced by proof-of-stake validators on Ethereum Mainnet.
-
-This guide will walk you through the changes that you need to make in preparation for The Merge. Note that these instructions need to be followed **only if you're running on a testnet**. After the Goerli-Prater test network has been merged, this guidance will be updated with Mainnet guidance.
-
 :::info New user?
 
 This guidance is targeted at users who are already running Prysm. If you're starting from scratch, see our [Quickstart](./install/install-with-script.md).
 
-**Not familiar with nodes, networks, and related terminology?** Consider reading [Nodes and networks](./concepts/nodes-networks.md) before proceeding.
-
 :::
+
+[Prysm v3](https://github.com/prysmaticlabs/prysm/releases/tag/v3.0.0) can be used to run a node on Mainnet using Merge-ready configuration. In this guide, we'll step through the tasks that you need to complete in order to be Merge-prepared. 
+
+
+## Merge preparation checklist
+
+Keep the following checklist in mind:
+
+ - **Review v3 release notes in detail**. [Prysm v3](https://github.com/prysmaticlabs/prysm/releases/tag/v3.0.0) introduces many updates, deprecations, and breaking changes. Review the [release notes](https://github.com/prysmaticlabs/prysm/releases/tag/v3.0.0) to understand how this release impacts your configuration.
+ - **Understand the high-level before and after**. The next section gives you a before/after picture of the items that you need to keep in mind while preparing for The Merge.
+ - **Ensure that you're using a network-compatible version of your execution client**: You may need to use a prerelease version of execution client software. Refer to your execution client software documentation for the latest guidance.
+ - **Ensure that you're using v3.0.0**: If you've ever set the `USE_PRYSM_VERSION` environment variable, either clear this variable or use `set USE_PRYSM_VERSION=v3.0.0` to ensure that Prysm uses Prysm v3.
+ - **Verify your version**: Verify that you're running Prysm `v3.0.0` by issuing the following command: `prysm.sh beacon-chain --version` (Linux) `prysm.bat beacon-chain --version` (Windows).
+ - **Configure JWT**: Ensure that both your execution node and beacon node are configured to use JWT authentication. These instructions are included below, and are also available here: [Configure JWT](../execution-node/authentication.md).
+ - **Update your firewall**: Post-merge, your beacon node will need to connect to its execution node on port `8551`. Previously, port `8545` was used. Ensure that your firewall rules are updated accordingly.
+ - (Power users) Review the Ethereum Launchpad's [Merge config checklist](https://notes.ethereum.org/@launchpad/merge-configuration-checklist).
 
 
 ## The Merge: Before and after
@@ -68,7 +78,7 @@ You’re now ready for The Merge. If you have any questions, feel free ask them 
 ## Frequently asked questions
 
 **I'm currently running a validator on Ethereum Mainnet. When should I make changes?** <br />
-You can make the above changes now if you're running on a testnet. This document will be continuously updated with the latest instructions as we approach Mainnet Merge.
+You can now make these changes, regardless of the network you're running on.
 
 **Can I use IPC post-Merge?** <br />
 Yes. You also won't have to worry about JWT if you use IPC. Refer to your clients' command-line documentation for IPC configuration parameters.
