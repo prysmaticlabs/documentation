@@ -34,6 +34,17 @@ header>h1 {
     font-size: 1.2rem !important;
 }
 
+.markdown>img {
+    display: block;
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    overflow: hidden;
+    width: auto;
+    max-width: 100%;
+}
+
 .panel {
     border-top: 2px solid #ddd;
     padding: 20px 20px 25px 20px;
@@ -266,7 +277,6 @@ footer.docusaurus-mt-lg {
     display: block;
     margin-top: -15px !important;
     margin-bottom: 30px;
-
     /*pragmatism over perfection*/
 }
 
@@ -279,7 +289,8 @@ footer.docusaurus-mt-lg {
     background-color: #efefef;
     padding: 3px 20px 3px 3px;
     height: 31px;
-    margin-right: 10px;
+    margin-right: 6px;
+    margin-bottom: 6px;
     vertical-align: top;
     white-space: nowrap;
     overflow: hidden;
@@ -300,16 +311,31 @@ html[data-theme='dark'] .header-badge:hover {
     background-color: #444;
 }
 
-.header-badge:hover>.badge-avatar {
-    opacity: 1;
+.header-badge>.badge-label {
+    transition-property: all;
+    transition-duration: 0.2s;
+    font-size: 13px;
+    line-height: 24px;
+    color: #333;
+    display: inline-block;
+    vertical-align: top;
+    height: 25px;
+}
+
+html[data-theme='dark'] .header-badge>.badge-label {
+    color: #ddd;
 }
 
 .header-badge:hover>.badge-label {
-    color: #222;
+    color: #000;
 }
 
 html[data-theme='dark'] .header-badge:hover>.badge-label {
     color: #d6d6d6;
+}
+
+.header-badge:hover>.badge-avatar {
+    opacity: 1;
 }
 
 .header-badge>.badge-avatar {
@@ -332,20 +358,7 @@ html[data-theme='dark'] .header-badge:hover>.badge-label {
     margin-right: 8px !important;
 }
 
-.header-badge>.badge-label {
-    transition-property: all;
-    transition-duration: 0.2s;
-    font-size: 13px;
-    line-height: 24px;
-    color: #666;
-    display: inline-block;
-    vertical-align: top;
-    height: 25px;
-}
 
-html[data-theme='dark'] .header-badge>.badge-label {
-    color: #ddd;
-}
 
 
 @media (max-width: 736px) {
@@ -356,6 +369,10 @@ html[data-theme='dark'] .header-badge>.badge-label {
 
     .nav-home {
         margin: auto !important;
+    }
+
+    .header-badge {
+        max-width: 200px;
     }
 }
 

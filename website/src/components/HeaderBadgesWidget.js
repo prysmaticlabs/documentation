@@ -1,12 +1,14 @@
 import React from 'react';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 
-export const HeaderBadgesWidget = ({ commaDelimitedAuthorNicknames, lastVerifiedDateString, lastVerifiedVersionString }) => {
+export const HeaderBadgesWidget = ({ commaDelimitedContributors, lastVerifiedDateString, lastVerifiedVersionString }) => {
 	let githubUsernames = {
 		Mick: "symbolpunk",
 		Raul: "rauljordan",
 		Terence: "terencechain",
-		James: "james-prysm"
+		James: "james-prysm",
+		Kasey: "kasey",
+		Potuz: "potuz"
 	}
 
 	let buildAuthorBadge = function (authorNickname) {
@@ -33,12 +35,12 @@ export const HeaderBadgesWidget = ({ commaDelimitedAuthorNicknames, lastVerified
 		<BrowserOnly>
 			{() =>
 				<div class="header-badges">
-					{commaDelimitedAuthorNicknames != null ? commaDelimitedAuthorNicknames.split(',').map(buildAuthorBadge) : ""}
+					{(commaDelimitedContributors != null ? commaDelimitedContributors.split(',').map(buildAuthorBadge) : null)}
+					{buildLastVerifiedBadge(lastVerifiedDateString, lastVerifiedVersionString)}
 					<a class="header-badge" href={`https://github.com/prysmaticlabs/documentation/issues/new?title=Docs update request: ${new URL(window.location.href).pathname}&body=Source: ${window.location.href}%0A%0ARequest: (how can we help?)`}>
 						<span class="badge-avatar emoji-avatar">✏️</span>
 						<span class="badge-label">Request an update</span>
 					</a>
-					{buildLastVerifiedBadge(lastVerifiedDateString, lastVerifiedVersionString)}
 				</div>
 			}
 		</BrowserOnly>
