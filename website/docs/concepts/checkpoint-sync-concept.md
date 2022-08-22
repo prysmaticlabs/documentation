@@ -95,8 +95,8 @@ Let's imagine that Bob wants to send Alice some ETH. In the happy scenario, Bob'
  4. **Block created**: This randomly selected block proposer dequeues a batch of transactions from its internal transaction queue, verifies the legitimacy of each dequeued transaction, and builds a new block that contains Bob's transaction.
  5. **Block proposed**: The block proposer broadcasts this proposed new block to peer nodes.
  6. **Attesters selected**: The Ethereum network randomly selects a small committee of other validator nodes to attest to the legitimacy of the proposed block and the transactions it contains.
- 7. **Block justified**: After a sufficient number and percentage of committee members have attested to the legitimacy of a future candidate checkpoint, the checkpoint is marked as justified along with all ancestor blocks.
- 8. **Block finalized**: After a sufficient number and percentage of committee members have attested to the legitimacy of a future justified checkpoint, the checkpoint is marked as finalized along with all ancestor blocks.
+ 7. **Block justified**: After a supermajority of attesters identify a future justified checkpoint, this block is marked as justified along with all of its ancestor blocks.
+ 8. **Block finalized**: After a supermajority of attesters identify another future justified checkpoint, the previous checkpoint is marked as finalized along with all of its ancestor blocks.
 
 
 ## Checkpoint sync
