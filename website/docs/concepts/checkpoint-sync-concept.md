@@ -71,7 +71,7 @@ A block is **justified** after:
  1. More than 2/3 of attesting validators agree that the block is a justified checkpoint, or
  2. A **future checkpoint** becomes justified, and the block is an ancestor of that newly justified checkpoint.
 
-A block becomes **finalized** after either:
+A block is **finalized** after either:
 
  1. The block is a **justified checkpoint** and 2/3 of attesting validators identify another justified checkpoint in a future epoch, or
  2. A **future epoch's justified checkpoint** becomes finalized, and the block is an ancestor of that newly finalized checkpoint.
@@ -83,10 +83,9 @@ Epochs are used to identify checkpoints, and checkpoints are used to implement t
 The above epochs can be described as follows:
 
 1. **Epoch 1**: All blocks are finalized.
-2. **Epoch 2**: All blocks are justified, and its first block is finalized. This epoch's first block is Ethereum's most recently finalized checkpoint.
-3. **Epoch 3**: All blocks are justified, including the block in its first slot. This epoch's first block is a justified checkpoint. This justified checkpoint could become the next finalized checkpoint.
-4. **Epoch 4**: All blocks are proposed, only the first has been justified. This epoch's first block is also a justified checkpoint, and it also could become the next finalized checkpoint.
-5. **Epoch 5**: In progress - blocks are being proposed, none are justified. Its first block could become a finalized checkpoint, but only after it becomes a justified checkpoint.
+2. **Epoch 2**: The first block is finalized, because the following epoch's checkpoint was justified. The rest of the blocks are justified. This epoch's first block is the most recently finalized checkpoint.
+3. **Epoch 3**: All blocks are proposed, only the first has been justified. This epoch's first block is also the most recently justified checkpoint, and thus, is the head of the chain.
+4. **Epoch 4**: Blocks are being proposed, none are justified. Its first block could become a justified checkpoint, but only after the epoch ends.
 
 Let's imagine that Bob wants to send Alice some ETH. In the happy scenario, Bob's transaction would flow through the following (oversimplified) transaction lifecycle:
 
