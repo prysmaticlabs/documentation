@@ -63,7 +63,7 @@ Every slot is an opportunity for one new block of transactions to be proposed an
 
 **Justification** is the process of marking a block as *tentatively canonical*. **Finalization** is the process of upgrading a block from *tentatively canonical* to *canonical*. When a block is finalized, its transactions are finalized, and the probability of transaction reversal is near-zero. Every epoch, a new set of blocks can be justified, and an older set of justified blocks can be finalized. The Ethereum network uses **checkpoints** to periodically perform these promotions.
 
-Blocks become **justified** after:
+Blocks become **justified** after either:
 
  1. The block is in the **first slot of an epoch** and 2/3 of attesting validators agree that the block is a justified checkpoint, or
  2. A **future epoch's first block** becomes justified, and the block is a descendent of that newly justified checkpoint.
