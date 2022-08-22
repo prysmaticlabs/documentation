@@ -15,7 +15,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 # Checkpoint sync: Conceptual overview
 
-<HeaderBadgesWidget commaDelimitedContributors="Mick,Potuz" />
+<HeaderBadgesWidget commaDelimitedContributors="Mick,Potuz,Kasey" />
 
 :::info Looking for the how-to?
 
