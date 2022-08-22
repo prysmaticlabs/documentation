@@ -19,12 +19,6 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 **Checkpoint sync** is a feature that significantly speeds up the initial sync between your beacon node and the Beacon Chain. With checkpoint sync configured, your beacon node will begin syncing from a recently finalized checkpoint instead of syncing from genesis. This can make installations, validator migrations, recoveries, and testnet deployments *way* faster.
 
-:::info Knowledge Check
-
-**Not familiar with checkpoint sync, checkpoints, or finality?** Consider reading [Checkpoint sync: Conceptual overview](../concepts/checkpoint-sync-concept.md) before proceeding. 
-
-:::
-
 To sync from a checkpoint, your Prysm beacon node needs three pieces of information: the latest finalized `BeaconState`, the `SignedBeaconBlock`, and (if you're on a testnet) the genesis state for the network you're using. Together, the `BeaconState` and `SignedBeaconBlock` represent a single **checkpoint state**.
 
 These three pieces of information can be retrieved either via a **network request**, or via **file export/import**. Syncing via network is the method we recommend to most users because it's more straightforward. 
