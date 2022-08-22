@@ -200,9 +200,11 @@ Block and state are immediately finalized upon import, so your first node should
 Similar to what happens when you sync from genesis, if your execution client isn't fully synced, your beacon node will go into optimistic sync mode. You'll be able to follow the chain, but any validators connected to your beacon node won't be able to propose.
 
 **Where can I learn more about checkpoint sync?** <br/>
+
+ - [Checkpoint sync: Conceptual overview](../concepts/checkpoint-sync-concept.md) for a beginner-friendly conceptual overview
  - [Checkpoint Sync Safety](https://www.symphonious.net/2022/05/21/checkpoint-sync-safety/) by Adrian Sutton
- - [How to: Checkpoint Sync](https://notes.ethereum.org/@launchpad/checkpoint-sync) by members of the Ethereum Foundation. 
- - [WS sync in practice](https://notes.ethereum.org/@djrtwo/ws-sync-in-practice) by Danny Ryan.
+ - [How to: Checkpoint Sync](https://notes.ethereum.org/@launchpad/checkpoint-sync) by members of the Ethereum Foundation
+ - [WS sync in practice](https://notes.ethereum.org/@djrtwo/ws-sync-in-practice) by Danny Ryan
  
 Special thanks to the authors of *How to: Checkpoint Sync* for providing the endpoints and verification procedure used in this guide.
 
