@@ -50,7 +50,9 @@ Ethereum's nodes work together to process one batch of transactions at a time. T
 
 It can be helpful to think of Ethereum as a "world computer" with a processor and hard drive. Its processor is the [Ethereum Virtual Machine](https://ethereum.org/en/developers/docs/evm/) (EVM) and its hard drive is the blockchain underlying Ethereum Mainnet. Both of these components live on every Ethereum node.
 
-Every 12 seconds, Ethereum's processor dequeues a collection of transactions and attempts to organize them into a block. These 12-second periods are called **slots**. `1 slot = 12 seconds` is a rule that's hardcoded within the [Beacon Chain protocol specification](https://github.com/ethereum/consensus-specs/blob/dev/specs/phase0/beacon-chain.md#time-parameters-1). Every slot is an opportunity for one new block of transactions to be proposed and tentatively accepted by the Ethereum network. Every 32 slots (or 384 seconds), Ethereum has an opporunity to upgrade a batch of slots from "proposed" to "finalized". Ethereum's blocks are finalized *at most* once every 32 slots. These 32-slot timespans are called **epochs**:
+Every 12 seconds, Ethereum's processor dequeues a collection of transactions and attempts to organize them into a block. These 12-second periods are called **slots**. `1 slot = 12 seconds` is a rule that's hardcoded within the [Beacon Chain protocol specification](https://github.com/ethereum/consensus-specs/blob/dev/specs/phase0/beacon-chain.md#time-parameters-1). 
+
+Every slot is an opportunity for one new block of transactions to be proposed and tentatively accepted by the Ethereum network. Every 32 slots (or 384 seconds), Ethereum has an opporunity to upgrade a batch of slots from "proposed" to "finalized". Ethereum's blocks are finalized *at most* once every 32 slots. These 32-slot timespans are called **epochs**:
 
 <img src={EpochsBlocks} />
 
