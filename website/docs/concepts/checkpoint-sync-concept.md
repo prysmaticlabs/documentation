@@ -67,7 +67,7 @@ Every epoch, a new set of blocks can be justified, and an older set of justified
 
 Blocks become **justified** after either:
 
- 1. 2/3 of attesting validators agree that the block is a justified checkpoint, or
+ 1. More than 2/3 of attesting validators agree that the block is a justified checkpoint, or
  2. A **future epoch's checkpoint** becomes justified, and the block is an ancestor of that newly justified checkpoint.
 
 Blocks become **finalized** after either:
