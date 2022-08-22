@@ -25,9 +25,11 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 :::
 
-To sync from a checkpoint, your Prysm beacon node needs three pieces of information: the latest finalized `BeaconState`, the `SignedBeaconBlock`, and (if you're on a testnet) the **genesis state** for the network you're using. Together, the `BeaconState` and `SignedBeaconBlock` represent a single **checkpoint state**.
+To sync from a checkpoint, your Prysm beacon node needs three pieces of information: the latest finalized `BeaconState`, the `SignedBeaconBlock`, and (if you're on a testnet) the genesis state for the network you're using. Together, the `BeaconState` and `SignedBeaconBlock` represent a single **checkpoint state**.
 
-This information can be retrieved either via a **network request**, or via **file export/import**. Syncing via network is the method we recommend to most users because it's more straightforward. After configuring checkpoint sync, we strongly recommend [verifying the authenticity of your beacon node's checkpoint](#verify-the-authenticity-of-your-beacon-nodes-checkpoint) as a way to "trust but verify" the integrity of your checkpoint data.
+These three pieces of information can be retrieved either via a **network request**, or via **file export/import**. Syncing via network is the method we recommend to most users because it's more straightforward. 
+
+After configuring checkpoint sync, we strongly recommend [verifying the authenticity of your beacon node's checkpoint](#verify-the-authenticity-of-your-beacon-nodes-checkpoint) as a way to "trust but verify" the integrity of your checkpoint data.
 
 ## Option 1: Configure checkpoint sync via network request
 
