@@ -80,7 +80,7 @@ Familiarity with these rules can help conceptualize the relationships between **
 
 <img src={Finality} />
 
-Let's describe each of the above epochs:
+The above epochs can be described as follows:
 
 1. **Epoch 1**: All blocks are finalized.
 2. **Epoch 2**: All blocks are justified, and its first block is finalized. This epoch's first block is Ethereum's most recently finalized checkpoint.
@@ -88,7 +88,7 @@ Let's describe each of the above epochs:
 4. **Epoch 4**: All blocks are proposed, only the first has been justified. This epoch's first block is also a justified checkpoint, and it also could become the next finalized checkpoint.
 5. **Epoch 5**: In progress - blocks are being proposed, none are justified. Its first block could become a finalized checkpoint, but only after it becomes a justified checkpoint.
 
-To further connect the dots, let's imagine that Bob wants to send Alice some ETH. In the happy scenario, Bob's transaction would flow through the following (oversimplified) transaction lifecycle:
+Let's imagine that Bob wants to send Alice some ETH. In the happy scenario, Bob's transaction would flow through the following (oversimplified) transaction lifecycle:
 
  1. **Transaction signed**: Bob signs a transaction that moves ETH from his wallet to Alice's wallet using the private key associated with his wallet.
  2. **Transaction submitted**: Bob submits this transaction to the Ethereum network. Theoretically, all nodes receive it.
