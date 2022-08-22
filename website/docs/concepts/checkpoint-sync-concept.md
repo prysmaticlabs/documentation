@@ -61,21 +61,22 @@ Every slot is an opportunity for one new block of transactions to be proposed an
 
 ### Justification, finality, and checkpoints
 
-**Justification** is the process of marking a block as *tentatively canonical*. **Finalization** is the process of upgrading a block from *tentatively canonical* to *canonical*. When a block is finalized, its transactions are finalized. At this point, the probability of transaction reversal is near-zero because it would require social consensus and a hard fork.
+**Justification** is the process of marking a block as *tentatively canonical*. **Finalization** is the process of upgrading a block from *tentatively canonical* to *canonical*. When a block is finalized, its transactions are finalized, and the probability of transaction reversal is near-zero because it would require social consensus and a hard fork.
 
-Every epoch, a new set of blocks can be justified, and an older set of justified blocks can be finalized. The Ethereum network uses **checkpoints** to periodically perform these promotions. A checkpoint consists of a **block** and an **epoch number**. In most cases, the block will be the first block of that epoch <a class="footnote" href='#footnote-1'>[12]</a>.
+Whenever a new epoch begins, a new set of blocks can be justified, and an older set of justified blocks can be finalized. The Ethereum network uses **checkpoints** to periodically perform these promotions. A checkpoint consists of a **block** and an **epoch number**. In most cases, a checkpoint will be the first block of its epoch <a class="footnote" href='#footnote-1'>[12]</a>.
 
-Blocks become **justified** after either:
+A block is **justified** after:
 
+ 1. Its epoch has passed, and either
  1. More than 2/3 of attesting validators agree that the block is a justified checkpoint, or
- 2. A **future epoch's checkpoint** becomes justified, and the block is an ancestor of that newly justified checkpoint.
+ 2. A **future checkpoint** becomes justified, and the block is an ancestor of that newly justified checkpoint.
 
-Blocks become **finalized** after either:
+A block becomes **finalized** after either:
 
- 1. The block is a **justified checkpoint** and 2/3 of attesting validators agree that the block is a finalized checkpoint, or
+ 1. The block is a **justified checkpoint** and 2/3 of attesting validators identify another justified checkpoint in a future epoch, or
  2. A **future epoch's justified checkpoint** becomes finalized, and the block is an ancestor of that newly finalized checkpoint.
 
-Familiarity with these rules can help conceptualize the relationships between **epochs**, **checkpoints**, **justified blocks**, and **finalized blocks**. Epochs are used to identify checkpoints, and checkpoints are used to implement the notions of justification and finality. Justification and finalization occur *at most* one epoch at a time. Ethereum's current head is the most recently justified checkpoint:
+Epochs are used to identify checkpoints, and checkpoints are used to implement the notions of justification and finality. Justification and finalization occur *at most* one epoch at a time. Ethereum's current head is the most recently justified checkpoint:
 
 <img src={Finality} />
 
