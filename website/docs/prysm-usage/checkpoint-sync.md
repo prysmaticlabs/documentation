@@ -21,7 +21,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 :::info Knowledge Check
 
-**Not familiar with checkpoint sync?** Consider reading [Checkpoint sync: Conceptual overview](../concepts/checkpoint-sync-concept.md) before proceeding. 
+**Not familiar with checkpoint sync, checkpoints, or finality?** Consider reading [Checkpoint sync: Conceptual overview](../concepts/checkpoint-sync-concept.md) before proceeding. 
 
 :::
 
