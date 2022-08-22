@@ -74,7 +74,7 @@ Blocks become **finalized** after either:
  1. The block is a **justified checkpoint** and 2/3 of attesting validators agree that the block is a finalized checkpoint, or
  2. A **future epoch's justified checkpoint** becomes finalized, and the block is a descendent of that newly finalized checkpoint.
 
-Familiarity with these rules can help conceptualize the relationships between **epochs**, **checkpoints**, **justified blocks**, and **finalized blocks**. Epochs are used to identify checkpoints, and checkpoints are used to implement the notions of justification and finality. Justification and finalization occur at most one epoch at a time. At any given time, Ethereum's current "candidate checkpoints" are justified blocks in the first slot of any epoch following the most recently finalized checkpoint:
+Familiarity with these rules can help conceptualize the relationships between **epochs**, **checkpoints**, **justified blocks**, and **finalized blocks**. Epochs are used to identify checkpoints, and checkpoints are used to implement the notions of justification and finality. Justification and finalization occur *at most* one epoch at a time. At any given time, Ethereum's current "candidate checkpoints" are justified blocks in the first slot of any epoch following the most recently finalized checkpoint:
 
 <img src={Finality} />
 
