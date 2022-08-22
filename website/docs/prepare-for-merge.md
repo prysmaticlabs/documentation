@@ -21,7 +21,7 @@ This guidance is targeted at users who are already running Prysm. If you're star
 [Prysm v3](https://github.com/prysmaticlabs/prysm/releases/tag/v3.0.0) can be used to run a node on Mainnet using Merge-ready configuration. In this guide, we'll step through the tasks that you need to complete in order to be Merge-prepared. 
 
 
-## Checklist
+## Merge preparation checklist
 
 Keep the following checklist in mind:
 
