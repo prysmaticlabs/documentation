@@ -120,7 +120,7 @@ Note: <YOUR_ETH_EXECUTION_NODE_ENDPOINT> is in the format of an http endpoint su
 **Mainnet**
 
 ```text
-bazel run //beacon-chain --config=release -- --http-web3provider=<YOUR_ETH_EXECUTION_NODE_ENDPOINT>
+bazel run //beacon-chain --config=release -- --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT>
 ```
 
 **Prater**
@@ -128,7 +128,7 @@ bazel run //beacon-chain --config=release -- --http-web3provider=<YOUR_ETH_EXECU
 Download the genesis state from [github.com/eth2-clients/eth2-networks/raw/master/shared/prater/genesis.ssz](https://github.com/eth2-clients/eth2-networks/raw/master/shared/prater/genesis.ssz) to a local file, then run
 
 ```text
-bazel run //beacon-chain --config=release -- --http-web3provider=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> --prater --genesis-state=/path/to/genesis.ssz
+bazel run //beacon-chain --config=release -- --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> --prater --genesis-state=/path/to/genesis.ssz
 ```
 
 **Ropsten**
@@ -136,7 +136,7 @@ bazel run //beacon-chain --config=release -- --http-web3provider=<YOUR_ETH_EXECU
 Download the genesis state from [github.com/eth-clients/merge-testnets/blob/main/ropsten-beacon-chain/genesis.ssz](https://github.com/eth-clients/merge-testnets/blob/main/ropsten-beacon-chain/genesis.ssz) to a local file, then run
 
 ```text
-bazel run //beacon-chain --config=release -- --http-web3provider=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> --ropsten --genesis-state=/path/to/genesis.ssz
+bazel run //beacon-chain --config=release -- --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> --ropsten --genesis-state=/path/to/genesis.ssz
 ```
 
 ## Running a Validator
