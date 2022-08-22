@@ -16,22 +16,21 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 This guidance is targeted at users who are already running Prysm. If you're starting from scratch, see our [Quickstart](./install/install-with-script.md).
 
-**Not familiar with nodes, networks, and related terminology?** Consider reading [Nodes and networks](./concepts/nodes-networks.md) before proceeding.
-
 :::
 
-[Prysm v3](https://github.com/prysmaticlabs/prysm/releases/tag/v3.0.0) can be used to run a node on Mainnet using Merge-ready configuration. Use either of the following guides to configure your node (and optionally, your validator):
+[Prysm v3](https://github.com/prysmaticlabs/prysm/releases/tag/v3.0.0) can be used to run a node on Mainnet using Merge-ready configuration. In this guide, we'll step through the tasks that you need to complete in order to be Merge-prepared. 
 
- - [Quickstart](../install/install-with-script.md): For users who are starting from scratch.
- - [Prepare for The Merge](../prepare-for-merge.md): For users who are already running a node.
+
+## Checklist
 
 Keep the following checklist in mind:
 
+ - **Understand the high-level before and after**. The next section gives you a before/after picture of the items that you need to keep in mind while preparing for The Merge.
  - **Ensure that you're using a network-compatible version of your execution client**: You may need to use a prerelease version of execution client software. Refer to your execution client software documentation for the latest guidance.
  - **Ensure that you're using v3.0.0**: If you've ever set the `USE_PRYSM_VERSION` environment variable, either clear this variable or use `set USE_PRYSM_VERSION=v3.0.0` to ensure that Prysm uses Prysm v3.
  - **Verify your version**: Verify that you're running Prysm `v3.0.0` by issuing the following command: `prysm.sh beacon-chain --version` (Linux) `prysm.bat beacon-chain --version` (Windows).
  - **Configure JWT**: Ensure that both your execution node and beacon node are configured to use JWT authentication. These instructions are included in both of the above-linked documents, and are also available here: [Configure JWT](../execution-node/authentication.md).
- - **Ensure that you can use port 8551**: Post-merge, your beacon node will need to connect to its execution node on port `8551`, while previously, port `8545` was used. Ensure that your firewall rules are updated accordingly.
+ - **Update your firewall**: Post-merge, your beacon node will need to connect to its execution node on port `8551`. Previously, port `8545` was used. Ensure that your firewall rules are updated accordingly.
  - (Power users) Review the Ethereum Launchpad's [Merge config checklist](https://notes.ethereum.org/@launchpad/merge-configuration-checklist).
 
 
