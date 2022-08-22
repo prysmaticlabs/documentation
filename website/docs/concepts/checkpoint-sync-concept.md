@@ -134,7 +134,7 @@ The process of retrieving historical blocks before the starting block is called 
 
 Footnotes:
 
-<strong id='footnote-1'>1</strong>. A checkpoint block may end up being in the middle of the previous epoch. Note that the proposer selected to fill the first slot of an epoch may not produce a valid block. If this happens, attesters will identify the checkpoint by working backwards through the previous epoch until they find a valid block. For example: slot 20 of the previous epoch may be used as a checkpoint if blocks from slots 21...32 are missing. <br />
+<strong id='footnote-1'>1</strong>. A checkpoint block may end up being in the middle of the previous epoch. Note that the proposer selected to fill the first slot of an epoch may not produce a valid block. If this happens, attesters will identify the candidate checkpoint by working backwards through the previous epoch until they find a valid block. For example: slot 20 of the previous epoch may be used as a checkpoint if blocks from slots 21...32 are missing. <br />
 
 
 <RequestUpdateWidget />
