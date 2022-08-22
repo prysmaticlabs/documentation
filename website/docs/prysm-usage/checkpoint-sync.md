@@ -201,6 +201,9 @@ Block and state are immediately finalized upon import, so your first node should
 **Does my execution client need to be fully synced before my beacon node can use checkpoint sync?** <br/>
 Similar to what happens when you sync from genesis, if your execution client isn't fully synced, your beacon node will go into optimistic sync mode. You'll be able to follow the chain, but any validators connected to your beacon node won't be able to propose.
 
+**How does checkpoint sync relate to weak subjectivity checkpoints?**
+Prysm offers a `--weak-subjectivity-checkpoint` flag that allows you to specify a weak subjectivity checkpoint. With this flag specified, your beacon node will ensure that it reconstructs a historical chain that matches the checkpoint root at the given epoch. This can offer the same level of weak subjectivity protection that checkpoint sync offers. See [Weak Subjectivity](https://blog.ethereum.org/2014/11/25/proof-stake-learned-love-weak-subjectivity/) to learn more.
+
 **Where can I learn more about checkpoint sync?** <br/>
 
  - [Checkpoint sync: Conceptual overview](../concepts/checkpoint-sync-concept.md) for a beginner-friendly conceptual overview
