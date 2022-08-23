@@ -26,71 +26,81 @@ import QuickstartPrereqsPartial from '@site/docs/install/partials/_quickstart-pr
 
 First, select a configuration:
 
-<Tabs class="quickstart-tabs" groupId="os" defaultValue="others" values={[
-    {label: 'Windows', value: 'win'},
-    {label: 'Linux, MacOS, Arm64', value: 'others'}
-]}>
-  <TabItem value="win"></TabItem>
-  <TabItem value="others"></TabItem>
-</Tabs>
+<div class='quickstart-tabs'>
 
-<Tabs class="quickstart-tabs" groupId="network" defaultValue="mainnet" values={[
-        {label: 'Mainnet', value: 'mainnet'},
-        {label: 'Goerli-Prater', value: 'goerli-prater'},
-        {label: 'Sepolia', value: 'sepolia'},
-        {label: 'Ropsten', value: 'ropsten'}
-    ]}>
-    <TabItem value="mainnet"></TabItem>
-    <TabItem value="goerli-prater"></TabItem>
-    <TabItem value="sepolia"></TabItem>
-    <TabItem value="ropsten"></TabItem>
-</Tabs>
+  <Tabs className="with-label" groupId="os" defaultValue="others" values={[
+      {label: 'Operating System', value: 'label'},
+      {label: 'Windows', value: 'win'},
+      {label: 'Linux, MacOS, Arm64', value: 'others'}
+  ]}>
+    <TabItem value="label"></TabItem>
+    <TabItem value="win"></TabItem>
+    <TabItem value="others"></TabItem>
+  </Tabs>
 
-<Tabs class="quickstart-tabs" groupId="protocol" defaultValue="jwt" values={[
-        {label: 'JWT', value: 'jwt'},
-        {label: 'IPC', value: 'ipc'}
-    ]}>
-    <TabItem value="jwt"></TabItem>
-    <TabItem value="ipc"></TabItem>
-</Tabs>
+  <Tabs className="with-label" groupId="network" defaultValue="mainnet" values={[
+          {label: 'Network', value: 'label'},
+          {label: 'Mainnet', value: 'mainnet'},
+          {label: 'Goerli-Prater', value: 'goerli-prater'},
+          {label: 'Sepolia', value: 'sepolia'},
+          {label: 'Ropsten', value: 'ropsten'}
+      ]}>
+      <TabItem value="label"></TabItem>
+      <TabItem value="mainnet"></TabItem>
+      <TabItem value="goerli-prater"></TabItem>
+      <TabItem value="sepolia"></TabItem>
+      <TabItem value="ropsten"></TabItem>
+  </Tabs>
+
+  <Tabs className="with-label" groupId="protocol" defaultValue="jwt" values={[
+          {label: 'EL-BN Protocol', value: 'label'},
+          {label: 'JWT', value: 'jwt'},
+          {label: 'IPC', value: 'ipc'}
+      ]}>
+      <TabItem value="label"></TabItem>
+      <TabItem value="jwt"></TabItem>
+      <TabItem value="ipc"></TabItem>
+  </Tabs>
+
+</div>
 
 <div class='hide-tabs'>
 
-import QuickstartInstallPrysmPartial from '@site/docs/install/partials/_quickstart-install-prysm.md';
+  import QuickstartInstallPrysmPartial from '@site/docs/install/partials/_quickstart-install-prysm.md';
 
-<QuickstartInstallPrysmPartial />
+  <QuickstartInstallPrysmPartial />
 
-### Generate JWT secret
+  ### Generate JWT secret
 
-import JwtGenerationPartial from '@site/docs/partials/_jwt-generation-partial.md';
+  import JwtGenerationPartial from '@site/docs/partials/_jwt-generation-partial.md';
 
-<JwtGenerationPartial />
+  <JwtGenerationPartial />
 
-This guide assumes that you've placed your `jwt.hex` file in your `consensus` directory, but you can place it anywhere and revise the below commands as needed.
-
-
-## Step 3: Run an execution client
-
-In this step, you'll install an execution-layer client that Prysm's beacon node will connect to.
-
-import QuickstartRunExecutionNodeJWTPartial from '@site/docs/install/partials/_quickstart-run-execution-node-jwt.md';
-
-<QuickstartRunExecutionNodeJWTPartial />
-
-Congratulations - you’re now running an <strong>execution node</strong> in Ethereum’s execution layer.
-
-## Step 4: Run a beacon node using Prysm
-
-import QuickstartRunBeaconNodePartial from '@site/docs/install/partials/_quickstart-run-beacon-node.md';
-
-<QuickstartRunBeaconNodePartial />
+  This guide assumes that you've placed your `jwt.hex` file in your `consensus` directory, but you can place it anywhere and revise the below commands as needed.
 
 
-## Step 5: Run a validator using Prysm
+  ## Step 3: Run an execution client
 
-import QuickstartRunValidatorPartial from '@site/docs/install/partials/_quickstart-run-validator.md';
+  In this step, you'll install an execution-layer client that Prysm's beacon node will connect to.
 
-<QuickstartRunValidatorPartial />
+  import QuickstartRunExecutionNodeJWTPartial from '@site/docs/install/partials/_quickstart-run-execution-node-jwt.md';
+
+  <QuickstartRunExecutionNodeJWTPartial />
+
+  Congratulations - you’re now running an <strong>execution node</strong> in Ethereum’s execution layer.
+
+  ## Step 4: Run a beacon node using Prysm
+
+  import QuickstartRunBeaconNodePartial from '@site/docs/install/partials/_quickstart-run-beacon-node.md';
+
+  <QuickstartRunBeaconNodePartial />
+
+
+  ## Step 5: Run a validator using Prysm
+
+  import QuickstartRunValidatorPartial from '@site/docs/install/partials/_quickstart-run-validator.md';
+
+  <QuickstartRunValidatorPartial />
 
 </div>
 
