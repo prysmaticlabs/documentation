@@ -32,10 +32,10 @@ html[data-theme='dark'] {
 .quickstart-tabs .with-label .tabs__item:first-child {
     color: black;
     width: 140px;
-    border: 1px solid transparent;
+    border: 1px solid transparent !important;
 }
 
-.quickstart-tabs .with-label .tabs__item:nth-child(1) {
+.quickstart-tabs .with-label .tabs__item:nth-child(2) {
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     border-top-right-radius: 0px;
