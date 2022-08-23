@@ -1,5 +1,5 @@
 
-## Step 4: Run a beacon node using Prysm
+
 
 In this step, you'll run a beacon node using Prysm.
 

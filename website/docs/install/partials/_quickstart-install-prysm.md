@@ -1,0 +1,37 @@
+
+
+
+First, create a folder called `ethereum` on your SSD, and then two subfolders within it: `consensus` and `execution`:
+
+```
+📂ethereum
+┣ 📂consensus
+┣ 📂execution
+```
+
+<Tabs groupId="os" defaultValue="others" values={[
+    {label: 'Windows', value: 'win'},
+    {label: 'Linux, MacOS, Arm64', value: 'others'}
+]}>
+  <TabItem value="win">
+    <p>Navigate to your <code>consensus</code> directory and run the following commands:</p>
+
+```
+mkdir prysm && cd prysm
+curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.bat --output prysm.bat
+reg add HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1
+```
+
+  <p>This will download the Prysm client and update your registry to enable verbose logging.</p>
+  </TabItem>
+  <TabItem value="others">
+    <p>Navigate to your <code>consensus</code> directory and run the following commands:</p>
+
+```
+mkdir prysm && cd prysm
+curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --output prysm.sh && chmod +x prysm.sh
+```
+
+  <p>This will download the Prysm client and make it executable.</p>
+  </TabItem>
+</Tabs>
