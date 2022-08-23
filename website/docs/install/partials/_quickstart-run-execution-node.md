@@ -106,7 +106,7 @@ curl -H "Content-Type: application/json" -X POST http://localhost:8545 -d "{""js
             {label: 'IPC', value: 'ipc'}
             ]}>
                 <TabItem value="jwt"><pre><code>geth --http --http.api eth,net,engine,admin --datadir . --authrpc.jwtsecret ../consensus/jwt.hex </code></pre></TabItem>
-                <TabItem value="ipc">TODO.</TabItem>
+                <TabItem value="ipc"><pre><code>geth --http --http.api eth,net,engine,admin --datadir . </code></pre></TabItem>
             </Tabs>
       </TabItem>
       <TabItem value="goerli-prater">
@@ -115,7 +115,7 @@ curl -H "Content-Type: application/json" -X POST http://localhost:8545 -d "{""js
             {label: 'IPC', value: 'ipc'}
             ]}>
                 <TabItem value="jwt"><pre><code>geth --goerli --http --http.api eth,net,engine,admin --datadir . --authrpc.jwtsecret ../consensus/jwt.hex </code></pre></TabItem>
-                <TabItem value="ipc">TODO.</TabItem>
+                <TabItem value="ipc"><pre><code>geth --goerli --http --http.api eth,net,engine,admin --datadir . </code></pre></TabItem>
             </Tabs>
       </TabItem>
       <TabItem value="sepolia">
@@ -124,7 +124,7 @@ curl -H "Content-Type: application/json" -X POST http://localhost:8545 -d "{""js
             {label: 'IPC', value: 'ipc'}
             ]}>
                 <TabItem value="jwt"><pre><code>geth --sepolia --http --http.api eth,net,engine,admin --datadir . --authrpc.jwtsecret ../consensus/jwt.hex --override.terminaltotaldifficulty 17000000000000000</code></pre></TabItem>
-                <TabItem value="ipc">TODO.</TabItem>
+                <TabItem value="ipc"><pre><code>geth --sepolia --http --http.api eth,net,engine,admin --datadir . --override.terminaltotaldifficulty 17000000000000000</code></pre></TabItem>
             </Tabs>
       </TabItem>
       <TabItem value="ropsten">
@@ -133,7 +133,7 @@ curl -H "Content-Type: application/json" -X POST http://localhost:8545 -d "{""js
             {label: 'IPC', value: 'ipc'}
             ]}>
                 <TabItem value="jwt"><pre><code>geth --ropsten --http --http.api eth,net,engine,admin --datadir . --authrpc.jwtsecret ../consensus/jwt.hex --override.terminaltotaldifficulty 50000000000000000</code></pre></TabItem>
-                <TabItem value="ipc">TODO.</TabItem>
+                <TabItem value="ipc"><pre><code>geth --ropsten --http --http.api eth,net,engine,admin --datadir . </code></pre></TabItem>
             </Tabs>
       </TabItem>
     </Tabs>
