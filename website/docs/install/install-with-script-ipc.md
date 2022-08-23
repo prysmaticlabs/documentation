@@ -9,12 +9,10 @@ import TabItem from '@theme/TabItem';
 import ClientStackPng from '@site/static/img/client-stack.png';
 
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
-<HeaderBadgesWidget commaDelimitedContributors="Mick" />
+<HeaderBadgesWidget commaDelimitedContributors="Mick" lastVerifiedDateString="August 23rd, 2022" lastVerifiedVersionString="v3.0.0" />
 
 import QuickstartIntroPartial from '@site/docs/install/partials/_quickstart-intro.md';
 <QuickstartIntroPartial />
-
-
 
 
 ### Generate JWT secret
