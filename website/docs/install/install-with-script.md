@@ -30,15 +30,6 @@ import QuickstartInstallPrysmPartial from '@site/docs/install/partials/_quicksta
 
 <QuickstartInstallPrysmPartial />
 
-### Generate JWT secret
-
-import JwtGenerationPartial from '@site/docs/partials/_jwt-generation-partial.md';
-
-<JwtGenerationPartial />
-
-This guide assumes that you've placed your `jwt.hex` file in your `consensus` directory, but you can place it anywhere and revise the below commands as needed.
-
-
 ## Step 3: Run an execution client
 
 In this step, you'll install an execution-layer client that Prysm's beacon node will connect to.

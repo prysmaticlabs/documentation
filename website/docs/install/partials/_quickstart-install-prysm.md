@@ -35,3 +35,23 @@ curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --out
   <p>This will download the Prysm client and make it executable.</p>
   </TabItem>
 </Tabs>
+
+
+<Tabs groupId="protocol" defaultValue="jwt" values={[
+        {label: 'JWT', value: 'jwt'}
+    ]}>
+    <TabItem value="jwt">
+    
+### Generate JWT secret
+
+import JwtGenerationPartial from '@site/docs/partials/_jwt-generation-partial.md';
+
+<JwtGenerationPartial />
+
+This guide assumes that you've placed your `jwt.hex` file in your `consensus` directory, but you can place it anywhere and revise the below commands as needed.
+    
+    
+  </TabItem>
+</Tabs>
+
+
