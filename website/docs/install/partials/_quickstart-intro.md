@@ -14,7 +14,7 @@ Select a quickstart configuration:
 <div class='quickstart-tabs'>
 
 <Tabs className="with-label" groupId="os" defaultValue="others" values={[
-    {label: 'Operating System', value: 'label'},
+    {label: 'Operating System:', value: 'label'},
     {label: 'Windows', value: 'win'},
     {label: 'Linux, MacOS, Arm64', value: 'others'}
 ]}>
@@ -24,7 +24,7 @@ Select a quickstart configuration:
 </Tabs>
 
 <Tabs className="with-label" groupId="network" defaultValue="mainnet" values={[
-        {label: 'Network', value: 'label'},
+        {label: 'Network:', value: 'label'},
         {label: 'Mainnet', value: 'mainnet'},
         {label: 'Goerli-Prater', value: 'goerli-prater'},
         {label: 'Sepolia', value: 'sepolia'},
@@ -38,7 +38,7 @@ Select a quickstart configuration:
 </Tabs>
 
 <Tabs className="with-label" groupId="execution-clients" defaultValue="nethermind" values={[
-  {label: 'Execution client', value: 'label'},
+  {label: 'Execution client:', value: 'label'},
   {label: 'Nethermind', value: 'nethermind'},
   {label: 'Besu', value: 'besu'},
   {label: 'Geth', value: 'geth'}
@@ -51,7 +51,7 @@ Select a quickstart configuration:
 
 
 <Tabs className="with-label" groupId="protocol" defaultValue="jwt" values={[
-        {label: 'EL-BN Protocol', value: 'label'},
+        {label: 'EL-BN Protocol:', value: 'label'},
         {label: 'JWT', value: 'jwt'},
         {label: 'IPC', value: 'ipc'}
     ]}>
