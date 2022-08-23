@@ -14,7 +14,7 @@ In this step, you'll use Geth to run an execution-layer client that Prysm's beac
     {label: 'Goerli-Prater', value: 'goerli-prater'},
     {label: 'Sepolia', value: 'sepolia'},
     {label: 'Ropsten', value: 'ropsten'}
-]}>
+]}> 
   <TabItem value="mainnet">
     <pre><code>geth --http --http.api eth,net,engine,admin --datadir . </code></pre>
   </TabItem>
