@@ -52,6 +52,19 @@ First, select a configuration:
     <TabItem value="ropsten"></TabItem>
 </Tabs>
 
+<Tabs className="with-label" groupId="execution-clients" defaultValue="nethermind" values={[
+  {label: 'Execution client', value: 'label'},
+  {label: 'Nethermind', value: 'nethermind'},
+  {label: 'Besu', value: 'besu'},
+  {label: 'Geth', value: 'geth'}
+  ]}>
+  <TabItem value="label"></TabItem>
+  <TabItem value="nethermind"></TabItem>
+  <TabItem value="besu"></TabItem>
+  <TabItem value="geth"></TabItem>
+</Tabs>
+
+
 <Tabs className="with-label" groupId="protocol" defaultValue="jwt" values={[
         {label: 'EL-BN Protocol', value: 'label'},
         {label: 'JWT', value: 'jwt'},

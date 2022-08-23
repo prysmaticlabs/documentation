@@ -10,10 +10,6 @@
         },
         {
             "type": "doc",
-            "id": "install/install-with-script-ipc"
-        },
-        {
-            "type": "doc",
             "id": "prepare-for-merge"
         },
         {
