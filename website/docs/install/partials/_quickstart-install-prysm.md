@@ -1,7 +1,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-First, create a folder called `ethereum` on your SSD, and then two subfolders within it: `consensus` and `execution`:
+Create a folder called `ethereum` on your SSD, and then two subfolders within it: `consensus` and `execution`:
 
 ```
 📂ethereum

@@ -1,7 +1,7 @@
 ---
 id: install-with-script
-title: "Quickstart: Run a node and (optionally) stake ETH using Prysm (JWT)"
-sidebar_label: "Quickstart: Run a node (JWT)"
+title: "Quickstart: Run a node and (optionally) stake ETH using Prysm"
+sidebar_label: "Quickstart: Run a node"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -23,6 +23,37 @@ import QuickstartPrereqsPartial from '@site/docs/install/partials/_quickstart-pr
 <QuickstartPrereqsPartial />
 
 ## Step 2: Install Prysm
+
+First, select a configuration:
+
+<Tabs groupId="os" defaultValue="others" values={[
+    {label: 'Windows', value: 'win'},
+    {label: 'Linux, MacOS, Arm64', value: 'others'}
+]}>
+  <TabItem value="win"></TabItem>
+  <TabItem value="others"></TabItem>
+</Tabs>
+
+<Tabs groupId="network" defaultValue="mainnet" values={[
+        {label: 'Mainnet', value: 'mainnet'},
+        {label: 'Goerli-Prater', value: 'goerli-prater'},
+        {label: 'Sepolia', value: 'sepolia'},
+        {label: 'Ropsten', value: 'ropsten'}
+    ]}>
+    <TabItem value="mainnet"></TabItem>
+    <TabItem value="goerli-prater"></TabItem>
+    <TabItem value="sepolia"></TabItem>
+    <TabItem value="ropsten"></TabItem>
+</Tabs>
+
+<Tabs groupId="protocol" defaultValue="jwt" values={[
+        {label: 'JWT', value: 'jwt'},
+        {label: 'IPC', value: 'ipc'}
+    ]}>
+    <TabItem value="jwt"></TabItem>
+    <TabItem value="ipc"></TabItem>
+</Tabs>
+
 
 import QuickstartInstallPrysmPartial from '@site/docs/install/partials/_quickstart-install-prysm.md';
 
