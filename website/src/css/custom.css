@@ -17,17 +17,20 @@ html[data-theme='dark'] {
     font-weight: 500;
 }
 
-.quickstart-tabs .with-label .tabs__item:first-child {
-    font-size: 13px;
-    font-weight: 500;
-    color: black;
-}
+
 
 .quickstart-tabs .with-label .tabs__item {
     border: 1px solid #DDD;
     font-size: 13px;
     font-weight: 500;
 }
+
+.quickstart-tabs .with-label .tabs__item:first-child {
+    font-size: 13px;
+    font-weight: 500;
+    color: black;
+}
+
 
 /* General elements */
 
