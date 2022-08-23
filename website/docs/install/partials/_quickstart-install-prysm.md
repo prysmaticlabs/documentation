@@ -38,7 +38,6 @@ curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --out
 
 
 <Tabs groupId="protocol" defaultValue="jwt" values={[
-        {label: 'EL-BN Protocol', value: 'label'},
         {label: 'JWT', value: 'jwt'},
         {label: 'IPC', value: 'ipc'}
     ]}>
