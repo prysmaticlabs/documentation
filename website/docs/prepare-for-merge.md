@@ -30,7 +30,7 @@ Keep the following checklist in mind:
  - **Ensure that you're using a network-compatible version of your execution client**: You may need to use a prerelease version of execution client software. Refer to your execution client software documentation for the latest guidance.
  - **Ensure that you're using v3.0.0**: If you've ever set the `USE_PRYSM_VERSION` environment variable, either clear this variable or use `set USE_PRYSM_VERSION=v3.0.0` to ensure that Prysm uses Prysm v3.
  - **Verify your version**: Verify that you're running Prysm `v3.0.0` by issuing the following command: `prysm.sh beacon-chain --version` (Linux) `prysm.bat beacon-chain --version` (Windows).
- - **Configure JWT**: Ensure that both your execution node and beacon node are configured to use JWT authentication. These instructions are included below, and are also available here: [Configure JWT](../execution-node/authentication.md).
+ - **Configure JWT**: Ensure that both your execution node and beacon node are configured to use JWT authentication. These instructions are included below, and are also available here: [Configure JWT](./execution-node/authentication.md).
  - **Update your firewall**: Post-merge, your beacon node will need to connect to its execution node on port `8551`. Previously, port `8545` was used. Ensure that your firewall rules are updated accordingly.
  - (Power users) Review the Ethereum Launchpad's [Merge config checklist](https://notes.ethereum.org/@launchpad/merge-configuration-checklist).
 
