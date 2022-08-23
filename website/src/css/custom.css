@@ -23,20 +23,43 @@ html[data-theme='dark'] {
     border: 1px solid transparent;
     font-size: 13px;
     font-weight: 500;
+    border-left: 1px solid transparent;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid transparent;
 }
 
 .quickstart-tabs .with-label .tabs__item:first-child {
-    font-size: 13px;
-    font-weight: 500;
     color: black;
     width: 140px;
+    border: 1px solid transparent;
+}
+
+.quickstart-tabs .with-label .tabs__item:nth-child(1) {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-left: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid transparent;
+}
+
+.quickstart-tabs .with-label .tabs__item:last-child {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-right: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
 }
 
 .quickstart-tabs .with-label .tabs__item--active {
-    border: 1px solid #DDD;
     font-size: 13px;
     font-weight: 500;
-    border-radius: 5px;
+
 }
 
 
