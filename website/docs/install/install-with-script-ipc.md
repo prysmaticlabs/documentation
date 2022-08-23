@@ -37,9 +37,15 @@ import QuickstartRunExecutionNodeIPCPartial from '@site/docs/install/partials/_q
 
 ## Step 4: Run a beacon node using Prysm
 
+<div class='ipc-container'>
+
 import QuickstartRunBeaconNodePartial from '@site/docs/install/partials/_quickstart-run-beacon-node.md';
 
 <QuickstartRunBeaconNodePartial />
+
+</div>
+
+
 
 
 ## Step 5: Run a validator using Prysm
