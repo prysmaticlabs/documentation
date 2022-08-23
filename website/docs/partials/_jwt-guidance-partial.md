@@ -6,83 +6,13 @@ import JwtGenerationPartial from '@site/docs/partials/_jwt-generation-partial.md
 
 ## Configure execution node
 
-If you're running on a testnet, your execution node will need to **expose a new port** and then **use the JWT token** to authenticate your beacon node's connection to that port. This new port exposes your execution node's **Engine API**, a new API that facilitates Ethereum's transition to a proof-of-stake consensus mechanism.
+Your execution node will need to **expose a new port** and then **use the JWT token** to authenticate your beacon node's connection to that port. This new port exposes your execution node's **Engine API**, a new API that facilitates Ethereum's transition to a proof-of-stake consensus mechanism.
 
 Using the latest version of your execution client software, issue the following command to configure your execution node's JWT token and Engine API endpoint:
 
-<Tabs groupId="execution-clients" defaultValue="nethermind" values={[
-{label: 'Nethermind', value: 'nethermind'},
-{label: 'Besu', value: 'besu'},
-{label: 'Geth', value: 'geth'}
-]}>
-  <TabItem value="nethermind">
-    <Tabs groupId="network" defaultValue="mainnet" values={[
-        {label: 'Ropsten', value: 'ropsten'},
-        {label: 'Sepolia', value: 'sepolia'},
-        {label: 'Goerli-Prater', value: 'goerli-prater'},
-        {label: 'Mainnet', value: 'mainnet'}
-    ]}>
-      <TabItem value="ropsten">
-        <pre><code>Nethermind.Runner --config ropsten --JsonRpc.Enabled true --JsonRpc.JwtSecretFile=path/to/jwt.hex --Merge.TerminalTotalDifficulty 50000000000000000</code></pre>
-      </TabItem>
-      <TabItem value="sepolia">
-        <pre><code>Nethermind.Runner --config sepolia --JsonRpc.Enabled true --JsonRpc.JwtSecretFile=path/to/jwt.hex --Merge.TerminalTotalDifficulty 17000000000000000</code></pre>
-      </TabItem>
-      <TabItem value="goerli-prater">
-        <pre><code>Nethermind.Runner --config goerli --JsonRpc.Enabled true --JsonRpc.Enabled true --JsonRpc.JwtSecretFile=path/to/jwt.hex</code></pre>
-      </TabItem>
-      <TabItem value="mainnet">
-        <pre><code>Nethermind.Runner --config mainnet --JsonRpc.Enabled true --JsonRpc.Enabled true --JsonRpc.JwtSecretFile=path/to/jwt.hex</code></pre>
-      </TabItem>
-    </Tabs>
-    <p>See Nethermind's <a href='https://docs.nethermind.io/nethermind/first-steps-with-nethermind/running-nethermind-post-merge'>Running Nethermind Post Merge</a> for more information.</p>
-  </TabItem>
-  <TabItem value="besu">
-    <Tabs groupId="network" defaultValue="mainnet" values={[
-        {label: 'Ropsten', value: 'ropsten'},
-        {label: 'Sepolia', value: 'sepolia'},
-        {label: 'Goerli-Prater', value: 'goerli-prater'},
-        {label: 'Mainnet', value: 'mainnet'}
-    ]}>
-      <TabItem value="ropsten">
-        <pre><code>besu --network=ropsten --rpc-http-enabled --engine-jwt-enabled=true --engine-jwt-secret=path/to/jwt.hex  --engine-host-allowlist="*" --override-genesis-config="terminalTotalDifficulty=50000000000000000"</code></pre>
-      </TabItem>
-      <TabItem value="sepolia">
-        <pre><code>besu --network=sepolia --rpc-http-enabled --engine-jwt-enabled=true --engine-jwt-secret=path/to/jwt.hex  --engine-host-allowlist="*" --override-genesis-config="terminalTotalDifficulty=17000000000000000"</code></pre>
-      </TabItem>
-      <TabItem value="goerli-prater">
-        <pre><code>besu --network=goerli --rpc-http-enabled --engine-jwt-enabled=true --engine-jwt-secret=path/to/jwt.hex  --engine-host-allowlist="*"</code></pre>
-      </TabItem>
-      <TabItem value="mainnet">
-        <pre><code>besu --network=mainnet --rpc-http-enabled --engine-jwt-enabled=true --engine-jwt-secret=path/to/jwt.hex  --engine-host-allowlist="*"</code></pre>
-      </TabItem>
-    </Tabs>
-    <p>See Besu's <a href='https://besu.hyperledger.org/en/stable/Reference/CLI/CLI-Syntax/'>command-line options</a> for parameter definitions.</p>
-  </TabItem>
-  <TabItem value="geth">
-    <Tabs groupId="network" defaultValue="mainnet" values={[
-        {label: 'Ropsten', value: 'ropsten'},
-        {label: 'Sepolia', value: 'sepolia'},
-        {label: 'Goerli-Prater', value: 'goerli-prater'},
-        {label: 'Mainnet', value: 'mainnet'}
-    ]}>
-      <TabItem value="ropsten">
-        <pre><code>geth --ropsten --http --http.api eth,net,engine,admin --authrpc.vhosts="localhost" --authrpc.jwtsecret=path/to/jwt.hex --override.terminaltotaldifficulty 50000000000000000</code></pre>
-      </TabItem>
-      <TabItem value="sepolia">
-        <pre><code>geth --sepolia --http --http.api eth,net,engine,admin --authrpc.vhosts="localhost" --authrpc.jwtsecret=path/to/jwt.hex --override.terminaltotaldifficulty 17000000000000000</code></pre>
-      </TabItem>
-      <TabItem value="goerli-prater">
-        <pre><code>geth --goerli --http --http.api eth,net,engine,admin --authrpc.vhosts="localhost" --authrpc.jwtsecret=path/to/jwt.hex</code></pre>
-      </TabItem>
-      <TabItem value="mainnet">
-        <pre><code>geth --mainnet --http --http.api eth,net,engine,admin --authrpc.vhosts="localhost" --authrpc.jwtsecret=path/to/jwt.hex</code></pre>
-      </TabItem>
-    </Tabs>
-    <p>See Geth's <a href='https://geth.ethereum.org/docs/interface/command-line-options'>command-line options</a> for parameter definitions.</p>
-  </TabItem>
-</Tabs>
+import QuickstartRunExecutionNodeJWTPartial from '@site/docs/install/partials/_quickstart-run-execution-node-jwt.md';
 
+<QuickstartRunExecutionNodeJWTPartial />
 
 ## Configure beacon node
 

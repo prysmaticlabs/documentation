@@ -39,10 +39,13 @@ This guide assumes that you've placed your `jwt.hex` file in your `consensus` di
 
 ## Step 3: Run an execution client
 
+In this step, you'll install an execution-layer client that Prysm's beacon node will connect to.
+
 import QuickstartRunExecutionNodeJWTPartial from '@site/docs/install/partials/_quickstart-run-execution-node-jwt.md';
 
 <QuickstartRunExecutionNodeJWTPartial />
 
+Congratulations - you’re now running an <strong>execution node</strong> in Ethereum’s execution layer.
 
 ## Step 4: Run a beacon node using Prysm
 
