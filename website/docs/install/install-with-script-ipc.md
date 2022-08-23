@@ -9,15 +9,18 @@ import TabItem from '@theme/TabItem';
 import ClientStackPng from '@site/static/img/client-stack.png';
 
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
+
 <HeaderBadgesWidget commaDelimitedContributors="Mick" lastVerifiedDateString="August 23rd, 2022" lastVerifiedVersionString="v3.0.0" />
 
 import QuickstartIntroPartial from '@site/docs/install/partials/_quickstart-intro.md';
+
 <QuickstartIntroPartial />
 
 
 ### Generate JWT secret
 
 import JwtGenerationPartial from '@site/docs/partials/_jwt-generation-partial.md';
+
 <JwtGenerationPartial />
 
 This guide assumes that you've placed your `jwt.hex` file in your `consensus` directory, but you can place it anywhere and revise the below commands as needed.
