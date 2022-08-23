@@ -20,7 +20,7 @@ html[data-theme='dark'] {
 
 
 .quickstart-tabs .with-label .tabs__item {
-    border: 1px solid #DDD;
+    border: 1px solid transparent;
     font-size: 13px;
     font-weight: 500;
 }
@@ -29,8 +29,13 @@ html[data-theme='dark'] {
     font-size: 13px;
     font-weight: 500;
     color: black;
-    border: 0px;
     width: 140px;
+}
+
+.quickstart-tabs .with-label .tabs__item--active {
+    border: 1px solid #DDD;
+    font-size: 13px;
+    font-weight: 500;
 }
 
 
