@@ -55,7 +55,7 @@ eth.syncing
 You can check your beacon node's <a href='https://ethereum.github.io/beacon-APIs/?urls.primaryName=dev#/Node/getSyncingStatus'>sync status</a> by running the following command from a separate terminal window:
 
 ```
-curl http://localhost:3500/eth/v1/node/syncing
+curl http://localhost:3500/eth/v1/node/syncing | jq
 ```
 
 This should produce the following output:
