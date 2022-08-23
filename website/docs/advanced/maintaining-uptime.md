@@ -8,7 +8,7 @@ Validators should be online as much as possible. If you're running your validato
 
 :::caution
 
-This may be overkill for at-home stakers who use the `prysm.sh` script to run Prysm. To those users, we recommend **keeping it simple** by periodically checking the status of your validator. See [Check Software Status](../monitoring/checking-status) to learn more.
+This may be overkill for at-home stakers who use the `prysm.sh` script to run Prysm. To those users, we recommend **keeping it simple** by occasionally checking the status of your validator. See [Check Software Status](../monitoring/checking-status) to learn more.
 
 :::
 
@@ -25,15 +25,15 @@ You can run your beacon node with the following systemd configuration, where you
 ```text
 [Unit]
 Description=Prysm Beacon chain daemon
-After=network.target
+After=network-online.target
 
 [Service]
 ExecStart=/home/prysm/prysm.sh beacon-chain
-Restart=always
+Restart=on-failure
 User=YOUR_USER
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=default.target
 ```
 
 You can also run your validator client in systemd using the following configuration.
@@ -41,16 +41,16 @@ You can also run your validator client in systemd using the following configurat
 ```text
 [Unit]
 Description=Prysm Validator daemon
-After=network.target
+After=network-online.target
 Wants=prysm-beacon.service
 
 [Service]
 ExecStart=/home/prysm/prysm.sh validator --wallet-dir DIR/TO/prysm-wallet-v2 --wallet-password-file DIR/TO/YOUR_PASSWORDFILE --graffiti YOUR_GRAFFITI
-Restart=always
+Restart=on-failure
 User=YOUR_USER
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=default.target
 ```
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
