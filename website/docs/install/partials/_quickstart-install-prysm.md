@@ -42,7 +42,7 @@ curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --out
         {label: 'IPC', value: 'ipc'}
     ]}>
     <TabItem value="jwt">
-    
+
 <h3>Generate JWT Secret</h3>
 
 import JwtGenerationPartial from '@site/docs/partials/_jwt-generation-partial.md';
@@ -50,7 +50,6 @@ import JwtGenerationPartial from '@site/docs/partials/_jwt-generation-partial.md
 <JwtGenerationPartial />
 
 This guide assumes that you've placed your `jwt.hex` file in your `consensus` directory, but you can place it anywhere and revise the below commands as needed.
-    
     
   </TabItem>
 </Tabs>
