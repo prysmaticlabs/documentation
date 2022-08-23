@@ -29,6 +29,7 @@ html[data-theme='dark'] {
     font-size: 13px;
     font-weight: 500;
     color: black;
+    border: 0px;
 }
 
 
