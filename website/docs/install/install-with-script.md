@@ -96,7 +96,7 @@ This guide assumes that you've placed your `jwt.hex` file in your `consensus` di
 
 In this step, you'll install an execution-layer client that Prysm's beacon node will connect to.
 
-import QuickstartRunExecutionNodeJWTPartial from '@site/docs/install/partials/_quickstart-run-execution-node-jwt.md';
+import QuickstartRunExecutionNodeJWTPartial from '@site/docs/install/partials/_quickstart-run-execution-node.md';
 
 <QuickstartRunExecutionNodeJWTPartial />
 

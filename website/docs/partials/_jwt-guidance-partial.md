@@ -10,7 +10,7 @@ Your execution node will need to **expose a new port** and then **use the JWT to
 
 Using the latest version of your execution client software, issue the following command to configure your execution node's JWT token and Engine API endpoint:
 
-import QuickstartRunExecutionNodeJWTPartial from '@site/docs/install/partials/_quickstart-run-execution-node-jwt.md';
+import QuickstartRunExecutionNodeJWTPartial from '@site/docs/install/partials/_quickstart-run-execution-node.md';
 
 <QuickstartRunExecutionNodeJWTPartial />
 
