@@ -15,24 +15,28 @@ html[data-theme='dark'] {
 .quickstart-tabs .with-label {
     font-size: 13px;
     font-weight: 500;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    overflow: hidden;
+    position: static;
 }
 
 
 
 .quickstart-tabs .with-label .tabs__item {
-    border: 1px solid transparent;
     font-size: 13px;
     font-weight: 500;
-    border-left: 1px solid transparent;
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
-    border-right: 1px solid transparent;
+    border: 1px solid transparent;
 }
 
 .quickstart-tabs .with-label .tabs__item:first-child {
     color: black;
     width: 140px;
     border: 1px solid transparent !important;
+    z-index: 2;
+    margin-left: -1px;
+    margin-right: -1px;
+    margin-top: -1px;
 }
 
 .quickstart-tabs .with-label .tabs__item:nth-child(2) {
@@ -41,9 +45,6 @@ html[data-theme='dark'] {
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
     border-left: 1px solid #ccc;
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
-    border-right: 1px solid transparent;
 }
 
 .quickstart-tabs .with-label .tabs__item:last-child {
