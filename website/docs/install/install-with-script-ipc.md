@@ -1,5 +1,5 @@
 ---
-id: install-with-script
+id: install-with-script-ipc
 title: "Quickstart: Run a node and (optionally) stake ETH using Prysm (IPC)"
 sidebar_label: "Quickstart: Run a node (IPC)"
 ---
