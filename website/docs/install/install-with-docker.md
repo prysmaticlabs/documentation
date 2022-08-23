@@ -87,21 +87,6 @@ docker pull gcr.io/prysmaticlabs/prysm/beacon-chain:stable
 ```
 
 
-:::info Ropsten
-
-If you want to use the **Ropsten** test network, replace the `gcr.io` links throughout this guide with links to the latest release candidate image:
-
-```text
-gcr.io/prysmaticlabs/prysm/validator@sha256:7ac120abe8732512ed9e8e193f00076ac05b75133ec3b04eca37921bad3ae07a
-gcr.io/prysmaticlabs/prysm/beacon-chain@sha256:bf9b95661c71ad60f633ee14cf352a668d550076471154cf80dfef8fce0bb41e
-```
-
-This guide will soon be revised with an updated structure that makes it easier for you to use docker with testnets and release candidates. Until then, visit our [quickstart](install-with-script.md) for the latest Ropsten instructions.
-
-:::
-
-
-
 This process will also install any related dependencies.
 
 :::tip Pro-Tip
