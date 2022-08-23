@@ -1,5 +1,5 @@
-
-
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 In this step, you'll run a beacon node using Prysm.
 

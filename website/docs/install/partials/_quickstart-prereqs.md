@@ -1,4 +1,3 @@
-
 <table>
     <tr>
         <th style={{minWidth: 180 + 'px'}}>Node type</th> 
@@ -51,4 +50,3 @@
 - **Review the latest advisories** for the network(s) that you're using: [Goerli-Prater](https://goerli.launchpad.ethereum.org/en/), [Mainnet](https://launchpad.ethereum.org/en/).
 - Review all of our [published security best practices](./security-best-practices/).
 - **Join the community** - join our [mailing list](https://groups.google.com/g/prysm-dev), the [Prysm Discord server](https://discord.gg/prysmaticlabs), [r/ethstaker](https://www.reddit.com/r/ethstaker/), and the [EthStaker Discord server](https://discord.io/ethstaker) for updates and support.
-

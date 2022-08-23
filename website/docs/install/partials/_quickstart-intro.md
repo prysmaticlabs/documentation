@@ -1,6 +1,3 @@
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 :::info Already running a node?
 
 This guidance is targeted at new users. If you're already running a node, see [Prepare for The Merge](../prepare-for-merge.md).
