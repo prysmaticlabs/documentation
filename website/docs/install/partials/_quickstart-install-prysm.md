@@ -53,7 +53,7 @@ import JwtGenerationPartial from '@site/docs/partials/_jwt-generation-partial.md
 This guide assumes that you've placed your `jwt.hex` file in your `consensus` directory, but you can place it anywhere and revise the below commands as needed.
     
     
-    </TabItem>
+  </TabItem>
 </Tabs>
 
 
