@@ -1,8 +1,6 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-In this step, you'll install an execution-layer client that Prysm's beacon node will connect to.
-
 <Tabs groupId="execution-clients" defaultValue="nethermind" values={[
 {label: 'Nethermind', value: 'nethermind'},
 {label: 'Besu', value: 'besu'},
@@ -79,16 +77,16 @@ curl -H "Content-Type: application/json" -X POST http://localhost:8545 -d "{""js
         {label: 'Ropsten', value: 'ropsten'}
     ]}>
       <TabItem value="mainnet">
-        <pre><code>geth --mainnet --http --http.api eth,net,engine,admin --authrpc.jwtsecret ../consensus/jwt.hex </code></pre>
+        <pre><code>geth --mainnet --http --http.api eth,net,engine,admin --datadir . --authrpc.jwtsecret ../consensus/jwt.hex </code></pre>
       </TabItem>
       <TabItem value="goerli-prater">
-        <pre><code>geth --goerli --http --http.api eth,net,engine,admin --authrpc.jwtsecret ../consensus/jwt.hex </code></pre>
+        <pre><code>geth --goerli --http --http.api eth,net,engine,admin --datadir . --authrpc.jwtsecret ../consensus/jwt.hex </code></pre>
       </TabItem>
       <TabItem value="sepolia">
-        <pre><code>geth --sepolia --http --http.api eth,net,engine,admin --authrpc.jwtsecret ../consensus/jwt.hex --override.terminaltotaldifficulty 17000000000000000</code></pre>
+        <pre><code>geth --sepolia --http --http.api eth,net,engine,admin --datadir . --authrpc.jwtsecret ../consensus/jwt.hex --override.terminaltotaldifficulty 17000000000000000</code></pre>
       </TabItem>
       <TabItem value="ropsten">
-        <pre><code>geth --ropsten --http --http.api eth,net,engine,admin --authrpc.jwtsecret ../consensus/jwt.hex --override.terminaltotaldifficulty 50000000000000000</code></pre>
+        <pre><code>geth --ropsten --http --http.api eth,net,engine,admin --datadir . --authrpc.jwtsecret ../consensus/jwt.hex --override.terminaltotaldifficulty 50000000000000000</code></pre>
       </TabItem>
     </Tabs>
     <p>See Geth's <a href='https://geth.ethereum.org/docs/interface/command-line-options'>command-line options</a> for parameter definitions.</p>
@@ -108,4 +106,3 @@ eth.syncing
   </TabItem>
 </Tabs>
 
-Congratulations - you’re now running an <strong>execution node</strong> in Ethereum’s execution layer.
