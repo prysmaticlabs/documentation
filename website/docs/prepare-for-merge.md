@@ -84,6 +84,10 @@ You can now make these changes, regardless of the network you're running on.
 **Can I use IPC post-Merge?** <br />
 Yes. You also won't have to worry about JWT if you use IPC. Refer to your clients' command-line documentation for IPC configuration parameters.
 
+**Can I use a light node with Prysm, or do I need to run a full execution node?** <br />
+No - at this time, a full node is required.
+
+
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
 <RequestUpdateWidget />
