@@ -144,7 +144,6 @@ curl -H "Content-Type: application/json" -X POST http://localhost:8545 -d "{""js
 ## if you're not using Windows
 geth attach 
 
-
 ## if you're using Windows
 geth attach ipc:\\.\pipe\geth.ipc
 eth.syncing
