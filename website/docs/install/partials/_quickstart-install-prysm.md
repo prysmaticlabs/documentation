@@ -38,7 +38,8 @@ curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --out
 
 
 <Tabs groupId="protocol" defaultValue="jwt" values={[
-        {label: 'JWT', value: 'jwt'}
+        {label: 'JWT', value: 'jwt'},
+        {label: 'IPC', value: 'ipc'}
     ]}>
     <TabItem value="jwt">
     
