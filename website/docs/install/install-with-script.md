@@ -26,7 +26,7 @@ import QuickstartPrereqsPartial from '@site/docs/install/partials/_quickstart-pr
 
 First, select a configuration:
 
-<Tabs groupId="os" defaultValue="others" values={[
+<Tabs class="quickstart-tabs" groupId="os" defaultValue="others" values={[
     {label: 'Windows', value: 'win'},
     {label: 'Linux, MacOS, Arm64', value: 'others'}
 ]}>
@@ -34,7 +34,7 @@ First, select a configuration:
   <TabItem value="others"></TabItem>
 </Tabs>
 
-<Tabs groupId="network" defaultValue="mainnet" values={[
+<Tabs class="quickstart-tabs" groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
         {label: 'Goerli-Prater', value: 'goerli-prater'},
         {label: 'Sepolia', value: 'sepolia'},
@@ -46,7 +46,7 @@ First, select a configuration:
     <TabItem value="ropsten"></TabItem>
 </Tabs>
 
-<Tabs groupId="protocol" defaultValue="jwt" values={[
+<Tabs class="quickstart-tabs" groupId="protocol" defaultValue="jwt" values={[
         {label: 'JWT', value: 'jwt'},
         {label: 'IPC', value: 'ipc'}
     ]}>
