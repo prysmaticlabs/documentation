@@ -16,16 +16,16 @@ In this step, you'll use Geth to run an execution-layer client that Prysm's beac
     {label: 'Ropsten', value: 'ropsten'}
 ]}>
   <TabItem value="mainnet">
-    <pre><code>geth --mainnet --http --http.api eth,net,engine,admin --authrpc.jwtsecret ../consensus/jwt.hex --authrpc.vhosts localhost </code></pre>
+    <pre><code>geth --http --http.api eth,net,engine,admin --authrpc.jwtsecret ../consensus/jwt.hex </code></pre>
   </TabItem>
   <TabItem value="goerli-prater">
-    <pre><code>geth --goerli --http --http.api eth,net,engine,admin --authrpc.jwtsecret ../consensus/jwt.hex --authrpc.vhosts localhost</code></pre>
+    <pre><code>geth --goerli --http --http.api eth,net,engine,admin --authrpc.jwtsecret ../consensus/jwt.hex </code></pre>
   </TabItem>
   <TabItem value="sepolia">
-    <pre><code>geth --sepolia --http --http.api eth,net,engine,admin --authrpc.jwtsecret ../consensus/jwt.hex --authrpc.vhosts localhost --override.terminaltotaldifficulty 17000000000000000</code></pre>
+    <pre><code>geth --sepolia --http --http.api eth,net,engine,admin --authrpc.jwtsecret ../consensus/jwt.hex --override.terminaltotaldifficulty 17000000000000000</code></pre>
   </TabItem>
   <TabItem value="ropsten">
-    <pre><code>geth --ropsten --http --http.api eth,net,engine,admin --authrpc.jwtsecret ../consensus/jwt.hex --authrpc.vhosts localhost --override.terminaltotaldifficulty 50000000000000000</code></pre>
+    <pre><code>geth --ropsten --http --http.api eth,net,engine,admin --authrpc.jwtsecret ../consensus/jwt.hex --override.terminaltotaldifficulty 50000000000000000</code></pre>
   </TabItem>
 </Tabs>
 
