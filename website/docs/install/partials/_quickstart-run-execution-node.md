@@ -38,25 +38,35 @@ curl localhost:8545/health
   </TabItem>
   <TabItem value="besu">
     <p>Ensure that the latest 64-bit version of the <a href='https://www.oracle.com/java/technologies/downloads/'>Java JDK</a> is installed. Download the latest stable release of Besu from the <a href='https://github.com/hyperledger/besu/releases'>Besu releases</a> page. OS-specific instructions are available on Besu's <a href='https://besu.hyperledger.org/en/stable/HowTo/Get-Started/Installation-Options/Install-Binaries/'>binary installation page</a>. Run the following command to start your execution node:</p>
-    <Tabs groupId="network" defaultValue="mainnet" values={[
-        {label: 'Mainnet', value: 'mainnet'},
-        {label: 'Goerli-Prater', value: 'goerli-prater'},
-        {label: 'Sepolia', value: 'sepolia'},
-        {label: 'Ropsten', value: 'ropsten'}
-    ]}>
-      <TabItem value="mainnet">
-        <pre><code>besu --network=mainnet --rpc-http-enabled --engine-jwt-enabled=true --engine-jwt-secret=path/to/jwt.hex  --engine-host-allowlist="*"</code></pre>
-      </TabItem>
-      <TabItem value="goerli-prater">
-        <pre><code>besu --network=goerli --rpc-http-enabled --engine-jwt-enabled=true --engine-jwt-secret=path/to/jwt.hex  --engine-host-allowlist="*"</code></pre>
-      </TabItem>
-      <TabItem value="sepolia">
-        <pre><code>besu --network=sepolia --rpc-http-enabled --engine-jwt-enabled=true --engine-jwt-secret=../consensus/jwt.hex --engine-host-allowlist="*" --override-genesis-config="terminalTotalDifficulty=17000000000000000"</code></pre>
-      </TabItem>
-      <TabItem value="ropsten">
-        <pre><code>besu --network=ropsten --rpc-http-enabled --engine-jwt-enabled=true --engine-jwt-secret=../consensus/jwt.hex --engine-host-allowlist="*" --override-genesis-config="terminalTotalDifficulty=50000000000000000"</code></pre>
-      </TabItem>
-    </Tabs>
+      <Tabs groupId="protocol" defaultValue="jwt" values={[
+              {label: 'JWT', value: 'jwt'},
+              {label: 'IPC', value: 'ipc'}
+          ]}>
+          <TabItem value="jwt">
+              <Tabs groupId="network" defaultValue="mainnet" values={[
+            {label: 'Mainnet', value: 'mainnet'},
+            {label: 'Goerli-Prater', value: 'goerli-prater'},
+            {label: 'Sepolia', value: 'sepolia'},
+            {label: 'Ropsten', value: 'ropsten'}
+            ]}>
+                  <TabItem value="mainnet">
+                    <pre><code>besu --network=mainnet --rpc-http-enabled --engine-jwt-enabled=true --engine-jwt-secret=path/to/jwt.hex  --engine-host-allowlist="*"</code></pre>
+                  </TabItem>
+                  <TabItem value="goerli-prater">
+                    <pre><code>besu --network=goerli --rpc-http-enabled --engine-jwt-enabled=true --engine-jwt-secret=path/to/jwt.hex  --engine-host-allowlist="*"</code></pre>
+                  </TabItem>
+                  <TabItem value="sepolia">
+                    <pre><code>besu --network=sepolia --rpc-http-enabled --engine-jwt-enabled=true --engine-jwt-secret=../consensus/jwt.hex --engine-host-allowlist="*" --override-genesis-config="terminalTotalDifficulty=17000000000000000"</code></pre>
+                  </TabItem>
+                  <TabItem value="ropsten">
+                    <pre><code>besu --network=ropsten --rpc-http-enabled --engine-jwt-enabled=true --engine-jwt-secret=../consensus/jwt.hex --engine-host-allowlist="*" --override-genesis-config="terminalTotalDifficulty=50000000000000000"</code></pre>
+                  </TabItem>
+              </Tabs>
+          </TabItem>
+          <TabItem value="ipc">
+              <p>Besu IPC guidance is not yet available.</p>
+          </TabItem>
+      </Tabs>
     <p>See Besu's <a href='https://besu.hyperledger.org/en/stable/Reference/CLI/CLI-Syntax/'>command-line options</a> for parameter definitions.</p>
     <p>Your Besu execution node will begin syncing. You can <a href='https://besu.hyperledger.org/en/stable/Reference/API-Methods/#eth_syncing'>check your Besu execution node's sync status</a> by running the following command from a separate terminal window:</p>
 
