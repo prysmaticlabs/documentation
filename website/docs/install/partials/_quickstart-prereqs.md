@@ -41,7 +41,6 @@
     </tr>
 </table>
 
-<br />
 
 ### Best practices
 
