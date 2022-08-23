@@ -24,59 +24,6 @@ import QuickstartPrereqsPartial from '@site/docs/install/partials/_quickstart-pr
 
 ## Step 2: Install Prysm
 
-First, select a configuration:
-
-<div class='quickstart-tabs'>
-
-<Tabs className="with-label" groupId="os" defaultValue="others" values={[
-    {label: 'Operating System', value: 'label'},
-    {label: 'Windows', value: 'win'},
-    {label: 'Linux, MacOS, Arm64', value: 'others'}
-]}>
-  <TabItem value="label"></TabItem>
-  <TabItem value="win"></TabItem>
-  <TabItem value="others"></TabItem>
-</Tabs>
-
-<Tabs className="with-label" groupId="network" defaultValue="mainnet" values={[
-        {label: 'Network', value: 'label'},
-        {label: 'Mainnet', value: 'mainnet'},
-        {label: 'Goerli-Prater', value: 'goerli-prater'},
-        {label: 'Sepolia', value: 'sepolia'},
-        {label: 'Ropsten', value: 'ropsten'}
-    ]}>
-    <TabItem value="label"></TabItem>
-    <TabItem value="mainnet"></TabItem>
-    <TabItem value="goerli-prater"></TabItem>
-    <TabItem value="sepolia"></TabItem>
-    <TabItem value="ropsten"></TabItem>
-</Tabs>
-
-<Tabs className="with-label" groupId="execution-clients" defaultValue="nethermind" values={[
-  {label: 'Execution client', value: 'label'},
-  {label: 'Nethermind', value: 'nethermind'},
-  {label: 'Besu', value: 'besu'},
-  {label: 'Geth', value: 'geth'}
-  ]}>
-  <TabItem value="label"></TabItem>
-  <TabItem value="nethermind"></TabItem>
-  <TabItem value="besu"></TabItem>
-  <TabItem value="geth"></TabItem>
-</Tabs>
-
-
-<Tabs className="with-label" groupId="protocol" defaultValue="jwt" values={[
-        {label: 'EL-BN Protocol', value: 'label'},
-        {label: 'JWT', value: 'jwt'},
-        {label: 'IPC', value: 'ipc'}
-    ]}>
-    <TabItem value="label"></TabItem>
-    <TabItem value="jwt"></TabItem>
-    <TabItem value="ipc"></TabItem>
-</Tabs>
-
-</div>
-
 <div class='hide-tabs'>
 
 import QuickstartInstallPrysmPartial from '@site/docs/install/partials/_quickstart-install-prysm.md';
