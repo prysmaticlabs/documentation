@@ -38,11 +38,13 @@ curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --out
 
 
 <Tabs groupId="protocol" defaultValue="jwt" values={[
-        {label: 'JWT', value: 'jwt'}
+        {label: 'EL-BN Protocol', value: 'label'},
+        {label: 'JWT', value: 'jwt'},
+        {label: 'IPC', value: 'ipc'}
     ]}>
     <TabItem value="jwt">
     
-### Generate JWT secret
+<h3>Generate JWT Secret</h3>
 
 import JwtGenerationPartial from '@site/docs/partials/_jwt-generation-partial.md';
 
@@ -51,7 +53,7 @@ import JwtGenerationPartial from '@site/docs/partials/_jwt-generation-partial.md
 This guide assumes that you've placed your `jwt.hex` file in your `consensus` directory, but you can place it anywhere and revise the below commands as needed.
     
     
-  </TabItem>
+    </TabItem>
 </Tabs>
 
 
