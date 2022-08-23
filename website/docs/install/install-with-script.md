@@ -54,6 +54,7 @@ First, select a configuration:
     <TabItem value="ipc"></TabItem>
 </Tabs>
 
+<div class='hide-tabs'>
 
 import QuickstartInstallPrysmPartial from '@site/docs/install/partials/_quickstart-install-prysm.md';
 
@@ -90,6 +91,8 @@ import QuickstartRunBeaconNodePartial from '@site/docs/install/partials/_quickst
 import QuickstartRunValidatorPartial from '@site/docs/install/partials/_quickstart-run-validator.md';
 
 <QuickstartRunValidatorPartial />
+
+</div>
 
 -------
 
