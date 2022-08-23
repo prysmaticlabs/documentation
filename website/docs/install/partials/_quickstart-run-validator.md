@@ -7,7 +7,7 @@ Running a validator requires 32.1 ETH. Instructions for acquiring testnet ETH ar
 
 :::
 
-Next, we'll create your validator keys with the [Ethereum Staking Deposit CLI](https://github.com/ethereum/staking-deposit-cli). Before proceeding, we recommend temporarily moving over to a **new machine that has never been connected to the internet** if possible. This will reduce the risk that your validator private key is exposed to an adversary. We'll carry an encrypted version of your private key to your primary machine after creating your keys on this "airgapped" machine.
+Next, we'll create your validator keys with the [Ethereum Staking Deposit CLI](https://github.com/ethereum/staking-deposit-cli).
 
 Download the latest stable version of the deposit CLI from the [Staking Deposit CLI Releases page](https://github.com/ethereum/staking-deposit-cli/releases).
 
