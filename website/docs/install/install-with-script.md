@@ -210,7 +210,7 @@ curl -H "Content-Type: application/json" -X POST http://localhost:8545 -d "{""js
   </TabItem>
   <TabItem value="geth">
     <p>Download and run the latest 64-bit stable release of the <strong>Geth installer</strong> for your operating system from the <a href='https://geth.ethereum.org/downloads/'>Geth downloads page</a>.</p>
-    <p>Note that Geth 1.10.22 contains a regression that the team is actively working on. Either monitor the <a href='https://github.com/ethereum/go-ethereum/releases'>Geth releases page on GitHub</a>, follow <a href='https://twitter.com/peter_szilagyi/status/1561947614471507968'>Péter Szilágyi on Twitter</a>, or join the <a href='https://discord.com/invite/nthXNEv'>Geth Discord</a> for the latest information.</p>
+    <p>Note that Geth 1.10.22 contains a regression that the team is actively working on. Either monitor the <a href='https://github.com/ethereum/go-ethereum/releases'>Geth releases page on GitHub</a> or join the <a href='https://discord.com/invite/nthXNEv'>Geth Discord</a> for the latest information.</p>
     <p>Navigate to your <code>execution</code> directory and run the following command to start your execution node:</p>
     <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
@@ -546,7 +546,8 @@ You can delegate hardware management to <a href='https://ethereum.org/en/staking
 <!-- **I'm new to Ethereum, and I'm a visual learner. Can you show me how these things work? How much disk space does each node type require?** <br />
 The Beginner's Introduction to Prysm uses diagrams to help you visualize Ethereum's architecture, and Prysm's too. (TODO) -->
 
-
+**Can I use a light node with Prysm, or do I need to run a full execution node?** <br />
+No - at this time, a full node is required.
 
 <!-- **I don't have a 2TB SSD, but I have multiple smaller SSDs. Will this work?** <br />
 Yes. You can tell your execution client to overflow into a specific drive by (TODO). You can tell your beacon node client to overflow into a specific drive by (TODO). You can tell your validator client to overflow into a specific drive by (TODO). -->
