@@ -7,7 +7,7 @@ This guidance is targeted at new users. If you're already running a node, see [P
 
 :::
 
-Select a configuration:
+Select a quickstart configuration:
 
 <div class='quickstart-tabs'>
 
