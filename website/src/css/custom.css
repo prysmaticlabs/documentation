@@ -12,6 +12,12 @@ html[data-theme='dark'] {
     display: none;
 }
 
+.quickstart-tabs .with-label {
+    border: 1px solid #DDD;
+    font-size: 13px;
+    font-weight: 500;
+}
+
 /* General elements */
 
 a {
