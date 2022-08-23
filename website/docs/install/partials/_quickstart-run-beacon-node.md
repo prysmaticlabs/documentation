@@ -21,7 +21,7 @@ In this step, you'll run a beacon node using Prysm.
             {label: 'IPC', value: 'ipc'}
             ]}>
                 <TabItem value="jwt"><pre><code>prysm.bat beacon-chain --execution-endpoint=http://localhost:8551 --jwt-secret=path/to/jwt.hex --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre></TabItem>
-                <TabItem value="ipc"><pre><code>prysm.bat beacon-chain --execution-endpoint=IPC-TODO --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre></TabItem>
+                <TabItem value="ipc"><pre><code>prysm.bat beacon-chain --execution-endpoint="\\.\pipe\geth.ipc \\\\.\\pipe\\geth.ipc" --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre></TabItem>
             </Tabs>
       </TabItem>
       <TabItem value="goerli-prater">
