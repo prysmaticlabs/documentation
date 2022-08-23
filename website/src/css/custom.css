@@ -36,6 +36,7 @@ html[data-theme='dark'] {
     border: 1px solid #DDD;
     font-size: 13px;
     font-weight: 500;
+    border-radius: 100px;
 }
 
 
