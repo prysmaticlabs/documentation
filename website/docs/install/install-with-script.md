@@ -16,6 +16,17 @@ import QuickstartIntroPartial from '@site/docs/install/partials/_quickstart-intr
 
 <QuickstartIntroPartial />
 
+## Step 1: Review prerequisites and best practices
+
+import QuickstartPrereqsPartial from '@site/docs/install/partials/_quickstart-prereqs.md';
+
+<QuickstartPrereqsPartial />
+
+## Step 2: Install Prysm
+
+import QuickstartInstallPrysmPartial from '@site/docs/install/partials/_quickstart-install-prysm.md';
+
+<QuickstartInstallPrysmPartial />
 
 ### Generate JWT secret
 
@@ -138,10 +149,14 @@ eth.syncing
 Congratulations - you’re now running an <strong>execution node</strong> in Ethereum’s execution layer.
 
 
+## Step 4: Run a beacon node using Prysm
+
 import QuickstartRunBeaconNodePartial from '@site/docs/install/partials/_quickstart-run-beacon-node.md';
 
 <QuickstartRunBeaconNodePartial />
 
+
+## Step 5: Run a validator using Prysm
 
 import QuickstartRunValidatorPartial from '@site/docs/install/partials/_quickstart-run-validator.md';
 

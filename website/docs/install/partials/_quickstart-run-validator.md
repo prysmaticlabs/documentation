@@ -1,6 +1,4 @@
 
-## Step 5: Run a validator using Prysm
-
 :::info ETH Required
 
 Running a validator requires 32.1 ETH. Instructions for acquiring testnet ETH are provided below. Note that using Sepolia as a validator is currently unsupported.
