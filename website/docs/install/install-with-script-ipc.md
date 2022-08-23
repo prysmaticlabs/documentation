@@ -30,6 +30,9 @@ import QuickstartInstallPrysmPartial from '@site/docs/install/partials/_quicksta
 
 ## Step 3: Run an execution client using Geth
 
+import QuickstartRunExecutionNodeIPCPartial from '@site/docs/install/partials/_quickstart-run-execution-node-ipc.md';
+
+<QuickstartRunExecutionNodeIPCPartial />
 
 
 ## Step 4: Run a beacon node using Prysm
