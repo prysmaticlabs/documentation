@@ -33,10 +33,6 @@ html[data-theme='dark'] {
     color: black;
     width: 140px;
     border: 1px solid transparent !important;
-    z-index: 2;
-    margin-left: -1px;
-    margin-right: -1px;
-    margin-top: -1px;
 }
 
 .quickstart-tabs .with-label .tabs__item:nth-child(2) {
@@ -45,6 +41,10 @@ html[data-theme='dark'] {
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
     border-left: 1px solid #ccc;
+    margin-left: -1px;
+    margin-right: -1px;
+    margin-top: -1px;
+    z-index: 2;
 }
 
 .quickstart-tabs .with-label .tabs__item:last-child {
