@@ -24,6 +24,9 @@ html[data-theme='dark'] .quickstart-tabs .tabs__item:first-child:hover {
 .quickstart .hidden-in-quickstart {
   display: none;
 }
+.jwt-guide .hidden-in-jwt-guide {
+  display: none;
+}
 .quickstart-tabs {
   position: relative;
 }
