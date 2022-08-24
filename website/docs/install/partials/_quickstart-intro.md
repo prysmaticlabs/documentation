@@ -42,9 +42,9 @@ First, <strong>select a quickstart configuration</strong>. If you're looking for
 
 <Tabs className="with-label" groupId="execution-clients" defaultValue="geth" values={[
   {label: 'Execution client:', value: 'label'},
+  {label: 'Geth', value: 'geth'},
   {label: 'Nethermind', value: 'nethermind'},
-  {label: 'Besu', value: 'besu'},
-  {label: 'Geth', value: 'geth'}
+  {label: 'Besu', value: 'besu'}
   ]}>
   <TabItem value="geth"></TabItem>
   <TabItem value="label"></TabItem>
@@ -55,8 +55,8 @@ First, <strong>select a quickstart configuration</strong>. If you're looking for
 
 <Tabs className="with-label" groupId="protocol" defaultValue="ipc" values={[
         {label: 'EN-BN connection:', value: 'label'},
+        {label: 'IPC', value: 'ipc'},
         {label: 'HTTP-JWT', value: 'jwt'},
-        {label: 'IPC', value: 'ipc'}
     ]}>
     <TabItem className="unclickable-element" value="label"></TabItem>
     <TabItem value="ipc"></TabItem>
