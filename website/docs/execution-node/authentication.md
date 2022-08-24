@@ -30,6 +30,12 @@ import JwtGuidancePartial from '@site/docs/partials/_jwt-guidance-partial.md';
 
 </div>
 
+:::Congratulations
+
+Congrats! You're now using JWT authentication.
+
+:::
+
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
 <RequestUpdateWidget />
