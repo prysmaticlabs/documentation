@@ -99,11 +99,9 @@ If you're running a validator, specifying a <code>suggested-fee-recipient</code>
 
 </div>
 
-## Configure validator node
+## Configure validator node (optional)
 
 Other than ensuring that you're using the [latest stable Prysm release](https://github.com/prysmaticlabs/prysm/releases), validator client configuration doesn't need to be updated for The Merge. A fee recipient address can optionally be configured on your validator node if you want redundancy or multiple fee recipient addresses. See [Configure a Fee Recipient address](./execution-node/fee-recipient.md) to learn more.
-
-Note that **consensus-layer Sepolia is a permissioned network** - you can run a beacon node on Sepolia, but not a validator.
 
 
 ## Upgrade hardware

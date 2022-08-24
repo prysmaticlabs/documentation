@@ -144,6 +144,6 @@ curl http://localhost:3500/eth/v1alpha1/node/eth1/connections
 
 <!-- You should see TODO. -->
 
-Congratulations - you’re now running a <strong>full, Merge-ready Ethereum node</strong>.
+<p class="hidden-in-mergeprep-guide">Congratulations - you’re now running a <strong>full, Merge-ready Ethereum node</strong>.</p>
 
 </div>
