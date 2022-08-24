@@ -82,9 +82,7 @@ export const MultiDimensionalContentWidget = () => {
 						} else if (textContent == 'Geth') {
 							enableByText('IPC');
 						} else if (textContent == 'IPC') {
-							console.log('checking...' + jwtOnly())
 							if (jwtOnly()) {
-								console.log('selecting http-jwt...');
 								setTimeout(function () { selectByText('HTTP-JWT'); }, 50)
 								disableByText('IPC');
 							} else {
@@ -95,7 +93,6 @@ export const MultiDimensionalContentWidget = () => {
 								disableByText('Nethermind');
 							}
 						} else if (textContent == 'HTTP-JWT') {
-							console.log('clicked http-jwt...')
 							enableByText('Besu');
 							enableByText('Nethermind');
 						}
