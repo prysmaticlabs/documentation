@@ -71,9 +71,6 @@ html[data-theme='dark'] {
 .quickstart-tabs .with-label .tabs__item.disabled-tab {
   color: #999 !important;
 }
-.quickstart-tabs .with-label .tabs__item.disabled-tab:hover {
-  background-color: transparent !important;
-}
 /* General elements */
 a {
   color: var(--prysm-pink);
