@@ -34,6 +34,8 @@ import JwtGuidancePartial from '@site/docs/partials/_jwt-guidance-partial.md';
 
 </div>
 
+</div>
+
 
 :::tip Congratulations
 
