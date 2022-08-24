@@ -1,13 +1,16 @@
 import React from 'react';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 
-export const MultiDimensionalContentWidget = () => {
+export const MultiDimensionalQuickstartWidget = () => {
 
 	let bindTabs = function () {
 		setTimeout(function () {
 			var tabElements = document.querySelectorAll('.quickstart-tabs .tabs__item');
 			tabElements.forEach(element => element.addEventListener("click", function (event) {
-				alert(event.target.innerHTML);
+				var textContent = event.target.textContent;
+				if (textContent == 'Besu') {
+					alert(textContent);
+				}
 			}, false));
 			console.log("start with the user, work backwards to the technology...");
 			console.log("start with utopia, work backwards to the mechanism design...");
