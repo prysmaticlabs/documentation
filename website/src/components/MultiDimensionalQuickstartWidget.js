@@ -48,6 +48,17 @@ export const MultiDimensionalQuickstartWidget = () => {
 	let bindTabs = function () {
 		setTimeout(function () {
 			var tabElements = getAllTabElements();
+			if (isSelectedByText('Besu')) {
+				selectByText('HTTP-JWT');
+				disableByText('IPC');
+			}
+			if (isSelectedByText('IPC')) {
+				disableByText('Besu');
+				if (isSelectedByText('Besu')) {
+					selectByText('Geth');
+				}
+			}
+
 			tabElements.forEach(element => {
 				var isLabel = element.textContent.indexOf(":") > -1;
 				if (isLabel) {
