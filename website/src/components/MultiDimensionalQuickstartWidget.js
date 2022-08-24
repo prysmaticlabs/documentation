@@ -88,12 +88,13 @@ export const MultiDimensionalQuickstartWidget = () => {
 								selectByText('HTTP-JWT');
 								disableByText('IPC');
 								return;
+							} else {
+								if (isSelectedByText('Besu') || isSelectedByText('Nethermind')) {
+									selectByText('Geth');
+								}
+								disableByText('Besu');
+								disableByText('Nethermind');
 							}
-							if (isSelectedByText('Besu') || isSelectedByText('Nethermind')) {
-								selectByText('Geth');
-							}
-							disableByText('Besu');
-							disableByText('Nethermind');
 						} else if (textContent == 'HTTP-JWT') {
 							enableByText('Besu');
 							enableByText('Nethermind');
