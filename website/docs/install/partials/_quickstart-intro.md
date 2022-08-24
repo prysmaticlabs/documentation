@@ -16,12 +16,6 @@ Select a quickstart configuration. If you're looking for the simplest configurat
 
 <script>
     alert('heyo 1');
-    function(){
-        alert('heyo 2');
-        var tabElements = document.querySelectorAll('.tabs__item');
-        foreach(var el in tabElements){
-            el.addEventListener("click", function () { alert('heyo'); })
-    }}();
 </script>
 
 <div class='quickstart-tabs'>
