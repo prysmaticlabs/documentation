@@ -13,6 +13,8 @@ export const MultiDimensionalQuickstartWidget = () => {
 				if (isLabel) {
 					console.log('isLabel')
 					event.preventDefault();
+					event.stopPropagation();
+					event.stopImmediatePropagation();
 					return true;
 				} else {
 					if (textContent == 'Besu') {
