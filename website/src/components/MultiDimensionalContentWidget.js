@@ -88,7 +88,6 @@ export const MultiDimensionalContentWidget = () => {
 							if (jwtOnly()) {
 								selectByText('HTTP-JWT');
 								disableByText('IPC');
-								return;
 							} else {
 								if (isSelectedByText('Besu') || isSelectedByText('Nethermind')) {
 									selectByText('Geth');
