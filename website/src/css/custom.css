@@ -69,11 +69,9 @@ html[data-theme='dark'] {
   color: white;
 }
 .quickstart-tabs .with-label .tabs__item.disabled-tab {
-  color: #ccc !important;
-  cursor: default !important;
+  color: #bbb !important;
 }
 .quickstart-tabs .with-label .tabs__item.disabled-tab:hover {
-  cursor: default !important;
   background-color: transparent !important;
 }
 /* General elements */
