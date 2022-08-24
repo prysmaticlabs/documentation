@@ -28,7 +28,7 @@ html[data-theme='dark'] {
     border-top: 1px solid var(--tab-active-color);
     border-bottom: 1px solid var(--tab-active-color);
     padding: 10px 15px;
-    border-radius: 0px;
+    border-radius: 0px !important;
 }
 
 .quickstart-tabs .with-label .tabs__item:first-child {
@@ -39,20 +39,16 @@ html[data-theme='dark'] {
 }
 
 .quickstart-tabs .with-label .tabs__item:nth-child(2) {
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-    border-top-right-radius: 0px;
-    border-bottom-right-radius: 0px;
+    border-top-left-radius: 5px !important;
+    border-bottom-left-radius: 5px !important;
     border-left: 1px solid var(--tab-active-color);
     border-right: 0px !important;
     z-index: 2;
 }
 
 .quickstart-tabs .with-label .tabs__item:last-child {
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    border-top-left-radius: 0px;
-    border-bottom-left-radius: 0px;
+    border-top-right-radius: 5px !important;
+    border-bottom-right-radius: 5px !important;
     border-right: 1px solid var(--tab-active-color);
     border-top: 1px solid var(--tab-active-color);
     border-bottom: 1px solid var(--tab-active-color);
