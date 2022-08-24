@@ -142,5 +142,4 @@ curl http://localhost:3500/eth/v1alpha1/node/eth1/connections
 
 <!-- You should see TODO. -->
 
-
 <p class='hidden-in-jwt-guide'>Congratulations - you’re now running a <strong>full Ethereum node</strong>. Your full node consists of an <strong>execution node</strong> in Ethereum’s execution layer, and a <strong>beacon node</strong> in Ethereum’s consensus layer.</p>
