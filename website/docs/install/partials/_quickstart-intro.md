@@ -17,7 +17,7 @@ First, <strong>select a quickstart configuration</strong>. If you're looking for
 <div class='quickstart-tabs'>
 
 <Tabs className="with-label" groupId="os" defaultValue="others" values={[
-    {label: 'Operating System:', value: 'label'},
+    {label: 'Operating system:', value: 'label'},
     {label: 'Windows', value: 'win'},
     {label: 'Linux, MacOS, Arm64', value: 'others'}
 ]}>
@@ -54,7 +54,7 @@ First, <strong>select a quickstart configuration</strong>. If you're looking for
 
 
 <Tabs className="with-label" groupId="protocol" defaultValue="jwt" values={[
-        {label: 'EN-BN Connection:', value: 'label'},
+        {label: 'EN-BN connection:', value: 'label'},
         {label: 'HTTP-JWT', value: 'jwt'},
         {label: 'IPC', value: 'ipc'}
     ]}>
