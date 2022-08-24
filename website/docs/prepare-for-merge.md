@@ -18,6 +18,8 @@ This guidance is targeted at users who are already running Prysm. If you're star
 
 :::
 
+
+
 [Prysm v3](https://github.com/prysmaticlabs/prysm/releases/tag/v3.0.0) can be used to run a node on Mainnet using Merge-ready configuration. In this guide, we'll step through the tasks that you need to complete in order to be Merge-prepared. 
 
 
@@ -51,12 +53,30 @@ Keep the following checklist in mind:
 <br />
 
 
-Let's step through each of these changes. 
+Let's step through each of these changes. First, <strong>select a configuration</strong>:
 
-## Create JWT token
+import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidimensional-content-controls-partial.md';
+
+<MultidimensionalContentControlsPartial />
+
+<div class='hide-tabs'>
+
+<Tabs className="with-label hidden-in-jwt-guide" groupId="protocol" values={[
+        {label: 'IPC', value: 'ipc'},
+        {label: 'HTTP-JWT', value: 'jwt'},
+    ]}>
+    <TabItem value="ipc"></TabItem>
+    <TabItem value="jwt">
+    
+<h2>Create JWT token</h2>
 
 <JwtGuidancePartial />
 
+    
+</TabItem>
+</Tabs>
+
+</div>
 
 ## Configure validator node
 
