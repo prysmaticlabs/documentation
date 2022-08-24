@@ -6,7 +6,7 @@ export const MultiDimensionalContentWidget = () => {
 		<BrowserOnly>
 			{() =>
 				<script >
-					document.getElementsByClassName('tabs__item').onclick = function () {alert('heyo')};
+					document.querySelectorAll('.tabs__item').forEach(function(el){el.addEventListener("click", function () { alert('heyo'); })});
 				</script>
 			}
 		</BrowserOnly>
