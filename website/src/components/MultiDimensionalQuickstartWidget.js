@@ -11,7 +11,7 @@ export const MultiDimensionalQuickstartWidget = () => {
 				if (isLabel) {
 					console.log('is label... unbinding')
 					// unbind so tab can't be selected
-					element.parentElement.innerHTML = element.parentElement.innerHTML;
+					element.outerHTML = element.outerHTML;
 				} else {
 					element.addEventListener("click", function (event) {
 						var targetElement = event.target;
