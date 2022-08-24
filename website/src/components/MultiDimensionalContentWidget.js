@@ -7,10 +7,11 @@ export const MultiDimensionalContentWidget = () => {
 			{() =>
 				<script>
 					{`
-					var tabElements = document.querySelectorAll('.tabs__item');
-					foreach(var el in tabElements){
-						el.addEventListener("click", function () { alert('heyo'); })
-					}
+					function(){
+						var tabElements = document.querySelectorAll('.tabs__item');
+						foreach(var el in tabElements){
+							el.addEventListener("click", function () { alert('heyo'); })
+					}}();
 					`}
 				</script>
 			}
