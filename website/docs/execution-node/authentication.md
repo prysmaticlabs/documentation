@@ -14,6 +14,8 @@ This guidance is relevant only if your beacon node is connecting to your executi
 
 :::
 
+First, <strong>select a configuration</strong>:
+
 import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidimensional-content-controls-partial.md';
 
 <MultidimensionalContentControlsPartial />
