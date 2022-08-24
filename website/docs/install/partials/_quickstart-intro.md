@@ -4,6 +4,12 @@ import {MultiDimensionalQuickstartWidget} from '@site/src/components/MultiDimens
 
 <MultiDimensionalQuickstartWidget />
 
+:::info Already running a node?
+
+This guidance is targeted at new users. If you're already running a node, see [Prepare for The Merge](../prepare-for-merge.md).
+
+:::
+
 <br />
 
 First, <strong>select a quickstart configuration</strong>. If you're looking for the simplest configuration, select `Geth` and `IPC`:
@@ -61,11 +67,7 @@ First, <strong>select a quickstart configuration</strong>. If you're looking for
 
 ## Introduction
 
-:::info Already running a node?
 
-This guidance is targeted at new users. If you're already running a node, see [Prepare for The Merge](../prepare-for-merge.md).
-
-:::
 
 Prysm is an implementation of the [Ethereum proof-of-stake consensus specification](https://github.com/ethereum/consensus-specs). In this quickstart, you’ll use Prysm to run an Ethereum node and optionally a validator. This will let you stake 32 ETH using hardware that you manage.
 
