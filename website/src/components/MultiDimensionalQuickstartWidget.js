@@ -12,10 +12,14 @@ export const MultiDimensionalQuickstartWidget = () => {
 	let getByText = function (text) {
 		var allElements = getAllTabElements();
 		console.log('looking for ' + text + ' via ' + allElements.length + ' allElements...')
-		var targetElement = allElements.find(function (element) {
-			return element.innerHTML == text;
+		var selectedElement;
+		// docusaurus seems to be stripping away some array extensions...
+		allElements.forEach(el => {
+			if (el.innerHTML == text) {
+				selectedElement = el;
+			}
 		})
-		return targetElement;
+		return selectedElement;
 	}
 
 	let disableByText = function (text) {
