@@ -19,7 +19,7 @@ import TabItem from '@theme/TabItem';
             {label: 'JWT', value: 'jwt'},
             {label: 'IPC', value: 'ipc'}
             ]}>
-                <TabItem value="jwt"><pre><code>Nethermind.Runner --config mainnet --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.JwtSecretFile=../consensus/jwt.hex --JsonRpc.Host=0.0.0.0</code></pre></TabItem>
+                <TabItem value="jwt"><pre><code>Nethermind.Runner --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.JwtSecretFile=../consensus/jwt.hex --JsonRpc.Host=0.0.0.0</code></pre></TabItem>
                 <TabItem value="ipc"><div class="admonition admonition-info alert alert--info"><div class="admonition-content"><p>Content under construction.</p></div></div></TabItem>
             </Tabs>
       </TabItem>
@@ -73,7 +73,7 @@ curl localhost:8545/health
             {label: 'JWT', value: 'jwt'},
             {label: 'IPC', value: 'ipc'}
             ]}>
-                <TabItem value="jwt"><pre><code>besu --network=mainnet --rpc-http-enabled --engine-jwt-enabled=true --engine-jwt-secret=path/to/jwt.hex  --engine-host-allowlist="*"</code></pre></TabItem>
+                <TabItem value="jwt"><pre><code>besu --rpc-http-enabled --engine-jwt-enabled=true --engine-jwt-secret=path/to/jwt.hex  --engine-host-allowlist="*"</code></pre></TabItem>
                 <TabItem value="ipc"><div class="admonition admonition-danger alert alert--info"><div class="admonition-content"><p>Content under construction.</p></div></div></TabItem>
             </Tabs>
       </TabItem>
