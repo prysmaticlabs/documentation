@@ -78,6 +78,8 @@ export const MultiDimensionalQuickstartWidget = () => {
 								selectByText('Geth');
 							}
 							disableByText('Besu');
+						} else if (textContent == 'HTTP-JWT') {
+							enableByText('Besu');
 						}
 					}, false)
 				}
