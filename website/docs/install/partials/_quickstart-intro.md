@@ -1,5 +1,8 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import {MultiDimensionalContentWidget} from '@site/src/components/MultiDimensionalContentWidget.js';
+
+<MultiDimensionalContentWidget />
 
 :::info Already running a node?
 
@@ -10,6 +13,16 @@ This guidance is targeted at new users. If you're already running a node, see [P
 <br />
 
 Select a quickstart configuration. If you're looking for the simplest configuration, select `Geth` and `IPC`:
+
+<script>
+    alert('heyo 1');
+    function(){
+        alert('heyo 2');
+        var tabElements = document.querySelectorAll('.tabs__item');
+        foreach(var el in tabElements){
+            el.addEventListener("click", function () { alert('heyo'); })
+    }}();
+</script>
 
 <div class='quickstart-tabs'>
 
