@@ -40,7 +40,7 @@ import TabItem from '@theme/TabItem';
 </Tabs>
 
 
-<Tabs className="with-label hidden-in-jwt-guide" groupId="protocol" defaultValue="ipc" values={[
+<Tabs className="with-label hidden-in-jwt-guide" groupId="protocol" defaultValue="jwt" values={[
         {label: 'EN-BN connection:', value: 'label'},
         {label: 'IPC', value: 'ipc'},
         {label: 'HTTP-JWT', value: 'jwt'},
