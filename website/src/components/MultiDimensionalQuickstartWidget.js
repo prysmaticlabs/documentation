@@ -3,9 +3,37 @@ import BrowserOnly from '@docusaurus/BrowserOnly';
 
 export const MultiDimensionalQuickstartWidget = () => {
 
+	let getAllTabElements = function () {
+		var tabElements = document.querySelectorAll('.quickstart-tabs .tabs__item');
+		return tabElements;
+	}
+
+	let getByText = function (text) {
+		var allElements = getAllTabElements();
+		var targetElement = allElements.find(function (element) {
+			return element.innerHTML == text;
+		})
+		return targetElement;
+	}
+
+	let disableByText = function (text) {
+		var targetElement = getByText(text);
+		targetElement.classList.add('disabled-tab');
+	}
+
+	let enableByText = function (text) {
+		var targetElement = getByText(text);
+		targetElement.classList.remove('disabled-tab');
+	}
+
+	let selectByText = function (text) {
+		var targetElement = getByText(text);
+		targetElement.click();
+	}
+
 	let bindTabs = function () {
 		setTimeout(function () {
-			var tabElements = document.querySelectorAll('.quickstart-tabs .tabs__item');
+			var tabElements = getAllTabElements();
 			tabElements.forEach(element => {
 				var isLabel = element.textContent.indexOf(":") > -1;
 				if (isLabel) {
@@ -19,11 +47,14 @@ export const MultiDimensionalQuickstartWidget = () => {
 
 						if (textContent == 'Besu') {
 							// disable IPC, select http
-							alert(textContent);
+							disableByText('IPC');
+							selectByText('HTTP-JWT');
 						} else if (textContent == 'Geth' || textContent == 'Nethermind') {
 							// enable IPC
+							enableByText('IPC');
 						} else if (textContent == 'IPC') {
 							// disable Besu
+							disableByText('Besu');
 						}
 					}, false)
 				}

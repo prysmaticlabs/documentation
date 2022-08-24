@@ -67,6 +67,9 @@ html[data-theme='dark'] {
   border-color: var(--tab-active-color);
   color: white;
 }
+.quickstart-tabs .with-label .tabs__item.tabs__item--active.disabled-tab {
+  background-color: red;
+}
 /* General elements */
 a {
   color: var(--prysm-pink);
