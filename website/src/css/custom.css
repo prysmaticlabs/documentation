@@ -59,9 +59,9 @@ html[data-theme='dark'] {
 .quickstart-tabs .with-label .tabs__item--active {
     font-size: 13px;
     font-weight: 500;
-    background-color: var(--tab-gray);
+    background-color: var(--tab-active-color);
     border-color: var(--tab-active-color);
-    color: var(--tab-active-color);
+    color: white;
 }
 
 
