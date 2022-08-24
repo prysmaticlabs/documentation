@@ -65,6 +65,7 @@ First, <strong>select a quickstart configuration</strong>. If you're looking for
 
 </div>
 
+## Introduction
 
 Prysm is an implementation of the [Ethereum proof-of-stake consensus specification](https://github.com/ethereum/consensus-specs). In this quickstart, you’ll use Prysm to run an Ethereum node and optionally a validator. This will let you stake 32 ETH using hardware that you manage.
 
