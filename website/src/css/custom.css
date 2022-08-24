@@ -15,6 +15,9 @@ html[data-theme='dark'] {
 .hide-tabs .tabs {
   display: none;
 }
+.quickstart-tabs {
+  position: relative;
+}
 .quickstart-tabs .with-label {
   font-size: 13px;
   font-weight: 500;

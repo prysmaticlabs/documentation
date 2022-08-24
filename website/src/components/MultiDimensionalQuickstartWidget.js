@@ -13,7 +13,7 @@ export const MultiDimensionalQuickstartWidget = () => {
 				if (isLabel) {
 					console.log('isLabel')
 					event.preventDefault();
-					return false;
+					return true;
 				} else {
 					if (textContent == 'Besu') {
 						// disable IPC, select http

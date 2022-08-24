@@ -20,60 +20,66 @@ html[data-theme='dark'] {
     display: none;
 }
 
-.quickstart-tabs .with-label {
-    font-size: 13px;
-    font-weight: 500;
-    border: 1px solid transparent;
-    border-radius: 5px;
-    overflow: hidden;
-    position: static;
+.quickstart-tabs {
+    position: relative;
 
-    .tabs__item {
+    .with-label {
         font-size: 13px;
         font-weight: 500;
-        border-top: 1px solid var(--tab-gray);
-        border-bottom: 1px solid var(--tab-gray);
-        padding: 10px 15px;
-        border-radius: 0px !important;
-        position: relative;
+        border: 1px solid transparent;
+        border-radius: 5px;
+        overflow: hidden;
+        position: static;
 
-        &:first-child {
-            cursor: default !important;
-            color: black;
-            width: 150px;
-            border: 1px solid transparent !important;
-            border-right: 0px !important;
-
-            &:hover {
-                cursor: default !important;
-            }
-        }
-
-        &:nth-child(2) {
-            border-top-left-radius: 5px !important;
-            border-bottom-left-radius: 5px !important;
-            border-left: 1px solid var(--tab-gray);
-            border-right: 0px !important;
-            z-index: 2;
-        }
-
-        &:last-child {
-            border-top-right-radius: 5px !important;
-            border-bottom-right-radius: 5px !important;
-            border-right: 1px solid var(--tab-gray);
-            border-top: 1px solid var(--tab-gray);
-            border-bottom: 1px solid var(--tab-gray);
-            border-left: 0px;
-        }
-
-        &.tabs__item--active {
+        .tabs__item {
             font-size: 13px;
             font-weight: 500;
-            background-color: var(--tab-active-color);
-            border-color: var(--tab-active-color);
-            color: white;
+            border-top: 1px solid var(--tab-gray);
+            border-bottom: 1px solid var(--tab-gray);
+            padding: 10px 15px;
+            border-radius: 0px !important;
+            position: relative;
+
+            &:first-child {
+                cursor: default !important;
+                color: black;
+                width: 150px;
+                border: 1px solid transparent !important;
+                border-right: 0px !important;
+
+                &:hover {
+                    cursor: default !important;
+                }
+            }
+
+            &:nth-child(2) {
+                border-top-left-radius: 5px !important;
+                border-bottom-left-radius: 5px !important;
+                border-left: 1px solid var(--tab-gray);
+                border-right: 0px !important;
+                z-index: 2;
+            }
+
+            &:last-child {
+                border-top-right-radius: 5px !important;
+                border-bottom-right-radius: 5px !important;
+                border-right: 1px solid var(--tab-gray);
+                border-top: 1px solid var(--tab-gray);
+                border-bottom: 1px solid var(--tab-gray);
+                border-left: 0px;
+            }
+
+            &.tabs__item--active {
+                font-size: 13px;
+                font-weight: 500;
+                background-color: var(--tab-active-color);
+                border-color: var(--tab-active-color);
+                color: white;
+            }
         }
     }
+
+
 }
 
 /* General elements */
