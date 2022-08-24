@@ -18,7 +18,7 @@ This guidance is targeted at users who are already running Prysm. If you're star
 
 :::
 
-<strong>Select a configuration</strong>:
+<p><strong>Select a configuration</strong>:</p>
 
 import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidimensional-content-controls-partial.md';
 
