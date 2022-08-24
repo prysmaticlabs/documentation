@@ -84,6 +84,7 @@ export const MultiDimensionalContentWidget = () => {
 						} else if (textContent == 'IPC') {
 							console.log('checking...' + jwtOnly())
 							if (jwtOnly()) {
+								console.log('selecting http-jwt...');
 								selectByText('HTTP-JWT');
 								disableByText('IPC');
 							} else {
