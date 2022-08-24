@@ -376,7 +376,14 @@ html[data-theme='dark'] {
     }
 }
 
+.truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .header-badge {
+    .truncate;
     transition-property: all;
     transition-duration: 0.2s;
     display: inline-block;
@@ -390,6 +397,7 @@ html[data-theme='dark'] {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    max-width: 100%;
 
     &:hover {
         text-decoration: none;
@@ -406,6 +414,7 @@ html[data-theme='dark'] {
     }
 
     .badge-label {
+        .truncate;
         transition-property: all;
         transition-duration: 0.2s;
         font-size: 13px;
@@ -414,6 +423,7 @@ html[data-theme='dark'] {
         display: inline-block;
         vertical-align: top;
         height: 25px;
+        max-width: calc(100% ~'-' 30px);
     }
 
     .badge-avatar {
