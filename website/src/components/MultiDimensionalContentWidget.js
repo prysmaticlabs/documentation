@@ -5,7 +5,7 @@ export const MultiDimensionalContentWidget = () => {
 
 	let bindTabs = function () {
 		console.log("heyo...");
-		var tabElements = document.querySelectorAll('.tabs__item');
+		var tabElements = document.querySelectorAll('.quickstart-tabs .tabs__item');
 		console.log("tabs: " + tabElements.length);
 		tabElements.forEach(element => element.addEventListener("click", function () { alert('heyo'); }));
 		console.log("bound");
