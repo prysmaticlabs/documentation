@@ -117,6 +117,7 @@ import TabItem from '@theme/TabItem';
 </Tabs>
 
 <div class='hidden-in-jwt-guide'>
+
 If you're running a validator, specifying a <code>suggested-fee-recipient</code> wallet address will allow you to earn what were previously miner transaction fee tips. See [How to configure Fee Recipient](../../execution-node/fee-recipient.md) for more information about this feature.
 
 Your beacon node will now begin syncing. This usually takes a couple days, but it can take longer depending on your network and hardware specs.
