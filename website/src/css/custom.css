@@ -11,30 +11,6 @@ html[data-theme='dark'] {
 .navbar__link--active {
   color: var(--prysm-pink-light) !important;
 }
-/* used to make label tabs unclickable */
-.unclickable-element {
-  position: relative;
-}
-.unclickable-element:after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  z-index: 1;
-  background: transparent;
-}
-.unclickable-element-after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  z-index: 1;
-  background: transparent;
-}
 /* used to hide all but the topmost tabs within our quickstart */
 .hide-tabs .tabs {
   display: none;
@@ -57,35 +33,14 @@ html[data-theme='dark'] {
   position: relative;
 }
 .quickstart-tabs .with-label .tabs__item:first-child {
-  position: relative;
+  cursor: default !important;
   color: black;
   width: 150px;
   border: 1px solid transparent !important;
   border-right: 0px !important;
 }
-.quickstart-tabs .with-label .tabs__item:first-child:after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  z-index: 1;
-  background: transparent;
-}
-/* used to make label tabs unclickable */
-.unclickable-element {
-  position: relative;
-}
-.unclickable-element:after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  z-index: 1;
-  background: transparent;
+.quickstart-tabs .with-label .tabs__item:first-child:hover {
+  cursor: default !important;
 }
 .quickstart-tabs .with-label .tabs__item:nth-child(2) {
   border-top-left-radius: 5px !important;
@@ -102,7 +57,7 @@ html[data-theme='dark'] {
   border-bottom: 1px solid var(--tab-gray);
   border-left: 0px;
 }
-.quickstart-tabs .with-label .tabs__item--active {
+.quickstart-tabs .with-label .tabs__item.tabs__item--active {
   font-size: 13px;
   font-weight: 500;
   background-color: var(--tab-active-color);

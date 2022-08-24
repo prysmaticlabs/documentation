@@ -7,14 +7,20 @@ export const MultiDimensionalQuickstartWidget = () => {
 		setTimeout(function () {
 			var tabElements = document.querySelectorAll('.quickstart-tabs .tabs__item');
 			tabElements.forEach(element => element.addEventListener("click", function (event) {
-				var textContent = event.target.textContent;
-				if (textContent == 'Besu') {
-					// disable IPC, select http
-					alert(textContent);
-				} else if (textContent == 'Geth' || textContent == 'Nethermind') {
-					// enable IPC
-				} else if (textContent == 'IPC') {
-					// disable Besu
+				var targetElement = event.target;
+				var textContent = targetElement.textContent;
+				var isLabel = textContent.indexOf(":") > -1;
+				if (isLabel) {
+					event.preventDefault();
+				} else {
+					if (textContent == 'Besu') {
+						// disable IPC, select http
+						alert(textContent);
+					} else if (textContent == 'Geth' || textContent == 'Nethermind') {
+						// enable IPC
+					} else if (textContent == 'IPC') {
+						// disable Besu
+					}
 				}
 			}, false));
 			console.log("start with the user, work backwards to the technology...");

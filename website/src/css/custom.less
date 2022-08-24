@@ -14,27 +14,6 @@ html[data-theme='dark'] {
     color: var(--prysm-pink-light) !important;
 }
 
-/* used to make label tabs unclickable */
-
-.unclickable-element {
-    position: relative;
-}
-
-.unclickable-element:after {
-    .unclickable-element-after;
-}
-
-.unclickable-element-after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    z-index: 1;
-    background: transparent;
-}
-
 /* used to hide all but the topmost tabs within our quickstart */
 
 .hide-tabs .tabs {
@@ -48,72 +27,54 @@ html[data-theme='dark'] {
     border-radius: 5px;
     overflow: hidden;
     position: static;
+
+    .tabs__item {
+        font-size: 13px;
+        font-weight: 500;
+        border-top: 1px solid var(--tab-gray);
+        border-bottom: 1px solid var(--tab-gray);
+        padding: 10px 15px;
+        border-radius: 0px !important;
+        position: relative;
+
+        &:first-child {
+            cursor: default !important;
+            color: black;
+            width: 150px;
+            border: 1px solid transparent !important;
+            border-right: 0px !important;
+
+            &:hover {
+                cursor: default !important;
+            }
+        }
+
+        &:nth-child(2) {
+            border-top-left-radius: 5px !important;
+            border-bottom-left-radius: 5px !important;
+            border-left: 1px solid var(--tab-gray);
+            border-right: 0px !important;
+            z-index: 2;
+        }
+
+        &:last-child {
+            border-top-right-radius: 5px !important;
+            border-bottom-right-radius: 5px !important;
+            border-right: 1px solid var(--tab-gray);
+            border-top: 1px solid var(--tab-gray);
+            border-bottom: 1px solid var(--tab-gray);
+            border-left: 0px;
+        }
+
+        &.tabs__item--active {
+            font-size: 13px;
+            font-weight: 500;
+            background-color: var(--tab-active-color);
+            border-color: var(--tab-active-color);
+            color: white;
+        }
+    }
 }
-
-.quickstart-tabs .with-label .tabs__item {
-    font-size: 13px;
-    font-weight: 500;
-    border-top: 1px solid var(--tab-gray);
-    border-bottom: 1px solid var(--tab-gray);
-    padding: 10px 15px;
-    border-radius: 0px !important;
-    position: relative;
-}
-
-.quickstart-tabs .with-label .tabs__item:first-child {
-    .unclickable-element;
-    color: black;
-    width: 150px;
-    border: 1px solid transparent !important;
-    border-right: 0px !important;
-}
-
-.quickstart-tabs .with-label .tabs__item:first-child:after {
-    .unclickable-element-after;
-}
-
-/* used to make label tabs unclickable */
-
-.unclickable-element {
-    position: relative;
-}
-
-.unclickable-element:after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    z-index: 1;
-    background: transparent;
-}
-
-.quickstart-tabs .with-label .tabs__item:nth-child(2) {
-    border-top-left-radius: 5px !important;
-    border-bottom-left-radius: 5px !important;
-    border-left: 1px solid var(--tab-gray);
-    border-right: 0px !important;
-    z-index: 2;
-}
-
-.quickstart-tabs .with-label .tabs__item:last-child {
-    border-top-right-radius: 5px !important;
-    border-bottom-right-radius: 5px !important;
-    border-right: 1px solid var(--tab-gray);
-    border-top: 1px solid var(--tab-gray);
-    border-bottom: 1px solid var(--tab-gray);
-    border-left: 0px;
-}
-
-.quickstart-tabs .with-label .tabs__item--active {
-    font-size: 13px;
-    font-weight: 500;
-    background-color: var(--tab-active-color);
-    border-color: var(--tab-active-color);
-    color: white;
-}
-
 
 /* General elements */
 
