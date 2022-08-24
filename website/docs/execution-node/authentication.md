@@ -8,6 +8,10 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <HeaderBadgesWidget />
 
+import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidimensional-content-controls-partial.md';
+
+<MultidimensionalContentControlsPartial />
+
 import {MultiDimensionalQuickstartWidget} from '@site/src/components/MultiDimensionalQuickstartWidget.js';
 
 <MultiDimensionalQuickstartWidget />
