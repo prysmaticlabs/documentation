@@ -82,6 +82,10 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
   <TabItem value="besu">See Besu's <a href='https://github.com/hyperledger/besu/releases'>releases page</a> and join <a href='https://discord.com/invite/hyperledger'>their Discord</a> to stay up to date as we approach Mainnet Merge.</TabItem>
 </Tabs>
 
+<h2>Configure beacon node</h2>
+
+If you're running a validator, specifying a <code>suggested-fee-recipient</code> wallet address will allow you to earn what were previously miner transaction fee tips. See <a href='./execution-node/fee-recipient.md'>How to configure Fee Recipient</a> for more information about this feature.
+
 </TabItem>
     <TabItem value="jwt">
     
