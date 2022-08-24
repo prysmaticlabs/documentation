@@ -11,7 +11,9 @@ export const MultiDimensionalQuickstartWidget = () => {
 				var textContent = targetElement.textContent;
 				var isLabel = textContent.indexOf(":") > -1;
 				if (isLabel) {
+					console.log('isLabel')
 					event.preventDefault();
+					return false;
 				} else {
 					if (textContent == 'Besu') {
 						// disable IPC, select http
