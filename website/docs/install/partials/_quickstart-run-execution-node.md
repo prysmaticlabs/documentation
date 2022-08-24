@@ -15,7 +15,7 @@ import TabItem from '@theme/TabItem';
         {label: 'Ropsten', value: 'ropsten'}
     ]}>
       <TabItem value="mainnet">
-        <Tabs groupId="protocol" defaultValue="jwt" values={[
+        <Tabs className='tabs-hidden-in-jwt-guide' groupId="protocol" defaultValue="jwt" values={[
             {label: 'JWT', value: 'jwt'},
             {label: 'IPC', value: 'ipc'}
             ]}>
@@ -24,7 +24,7 @@ import TabItem from '@theme/TabItem';
             </Tabs>
       </TabItem>
       <TabItem value="goerli-prater">
-          <Tabs groupId="protocol" defaultValue="jwt" values={[
+          <Tabs className='tabs-hidden-in-jwt-guide' groupId="protocol" defaultValue="jwt" values={[
             {label: 'JWT', value: 'jwt'},
             {label: 'IPC', value: 'ipc'}
             ]}>
@@ -33,7 +33,7 @@ import TabItem from '@theme/TabItem';
             </Tabs>
       </TabItem>
       <TabItem value="sepolia">
-        <Tabs groupId="protocol" defaultValue="jwt" values={[
+        <Tabs className='tabs-hidden-in-jwt-guide' groupId="protocol" defaultValue="jwt" values={[
             {label: 'JWT', value: 'jwt'},
             {label: 'IPC', value: 'ipc'}
             ]}>
@@ -42,7 +42,7 @@ import TabItem from '@theme/TabItem';
             </Tabs>
       </TabItem>
       <TabItem value="ropsten">
-        <Tabs groupId="protocol" defaultValue="jwt" values={[
+        <Tabs className='tabs-hidden-in-jwt-guide'  groupId="protocol" defaultValue="jwt" values={[
             {label: 'JWT', value: 'jwt'},
             {label: 'IPC', value: 'ipc'}
             ]}>
@@ -69,7 +69,7 @@ curl localhost:8545/health
         {label: 'Ropsten', value: 'ropsten'}
     ]}>
       <TabItem value="mainnet">
-          <Tabs groupId="protocol" defaultValue="jwt" values={[
+          <Tabs className='tabs-hidden-in-jwt-guide'  groupId="protocol" defaultValue="jwt" values={[
             {label: 'JWT', value: 'jwt'},
             {label: 'IPC', value: 'ipc'}
             ]}>
@@ -78,7 +78,7 @@ curl localhost:8545/health
             </Tabs>
       </TabItem>
       <TabItem value="goerli-prater">
-        <Tabs groupId="protocol" defaultValue="jwt" values={[
+        <Tabs className='tabs-hidden-in-jwt-guide'  groupId="protocol" defaultValue="jwt" values={[
             {label: 'JWT', value: 'jwt'},
             {label: 'IPC', value: 'ipc'}
             ]}>
@@ -87,7 +87,7 @@ curl localhost:8545/health
             </Tabs>
       </TabItem>
       <TabItem value="sepolia">
-        <Tabs groupId="protocol" defaultValue="jwt" values={[
+        <Tabs className='tabs-hidden-in-jwt-guide'  groupId="protocol" defaultValue="jwt" values={[
             {label: 'JWT', value: 'jwt'},
             {label: 'IPC', value: 'ipc'}
             ]}>
@@ -96,7 +96,7 @@ curl localhost:8545/health
             </Tabs>
       </TabItem>
       <TabItem value="ropsten">
-        <Tabs groupId="protocol" defaultValue="jwt" values={[
+        <Tabs className='tabs-hidden-in-jwt-guide'  groupId="protocol" defaultValue="jwt" values={[
             {label: 'JWT', value: 'jwt'},
             {label: 'IPC', value: 'ipc'}
             ]}>
@@ -125,7 +125,7 @@ curl -H "Content-Type: application/json" -X POST http://localhost:8545 -d "{""js
         {label: 'Ropsten', value: 'ropsten'}
     ]}>
       <TabItem value="mainnet">
-        <Tabs groupId="protocol" defaultValue="jwt" values={[
+        <Tabs className='tabs-hidden-in-jwt-guide'  groupId="protocol" defaultValue="jwt" values={[
             {label: 'JWT', value: 'jwt'},
             {label: 'IPC', value: 'ipc'}
             ]}>
@@ -134,7 +134,7 @@ curl -H "Content-Type: application/json" -X POST http://localhost:8545 -d "{""js
             </Tabs>
       </TabItem>
       <TabItem value="goerli-prater">
-        <Tabs groupId="protocol" defaultValue="jwt" values={[
+        <Tabs className='tabs-hidden-in-jwt-guide'  groupId="protocol" defaultValue="jwt" values={[
             {label: 'JWT', value: 'jwt'},
             {label: 'IPC', value: 'ipc'}
             ]}>
@@ -143,7 +143,7 @@ curl -H "Content-Type: application/json" -X POST http://localhost:8545 -d "{""js
             </Tabs>
       </TabItem>
       <TabItem value="sepolia">
-        <Tabs groupId="protocol" defaultValue="jwt" values={[
+        <Tabs className='tabs-hidden-in-jwt-guide'  groupId="protocol" defaultValue="jwt" values={[
             {label: 'JWT', value: 'jwt'},
             {label: 'IPC', value: 'ipc'}
             ]}>
@@ -152,7 +152,7 @@ curl -H "Content-Type: application/json" -X POST http://localhost:8545 -d "{""js
             </Tabs>
       </TabItem>
       <TabItem value="ropsten">
-        <Tabs groupId="protocol" defaultValue="jwt" values={[
+        <Tabs className='tabs-hidden-in-jwt-guide'  groupId="protocol" defaultValue="jwt" values={[
             {label: 'JWT', value: 'jwt'},
             {label: 'IPC', value: 'ipc'}
             ]}>
