@@ -41,6 +41,11 @@ export const MultiDimensionalQuickstartWidget = () => {
 		return isSelected;
 	}
 
+	let isOnAuthPage = function () {
+		var isOnAuthPage = window.location.href.indexOf('authentication') > -1;
+		return isOnAuthPage;
+	}
+
 	let bindTabs = function () {
 		setTimeout(function () {
 			var tabElements = getAllTabElements();
@@ -54,6 +59,10 @@ export const MultiDimensionalQuickstartWidget = () => {
 				}
 				disableByText('Besu');
 				disableByText('Nethermind');
+			}
+			if (isOnAuthPage()) {
+				selectByText('HTTP-JWT');
+				disableByText('IPC');
 			}
 
 			tabElements.forEach(element => {
@@ -75,6 +84,11 @@ export const MultiDimensionalQuickstartWidget = () => {
 						} else if (textContent == 'Geth') {
 							enableByText('IPC');
 						} else if (textContent == 'IPC') {
+							if (isOnAuthPage()) {
+								selectByText('HTTP-JWT');
+								disableByText('IPC');
+								return;
+							}
 							if (isSelectedByText('Besu') || isSelectedByText('Nethermind')) {
 								selectByText('Geth');
 							}
