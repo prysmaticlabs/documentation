@@ -1,7 +1,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-In this step, you'll run a beacon node using Prysm.
+<p class='hidden-in-jwt-guide'>In this step, you'll run a beacon node using Prysm.</p>
 
 <Tabs groupId="os" defaultValue="others" values={[
     {label: 'Windows', value: 'win'},
