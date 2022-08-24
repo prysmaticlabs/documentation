@@ -82,17 +82,13 @@ export const MultiDimensionalContentWidget = () => {
 						} else if (textContent == 'Geth') {
 							enableByText('IPC');
 						} else if (textContent == 'IPC') {
-							console.log('85')
 							if (jwtOnly()) {
-								console.log('87')
 								setTimeout(function () { selectByText('HTTP-JWT'); }, 50)
 								disableByText('IPC');
 							} else {
-								console.log('91')
 								if (isSelectedByText('Besu') || isSelectedByText('Nethermind')) {
 									selectByText('Geth');
 								}
-								console.log('95')
 								disableByText('Besu');
 								disableByText('Nethermind');
 							}
