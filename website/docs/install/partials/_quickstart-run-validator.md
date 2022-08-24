@@ -150,15 +150,11 @@ Download the latest stable version of the deposit CLI from the [Staking Deposit 
   </TabItem>
 </Tabs>
 
-<br />
-
 :::tip Congratulations! 
 
 You’re now running a <strong>full Ethereum node</strong> and a <strong>validator</strong>.
 
 :::
-
-<br />
 
 It can a long time (from days to months) for your validator to become fully activated. To learn more about the validator activation process, see [Deposit Process](https://kb.beaconcha.in/ethereum-2.0-depositing). You can paste your validator's public key (available in your `deposit_data-*.json` file) into a blockchain explorer to check the status of your validator:
 
