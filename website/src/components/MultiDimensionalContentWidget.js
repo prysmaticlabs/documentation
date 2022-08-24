@@ -68,7 +68,6 @@ export const MultiDimensionalContentWidget = () => {
 			tabElements.forEach(element => {
 				var isLabel = element.textContent.indexOf(":") > -1;
 
-
 				if (isLabel) {
 					console.log('is label... unbinding')
 					// unbind so tab can't be selected
