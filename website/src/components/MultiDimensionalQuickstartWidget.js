@@ -13,7 +13,7 @@ export const MultiDimensionalQuickstartWidget = () => {
 		var allElements = getAllTabElements();
 		console.log('looking for ' + text + ' via ' + allElements.length + ' allElements...')
 		var selectedElement;
-		// docusaurus seems to be stripping away some array extensions...
+		// docusaurus seems to be stripping away some array extensions like find()...
 		allElements.forEach(el => {
 			if (el.innerHTML == text) {
 				selectedElement = el;
