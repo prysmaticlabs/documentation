@@ -46,7 +46,7 @@ First, <strong>select a quickstart configuration</strong>. If you're looking for
   {label: 'Besu', value: 'besu'},
   {label: 'Geth', value: 'geth'}
   ]}>
-  <TabItem className="unclickable-element" value="label"></TabItem>
+  <TabItem attributes={{className: 'unclickable-element'}} value="label"></TabItem>
   <TabItem value="nethermind"></TabItem>
   <TabItem value="besu"></TabItem>
   <TabItem value="geth"></TabItem>
