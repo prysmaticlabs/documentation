@@ -9,7 +9,7 @@ export const MultiDimensionalQuickstartWidget = () => {
 			tabElements.forEach(element => {
 				var isLabel = element.textContent.indexOf(":") > -1;
 				if (isLabel) {
-					console.log('isLabel2')
+					console.log('is label... unbinding')
 					// unbind so tab can't be selected
 					element.parentElement.innerHTML = element.parentElement.innerHTML;
 				} else {
