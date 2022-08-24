@@ -5,6 +5,7 @@ export const MultiDimensionalQuickstartWidget = () => {
 
 	let getAllTabElements = function () {
 		var tabElements = document.querySelectorAll('.quickstart-tabs .tabs__item');
+		console.log('got ' + tabElements.length + ' elements...')
 		return tabElements;
 	}
 
