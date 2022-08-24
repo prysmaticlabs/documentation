@@ -344,7 +344,7 @@ html[data-theme='dark'] .header-badge .badge-label {
   display: inline-block;
   vertical-align: top;
   height: 25px;
-  max-width: calc(100% - 30px);
+  max-width: calc(100% - 33px);
 }
 .header-badge .badge-avatar {
   transition-property: all;
