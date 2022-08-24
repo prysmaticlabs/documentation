@@ -43,6 +43,7 @@ html[data-theme='dark'] {
   border-right: 0px !important;
 }
 .quickstart-tabs .with-label .tabs__item:first-child:hover {
+  background-color: transparent !important;
   cursor: default !important;
 }
 .quickstart-tabs .with-label .tabs__item:nth-child(2) {
@@ -73,6 +74,7 @@ html[data-theme='dark'] {
 }
 .quickstart-tabs .with-label .tabs__item.disabled-tab:hover {
   cursor: default !important;
+  background-color: transparent !important;
 }
 /* General elements */
 a {
