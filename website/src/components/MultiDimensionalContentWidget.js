@@ -10,9 +10,7 @@ export const MultiDimensionalContentWidget = () => {
 			console.log("tabs: " + tabElements.length);
 			tabElements.forEach(element => element.addEventListener("click", function () { alert('heyo'); }));
 			console.log("bound");
-
 		}, 500)
-
 	}
 
 	return (
