@@ -70,7 +70,7 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
 
 <h2>Configure execution node</h2>
 
-<p>If your beacon node is connecting to your execution node using IPC, just make sure that your execution node has been updated to the latest available stable version.</p>
+<p>If your beacon node is connecting to your execution node using IPC, ensure that your execution node has been updated to the latest available stable version.</p>
 
 <Tabs className="with-label" groupId="execution-clients" defaultValue="geth" values={[
   {label: 'Geth', value: 'geth'},
