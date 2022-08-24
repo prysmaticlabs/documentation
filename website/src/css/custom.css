@@ -34,6 +34,7 @@ html[data-theme='dark'] {
     color: black;
     width: 150px;
     border: 1px solid transparent !important;
+    border-right: 0px !important;
 }
 
 .quickstart-tabs .with-label .tabs__item:nth-child(2) {
@@ -42,9 +43,7 @@ html[data-theme='dark'] {
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
     border-left: 1px solid var(--tab-active-color);
-    margin-left: -1px;
-    margin-right: -1px;
-    margin-top: -1px;
+    border-right: 0px !important;
     z-index: 2;
 }
 
@@ -56,6 +55,7 @@ html[data-theme='dark'] {
     border-right: 1px solid var(--tab-active-color);
     border-top: 1px solid var(--tab-active-color);
     border-bottom: 1px solid var(--tab-active-color);
+    border-left: 0px;
 }
 
 .quickstart-tabs .with-label .tabs__item--active {
