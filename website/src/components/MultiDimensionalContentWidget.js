@@ -41,7 +41,7 @@ export const MultiDimensionalContentWidget = () => {
 		return isSelected;
 	}
 
-	let isOnAuthPage = function () {
+	let jwtOnly = function () {
 		var isOnAuthPage = window.location.href.indexOf('/authentication') > -1;
 		return isOnAuthPage;
 	}
@@ -60,7 +60,7 @@ export const MultiDimensionalContentWidget = () => {
 				disableByText('Besu');
 				disableByText('Nethermind');
 			}
-			if (isOnAuthPage()) {
+			if (jwtOnly()) {
 				selectByText('HTTP-JWT');
 				disableByText('IPC');
 			}
@@ -84,7 +84,8 @@ export const MultiDimensionalContentWidget = () => {
 						} else if (textContent == 'Geth') {
 							enableByText('IPC');
 						} else if (textContent == 'IPC') {
-							if (isOnAuthPage()) {
+							console.log('checking...' + jwtOnly())
+							if (jwtOnly()) {
 								selectByText('HTTP-JWT');
 								disableByText('IPC');
 								return;
