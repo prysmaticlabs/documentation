@@ -39,6 +39,7 @@ export const MultiDimensionalQuickstartWidget = () => {
 
 	let isSelectedByText = function (text) {
 		var targetElement = getByText(text);
+		console.log(targetElement.classList[0]);
 		return targetElement.classList.indexOf('tabs__item--active') > -1;
 	}
 
