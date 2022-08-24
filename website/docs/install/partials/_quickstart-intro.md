@@ -51,8 +51,8 @@ Select a quickstart configuration:
 
 
 <Tabs className="with-label" groupId="protocol" defaultValue="jwt" values={[
-        {label: 'EL-BN Protocol:', value: 'label'},
-        {label: 'JWT', value: 'jwt'},
+        {label: 'EN-BN Connection:', value: 'label'},
+        {label: 'HTTP-JWT', value: 'jwt'},
         {label: 'IPC', value: 'ipc'}
     ]}>
     <TabItem value="label"></TabItem>
