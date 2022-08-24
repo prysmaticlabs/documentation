@@ -358,6 +358,23 @@ footer.docusaurus-mt-lg {
     /*pragmatism over perfection*/
 }
 
+html[data-theme='dark'] {
+    .header-badge {
+        background-color: #333;
+
+        &:hover {
+            background-color: #444;
+
+            .badge-label {
+                color: #d6d6d6;
+            }
+        }
+
+        .badge-label {
+            color: #ddd;
+        }
+    }
+}
 
 .header-badge {
     transition-property: all;
@@ -373,70 +390,52 @@ footer.docusaurus-mt-lg {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+
+    &:hover {
+        text-decoration: none;
+        background-color: #e6e6e6;
+        opacity: 1;
+
+        .badge-avatar {
+            opacity: 1;
+        }
+
+        .badge-label {
+            color: #000;
+        }
+    }
+
+    .badge-label {
+        transition-property: all;
+        transition-duration: 0.2s;
+        font-size: 13px;
+        line-height: 24px;
+        color: #333;
+        display: inline-block;
+        vertical-align: top;
+        height: 25px;
+    }
+
+    .badge-avatar {
+        transition-property: all;
+        transition-duration: 0.2s;
+        display: inline-block;
+        border-radius: 30px;
+        width: 25px;
+        height: 25px;
+        background-size: cover;
+        margin-right: 12px;
+        font-size: 12px;
+        vertical-align: top;
+        line-height: 23px;
+        padding-left: 8px;
+        opacity: 0.7;
+    }
+
+    .emoji-avatar {
+        margin-right: 8px !important;
+    }
 }
-
-html[data-theme='dark'] .header-badge {
-    background-color: #333;
-}
-
-.header-badge:hover {
-    text-decoration: none;
-    background-color: #e6e6e6;
-    opacity: 1;
-}
-
-html[data-theme='dark'] .header-badge:hover {
-    background-color: #444;
-}
-
-.header-badge>.badge-label {
-    transition-property: all;
-    transition-duration: 0.2s;
-    font-size: 13px;
-    line-height: 24px;
-    color: #333;
-    display: inline-block;
-    vertical-align: top;
-    height: 25px;
-}
-
-html[data-theme='dark'] .header-badge>.badge-label {
-    color: #ddd;
-}
-
-.header-badge:hover>.badge-label {
-    color: #000;
-}
-
-html[data-theme='dark'] .header-badge:hover>.badge-label {
-    color: #d6d6d6;
-}
-
-.header-badge:hover>.badge-avatar {
-    opacity: 1;
-}
-
-.header-badge>.badge-avatar {
-    transition-property: all;
-    transition-duration: 0.2s;
-    display: inline-block;
-    border-radius: 30px;
-    width: 25px;
-    height: 25px;
-    background-size: cover;
-    margin-right: 12px;
-    font-size: 12px;
-    vertical-align: top;
-    line-height: 23px;
-    padding-left: 8px;
-    opacity: 0.7;
-}
-
-.header-badge>.emoji-avatar {
-    margin-right: 8px !important;
-}
-
-
 
 
 @media (max-width: 736px) {

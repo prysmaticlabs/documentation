@@ -288,6 +288,18 @@ footer.docusaurus-mt-lg {
   margin-bottom: 30px;
   /*pragmatism over perfection*/
 }
+html[data-theme='dark'] .header-badge {
+  background-color: #333;
+}
+html[data-theme='dark'] .header-badge:hover {
+  background-color: #444;
+}
+html[data-theme='dark'] .header-badge:hover .badge-label {
+  color: #d6d6d6;
+}
+html[data-theme='dark'] .header-badge .badge-label {
+  color: #ddd;
+}
 .header-badge {
   transition-property: all;
   transition-duration: 0.2s;
@@ -303,18 +315,18 @@ footer.docusaurus-mt-lg {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-html[data-theme='dark'] .header-badge {
-  background-color: #333;
-}
 .header-badge:hover {
   text-decoration: none;
   background-color: #e6e6e6;
   opacity: 1;
 }
-html[data-theme='dark'] .header-badge:hover {
-  background-color: #444;
+.header-badge:hover .badge-avatar {
+  opacity: 1;
 }
-.header-badge > .badge-label {
+.header-badge:hover .badge-label {
+  color: #000;
+}
+.header-badge .badge-label {
   transition-property: all;
   transition-duration: 0.2s;
   font-size: 13px;
@@ -324,19 +336,7 @@ html[data-theme='dark'] .header-badge:hover {
   vertical-align: top;
   height: 25px;
 }
-html[data-theme='dark'] .header-badge > .badge-label {
-  color: #ddd;
-}
-.header-badge:hover > .badge-label {
-  color: #000;
-}
-html[data-theme='dark'] .header-badge:hover > .badge-label {
-  color: #d6d6d6;
-}
-.header-badge:hover > .badge-avatar {
-  opacity: 1;
-}
-.header-badge > .badge-avatar {
+.header-badge .badge-avatar {
   transition-property: all;
   transition-duration: 0.2s;
   display: inline-block;
@@ -351,7 +351,7 @@ html[data-theme='dark'] .header-badge:hover > .badge-label {
   padding-left: 8px;
   opacity: 0.7;
 }
-.header-badge > .emoji-avatar {
+.header-badge .emoji-avatar {
   margin-right: 8px !important;
 }
 @media (max-width: 736px) {
