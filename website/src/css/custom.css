@@ -68,7 +68,7 @@ html[data-theme='dark'] {
   color: white;
 }
 .quickstart-tabs .with-label .tabs__item.disabled-tab {
-  color: #666;
+  color: #888 !important;
   cursor: default !important;
 }
 .quickstart-tabs .with-label .tabs__item.disabled-tab:hover {
