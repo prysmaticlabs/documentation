@@ -5,13 +5,11 @@ export const MultiDimensionalQuickstartWidget = () => {
 
 	let getAllTabElements = function () {
 		var tabElements = document.querySelectorAll('.quickstart-tabs .tabs__item');
-		console.log('got ' + tabElements.length + ' elements...')
 		return tabElements;
 	}
 
 	let getByText = function (text) {
 		var allElements = getAllTabElements();
-		console.log('looking for ' + text + ' via ' + allElements.length + ' allElements...')
 		var selectedElement;
 		// docusaurus seems to be stripping away some array extensions like find()...
 		allElements.forEach(el => {
@@ -39,9 +37,7 @@ export const MultiDimensionalQuickstartWidget = () => {
 
 	let isSelectedByText = function (text) {
 		var targetElement = getByText(text);
-		console.log(targetElement.classList[0]);
 		var isSelected = targetElement.classList.contains('tabs__item--active');
-		console.log(text + ' isSelected: ' + isSelected);
 		return isSelected;
 	}
 
@@ -73,19 +69,15 @@ export const MultiDimensionalQuickstartWidget = () => {
 						var textContent = targetElement.textContent;
 
 						if (textContent == 'Besu') {
-							// disable IPC, select http
 							selectByText('HTTP-JWT');
 							disableByText('IPC');
 						} else if (textContent == 'Geth' || textContent == 'Nethermind') {
-							// enable IPC
 							enableByText('IPC');
 						} else if (textContent == 'IPC') {
-							// disable Besu
-							disableByText('Besu');
-							// if besu selected, select geth
 							if (isSelectedByText('Besu')) {
 								selectByText('Geth');
 							}
+							disableByText('Besu');
 						}
 					}, false)
 				}
