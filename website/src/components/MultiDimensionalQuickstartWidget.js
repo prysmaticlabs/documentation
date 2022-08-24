@@ -40,7 +40,7 @@ export const MultiDimensionalQuickstartWidget = () => {
 	let isSelectedByText = function (text) {
 		var targetElement = getByText(text);
 		console.log(targetElement.classList[0]);
-		var isSelected = targetElement.classList.indexOf('tabs__item--active') > -1;
+		var isSelected = targetElement.classList.contains('tabs__item--active');
 		console.log(text + ' isSelected: ' + isSelected);
 		return isSelected;
 	}
