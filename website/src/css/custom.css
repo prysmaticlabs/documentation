@@ -31,7 +31,7 @@ html[data-theme='dark'] {
 
 .quickstart-tabs .with-label .tabs__item:first-child {
     color: black;
-    width: 140px;
+    width: 150px;
     border: 1px solid transparent !important;
 }
 
