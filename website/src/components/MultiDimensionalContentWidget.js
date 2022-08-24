@@ -85,7 +85,7 @@ export const MultiDimensionalContentWidget = () => {
 							console.log('checking...' + jwtOnly())
 							if (jwtOnly()) {
 								console.log('selecting http-jwt...');
-								selectByText('HTTP-JWT');
+								setTimeout(function () { selectByText('HTTP-JWT'); }, 50)
 								disableByText('IPC');
 							} else {
 								if (isSelectedByText('Besu') || isSelectedByText('Nethermind')) {
