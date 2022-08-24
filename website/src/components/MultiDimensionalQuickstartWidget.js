@@ -53,8 +53,8 @@ export const MultiDimensionalQuickstartWidget = () => {
 
 						if (textContent == 'Besu') {
 							// disable IPC, select http
-							disableByText('IPC');
 							selectByText('HTTP-JWT');
+							disableByText('IPC');
 						} else if (textContent == 'Geth' || textContent == 'Nethermind') {
 							// enable IPC
 							enableByText('IPC');
