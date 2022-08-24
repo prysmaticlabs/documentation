@@ -8,6 +8,10 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <HeaderBadgesWidget />
 
+import {MultiDimensionalQuickstartWidget} from '@site/src/components/MultiDimensionalQuickstartWidget.js';
+
+<MultiDimensionalQuickstartWidget />
+
 <div class='jwt-guide'>
 
 import JwtGuidancePartial from '@site/docs/partials/_jwt-guidance-partial.md';
