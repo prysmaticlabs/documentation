@@ -2,10 +2,15 @@
     --prysm-pink: #6540da;
     --tab-active-color: #6540da;
     --tab-gray: #ddd;
+    --prysm-pink-light: #9077e2;
 }
 
 html[data-theme='dark'] {
-    --prysm-pink: #9077e2;
+    --prysm-pink: var(--prysm-pink-light);
+}
+
+.navbar__link--active {
+    color: var(--prysm-pink-light);
 }
 
 /* used to hide all but the topmost tabs within our quickstart */
