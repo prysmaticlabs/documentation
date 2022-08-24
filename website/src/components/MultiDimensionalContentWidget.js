@@ -69,7 +69,6 @@ export const MultiDimensionalContentWidget = () => {
 				var isLabel = element.textContent.indexOf(":") > -1;
 
 				if (isLabel) {
-					console.log('is label... unbinding')
 					// unbind so tab can't be selected
 					element.outerHTML = element.outerHTML;
 				} else {
@@ -95,6 +94,7 @@ export const MultiDimensionalContentWidget = () => {
 								disableByText('Nethermind');
 							}
 						} else if (textContent == 'HTTP-JWT') {
+							console.log('clicked http-jwt...')
 							enableByText('Besu');
 							enableByText('Nethermind');
 						}
