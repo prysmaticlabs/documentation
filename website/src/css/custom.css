@@ -8,6 +8,12 @@ html[data-theme='dark'] {
   --prysm-pink: var(--prysm-pink-light);
   --tab-gray: #aaa;
 }
+html[data-theme='dark'] .quickstart-tabs .tabs__item:first-child {
+  color: #eee;
+}
+html[data-theme='dark'] .quickstart-tabs .tabs__item:first-child:hover {
+  background-color: transparent !important;
+}
 .navbar__link--active {
   color: var(--prysm-pink-light) !important;
 }
@@ -45,9 +51,6 @@ html[data-theme='dark'] {
 .quickstart-tabs .with-label .tabs__item:first-child:hover {
   background-color: transparent !important;
   cursor: default !important;
-}
-.quickstart-tabs .with-label .tabs__item:first-child html[data-theme='dark'] {
-  color: #eee !important;
 }
 .quickstart-tabs .with-label .tabs__item:nth-child(2) {
   border-top-left-radius: 5px !important;

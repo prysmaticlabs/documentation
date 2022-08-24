@@ -8,6 +8,19 @@
 html[data-theme='dark'] {
     --prysm-pink: var(--prysm-pink-light);
     --tab-gray: #aaa;
+
+    .quickstart-tabs {
+        .tabs__item {
+            &:first-child {
+
+                color: #eee;
+
+                &:hover {
+                    background-color: transparent !important;
+                }
+            }
+        }
+    }
 }
 
 .navbar__link--active {
@@ -50,10 +63,6 @@ html[data-theme='dark'] {
                 &:hover {
                     background-color: transparent !important;
                     cursor: default !important;
-                }
-
-                html[data-theme='dark'] {
-                    color: #eee !important;
                 }
             }
 
