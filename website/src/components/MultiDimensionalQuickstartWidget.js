@@ -11,6 +11,7 @@ export const MultiDimensionalQuickstartWidget = () => {
 
 	let getByText = function (text) {
 		var allElements = getAllTabElements();
+		console.log('looking for ' + text + ' via ' + tabElements.length + ' allElements...')
 		var targetElement = allElements.find(function (element) {
 			return element.innerHTML == text;
 		})
