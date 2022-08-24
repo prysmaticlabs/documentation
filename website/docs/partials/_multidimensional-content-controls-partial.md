@@ -1,6 +1,10 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+import {MultiDimensionalContentWidget} from '@site/src/components/MultiDimensionalContentWidget.js';
+
+<MultiDimensionalContentWidget />
+
 <div class='quickstart-tabs'>
 
 <Tabs className="with-label" groupId="os" defaultValue="others" values={[

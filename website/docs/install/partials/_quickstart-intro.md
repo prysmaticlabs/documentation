@@ -1,8 +1,5 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import {MultiDimensionalContentWidget} from '@site/src/components/MultiDimensionalContentWidget.js';
-
-<MultiDimensionalContentWidget />
 
 :::info Already running a node?
 
