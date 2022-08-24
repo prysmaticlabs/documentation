@@ -20,7 +20,7 @@ import TabItem from '@theme/TabItem';
             {label: 'IPC', value: 'ipc'}
             ]}>
                 <TabItem value="jwt"><pre><code>Nethermind.Runner --config mainnet --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.JwtSecretFile=../consensus/jwt.hex --JsonRpc.Host=0.0.0.0</code></pre></TabItem>
-                <TabItem value="ipc"><div class="admonition admonition-danger alert alert--info"><div class="admonition-content"><p>Content under construction.</p></div></div></TabItem>
+                <TabItem value="ipc"><div class="admonition admonition-info alert alert--info"><div class="admonition-content"><p>Content under construction.</p></div></div></TabItem>
             </Tabs>
       </TabItem>
       <TabItem value="goerli-prater">
@@ -29,7 +29,7 @@ import TabItem from '@theme/TabItem';
             {label: 'IPC', value: 'ipc'}
             ]}>
                 <TabItem value="jwt"><pre><code>Nethermind.Runner --config goerli --JsonRpc.Enabled true  --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.JwtSecretFile=../consensus/jwt.hex --JsonRpc.Host=0.0.0.0</code></pre></TabItem>
-                <TabItem value="ipc"><div class="admonition admonition-danger alert alert--info"><div class="admonition-content"><p>Content under construction.</p></div></div></TabItem>
+                <TabItem value="ipc"><div class="admonition admonition-info alert alert--info"><div class="admonition-content"><p>Content under construction.</p></div></div></TabItem>
             </Tabs>
       </TabItem>
       <TabItem value="sepolia">
@@ -38,7 +38,7 @@ import TabItem from '@theme/TabItem';
             {label: 'IPC', value: 'ipc'}
             ]}>
                 <TabItem value="jwt"><pre><code>Nethermind.Runner --config sepolia --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.JwtSecretFile=../consensus/jwt.hex --JsonRpc.Host=0.0.0.0 --Merge.TerminalTotalDifficulty 17000000000000000</code></pre></TabItem>
-                <TabItem value="ipc"><div class="admonition admonition-danger alert alert--info"><div class="admonition-content"><p>Content under construction.</p></div></div></TabItem>
+                <TabItem value="ipc"><div class="admonition admonition-info alert alert--info"><div class="admonition-content"><p>Content under construction.</p></div></div></TabItem>
             </Tabs>
       </TabItem>
       <TabItem value="ropsten">
@@ -47,7 +47,7 @@ import TabItem from '@theme/TabItem';
             {label: 'IPC', value: 'ipc'}
             ]}>
                 <TabItem value="jwt"><pre><code>Nethermind.Runner --config ropsten --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.JwtSecretFile=../consensus/jwt.hex --JsonRpc.Host=0.0.0.0 --Merge.TerminalTotalDifficulty 50000000000000000</code></pre></TabItem>
-                <TabItem value="ipc"><div class="admonition admonition-danger alert alert--info"><div class="admonition-content"><p>Content under construction.</p></div></div></TabItem>
+                <TabItem value="ipc"><div class="admonition admonition-info alert alert--info"><div class="admonition-content"><p>Content under construction.</p></div></div></TabItem>
             </Tabs>
       </TabItem>
     </Tabs>
