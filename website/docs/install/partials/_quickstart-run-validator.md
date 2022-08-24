@@ -3,7 +3,7 @@ import TabItem from '@theme/TabItem';
 
 :::info ETH Required
 
-Running a validator requires 32.1 ETH. Instructions for acquiring testnet ETH are provided below. Note that using Sepolia as a validator is currently unsupported.
+Running a validator requires 32.01 ETH. Instructions for acquiring testnet ETH are provided below. Note that using Sepolia as a validator is currently unsupported.
 
 :::
 
