@@ -16,7 +16,7 @@ import {MultiDimensionalQuickstartWidget} from '@site/src/components/MultiDimens
 
 <MultiDimensionalQuickstartWidget />
 
-<div class='jwt-guide'>
+<div class='jwt-guide hide-tabs'>
 
 import JwtGuidancePartial from '@site/docs/partials/_jwt-guidance-partial.md';
 
