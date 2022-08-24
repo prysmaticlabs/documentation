@@ -28,6 +28,7 @@ html[data-theme='dark'] {
     border-top: 1px solid var(--tab-active-color);
     border-bottom: 1px solid var(--tab-active-color);
     padding: 10px 15px;
+    border-radius: 0px;
 }
 
 .quickstart-tabs .with-label .tabs__item:first-child {
