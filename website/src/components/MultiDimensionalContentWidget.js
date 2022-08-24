@@ -5,8 +5,11 @@ export const MultiDimensionalContentWidget = () => {
 	return (
 		<BrowserOnly>
 			{() =>
-				<script >
-					document.querySelectorAll('.tabs__item').forEach(function(el){el.addEventListener("click", function () { alert('heyo'); })});
+				<script>
+					var tabElements = document.querySelectorAll('.tabs__item');
+					foreach(var el in tabElements){
+						el.addEventListener("click", function () { alert('heyo'); })
+					}
 				</script>
 			}
 		</BrowserOnly>
