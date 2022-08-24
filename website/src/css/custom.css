@@ -21,13 +21,12 @@ html[data-theme='dark'] {
     position: static;
 }
 
-
-
 .quickstart-tabs .with-label .tabs__item {
     font-size: 13px;
     font-weight: 500;
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
+    padding: 10px 15px;
 }
 
 .quickstart-tabs .with-label .tabs__item:first-child {
@@ -61,7 +60,8 @@ html[data-theme='dark'] {
 .quickstart-tabs .with-label .tabs__item--active {
     font-size: 13px;
     font-weight: 500;
-
+    background-color: #3578e5;
+    color: white;
 }
 
 
