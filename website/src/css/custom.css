@@ -1,6 +1,7 @@
 :root {
     --prysm-pink: #c72a7d;
     --tab-active-color: #3578e5;
+    --tab-gray: #ddd;
 }
 
 html[data-theme='dark'] {
@@ -25,8 +26,8 @@ html[data-theme='dark'] {
 .quickstart-tabs .with-label .tabs__item {
     font-size: 13px;
     font-weight: 500;
-    border-top: 1px solid var(--tab-active-color);
-    border-bottom: 1px solid var(--tab-active-color);
+    border-top: 1px solid var(--tab-gray);
+    border-bottom: 1px solid var(--tab-gray);
     padding: 10px 15px;
     border-radius: 0px !important;
 }
@@ -41,7 +42,7 @@ html[data-theme='dark'] {
 .quickstart-tabs .with-label .tabs__item:nth-child(2) {
     border-top-left-radius: 5px !important;
     border-bottom-left-radius: 5px !important;
-    border-left: 1px solid var(--tab-active-color);
+    border-left: 1px solid var(--tab-gray);
     border-right: 0px !important;
     z-index: 2;
 }
@@ -49,9 +50,9 @@ html[data-theme='dark'] {
 .quickstart-tabs .with-label .tabs__item:last-child {
     border-top-right-radius: 5px !important;
     border-bottom-right-radius: 5px !important;
-    border-right: 1px solid var(--tab-active-color);
-    border-top: 1px solid var(--tab-active-color);
-    border-bottom: 1px solid var(--tab-active-color);
+    border-right: 1px solid var(--tab-gray);
+    border-top: 1px solid var(--tab-gray);
+    border-bottom: 1px solid var(--tab-gray);
     border-left: 0px;
 }
 
@@ -59,6 +60,7 @@ html[data-theme='dark'] {
     font-size: 13px;
     font-weight: 500;
     background-color: var(--tab-active-color);
+    border-color: var(--tab-active-color);
     color: white;
 }
 
