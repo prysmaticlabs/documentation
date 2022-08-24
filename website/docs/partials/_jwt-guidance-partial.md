@@ -8,8 +8,6 @@ import JwtGenerationPartial from '@site/docs/partials/_jwt-generation-partial.md
 
 Your execution node needs to **expose a new port** and then **use the JWT token** to authenticate your beacon node's connection to that port. This new port exposes your execution node's **Engine API**, a new API that facilitates Ethereum's transition to a proof-of-stake consensus mechanism.
 
-Using the latest version of your execution client software, issue the following command to configure your execution node's JWT token and Engine API endpoint:
-
 import QuickstartRunExecutionNodeJWTPartial from '@site/docs/install/partials/_quickstart-run-execution-node.md';
 
 <QuickstartRunExecutionNodeJWTPartial />
