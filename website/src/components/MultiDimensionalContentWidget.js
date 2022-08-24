@@ -1,7 +1,7 @@
 import React from 'react';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 
-export const MultiDimensionalQuickstartWidget = () => {
+export const MultiDimensionalContentWidget = () => {
 
 	let getAllTabElements = function () {
 		var tabElements = document.querySelectorAll('.quickstart-tabs .tabs__item');

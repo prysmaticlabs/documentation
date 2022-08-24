@@ -1,8 +1,8 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import {MultiDimensionalQuickstartWidget} from '@site/src/components/MultiDimensionalQuickstartWidget.js';
+import {MultiDimensionalContentWidget} from '@site/src/components/MultiDimensionalContentWidget.js';
 
-<MultiDimensionalQuickstartWidget />
+<MultiDimensionalContentWidget />
 
 :::info Already running a node?
 

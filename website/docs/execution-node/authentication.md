@@ -20,9 +20,9 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
 
 <MultidimensionalContentControlsPartial />
 
-import {MultiDimensionalQuickstartWidget} from '@site/src/components/MultiDimensionalQuickstartWidget.js';
+import {MultiDimensionalContentWidget} from '@site/src/components/MultiDimensionalContentWidget.js';
 
-<MultiDimensionalQuickstartWidget />
+<MultiDimensionalContentWidget />
 
 <div class='jwt-guide hide-tabs'>
 
