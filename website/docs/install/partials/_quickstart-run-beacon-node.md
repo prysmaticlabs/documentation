@@ -116,7 +116,8 @@ import TabItem from '@theme/TabItem';
   </TabItem>
 </Tabs>
 
-<p class='hidden-in-jwt-guide'>If you're running a validator, specifying a <code>suggested-fee-recipient</code> wallet address will allow you to earn what were previously miner transaction fee tips. See [How to configure Fee Recipient](../../execution-node/fee-recipient.md) for more information about this feature.</p>
+<div class='hidden-in-jwt-guide'>
+If you're running a validator, specifying a <code>suggested-fee-recipient</code> wallet address will allow you to earn what were previously miner transaction fee tips. See [How to configure Fee Recipient](../../execution-node/fee-recipient.md) for more information about this feature.
 
 Your beacon node will now begin syncing. This usually takes a couple days, but it can take longer depending on your network and hardware specs.
 
@@ -142,4 +143,6 @@ curl http://localhost:3500/eth/v1alpha1/node/eth1/connections
 
 <!-- You should see TODO. -->
 
-<p class='hidden-in-jwt-guide'>Congratulations - you’re now running a <strong>full Ethereum node</strong>. Your full node consists of an <strong>execution node</strong> in Ethereum’s execution layer, and a <strong>beacon node</strong> in Ethereum’s consensus layer.</p>
+Congratulations - you’re now running a <strong>full Ethereum node</strong>. Your full node consists of an <strong>execution node</strong> in Ethereum’s execution layer, and a <strong>beacon node</strong> in Ethereum’s consensus layer.
+
+</div>
