@@ -63,7 +63,6 @@ Let's step through each of these changes.
 
 <div class='hide-tabs mergeprep-guide'>
 
-<br />
 
 <Tabs className="with-label hidden-in-jwt-guide" groupId="protocol" default="jwt" values={[
         {label: 'IPC', value: 'ipc'},
