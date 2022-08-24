@@ -16,6 +16,8 @@ This guidance is relevant only if your beacon node is connecting to your executi
 
 First, <strong>select a configuration</strong>:
 
+<div class='jwt-guide'>
+
 import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidimensional-content-controls-partial.md';
 
 <MultidimensionalContentControlsPartial />
@@ -24,7 +26,7 @@ import {MultiDimensionalContentWidget} from '@site/src/components/MultiDimension
 
 <MultiDimensionalContentWidget />
 
-<div class='jwt-guide hide-tabs'>
+<div class='hide-tabs'>
 
 import JwtGuidancePartial from '@site/docs/partials/_jwt-guidance-partial.md';
 
