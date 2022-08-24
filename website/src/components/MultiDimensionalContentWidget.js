@@ -8,7 +8,7 @@ export const MultiDimensionalContentWidget = () => {
 			var tabElements = document.querySelectorAll('.quickstart-tabs .tabs__item');
 			tabElements.forEach(element => element.addEventListener("click", function (el) {
 				alert(el.innerHTML);
-			}));
+			}, false));
 			console.log("start with the user, work backwards to the technology...");
 			console.log("start with utopia, work backwards to the mechanism design...");
 		}, 500)
