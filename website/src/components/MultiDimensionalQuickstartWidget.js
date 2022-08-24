@@ -49,11 +49,11 @@ export const MultiDimensionalQuickstartWidget = () => {
 				disableByText('IPC');
 			}
 			if (isSelectedByText('IPC')) {
-				disableByText('Besu');
-				disableByText('Nethermind');
 				if (isSelectedByText('Besu') || isSelectedByText('Nethermind')) {
 					selectByText('Geth');
 				}
+				disableByText('Besu');
+				disableByText('Nethermind');
 			}
 
 			tabElements.forEach(element => {
