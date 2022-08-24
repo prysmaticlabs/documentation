@@ -12,11 +12,7 @@ This guidance is targeted at new users. If you're already running a node, see [P
 
 <br />
 
-Select a quickstart configuration. If you're looking for the simplest configuration, select `Geth` and `IPC`:
-
-<script>
-    alert('heyo 1');
-</script>
+First, <strong>select a quickstart configuration</strong>. If you're looking for the simplest configuration, select `Geth` and `IPC`:
 
 <div class='quickstart-tabs'>
 
