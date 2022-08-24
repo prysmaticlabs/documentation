@@ -22,10 +22,6 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
 
 <MultidimensionalContentControlsPartial />
 
-import {MultiDimensionalContentWidget} from '@site/src/components/MultiDimensionalContentWidget.js';
-
-<MultiDimensionalContentWidget />
-
 <div class='hide-tabs'>
 
 import JwtGuidancePartial from '@site/docs/partials/_jwt-guidance-partial.md';
