@@ -21,6 +21,10 @@ html[data-theme='dark'] {
 }
 
 .unclickable-element:after {
+    .unclickable-element-after;
+}
+
+.unclickable-element-after {
     content: '';
     position: absolute;
     left: 0;
@@ -62,6 +66,10 @@ html[data-theme='dark'] {
     width: 150px;
     border: 1px solid transparent !important;
     border-right: 0px !important;
+}
+
+.quickstart-tabs .with-label .tabs__item:first-child:after {
+    .unclickable-element-after;
 }
 
 /* used to make label tabs unclickable */
