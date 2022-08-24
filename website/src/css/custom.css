@@ -15,7 +15,7 @@ html[data-theme='dark'] {
 .quickstart-tabs .with-label {
     font-size: 13px;
     font-weight: 500;
-    border: 1px solid transparent;
+    border: 1px solid #ccc;
     border-radius: 5px;
     overflow: hidden;
     position: static;
