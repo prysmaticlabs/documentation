@@ -12,6 +12,8 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <HeaderBadgesWidget commaDelimitedContributors="Mick" lastVerifiedDateString="August 23rd, 2022" lastVerifiedVersionString="v3.0.0" />
 
+<div class='quickstart'>
+
 import QuickstartIntroPartial from '@site/docs/install/partials/_quickstart-intro.md';
 
 <QuickstartIntroPartial />
@@ -52,6 +54,8 @@ import QuickstartRunBeaconNodePartial from '@site/docs/install/partials/_quickst
 import QuickstartRunValidatorPartial from '@site/docs/install/partials/_quickstart-run-validator.md';
 
 <QuickstartRunValidatorPartial />
+
+</div>
 
 </div>
 

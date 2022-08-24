@@ -1,6 +1,16 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+<div class="hidden-in-quickstart">
+
+:::info HTTP-JWT only
+
+This guidance is relevant only if your beacon node is connecting to your execution node over HTTP. If you're using IPC, you can ignore this.
+
+:::
+
+</div>
+
 The HTTP connection between your beacon node and execution node needs to be authenticated using a [JWT token](https://jwt.io/). There are several ways to generate this JWT token:
 
  - Use an online generator like [this](https://seanwasere.com/generate-random-hex/). Copy and paste this value into a `jwt.hex` file.

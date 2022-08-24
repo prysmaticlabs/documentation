@@ -21,6 +21,9 @@ html[data-theme='dark'] .quickstart-tabs .tabs__item:first-child:hover {
 .hide-tabs .tabs {
   display: none;
 }
+.quickstart .hidden-in-quickstart {
+  display: none;
+}
 .quickstart-tabs {
   position: relative;
 }
