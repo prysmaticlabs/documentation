@@ -9,7 +9,7 @@ This guidance is targeted at new users. If you're already running a node, see [P
 
 <br />
 
-Select a quickstart configuration. If you just want to get started with the simplest possible setup, select `Geth` and `IPC`:
+Select a quickstart configuration. If you're looking for the simplest configuration, select `Geth` and `IPC`:
 
 <div class='quickstart-tabs'>
 
