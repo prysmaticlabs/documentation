@@ -33,8 +33,8 @@ import TabItem from '@theme/TabItem';
   {label: 'Nethermind', value: 'nethermind'},
   {label: 'Besu', value: 'besu'}
   ]}>
+  <TabItem className="unclickable-element" value="label"></TabItem>
   <TabItem value="geth"></TabItem>
-  <TabItem value="label"></TabItem>
   <TabItem value="nethermind"></TabItem>
   <TabItem value="besu"></TabItem>
 </Tabs>

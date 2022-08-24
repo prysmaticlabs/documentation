@@ -65,7 +65,23 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
         {label: 'IPC', value: 'ipc'},
         {label: 'HTTP-JWT', value: 'jwt'},
     ]}>
-    <TabItem value="ipc"></TabItem>
+    <TabItem value="ipc">
+
+<h2>Configure execution node</h2>
+
+<p>If your beacon node is connecting to your execution node using IPC, just make sure that your execution node has been updated to the latest available stable version.</p>
+
+<Tabs className="with-label" groupId="execution-clients" defaultValue="geth" values={[
+  {label: 'Geth', value: 'geth'},
+  {label: 'Nethermind', value: 'nethermind'},
+  {label: 'Besu', value: 'besu'}
+  ]}>
+  <TabItem value="geth"></TabItem>
+  <TabItem value="nethermind"></TabItem>
+  <TabItem value="besu"></TabItem>
+</Tabs>
+
+</TabItem>
     <TabItem value="jwt">
     
 <h2>Create JWT token</h2>
