@@ -37,6 +37,11 @@ export const MultiDimensionalQuickstartWidget = () => {
 		targetElement.click();
 	}
 
+	let isSelectedByText = function (text) {
+		var targetElement = getByText(text);
+		return targetElement.classList.indexOf('tabs__item--active') > -1;
+	}
+
 	let bindTabs = function () {
 		setTimeout(function () {
 			var tabElements = getAllTabElements();
@@ -61,6 +66,10 @@ export const MultiDimensionalQuickstartWidget = () => {
 						} else if (textContent == 'IPC') {
 							// disable Besu
 							disableByText('Besu');
+							// if besu selected, select geth
+							if (isSelectedByText('Besu')) {
+								selectByText('Geth');
+							}
 						}
 					}, false)
 				}
