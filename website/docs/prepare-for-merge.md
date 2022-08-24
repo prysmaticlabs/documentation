@@ -39,7 +39,7 @@ Keep the following checklist in mind:
  - (Power users) Review the Ethereum Launchpad's [Merge config checklist](https://notes.ethereum.org/@launchpad/merge-configuration-checklist).
 
 
-## The Merge: Before and after
+## The Merge: Before and now
 
 | Before                                                                                                         | Now                                                                                                                                      |
 |----------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|
