@@ -11,7 +11,7 @@ html[data-theme='dark'] {
 }
 
 .navbar__link--active {
-    color: var(--prysm-pink-light);
+    color: var(--prysm-pink-light) !important;
 }
 
 /* used to hide all but the topmost tabs within our quickstart */
