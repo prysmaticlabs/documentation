@@ -1,5 +1,6 @@
 :root {
     --prysm-pink: #c72a7d;
+    --tab-active-color: #3578e5;
 }
 
 html[data-theme='dark'] {
@@ -24,8 +25,8 @@ html[data-theme='dark'] {
 .quickstart-tabs .with-label .tabs__item {
     font-size: 13px;
     font-weight: 500;
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
+    border-top: 1px solid var(--tab-active-color);
+    border-bottom: 1px solid var(--tab-active-color);
     padding: 10px 15px;
 }
 
@@ -40,7 +41,7 @@ html[data-theme='dark'] {
     border-bottom-left-radius: 5px;
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
-    border-left: 1px solid #ccc;
+    border-left: 1px solid var(--tab-active-color);
     margin-left: -1px;
     margin-right: -1px;
     margin-top: -1px;
@@ -52,15 +53,15 @@ html[data-theme='dark'] {
     border-bottom-right-radius: 5px;
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
-    border-right: 1px solid #ccc;
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
+    border-right: 1px solid var(--tab-active-color);
+    border-top: 1px solid var(--tab-active-color);
+    border-bottom: 1px solid var(--tab-active-color);
 }
 
 .quickstart-tabs .with-label .tabs__item--active {
     font-size: 13px;
     font-weight: 500;
-    background-color: #3578e5;
+    background-color: var(--tab-active-color);
     color: white;
 }
 
