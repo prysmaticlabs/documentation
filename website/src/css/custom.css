@@ -14,6 +14,23 @@ html[data-theme='dark'] {
     color: var(--prysm-pink-light) !important;
 }
 
+/* used to make label tabs unclickable */
+
+.unclickable-element {
+    position: relative;
+}
+
+.unclickable-element:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    background: transparent;
+}
+
 /* used to hide all but the topmost tabs within our quickstart */
 
 .hide-tabs .tabs {
@@ -36,6 +53,7 @@ html[data-theme='dark'] {
     border-bottom: 1px solid var(--tab-gray);
     padding: 10px 15px;
     border-radius: 0px !important;
+    position: relative;
 }
 
 .quickstart-tabs .with-label .tabs__item:first-child {

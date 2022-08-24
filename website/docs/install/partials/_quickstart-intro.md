@@ -21,7 +21,7 @@ First, <strong>select a quickstart configuration</strong>. If you're looking for
     {label: 'Windows', value: 'win'},
     {label: 'Linux, MacOS, Arm64', value: 'others'}
 ]}>
-  <TabItem value="label"></TabItem>
+  <TabItem className="unclickable-element" value="label"></TabItem>
   <TabItem value="win"></TabItem>
   <TabItem value="others"></TabItem>
 </Tabs>
@@ -33,7 +33,7 @@ First, <strong>select a quickstart configuration</strong>. If you're looking for
         {label: 'Sepolia', value: 'sepolia'},
         {label: 'Ropsten', value: 'ropsten'}
     ]}>
-    <TabItem value="label"></TabItem>
+    <TabItem className="unclickable-element" value="label"></TabItem>
     <TabItem value="mainnet"></TabItem>
     <TabItem value="goerli-prater"></TabItem>
     <TabItem value="sepolia"></TabItem>
@@ -46,7 +46,7 @@ First, <strong>select a quickstart configuration</strong>. If you're looking for
   {label: 'Besu', value: 'besu'},
   {label: 'Geth', value: 'geth'}
   ]}>
-  <TabItem value="label"></TabItem>
+  <TabItem className="unclickable-element" value="label"></TabItem>
   <TabItem value="nethermind"></TabItem>
   <TabItem value="besu"></TabItem>
   <TabItem value="geth"></TabItem>
@@ -58,7 +58,7 @@ First, <strong>select a quickstart configuration</strong>. If you're looking for
         {label: 'HTTP-JWT', value: 'jwt'},
         {label: 'IPC', value: 'ipc'}
     ]}>
-    <TabItem value="label"></TabItem>
+    <TabItem className="unclickable-element" value="label"></TabItem>
     <TabItem value="jwt"></TabItem>
     <TabItem value="ipc"></TabItem>
 </Tabs>
