@@ -14,7 +14,7 @@ import QuickstartRunExecutionNodeJWTPartial from '@site/docs/install/partials/_q
 
 <QuickstartRunExecutionNodeJWTPartial />
 
-<div class='hide-tabs'>
+
 
 ## Configure beacon node
 
