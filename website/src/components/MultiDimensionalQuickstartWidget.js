@@ -42,7 +42,7 @@ export const MultiDimensionalQuickstartWidget = () => {
 	}
 
 	let isOnAuthPage = function () {
-		var isOnAuthPage = window.location.href.indexOf('authentication') > -1;
+		var isOnAuthPage = window.location.href.indexOf('/authentication') > -1;
 		return isOnAuthPage;
 	}
 
