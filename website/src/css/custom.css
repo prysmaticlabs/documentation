@@ -1,11 +1,11 @@
 :root {
-    --prysm-pink: #c72a7d;
+    --prysm-pink: #6540da;
     --tab-active-color: #6540da;
     --tab-gray: #ddd;
 }
 
 html[data-theme='dark'] {
-    --prysm-pink: #da77ab;
+    --prysm-pink: #9077e2;
 }
 
 /* used to hide all but the topmost tabs within our quickstart */
