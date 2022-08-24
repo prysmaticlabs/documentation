@@ -27,7 +27,7 @@ This guidance is targeted at users who are already running Prysm. If you're star
 
 Keep the following checklist in mind:
 
- - **Review v3 release notes in detail**: [Prysm v3](https://github.com/prysmaticlabs/prysm/releases/tag/v3.0.0) introduces many updates, deprecations, and breaking changes. Review the [release notes](https://github.com/prysmaticlabs/prysm/releases/tag/v3.0.0) to understand how this release impacts your configuration.
+ - **Review v3 release notes in detail**: [Prysm v3](https://github.com/prysmaticlabs/prysm/releases/tag/v3.0.0) includes updates, deprecations, and breaking changes. Review the [release notes](https://github.com/prysmaticlabs/prysm/releases/tag/v3.0.0) to understand how this release impacts your configuration.
  - **Understand the high-level before and after**: The next section gives you a before/after picture of the items that you need to keep in mind while preparing for The Merge.
  - **Ensure that you're using a network-compatible version of your execution client**: You may need to use a prerelease version of execution client software. Refer to your execution client software documentation for the latest guidance.
  - **If you're using Geth, stay plugged in**: Geth 1.10.22 contains a regression that the team is actively working on. Update to <a href='https://github.com/ethereum/go-ethereum/releases'>v1.10.23+</a> if you haven't already.
