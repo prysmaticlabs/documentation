@@ -9,6 +9,9 @@ import TabItem from '@theme/TabItem';
 import ClientStackPng from '@site/static/img/client-stack.png';
 import {MultiDimensionalContentWidget} from '@site/src/components/MultiDimensionalContentWidget.js';
 
+<MultiDimensionalContentWidget />
+
+
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <HeaderBadgesWidget commaDelimitedContributors="Mick" lastVerifiedDateString="August 23rd, 2022" lastVerifiedVersionString="v3.0.0" />
