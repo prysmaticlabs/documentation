@@ -27,6 +27,9 @@ html[data-theme='dark'] .quickstart-tabs .tabs__item:first-child:hover {
 .jwt-guide .hidden-in-jwt-guide {
   display: none;
 }
+.mergeprep-guide .hidden-in-mergeprep-guide {
+  display: none;
+}
 .quickstart-tabs {
   position: relative;
 }

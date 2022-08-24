@@ -60,7 +60,7 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
 
 <MultidimensionalContentControlsPartial />
 
-<div class='hide-tabs'>
+<div class='hide-tabs mergeprep-guide'>
 
 <Tabs className="with-label hidden-in-jwt-guide" groupId="protocol" default="jwt" values={[
         {label: 'IPC', value: 'ipc'},
