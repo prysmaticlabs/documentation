@@ -15,7 +15,7 @@ html[data-theme='dark'] {
 .quickstart-tabs .with-label {
     font-size: 13px;
     font-weight: 500;
-    border: 1px solid #ccc;
+    border: 1px solid transparent;
     border-radius: 5px;
     overflow: hidden;
     position: static;
@@ -26,7 +26,8 @@ html[data-theme='dark'] {
 .quickstart-tabs .with-label .tabs__item {
     font-size: 13px;
     font-weight: 500;
-    border: 1px solid transparent;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
 }
 
 .quickstart-tabs .with-label .tabs__item:first-child {
