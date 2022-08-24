@@ -40,27 +40,27 @@ First, <strong>select a quickstart configuration</strong>. If you're looking for
     <TabItem value="ropsten"></TabItem>
 </Tabs>
 
-<Tabs className="with-label" groupId="execution-clients" defaultValue="nethermind" values={[
+<Tabs className="with-label" groupId="execution-clients" defaultValue="geth" values={[
   {label: 'Execution client:', value: 'label'},
   {label: 'Nethermind', value: 'nethermind'},
   {label: 'Besu', value: 'besu'},
   {label: 'Geth', value: 'geth'}
   ]}>
+  <TabItem value="geth"></TabItem>
   <TabItem value="label"></TabItem>
   <TabItem value="nethermind"></TabItem>
   <TabItem value="besu"></TabItem>
-  <TabItem value="geth"></TabItem>
 </Tabs>
 
 
-<Tabs className="with-label" groupId="protocol" defaultValue="jwt" values={[
+<Tabs className="with-label" groupId="protocol" defaultValue="ipc" values={[
         {label: 'EN-BN connection:', value: 'label'},
         {label: 'HTTP-JWT', value: 'jwt'},
         {label: 'IPC', value: 'ipc'}
     ]}>
     <TabItem className="unclickable-element" value="label"></TabItem>
-    <TabItem value="jwt"></TabItem>
     <TabItem value="ipc"></TabItem>
+    <TabItem value="jwt"></TabItem>
 </Tabs>
 
 </div>
