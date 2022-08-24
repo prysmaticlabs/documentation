@@ -1,8 +1,8 @@
 :root {
-    --prysm-pink: #6540da;
-    --tab-active-color: #6540da;
+    --prysm-pink: #c72a7d;
+    --tab-active-color: #3578e5;
     --tab-gray: #ddd;
-    --prysm-pink-light: #9077e2;
+    --prysm-pink-light: #da77ab;
 }
 
 html[data-theme='dark'] {
