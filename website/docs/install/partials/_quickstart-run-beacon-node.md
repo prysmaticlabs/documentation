@@ -79,7 +79,7 @@ In this step, you'll run a beacon node using Prysm.
             {label: 'IPC', value: 'ipc'}
             ]}>
                 <TabItem value="jwt"><pre><code>./prysm.sh beacon-chain --execution-endpoint=http://localhost:8551 --jwt-secret=path/to/jwt.hex --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre></TabItem>
-                <TabItem value="ipc"><pre><code>./prysm.sh beacon-chain --execution-endpoint=IPC-TODO --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre></TabItem>
+                <TabItem value="ipc"><pre><code>./prysm.sh beacon-chain --execution-endpoint=$HOME/.ethereum/geth.ipc --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre></TabItem>
             </Tabs>
       </TabItem>
       <TabItem value="goerli-prater">
@@ -89,7 +89,7 @@ In this step, you'll run a beacon node using Prysm.
             {label: 'IPC', value: 'ipc'}
             ]}>
                 <TabItem value="jwt"><pre><code>./prysm.sh beacon-chain --execution-endpoint=http://localhost:8551 --prater --jwt-secret=path/to/jwt.hex --genesis-state=genesis.ssz --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre></TabItem>
-                <TabItem value="ipc"><pre><code>./prysm.sh beacon-chain --execution-endpoint=IPC-TODO --prater --genesis-state=genesis.ssz --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre></TabItem>
+                <TabItem value="ipc"><pre><code>./prysm.sh beacon-chain --execution-endpoint=$HOME/.ethereum/geth.ipc --prater --genesis-state=genesis.ssz --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre></TabItem>
             </Tabs>
       </TabItem>
       <TabItem value="sepolia">
@@ -99,7 +99,7 @@ In this step, you'll run a beacon node using Prysm.
             {label: 'IPC', value: 'ipc'}
             ]}>
                 <TabItem value="jwt"><pre><code>./prysm.sh beacon-chain --execution-endpoint=http://localhost:8551 --sepolia --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9 --jwt-secret=jwt.hex --genesis-state=genesis.ssz</code></pre></TabItem>
-                <TabItem value="ipc"><pre><code>./prysm.sh beacon-chain --execution-endpoint=IPC-TODO --sepolia --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9 --genesis-state=genesis.ssz</code></pre></TabItem>
+                <TabItem value="ipc"><pre><code>./prysm.sh beacon-chain --execution-endpoint=$HOME/.ethereum/geth.ipc --sepolia --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9 --genesis-state=genesis.ssz</code></pre></TabItem>
             </Tabs>
       </TabItem>
       <TabItem value="ropsten">
@@ -109,7 +109,7 @@ In this step, you'll run a beacon node using Prysm.
             {label: 'IPC', value: 'ipc'}
             ]}>
                 <TabItem value="jwt"><pre><code>./prysm.sh beacon-chain --execution-endpoint=http://localhost:8551 --ropsten --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9 --jwt-secret=jwt.hex --genesis-state=genesis.ssz</code></pre></TabItem>
-                <TabItem value="ipc"><pre><code>./prysm.sh beacon-chain --execution-endpoint=IPC-TODO --ropsten --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9 --genesis-state=genesis.ssz</code></pre></TabItem>
+                <TabItem value="ipc"><pre><code>./prysm.sh beacon-chain --execution-endpoint=$HOME/.ethereum/geth.ipc --ropsten --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9 --genesis-state=genesis.ssz</code></pre></TabItem>
             </Tabs>
       </TabItem>
     </Tabs>
