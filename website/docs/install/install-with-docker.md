@@ -234,7 +234,7 @@ docker run -it -v %LOCALAPPDATA%\Eth2:/data -v \path\to\genesis.ssz:/genesis/gen
 
 
 
-OLE BELOW THIS
+OLD BELOW THIS
 
 
 
