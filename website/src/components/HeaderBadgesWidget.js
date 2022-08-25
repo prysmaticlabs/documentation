@@ -12,12 +12,21 @@ export const HeaderBadgesWidget = ({ commaDelimitedContributors, lastVerifiedDat
 	}
 
 	let buildAuthorBadge = function (authorNickname) {
-		return (
-			<a class="header-badge" href={`https://github.com/${githubUsernames[authorNickname]}`}>
-				<span class="badge-avatar" style={{ backgroundImage: "url('https://avatars.githubusercontent.com/" + githubUsernames[authorNickname] + "')" }}></span>
-				<span class="badge-label">{authorNickname}</span>
-			</a>
-		)
+		if (authorNickname != "Clarin") {
+			return (
+				<a class="header-badge" href={`https://github.com/${githubUsernames[authorNickname]}`}>
+					<span class="badge-avatar" style={{ backgroundImage: "url('https://avatars.githubusercontent.com/" + githubUsernames[authorNickname] + "')" }}></span>
+					<span class="badge-label">{authorNickname}</span>
+				</a>
+			)
+		} else {
+			return (
+				<a class="header-badge" href='https://www.linkedin.com/in/clarin-dy-239b5616a/'>
+					<span class="badge-avatar" style={{ backgroundImage: "url('https://avatars.githubusercontent.com/" + githubUsernames[authorNickname] + "')" }}></span>
+					<span class="badge-label">{authorNickname}</span>
+				</a>
+			)
+		}
 	}
 
 	let buildLastVerifiedBadge = function (dateString, versionString) {
