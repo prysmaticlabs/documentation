@@ -4,6 +4,10 @@ title: Optimistic sync
 sidebar_label: Optimistic sync
 ---
 
+import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
+
+<HeaderBadgesWidget commaDelimitedContributors="Potuz" />
+
 :::info
 
 This content was previously [published on HackMD](https://hackmd.io/5NhsX8FvSm2GqESpdpe-Vg?view). The version you're reading now is the version that we're maintaining.
