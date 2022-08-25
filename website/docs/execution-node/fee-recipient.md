@@ -20,31 +20,33 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <br/>
 
-**Fee Recipient** is a feature that lets you specify a priority fee recipient address on your validator client instance and beacon node. After [The Merge](https://ethereum.org/en/upgrades/merge/), execution clients will begin depositing priority fees into this address whenever your validator client proposes a new block.
+**Fee Recipient** is a feature that lets you specify a priority fee recipient address on your validator client instance and beacon node. 
+
+Your fee recipient wallet address is a **standard Ethereum wallet address**, just like the wallet address used when sending and receiving tokens from Metamask. After [The Merge](https://ethereum.org/en/upgrades/merge/), execution clients will begin depositing priority fees into this address whenever your validator client proposes a new block.
 
 ## Background
 
 When users pay gas to submit transactions to the Ethereum network, they can specify a **priority fee**. Priority fees are like tips. End-users use priority fees to incentivize block proposers to prioritize the inclusion of particular transactions in the blocks that they propose.
 
-Miners currently collect these priority fees. After The Merge, proof-of-work consensus will be replaced with proof-of-stake consensus. At this point, validators will collect these priority fees <a class="footnote" href='#footnote-1'>[1]</a>.
+Miners currently collect these priority fees. After The Merge, proof-of-work will be replaced with proof-of-stake. At this point, validators will collect these priority fees <a class="footnote" href='#footnote-1'>[1]</a>.
 
-Because priority fees are captured by execution clients in the execution layer, validator clients need to tell execution clients where to forward these priority fees. This priority fee “forwarding address” is referred to as your **fee recipient** address.
+Because priority fees are captured by execution clients in the execution layer <a class="footnote" href='#footnote-2'>[2]</a>, validator clients need to tell execution clients where to forward these priority fees. This priority fee "forwarding address" is referred to as your **fee recipient** wallet address.
 
 :::tip Configure this before The Merge
-If you don't configure your fee recipient address before The Merge, your priority fee earnings will be deposited into a [burn address](https://etherscan.io/address/0x0000000000000000000000000000000000000000).
+If you don't configure your fee recipient wallet address before The Merge, your priority fee earnings will be deposited into a [burn address](https://etherscan.io/address/0x0000000000000000000000000000000000000000).
 :::
 
 
 ## Configuring Fee Recipient
 
-Your fee recipient address can be configured in two places: on your **validator client instance** and on your **beacon node**. Configuring fee recipient on your validator client instance lets you configure a different fee recipient address for each validator public key.
+Your fee recipient wallet address can be configured in two places: on your **validator client instance** and on your **beacon node**. Configuring fee recipient on your validator client instance lets you configure a different fee recipient wallet address for each validator public key.
 
-We recommend configuring it in both places, even if you only have one validator public key. Your validator client instance configuration will override the beacon node configuration, while the beacon node configuration will be treated like a backup in the event that your client instance configuration fails.
+We recommend configuring a fee recipient wallet address on both your validator and beacon node, even if you only have one validator public key. Your validator client instance configuration will override the beacon node configuration, while the beacon node configuration will be treated like a backup in the event that your client instance configuration fails.
 
 
 ### Configuring Fee Recipient on your validator client instance
 
-A fee recipient address can be configured on your client instance by using one of the following flags in the Prysm CLI:
+A fee recipient wallet address can be configured on your client instance by using one of the following flags in the Prysm CLI:
 
 <table>
   <tr>
@@ -56,7 +58,7 @@ A fee recipient address can be configured on your client instance by using one o
     <td>
     Sets a default ETH address for all validator public keys. <br /> <br /> 
     <strong>Example</strong>: <code>--suggested-fee-recipient=0x0123456722E6b0000012BFEBf6177F1D2e9758D9</code> <br /> <br /> 
-    <strong>Note</strong>: This setting is overwritten by the flags below. If you don't configure a Fee Recipient address using one of the flags below, this address will be mapped to all validator public keys.
+    <strong>Note</strong>: This setting is overwritten by the flags below. If you don't configure an address using one of the flags below, this address will be mapped to each of your validator public keys.
     </td>
   </tr>
   <tr>
@@ -79,7 +81,7 @@ A fee recipient address can be configured on your client instance by using one o
     <td>
     This flag enables the periodic calling of Validator Registration API <a href="https://github.com/ethereum/builder-specs">(a Builder API)</a> while using the <code>suggested-fee-recipient</code> flag. <br /> <br /> 
     <strong>Example</strong>: <code>--enable-builder</code> <br /> <br /> 
-    <strong>Note</strong>: this flag will not affect proposer settings file. The proposer settings can specify builder config use through its own fields.
+    <strong>Note</strong>: this flag will not affect the proposer settings file. The proposer settings can specify builder configuration through its own fields.
     </td>
   </tr>
 </table>
@@ -279,6 +281,9 @@ Note that when configuring fee recipient on your beacon node, the beacon node wi
 Footnotes:
 
 <strong id="footnote-1">1.</strong> The <a href='https://github.com/ethereum/consensus-specs/blob/master/specs/bellatrix/validator.md#block-proposal'>Bellatrix -- Honest Validator spec</a> contains Fee Recipient implementation details pertaining to validator clients. The <a href='https://github.com/ethereum/consensus-specs/blob/master/specs/bellatrix/beacon-chain.md#executionpayload'>Bellatrix -- The Beacon Chain spec</a> contains Fee Recipient implementation details pertaining to beacon nodes. <br />
+
+<strong id="footnote-1">2.</strong> See <a href='../concepts/nodes-networks.md'>Nodes and Networks</a> for a quick refresher on the fundamentals of Ethereum nodes. <br />
+
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
