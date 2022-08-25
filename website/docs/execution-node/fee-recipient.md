@@ -6,7 +6,7 @@ sidebar_label: Configure Fee Recipient
 
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
-<HeaderBadgesWidget />
+<HeaderBadgesWidget commaDelimitedContributors="James,Mick" lastVerifiedDateString="August 25th, 2022" lastVerifiedVersionString="v3.0.0" />
 
 
 :::caution Breaking changes
