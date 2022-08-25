@@ -11,7 +11,10 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 :::caution Breaking changes
 
-[Prysm v3.0.0](https://github.com/prysmaticlabs/prysm/releases) introduces breaking changes that may impact your Fee Recipient configuration.
+[Prysm v3.0.0](https://github.com/prysmaticlabs/prysm/releases) introduces breaking changes that may impact your Fee Recipient configuration:
+
+- The existing `gaslimit` property within the proposer settings file has been replaced with an optional `builder` object that contains the `gaslimit` property.
+- The existing `suggested-fee-recipient` flag must now be used with the new `enable-builder` flag. This allows your validator client to use the MEV Builder API.
 
 :::
 
