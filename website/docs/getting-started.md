@@ -6,7 +6,8 @@ sidebar_label: Table of contents
 
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
-<HeaderBadgesWidget />
+<HeaderBadgesWidget commaDelimitedContributors="Clarin,Mick" />
+
 
 [Prysm](https://github.com/prysmaticlabs/prysm) is an [Ethereum](https://ethereum.org/en/developers/docs/intro-to-ethereum/) [proof-of-stake](https://ethereum.org/en/developers/docs/consensus-mechanisms/pos/) client written in [Go](https://golang.org). You can use Prysm to participate in Ethereum's [decentralized economy](https://ethereum.org/en/developers/docs/web2-vs-web3/) by [running a node](./install/install-with-script.md) and, if you have [32 ETH to stake](https://ethereum.org/en/staking/), a [validator](./install/install-with-script.md#step-6-run-a-validator-using-prysm). If you're new to Ethereum, you may enjoy our beginner-friendly [Nodes and networks](./concepts/nodes-networks.md) explainer.
 
@@ -299,15 +300,6 @@ The following table of contents provides a descriptive overview of Prysm's docum
 </div>
 <div class='panel'>
 <a href='contribute/bugreports'>File a bug report</a>
-</div>
-<div class='panel section-title'>
-
-## vNext
-
-<p>This section contains documentation that applies to vNext versions of Prysm.</p>
-</div>
-<div class='panel'>
-<a href='execution-node/fee-recipient-vNext'>Configure Fee Recipient (vNext)</a>
 </div>
 
 <br/>
