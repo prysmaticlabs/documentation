@@ -300,15 +300,6 @@ The following table of contents provides a descriptive overview of Prysm's docum
 <div class='panel'>
 <a href='contribute/bugreports'>File a bug report</a>
 </div>
-<div class='panel section-title'>
-
-## vNext
-
-<p>This section contains documentation that applies to vNext versions of Prysm.</p>
-</div>
-<div class='panel'>
-<a href='execution-node/fee-recipient-vNext'>Configure Fee Recipient (vNext)</a>
-</div>
 
 <br/>
 
