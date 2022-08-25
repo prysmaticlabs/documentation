@@ -6,7 +6,7 @@ sidebar_label: Troubleshooting
 
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
-<HeaderBadgesWidget />
+<HeaderBadgesWidget commaDelimitedContributors="Nishant,Mick" />
 
 Common troubleshooting scenarios and solutions are detailed below. Feel free reach out to us on [Discord](https://discord.gg/prysmaticlabs) for additional troubleshooting support.
 
