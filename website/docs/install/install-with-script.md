@@ -11,7 +11,7 @@ import JwtGenerationPartial from '@site/docs/partials/_jwt-generation-partial.md
 
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
-<HeaderBadgesWidget />
+<HeaderBadgesWidget commaDelimitedContributors="Mick" lastVerifiedDateString="August 25th, 2022" lastVerifiedVersionString="v3.0.0" />
 
 :::info Already running a node?
 
