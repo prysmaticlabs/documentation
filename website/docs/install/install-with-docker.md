@@ -4,55 +4,51 @@ title: Install Prysm with Docker
 sidebar_label: Install using Docker
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <HeaderBadgesWidget />
 
-Prysm can be installed on Windows, GNU/Linux, and MacOS systems with Docker.
+Prysm can be installed on Windows, GNU/Linux, and MacOS systems with Docker. We use [Bazel](https://bazel.build) to push minimal Docker images to a registry. 
 
-:::tip Pro-Tip
-The [Prysm Quickstart](/docs/install/install-with-script) is the easiest way to install Prysm. Docker is for advanced users.
+:::tip Not familiar with docker? Try our quickstart
+
+This guidance is targeted at users who are already comfortable with Docker. See our [Quickstart](/docs/install/install-with-script) for beginner-friendly installation instructions.
+
 :::
 
-**Have questions?** Stop by the [#documentation](https://discord.gg/prysmaticlabs) channel on Discord and let us know.
+## Review system requirements
 
-## System requirements
+<table>
+    <tr>
+        <th>Minimum</th>
+        <th>Recommended</th>
+    </tr>
+    <tr>
+      <td>
+        <ul> 
+          <li><strong>OS</strong>: 64-bit Linux, Mac OS X 10.14+, Windows 64-bit</li> 
+          <li><strong>CPU</strong>: Intel Core i5–760 or AMD FX-8100 or better</li> 
+          <li><strong>Memory</strong>: 8GB RAM</li> 
+          <li><strong>Storage</strong>: SSD with 20GB+ available</li> 
+          <li><strong>Internet</strong>: Broadband connection</li> 
+          <li><strong>Software</strong>: The latest release of <a href='https://docs.docker.com/install/'>Docker</a> installed.</li> 
+        </ul> 
+      </td>
+      <td>
+        <ul> 
+          <li><strong>CPU</strong>: Intel Core i7–4770 or AMD FX-8310 or better</li> 
+          <li><strong>Memory</strong>: 16GB RAM</li> 
+          <li><strong>Storage</strong>: SSD with 100GB+ available</li> 
+        </ul> 
+      </td>
+    </tr> 
+</table>
 
-### Minimum specifications
 
-These specifications must be met in order to successfully run the Prysm client.
-
-* Operating System: 64-bit Linux, Mac OS X 10.14+, Windows 64-bit
-* Processor: Intel Core i5–760 or AMD FX-8100 or better
-* Memory: 8GB RAM
-* Storage: 20GB available space SSD
-* Internet: Broadband connection
-
-### Recommended specifications
-
-These hardware specifications are recommended, but not required to run the Prysm client.
-
-* Processor: Intel Core i7–4770 or AMD FX-8310 or better
-* Memory: 16GB RAM
-* Storage: 100GB available space SSD
-* Internet: Broadband connection
-
-## Dependencies
-
-* A modern operating system
-* The latest release of [Docker](https://docs.docker.com/install/) installed
-
-## Installing Prysm
-
-### Where is the Prysm Dockerfile?
-
-Instead of manually writing Dockerfiles, our team relies on the [Bazel](https://bazel.build) build system used by major companies to manage mono-repositories. Bazel has the option to generate and push minimal Docker images to a registry, which is what we use for Prysm. Bazel provides reproducible builds and a sandboxed environment that ensures everyone building Prysm has the same experience and can build our entire project from a single command. To see how to build the Docker images yourself from scratch for your own purposes, see our instructions [here](/docs/install/install-with-bazel#building-docker-images).
-
-### Downloading the Prysm Docker images
-
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
+## Download the Prysm Docker images
 
 <Tabs
   groupId="operating-systems"
@@ -65,33 +61,28 @@ import TabItem from '@theme/TabItem';
 }>
 <TabItem value="lin">
 
-1. Ensure you are running the most recent version of Docker by issuing the command:
+First, ensure that you're running the most recent version of Docker:
 
 ```text
 docker -v
 ```
 
-2. Ensure that your user is a member of the `docker` group by issuing the command, where `username` is your user:
+Next, pull the Prysm images:
 
 ```text
-sudo usermod -aG docker username
-```
-
-Any changes made will take effect when your user next logs in.
-
-3. To pull the Prysm images, issue the following commands:
-
-```text
+## without Busybox debugging tools
 docker pull gcr.io/prysmaticlabs/prysm/validator:stable
 docker pull gcr.io/prysmaticlabs/prysm/beacon-chain:stable
+
+## with Busybox debugging tools
+docker pull gcr.io/prysmaticlabs/prysm/validator:latest-alpine
+docker pull gcr.io/prysmaticlabs/prysm/beacon-chain:latest-alpine
 ```
 
 
-This process will also install any related dependencies.
 
-:::tip Pro-Tip
-For advanced users, the beacon-chain and validator images with debugging tools bundled in can be fetched instead by appending `-alpine` to the end of the images in the `pull` commands above. For example: `docker pull .../prysm/validator:latest-alpine`.
-:::
+
+This process will also install dependencies. Alternatively, you can pull images with Busybox debugging tools bundled in can be fetched instead using the following commands: by appending `-alpine` to the end of the images in the `pull` commands above. For example: `docker pull .../prysm/validator:latest-alpine`.
 
 Below are various methods of controlling the beacon node in Docker installations.
 
@@ -117,7 +108,7 @@ To recreate a deleted container and refresh the chain database, issue the start 
 
 ```text
 docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node \
-  gcr.io/prysmaticlabs/prysm/beacon-chain:stable \
+  gcr.io/prysmaticlabs/prysm/beacon-chain:latest \
   --datadir=/data \
   --clear-db \
   --rpc-host=0.0.0.0 \
@@ -128,7 +119,7 @@ docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/u
 </TabItem>
 <TabItem value="win">
 
-1. Ensure you are running the most recent version of Docker by issuing the command:
+1. Ensure you're running the most recent version of Docker by issuing the command:
 
 ```text
 docker -v
@@ -176,7 +167,7 @@ docker run -it -v %LOCALAPPDATA%\Eth2:/data -p 4000:4000 -p 13000:13000 -p 12000
 </TabItem>
 <TabItem value="mac">
 
-1. Ensure you are running the most recent version of Docker by issuing the command:
+1. Ensure you're running the most recent version of Docker by issuing the command:
 
 ```text
 docker -v
@@ -409,7 +400,7 @@ A validator is an optional process that can be attached to a running beacon node
 An important step in the process is ensuring your beacon node is all set up before trying to run a validator. This is because after your validator is inducted into the participating validator set, it is expected to begin performing its duties almost right away. It is important to run a validator with a node that is synchronized to the chain head so you can start earning ETH instead of losing it.
 
 :::tip Syncing your node
-The beacon-chain node you are using should be **completely synced** before submitting your deposit. You may **incur minor inactivity balance penalties** if the validator is unable to perform its duties by the time the deposit is processed and activated by the beacon chain network.
+The beacon-chain node you're using should be **completely synced** before submitting your deposit. You may **incur minor inactivity balance penalties** if the validator is unable to perform its duties by the time the deposit is processed and activated by the beacon chain network.
 :::
 
 You can check the sync status of your node with the following command on most systems:
@@ -546,7 +537,7 @@ To check on the status of your validator, we recommend checking out the popular 
 
 For running an advanced wallet setups, our documentation includes comprehensive guides as to how to use the wallet built into Prysm to recover another wallet, use a remote signing server, and more. You can read more about it [here](https://docs.prylabs.network/docs/wallet/introduction).
 
-**Congratulations, you are now fully participating in Ethereum proof-of-stake**
+**Congratulations, you're now fully participating in Ethereum proof-of-stake**
 
 **Still have questions?**  Stop by our [Discord](https://discord.gg/prysmaticlabs) for further assistance!
 
