@@ -3,21 +3,31 @@ import BrowserOnly from '@docusaurus/BrowserOnly';
 
 export const HeaderBadgesWidget = ({ commaDelimitedContributors, lastVerifiedDateString, lastVerifiedVersionString }) => {
 	let githubUsernames = {
-		Mick: "symbolpunk",
+		Mick: "mick-prysm",
 		Raul: "rauljordan",
 		Terence: "terencechain",
 		James: "james-prysm",
 		Kasey: "kasey",
-		Potuz: "potuz"
+		Potuz: "potuz",
+		Nishant: "nisdas"
 	}
 
 	let buildAuthorBadge = function (authorNickname) {
-		return (
-			<a class="header-badge" href={`https://github.com/${githubUsernames[authorNickname]}`}>
-				<span class="badge-avatar" style={{ backgroundImage: "url('https://avatars.githubusercontent.com/" + githubUsernames[authorNickname] + "')" }}></span>
-				<span class="badge-label">{authorNickname}</span>
-			</a>
-		)
+		if (authorNickname != "Clarin") {
+			return (
+				<a class="header-badge" href={`https://github.com/${githubUsernames[authorNickname]}`}>
+					<span class="badge-avatar" style={{ backgroundImage: "url('https://avatars.githubusercontent.com/" + githubUsernames[authorNickname] + "')" }}></span>
+					<span class="badge-label">{authorNickname}</span>
+				</a>
+			)
+		} else {
+			return (
+				<a class="header-badge" href='https://www.linkedin.com/in/clarin-dy-239b5616a/'>
+					<span class="badge-avatar" style={{ backgroundImage: "url('https://i.imgur.com/vhht8qs.jpg')" }}></span>
+					<span class="badge-label">{authorNickname}</span>
+				</a>
+			)
+		}
 	}
 
 	let buildLastVerifiedBadge = function (dateString, versionString) {

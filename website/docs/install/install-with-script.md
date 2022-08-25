@@ -11,7 +11,7 @@ import JwtGenerationPartial from '@site/docs/partials/_jwt-generation-partial.md
 
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
-<HeaderBadgesWidget />
+<HeaderBadgesWidget commaDelimitedContributors="Mick" lastVerifiedDateString="August 25th, 2022" lastVerifiedVersionString="v3.0.0" />
 
 :::info Already running a node?
 
@@ -91,7 +91,7 @@ At a high level, we'll walk through the following flow:
 - **If you're staking ETH as a validator, try this guide on a testnet first**, *then* mainnet.
 - **Keep things simple**. This guidance assumes all client software will run on a single machine.
 - **Review the latest advisories** for the network(s) that you're using: [Goerli-Prater](https://goerli.launchpad.ethereum.org/en/), [Mainnet](https://launchpad.ethereum.org/en/).
-- Review all of our [published security best practices](./security-best-practices/).
+- Review all of our [published security best practices](../security-best-practices/).
 - **Join the community** - join our [mailing list](https://groups.google.com/g/prysm-dev), the [Prysm Discord server](https://discord.gg/prysmaticlabs), [r/ethstaker](https://www.reddit.com/r/ethstaker/), and the [EthStaker Discord server](https://discord.io/ethstaker) for updates and support.
 
 
@@ -345,9 +345,9 @@ Congratulations - you’re now running a <strong>full Ethereum node</strong>. Yo
 
 ## Step 5: Run a validator using Prysm
 
-:::info ETH Required
+:::caution ETH + Fully Synced Beacon Node Required
 
-Running a validator requires 32.1 ETH. Instructions for acquiring testnet ETH are provided below. Note that using Sepolia as a validator is currently unsupported.
+Running a validator requires 32.1 ETH and a fully synced beacon node. Verify that your **beacon node and execution node are both fully synced** before proceeding. If you're not fully synced, you risk being penalized and losing some of your staked ETH.
 
 :::
 
