@@ -365,6 +365,23 @@ header > h1 {
 .header-badges .header-badge .emoji-avatar {
   margin-right: 8px !important;
 }
+.checklist {
+  --li-bg: purple;
+  counter-reset: orderedlist;
+}
+.checklist li::before {
+  counter-increment: orderedlist;
+  content: counter(orderedlist);
+  font-family: "Indie Flower";
+  font-size: 1.25em;
+  line-height: 0.75;
+  width: 1.5rem;
+  padding-top: 0.25rem;
+  text-align: center;
+  color: #fff;
+  background-color: var(--li-bg);
+  border-radius: 0.25em;
+}
 .checklist input {
   width: 30px;
   height: 30px;
