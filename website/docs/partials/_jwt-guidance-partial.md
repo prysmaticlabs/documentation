@@ -16,7 +16,7 @@ import QuickstartRunExecutionNodeJWTPartial from '@site/docs/install/partials/_q
 
 ## Configure beacon node
 
-Next, we'll configure your beacon node to consume your JWT token so it can form an authenticated HTTP connection with your execution node. 
+Next, we'll configure your beacon node to consume your JWT token so it can form an authenticated HTTP connection with your execution node.
 
 import QuickstartRunBeaconNodePartial from '@site/docs/install/partials/_quickstart-run-beacon-node.md';
 
