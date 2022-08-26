@@ -46,6 +46,11 @@ export const MultiDimensionalContentWidget = () => {
 		return isOnAuthPage;
 	}
 
+	let isViewingMergePrep = function () {
+		var isOnAuthPage = window.location.href.indexOf('/prepare-for-merge') > -1;
+		return isOnAuthPage;
+	}
+
 	let bindTabs = function () {
 		setTimeout(function () {
 			var tabElements = getAllTabElements();
@@ -63,6 +68,9 @@ export const MultiDimensionalContentWidget = () => {
 			if (jwtOnly()) {
 				selectByText('HTTP-JWT');
 				disableByText('IPC');
+			} else if (isViewingMergePrep() && isSelectedByText('Geth')) {
+				selectByText('Nethermind');
+				selectByText('Geth');
 			}
 
 			tabElements.forEach(element => {
