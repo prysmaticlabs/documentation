@@ -104,6 +104,7 @@ export const MultiDimensionalContentWidget = () => {
 							disableByText('IPC');
 						} else if (textContent == 'Geth') {
 							enableByText('IPC');
+							console.log('enabled IPC...')
 						} else if (textContent == 'IPC') {
 							if (jwtOnly()) {
 								setTimeout(function () { selectByText('HTTP-JWT'); }, 50)
