@@ -29,7 +29,9 @@ html[data-theme='dark'] {
 /* used to hide all but the topmost tabs within our quickstart */
 
 .hide-tabs .tabs {
-    display: none;
+    visibility: invisible !important;
+    height: 0 !important;
+    overflow: hidden;
 }
 
 .quickstart {
