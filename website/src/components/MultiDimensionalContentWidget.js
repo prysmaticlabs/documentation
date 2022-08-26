@@ -86,7 +86,7 @@ export const MultiDimensionalContentWidget = () => {
 					} else if (isSelectedByText('Besu')) {
 						selectByText('Besu');
 					}
-				}, 500)
+				}, 10)
 			}
 
 			tabElements.forEach(element => {
@@ -123,7 +123,7 @@ export const MultiDimensionalContentWidget = () => {
 					}, false)
 				}
 			});
-		}, 500)
+		}, 100)
 	}
 
 	return (
