@@ -69,8 +69,7 @@ export const MultiDimensionalContentWidget = () => {
 				selectByText('HTTP-JWT');
 				disableByText('IPC');
 			} else if (isViewingMergePrep() && isSelectedByText('Geth')) {
-				selectByText('Nethermind');
-				selectByText('Geth');
+				selectByText('HTTP-JWT');
 			}
 
 			tabElements.forEach(element => {
