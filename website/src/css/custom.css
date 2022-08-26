@@ -380,6 +380,7 @@ header > h1 {
 }
 .checklist .task .guidance-container {
   display: inline-block;
+  padding-top: 5px;
 }
 .checklist .task .guidance-container label {
   display: block;
