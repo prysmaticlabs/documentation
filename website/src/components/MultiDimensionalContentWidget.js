@@ -52,6 +52,7 @@ export const MultiDimensionalContentWidget = () => {
 	}
 
 	let bindTabs = function () {
+		console.log('binding...')
 		setTimeout(function () {
 			var tabElements = getAllTabElements();
 			if (isSelectedByText('Besu') || isSelectedByText('Nethermind')) {
