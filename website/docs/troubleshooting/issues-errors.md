@@ -57,6 +57,10 @@ Common troubleshooting scenarios and solutions are detailed below. Feel free rea
       <td>Node is currently optimistic and cannot serve validators: <code>level=error msg="Could not request attestation to sign at slot" error="rpc error: code = Unavailable desc = the node is currently optimistic and cannot serve validators" prefix=validator pubKey=0x01234 slot=65740</code></td>
       <td>This usually means that your execution client isn't yet synchronized. Visit <a href='../monitoring/checking-status'>Check Node and Validator Status</a> to learn how to check the sync status of your execution client.</td>
     </tr>
+    <tr>
+      <td><code>Could not read JWT secret</code>, <code>Could not access JWT secret</code></td>
+      <td>You, your terminal window, or the script you're using may not have the permissions required in order to read or write your JWT token. Try elevating privileges or running as Administrator (if you're on Windows).</td>
+    </tr>
 </table>
 
 
