@@ -63,28 +63,28 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
         <div class='input-container'><input id="cl-5" type='checkbox'/><span class='done'></span></div>
         <div class='guidance-container'>
             <label for="cl-5">Ensure that you're using Prysm v3.0.0</label>
-            <p>If you've ever set the `USE_PRYSM_VERSION` environment variable, either clear this variable via `UNSET USE_PRYSM_VERSION` (Linux/MacOS) / `set USE_PRYSM_VERSION=` (Windows), or use `set USE_PRYSM_VERSION=v3.0.0` to ensure that Prysm uses Prysm v3.</p>
+            <p>If you've ever set the <code>USE_PRYSM_VERSION</code> environment variable, either clear this variable via <code>UNSET USE_PRYSM_VERSION</code> (Linux/MacOS) / <code>set USE_PRYSM_VERSION=</code> (Windows), or use <code>set USE_PRYSM_VERSION=v3.0.0</code> to ensure that Prysm uses Prysm v3.</p>
         </div>
     </div>
     <div class='task'>
         <div class='input-container'><input id="cl-6" type='checkbox'/><span class='done'></span></div>
         <div class='guidance-container'>
             <label for="cl-6">Verify your version</label>
-            <p>Verify that you're running Prysm `v3.0.0` by issuing the following command: `prysm.sh beacon-chain --version` (Linux) `prysm.bat beacon-chain --version` (Windows).</p>
+            <p>Verify that you're running Prysm <code>v3.0.0</code> by issuing the following command: <code>prysm.sh beacon-chain --version</code> (Linux) <code>prysm.bat beacon-chain --version</code> (Windows).</p>
         </div>
     </div>
     <div class='task'>
         <div class='input-container'><input id="cl-7" type='checkbox'/><span class='done'></span></div>
         <div class='guidance-container'>
             <label for="cl-7">Configure JWT</label>
-            <p>If you're not using IPC to connect your beacon node and execution node, ensure that both your execution node and beacon node are configured to use JWT authentication. These instructions are included below, and are also available here: [Configure JWT](./execution-node/authentication.md).</p>
+            <p>If you're not using IPC to connect your beacon node and execution node, ensure that both your execution node and beacon node are configured to use JWT authentication. These instructions are included below, and are also available here: <a href='./execution-node/authentication'>Configure JWT</a></p>
         </div>
     </div>
     <div class='task'>
         <div class='input-container'><input id="cl-8" type='checkbox'/><span class='done'></span></div>
         <div class='guidance-container'>
             <label for="cl-8">Update your firewall</label>
-            <p>If you're not using IPC to connect your beacon node and execution node, your beacon node will need to connect to its execution node on port `8551`. Previously, port `8545` was used. Ensure that your firewall rules are updated accordingly.</p>
+            <p>If you're not using IPC to connect your beacon node and execution node, your beacon node will need to connect to its execution node on port <code>8551</code>. Previously, port <code>8545</code> was used. Ensure that your firewall rules are updated accordingly, and refer to <a href='./prysm-usage/p2p-host-ip'>Configure ports and firewalls for improved network connectivity</a> for general connectivity improvement tips.</p>
         </div>
     </div>
     <div class='task'>
