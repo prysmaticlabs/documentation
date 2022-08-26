@@ -119,6 +119,7 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
     </div>
 </div>
 
+<br />
 
 ## The Merge: Before and now
 
