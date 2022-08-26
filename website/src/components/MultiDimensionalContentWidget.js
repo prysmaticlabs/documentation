@@ -31,6 +31,7 @@ export const MultiDimensionalContentWidget = () => {
 	}
 
 	let selectByText = function (text) {
+		console.log('clicking ' + text + '...')
 		var targetElement = getByText(text);
 		targetElement.click();
 	}
