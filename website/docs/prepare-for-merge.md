@@ -64,7 +64,7 @@ Let's step through each of these changes.
 <div class='hide-tabs mergeprep-guide'>
 
 
-<Tabs className="with-label hidden-in-jwt-guide" groupId="protocol" default="jwt" values={[
+<Tabs className="with-label hidden-in-jwt-guide" groupId="protocol" values={[
         {label: 'IPC', value: 'ipc'},
         {label: 'HTTP-JWT', value: 'jwt'},
     ]}>
@@ -77,7 +77,7 @@ Let's step through each of these changes.
 
 <p>Ensure that your execution node has been updated to the latest available stable version.</p>
 
-<Tabs className="with-label" groupId="execution-clients" defaultValue="geth" values={[
+<Tabs className="with-label" groupId="execution-clients" values={[
   {label: 'Geth', value: 'geth'},
   {label: 'Nethermind', value: 'nethermind'},
   {label: 'Besu', value: 'besu'}
