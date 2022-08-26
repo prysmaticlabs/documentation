@@ -285,7 +285,7 @@ The fee recipient can also be set through the <a href='../prysm-usage/web-interf
  
 :::warning Fee Recipient changes from UI/API don't persist on client restart
 Fee Recipient changes through UI or Keymanager APIs do not persist after restart of the validator client.
-This persistence feature is requested as per this [issue](https://github.com/prysmaticlabs/prysm/issues/11322)
+This persistence feature is requested in [this issue](https://github.com/prysmaticlabs/prysm/issues/11322).
 Please use the `--proposer-settings-file` or `--proposer-settings-url` flags for persistent validator settings in the mean time.
 :::
 
