@@ -31,7 +31,7 @@ import {MultiDimensionalContentWidget} from '@site/src/components/MultiDimension
     <TabItem value="ropsten"></TabItem>
 </Tabs>
 
-<Tabs className="with-label" groupId="execution-clients" defaultValue="geth" values={[
+<Tabs className="with-label hidden-in-docker-guide" groupId="execution-clients" defaultValue="geth" values={[
   {label: 'Execution client:', value: 'label'},
   {label: 'Geth', value: 'geth'},
   {label: 'Nethermind', value: 'nethermind'},
@@ -44,7 +44,7 @@ import {MultiDimensionalContentWidget} from '@site/src/components/MultiDimension
 </Tabs>
 
 
-<Tabs className="with-label hidden-in-jwt-guide" groupId="protocol" defaultValue="jwt" values={[
+<Tabs className="with-label hidden-in-jwt-guide hidden-in-docker-guide" groupId="protocol" defaultValue="jwt" values={[
         {label: 'EN-BN connection:', value: 'label'},
         {label: 'HTTP-JWT', value: 'jwt'},
         {label: 'IPC', value: 'ipc'}

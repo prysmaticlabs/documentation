@@ -19,7 +19,9 @@ This guidance is targeted at users who are already comfortable with Docker. See 
 
 :::
 
-<strong>Select a quickstart configuration</strong>:
+<div class='docker-guide'>
+
+<strong>Select a configuration</strong>:
 
 import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidimensional-content-controls-partial.md';
 
@@ -394,7 +396,7 @@ docker run -it -v %LOCALAPPDATA%\Eth2:/data -p 4000:4000 -p 13000:13000 -p 12000
 </Tabs>
 
 </div>
-
+</div>
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
