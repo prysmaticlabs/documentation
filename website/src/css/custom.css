@@ -97,10 +97,6 @@ a {
 .footnote:hover {
   color: #000 !important;
 }
-header > h1 {
-  font-size: 2rem !important;
-  margin-top: 20px !important;
-}
 .markdown > h2 {
   font-size: 1.5rem !important;
 }
@@ -298,11 +294,141 @@ footer.docusaurus-mt-lg {
   color: white;
   font-weight: 600;
 }
+header > h1 {
+  font-size: 2rem !important;
+  margin-top: 20px !important;
+  margin-bottom: 60px !important;
+}
 .header-badges {
   display: block;
-  margin-top: -15px !important;
-  margin-bottom: 30px;
+  margin-top: -50px !important;
+  margin-bottom: 15px;
+  min-height: 35px;
   /*pragmatism over perfection*/
+}
+.header-badges .header-badge {
+  transition-property: all;
+  transition-duration: 0.2s;
+  display: inline-block;
+  border-radius: 20px;
+  background-color: #efefef;
+  padding: 3px 20px 3px 3px;
+  height: 31px;
+  margin-right: 6px;
+  margin-bottom: 5px;
+  vertical-align: top;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+.header-badges .header-badge:hover {
+  text-decoration: none;
+  background-color: #e6e6e6;
+  opacity: 1;
+}
+.header-badges .header-badge:hover .badge-avatar {
+  opacity: 1;
+}
+.header-badges .header-badge:hover .badge-label {
+  color: #000;
+}
+.header-badges .header-badge .badge-label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition-property: all;
+  transition-duration: 0.2s;
+  font-size: 13px;
+  line-height: 24px;
+  color: #333;
+  display: inline-block;
+  vertical-align: top;
+  height: 25px;
+  max-width: calc(100% - 33px);
+}
+.header-badges .header-badge .badge-avatar {
+  transition-property: all;
+  transition-duration: 0.2s;
+  display: inline-block;
+  border-radius: 30px;
+  width: 25px;
+  height: 25px;
+  background-size: cover;
+  margin-right: 12px;
+  font-size: 12px;
+  vertical-align: top;
+  line-height: 23px;
+  padding-left: 8px;
+  opacity: 0.7;
+}
+.header-badges .header-badge .emoji-avatar {
+  margin-right: 8px !important;
+}
+.checklist .task {
+  display: table;
+  position: relative;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  padding: 10px;
+  overflow: hidden;
+  width: 100%;
+}
+.checklist .task .input-container {
+  display: table-cell;
+  vertical-align: middle;
+  padding: 10px 5px;
+  width: 40px;
+}
+.checklist .task .input-container input {
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+}
+.checklist .task .input-container .done {
+  transition-property: background-color;
+  transition-duration: 0.2s;
+  transition-delay: 0s;
+}
+.checklist .task .input-container input:checked + .done {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #dfebfd;
+  z-index: 0;
+}
+.checklist .task .guidance-container {
+  display: inline-block;
+  padding-top: 0px;
+  position: relative;
+  z-index: 2;
+  padding-left: 10px;
+}
+.checklist .task .guidance-container label {
+  display: block;
+  font-weight: bold;
+}
+.checklist .task .guidance-container > p {
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 0;
+}
+.checklist input {
+  margin-right: 5px;
+}
+html[data-theme='dark'] .checklist .task .input-container input:checked + .done {
+  background-color: #002862;
+}
+html[data-theme='dark'] .checklist .task .guidance-container label {
+  color: white;
+}
+html[data-theme='dark'] .checklist .task .guidance-container > p {
+  color: white;
 }
 html[data-theme='dark'] .header-badge {
   background-color: #333;
@@ -320,65 +446,6 @@ html[data-theme='dark'] .header-badge .badge-label {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-.header-badge {
-  transition-property: all;
-  transition-duration: 0.2s;
-  display: inline-block;
-  border-radius: 20px;
-  background-color: #efefef;
-  padding: 3px 20px 3px 3px;
-  height: 31px;
-  margin-right: 6px;
-  margin-bottom: 6px;
-  vertical-align: top;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 100%;
-}
-.header-badge:hover {
-  text-decoration: none;
-  background-color: #e6e6e6;
-  opacity: 1;
-}
-.header-badge:hover .badge-avatar {
-  opacity: 1;
-}
-.header-badge:hover .badge-label {
-  color: #000;
-}
-.header-badge .badge-label {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  transition-property: all;
-  transition-duration: 0.2s;
-  font-size: 13px;
-  line-height: 24px;
-  color: #333;
-  display: inline-block;
-  vertical-align: top;
-  height: 25px;
-  max-width: calc(100% - 33px);
-}
-.header-badge .badge-avatar {
-  transition-property: all;
-  transition-duration: 0.2s;
-  display: inline-block;
-  border-radius: 30px;
-  width: 25px;
-  height: 25px;
-  background-size: cover;
-  margin-right: 12px;
-  font-size: 12px;
-  vertical-align: top;
-  line-height: 23px;
-  padding-left: 8px;
-  opacity: 0.7;
-}
-.header-badge .emoji-avatar {
-  margin-right: 8px !important;
 }
 @media (max-width: 736px) {
   .nav-footer {
