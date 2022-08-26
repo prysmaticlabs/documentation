@@ -384,11 +384,6 @@ header > h1 {
   display: inline-block;
   position: relative;
   z-index: 2;
-  border-radius: 5px;
-  border: 1px solid var(--tab-gray);
-  appearance: none;
-  -webkit-appearance: none;
-  outline: none;
   cursor: pointer;
 }
 .checklist .task .input-container .done {
@@ -419,6 +414,7 @@ header > h1 {
 .checklist .task .guidance-container > p {
   font-size: 14px;
   line-height: 16px;
+  margin-bottom: 0;
 }
 .checklist input {
   margin-right: 5px;
