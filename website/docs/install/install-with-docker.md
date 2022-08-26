@@ -19,6 +19,13 @@ This guidance is targeted at users who are already comfortable with Docker. See 
 
 :::
 
+<strong>Select a quickstart configuration</strong>:
+
+import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidimensional-content-controls-partial.md';
+
+<MultidimensionalContentControlsPartial />
+
+
 ## Review system requirements
 
 <table>
@@ -79,7 +86,7 @@ These commands will automatically install dependencies.
 
 We recommend opening up ports `tcp/13000` and `udp/12000` on your router and firewall to improve peer-to-peer connectivity. Refer to your operating system and router documentation for port configuration instructions. With this complete, appending `--p2p-host-ip=$(curl -s ident.me)` to your beacon node startup command will configure Prysm to use your newly opened ports.
 
-
+<div class='hide-tabs'>
 
 ## Run a beacon node
 
@@ -226,28 +233,15 @@ docker run -it -v %LOCALAPPDATA%\Eth2:/data -v \path\to\genesis.ssz:/genesis/gen
 
 ## Run a validator
 
+import SingletonWarningPartial from '@site/docs/install/partials/_singleton-warning-partial.md';
 
+<SingletonWarningPartial />
 
+import FullSyncWarningPartial from '@site/docs/install/partials/_full-sync-warning-partial.md';
 
+<FullSyncWarningPartial />
 
-
-
-
-
-OLD BELOW THIS
-
-
-
-
-### Step 1: Ensure your beacon node is synced
-
-An important step in the process is ensuring your beacon node is all set up before trying to run a validator. This is because after your validator is inducted into the participating validator set, it is expected to begin performing its duties almost right away. It is important to run a validator with a node that is synchronized to the chain head so you can start earning ETH instead of losing it.
-
-:::tip Syncing your node
-The beacon-chain node you're using should be **completely synced** before submitting your deposit. You may **incur minor inactivity balance penalties** if the validator is unable to perform its duties by the time the deposit is processed and activated by the beacon chain network.
-:::
-
-You can check the sync status of your node with the following command on most systems:
+Check the sync status of your node with the following command:
 
 ```text
 curl http://localhost:3500/eth/v1alpha1/node/syncing
@@ -259,37 +253,37 @@ If your node is done synchronizing, you will see the response:
 {"syncing":false}%
 ```
 
-### Step 2: Send your validator deposit via the Ethereum validator launchpad
+### Stake your ETH
 
-:::danger Ensure You Are Not Being Scammed
-The correct address for the launchpad is https://launchpad.ethereum.org and the only, official validator deposit contract is [0x00000000219ab540356cbb839cbe05303d7705fa](https://etherscan.io/address/0x00000000219ab540356cbb839cbe05303d7705fa). Do not send ETH directly to the contract, and only join by using the Ethereum.org launchpad.
+:::danger Exercise caution
+
+The Ethereum launchpad URL is `https://launchpad.ethereum.org` and the only, official validator deposit contract is [0x00000000219ab540356cbb839cbe05303d7705fa](https://etherscan.io/address/0x00000000219ab540356cbb839cbe05303d7705fa). Don't send ETH directly to the contract - deposit your stake through Ethereum.org launchpad.
+
 :::
 
-The [Mainnet Launchpad](https://launchpad.ethereum.org/summary) is the most secure way to deposit your 32 ETH to become a validator. If you want to participate in the **testnet**, you can navigate to the [Goerli-Prater](https://goerli.launchpad.ethereum.org/en/) or [Ropsten](https://ropsten.launchpad.ethereum.org/summary) launchpads.
+Use the [Mainnet Launchpad](https://launchpad.ethereum.org/summary) to deposit your 32 ETH. If you want to participate in the **testnet**, use the [Goerli-Prater](https://goerli.launchpad.ethereum.org/en/) or [Ropsten](https://ropsten.launchpad.ethereum.org/summary) launchpads.
 
-Throughout the process, you'll be asked to generate new validator credentials using the official Ethereum deposit command-line-tool [here](https://github.com/ethereum/eth2.0-deposit-cli). Make sure you use the `mainnet` option when generating keys with the deposit CLI. During the process, you will have generated a `validator_keys` folder under the `eth2.0-deposit-cli` directory. You can import all of your validator keys into Prysm from that folder in the next step.
+Throughout the process, you'll be asked to generate new validator credentials using the [official Ethereum deposit command-line-tool](https://github.com/ethereum/eth2.0-deposit-cli). Make sure you use the `mainnet` option when generating keys with the deposit CLI. During the process, you will have generated a `validator_keys` folder under the `eth2.0-deposit-cli` directory. You can import all of your validator keys into Prysm from that folder in the next step.
 
-### Step 3: Import keystores into Prysm
+### Import keystores
 
-For this step, you'll need to copy the path to the `validator_keys` folder under the `eth2.0-deposit-cli` directory you created during the launchpad process. For example, if your eth2.0-deposit-cli installation is in your `$HOME` (or `%LOCALAPPDATA%` on Windows) directory, you can then run the following commands for your operating system
+Copy the path to the `validator_keys` folder under the `eth2.0-deposit-cli` directory you created during the launchpad process and issue the following command:
 
 <Tabs
-  groupId="operating-systems"
-  defaultValue="lin"
+  groupId="os"
+  defaultValue="others"
   values={[
-    {label: 'Linux', value: 'lin'},
-    {label: 'Windows', value: 'win'},
-    {label: 'MacOS', value: 'mac'},
+    {label: 'Linux, MacOS, Arm64', value: 'others'},
+    {label: 'Windows', value: 'win'}
   ]
 }>
-<TabItem value="lin">
-
-Note: You will be asked to do a one time acknowledgement of our [Terms of Use](https://github.com/prysmaticlabs/prysm/blob/master/TERMS_OF_SERVICE.md). You can also read the legal terms first, then confirm them via a flag using --accept-terms-of-use in both your beacon node and validator.
+<TabItem value="others">
 
 ```text
 docker run -it -v $HOME/eth2.0-deposit-cli/validator_keys:/keys \
   -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
   --name validator \
+  --accept-terms-of-use \
   gcr.io/prysmaticlabs/prysm/validator:stable \
   accounts import --keys-dir=/keys --wallet-dir=/wallet
 ```
@@ -297,43 +291,28 @@ docker run -it -v $HOME/eth2.0-deposit-cli/validator_keys:/keys \
 </TabItem>
 <TabItem value="win">
 
-Note: You will be asked to do a one time acknowledgement of our [Terms of Use](https://github.com/prysmaticlabs/prysm/blob/master/TERMS_OF_SERVICE.md). You can also read the legal terms first, then confirm them via a flag using --accept-terms-of-use in both your beacon node and validator.
-
 ```text
-docker run -it -v %LOCALAPPDATA%\eth2.0-deposit-cli\validator_keys:/keys -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet gcr.io/prysmaticlabs/prysm/validator:stable accounts import --keys-dir=/keys --wallet-dir=/wallet
+docker run -it -v %LOCALAPPDATA%\eth2.0-deposit-cli\validator_keys:/keys -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet gcr.io/prysmaticlabs/prysm/validator:stable accounts import --keys-dir=/keys --wallet-dir=/wallet --accept-terms-of-use
 ```
 
 </TabItem>
-<TabItem value="mac">
 
-Note: You will be asked to do a one time acknowledgement of our [Terms of Use](https://github.com/prysmaticlabs/prysm/blob/master/TERMS_OF_SERVICE.md). You can also read the legal terms first, then confirm them via a flag using --accept-terms-of-use in both your beacon node and validator.
-
-```text
-docker run -it -v $HOME/eth2.0-deposit-cli/validator_keys:/keys \
-  -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
-  --name validator \
-  gcr.io/prysmaticlabs/prysm/validator:stable \
-  accounts import --keys-dir=/keys --wallet-dir=/wallet
-```
-
-</TabItem>
 </Tabs>
 
-### Step 4: Run your Prysm validator
+### Run validator
 
-Open a second terminal window. Depending on your platform, issue the appropriate command from the examples below to start the validator.
+Open a second terminal window. Issue the following command to start the validator:
+
 
 <Tabs
-  groupId="operating-systems"
-  defaultValue="lin"
+  groupId="os"
+  defaultValue="others"
   values={[
-    {label: 'Linux', value: 'lin'},
-    {label: 'Windows', value: 'win'},
-    {label: 'MacOS', value: 'mac'},
-    {label: 'Arm64', value: 'arm'},
+    {label: 'Linux, MacOS, Arm64', value: 'others'},
+    {label: 'Windows', value: 'win'}
   ]
 }>
-<TabItem value="lin">
+<TabItem value="others">
 
 ```text
 docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
@@ -353,57 +332,26 @@ docker run -it -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet -v %LOCA
 ```
 
 </TabItem>
-<TabItem value="mac">
 
-```text
-docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \ 
-  -v $HOME/Eth2:/validatorDB \
-  --network="host" --name validator-import \
-  gcr.io/prysmaticlabs/prysm/validator:stable \
-  --beacon-rpc-provider=127.0.0.1:4000 \
-  --wallet-dir=/wallet \
-  --datadir=/validatorDB
-```
-
-</TabItem>
 </Tabs>
 
 
-### Step 5: Wait for your validator assignment
+:::tip Congratulations! 
 
-Please note it will take time for nodes in the network to process a deposit. To understand the timeline of becoming a validator and how long it takes on average, please read [this knowledge base](https://kb.beaconcha.in/ethereum-2.0-depositing). In the meantime, leave both terminal windows open and running; once the validator is activated by the ETH2 network, it will immediately begin receiving tasks and performing its responsibilities. If the eth2 chain has not yet started, the validator will be ready to start proposing blocks and signing votes as soon as the genesis time is reached.
+You’re now running a <strong>full Ethereum node</strong> and a <strong>validator</strong>.
 
-To check on the status of your validator, we recommend checking out the popular block explorers: [beaconcha.in](https://beaconcha.in) by Bitfly and [beacon.etherscan.io](https://beacon.etherscan.io) by the Etherscan team.
+:::
 
-![image](https://i.imgur.com/CDNc6Ft.png)
+It can a long time (from days to months) for your validator to become fully activated. To learn more about the validator activation process, see [Deposit Process](https://kb.beaconcha.in/ethereum-2.0-depositing). You can paste your validator's public key (available in your `deposit_data-*.json` file) into a blockchain explorer to check the status of your validator:
 
+ - [Beaconcha.in (Mainnet)](https://beaconcha.in) 
+ - [Beaconcha.in (Prater)](https://prater.beaconcha.in/)
+ - [Beaconcha.in (Ropsten)](https://ropsten.beaconcha.in/)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+In the meantime, you should leave your **execution client**, **beacon node**, and **validator client** terminal windows open and running. Once your validator is activated, it will automatically begin proposing and validating blocks.
 
 
 ## Manage Prysm with Docker
-
 
 To interact with your beacon node through Docker, use one of the following commands:
 
@@ -411,19 +359,18 @@ To interact with your beacon node through Docker, use one of the following comma
  - Restart: `docker start -ai beacon-node`
  - Delete: `docker rm beacon-node`
 
+To recreate a deleted container and refresh the chain database, issue the start command with an additional `--clear-db` parameter, where `<YOUR_ETH_EXECUTION_NODE_ENDPOINT>` is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8551` for Geth) or an IPC path such as `/path/to/geth.ipc`:
 
-To recreate a deleted container and refresh the chain database, issue the start command with an additional `--clear-db` parameter where <YOUR_ETH_EXECUTION_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8551` for Geth) or an IPC path such as `/path/to/geth.ipc`:
 
 <Tabs
-  groupId="operating-systems"
-  defaultValue="lin"
+  groupId="os"
+  defaultValue="others"
   values={[
-    {label: 'Linux', value: 'lin'},
-    {label: 'Windows', value: 'win'},
-    {label: 'MacOS', value: 'mac'},
+    {label: 'Linux, MacOS, Arm64', value: 'others'},
+    {label: 'Windows', value: 'win'}
   ]
 }>
-<TabItem value="lin">
+<TabItem value="others">
 
 ```text
 docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node \
@@ -443,29 +390,11 @@ docker run -it -v %LOCALAPPDATA%\Eth2:/data -p 4000:4000 -p 13000:13000 -p 12000
 ```
 
 </TabItem>
-<TabItem value="mac">
 
-```text
-docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node \
-  gcr.io/prysmaticlabs/prysm/beacon-chain:latest \
-  --datadir=/data \
-  --clear-db \
-  --rpc-host=0.0.0.0 \
-  --monitoring-host=0.0.0.0 \
-  --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT>
-```
-
-</TabItem>
 </Tabs>
 
+</div>
 
-## Advanced Configuration and Key Management
-
-For running an advanced wallet setups, our documentation includes comprehensive guides as to how to use the wallet built into Prysm to recover another wallet, use a remote signing server, and more. You can read more about it [here](https://docs.prylabs.network/docs/wallet/introduction).
-
-**Congratulations, you're now fully participating in Ethereum proof-of-stake**
-
-**Still have questions?**  Stop by our [Discord](https://discord.gg/prysmaticlabs) for further assistance!
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
