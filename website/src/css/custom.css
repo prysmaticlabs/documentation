@@ -421,6 +421,15 @@ header > h1 {
 .checklist input {
   margin-right: 5px;
 }
+html[data-theme='dark'] .checklist .task .input-container input:checked + .done {
+  background-color: #000f25;
+}
+html[data-theme='dark'] .checklist .task .guidance-container label {
+  color: white;
+}
+html[data-theme='dark'] .checklist .task .guidance-container > p {
+  color: white;
+}
 html[data-theme='dark'] .header-badge {
   background-color: #333;
 }
