@@ -116,9 +116,8 @@ curl -H "Content-Type: application/json" -X POST http://localhost:8545 -d "{""js
   </TabItem>
   <TabItem value="geth">
     <p class='hidden-in-jwt-guide hidden-in-mergeprep-guide'>Download and run the latest 64-bit stable release of the <strong>Geth installer</strong> for your operating system from the <a href='https://geth.ethereum.org/downloads/'>Geth downloads page</a>.</p>
-    <div class="admonition admonition-danger alert alert--danger"><div class="admonition-content"><p>Note that Geth 1.10.22 contains a regression. Update to <a href='https://github.com/ethereum/go-ethereum/releases'>v1.10.23+</a> if you haven't already.</p></div></div>
+    <div class="admonition admonition-danger alert alert--danger hidden-in-mergeprep-guide"><div class="admonition-content"><p>Note that Geth 1.10.22 contains a regression. Update to <a href='https://github.com/ethereum/go-ethereum/releases'>v1.10.23+</a> if you haven't already.</p></div></div>
     <p class='hidden-in-jwt-guide hidden-in-mergeprep-guide'>Navigate to your <code>execution</code> directory and run the following command to start your execution node:</p>
-     <p class='hidden-in-jwt-guide hidden-in-quickstart'>Run the following command to start your execution node:</p>
     <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
         {label: 'Goerli-Prater', value: 'goerli-prater'},
