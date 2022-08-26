@@ -30,8 +30,6 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
 
 ## Merge preparation checklist
 
-<div >
-
 <ul class='checklist'>
 
 <li><input type='checkbox'/><strong>Review v3 release notes in detail</strong>: [Prysm v3](https://github.com/prysmaticlabs/prysm/releases/tag/v3.0.0) includes updates, deprecations, and breaking changes. Review the [release notes](https://github.com/prysmaticlabs/prysm/releases/tag/v3.0.0) to understand how this release impacts your configuration.</li>
@@ -48,18 +46,6 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
 
 </ul>
 
- - <input type="checkbox" /> 
- - 
- - 
- - 
- - 
- - 
- - 
- - 
-  - 
- - 
-
-</div>
 
 
 
