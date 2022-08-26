@@ -22,26 +22,31 @@ html[data-theme='dark'] .quickstart-tabs .tabs__item:first-child:hover {
   visibility: hidden !important;
   height: 0 !important;
   overflow: hidden;
+  margin: 0 !important;
 }
 .hide-tabs .tabs {
   visibility: hidden !important;
   height: 0 !important;
   overflow: hidden;
+  margin: 0 !important;
 }
 .quickstart .hidden-in-quickstart {
   visibility: hidden !important;
   height: 0 !important;
   overflow: hidden;
+  margin: 0 !important;
 }
 .jwt-guide .hidden-in-jwt-guide {
   visibility: hidden !important;
   height: 0 !important;
   overflow: hidden;
+  margin: 0 !important;
 }
 .mergeprep-guide .hidden-in-mergeprep-guide {
   visibility: hidden !important;
   height: 0 !important;
   overflow: hidden;
+  margin: 0 !important;
 }
 .quickstart-tabs {
   position: relative;
