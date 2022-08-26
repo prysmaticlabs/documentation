@@ -10,7 +10,7 @@ import JwtGuidancePartial from '@site/docs/partials/_jwt-guidance-partial.md';
 
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
-<HeaderBadgesWidget commaDelimitedContributors="Mick" />
+<HeaderBadgesWidget commaDelimitedContributors="Mick,Raul,James" lastVerifiedDateString="August 24th, 2022" lastVerifiedVersionString="v3.0.0" />
 
 :::info New user?
 
@@ -30,10 +30,8 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
 
 ## Merge preparation checklist
 
-Keep the following checklist in mind:
-
  - **Review v3 release notes in detail**: [Prysm v3](https://github.com/prysmaticlabs/prysm/releases/tag/v3.0.0) includes updates, deprecations, and breaking changes. Review the [release notes](https://github.com/prysmaticlabs/prysm/releases/tag/v3.0.0) to understand how this release impacts your configuration.
- - **Review "Before and now"**: The next section gives you a high-level overview of the items that you need to keep in mind while preparing for The Merge.
+ - **Review "Before and now"**: The next section gives you a high-level overview of the items that you need to keep in mind while preparing for The Merge. See the Ethereum.org [Merge announcement](https://blog.ethereum.org/2022/08/24/mainnet-merge-announcement/) and [Merge readiness checklist](https://launchpad.ethereum.org/en/merge-readiness) for more detailed information.
  - **Ensure that you're using a network-compatible version of your execution client**: You may need to use a prerelease version of execution client software. Refer to your execution client software documentation for the latest guidance.
  - **If you're using Geth, update now**: Geth 1.10.22 contains a regression. Update to <a href='https://github.com/ethereum/go-ethereum/releases'>v1.10.23+</a> if you haven't already.
  - **Ensure that you're using Prysm v3.0.0**: If you've ever set the `USE_PRYSM_VERSION` environment variable, either clear this variable via `UNSET USE_PRYSM_VERSION` (Linux/MacOS) / `set USE_PRYSM_VERSION=` (Windows), or use `set USE_PRYSM_VERSION=v3.0.0` to ensure that Prysm uses Prysm v3.
@@ -63,18 +61,26 @@ Let's step through each of these changes.
 
 <div class='hide-tabs mergeprep-guide'>
 
-
-<Tabs className="with-label hidden-in-jwt-guide" groupId="protocol" default="jwt" values={[
-        {label: 'IPC', value: 'ipc'},
+<Tabs className="with-label hidden-in-jwt-guide" groupId="protocol" values={[
         {label: 'HTTP-JWT', value: 'jwt'},
+        {label: 'IPC', value: 'ipc'}
     ]}>
-    <TabItem value="ipc">
+    <TabItem value="jwt">
+    
+<h2>Create JWT token</h2>
 
-<h2>Configure execution node</h2>
+<JwtGuidancePartial />
+
+    
+</TabItem>
+<TabItem value="ipc">
+
+
+## Configure execution node
 
 <p>Ensure that your execution node has been updated to the latest available stable version.</p>
 
-<Tabs className="with-label" groupId="execution-clients" defaultValue="geth" values={[
+<Tabs className="with-label" groupId="execution-clients" values={[
   {label: 'Geth', value: 'geth'},
   {label: 'Nethermind', value: 'nethermind'},
   {label: 'Besu', value: 'besu'}
@@ -91,14 +97,6 @@ Let's step through each of these changes.
 If you're running a validator, specifying a <code>suggested-fee-recipient</code> wallet address will allow you to earn what were previously miner transaction fee tips. See <a href='./execution-node/fee-recipient.md'>How to configure Fee Recipient</a> for more information about this feature.
 
 </TabItem>
-    <TabItem value="jwt">
-    
-<h2>Create JWT token</h2>
-
-<JwtGuidancePartial />
-
-    
-</TabItem>
 </Tabs>
 
 </div>
@@ -107,6 +105,7 @@ If you're running a validator, specifying a <code>suggested-fee-recipient</code>
 
 Other than ensuring that you're using the [latest stable Prysm release](https://github.com/prysmaticlabs/prysm/releases), validator client configuration doesn't need to be updated for The Merge. A fee recipient address can optionally be configured on your validator node if you want redundancy or multiple fee recipient addresses. See [Configure a Fee Recipient address](./execution-node/fee-recipient.md) to learn more.
 
+<div class="admonition admonition-caution alert alert--warning"><div class="admonition-content"><p><strong>Ensure that you're not running multiple instances of the same validator public key</strong>, especially if you're using scripts or other forms of automation. If the Ethereum network detects two instances of the validator key submitting proposals, attestations, or votes, it may assume malicious intent and slash accordingly.</p></div></div>
 
 ## Upgrade hardware
 

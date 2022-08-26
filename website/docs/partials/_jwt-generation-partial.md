@@ -8,7 +8,7 @@ The HTTP connection between your beacon node and execution node needs to be auth
  - Use an execution client to generate the `jwt.hex` file.
  - Use Prysm [v3](https://github.com/prysmaticlabs/prysm/releases/tag/v3.0.0) to generate the `jwt.hex` file:
 
-<Tabs groupId="os" defaultValue="others" values={[
+<Tabs groupId="os" values={[
     {label: 'Windows', value: 'win'},
     {label: 'Linux, MacOS, Arm64', value: 'others'}
 ]}>
@@ -37,3 +37,6 @@ USE_PRYSM_VERSION=v3.0.0
 </Tabs>
 
 Prysm will output a `jwt.hex` file path.
+
+
+<div class="admonition admonition-caution alert alert--warning"><div class="admonition-content"><p>Ensure that the script, user, or terminal window used to create and access your JWT token has the permissions it needs. Windows users may need to run command windows as Administrator.</p></div></div>

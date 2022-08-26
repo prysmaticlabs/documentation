@@ -9,12 +9,12 @@ import {MultiDimensionalContentWidget} from '@site/src/components/MultiDimension
 
 <Tabs className="with-label" groupId="os" defaultValue="others" values={[
     {label: 'Operating system:', value: 'label'},
-    {label: 'Windows', value: 'win'},
-    {label: 'Linux, MacOS, Arm64', value: 'others'}
+    {label: 'Linux, MacOS, Arm64', value: 'others'},
+    {label: 'Windows', value: 'win'}
 ]}>
   <TabItem className="unclickable-element" value="label"></TabItem>
-  <TabItem value="win"></TabItem>
   <TabItem value="others"></TabItem>
+  <TabItem value="win"></TabItem>
 </Tabs>
 
 <Tabs className="with-label" groupId="network" defaultValue="mainnet" values={[
@@ -46,12 +46,12 @@ import {MultiDimensionalContentWidget} from '@site/src/components/MultiDimension
 
 <Tabs className="with-label hidden-in-jwt-guide" groupId="protocol" defaultValue="jwt" values={[
         {label: 'EN-BN connection:', value: 'label'},
-        {label: 'IPC', value: 'ipc'},
         {label: 'HTTP-JWT', value: 'jwt'},
+        {label: 'IPC', value: 'ipc'}
     ]}>
     <TabItem className="unclickable-element" value="label"></TabItem>
-    <TabItem value="ipc"></TabItem>
     <TabItem value="jwt"></TabItem>
+    <TabItem value="ipc"></TabItem>
 </Tabs>
 
 </div>

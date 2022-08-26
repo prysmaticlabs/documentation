@@ -46,6 +46,11 @@ export const MultiDimensionalContentWidget = () => {
 		return isOnAuthPage;
 	}
 
+	let isViewingMergePrep = function () {
+		var isOnMergePrepPage = window.location.href.indexOf('/prepare-for-merge') > -1;
+		return isOnMergePrepPage;
+	}
+
 	let bindTabs = function () {
 		setTimeout(function () {
 			var tabElements = getAllTabElements();
@@ -63,6 +68,17 @@ export const MultiDimensionalContentWidget = () => {
 			if (jwtOnly()) {
 				selectByText('HTTP-JWT');
 				disableByText('IPC');
+			}
+
+			if (isViewingMergePrep()) {
+				// tempfix
+				setTimeout(function () {
+					if (isSelectedByText('HTTP-JWT')) {
+						selectByText('HTTP-JWT');
+					} else {
+						selectByText('IPC');
+					}
+				}, 1000)
 			}
 
 			tabElements.forEach(element => {
@@ -99,7 +115,7 @@ export const MultiDimensionalContentWidget = () => {
 					}, false)
 				}
 			});
-		}, 200)
+		}, 500)
 	}
 
 	return (
