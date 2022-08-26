@@ -35,14 +35,14 @@ curl -H "Content-Type: application/json" -X POST http://localhost:8545 -d "{""js
   <p>A sync status of <code>false</code> indicates that your node is fully synced.</p>
   </TabItem>
   <TabItem value="geth">
-    <div class="admonition admonition-caution alert alert--warning">
-      <div class="admonition-content"><p><strong>Geth is a supermajority execution-layer client</strong>. This centralization poses an active risk to the security of Ethereum. If Geth's code contains a bug, a majority of nodes (and L2s, and users) will be impacted. We strongly encourage you to use either Nethermind or Besu to distribute this risk for the ecosystem.</p></div>
-    </div>
     <p>You can <a href='https://besu.hyperledger.org/en/stable/Reference/API-Methods/#eth_syncing'>check your Geth execution node's sync status</a> by running the following commands from a separate terminal window:</p>
 
 ```
-geth attach // if you're not using Windows
-geth attach ipc:\\.\pipe\geth.ipc // if you're using Windows 
+## if you're not using Windows
+geth attach
+
+## if you're using Windows 
+geth attach ipc:\\.\pipe\geth.ipc 
 eth.syncing
 ```
 
@@ -59,7 +59,6 @@ curl http://localhost:3500/eth/v1/node/syncing | jq
 ```
 
 This should produce the following output:
-
 
 ```
 {"data":{"head_slot":"6944","sync_distance":"3003133","is_syncing":true,"is_optimistic":true}}

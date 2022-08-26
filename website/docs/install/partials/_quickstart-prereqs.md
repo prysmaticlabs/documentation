@@ -31,7 +31,7 @@
         </td>
         <td>
           <ul> 
-            <li><strong>Everything above, plus...</strong></li>    
+            <li>Everything above, plus...</li>    
             <li><strong>Software:</strong> Validator client, browser-based crypto wallet (instructions below)</li>   
             <li><strong>Hardware:</strong> (Recommended) A new machine that has never been connected to the internet that you can use to securely generate your mnemonic phrase and keypair</li>     
             <li><strong>32 ETH</strong> (Mainnet)</li>
@@ -41,6 +41,7 @@
     </tr>
 </table>
 
+<div class='hidden-in-mergeprep-guide'>
 
 ### Best practices
 
@@ -50,4 +51,5 @@
 - Review all of our [published security best practices](./security-best-practices/).
 - **Join the community** - join our [mailing list](https://groups.google.com/g/prysm-dev), the [Prysm Discord server](https://discord.gg/prysmaticlabs), [r/ethstaker](https://www.reddit.com/r/ethstaker/), and the [EthStaker Discord server](https://discord.io/ethstaker) for updates and support.
 
-<br />
+</div>
+
