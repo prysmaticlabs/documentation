@@ -9,8 +9,8 @@ The HTTP connection between your beacon node and execution node needs to be auth
  - Use Prysm [v3](https://github.com/prysmaticlabs/prysm/releases/tag/v3.0.0) to generate the `jwt.hex` file:
 
 <Tabs groupId="os" values={[
-    {label: 'Windows', value: 'win'},
-    {label: 'Linux, MacOS, Arm64', value: 'others'}
+    {label: 'Linux, MacOS, Arm64', value: 'others'},
+    {label: 'Windows', value: 'win'}
 ]}>
   <TabItem value="win">
 
