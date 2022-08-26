@@ -33,7 +33,7 @@ html[data-theme='dark'] .quickstart-tabs .tabs__item:first-child:hover {
 }
 .quickstart-tabs {
   position: relative;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
 }
 .quickstart-tabs .with-label {
   font-size: 13px;
