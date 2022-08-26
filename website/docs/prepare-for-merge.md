@@ -167,6 +167,7 @@ import QuickstartPrereqsPartial from '@site/docs/install/partials/_quickstart-pr
 
 
 <Tabs className="with-label hidden-in-jwt-guide" groupId="protocol" values={[
+        {label: 'EN-BN connection:', value: 'label'},
         {label: 'HTTP-JWT', value: 'jwt'},
         {label: 'IPC', value: 'ipc'}
     ]}>
