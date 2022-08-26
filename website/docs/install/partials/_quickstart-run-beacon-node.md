@@ -15,7 +15,7 @@ import TabItem from '@theme/TabItem';
         {label: 'Ropsten', value: 'ropsten'}
     ]}>
       <TabItem value="mainnet">  
-        <p class='hidden-in-jwt-guide'>Use the following command to start a beacon node that connects to your local execution node:</p>
+        <p class='hidden-in-jwt-guide hidden-in-mergeprep-guide'>Use the following command to start a beacon node that connects to your local execution node:</p>
         <Tabs groupId="protocol" defaultValue="jwt" values={[
             {label: 'JWT', value: 'jwt'},
             {label: 'IPC', value: 'ipc'}

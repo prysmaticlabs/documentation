@@ -8,10 +8,12 @@ The HTTP connection between your beacon node and execution node needs to be auth
  - Use an execution client to generate the `jwt.hex` file.
  - Use Prysm [v3](https://github.com/prysmaticlabs/prysm/releases/tag/v3.0.0) to generate the `jwt.hex` file:
 
-<Tabs groupId="os" values={[
-    {label: 'Windows', value: 'win'},
-    {label: 'Linux, MacOS, Arm64', value: 'others'}
+<Tabs groupId="os" defaultValue="others" values={[
+    {label: 'Operating system:', value: 'label'},
+    {label: 'Linux, MacOS, Arm64', value: 'others'},
+    {label: 'Windows', value: 'win'}
 ]}>
+  <TabItem className="unclickable-element" value="label"></TabItem>
   <TabItem value="win">
 
 ```

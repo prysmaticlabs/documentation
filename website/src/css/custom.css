@@ -18,18 +18,40 @@ html[data-theme='dark'] .quickstart-tabs .tabs__item:first-child:hover {
   color: var(--prysm-pink-light) !important;
 }
 /* used to hide all but the topmost tabs within our quickstart */
+.hidden {
+  visibility: hidden !important;
+  height: 0 !important;
+  overflow: hidden;
+  margin: 0 !important;
+  padding: 0 !important;
+}
 .hide-tabs .tabs {
-  display: none;
+  visibility: hidden !important;
+  height: 0 !important;
+  overflow: hidden;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 .quickstart .hidden-in-quickstart {
-  display: none;
+  visibility: hidden !important;
+  height: 0 !important;
+  overflow: hidden;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 .jwt-guide .hidden-in-jwt-guide {
   visibility: hidden !important;
   height: 0 !important;
+  overflow: hidden;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 .mergeprep-guide .hidden-in-mergeprep-guide {
-  display: none;
+  visibility: hidden !important;
+  height: 0 !important;
+  overflow: hidden;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 .quickstart-tabs {
   position: relative;
@@ -42,6 +64,7 @@ html[data-theme='dark'] .quickstart-tabs .tabs__item:first-child:hover {
   border-radius: 5px;
   overflow: hidden;
   position: static;
+  margin-bottom: 10px;
 }
 .quickstart-tabs .with-label .tabs__item {
   font-size: 13px;
@@ -81,9 +104,9 @@ html[data-theme='dark'] .quickstart-tabs .tabs__item:first-child:hover {
 .quickstart-tabs .with-label .tabs__item.tabs__item--active {
   font-size: 13px;
   font-weight: 500;
-  background-color: var(--tab-active-color);
-  border-color: var(--tab-active-color);
-  color: white;
+  background-color: var(--tab-active-color) !important;
+  border-color: var(--tab-active-color) !important;
+  color: white !important;
 }
 .quickstart-tabs .with-label .tabs__item.disabled-tab {
   color: #999 !important;
@@ -98,13 +121,14 @@ a {
 .footnote:hover {
   color: #000 !important;
 }
-.markdown > h2 {
+.markdown h2 {
   font-size: 1.5rem !important;
+  margin-top: 25px !important;
 }
-.markdown > h3 {
+.markdown h3 {
   font-size: 1.2rem !important;
 }
-.markdown > img {
+.markdown img {
   display: block;
   margin: auto;
   margin-top: 15px;
@@ -113,6 +137,9 @@ a {
   overflow: hidden;
   width: auto;
   max-width: 100%;
+}
+.markdown .tabpanel p:last-child {
+  margin-bottom: 0 !important;
 }
 .panel {
   border-top: 2px solid #ddd;
@@ -366,7 +393,7 @@ header > h1 {
 .header-badges .header-badge .emoji-avatar {
   margin-right: 8px !important;
 }
-.checklist .margin-vert--md {
+.margin-vert--md {
   margin: 0 !important;
 }
 .checklist .task {

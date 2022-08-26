@@ -28,26 +28,33 @@ html[data-theme='dark'] {
 
 /* used to hide all but the topmost tabs within our quickstart */
 
+.hidden {
+    visibility: hidden !important;
+    height: 0 !important;
+    overflow: hidden;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
 .hide-tabs .tabs {
-    display: none;
+    .hidden;
 }
 
 .quickstart {
     .hidden-in-quickstart {
-        display: none;
+        .hidden;
     }
 }
 
 .jwt-guide {
     .hidden-in-jwt-guide {
-        visibility: hidden !important;
-        height: 0 !important;
+        .hidden;
     }
 }
 
 .mergeprep-guide {
     .hidden-in-mergeprep-guide {
-        display: none;
+        .hidden;
     }
 }
 
@@ -62,6 +69,7 @@ html[data-theme='dark'] {
         border-radius: 5px;
         overflow: hidden;
         position: static;
+        margin-bottom: 10px;
 
         .tabs__item {
             font-size: 13px;
@@ -105,9 +113,9 @@ html[data-theme='dark'] {
             &.tabs__item--active {
                 font-size: 13px;
                 font-weight: 500;
-                background-color: var(--tab-active-color);
-                border-color: var(--tab-active-color);
-                color: white;
+                background-color: var(--tab-active-color) !important;
+                border-color: var(--tab-active-color) !important;
+                color: white !important;
             }
 
             &.disabled-tab {
@@ -133,24 +141,34 @@ a {
 
 
 
-.markdown>h2 {
-    font-size: 1.5rem !important;
+.markdown {
+    h2 {
+        font-size: 1.5rem !important;
+        margin-top: 25px !important;
+    }
+
+    h3 {
+        font-size: 1.2rem !important;
+    }
+
+    img {
+        display: block;
+        margin: auto;
+        margin-top: 15px;
+        margin-bottom: 20px;
+        border-radius: 6px;
+        overflow: hidden;
+        width: auto;
+        max-width: 100%;
+    }
+
+    .tabpanel {
+        p:last-child {
+            margin-bottom: 0 !important;
+        }
+    }
 }
 
-.markdown>h3 {
-    font-size: 1.2rem !important;
-}
-
-.markdown>img {
-    display: block;
-    margin: auto;
-    margin-top: 15px;
-    margin-bottom: 20px;
-    border-radius: 6px;
-    overflow: hidden;
-    width: auto;
-    max-width: 100%;
-}
 
 .panel {
     border-top: 2px solid #ddd;
@@ -460,12 +478,11 @@ header>h1 {
 
 }
 
+.margin-vert--md {
+    margin: 0 !important;
+}
+
 .checklist {
-
-    .margin-vert--md {
-        margin: 0 !important;
-    }
-
     .task {
         display: table;
         position: relative;

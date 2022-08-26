@@ -45,7 +45,7 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
         <div class='input-container'><input id="cl-5" type='checkbox'/><span class='done'></span></div>
         <div class='guidance-container'>
             <label for="cl-5">Unset <code>USE_PRYSM_VERSION</code></label>
-            <p>If you've ever set the <code>USE_PRYSM_VERSION</code> environment variable, either clear this variable via <code>UNSET USE_PRYSM_VERSION</code> (Linux/MacOS) / <code>set USE_PRYSM_VERSION=</code> (Windows), or use <code>set USE_PRYSM_VERSION=v3.0.0</code> to ensure that Prysm uses Prysm v3.</p>
+            <p>If you've ever set the <code>USE_PRYSM_VERSION</code> environment variable to use a release candidate, either clear it via <code>UNSET USE_PRYSM_VERSION</code> (Linux/MacOS) or <code>set USE_PRYSM_VERSION=</code> (Windows).</p>
         </div>
     </div>
         <div class='task'>
@@ -143,7 +143,6 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
     </div>
 </div>
 
-<br />
 
 ## The Merge: Before and now
 
@@ -155,9 +154,6 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
 | Miners receive transaction fee tips.                                                                           | **Validators** receive transaction fee tips. The "fee" is now a base fee that's burned - block producers earn only transaction fee tips. |
 | A fee recipient address does not need to be specified.                                                         | A fee recipient address **does** need to be specified.                                                                                   |
 | A 1TB hard drive is enough.                                                                                    | A **2TB+ SSD** is highly recommended.                                                                                                    |
-
-
-<br />
 
 
 ## Post-Merge system requirements
