@@ -73,7 +73,17 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
         <div class='input-container'><input id="cl-3" type='checkbox'/><span class='done'></span></div>
         <div class='guidance-container'>
             <label for="cl-3">Use a Merge-ready version of your execution client</label>
-            <p>You may need to use a prerelease version of execution client software. Refer to your execution client software documentation for the latest guidance.</p>
+            <p>
+            <Tabs className="with-label" groupId="execution-clients" values={[
+                {label: 'Geth', value: 'geth'},
+                {label: 'Nethermind', value: 'nethermind'},
+                {label: 'Besu', value: 'besu'}
+                ]}>
+                <TabItem value="geth">See <a href='https://github.com/ethereum/go-ethereum/releases'>Geth's releases page</a> and join <a href='https://discord.gg/invite/nthXNEv'>their Discord</a> to stay up to date as we approach Mainnet Merge.</TabItem>
+                <TabItem value="nethermind">See <a href='https://github.com/NethermindEth/nethermind/releases'>Nethermind's releases page</a> and join <a href='https://discord.com/invite/DedCdvDaNm'>their Discord</a> to stay up to date as we approach Mainnet Merge.</TabItem>
+                <TabItem value="besu">See Besu's <a href='https://github.com/hyperledger/besu/releases'>releases page</a> and join <a href='https://discord.com/invite/hyperledger'>their Discord</a> to stay up to date as we approach Mainnet Merge.</TabItem>
+                </Tabs>
+            </p>
         </div>
     </div>
     <Tabs className="with-label" groupId="execution-clients" defaultValue="geth" values={[
@@ -167,32 +177,8 @@ import QuickstartPrereqsPartial from '@site/docs/install/partials/_quickstart-pr
 
 <JwtGuidancePartial />
 
-    
 </TabItem>
-<TabItem value="ipc">
-
-
-## Prepare execution node
-
-<p>Ensure that your execution node has been updated to the latest available stable version.</p>
-
-<Tabs className="with-label" groupId="execution-clients" values={[
-  {label: 'Geth', value: 'geth'},
-  {label: 'Nethermind', value: 'nethermind'},
-  {label: 'Besu', value: 'besu'}
-  ]}>
-  <TabItem value="geth">See <a href='https://github.com/ethereum/go-ethereum/releases'>Geth's releases page</a> and join <a href='https://discord.gg/invite/nthXNEv'>their Discord</a> to stay up to date as we approach Mainnet Merge.</TabItem>
-  <TabItem value="nethermind">See <a href='https://github.com/NethermindEth/nethermind/releases'>Nethermind's releases page</a> and join <a href='https://discord.com/invite/DedCdvDaNm'>their Discord</a> to stay up to date as we approach Mainnet Merge.</TabItem>
-  <TabItem value="besu">See Besu's <a href='https://github.com/hyperledger/besu/releases'>releases page</a> and join <a href='https://discord.com/invite/hyperledger'>their Discord</a> to stay up to date as we approach Mainnet Merge.</TabItem>
-</Tabs>
-
-<br />
-
-<h2>Prepare beacon node</h2>
-
-If you're running a validator, specifying a <code>suggested-fee-recipient</code> wallet address will allow you to earn what were previously miner transaction fee tips. See <a href='./execution-node/fee-recipient'>How to configure Fee Recipient</a> for more information about this feature.
-
-</TabItem>
+<TabItem value="ipc"></TabItem>
 </Tabs>
 
 </div>
