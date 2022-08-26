@@ -353,7 +353,7 @@ It can a long time (from days to months) for your validator to become fully acti
 In the meantime, you should leave your **execution client**, **beacon node**, and **validator client** terminal windows open and running. Once your validator is activated, it will automatically begin proposing and validating blocks.
 
 
-## Manage Prysm with Docker
+## Appendix A: Manage Prysm with Docker
 
 To interact with your beacon node through Docker, use one of the following commands:
 
