@@ -58,13 +58,14 @@ export const MultiDimensionalContentWidget = () => {
 
 	let bindTabs = function () {
 		setTimeout(function () {
-			// when the page loads, in some cases, we need to click tabs because of how docusaurus renders embedded tab content
-			// clicking is what shows the content
-			// but clicking scrolls the user
-			// so if you link someone to a section, they open the page, it initially displays the section, then scrolls
-			// this prevents that behavior
-			scrollDownASmidge();
+
 			if (false) {
+				// when the page loads, in some cases, we need to click tabs because of how docusaurus renders embedded tab content
+				// clicking is what shows the content
+				// but clicking scrolls the user
+				// so if you link someone to a section, they open the page, it initially displays the section, then scrolls
+				// this prevents that behavior
+				scrollDownASmidge();
 				if (isSelectedByText('Besu') || isSelectedByText('Nethermind')) {
 					selectByText('HTTP-JWT');
 					disableByText('IPC');
