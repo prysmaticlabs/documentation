@@ -42,13 +42,13 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
         <div class='input-container'><input id="cl-2" type='checkbox'/><span class='done'></span></div>
         <div class='guidance-container'>
             <label for="cl-2">Review "Before and now"</label>
-            <p>The next section gives you a high-level overview of the items that you need to keep in mind while preparing for The Merge. See the Ethereum.org <a href='https://blog.ethereum.org/2022/08/24/mainnet-merge-announcement/'>Merge announcement</a> and <a href='https://launchpad.ethereum.org/en/merge-readiness'>Merge readiness checklist</a> for more detailed information.</p>
+            <p>The <a href='#the-merge-before-and-now'>Before and now</a> section below gives you a high-level overview of the items that you need to keep in mind while preparing for The Merge. See the Ethereum.org <a href='https://blog.ethereum.org/2022/08/24/mainnet-merge-announcement/'>Merge announcement</a> and <a href='https://launchpad.ethereum.org/en/merge-readiness'>Merge readiness checklist</a> for more detailed information.</p>
         </div>
     </div>
     <div class='task'>
         <div class='input-container'><input id="cl-3" type='checkbox'/><span class='done'></span></div>
         <div class='guidance-container'>
-            <label for="cl-3">Ensure that you're using a Merge-ready version of your execution client</label>
+            <label for="cl-3">Use a Merge-ready version of your execution client</label>
             <p>You may need to use a prerelease version of execution client software. Refer to your execution client software documentation for the latest guidance.</p>
         </div>
     </div>
@@ -62,14 +62,14 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
     <div class='task'>
         <div class='input-container'><input id="cl-5" type='checkbox'/><span class='done'></span></div>
         <div class='guidance-container'>
-            <label for="cl-5">Ensure that you're using Prysm v3.0.0</label>
+            <label for="cl-5">Use Prysm v3.0.0</label>
             <p>If you've ever set the <code>USE_PRYSM_VERSION</code> environment variable, either clear this variable via <code>UNSET USE_PRYSM_VERSION</code> (Linux/MacOS) / <code>set USE_PRYSM_VERSION=</code> (Windows), or use <code>set USE_PRYSM_VERSION=v3.0.0</code> to ensure that Prysm uses Prysm v3.</p>
         </div>
     </div>
     <div class='task'>
         <div class='input-container'><input id="cl-6" type='checkbox'/><span class='done'></span></div>
         <div class='guidance-container'>
-            <label for="cl-6">Verify your version</label>
+            <label for="cl-6">Verify your Prysm version</label>
             <p>Verify that you're running Prysm <code>v3.0.0</code> by issuing the following command: <code>prysm.sh beacon-chain --version</code> (Linux) <code>prysm.bat beacon-chain --version</code> (Windows).</p>
         </div>
     </div>
