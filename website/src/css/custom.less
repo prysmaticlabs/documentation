@@ -464,6 +464,7 @@ header>h1 {
         display: table;
         position: relative;
         margin-bottom: 5px;
+        border-radius: 5px;
 
         .input-container {
             display: table-cell;
@@ -474,6 +475,8 @@ header>h1 {
                 width: 25px;
                 height: 25px;
                 display: inline-block;
+                position: relative;
+                z-index: 2;
             }
 
             input:checked+.done {
@@ -482,13 +485,16 @@ header>h1 {
                 bottom: 0;
                 left: 0;
                 right: 0;
-                background-color: #eee;
+                background-color: #f0f0f0;
+                z-index: 0;
             }
         }
 
         .guidance-container {
             display: inline-block;
             padding-top: 5px;
+            position: relative;
+            z-index: 2;
 
             label {
                 display: block;
