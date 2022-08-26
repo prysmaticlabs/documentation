@@ -21,7 +21,7 @@ This guidance is targeted at users who are already comfortable with Docker. See 
 
 <div class='docker-guide'>
 
-<strong>Select a configuration</strong>:
+<p><strong>Select a configuration</strong></p>:
 
 import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidimensional-content-controls-partial.md';
 
