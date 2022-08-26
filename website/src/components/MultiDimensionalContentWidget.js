@@ -71,12 +71,15 @@ export const MultiDimensionalContentWidget = () => {
 			} else if (isViewingMergePrep()) {
 				// tempfix
 				setTimeout(function () {
+					console.log('click')
 					if (isSelectedByText('HTTP-JWT')) {
+						console.log('click jwt')
 						selectByText('HTTP-JWT');
 					} else {
+						console.log('click ipc')
 						selectByText('IPC');
 					}
-				}, 500)
+				}, 1000)
 			}
 
 			tabElements.forEach(element => {
