@@ -70,7 +70,10 @@ Let's step through each of these changes.
     ]}>
     <TabItem value="ipc">
 
-<h2>Configure execution node</h2>
+
+## Configure execution node
+
+
 
 <p>Ensure that your execution node has been updated to the latest available stable version.</p>
 
