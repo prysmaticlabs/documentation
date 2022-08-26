@@ -31,7 +31,7 @@
         </td>
         <td>
           <ul> 
-            <li><strong>Everything above, plus...</strong></li>    
+            <li>Everything above, plus...</li>    
             <li><strong>Software:</strong> Validator client, browser-based crypto wallet (instructions below)</li>   
             <li><strong>Hardware:</strong> (Recommended) A new machine that has never been connected to the internet that you can use to securely generate your mnemonic phrase and keypair</li>     
             <li><strong>32 ETH</strong> (Mainnet)</li>
