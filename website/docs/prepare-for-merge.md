@@ -37,8 +37,22 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
     <div class='task'>
         <div class='input-container'><input id="cl-1" type='checkbox'/><span class='done'></span></div>
         <div class='guidance-container'>
-            <label for="cl-1">Review v3 release notes</label>
-            <p><a href='https://github.com/prysmaticlabs/prysm/releases/tag/v3.0.0'>Prysm v3</a> includes updates, deprecations, and breaking changes. Review the <a href='https://github.com/prysmaticlabs/prysm/releases/tag/v3.0.0'>release notes</a> to understand how this release impacts your configuration.</p>
+            <label for="cl-1">Use Prysm v3.0.0</label>
+            <p><a href='https://github.com/prysmaticlabs/prysm/releases/tag/v3.0.0'>Prysm v3</a> is a <strong>Merge-ready release</strong> that includes updates, deprecations, and breaking changes. Review the <a href='https://github.com/prysmaticlabs/prysm/releases/tag/v3.0.0'>release notes</a> to understand how this release impacts your configuration.</p>
+        </div>
+    </div>
+    <div class='task'>
+        <div class='input-container'><input id="cl-5" type='checkbox'/><span class='done'></span></div>
+        <div class='guidance-container'>
+            <label for="cl-5">Unset <code>USE_PRYSM_VERSION</code></label>
+            <p>If you've ever set the <code>USE_PRYSM_VERSION</code> environment variable, either clear this variable via <code>UNSET USE_PRYSM_VERSION</code> (Linux/MacOS) / <code>set USE_PRYSM_VERSION=</code> (Windows), or use <code>set USE_PRYSM_VERSION=v3.0.0</code> to ensure that Prysm uses Prysm v3.</p>
+        </div>
+    </div>
+        <div class='task'>
+        <div class='input-container'><input id="cl-6" type='checkbox'/><span class='done'></span></div>
+        <div class='guidance-container'>
+            <label for="cl-6">Verify your Prysm version</label>
+            <p>Verify that you're running Prysm <code>v3.0.0</code> by issuing the following command: <code>prysm.sh beacon-chain --version</code> (Linux) <code>prysm.bat beacon-chain --version</code> (Windows).</p>
         </div>
     </div>
     <div class='task'>
@@ -73,20 +87,6 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
         <TabItem value="nethermind"></TabItem>
         <TabItem value="besu"></TabItem>
     </Tabs>
-    <div class='task'>
-        <div class='input-container'><input id="cl-5" type='checkbox'/><span class='done'></span></div>
-        <div class='guidance-container'>
-            <label for="cl-5">Use Prysm v3.0.0</label>
-            <p>If you've ever set the <code>USE_PRYSM_VERSION</code> environment variable, either clear this variable via <code>UNSET USE_PRYSM_VERSION</code> (Linux/MacOS) / <code>set USE_PRYSM_VERSION=</code> (Windows), or use <code>set USE_PRYSM_VERSION=v3.0.0</code> to ensure that Prysm uses Prysm v3.</p>
-        </div>
-    </div>
-    <div class='task'>
-        <div class='input-container'><input id="cl-6" type='checkbox'/><span class='done'></span></div>
-        <div class='guidance-container'>
-            <label for="cl-6">Verify your Prysm version</label>
-            <p>Verify that you're running Prysm <code>v3.0.0</code> by issuing the following command: <code>prysm.sh beacon-chain --version</code> (Linux) <code>prysm.bat beacon-chain --version</code> (Windows).</p>
-        </div>
-    </div>
     <Tabs className="with-label" groupId="protocol" defaultValue="jwt" values={[
         {label: 'EN-BN connection:', value: 'label'},
         {label: 'HTTP-JWT', value: 'jwt'},
@@ -136,7 +136,12 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
 <br />
 
 
-Let's step through each of these changes.
+## Merge-ready requirements
+
+import QuickstartPrereqsPartial from '@site/docs/install/partials/_quickstart-prereqs.md';
+
+<QuickstartPrereqsPartial />
+
 
 <Tabs className="with-label hidden-in-jwt-guide" groupId="protocol" values={[
         {label: 'HTTP-JWT', value: 'jwt'},
