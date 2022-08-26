@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
-<HeaderBadgesWidget />
+<HeaderBadgesWidget commaDelimitedContributors="Raul,Mick" />
 
 Prysm can be installed on Windows, GNU/Linux, and MacOS systems with Docker. We use [Bazel](https://bazel.build) to push preconfigured Docker images to a publicly accessible Google Cloud container registry. 
 
