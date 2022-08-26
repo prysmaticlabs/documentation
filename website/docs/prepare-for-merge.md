@@ -63,7 +63,6 @@ Let's step through each of these changes.
 
 <div class='hide-tabs mergeprep-guide'>
 
-
 <Tabs className="with-label hidden-in-jwt-guide" groupId="protocol" values={[
         {label: 'IPC', value: 'ipc'},
         {label: 'HTTP-JWT', value: 'jwt'},
@@ -72,8 +71,6 @@ Let's step through each of these changes.
 
 
 ## Configure execution node
-
-
 
 <p>Ensure that your execution node has been updated to the latest available stable version.</p>
 
