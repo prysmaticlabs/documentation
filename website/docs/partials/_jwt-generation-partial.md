@@ -39,4 +39,4 @@ USE_PRYSM_VERSION=v3.0.0
 Prysm will output a `jwt.hex` file path.
 
 
-<div class="admonition admonition-caution alert alert--caution"><div class="admonition-content"><p>Ensure that the script, user, or terminal window used to create and access your JWT token has the permissions it needs. Windows users may need to run command windows as Administrator.</p></div></div>
+<div class="admonition admonition-caution alert alert--warning"><div class="admonition-content"><p>Ensure that the script, user, or terminal window used to create and access your JWT token has the permissions it needs. Windows users may need to run command windows as Administrator.</p></div></div>
