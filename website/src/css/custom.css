@@ -385,6 +385,11 @@ header > h1 {
   position: relative;
   z-index: 2;
 }
+.checklist .task .input-container .done {
+  transition-property: background-color;
+  transition-duration: 0.2s;
+  transition-delay: 0s;
+}
 .checklist .task .input-container input:checked + .done {
   position: absolute;
   top: 0;
