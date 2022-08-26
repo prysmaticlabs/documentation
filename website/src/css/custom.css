@@ -365,6 +365,12 @@ header > h1 {
 .header-badges .header-badge .emoji-avatar {
   margin-right: 8px !important;
 }
+.checklist input {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  margin-right: 5px;
+}
 html[data-theme='dark'] .header-badge {
   background-color: #333;
 }
