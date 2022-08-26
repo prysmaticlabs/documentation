@@ -3,7 +3,7 @@ id: fee-recipient
 title: Configure Fee Recipient 
 sidebar_label: Configure Fee Recipient
 ---
-
+import FeeRecipientPng from '@site/static/img/fee-recipient-ui.png'
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <HeaderBadgesWidget commaDelimitedContributors="James,Mick" lastVerifiedDateString="August 25th, 2022" lastVerifiedVersionString="v3.0.0" />
@@ -92,6 +92,8 @@ A fee recipient wallet address can be configured on your client instance by usin
 An example invocation: `./prysm.sh validator --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9`. 
 
 If you don't see any errors after issuing one of the above commands, your fee recipient address has been successfully configured.
+
+
 
 
 #### Fee Recipient JSON Config File
@@ -275,6 +277,19 @@ A fee recipient address can be configured on your beacon node instance by using 
 
 Note that when configuring fee recipient on your beacon node, the beacon node will cache the fee recipient address locally.
 
+## Configuring Fee Recipient through Web UI
+
+<img style={{maxWidth: 700 + 'px'}} src={FeeRecipientPng} /> 
+
+The fee recipient can also be set through the <a href='../prysm-usage/web-interface'>web UI</a> on the dashboard. The UI uses the <a href='../how-prysm-works/keymanager-api'>Key Manager APIs</a> to set the fee recipient.
+ 
+:::warning Fee Recipient changes from UI/API don't persist on client restart
+
+If you configure your fee recipient wallet address through the web UI or Keymanager APIs, your configuration **will not persist** if you restart your validator client.
+
+See [this issue](https://github.com/prysmaticlabs/prysm/issues/11322) to track the status of configuration persistence, and use the `--proposer-settings-file` or `--proposer-settings-url` flags for persistent validator settings in the meantime.
+
+:::
 
 ------------------
 
