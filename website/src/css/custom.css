@@ -416,8 +416,9 @@ header > h1 {
   display: block;
   font-weight: bold;
 }
-.checklist .task .guidance-container > span {
+.checklist .task .guidance-container > p {
   font-size: 14px;
+  line-height: 16px;
 }
 .checklist input {
   margin-right: 5px;
