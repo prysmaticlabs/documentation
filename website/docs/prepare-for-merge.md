@@ -30,19 +30,34 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
 
 ## Merge preparation checklist
 
-<div class='checklist'>
+<div >
 
- - <input type="checkbox" /> **Review v3 release notes in detail**: [Prysm v3](https://github.com/prysmaticlabs/prysm/releases/tag/v3.0.0) includes updates, deprecations, and breaking changes. Review the [release notes](https://github.com/prysmaticlabs/prysm/releases/tag/v3.0.0) to understand how this release impacts your configuration.
- - **Review "Before and now"**: The next section gives you a high-level overview of the items that you need to keep in mind while preparing for The Merge. See the Ethereum.org [Merge announcement](https://blog.ethereum.org/2022/08/24/mainnet-merge-announcement/) and [Merge readiness checklist](https://launchpad.ethereum.org/en/merge-readiness) for more detailed information.
- - **Ensure that you're using a network-compatible version of your execution client**: You may need to use a prerelease version of execution client software. Refer to your execution client software documentation for the latest guidance.
- - **If you're using Geth, update now**: Geth 1.10.22 contains a regression. Update to <a href='https://github.com/ethereum/go-ethereum/releases'>v1.10.23+</a> if you haven't already.
- - **Ensure that you're using Prysm v3.0.0**: If you've ever set the `USE_PRYSM_VERSION` environment variable, either clear this variable via `UNSET USE_PRYSM_VERSION` (Linux/MacOS) / `set USE_PRYSM_VERSION=` (Windows), or use `set USE_PRYSM_VERSION=v3.0.0` to ensure that Prysm uses Prysm v3.
- - **Verify your version**: Verify that you're running Prysm `v3.0.0` by issuing the following command: `prysm.sh beacon-chain --version` (Linux) `prysm.bat beacon-chain --version` (Windows).
- - **Configure JWT**: If you're not using IPC to connect your beacon node and execution node, ensure that both your execution node and beacon node are configured to use JWT authentication. These instructions are included below, and are also available here: [Configure JWT](./execution-node/authentication.md).
- - **Update your firewall**: If you're not using IPC to connect your beacon node and execution node, your beacon node will need to connect to its execution node on port `8551`. Previously, port `8545` was used. Ensure that your firewall rules are updated accordingly.
-  - **Configure a fee recipient address**: If you're running a validator, configuring a fee recipient address will allow you to earn what were previously miners' transaction fee tips. Instructions are provided below, and also here: [Configure a Fee Recipient address](./execution-node/fee-recipient.md).
- - (Power users) Review the Ethereum Launchpad's [Merge config checklist](https://notes.ethereum.org/@launchpad/merge-configuration-checklist).
+<ul class='checklist'>
 
+<li><input type='checkbox'/><strong>Review v3 release notes in detail</strong>: [Prysm v3](https://github.com/prysmaticlabs/prysm/releases/tag/v3.0.0) includes updates, deprecations, and breaking changes. Review the [release notes](https://github.com/prysmaticlabs/prysm/releases/tag/v3.0.0) to understand how this release impacts your configuration.</li>
+<li><input type='checkbox'/><strong>Review "Before and now"</strong>: The next section gives you a high-level overview of the items that you need to keep in mind while preparing for The Merge. See the Ethereum.org [Merge announcement](https://blog.ethereum.org/2022/08/24/mainnet-merge-announcement/) and [Merge readiness checklist](https://launchpad.ethereum.org/en/merge-readiness) for more detailed information.</li>
+<li><input type='checkbox'/><strong>Ensure that you're using a merge-ready version of your execution client</strong>: You may need to use a prerelease version of execution client software. Refer to your execution client software documentation for the latest guidance.</li>
+<li><input type='checkbox'/><strong>If you're using Geth, update now</strong>: Geth 1.10.22 contains a regression. Update to <a href='https://github.com/ethereum/go-ethereum/releases'>v1.10.23+</a> if you haven't already.</li>
+<li><input type='checkbox'/><strong>Ensure that you're using Prysm v3.0.0</strong>: If you've ever set the `USE_PRYSM_VERSION` environment variable, either clear this variable via `UNSET USE_PRYSM_VERSION` (Linux/MacOS) / `set USE_PRYSM_VERSION=` (Windows), or use `set USE_PRYSM_VERSION=v3.0.0` to ensure that Prysm uses Prysm v3.</li>
+<li><input type='checkbox'/><strong>Verify your version</strong>: Verify that you're running Prysm `v3.0.0` by issuing the following command: `prysm.sh beacon-chain --version` (Linux) `prysm.bat beacon-chain --version` (Windows).</li>
+<li><input type='checkbox'/><strong>Configure JWT</strong>: If you're not using IPC to connect your beacon node and execution node, ensure that both your execution node and beacon node are configured to use JWT authentication. These instructions are included below, and are also available here: [Configure JWT](./execution-node/authentication.md).</li>
+<li><input type='checkbox'/><strong>Update your firewall</strong>: If you're not using IPC to connect your beacon node and execution node, your beacon node will need to connect to its execution node on port `8551`. Previously, port `8545` was used. Ensure that your firewall rules are updated accordingly.</li>
+<li><input type='checkbox'/><strong>Configure a fee recipient address</strong>: If you're running a validator, configuring a fee recipient address will allow you to earn what were previously miners' transaction fee tips. Instructions are provided below, and also here: [Configure a Fee Recipient address](./execution-node/fee-recipient.md).</li>
+<li><input type='checkbox'/>(Power users) Review the Ethereum Launchpad's [Merge config checklist](https://notes.ethereum.org/@launchpad/merge-configuration-checklist).
+</li>
+
+</ul>
+
+ - <input type="checkbox" /> 
+ - 
+ - 
+ - 
+ - 
+ - 
+ - 
+ - 
+  - 
+ - 
 
 </div>
 
