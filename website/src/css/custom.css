@@ -372,11 +372,13 @@ header > h1 {
   border-radius: 5px;
   padding: 10px;
   overflow: hidden;
+  width: 100%;
 }
 .checklist .task .input-container {
   display: table-cell;
   vertical-align: middle;
   padding: 10px 5px;
+  width: 40px;
 }
 .checklist .task .input-container input {
   width: 25px;
