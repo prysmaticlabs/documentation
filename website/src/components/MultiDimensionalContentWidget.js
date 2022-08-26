@@ -78,7 +78,14 @@ export const MultiDimensionalContentWidget = () => {
 					} else {
 						selectByText('IPC');
 					}
-				}, 1000)
+					if (isSelectedByText('Geth')) {
+						selectByText('Geth');
+					} else if (isSelectedByText('Nethermind')) {
+						selectByText('Nethermind');
+					} else if (isSelectedByText('Besu')) {
+						selectByText('Besu');
+					}
+				}, 500)
 			}
 
 			tabElements.forEach(element => {
