@@ -462,6 +462,8 @@ header>h1 {
 .checklist {
     .task {
         display: table;
+        position: relative;
+        margin-bottom: 5px;
 
         .input-container {
             display: table-cell;
@@ -472,6 +474,15 @@ header>h1 {
                 width: 25px;
                 height: 25px;
                 display: inline-block;
+            }
+
+            input:checked+.done {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background-color: #eee;
             }
         }
 
