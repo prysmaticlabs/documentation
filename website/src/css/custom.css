@@ -384,6 +384,7 @@ header > h1 {
   display: inline-block;
   position: relative;
   z-index: 2;
+  border-radius: 5px;
 }
 .checklist .task .input-container .done {
   transition-property: background-color;
