@@ -385,6 +385,11 @@ header > h1 {
   position: relative;
   z-index: 2;
   border-radius: 5px;
+  border: 1px solid var(--tab-gray);
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
 }
 .checklist .task .input-container .done {
   transition-property: background-color;
