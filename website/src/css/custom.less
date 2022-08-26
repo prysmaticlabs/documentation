@@ -460,8 +460,18 @@ header>h1 {
 }
 
 .checklist {
-    --li-bg: purple;
+    list-style: none;
+    --li-bg: var(--prysm-pink);
     counter-reset: orderedlist;
+
+    li {
+        display: grid;
+        grid-template-columns: 0 1fr;
+        grid-gap: 1.75em;
+        align-items: start;
+        font-size: 1.5rem;
+        line-height: 1.25;
+    }
 
     li::before {
         counter-increment: orderedlist;
@@ -475,6 +485,7 @@ header>h1 {
         color: #fff;
         background-color: var(--li-bg);
         border-radius: 0.25em;
+
     }
 
     input {
