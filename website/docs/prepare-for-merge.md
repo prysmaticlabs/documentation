@@ -30,9 +30,18 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
 
 ## Merge preparation checklist
 
-<ul class='checklist'>
+<div class='checklist'>
 
-<li><input type='checkbox'/><strong>Review v3 release notes in detail</strong>: [Prysm v3](https://github.com/prysmaticlabs/prysm/releases/tag/v3.0.0) includes updates, deprecations, and breaking changes. Review the [release notes](https://github.com/prysmaticlabs/prysm/releases/tag/v3.0.0) to understand how this release impacts your configuration.</li>
+<div class='task'>
+<div class='input-container'><input type='checkbox'/></div>
+<div class='guidance-container'>
+<p>Review v3 release notes</p>
+<span>[Prysm v3](https://github.com/prysmaticlabs/prysm/releases/tag/v3.0.0) includes updates, deprecations, and breaking changes. Review the [release notes](https://github.com/prysmaticlabs/prysm/releases/tag/v3.0.0) to understand how this release impacts your configuration.</span>
+</div>
+</div>
+</div>
+
+<!--
 <li><input type='checkbox'/><strong>Review "Before and now"</strong>: The next section gives you a high-level overview of the items that you need to keep in mind while preparing for The Merge. See the Ethereum.org [Merge announcement](https://blog.ethereum.org/2022/08/24/mainnet-merge-announcement/) and [Merge readiness checklist](https://launchpad.ethereum.org/en/merge-readiness) for more detailed information.</li>
 <li><input type='checkbox'/><strong>Ensure that you're using a merge-ready version of your execution client</strong>: You may need to use a prerelease version of execution client software. Refer to your execution client software documentation for the latest guidance.</li>
 <li><input type='checkbox'/><strong>If you're using Geth, update now</strong>: Geth 1.10.22 contains a regression. Update to <a href='https://github.com/ethereum/go-ethereum/releases'>v1.10.23+</a> if you haven't already.</li>
@@ -44,9 +53,8 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
 <li><input type='checkbox'/>(Power users) Review the Ethereum Launchpad's [Merge config checklist](https://notes.ethereum.org/@launchpad/merge-configuration-checklist).
 </li>
 
-</ul>
-
-
+</div>
+-->
 
 
 ## The Merge: Before and now
