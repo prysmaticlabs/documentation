@@ -19,27 +19,27 @@ html[data-theme='dark'] .quickstart-tabs .tabs__item:first-child:hover {
 }
 /* used to hide all but the topmost tabs within our quickstart */
 .hidden {
-  visibility: invisible !important;
+  visibility: hidden !important;
   height: 0 !important;
   overflow: hidden;
 }
 .hide-tabs .tabs {
-  visibility: invisible !important;
+  visibility: hidden !important;
   height: 0 !important;
   overflow: hidden;
 }
 .quickstart .hidden-in-quickstart {
-  visibility: invisible !important;
+  visibility: hidden !important;
   height: 0 !important;
   overflow: hidden;
 }
 .jwt-guide .hidden-in-jwt-guide {
-  visibility: invisible !important;
+  visibility: hidden !important;
   height: 0 !important;
   overflow: hidden;
 }
 .mergeprep-guide .hidden-in-mergeprep-guide {
-  visibility: invisible !important;
+  visibility: hidden !important;
   height: 0 !important;
   overflow: hidden;
 }
