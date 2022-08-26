@@ -183,7 +183,7 @@ import QuickstartPrereqsPartial from '@site/docs/install/partials/_quickstart-pr
 
 </div>
 
-## Prepare validator node (optional)
+## Configure validator node (optional)
 
 Other than ensuring that you're using the [latest stable Prysm release](https://github.com/prysmaticlabs/prysm/releases), validator client configuration doesn't need to be updated for The Merge. A fee recipient address can optionally be configured on your validator node if you want redundancy or multiple fee recipient addresses. See [Configure a Fee Recipient address](./execution-node/fee-recipient.md) to learn more.
 
