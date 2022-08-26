@@ -279,7 +279,7 @@ Note that when configuring fee recipient on your beacon node, the beacon node wi
 
 ## Configuring Fee Recipient through Web UI
 
-<img style={{maxWidth: 461 + 'px'}} src={FeeRecipient} /> 
+<img style={{maxWidth: 461 + 'px'}} src={FeeRecipientPng} /> 
 
 The fee recipient can also be set through the <a href='../prysm-usage/web-interface'>web UI</a> on the dashboard. The UI uses the <a href='../how-prysm-works/keymanager-api'>Key Manager APIs</a> to set the fee recipient. 
  
