@@ -63,6 +63,13 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
         </div>
     </div>
     <div class='task'>
+        <div class='input-container'><input id="cl-prereqs" type='checkbox'/><span class='done'></span></div>
+        <div class='guidance-container'>
+            <label for="cl-prereqs">Review system requirements</label>
+            <p>Review the <a href='#post-merge-system-requirements'>post-Merge system requirements</a> section below to ensure that your configuration will support The Merge. Note that <strong>a 2TB+ SSD is highly recommended</strong>.</p>
+        </div>
+    </div>
+    <div class='task'>
         <div class='input-container'><input id="cl-3" type='checkbox'/><span class='done'></span></div>
         <div class='guidance-container'>
             <label for="cl-3">Use a Merge-ready version of your execution client</label>
@@ -117,6 +124,13 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
             <p>If you're running a validator, configuring a fee recipient address will allow you to earn what were previously miners' transaction fee tips. Instructions are provided below, and also here: <a href='./execution-node/fee-recipient'>Configure a Fee Recipient address</a>.</p>
         </div>
     </div>
+    <div class='task'>
+        <div class='input-container'><input id="cl-expected" type='checkbox'/><span class='done'></span></div>
+        <div class='guidance-container'>
+            <label for="cl-expected">Ensure that Prysm is running as expected</label>
+            <p>See <a href='./monitoring/checking-status'>Check node and validator status</a> to learn how to check the status of your execution node, beacon node, and validator node.</p>
+        </div>
+    </div>
 </div>
 
 <br />
@@ -136,7 +150,7 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
 <br />
 
 
-## Merge-ready requirements
+## Post-Merge system requirements
 
 import QuickstartPrereqsPartial from '@site/docs/install/partials/_quickstart-prereqs.md';
 
@@ -149,7 +163,7 @@ import QuickstartPrereqsPartial from '@site/docs/install/partials/_quickstart-pr
     ]}>
     <TabItem value="jwt">
     
-<h2>Create JWT token</h2>
+<h2>Configure JWT authentication</h2>
 
 <JwtGuidancePartial />
 
@@ -158,7 +172,7 @@ import QuickstartPrereqsPartial from '@site/docs/install/partials/_quickstart-pr
 <TabItem value="ipc">
 
 
-## Configure execution node
+## Prepare execution node
 
 <p>Ensure that your execution node has been updated to the latest available stable version.</p>
 
@@ -174,7 +188,7 @@ import QuickstartPrereqsPartial from '@site/docs/install/partials/_quickstart-pr
 
 <br />
 
-<h2>Configure beacon node</h2>
+<h2>Prepare beacon node</h2>
 
 If you're running a validator, specifying a <code>suggested-fee-recipient</code> wallet address will allow you to earn what were previously miner transaction fee tips. See <a href='./execution-node/fee-recipient'>How to configure Fee Recipient</a> for more information about this feature.
 
@@ -183,7 +197,7 @@ If you're running a validator, specifying a <code>suggested-fee-recipient</code>
 
 </div>
 
-## Configure validator node (optional)
+## Prepare validator node (optional)
 
 Other than ensuring that you're using the [latest stable Prysm release](https://github.com/prysmaticlabs/prysm/releases), validator client configuration doesn't need to be updated for The Merge. A fee recipient address can optionally be configured on your validator node if you want redundancy or multiple fee recipient addresses. See [Configure a Fee Recipient address](./execution-node/fee-recipient.md) to learn more.
 
