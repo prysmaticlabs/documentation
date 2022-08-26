@@ -64,10 +64,18 @@ Let's step through each of these changes.
 <div class='hide-tabs mergeprep-guide'>
 
 <Tabs className="with-label hidden-in-jwt-guide" groupId="protocol" values={[
+        {label: 'HTTP-JWT', value: 'jwt'}
         {label: 'IPC', value: 'ipc'},
-        {label: 'HTTP-JWT', value: 'jwt'},
     ]}>
-    <TabItem value="ipc">
+    <TabItem value="jwt">
+    
+<h2>Create JWT token</h2>
+
+<JwtGuidancePartial />
+
+    
+</TabItem>
+<TabItem value="ipc">
 
 
 ## Configure execution node
@@ -90,14 +98,6 @@ Let's step through each of these changes.
 
 If you're running a validator, specifying a <code>suggested-fee-recipient</code> wallet address will allow you to earn what were previously miner transaction fee tips. See <a href='./execution-node/fee-recipient.md'>How to configure Fee Recipient</a> for more information about this feature.
 
-</TabItem>
-    <TabItem value="jwt">
-    
-<h2>Create JWT token</h2>
-
-<JwtGuidancePartial />
-
-    
 </TabItem>
 </Tabs>
 
