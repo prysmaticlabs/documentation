@@ -163,6 +163,7 @@ html[data-theme='dark'] .panel {
   font-weight: 500;
   margin-bottom: 0;
   line-height: 33px;
+  margin-top: 0 !important;
 }
 .panel > a,
 .panel > h2 {
@@ -176,6 +177,7 @@ html[data-theme='dark'] .panel {
   font-weight: 500;
   margin-bottom: 0;
   line-height: 28px;
+  margin-top: 0 !important;
 }
 .panel > p {
   font-size: 15px;
