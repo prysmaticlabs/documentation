@@ -18,20 +18,30 @@ html[data-theme='dark'] .quickstart-tabs .tabs__item:first-child:hover {
   color: var(--prysm-pink-light) !important;
 }
 /* used to hide all but the topmost tabs within our quickstart */
+.hidden {
+  visibility: invisible !important;
+  height: 0 !important;
+  overflow: hidden;
+}
 .hide-tabs .tabs {
   visibility: invisible !important;
   height: 0 !important;
   overflow: hidden;
 }
 .quickstart .hidden-in-quickstart {
-  display: none;
+  visibility: invisible !important;
+  height: 0 !important;
+  overflow: hidden;
 }
 .jwt-guide .hidden-in-jwt-guide {
-  visibility: hidden !important;
+  visibility: invisible !important;
   height: 0 !important;
+  overflow: hidden;
 }
 .mergeprep-guide .hidden-in-mergeprep-guide {
-  display: none;
+  visibility: invisible !important;
+  height: 0 !important;
+  overflow: hidden;
 }
 .quickstart-tabs {
   position: relative;

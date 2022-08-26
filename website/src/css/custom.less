@@ -28,28 +28,31 @@ html[data-theme='dark'] {
 
 /* used to hide all but the topmost tabs within our quickstart */
 
-.hide-tabs .tabs {
+.hidden {
     visibility: invisible !important;
     height: 0 !important;
     overflow: hidden;
 }
 
+.hide-tabs .tabs {
+    .hidden;
+}
+
 .quickstart {
     .hidden-in-quickstart {
-        display: none;
+        .hidden;
     }
 }
 
 .jwt-guide {
     .hidden-in-jwt-guide {
-        visibility: hidden !important;
-        height: 0 !important;
+        .hidden;
     }
 }
 
 .mergeprep-guide {
     .hidden-in-mergeprep-guide {
-        display: none;
+        .hidden;
     }
 }
 
