@@ -189,9 +189,6 @@ Other than ensuring that you're using the [latest stable Prysm release](https://
 
 <div class="admonition admonition-caution alert alert--warning"><div class="admonition-content"><p><strong>Ensure that you're not running multiple instances of the same validator public key</strong>, especially if you're using scripts or other forms of automation. If the Ethereum network detects two instances of the validator key submitting proposals, attestations, or votes, it may assume malicious intent and slash accordingly.</p></div></div>
 
-## Upgrade hardware
-
-We recommend updating your hard drive to a 2TB+ SSD as soon as possible.
 
 :::tip Congratulations!
 
