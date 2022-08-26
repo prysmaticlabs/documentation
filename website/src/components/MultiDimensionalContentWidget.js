@@ -47,8 +47,8 @@ export const MultiDimensionalContentWidget = () => {
 	}
 
 	let isViewingMergePrep = function () {
-		var isOnAuthPage = window.location.href.indexOf('/prepare-for-merge') > -1;
-		return isOnAuthPage;
+		var isOnMergePrepPage = window.location.href.indexOf('/prepare-for-merge') > -1;
+		return isOnMergePrepPage;
 	}
 
 	let bindTabs = function () {
