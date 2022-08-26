@@ -99,7 +99,7 @@ export const MultiDimensionalContentWidget = () => {
 					}, false)
 				}
 			});
-		}, 200)
+		}, 500)
 	}
 
 	return (
