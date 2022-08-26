@@ -10,7 +10,7 @@ import JwtGuidancePartial from '@site/docs/partials/_jwt-guidance-partial.md';
 
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
-<HeaderBadgesWidget commaDelimitedContributors="Mick" />
+<HeaderBadgesWidget commaDelimitedContributors="Mick,Raul,James" lastVerifiedDateString="August 24th, 2022" lastVerifiedVersionString="v3.0.0" />
 
 :::info New user?
 
