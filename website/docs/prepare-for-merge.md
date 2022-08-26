@@ -35,63 +35,63 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
         <div class='input-container'><input id="cl-1" type='checkbox'/><span class='done'></span></div>
         <div class='guidance-container'>
             <label for="cl-1">Review v3 release notes</label>
-            <span><a href='https://github.com/prysmaticlabs/prysm/releases/tag/v3.0.0'>Prysm v3</a> includes updates, deprecations, and breaking changes. Review the <a href='https://github.com/prysmaticlabs/prysm/releases/tag/v3.0.0'>release notes</a> to understand how this release impacts your configuration.</span>
+            <p><a href='https://github.com/prysmaticlabs/prysm/releases/tag/v3.0.0'>Prysm v3</a> includes updates, deprecations, and breaking changes. Review the <a href='https://github.com/prysmaticlabs/prysm/releases/tag/v3.0.0'>release notes</a> to understand how this release impacts your configuration.</p>
         </div>
     </div>
     <div class='task'>
         <div class='input-container'><input id="cl-2" type='checkbox'/><span class='done'></span></div>
         <div class='guidance-container'>
             <label for="cl-2">Review "Before and now"</label>
-            <span>The next section gives you a high-level overview of the items that you need to keep in mind while preparing for The Merge. See the Ethereum.org <a href='https://blog.ethereum.org/2022/08/24/mainnet-merge-announcement/'>Merge announcement</a> and <a href='https://launchpad.ethereum.org/en/merge-readiness'>Merge readiness checklist</a> for more detailed information.</span>
+            <p>The next section gives you a high-level overview of the items that you need to keep in mind while preparing for The Merge. See the Ethereum.org <a href='https://blog.ethereum.org/2022/08/24/mainnet-merge-announcement/'>Merge announcement</a> and <a href='https://launchpad.ethereum.org/en/merge-readiness'>Merge readiness checklist</a> for more detailed information.</p>
         </div>
     </div>
     <div class='task'>
         <div class='input-container'><input id="cl-3" type='checkbox'/><span class='done'></span></div>
         <div class='guidance-container'>
             <label for="cl-3">Ensure that you're using a Merge-ready version of your execution client</label>
-            <span>You may need to use a prerelease version of execution client software. Refer to your execution client software documentation for the latest guidance.</span>
+            <p>You may need to use a prerelease version of execution client software. Refer to your execution client software documentation for the latest guidance.</p>
         </div>
     </div>
     <div class='task'>
         <div class='input-container'><input id="cl-4" type='checkbox'/><span class='done'></span></div>
         <div class='guidance-container'>
             <label for="cl-4">If you're using Geth, update now</label>
-            <span>Geth 1.10.22 contains a regression. Update to <a href='https://github.com/ethereum/go-ethereum/releases'>v1.10.23+</a> if you haven't already.</span>
+            <p>Geth 1.10.22 contains a regression. Update to <a href='https://github.com/ethereum/go-ethereum/releases'>v1.10.23+</a> if you haven't already.</p>
         </div>
     </div>
     <div class='task'>
         <div class='input-container'><input id="cl-5" type='checkbox'/><span class='done'></span></div>
         <div class='guidance-container'>
             <label for="cl-5">Ensure that you're using Prysm v3.0.0</label>
-            <span>If you've ever set the `USE_PRYSM_VERSION` environment variable, either clear this variable via `UNSET USE_PRYSM_VERSION` (Linux/MacOS) / `set USE_PRYSM_VERSION=` (Windows), or use `set USE_PRYSM_VERSION=v3.0.0` to ensure that Prysm uses Prysm v3.</span>
+            <p>If you've ever set the `USE_PRYSM_VERSION` environment variable, either clear this variable via `UNSET USE_PRYSM_VERSION` (Linux/MacOS) / `set USE_PRYSM_VERSION=` (Windows), or use `set USE_PRYSM_VERSION=v3.0.0` to ensure that Prysm uses Prysm v3.</p>
         </div>
     </div>
     <div class='task'>
         <div class='input-container'><input id="cl-6" type='checkbox'/><span class='done'></span></div>
         <div class='guidance-container'>
             <label for="cl-6">Verify your version</label>
-            <span>Verify that you're running Prysm `v3.0.0` by issuing the following command: `prysm.sh beacon-chain --version` (Linux) `prysm.bat beacon-chain --version` (Windows).</span>
+            <p>Verify that you're running Prysm `v3.0.0` by issuing the following command: `prysm.sh beacon-chain --version` (Linux) `prysm.bat beacon-chain --version` (Windows).</p>
         </div>
     </div>
     <div class='task'>
         <div class='input-container'><input id="cl-7" type='checkbox'/><span class='done'></span></div>
         <div class='guidance-container'>
             <label for="cl-7">Configure JWT</label>
-            <span>If you're not using IPC to connect your beacon node and execution node, ensure that both your execution node and beacon node are configured to use JWT authentication. These instructions are included below, and are also available here: [Configure JWT](./execution-node/authentication.md).</span>
+            <p>If you're not using IPC to connect your beacon node and execution node, ensure that both your execution node and beacon node are configured to use JWT authentication. These instructions are included below, and are also available here: [Configure JWT](./execution-node/authentication.md).</p>
         </div>
     </div>
     <div class='task'>
         <div class='input-container'><input id="cl-8" type='checkbox'/><span class='done'></span></div>
         <div class='guidance-container'>
             <label for="cl-8">Update your firewall</label>
-            <span>If you're not using IPC to connect your beacon node and execution node, your beacon node will need to connect to its execution node on port `8551`. Previously, port `8545` was used. Ensure that your firewall rules are updated accordingly.</span>
+            <p>If you're not using IPC to connect your beacon node and execution node, your beacon node will need to connect to its execution node on port `8551`. Previously, port `8545` was used. Ensure that your firewall rules are updated accordingly.</p>
         </div>
     </div>
     <div class='task'>
         <div class='input-container'><input id="cl-9" type='checkbox'/><span class='done'></span></div>
         <div class='guidance-container'>
             <label for="cl-9">Configure a fee recipient address</label>
-            <span>If you're running a validator, configuring a fee recipient address will allow you to earn what were previously miners' transaction fee tips. Instructions are provided below, and also here: [Configure a Fee Recipient address](./execution-node/fee-recipient.md).</span>
+            <p>If you're running a validator, configuring a fee recipient address will allow you to earn what were previously miners' transaction fee tips. Instructions are provided below, and also here: [Configure a Fee Recipient address](./execution-node/fee-recipient.md).</p>
         </div>
     </div>
 </div>
