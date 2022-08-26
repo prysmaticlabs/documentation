@@ -302,6 +302,7 @@ footer.docusaurus-mt-lg {
   display: block;
   margin-top: -15px !important;
   margin-bottom: 30px;
+  min-height: 37px;
   /*pragmatism over perfection*/
 }
 html[data-theme='dark'] .header-badge {
