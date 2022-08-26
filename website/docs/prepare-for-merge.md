@@ -33,7 +33,7 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
 Keep the following checklist in mind:
 
  - **Review v3 release notes in detail**: [Prysm v3](https://github.com/prysmaticlabs/prysm/releases/tag/v3.0.0) includes updates, deprecations, and breaking changes. Review the [release notes](https://github.com/prysmaticlabs/prysm/releases/tag/v3.0.0) to understand how this release impacts your configuration.
- - **Review "Before and now"**: The next section gives you a high-level overview of the items that you need to keep in mind while preparing for The Merge.
+ - **Review "Before and now"**: The next section gives you a high-level overview of the items that you need to keep in mind while preparing for The Merge. See the Ethereum.org [Merge announcement](https://blog.ethereum.org/2022/08/24/mainnet-merge-announcement/) and [Merge readiness checklist](https://launchpad.ethereum.org/en/merge-readiness) for more detailed information.
  - **Ensure that you're using a network-compatible version of your execution client**: You may need to use a prerelease version of execution client software. Refer to your execution client software documentation for the latest guidance.
  - **If you're using Geth, update now**: Geth 1.10.22 contains a regression. Update to <a href='https://github.com/ethereum/go-ethereum/releases'>v1.10.23+</a> if you haven't already.
  - **Ensure that you're using Prysm v3.0.0**: If you've ever set the `USE_PRYSM_VERSION` environment variable, either clear this variable via `UNSET USE_PRYSM_VERSION` (Linux/MacOS) / `set USE_PRYSM_VERSION=` (Windows), or use `set USE_PRYSM_VERSION=v3.0.0` to ensure that Prysm uses Prysm v3.
