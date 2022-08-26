@@ -77,6 +77,7 @@ This guidance is targeted at users who are already running Prysm. If you're star
             <label for="cl-3">Use a Merge-ready version of your execution client</label>
             <p>
             <Tabs className="with-label" groupId="execution-clients" values={[
+                {label: 'Execution client:', value: 'label'},
                 {label: 'Geth', value: 'geth'},
                 {label: 'Nethermind', value: 'nethermind'},
                 {label: 'Besu', value: 'besu'}
