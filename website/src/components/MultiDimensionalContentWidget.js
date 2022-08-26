@@ -31,7 +31,6 @@ export const MultiDimensionalContentWidget = () => {
 	}
 
 	let selectByText = function (text) {
-		console.log('clicking ' + text + '...')
 		var targetElement = getByText(text);
 		targetElement.click();
 	}
@@ -53,7 +52,6 @@ export const MultiDimensionalContentWidget = () => {
 	}
 
 	let bindTabs = function () {
-		console.log('binding...')
 		setTimeout(function () {
 			var tabElements = getAllTabElements();
 			if (isSelectedByText('Besu') || isSelectedByText('Nethermind')) {
@@ -72,17 +70,12 @@ export const MultiDimensionalContentWidget = () => {
 				disableByText('IPC');
 			}
 
-			console.log('checking mergeprep...')
 			if (isViewingMergePrep()) {
-				console.log('in mergeprep...')
 				// tempfix
 				setTimeout(function () {
-					console.log('click')
 					if (isSelectedByText('HTTP-JWT')) {
-						console.log('click jwt')
 						selectByText('HTTP-JWT');
 					} else {
-						console.log('click ipc')
 						selectByText('IPC');
 					}
 				}, 1000)
@@ -104,7 +97,6 @@ export const MultiDimensionalContentWidget = () => {
 							disableByText('IPC');
 						} else if (textContent == 'Geth') {
 							enableByText('IPC');
-							console.log('enabled IPC...')
 						} else if (textContent == 'IPC') {
 							if (jwtOnly()) {
 								setTimeout(function () { selectByText('HTTP-JWT'); }, 50)
