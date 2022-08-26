@@ -1,0 +1,521 @@
+:root {
+    --prysm-pink: #c72a7d;
+    --tab-active-color: #3578e5;
+    --tab-gray: #ddd;
+    --prysm-pink-light: #da77ab;
+}
+
+html[data-theme='dark'] {
+    --prysm-pink: var(--prysm-pink-light);
+    --tab-gray: #aaa;
+
+    .quickstart-tabs {
+        .tabs__item {
+            &:first-child {
+                color: #eee;
+
+                &:hover {
+                    background-color: transparent !important;
+                }
+            }
+        }
+    }
+}
+
+.navbar__link--active {
+    color: var(--prysm-pink-light) !important;
+}
+
+/* used to hide all but the topmost tabs within our quickstart */
+
+.hide-tabs .tabs {
+    display: none;
+}
+
+.quickstart {
+    .hidden-in-quickstart {
+        display: none;
+    }
+}
+
+.jwt-guide {
+    .hidden-in-jwt-guide {
+        display: none;
+    }
+}
+
+.mergeprep-guide {
+    .hidden-in-mergeprep-guide {
+        display: none;
+    }
+}
+
+.quickstart-tabs {
+    position: relative;
+
+    .with-label {
+        font-size: 13px;
+        font-weight: 500;
+        border: 1px solid transparent;
+        border-radius: 5px;
+        overflow: hidden;
+        position: static;
+
+        .tabs__item {
+            font-size: 13px;
+            font-weight: 500;
+            border-top: 1px solid var(--tab-gray);
+            border-bottom: 1px solid var(--tab-gray);
+            padding: 10px 15px;
+            border-radius: 0px !important;
+            position: relative;
+
+            &:first-child {
+                cursor: default !important;
+                color: black;
+                width: 150px;
+                border: 1px solid transparent !important;
+                border-right: 0px !important;
+
+                &:hover {
+                    background-color: transparent !important;
+                    cursor: default !important;
+                }
+            }
+
+            &:nth-child(2) {
+                border-top-left-radius: 5px !important;
+                border-bottom-left-radius: 5px !important;
+                border-left: 1px solid var(--tab-gray);
+                border-right: 0px !important;
+                z-index: 2;
+            }
+
+            &:last-child {
+                border-top-right-radius: 5px !important;
+                border-bottom-right-radius: 5px !important;
+                border-right: 1px solid var(--tab-gray);
+                border-top: 1px solid var(--tab-gray);
+                border-bottom: 1px solid var(--tab-gray);
+                border-left: 0px;
+            }
+
+            &.tabs__item--active {
+                font-size: 13px;
+                font-weight: 500;
+                background-color: var(--tab-active-color);
+                border-color: var(--tab-active-color);
+                color: white;
+            }
+
+            &.disabled-tab {
+                color: #999 !important;
+            }
+        }
+    }
+}
+
+/* General elements */
+
+a {
+    color: var(--prysm-pink);
+}
+
+.footnote {
+    color: #aaa !important;
+}
+
+.footnote:hover {
+    color: #000 !important;
+}
+
+header>h1 {
+    font-size: 2rem !important;
+    margin-top: 20px !important;
+}
+
+.markdown>h2 {
+    font-size: 1.5rem !important;
+}
+
+.markdown>h3 {
+    font-size: 1.2rem !important;
+}
+
+.markdown>img {
+    display: block;
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    overflow: hidden;
+    width: auto;
+    max-width: 100%;
+}
+
+.panel {
+    border-top: 2px solid #ddd;
+    padding: 20px 20px 25px 20px;
+}
+
+html[data-theme='dark'] .panel {
+    border-top: 2px solid #555;
+}
+
+.panel>a,
+.panel>h2 {
+    text-transform: uppercase;
+    font-size: 20px;
+    letter-spacing: 0.7px;
+    font-weight: 500;
+    margin-bottom: 0;
+    line-height: 33px;
+}
+
+.panel>a,
+.panel>h2 {
+    display: inline-block;
+}
+
+.panel>h3 {
+    display: block;
+    text-transform: uppercase;
+    font-size: 17px;
+    letter-spacing: 0.6px;
+    font-weight: 500;
+    margin-bottom: 0;
+    line-height: 28px;
+}
+
+.panel>p {
+    font-size: 15px;
+    margin-bottom: 0;
+}
+
+.panel.section-title {
+    background-color: #f9f9f9;
+    border-left: 2px solid #ddd;
+    border-right: 2px solid #ddd;
+}
+
+html[data-theme='dark'] .panel.section-title {
+    background-color: #292929;
+    border-top: 2px solid #555;
+    border-left: 2px solid #555;
+    border-right: 2px solid #555;
+}
+
+.panel.secondary-panel.section-title {
+    background-color: #fefefe;
+    border-left: 2px solid #ddd;
+    border-right: 2px solid #ddd;
+}
+
+html[data-theme='dark'] .panel.secondary-panel.section-title {
+    background-color: #2e2e2e;
+    border-top: 2px solid #555;
+    border-left: 2px solid #555;
+    border-right: 2px solid #555;
+}
+
+.panel.secondary-panel {
+    padding: 15px 20px 20px 20px;
+}
+
+.update-request {
+    margin-left: auto;
+    display: block;
+    text-align: right;
+    margin-top: 10px;
+}
+
+
+
+
+
+/* see: https://github.com/facebook/docusaurus/pull/7134/files  */
+/* referenced by: https://github.com/facebook/docusaurus/pull/7134 */
+/* as a fix for wrapping sidebar titles causing buggy behavior (in our case, docs were getting cut off in nested sidebar expandos because after expanding the nested section, a scrollbar appears, which pushes the sidebar content over, but only after docusaurus reads the inner element height, causing the inner sidebar section to expand its height a little less than it needs to, causing bottom sidebar entries to appear cut off. */
+.menu {
+    padding: 0.5rem 0 0.5rem 0.5rem;
+    scrollbar-gutter: stable;
+}
+
+.lastUpdated_3DPF {
+    display: none;
+}
+
+nav.pagination-nav {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+article {
+    margin-bottom: 10px !important;
+}
+
+.footer {
+    padding: 10px !important;
+    display: none !important;
+    /* can remove display style if we want to reintroduce */
+}
+
+footer>.col {
+    text-align: right;
+}
+
+footer>.col a,
+.update-request>a {
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-color: #fcfcfc;
+    font-size: 14px;
+    border-radius: 5px;
+    margin-top: 10px;
+    text-decoration: none;
+    transition-property: all;
+    transition-duration: 0.2s;
+    display: inline-block;
+}
+
+.update-request>a {
+    margin-bottom: 10px;
+}
+
+html[data-theme='dark'] .update-request>a,
+html[data-theme='dark'] footer>.col a {
+    background-color: #111;
+    color: var(--prysm-pink);
+}
+
+footer>.col a:hover,
+.update-request>a:hover {
+    text-decoration: none;
+    background-color: #f8f8f8;
+    border: 1px solid #3578e5;
+}
+
+html[data-theme='dark'] .update-request>a:hover,
+html[data-theme='dark'] footer>.col a:hover {
+    background-color: #333;
+    color: var(--prysm-pink);
+}
+
+
+footer>.col a svg {
+    height: 17px;
+    margin-bottom: 1px;
+}
+
+
+footer.docusaurus-mt-lg {
+    margin-top: 0 !important;
+}
+
+.footer__logo {
+    max-width: 25px;
+    max-height: 25px;
+}
+
+.footer__copyright {
+    font-size: 13px;
+}
+
+
+.navbar {
+    background-color: #22292f;
+    color: white;
+}
+
+.navbar--fixed-top {
+    border-bottom: 3px solid var(--prysm-pink);
+}
+
+.navbar__link--active {
+    font-weight: 600;
+}
+
+.navbar__link {
+    color: white;
+}
+
+.navbar__link:hover,
+.navbar__link--active {
+    color: var(--prysm-pink);
+}
+
+.navbar__brand {
+    color: white;
+}
+
+.table-of-contents li a {
+    font-size: 15px;
+    padding: 2px 0;
+}
+
+.menu__link--active {
+    color: var(--ifm-menu-color);
+    font-weight: 600;
+}
+
+.menu__link:hover,
+.menu__link--active:hover {
+    color: var(--prysm-pink);
+}
+
+.table-of-contents>li> {
+    font-size: 17px;
+    color: #22292f;
+}
+
+.table-of-contents__link:hover {
+    color: var(--prysm-pink);
+}
+
+.toc .toggleNav ul li a:hover {
+    color: var(--prysm-pink);
+}
+
+.toc .toggleNav ul li.navListItemActive a {
+    color: white;
+    font-weight: 600;
+}
+
+.header-badges {
+    display: block;
+    margin-top: -15px !important;
+    margin-bottom: 30px;
+    /*pragmatism over perfection*/
+}
+
+html[data-theme='dark'] {
+    .header-badge {
+        background-color: #333;
+
+        &:hover {
+            background-color: #444;
+
+            .badge-label {
+                color: #d6d6d6;
+            }
+        }
+
+        .badge-label {
+            color: #ddd;
+        }
+    }
+}
+
+.truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.header-badge {
+    .truncate;
+    transition-property: all;
+    transition-duration: 0.2s;
+    display: inline-block;
+    border-radius: 20px;
+    background-color: #efefef;
+    padding: 3px 20px 3px 3px;
+    height: 31px;
+    margin-right: 6px;
+    margin-bottom: 6px;
+    vertical-align: top;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+
+    &:hover {
+        text-decoration: none;
+        background-color: #e6e6e6;
+        opacity: 1;
+
+        .badge-avatar {
+            opacity: 1;
+        }
+
+        .badge-label {
+            color: #000;
+        }
+    }
+
+    .badge-label {
+        .truncate;
+        transition-property: all;
+        transition-duration: 0.2s;
+        font-size: 13px;
+        line-height: 24px;
+        color: #333;
+        display: inline-block;
+        vertical-align: top;
+        height: 25px;
+        max-width: calc(100% ~'-' 33px);
+    }
+
+    .badge-avatar {
+        transition-property: all;
+        transition-duration: 0.2s;
+        display: inline-block;
+        border-radius: 30px;
+        width: 25px;
+        height: 25px;
+        background-size: cover;
+        margin-right: 12px;
+        font-size: 12px;
+        vertical-align: top;
+        line-height: 23px;
+        padding-left: 8px;
+        opacity: 0.7;
+    }
+
+    .emoji-avatar {
+        margin-right: 8px !important;
+    }
+}
+
+
+@media (max-width: 736px) {
+    .nav-footer {
+        text-align: center;
+        margin: auto;
+    }
+
+    .nav-home {
+        margin: auto !important;
+    }
+
+    .header-badge {
+        max-width: 200px;
+    }
+
+
+
+}
+
+@media (max-width: 600px) {
+    .quickstart-tabs {
+        .with-label {
+            .tabs__item {
+                padding: 5px !important;
+
+                &:first-child {
+                    display: none !important;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-device-width: 360px) and (max-device-width: 736px) {}
+
+@media only screen and (min-width: 1024px) {}
+
+@media only screen and (max-width: 1023px) {}
+
+@media only screen and (min-width: 1400px) {}
+
+@media only screen and (min-width: 1500px) {}

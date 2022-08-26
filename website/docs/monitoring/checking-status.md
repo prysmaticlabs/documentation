@@ -10,7 +10,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 ## Check status: Execution client
 
-<Tabs groupId="execution-clients" defaultValue="nethermind" values={[
+<Tabs groupId="execution-clients" defaultValue="geth" values={[
 {label: 'Nethermind', value: 'nethermind'},
 {label: 'Besu', value: 'besu'},
 {label: 'Geth', value: 'geth'}

@@ -18,6 +18,13 @@ This guidance is targeted at users who are already running Prysm. If you're star
 
 :::
 
+<p><strong>Select a configuration</strong>:</p>
+
+import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidimensional-content-controls-partial.md';
+
+<MultidimensionalContentControlsPartial />
+
+
 [Prysm v3](https://github.com/prysmaticlabs/prysm/releases/tag/v3.0.0) can be used to run a node on Mainnet using Merge-ready configuration. In this guide, we'll step through the tasks that you need to complete in order to be Merge-prepared. 
 
 
@@ -25,20 +32,21 @@ This guidance is targeted at users who are already running Prysm. If you're star
 
 Keep the following checklist in mind:
 
- - **Review v3 release notes in detail**: [Prysm v3](https://github.com/prysmaticlabs/prysm/releases/tag/v3.0.0) introduces many updates, deprecations, and breaking changes. Review the [release notes](https://github.com/prysmaticlabs/prysm/releases/tag/v3.0.0) to understand how this release impacts your configuration.
- - **Understand the high-level before and after**: The next section gives you a before/after picture of the items that you need to keep in mind while preparing for The Merge.
+ - **Review v3 release notes in detail**: [Prysm v3](https://github.com/prysmaticlabs/prysm/releases/tag/v3.0.0) includes updates, deprecations, and breaking changes. Review the [release notes](https://github.com/prysmaticlabs/prysm/releases/tag/v3.0.0) to understand how this release impacts your configuration.
+ - **Review "Before and now"**: The next section gives you a high-level overview of the items that you need to keep in mind while preparing for The Merge.
  - **Ensure that you're using a network-compatible version of your execution client**: You may need to use a prerelease version of execution client software. Refer to your execution client software documentation for the latest guidance.
- - **If you're using Geth, stay plugged in**: Geth 1.10.22 contains a regression that the team is actively working on. Either <a href='https://github.com/ethereum/go-ethereum/releases'>Geth releases page on GitHub</a> or join the [Geth Discord](https://discord.com/invite/nthXNEv) for the latest information.
- - **Ensure that you're using v3.0.0**: If you've ever set the `USE_PRYSM_VERSION` environment variable, either clear this variable via `UNSET USE_PRYSM_VERSION` (Linux/MacOS) / `set USE_PRYSM_VERSION=` (Windows), or use `set USE_PRYSM_VERSION=v3.0.0` to ensure that Prysm uses Prysm v3.
+ - **If you're using Geth, update now**: Geth 1.10.22 contains a regression. Update to <a href='https://github.com/ethereum/go-ethereum/releases'>v1.10.23+</a> if you haven't already.
+ - **Ensure that you're using Prysm v3.0.0**: If you've ever set the `USE_PRYSM_VERSION` environment variable, either clear this variable via `UNSET USE_PRYSM_VERSION` (Linux/MacOS) / `set USE_PRYSM_VERSION=` (Windows), or use `set USE_PRYSM_VERSION=v3.0.0` to ensure that Prysm uses Prysm v3.
  - **Verify your version**: Verify that you're running Prysm `v3.0.0` by issuing the following command: `prysm.sh beacon-chain --version` (Linux) `prysm.bat beacon-chain --version` (Windows).
- - **Configure JWT**: Ensure that both your execution node and beacon node are configured to use JWT authentication. These instructions are included below, and are also available here: [Configure JWT](./execution-node/authentication.md).
- - **Update your firewall**: Post-merge, your beacon node will need to connect to its execution node on port `8551`. Previously, port `8545` was used. Ensure that your firewall rules are updated accordingly.
+ - **Configure JWT**: If you're not using IPC to connect your beacon node and execution node, ensure that both your execution node and beacon node are configured to use JWT authentication. These instructions are included below, and are also available here: [Configure JWT](./execution-node/authentication.md).
+ - **Update your firewall**: If you're not using IPC to connect your beacon node and execution node, your beacon node will need to connect to its execution node on port `8551`. Previously, port `8545` was used. Ensure that your firewall rules are updated accordingly.
+  - **Configure a fee recipient address**: If you're running a validator, configuring a fee recipient address will allow you to earn what were previously miners' transaction fee tips. Instructions are provided below, and also here: [Configure a Fee Recipient address](./execution-node/fee-recipient.md).
  - (Power users) Review the Ethereum Launchpad's [Merge config checklist](https://notes.ethereum.org/@launchpad/merge-configuration-checklist).
 
 
-## The Merge: Before and after
+## The Merge: Before and now
 
-| Before The Merge                                                                                               | After The Merge                                                                                                                          |
+| Before                                                                                                         | Now                                                                                                                                      |
 |----------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|
 | You don't need to run a local execution client. You can use a service like Infura instead.                     | You **do** need to run an execution client. You **can't** use a service like Infura.                                                     |
 | The HTTP connection between beacon node and execution node doesn't need to be authenticated using a JWT token. | The HTTP connection between beacon node and execution node **does** need to be authenticated using a JWT token.                          |
@@ -51,18 +59,53 @@ Keep the following checklist in mind:
 <br />
 
 
-Let's step through each of these changes. 
+Let's step through each of these changes.
 
-## Create JWT token
+<div class='hide-tabs mergeprep-guide'>
+
+
+<Tabs className="with-label hidden-in-jwt-guide" groupId="protocol" default="jwt" values={[
+        {label: 'IPC', value: 'ipc'},
+        {label: 'HTTP-JWT', value: 'jwt'},
+    ]}>
+    <TabItem value="ipc">
+
+<h2>Configure execution node</h2>
+
+<p>Ensure that your execution node has been updated to the latest available stable version.</p>
+
+<Tabs className="with-label" groupId="execution-clients" defaultValue="geth" values={[
+  {label: 'Geth', value: 'geth'},
+  {label: 'Nethermind', value: 'nethermind'},
+  {label: 'Besu', value: 'besu'}
+  ]}>
+  <TabItem value="geth">See <a href='https://github.com/ethereum/go-ethereum/releases'>Geth's releases page</a> and join <a href='https://discord.gg/invite/nthXNEv'>their Discord</a> to stay up to date as we approach Mainnet Merge.</TabItem>
+  <TabItem value="nethermind">See <a href='https://github.com/NethermindEth/nethermind/releases'>Nethermind's releases page</a> and join <a href='https://discord.com/invite/DedCdvDaNm'>their Discord</a> to stay up to date as we approach Mainnet Merge.</TabItem>
+  <TabItem value="besu">See Besu's <a href='https://github.com/hyperledger/besu/releases'>releases page</a> and join <a href='https://discord.com/invite/hyperledger'>their Discord</a> to stay up to date as we approach Mainnet Merge.</TabItem>
+</Tabs>
+
+<br />
+
+<h2>Configure beacon node</h2>
+
+If you're running a validator, specifying a <code>suggested-fee-recipient</code> wallet address will allow you to earn what were previously miner transaction fee tips. See <a href='./execution-node/fee-recipient.md'>How to configure Fee Recipient</a> for more information about this feature.
+
+</TabItem>
+    <TabItem value="jwt">
+    
+<h2>Create JWT token</h2>
 
 <JwtGuidancePartial />
 
+    
+</TabItem>
+</Tabs>
 
-## Configure validator node
+</div>
 
-Validator client configuration doesn't need to be updated for The Merge. A fee recipient address can optionally be configured on your validator node if you want redundancy or multiple fee recipient addresses. See [Configuring a Fee Recipient Address](./execution-node/fee-recipient.md) to learn more.
+## Configure validator node (optional)
 
-Note that **consensus-layer Sepolia is a permissioned network** - you can run a beacon node on Sepolia, but not a validator.
+Other than ensuring that you're using the [latest stable Prysm release](https://github.com/prysmaticlabs/prysm/releases), validator client configuration doesn't need to be updated for The Merge. A fee recipient address can optionally be configured on your validator node if you want redundancy or multiple fee recipient addresses. See [Configure a Fee Recipient address](./execution-node/fee-recipient.md) to learn more.
 
 
 ## Upgrade hardware
