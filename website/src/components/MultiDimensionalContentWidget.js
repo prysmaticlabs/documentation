@@ -68,7 +68,11 @@ export const MultiDimensionalContentWidget = () => {
 			if (jwtOnly()) {
 				selectByText('HTTP-JWT');
 				disableByText('IPC');
-			} else if (isViewingMergePrep()) {
+			}
+
+			console.log('checking mergeprep...')
+			if (isViewingMergePrep()) {
+				console.log('in mergeprep...')
 				// tempfix
 				setTimeout(function () {
 					console.log('click')
