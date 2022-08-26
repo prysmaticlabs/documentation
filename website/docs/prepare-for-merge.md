@@ -156,9 +156,6 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
 | A 1TB hard drive is enough.                                                                                    | A **2TB+ SSD** is highly recommended.                                                                                                    |
 
 
-<br />
-
-
 ## Post-Merge system requirements
 
 import QuickstartPrereqsPartial from '@site/docs/install/partials/_quickstart-prereqs.md';
