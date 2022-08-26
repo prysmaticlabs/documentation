@@ -20,17 +20,13 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
 <MultidimensionalContentControlsPartial />
 
 
+## Merge preparation checklist
 
 :::info New user?
 
 This guidance is targeted at users who are already running Prysm. If you're starting from scratch, see our [Quickstart](./install/install-with-script.md).
 
 :::
-
-[Prysm v3](https://github.com/prysmaticlabs/prysm/releases/tag/v3.0.0) can be used to run a node on Mainnet using Merge-ready configuration. In this guide, we'll step through the tasks that you need to complete in order to be Merge-prepared. 
-
-
-## Merge preparation checklist
 
 
 <div class='hide-tabs mergeprep-guide'>
