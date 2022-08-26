@@ -7,7 +7,7 @@ import {MultiDimensionalContentWidget} from '@site/src/components/MultiDimension
 
 <div class='quickstart-tabs'>
 
-<Tabs className="with-label" groupId="os" defaultValue="others" values={[
+<Tabs className="with-label" groupId="os" values={[
     {label: 'Operating system:', value: 'label'},
     {label: 'Windows', value: 'win'},
     {label: 'Linux, MacOS, Arm64', value: 'others'}
@@ -17,7 +17,7 @@ import {MultiDimensionalContentWidget} from '@site/src/components/MultiDimension
   <TabItem value="others"></TabItem>
 </Tabs>
 
-<Tabs className="with-label" groupId="network" defaultValue="mainnet" values={[
+<Tabs className="with-label" groupId="network" values={[
         {label: 'Network:', value: 'label'},
         {label: 'Mainnet', value: 'mainnet'},
         {label: 'Goerli-Prater', value: 'goerli-prater'},
@@ -31,7 +31,7 @@ import {MultiDimensionalContentWidget} from '@site/src/components/MultiDimension
     <TabItem value="ropsten"></TabItem>
 </Tabs>
 
-<Tabs className="with-label" groupId="execution-clients" defaultValue="geth" values={[
+<Tabs className="with-label" groupId="execution-clients"  values={[
   {label: 'Execution client:', value: 'label'},
   {label: 'Geth', value: 'geth'},
   {label: 'Nethermind', value: 'nethermind'},
@@ -44,7 +44,7 @@ import {MultiDimensionalContentWidget} from '@site/src/components/MultiDimension
 </Tabs>
 
 
-<Tabs className="with-label hidden-in-jwt-guide" groupId="protocol" defaultValue="jwt" values={[
+<Tabs className="with-label hidden-in-jwt-guide" groupId="protocol" values={[
         {label: 'EN-BN connection:', value: 'label'},
         {label: 'IPC', value: 'ipc'},
         {label: 'HTTP-JWT', value: 'jwt'},
