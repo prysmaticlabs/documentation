@@ -73,6 +73,7 @@ export const MultiDimensionalContentWidget = () => {
 					element.outerHTML = element.outerHTML;
 				} else {
 					element.addEventListener("click", function (event) {
+						console.log("76");
 						var targetElement = event.target;
 						var textContent = targetElement.textContent;
 
@@ -99,8 +100,6 @@ export const MultiDimensionalContentWidget = () => {
 					}, false)
 				}
 			});
-			console.log("start with the user, work backwards to the technology...");
-			console.log("start with utopia, work backwards to the mechanism design...");
 		}, 500)
 	}
 
