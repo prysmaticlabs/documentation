@@ -10,7 +10,7 @@ import ClientStackPng from '@site/static/img/client-stack.png';
 
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
-<HeaderBadgesWidget commaDelimitedContributors="Mick" lastVerifiedDateString="August 23rd, 2022" lastVerifiedVersionString="v3.0.0" />
+<HeaderBadgesWidget commaDelimitedContributors="Mick" lastVerifiedDateString="August 25th, 2022" lastVerifiedVersionString="v3.0.0" />
 
 <div class='quickstart'>
 
@@ -50,6 +50,7 @@ import QuickstartRunBeaconNodePartial from '@site/docs/install/partials/_quickst
 
 
 ## Step 5: Run a validator using Prysm
+
 
 import QuickstartRunValidatorPartial from '@site/docs/install/partials/_quickstart-run-validator.md';
 

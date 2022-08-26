@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
-<HeaderBadgesWidget commaDelimitedContributors="Kasey,Mick,James" lastVerifiedDateString="August 18th, 2022" lastVerifiedVersionString="v2.1.4" />
+<HeaderBadgesWidget commaDelimitedContributors="Kasey,Mick,James" lastVerifiedDateString="August 24th, 2022" lastVerifiedVersionString="v3.0.0" />
 
 :::caution Public Preview
 
