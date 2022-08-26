@@ -279,11 +279,11 @@ Note that when configuring fee recipient on your beacon node, the beacon node wi
 
 ## Configuring Fee Recipient through Web UI
 
-<img style={{maxWidth: 680 + 'px'}} src={FeeRecipientPng} /> 
+<img style={{maxWidth: 700 + 'px'}} src={FeeRecipientPng} /> 
 
 The fee recipient can also be set through the <a href='../prysm-usage/web-interface'>web UI</a> on the dashboard. The UI uses the <a href='../how-prysm-works/keymanager-api'>Key Manager APIs</a> to set the fee recipient. 
  
-:::warning Fee Recipient changes not saved from UI/API 
+:::warning Fee Recipient changes from UI/API don't persist on client restart
 Fee Recipient changes through UI or Keymanager APIs do not persist after restart of the validator client.
 This persistence feature is requested as per this [issue](https://github.com/prysmaticlabs/prysm/issues/11322)
 Please use the `--proposer-settings-file` or `--proposer-settings-url` flags for persistent validator settings in the mean time.
