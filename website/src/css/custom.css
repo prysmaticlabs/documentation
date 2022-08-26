@@ -365,36 +365,67 @@ header > h1 {
 .header-badges .header-badge .emoji-avatar {
   margin-right: 8px !important;
 }
-.checklist {
-  list-style: none;
-  --li-bg: var(--prysm-pink);
-  counter-reset: orderedlist;
+.checklist .task {
+  display: table;
 }
-.checklist li {
-  display: grid;
-  grid-template-columns: 0 1fr;
-  grid-gap: 1.75em;
-  align-items: start;
-  font-size: 1.5rem;
-  line-height: 1.25;
+.checklist .task .input-container {
+  display: table-cell;
+  vertical-align: middle;
 }
-.checklist li::before {
-  counter-increment: orderedlist;
-  content: counter(orderedlist);
-  font-family: "Indie Flower";
-  font-size: 1.25em;
-  line-height: 0.75;
-  width: 1.5rem;
-  padding-top: 0.25rem;
-  text-align: center;
-  color: #fff;
-  background-color: var(--li-bg);
-  border-radius: 0.25em;
+.checklist .task .input-container input {
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+}
+.checklist .task .input-container input + label {
+  position: relative;
+  cursor: pointer;
+  padding: 0;
+}
+.checklist .task .input-container input + label:before {
+  content: '';
+  margin-right: 10px;
+  display: inline-block;
+  vertical-align: text-top;
+  width: 20px;
+  height: 20px;
+  background: white;
+}
+.checklist .task .input-container input:hover + label:before {
+  background: #035429;
+}
+.checklist .task .input-container input:focus + label:before {
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12);
+}
+.checklist .task .input-container input:checked + label:before {
+  background: #f35429;
+}
+.checklist .task .input-container input:disabled + label {
+  color: #b8b8b8;
+  cursor: auto;
+}
+.checklist .task .input-container input:disabled + label:before {
+  box-shadow: none;
+  background: #ddd;
+}
+.checklist .task .input-container input:checked + label:after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 9px;
+  background: white;
+  width: 2px;
+  height: 2px;
+  box-shadow: 2px 0 0 white, 4px 0 0 white, 4px -2px 0 white, 4px -4px 0 white, 4px -6px 0 white, 4px -8px 0 white;
+  transform: rotate(45deg);
+}
+.checklist .task .guidance-container {
+  display: inline-block;
+}
+.checklist .task .guidance-container label {
+  display: block;
 }
 .checklist input {
-  width: 30px;
-  height: 30px;
-  display: inline-block;
   margin-right: 5px;
 }
 html[data-theme='dark'] .header-badge {
