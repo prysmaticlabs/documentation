@@ -1,12 +1,6 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-:::caution ETH + Fully Synced Beacon Node Required
-
-Running a validator requires 32.1 ETH and a fully synced beacon node. Verify that your **beacon node and execution node are both fully synced** before proceeding. If you're not fully synced, you risk being penalized and losing some of your staked ETH.
-
-:::
-
 Next, we'll create your validator keys with the [Ethereum Staking Deposit CLI](https://github.com/ethereum/staking-deposit-cli).
 
 Download the latest stable version of the deposit CLI from the [Staking Deposit CLI Releases page](https://github.com/ethereum/staking-deposit-cli/releases).

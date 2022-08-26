@@ -4,267 +4,121 @@ title: Install Prysm with Docker
 sidebar_label: Install using Docker
 ---
 
-import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
-
-<HeaderBadgesWidget />
-
-Prysm can be installed on Windows, GNU/Linux, and MacOS systems with Docker.
-
-:::tip Pro-Tip
-The [Prysm Quickstart](/docs/install/install-with-script) is the easiest way to install Prysm. Docker is for advanced users.
-:::
-
-**Have questions?** Stop by the [#documentation](https://discord.gg/prysmaticlabs) channel on Discord and let us know.
-
-## System requirements
-
-### Minimum specifications
-
-These specifications must be met in order to successfully run the Prysm client.
-
-* Operating System: 64-bit Linux, Mac OS X 10.14+, Windows 64-bit
-* Processor: Intel Core i5–760 or AMD FX-8100 or better
-* Memory: 8GB RAM
-* Storage: 20GB available space SSD
-* Internet: Broadband connection
-
-### Recommended specifications
-
-These hardware specifications are recommended, but not required to run the Prysm client.
-
-* Processor: Intel Core i7–4770 or AMD FX-8310 or better
-* Memory: 16GB RAM
-* Storage: 100GB available space SSD
-* Internet: Broadband connection
-
-## Dependencies
-
-* A modern operating system
-* The latest release of [Docker](https://docs.docker.com/install/) installed
-
-## Installing Prysm
-
-### Where is the Prysm Dockerfile?
-
-Instead of manually writing Dockerfiles, our team relies on the [Bazel](https://bazel.build) build system used by major companies to manage mono-repositories. Bazel has the option to generate and push minimal Docker images to a registry, which is what we use for Prysm. Bazel provides reproducible builds and a sandboxed environment that ensures everyone building Prysm has the same experience and can build our entire project from a single command. To see how to build the Docker images yourself from scratch for your own purposes, see our instructions [here](/docs/install/install-with-bazel#building-docker-images).
-
-### Downloading the Prysm Docker images
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
+
+<HeaderBadgesWidget commaDelimitedContributors="Raul,Mick" />
+
+Prysm can be installed on Windows, GNU/Linux, and MacOS systems with Docker. We use [Bazel](https://bazel.build) to push preconfigured Docker images to a publicly accessible Google Cloud container registry. 
+
+:::tip Not familiar with docker? Try our quickstart
+
+This guidance is targeted at users who are already comfortable with Docker. See our [Quickstart](/docs/install/install-with-script) for beginner-friendly installation instructions.
+
+:::
+
+<div class='docker-guide'>
+
+<p><strong>Select a configuration</strong>:</p>
+
+import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidimensional-content-controls-partial.md';
+
+<MultidimensionalContentControlsPartial />
+
+
+## Review system requirements
+
+<table>
+    <tr>
+        <th>Minimum</th>
+        <th>Recommended</th>
+    </tr>
+    <tr>
+      <td>
+        <ul> 
+          <li><strong>OS</strong>: 64-bit Linux, Mac OS X 10.14+, Windows 64-bit</li> 
+          <li><strong>CPU</strong>: Intel Core i5–760 or AMD FX-8100 or better</li> 
+          <li><strong>Memory</strong>: 8GB RAM</li> 
+          <li><strong>Storage</strong>: SSD with 20GB+ available</li> 
+          <li><strong>Internet</strong>: Broadband connection</li> 
+          <li><strong>Software</strong>: The latest release of <a href='https://docs.docker.com/install/'>Docker</a> installed.</li> 
+        </ul> 
+      </td>
+      <td>
+        <ul> 
+          <li><strong>CPU</strong>: Intel Core i7–4770 or AMD FX-8310 or better</li> 
+          <li><strong>Memory</strong>: 16GB RAM</li> 
+          <li><strong>Storage</strong>: SSD with 100GB+ available</li> 
+        </ul> 
+      </td>
+    </tr> 
+</table>
+
+
+## Download the Prysm Docker images
+
+First, ensure that you're running the most recent version of Docker:
+
+```text
+docker -v
+```
+
+Next, pull the Prysm images:
+
+```text
+## stable, without Busybox debugging tools
+docker pull gcr.io/prysmaticlabs/prysm/validator:stable
+docker pull gcr.io/prysmaticlabs/prysm/beacon-chain:stable
+
+## latest, without Busybox debugging tools
+docker pull gcr.io/prysmaticlabs/prysm/validator:latest
+docker pull gcr.io/prysmaticlabs/prysm/beacon-chain:latest
+
+## latest, with Busybox debugging tools
+docker pull gcr.io/prysmaticlabs/prysm/validator:latest-alpine
+docker pull gcr.io/prysmaticlabs/prysm/beacon-chain:latest-alpine
+```
+
+These commands will automatically install dependencies. 
+
+
+## Configure ports (optional)
+
+We recommend opening up ports `tcp/13000` and `udp/12000` on your router and firewall to improve peer-to-peer connectivity. Refer to your operating system and router documentation for port configuration instructions. With this complete, appending `--p2p-host-ip=$(curl -s ident.me)` to your beacon node startup command will configure Prysm to use your newly opened ports.
+
+<div class='hide-tabs'>
+
+## Run a beacon node
+
+:::info Knowledge Check
+
+**Not familiar with nodes, networks, and related terminology?** Consider reading [Nodes and networks](../concepts/nodes-networks.md) before proceeding. 
+
+:::
+
+If you're not already running an execution node, refer to our [Quickstart](/docs/install/install-with-script) for beginner-friendly execution node installation instructions.
+
+Next, use Docker to tell your beacon node to connect to your local execution node. Note that `<YOUR_ETH_EXECUTION_NODE_ENDPOINT>` is either an HTTP endpoint `http://host:port` or an IPC path such as `/path/to/geth.ipc`.
 
 <Tabs
-  groupId="operating-systems"
-  defaultValue="lin"
+  groupId="os"
+  defaultValue="others"
   values={[
-    {label: 'Linux', value: 'lin'},
-    {label: 'Windows', value: 'win'},
-    {label: 'MacOS', value: 'mac'},
+    {label: 'Linux, MacOS, Arm64', value: 'others'},
+    {label: 'Windows', value: 'win'}
   ]
 }>
-<TabItem value="lin">
-
-1. Ensure you are running the most recent version of Docker by issuing the command:
-
-```text
-docker -v
-```
-
-2. Ensure that your user is a member of the `docker` group by issuing the command, where `username` is your user:
-
-```text
-sudo usermod -aG docker username
-```
-
-Any changes made will take effect when your user next logs in.
-
-3. To pull the Prysm images, issue the following commands:
-
-```text
-docker pull gcr.io/prysmaticlabs/prysm/validator:stable
-docker pull gcr.io/prysmaticlabs/prysm/beacon-chain:stable
-```
-
-
-This process will also install any related dependencies.
-
-:::tip Pro-Tip
-For advanced users, the beacon-chain and validator images with debugging tools bundled in can be fetched instead by appending `-alpine` to the end of the images in the `pull` commands above. For example: `docker pull .../prysm/validator:latest-alpine`.
-:::
-
-Below are various methods of controlling the beacon node in Docker installations.
-
-The beacon node can be halted by either using `Ctrl+c` or with the command:
-
-```text
-docker stop beacon-node
-```
-
-To restart the beacon node, issue the following command:
-
-```text
-docker start -ai beacon-node
-```
-
-To delete a corrupted container, issue the following command:
-
-```text
-docker rm beacon-node
-```
-
-To recreate a deleted container and refresh the chain database, issue the start command with an additional `--clear-db` parameter where <YOUR_ETH_EXECUTION_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`:
-
-```text
-docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node \
-  gcr.io/prysmaticlabs/prysm/beacon-chain:stable \
-  --datadir=/data \
-  --clear-db \
-  --rpc-host=0.0.0.0 \
-  --monitoring-host=0.0.0.0 \
-  --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT>
-```
-
-</TabItem>
-<TabItem value="win">
-
-1. Ensure you are running the most recent version of Docker by issuing the command:
-
-```text
-docker -v
-```
-
-2. To pull the Prysm images, issue the following commands:
-
-```text
-docker pull gcr.io/prysmaticlabs/prysm/validator:stable
-docker pull gcr.io/prysmaticlabs/prysm/beacon-chain:stable
-```
-
-This process will also install any related dependencies. For advanced users, the beacon-chain and validator images with debugging tools bundled in can be fetched instead by appending `-alpine` to the end of the images in the `pull` commands above. For example: `docker pull .../prysm/validator:latest-alpine`.
-
-:::tip Pro-Tip
-It is recommended to open up port tcp/13000 and udp/12000 on your local router to improve connectivity and receive more peers from the network. To do so, navigate to `192.168.0.1` in your browser and login if required. Follow along with the interface to modify your routers firewall settings. When this task is completed, append the parameter`--p2p-host-ip=$(curl -s ident.me)` to your selected beacon startup command presented in this section to use the newly opened port.
-:::
-
-Below are various methods of controlling the beacon node in Docker installations.
-
-The beacon node can be halted by either using `Ctrl+c` or with the command:
-
-```text
-docker stop beacon-node
-```
-
-To restart the beacon node, issue the following command:
-
-```text
-docker start -ai beacon-node
-```
-
-To delete a corrupted container, issue the following command:
-
-```text
-docker rm beacon-node
-```
-
-To recreate a deleted container and refresh the chain database, issue the start command with an additional `--clear-db` parameter where <YOUR_ETH_EXECUTION_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`:
-
-```text
-docker run -it -v %LOCALAPPDATA%\Eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node gcr.io/prysmaticlabs/prysm/beacon-chain:latest --datadir=/data --clear-db --monitoring-host=0.0.0.0 --rpc-host=0.0.0.0 --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT>
-```
-
-</TabItem>
-<TabItem value="mac">
-
-1. Ensure you are running the most recent version of Docker by issuing the command:
-
-```text
-docker -v
-```
-
-2. To pull the Prysm images, issue the following commands:
-
-```text
-docker pull gcr.io/prysmaticlabs/prysm/validator:stable
-docker pull gcr.io/prysmaticlabs/prysm/beacon-chain:stable
-```
-
-This process will also install any related dependencies. For advanced users, the beacon-chain and validator images with Busybox debugging tools bundled in can be fetched instead by appending `-alpine` to the end of the images in the `pull` commands above. For example: `docker pull .../prysm/validator:latest-alpine`.
-
-Below are various methods of controlling the beacon node in Docker installations.
-
-The beacon node can be halted by either using `Ctrl+c` or with the command:
-
-```text
-docker stop beacon-node
-```
-
-To restart the beacon node, issue the following command:
-
-```text
-docker start -ai beacon-node
-```
-
-To delete a corrupted container, issue the following command:
-
-```text
-docker rm beacon-node
-```
-
-To recreate a deleted container and refresh the chain database, issue the start command with an additional `--clear-db` parameter where <YOUR_ETH_EXECUTION_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`:
-
-```text
-docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node \
-  gcr.io/prysmaticlabs/prysm/beacon-chain:latest \
-  --datadir=/data \
-  --clear-db \
-  --rpc-host=0.0.0.0 \
-  --monitoring-host=0.0.0.0 \
-  --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT>
-```
-
-
-</TabItem>
-</Tabs>
-
-### Before you begin: pick your network
-
-When running a Prysm **beacon node** or **validator**, you can choose to run in the **main network** which has real assets at stake, or in a **test network** which is used by developers and stakers that might want to gain some confidence before depositing 32 ETH to validate. The currently supported networks in Prysm are:
-
-* [Mainnet](https://launchpad.ethereum.org): the current, live version of Ethereum proof-of-stake with billions of dollars' worth of real ETH at stake
-* [Goerli-Prater testnet](https://goerli.launchpad.ethereum.org/en/): a staging testnet for developers and validators who want to try things out before using the real mainnet
-* [Ropsten testnet](https://ropsten.launchpad.ethereum.org): a consensus-layer staging testnet created specifically to help developers and validators test the Merge using execution-layer Ropsten testnet
-
-
-:::tip Using testnets
-
-**Mainnet** is enabled by default in all Prysm commands. If you want to use a **testnet**, add `--prater` or `--ropsten` to all Prysm commands within this document.
-
-:::
-
-
-## Running a Beacon Node
-
-### Step 1: Set up an execution node endpoint
-
-First, let's run a beacon node connected to the main Ethereum network. To run a beacon node, you will need access to an execution client software. We have dedicated instructions for this [here](/docs/execution-node/configuring-for-prysm).
-
-### Step 2: Sync your beacon node
-
-<Tabs
-  groupId="operating-systems"
-  defaultValue="lin"
-  values={[
-    {label: 'Linux', value: 'lin'},
-    {label: 'Windows', value: 'win'},
-    {label: 'MacOS', value: 'mac'},
-  ]
-}>
-<TabItem value="lin">
-
-Note: <YOUR_ETH_EXECUTION_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`.
-
-**Mainnet**
+<TabItem value="others">
+
+<Tabs groupId="network" defaultValue="mainnet" values={[
+        {label: 'Mainnet', value: 'mainnet'},
+        {label: 'Goerli-Prater', value: 'goerli-prater'},
+        {label: 'Sepolia', value: 'sepolia'},
+        {label: 'Ropsten', value: 'ropsten'}
+    ]}>
+      <TabItem value="mainnet">
 
 ```text
 docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node \
@@ -275,9 +129,10 @@ docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/u
   --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT>
 ```
 
-**Prater**
+  </TabItem>
+      <TabItem value="goerli-prater">
 
-Download the genesis state from [github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz](https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz) to a local file, then run
+Download the Goerli-Prater genesis state from [Github](https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz) to a local file. Then issue the following command:
 
 ```text
 docker run -it -v $HOME/.eth2:/data -v /path/to/genesis.ssz:/genesis/genesis.ssz -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node \
@@ -290,9 +145,26 @@ docker run -it -v $HOME/.eth2:/data -v /path/to/genesis.ssz:/genesis/genesis.ssz
   --prater
 ```
 
-**Ropsten**
+  </TabItem>
+      <TabItem value="sepolia">
 
-Download the genesis state from [github.com/eth-clients/merge-testnets/blob/main/ropsten-beacon-chain/genesis.ssz](https://github.com/eth-clients/merge-testnets/blob/main/ropsten-beacon-chain/genesis.ssz) to a local file, then run
+Download the Sepolia genesis state from [Github](https://github.com/eth-clients/merge-testnets/blob/main/sepolia/genesis.ssz) to a local file, then run
+
+```text
+docker run -it -v $HOME/.eth2:/data -v /path/to/genesis.ssz:/genesis/genesis.ssz -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node \
+  gcr.io/prysmaticlabs/prysm/beacon-chain@sha256:bf9b95661c71ad60f633ee14cf352a668d550076471154cf80dfef8fce0bb41e \
+  --datadir=/data \
+  --rpc-host=0.0.0.0 \
+  --monitoring-host=0.0.0.0 \
+  --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> \
+  --genesis-state=/genesis/genesis.ssz \
+  --sepolia
+```
+
+  </TabItem>
+      <TabItem value="ropsten">
+
+Download the Ropsten genesis state from [Github](https://github.com/eth-clients/merge-testnets/blob/main/ropsten-beacon-chain/genesis.ssz) to a local file, then run
 
 ```text
 docker run -it -v $HOME/.eth2:/data -v /path/to/genesis.ssz:/genesis/genesis.ssz -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node \
@@ -305,114 +177,73 @@ docker run -it -v $HOME/.eth2:/data -v /path/to/genesis.ssz:/genesis/genesis.ssz
   --ropsten
 ```
 
+  </TabItem>
+    </Tabs>
+
+
 
 </TabItem>
 <TabItem value="win">
 
-Note: <YOUR_ETH_EXECUTION_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`.
+To ensure that your Docker image has access to a data directory, mount a local drive to your container. Right click your Docker tray icon -> `Settings` -> `Shared Drives` -> select your drive -> `Apply`. Next, create a directory named `/prysm/` within your shared drive. This folder will be used as a local data directory for Prysm. This guide assumes that `C:` is the drive you've selected:
 
-1. You will need to share the local drive you wish to mount to to container \(e.g. C:\).
-   1. Enter Docker settings \(right click the tray icon\)
-   2. Click 'Shared Drives'
-   3. Select a drive to share
-   4. Click 'Apply'
-2. You will next need to create a directory named `/prysm/` within your selected shared Drive. This folder will be used as a local data directory for [beacon node](/docs/how-prysm-works/beacon-node) chain data as well as account and keystore information required by the validator. Docker **will not** create this directory if it does not exist already. For the purposes of these instructions, it is assumed that `C:` is your prior-selected shared Drive.
-3. To run the beacon node, issue the following command where <YOUR_ETH_EXECUTION_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`:
-
-**Mainnet**
+<Tabs groupId="network" defaultValue="mainnet" values={[
+        {label: 'Mainnet', value: 'mainnet'},
+        {label: 'Goerli-Prater', value: 'goerli-prater'},
+        {label: 'Sepolia', value: 'sepolia'},
+        {label: 'Ropsten', value: 'ropsten'}
+    ]}>
+      <TabItem value="mainnet">
 
 ```text
 docker run -it -v %LOCALAPPDATA%\Eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp gcr.io/prysmaticlabs/prysm/beacon-chain:stable --datadir=/data --rpc-host=0.0.0.0 --monitoring-host=0.0.0.0 --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT>
 ```
 
-This will sync up the beacon node with the latest cannonical head block in the network. The Docker `-d` flag can be appended before the `-v` flag to launch the process in a detached terminal window.
+  </TabItem>
+      <TabItem value="goerli-prater">
 
-**Prater**
-
-Download the genesis state from [github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz](https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz) to a local file, then run
-
+Download the Goerli-Prater genesis state from [Github](https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz) to a local file. Then issue the following command:
 
 ```text
 docker run -it -v %LOCALAPPDATA%\Eth2:/data -v \path\to\genesis.ssz:/genesis/genesis.ssz -p 4000:4000 -p 13000:13000 -p 12000:12000/udp gcr.io/prysmaticlabs/prysm/beacon-chain:stable --datadir=/data --rpc-host=0.0.0.0 --monitoring-host=0.0.0.0 --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> --genesis-state=/genesis/genesis.ssz --prater
 ```
 
-**Ropsten**
+  </TabItem>
+      <TabItem value="sepolia">
 
-Download the genesis state from [github.com/eth-clients/merge-testnets/blob/main/ropsten-beacon-chain/genesis.ssz](https://github.com/eth-clients/merge-testnets/blob/main/ropsten-beacon-chain/genesis.ssz) to a local file, then run
+Download the Sepolia genesis state from [Github](https://github.com/eth-clients/merge-testnets/blob/main/sepolia/genesis.ssz) to a local file, then run
 
+```text
+docker run -it -v %LOCALAPPDATA%\Eth2:/data -v \path\to\genesis.ssz:/genesis/genesis.ssz -p 4000:4000 -p 13000:13000 -p 12000:12000/udp gcr.io/prysmaticlabs/prysm/beacon-chain@sha256:bf9b95661c71ad60f633ee14cf352a668d550076471154cf80dfef8fce0bb41e --datadir=/data --rpc-host=0.0.0.0 --monitoring-host=0.0.0.0 --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> --genesis-state=/genesis/genesis.ssz --sepolia
+```
+
+  </TabItem>
+      <TabItem value="ropsten">
+
+Download the Ropsten genesis state from [Github](https://github.com/eth-clients/merge-testnets/blob/main/ropsten-beacon-chain/genesis.ssz) to a local file, then run
 
 ```text
 docker run -it -v %LOCALAPPDATA%\Eth2:/data -v \path\to\genesis.ssz:/genesis/genesis.ssz -p 4000:4000 -p 13000:13000 -p 12000:12000/udp gcr.io/prysmaticlabs/prysm/beacon-chain@sha256:bf9b95661c71ad60f633ee14cf352a668d550076471154cf80dfef8fce0bb41e --datadir=/data --rpc-host=0.0.0.0 --monitoring-host=0.0.0.0 --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> --genesis-state=/genesis/genesis.ssz --ropsten
 ```
 
-</TabItem>
-<TabItem value="mac">
 
-Note: <YOUR_ETH_EXECUTION_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`.
-
-**Mainnet**
-
-```text
-docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node \
-  gcr.io/prysmaticlabs/prysm/beacon-chain:stable \
-  --datadir=/data \
-  --rpc-host=0.0.0.0 \
-  --monitoring-host=0.0.0.0 \
-  --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT>
-```
-
-**Prater**
-
-Download the genesis state from [github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz](https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz) to a local file, then run
-
-```text
-docker run -it -v $HOME/.eth2:/data -v /path/to/genesis.ssz:/genesis/genesis.ssz -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node \
-  gcr.io/prysmaticlabs/prysm/beacon-chain:stable \
-  --datadir=/data \
-  --rpc-host=0.0.0.0 \
-  --monitoring-host=0.0.0.0 \
-  --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> \
-  --genesis-state=/genesis/genesis.ssz \
-  --prater
-```
-
-**Ropsten**
-
-Download the genesis state from [github.com/eth-clients/merge-testnets/blob/main/ropsten-beacon-chain/genesis.ssz](https://github.com/eth-clients/merge-testnets/blob/main/ropsten-beacon-chain/genesis.ssz) to a local file, then run
-
-```text
-docker run -it -v $HOME/.eth2:/data -v /path/to/genesis.ssz:/genesis/genesis.ssz -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node \
-  gcr.io/prysmaticlabs/prysm/beacon-chain@sha256:bf9b95661c71ad60f633ee14cf352a668d550076471154cf80dfef8fce0bb41e \
-  --datadir=/data \
-  --rpc-host=0.0.0.0 \
-  --monitoring-host=0.0.0.0 \
-  --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> \
-  --genesis-state=/genesis/genesis.ssz \
-  --ropsten
-```
+  </TabItem>
+    </Tabs>
 
 </TabItem>
 </Tabs>
 
-## Running a Validator
+## Run a validator
 
-A validator is an optional process that can be attached to a running beacon node to stake your ETH and participate in the chain's consensus. It is the analogue of a **miner** from proof-of-work-based systems.
+import SingletonWarningPartial from '@site/docs/partials/_singleton-warning-partial.md';
 
-:::tip Using testnets
+<SingletonWarningPartial />
 
-**Never deposit real ETH into testnet deposit contracts!** Every testnet has its own test ETH that should be used instead.
+import FullSyncWarningPartial from '@site/docs/partials/_full-sync-warning-partial.md';
 
-:::
+<FullSyncWarningPartial />
 
-### Step 1: Ensure your beacon node is synced
-
-An important step in the process is ensuring your beacon node is all set up before trying to run a validator. This is because after your validator is inducted into the participating validator set, it is expected to begin performing its duties almost right away. It is important to run a validator with a node that is synchronized to the chain head so you can start earning ETH instead of losing it.
-
-:::tip Syncing your node
-The beacon-chain node you are using should be **completely synced** before submitting your deposit. You may **incur minor inactivity balance penalties** if the validator is unable to perform its duties by the time the deposit is processed and activated by the beacon chain network.
-:::
-
-You can check the sync status of your node with the following command on most systems:
+Check the sync status of your node with the following command:
 
 ```text
 curl http://localhost:3500/eth/v1alpha1/node/syncing
@@ -424,37 +255,37 @@ If your node is done synchronizing, you will see the response:
 {"syncing":false}%
 ```
 
-### Step 2: Send your validator deposit via the Ethereum validator launchpad
+### Stake your ETH
 
-:::danger Ensure You Are Not Being Scammed
-The correct address for the launchpad is https://launchpad.ethereum.org and the only, official validator deposit contract is [0x00000000219ab540356cbb839cbe05303d7705fa](https://etherscan.io/address/0x00000000219ab540356cbb839cbe05303d7705fa). Do not send ETH directly to the contract, and only join by using the Ethereum.org launchpad.
+:::danger Exercise caution
+
+The Ethereum launchpad URL is `https://launchpad.ethereum.org` and the only, official validator deposit contract is [0x00000000219ab540356cbb839cbe05303d7705fa](https://etherscan.io/address/0x00000000219ab540356cbb839cbe05303d7705fa). Don't send ETH directly to the contract - deposit your stake through Ethereum.org launchpad.
+
 :::
 
-The [Mainnet Launchpad](https://launchpad.ethereum.org/summary) is the most secure way to deposit your 32 ETH to become a validator. If you want to participate in the **testnet**, you can navigate to the [Goerli-Prater](https://goerli.launchpad.ethereum.org/en/) or [Ropsten](https://ropsten.launchpad.ethereum.org/summary) launchpads.
+Use the [Mainnet Launchpad](https://launchpad.ethereum.org/summary) to deposit your 32 ETH. If you want to participate in the **testnet**, use the [Goerli-Prater](https://goerli.launchpad.ethereum.org/en/) or [Ropsten](https://ropsten.launchpad.ethereum.org/summary) launchpads.
 
-Throughout the process, you'll be asked to generate new validator credentials using the official Ethereum deposit command-line-tool [here](https://github.com/ethereum/eth2.0-deposit-cli). Make sure you use the `mainnet` option when generating keys with the deposit CLI. During the process, you will have generated a `validator_keys` folder under the `eth2.0-deposit-cli` directory. You can import all of your validator keys into Prysm from that folder in the next step.
+Throughout the process, you'll be asked to generate new validator credentials using the [official Ethereum deposit command-line-tool](https://github.com/ethereum/eth2.0-deposit-cli). Make sure you use the `mainnet` option when generating keys with the deposit CLI. During the process, you will have generated a `validator_keys` folder under the `eth2.0-deposit-cli` directory. You can import all of your validator keys into Prysm from that folder in the next step.
 
-### Step 3: Import keystores into Prysm
+### Import keystores
 
-For this step, you'll need to copy the path to the `validator_keys` folder under the `eth2.0-deposit-cli` directory you created during the launchpad process. For example, if your eth2.0-deposit-cli installation is in your `$HOME` (or `%LOCALAPPDATA%` on Windows) directory, you can then run the following commands for your operating system
+Copy the path to the `validator_keys` folder under the `eth2.0-deposit-cli` directory you created during the launchpad process and issue the following command:
 
 <Tabs
-  groupId="operating-systems"
-  defaultValue="lin"
+  groupId="os"
+  defaultValue="others"
   values={[
-    {label: 'Linux', value: 'lin'},
-    {label: 'Windows', value: 'win'},
-    {label: 'MacOS', value: 'mac'},
+    {label: 'Linux, MacOS, Arm64', value: 'others'},
+    {label: 'Windows', value: 'win'}
   ]
 }>
-<TabItem value="lin">
-
-Note: You will be asked to do a one time acknowledgement of our [Terms of Use](https://github.com/prysmaticlabs/prysm/blob/master/TERMS_OF_SERVICE.md). You can also read the legal terms first, then confirm them via a flag using --accept-terms-of-use in both your beacon node and validator.
+<TabItem value="others">
 
 ```text
 docker run -it -v $HOME/eth2.0-deposit-cli/validator_keys:/keys \
   -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
   --name validator \
+  --accept-terms-of-use \
   gcr.io/prysmaticlabs/prysm/validator:stable \
   accounts import --keys-dir=/keys --wallet-dir=/wallet
 ```
@@ -462,43 +293,28 @@ docker run -it -v $HOME/eth2.0-deposit-cli/validator_keys:/keys \
 </TabItem>
 <TabItem value="win">
 
-Note: You will be asked to do a one time acknowledgement of our [Terms of Use](https://github.com/prysmaticlabs/prysm/blob/master/TERMS_OF_SERVICE.md). You can also read the legal terms first, then confirm them via a flag using --accept-terms-of-use in both your beacon node and validator.
-
 ```text
-docker run -it -v %LOCALAPPDATA%\eth2.0-deposit-cli\validator_keys:/keys -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet gcr.io/prysmaticlabs/prysm/validator:stable accounts import --keys-dir=/keys --wallet-dir=/wallet
+docker run -it -v %LOCALAPPDATA%\eth2.0-deposit-cli\validator_keys:/keys -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet gcr.io/prysmaticlabs/prysm/validator:stable accounts import --keys-dir=/keys --wallet-dir=/wallet --accept-terms-of-use
 ```
 
 </TabItem>
-<TabItem value="mac">
 
-Note: You will be asked to do a one time acknowledgement of our [Terms of Use](https://github.com/prysmaticlabs/prysm/blob/master/TERMS_OF_SERVICE.md). You can also read the legal terms first, then confirm them via a flag using --accept-terms-of-use in both your beacon node and validator.
-
-```text
-docker run -it -v $HOME/eth2.0-deposit-cli/validator_keys:/keys \
-  -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
-  --name validator \
-  gcr.io/prysmaticlabs/prysm/validator:stable \
-  accounts import --keys-dir=/keys --wallet-dir=/wallet
-```
-
-</TabItem>
 </Tabs>
 
-### Step 4: Run your Prysm validator
+### Run validator
 
-Open a second terminal window. Depending on your platform, issue the appropriate command from the examples below to start the validator.
+Open a second terminal window. Issue the following command to start the validator:
+
 
 <Tabs
-  groupId="operating-systems"
-  defaultValue="lin"
+  groupId="os"
+  defaultValue="others"
   values={[
-    {label: 'Linux', value: 'lin'},
-    {label: 'Windows', value: 'win'},
-    {label: 'MacOS', value: 'mac'},
-    {label: 'Arm64', value: 'arm'},
+    {label: 'Linux, MacOS, Arm64', value: 'others'},
+    {label: 'Windows', value: 'win'}
   ]
 }>
-<TabItem value="lin">
+<TabItem value="others">
 
 ```text
 docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
@@ -518,37 +334,69 @@ docker run -it -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet -v %LOCA
 ```
 
 </TabItem>
-<TabItem value="mac">
 
-```text
-docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \ 
-  -v $HOME/Eth2:/validatorDB \
-  --network="host" --name validator-import \
-  gcr.io/prysmaticlabs/prysm/validator:stable \
-  --beacon-rpc-provider=127.0.0.1:4000 \
-  --wallet-dir=/wallet \
-  --datadir=/validatorDB
-```
-
-</TabItem>
 </Tabs>
 
 
-### Step 5: Wait for your validator assignment
+:::tip Congratulations! 
 
-Please note it will take time for nodes in the network to process a deposit. To understand the timeline of becoming a validator and how long it takes on average, please read [this knowledge base](https://kb.beaconcha.in/ethereum-2.0-depositing). In the meantime, leave both terminal windows open and running; once the validator is activated by the ETH2 network, it will immediately begin receiving tasks and performing its responsibilities. If the eth2 chain has not yet started, the validator will be ready to start proposing blocks and signing votes as soon as the genesis time is reached.
+You’re now running a <strong>full Ethereum node</strong> and a <strong>validator</strong>.
 
-To check on the status of your validator, we recommend checking out the popular block explorers: [beaconcha.in](https://beaconcha.in) by Bitfly and [beacon.etherscan.io](https://beacon.etherscan.io) by the Etherscan team.
+:::
 
-![image](https://i.imgur.com/CDNc6Ft.png)
+It can a long time (from days to months) for your validator to become fully activated. To learn more about the validator activation process, see [Deposit Process](https://kb.beaconcha.in/ethereum-2.0-depositing). You can paste your validator's public key (available in your `deposit_data-*.json` file) into a blockchain explorer to check the status of your validator:
 
-## Advanced Configuration and Key Management
+ - [Beaconcha.in (Mainnet)](https://beaconcha.in) 
+ - [Beaconcha.in (Prater)](https://prater.beaconcha.in/)
+ - [Beaconcha.in (Ropsten)](https://ropsten.beaconcha.in/)
 
-For running an advanced wallet setups, our documentation includes comprehensive guides as to how to use the wallet built into Prysm to recover another wallet, use a remote signing server, and more. You can read more about it [here](https://docs.prylabs.network/docs/wallet/introduction).
+In the meantime, you should leave your **execution client**, **beacon node**, and **validator client** terminal windows open and running. Once your validator is activated, it will automatically begin proposing and validating blocks.
 
-**Congratulations, you are now fully participating in Ethereum proof-of-stake**
 
-**Still have questions?**  Stop by our [Discord](https://discord.gg/prysmaticlabs) for further assistance!
+## Appendix A: Manage Prysm with Docker
+
+To interact with your beacon node through Docker, use one of the following commands:
+
+ - Halt: `docker stop beacon-node` or `Ctrl+c`
+ - Restart: `docker start -ai beacon-node`
+ - Delete: `docker rm beacon-node`
+
+To recreate a deleted container and refresh the chain database, issue the start command with an additional `--clear-db` parameter, where `<YOUR_ETH_EXECUTION_NODE_ENDPOINT>` is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8551` for Geth) or an IPC path such as `/path/to/geth.ipc`:
+
+
+<Tabs
+  groupId="os"
+  defaultValue="others"
+  values={[
+    {label: 'Linux, MacOS, Arm64', value: 'others'},
+    {label: 'Windows', value: 'win'}
+  ]
+}>
+<TabItem value="others">
+
+```text
+docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node \
+  gcr.io/prysmaticlabs/prysm/beacon-chain:latest \
+  --datadir=/data \
+  --clear-db \
+  --rpc-host=0.0.0.0 \
+  --monitoring-host=0.0.0.0 \
+  --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT>
+```
+
+</TabItem>
+<TabItem value="win">
+
+```text
+docker run -it -v %LOCALAPPDATA%\Eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node gcr.io/prysmaticlabs/prysm/beacon-chain:latest --datadir=/data --clear-db --monitoring-host=0.0.0.0 --rpc-host=0.0.0.0 --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT>
+```
+
+</TabItem>
+
+</Tabs>
+
+</div>
+</div>
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
