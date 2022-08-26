@@ -235,11 +235,11 @@ docker run -it -v %LOCALAPPDATA%\Eth2:/data -v \path\to\genesis.ssz:/genesis/gen
 
 ## Run a validator
 
-import SingletonWarningPartial from '@site/docs/install/partials/_singleton-warning-partial.md';
+import SingletonWarningPartial from '@site/docs/partials/_singleton-warning-partial.md';
 
 <SingletonWarningPartial />
 
-import FullSyncWarningPartial from '@site/docs/install/partials/_full-sync-warning-partial.md';
+import FullSyncWarningPartial from '@site/docs/partials/_full-sync-warning-partial.md';
 
 <FullSyncWarningPartial />
 
