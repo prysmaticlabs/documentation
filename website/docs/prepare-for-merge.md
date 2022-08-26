@@ -13,6 +13,12 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 <HeaderBadgesWidget commaDelimitedContributors="Mick,Raul,James" lastVerifiedDateString="August 24th, 2022" lastVerifiedVersionString="v3.0.0" />
 
 
+:::info New user?
+
+This guidance is targeted at users who are already running Prysm. If you're starting from scratch, see our [Quickstart](./install/install-with-script.md).
+
+:::
+
 ## Select a configuration
 
 import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidimensional-content-controls-partial.md';
@@ -21,12 +27,6 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
 
 
 ## Merge preparation checklist
-
-:::info New user?
-
-This guidance is targeted at users who are already running Prysm. If you're starting from scratch, see our [Quickstart](./install/install-with-script.md).
-
-:::
 
 
 <div class='hide-tabs mergeprep-guide'>
