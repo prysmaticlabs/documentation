@@ -2,10 +2,11 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs groupId="execution-clients" defaultValue="geth" values={[
-{label: 'Nethermind', value: 'nethermind'},
-{label: 'Besu', value: 'besu'},
-{label: 'Geth', value: 'geth'}
-]}>
+    {label: 'Execution client:', value: 'label'},
+    {label: 'Nethermind', value: 'nethermind'},
+    {label: 'Besu', value: 'besu'},
+    {label: 'Geth', value: 'geth'}
+    ]}>
   <TabItem value="nethermind">
    <p class='hidden-in-jwt-guide'>Download the latest stable release of Nethermind for your operating system from the <a href='https://downloads.nethermind.io/'>Nethermind downloads page</a>. Extract the contents into your <code>execution</code> folder. Run the following command to start your execution node:</p>
     <Tabs groupId="network" defaultValue="mainnet" values={[

@@ -1,5 +1,1 @@
-:::caution Fully Synced Beacon Node Required
-
-Verify that your **beacon node and execution node are both fully synced** before proceeding. If you're not fully synced, you risk being penalized and losing some of your staked ETH.
-
-:::
+<div class="admonition admonition-caution alert alert--warning"><div class="admonition-content"><p>Verify that your <strong>beacon node and execution node are both fully synced</strong> before proceeding. If you're not fully synced, you risk being penalized and losing some of your staked ETH.</p></div></div>

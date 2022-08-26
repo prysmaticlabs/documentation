@@ -12,20 +12,18 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <HeaderBadgesWidget commaDelimitedContributors="Mick,Raul,James" lastVerifiedDateString="August 24th, 2022" lastVerifiedVersionString="v3.0.0" />
 
+
 :::info New user?
 
 This guidance is targeted at users who are already running Prysm. If you're starting from scratch, see our [Quickstart](./install/install-with-script.md).
 
 :::
 
-<p><strong>Select a configuration</strong>:</p>
+## Select a configuration
 
 import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidimensional-content-controls-partial.md';
 
 <MultidimensionalContentControlsPartial />
-
-
-[Prysm v3](https://github.com/prysmaticlabs/prysm/releases/tag/v3.0.0) can be used to run a node on Mainnet using Merge-ready configuration. In this guide, we'll step through the tasks that you need to complete in order to be Merge-prepared. 
 
 
 ## Merge preparation checklist
@@ -75,6 +73,7 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
             <label for="cl-3">Use a Merge-ready version of your execution client</label>
             <p>
             <Tabs className="with-label" groupId="execution-clients" values={[
+                {label: 'Execution client:', value: 'label'},
                 {label: 'Geth', value: 'geth'},
                 {label: 'Nethermind', value: 'nethermind'},
                 {label: 'Besu', value: 'besu'}
@@ -164,6 +163,7 @@ import QuickstartPrereqsPartial from '@site/docs/install/partials/_quickstart-pr
 
 
 <Tabs className="with-label hidden-in-jwt-guide" groupId="protocol" values={[
+        {label: 'EN-BN connection:', value: 'label'},
         {label: 'HTTP-JWT', value: 'jwt'},
         {label: 'IPC', value: 'ipc'}
     ]}>

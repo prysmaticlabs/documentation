@@ -11,10 +11,11 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 ## Check status: Execution client
 
 <Tabs groupId="execution-clients" defaultValue="geth" values={[
-{label: 'Nethermind', value: 'nethermind'},
-{label: 'Besu', value: 'besu'},
-{label: 'Geth', value: 'geth'}
-]}>
+  {label: 'Execution client:', value: 'label'},
+  {label: 'Nethermind', value: 'nethermind'},
+  {label: 'Besu', value: 'besu'},
+  {label: 'Geth', value: 'geth'}
+  ]}>
 
   <TabItem value="nethermind">
     <p>You can <a href='https://docs.nethermind.io/nethermind/ethereum-client/monitoring-node-health'>check your Nethermind execution node's sync status</a> by navigating to <a href='http://localhost:8545/healthchecks-ui'><code>http://localhost:8545/healthchecks-ui</code></a> or by running the following command from a separate terminal window:</p>
