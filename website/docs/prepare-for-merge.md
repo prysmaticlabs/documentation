@@ -149,7 +149,7 @@ Let's step through each of these changes.
 
 <h2>Configure beacon node</h2>
 
-If you're running a validator, specifying a <code>suggested-fee-recipient</code> wallet address will allow you to earn what were previously miner transaction fee tips. See <a href='./execution-node/fee-recipient.md'>How to configure Fee Recipient</a> for more information about this feature.
+If you're running a validator, specifying a <code>suggested-fee-recipient</code> wallet address will allow you to earn what were previously miner transaction fee tips. See <a href='./execution-node/fee-recipient'>How to configure Fee Recipient</a> for more information about this feature.
 
 </TabItem>
 </Tabs>
