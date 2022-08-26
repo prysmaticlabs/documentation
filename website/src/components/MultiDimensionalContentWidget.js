@@ -68,8 +68,15 @@ export const MultiDimensionalContentWidget = () => {
 			if (jwtOnly()) {
 				selectByText('HTTP-JWT');
 				disableByText('IPC');
-			} else if (isViewingMergePrep() && isSelectedByText('Geth')) {
-				selectByText('HTTP-JWT');
+			} else if (isViewingMergePrep()) {
+				// tempfix
+				setTimeout(function () {
+					if (isSelectedByText('HTTP-JWT')) {
+						selectByText('HTTP-JWT');
+					} else {
+						selectByText('IPC');
+					}
+				}, 500)
 			}
 
 			tabElements.forEach(element => {
