@@ -120,14 +120,14 @@ a {
 .footnote:hover {
   color: #000 !important;
 }
-.markdown > h2 {
+.markdown h2 {
   font-size: 1.5rem !important;
   margin-top: 15px !important;
 }
-.markdown > h3 {
+.markdown h3 {
   font-size: 1.2rem !important;
 }
-.markdown > img {
+.markdown img {
   display: block;
   margin: auto;
   margin-top: 15px;
