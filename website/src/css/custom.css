@@ -93,9 +93,9 @@ html[data-theme='dark'] .quickstart-tabs .tabs__item:first-child:hover {
 .quickstart-tabs .with-label .tabs__item.tabs__item--active {
   font-size: 13px;
   font-weight: 500;
-  background-color: var(--tab-active-color);
-  border-color: var(--tab-active-color);
-  color: white;
+  background-color: var(--tab-active-color) !important;
+  border-color: var(--tab-active-color) !important;
+  color: white !important;
 }
 .quickstart-tabs .with-label .tabs__item.disabled-tab {
   color: #999 !important;
