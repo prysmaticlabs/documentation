@@ -140,24 +140,28 @@ a {
 
 
 
-.markdown>h2 {
-    font-size: 1.5rem !important;
+.markdown {
+    >h2 {
+        font-size: 1.5rem !important;
+        margin-top: 15px !important;
+    }
+
+    >h3 {
+        font-size: 1.2rem !important;
+    }
+
+    >img {
+        display: block;
+        margin: auto;
+        margin-top: 15px;
+        margin-bottom: 20px;
+        border-radius: 6px;
+        overflow: hidden;
+        width: auto;
+        max-width: 100%;
+    }
 }
 
-.markdown>h3 {
-    font-size: 1.2rem !important;
-}
-
-.markdown>img {
-    display: block;
-    margin: auto;
-    margin-top: 15px;
-    margin-bottom: 20px;
-    border-radius: 6px;
-    overflow: hidden;
-    width: auto;
-    max-width: 100%;
-}
 
 .panel {
     border-top: 2px solid #ddd;
