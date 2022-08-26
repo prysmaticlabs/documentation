@@ -72,15 +72,15 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
         <div class='guidance-container'>
             <label for="cl-3">Use a Merge-ready version of your execution client</label>
             <p>
-            <Tabs className="with-label" groupId="execution-clients" values={[
+                <Tabs className="with-label" groupId="execution-clients" defaultValue="geth" values={[
                 {label: 'Execution client:', value: 'label'},
                 {label: 'Geth', value: 'geth'},
                 {label: 'Nethermind', value: 'nethermind'},
                 {label: 'Besu', value: 'besu'}
                 ]}>
-                <TabItem value="geth">See <a href='https://github.com/ethereum/go-ethereum/releases'>Geth's releases page</a> and join <a href='https://discord.gg/invite/nthXNEv'>their Discord</a> to stay up to date as we approach Mainnet Merge.</TabItem>
-                <TabItem value="nethermind">See <a href='https://github.com/NethermindEth/nethermind/releases'>Nethermind's releases page</a> and join <a href='https://discord.com/invite/DedCdvDaNm'>their Discord</a> to stay up to date as we approach Mainnet Merge.</TabItem>
-                <TabItem value="besu">See Besu's <a href='https://github.com/hyperledger/besu/releases'>releases page</a> and join <a href='https://discord.com/invite/hyperledger'>their Discord</a> to stay up to date as we approach Mainnet Merge.</TabItem>
+                    <TabItem value="geth">See <a href='https://github.com/ethereum/go-ethereum/releases'>Geth's releases page</a> and join <a href='https://discord.gg/invite/nthXNEv'>their Discord</a> to stay up to date as we approach Mainnet Merge.</TabItem>
+                    <TabItem value="nethermind">See <a href='https://github.com/NethermindEth/nethermind/releases'>Nethermind's releases page</a> and join <a href='https://discord.com/invite/DedCdvDaNm'>their Discord</a> to stay up to date as we approach Mainnet Merge.</TabItem>
+                    <TabItem value="besu">See Besu's <a href='https://github.com/hyperledger/besu/releases'>releases page</a> and join <a href='https://discord.com/invite/hyperledger'>their Discord</a> to stay up to date as we approach Mainnet Merge.</TabItem>
                 </Tabs>
             </p>
         </div>
@@ -162,7 +162,7 @@ import QuickstartPrereqsPartial from '@site/docs/install/partials/_quickstart-pr
 <QuickstartPrereqsPartial />
 
 
-<Tabs className="with-label hidden-in-jwt-guide" groupId="protocol" values={[
+<Tabs className="with-label hidden-in-jwt-guide" defaultValue="jwt" groupId="protocol" values={[
         {label: 'EN-BN connection:', value: 'label'},
         {label: 'HTTP-JWT', value: 'jwt'},
         {label: 'IPC', value: 'ipc'}
