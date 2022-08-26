@@ -52,43 +52,55 @@ export const MultiDimensionalContentWidget = () => {
 		return isOnMergePrepPage;
 	}
 
+	let scrollDownASmidge = function () {
+		window.scrollBy(0, 10)
+	}
+
 	let bindTabs = function () {
 		setTimeout(function () {
-			var tabElements = getAllTabElements();
-			if (isSelectedByText('Besu') || isSelectedByText('Nethermind')) {
-				selectByText('HTTP-JWT');
-				disableByText('IPC');
-			}
-			if (isSelectedByText('IPC')) {
+			// when the page loads, in some cases, we need to click tabs because of how docusaurus renders embedded tab content
+			// clicking is what shows the content
+			// but clicking scrolls the user
+			// so if you link someone to a section, they open the page, it initially displays the section, then scrolls
+			// this prevents that behavior
+			scrollDownASmidge();
+			if (false) {
 				if (isSelectedByText('Besu') || isSelectedByText('Nethermind')) {
-					selectByText('Geth');
+					selectByText('HTTP-JWT');
+					disableByText('IPC');
 				}
-				disableByText('Besu');
-				disableByText('Nethermind');
-			}
-			if (jwtOnly()) {
-				selectByText('HTTP-JWT');
-				disableByText('IPC');
-			}
-
-			if (isViewingMergePrep()) {
-				// tempfix
-				setTimeout(function () {
-					if (isSelectedByText('HTTP-JWT')) {
-						selectByText('HTTP-JWT');
-					} else {
-						selectByText('IPC');
-					}
-					if (isSelectedByText('Geth')) {
+				if (isSelectedByText('IPC')) {
+					if (isSelectedByText('Besu') || isSelectedByText('Nethermind')) {
 						selectByText('Geth');
-					} else if (isSelectedByText('Nethermind')) {
-						selectByText('Nethermind');
-					} else if (isSelectedByText('Besu')) {
-						selectByText('Besu');
 					}
-				}, 10)
+					disableByText('Besu');
+					disableByText('Nethermind');
+				}
+				if (jwtOnly()) {
+					selectByText('HTTP-JWT');
+					disableByText('IPC');
+				}
+
+				if (isViewingMergePrep()) {
+					// tempfix
+					setTimeout(function () {
+						if (isSelectedByText('HTTP-JWT')) {
+							selectByText('HTTP-JWT');
+						} else {
+							selectByText('IPC');
+						}
+						if (isSelectedByText('Geth')) {
+							selectByText('Geth');
+						} else if (isSelectedByText('Nethermind')) {
+							selectByText('Nethermind');
+						} else if (isSelectedByText('Besu')) {
+							selectByText('Besu');
+						}
+					}, 10)
+				}
 			}
 
+			var tabElements = getAllTabElements();
 			tabElements.forEach(element => {
 				var isLabel = element.textContent.indexOf(":") > -1;
 
