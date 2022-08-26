@@ -30,7 +30,9 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
 
 ## Merge preparation checklist
 
- - **Review v3 release notes in detail**: [Prysm v3](https://github.com/prysmaticlabs/prysm/releases/tag/v3.0.0) includes updates, deprecations, and breaking changes. Review the [release notes](https://github.com/prysmaticlabs/prysm/releases/tag/v3.0.0) to understand how this release impacts your configuration.
+<div class='checklist'>
+
+ - <input type="checkbox"> **Review v3 release notes in detail**: [Prysm v3](https://github.com/prysmaticlabs/prysm/releases/tag/v3.0.0) includes updates, deprecations, and breaking changes. Review the [release notes](https://github.com/prysmaticlabs/prysm/releases/tag/v3.0.0) to understand how this release impacts your configuration.
  - **Review "Before and now"**: The next section gives you a high-level overview of the items that you need to keep in mind while preparing for The Merge. See the Ethereum.org [Merge announcement](https://blog.ethereum.org/2022/08/24/mainnet-merge-announcement/) and [Merge readiness checklist](https://launchpad.ethereum.org/en/merge-readiness) for more detailed information.
  - **Ensure that you're using a network-compatible version of your execution client**: You may need to use a prerelease version of execution client software. Refer to your execution client software documentation for the latest guidance.
  - **If you're using Geth, update now**: Geth 1.10.22 contains a regression. Update to <a href='https://github.com/ethereum/go-ethereum/releases'>v1.10.23+</a> if you haven't already.
@@ -40,6 +42,10 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
  - **Update your firewall**: If you're not using IPC to connect your beacon node and execution node, your beacon node will need to connect to its execution node on port `8551`. Previously, port `8545` was used. Ensure that your firewall rules are updated accordingly.
   - **Configure a fee recipient address**: If you're running a validator, configuring a fee recipient address will allow you to earn what were previously miners' transaction fee tips. Instructions are provided below, and also here: [Configure a Fee Recipient address](./execution-node/fee-recipient.md).
  - (Power users) Review the Ethereum Launchpad's [Merge config checklist](https://notes.ethereum.org/@launchpad/merge-configuration-checklist).
+
+
+</div>
+
 
 
 ## The Merge: Before and now
