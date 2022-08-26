@@ -110,6 +110,7 @@ If you're running a validator, specifying a <code>suggested-fee-recipient</code>
 
 Other than ensuring that you're using the [latest stable Prysm release](https://github.com/prysmaticlabs/prysm/releases), validator client configuration doesn't need to be updated for The Merge. A fee recipient address can optionally be configured on your validator node if you want redundancy or multiple fee recipient addresses. See [Configure a Fee Recipient address](./execution-node/fee-recipient.md) to learn more.
 
+<div class="admonition admonition-caution alert alert--caution"><div class="admonition-content"><p>Ensure that you're not running multiple instances of the same validator, especially if you're using scripts or other forms of automation. If the Ethereum network detects two instances of the same validator public key submitting proposals, attestations, or votes, it assumes malicious intent and may slash offending validators.</p></div></div>
 
 ## Upgrade hardware
 
