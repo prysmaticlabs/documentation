@@ -37,8 +37,22 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
     <div class='task'>
         <div class='input-container'><input id="cl-1" type='checkbox'/><span class='done'></span></div>
         <div class='guidance-container'>
-            <label for="cl-1">Review v3 release notes</label>
-            <p><a href='https://github.com/prysmaticlabs/prysm/releases/tag/v3.0.0'>Prysm v3</a> includes updates, deprecations, and breaking changes. Review the <a href='https://github.com/prysmaticlabs/prysm/releases/tag/v3.0.0'>release notes</a> to understand how this release impacts your configuration.</p>
+            <label for="cl-1">Use Prysm v3.0.0</label>
+            <p><a href='https://github.com/prysmaticlabs/prysm/releases/tag/v3.0.0'>Prysm v3</a> is a <strong>Merge-ready release</strong> that includes updates, deprecations, and breaking changes. Review the <a href='https://github.com/prysmaticlabs/prysm/releases/tag/v3.0.0'>release notes</a> to understand how this release impacts your configuration.</p>
+        </div>
+    </div>
+    <div class='task'>
+        <div class='input-container'><input id="cl-5" type='checkbox'/><span class='done'></span></div>
+        <div class='guidance-container'>
+            <label for="cl-5">Unset <code>USE_PRYSM_VERSION</code></label>
+            <p>If you've ever set the <code>USE_PRYSM_VERSION</code> environment variable, either clear this variable via <code>UNSET USE_PRYSM_VERSION</code> (Linux/MacOS) / <code>set USE_PRYSM_VERSION=</code> (Windows), or use <code>set USE_PRYSM_VERSION=v3.0.0</code> to ensure that Prysm uses Prysm v3.</p>
+        </div>
+    </div>
+        <div class='task'>
+        <div class='input-container'><input id="cl-6" type='checkbox'/><span class='done'></span></div>
+        <div class='guidance-container'>
+            <label for="cl-6">Verify your Prysm version</label>
+            <p>Verify that you're running Prysm <code>v3.0.0</code> by issuing the following command: <code>prysm.sh beacon-chain --version</code> (Linux) <code>prysm.bat beacon-chain --version</code> (Windows).</p>
         </div>
     </div>
     <div class='task'>
@@ -46,6 +60,13 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
         <div class='guidance-container'>
             <label for="cl-2">Review "Before and now"</label>
             <p>The <a href='#the-merge-before-and-now'>Before and now</a> section below gives you a high-level overview of the items that you need to keep in mind while preparing for The Merge. See the Ethereum.org <a href='https://blog.ethereum.org/2022/08/24/mainnet-merge-announcement/'>Merge announcement</a> and <a href='https://launchpad.ethereum.org/en/merge-readiness'>Merge readiness checklist</a> for more detailed information.</p>
+        </div>
+    </div>
+    <div class='task'>
+        <div class='input-container'><input id="cl-prereqs" type='checkbox'/><span class='done'></span></div>
+        <div class='guidance-container'>
+            <label for="cl-prereqs">Review system requirements</label>
+            <p>Review the <a href='#post-merge-system-requirements'>post-Merge system requirements</a> section below to ensure that your configuration will support The Merge. Note that <strong>a 2TB+ SSD is highly recommended</strong>.</p>
         </div>
     </div>
     <div class='task'>
@@ -73,20 +94,6 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
         <TabItem value="nethermind"></TabItem>
         <TabItem value="besu"></TabItem>
     </Tabs>
-    <div class='task'>
-        <div class='input-container'><input id="cl-5" type='checkbox'/><span class='done'></span></div>
-        <div class='guidance-container'>
-            <label for="cl-5">Use Prysm v3.0.0</label>
-            <p>If you've ever set the <code>USE_PRYSM_VERSION</code> environment variable, either clear this variable via <code>UNSET USE_PRYSM_VERSION</code> (Linux/MacOS) / <code>set USE_PRYSM_VERSION=</code> (Windows), or use <code>set USE_PRYSM_VERSION=v3.0.0</code> to ensure that Prysm uses Prysm v3.</p>
-        </div>
-    </div>
-    <div class='task'>
-        <div class='input-container'><input id="cl-6" type='checkbox'/><span class='done'></span></div>
-        <div class='guidance-container'>
-            <label for="cl-6">Verify your Prysm version</label>
-            <p>Verify that you're running Prysm <code>v3.0.0</code> by issuing the following command: <code>prysm.sh beacon-chain --version</code> (Linux) <code>prysm.bat beacon-chain --version</code> (Windows).</p>
-        </div>
-    </div>
     <Tabs className="with-label" groupId="protocol" defaultValue="jwt" values={[
         {label: 'EN-BN connection:', value: 'label'},
         {label: 'HTTP-JWT', value: 'jwt'},
@@ -117,6 +124,13 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
             <p>If you're running a validator, configuring a fee recipient address will allow you to earn what were previously miners' transaction fee tips. Instructions are provided below, and also here: <a href='./execution-node/fee-recipient'>Configure a Fee Recipient address</a>.</p>
         </div>
     </div>
+    <div class='task'>
+        <div class='input-container'><input id="cl-expected" type='checkbox'/><span class='done'></span></div>
+        <div class='guidance-container'>
+            <label for="cl-expected">Ensure that Prysm is running as expected</label>
+            <p>See <a href='./monitoring/checking-status'>Check node and validator status</a> to learn how to check the status of your execution node, beacon node, and validator node.</p>
+        </div>
+    </div>
 </div>
 
 <br />
@@ -136,7 +150,12 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
 <br />
 
 
-Let's step through each of these changes.
+## Post-Merge system requirements
+
+import QuickstartPrereqsPartial from '@site/docs/install/partials/_quickstart-prereqs.md';
+
+<QuickstartPrereqsPartial />
+
 
 <Tabs className="with-label hidden-in-jwt-guide" groupId="protocol" values={[
         {label: 'HTTP-JWT', value: 'jwt'},
@@ -144,7 +163,7 @@ Let's step through each of these changes.
     ]}>
     <TabItem value="jwt">
     
-<h2>Create JWT token</h2>
+<h2>Configure JWT authentication</h2>
 
 <JwtGuidancePartial />
 
@@ -153,7 +172,7 @@ Let's step through each of these changes.
 <TabItem value="ipc">
 
 
-## Configure execution node
+## Prepare execution node
 
 <p>Ensure that your execution node has been updated to the latest available stable version.</p>
 
@@ -169,7 +188,7 @@ Let's step through each of these changes.
 
 <br />
 
-<h2>Configure beacon node</h2>
+<h2>Prepare beacon node</h2>
 
 If you're running a validator, specifying a <code>suggested-fee-recipient</code> wallet address will allow you to earn what were previously miner transaction fee tips. See <a href='./execution-node/fee-recipient'>How to configure Fee Recipient</a> for more information about this feature.
 
@@ -178,7 +197,7 @@ If you're running a validator, specifying a <code>suggested-fee-recipient</code>
 
 </div>
 
-## Configure validator node (optional)
+## Prepare validator node (optional)
 
 Other than ensuring that you're using the [latest stable Prysm release](https://github.com/prysmaticlabs/prysm/releases), validator client configuration doesn't need to be updated for The Merge. A fee recipient address can optionally be configured on your validator node if you want redundancy or multiple fee recipient addresses. See [Configure a Fee Recipient address](./execution-node/fee-recipient.md) to learn more.
 
