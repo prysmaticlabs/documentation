@@ -45,7 +45,7 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
         <div class='input-container'><input id="cl-5" type='checkbox'/><span class='done'></span></div>
         <div class='guidance-container'>
             <label for="cl-5">Unset <code>USE_PRYSM_VERSION</code></label>
-            <p>If you've ever set the <code>USE_PRYSM_VERSION</code> environment variable, either clear this variable via <code>UNSET USE_PRYSM_VERSION</code> (Linux/MacOS) / <code>set USE_PRYSM_VERSION=</code> (Windows), or use <code>set USE_PRYSM_VERSION=v3.0.0</code> to ensure that Prysm uses Prysm v3.</p>
+            <p>If you've ever set the <code>USE_PRYSM_VERSION</code> environment variable to use a release candidate, either clear it via <code>UNSET USE_PRYSM_VERSION</code> (Linux/MacOS) or <code>set USE_PRYSM_VERSION=</code> (Windows).</p>
         </div>
     </div>
         <div class='task'>
