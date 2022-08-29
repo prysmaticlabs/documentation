@@ -11,17 +11,20 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <HeaderBadgesWidget commaDelimitedContributors="Raul,Mick" />
 
-Prysm can be installed on Windows, GNU/Linux, and MacOS systems with Docker. We use [Bazel](https://bazel.build) to push preconfigured Docker images to a publicly accessible Google Cloud container registry. 
-
 :::tip Not familiar with docker? Try our quickstart
 
 This guidance is targeted at users who are already comfortable with Docker. See our [Quickstart](/docs/install/install-with-script) for beginner-friendly installation instructions.
 
 :::
 
+
+
+
 <div class='docker-guide'>
 
-<p><strong>Select a configuration</strong>:</p>
+## Select a configuration
+
+You can use [Docker](https://www.docker.com/) to install Prysm on Windows, GNU/Linux, and MacOS systems. Select a configuration before proceeding:
 
 import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidimensional-content-controls-partial.md';
 
@@ -29,6 +32,8 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
 
 
 ## Review system requirements
+
+
 
 <table>
     <tr>
@@ -397,6 +402,13 @@ docker run -it -v %LOCALAPPDATA%\Eth2:/data -p 4000:4000 -p 13000:13000 -p 12000
 
 </div>
 </div>
+
+
+## Frequently asked questions 
+
+**Q: How are Prysm's Docker images published?** <br />
+We use [Bazel](https://bazel.build) to publish preconfigured Docker images to [a publicly accessible Google Cloud container registry](https://console.cloud.google.com/gcr/images/prysmaticlabs/GLOBAL/prysm).
+
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
