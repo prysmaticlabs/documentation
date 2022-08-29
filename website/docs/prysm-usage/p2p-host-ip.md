@@ -19,7 +19,7 @@ The following ports are "interesting" when using default, Merge-ready configurat
     </tr>
     <tr>
       <td><strong><code>8551</code></strong></td>
-      <td><strong>Execution node Engine API endpoint</strong><br />Prysm (and other consensus clients) interact with the <a href='https://github.com/ethereum/execution-apis/blob/main/src/engine/specification.md'>Engine API</a> using this port. This lets execution clients and consensus clients communicate about chain status, facilitating Ethereum's transition to proof-of-stake consensus.</td>
+      <td><strong>Execution node Engine API endpoint</strong><br />Prysm (and other consensus clients) interact with the <a href='https://github.com/ethereum/execution-apis/blob/main/src/engine/specification.md'>Engine API</a> using this port. This lets execution clients and consensus clients communicate with one another about chain status, facilitating Ethereum's transition to proof-of-stake consensus.</td>
     </tr> 
     <tr>
       <td><strong><code>8545</code></strong></td>
