@@ -10,7 +10,6 @@ sidebar_label: Configure ports and firewalls
 
 :::
 
-
 The following ports are "interesting" when using default, Merge-ready configuration:
 
 <table>
@@ -20,7 +19,7 @@ The following ports are "interesting" when using default, Merge-ready configurat
     </tr>
     <tr>
       <td><strong><code>8551</code></strong></td>
-      <td><strong>Execution node Engine API endpoint</strong><br />Prysm (and other consensus clients) interact with the <a href='https://github.com/ethereum/execution-apis/blob/main/src/engine/specification.md'>Engine API</a> using this port. This allows execution clients and consensus clients communicate about chain status, facilitating Ethereum's transition to proof-of-stake consensus.</td>
+      <td><strong>Execution node Engine API endpoint</strong><br />Prysm (and other consensus clients) interact with the <a href='https://github.com/ethereum/execution-apis/blob/main/src/engine/specification.md'>Engine API</a> using this port. This lets execution clients and consensus clients communicate about chain status, facilitating Ethereum's transition to proof-of-stake consensus.</td>
     </tr> 
     <tr>
       <td><strong><code>8545</code></strong></td>
@@ -43,7 +42,6 @@ The following ports are "interesting" when using default, Merge-ready configurat
       <td><strong>Beacon-validator connection endpoint</strong><br/>Your validator uses this port to connect to your beacon node via <a href='https://grpc.io'></a>.</td>
     </tr> 
 </table>
-
 
 
 
