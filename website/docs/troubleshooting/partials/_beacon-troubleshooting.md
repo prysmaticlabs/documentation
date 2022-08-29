@@ -30,7 +30,7 @@
     </tr>
     <tr>
       <td><code>could not process block: could not process block header: parent root 0x... does not match the latest block header signing root in state</code></td>
-      <td></td>
+      <td>This error is being actively investigated. See <a href='https://github.com/prysmaticlabs/prysm/issues/11279'>this open issue</a> for more information.</td>
     </tr>
     <tr>
       <td><code>Could not check configuration values between execution and consensus client" error="method not found" prefix=powchain</code></td>
