@@ -14,6 +14,7 @@ Validators are rewarded for maintaining highly available, trustworthy validator 
 
 Note that this document is subject to the [Prysmatic Labs Terms of Service](https://github.com/prysmaticlabs/prysm/blob/master/TERMS_OF_SERVICE.md).
 
+<!--todo: copy reduction -->
 
 ## Security principles
 The following principles apply generally to staking security:
