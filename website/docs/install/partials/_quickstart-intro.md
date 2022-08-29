@@ -9,7 +9,9 @@ This guidance is targeted at new users. If you're already running a node, see [P
 
 <br />
 
-First, <strong>select a quickstart configuration</strong>. If you're looking for the simplest configuration, select `Geth` and `IPC`:
+## Select a configuration 
+
+If you're looking for the simplest configuration, select `Geth` and `IPC`:
 
 import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidimensional-content-controls-partial.md';
 

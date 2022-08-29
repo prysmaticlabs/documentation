@@ -43,7 +43,6 @@ import {MultiDimensionalContentWidget} from '@site/src/components/MultiDimension
   <TabItem value="besu"></TabItem>
 </Tabs>
 
-
 <Tabs className="with-label hidden-in-jwt-guide hidden-in-docker-guide" groupId="protocol" defaultValue="jwt" values={[
         {label: 'EN-BN connection:', value: 'label'},
         {label: 'HTTP-JWT', value: 'jwt'},
