@@ -169,17 +169,29 @@ curl -H "Content-Type: application/json" -X POST http://localhost:8545 -d "{""js
     </Tabs>
     <p>See Geth's <a href='https://geth.ethereum.org/docs/interface/command-line-options'>command-line options</a> for parameter definitions.</p>
     <div class='hidden-in-mergeprep-guide'>
-       <p>Your Geth execution node will begin syncing. You can check your Geth execution node's sync status by running the following commands from a separate terminal window:</p>
-
+        <p>Your Geth execution node will begin syncing. You can check your Geth execution node's sync status by running the following commands from a separate terminal window:</p>
+        <Tabs className="with-label" groupId="os" defaultValue="others" values={[
+          {label: 'Operating system:', value: 'label'},
+          {label: 'Linux, MacOS, Arm64', value: 'others'},
+          {label: 'Windows', value: 'win'}
+          ]}>
+        <TabItem className="unclickable-element" value="label"></TabItem>
+        <TabItem value="others">
+        
 ```
-## if you're not using Windows
 geth attach 
-
-## if you're using Windows
+```
+        
+  </TabItem>
+  <TabItem value="win">
+        
+```
 geth attach ipc:\\.\pipe\geth.ipc
 eth.syncing
 ```
-
+        
+  </TabItem>
+  </Tabs>
   <p>A sync status of <code>false</code> indicates that your node is fully synced. You can proceed to the next step while Geth syncs.</p>
     </div> 
   </TabItem>
