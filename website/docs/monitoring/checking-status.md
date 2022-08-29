@@ -8,6 +8,16 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <HeaderBadgesWidget />
 
+
+## Select a configuration 
+
+import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidimensional-content-controls-partial.md';
+
+<MultidimensionalContentControlsPartial />
+
+<div class='hide-tabs'>
+
+
 ## Check status: Execution client
 
 <Tabs groupId="execution-clients" defaultValue="geth" values={[
@@ -36,16 +46,32 @@ curl -H "Content-Type: application/json" -X POST http://localhost:8545 -d "{""js
   <p>A sync status of <code>false</code> indicates that your node is fully synced.</p>
   </TabItem>
   <TabItem value="geth">
-    <p>You can <a href='https://besu.hyperledger.org/en/stable/Reference/API-Methods/#eth_syncing'>check your Geth execution node's sync status</a> by running the following commands from a separate terminal window:</p>
 
+ <p>Your Geth execution node will begin syncing. To check its sync status, issue the following commands from a separate terminal window:</p>
+        <Tabs className="with-label" groupId="os" defaultValue="others" values={[
+          {label: 'Operating system:', value: 'label'},
+          {label: 'Linux, MacOS, Arm64', value: 'others'},
+          {label: 'Windows', value: 'win'}
+          ]}>
+        <TabItem className="unclickable-element" value="label"></TabItem>
+        <TabItem value="others">
+        
 ```
-## if you're not using Windows
 geth attach
-
-## if you're using Windows 
-geth attach ipc:\\.\pipe\geth.ipc 
 eth.syncing
 ```
+        
+  </TabItem>
+  <TabItem value="win">
+        
+```
+geth attach ipc:\\.\pipe\geth.ipc
+eth.syncing
+```
+        
+  </TabItem>
+  </Tabs>
+
 
   <p>A sync status of <code>false</code> indicates that your node is fully synced.</p>
   </TabItem>
@@ -74,6 +100,9 @@ Paste your validator's public key (available in your `deposit_data-*.json` file)
  - [Beaconcha.in (Mainnet)](https://beaconcha.in) 
  - [Beaconcha.in (Prater)](https://prater.beaconcha.in/)
  - [Beaconcha.in (Ropsten)](https://ropsten.beaconcha.in/)
+
+
+</div>
 
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
