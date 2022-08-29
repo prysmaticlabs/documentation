@@ -177,15 +177,15 @@ curl -H "Content-Type: application/json" -X POST http://localhost:8545 -d "{""js
           {label: 'Windows', value: 'win'}
           ]}>
         <TabItem className="unclickable-element" value="label"></TabItem>
-        <TabItem value="others">
+  <TabItem value="others">
 
 
 ```
 geth attach
 eth.syncing
 ```
-  
-        
+
+
   </TabItem>
   <TabItem value="win">
 
