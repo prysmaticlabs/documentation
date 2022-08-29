@@ -1,8 +1,46 @@
 ---
 id: p2p-host-ip
-title: Configure ports and firewalls for improved network connectivity
-sidebar_label: Configure ports and firewalls for improved network connectivity
+title: Configure ports and firewalls for peer-to-peer connectivity
+sidebar_label: Configure ports and firewalls
 ---
+
+The following ports are "interesting" when using default, Merge-ready configuration:
+
+<table>
+    <tr>
+        <th style={{minWidth: 180 + 'px'}}>Port</th> 
+        <th>Why it's interesting</th>
+    </tr>
+    <tr>
+      <td><strong><code>8551</code></strong></td>
+      <td><strong>Engine API endpoint</strong><br />Your execution node exposes this port so Prysm (and other consensus clients) can interact with the <a href='https://github.com/ethereum/execution-apis/blob/main/src/engine/specification.md'>Engine API</a>, a new service that facilitates Ethereum's transition to proof-of-stake consensus.</td>
+    </tr> 
+    <tr>
+      <td><strong><code>8545</code></strong></td>
+      <td><strong>Query API endpoint</strong><br />Your execution node exposes this so you (and apps) can check node status, query chain data, and even submit transactions.</td>
+    </tr>
+    <tr>
+      <td><strong><code>3500</code></strong></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><strong><code>13000</code></strong></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><strong><code>12000</code></strong></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><strong><code>4000</code></strong></td>
+      <td></td>
+    </tr> 
+</table>
+
+
+
+
+
 
 The Ethereum proof-of-stake [architecture](/docs/how-prysm-works/architecture-overview/) is designed to be a fully peer to peer (P2P) network.  This section describes how to configure the Prysm [beacon node](/docs/how-prysm-works/beacon-node) and your network to optimise the number of peers that you communicate with on the Ethereum proof-of-stake etwork.  Increasing peers helps improve the health, performance and stablity of nodes and the overall network.
 
