@@ -145,6 +145,13 @@ a {
   width: auto;
   max-width: 100%;
 }
+.markdown table {
+  font-size: 15px;
+}
+.markdown table ul,
+.markdown table ol {
+  margin-top: 10px;
+}
 .markdown .tabpanel p:last-child {
   margin-bottom: 0 !important;
 }
