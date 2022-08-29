@@ -18,8 +18,6 @@ This guidance is targeted at users who are already comfortable with Docker. See 
 :::
 
 
-
-
 <div class='docker-guide'>
 
 ## Select a configuration
