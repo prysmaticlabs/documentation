@@ -36,4 +36,8 @@
       <td><code>Could not check configuration values between execution and consensus client" error="method not found" prefix=powchain</code></td>
       <td>Geth users see this error when they're using an old Geth binary. Make sure you're using the <a href='https://github.com/ethereum/go-ethereum/releases'>latest stable release of Geth</a>.</td>
     </tr>
+    <tr>
+      <td><code>weak-subjectivity-checkpoint not provided. Prysm recommends providing a weak subjectivity checkpoint for nodes synced from genesis</code></td>
+      <td>You can safely ignore this warning - it will be removed in an upcoming Prysm release. See <a href='../../prysm-usage/checkpoint-sync'>How to configure Checkpoint Sync</a> if you'd like to learn more about checkpoint sync.</td>
+    </tr>
 </table>
