@@ -3,7 +3,7 @@ import TabItem from '@theme/TabItem';
 
 :::info Already running a node?
 
-This guidance is targeted at new users. If you're already running a node, see [Prepare for The Merge](../prepare-for-merge.md).
+This guidance is targeted at new users. If you're already running a node, see [Prepare for The Merge](../../prepare-for-merge.md).
 
 :::
 
@@ -31,7 +31,7 @@ At a high level, we'll walk through the following flow:
 
 :::info Knowledge Check
 
-**Not familiar with nodes, networks, and related terminology?** Consider reading [Nodes and networks](../concepts/nodes-networks.md) before proceeding. 
+**Not familiar with nodes, networks, and related terminology?** Consider reading [Nodes and networks](../../concepts/nodes-networks.md) before proceeding. 
 
 :::
 
