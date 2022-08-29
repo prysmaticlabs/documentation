@@ -8,6 +8,12 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <HeaderBadgesWidget />
 
+:::info Looking for an end-to-end guide?
+
+This guidance is targeted at new users who only need to configure an execution client. If you're already running a node, see [Prepare for The Merge](../../prepare-for-merge.md). If you're looking for end-to-end configuration guidance, refer to our [Quickstart](../install/install-with-script.md).
+
+:::
+
 <div class='execution-node-guide'>
 
 ## Select a configuration 
