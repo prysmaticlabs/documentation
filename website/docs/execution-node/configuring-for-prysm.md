@@ -1,7 +1,7 @@
 ---
 id: configuring-for-prysm
 title: Configure an execution node for Prysm
-sidebar_label: Configure an execution node for Prysm
+sidebar_label: Configure execution node
 ---
 
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
