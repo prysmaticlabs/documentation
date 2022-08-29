@@ -10,6 +10,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 Common troubleshooting scenarios and solutions are detailed below. Feel free reach out to us on [Discord](https://discord.gg/prysmaticlabs) for additional troubleshooting support.
 
+<!--todo: make embeddable -->
 
 ## Validator node
 
