@@ -4,6 +4,13 @@ title: Configure ports and firewalls for peer-to-peer connectivity
 sidebar_label: Configure ports and firewalls
 ---
 
+:::info Knowledge Check
+
+**Not familiar with nodes, networks, and related terminology?** Consider reading [Nodes and networks](../../concepts/nodes-networks.md) before proceeding. 
+
+:::
+
+
 The following ports are "interesting" when using default, Merge-ready configuration:
 
 <table>
@@ -13,33 +20,61 @@ The following ports are "interesting" when using default, Merge-ready configurat
     </tr>
     <tr>
       <td><strong><code>8551</code></strong></td>
-      <td><strong>Engine API endpoint</strong><br />Your execution node exposes this port so Prysm (and other consensus clients) can interact with the <a href='https://github.com/ethereum/execution-apis/blob/main/src/engine/specification.md'>Engine API</a>, a new service that facilitates Ethereum's transition to proof-of-stake consensus.</td>
+      <td><strong>Execution node Engine API endpoint</strong><br />Prysm (and other consensus clients) interact with the <a href='https://github.com/ethereum/execution-apis/blob/main/src/engine/specification.md'>Engine API</a> using this port. This allows execution clients and consensus clients communicate about chain status, facilitating Ethereum's transition to proof-of-stake consensus.</td>
     </tr> 
     <tr>
       <td><strong><code>8545</code></strong></td>
-      <td><strong>Query API endpoint</strong><br />Your execution node exposes this so you (and apps) can check node status, query chain data, and even submit transactions.</td>
+      <td><strong>Execution node query API endpoint</strong><br />You (and apps) can use this port to check execution node status, query execution-layer chain data, and even submit transactions.</td>
     </tr>
     <tr>
       <td><strong><code>3500</code></strong></td>
-      <td></td>
+      <td><strong>Beacon node query API endpoint</strong><br />You (and apps) can use this port to check beacon node status and query consensus-layer chain data.</td>
     </tr>
     <tr>
       <td><strong><code>13000</code></strong></td>
-      <td></td>
+      <td><strong>Beacon node peer discovery endpoint (TCP)</strong><br />Your beacon node exposes this TCP port so that other Ethereum nodes can discover your node, request chain data, and provide chain data.</td>
     </tr>
     <tr>
       <td><strong><code>12000</code></strong></td>
-      <td></td>
+      <td><strong>Beacon node peer discovery endpoint (UDP)</strong><br />Your beacon node exposes this UDP port so that other Ethereum nodes can discover your node, request chain data, and provide chain data.</td>
     </tr>
     <tr>
       <td><strong><code>4000</code></strong></td>
-      <td></td>
+      <td><strong>Beacon-validator connection endpoint</strong><br/>Your validator uses this port to connect to your beacon node via <a href='https://grpc.io'></a>.</td>
     </tr> 
 </table>
 
 
 
 
+## Configure 8551
+
+
+## Configure 8545
+
+
+## Configure 3500
+
+
+## Configure TCP/13000 and UDP/12000
+
+
+## Configure 4000
+
+
+
+
+
+By default, the beacon node exposes a [gRPC](https://grpc.io) API on host `127.0.0.1:4000`, which is accessed by the validator client. This is not an HTTP endpoint, so you will not be able to perform API queries via HTTP on that port. However, we also expose a JSON-HTTP endpoint on `127.0.0.1:3500` by default for your needs. If you want to query information such as the chainhead from your local beacon node, you can call:
+
+```
+http://127.0.0.1:3500/eth/v1alpha1/beacon/chainhead
+```
+
+
+
+
+---
 
 
 The Ethereum proof-of-stake [architecture](/docs/how-prysm-works/architecture-overview/) is designed to be a fully peer to peer (P2P) network.  This section describes how to configure the Prysm [beacon node](/docs/how-prysm-works/beacon-node) and your network to optimise the number of peers that you communicate with on the Ethereum proof-of-stake etwork.  Increasing peers helps improve the health, performance and stablity of nodes and the overall network.
@@ -64,7 +99,6 @@ Other participants on the Ethereum proof-of-stake network operate their nodes on
 
 In order for other participants on the Ethereum proof-of-stake network to establish incoming P2P connections with your [beacon node](/docs/how-prysm-works/beacon-node), a number of conditions must be met:
 1. Your public IP address must be known.
-2. The protocol (TCP/UDP) and port number (0-65535) on which your [beacon node](/docs/how-prysm-works/beacon-node) is listening must be known (Default - TCP/13000 and UDP/12000).
 3. All routers & firewalls must be configured to allow incoming traffic on that protocol/port combination.
 
 ## Private IP addresses
