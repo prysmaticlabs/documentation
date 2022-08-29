@@ -24,4 +24,16 @@
       <td><code>Could not read JWT secret</code>, <code>Could not access JWT secret</code></td>
       <td>You, your terminal window, or the script you're using may not have the permissions required in order to read or write your JWT token. Try elevating privileges or running as Administrator (if you're on Windows).</td>
     </tr>
+    <tr>
+      <td><code>could not get ancestor state: failed to unmarshal encoding: incorrect size</code></td>
+      <td>This usually indicates that your beacon node's data has become corrupt. Try restarting your beacon node with a new or cleared data directory. Consider using [Checkpoint Sync](../../prysm-usage/checkpoint-sync.md) to reduce sync time.</td>
+    </tr>
+    <tr>
+      <td><code>could not process block: could not process block header: parent root 0x... does not match the latest block header signing root in state</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><code>Could not check configuration values between execution and consensus client" error="method not found" prefix=powchain</code></td>
+      <td>Geth users see this error when they're using an old Geth binary. Make sure you're using the <a href='https://github.com/ethereum/go-ethereum/releases'>latest stable release of Geth</a>.</td>
+    </tr>
 </table>
