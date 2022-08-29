@@ -15,7 +15,7 @@ The following ports are "interesting" when using default, Merge-ready configurat
 <table>
     <tr>
         <th style={{minWidth: 180 + 'px'}}>Port</th> 
-        <th>Why it's interesting</th>
+        <th>Details</th>
     </tr>
     <tr>
       <td><strong><code>8551</code></strong></td>
