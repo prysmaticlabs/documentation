@@ -38,6 +38,6 @@
     </tr>
     <tr>
       <td><code>weak-subjectivity-checkpoint not provided. Prysm recommends providing a weak subjectivity checkpoint for nodes synced from genesis</code></td>
-      <td>You can safely ignore this warning - it will be removed in an upcoming Prysm release. See <a href='../../prysm-usage/checkpoint-sync'>How to configure Checkpoint Sync</a> if you'd like to learn more about checkpoint sync.</td>
+      <td>You can safely ignore this warning - it will be removed in an upcoming Prysm release. See <a href='../prysm-usage/checkpoint-sync'>How to configure Checkpoint Sync</a> if you'd like to learn more about checkpoint sync.</td>
     </tr>
 </table>
