@@ -180,8 +180,6 @@ docker run -it -v $HOME/.eth2:/data -v /path/to/genesis.ssz:/genesis/genesis.ssz
   </TabItem>
     </Tabs>
 
-
-
 </TabItem>
 <TabItem value="win">
 
