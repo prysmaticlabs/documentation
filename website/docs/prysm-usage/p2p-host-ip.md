@@ -6,7 +6,7 @@ sidebar_label: Configure ports and firewalls
 
 :::info Knowledge Check
 
-**Not familiar with nodes, networks, and related terminology?** Consider reading [Nodes and networks](../../concepts/nodes-networks.md) before proceeding. 
+**Not familiar with nodes, networks, and related terminology?** Consider reading [Nodes and networks](../concepts/nodes-networks.md) before proceeding. 
 
 :::
 
@@ -49,27 +49,47 @@ The following ports are "interesting" when using default, Merge-ready configurat
 
 ## Configure 8551
 
+ - Here's how you can verify that it's working
+ - Here's what to do if it's not
+ - Here's what external nodes need
+
 
 ## Configure 8545
+
+ - Here's how you can verify that it's working
+ - Here's what to do if it's not
+ - Here's what external nodes need
 
 
 ## Configure 3500
 
+ - Here's how you can verify that it's working
+ - Here's what to do if it's not
+ - Here's what external nodes need
 
-## Configure TCP/13000 and UDP/12000
-
-
-## Configure 4000
-
-
-
-
-
-By default, the beacon node exposes a [gRPC](https://grpc.io) API on host `127.0.0.1:4000`, which is accessed by the validator client. This is not an HTTP endpoint, so you will not be able to perform API queries via HTTP on that port. However, we also expose a JSON-HTTP endpoint on `127.0.0.1:3500` by default for your needs. If you want to query information such as the chainhead from your local beacon node, you can call:
+If you want to query information such as the chainhead from your local beacon node, you can call:
 
 ```
 http://127.0.0.1:3500/eth/v1alpha1/beacon/chainhead
 ```
+
+
+## Configure TCP/13000 and UDP/12000
+
+ - Here's how you can verify that it's working
+ - Here's what to do if it's not
+ - Here's what external nodes need
+
+
+## Configure 4000
+
+ - Here's how you can verify that it's working
+ - Here's what to do if it's not
+ - Here's what external nodes need
+
+
+
+By default, the beacon node exposes a [gRPC](https://grpc.io) API on host `127.0.0.1:4000`, which is accessed by the validator client. This is not an HTTP endpoint, so you will not be able to perform API queries via HTTP on that port. However, we also expose a JSON-HTTP endpoint on `127.0.0.1:3500` by default for your needs. 
 
 
 
