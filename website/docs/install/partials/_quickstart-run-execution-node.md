@@ -111,7 +111,8 @@ curl localhost:8545/health
     <p>See Besu's <a href='https://besu.hyperledger.org/en/stable/Reference/CLI/CLI-Syntax/'>command-line options</a> for parameter definitions.</p>
     <div class='hidden-in-mergeprep-guide'>
 
-    <p>Your Besu execution node will begin syncing. You can <a href='https://besu.hyperledger.org/en/stable/Reference/API-Methods/#eth_syncing'>check your Besu execution node's sync status</a> by running the following command from a separate terminal window:</p>
+  <p>Your Besu execution node will begin syncing. You can <a href='https://besu.hyperledger.org/en/stable/Reference/API-Methods/#eth_syncing'>check your Besu execution node's sync status</a> by running the following command from a separate terminal window:</p>
+
 
 ```
 curl -H "Content-Type: application/json" -X POST http://localhost:8545 -d "{""jsonrpc"":""2.0"",""method"":""eth_syncing"",""params"":[],""id"":51}" 
@@ -177,20 +178,24 @@ curl -H "Content-Type: application/json" -X POST http://localhost:8545 -d "{""js
           ]}>
         <TabItem className="unclickable-element" value="label"></TabItem>
         <TabItem value="others">
-        
+
+
 ```
 geth attach
 eth.syncing
 ```
+  
         
   </TabItem>
   <TabItem value="win">
-        
+
+
 ```
 geth attach ipc:\\.\pipe\geth.ipc
 eth.syncing
 ```
-        
+
+
   </TabItem>
   </Tabs>
   <p>A sync status of <code>false</code> indicates that your node is fully synced. You can proceed to the next step while Geth syncs.</p>
