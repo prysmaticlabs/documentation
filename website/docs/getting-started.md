@@ -66,6 +66,10 @@ The following table of contents provides a descriptive overview of Prysm's docum
 <p>After The Merge, Prysm will need to securely connect to a local execution node. This how-to shows you how to form this secure connection using a JWT token.</p>
 </div>
 <div class='panel'>
+<a href='execution-node/authentication'>Configure execution node</a>
+<p>After The Merge, Prysm will need to securely connect to a local execution node. This how-to shows you how to configure Geth, Besu, or Nethermind.</p>
+</div>
+<div class='panel'>
 <a href='prysm-usage/staying-up-to-date'>Update and downgrade Prysm</a>
 <p>Learn how to <strong>keep Prysm updated</strong>, how to downgrade Prysm, and how to use release candidates.</p>
 </div>
@@ -243,7 +247,7 @@ The following table of contents provides a descriptive overview of Prysm's docum
 <a href='devtools/net-design'>Network design</a>
 </div>
 <div class='panel'>
-<a href='devtools/api-middleware'>API middleware</a>
+<a href='devtools/extending-apis'>Extending APIs</a>
 </div>
 <div class='panel'>
 <a href='how-prysm-works/architecture-overview'>Architecture overview</a>
