@@ -11,6 +11,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <HeaderBadgesWidget />
 
+<div class='status-guide'>
 
 ## Select a configuration 
 
@@ -106,6 +107,8 @@ Paste your validator's public key (available in your `deposit_data-*.json` file)
  - [Beaconcha.in (Prater)](https://prater.beaconcha.in/)
  - [Beaconcha.in (Ropsten)](https://ropsten.beaconcha.in/)
 
+
+</div>
 
 </div>
 
