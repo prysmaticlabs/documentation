@@ -200,7 +200,6 @@ Prysm offers a `--weak-subjectivity-checkpoint` flag that allows you to specify 
 
 **Where can I learn more about checkpoint sync?** <br/>
 
- - [Checkpoint sync: Conceptual overview](../concepts/checkpoint-sync-concept.md) for a beginner-friendly conceptual overview
  - [Checkpoint Sync Safety](https://www.symphonious.net/2022/05/21/checkpoint-sync-safety/) by Adrian Sutton
  - [How to: Checkpoint Sync](https://notes.ethereum.org/@launchpad/checkpoint-sync) by members of the Ethereum Foundation
  - [WS sync in practice](https://notes.ethereum.org/@djrtwo/ws-sync-in-practice) by Danny Ryan
