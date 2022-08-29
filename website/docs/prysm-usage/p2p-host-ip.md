@@ -87,12 +87,18 @@ http://127.0.0.1:3500/eth/v1alpha1/beacon/chainhead
 
 
 
+
+
+---
+
+OLD BELOW THIS
+
 By default, the beacon node exposes a [gRPC](https://grpc.io) API on host `127.0.0.1:4000`, which is accessed by the validator client. This is not an HTTP endpoint, so you will not be able to perform API queries via HTTP on that port. However, we also expose a JSON-HTTP endpoint on `127.0.0.1:3500` by default for your needs. 
 
 
 
 
----
+
 
 
 The Ethereum proof-of-stake [architecture](/docs/how-prysm-works/architecture-overview/) is designed to be a fully peer to peer (P2P) network.  This section describes how to configure the Prysm [beacon node](/docs/how-prysm-works/beacon-node) and your network to optimise the number of peers that you communicate with on the Ethereum proof-of-stake etwork.  Increasing peers helps improve the health, performance and stablity of nodes and the overall network.
