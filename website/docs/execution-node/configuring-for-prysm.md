@@ -30,7 +30,7 @@ import QuickstartRunExecutionNodeJWTPartial from '@site/docs/install/partials/_q
 
 <QuickstartRunExecutionNodeJWTPartial />
 
-Congratulations - you’re now running an <strong>execution node</strong> in Ethereum’s execution layer.
+Congratulations - you’re now running an <strong>execution node</strong> that your Prysm beacon node can connect to.
 
 </div>
 
