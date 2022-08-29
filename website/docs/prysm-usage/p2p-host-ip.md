@@ -39,7 +39,7 @@ The following ports are "interesting" when using default, Merge-ready configurat
     </tr>
     <tr>
       <td><strong><code>4000</code></strong></td>
-      <td><strong>Beacon-validator connection endpoint</strong><br/>Your validator uses this port to connect to your beacon node via <a href='https://grpc.io'>GRPC</a>.</td>
+      <td><strong>Beacon-validator connection endpoint</strong><br/>Your validator uses this port to connect to your beacon node via <a href='https://grpc.io'>gRPC</a>.</td>
     </tr> 
 </table>
 
