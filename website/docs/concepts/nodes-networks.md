@@ -19,6 +19,8 @@ Ethereum is a decentralized **network** of **nodes** that communicate via peer-t
 <img style={{maxWidth: 461 + 'px'}} src={NetworkPng} /> 
 
 
+<!--todo: storage requirements -->
+
 ## Nodes
 
 An Ethereum **node** is a running instance of Ethereum's client software. This software is responsible for running the Ethereum blockchain. 
