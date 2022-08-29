@@ -13,6 +13,8 @@ import TabItem from '@theme/TabItem';
 
 #### How do I troubleshoot errors?
 
+TODO: see troubleshooting guidance
+
 If your beacon node or validator logs display an `ERROR`, go to our [open issues](https://github.com/prysmaticlabs/prysm/issues) to see if someone has reported the same problem before. If this doesn't help, note the **Prysm version you're running** and your **operating system**, and then file a bug report [here](https://github.com/prysmaticlabs/prysm/issues/new?assignees=&labels=&template=bug_report.md). You can also ask our community on [discord](https://discord.gg/prysmaticlabs) about your error and we'll take a look as soon as possible.
 
 #### My validator is losing money, what's going on?
