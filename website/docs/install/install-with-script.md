@@ -64,6 +64,7 @@ import QuickstartRunValidatorPartial from '@site/docs/install/partials/_quicksta
 
 ## Frequently asked questions
 
+
 <!-- **I'm new to Ethereum, and I'm a visual learner. Can you show me how these things work?** <br />
 The Beginner's Introduction to Prysm uses diagrams to help you visualize Ethereum's architecture, and Prysm's too. (TODO) -->
 
