@@ -486,10 +486,11 @@ header > h1 {
   display: block;
   font-weight: bold;
 }
-.checklist .task .guidance-container > p {
+.checklist .task .guidance-container > p,
+.checklist .task .guidance-container p {
   font-size: 14px;
   line-height: 20px;
-  margin-bottom: 0;
+  margin-bottom: 0 !important;
 }
 .checklist input {
   margin-right: 5px;
