@@ -40,7 +40,15 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
                 <p>You can <a href='https://docs.nethermind.io/nethermind/ethereum-client/monitoring-node-health'>check your Nethermind execution node's sync status</a> by navigating to <a href='http://localhost:8545/healthchecks-ui'><code>http://localhost:8545/healthchecks-ui</code></a> or by running <code>curl localhost:8545/health</code> from a separate terminal window. A sync status of <code>false</code> indicates that your node is fully synced. </p>
               </TabItem>
               <TabItem value="besu">
-                <p>You can <a href='https://besu.hyperledger.org/en/stable/Reference/API-Methods/#eth_syncing'>check your Besu execution node's sync status</a> by running <code>curl -H "Content-Type: application/json" -X POST http://localhost:8545 -d "&#123;""jsonrpc"":""2.0"",""method"":""eth_syncing"",""params"":[],""id"":51&#125;"</code> from a separate terminal window. A sync status of <code>false</code> indicates that your node is fully synced.</p>
+                <Tabs className="tabgroup-with-label" groupId="os" defaultValue="others" values={[
+                      {label: 'Operating system:', value: 'label'},
+                      {label: 'Linux, MacOS, Arm64', value: 'others'},
+                      {label: 'Windows', value: 'win'}
+                      ]}>
+                    <TabItem className="unclickable-element" value="label"></TabItem>
+                    <TabItem value="others"><p>You can <a href='https://besu.hyperledger.org/en/stable/Reference/API-Methods/#eth_syncing'>check your Besu execution node's sync status</a> by running <code>curl -H 'Content-Type: application/json' -X POST http://localhost:8545 -d '&#123;"jsonrpc":"2.0","method":"eth_syncing","params":[],"id":51&#125;'</code> from a separate terminal window. A sync status of <code>false</code> indicates that your node is fully synced.</p></TabItem>
+                    <TabItem value="win"><p>You can <a href='https://besu.hyperledger.org/en/stable/Reference/API-Methods/#eth_syncing'>check your Besu execution node's sync status</a> by running <code>curl -H "Content-Type: application/json" -X POST http://localhost:8545 -d "&#123;""jsonrpc"":""2.0"",""method"":""eth_syncing"",""params"":[],""id"":51&#125;"</code> from a separate terminal window. A sync status of <code>false</code> indicates that your node is fully synced.</p></TabItem>
+                  </Tabs>
               </TabItem>
               <TabItem value="geth">
                   <Tabs className="tabgroup-with-label" groupId="os" defaultValue="others" values={[
@@ -111,7 +119,7 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
         <div class='input-container'><input id="st-5" type='checkbox'/><span class='done'></span></div>
         <div class='guidance-container'>
             <label for="st-5">5. Beacon node peer connectivity</label>
-            <p>You should periodically see more than a few peers reported through your beacon node's log output. Look for output in the format of <code>peers=12</code>. You can also visit <code>http://localhost:8080/healthz</code> from your browser. If you see <code>currentConnectionError: no contract code at given address</code>, your execution node may still be syncing. Otherwise, if you don't see any errors, your beacon node is connected to peers.</p>
+            <p>You should periodically see more than a few peers reported through your beacon node's log output. Look for output in the format of <code>peers=12</code>. You can use <code>curl http://localhost:8080/healthz</code> to check connectivity status. If you see <code>currentConnectionError: no contract code at given address</code>, your execution node may still be syncing. Otherwise, if you don't see any errors, your beacon node is connected to peers.</p>
         </div>
     </div>
     <div class='task'>
@@ -125,7 +133,7 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
         <div class='input-container'><input id="st-7" type='checkbox'/><span class='done'></span></div>
         <div class='guidance-container'>
             <label for="st-7">7. Beacon node ↔ execution node connectivity</label>
-            <p>Visit <code>http://localhost:3500/eth/v1alpha1/node/eth1/connections</code> from your browser. If you see <code>currentConnectionError: no contract code at given address</code>, your execution node may still be syncing. Otherwise, if you don't see any errors, your beacon node is connected to your execution node.</p>
+            <p>Issue <code>curl http://localhost:3500/eth/v1alpha1/node/eth1/connections</code> from a separate terminal window. If you see <code>currentConnectionError: no contract code at given address</code>, your execution node may still be syncing. Otherwise, if you don't see any errors, your beacon node is connected to your execution node.</p>
         </div>
     </div>
     <div class='task'>
