@@ -29,14 +29,14 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
         <div class='input-container'><input id="cl-1" type='checkbox'/><span class='done'></span></div>
         <div class='guidance-container'>
             <label for="cl-1">Execution node sync status</label>
-            <p>See <a href='#'></a></p>
+            <p>See <a href='#execution-node-sync-status'>Execution node: Sync status</a> below.</p>
         </div>
     </div>
     <div class='task'>
         <div class='input-container'><input id="cl-1" type='checkbox'/><span class='done'></span></div>
         <div class='guidance-container'>
             <label for="cl-1">Execution node peer connectivity</label>
-            <p>You should periodically see more than a few peers reported through your execution node's log output. Look for output in the format of <code>peercount=12</code>.</p>
+            <p>See <a href='#execution-node-peer-connectivity'>Execution node: Peer connectivity</a> below.</p>
         </div>
     </div>
         <div class='task'>
@@ -59,7 +59,7 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
         <div class='input-container'><input id="cl-1" type='checkbox'/><span class='done'></span></div>
         <div class='guidance-container'>
             <label for="cl-1">Beacon node sync status</label>
-            <p>TODO</p>
+            <p>See <a href='#beacon-node-sync-status'>Beacon node: Sync status</a> below.</p>
         </div>
     </div>
     <div class='task'>
@@ -197,12 +197,6 @@ This should produce the following output:
 ```
 
 When you see `"is_syncing":false`, your beacon node is fully synchronized with the beacon chain. When you see `"is_optimistic":false`, your beacon node sees that your execution node is either 1) not yet started, or 2) fully synchronized with the execution-layer blockchain.
-
-
-### Beacon node: Peer connectivity
-
-TODO
-
 
 
 ### Beacon node ↔ execution node connectivity
