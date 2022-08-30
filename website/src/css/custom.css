@@ -126,7 +126,6 @@ html[data-theme='dark'] .quickstart-tabs .tabs__item:first-child:hover {
   color: #999 !important;
 }
 .quickstart-tabs .tabgroup-with-label:after {
-  width: 0;
   font-size: 13px;
   font-weight: 500;
   padding: 10px 15px;
@@ -139,7 +138,6 @@ html[data-theme='dark'] .quickstart-tabs .tabs__item:first-child:hover {
   content: "Content updated!";
 }
 .quickstart-tabs .tabgroup-with-label.updated:after {
-  width: auto;
   color: var(--tab-active-color);
 }
 /* General elements */
