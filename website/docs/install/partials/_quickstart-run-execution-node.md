@@ -54,13 +54,7 @@ import TabItem from '@theme/TabItem';
     </Tabs>
     <p>See Nethermind's <a href='https://docs.nethermind.io/nethermind/ethereum-client/configuration'>command-line options</a> for parameter definitions.</p>
     <div class='hidden-in-mergeprep-guide'>
-    <p class='hidden-in-jwt-guide'>Your Nethermind execution node will begin syncing. This can take a long time - from hours to days. You can <a href='https://docs.nethermind.io/nethermind/ethereum-client/monitoring-node-health'>check your Nethermind execution node's sync status</a> by navigating to <a href='http://localhost:8545/healthchecks-ui'><code>http://localhost:8545/healthchecks-ui</code></a> or by running the following command from a separate terminal window:</p>
-
-```
-curl localhost:8545/health 
-```
-
-  <p>A sync status of <code>false</code> indicates that your node is fully synced. You can proceed to the next step while Nethermind syncs.</p>
+    <p class='hidden-in-jwt-guide'>Your Nethermind execution node will begin syncing.</p>
     </div>
   </TabItem>
   <TabItem value="besu">
@@ -109,17 +103,7 @@ curl localhost:8545/health
       </TabItem>
     </Tabs>
     <p>See Besu's <a href='https://besu.hyperledger.org/en/stable/Reference/CLI/CLI-Syntax/'>command-line options</a> for parameter definitions.</p>
-    <div class='hidden-in-mergeprep-guide'>
-
-  <p>Your Besu execution node will begin syncing. You can <a href='https://besu.hyperledger.org/en/stable/Reference/API-Methods/#eth_syncing'>check your Besu execution node's sync status</a> by running the following command from a separate terminal window:</p>
-
-
-```
-curl -H "Content-Type: application/json" -X POST http://localhost:8545 -d "{""jsonrpc"":""2.0"",""method"":""eth_syncing"",""params"":[],""id"":51}" 
-```
-
-  <p>A sync status of <code>false</code> indicates that your node is fully synced. You can proceed to the next step while Besu syncs.</p>
-  </div>
+    <div class='hidden-in-mergeprep-guide'><p>Your Besu execution node will begin syncing.</p></div>
   </TabItem>
   <TabItem value="geth">
     <p class='hidden-in-jwt-guide hidden-in-mergeprep-guide'>Download and run the latest 64-bit stable release of the <strong>Geth installer</strong> for your operating system from the <a href='https://geth.ethereum.org/downloads/'>Geth downloads page</a>.</p>
@@ -170,36 +154,10 @@ curl -H "Content-Type: application/json" -X POST http://localhost:8545 -d "{""js
     </Tabs>
     <p>See Geth's <a href='https://geth.ethereum.org/docs/interface/command-line-options'>command-line options</a> for parameter definitions.</p>
     <div class='hidden-in-mergeprep-guide'>
-        <p>Your Geth execution node will begin syncing. To check its sync status, issue the following commands from a separate terminal window:</p>
-        <Tabs className="tabgroup-with-label" groupId="os" defaultValue="others" values={[
-          {label: 'Operating system:', value: 'label'},
-          {label: 'Linux, MacOS, Arm64', value: 'others'},
-          {label: 'Windows', value: 'win'}
-          ]}>
-        <TabItem className="unclickable-element" value="label"></TabItem>
-  <TabItem value="others">
-
-
-```
-geth attach
-eth.syncing
-```
-
-
-  </TabItem>
-  <TabItem value="win">
-
-
-```
-geth attach ipc:\\.\pipe\geth.ipc
-eth.syncing
-```
-
-
-  </TabItem>
-  </Tabs>
-    <p>A sync status of <code>false</code> indicates that your node is fully synced. <span class='hidden-in-execution-guide'>You can proceed to the next step while Geth syncs.</span></p>
+        <p>Your Geth execution node will begin syncing.</p>
     </div> 
   </TabItem>
 </Tabs>
+
+This can take a long time - from hours to days. You can proceed to the next step while your execution node syncs. To check the status of your node, visit [Check node and validator status](../../monitoring/checking-status.md).
 
