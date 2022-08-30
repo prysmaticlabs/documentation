@@ -70,7 +70,7 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
     <div class='task'>
         <div class='input-container'><input id="cl-1" type='checkbox'/><span class='done'></span></div>
         <div class='guidance-container'>
-            <label for="cl-1">Check beacon node <> execution node connectivity</label>
+            <label for="cl-1">Check beacon node ↔ execution node connectivity</label>
             <p>TODO</p>
         </div>
     </div>
@@ -186,7 +186,7 @@ TODO
 TODO
 
 
-### Beacon node <> execution node connectivity
+### Beacon node ↔ execution node connectivity
 
 TODO
 
