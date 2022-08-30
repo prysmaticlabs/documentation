@@ -53,9 +53,6 @@ import TabItem from '@theme/TabItem';
       </TabItem>
     </Tabs>
     <p>See Nethermind's <a href='https://docs.nethermind.io/nethermind/ethereum-client/configuration'>command-line options</a> for parameter definitions.</p>
-    <div class='hidden-in-mergeprep-guide'>
-    <p class='hidden-in-jwt-guide'>Your Nethermind execution node will begin syncing.</p>
-    </div>
   </TabItem>
   <TabItem value="besu">
     <p class='hidden-in-jwt-guide hidden-in-mergeprep-guide'>Ensure that the latest 64-bit version of the <a href='https://www.oracle.com/java/technologies/downloads/'>Java JDK</a> is installed. Download the latest stable release of Besu from the <a href='https://github.com/hyperledger/besu/releases'>Besu releases</a> page. OS-specific instructions are available on Besu's <a href='https://besu.hyperledger.org/en/stable/HowTo/Get-Started/Installation-Options/Install-Binaries/'>binary installation page</a>. Run the following command to start your execution node:</p>
@@ -103,7 +100,6 @@ import TabItem from '@theme/TabItem';
       </TabItem>
     </Tabs>
     <p>See Besu's <a href='https://besu.hyperledger.org/en/stable/Reference/CLI/CLI-Syntax/'>command-line options</a> for parameter definitions.</p>
-    <div class='hidden-in-mergeprep-guide'><p>Your Besu execution node will begin syncing.</p></div>
   </TabItem>
   <TabItem value="geth">
     <p class='hidden-in-jwt-guide hidden-in-mergeprep-guide'>Download and run the latest 64-bit stable release of the <strong>Geth installer</strong> for your operating system from the <a href='https://geth.ethereum.org/downloads/'>Geth downloads page</a>.</p>
@@ -153,11 +149,8 @@ import TabItem from '@theme/TabItem';
       </TabItem>
     </Tabs>
     <p>See Geth's <a href='https://geth.ethereum.org/docs/interface/command-line-options'>command-line options</a> for parameter definitions.</p>
-    <div class='hidden-in-mergeprep-guide'>
-        <p>Your Geth execution node will begin syncing.</p>
-    </div> 
   </TabItem>
 </Tabs>
 
-This can take a long time - from hours to days. <span class='hidden-in-jwt-guide hidden-in-execution-guide'>You can proceed to the next step while your execution node syncs.</span>
+Syncing can take a long time - from hours to days. <span class='hidden-in-jwt-guide hidden-in-execution-guide'>You can proceed to the next step while your execution node syncs.</span>
 
