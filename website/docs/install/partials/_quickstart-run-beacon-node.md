@@ -122,28 +122,6 @@ If you're running a validator, specifying a <code>suggested-fee-recipient</code>
 
 Your beacon node will now begin syncing. This usually takes a couple days, but it can take longer depending on your network and hardware specs.
 
-You can check your beacon node's <a href='https://ethereum.github.io/beacon-APIs/?urls.primaryName=dev#/Node/getSyncingStatus'>sync status</a> by running the following command from a separate terminal window:
-
-```
-curl http://localhost:3500/eth/v1/node/syncing | jq
-```
-
-This should produce the following output:
-
-```
-{"data":{"head_slot":"6944","sync_distance":"3003133","is_syncing":true,"is_optimistic":true}}
-```
-
-When you see `"is_syncing":false`, your beacon node is fully synchronized. When you see `"is_optimistic":false`, your execution node is fully synchronized.
-
-You can verify that your beacon node has successfully connected to your execution node by running the following command from a separate terminal window:
-
-```
-curl http://localhost:3500/eth/v1alpha1/node/eth1/connections
-```
-
-<!-- You should see TODO. -->
-
-<p class="hidden-in-mergeprep-guide">Congratulations - you’re now running a <strong>full, Merge-ready Ethereum node</strong>.</p>
+<p class="hidden-in-mergeprep-guide">Congratulations - you’re now running a <strong>full, Merge-ready Ethereum node</strong>. To check the status of your node, visit <a href='../../monitoring/checking-status'>Check node and validator status</a>.</p>
 
 </div>
