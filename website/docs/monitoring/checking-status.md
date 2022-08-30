@@ -26,9 +26,9 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
 
 <div class='checklist'>
     <div class='task'>
-        <div class='input-container'><input id="cl-1" type='checkbox'/><span class='done'></span></div>
+        <div class='input-container'><input id="st-1" type='checkbox'/><span class='done'></span></div>
         <div class='guidance-container'>
-            <label for="cl-1">Execution node sync status</label>
+            <label for="st-1">Execution node sync status</label>
             <p>
             <Tabs groupId="execution-clients" defaultValue="geth" values={[
               {label: 'Execution client:', value: 'label'},
@@ -58,9 +58,9 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
         </div>
     </div>
     <div class='task'>
-        <div class='input-container'><input id="cl-1" type='checkbox'/><span class='done'></span></div>
+        <div class='input-container'><input id="st-2" type='checkbox'/><span class='done'></span></div>
         <div class='guidance-container'>
-            <label for="cl-1">Execution node peer connectivity</label>
+            <label for="st-2">Execution node peer connectivity</label>
             <p>
             <Tabs groupId="execution-clients" defaultValue="geth" values={[
                 {label: 'Execution client:', value: 'label'},
@@ -82,9 +82,9 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
         </div>
     </div>
         <div class='task'>
-        <div class='input-container'><input id="cl-1" type='checkbox'/><span class='done'></span></div>
+        <div class='input-container'><input id="st-3" type='checkbox'/><span class='done'></span></div>
         <div class='guidance-container'>
-            <label for="cl-1">Execution node version</label>
+            <label for="st-3">Execution node version</label>
             <p>
             <Tabs className="tabgroup-with-label" groupId="execution-clients" defaultValue="geth" values={[
                 {label: 'Execution client:', value: 'label'},
@@ -100,45 +100,45 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
         </div>
     </div>
     <div class='task'>
-        <div class='input-container'><input id="cl-1" type='checkbox'/><span class='done'></span></div>
+        <div class='input-container'><input id="st-4" type='checkbox'/><span class='done'></span></div>
         <div class='guidance-container'>
-            <label for="cl-1">Beacon node sync status</label>
+            <label for="st-4">Beacon node sync status</label>
             <p>You can check your beacon node's <a href='https://ethereum.github.io/beacon-APIs/?urls.primaryName=dev#/Node/getSyncingStatus'>sync status</a> by running <code>curl http://localhost:3500/eth/v1/node/syncing | jq</code> from a separate terminal window. This should produce output that looks like this: <code>&#123;"data":&#123;"head_slot":"6944","sync_distance":"3003133","is_syncing":true,"is_optimistic":true&#123;&#123;</code>. When you see <code>"is_syncing":false</code>, your beacon node is fully synchronized with the beacon chain. When you see <code>"is_optimistic":false</code>, your beacon node sees that your execution node is either 1) not yet started, or 2) fully synchronized with the execution-layer blockchain.
             </p>
         </div>
     </div>
     <div class='task'>
-        <div class='input-container'><input id="cl-1" type='checkbox'/><span class='done'></span></div>
+        <div class='input-container'><input id="st-5" type='checkbox'/><span class='done'></span></div>
         <div class='guidance-container'>
-            <label for="cl-1">Beacon node peer connectivity</label>
+            <label for="st-5">Beacon node peer connectivity</label>
             <p>You should periodically see more than a few peers reported through your beacon node's log output. Look for output in the format of <code>peers=12</code>.</p>
         </div>
     </div>
     <div class='task'>
-        <div class='input-container'><input id="cl-1" type='checkbox'/><span class='done'></span></div>
+        <div class='input-container'><input id="st-6" type='checkbox'/><span class='done'></span></div>
         <div class='guidance-container'>
-            <label for="cl-1">Beacon node version</label>
+            <label for="st-6">Beacon node version</label>
             <p>Ensure that you're using the <a href='https://github.com/prysmaticlabs/prysm/releases'>latest stable Prysm release</a>. Check Prysm's version by issuing the following command: <code>prysm.sh beacon-chain --version</code> (Linux) <code>prysm.bat beacon-chain --version</code> (Windows).</p>
         </div>
     </div>
     <div class='task'>
-        <div class='input-container'><input id="cl-1" type='checkbox'/><span class='done'></span></div>
+        <div class='input-container'><input id="st-7" type='checkbox'/><span class='done'></span></div>
         <div class='guidance-container'>
-            <label for="cl-1">Beacon node ↔ execution node connectivity</label>
+            <label for="st-7">Beacon node ↔ execution node connectivity</label>
             <p>Visit <code>http://localhost:3500/eth/v1alpha1/node/eth1/connections</code> from your browser. If you see <code>currentConnectionError: no contract code at given address</code>, your execution node may still be syncing. Otherwise, if you don't see any errors, your beacon node is connected to your execution node.</p>
         </div>
     </div>
     <div class='task'>
-        <div class='input-container'><input id="cl-1" type='checkbox'/><span class='done'></span></div>
+        <div class='input-container'><input id="st-8" type='checkbox'/><span class='done'></span></div>
         <div class='guidance-container'>
-            <label for="cl-1">Fee recipient configuration</label>
+            <label for="st-8">Fee recipient configuration</label>
             <p>Prysm will output an error if you attempt to provide an invalid Ethereum wallet address as a fee recipient address. You'll see warnings if a fee recipient address hasn't been provided. See <a href='../execution-node/fee-recipient'>Configure Fee Recipient</a> for more information.</p>
         </div>
     </div>
     <div class='task'>
-        <div class='input-container'><input id="cl-1" type='checkbox'/><span class='done'></span></div>
+        <div class='input-container'><input id="st-9" type='checkbox'/><span class='done'></span></div>
         <div class='guidance-container'>
-            <label for="cl-1">Validator status</label>
+            <label for="st-9">Validator status</label>
             <p>
             <Tabs className="tabgroup-with-label" groupId="network" defaultValue="mainnet" values={[
                     {label: 'Network:', value: 'label'},
