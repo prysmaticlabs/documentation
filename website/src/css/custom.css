@@ -533,7 +533,8 @@ html[data-theme='dark'] .header-badge .badge-label {
 }
 @media (max-width: 600px) {
   .quickstart-tabs .tabgroup-with-label .tabs__item {
-    padding: 5px !important;
+    padding: 5px 10px !important;
+    line-height: 27px;
   }
   .quickstart-tabs .tabgroup-with-label .tabs__item:first-child {
     display: none !important;
