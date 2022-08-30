@@ -56,7 +56,7 @@ export const MultiDimensionalContentWidget = () => {
 		window.scrollBy(0, 10)
 	}
 
-	let isToggling = false;
+	var isToggling = false;
 
 	let toggleUpdated = function (element) {
 		if (!isToggling)
