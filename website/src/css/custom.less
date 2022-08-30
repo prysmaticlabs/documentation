@@ -74,7 +74,7 @@ html[data-theme='dark'] {
     position: relative;
     margin-bottom: 25px;
 
-    .with-label {
+    .tabgroup-with-label {
         font-size: 13px;
         font-weight: 500;
         border: 1px solid transparent;
@@ -132,6 +132,22 @@ html[data-theme='dark'] {
 
             &.disabled-tab {
                 color: #999 !important;
+            }
+        }
+
+        &:after {
+            transition: all .5s linear;
+            background: transparent;
+            color: transparent;
+            content: "Content updated!";
+        }
+
+        &.updated {
+            background: blue;
+
+            &:after {
+                background: #0c0;
+                color: black;
             }
         }
     }
@@ -644,7 +660,7 @@ html[data-theme='dark'] {
 
 @media (max-width: 600px) {
     .quickstart-tabs {
-        .with-label {
+        .tabgroup-with-label {
             .tabs__item {
                 padding: 5px !important;
 
