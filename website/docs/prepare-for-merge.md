@@ -72,7 +72,7 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
         <div class='guidance-container'>
             <label for="cl-3">Use a Merge-ready version of your execution client</label>
             <p>
-                <Tabs className="with-label" groupId="execution-clients" defaultValue="geth" values={[
+                <Tabs className="tabgroup-with-label" groupId="execution-clients" defaultValue="geth" values={[
                 {label: 'Execution client:', value: 'label'},
                 {label: 'Geth', value: 'geth'},
                 {label: 'Nethermind', value: 'nethermind'},
@@ -85,7 +85,7 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
             </p>
         </div>
     </div>
-    <Tabs className="with-label" groupId="execution-clients" defaultValue="geth" values={[
+    <Tabs className="tabgroup-with-label" groupId="execution-clients" defaultValue="geth" values={[
             {label: 'Execution client:', value: 'label'},
             {label: 'Geth', value: 'geth'},
             {label: 'Nethermind', value: 'nethermind'},
@@ -103,7 +103,7 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
         <TabItem value="nethermind"></TabItem>
         <TabItem value="besu"></TabItem>
     </Tabs>
-    <Tabs className="with-label" groupId="protocol" defaultValue="jwt" values={[
+    <Tabs className="tabgroup-with-label" groupId="protocol" defaultValue="jwt" values={[
         {label: 'EN-BN connection:', value: 'label'},
         {label: 'HTTP-JWT', value: 'jwt'},
         {label: 'IPC', value: 'ipc'}
@@ -162,7 +162,7 @@ import QuickstartPrereqsPartial from '@site/docs/install/partials/_quickstart-pr
 <QuickstartPrereqsPartial />
 
 
-<Tabs className="with-label hidden-in-jwt-guide" defaultValue="jwt" groupId="protocol" values={[
+<Tabs className="tabgroup-with-label hidden-in-jwt-guide" defaultValue="jwt" groupId="protocol" values={[
         {label: 'EN-BN connection:', value: 'label'},
         {label: 'HTTP-JWT', value: 'jwt'},
         {label: 'IPC', value: 'ipc'}

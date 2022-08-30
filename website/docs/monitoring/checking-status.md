@@ -52,7 +52,7 @@ curl -H "Content-Type: application/json" -X POST http://localhost:8545 -d "{""js
   <TabItem value="geth">
 
  <p>Your Geth execution node will begin syncing. To check its sync status, issue the following commands from a separate terminal window:</p>
-        <Tabs className="with-label" groupId="os" defaultValue="others" values={[
+        <Tabs className="tabgroup-with-label" groupId="os" defaultValue="others" values={[
           {label: 'Operating system:', value: 'label'},
           {label: 'Linux, MacOS, Arm64', value: 'others'},
           {label: 'Windows', value: 'win'}
