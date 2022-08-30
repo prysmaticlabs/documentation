@@ -111,7 +111,7 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
         <div class='input-container'><input id="st-5" type='checkbox'/><span class='done'></span></div>
         <div class='guidance-container'>
             <label for="st-5">Beacon node peer connectivity</label>
-            <p>You should periodically see more than a few peers reported through your beacon node's log output. Look for output in the format of <code>peers=12</code>.</p>
+            <p>You should periodically see more than a few peers reported through your beacon node's log output. Look for output in the format of <code>peers=12</code>. You can also visit <code>http://localhost:8080/healthz</code> from your browser. If you see <code>currentConnectionError: no contract code at given address</code>, your execution node may still be syncing. Otherwise, if you don't see any errors, your beacon node is connected to peers.</p>
         </div>
     </div>
     <div class='task'>
