@@ -60,7 +60,7 @@ html[data-theme='dark'] .quickstart-tabs .tabs__item:first-child:hover {
   margin: 0 !important;
   padding: 0 !important;
 }
-.status-guide .network-tabgroup {
+.status-guide .enbn-tabgroup {
   visibility: hidden !important;
   height: 0 !important;
   overflow: hidden;
