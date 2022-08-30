@@ -43,6 +43,7 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
         <div class='input-container'><input id="cl-1" type='checkbox'/><span class='done'></span></div>
         <div class='guidance-container'>
             <label for="cl-1">Execution node version</label>
+            <p>
             <Tabs className="tabgroup-with-label" groupId="execution-clients" defaultValue="geth" values={[
                 {label: 'Execution client:', value: 'label'},
                 {label: 'Geth', value: 'geth'},
@@ -53,6 +54,7 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
                   <TabItem value="nethermind">Review Nethermind's log output to see what version you're using. See <a href='https://github.com/NethermindEth/nethermind/releases'>Nethermind's releases page</a> and join <a href='https://discord.com/invite/DedCdvDaNm'>their Discord</a> to stay up to date as we approach Mainnet Merge.</TabItem>
                   <TabItem value="besu">Review Besu's log output to see what version you're using. See Besu's <a href='https://github.com/hyperledger/besu/releases'>releases page</a> and join <a href='https://discord.com/invite/hyperledger'>their Discord</a> to stay up to date as we approach Mainnet Merge.</TabItem>
             </Tabs>
+            </p>
         </div>
     </div>
     <div class='task'>
