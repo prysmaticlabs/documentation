@@ -159,5 +159,5 @@ import TabItem from '@theme/TabItem';
   </TabItem>
 </Tabs>
 
-This can take a long time - from hours to days. You can proceed to the next step while your execution node syncs. To check the status of your node, visit [Check node and validator status](../../monitoring/checking-status.md).
+This can take a long time - from hours to days. <span class='hidden-in-jwt-guide hidden-in-execution-guide'>You can proceed to the next step while your execution node syncs.</span>
 
