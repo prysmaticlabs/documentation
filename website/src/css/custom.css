@@ -60,7 +60,7 @@ html[data-theme='dark'] .quickstart-tabs .tabs__item:first-child:hover {
   margin: 0 !important;
   padding: 0 !important;
 }
-.status-guide .network-tabgroup {
+.status-guide .enbn-tabgroup {
   visibility: hidden !important;
   height: 0 !important;
   overflow: hidden;
@@ -485,10 +485,11 @@ header > h1 {
   display: block;
   font-weight: bold;
 }
-.checklist .task .guidance-container > p {
+.checklist .task .guidance-container > p,
+.checklist .task .guidance-container p {
   font-size: 14px;
   line-height: 20px;
-  margin-bottom: 0;
+  margin-bottom: 0 !important;
 }
 .checklist input {
   margin-right: 5px;
