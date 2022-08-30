@@ -61,7 +61,7 @@ export const MultiDimensionalContentWidget = () => {
 		parent.classList.add('updated');
 		setTimeout(function () {
 			parent.classList.remove('updated');
-		}, 1000)
+		}, 100000)
 	}
 
 	let bindTabs = function () {
