@@ -22,71 +22,78 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
 <div class='hide-tabs'>
 
 
-## Status checking checklist
+## Status checklist
 
 <div class='checklist'>
     <div class='task'>
         <div class='input-container'><input id="cl-1" type='checkbox'/><span class='done'></span></div>
         <div class='guidance-container'>
-            <label for="cl-1">Check execution node sync status</label>
-            <p>TODO</p>
+            <label for="cl-1">Execution node sync status</label>
+            <p>See <a href='#'></a></p>
         </div>
     </div>
     <div class='task'>
         <div class='input-container'><input id="cl-1" type='checkbox'/><span class='done'></span></div>
         <div class='guidance-container'>
-            <label for="cl-1">Check execution node peer connectivity</label>
-            <p>TODO</p>
+            <label for="cl-1">Execution node peer connectivity</label>
+            <p>You should periodically see more than a few peers reported through your execution node's log output. Look for output in the format of <code>peercount=12</code>.</p>
         </div>
     </div>
         <div class='task'>
         <div class='input-container'><input id="cl-1" type='checkbox'/><span class='done'></span></div>
         <div class='guidance-container'>
-            <label for="cl-1">Check execution client version</label>
+            <label for="cl-1">Execution node version</label>
+            <Tabs className="tabgroup-with-label" groupId="execution-clients" defaultValue="geth" values={[
+                {label: 'Execution client:', value: 'label'},
+                {label: 'Geth', value: 'geth'},
+                {label: 'Nethermind', value: 'nethermind'},
+                {label: 'Besu', value: 'besu'}
+                ]}>
+                  <TabItem value="geth">Use <code>geth version</code> to check Geth's version. See <a href='https://github.com/ethereum/go-ethereum/releases'>Geth's releases page</a> and join <a href='https://discord.gg/invite/nthXNEv'>their Discord</a> to stay up to date as we approach Mainnet Merge.</TabItem>
+                  <TabItem value="nethermind">Review Nethermind's log output to see what version you're using. See <a href='https://github.com/NethermindEth/nethermind/releases'>Nethermind's releases page</a> and join <a href='https://discord.com/invite/DedCdvDaNm'>their Discord</a> to stay up to date as we approach Mainnet Merge.</TabItem>
+                  <TabItem value="besu">Review Besu's log output to see what version you're using. See Besu's <a href='https://github.com/hyperledger/besu/releases'>releases page</a> and join <a href='https://discord.com/invite/hyperledger'>their Discord</a> to stay up to date as we approach Mainnet Merge.</TabItem>
+            </Tabs>
+        </div>
+    </div>
+    <div class='task'>
+        <div class='input-container'><input id="cl-1" type='checkbox'/><span class='done'></span></div>
+        <div class='guidance-container'>
+            <label for="cl-1">Beacon node sync status</label>
             <p>TODO</p>
         </div>
     </div>
     <div class='task'>
         <div class='input-container'><input id="cl-1" type='checkbox'/><span class='done'></span></div>
         <div class='guidance-container'>
-            <label for="cl-1">Check beacon node sync status</label>
+            <label for="cl-1">Beacon node peer connectivity</label>
+            <p>You should periodically see more than a few peers reported through your beacon node's log output. Look for output in the format of <code>peers=12</code>.</p>
+        </div>
+    </div>
+    <div class='task'>
+        <div class='input-container'><input id="cl-1" type='checkbox'/><span class='done'></span></div>
+        <div class='guidance-container'>
+            <label for="cl-1">Beacon node version</label>
+            <p>Ensure that you're using the <a href='https://github.com/prysmaticlabs/prysm/releases'>latest stable Prysm release</a>. Check Prysm's version by issuing the following command: <code>prysm.sh beacon-chain --version</code> (Linux) <code>prysm.bat beacon-chain --version</code> (Windows).</p>
+        </div>
+    </div>
+    <div class='task'>
+        <div class='input-container'><input id="cl-1" type='checkbox'/><span class='done'></span></div>
+        <div class='guidance-container'>
+            <label for="cl-1">Beacon node ↔ execution node connectivity</label>
             <p>TODO</p>
         </div>
     </div>
     <div class='task'>
         <div class='input-container'><input id="cl-1" type='checkbox'/><span class='done'></span></div>
         <div class='guidance-container'>
-            <label for="cl-1">Check beacon node peer connectivity</label>
-            <p>TODO</p>
-        </div>
-    </div>
-    <div class='task'>
-        <div class='input-container'><input id="cl-1" type='checkbox'/><span class='done'></span></div>
-        <div class='guidance-container'>
-            <label for="cl-1">Check beacon node version</label>
-            <p>TODO</p>
-        </div>
-    </div>
-    <div class='task'>
-        <div class='input-container'><input id="cl-1" type='checkbox'/><span class='done'></span></div>
-        <div class='guidance-container'>
-            <label for="cl-1">Check beacon node ↔ execution node connectivity</label>
-            <p>TODO</p>
-        </div>
-    </div>
-    <div class='task'>
-        <div class='input-container'><input id="cl-1" type='checkbox'/><span class='done'></span></div>
-        <div class='guidance-container'>
-            <label for="cl-1">Check fee recipient configuration</label>
+            <label for="cl-1">Fee recipient configuration</label>
             <p>TODO</p>
         </div>
     </div>
 </div>
 
 
-## Check status: Execution client
-
-### Sync status
+### Execution node: Sync status
 
 <Tabs groupId="execution-clients" defaultValue="geth" values={[
   {label: 'Execution client:', value: 'label'},
@@ -147,19 +154,35 @@ eth.syncing
   </TabItem>
 </Tabs>
 
-### Peer connectivity
-
-TODO
+### Execution node: Peer connectivity
 
 
-### Version
+<Tabs groupId="execution-clients" defaultValue="geth" values={[
+  {label: 'Execution client:', value: 'label'},
+  {label: 'Nethermind', value: 'nethermind'},
+  {label: 'Besu', value: 'besu'},
+  {label: 'Geth', value: 'geth'}
+  ]}>
 
-TODO
+  <TabItem value="nethermind">
+    <p>You can <a href='https://docs.nethermind.io/nethermind/ethereum-client/monitoring-node-health'>check your Nethermind execution node's peer connectivity</a> by navigating to <a href='http://localhost:8545/healthchecks-ui'><code>http://localhost:8545/healthchecks-ui</code></a> or by running the following command from a separate terminal window:</p>
+
+```
+curl localhost:8545/health
+```
+
+  <p>A health status of <code>Healthy</code> indicates that your node is connected to peers.</p>
+  </TabItem>
+  <TabItem value="besu">
+    <p>You should see Besu's log output report connections to more than a few peers. Refer to Besu's <a href='https://besu.hyperledger.org/en/stable/public-networks/how-to/connect/manage-peers/#monitor-peer-connections'>Monitor peer connections</a> documentation for more detailed peer health monitoring guidance.</p>
+  </TabItem>
+  <TabItem value="geth">
+    <p>You should periodically see more than a few peers reported through your execution node's log output. Look for output in the format of <code>peercount=12</code> Refer to Geth's <a href='https://geth.ethereum.org/docs/interface/peer-to-peer'>Connecting To The Network</a> documentation for more detailed peer health monitoring guidance.</p>
+  </TabItem>
+</Tabs>
 
 
-## Check status: Beacon node
-
-### Sync status
+### Beacon node: Sync status
 
 You can check your beacon node's <a href='https://ethereum.github.io/beacon-APIs/?urls.primaryName=dev#/Node/getSyncingStatus'>sync status</a> by running the following command from a separate terminal window:
 
@@ -176,14 +199,10 @@ This should produce the following output:
 When you see `"is_syncing":false`, your beacon node is fully synchronized with the beacon chain. When you see `"is_optimistic":false`, your beacon node sees that your execution node is either 1) not yet started, or 2) fully synchronized with the execution-layer blockchain.
 
 
-### Peer connectivity
+### Beacon node: Peer connectivity
 
 TODO
 
-
-### Version
-
-TODO
 
 
 ### Beacon node ↔ execution node connectivity
@@ -196,7 +215,7 @@ TODO
 TODO
 
 
-## Check status: Validator node
+### Validator status
 
 Paste your validator's public key (available in your `deposit_data-*.json` file) into a blockchain explorer to check the status of your validator:
 
