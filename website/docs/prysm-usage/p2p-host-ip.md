@@ -4,11 +4,54 @@ title: Configure ports and firewalls for peer-to-peer connectivity
 sidebar_label: Configure ports and firewalls
 ---
 
+import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
+
+<HeaderBadgesWidget commaDelimitedContributors="Nishant" lastVerifiedDateString="August 30th, 2022" lastVerifiedVersionString="v3.0.0" />
+
+
 :::info Knowledge Check
 
 **Not familiar with nodes, networks, and related terminology?** Consider reading [Nodes and networks](../concepts/nodes-networks.md) before proceeding. 
 
 :::
+
+Prysm relies on **peer-to-peer connectivity** with other nodes. In some cases, small changes to your port and firewall configuration can significantly improve your node's peer-to-peer connectivity and discoverability. In this how-to, we'll review the following information:
+
+ 1. Ports 101
+ 2. Interesting ports
+ 3. How to test and update your port configuration
+ 4. Troubleshooting
+
+
+## Ports 101
+
+
+When you start Prysm's beacon node, Prysm will attempt to establish connections with peer nodes in order to begin retrieving and providing chain data. This attempt generally flows through the following steps:
+
+ 1. Prysm "dials out" using a random UDP port.
+
+
+
+
+4. firewalls, ports
+ - Recommended inbound rules
+ - Recommended outbound rules
+ - inbound vs outbound, forwarding fundamentals, firewall fundamentals (eg 8551 requires config for some reason)
+
+for discovery, we will dial via a random port. So you need to allow outbound udp connections from any port
+13000 is our tcp port, and we dial other peers from this port
+as a correcttion, 13000 isn't the peer discovery port. It is the port through which we initiate the underlying tcp connection for libp2p and through which all gossip/p2p request and responses will flow
+
+
+ - can you allow only UDP for outbound connections from a random port ? 
+ - like i mentioned it isnt currently possible to have a fixed outbound port to dial from
+otherwise discovery wont work
+
+
+
+
+
+## Review ports
 
 The following ports are "interesting" when using default, Merge-ready configuration:
 
@@ -41,25 +84,31 @@ The following ports are "interesting" when using default, Merge-ready configurat
       <td><strong><code>4000</code></strong></td>
       <td><strong>Beacon-validator connection endpoint</strong><br/>Your validator uses this port to connect to your beacon node via <a href='https://grpc.io'>gRPC</a>.</td>
     </tr> 
+    <tr>
+      <td><strong><code>30303</code></strong></td>
+      <td><strong>TODO</strong><br/>TODO.</td>
+    </tr> 
 </table>
 
 
-
-## Configure 8551
-
- - Here's how you can verify that it's working
- - Here's what to do if it's not
- - Here's what external nodes need
+## Test and configure your ports
 
 
-## Configure 8545
+### 8551
 
  - Here's how you can verify that it's working
  - Here's what to do if it's not
  - Here's what external nodes need
 
 
-## Configure 3500
+### 8545
+
+ - Here's how you can verify that it's working
+ - Here's what to do if it's not
+ - Here's what external nodes need
+
+
+### 3500
 
  - Here's how you can verify that it's working
  - Here's what to do if it's not
@@ -72,18 +121,25 @@ http://127.0.0.1:3500/eth/v1alpha1/beacon/chainhead
 ```
 
 
-## Configure TCP/13000 and UDP/12000
+### TCP/13000 and UDP/12000
 
  - Here's how you can verify that it's working
  - Here's what to do if it's not
  - Here's what external nodes need
 
 
-## Configure 4000
+### 4000
 
  - Here's how you can verify that it's working
  - Here's what to do if it's not
  - Here's what external nodes need
+
+
+
+## Troubleshooting
+
+TODO: embed here
+
 
 
 
