@@ -209,6 +209,7 @@ Paste your validator's public key (available in your `deposit_data-*.json` file)
 
 </div>
 
+If you see unexpected output, refer to [Troubleshooting Prysm](../troubleshooting/issues-errors.md) for troubleshooting tips. Feel free to reach out to us on our [Discord](https://discord.gg/prysmaticlabs) for support.
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
