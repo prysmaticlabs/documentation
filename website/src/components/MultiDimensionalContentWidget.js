@@ -56,12 +56,18 @@ export const MultiDimensionalContentWidget = () => {
 		window.scrollBy(0, 10)
 	}
 
+	let isToggling = false;
+
 	let toggleUpdated = function (element) {
+		if (!isToggling)
+			isToggling = true;
+
 		var parent = element.parentElement;
 		parent.classList.remove('updated');
 		parent.classList.add('updated');
 		setTimeout(function () {
 			parent.classList.remove('updated');
+			isToggling = false;
 		}, 2000)
 	}
 
