@@ -136,6 +136,7 @@ html[data-theme='dark'] {
         }
 
         &:after {
+            width: 0;
             font-size: 13px;
             font-weight: 500;
             padding: 10px 15px;
@@ -144,11 +145,13 @@ html[data-theme='dark'] {
             transition: all .15s linear;
             background: transparent;
             color: transparent;
+            display: inline-block;
             content: "Content updated!";
         }
 
         &.updated {
             &:after {
+                width: auto;
                 color: var(--tab-active-color);
             }
         }

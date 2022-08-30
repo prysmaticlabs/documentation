@@ -126,6 +126,7 @@ html[data-theme='dark'] .quickstart-tabs .tabs__item:first-child:hover {
   color: #999 !important;
 }
 .quickstart-tabs .tabgroup-with-label:after {
+  width: 0;
   font-size: 13px;
   font-weight: 500;
   padding: 10px 15px;
@@ -134,9 +135,11 @@ html[data-theme='dark'] .quickstart-tabs .tabs__item:first-child:hover {
   transition: all 0.15s linear;
   background: transparent;
   color: transparent;
+  display: inline-block;
   content: "Content updated!";
 }
 .quickstart-tabs .tabgroup-with-label.updated:after {
+  width: auto;
   color: var(--tab-active-color);
 }
 /* General elements */
