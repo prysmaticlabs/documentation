@@ -19,4 +19,8 @@
       <td>I'm running on mainnet, but I see a testnet (Goerli, Prater, etc) specified in my output logs</td>
       <td>Your execution client may be using an old binary, or an old database. Try using a new data directory, and make sure you're using the latest version of your execution client software.</td>
     </tr>
+    <tr>
+    <td><code>the method engine_exchangeTransitionConfigurationV1 does not exist/is not available</code></td>
+    <td>Users have resolved this Geth error by 1) updating to the <a href='https://github.com/ethereum/go-ethereum/releases'>latest version of Geth</a> and 2) ensuring that both Prysm and Geth are configured to <a href='https://docs.prylabs.network/docs/execution-node/authentication'>use JWT</a> (if you're connecting your beacon node to Geth over HTTP). Configuring Geth to use a fresh data directory may also resolve this warning. </td>
+    </tr>
 </table>
