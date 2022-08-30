@@ -161,6 +161,8 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
 
 </div>
 
+<br />
+
 If you see unexpected output, refer to [Troubleshooting Prysm](../troubleshooting/issues-errors.md). Feel free to reach out to us on our [Discord](https://discord.gg/prysmaticlabs) for support.
 
 
