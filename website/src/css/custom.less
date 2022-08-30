@@ -136,18 +136,17 @@ html[data-theme='dark'] {
         }
 
         &:after {
+            .tabs__item;
             transition: all .5s linear;
             background: transparent;
             color: transparent;
             content: "Content updated!";
+            display: inline-block;
         }
 
         &.updated {
-            background: blue;
-
             &:after {
-                background: #0c0;
-                color: black;
+                color: var(--tab-active-color);
             }
         }
     }
