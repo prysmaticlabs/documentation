@@ -40,7 +40,7 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
                 <p>You can <a href='https://docs.nethermind.io/nethermind/ethereum-client/monitoring-node-health'>check your Nethermind execution node's sync status</a> by navigating to <a href='http://localhost:8545/healthchecks-ui'><code>http://localhost:8545/healthchecks-ui</code></a> or by running <code>curl localhost:8545/health</code> from a separate terminal window. A sync status of <code>false</code> indicates that your node is fully synced. </p>
               </TabItem>
               <TabItem value="besu">
-                <p>You can <a href='https://besu.hyperledger.org/en/stable/Reference/API-Methods/#eth_syncing'>check your Besu execution node's sync status</a> by running <code>curl -H "Content-Type: application/json" -X POST http://localhost:8545 -d "{""jsonrpc"":""2.0"",""method"":""eth_syncing"",""params"":[],""id"":51}"</code> from a separate terminal window. A sync status of <code>false</code> indicates that your node is fully synced.</p>
+                <p>You can <a href='https://besu.hyperledger.org/en/stable/Reference/API-Methods/#eth_syncing'>check your Besu execution node's sync status</a> by running <code>curl -H "Content-Type: application/json" -X POST http://localhost:8545 -d "[""jsonrpc"":""2.0"",""method"":""eth_syncing"",""params"":[],""id"":51]"</code> from a separate terminal window. A sync status of <code>false</code> indicates that your node is fully synced.</p>
               </TabItem>
               <TabItem value="geth">
                   <Tabs className="tabgroup-with-label" groupId="os" defaultValue="others" values={[
