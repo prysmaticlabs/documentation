@@ -61,7 +61,24 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
         <div class='input-container'><input id="cl-1" type='checkbox'/><span class='done'></span></div>
         <div class='guidance-container'>
             <label for="cl-1">Execution node peer connectivity</label>
-            <p>See <a href='#execution-node-peer-connectivity'>Execution node: Peer connectivity</a> below.</p>
+            <p>
+            <Tabs groupId="execution-clients" defaultValue="geth" values={[
+                {label: 'Execution client:', value: 'label'},
+                {label: 'Nethermind', value: 'nethermind'},
+                {label: 'Besu', value: 'besu'},
+                {label: 'Geth', value: 'geth'}
+                ]}>
+                <TabItem value="nethermind">
+                  <p>You can <a href='https://docs.nethermind.io/nethermind/ethereum-client/monitoring-node-health'>check your Nethermind execution node's peer connectivity</a> by navigating to <a href='http://localhost:8545/healthchecks-ui'><code>http://localhost:8545/healthchecks-ui</code></a> or by running <code>curl localhost:8545/health</code> a separate terminal window. A health status of <code>Healthy</code> indicates that your node is connected to peers.</p>
+                </TabItem>
+                <TabItem value="besu">
+                  <p>You should periodically see more than a few peers reported through Besu's log output. Refer to Besu's <a href='https://besu.hyperledger.org/en/stable/public-networks/how-to/connect/manage-peers/#monitor-peer-connections'>Monitor peer connections</a> documentation for more detailed peer health monitoring guidance.</p>
+                </TabItem>
+                <TabItem value="geth">
+                  <p>You should periodically see more than a few peers reported through Geth's log output. Look for output in the format of <code>peercount=12</code>. Refer to Geth's <a href='https://geth.ethereum.org/docs/interface/peer-to-peer'>Connecting To The Network</a> documentation for more detailed peer health monitoring guidance.</p>
+                </TabItem>
+              </Tabs>
+            </p>
         </div>
     </div>
         <div class='task'>
@@ -86,7 +103,8 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
         <div class='input-container'><input id="cl-1" type='checkbox'/><span class='done'></span></div>
         <div class='guidance-container'>
             <label for="cl-1">Beacon node sync status</label>
-            <p>See <a href='#beacon-node-sync-status'>Beacon node: Sync status</a> below.</p>
+            <p>You can check your beacon node's <a href='https://ethereum.github.io/beacon-APIs/?urls.primaryName=dev#/Node/getSyncingStatus'>sync status</a> by running <code>curl http://localhost:3500/eth/v1/node/syncing | jq</code> from a separate terminal window. This should produce output that looks like this: <code>{"data":{"head_slot":"6944","sync_distance":"3003133","is_syncing":true,"is_optimistic":true}}</code>. When you see <code>"is_syncing":false</code>, your beacon node is fully synchronized with the beacon chain. When you see <code>"is_optimistic":false</code>, your beacon node sees that your execution node is either 1) not yet started, or 2) fully synchronized with the execution-layer blockchain.
+            </p>
         </div>
     </div>
     <div class='task'>
@@ -107,88 +125,44 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
         <div class='input-container'><input id="cl-1" type='checkbox'/><span class='done'></span></div>
         <div class='guidance-container'>
             <label for="cl-1">Beacon node ↔ execution node connectivity</label>
-            <p>TODO</p>
+            <p>Visit <code>http://localhost:3500/eth/v1alpha1/node/eth1/connections</code> from your browser. If you see <code>currentConnectionError: no contract code at given address</code>, your execution node may still be syncing. Otherwise, if you don't see any errors, your beacon node is connected to your execution node.</p>
         </div>
     </div>
     <div class='task'>
         <div class='input-container'><input id="cl-1" type='checkbox'/><span class='done'></span></div>
         <div class='guidance-container'>
             <label for="cl-1">Fee recipient configuration</label>
-            <p>TODO</p>
+            <p>Prysm will output an error if you attempt to provide an invalid Ethereum wallet address as a fee recipient address. You'll see warnings if a fee recipient address hasn't been provided. See <a href='../execution-node/fee-recipient'>Configure Fee Recipient</a> for more information.</p>
+        </div>
+    </div>
+    <div class='task'>
+        <div class='input-container'><input id="cl-1" type='checkbox'/><span class='done'></span></div>
+        <div class='guidance-container'>
+            <label for="cl-1">Validator status</label>
+            <p>
+            <Tabs className="tabgroup-with-label" groupId="network" defaultValue="mainnet" values={[
+                    {label: 'Network:', value: 'label'},
+                    {label: 'Mainnet', value: 'mainnet'},
+                    {label: 'Goerli-Prater', value: 'goerli-prater'},
+                    {label: 'Sepolia', value: 'sepolia'},
+                    {label: 'Ropsten', value: 'ropsten'}
+                ]}>
+                <TabItem value="mainnet">Paste your validator's public key (available in your <code>deposit_data-*.json</code> file) into a <a href='https://beaconcha.in'>blockchain explorer like beaconcha.in</a> to check the status of your validator.</TabItem>
+                <TabItem value="goerli-prater">Paste your validator's public key (available in your <code>deposit_data-*.json</code> file) into a <a href='https://prater.beaconcha.in/'>Goerli-Prater blockchain explorer like beaconcha.in</a> to check the status of your validator.</TabItem>
+                <TabItem value="sepolia">Running a validator on Sepolia is currently unsupported.</TabItem>
+                <TabItem value="ropsten">Paste your validator's public key (available in your <code>deposit_data-*.json</code> file) into a <a href='https://ropsten.beaconcha.in/'>Ropsten blockchain explorer like beaconcha.in</a> to check the status of your validator.</TabItem>
+            </Tabs>
+            </p>
         </div>
     </div>
 </div>
 
-
-### Execution node: Peer connectivity
-
-
-<Tabs groupId="execution-clients" defaultValue="geth" values={[
-  {label: 'Execution client:', value: 'label'},
-  {label: 'Nethermind', value: 'nethermind'},
-  {label: 'Besu', value: 'besu'},
-  {label: 'Geth', value: 'geth'}
-  ]}>
-
-  <TabItem value="nethermind">
-    <p>You can <a href='https://docs.nethermind.io/nethermind/ethereum-client/monitoring-node-health'>check your Nethermind execution node's peer connectivity</a> by navigating to <a href='http://localhost:8545/healthchecks-ui'><code>http://localhost:8545/healthchecks-ui</code></a> or by running the following command from a separate terminal window:</p>
-
-```
-curl localhost:8545/health
-```
-
-  <p>A health status of <code>Healthy</code> indicates that your node is connected to peers.</p>
-  </TabItem>
-  <TabItem value="besu">
-    <p>You should see Besu's log output report connections to more than a few peers. Refer to Besu's <a href='https://besu.hyperledger.org/en/stable/public-networks/how-to/connect/manage-peers/#monitor-peer-connections'>Monitor peer connections</a> documentation for more detailed peer health monitoring guidance.</p>
-  </TabItem>
-  <TabItem value="geth">
-    <p>You should periodically see more than a few peers reported through your execution node's log output. Look for output in the format of <code>peercount=12</code> Refer to Geth's <a href='https://geth.ethereum.org/docs/interface/peer-to-peer'>Connecting To The Network</a> documentation for more detailed peer health monitoring guidance.</p>
-  </TabItem>
-</Tabs>
-
-
-### Beacon node: Sync status
-
-You can check your beacon node's <a href='https://ethereum.github.io/beacon-APIs/?urls.primaryName=dev#/Node/getSyncingStatus'>sync status</a> by running the following command from a separate terminal window:
-
-```
-curl http://localhost:3500/eth/v1/node/syncing | jq
-```
-
-This should produce the following output:
-
-```
-{"data":{"head_slot":"6944","sync_distance":"3003133","is_syncing":true,"is_optimistic":true}}
-```
-
-When you see `"is_syncing":false`, your beacon node is fully synchronized with the beacon chain. When you see `"is_optimistic":false`, your beacon node sees that your execution node is either 1) not yet started, or 2) fully synchronized with the execution-layer blockchain.
-
-
-### Beacon node ↔ execution node connectivity
-
-TODO
-
-
-### Fee recipient
-
-TODO
-
-
-### Validator status
-
-Paste your validator's public key (available in your `deposit_data-*.json` file) into a blockchain explorer to check the status of your validator:
-
- - [Beaconcha.in (Mainnet)](https://beaconcha.in) 
- - [Beaconcha.in (Prater)](https://prater.beaconcha.in/)
- - [Beaconcha.in (Ropsten)](https://ropsten.beaconcha.in/)
-
-
 </div>
 
 </div>
 
-If you see unexpected output, refer to [Troubleshooting Prysm](../troubleshooting/issues-errors.md) for troubleshooting tips. Feel free to reach out to us on our [Discord](https://discord.gg/prysmaticlabs) for support.
+If you see unexpected output, refer to [Troubleshooting Prysm](../troubleshooting/issues-errors.md). Feel free to reach out to us on our [Discord](https://discord.gg/prysmaticlabs) for support.
+
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
