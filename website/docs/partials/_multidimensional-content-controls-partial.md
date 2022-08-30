@@ -7,7 +7,7 @@ import {MultiDimensionalContentWidget} from '@site/src/components/MultiDimension
 
 <div class='quickstart-tabs'>
 
-<Tabs className="with-label" groupId="os" defaultValue="others" values={[
+<Tabs className="tabgroup-with-label os-tabgroup" groupId="os" defaultValue="others" values={[
     {label: 'Operating system:', value: 'label'},
     {label: 'Linux, MacOS, Arm64', value: 'others'},
     {label: 'Windows', value: 'win'}
@@ -17,7 +17,7 @@ import {MultiDimensionalContentWidget} from '@site/src/components/MultiDimension
   <TabItem value="win"></TabItem>
 </Tabs>
 
-<Tabs className="with-label" groupId="network" defaultValue="mainnet" values={[
+<Tabs className="tabgroup-with-label network-tabgroup" groupId="network" defaultValue="mainnet" values={[
         {label: 'Network:', value: 'label'},
         {label: 'Mainnet', value: 'mainnet'},
         {label: 'Goerli-Prater', value: 'goerli-prater'},
@@ -31,7 +31,7 @@ import {MultiDimensionalContentWidget} from '@site/src/components/MultiDimension
     <TabItem value="ropsten"></TabItem>
 </Tabs>
 
-<Tabs className="with-label hidden-in-docker-guide" groupId="execution-clients" defaultValue="geth" values={[
+<Tabs className="tabgroup-with-label hidden-in-docker-guide el-tabgroup" groupId="execution-clients" defaultValue="geth" values={[
   {label: 'Execution client:', value: 'label'},
   {label: 'Geth', value: 'geth'},
   {label: 'Nethermind', value: 'nethermind'},
@@ -43,8 +43,7 @@ import {MultiDimensionalContentWidget} from '@site/src/components/MultiDimension
   <TabItem value="besu"></TabItem>
 </Tabs>
 
-
-<Tabs className="with-label hidden-in-jwt-guide hidden-in-docker-guide" groupId="protocol" defaultValue="jwt" values={[
+<Tabs className="tabgroup-with-label hidden-in-jwt-guide hidden-in-docker-guide enbn-tabgroup" groupId="protocol" defaultValue="jwt" values={[
         {label: 'EN-BN connection:', value: 'label'},
         {label: 'HTTP-JWT', value: 'jwt'},
         {label: 'IPC', value: 'ipc'}
