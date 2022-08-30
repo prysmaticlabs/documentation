@@ -22,7 +22,71 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
 <div class='hide-tabs'>
 
 
+## Status checking checklist
+
+<div class='checklist'>
+    <div class='task'>
+        <div class='input-container'><input id="cl-1" type='checkbox'/><span class='done'></span></div>
+        <div class='guidance-container'>
+            <label for="cl-1">Check execution node sync status</label>
+            <p>TODO</p>
+        </div>
+    </div>
+    <div class='task'>
+        <div class='input-container'><input id="cl-1" type='checkbox'/><span class='done'></span></div>
+        <div class='guidance-container'>
+            <label for="cl-1">Check execution node peer connectivity</label>
+            <p>TODO</p>
+        </div>
+    </div>
+        <div class='task'>
+        <div class='input-container'><input id="cl-1" type='checkbox'/><span class='done'></span></div>
+        <div class='guidance-container'>
+            <label for="cl-1">Check execution client version</label>
+            <p>TODO</p>
+        </div>
+    </div>
+    <div class='task'>
+        <div class='input-container'><input id="cl-1" type='checkbox'/><span class='done'></span></div>
+        <div class='guidance-container'>
+            <label for="cl-1">Check beacon node sync status</label>
+            <p>TODO</p>
+        </div>
+    </div>
+    <div class='task'>
+        <div class='input-container'><input id="cl-1" type='checkbox'/><span class='done'></span></div>
+        <div class='guidance-container'>
+            <label for="cl-1">Check beacon node peer connectivity</label>
+            <p>TODO</p>
+        </div>
+    </div>
+    <div class='task'>
+        <div class='input-container'><input id="cl-1" type='checkbox'/><span class='done'></span></div>
+        <div class='guidance-container'>
+            <label for="cl-1">Check beacon node version</label>
+            <p>TODO</p>
+        </div>
+    </div>
+    <div class='task'>
+        <div class='input-container'><input id="cl-1" type='checkbox'/><span class='done'></span></div>
+        <div class='guidance-container'>
+            <label for="cl-1">Check beacon node <> execution node connectivity</label>
+            <p>TODO</p>
+        </div>
+    </div>
+    <div class='task'>
+        <div class='input-container'><input id="cl-1" type='checkbox'/><span class='done'></span></div>
+        <div class='guidance-container'>
+            <label for="cl-1">Check fee recipient configuration</label>
+            <p>TODO</p>
+        </div>
+    </div>
+</div>
+
+
 ## Check status: Execution client
+
+### Sync status
 
 <Tabs groupId="execution-clients" defaultValue="geth" values={[
   {label: 'Execution client:', value: 'label'},
@@ -83,6 +147,16 @@ eth.syncing
   </TabItem>
 </Tabs>
 
+### Peer connectivity
+
+TODO
+
+
+### Version
+
+TODO
+
+
 ## Check status: Beacon node
 
 ### Sync status
@@ -99,7 +173,22 @@ This should produce the following output:
 {"data":{"head_slot":"6944","sync_distance":"3003133","is_syncing":true,"is_optimistic":true}}
 ```
 
-When you see `"is_syncing":false`, your beacon node is fully synchronized with the beacon chain. When you see `"is_optimistic":false`, your execution node is fully synchronized with the execution-layer blockchain. 
+When you see `"is_syncing":false`, your beacon node is fully synchronized with the beacon chain. When you see `"is_optimistic":false`, your beacon node sees that your execution node is either 1) not yet started, or 2) fully synchronized with the execution-layer blockchain.
+
+
+### Peer connectivity
+
+TODO
+
+
+### Version
+
+TODO
+
+
+### Beacon node <> execution node connectivity
+
+TODO
 
 
 ### Fee recipient
