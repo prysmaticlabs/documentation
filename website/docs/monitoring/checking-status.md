@@ -29,7 +29,32 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
         <div class='input-container'><input id="cl-1" type='checkbox'/><span class='done'></span></div>
         <div class='guidance-container'>
             <label for="cl-1">Execution node sync status</label>
-            <p>See <a href='#execution-node-sync-status'>Execution node: Sync status</a> below.</p>
+            <p>
+            <Tabs groupId="execution-clients" defaultValue="geth" values={[
+              {label: 'Execution client:', value: 'label'},
+              {label: 'Nethermind', value: 'nethermind'},
+              {label: 'Besu', value: 'besu'},
+              {label: 'Geth', value: 'geth'}
+              ]}>
+              <TabItem value="nethermind">
+                <p>You can <a href='https://docs.nethermind.io/nethermind/ethereum-client/monitoring-node-health'>check your Nethermind execution node's sync status</a> by navigating to <a href='http://localhost:8545/healthchecks-ui'><code>http://localhost:8545/healthchecks-ui</code></a> or by running <code>curl localhost:8545/health</code> from a separate terminal window. A sync status of <code>false</code> indicates that your node is fully synced. </p>
+              </TabItem>
+              <TabItem value="besu">
+                <p>You can <a href='https://besu.hyperledger.org/en/stable/Reference/API-Methods/#eth_syncing'>check your Besu execution node's sync status</a> by running <code>curl -H "Content-Type: application/json" -X POST http://localhost:8545 -d "{""jsonrpc"":""2.0"",""method"":""eth_syncing"",""params"":[],""id"":51}"</code> from a separate terminal window. A sync status of <code>false</code> indicates that your node is fully synced.</p>
+              </TabItem>
+              <TabItem value="geth">
+                  <Tabs className="tabgroup-with-label" groupId="os" defaultValue="others" values={[
+                      {label: 'Operating system:', value: 'label'},
+                      {label: 'Linux, MacOS, Arm64', value: 'others'},
+                      {label: 'Windows', value: 'win'}
+                      ]}>
+                    <TabItem className="unclickable-element" value="label"></TabItem>
+                    <TabItem value="others"><p>You can check your Geth execution node's sync status by running <code>geth attach</code> and then <code>eth.syncing</code> from a separate terminal window. A sync status of <code>false</code> indicates that your node is fully synced.</p></TabItem>
+                    <TabItem value="win"><p>You can check your Geth execution node's sync status by running <code>geth attach ipc:\\.\pipe\geth.ipc</code> and then <code>eth.syncing</code> from a separate terminal window. A sync status of <code>false</code> indicates that your node is fully synced.</p></TabItem>
+                  </Tabs>
+              </TabItem>
+            </Tabs>
+            </p>
         </div>
     </div>
     <div class='task'>
@@ -94,67 +119,6 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
     </div>
 </div>
 
-
-### Execution node: Sync status
-
-<Tabs groupId="execution-clients" defaultValue="geth" values={[
-  {label: 'Execution client:', value: 'label'},
-  {label: 'Nethermind', value: 'nethermind'},
-  {label: 'Besu', value: 'besu'},
-  {label: 'Geth', value: 'geth'}
-  ]}>
-
-  <TabItem value="nethermind">
-    <p>You can <a href='https://docs.nethermind.io/nethermind/ethereum-client/monitoring-node-health'>check your Nethermind execution node's sync status</a> by navigating to <a href='http://localhost:8545/healthchecks-ui'><code>http://localhost:8545/healthchecks-ui</code></a> or by running the following command from a separate terminal window:</p>
-
-```
-curl localhost:8545/health
-```
-
-  <p>A sync status of <code>false</code> indicates that your node is fully synced.</p>
-  </TabItem>
-  <TabItem value="besu">
-    <p>You can <a href='https://besu.hyperledger.org/en/stable/Reference/API-Methods/#eth_syncing'>check your Besu execution node's sync status</a> by running the following command from a separate terminal window:</p>
-
-```
-curl -H "Content-Type: application/json" -X POST http://localhost:8545 -d "{""jsonrpc"":""2.0"",""method"":""eth_syncing"",""params"":[],""id"":51}" 
-```
-
-  <p>A sync status of <code>false</code> indicates that your node is fully synced.</p>
-  </TabItem>
-  <TabItem value="geth">
-
- <p>Your Geth execution node will begin syncing. To check its sync status, issue the following commands from a separate terminal window:</p>
-        <Tabs className="tabgroup-with-label" groupId="os" defaultValue="others" values={[
-          {label: 'Operating system:', value: 'label'},
-          {label: 'Linux, MacOS, Arm64', value: 'others'},
-          {label: 'Windows', value: 'win'}
-          ]}>
-        <TabItem className="unclickable-element" value="label"></TabItem>
-  <TabItem value="others">
-
-
-```
-geth attach
-eth.syncing
-```
-
-
-  </TabItem>
-  <TabItem value="win">
-
-
-```
-geth attach ipc:\\.\pipe\geth.ipc
-eth.syncing
-```
-
-
-  </TabItem>
-  </Tabs>
-  <p>A sync status of <code>false</code> indicates that your node is fully synced.</p>
-  </TabItem>
-</Tabs>
 
 ### Execution node: Peer connectivity
 
