@@ -86,7 +86,7 @@ Invoking `prysmctl` using the below syntax will be possible in an upcoming stabl
 :::
 
 ```bash
-go run github.com/prysmaticlabs/prysm/cmd/prysmctl@latest checkpoint save --beacon-node-host=http://localhost:3500
+go run github.com/prysmaticlabs/prysm/v3/cmd/prysmctl checkpoint-sync download --beacon-node-host=http://localhost:3500
 ```
 
 You should see the following output if your export was successful:
