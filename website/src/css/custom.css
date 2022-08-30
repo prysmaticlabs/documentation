@@ -138,7 +138,6 @@ html[data-theme='dark'] .quickstart-tabs .tabs__item:first-child:hover {
   background: transparent;
   color: transparent;
   content: "Content updated!";
-  display: inline-block;
 }
 .quickstart-tabs .tabgroup-with-label:after:first-child {
   cursor: default !important;
