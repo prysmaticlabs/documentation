@@ -67,6 +67,11 @@ export const MultiDimensionalContentWidget = () => {
 
 	let bindTabs = function () {
 		setTimeout(function () {
+			if (jwtOnly()) {
+				setTimeout(function () { selectByText('HTTP-JWT'); }, 50)
+				disableByText('IPC');
+			}
+
 			var tabElements = getAllTabElements();
 			tabElements.forEach(element => {
 				var isLabel = element.textContent.indexOf(":") > -1;
