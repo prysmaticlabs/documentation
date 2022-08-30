@@ -198,7 +198,7 @@ eth.syncing
 
   </TabItem>
   </Tabs>
-  <p>A sync status of <code>false</code> indicates that your node is fully synced. You can proceed to the next step while Geth syncs.</p>
+    <p>A sync status of <code>false</code> indicates that your node is fully synced. <span class='hidden-in-execution-guide'>You can proceed to the next step while Geth syncs.</span></p>
     </div> 
   </TabItem>
 </Tabs>
