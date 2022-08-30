@@ -122,6 +122,6 @@ If you're running a validator, specifying a <code>suggested-fee-recipient</code>
 
 Your beacon node will now begin syncing. This usually takes a couple days, but it can take longer depending on your network and hardware specs.
 
-<p class="hidden-in-mergeprep-guide">Congratulations - you’re now running a <strong>full, Merge-ready Ethereum node</strong>. To check the status of your node, visit <a href='../../monitoring/checking-status'>Check node and validator status</a>.</p>
+<p class="hidden-in-mergeprep-guide">Congratulations - you’re now running a <strong>full, Merge-ready Ethereum node</strong>. To check the status of your node, visit <a href='monitoring/checking-status'>Check node and validator status</a>.</p>
 
 </div>
