@@ -131,7 +131,7 @@ html[data-theme='dark'] .quickstart-tabs .tabs__item:first-child:hover {
   padding: 10px 15px;
   position: relative;
   border-color: transparent !important;
-  transition: all 0.5s linear;
+  transition: all 0.15s linear;
   background: transparent;
   color: transparent;
   content: "Content updated!";
