@@ -103,7 +103,7 @@ Download the latest stable version of the deposit CLI from the [Staking Deposit 
         </ol>
       </li>
     </ol>
-    Copy the <code>validator_keys</code> folder to your primary machine's <code>consensus</code> folder. Run the following command to import your keystores, replacing <code>&lt;YOUR_FOLDER_PATH&gt;</code> with the full path to your <code>consensus/validator_keys</code> folder:<br/>
+    <p>Copy the <code>validator_keys</code> folder to your primary machine's <code>consensus</code> folder. Run the following command to import your keystores, replacing <code>&lt;YOUR_FOLDER_PATH&gt;</code> with the full path to your <code>consensus/validator_keys</code> folder:</p>
     <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
         {label: 'Goerli-Prater', value: 'goerli-prater'},
@@ -150,10 +150,6 @@ You’re now running a <strong>full Ethereum node</strong> and a <strong>validat
 
 :::
 
-It can a long time (from days to months) for your validator to become fully activated. To learn more about the validator activation process, see [Deposit Process](https://kb.beaconcha.in/ethereum-2.0-depositing). You can paste your validator's public key (available in your `deposit_data-*.json` file) into a blockchain explorer to check the status of your validator:
+It can a long time (from days to months) for your validator to become fully activated. To learn more about the validator activation process, see [Deposit Process](https://kb.beaconcha.in/ethereum-2.0-depositing). See [Check node and validator status](https://docs.prylabs.network/docs/monitoring/checking-status) for detailed status monitoring guidance.
 
- - [Beaconcha.in (Mainnet)](https://beaconcha.in) 
- - [Beaconcha.in (Prater)](https://prater.beaconcha.in/)
- - [Beaconcha.in (Ropsten)](https://ropsten.beaconcha.in/)
-
-In the meantime, you should leave your **execution client**, **beacon node**, and **validator client** terminal windows open and running. Once your validator is activated, it will automatically begin proposing and validating blocks.
+You can leave your **execution client**, **beacon node**, and **validator client** terminal windows open and running. Once your validator is activated, it will automatically begin proposing and validating blocks.
