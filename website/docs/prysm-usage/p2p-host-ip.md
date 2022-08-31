@@ -6,7 +6,7 @@ sidebar_label: Configure ports and firewalls
 
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
-<HeaderBadgesWidget commaDelimitedContributors="Nishant" lastVerifiedDateString="August 30th, 2022" lastVerifiedVersionString="v3.0.0" />
+<HeaderBadgesWidget commaDelimitedContributors="Nishant,Raul,Mick" lastVerifiedDateString="August 30th, 2022" lastVerifiedVersionString="v3.0.0" />
 
 
 :::info Knowledge Check
