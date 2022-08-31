@@ -15,209 +15,50 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 :::
 
-Prysm relies on **peer-to-peer connectivity** with other nodes. In some cases, small changes to your port and firewall configuration can significantly improve your node's peer-to-peer connectivity and discoverability. In this how-to, we'll review the following information:
+In some cases, small changes to your port and firewall configuration can significantly improve your node's peer-to-peer **connectivity** and **discoverability**. In this how-to, we'll review the following information:
 
- 1. Ports 101
- 2. Interesting ports
- 3. How to test and update your port configuration
- 4. Troubleshooting
+ 1. Configure firewall
+ 2. Configure IP address
+ 3. Configure port forwarding
 
 
-## Ports 101
+## Configure firewall
 
+Your node and validator will try to establish several types of connections:
 
-When you start Prysm's beacon node, Prysm will attempt to establish connections with peer nodes in order to begin retrieving and providing chain data. This attempt generally flows through the following steps:
+ 0. Validator nodes try to connect to a single, dedicated beacon node. This beacon node must be local.
+ 1. Beacon nodes try to connect to a single, dedicated execution node. This execution node can be local or remote.
+ 2. Beacon nodes try to connect to many peer beacon nodes.
+ 3. Execution nodes try to connect to many peer execution nodes.
 
- 1. Prysm "dials out" using a random UDP port.
+To establish these connections, your client software needs to be able to send and receive messages through specific ports. We can use **port rules** to describe how ports should be configured. The following table of port rules uses default port values:
 
+| Port/Protocol   | Firewall rule                       | Reason                                                                                                                                                                                                                                                         |
+|-----------------|-------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| */UDP           | Allow outbound traffic.             | To [discover](https://github.com/ethereum/devp2p/wiki/Discovery-Overview) peers, Prysm's beacon node dials out through random UDP ports. Allowing outbound UDP connections from any UDP port will help Prysm find peers.                                       |
+| 13000/TCP       | Allow outbound traffic.             | After we discover peers, we dial them through this port to establish an ongoing connection for [libp2p](https://libp2p.io/) and through which all gossip/p2p request and responses will flow                                                                   |
+| 12000/UDP       | Allow inbound and outbound traffic  | Your beacon node exposes this TCP port so that other Ethereum nodes can discover your node, request chain data, and provide chain data.                                                                                                                        |
+| 8551/TCP        | Allow inbound and outbound traffic. | This lets your local beacon node connect to a dedicated remote execution node's [Engine API](https://github.com/ethereum/execution-apis/blob/main/src/engine/specification.md). You can ignore this if your BN and EN are on the same machine.                 |
+| 8551/TCP        | Allow inbound and outbound traffic. | This lets your remote execution node connect to a dedicated remote execution node. You can ignore this if your BN and EN are on the same machine.                                                                                                              |
+| `30303/TCP+UDP` | Allow inbound and outbound traffic. | `30303/TCP` is your execution node's listener port, while `30303/UDP` is its discovery port. Some clients use `30301` by default.                                                                                                                              |
+| 8545/TCP        | Block inbound traffic.              | This is the JSON-RPC port for your execution node's Query API. You (and apps) can use this port to check execution node status, query execution-layer chain data, and even submit transactions. This port generally shouldn't be exposed to the outside world. |
+| 3500/TCP        | Block inbound traffic.              | This is the JSON-RPC port for your beacon node's Query API. You (and apps) can use this port to check beacon node status and query consensus-layer chain data. This port generally shouldn't be exposed to the outside world.                                  |
+| 4000/TCP        | Block inbound traffic.              | Your validator uses this port to connect to your beacon node via [gRPC](https://grpc.io)                                                                                                                                                                       |
 
 
+As a security best practice, we recommend blocking all incoming connections across all local ports, exposing inbound connections through specific ports only as needed. Ensure that your firewall is configured to allow incoming connections on TCP/13000 and UDP/12000 from all source IP addresses so that Prysm can connect to peers.
 
-4. firewalls, ports
- - Recommended inbound rules
- - Recommended outbound rules
- - inbound vs outbound, forwarding fundamentals, firewall fundamentals (eg 8551 requires config for some reason)
+Prysm uses a randomly selected outbound port when forming outbound TCP connections with peers, so you shouldn't restrict Prysm's ability to form outbound connections through any local ports. You may need to add a firewall rule specifically to grant Prysm outbound access via all local TCP/UDP ports.
 
-for discovery, we will dial via a random port. So you need to allow outbound udp connections from any port
-13000 is our tcp port, and we dial other peers from this port
-as a correcttion, 13000 isn't the peer discovery port. It is the port through which we initiate the underlying tcp connection for libp2p and through which all gossip/p2p request and responses will flow
 
 
- - can you allow only UDP for outbound connections from a random port ? 
- - like i mentioned it isnt currently possible to have a fixed outbound port to dial from
-otherwise discovery wont work
 
 
+## Configure router
 
+TCP/13000 and UDP/12000.  The specific steps required vary based on your router, but can be summarised as follows:
 
-
-## Review ports
-
-The following ports are "interesting" when using default, Merge-ready configuration:
-
-<table>
-    <tr>
-        <th style={{minWidth: 180 + 'px'}}>Port</th> 
-        <th>Details</th>
-    </tr>
-    <tr>
-      <td><strong><code>8551</code></strong></td>
-      <td><strong>Execution node Engine API endpoint</strong><br />Prysm (and other consensus clients) interact with the <a href='https://github.com/ethereum/execution-apis/blob/main/src/engine/specification.md'>Engine API</a> using this port. This lets execution clients and consensus clients communicate with one another about chain status, facilitating Ethereum's transition to proof-of-stake consensus.</td>
-    </tr> 
-    <tr>
-      <td><strong><code>8545</code></strong></td>
-      <td><strong>Execution node query API endpoint</strong><br />You (and apps) can use this port to check execution node status, query execution-layer chain data, and even submit transactions.</td>
-    </tr>
-    <tr>
-      <td><strong><code>3500</code></strong></td>
-      <td><strong>Beacon node query API endpoint</strong><br />You (and apps) can use this port to check beacon node status and query consensus-layer chain data.</td>
-    </tr>
-    <tr>
-      <td><strong><code>13000</code></strong></td>
-      <td><strong>Beacon node peer discovery endpoint (TCP)</strong><br />Your beacon node exposes this TCP port so that other Ethereum nodes can discover your node, request chain data, and provide chain data.</td>
-    </tr>
-    <tr>
-      <td><strong><code>12000</code></strong></td>
-      <td><strong>Beacon node peer discovery endpoint (UDP)</strong><br />Your beacon node exposes this UDP port so that other Ethereum nodes can discover your node, request chain data, and provide chain data.</td>
-    </tr>
-    <tr>
-      <td><strong><code>4000</code></strong></td>
-      <td><strong>Beacon-validator connection endpoint</strong><br/>Your validator uses this port to connect to your beacon node via <a href='https://grpc.io'>gRPC</a>.</td>
-    </tr> 
-    <tr>
-      <td><strong><code>30303</code></strong></td>
-      <td><strong>TODO</strong><br/>TODO.</td>
-    </tr> 
-</table>
-
-
-## Test and configure your ports
-
-
-### 8551
-
- - Here's how you can verify that it's working
- - Here's what to do if it's not
- - Here's what external nodes need
-
-
-### 8545
-
- - Here's how you can verify that it's working
- - Here's what to do if it's not
- - Here's what external nodes need
-
-
-### 3500
-
- - Here's how you can verify that it's working
- - Here's what to do if it's not
- - Here's what external nodes need
-
-If you want to query information such as the chainhead from your local beacon node, you can call:
-
-```
-http://127.0.0.1:3500/eth/v1alpha1/beacon/chainhead
-```
-
-
-### TCP/13000 and UDP/12000
-
- - Here's how you can verify that it's working
- - Here's what to do if it's not
- - Here's what external nodes need
-
-
-### 4000
-
- - Here's how you can verify that it's working
- - Here's what to do if it's not
- - Here's what external nodes need
-
-
-
-## Troubleshooting
-
-TODO: embed here
-
-
-
-
-
-
----
-
-OLD BELOW THIS
-
-By default, the beacon node exposes a [gRPC](https://grpc.io) API on host `127.0.0.1:4000`, which is accessed by the validator client. This is not an HTTP endpoint, so you will not be able to perform API queries via HTTP on that port. However, we also expose a JSON-HTTP endpoint on `127.0.0.1:3500` by default for your needs. 
-
-
-
-
-
-
-
-The Ethereum proof-of-stake [architecture](/docs/how-prysm-works/architecture-overview/) is designed to be a fully peer to peer (P2P) network.  This section describes how to configure the Prysm [beacon node](/docs/how-prysm-works/beacon-node) and your network to optimise the number of peers that you communicate with on the Ethereum proof-of-stake etwork.  Increasing peers helps improve the health, performance and stablity of nodes and the overall network.
-
-> **NOTICE:** This section contains advanced network configurations and is optional.
-
-Ethereum proof-of-stake leverages [libp2p](/docs/how-prysm-works/p2p-networking), a framework and suite of protocols for building peer-to-peer network applications.  When a [beacon node](/docs/how-prysm-works/beacon-node) first starts up, it does two things to start communicating with other participants:
-- Begins listening for new incoming P2P connections
-- Starts a [discovery](https://github.com/ethereum/devp2p/wiki/Discovery-Overview) process to find and connect to new peers
-
-![P2P Network Diagram](/img/prysm-p2p-host-ip.png)
-
-## Home networks & routers
-
-Many participants on the Ethereum proof-of-stake network operate their nodes on a home network. Home networks typically have a router that provides a logical boundary between your private home network, and the public internet.  While this is good for keeping bad traffic out of your network, it presents a challenge for communicating with other nodes who are also on home networks.
-
-## Virtual public cloud (VPC) networks
-
-Other participants on the Ethereum proof-of-stake network operate their nodes on a virtual public cloud (VPC) instance.  This is basically a computer running in a datacenter that quite often is directly connected to the public internet.
-
-## Incoming P2P connection prerequisites
-
-In order for other participants on the Ethereum proof-of-stake network to establish incoming P2P connections with your [beacon node](/docs/how-prysm-works/beacon-node), a number of conditions must be met:
-1. Your public IP address must be known.
-3. All routers & firewalls must be configured to allow incoming traffic on that protocol/port combination.
-
-## Private IP addresses
-
-Computers on a home network will typically have a private IP address.  Attempting to establish a P2P connection to another participant on the Ethereum proof-of-stake network using that participant's **private** IP address is not possible, you must use the **public** IP address.  Private IPv4 addresses will always fall into one of the following ranges, as per [RFC1918](https://en.wikipedia.org/wiki/Private_network):
- - 192.168.0.0 – 192.168.255.255
- - 172.16.0.0 – 172.31.255.255
- - 10.0.0.0 – 10.255.255.255
-
-> **NOTICE:** You may have more than one private IP address
-
-To determine your **private** IP address, or run the appropriate command for your OS:
-
-**GNU/Linux:**
-```
-ip addr show | grep "inet " | grep -v 127.0.0.1
-```
-**Windows:**
-```
-ipconfig | findstr /i "IPv4 Address"
-```
-**macOS:**
-```
-ifconfig | grep "inet " | grep -v 127.0.0.1
-```
-
-## Public IP addresses
-
-Public IP addresses include all other IP addresses not in the private ranges mentioned above, with some exceptions for [Special-Use IPv4 Addresses](https://tools.ietf.org/html/rfc3330).
-
-To determine your **public**  IP  address, visit (http://v4.ident.me/) or run this command:
-```
-curl v4.ident.me
-```
-
-## Port forwarding
-Participants on home networks will need to configure their router to perform port forwarding so that other Ethereum proof-of-stake participants can establish a connection to your [beacon node](/docs/how-prysm-works/beacon-node) on TCP/13000 and UDP/12000.  The specific steps required vary based on your router, but can be summarised as follows:
-
-> **NOTICE:** Participants with nodes on a virtual public cloud (VPC) instance can skip this step.
+> If you're running on a virtual public cloud (VPC) instance, you can skip this step.
 
 1. Determine the IP address for your home router
 2. Browse to the management website for your home router (typically http://192.168.1.1)
@@ -234,32 +75,8 @@ Participants on home networks will need to configure their router to perform por
     - Protocol: UDP
     - IP Address: Private IP address of the computer running beacon-chain
 
-There are many websites available with more detailed instructions on how to perform the steps above on your specific router. A quick search should help get you started.  Feel free to ask for help in our [Discord](https://discord.gg/prysmaticlabs).
 
-To determine the IP address for your home router, run the appropriate command for your OS:
-
-> **NOTICE:** You may have more then one gateway IP address
-
-**GNU/Linux:**
-```
-ip route | grep default
-```
-**Windows:**
-```
-ipconfig | findstr /i "Gateway"
-```
-**macOS:**
-```
-netstat -nr | grep default
-```
-
-## Firewalls
-
-As a security best practice, we recommend blocking all incoming connections across all local ports, exposing inbound connections through specific ports only as needed. Ensure that your firewall is configured to allow incoming connections on TCP/13000 and UDP/12000 from all source IP addresses so that Prysm can connect to peers.
-
-Prysm uses a randomly selected outbound port when forming outbound TCP connections with peers, so you shouldn't restrict Prysm's ability to form outbound connections through any local ports. You may need to add a firewall rule specifically to grant Prysm outbound access via all local TCP/UDP ports.
-
-## Setting the `--p2p-host-ip` or `--p2p-host-dns` flag
+## Set the `--p2p-host-ip` or `--p2p-host-dns` flag
 
 The [beacon node](/docs/how-prysm-works/beacon-node) needs to know what your **public** IP address is so that it can inform other peers how to reach your node.  Do this by including either the `--p2p-host-ip=<your public IP>` or, if you have a valid DNS record `--p2p-host-dns="host.domain.com"` flag when you start up the `beacon-chain`.
 
@@ -277,17 +94,64 @@ prysm.sh beacon-chain --p2p-host-ip=$(curl -s v4.ident.me)
 for /f %i in ('curl -s v4.ident.me') do set PRYSM-P2P-HOST-IP=%i
 prysm.bat beacon-chain --p2p-host-ip=%PRYSM-P2P-HOST-IP%
 ```
+
 > **NOTICE:** If you are using this command in a `.bat` script, replace both instances of `%i` with `%%i`.
 
-## Verifying `--p2p-host-ip` or `--p2p-host-dns` settings
+## Verify your discoverability
 
-To verify the `--p2p-host-ip` or `--p2p-host-dns` settings are operating correctly, use [MX Toolbox TCP Lookup tool](https://mxtoolbox.com/SuperTool.aspx?action=tcp%3a{node-IP-address}%3a13000&run=toolpage).
+Use [MX Toolbox TCP Lookup tool](https://mxtoolbox.com/SuperTool.aspx?action=tcp%3a{node-IP-address}%3a13000&run=toolpage).
 
 Enter the IP Address or DNS Name of the node, followed by `:13000` and click "TCP Lookup".
 
 If the results are as below, then the settings are correct:
 
 ![image](https://user-images.githubusercontent.com/2212651/81552111-7c703400-93a0-11ea-83b5-abeebc63c285.png)
+
+
+
+## Determine your IP Address
+
+
+To determine your **private IP address**, run the following command:
+
+**Windows:**
+```
+ipconfig | findstr /i "IPv4 Address"
+```
+**macOS/linux:**
+```
+ifconfig | grep "inet " | grep -v 127.0.0.1
+```
+
+
+To determine your **public IP address**, visit (http://v4.ident.me/) or run this command:
+
+```
+curl v4.ident.me
+```
+
+To determine your **home router IP address**, run the following command:
+
+> **NOTICE:** You may have more then one gateway IP address
+
+**GNU/Linux:**
+```
+ip route | grep default
+```
+**Windows:**
+```
+ipconfig | findstr /i "Gateway"
+```
+**macOS:**
+```
+netstat -nr | grep default
+```
+
+
+## FAQ
+
+
+
 
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
