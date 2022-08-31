@@ -77,16 +77,25 @@ Note that **this is entirely optional**. The beacon node *requesting* the checkp
 
 When you sync via **network request**, the `BeaconState`, `SignedBeaconBlock`, and genesis state files are delivered from one beacon node to another using a peer-to-peer connection. When you sync via **file export/import**, you manually export these files from one beacon node and import them into another. This can be useful if you don't want your beacon node to expose an RPC gateway provider endpoint. Block explorers and client teams can also host these exported files statically as a trusted checkpoint sync source.
 
-Issue the following command to export the `BeaconState` and `SignedBeaconBlock` files from a synced beacon node using `prysmctl`:
+Issue the following commands to export the `BeaconState` and `SignedBeaconBlock` files from a synced beacon node using `prysmctl`. Until `prysmctl` is included in Prysm's binary release package, it is necessary to run it from a local source checkout:
 
 :::info
 
-Invoking `prysmctl` using the below syntax will be possible in an upcoming stable release.
+Installing `prysmctl` via `prysm.sh`, or downloading it from prysm's github release page, will be possible in an upcoming stable release.
 
 :::
 
 ```bash
-go run github.com/prysmaticlabs/prysm/cmd/prysmctl@latest checkpoint save --beacon-node-host=http://localhost:3500
+$ git clone git@github.com:prysmaticlabs/prysm.git
+Cloning into 'prysm'...
+remote: Enumerating objects: 167386, done.
+remote: Counting objects: 100% (332/332), done.
+remote: Compressing objects: 100% (234/234), done.
+remote: Total 167386 (delta 118), reused 220 (delta 93), pack-reused 167054
+Receiving objects: 100% (167386/167386), 154.30 MiB | 39.56 MiB/s, done.
+Resolving deltas: 100% (127482/127482), done.
+
+$ go run github.com/prysmaticlabs/prysm/v3/cmd/prysmctl checkpoint-sync download --beacon-node-host=http://localhost:3500
 ```
 
 You should see the following output if your export was successful:
