@@ -4,7 +4,12 @@ title: Configure a remote signing wallet
 sidebar_label: Configure a remote signing wallet
 ---
 
-## Background
+
+:::caution Deprecated Content
+
+**This content is now deprecated.** See [Configure Web3Signer](./we3signer.md) for the latest and recommended remote signing guidance.
+
+:::
 
 A **remote signing wallet** provides the ability to connect to a remote server to retrieve validating public keys and process signing requests via a secure [gRPC](https://grpc.io) connection. You must supply valid TLS certificates for establishing the secure connection to your server. We have created a reference implementation of a remote signer server, maintained as an open source, Apache 2 project on Github [here](https://github.com/prysmaticlabs/remote-signer) as a starting point
 
