@@ -64,11 +64,23 @@ html[data-theme='dark'] {
     }
 }
 
+.status-guide {
+    .enbn-tabgroup {
+        .hidden;
+    }
+}
+
+.execution-node-guide {
+    .hidden-in-execution-guide {
+        .hidden;
+    }
+}
+
 .quickstart-tabs {
     position: relative;
     margin-bottom: 25px;
 
-    .with-label {
+    .tabgroup-with-label {
         font-size: 13px;
         font-weight: 500;
         border: 1px solid transparent;
@@ -128,6 +140,25 @@ html[data-theme='dark'] {
                 color: #999 !important;
             }
         }
+
+        &:after {
+            font-size: 13px;
+            font-weight: 500;
+            padding: 10px 15px;
+            position: relative;
+            border-color: transparent !important;
+            transition: all .15s linear;
+            background: transparent;
+            color: transparent;
+            display: inline-block;
+            content: "Content updated!";
+        }
+
+        &.updated {
+            &:after {
+                color: var(--tab-active-color);
+            }
+        }
     }
 }
 
@@ -144,8 +175,6 @@ a {
 .footnote:hover {
     color: #000 !important;
 }
-
-
 
 .markdown {
     h2 {
@@ -166,6 +195,15 @@ a {
         overflow: hidden;
         width: auto;
         max-width: 100%;
+    }
+
+    table {
+        font-size: 15px;
+
+        ul,
+        ol {
+            margin-top: 10px;
+        }
     }
 
     .tabpanel {
@@ -548,10 +586,11 @@ header>h1 {
                 font-weight: bold;
             }
 
-            >p {
+            >p,
+            p {
                 font-size: 14px;
                 line-height: 20px;
-                margin-bottom: 0;
+                margin-bottom: 0 !important;
             }
         }
     }
@@ -631,9 +670,10 @@ html[data-theme='dark'] {
 
 @media (max-width: 600px) {
     .quickstart-tabs {
-        .with-label {
+        .tabgroup-with-label {
             .tabs__item {
-                padding: 5px !important;
+                padding: 5px 10px !important;
+                line-height: 27px;
 
                 &:first-child {
                     display: none !important;
