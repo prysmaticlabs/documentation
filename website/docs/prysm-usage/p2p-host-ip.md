@@ -27,10 +27,10 @@ In some cases, small changes to your port and firewall configuration can signifi
 
 Your node and validator will try to establish several types of connections:
 
- 0. Validator nodes try to connect to a single, dedicated beacon node. This beacon node must be local.
- 1. Beacon nodes try to connect to a single, dedicated execution node. This execution node can be local or remote.
- 2. Beacon nodes try to connect to many peer beacon nodes.
- 3. Execution nodes try to connect to many peer execution nodes.
+ 1. Validator nodes try to connect to a single, dedicated beacon node. This beacon node must be local.
+ 2. Beacon nodes try to connect to a single, dedicated execution node. This execution node can be local or remote.
+ 3. Beacon nodes try to connect to many peer beacon nodes.
+ 4. Execution nodes try to connect to many peer execution nodes.
 
 To establish these connections, your client software needs to be able to send and receive messages through specific ports. As a security best practice, we recommend blocking inbound traffic across all local ports, allowing inbound traffic on a port-by-port basis. The following firewall rules should be configured on any local operating system, software, or hardware firewalls between you and your internet connection:
 
