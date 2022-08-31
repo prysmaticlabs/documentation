@@ -3,7 +3,8 @@ module.exports = {
     tagline: 'Ethereum consensus implementation written entirely in Go.',
     url: 'https://docs.prylabs.network',
     baseUrl: '/',
-    onBrokenLinks: 'warn',
+    onBrokenLinks: 'throw',
+    onBrokenMarkdownLinks: 'throw',
     favicon: 'img/Prysm.svg',
     organizationName: 'Prysmatic Labs',
     projectName: 'prysm-docs',
@@ -12,6 +13,7 @@ module.exports = {
     },
     trailingSlash: false,
     scripts: ['https://buttons.github.io/buttons.js'],
+
     themeConfig: {
         navbar: {
             title: "Prysm Documentation",

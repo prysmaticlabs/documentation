@@ -66,6 +66,10 @@ The following table of contents provides a descriptive overview of Prysm's docum
 <p>After The Merge, Prysm will need to securely connect to a local execution node. This how-to shows you how to form this secure connection using a JWT token.</p>
 </div>
 <div class='panel'>
+<a href='execution-node/authentication'>Configure execution node</a>
+<p>After The Merge, Prysm will need to securely connect to a local execution node. This how-to shows you how to configure Geth, Besu, or Nethermind.</p>
+</div>
+<div class='panel'>
 <a href='prysm-usage/staying-up-to-date'>Update and downgrade Prysm</a>
 <p>Learn how to <strong>keep Prysm updated</strong>, how to downgrade Prysm, and how to use release candidates.</p>
 </div>
@@ -116,10 +120,6 @@ The following table of contents provides a descriptive overview of Prysm's docum
 <div class='panel'>
 <a href='wallet/deterministic'>Create a Prysm wallet</a>
 <p>Learn how to create a wallet using Prysm.</p>
-</div>
-<div class='panel'>
-<a href='wallet/remote'>Configure a remote signing wallet</a>
-<p>Learn how to configure a <strong>remote signing wallet</strong>, a special type of wallet that lets your validator connect to a remote server to retrieve the keys you need to process signing requests via a secure gRPC connection. This guidance is targeted at power users who are willing to increase complexity in exchange for increased validator key security.</p>
 </div>
 <div class='panel'>
 <a href='wallet/nondeterministic'>Import keys into a Prysm wallet</a>
@@ -243,7 +243,7 @@ The following table of contents provides a descriptive overview of Prysm's docum
 <a href='devtools/net-design'>Network design</a>
 </div>
 <div class='panel'>
-<a href='devtools/api-middleware'>API middleware</a>
+<a href='devtools/extending-apis'>Extending APIs</a>
 </div>
 <div class='panel'>
 <a href='how-prysm-works/architecture-overview'>Architecture overview</a>
