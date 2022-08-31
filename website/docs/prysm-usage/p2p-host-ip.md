@@ -15,13 +15,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 :::
 
-In some cases, small changes to your port and firewall configuration can significantly improve your node's peer-to-peer **connectivity**. Improved peer-to-peer connectivity benefits the broader Ethereum ecosystem. It can also help your validator find more work and earn more ETH. In this how-to, we'll review the following procedures:
-
- 1. Configure your firewall
- 2. Configure your router
- 3. Broadcast your public IP address
- 4. Test your discoverability
-
+In some cases, small changes to your port and firewall configuration can significantly improve your node's peer-to-peer **connectivity**. Improved peer-to-peer connectivity benefits the broader Ethereum ecosystem by making blockchain data more available. It can also help your validator find more work and earn more ETH.
 
 ## Configure your firewall
 
