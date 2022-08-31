@@ -15,7 +15,13 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 :::
 
-In some cases, small changes to your port and firewall configuration can significantly improve your node's **peer-to-peer connectivity**. Improved peer-to-peer connectivity benefits the broader Ethereum ecosystem by making blockchain data more available. It can also help your validator find more work and earn more ETH.
+In some cases, small changes to your port and firewall configuration can significantly improve your node's **peer-to-peer connectivity**. Improved peer-to-peer connectivity benefits the broader Ethereum ecosystem by making blockchain data more available. It can also help your validator find more work and earn more ETH. In this how-to, we'll walk through the following tasks:
+
+ 1. **Configure your firewall** for improved peer-to-peer connectivity
+ 2. **Configure your router** for improved peer-to-peer connectivity
+ 3. Configure your beacon node to **broadcast your public IP address**
+ 4. **Verify your node's discoverability** by using a TCP lookup tool
+
 
 ## Configure your firewall
 
