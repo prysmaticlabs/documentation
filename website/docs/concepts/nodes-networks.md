@@ -94,7 +94,7 @@ Every network's execution layer works with (and only with) its corresponding "pa
     <tr>
       <td>Sepolia</td>
       <td>Sepolia</td>
-      <td>Consensus-layer Sepolia is a new network that was created to facilitate Merge testing, similar to consensus-layer Ropsten. Sepolia is the next network that will be Merge-tested. The <a href='../../install/install-with-script'>Prysm Quickstart</a> shows you how to configure a Merge-ready node on Sepolia. Note that this is a permissioned network, so you can run a node on Sepolia, but not a validator.<br/><br/>This network pair mints and manages <strong>SepplETH</strong>, a type of testnet ETH used exclusively within this network pair.</td>
+      <td>Consensus-layer Sepolia is a new network that was created to facilitate Merge testing, similar to consensus-layer Ropsten. Sepolia is the next network that will be Merge-tested. The <a href='../install/install-with-script'>Prysm Quickstart</a> shows you how to configure a Merge-ready node on Sepolia. Note that this is a permissioned network, so you can run a node on Sepolia, but not a validator.<br/><br/>This network pair mints and manages <strong>SepplETH</strong>, a type of testnet ETH used exclusively within this network pair.</td>
     </tr>
     <tr>
       <td>Ropsten</td>

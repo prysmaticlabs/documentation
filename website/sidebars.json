@@ -56,6 +56,10 @@
                 },
                 {
                     "type": "doc",
+                    "id": "execution-node/configuring-for-prysm"
+                },
+                {
+                    "type": "doc",
                     "id": "prysm-usage/staying-up-to-date"
                 },
                 {
