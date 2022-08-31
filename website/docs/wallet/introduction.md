@@ -4,7 +4,7 @@ title: Keys, wallets, and accounts
 sidebar_label: Keys, wallets, and accounts
 ---
 
-This section explains everything about how to manage validator accounts using Prysm's built-in wallet, as well as setup instructions for different types of wallets including HD (hierarchical deterministic), non-HD, and remote signing wallets. If you created a wallet using the official [Ethereum launchpad](https://launchpad.ethereum.org/) and want to run Prysm using it, see our dedicated instructions [here](/docs/mainnet/joining-eth2).
+This section explains everything about how to manage validator accounts using Prysm's built-in wallet, as well as setup instructions for different types of wallets including HD (hierarchical deterministic), non-HD, and remote signing wallets.
 
 :::tip Pro-Tip
 Prysm's validator accounts are extensible enough to allow for the most basic setup all the way to advanced production setups where security is paramount.
@@ -31,7 +31,7 @@ When creating an HD wallet, you'll be given a 24-word mnemonic phrase which you 
 The ideal security for an average user participating as a validator is as follows:
 
 - Create a wallet using the official [eth2.0-deposit-cli](https://github.com/ethereum/eth2.0-deposit-cli) and keep your mnemonic stored offline, safely.
-- Import only the validating keys you need into your validator client, such as by following the instructions [here](/docs/mainnet/joining-eth2).
+- Import only the validating keys you need into your validator client, such as by following the instructions [here](../install/install-with-script#step-5-run-a-validator-using-prysm).
 
 For **best security** in production cloud deployments, it's best you use a **remote signer**, as that offers absolute separation of your secret keys and your validator client software. Read more about remote signers [here](/docs/wallet/remote).
 
