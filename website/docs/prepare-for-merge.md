@@ -123,7 +123,7 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
         <div class='input-container'><input id="cl-8" type='checkbox'/><span class='done'></span></div>
         <div class='guidance-container'>
             <label for="cl-8">Update your firewall</label>
-            <p>If you're not using IPC to connect your beacon node and execution node, your beacon node will need to connect to its execution node on port <code>8551</code>. Previously, port <code>8545</code> was used. Ensure that your firewall rules are updated accordingly, and refer to <a href='./prysm-usage/p2p-host-ip'>Configure ports and firewalls for improved network connectivity</a> for general connectivity improvement tips.</p>
+            <p>If you're not using IPC to connect your beacon node and execution node, your beacon node will need to connect to its execution node on port <code>8551</code>. Previously, port <code>8545</code> was used. If your beacon node and execution node are on different host machines, ensure that your firewall rules are updated accordingly, and refer to <a href='./prysm-usage/p2p-host-ip'>Configure ports and firewalls for improved network connectivity</a> for general connectivity improvement tips.</p>
         </div>
     </div>
     <div class='task'>
