@@ -109,7 +109,7 @@ netstat -nr | grep default
 
 Your beacon node will broadcast your **public IP address** to other peers if you configure either the following flags:
 
- - `--p2p-host-ip=<your public IP>`: If you haven't configured a DNS record for your public IP. For example: `--p2p-host-ip=76.127.152.89`
+ - `--p2p-host-ip=<your public IP>`: If you haven't configured a DNS record for your public IP. For example: `--p2p-host-ip=67.127.152.89`
  - `--p2p-host-dns="host.domain.com"`: For example: `--p2p-host-dns=host.domain.com`
 
 
