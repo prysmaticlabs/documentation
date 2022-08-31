@@ -72,20 +72,20 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
         <div class='guidance-container'>
             <label for="cl-3">Use a Merge-ready version of your execution client</label>
             <p>
-                <Tabs className="with-label" groupId="execution-clients" defaultValue="geth" values={[
+                <Tabs className="tabgroup-with-label" groupId="execution-clients" defaultValue="geth" values={[
                 {label: 'Execution client:', value: 'label'},
                 {label: 'Geth', value: 'geth'},
                 {label: 'Nethermind', value: 'nethermind'},
                 {label: 'Besu', value: 'besu'}
                 ]}>
-                    <TabItem value="geth">See <a href='https://github.com/ethereum/go-ethereum/releases'>Geth's releases page</a> and join <a href='https://discord.gg/invite/nthXNEv'>their Discord</a> to stay up to date as we approach Mainnet Merge.</TabItem>
-                    <TabItem value="nethermind">See <a href='https://github.com/NethermindEth/nethermind/releases'>Nethermind's releases page</a> and join <a href='https://discord.com/invite/DedCdvDaNm'>their Discord</a> to stay up to date as we approach Mainnet Merge.</TabItem>
-                    <TabItem value="besu">See Besu's <a href='https://github.com/hyperledger/besu/releases'>releases page</a> and join <a href='https://discord.com/invite/hyperledger'>their Discord</a> to stay up to date as we approach Mainnet Merge.</TabItem>
+                    <TabItem value="geth">Use <code>geth version</code> to check Geth's version. See <a href='https://github.com/ethereum/go-ethereum/releases'>Geth's releases page</a> and join <a href='https://discord.gg/invite/nthXNEv'>their Discord</a> to stay up to date as we approach Mainnet Merge.</TabItem>
+                    <TabItem value="nethermind">Review Nethermind's log output to see what version you're using. See <a href='https://github.com/NethermindEth/nethermind/releases'>Nethermind's releases page</a> and join <a href='https://discord.com/invite/DedCdvDaNm'>their Discord</a> to stay up to date as we approach Mainnet Merge.</TabItem>
+                    <TabItem value="besu">Review Besu's log output to see what version you're using. See Besu's <a href='https://github.com/hyperledger/besu/releases'>releases page</a> and join <a href='https://discord.com/invite/hyperledger'>their Discord</a> to stay up to date as we approach Mainnet Merge.</TabItem>
                 </Tabs>
             </p>
         </div>
     </div>
-    <Tabs className="with-label" groupId="execution-clients" defaultValue="geth" values={[
+    <Tabs className="tabgroup-with-label" groupId="execution-clients" defaultValue="geth" values={[
             {label: 'Execution client:', value: 'label'},
             {label: 'Geth', value: 'geth'},
             {label: 'Nethermind', value: 'nethermind'},
@@ -103,7 +103,7 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
         <TabItem value="nethermind"></TabItem>
         <TabItem value="besu"></TabItem>
     </Tabs>
-    <Tabs className="with-label" groupId="protocol" defaultValue="jwt" values={[
+    <Tabs className="tabgroup-with-label" groupId="protocol" defaultValue="jwt" values={[
         {label: 'EN-BN connection:', value: 'label'},
         {label: 'HTTP-JWT', value: 'jwt'},
         {label: 'IPC', value: 'ipc'}
@@ -123,7 +123,7 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
         <div class='input-container'><input id="cl-8" type='checkbox'/><span class='done'></span></div>
         <div class='guidance-container'>
             <label for="cl-8">Update your firewall</label>
-            <p>If you're not using IPC to connect your beacon node and execution node, your beacon node will need to connect to its execution node on port <code>8551</code>. Previously, port <code>8545</code> was used. Ensure that your firewall rules are updated accordingly, and refer to <a href='./prysm-usage/p2p-host-ip'>Configure ports and firewalls for improved network connectivity</a> for general connectivity improvement tips.</p>
+            <p>If you're not using IPC to connect your beacon node and execution node, your beacon node will need to connect to its execution node on port <code>8551</code>. Previously, port <code>8545</code> was used. If your beacon node and execution node are on different host machines, ensure that your firewall rules are updated accordingly, and refer to <a href='./prysm-usage/p2p-host-ip'>Configure ports and firewalls for improved network connectivity</a> for general connectivity improvement tips.</p>
         </div>
     </div>
     <div class='task'>
@@ -162,7 +162,7 @@ import QuickstartPrereqsPartial from '@site/docs/install/partials/_quickstart-pr
 <QuickstartPrereqsPartial />
 
 
-<Tabs className="with-label hidden-in-jwt-guide" defaultValue="jwt" groupId="protocol" values={[
+<Tabs className="tabgroup-with-label hidden-in-jwt-guide" defaultValue="jwt" groupId="protocol" values={[
         {label: 'EN-BN connection:', value: 'label'},
         {label: 'HTTP-JWT', value: 'jwt'},
         {label: 'IPC', value: 'ipc'}
