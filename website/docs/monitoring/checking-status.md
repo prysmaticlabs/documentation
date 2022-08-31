@@ -111,7 +111,7 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
         <div class='input-container'><input id="st-4" type='checkbox'/><span class='done'></span></div>
         <div class='guidance-container'>
             <label for="st-4">4. Beacon node sync status</label>
-            <p>You can check your beacon node's <a href='https://ethereum.github.io/beacon-APIs/?urls.primaryName=dev#/Node/getSyncingStatus'>sync status</a> by running <code>curl http://localhost:3500/eth/v1/node/syncing | jq</code> from a separate terminal window. When you see <code>"is_syncing":false</code>, your beacon node is fully synchronized with the beacon chain. When you see <code>"is_optimistic":false</code>, your beacon node sees that your execution node is either 1) not yet started, or 2) fully synchronized with the execution-layer blockchain.
+            <p>You can check your beacon node's <a href='https://ethereum.github.io/beacon-APIs/?urls.primaryName=dev#/Node/getSyncingStatus'>sync status</a> by running <code>curl http://localhost:3500/eth/v1/node/syncing | jq</code> from a separate terminal window. When you see <code>"is_syncing":false</code>, your beacon node is fully synchronized with the beacon chain. When you see <code>"is_optimistic":false</code>, your beacon node sees that your execution node is either 1) not yet started, 2) hasn't synced past the merge block or 3) fully synchronized with the execution-layer blockchain.
             </p>
         </div>
     </div>
