@@ -1,6 +1,6 @@
 ---
 id: p2p-host-ip
-title: Configure ports and firewalls for peer-to-peer connectivity
+title: Configure ports and firewalls for improved peer-to-peer connectivity
 sidebar_label: Configure ports and firewalls
 ---
 
