@@ -35,7 +35,9 @@ Your node and validator will try to establish several types of connections:
  3. **Beacon nodes** try to connect to **many peer beacon nodes**.
  4. **Execution nodes** try to connect to **many peer execution nodes**.
 
-To establish these connections, your client software needs to be able to send and receive messages through specific ports. As a security best practice, we recommend blocking inbound traffic across all local ports, allowing inbound traffic on a port-by-port basis. The following firewall rules should be configured on any local operating system, software, or hardware firewalls between your nodes and their internet connection:
+To establish these connections, your client software needs to be able to send and receive messages through specific ports. As a security best practice, we recommend blocking inbound traffic across all local ports, allowing inbound traffic on a port-by-port basis. 
+
+The following firewall rules should be configured on any local operating system, third-party software, or hardware firewalls between your nodes and their internet connection:
 
 
 | Port/Protocol   | Firewall rule                       | Reason/Caveats                                                                                                                                                                                                                                                 |
