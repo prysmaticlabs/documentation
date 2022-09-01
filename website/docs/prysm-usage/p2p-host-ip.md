@@ -4,6 +4,9 @@ title: Configure ports and firewalls for improved peer-to-peer connectivity
 sidebar_label: Configure ports and firewalls
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <HeaderBadgesWidget commaDelimitedContributors="Nishant,Raul,Mick" lastVerifiedDateString="August 30th, 2022" lastVerifiedVersionString="v3.0.0" />
@@ -15,14 +18,16 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 :::
 
+
 In some cases, small changes to your port and firewall configuration can significantly improve your node's **peer-to-peer connectivity**. Improved peer-to-peer connectivity benefits the broader Ethereum ecosystem by making blockchain data more available, and it can also help your validator find more work and earn (a little) more ETH.
 
 In this how-to, we'll walk through the following tasks:
 
  1. **[Configure your firewall](#configure-your-firewall)** for improved peer-to-peer connectivity.
- 2. **[Configure your router](#configure-your-router)** for improved peer-to-peer connectivity.
- 3. Configure your beacon node to **[broadcast your public IP address](#broadcast-your-public-ip-address)**.
- 4. **[Verify your node's discoverability](#verify-your-nodes-discoverability)** by using a TCP lookup tool.
+ 2. **[Determine your IP addresses](#determine-your-ip-addresses)** so you can configure your router and beacon node.
+ 3. **[Configure your router](#configure-your-router)** for improved peer-to-peer connectivity.
+ 4. Configure your beacon node to **[broadcast your public IP address](#broadcast-your-public-ip-address)**.
+ 5. **[Verify your node's discoverability](#verify-your-nodes-discoverability)** by using a TCP lookup tool.
 
 Note that **as long as you can complete the [Status checklist](../monitoring/checking-status.md) without error, this isn't required**. These are optimizations targeted at power users.
 
@@ -56,6 +61,33 @@ Note that both consensus and execution clients allow you to customize many of th
 When configuring `Allow inbound` rules, consider tying the rule to an IP address when possible. For example, if your beacon node on `Machine A` is connecting to a remote execution node on `Machine B`, `Machine B`'s `Allow inbound and outbound traffic over 8551` rule should be tied to `Machine A's` public IP address. More information about IP addresses and port forwarding is available below.
 
 
+## Determine your IP addresses
+
+<Tabs groupId="os" defaultValue="others" values={[
+    {label: 'Windows', value: 'win'},
+    {label: 'Linux, MacOS, Arm64', value: 'others'}
+]}>
+<TabItem value="win">
+  
+
+ - Private IP address: `ipconfig | findstr /i "IPv4 Address"`
+ - Public IP address: Visit (http://v4.ident.me/) or run `curl v4.ident.me`
+ - Router IP address: `ipconfig | findstr /i "Gateway"`
+
+  
+</TabItem>
+<TabItem value="others">
+
+
+ - Private IP address: `ifconfig | grep "inet " | grep -v 127.0.0.1`
+ - Public IP address: Visit (http://v4.ident.me/) or run `curl v4.ident.me`
+ - Router IP address: `ip route | grep default` (Linux) `netstat -nr | grep default` (MacOS)
+
+
+</TabItem>
+</Tabs>
+
+
 ## Configure your router
 
 > If you're running on a virtual public cloud (VPC) instance, you can skip this step.
@@ -79,45 +111,6 @@ To ensure that other nodes can connect with your node, you may need to forward p
 
 If your execution node, beacon node, and validator node are split across multiple machines, you may need to forward additional ports. Refer to the above table of rules for more detailed information.
 
-
-### Determine your private IP address
-
-Run the following command:
-
-
-**Windows:**
-```
-ipconfig | findstr /i "IPv4 Address"
-```
-**macOS/linux:**
-```
-ifconfig | grep "inet " | grep -v 127.0.0.1
-```
-
-### Determine your public IP address
-
-Visit (http://v4.ident.me/) or run this command:
-
-```
-curl v4.ident.me
-```
-
-### Determine your router's IP address
-
-Run the following command:
-
-**GNU/Linux:**
-```
-ip route | grep default
-```
-**Windows:**
-```
-ipconfig | findstr /i "Gateway"
-```
-**macOS:**
-```
-netstat -nr | grep default
-```
 
 ## Broadcast your public IP address
 
