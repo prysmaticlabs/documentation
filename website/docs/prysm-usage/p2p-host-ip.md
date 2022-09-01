@@ -60,8 +60,16 @@ Note that both consensus and execution clients allow you to customize many of th
 
 When configuring `Allow inbound` rules, consider tying the rule to an IP address when possible. For example, if your beacon node on `Machine A` is connecting to a remote execution node on `Machine B`, `Machine B`'s `Allow inbound and outbound traffic over 8551` rule should be tied to `Machine A's` public IP address. More information about IP addresses and port forwarding is available below.
 
+<div class='port-guide'>
 
 ## Determine your IP addresses
+
+import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidimensional-content-controls-partial.md';
+
+<MultidimensionalContentControlsPartial />
+
+<div class='hide-tabs'>
+
 
 <Tabs groupId="os" defaultValue="others" values={[
     {label: 'Windows', value: 'win'},
@@ -87,6 +95,9 @@ When configuring `Allow inbound` rules, consider tying the rule to an IP address
 </TabItem>
 </Tabs>
 
+</div>
+
+</div>
 
 ## Configure your router
 
