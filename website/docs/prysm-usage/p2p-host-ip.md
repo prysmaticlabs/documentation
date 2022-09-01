@@ -79,20 +79,20 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
   
 | IP type | Command                                               |
 |---------|-------------------------------------------------------|
-| Private | `ipconfig | findstr /i "IPv4 Address"`                |
+| Private | `ipconfig &verbar; findstr /i "IPv4 Address"`         |
 | Public  | Visit (http://v4.ident.me/) or run `curl v4.ident.me` |
-| Router  | `ipconfig | findstr /i "Gateway"`                     |
+| Router  | `ipconfig &verbar; findstr /i "Gateway"`              |
 
   
 </TabItem>
 <TabItem value="others">
 
 
-| IP type | Command                                                                |
-|---------|------------------------------------------------------------------------|
-| Private | `ifconfig | grep "inet " | grep -v 127.0.0.1`                          |
-| Public  | Visit (http://v4.ident.me/) or run `curl v4.ident.me`                  |
-| Router  | `ip route | grep default` (Linux) `netstat -nr | grep default` (MacOS) |
+| IP type | Command                                                                              |
+|---------|--------------------------------------------------------------------------------------|
+| Private | `ifconfig &verbar; grep "inet " &verbar; grep -v 127.0.0.1`                          |
+| Public  | Visit (http://v4.ident.me/) or run `curl v4.ident.me`                                |
+| Router  | `ip route &verbar; grep default` (Linux) `netstat -nr &verbar; grep default` (MacOS) |
 
 
 </TabItem>
