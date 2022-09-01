@@ -50,7 +50,7 @@ To establish these connections, your client software needs to be able to send an
 | `8551/TCP`      | Allow inbound traffic.              | This lets your local execution node connect to a dedicated remote beacon node. You can ignore this if your BN and EN are on the same machine.                                                                                                                  |
 | `30303/TCP+UDP` | Allow inbound and outbound traffic. | `30303/TCP` is your execution node's listener port, while `30303/UDP` is its discovery port. This rule lets your execution node connect to other peers. Note that some clients use `30301` by default.                                                         |
 
-Note that both consensus and execution clients allow you to customize many of these ports. The above table of port rules uses default port values.
+Note that both consensus and execution clients allow you to customize many of these ports. The above table of rules is based on default port values.
 
 
 ## Configure your router
