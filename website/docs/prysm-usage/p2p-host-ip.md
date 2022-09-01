@@ -51,7 +51,9 @@ The following firewall rules should be configured on any local operating system,
 | `12000/UDP`     | Allow inbound and outbound traffic. | Your beacon node exposes this TCP port so that other Ethereum nodes can discover your node, request chain data, and provide chain data.                                                                                                                              |
 | `30303/TCP+UDP` | Allow inbound and outbound traffic. | `30303/TCP` is your execution node's listener port, while `30303/UDP` is its discovery port. This rule lets your execution node connect to other peers. Note that some clients use `30301` by default.                                                               |
 
-Note that both consensus and execution clients allow you to customize many of these ports. The above table of rules is based on default port values. When configuring `Allow` rules, consider tying the rule to an IP address when possible. For example, if your beacon node on `Machine A` is connecting to a remote execution node on `Machine B`, `Machine B`'s `Allow inbound and outbound traffic over 8551` rule should be mapped to `Machine A's` public IP address. More information about IP addresses and port forwarding is available below. 
+Note that both consensus and execution clients allow you to customize many of these ports. The above table of rules is based on default port values. 
+
+When configuring `Allow` rules, consider tying the rule to an IP address when possible. For example, if your beacon node on `Machine A` is connecting to a remote execution node on `Machine B`, `Machine B`'s `Allow inbound and outbound traffic over 8551` rule should be tied to `Machine A's` public IP address. More information about IP addresses and port forwarding is available below.
 
 
 ## Configure your router
