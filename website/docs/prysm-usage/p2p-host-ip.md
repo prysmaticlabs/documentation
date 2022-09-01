@@ -77,19 +77,22 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
 ]}>
 <TabItem value="win">
   
-
- - Private IP address: `ipconfig | findstr /i "IPv4 Address"`
- - Public IP address: Visit (http://v4.ident.me/) or run `curl v4.ident.me`
- - Router IP address: `ipconfig | findstr /i "Gateway"`
+| IP type | Command                                               |
+|---------|-------------------------------------------------------|
+| Private | `ipconfig | findstr /i "IPv4 Address"`                |
+| Public  | Visit (http://v4.ident.me/) or run `curl v4.ident.me` |
+| Router  | `ipconfig | findstr /i "Gateway"`                     |
 
   
 </TabItem>
 <TabItem value="others">
 
 
- - Private IP address: `ifconfig | grep "inet " | grep -v 127.0.0.1`
- - Public IP address: Visit (http://v4.ident.me/) or run `curl v4.ident.me`
- - Router IP address: `ip route | grep default` (Linux) `netstat -nr | grep default` (MacOS)
+| IP type | Command                                                                |
+|---------|------------------------------------------------------------------------|
+| Private | `ifconfig | grep "inet " | grep -v 127.0.0.1`                          |
+| Public  | Visit (http://v4.ident.me/) or run `curl v4.ident.me`                  |
+| Router  | `ip route | grep default` (Linux) `netstat -nr | grep default` (MacOS) |
 
 
 </TabItem>
