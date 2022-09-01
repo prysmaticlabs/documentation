@@ -59,7 +59,7 @@ Note that both consensus and execution clients allow you to customize many of th
 
 > If you're running on a virtual public cloud (VPC) instance, you can skip this step.
 
-To ensure that other nodes can connect with your node, you may need to forward ports `13000/TCP` and `12000/UDP` using your router's admin interface.  The specific steps required vary based on your router, but can be summarised as follows:
+To ensure that other nodes can connect with your node, you may need to forward ports `13000/TCP` and `12000/UDP` using your router's admin interface. The specific steps required vary based on your router, but can be summarised as follows:
 
 1. Determine your router's IP address
 2. Log in to your router's browser-based admin interface (usually something like http://192.168.1.1)
