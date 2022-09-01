@@ -45,10 +45,9 @@ To establish these connections, your client software needs to be able to send an
 | `12000/UDP`     | Allow inbound and outbound traffic  | Your beacon node exposes this TCP port so that other Ethereum nodes can discover your node, request chain data, and provide chain data.                                                                                                                        |
 | `8551/TCP`      | Allow outbound traffic.             | This lets your local beacon node connect to a dedicated remote execution node's [Engine API](https://github.com/ethereum/execution-apis/blob/main/src/engine/specification.md). You can ignore this if your BN and EN are on the same machine.                 |
 | `8551/TCP`      | Allow inbound traffic.              | This lets your local execution node connect to a dedicated remote beacon node. You can ignore this if your BN and EN are on the same machine.                                                                                                                  |
-| `30303/TCP+UDP` | Allow inbound and outbound traffic. | `30303/TCP` is your execution node's listener port, while `30303/UDP` is its discovery port. Some clients use `30301` by default.                                                                                                                              |
+| `30303/TCP+UDP` | Allow inbound and outbound traffic. | `30303/TCP` is your execution node's listener port, while `30303/UDP` is its discovery port. This rule lets your execution node connect to other peers. Note that some clients use `30301` by default.                                                         |
 
-Note that clients allow you to customize many of these ports. The above table of port rules uses default port values.
-
+Note that both consensus and execution clients allow you to customize many of these ports. The above table of port rules uses default port values.
 
 
 ## Configure your router
