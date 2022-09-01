@@ -77,11 +77,11 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
 ]}>
 <TabItem value="win">
   
-| IP type | Command                                                |
-|---------|--------------------------------------------------------|
-| Private | <code>ipconfig &#124; findstr /i "IPv4 Address"</code> |
-| Public  | Visit (http://v4.ident.me/) or run `curl v4.ident.me`  |
-| Router  | <code>ipconfig &#124; findstr /i "Gateway"</code>      |
+| IP type | Command                                                            |
+|---------|--------------------------------------------------------------------|
+| Private | <code>ipconfig &#124; findstr /i "IPv4 Address"</code>             |
+| Public  | Visit [v4.ident.me](http://v4.ident.me/) or run `curl v4.ident.me` |
+| Router  | <code>ipconfig &#124; findstr /i "Gateway"</code>                  |
 
   
 </TabItem>
@@ -91,7 +91,7 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
 | IP type | Command                                                                                                |
 |---------|--------------------------------------------------------------------------------------------------------|
 | Private | <code>ifconfig &#124; grep "inet " &#124; grep -v 127.0.0.1</code>                                     |
-| Public  | Visit (http://v4.ident.me/) or run `curl v4.ident.me`                                                  |
+| Public  | Visit [v4.ident.me](http://v4.ident.me/) or run `curl v4.ident.me`                                     |
 | Router  | <code>ip route &#124; grep default</code> (Linux) <code>netstat -nr &#124; grep default</code> (MacOS) |
 
 
