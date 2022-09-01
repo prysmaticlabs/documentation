@@ -76,7 +76,8 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
     {label: 'Linux, MacOS, Arm64', value: 'others'}
 ]}>
 <TabItem value="win">
-  
+
+
 | IP type | Command                                                            |
 |---------|--------------------------------------------------------------------|
 | Private | <code>ipconfig &#124; findstr /i "IPv4 Address"</code>             |
