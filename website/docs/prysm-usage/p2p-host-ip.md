@@ -147,7 +147,9 @@ If you see the following results, your beacon node is highly discoverable:
 
 ![image](https://user-images.githubusercontent.com/2212651/81552111-7c703400-93a0-11ea-83b5-abeebc63c285.png)
 
-You can perform the same test using `30303/TCP` to test your execution node's discoverability. See [Check your node and validator status](../monitoring/checking-status.md) for a comprehensive status checklist.
+You can perform the same test using `30303/TCP` to test your execution node's discoverability. 
+
+See [Check your node and validator status](../monitoring/checking-status.md) for a comprehensive status checklist.
 
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
