@@ -83,6 +83,9 @@ html[data-theme='dark'] .quickstart-tabs .tabs__item:first-child:hover {
   margin: 0 !important;
   padding: 0 !important;
 }
+.port-guide .quickstart-tabs {
+  margin-bottom: 5px !important;
+}
 .quickstart-tabs {
   position: relative;
   margin-bottom: 25px;
