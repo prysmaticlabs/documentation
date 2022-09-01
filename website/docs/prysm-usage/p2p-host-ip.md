@@ -77,22 +77,22 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
 ]}>
 <TabItem value="win">
   
-| IP type | Command                                               |
-|---------|-------------------------------------------------------|
-| Private | `ipconfig &verbar; findstr /i "IPv4 Address"`         |
-| Public  | Visit (http://v4.ident.me/) or run `curl v4.ident.me` |
-| Router  | `ipconfig &verbar; findstr /i "Gateway"`              |
+| IP type | Command                                                |
+|---------|--------------------------------------------------------|
+| Private | <code>ipconfig &#124; findstr /i "IPv4 Address"</code> |
+| Public  | Visit (http://v4.ident.me/) or run `curl v4.ident.me`  |
+| Router  | <code>ipconfig &#124; findstr /i "Gateway"</code>      |
 
   
 </TabItem>
 <TabItem value="others">
 
 
-| IP type | Command                                                                              |
-|---------|--------------------------------------------------------------------------------------|
-| Private | `ifconfig &verbar; grep "inet " &verbar; grep -v 127.0.0.1`                          |
-| Public  | Visit (http://v4.ident.me/) or run `curl v4.ident.me`                                |
-| Router  | `ip route &verbar; grep default` (Linux) `netstat -nr &verbar; grep default` (MacOS) |
+| IP type | Command                                                                                                |
+|---------|--------------------------------------------------------------------------------------------------------|
+| Private | <code>ifconfig &#124; grep "inet " &#124; grep -v 127.0.0.1</code>                                     |
+| Public  | Visit (http://v4.ident.me/) or run `curl v4.ident.me`                                                  |
+| Router  | <code>ip route &#124; grep default</code> (Linux) <code>netstat -nr &#124; grep default</code> (MacOS) |
 
 
 </TabItem>
