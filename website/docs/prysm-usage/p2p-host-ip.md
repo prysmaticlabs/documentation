@@ -118,11 +118,12 @@ netstat -nr | grep default
 
 ## Broadcast your public IP address
 
-Your beacon node will broadcast your **public IP address** to other peers if you configure either the following flags:
+Your beacon node will broadcast your **public IP address** to peer nodes if you configure either the following flags:
 
  - `--p2p-host-ip=<your public IP>`: Use this if you haven't configured a DNS record for your public IP. For example: `--p2p-host-ip=67.127.151.89`
  - `--p2p-host-dns="host.domain.com"`: For example: `--p2p-host-dns=host.domain.com`
 
+Broadcasting your IP can make your beacon node more discoverable, which benefits the Ethereum network by making consensus-layer blockchain data more available.
 
 ## Verify your node's discoverability
 
