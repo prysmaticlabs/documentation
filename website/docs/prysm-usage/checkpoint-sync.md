@@ -81,7 +81,7 @@ Installing `prysmctl` via `prysm.sh`, or downloading it from prysm's github rele
 
 :::info
 
-An alternative to using prysmctl is calling the prysm api directly, making use of the `eth/v2/debug/beacon/states/{state_id}` and `eth/v2/beacon/blocks/{block_id}` endpoints.
+An alternative to using `prysmctl` is calling the Prysm API directly, making use of the `eth/v2/debug/beacon/states/{state_id}` and `eth/v2/beacon/blocks/{block_id}` endpoints.
 
 :::
 
