@@ -17,10 +17,10 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 In some cases, small changes to your port and firewall configuration can significantly improve your node's **peer-to-peer connectivity**. Improved peer-to-peer connectivity benefits the broader Ethereum ecosystem by making blockchain data more available. It can also help your validator find more work and earn more ETH. In this how-to, we'll walk through the following tasks:
 
- 1. **Configure your firewall** for improved peer-to-peer connectivity
- 2. **Configure your router** for improved peer-to-peer connectivity
- 3. Configure your beacon node to **broadcast your public IP address**
- 4. **Verify your node's discoverability** by using a TCP lookup tool
+ 1. **[Configure your firewall](#configure-your-firewall)** for improved peer-to-peer connectivity.
+ 2. **[Configure your router](#configure-your-router)** for improved peer-to-peer connectivity.
+ 3. Configure your beacon node to **[broadcast your public IP address](#broadcast-your-public-ip-address)**.
+ 4. **[Verify your node's discoverability](#verify-your-nodes-discoverability)** by using a TCP lookup tool.
 
 
 ## Configure your firewall
@@ -119,7 +119,7 @@ Your beacon node will broadcast your **public IP address** to other peers if you
  - `--p2p-host-dns="host.domain.com"`: For example: `--p2p-host-dns=host.domain.com`
 
 
-## Verify your discoverability
+## Verify your node's discoverability
 
 Use the [MX Toolbox TCP Lookup tool](https://mxtoolbox.com/SuperTool.aspx?): `https://mxtoolbox.com/SuperTool.aspx?action=tcp%3a{Your-Public-IP-Address}%3a13000&run=toolpage`
 
