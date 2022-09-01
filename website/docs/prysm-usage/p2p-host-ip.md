@@ -15,19 +15,22 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 :::
 
-In some cases, small changes to your port and firewall configuration can significantly improve your node's **peer-to-peer connectivity**. Improved peer-to-peer connectivity benefits the broader Ethereum ecosystem by making blockchain data more available. It can also help your validator find more work and earn more ETH. In this how-to, we'll walk through the following tasks:
+In some cases, small changes to your port and firewall configuration can significantly improve your node's **peer-to-peer connectivity**. Improved peer-to-peer connectivity benefits the broader Ethereum ecosystem by making blockchain data more available, and it can also help your validator find more work and earn (a little) more ETH.
+
+In this how-to, we'll walk through the following tasks:
 
  1. **[Configure your firewall](#configure-your-firewall)** for improved peer-to-peer connectivity.
  2. **[Configure your router](#configure-your-router)** for improved peer-to-peer connectivity.
  3. Configure your beacon node to **[broadcast your public IP address](#broadcast-your-public-ip-address)**.
  4. **[Verify your node's discoverability](#verify-your-nodes-discoverability)** by using a TCP lookup tool.
 
+Note that **as long as you can complete the [Status checklist](../monitoring/checking-status.md) without error, this isn't required**. These are optimizations targeted at power users.
 
 ## Configure your firewall
 
 Your node and validator will try to establish several types of connections:
 
- 1. Validator nodes try to connect to a single, dedicated beacon node. This beacon node must be local.
+ 1. **Validator** nodes try to connect to a **single, dedicated beacon node**. This beacon node must be local.
  2. Beacon nodes try to connect to a single, dedicated execution node. This execution node can be local or remote.
  3. Beacon nodes try to connect to many peer beacon nodes.
  4. Execution nodes try to connect to many peer execution nodes.
