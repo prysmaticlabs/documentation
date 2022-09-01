@@ -53,7 +53,7 @@ The following firewall rules should be configured on any local operating system,
 
 Note that both consensus and execution clients allow you to customize many of these ports. The above table of rules is based on default port values. 
 
-When configuring `Allow` rules, consider tying the rule to an IP address when possible. For example, if your beacon node on `Machine A` is connecting to a remote execution node on `Machine B`, `Machine B`'s `Allow inbound and outbound traffic over 8551` rule should be tied to `Machine A's` public IP address. More information about IP addresses and port forwarding is available below.
+When configuring `Allow inbound` rules, consider tying the rule to an IP address when possible. For example, if your beacon node on `Machine A` is connecting to a remote execution node on `Machine B`, `Machine B`'s `Allow inbound and outbound traffic over 8551` rule should be tied to `Machine A's` public IP address. More information about IP addresses and port forwarding is available below.
 
 
 ## Configure your router
