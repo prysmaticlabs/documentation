@@ -77,6 +77,9 @@ To ensure that other nodes can connect with your node, you may need to forward p
     - IP Address: The private IP address of the computer running your beacon node
 
 
+If your execution node, beacon node, and validator node are split across multiple machines, you may need to forward additional ports. Refer to the above table of rules for more detailed information.
+
+
 ### Determine your private IP address
 
 Run the following command:
