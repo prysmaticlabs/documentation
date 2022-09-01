@@ -86,6 +86,9 @@ html[data-theme='dark'] .quickstart-tabs .tabs__item:first-child:hover {
 .port-guide .quickstart-tabs {
   margin-bottom: 5px !important;
 }
+.port-guide .tabgroup-with-label::after {
+  display: none !important;
+}
 .quickstart-tabs {
   position: relative;
   margin-bottom: 25px;
