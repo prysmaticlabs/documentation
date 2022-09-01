@@ -127,7 +127,7 @@ Use the [MX Toolbox TCP Lookup tool](https://mxtoolbox.com/SuperTool.aspx?): `ht
 
 Note the above placeholder for `Your-Public-IP-Address`, and the specification of `13000/TCP`.
 
-If the results are as below, then your beacon node is discoverable:
+If the results are as below, then your beacon node is highly discoverable:
 
 ![image](https://user-images.githubusercontent.com/2212651/81552111-7c703400-93a0-11ea-83b5-abeebc63c285.png)
 
