@@ -69,12 +69,6 @@ Note that **this is entirely optional**. The beacon node *requesting* the checkp
 
 ## Option 2 (Advanced): Configure checkpoint sync via file export/import
 
-:::info
-
-`Go` needs to be installed on the machine that hosts your synced beacon node if you use this method. See [go.dev](https://go.dev/) for installation instructions.
-
-:::
-
 When you sync via **network request**, the `BeaconState`, `SignedBeaconBlock`, and genesis state files are delivered from one beacon node to another using a peer-to-peer connection. When you sync via **file export/import**, you manually export these files from one beacon node and import them into another. This can be useful if you don't want your beacon node to expose an RPC gateway provider endpoint. Block explorers and client teams can also host these exported files statically as a trusted checkpoint sync source.
 
 Issue the following commands to export the `BeaconState` and `SignedBeaconBlock` files from a synced beacon node using `prysmctl`. Until `prysmctl` is included in Prysm's binary release package, it is necessary to run it from a local source checkout:
@@ -82,6 +76,12 @@ Issue the following commands to export the `BeaconState` and `SignedBeaconBlock`
 :::info
 
 Installing `prysmctl` via `prysm.sh`, or downloading it from prysm's github release page, will be possible in an upcoming stable release.
+
+:::
+
+:::info
+
+An alternative to using prysmctl is calling the prysm api directly, making use of the `eth/v2/debug/beacon/states/{state_id}` and `eth/v2/beacon/blocks/{block_id}` endpoints.
 
 :::
 
