@@ -116,7 +116,7 @@ proposer_config:
     fee_recipient: '0x01234567bE214B3DaeFd350155530FCE8a85ec705'
     builder:
       enabled: true
-      gas_limit: '35000000'
+      gas_limit: '30000000'
 default_config:
   fee_recipient: '0x01234567c5af9B61374A128e6F85f553aF09ff89A'
   builder:
@@ -141,7 +141,7 @@ JSON example:
       "fee_recipient": "0x01234567bE214B3DaeFd350155530FCE8a85ec705",
       "builder": {
         "enabled": false,
-        "gas_limit": "35000000"
+        "gas_limit": "30000000"
       }
     }
   },
