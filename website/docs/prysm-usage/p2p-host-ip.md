@@ -19,15 +19,15 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 :::
 
 
-In some cases, small changes to your port and firewall configuration can significantly improve your node's **peer-to-peer connectivity**. Improved peer-to-peer connectivity benefits the broader Ethereum ecosystem by making blockchain data more available, and it can also help your validator find more work and earn (a little) more ETH.
+In some cases, small changes to your port and firewall configuration can significantly improve your node's **peer-to-peer connectivity**. Improved peer-to-peer connectivity benefits the broader Ethereum ecosystem by making blockchain data more available, and it can also help your validator find more work (and earn a little more ETH).
 
 In this how-to, we'll walk through the following tasks:
 
- 1. **[Configure your firewall](#configure-your-firewall)** for improved peer-to-peer connectivity.
- 2. **[Determine your IP addresses](#determine-your-ip-addresses)** so you can configure your router and beacon node.
- 3. **[Configure your router](#configure-your-router)** for improved peer-to-peer connectivity.
- 4. Configure your beacon node to **[broadcast your public IP address](#broadcast-your-public-ip-address)**.
- 5. **[Verify your node's discoverability](#verify-your-nodes-discoverability)** by using a TCP lookup tool.
+ 1. [Configure your firewall](#configure-your-firewall) for improved peer-to-peer connectivity.
+ 2. [Determine your IP addresses](#determine-your-ip-addresses) so you can configure your router and beacon node.
+ 3. [Configure your router](#configure-your-router) for improved peer-to-peer connectivity.
+ 4. Configure your beacon node to [broadcast your public IP address](#broadcast-your-public-ip-address).
+ 5. [Verify your node's discoverability](#verify-your-nodes-discoverability) by using a TCP lookup tool.
 
 Note that **as long as you can complete the [Status checklist](../monitoring/checking-status.md) without error, this isn't required**. These are optimizations targeted at power users.
 
