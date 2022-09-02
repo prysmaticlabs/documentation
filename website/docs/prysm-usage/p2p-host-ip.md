@@ -107,7 +107,7 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
 
 > If you're running on a virtual public cloud (VPC) instance, you can skip this step.
 
-To ensure that other nodes can connect with your node, you may need to forward ports `13000/TCP` and `12000/UDP` using your router's admin interface. The specific steps required vary based on your router, but can be summarised as follows:
+To ensure that other peer nodes can discover your node, you may need to forward ports `13000/TCP` and `12000/UDP` using your router's admin interface. Every router is different, but the procedure is usually something like this:
 
 1. Determine your router's IP address
 2. Log in to your router's browser-based admin interface (usually something like http://192.168.1.1)
@@ -123,8 +123,7 @@ To ensure that other nodes can connect with your node, you may need to forward p
     - Protocol: `UDP`
     - IP Address: The private IP address of the computer running your beacon node
 
-
-If your execution node, beacon node, and validator node are split across multiple machines, you may need to forward additional ports. Refer to the above table of rules for more detailed information.
+If your execution node, beacon node, and validator node are split across multiple machines, you may need to forward additional ports. Refer to the above table of firewall rules for information about specific ports that you may need to forward.
 
 
 ## Broadcast your public IP address
