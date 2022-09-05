@@ -162,6 +162,24 @@ html[data-theme='dark'] .quickstart-tabs .tabs__item:first-child:hover {
 .quickstart-tabs .tabgroup-with-label.updated:after {
   color: var(--tab-active-color);
 }
+/* Troubleshooting reports */
+.generate-report {
+  font-size: 13px;
+  font-weight: 500;
+  padding: 10px 15px;
+  border-radius: 5px !important;
+  position: relative;
+  background-color: var(--tab-active-color) !important;
+  border-color: var(--tab-active-color) !important;
+  color: white !important;
+}
+.generated-report {
+  margin: auto;
+  max-width: 300px;
+  width: 100%;
+  font-size: 12px;
+  padding: 10px;
+}
 /* General elements */
 a {
   color: var(--prysm-pink);
