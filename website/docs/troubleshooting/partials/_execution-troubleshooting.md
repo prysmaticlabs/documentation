@@ -29,6 +29,6 @@
     </tr>
     <tr>
       <td><code>403 signature invalid</code></td>
-      <td>This is usually caused by invalid JWT configuration. See <a href='https://docs.prylabs.network/docs/execution-node/authentication'>Configure JWT authentication</a> for more information.</td>
+      <td>This is usually caused by invalid JWT configuration. If you're using HTTP-JWT to connect your EN-BN, ensure that both EN and BN are configured to use the same JWT secret. Different files are OK (eg when your EN and BN are on different machines), but the secret within each JWT file should be the same. See <a href='https://docs.prylabs.network/docs/execution-node/authentication'>Configure JWT authentication</a> for more information.</td>
     </tr>
 </table>
