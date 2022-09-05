@@ -166,7 +166,7 @@ import TabItem from '@theme/TabItem';
             <div class='input-container'><input id="st-11" type='checkbox'/><span class='done'></span></div>
             <div class='guidance-container'>
                 <label for="st-11">13. Troubleshooting report</label>
-                <p>Issue still not resolved? Generate a troubleshooting report below. Head over to <a href='https://discord.gg/prysmaticlabs'>Discord</a> and paste your report for additional troubleshooting assistance.</p>
+                <p>Issue still not resolved? <a href='#generate-troubleshooting-report'>Generate a troubleshooting report below</a>. Head over to <a href='https://discord.gg/prysmaticlabs'>Discord</a> and paste your report for additional troubleshooting assistance.</p>
             </div>
         </div>
     </div>
