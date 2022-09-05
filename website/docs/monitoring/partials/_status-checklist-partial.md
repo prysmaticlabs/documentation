@@ -159,6 +159,6 @@ import TabItem from '@theme/TabItem';
 </div>
 
 <div class='troubleshooting-report-area'>
-    <a class='generate-report'>Generate report</a>
+    <a class='generate-report'>Generate troubleshooting report</a>
     <div class='generated-report'>temp</div>
 </div>

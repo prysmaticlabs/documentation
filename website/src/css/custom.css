@@ -173,8 +173,9 @@ html[data-theme='dark'] .quickstart-tabs .tabs__item:first-child:hover {
   border-color: var(--tab-active-color) !important;
   color: white !important;
   display: inline-block;
-  width: 150px;
   margin: auto;
+  text-align: center;
+  padding: 15px 25px;
 }
 .generated-report {
   display: block;
@@ -184,6 +185,11 @@ html[data-theme='dark'] .quickstart-tabs .tabs__item:first-child:hover {
   font-size: 12px;
   padding: 10px;
   font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  background-color: #292929;
+  color: white;
+}
+.troubleshooting-report-area {
+  text-align: center;
 }
 /* General elements */
 a {
