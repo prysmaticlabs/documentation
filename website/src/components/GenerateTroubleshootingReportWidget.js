@@ -46,7 +46,7 @@ export const GenerateTroubleshootingReportWidget = () => {
 
 	let generateReport = function () {
 		var output = 'Troubleshooting report';
-		appendLineToText(output, '---------');
+		output = appendLineToText(output, '---------');
 
 		appendConfigDetailsToOutput(output);
 
@@ -57,10 +57,12 @@ export const GenerateTroubleshootingReportWidget = () => {
 
 		var reportDiv = document.querySelector('#generated-report');
 		reportDiv.innerHTML = output;
+		console.log('report generated')
 	}
 
 	let appendLineToText = function (existingText, newLine) {
 		existingText = existingText + `\n` + newLine;
+		return existingText;
 	}
 
 	let getButton = function () {
