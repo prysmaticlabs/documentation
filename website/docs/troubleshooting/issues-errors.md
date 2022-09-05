@@ -36,6 +36,15 @@ import TroubleshootingAllPartial from '@site/docs/troubleshooting/partials/_trou
 
 <TroubleshootingAllPartial />
 
+
+## Generate troubleshooting report
+
+import GenerateTroubleshootingReportPartial from '@site/docs/troubleshooting/partials/_generate-troubleshooting-report.md';
+
+<GenerateTroubleshootingReportPartial />
+
+
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
 <RequestUpdateWidget />
+
