@@ -46,7 +46,7 @@
     </tr>
     <tr>
       <td><code>weak-subjectivity-checkpoint not provided. Prysm recommends providing a weak subjectivity checkpoint for nodes synced from genesis</code></td>
-      <td>You can safely ignore this warning - it will be removed in an upcoming Prysm release. See <a href='../prysm-usage/checkpoint-sync'>How to configure Checkpoint Sync</a> if you'd like to learn more about checkpoint sync.</td>
+      <td>You can safely ignore this warning - it will be removed in an upcoming Prysm release. See <a href='https://docs.prylabs.network/docs/prysm-usage/checkpoint-sync'>How to configure Checkpoint Sync</a> if you'd like to learn more about checkpoint sync.</td>
     </tr>
     <tr>
       <td><code>Could not connect to execution client endpoint" error="could not make initial request to verify execution chain ID: 401 Unauthorized</code></td>
