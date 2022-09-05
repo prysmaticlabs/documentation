@@ -187,6 +187,7 @@ html[data-theme='dark'] .quickstart-tabs .tabs__item:first-child:hover {
   font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   background-color: #292929;
   color: white;
+  text-align: left;
 }
 .troubleshooting-report-area {
   text-align: center;
