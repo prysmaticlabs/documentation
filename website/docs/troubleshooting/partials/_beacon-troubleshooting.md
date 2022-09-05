@@ -26,7 +26,7 @@
     </tr>
     <tr>
       <td><code>could not get ancestor state: failed to unmarshal encoding: incorrect size</code></td>
-      <td>This usually indicates that your beacon node's data has become corrupt. Try restarting your beacon node with a new or cleared data directory. Consider using <a href='../../prysm-usage/checkpoint-sync'>Checkpoint Sync</a> to reduce sync time.</td>
+      <td>This usually indicates that your beacon node's data has become corrupt. Try restarting your beacon node with a new or cleared data directory. Consider using <a href='https://docs.prylabs.network/docs/prysm-usage/checkpoint-sync'>Checkpoint Sync</a> to reduce sync time.</td>
     </tr>
     <tr>
       <td><code>could not process block: could not process block header: parent root 0x... does not match the latest block header signing root in state</code></td>
