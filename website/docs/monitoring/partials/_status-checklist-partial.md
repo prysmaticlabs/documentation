@@ -160,5 +160,5 @@ import TabItem from '@theme/TabItem';
 
 <div class='troubleshooting-report-area'>
     <a class='generate-report'>Generate report</a>
-    <pre class='generated-report'>temp</pre>
+    <div class='generated-report'>temp</div>
 </div>
