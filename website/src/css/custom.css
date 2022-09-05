@@ -191,6 +191,7 @@ html[data-theme='dark'] .quickstart-tabs .tabs__item:first-child:hover {
   margin-bottom: 20px;
   width: 100%;
   min-width: 100%;
+  border: none !important;
 }
 .troubleshooting-report-area > textarea::placeholder {
   color: #666 !important;
