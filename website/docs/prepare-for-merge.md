@@ -10,8 +10,7 @@ import JwtGuidancePartial from '@site/docs/partials/_jwt-guidance-partial.md';
 
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
-<HeaderBadgesWidget commaDelimitedContributors="Mick,Raul,James" lastVerifiedDateString="August 24th, 2022" lastVerifiedVersionString="v3.0.0" />
-
+<HeaderBadgesWidget commaDelimitedContributors="Mick,Raul,James" lastVerifiedDateString="September 5th, 2022" lastVerifiedVersionString="v3.1.0" />
 
 :::info New user?
 
@@ -35,8 +34,8 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
     <div class='task'>
         <div class='input-container'><input id="cl-1" type='checkbox'/><span class='done'></span></div>
         <div class='guidance-container'>
-            <label for="cl-1">Use Prysm v3.0.0</label>
-            <p><a href='https://github.com/prysmaticlabs/prysm/releases/tag/v3.0.0'>Prysm v3</a> is a <strong>Merge-ready release</strong> that includes updates, deprecations, and breaking changes. Review the <a href='https://github.com/prysmaticlabs/prysm/releases/tag/v3.0.0'>release notes</a> to understand how this release impacts your configuration.</p>
+            <label for="cl-1">Use Prysm v3.1.0</label>
+            <p><a href='https://github.com/prysmaticlabs/prysm/releases/tag/v3.1.0'>Prysm v3</a> is a <strong>Merge-ready release</strong> that includes updates, deprecations, and breaking changes. Review the <a href='https://github.com/prysmaticlabs/prysm/releases/tag/v3.1.0'>release notes</a> to understand how this release impacts your configuration.</p>
         </div>
     </div>
     <div class='task'>
@@ -50,7 +49,7 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
         <div class='input-container'><input id="cl-6" type='checkbox'/><span class='done'></span></div>
         <div class='guidance-container'>
             <label for="cl-6">Verify your Prysm version</label>
-            <p>Verify that you're running Prysm <code>v3.0.0</code> by issuing the following command: <code>prysm.sh beacon-chain --version</code> (Linux) <code>prysm.bat beacon-chain --version</code> (Windows).</p>
+            <p>Verify that you're running Prysm <code>v3.1.0</code> by issuing the following command: <code>prysm.sh beacon-chain --version</code> (Linux) <code>prysm.bat beacon-chain --version</code> (Windows).</p>
         </div>
     </div>
     <div class='task'>
