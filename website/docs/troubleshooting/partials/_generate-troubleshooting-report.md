@@ -5,9 +5,9 @@ import {GenerateTroubleshootingReportWidget} from '@site/src/components/Generate
 <div class='troubleshooting-report-area'>
     <p>Execution node startup command</p>
     <span><strong>Tip:</strong> We recommend redacting wallet addresses, IP addresses, and other personal information as a general operational security best practice.</span>
-    <textarea id="el-cmd" rows="4" placeholder='Paste something like "Nethermind.Runner --JsonRpc.Enabled true --HealthChecks.Enabled true" (or Docker config) here...'></textarea>
+    <textarea id="el-cmd" rows="4" placeholder='Paste something like "Nethermind.Runner --JsonRpc.Enabled true --JsonRpc.JwtSecretFile=../consensus/jwt.hex" (or Docker config) here...'></textarea>
     <p>Beacon node startup command</p>
-    <textarea id="bn-cmd" rows="4" placeholder='Paste something like "./prysm.sh beacon-chain --execution-endpoint=http://localhost:8551 --jwt-secret=path/to/jwt.hex" (or Docker config) here...'></textarea>
+    <textarea id="bn-cmd" rows="4" placeholder='Paste something like "./prysm.sh beacon-chain --execution-endpoint=http://localhost:8551 --jwt-secret=path/to/jwt.hex" here...'></textarea>
     <p>Validator node startup command</p>
     <textarea id="vn-cmd" rows="4" placeholder='Paste something like "./prysm.sh validator" (or Docker config) here...'></textarea>
     <p>Unexpected output</p>

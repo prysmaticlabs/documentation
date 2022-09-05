@@ -188,6 +188,11 @@ html[data-theme='dark'] .quickstart-tabs .tabs__item:first-child:hover {
   color: #333;
 }
 .troubleshooting-report-area > textarea {
+  -ms-overflow-style: none;
+  /* for Internet Explorer, Edge */
+  scrollbar-width: none;
+  /* for Firefox */
+  overflow-x: scroll;
   padding: 15px;
   font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   background-color: #f6f6f6;
@@ -200,6 +205,10 @@ html[data-theme='dark'] .quickstart-tabs .tabs__item:first-child:hover {
   min-width: 100%;
   border: 1px solid #c2c2c2 !important;
   white-space: pre;
+}
+.troubleshooting-report-area > textarea::-webkit-scrollbar {
+  display: none;
+  /* for Chrome, Safari, and Opera */
 }
 rows .troubleshooting-report-area > textarea::placeholder {
   color: #777 !important;
@@ -230,6 +239,11 @@ rows .troubleshooting-report-area > textarea::placeholder {
   background-color: var(--tab-active-color-hover);
 }
 .troubleshooting-report-area .generated-report {
+  -ms-overflow-style: none;
+  /* for Internet Explorer, Edge */
+  scrollbar-width: none;
+  /* for Firefox */
+  overflow-x: scroll;
   display: block;
   width: 100%;
   min-width: 100%;
@@ -244,6 +258,10 @@ rows .troubleshooting-report-area > textarea::placeholder {
   margin-bottom: 20px;
   white-space: pre;
 }
+.troubleshooting-report-area .generated-report::-webkit-scrollbar {
+  display: none;
+  /* for Chrome, Safari, and Opera */
+}
 /* MIXINS */
 .enable-transition {
   -o-transition: all 0.15s ease;
@@ -252,6 +270,17 @@ rows .troubleshooting-report-area > textarea::placeholder {
   -webkit-transition: all 0.15s ease;
   /* ...and now for the proper property */
   transition: all 0.15s ease;
+}
+.invisible-horizontal-scroll {
+  -ms-overflow-style: none;
+  /* for Internet Explorer, Edge */
+  scrollbar-width: none;
+  /* for Firefox */
+  overflow-x: scroll;
+}
+.invisible-horizontal-scroll::-webkit-scrollbar {
+  display: none;
+  /* for Chrome, Safari, and Opera */
 }
 /* General elements */
 a {

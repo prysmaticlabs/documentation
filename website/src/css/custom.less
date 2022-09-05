@@ -207,6 +207,7 @@ html[data-theme='dark'] {
     }
 
     >textarea {
+        .invisible-horizontal-scroll;
         padding: 15px;
         font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
         background-color: #f6f6f6;
@@ -248,6 +249,7 @@ html[data-theme='dark'] {
     }
 
     .generated-report {
+        .invisible-horizontal-scroll;
         display: block;
         width: 100%;
         min-width: 100%;
@@ -291,6 +293,19 @@ html[data-theme='dark'] {
     -webkit-transition: @properties .15s ease;
     /* ...and now for the proper property */
     transition: @properties .15s ease;
+}
+
+.invisible-horizontal-scroll {
+    -ms-overflow-style: none;
+    /* for Internet Explorer, Edge */
+    scrollbar-width: none;
+    /* for Firefox */
+    overflow-x: scroll;
+
+    &::-webkit-scrollbar {
+        display: none;
+        /* for Chrome, Safari, and Opera */
+    }
 }
 
 /* General elements */
