@@ -15,22 +15,22 @@ export const GenerateTroubleshootingReportWidget = () => {
 	let appendUserInputToOutput = function (output) {
 		try {
 			var inputToRead = document.querySelector('#el-cmd');
-			var innerText = inputToRead.innerText;
+			var innerText = inputToRead.value;
 			if (innerText)
 				output = appendLineToText(output, 'Execution client command: ' + innerText);
 
 			inputToRead = document.querySelector('#bn-cmd');
-			innerText = inputToRead.innerText;
+			innerText = inputToRead.value;
 			if (innerText)
 				output = appendLineToText(output, 'Beacon node command: ' + innerText);
 
 			inputToRead = document.querySelector('#vn-cmd');
-			innerText = inputToRead.innerText;
+			innerText = inputToRead.value;
 			if (innerText)
 				output = appendLineToText(output, 'Validator node command: ' + innerText);
 
 			inputToRead = document.querySelector('#output');
-			innerText = inputToRead.innerText;
+			innerText = inputToRead.value;
 			if (innerText)
 				output = appendLineToText(output, 'Unexpected output: ' + innerText);
 
@@ -49,6 +49,7 @@ export const GenerateTroubleshootingReportWidget = () => {
 		var output = 'Troubleshooting report';
 		output = appendLineToText(output, '---------');
 		output = appendConfigDetailsToOutput(output);
+		output = appendLineToText(output, '---------');
 		output = appendChecklistDetailsToOutput(output);
 		output = appendUserInputToOutput(output);
 
