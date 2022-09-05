@@ -10,6 +10,7 @@ export const GenerateTroubleshootingReportWidget = () => {
 		output = appendLineToText(output, 'Network: ' + currentConfig.selectedNetwork);
 		output = appendLineToText(output, 'Execution client: ' + currentConfig.selectedEL);
 		output = appendLineToText(output, 'EN-BN connection: ' + currentConfig.selectedENBN);
+		return output;
 	}
 
 	let appendUserInputToOutput = function (output) {
