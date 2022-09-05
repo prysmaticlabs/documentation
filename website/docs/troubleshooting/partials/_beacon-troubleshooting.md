@@ -37,32 +37,19 @@
       <td>Geth users see this error when they're using an old Geth binary. Make sure you're using the <a href='https://github.com/ethereum/go-ethereum/releases'>latest stable release of Geth</a>.</td>
     </tr>
     <tr>
-      <td><code>could not check configuration values between execution and consensus client error: timeout from http.Client</code></td>
-      <td>This is usually caused by invalid JWT configuration. If you're using HTTP-JWT to connect your EN-BN, ensure that both EN and BN are configured to use the same JWT secret. Different files are OK (eg when your EN and BN are on different machines), but the secret within each JWT file should be the same. See <a href='https://docs.prylabs.network/docs/execution-node/authentication'>Configure JWT authentication</a> for more information.</td>
-    </tr>
-    <tr>
-      <td><code>403 signature invalid</code></td>
-      <td>This is usually caused by invalid JWT configuration. If you're using HTTP-JWT to connect your EN-BN, ensure that both EN and BN are configured to use the same JWT secret. Different files are OK (eg when your EN and BN are on different machines), but the secret within each JWT file should be the same. See <a href='https://docs.prylabs.network/docs/execution-node/authentication'>Configure JWT authentication</a> for more information.</td>
+      <td>
+        <code>could not check configuration values between execution and consensus client error: timeout from http.Client</code><br/>
+        <code>403 signature invalid</code><br/>
+        <code>Could not connect to execution client endpoint" error="could not make initial request to verify execution chain ID: 401 Unauthorized</code><br/>
+        <code>level=error msg="Could not connect to execution client endpoint" error="could not make initial request to verify execution chain ID: Post "http://localhost:8551/": dial tcp 127.0.0.1:8551: connect: connection refused" prefix=powchain</code><br/>
+        <code>warning msg="Batch is not processed" error="could not process block in batch: timeout from http.Client: received an undefined ee error. </code><br/>
+        <code>warning msg="Batch is not processed" error="could not process block in batch: got an unexpected error in JSON-RPC response: 403 Forbidden: signature is invalid</code>
+      </td>
+      <td>These errors are usually caused by invalid JWT configuration. If you're using HTTP-JWT to connect your EN-BN, ensure that both EN and BN are configured to use the same JWT secret. Different files are OK (eg when your EN and BN are on different machines), but the secret within each JWT file should be the same. See <a href='https://docs.prylabs.network/docs/execution-node/authentication'>Configure JWT authentication</a> for more information.</td>
     </tr>
     <tr>
       <td><code>weak-subjectivity-checkpoint not provided. Prysm recommends providing a weak subjectivity checkpoint for nodes synced from genesis</code></td>
       <td>You can safely ignore this warning - it will be removed in an upcoming Prysm release. See <a href='https://docs.prylabs.network/docs/prysm-usage/checkpoint-sync'>How to configure Checkpoint Sync</a> if you'd like to learn more about checkpoint sync.</td>
-    </tr>
-    <tr>
-      <td><code>Could not connect to execution client endpoint" error="could not make initial request to verify execution chain ID: 401 Unauthorized</code></td>
-      <td>This is usually caused by invalid JWT configuration. If you're using HTTP-JWT to connect your EN-BN, ensure that both EN and BN are configured to use the same JWT secret. Different files are OK (eg when your EN and BN are on different machines), but the secret within each JWT file should be the same. See <a href='https://docs.prylabs.network/docs/execution-node/authentication'>Configure JWT authentication</a> for more information.</td>
-     </tr>
-    <tr>
-      <td><code>level=error msg="Could not connect to execution client endpoint" error="could not make initial request to verify execution chain ID: Post "http://localhost:8551/": dial tcp 127.0.0.1:8551: connect: connection refused" prefix=powchain</code></td>
-      <td>This is usually caused by invalid JWT configuration. If you're using HTTP-JWT to connect your EN-BN, ensure that both EN and BN are configured to use the same JWT secret. Different files are OK (eg when your EN and BN are on different machines), but the secret within each JWT file should be the same. See <a href='https://docs.prylabs.network/docs/execution-node/authentication'>Configure JWT authentication</a> for more information.</td>
-    </tr>
-    <tr>
-      <td><code>warning msg="Batch is not processed" error="could not process block in batch: timeout from http.Client: received an undefined ee error. </code></td>
-      <td>This is usually caused by invalid JWT configuration. If you're using HTTP-JWT to connect your EN-BN, ensure that both EN and BN are configured to use the same JWT secret. Different files are OK (eg when your EN and BN are on different machines), but the secret within each JWT file should be the same. See <a href='https://docs.prylabs.network/docs/execution-node/authentication'>Configure JWT authentication</a> for more information.</td>
-    </tr>
-    <tr>
-      <td><code>warning msg="Batch is not processed" error="could not process block in batch: got an unexpected error in JSON-RPC response: 403 Forbidden: signature is invalid</code></td>
-      <td>This is usually caused by invalid JWT configuration. If you're using HTTP-JWT to connect your EN-BN, ensure that both EN and BN are configured to use the same JWT secret. Different files are OK (eg when your EN and BN are on different machines), but the secret within each JWT file should be the same. See <a href='https://docs.prylabs.network/docs/execution-node/authentication'>Configure JWT authentication</a> for more information.</td>
     </tr>
     <tr>
       <td><code>beacon node doesn't have a parent in db with root...</code></td>
