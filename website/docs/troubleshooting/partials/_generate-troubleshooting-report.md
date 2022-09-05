@@ -7,7 +7,7 @@
     <textarea rows="4" placeholder='Paste something like "./prysm.sh validator" (or Docker config) here...'></textarea>
     <p>Unexpected output</p>
     <span><strong>Tip:</strong> Paste the ~100 lines of output before and including the output you're asking about.</span>
-    <textarea rows="4" placeholder='Unexpected output goes here...'></textarea>
+    <textarea rows="8" placeholder='Unexpected output goes here...'></textarea>
     <a class='generate-report'>Generate troubleshooting report</a>
     <div class='generated-report'>Troubleshooting report</div>
 </div>
