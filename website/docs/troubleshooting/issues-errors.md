@@ -14,7 +14,9 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
 
 ## Troubleshooting checklist
 
-Prysmatic Labs is a small but mighty team of engineers who are working hard to support The Merge. **To help us help you**, use the following checklist to generate a **Troubleshooting Report**. You can then paste this report on [Discord](https://discord.gg/prysmaticlabs) when asking for support:
+Prysmatic Labs is a small but mighty team of engineers who are working hard to support The Merge. If you're running into unexpected outputs or errors, use the following checklist to check the status of your configuration. 
+
+In many cases, this checklist will solve your problems. If it doesn't, you can generate a **troubleshooting report** and paste it into [Discord](https://discord.gg/prysmaticlabs) when asking for support:
 
 import StatusChecklistPartial from '@site/docs/monitoring/partials/_status-checklist-partial.md';
 
