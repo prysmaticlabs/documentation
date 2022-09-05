@@ -21,7 +21,7 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
 
 ## Status checklist
 
-Use the following checklist to check the status of your nodes and validators. As you complete tasks, inputs will display where you can paste your logs. You can then generate a **troubleshooting report** and paste it on [Discord](https://discord.gg/prysmaticlabs) if you need support:
+Use the following checklist to check the status of your nodes and validators. If you run into issues, generate a **troubleshooting report** and paste it on [Discord](https://discord.gg/prysmaticlabs):
 
 import StatusChecklistPartial from '@site/docs/monitoring/partials/_status-checklist-partial.md';
 

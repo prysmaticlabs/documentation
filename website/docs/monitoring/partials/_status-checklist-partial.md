@@ -7,7 +7,7 @@ import TabItem from '@theme/TabItem';
             <div class='input-container'><input id="tc-1" type='checkbox'/><span class='done'></span></div>
             <div class='guidance-container'>
                 <label for="tc-1">1. Select a configuration above</label>
-                <p>If you run into issues while completing this checklist, you can generate a troubleshooting report. This report will include your selected configuration.</p>
+                <p>If you end up generating a troubleshooting report, your report will the items you've selected above.</p>
             </div>
         </div>
         <div class='task'>

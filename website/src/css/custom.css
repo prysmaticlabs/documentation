@@ -172,13 +172,18 @@ html[data-theme='dark'] .quickstart-tabs .tabs__item:first-child:hover {
   background-color: var(--tab-active-color) !important;
   border-color: var(--tab-active-color) !important;
   color: white !important;
+  display: inline-block;
+  width: 150px;
+  margin: auto;
 }
 .generated-report {
+  display: block;
   margin: auto;
-  max-width: 300px;
   width: 100%;
+  max-width: 300px;
   font-size: 12px;
   padding: 10px;
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 /* General elements */
 a {
