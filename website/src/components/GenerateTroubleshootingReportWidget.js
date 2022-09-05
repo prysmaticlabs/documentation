@@ -6,10 +6,10 @@ export const GenerateTroubleshootingReportWidget = () => {
 	let appendConfigDetailsToOutput = function (output) {
 		var tabWidget = document.querySelector('.quickstart-tabs');
 		var currentConfig = tabWidget.dataset.configObject;
-		appendLineToText(output, 'Operating system: ' + currentConfig.selectedOS);
-		appendLineToText(output, 'Network: ' + currentConfig.selectedNetwork);
-		appendLineToText(output, 'Execution client: ' + currentConfig.selectedEL);
-		appendLineToText(output, 'EN-BN connection: ' + currentConfig.selectedENBN);
+		output = appendLineToText(output, 'Operating system: ' + currentConfig.selectedOS);
+		output = appendLineToText(output, 'Network: ' + currentConfig.selectedNetwork);
+		output = appendLineToText(output, 'Execution client: ' + currentConfig.selectedEL);
+		output = appendLineToText(output, 'EN-BN connection: ' + currentConfig.selectedENBN);
 	}
 
 	let appendUserInputToOutput = function (output) {
@@ -17,25 +17,27 @@ export const GenerateTroubleshootingReportWidget = () => {
 			var inputToRead = document.querySelector('#el-cmd');
 			var innerText = inputToRead.innerText;
 			if (innerText)
-				appendLineToText(output, 'Execution client command: ' + innerText);
+				output = appendLineToText(output, 'Execution client command: ' + innerText);
 
 			inputToRead = document.querySelector('#bn-cmd');
 			innerText = inputToRead.innerText;
 			if (innerText)
-				appendLineToText(output, 'Beacon node command: ' + innerText);
+				output = appendLineToText(output, 'Beacon node command: ' + innerText);
 
 			inputToRead = document.querySelector('#vn-cmd');
 			innerText = inputToRead.innerText;
 			if (innerText)
-				appendLineToText(output, 'Validator node command: ' + innerText);
+				output = appendLineToText(output, 'Validator node command: ' + innerText);
 
 			inputToRead = document.querySelector('#output');
 			innerText = inputToRead.innerText;
 			if (innerText)
-				appendLineToText(output, 'Unexpected output: ' + innerText);
+				output = appendLineToText(output, 'Unexpected output: ' + innerText);
+
+			return output;
 
 		} catch {
-			// gulp for now
+			return output;
 		}
 	}
 
@@ -48,12 +50,12 @@ export const GenerateTroubleshootingReportWidget = () => {
 		var output = 'Troubleshooting report';
 		output = appendLineToText(output, '---------');
 
-		appendConfigDetailsToOutput(output);
+		output = appendConfigDetailsToOutput(output);
 
 		var checklistDetails = generateChecklistDetails();
-		appendLineToText(output, checklistDetails);
+		output = appendLineToText(output, checklistDetails);
 
-		var userInput = appendUserInputToOutput(output);
+		output = appendUserInputToOutput(output);
 
 		var reportDiv = document.querySelector('#generated-report');
 		reportDiv.innerHTML = output;
