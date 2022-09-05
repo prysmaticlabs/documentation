@@ -24,7 +24,9 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
 
 ## Status checklist
 
+import StatusChecklistPartial from '@site/docs/monitoring/partials/_status-checklist-partial.md';
 
+<StatusChecklistPartial />
 
 </div>
 
