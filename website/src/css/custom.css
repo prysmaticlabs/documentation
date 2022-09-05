@@ -182,10 +182,11 @@ html[data-theme='dark'] .quickstart-tabs .tabs__item:first-child:hover {
   background-color: #292929;
   color: white;
   text-align: left;
-  border-radius: 10px;
+  border-radius: 5px;
   margin-top: 20px;
   margin-bottom: 20px;
   width: 100%;
+  min-width: 100%;
 }
 .troubleshooting-report-area .generate-report {
   font-size: 13px;
@@ -208,9 +209,8 @@ html[data-theme='dark'] .quickstart-tabs .tabs__item:first-child:hover {
 }
 .troubleshooting-report-area .generated-report {
   display: block;
-  margin: auto;
   width: 100%;
-  max-width: 300px;
+  min-width: 100%;
   font-size: 12px;
   padding: 20px;
   font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;

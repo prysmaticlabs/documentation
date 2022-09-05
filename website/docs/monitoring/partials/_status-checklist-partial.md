@@ -166,7 +166,7 @@ import TabItem from '@theme/TabItem';
             <div class='input-container'><input id="st-11" type='checkbox'/><span class='done'></span></div>
             <div class='guidance-container'>
                 <label for="st-11">13. Troubleshooting report</label>
-                <p>Issue still not resolved? Click the big blue button below to generate a troubleshooting report. Head over to <a href='https://discord.gg/prysmaticlabs'>Discord</a> and paste your report for additional troubleshooting assistance.</p>
+                <p>Issue still not resolved? Generate a troubleshooting report below. Head over to <a href='https://discord.gg/prysmaticlabs'>Discord</a> and paste your report for additional troubleshooting assistance.</p>
             </div>
         </div>
     </div>
@@ -185,5 +185,5 @@ import TabItem from '@theme/TabItem';
     <span>Tip: paste ~100 lines of output before and including the output you're asking about.</span>
     <textarea placeholder='Unexpected output goes here...'></textarea>
     <a class='generate-report'>Generate troubleshooting report</a>
-    <div class='generated-report'>temp</div>
+    <div class='generated-report'>Troubleshooting report</div>
 </div>
