@@ -6,7 +6,7 @@ The HTTP connection between your beacon node and execution node needs to be auth
  - Use an online generator like [this](https://seanwasere.com/generate-random-hex/). Copy and paste this value into a `jwt.hex` file.
  - Use a utility like OpenSSL to create the token via command: `openssl rand -hex 32 | tr -d "\n" > "jwt.hex"`.
  - Use an execution client to generate the `jwt.hex` file.
- - Use Prysm [v3](https://github.com/prysmaticlabs/prysm/releases/tag/v3.0.0) to generate the `jwt.hex` file:
+ - Use Prysm to generate the `jwt.hex` file:
 
 <Tabs groupId="os" defaultValue="others" values={[
     {label: 'Operating system:', value: 'label'},
@@ -18,7 +18,7 @@ The HTTP connection between your beacon node and execution node needs to be auth
 
 ```
 ## Optional. This command is necessary only if you've previously configured USE_PRYSM_VERSION
-SET USE_PRYSM_VERSION=v3.0.0
+SET USE_PRYSM_VERSION=v3.1.0
 
 ## Required.
 prysm.bat beacon-chain generate-auth-secret
@@ -29,7 +29,7 @@ prysm.bat beacon-chain generate-auth-secret
 
 ```
 ## Optional. This command is necessary only if you've previously configured USE_PRYSM_VERSION
-USE_PRYSM_VERSION=v3.0.0
+USE_PRYSM_VERSION=v3.1.0
 
 ## Required.
 ./prysm.sh beacon-chain generate-auth-secret
