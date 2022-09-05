@@ -68,6 +68,13 @@ html[data-theme='dark'] .quickstart-tabs .tabs__item:first-child:hover {
   margin: 0 !important;
   padding: 0 !important;
 }
+.status-guide .hidden-in-status-guide {
+  visibility: hidden !important;
+  height: 0 !important;
+  overflow: hidden;
+  margin: 0 !important;
+  padding: 0 !important;
+}
 .execution-node-guide .hidden-in-execution-guide {
   visibility: hidden !important;
   height: 0 !important;

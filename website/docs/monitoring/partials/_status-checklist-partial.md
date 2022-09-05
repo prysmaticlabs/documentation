@@ -155,14 +155,14 @@ import TabItem from '@theme/TabItem';
                 </p>
             </div>
         </div>
-        <div class='task'>
+        <div class='task hidden-in-status-guide'>
             <div class='input-container'><input id="st-10" type='checkbox'/><span class='done'></span></div>
             <div class='guidance-container'>
                 <label for="st-10">12. Troubleshooting scenarios and solutions</label>
-                <p>Running into unexpected output, warnings, or errors? Although this is unintuitive, <strong>many errors and warnings are expected</strong> and have been identified in the troubleshooting scenarios and solutions tables below. We recommend reviewing this in detail before asking for support.</p>
+                <p>Running into unexpected output, warnings, or errors? Although this is unintuitive, <strong>many errors and warnings are expected</strong> and have been identified in the below list of troubleshooting scenarios and solutions. We gratefully ask that you review this before asking for support.</p>
             </div>
         </div>
-        <div class='task'>
+        <div class='task hidden-in-status-guide'>
             <div class='input-container'><input id="st-11" type='checkbox'/><span class='done'></span></div>
             <div class='guidance-container'>
                 <label for="st-11">13. Troubleshooting report</label>
