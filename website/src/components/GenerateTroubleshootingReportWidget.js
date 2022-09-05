@@ -28,7 +28,7 @@ export const GenerateTroubleshootingReportWidget = () => {
 	}
 
 	let appendLineToOutput = function (output, newLine) {
-		output = output + `\n` + newLine;
+		output = output + `\n\r` + newLine;
 		return output;
 	}
 
