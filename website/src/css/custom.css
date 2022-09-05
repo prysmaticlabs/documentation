@@ -170,14 +170,15 @@ html[data-theme='dark'] .quickstart-tabs .tabs__item:first-child:hover {
   padding: 10px 15px;
   border-radius: 5px !important;
   position: relative;
-  background-color: var(--tab-active-color) !important;
-  border-color: var(--tab-active-color) !important;
+  background-color: var(--tab-active-color);
+  border-color: var(--tab-active-color);
   color: white !important;
   display: inline-block;
   margin: auto;
   text-align: center;
   padding: 15px 25px;
   cursor: pointer;
+  margin-top: 20px;
 }
 .generate-report:hover {
   background-color: var(--tab-active-color-hover);
