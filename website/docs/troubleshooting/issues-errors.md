@@ -14,7 +14,7 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
 
 ## Troubleshooting checklist
 
-If you're running into unexpected outputs or errors, use the following checklist to check the status of your configuration. In many cases, this checklist will help you independently resolve your issue. If you still need help after completing this checklist, you can generate a **troubleshooting report** below and paste it into [Discord](https://discord.gg/prysmaticlabs) when asking for support.
+If you're running into unexpected outputs or errors, use the following checklist to check the status of your configuration. In many cases, this checklist will help you independently resolve your issue. If you still need help after completing this checklist, you can generate a [**troubleshooting report** below](#generate-troubleshooting-report) and paste it into [Discord](https://discord.gg/prysmaticlabs) when asking for support.
 
 :::tip Thank you!
 
@@ -39,7 +39,10 @@ import TroubleshootingAllPartial from '@site/docs/troubleshooting/partials/_trou
 
 ## Generate troubleshooting report
 
-Feel free to complete this form and then click `Generate troubleshooting report`. You can copy and paste the report into [Discord](https://discord.gg/prysmaticlabs) when asking for support:
+ 1. Complete the above troubleshooting checklist
+ 2. Fill in the below form
+ 3. Click `Generate troubleshooting report`
+ 4. Copy and paste the report into [Discord](https://discord.gg/prysmaticlabs) when asking for support
 
 import GenerateTroubleshootingReportPartial from '@site/docs/troubleshooting/partials/_generate-troubleshooting-report.md';
 
