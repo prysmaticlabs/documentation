@@ -41,20 +41,15 @@ export const GenerateTroubleshootingReportWidget = () => {
 		}
 	}
 
-	let generateChecklistDetails = function () {
-		var foo = `checklist`;
-		return foo;
+	let appendChecklistDetailsToOutput = function (output) {
+		return output;
 	}
 
 	let generateReport = function () {
 		var output = 'Troubleshooting report';
 		output = appendLineToText(output, '---------');
-
 		output = appendConfigDetailsToOutput(output);
-
-		var checklistDetails = generateChecklistDetails();
-		output = appendLineToText(output, checklistDetails);
-
+		output = appendChecklistDetailsToOutput(output);
 		output = appendUserInputToOutput(output);
 
 		var reportDiv = document.querySelector('#generated-report');
