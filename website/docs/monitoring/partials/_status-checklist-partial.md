@@ -182,7 +182,7 @@ import TabItem from '@theme/TabItem';
     <p>Validator node startup command/config</p>
     <textarea placeholder='Paste here (remove wallet addresses and other PII before generating report)...'></textarea>
     <p>Unexpected output</p>
-    <span>Tip: paste ~100 lines of output before and including the output you're asking about.</span>
+    <span>Tip: Paste ~100 lines of output before and including the output you're asking about.</span>
     <textarea placeholder='Unexpected output goes here...'></textarea>
     <a class='generate-report'>Generate troubleshooting report</a>
     <div class='generated-report'>Troubleshooting report</div>
