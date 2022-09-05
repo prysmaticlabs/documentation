@@ -192,6 +192,7 @@ html[data-theme='dark'] .quickstart-tabs .tabs__item:first-child:hover {
   width: 100%;
   min-width: 100%;
   border: 1px solid #c2c2c2 !important;
+  white-space: pre;
 }
 rows .troubleshooting-report-area > textarea::placeholder {
   color: #777 !important;
