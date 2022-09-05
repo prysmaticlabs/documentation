@@ -183,7 +183,7 @@ html[data-theme='dark'] .quickstart-tabs .tabs__item:first-child:hover {
 .troubleshooting-report-area > textarea {
   padding: 15px;
   font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  background-color: #cbcbcb;
+  background-color: #dbdbdb;
   color: #444 !important;
   text-align: left;
   border-radius: 5px;
