@@ -176,7 +176,7 @@ html[data-theme='dark'] .quickstart-tabs .tabs__item:first-child:hover {
   display: block;
   margin-bottom: 0;
   margin-top: 0;
-  font-size: 11px;
+  font-size: 12px;
   color: #333;
 }
 .troubleshooting-report-area > textarea {
