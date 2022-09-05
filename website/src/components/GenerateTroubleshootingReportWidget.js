@@ -5,11 +5,10 @@ export const GenerateTroubleshootingReportWidget = () => {
 
 	let appendConfigDetailsToOutput = function (output) {
 		var tabWidget = document.querySelector('.quickstart-tabs');
-		var currentConfig = tabWidget.dataset.configObject;
-		output = appendLineToText(output, 'Operating system: ' + currentConfig.selectedOS);
-		output = appendLineToText(output, 'Network: ' + currentConfig.selectedNetwork);
-		output = appendLineToText(output, 'Execution client: ' + currentConfig.selectedEL);
-		output = appendLineToText(output, 'EN-BN connection: ' + currentConfig.selectedENBN);
+		output = appendLineToText(output, 'Operating system: ' + tabWidget.dataset.selectedOS);
+		output = appendLineToText(output, 'Network: ' + tabWidget.dataset.selectedNetwork);
+		output = appendLineToText(output, 'Execution client: ' + tabWidget.dataset.selectedEL);
+		output = appendLineToText(output, 'EN-BN connection: ' + tabWidget.dataset.selectedENBN);
 		return output;
 	}
 

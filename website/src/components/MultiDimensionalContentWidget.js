@@ -94,15 +94,11 @@ export const MultiDimensionalContentWidget = () => {
 		else
 			selectedENBN = "HTTP-JWT";
 
-		var configObject = {
-			selectedOS: selectedOS,
-			selectedNetwork: selectedNetwork,
-			selectedEL: selectedEL,
-			selectedENBN: selectedENBN
-		}
-
 		var tabWidget = document.querySelector('.quickstart-tabs');
-		tabWidget.dataset.configObject = configObject;
+		tabWidget.dataset.selectedOS = selectedOS;
+		tabWidget.dataset.selectedNetwork = selectedNetwork;
+		tabWidget.dataset.selectedEL = selectedEL;
+		tabWidget.dataset.selectedENBN = selectedENBN;
 	}
 
 	let bindTabs = function () {
