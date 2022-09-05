@@ -18,7 +18,7 @@ If you're running into unexpected outputs or errors, use the following checklist
 
 :::tip Thank you!
 
-Prysmatic Labs is a small but mighty team of engineers who are working hard to support The Merge. **Using this checklist is very helpful** because it often reduces the time that it takes to gather information, allowing us to focus on Merge engineering and monitoring. Thank you for helping us!
+Prysmatic Labs is a small but mighty team of engineers who are working hard to support The Merge. **Using this checklist is very helpful** because it can reduce the time that it takes to gather information, allowing us to focus on Merge engineering and monitoring. Thank you for helping us!
 
 :::
 
