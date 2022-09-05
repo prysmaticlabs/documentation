@@ -12,7 +12,7 @@ import {GenerateTroubleshootingReportWidget} from '@site/src/components/Generate
     <textarea id="vn-cmd" rows="4" placeholder='Paste something like "./prysm.sh validator" (or Docker config) here...'></textarea>
     <p>Unexpected output</p>
     <span><strong>Tip:</strong> Paste the ~100 lines of output before and including the output you're asking about.</span>
-    <textarea id="output" rows="8" placeholder='Paste your unexpected output here...'></textarea>
+    <textarea id="output" rows="4" placeholder='Paste your unexpected output here...'></textarea>
     <a id='generate-report' class='generate-report'>Generate troubleshooting report</a>
     <div id='generated-report' class='generated-report'>Complete the checklist above before generating...</div>
 </div>
