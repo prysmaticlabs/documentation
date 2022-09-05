@@ -7,14 +7,14 @@ import TabItem from '@theme/TabItem';
             <div class='input-container'><input id="tc-1" type='checkbox'/><span class='done'></span></div>
             <div class='guidance-container'>
                 <label for="tc-1">1. Select a configuration above</label>
-                <p>If you end up generating a troubleshooting report, your report will the items you've selected above.</p>
+                <p>If you end up generating a troubleshooting report, your report will include your selected configuration.</p>
             </div>
         </div>
         <div class='task'>
             <div class='input-container'><input id="tc-2" type='checkbox'/><span class='done'></span></div>
             <div class='guidance-container'>
                 <label for="tc-2">2. Complete Prepare for The Merge</label>
-                <p>Ensure that you've completed the <a target="_blank" href='../prepare-for-merge'>Prepare for The Merge</a> checklist before proceeding.</p>
+                <p>Many common issues are resolved by the steps in our <a target="_blank" href='../prepare-for-merge'>Prepare for The Merge</a> checklist. Once you've completed this checklist, you can proceed here.</p>
             </div>
         </div>
         <div class='task'>
