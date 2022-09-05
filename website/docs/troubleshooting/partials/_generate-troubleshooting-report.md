@@ -1,3 +1,7 @@
+import {GenerateTroubleshootingReportWidget} from '@site/src/components/GenerateTroubleshootingReportWidget.js';
+
+<GenerateTroubleshootingReportWidget />
+
 <div class='troubleshooting-report-area'>
     <p>Execution node startup command</p>
     <span><strong>Tip:</strong> We recommend redacting wallet addresses and other personal information as a general operational security best practice.</span>
@@ -9,6 +13,6 @@
     <p>Unexpected output</p>
     <span><strong>Tip:</strong> Paste the ~100 lines of output before and including the output you're asking about.</span>
     <textarea rows="8" placeholder='Unexpected output goes here...'></textarea>
-    <a class='generate-report'>Generate troubleshooting report</a>
+    <a id='generate-report' class='generate-report'>Generate troubleshooting report</a>
     <div class='generated-report'>Troubleshooting report</div>
 </div>
