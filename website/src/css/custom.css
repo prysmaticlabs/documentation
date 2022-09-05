@@ -15,6 +15,9 @@ html[data-theme='dark'] .quickstart-tabs .tabs__item:first-child {
 html[data-theme='dark'] .quickstart-tabs .tabs__item:first-child:hover {
   background-color: transparent !important;
 }
+html[data-theme='dark'] .troubleshooting-report-area > span {
+  color: #ddd !important;
+}
 .navbar__link--active {
   color: var(--prysm-pink-light) !important;
 }
