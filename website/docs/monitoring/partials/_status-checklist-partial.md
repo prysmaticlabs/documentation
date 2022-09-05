@@ -173,6 +173,15 @@ import TabItem from '@theme/TabItem';
 </div>
 
 <div class='troubleshooting-report-area'>
+    <p>Execution node startup command/config</p>
+    <textarea></textarea>
+    <p>Beacon node startup command/config</p>
+    <textarea></textarea>
+    <p>Validator node startup command/config</p>
+    <textarea></textarea>
+    <p>Unexpected output</p>
+    <p>Tip: paste ~100 lines of output before and including the output you're asking about.
+    <textarea></textarea>
     <a class='generate-report'>Generate troubleshooting report</a>
     <div class='generated-report'>temp</div>
 </div>

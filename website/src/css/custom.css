@@ -164,7 +164,24 @@ html[data-theme='dark'] .quickstart-tabs .tabs__item:first-child:hover {
   color: var(--tab-active-color);
 }
 /* Troubleshooting reports */
-.generate-report {
+.troubleshooting-report-area {
+  padding: 10px;
+  text-align: left;
+}
+.troubleshooting-report-area > p {
+  font-weight: bold;
+}
+.troubleshooting-report-area > textarea {
+  padding: 10px;
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  background-color: #292929;
+  color: white;
+  text-align: left;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.troubleshooting-report-area .generate-report {
   font-size: 13px;
   font-weight: 500;
   padding: 10px 15px;
@@ -180,10 +197,10 @@ html[data-theme='dark'] .quickstart-tabs .tabs__item:first-child:hover {
   cursor: pointer;
   margin-top: 20px;
 }
-.generate-report:hover {
+.troubleshooting-report-area .generate-report:hover {
   background-color: var(--tab-active-color-hover);
 }
-.generated-report {
+.troubleshooting-report-area .generated-report {
   display: block;
   margin: auto;
   width: 100%;
@@ -197,9 +214,6 @@ html[data-theme='dark'] .quickstart-tabs .tabs__item:first-child:hover {
   border-radius: 10px;
   margin-top: 20px;
   margin-bottom: 20px;
-}
-.troubleshooting-report-area {
-  text-align: center;
 }
 /* General elements */
 a {
