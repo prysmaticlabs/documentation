@@ -31,8 +31,6 @@ import StatusChecklistPartial from '@site/docs/monitoring/partials/_status-check
 
 <br />
 
-If you see unexpected output, refer to [Troubleshooting Prysm](../troubleshooting/issues-errors.md). Feel free to reach out to us on our [Discord](https://discord.gg/prysmaticlabs) for support.
-
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
 <RequestUpdateWidget />
