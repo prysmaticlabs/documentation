@@ -20,7 +20,7 @@ In many cases, this checklist will meet your needs. If it doesn't, you can gener
 
 :::tip Thank you!
 
-This process will **help us help you** because it reduces the time that it takes to gather information and diagnose issues, allowing us to focus more on Merge engineering and monitoring. Thank you for helping us!
+This process is helpful because it reduces the time that it takes to gather information and diagnose issues, allowing us to focus more on Merge engineering and monitoring. Thank you for helping us!
 
 :::
 
