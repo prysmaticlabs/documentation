@@ -4,8 +4,9 @@ import BrowserOnly from '@docusaurus/BrowserOnly';
 export const GenerateTroubleshootingReportWidget = () => {
 
 	let generateConfigDetails = function () {
-		var foo = `config`;
-		return foo;
+		var tabWidget = document.querySelector('.quickstart-tabs');
+		var currentConfig = tabWidget.dataset.configObject;
+		return currentConfig;
 	}
 
 	let generateChecklistDetails = function () {
@@ -28,7 +29,7 @@ export const GenerateTroubleshootingReportWidget = () => {
 	}
 
 	let appendLineToOutput = function (output, newLine) {
-		output = output + `\n\r` + newLine;
+		output = output + `\n` + newLine;
 		return output;
 	}
 
