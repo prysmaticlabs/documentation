@@ -39,7 +39,7 @@ import TroubleshootingAllPartial from '@site/docs/troubleshooting/partials/_trou
 
 ## Generate troubleshooting report
 
-Feel free to complete this form and then click `Generate troubleshooting report`. You can then copy and paste the report into [Discord](https://discord.gg/prysmaticlabs) when asking for support:
+Feel free to complete this form and then click `Generate troubleshooting report`. You can copy and paste the report into [Discord](https://discord.gg/prysmaticlabs) when asking for support:
 
 import GenerateTroubleshootingReportPartial from '@site/docs/troubleshooting/partials/_generate-troubleshooting-report.md';
 
