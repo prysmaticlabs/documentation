@@ -31,8 +31,10 @@ export const GenerateTroubleshootingReportWidget = () => {
 
 			inputToRead = document.querySelector('#output');
 			innerText = inputToRead.value;
-			if (innerText)
+			if (innerText) {
+				output = appendLineToText(output, '---------');
 				output = appendLineToText(output, 'Unexpected output: ' + innerText);
+			}
 
 			return output;
 
