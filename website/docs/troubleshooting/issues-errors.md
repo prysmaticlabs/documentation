@@ -14,7 +14,7 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
 
 ## Troubleshooting checklist
 
-If you're running into unexpected outputs or errors, use the following checklist to check the status of your configuration. In many cases, this checklist will resolve your issue. If it doesn't, you can generate a **troubleshooting report** below and paste it into [Discord](https://discord.gg/prysmaticlabs) when asking for support.
+If you're running into unexpected outputs or errors, use the following checklist to check the status of your configuration. In many cases, this checklist will help you independently resolve your issue. If you still need help after completing this checklist, you can generate a **troubleshooting report** below and paste it into [Discord](https://discord.gg/prysmaticlabs) when asking for support.
 
 :::tip Thank you!
 
