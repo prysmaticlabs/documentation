@@ -6,12 +6,12 @@ sidebar_label: Configure Fee Recipient
 import FeeRecipientPng from '@site/static/img/fee-recipient-ui.png'
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
-<HeaderBadgesWidget commaDelimitedContributors="James,Mick" lastVerifiedDateString="August 25th, 2022" lastVerifiedVersionString="v3.0.0" />
+<HeaderBadgesWidget commaDelimitedContributors="James,Mick" lastVerifiedDateString="September 5th, 2022" lastVerifiedVersionString="v3.1.0" />
 
 
 :::caution Breaking changes
 
-[Prysm v3.0.0](https://github.com/prysmaticlabs/prysm/releases) introduces breaking changes that may impact your Fee Recipient configuration:
+[Prysm v3.1.0](https://github.com/prysmaticlabs/prysm/releases) introduces breaking changes that may impact your Fee Recipient configuration:
 
 - The existing `gaslimit` property within the proposer settings file has been replaced with an optional `builder` object that contains the `gaslimit` property.
 - The existing `suggested-fee-recipient` flag must now be used with the new `enable-builder` flag. This allows your validator client to use the MEV Builder API.
