@@ -180,7 +180,7 @@ html[data-theme='dark'] .quickstart-tabs .tabs__item:first-child:hover {
   padding: 10px;
   font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   background-color: #292929;
-  color: white;
+  color: #ddd !important;
   text-align: left;
   border-radius: 5px;
   margin-top: 20px;
