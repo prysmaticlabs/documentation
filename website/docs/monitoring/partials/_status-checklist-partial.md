@@ -155,6 +155,20 @@ import TabItem from '@theme/TabItem';
                 </p>
             </div>
         </div>
+        <div class='task'>
+            <div class='input-container'><input id="st-10" type='checkbox'/><span class='done'></span></div>
+            <div class='guidance-container'>
+                <label for="st-10">12. Review scenarios and solutions</label>
+                <p>Running into unexpected output, warnings, or errors? Although this is unintuitive, many errors and warnings are expected and have been identified in the troubleshooting scenarios and solutions tables below. We recommend reviewing this in detail before asking for support.</p>
+            </div>
+        </div>
+        <div class='task'>
+            <div class='input-container'><input id="st-10" type='checkbox'/><span class='done'></span></div>
+            <div class='guidance-container'>
+                <label for="st-10">13. Generate troubleshooting report</label>
+                <p>Issue still not resolved? Generate a troubleshooting report and paste it on Discord when asking for support.</p>
+            </div>
+        </div>
     </div>
 </div>
 
