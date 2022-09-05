@@ -172,6 +172,8 @@ import TabItem from '@theme/TabItem';
     </div>
 </div>
 
+### Generate troubleshooting report
+
 <div class='troubleshooting-report-area'>
     <p>Execution node startup command/config</p>
     <textarea placeholder='Paste here (remove wallet addresses and other PII before generating report)...'></textarea>
@@ -180,7 +182,7 @@ import TabItem from '@theme/TabItem';
     <p>Validator node startup command/config</p>
     <textarea placeholder='Paste here (remove wallet addresses and other PII before generating report)...'></textarea>
     <p>Unexpected output</p>
-    <p>Tip: paste ~100 lines of output before and including the output you're asking about.</p>
+    <span>Tip: paste ~100 lines of output before and including the output you're asking about.</span>
     <textarea placeholder='Unexpected output goes here...'></textarea>
     <a class='generate-report'>Generate troubleshooting report</a>
     <div class='generated-report'>temp</div>

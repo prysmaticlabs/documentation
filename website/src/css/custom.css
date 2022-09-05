@@ -171,6 +171,11 @@ html[data-theme='dark'] .quickstart-tabs .tabs__item:first-child:hover {
 .troubleshooting-report-area > p {
   font-weight: bold;
 }
+.troubleshooting-report-area > span {
+  display: block;
+  margin-bottom: 0;
+  margin-top: 0;
+}
 .troubleshooting-report-area > textarea {
   padding: 10px;
   font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
@@ -180,6 +185,7 @@ html[data-theme='dark'] .quickstart-tabs .tabs__item:first-child:hover {
   border-radius: 10px;
   margin-top: 20px;
   margin-bottom: 20px;
+  width: 100%;
 }
 .troubleshooting-report-area .generate-report {
   font-size: 13px;
