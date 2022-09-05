@@ -165,7 +165,6 @@ html[data-theme='dark'] .quickstart-tabs .tabs__item:first-child:hover {
 }
 /* Troubleshooting reports */
 .troubleshooting-report-area {
-  padding: 10px;
   text-align: left;
 }
 .troubleshooting-report-area > p {
@@ -179,7 +178,7 @@ html[data-theme='dark'] .quickstart-tabs .tabs__item:first-child:hover {
   margin-top: 0;
 }
 .troubleshooting-report-area > textarea {
-  padding: 10px;
+  padding: 15px;
   font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   background-color: #292929;
   color: #ddd !important;
@@ -189,6 +188,9 @@ html[data-theme='dark'] .quickstart-tabs .tabs__item:first-child:hover {
   margin-bottom: 20px;
   width: 100%;
   min-width: 100%;
+}
+.troubleshooting-report-area > textarea.troubleshooting-report-area > textarea::placeholder {
+  color: #ccc;
 }
 .troubleshooting-report-area .generate-report {
   font-size: 13px;

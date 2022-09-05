@@ -185,9 +185,7 @@ html[data-theme='dark'] {
 
 
 .troubleshooting-report-area {
-    padding: 10px;
     text-align: left;
-
 
     >p {
         font-weight: bold;
@@ -202,7 +200,7 @@ html[data-theme='dark'] {
     }
 
     >textarea {
-        padding: 10px;
+        padding: 15px;
         font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
         background-color: #292929;
         color: #ddd !important;
@@ -212,6 +210,10 @@ html[data-theme='dark'] {
         margin-bottom: 20px;
         width: 100%;
         min-width: 100%;
+
+        &&::placeholder {
+            color: #ccc;
+        }
     }
 
     .generate-report {
