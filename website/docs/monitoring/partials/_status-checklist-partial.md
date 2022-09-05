@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
         <div class='task'>
             <div class='input-container'><input id="tc-2" type='checkbox'/><span class='done'></span></div>
             <div class='guidance-container'>
-                <label for="tc-2">2. <em>Prepare for The Merge</em></label>
+                <label for="tc-2">2. Prepare for The Merge</label>
                 <p>Many common issues are resolved by the steps in our <a target="_blank" href='../prepare-for-merge'>Prepare for The Merge</a> checklist. Once you've completed this checklist, you can proceed here.</p>
             </div>
         </div>
