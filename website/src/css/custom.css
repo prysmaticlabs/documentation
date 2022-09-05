@@ -74,6 +74,21 @@ html[data-theme='dark'] .quickstart-tabs .tabs__item:first-child:hover {
   margin: 0 !important;
   padding: 0 !important;
 }
+.port-guide .enbn-tabgroup,
+.port-guide .network-tabgroup,
+.port-guide .el-tabgroup {
+  visibility: hidden !important;
+  height: 0 !important;
+  overflow: hidden;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.port-guide .quickstart-tabs {
+  margin-bottom: 5px !important;
+}
+.port-guide .tabgroup-with-label::after {
+  display: none !important;
+}
 .quickstart-tabs {
   position: relative;
   margin-bottom: 25px;
