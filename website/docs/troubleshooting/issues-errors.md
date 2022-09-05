@@ -20,8 +20,6 @@ import StatusChecklistPartial from '@site/docs/monitoring/partials/_status-check
 
 <StatusChecklistPartial />
 
-
-
 <div class='checklist'>
     <div class='task'>
         <div class='input-container'><input id="tc-2" type='checkbox'/><span class='done'></span></div>

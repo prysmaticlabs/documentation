@@ -19,22 +19,19 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
 
 <MultidimensionalContentControlsPartial />
 
-
-
-
 ## Status checklist
+
+Use the following checklist to check the status of your nodes and validators. As you complete tasks, inputs will display where you can paste your logs. You can then generate a **troubleshooting report** and paste it on [Discord](https://discord.gg/prysmaticlabs) if you need support:
 
 import StatusChecklistPartial from '@site/docs/monitoring/partials/_status-checklist-partial.md';
 
 <StatusChecklistPartial />
-
 
 </div>
 
 <br />
 
 If you see unexpected output, refer to [Troubleshooting Prysm](../troubleshooting/issues-errors.md). Feel free to reach out to us on our [Discord](https://discord.gg/prysmaticlabs) for support.
-
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
