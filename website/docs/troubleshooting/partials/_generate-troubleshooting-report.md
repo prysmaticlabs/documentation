@@ -1,5 +1,6 @@
 <div class='troubleshooting-report-area'>
     <p>Execution node startup command/config</p>
+    <span><strong>Tip:</strong> We recommend redacting wallet addresses and other personal information as a general operational security best practice.</span>
     <textarea rows="4" placeholder='Paste something like "Nethermind.Runner --JsonRpc.Enabled true --HealthChecks.Enabled true" (or Docker config) here...'></textarea>
     <p>Beacon node startup command/config</p>
     <textarea rows="4" placeholder='Paste something like "./prysm.sh beacon-chain --execution-endpoint=http://localhost:8551 --jwt-secret=path/to/jwt.hex" (or Docker config) here...'></textarea>
