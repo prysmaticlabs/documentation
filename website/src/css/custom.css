@@ -1,6 +1,7 @@
 :root {
   --prysm-pink: #c72a7d;
   --tab-active-color: #3578e5;
+  --tab-active-color-hover: hsl(217, 58%, 36%);
   --tab-gray: #ddd;
   --prysm-pink-light: #da77ab;
 }
@@ -176,6 +177,10 @@ html[data-theme='dark'] .quickstart-tabs .tabs__item:first-child:hover {
   margin: auto;
   text-align: center;
   padding: 15px 25px;
+  cursor: pointer;
+}
+.generate-report:hover {
+  background-color: var(--tab-active-color-hover);
 }
 .generated-report {
   display: block;
