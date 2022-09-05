@@ -3,10 +3,13 @@ import BrowserOnly from '@docusaurus/BrowserOnly';
 
 export const GenerateTroubleshootingReportWidget = () => {
 
-	let generateConfigDetails = function () {
+	let appendConfigDetailsToOutput = function (output) {
 		var tabWidget = document.querySelector('.quickstart-tabs');
 		var currentConfig = tabWidget.dataset.configObject;
-		return currentConfig;
+		appendLineToText(output, 'Operating system: ' + currentConfig.selectedOS);
+		appendLineToText(output, 'Network: ' + currentConfig.selectedNetwork);
+		appendLineToText(output, 'Execution client: ' + currentConfig.selectedEL);
+		appendLineToText(output, 'EN-BN connection: ' + currentConfig.selectedENBN);
 	}
 
 	let generateChecklistDetails = function () {
@@ -16,21 +19,19 @@ export const GenerateTroubleshootingReportWidget = () => {
 
 	let generateReport = function () {
 		var output = 'Troubleshooting report';
-		output = appendLineToOutput(output, '---------');
+		appendLineToText(output, '---------');
 
-		var configDetails = generateConfigDetails();
-		output = appendLineToOutput(output, configDetails);
+		appendConfigDetailsToOutput(output);
 
 		var checklistDetails = generateChecklistDetails();
-		output = appendLineToOutput(output, checklistDetails);
+		appendLineToText(output, checklistDetails);
 
 		var reportDiv = document.querySelector('#generated-report');
 		reportDiv.innerHTML = output;
 	}
 
-	let appendLineToOutput = function (output, newLine) {
-		output = output + `\n` + newLine;
-		return output;
+	let appendLineToText = function (existingText, newLine) {
+		existingText = existingText + `\n` + newLine;
 	}
 
 	let getButton = function () {
