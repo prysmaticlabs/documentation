@@ -13,26 +13,30 @@ export const GenerateTroubleshootingReportWidget = () => {
 	}
 
 	let appendUserInputToOutput = function (output) {
-		var inputToRead = document.querySelector('#el-cmd');
-		var innerText = inputToRead.innerText;
-		if (innerText)
-			appendLineToText(output, 'Execution client command: ' + innerText);
+		try {
+			var inputToRead = document.querySelector('#el-cmd');
+			var innerText = inputToRead.innerText;
+			if (innerText)
+				appendLineToText(output, 'Execution client command: ' + innerText);
 
-		inputToRead = document.querySelector('#bn-cmd');
-		innerText = inputToRead.innerText;
-		if (innerText)
-			appendLineToText(output, 'Beacon node command: ' + innerText);
+			inputToRead = document.querySelector('#bn-cmd');
+			innerText = inputToRead.innerText;
+			if (innerText)
+				appendLineToText(output, 'Beacon node command: ' + innerText);
 
-		inputToRead = document.querySelector('#vn-cmd');
-		innerText = inputToRead.innerText;
-		if (innerText)
-			appendLineToText(output, 'Validator node command: ' + innerText);
+			inputToRead = document.querySelector('#vn-cmd');
+			innerText = inputToRead.innerText;
+			if (innerText)
+				appendLineToText(output, 'Validator node command: ' + innerText);
 
-		inputToRead = document.querySelector('#output');
-		innerText = inputToRead.innerText;
-		if (innerText)
-			appendLineToText(output, 'Unexpected output: ' + innerText);
+			inputToRead = document.querySelector('#output');
+			innerText = inputToRead.innerText;
+			if (innerText)
+				appendLineToText(output, 'Unexpected output: ' + innerText);
 
+		} catch {
+			// gulp for now
+		}
 	}
 
 	let generateChecklistDetails = function () {
