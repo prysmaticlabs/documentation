@@ -5,7 +5,7 @@
     </tr>
     <tr>
       <td><code>chain not synced beyond EIP-155</code></td>
-      <td>This usually means that your execution client needs more time to "catch up", which you don't need to worry about. If you see that your node is connected to peers and is importing data, your node is healthy.</td>
+      <td>This usually means that your execution client needs more time to "catch up", which you don't need to worry about. If you see that your node is connected to peers and is advancing, your node is healthy.</td>
     </tr>
     <tr>
       <td><code>Fatal: Failed to register the Ethereum service: genesis not found in chain</code></td>
@@ -25,7 +25,7 @@
     </tr>
     <tr>
       <td><code>ERROR powchain: Unable to process past deposit contract logs, perhaps your execution client is not fully synced error=Receipt not available for 'To' block '14957457'.</code></td>
-      <td>Pending guidance</td>
+      <td>This usually means that your execution client needs more time to "catch up", which you don't need to worry about. If you see that your node is connected to peers and is advancing, your node is healthy.</td>
     </tr>
     <tr>
       <td><code>403 signature invalid</code></td>
