@@ -191,8 +191,8 @@ html[data-theme='dark'] .quickstart-tabs .tabs__item:first-child:hover {
   width: 100%;
   min-width: 100%;
 }
-.troubleshooting-report-area > textarea.troubleshooting-report-area > textarea::placeholder {
-  color: #ccc;
+.troubleshooting-report-area > textarea::placeholder {
+  color: #ccc !important;
 }
 .troubleshooting-report-area .generate-report {
   font-size: 13px;
