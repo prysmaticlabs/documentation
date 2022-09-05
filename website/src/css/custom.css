@@ -230,7 +230,7 @@ html[data-theme='dark'] .quickstart-tabs .tabs__item:first-child:hover {
   background-color: #292929;
   color: white;
   text-align: left;
-  border-radius: 10px;
+  border-radius: 5px;
   margin-top: 20px;
   margin-bottom: 20px;
 }
