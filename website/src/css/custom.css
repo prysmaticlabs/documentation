@@ -194,7 +194,7 @@ html[data-theme='dark'] .quickstart-tabs .tabs__item:first-child:hover {
   border: 1px solid #c2c2c2 !important;
 }
 rows .troubleshooting-report-area > textarea::placeholder {
-  color: #666 !important;
+  color: #777 !important;
 }
 .troubleshooting-report-area .generate-report {
   -o-transition: all 0.15s ease;
