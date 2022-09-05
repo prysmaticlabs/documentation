@@ -1,6 +1,7 @@
 :root {
   --prysm-pink: #c72a7d;
   --tab-active-color: #3578e5;
+  --tab-active-color-hover: hsl(217, 58%, 36%);
   --tab-gray: #ddd;
   --prysm-pink-light: #da77ab;
 }
@@ -13,6 +14,9 @@ html[data-theme='dark'] .quickstart-tabs .tabs__item:first-child {
 }
 html[data-theme='dark'] .quickstart-tabs .tabs__item:first-child:hover {
   background-color: transparent !important;
+}
+html[data-theme='dark'] .troubleshooting-report-area > span {
+  color: #ddd !important;
 }
 .navbar__link--active {
   color: var(--prysm-pink-light) !important;
@@ -61,6 +65,13 @@ html[data-theme='dark'] .quickstart-tabs .tabs__item:first-child:hover {
   padding: 0 !important;
 }
 .status-guide .enbn-tabgroup {
+  visibility: hidden !important;
+  height: 0 !important;
+  overflow: hidden;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.status-guide .hidden-in-status-guide {
   visibility: hidden !important;
   height: 0 !important;
   overflow: hidden;
@@ -162,6 +173,118 @@ html[data-theme='dark'] .quickstart-tabs .tabs__item:first-child:hover {
 .quickstart-tabs .tabgroup-with-label.updated:after {
   color: var(--tab-active-color);
 }
+/* Troubleshooting reports */
+.troubleshooting-report-area {
+  text-align: left;
+}
+.troubleshooting-report-area > p {
+  font-weight: bold;
+  margin-bottom: 0;
+  margin-top: 0;
+  font-size: 16px;
+}
+.troubleshooting-report-area > span {
+  display: block;
+  margin-bottom: 0;
+  margin-top: 0;
+  font-size: 13px;
+  color: #333;
+}
+.troubleshooting-report-area > textarea {
+  -ms-overflow-style: none;
+  /* for Internet Explorer, Edge */
+  scrollbar-width: none;
+  /* for Firefox */
+  overflow-x: scroll;
+  padding: 15px;
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  background-color: #f6f6f6;
+  color: #444 !important;
+  text-align: left;
+  border-radius: 5px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  width: 100%;
+  min-width: 100%;
+  border: 1px solid #c2c2c2 !important;
+  white-space: pre;
+}
+.troubleshooting-report-area > textarea::-webkit-scrollbar {
+  display: none;
+  /* for Chrome, Safari, and Opera */
+}
+rows .troubleshooting-report-area > textarea::placeholder {
+  color: #777 !important;
+}
+.troubleshooting-report-area .generate-report {
+  -o-transition: all 0.15s ease;
+  -ms-transition: all 0.15s ease;
+  -moz-transition: all 0.15s ease;
+  -webkit-transition: all 0.15s ease;
+  /* ...and now for the proper property */
+  transition: all 0.15s ease;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 10px 15px;
+  border-radius: 5px !important;
+  position: relative;
+  background-color: var(--tab-active-color);
+  border-color: var(--tab-active-color);
+  color: white !important;
+  display: inline-block;
+  margin: auto;
+  text-align: center;
+  padding: 15px 25px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+.troubleshooting-report-area .generate-report:hover {
+  background-color: var(--tab-active-color-hover);
+}
+.troubleshooting-report-area .generated-report {
+  -ms-overflow-style: none;
+  /* for Internet Explorer, Edge */
+  scrollbar-width: none;
+  /* for Firefox */
+  overflow-x: scroll;
+  display: block;
+  width: 100%;
+  min-width: 100%;
+  font-size: 12px;
+  padding: 20px;
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  background-color: #292929;
+  color: white;
+  text-align: left;
+  border-radius: 5px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  white-space: pre;
+}
+.troubleshooting-report-area .generated-report::-webkit-scrollbar {
+  display: none;
+  /* for Chrome, Safari, and Opera */
+}
+/* MIXINS */
+.enable-transition {
+  -o-transition: all 0.15s ease;
+  -ms-transition: all 0.15s ease;
+  -moz-transition: all 0.15s ease;
+  -webkit-transition: all 0.15s ease;
+  /* ...and now for the proper property */
+  transition: all 0.15s ease;
+}
+.invisible-horizontal-scroll {
+  -ms-overflow-style: none;
+  /* for Internet Explorer, Edge */
+  scrollbar-width: none;
+  /* for Firefox */
+  overflow-x: scroll;
+}
+.invisible-horizontal-scroll::-webkit-scrollbar {
+  display: none;
+  /* for Chrome, Safari, and Opera */
+}
 /* General elements */
 a {
   color: var(--prysm-pink);
@@ -190,7 +313,7 @@ a {
   max-width: 100%;
 }
 .markdown table {
-  font-size: 15px;
+  font-size: 14.5px;
 }
 .markdown table ul,
 .markdown table ol {

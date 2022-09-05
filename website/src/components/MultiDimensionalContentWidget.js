@@ -65,10 +65,46 @@ export const MultiDimensionalContentWidget = () => {
 		}, 2000)
 	}
 
+	let stashConfig = function () {
+		var selectedOS, selectedNetwork, selectedEL, selectedENBN;
+
+		if (isSelectedByText('Windows'))
+			selectedOS = "Windows";
+		else
+			selectedOS = "Linux, MacOS, Arm64";
+
+		if (isSelectedByText('Mainnet'))
+			selectedNetwork = "Mainnet";
+		else if (isSelectedByText('Goerli-Prater'))
+			selectedNetwork = "Goerli-Prater";
+		else if (isSelectedByText('Sepolia'))
+			selectedNetwork = "Sepolia";
+		else if (isSelectedByText('Ropsten'))
+			selectedNetwork = "Ropsten";
+
+		if (isSelectedByText('Geth'))
+			selectedEL = "Geth";
+		else if (isSelectedByText('Nethermind'))
+			selectedEL = "Nethermind";
+		else if (isSelectedByText('Besu'))
+			selectedEL = "Besu";
+
+		if (isSelectedByText('IPC'))
+			selectedENBN = "IPC";
+		else
+			selectedENBN = "HTTP-JWT";
+
+		var tabWidget = document.querySelector('.quickstart-tabs');
+		tabWidget.dataset.selectedOS = selectedOS;
+		tabWidget.dataset.selectedNetwork = selectedNetwork;
+		tabWidget.dataset.selectedEL = selectedEL;
+		tabWidget.dataset.selectedENBN = selectedENBN;
+	}
+
 	let bindTabs = function () {
 		setTimeout(function () {
 			if (jwtOnly()) {
-				setTimeout(function () { selectByText('HTTP-JWT'); }, 50)
+				setTimeout(function () { selectByText('HTTP-JWT'); stashConfig(); }, 50)
 				disableByText('IPC');
 			}
 
@@ -108,10 +144,11 @@ export const MultiDimensionalContentWidget = () => {
 						}
 
 						toggleUpdated(targetElement);
-
+						stashConfig();
 					}, false)
 				}
 			});
+			stashConfig();
 		}, 100)
 	}
 
