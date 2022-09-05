@@ -11,10 +11,13 @@ export const GenerateTroubleshootingReportWidget = () => {
 	let bindButton = function () {
 		setTimeout(function () {
 			var button = getButton();
-			button.addEventListener("click", function (event) {
-				var targetElement = event.target;
-				console.log(targetElement.innerHTML);
-			});
+			if (button && !button.classList.contains('bound')) {
+				button.addEventListener("click", function (event) {
+					var targetElement = event.target;
+					console.log(targetElement.innerHTML);
+				});
+				button.classList.add('bound');
+			}
 		}, 100)
 	}
 
