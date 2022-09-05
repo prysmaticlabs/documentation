@@ -35,7 +35,7 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
         <div class='input-container'><input id="cl-1" type='checkbox'/><span class='done'></span></div>
         <div class='guidance-container'>
             <label for="cl-1">Use Prysm v3.1.0</label>
-            <p><a href='https://github.com/prysmaticlabs/prysm/releases/tag/v3.1.0'>Prysm v3</a> is a <strong>Merge-ready release</strong> that includes updates, deprecations, and breaking changes. Review the <a href='https://github.com/prysmaticlabs/prysm/releases/tag/v3.1.0'>release notes</a> to understand how this release impacts your configuration.</p>
+            <p><a href='https://github.com/prysmaticlabs/prysm/releases/tag/v3.1.0'>Prysm v3.1</a> is a <strong>Merge-ready release</strong>. Review the <a href='https://github.com/prysmaticlabs/prysm/releases/tag/v3.1.0'>release notes</a> to understand how this release impacts your configuration.</p>
         </div>
     </div>
     <div class='task'>
