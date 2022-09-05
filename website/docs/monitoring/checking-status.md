@@ -19,7 +19,7 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
 
 <MultidimensionalContentControlsPartial />
 
-<div class='hide-tabs'>
+
 
 
 ## Status checklist
@@ -28,7 +28,6 @@ import StatusChecklistPartial from '@site/docs/monitoring/partials/_status-check
 
 <StatusChecklistPartial />
 
-</div>
 
 </div>
 
