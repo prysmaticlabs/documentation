@@ -219,6 +219,7 @@ html[data-theme='dark'] {
     }
 
     .generate-report {
+        .enable-transition;
         font-size: 13px;
         font-weight: 500;
         padding: 10px 15px;
@@ -253,6 +254,35 @@ html[data-theme='dark'] {
         margin-top: 20px;
         margin-bottom: 20px;
     }
+}
+
+
+/* MIXINS */
+.enable-transition {
+    -o-transition: all .15s ease;
+    -ms-transition: all .15s ease;
+    -moz-transition: all .15s ease;
+    -webkit-transition: all .15s ease;
+    /* ...and now for the proper property */
+    transition: all .15s ease;
+}
+
+.enable-transition(@timeWithSAppendedLike2s) {
+    -o-transition: all @timeWithSAppendedLike2s ease;
+    -ms-transition: all @timeWithSAppendedLike2s ease;
+    -moz-transition: all @timeWithSAppendedLike2s ease;
+    -webkit-transition: all @timeWithSAppendedLike2s ease;
+    /* ...and now for the proper property */
+    transition: all @timeWithSAppendedLike2s ease;
+}
+
+.enable-transition-via-properties(@properties) {
+    -o-transition: @properties .15s ease;
+    -ms-transition: @properties .15s ease;
+    -moz-transition: @properties .15s ease;
+    -webkit-transition: @properties .15s ease;
+    /* ...and now for the proper property */
+    transition: @properties .15s ease;
 }
 
 /* General elements */

@@ -195,6 +195,12 @@ html[data-theme='dark'] .quickstart-tabs .tabs__item:first-child:hover {
   color: #ccc !important;
 }
 .troubleshooting-report-area .generate-report {
+  -o-transition: all 0.15s ease;
+  -ms-transition: all 0.15s ease;
+  -moz-transition: all 0.15s ease;
+  -webkit-transition: all 0.15s ease;
+  /* ...and now for the proper property */
+  transition: all 0.15s ease;
   font-size: 13px;
   font-weight: 500;
   padding: 10px 15px;
@@ -226,6 +232,15 @@ html[data-theme='dark'] .quickstart-tabs .tabs__item:first-child:hover {
   border-radius: 10px;
   margin-top: 20px;
   margin-bottom: 20px;
+}
+/* MIXINS */
+.enable-transition {
+  -o-transition: all 0.15s ease;
+  -ms-transition: all 0.15s ease;
+  -moz-transition: all 0.15s ease;
+  -webkit-transition: all 0.15s ease;
+  /* ...and now for the proper property */
+  transition: all 0.15s ease;
 }
 /* General elements */
 a {
