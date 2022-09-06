@@ -20,8 +20,8 @@ import TabItem from '@theme/TabItem';
             {label: 'JWT', value: 'jwt'},
             {label: 'IPC', value: 'ipc'}
             ]}>
-                <TabItem value="jwt"><pre><code>Nethermind.Runner --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.JwtSecretFile=/path/to/jwt.hex --JsonRpc.Host=0.0.0.0</code></pre></TabItem>
-                <TabItem value="ipc"><div class="admonition admonition-info alert alert--info"><div class="admonition-content"><p>Content under construction.</p></div></div></TabItem>
+                <TabItem value="jwt"><pre><code>Nethermind.Runner --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.JwtSecretFile=/path/to/jwt.hex</code></pre></TabItem>
+                <TabItem value="ipc"><pre><code>Nethermind.Runner --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.IpcUnixDomainSocketPath=/path/to/*.ipc</code></pre></TabItem>
             </Tabs>
       </TabItem>
       <TabItem value="goerli-prater">
@@ -29,8 +29,8 @@ import TabItem from '@theme/TabItem';
             {label: 'JWT', value: 'jwt'},
             {label: 'IPC', value: 'ipc'}
             ]}>
-                <TabItem value="jwt"><pre><code>Nethermind.Runner --config goerli --JsonRpc.Enabled true  --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.JwtSecretFile=/path/to/jwt.hex --JsonRpc.Host=0.0.0.0</code></pre></TabItem>
-                <TabItem value="ipc"><div class="admonition admonition-info alert alert--info"><div class="admonition-content"><p>Content under construction.</p></div></div></TabItem>
+                <TabItem value="jwt"><pre><code>Nethermind.Runner --config goerli --JsonRpc.Enabled true  --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.JwtSecretFile=/path/to/jwt.hex</code></pre></TabItem>
+                <TabItem value="ipc"><pre><code>Nethermind.Runner --config goerli --JsonRpc.Enabled true  --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.IpcUnixDomainSocketPath=/path/to/*.ipc</code></pre></TabItem>
             </Tabs>
       </TabItem>
       <TabItem value="sepolia">
@@ -38,8 +38,8 @@ import TabItem from '@theme/TabItem';
             {label: 'JWT', value: 'jwt'},
             {label: 'IPC', value: 'ipc'}
             ]}>
-                <TabItem value="jwt"><pre><code>Nethermind.Runner --config sepolia --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.JwtSecretFile=/path/to/jwt.hex --JsonRpc.Host=0.0.0.0 --Merge.TerminalTotalDifficulty 17000000000000000</code></pre></TabItem>
-                <TabItem value="ipc"><div class="admonition admonition-info alert alert--info"><div class="admonition-content"><p>Content under construction.</p></div></div></TabItem>
+                <TabItem value="jwt"><pre><code>Nethermind.Runner --config sepolia --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.JwtSecretFile=/path/to/jwt.hex --Merge.TerminalTotalDifficulty 17000000000000000</code></pre></TabItem>
+                <TabItem value="ipc"><pre><code>Nethermind.Runner --config sepolia --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.IpcUnixDomainSocketPath=/path/to/*.ipc --Merge.TerminalTotalDifficulty 17000000000000000</code></pre></TabItem>
             </Tabs>
       </TabItem>
       <TabItem value="ropsten">
@@ -47,8 +47,8 @@ import TabItem from '@theme/TabItem';
             {label: 'JWT', value: 'jwt'},
             {label: 'IPC', value: 'ipc'}
             ]}>
-                <TabItem value="jwt"><pre><code>Nethermind.Runner --config ropsten --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.JwtSecretFile=/path/to/jwt.hex --JsonRpc.Host=0.0.0.0 --Merge.TerminalTotalDifficulty 50000000000000000</code></pre></TabItem>
-                <TabItem value="ipc"><div class="admonition admonition-info alert alert--info"><div class="admonition-content"><p>Content under construction.</p></div></div></TabItem>
+                <TabItem value="jwt"><pre><code>Nethermind.Runner --config ropsten --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.JwtSecretFile=/path/to/jwt.hex --Merge.TerminalTotalDifficulty 50000000000000000</code></pre></TabItem>
+                <TabItem value="ipc"><pre><code>Nethermind.Runner --config ropsten --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.IpcUnixDomainSocketPath=/path/to/*.ipc --Merge.TerminalTotalDifficulty 50000000000000000</code></pre></TabItem>
             </Tabs>
       </TabItem>
     </Tabs>
