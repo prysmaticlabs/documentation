@@ -120,27 +120,25 @@ export const MultiDimensionalContentWidget = () => {
 						var targetElement = event.target;
 						var textContent = targetElement.textContent;
 
-						if (textContent == 'Besu' || textContent == 'Nethermind') {
+						if (textContent == 'Besu') {
 							if (isSelectedByText('IPC')) {
 								selectByText('HTTP-JWT');
 							}
 							disableByText('IPC');
-						} else if (textContent == 'Geth') {
+						} else if (textContent == 'Geth' || textContent == 'Nethermind') {
 							enableByText('IPC');
 						} else if (textContent == 'IPC') {
 							if (jwtOnly()) {
 								setTimeout(function () { selectByText('HTTP-JWT'); }, 50)
 								disableByText('IPC');
 							} else {
-								if (isSelectedByText('Besu') || isSelectedByText('Nethermind')) {
+								if (isSelectedByText('Besu')) {
 									selectByText('Geth');
 								}
 								disableByText('Besu');
-								disableByText('Nethermind');
 							}
 						} else if (textContent == 'HTTP-JWT') {
 							enableByText('Besu');
-							enableByText('Nethermind');
 						}
 
 						toggleUpdated(targetElement);
