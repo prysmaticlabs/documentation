@@ -20,7 +20,7 @@ import TabItem from '@theme/TabItem';
             {label: 'JWT', value: 'jwt'},
             {label: 'IPC', value: 'ipc'}
             ]}>
-                <TabItem value="jwt"><pre><code>Nethermind.Runner --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.JwtSecretFile=../consensus/jwt.hex --JsonRpc.Host=0.0.0.0</code></pre></TabItem>
+                <TabItem value="jwt"><pre><code>Nethermind.Runner --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.JwtSecretFile=/path/to/jwt.hex --JsonRpc.Host=0.0.0.0</code></pre></TabItem>
                 <TabItem value="ipc"><div class="admonition admonition-info alert alert--info"><div class="admonition-content"><p>Content under construction.</p></div></div></TabItem>
             </Tabs>
       </TabItem>
@@ -29,7 +29,7 @@ import TabItem from '@theme/TabItem';
             {label: 'JWT', value: 'jwt'},
             {label: 'IPC', value: 'ipc'}
             ]}>
-                <TabItem value="jwt"><pre><code>Nethermind.Runner --config goerli --JsonRpc.Enabled true  --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.JwtSecretFile=../consensus/jwt.hex --JsonRpc.Host=0.0.0.0</code></pre></TabItem>
+                <TabItem value="jwt"><pre><code>Nethermind.Runner --config goerli --JsonRpc.Enabled true  --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.JwtSecretFile=/path/to/jwt.hex --JsonRpc.Host=0.0.0.0</code></pre></TabItem>
                 <TabItem value="ipc"><div class="admonition admonition-info alert alert--info"><div class="admonition-content"><p>Content under construction.</p></div></div></TabItem>
             </Tabs>
       </TabItem>
@@ -38,7 +38,7 @@ import TabItem from '@theme/TabItem';
             {label: 'JWT', value: 'jwt'},
             {label: 'IPC', value: 'ipc'}
             ]}>
-                <TabItem value="jwt"><pre><code>Nethermind.Runner --config sepolia --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.JwtSecretFile=../consensus/jwt.hex --JsonRpc.Host=0.0.0.0 --Merge.TerminalTotalDifficulty 17000000000000000</code></pre></TabItem>
+                <TabItem value="jwt"><pre><code>Nethermind.Runner --config sepolia --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.JwtSecretFile=/path/to/jwt.hex --JsonRpc.Host=0.0.0.0 --Merge.TerminalTotalDifficulty 17000000000000000</code></pre></TabItem>
                 <TabItem value="ipc"><div class="admonition admonition-info alert alert--info"><div class="admonition-content"><p>Content under construction.</p></div></div></TabItem>
             </Tabs>
       </TabItem>
@@ -47,7 +47,7 @@ import TabItem from '@theme/TabItem';
             {label: 'JWT', value: 'jwt'},
             {label: 'IPC', value: 'ipc'}
             ]}>
-                <TabItem value="jwt"><pre><code>Nethermind.Runner --config ropsten --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.JwtSecretFile=../consensus/jwt.hex --JsonRpc.Host=0.0.0.0 --Merge.TerminalTotalDifficulty 50000000000000000</code></pre></TabItem>
+                <TabItem value="jwt"><pre><code>Nethermind.Runner --config ropsten --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.JwtSecretFile=/path/to/jwt.hex --JsonRpc.Host=0.0.0.0 --Merge.TerminalTotalDifficulty 50000000000000000</code></pre></TabItem>
                 <TabItem value="ipc"><div class="admonition admonition-info alert alert--info"><div class="admonition-content"><p>Content under construction.</p></div></div></TabItem>
             </Tabs>
       </TabItem>
@@ -85,7 +85,7 @@ import TabItem from '@theme/TabItem';
             {label: 'JWT', value: 'jwt'},
             {label: 'IPC', value: 'ipc'}
             ]}>
-                <TabItem value="jwt"><pre><code>besu --network=sepolia --rpc-http-enabled --engine-jwt-enabled=true --engine-jwt-secret=../consensus/jwt.hex --engine-host-allowlist="*" --override-genesis-config="terminalTotalDifficulty=17000000000000000"</code></pre></TabItem>
+                <TabItem value="jwt"><pre><code>besu --network=sepolia --rpc-http-enabled --engine-jwt-enabled=true --engine-jwt-secret=/path/to/jwt.hex --engine-host-allowlist="*" --override-genesis-config="terminalTotalDifficulty=17000000000000000"</code></pre></TabItem>
                 <TabItem value="ipc"><div class="admonition admonition-danger alert alert--info"><div class="admonition-content"><p>Content under construction.</p></div></div></TabItem>
             </Tabs>
       </TabItem>
@@ -94,7 +94,7 @@ import TabItem from '@theme/TabItem';
             {label: 'JWT', value: 'jwt'},
             {label: 'IPC', value: 'ipc'}
             ]}>
-                <TabItem value="jwt"><pre><code>besu --network=ropsten --rpc-http-enabled --engine-jwt-enabled=true --engine-jwt-secret=../consensus/jwt.hex --engine-host-allowlist="*" --override-genesis-config="terminalTotalDifficulty=50000000000000000"</code></pre></TabItem>
+                <TabItem value="jwt"><pre><code>besu --network=ropsten --rpc-http-enabled --engine-jwt-enabled=true --engine-jwt-secret=/path/to/jwt.hex --engine-host-allowlist="*" --override-genesis-config="terminalTotalDifficulty=50000000000000000"</code></pre></TabItem>
                 <TabItem value="ipc"><div class="admonition admonition-danger alert alert--info"><div class="admonition-content"><p>Content under construction.</p></div></div></TabItem>
             </Tabs>
       </TabItem>
@@ -116,8 +116,8 @@ import TabItem from '@theme/TabItem';
             {label: 'JWT', value: 'jwt'},
             {label: 'IPC', value: 'ipc'}
             ]}>
-                <TabItem value="jwt"><pre><code>geth --http --http.api eth,net,engine,admin --datadir . --authrpc.jwtsecret ../consensus/jwt.hex </code></pre></TabItem>
-                <TabItem value="ipc"><pre><code>geth --http --http.api eth,net,engine,admin --datadir . </code></pre></TabItem>
+                <TabItem value="jwt"><pre><code>geth --http --http.api eth,net,engine,admin --authrpc.jwtsecret /path/to/jwt.hex </code></pre></TabItem>
+                <TabItem value="ipc"><pre><code>geth --http --http.api eth,net,engine,admin </code></pre></TabItem>
             </Tabs>
       </TabItem>
       <TabItem value="goerli-prater">
@@ -125,8 +125,8 @@ import TabItem from '@theme/TabItem';
             {label: 'JWT', value: 'jwt'},
             {label: 'IPC', value: 'ipc'}
             ]}>
-                <TabItem value="jwt"><pre><code>geth --goerli --http --http.api eth,net,engine,admin --datadir . --authrpc.jwtsecret ../consensus/jwt.hex </code></pre></TabItem>
-                <TabItem value="ipc"><pre><code>geth --goerli --http --http.api eth,net,engine,admin --datadir . </code></pre></TabItem>
+                <TabItem value="jwt"><pre><code>geth --goerli --http --http.api eth,net,engine,admin --authrpc.jwtsecret /path/to/jwt.hex </code></pre></TabItem>
+                <TabItem value="ipc"><pre><code>geth --goerli --http --http.api eth,net,engine,admin </code></pre></TabItem>
             </Tabs>
       </TabItem>
       <TabItem value="sepolia">
@@ -134,8 +134,8 @@ import TabItem from '@theme/TabItem';
             {label: 'JWT', value: 'jwt'},
             {label: 'IPC', value: 'ipc'}
             ]}>
-                <TabItem value="jwt"><pre><code>geth --sepolia --http --http.api eth,net,engine,admin --datadir . --authrpc.jwtsecret ../consensus/jwt.hex --override.terminaltotaldifficulty 17000000000000000</code></pre></TabItem>
-                <TabItem value="ipc"><pre><code>geth --sepolia --http --http.api eth,net,engine,admin --datadir . --override.terminaltotaldifficulty 17000000000000000</code></pre></TabItem>
+                <TabItem value="jwt"><pre><code>geth --sepolia --http --http.api eth,net,engine,admin --authrpc.jwtsecret /path/to/jwt.hex --override.terminaltotaldifficulty 17000000000000000</code></pre></TabItem>
+                <TabItem value="ipc"><pre><code>geth --sepolia --http --http.api eth,net,engine,admin --override.terminaltotaldifficulty 17000000000000000</code></pre></TabItem>
             </Tabs>
       </TabItem>
       <TabItem value="ropsten">
@@ -143,8 +143,8 @@ import TabItem from '@theme/TabItem';
             {label: 'JWT', value: 'jwt'},
             {label: 'IPC', value: 'ipc'}
             ]}>
-                <TabItem value="jwt"><pre><code>geth --ropsten --http --http.api eth,net,engine,admin --datadir . --authrpc.jwtsecret ../consensus/jwt.hex --override.terminaltotaldifficulty 50000000000000000</code></pre></TabItem>
-                <TabItem value="ipc"><pre><code>geth --ropsten --http --http.api eth,net,engine,admin --datadir . </code></pre></TabItem>
+                <TabItem value="jwt"><pre><code>geth --ropsten --http --http.api eth,net,engine,admin --authrpc.jwtsecret /path/to/jwt.hex --override.terminaltotaldifficulty 50000000000000000</code></pre></TabItem>
+                <TabItem value="ipc"><pre><code>geth --ropsten --http --http.api eth,net,engine,admin </code></pre></TabItem>
             </Tabs>
       </TabItem>
     </Tabs>
