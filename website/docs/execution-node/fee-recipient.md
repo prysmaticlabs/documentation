@@ -81,7 +81,7 @@ A fee recipient wallet address can be configured on your client instance by usin
     <td>
     This flag enables the periodic calling of Validator Registration API <a href="https://github.com/ethereum/builder-specs">(a Builder API)</a> while using the <code>suggested-fee-recipient</code> flag. <br /> <br /> 
     <strong>Example</strong>: <code>--enable-builder</code> <br /> <br /> 
-    <strong>Note</strong>: this flag will not affect the proposer settings file. The proposer settings can specify builder configuration through its own fields.
+    <strong>Note</strong>: this flag will not affect the proposer settings file. The proposer settings can specify builder configuration through its own fields. If you don't run a builder, you can ignore this.
     </td>
   </tr>
 </table>
@@ -188,7 +188,7 @@ The above JSON demonstrates configuring two 1:1 mappings between `validator publ
     <td>
     Optional. A configuration object that contains <code>enable</code> and <code>gas_limit</code> properties.<br /> <br /> 
     <strong>Type:</strong> Object<br /> <br /> 
-    <strong>Note:</strong> Applicable only when using custom block builders.
+    <strong>Note:</strong> Applicable only when using custom block builders. If you don't run a builder, you can ignore this.
     </td>
   </tr>
   <tr>
@@ -196,7 +196,7 @@ The above JSON demonstrates configuring two 1:1 mappings between `validator publ
     <td>
     Optional. Sets whether or not the validator registration is enabled or not.<br /> <br /> 
     <strong>Type:</strong> bool <br /> <br /> 
-    <strong>Note:</strong> Applicable only when using custom block builders.<br /> <br /> 
+    <strong>Note:</strong> Applicable only when using custom block builders. If you don't run a builder, you can ignore this.<br /> <br /> 
     <strong>Example:</strong> <code>true</code> 
     </td>
   </tr>
@@ -205,7 +205,7 @@ The above JSON demonstrates configuring two 1:1 mappings between `validator publ
     <td>
     Optional. Sets an upper gas limit (in gwei) for block builders.<br /> <br /> 
     <strong>Type:</strong> string(uint64) <br /> <br /> 
-    <strong>Note:</strong> Applicable only when using custom block builders. Block limits can only change a fixed amount per proposal - the default limit is 30M gwei. <br /> <br /> 
+    <strong>Note:</strong> Applicable only when using custom block builders. If you don't run a builder, you can ignore this. Block limits can only change a fixed amount per proposal - the default limit is 30M gwei. <br /> <br /> 
     <strong>Example:</strong> <code>"35000000"</code>
     </td>
   </tr>
@@ -229,7 +229,7 @@ The above JSON demonstrates configuring two 1:1 mappings between `validator publ
     <td>
     Optional. A configuration object that contains <code>enable</code> and <code>gas_limit</code> properties.<br /> <br /> 
     <strong>Type:</strong> Object<br /> <br /> 
-    <strong>Note:</strong> Applicable only when using custom block builders.
+    <strong>Note:</strong> Applicable only when using custom block builders. If you don't run a builder, you can ignore this.
     </td>
   </tr>
   <tr>
@@ -237,7 +237,7 @@ The above JSON demonstrates configuring two 1:1 mappings between `validator publ
     <td>
     Optional.<br /> <br /> 
     <strong>Type:</strong> bool <br /> <br /> 
-    <strong>Note:</strong> Applicable only when using custom block builders. Sets whether or not the MEV builder validator registration is enabled or not. <br /> <br /> 
+    <strong>Note:</strong> Sets whether or not the MEV builder validator registration is enabled or not. Applicable only when using custom block builders. If you don't run a builder, you can ignore this.  <br /> <br /> 
     <strong>Example:</strong> <code>true</code> 
     </td>
   </tr>
@@ -246,7 +246,7 @@ The above JSON demonstrates configuring two 1:1 mappings between `validator publ
     <td>
     Optional. Sets a gas limit upper limit (in gwei) for block builders. <br /> <br /> 
     <strong>Type:</strong> string(uint64) <br /> <br /> 
-    <strong>Note:</strong> Applicable only when using custom block builders. Block limits can only change a fixed amount per proposal - the default limit is 30M gwei.<br /> <br />
+    <strong>Note:</strong> Applicable only when using custom block builders. If you don't run a builder, you can ignore this. Block limits can only change a fixed amount per proposal - the default limit is 30M gwei.<br /> <br />
     <strong>Example:</strong> <code>"35000000"</code>  
     </td>
   </tr>
