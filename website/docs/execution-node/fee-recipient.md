@@ -8,6 +8,10 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <HeaderBadgesWidget commaDelimitedContributors="James,Mick" lastVerifiedDateString="September 5th, 2022" lastVerifiedVersionString="v3.1.0" />
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+
 :::tip Configure this before The Merge
 
 If you don't configure your fee recipient wallet address before The Merge, your priority fee earnings will be deposited into a [burn address](https://etherscan.io/address/0x0000000000000000000000000000000000000000).
