@@ -215,7 +215,7 @@ If you don't see any errors after issuing one of the above commands, your fee re
 **TODO: what does this mean?** <br />
 - The existing `suggested-fee-recipient` flag must now be used with the new `enable-builder` flag. This allows your validator client to use the MEV Builder API.
 
-**TODO: when should I set my own gas_limit, and how do I know what to set?** <br />
+**TODO: when should I set my own `gas_limit`, and how do I know what to set?** <br />
 - TODO
 
 
