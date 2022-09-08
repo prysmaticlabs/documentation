@@ -311,5 +311,3 @@ By default, this will deploy to Prysmatic Labs' Google Container Registry namesp
 
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
-
-<RequestUpdateWidget />
