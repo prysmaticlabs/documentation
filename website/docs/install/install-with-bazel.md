@@ -82,8 +82,8 @@ cd prysm
 2. Build both the beacon chain node and the validator client:
 
 ```text
-bazel build //beacon-chain:beacon-chain --config=release
-bazel build //validator:validator --config=release
+bazel build //cmd/beacon-chain:beacon-chain --config=release
+bazel build //cmd/validator:validator --config=release
 ```
 
 Bazel will automatically pull and install any dependencies as well, including Go and necessary compilers.
