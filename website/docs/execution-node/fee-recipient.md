@@ -146,7 +146,7 @@ JSON example:
     }
   },
   "default_config": {
-    "fee_recipient": "0x01234567c5af9B61374A128e6F85f553aF09ff89A"
+    "fee_recipient": "0x01234567c5af9B61374A128e6F85f553aF09ff89A",
     "builder": {
       "enabled": true,
       "gas_limit": "30000000"
