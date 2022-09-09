@@ -213,11 +213,11 @@ If you don't see any errors after issuing one of the above commands, your fee re
 **What happened to `fee-recipient-config-file`?** <br />
 `fee-recipient-config-file` and `fee-recipient-config-url` flags are deprecated and have been replaced with `proposer-settings-file` and `proposer-settings-url` flags as of Prysm v2.1.3.
 
-**TODO: what does this mean?** <br />
-- The existing `suggested-fee-recipient` flag must now be used with the new `enable-builder` flag. This allows your validator client to use the MEV Builder API.
+**How do I ensure that builders receive my fee recipient wallet address?** <br />
+When `enable-builder` is set to `true` on your validator, you can use either the `--suggested-fee-recipient` flag or the JSON/YAML configuration method to communicate your fee recipient wallet address to builders.
 
-**TODO: when should I set my own `gas_limit`, and how do I know what to set?** <br />
-- TODO
+**When should I set my own `gas_limit`, and how do I know what to set?** <br />
+This is an advanced configuration property that most users won't have to think about. In general, large gas limits will result in you not being able to include many transactions in a block, while using low values won't be as profitable. See [https://github.com/ethereum/builder-specs/issues/17](https://github.com/ethereum/builder-specs/issues/17) for related discussion.
 
 
 
