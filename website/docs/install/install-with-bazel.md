@@ -3,7 +3,8 @@ id: install-with-bazel
 title: Build Prysm from source
 sidebar_label: Build from source
 ---
-
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <HeaderBadgesWidget />
