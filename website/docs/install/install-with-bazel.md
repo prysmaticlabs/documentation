@@ -23,14 +23,15 @@ This guidance is targeted at users who are already comfortable with Bazel and st
 Instead of using the `Go` tool to build Prysm, our team relies on the [Bazel](https://bazel.build) build system used by major companies to manage monorepositories. Bazel provides reproducible builds and a sandboxed environment that ensures everyone building Prysm has the same experience and can build our entire project from a single command. For more detailed rationale on why Bazel, how it works in Prysm, and all important information about how exactly building from source works, read our rationale [here](/docs/reading/bazel).
 
 
-<div class='bazel-guide hide-tabs'>
+<div class='bazel-guide'>
 
-<p><strong>Select a configuration</strong>:</p>
+## Select a configuration
 
 import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidimensional-content-controls-partial.md';
 
 <MultidimensionalContentControlsPartial />
 
+<div class='hide-tabs'>
 
 ## Review system requirements
 
@@ -199,7 +200,7 @@ To check on the status of your validator, we recommend checking out the popular 
 
 ![image](https://i.imgur.com/CDNc6Ft.png)
 
-
+</div>
 
 
 ## Advanced: Build Docker images from source
