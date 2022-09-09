@@ -87,7 +87,7 @@ You can install Bazelisk in multiple ways, including:
 
 ## Install Prysm using Bazel
 
-1. Clone Prysm's [main repository](https://github.com/prysmaticlabs/prysm). Make sure you switch to the latest version (the latest version number can be found from the [releases page](https://github.com/prysmaticlabs/prysm/releases)). Once cloned, enter the directory:
+Clone Prysm's [main repository](https://github.com/prysmaticlabs/prysm). Make sure you switch to the latest version (the latest version number can be found from the [releases page](https://github.com/prysmaticlabs/prysm/releases)). Once cloned, enter the directory:
 
 ```text
 git clone https://github.com/prysmaticlabs/prysm
@@ -95,7 +95,7 @@ git checkout <version>
 cd prysm
 ```
 
-2. Build both the beacon chain node and the validator client:
+Build both the beacon chain node and the validator client:
 
 ```text
 bazel build //cmd/beacon-chain:beacon-chain --config=release
