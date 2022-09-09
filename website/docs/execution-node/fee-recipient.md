@@ -189,6 +189,7 @@ New property definitions are as follows:
 
 
 
+
 ### Advanced: Configuring fee recipient through the Web UI
 
 <img style={{maxWidth: 700 + 'px'}} src={FeeRecipientPng} /> 
@@ -217,7 +218,6 @@ If you don't see any errors after issuing one of the above commands, your fee re
 
 **TODO: when should I set my own `gas_limit`, and how do I know what to set?** <br />
 - TODO
-
 
 
 
