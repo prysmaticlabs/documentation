@@ -25,14 +25,6 @@ Instead of using the `Go` tool to build Prysm, our team relies on the [Bazel](ht
 
 <div class='bazel-guide'>
 
-## Select a configuration
-
-import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidimensional-content-controls-partial.md';
-
-<MultidimensionalContentControlsPartial />
-
-<div class='hide-tabs'>
-
 ## Review system requirements
 
 <table>
@@ -122,6 +114,12 @@ To run a beacon node, you'll need access to an execution node. See [Configure ex
 
 Note: <YOUR_ETH_EXECUTION_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`.
 
+import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidimensional-content-controls-partial.md';
+
+<MultidimensionalContentControlsPartial />
+
+<div class='hide-tabs'>
+
 <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
         {label: 'Goerli-Prater', value: 'goerli-prater'},
@@ -165,7 +163,7 @@ bazel run //beacon-chain --config=release -- --execution-endpoint=<YOUR_ETH_EXEC
   </TabItem>
 </Tabs>
 
-
+</div>
 
 ## Run a validator
 
@@ -201,7 +199,7 @@ To check on the status of your validator, we recommend checking out the popular 
 ![image](https://i.imgur.com/CDNc6Ft.png)
 
 </div>
-</div>
+
 
 
 ## Advanced: Build Docker images from source
