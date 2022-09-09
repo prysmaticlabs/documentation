@@ -201,6 +201,7 @@ To check on the status of your validator, we recommend checking out the popular 
 ![image](https://i.imgur.com/CDNc6Ft.png)
 
 </div>
+</div>
 
 
 ## Advanced: Build Docker images from source
