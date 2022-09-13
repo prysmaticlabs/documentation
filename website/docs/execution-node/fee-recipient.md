@@ -6,7 +6,7 @@ sidebar_label: Configure Fee Recipient
 import FeeRecipientPng from '@site/static/img/fee-recipient-ui.png'
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
-<HeaderBadgesWidget commaDelimitedContributors="James,Mick" lastVerifiedDateString="September 5th, 2022" lastVerifiedVersionString="v3.1.0" />
+<HeaderBadgesWidget commaDelimitedContributors="James,Mick" lastVerifiedDateString="September 12th, 2022" lastVerifiedVersionString="v3.1.1" />
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -217,7 +217,7 @@ If you don't see any errors after issuing one of the above commands, your fee re
 When `enable-builder` is set to `true` on your validator, you can use either the `--suggested-fee-recipient` flag or the JSON/YAML configuration method to communicate your fee recipient wallet address to builders.
 
 **When should I set my own `gas_limit`, and how do I know what to set?** <br />
-This is an advanced configuration property that most users won't have to think about. In general, large gas limits will result in you not being able to include many transactions in a block, while using low values won't be as profitable. See [https://github.com/ethereum/builder-specs/issues/17](https://github.com/ethereum/builder-specs/issues/17) for related discussion.
+This is an advanced configuration property related to custom builders (MEV) that most users won't have to think about. In general, large gas limits will result in you not being able to include many transactions in a block, while using low values won't be as profitable.  See [https://github.com/ethereum/builder-specs/issues/17](https://github.com/ethereum/builder-specs/issues/17) for related discussion.
 
 
 
