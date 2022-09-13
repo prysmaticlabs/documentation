@@ -113,7 +113,7 @@ Tell your validator to use the JSON/YAML configuration through one of the follow
 
 
 
-### Advanced: Configuring MEV builder and gas limit
+### Advanced: Configure MEV builder and gas limit
 
 In the previous section, we reviewed a sample JSON/YAML file. The following file reveals additional properties that can optionally be included in order to configure MEV builder validator registration and gas limits:
 
@@ -192,7 +192,7 @@ New property definitions are as follows:
 
 
 
-### Advanced: Configuring fee recipient through the Web UI
+### Advanced: Configure fee recipient through the Web UI
 
 <img style={{maxWidth: 700 + 'px'}} src={FeeRecipientPng} /> 
 
