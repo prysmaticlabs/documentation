@@ -38,10 +38,12 @@ Your fee recipient wallet address can be configured on your **validator client i
 
 ### Configure fee recipient via flags
 
-Your fee recipient wallet address can be configured through the `--suggested-fee-recipient` flag. For example:
+Your fee recipient wallet address can be configured on both your beacon node and validator through the `--suggested-fee-recipient` flag:
 
- - **Beacon node**: `./prysm.sh validator --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9`
- - **Validator node**: `./prysm.sh beacon-chain --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9`
+ - **Beacon node**: `./prysm.sh validator --suggested-fee-recipient=<WALLET ADDRESS>`
+ - **Validator**: `./prysm.sh beacon-chain --suggested-fee-recipient=<WALLET ADDRESS>`
+
+For example: `./prysm.sh validator --suggested-fee-recipient=0x52FfeB84540173B15eEC5a486FdB5c769F50400a`.
 
 If your validator is running multiple keys (for example, staking 64 ETH using two validator public keys that have been imported into a single validator client instance), all validator public keys will use the wallet address specified through the `--suggested-fee-recipient` flag. You can optionally associate different fee recipient wallet addresses to individual validator public keys using the JSON/YAML configuration method detailed in the following section.
 
@@ -61,15 +63,15 @@ You can assign different wallet addresses to each of your validator public keys 
 ```
 {
   "proposer_config": {
-    "0x01234567155ad77931185101128655c0191bd0214c201ca48ed887f6c4c6adf334070efcd75140eada5ac83a92506dd7a": {
-      "fee_recipient": "0x012345670FCE8a85ec7055A5F8b2bE214B3DaeFd3"
+    "<VALIDATOR PUBLIC KEY>": {
+      "fee_recipient": "<WALLET ADDRESS>"
     },
-    "0x0123456748ed887f6c4c6adf334070efcd75140eada5ac83a92506dd7a057816155ad77931185101128655c0191bd0214": {
-      "fee_recipient": "0x01234567bE214B3DaeFd350155530FCE8a85ec705"
+    "<VALIDATOR PUBLIC KEY>": {
+      "fee_recipient": "<WALLET ADDRESS>"
     }
   },
   "default_config": {
-    "fee_recipient": "0x01234567c5af9B61374A128e6F85f553aF09ff89A"
+    "fee_recipient": "<WALLET ADDRESS>"
   }
 }
 ```
@@ -82,12 +84,12 @@ You can assign different wallet addresses to each of your validator public keys 
 ```
 ---
 proposer_config:
-  '0x01234567155ad77931185101128655c0191bd0214c201ca48ed887f6c4c6adf334070efcd75140eada5ac83a92506dd7a':
-    fee_recipient: '0x012345670FCE8a85ec7055A5F8b2bE214B3DaeFd3'
-  '0x0123456748ed887f6c4c6adf334070efcd75140eada5ac83a92506dd7a057816155ad77931185101128655c0191bd0214':
-    fee_recipient: '0x01234567bE214B3DaeFd350155530FCE8a85ec705'
+  '<VALIDATOR PUBLIC KEY>':
+    fee_recipient: '<WALLET ADDRESS>'
+  '<VALIDATOR PUBLIC KEY>':
+    fee_recipient: '<WALLET ADDRESS>'
 default_config:
-  fee_recipient: '0x01234567c5af9B61374A128e6F85f553aF09ff89A'
+  fee_recipient: '<WALLET ADDRESS>'
 ```
 
 
@@ -97,8 +99,8 @@ default_config:
 Property definitions are as follows:
 
  - `proposer_config`: An object containing key-value pairs, where member keys are validator public keys.
- - `0x01234567155ad77931185...`: A validator public key (98 characters long - not a wallet address) used as a key.
- - `fee_recipient`: A fee recipient wallet address.
+ - `<VALIDATOR PUBLIC KEY>`: A validator public key (98 characters long - not a wallet address) used as a JSON property key. Example: `0x0123456748ed887f6c4c6adf334070efcd75140eada5ac83a92506dd7a057816155ad77931185101128655c0191bd0214`.
+ - `fee_recipient`: A fee recipient wallet address. Example: `0x52FfeB84540173B15eEC5a486FdB5c769F50400a`.
  - `default_config`: An object containing a default fee recipient wallet address. Validator public keys not specified in `proposer_config` will use this wallet address.
 
 
@@ -125,15 +127,15 @@ In the previous section, we reviewed a sample JSON/YAML file. The following file
 ```
 {
   "proposer_config": {
-    "0x01234567155ad77931185101128655c0191bd0214c201ca48ed887f6c4c6adf334070efcd75140eada5ac83a92506dd7a": {
-      "fee_recipient": "0x012345670FCE8a85ec7055A5F8b2bE214B3DaeFd3",
+    "<VALIDATOR PUBLIC KEY>": {
+      "fee_recipient": "<WALLET ADDRESS>",
       "builder": {
         "enabled": true,
         "gas_limit": "30000000"
       }
     },
-    "0x0123456748ed887f6c4c6adf334070efcd75140eada5ac83a92506dd7a057816155ad77931185101128655c0191bd0214": {
-      "fee_recipient": "0x01234567bE214B3DaeFd350155530FCE8a85ec705",
+    "<VALIDATOR PUBLIC KEY>": {
+      "fee_recipient": "<WALLET ADDRESS>",
       "builder": {
         "enabled": false,
         "gas_limit": "30000000"
@@ -141,7 +143,7 @@ In the previous section, we reviewed a sample JSON/YAML file. The following file
     }
   },
   "default_config": {
-    "fee_recipient": "0x01234567c5af9B61374A128e6F85f553aF09ff89A",
+    "fee_recipient": "<WALLET ADDRESS>",
     "builder": {
       "enabled": true,
       "gas_limit": "30000000"
@@ -158,18 +160,18 @@ In the previous section, we reviewed a sample JSON/YAML file. The following file
 ```
 ---
 proposer_config:
-  '0x01234567155ad77931185101128655c0191bd0214c201ca48ed887f6c4c6adf334070efcd75140eada5ac83a92506dd7a':
-    fee_recipient: '0x012345670FCE8a85ec7055A5F8b2bE214B3DaeFd3'
+  '<VALIDATOR PUBLIC KEY>':
+    fee_recipient: '<WALLET ADDRESS>'
     builder:
       enabled: true
       gas_limit: '30000000'
-  '0x0123456748ed887f6c4c6adf334070efcd75140eada5ac83a92506dd7a057816155ad77931185101128655c0191bd0214':
-    fee_recipient: '0x01234567bE214B3DaeFd350155530FCE8a85ec705'
+  '<VALIDATOR PUBLIC KEY>':
+    fee_recipient: '<WALLET ADDRESS>'
     builder:
       enabled: true
       gas_limit: '30000000'
 default_config:
-  fee_recipient: '0x01234567c5af9B61374A128e6F85f553aF09ff89A'
+  fee_recipient: '<WALLET ADDRESS>'
   builder:
       enabled: true
       gas_limit: '30000000'
