@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
-<HeaderBadgesWidget commaDelimitedContributors="Kasey,Mick,James" lastVerifiedDateString="August 24th, 2022" lastVerifiedVersionString="v3.0.0" />
+<HeaderBadgesWidget commaDelimitedContributors="Kasey,Mick,James" lastVerifiedDateString="September 12th, 2022" lastVerifiedVersionString="v3.1.1" />
 
 :::caution Public Preview
 
@@ -62,7 +62,6 @@ level=info msg="requesting <your configured checkpoint sync endpoint>"
 The above instructions tell you how to **request** checkpoint state from another node. If you want to **serve** these requests, run a fully synced node with the following flags:
 
  - `--enable-debug-rpc-endpoints`: The [Beacon Node API for retrieving a BeaconState](https://ethereum.github.io/beacon-APIs/#/Debug/getStateV2) is a debug endpoint - this flag tells Prysm to enable the endpoint so checkpoint sync requests can be served through your beacon node's RPC gateway provider endpoint.
- - `--grpc-max-msg-size=65568081`: By default, Prysm caps the size of its RPC responses. This flag configures a cap that allows Prysm to serve checkpoint sync requests with checkpoint state files.
 
 Note that **this is entirely optional**. The beacon node *requesting* the checkpoint state from this node doesn't need these flags.
 
@@ -77,16 +76,25 @@ Note that **this is entirely optional**. The beacon node *requesting* the checkp
 
 When you sync via **network request**, the `BeaconState`, `SignedBeaconBlock`, and genesis state files are delivered from one beacon node to another using a peer-to-peer connection. When you sync via **file export/import**, you manually export these files from one beacon node and import them into another. This can be useful if you don't want your beacon node to expose an RPC gateway provider endpoint. Block explorers and client teams can also host these exported files statically as a trusted checkpoint sync source.
 
-Issue the following command to export the `BeaconState` and `SignedBeaconBlock` files from a synced beacon node using `prysmctl`:
+Issue the following commands to export the `BeaconState` and `SignedBeaconBlock` files from a synced beacon node using `prysmctl`. Until `prysmctl` is included in Prysm's binary release package, it is necessary to run it from a local source checkout:
 
 :::info
 
-Invoking `prysmctl` using the below syntax will be possible in an upcoming stable release.
+Installing `prysmctl` via `prysm.sh`, or downloading it from prysm's github release page, will be possible in an upcoming stable release.
 
 :::
 
 ```bash
-go run github.com/prysmaticlabs/prysm/cmd/prysmctl@latest checkpoint save --beacon-node-host=http://localhost:3500
+$ git clone git@github.com:prysmaticlabs/prysm.git
+Cloning into 'prysm'...
+remote: Enumerating objects: 167386, done.
+remote: Counting objects: 100% (332/332), done.
+remote: Compressing objects: 100% (234/234), done.
+remote: Total 167386 (delta 118), reused 220 (delta 93), pack-reused 167054
+Receiving objects: 100% (167386/167386), 154.30 MiB | 39.56 MiB/s, done.
+Resolving deltas: 100% (127482/127482), done.
+
+$ go run github.com/prysmaticlabs/prysm/v3/cmd/prysmctl checkpoint-sync download --beacon-node-host=http://localhost:3500
 ```
 
 You should see the following output if your export was successful:

@@ -4,6 +4,10 @@ title: Collect metrics with client-stats
 sidebar_label: Collect metrics with client-stats
 ---
 
+import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
+
+<HeaderBadgesWidget />
+
 :::danger Alpha testing
 This functionality is in its early stage alpha testing and may not be fully functional at this time. 
 :::

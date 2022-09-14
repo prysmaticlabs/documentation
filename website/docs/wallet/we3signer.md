@@ -4,6 +4,10 @@ title: Use Web3Signer
 sidebar_label: Use Web3Signer
 ---
 
+import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
+
+<HeaderBadgesWidget />
+
 [Web3Signer](https://github.com/ConsenSys/web3signer) is an open-source remote signing service developed by Consensys. Prysm users can use this tool as an alternative to storing keys locally. Web3Signer uses REST APIs.
 
 Prysm supports the use of Web3Signer the following flags:

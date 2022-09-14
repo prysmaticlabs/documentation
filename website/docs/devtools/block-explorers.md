@@ -4,6 +4,10 @@ title: Block explorers
 sidebar_label: Block explorers
 ---
 
+import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
+
+<HeaderBadgesWidget />
+
 Below is a list of third-party block explorer services displaying statistics about Ethereum proof-of-stake.
 
 ## [beacon.etherscan.io](https://beacon.etherscan.io)

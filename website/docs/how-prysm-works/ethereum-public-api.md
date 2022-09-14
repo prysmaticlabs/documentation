@@ -5,6 +5,10 @@ sidebar_label: Eth Beacon Node API
 description: This section contains information about the official Ethereum beacon API
 ---
 
+import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
+
+<HeaderBadgesWidget />
+
 Prysm supports the official [Eth Beacon Node API specification](https://ethereum.github.io/beacon-APIs/), the official API standard developed by the Ethereum R&D team. The specification describes a RESTful set of endpoints which should be implemented by an Eth beacon node or a third-party service. This reduces the overhead of having to learn a new set of APIs when trying out a different client, and it allows network participants to reliably talk to each other over HTTP. As an example of an external service implementing the spec, Infura's beacon chain API is described [here](https://infura.io/docs/eth2#tag/Beacon).
 
 :::caution The official Ethereum specification contains multiple definitions

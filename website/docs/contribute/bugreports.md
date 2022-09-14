@@ -4,6 +4,10 @@ title: File a bug report
 sidebar_label: File a bug report
 ---
 
+import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
+
+<HeaderBadgesWidget />
+
 Bug reports are critical to the rapid development of the Prysm client. In order to make the process quick and efficient for all parties, it is best to follow some common reporting etiquette when filing to avoid double issues or miscommunications.
 
 ## Checking if your issue exists

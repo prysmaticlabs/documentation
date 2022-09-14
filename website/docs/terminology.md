@@ -3,6 +3,12 @@ id: terminology
 title: Glossary
 sidebar_label: Glossary
 ---
+
+import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
+
+<HeaderBadgesWidget />
+
+
 This page houses definitions to the various technical terms found throughout this documentation portal. See a word or phrase that should be here? Let us know!
 ## General terms
 

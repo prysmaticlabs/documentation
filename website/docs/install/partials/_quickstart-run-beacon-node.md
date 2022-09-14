@@ -23,7 +23,7 @@ import TabItem from '@theme/TabItem';
                 <TabItem value="jwt"><pre><code>prysm.bat beacon-chain --execution-endpoint=http://localhost:8551 --jwt-secret=path/to/jwt.hex --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre></TabItem>
                 <TabItem value="ipc">
                   <div class="admonition admonition-info alert alert--info"><div class="admonition-content"><p><code>--http-web3provider</code> is deprecated and has been replaced with <code>--execution-endpoint</code>, but IPC currently only works through <code>--http-web3provider</code> on Windows. This will be fixed in our next release. You can safely ignore any related "deprecated flag" warnings you see in the meantime.</p></div></div>
-                  <pre><code>prysm.bat beacon-chain --http-web3provider=//./pipe/geth.ipc --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
+                  <pre><code>prysm.bat beacon-chain --http-web3provider=//./pipe/&lt;your.ipc&gt; --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre>
                 </TabItem>
             </Tabs>
       </TabItem>
@@ -36,7 +36,7 @@ import TabItem from '@theme/TabItem';
                 <TabItem value="jwt"><pre><code>prysm.bat beacon-chain --execution-endpoint=http://localhost:8551 --prater --jwt-secret=path/to/jwt.hex --genesis-state=genesis.ssz --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre></TabItem>
                 <TabItem value="ipc">
                 <div class="admonition admonition-info alert alert--info"><div class="admonition-content"><p><code>--http-web3provider</code> is deprecated and has been replaced with <code>--execution-endpoint</code>, but IPC currently only works through <code>--http-web3provider</code> on Windows. This will be fixed in our next release. You can safely ignore any related "deprecated flag" warnings you see in the meantime.</p></div></div>
-                <pre><code>prysm.bat beacon-chain --http-web3provider=//./pipe/geth.ipc --prater --genesis-state=genesis.ssz --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre></TabItem>
+                <pre><code>prysm.bat beacon-chain --http-web3provider=//./pipe/&lt;your.ipc&gt; --prater --genesis-state=genesis.ssz --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre></TabItem>
             </Tabs> 
       </TabItem>
       <TabItem value="sepolia">
@@ -48,7 +48,7 @@ import TabItem from '@theme/TabItem';
                 <TabItem value="jwt"><pre><code>prysm.bat beacon-chain --execution-endpoint=http://localhost:8551 --sepolia --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9 --jwt-secret=jwt.hex --genesis-state=genesis.ssz</code></pre></TabItem>
                 <TabItem value="ipc">
                 <div class="admonition admonition-info alert alert--info"><div class="admonition-content"><p><code>--http-web3provider</code> is deprecated and has been replaced with <code>--execution-endpoint</code>, but IPC currently only works through <code>--http-web3provider</code> on Windows. This will be fixed in our next release. You can safely ignore any related "deprecated flag" warnings you see in the meantime.</p></div></div>
-                <pre><code>prysm.bat beacon-chain --http-web3provider=//./pipe/geth.ipc --sepolia --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9 --genesis-state=genesis.ssz</code></pre></TabItem>
+                <pre><code>prysm.bat beacon-chain --http-web3provider=//./pipe/&lt;your.ipc&gt; --sepolia --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9 --genesis-state=genesis.ssz</code></pre></TabItem>
             </Tabs>
       </TabItem>
       <TabItem value="ropsten">
@@ -60,7 +60,7 @@ import TabItem from '@theme/TabItem';
                 <TabItem value="jwt"><pre><code>prysm.bat beacon-chain --execution-endpoint=http://localhost:8551 --ropsten --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9 --jwt-secret=jwt.hex --genesis-state=genesis.ssz</code></pre></TabItem>
                 <TabItem value="ipc">
                 <div class="admonition admonition-info alert alert--info"><div class="admonition-content"><p><code>--http-web3provider</code> is deprecated and has been replaced with <code>--execution-endpoint</code>, but IPC currently only works through <code>--http-web3provider</code> on Windows. This will be fixed in our next release. You can safely ignore any related "deprecated flag" warnings you see in the meantime.</p></div></div>
-                <pre><code>prysm.bat beacon-chain --http-web3provider=//./pipe/geth.ipc --ropsten --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9 --genesis-state=genesis.ssz</code></pre></TabItem>
+                <pre><code>prysm.bat beacon-chain --http-web3provider=//./pipe/&lt;your.ipc&gt; --ropsten --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9 --genesis-state=genesis.ssz</code></pre></TabItem>
             </Tabs>
       </TabItem>
     </Tabs>
@@ -79,7 +79,7 @@ import TabItem from '@theme/TabItem';
             {label: 'IPC', value: 'ipc'}
             ]}>
                 <TabItem value="jwt"><pre><code>./prysm.sh beacon-chain --execution-endpoint=http://localhost:8551 --jwt-secret=path/to/jwt.hex --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre></TabItem>
-                <TabItem value="ipc"><pre><code>./prysm.sh beacon-chain --execution-endpoint=$HOME/.ethereum/geth.ipc --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre></TabItem>
+                <TabItem value="ipc"><pre><code>./prysm.sh beacon-chain --execution-endpoint=$HOME/.ethereum/&lt;your.ipc&gt; --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre></TabItem>
             </Tabs>
       </TabItem>
       <TabItem value="goerli-prater">
@@ -89,7 +89,7 @@ import TabItem from '@theme/TabItem';
             {label: 'IPC', value: 'ipc'}
             ]}>
                 <TabItem value="jwt"><pre><code>./prysm.sh beacon-chain --execution-endpoint=http://localhost:8551 --prater --jwt-secret=path/to/jwt.hex --genesis-state=genesis.ssz --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre></TabItem>
-                <TabItem value="ipc"><pre><code>./prysm.sh beacon-chain --execution-endpoint=$HOME/.ethereum/geth.ipc --prater --genesis-state=genesis.ssz --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre></TabItem>
+                <TabItem value="ipc"><pre><code>./prysm.sh beacon-chain --execution-endpoint=$HOME/.ethereum/&lt;your.ipc&gt; --prater --genesis-state=genesis.ssz --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code></pre></TabItem>
             </Tabs>
       </TabItem>
       <TabItem value="sepolia">
@@ -99,7 +99,7 @@ import TabItem from '@theme/TabItem';
             {label: 'IPC', value: 'ipc'}
             ]}>
                 <TabItem value="jwt"><pre><code>./prysm.sh beacon-chain --execution-endpoint=http://localhost:8551 --sepolia --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9 --jwt-secret=jwt.hex --genesis-state=genesis.ssz</code></pre></TabItem>
-                <TabItem value="ipc"><pre><code>./prysm.sh beacon-chain --execution-endpoint=$HOME/.ethereum/geth.ipc --sepolia --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9 --genesis-state=genesis.ssz</code></pre></TabItem>
+                <TabItem value="ipc"><pre><code>./prysm.sh beacon-chain --execution-endpoint=$HOME/.ethereum/&lt;your.ipc&gt; --sepolia --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9 --genesis-state=genesis.ssz</code></pre></TabItem>
             </Tabs>
       </TabItem>
       <TabItem value="ropsten">
@@ -109,7 +109,7 @@ import TabItem from '@theme/TabItem';
             {label: 'IPC', value: 'ipc'}
             ]}>
                 <TabItem value="jwt"><pre><code>./prysm.sh beacon-chain --execution-endpoint=http://localhost:8551 --ropsten --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9 --jwt-secret=jwt.hex --genesis-state=genesis.ssz</code></pre></TabItem>
-                <TabItem value="ipc"><pre><code>./prysm.sh beacon-chain --execution-endpoint=$HOME/.ethereum/geth.ipc --ropsten --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9 --genesis-state=genesis.ssz</code></pre></TabItem>
+                <TabItem value="ipc"><pre><code>./prysm.sh beacon-chain --execution-endpoint=$HOME/.ethereum/&lt;your.ipc&gt; --ropsten --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9 --genesis-state=genesis.ssz</code></pre></TabItem>
             </Tabs>
       </TabItem>
     </Tabs>

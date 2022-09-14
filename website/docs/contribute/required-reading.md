@@ -4,6 +4,10 @@ title: External reading
 sidebar_label: External reading
 ---
 
+import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
+
+<HeaderBadgesWidget />
+
 :::danger Deprecated
 This page is deprecated and no longer maintained. It may not have accurate information.
 :::

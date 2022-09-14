@@ -4,6 +4,10 @@ title: Run an archival node
 sidebar_label: Run an archival node
 ---
 
+import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
+
+<HeaderBadgesWidget />
+
 ## Using archival beacon nodes for API retrieval
 
 The beacon chain is the coordinator of Ethereum proof-of-stake. It is responsible for creating new blocks, ensuring their validity, and both rewarding and penalizing participating validators for their actions. This responsibility gives the beacon node full visibility of actions performed on the blockchain, and as such, can be used as a retrospective API in order to query chain information. While this could be considered analogous to log analysis, unlike in log analysis, previous states that have not had full data stored locally for review can be requested, then fetched retrospectively and queried.
