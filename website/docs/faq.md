@@ -4,6 +4,10 @@ title: Prysm - Frequently asked questions
 sidebar_label: Frequently asked questions
 ---
 
+import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
+
+<HeaderBadgesWidget />
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
