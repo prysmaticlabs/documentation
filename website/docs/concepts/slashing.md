@@ -4,6 +4,10 @@ title: Slashing
 sidebar_label: Slashing
 ---
 
+import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
+
+<HeaderBadgesWidget />
+
 **Slashing** is a mechanism designed to encourage good behavior on the Ethereum network and discourage attacks and bad behavior. Where a validator is found to have broken the rules it will be slashed and removed from the network. In addition to being removed from the network, the entire validator stake may be removed. 
 
 Being slashed is the result of a validator undertaking one of three “bad” actions: 

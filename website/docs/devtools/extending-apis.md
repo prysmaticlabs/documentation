@@ -4,6 +4,10 @@ title: Extending APIs
 sidebar_label: Extending APIs
 ---
 
+import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
+
+<HeaderBadgesWidget />
+
 ## Introduction: Prysm API and Beacon API
 ---
 
