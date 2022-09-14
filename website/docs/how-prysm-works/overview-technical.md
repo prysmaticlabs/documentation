@@ -3,8 +3,12 @@ id: architecture-overview
 title: Architecture overview
 sidebar_label: Architecture overview
 ---
-  This section outlines Prysm's various internal components and their role in
-  the client.
+
+import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
+
+<HeaderBadgesWidget />
+
+This section outlines Prysm's various internal components and their role in the client.
 
 ![Architecture Diagram](/img/prysm-architecture.png)
 

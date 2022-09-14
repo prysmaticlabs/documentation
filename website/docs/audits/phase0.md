@@ -4,6 +4,10 @@ title: Security audits
 sidebar_label: Security audits
 ---
 
+import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
+
+<HeaderBadgesWidget />
+
 Prysmatic Labs' implementation for Phase 0 of Ethereum proof-of-stake has received the following audits.
 
 ## Quantstamp

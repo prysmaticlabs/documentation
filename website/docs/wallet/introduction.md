@@ -4,6 +4,10 @@ title: Keys, wallets, and accounts
 sidebar_label: Keys, wallets, and accounts
 ---
 
+import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
+
+<HeaderBadgesWidget />
+
 This section explains everything about how to manage validator accounts using Prysm's built-in wallet, as well as setup instructions for different types of wallets including HD (hierarchical deterministic), non-HD, and remote signing wallets.
 
 :::tip Pro-Tip
