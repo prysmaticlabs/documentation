@@ -4,6 +4,10 @@ title: Contribute to Prysm's codebase
 sidebar_label: Contribute to Prysm's codebase
 ---
 
+import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
+
+<HeaderBadgesWidget />
+
 There are a number of ways to help out the project for people of all skillsets and experience levels. If you are unsure where you may be best suited, stop by either our [**Discord**](https://discord.gg/prysmaticlabs) and a member of the team or community will be happy to answer questions and offer some direction.
 
 ## Getting Started

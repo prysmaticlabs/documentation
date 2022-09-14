@@ -4,6 +4,10 @@ title: Keymanager APIs
 sidebar_label: Keymanager APIs
 ---
 
+import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
+
+<HeaderBadgesWidget />
+
 Prysm supports the official [Keymanager APIs](https://github.com/ethereum/keymanager-APIs), a REST API spec for validator clients to provide an alternative to CLI commands for onboarding and offboarding their validator keys on the consensus client. 
 
 All Prysm Validator Client APIs require the use of the `--web` flag. 

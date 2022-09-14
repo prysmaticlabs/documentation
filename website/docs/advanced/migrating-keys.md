@@ -4,6 +4,10 @@ title: Move to a new machine
 sidebar_label: Move to a new machine
 ---
 
+import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
+
+<HeaderBadgesWidget />
+
 This document provides guidance on migrating Prysm and your validator keys from one host system to another while minimizing the risk of slashing.  
 
 :::danger Slashing Prevention

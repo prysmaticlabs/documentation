@@ -4,6 +4,10 @@ title: Monitor validators by index
 sidebar_label: Monitor validators by index
 ---
 
+import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
+
+<HeaderBadgesWidget />
+
 Prysm beacon nodes allow for monitoring of specific validator indices by tracking important metrics on the blockchain, including details about their rewards, attestation performance, sync committee participation, and more.
 
 The beacon node takes a flag `--monitor-indices` that takes as parameter a validator index. This flag can be used multiple times. For example, to track validators 1, 2, 12, and 15, you can run with

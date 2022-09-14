@@ -4,6 +4,10 @@ title: Network Design
 sidebar_label: Network design 
 ---
 
+import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
+
+<HeaderBadgesWidget />
+
 ##  Objective
 
 We aim to achieve a design that will specify the networking requirements needed for interoperability and Mainnet in the Prysm Client.

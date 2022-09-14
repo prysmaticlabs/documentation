@@ -5,6 +5,9 @@ sidebar_label: Prysm License
 description: Relevant licenses for Prysm and the various materials produced by Prysmatic Labs.
 ---
 
+import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
+
+<HeaderBadgesWidget />
 
 ## GNU General Public License v3.0
 

@@ -4,6 +4,10 @@ title: Exit your validator
 sidebar_label: Exit your validator
 ---
 
+import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
+
+<HeaderBadgesWidget />
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
