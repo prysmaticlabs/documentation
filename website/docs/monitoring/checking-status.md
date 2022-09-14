@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
-<HeaderBadgesWidget lastVerifiedDateString="September 5th, 2022" lastVerifiedVersionString="v3.1.0" />
+<HeaderBadgesWidget lastVerifiedDateString="September 12th, 2022" lastVerifiedVersionString="v3.1.1" />
 
 <div class='status-guide'>
 

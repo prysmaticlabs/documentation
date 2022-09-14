@@ -6,19 +6,17 @@ sidebar_label: Configure Fee Recipient
 import FeeRecipientPng from '@site/static/img/fee-recipient-ui.png'
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
-<HeaderBadgesWidget commaDelimitedContributors="James,Mick" lastVerifiedDateString="September 5th, 2022" lastVerifiedVersionString="v3.1.0" />
+<HeaderBadgesWidget commaDelimitedContributors="James,Mick" lastVerifiedDateString="September 12th, 2022" lastVerifiedVersionString="v3.1.1" />
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 
-:::caution Breaking changes
+:::tip Configure this before The Merge
 
-[Prysm v3.1.0](https://github.com/prysmaticlabs/prysm/releases) introduces breaking changes that may impact your Fee Recipient configuration:
-
-- The existing `gaslimit` property within the proposer settings file has been replaced with an optional `builder` object that contains the `gaslimit` property.
-- The existing `suggested-fee-recipient` flag must now be used with the new `enable-builder` flag. This allows your validator client to use the MEV Builder API.
+If you don't configure your fee recipient wallet address before The Merge, your priority fee earnings will be deposited into a [burn address](https://etherscan.io/address/0x0000000000000000000000000000000000000000).
 
 :::
-
-<br/>
 
 **Fee Recipient** is a feature that lets you specify a priority fee recipient address on your validator client instance and beacon node. 
 
@@ -30,115 +28,114 @@ When users pay gas to submit transactions to the Ethereum network, they can spec
 
 Miners currently collect these priority fees. After The Merge, proof-of-work will be replaced with proof-of-stake. At this point, validators will collect these priority fees <a class="footnote" href='#footnote-1'>[1]</a>.
 
-Because priority fees are captured by execution clients in the execution layer <a class="footnote" href='#footnote-2'>[2]</a>, validator clients need to tell execution clients where to forward these priority fees. This priority fee "forwarding address" is referred to as your **fee recipient** wallet address.
-
-:::tip Configure this before The Merge
-If you don't configure your fee recipient wallet address before The Merge, your priority fee earnings will be deposited into a [burn address](https://etherscan.io/address/0x0000000000000000000000000000000000000000).
-:::
+Priority fees are captured by execution clients in the execution layer <a class="footnote" href='#footnote-2'>[2]</a>, so validator clients need to tell execution clients where to forward the fees. This "forwarding address" is referred to as your **fee recipient** wallet address.
 
 
-## Configuring Fee Recipient
+## Configure fee recipient
 
-Your fee recipient wallet address can be configured in two places: on your **validator client instance** and on your **beacon node**. Configuring fee recipient on your validator client instance lets you configure a different fee recipient wallet address for each validator public key.
-
-We recommend configuring a fee recipient wallet address on both your validator and beacon node, even if you only have one validator public key. Your validator client instance configuration will override the beacon node configuration, while the beacon node configuration will be treated like a backup in the event that your client instance configuration fails.
+Your fee recipient wallet address can be configured on your **validator client instance** and on your **beacon node**. We recommend configuring it in both places. Your validator's configuration will override the beacon node configuration, while the beacon node configuration will be treated like a backup in the event that your validator configuration fails.
 
 
-### Configuring Fee Recipient on your validator client instance
+### Configure fee recipient via flags
 
-A fee recipient wallet address can be configured on your client instance by using one of the following flags in the Prysm CLI:
+Your fee recipient wallet address can be configured on both your beacon node and validator through the `--suggested-fee-recipient` flag:
 
-<table>
-  <tr>
-    <th style={{minWidth: 240 + 'px'}}>Flag</th> 
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td><code>suggested-fee-recipient</code></td>
-    <td>
-    Sets a default ETH address for all validator public keys. <br /> <br /> 
-    <strong>Example</strong>: <code>--suggested-fee-recipient=0x0123456722E6b0000012BFEBf6177F1D2e9758D9</code> <br /> <br /> 
-    <strong>Note</strong>: This setting is overwritten by the flags below. If you don't configure an address using one of the flags below, this address will be mapped to each of your validator public keys.
-    </td>
-  </tr>
-  <tr>
-    <td><code>proposer-settings-file</code></td>
-    <td>
-    Sets the local file location for your <code>proposer-settings</code> YAML or JSON configuration. This lets you configure proposer settings like <code>fee_recipient</code> and <code>gas_limit</code> for your validator keys. This lets you override the ETH address specified by <code>suggested-fee-recipient</code> for any number of public keys. <br /> <br /> 
-    <strong>Example</strong>: <code>--proposer-settings-file=./proposer_settings.json</code> 
-    </td>
-  </tr>
-  <tr>
-    <td><code>proposer-settings-url</code></td>
-    <td>
-    A remote <code>proposer-settings</code> configuration endpoint in URL format. This lets you override the ETH address specified by <code>suggested-fee-recipient</code> for any number of public keys. <br /> <br /> 
-    <strong>Example</strong>: <code>--proposer-settings-url=http://example.com/api/getProposerSettings</code> <br /> <br /> 
-    <strong>Note</strong>: JSON should be delivered as a JSON payload, not as a JSON file. Your client will issue a GET request and expects the response <code>Content-Type</code> header to be <code>application/json</code>.
-    </td>
-  </tr>
-  <tr>
-    <td><code>enable-builder</code></td>
-    <td>
-    This flag enables the periodic calling of Validator Registration API <a href="https://github.com/ethereum/builder-specs">(a Builder API)</a> while using the <code>suggested-fee-recipient</code> flag. <br /> <br /> 
-    <strong>Example</strong>: <code>--enable-builder</code> <br /> <br /> 
-    <strong>Note</strong>: this flag will not affect the proposer settings file. The proposer settings can specify builder configuration through its own fields. If you don't run a builder, you can ignore this.
-    </td>
-  </tr>
-</table>
+ - **Beacon node**: `./prysm.sh validator --suggested-fee-recipient=<WALLET ADDRESS>`
+ - **Validator**: `./prysm.sh beacon-chain --suggested-fee-recipient=<WALLET ADDRESS>`
 
-<br />
+For example: `./prysm.sh validator --suggested-fee-recipient=0x52FfeB84540173B15eEC5a486FdB5c769F50400a`.
+
+If your validator is running multiple keys (for example, staking 64 ETH using two validator public keys that have been imported into a single validator client instance), all validator public keys will use the wallet address specified through the `--suggested-fee-recipient` flag. You can optionally associate different fee recipient wallet addresses to individual validator public keys using the JSON/YAML configuration method detailed in the following section.
 
 
-An example invocation: `./prysm.sh validator --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9`. 
+### Configure fee recipient via JSON/YAML (validator only)
 
-If you don't see any errors after issuing one of the above commands, your fee recipient address has been successfully configured.
-
-
+You can assign different wallet addresses to each of your validator public keys using JSON/YAML configuration. Fee recipient address assignments specified through JSON/YAML override those configured through the `--suggested-fee-recipient` flag. This method of configuration uses the following JSON/YAML schema:
 
 
-#### Fee Recipient JSON Config File
+<Tabs groupId="format" defaultValue="json" values={[
+        {label: 'JSON', value: 'json'},
+        {label: 'YAML', value: 'yaml'}
+    ]}>
+  <TabItem value="json">
 
-:::warning Breaking changes
-`fee-recipient-config-file` and `fee-recipient-config-url` flags are deprecated and have been replaced with `proposer-settings-file` and `proposer-settings-url` flags as of Prysm v2.1.3.
-:::
-
-If you use either `proposer-settings-file` or `proposer-settings-url` to specify your fee recipient address, your YAML/JSON configuration should follow this schema:
-
-```
----
-proposer_config:
-  '0x01234567155ad77931185101128655c0191bd0214c201ca48ed887f6c4c6adf334070efcd75140eada5ac83a92506dd7a':
-    fee_recipient: '0x012345670FCE8a85ec7055A5F8b2bE214B3DaeFd3'
-    builder:
-      enabled: true
-      gas_limit: '30000000'
-  '0x0123456748ed887f6c4c6adf334070efcd75140eada5ac83a92506dd7a057816155ad77931185101128655c0191bd0214':
-    fee_recipient: '0x01234567bE214B3DaeFd350155530FCE8a85ec705'
-    builder:
-      enabled: true
-      gas_limit: '30000000'
-default_config:
-  fee_recipient: '0x01234567c5af9B61374A128e6F85f553aF09ff89A'
-  builder:
-      enabled: true
-      gas_limit: '30000000'
-
-```
-
-JSON example:
 
 ```
 {
   "proposer_config": {
-    "0x01234567155ad77931185101128655c0191bd0214c201ca48ed887f6c4c6adf334070efcd75140eada5ac83a92506dd7a": {
-      "fee_recipient": "0x012345670FCE8a85ec7055A5F8b2bE214B3DaeFd3",
+    "<VALIDATOR PUBLIC KEY>": {
+      "fee_recipient": "<WALLET ADDRESS>"
+    },
+    "<VALIDATOR PUBLIC KEY>": {
+      "fee_recipient": "<WALLET ADDRESS>"
+    }
+  },
+  "default_config": {
+    "fee_recipient": "<WALLET ADDRESS>"
+  }
+}
+```
+
+
+   </TabItem>
+   <TabItem value="yaml">
+
+
+```
+---
+proposer_config:
+  '<VALIDATOR PUBLIC KEY>':
+    fee_recipient: '<WALLET ADDRESS>'
+  '<VALIDATOR PUBLIC KEY>':
+    fee_recipient: '<WALLET ADDRESS>'
+default_config:
+  fee_recipient: '<WALLET ADDRESS>'
+```
+
+
+   </TabItem>
+</Tabs>
+
+Property definitions are as follows:
+
+ - `proposer_config`: An object containing key-value pairs, where member keys are validator public keys.
+ - `<VALIDATOR PUBLIC KEY>`: A validator public key (98 characters long - not a wallet address) used as a JSON property key. Example: `0x0123456748ed887f6c4c6adf334070efcd75140eada5ac83a92506dd7a057816155ad77931185101128655c0191bd0214`.
+ - `fee_recipient`: A fee recipient wallet address. Example: `0x52FfeB84540173B15eEC5a486FdB5c769F50400a`.
+ - `default_config`: An object containing a default fee recipient wallet address. Validator public keys not specified in `proposer_config` will use this wallet address.
+
+
+The above example demonstrates configuring two 1:1 mappings between `validator public key`:`fee_recipient` and a default `fee_recipient`. In this case, the `default_config` fee recipient address would apply to all validator public keys not specified in `proposer_config`, and will override any wallet address specified by the `--suggested-fee-recipient` flag.
+
+Tell your validator to use the JSON/YAML configuration through one of the following flags: 
+
+ - `proposer-settings-file`: Points to a local JSON/YAML file. 
+ - `proposer-settings-url`: Points to a remote JSON/YAML configuration endpoint in URL format. JSON should be delivered as a JSON payload, not as a JSON file. Your client will issue a GET request and expects the response <code>Content-Type</code> header to be <code>application/json</code>
+
+
+
+### Advanced: Configure MEV builder and gas limit
+
+In the previous section, we reviewed a sample JSON/YAML file. The following file reveals additional properties that can optionally be included in order to configure MEV builder validator registration and gas limits:
+
+<Tabs groupId="format" defaultValue="json" values={[
+        {label: 'JSON', value: 'json'},
+        {label: 'YAML', value: 'yaml'}
+    ]}>
+  <TabItem value="json">
+
+
+```
+{
+  "proposer_config": {
+    "<VALIDATOR PUBLIC KEY>": {
+      "fee_recipient": "<WALLET ADDRESS>",
       "builder": {
         "enabled": true,
         "gas_limit": "30000000"
       }
     },
-    "0x0123456748ed887f6c4c6adf334070efcd75140eada5ac83a92506dd7a057816155ad77931185101128655c0191bd0214": {
-      "fee_recipient": "0x01234567bE214B3DaeFd350155530FCE8a85ec705",
+    "<VALIDATOR PUBLIC KEY>": {
+      "fee_recipient": "<WALLET ADDRESS>",
       "builder": {
         "enabled": false,
         "gas_limit": "30000000"
@@ -146,7 +143,7 @@ JSON example:
     }
   },
   "default_config": {
-    "fee_recipient": "0x01234567c5af9B61374A128e6F85f553aF09ff89A",
+    "fee_recipient": "<WALLET ADDRESS>",
     "builder": {
       "enabled": true,
       "gas_limit": "30000000"
@@ -154,134 +151,52 @@ JSON example:
   }
 }
 ```
-<br />
-
-The above JSON demonstrates configuring two 1:1 mappings between `validator public key`:`fee_recipient` and a default `fee_recipient`. In this case, the `default_config` fee recipient address would apply to all validator public keys not specified in `proposer_config`. JSON configuration members are listed in the following table:
-
-<br />
-
-<table>
-  <tr>
-    <th>Member</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td><code>proposer_config</code></td>
-    <td>
-    Optional. Your validator client instance’s public key. <br /> <br /> 
-    <strong>Type:</strong> Validator public key. 98 characters long hexstring.<br /> <br /> 
-    <strong>Note:</strong> Use this to map a single validator instance public key to a single fee recipient ETH address. <br /> <br /> 
-    <strong>Example:</strong> <code>"0x01234567155ad77931185101128655c0191bd0214c201ca48ed887f6c4c6adf334070efcd75140eada5ac83a92506dd7a"</code>
-    </td>
-  </tr>
-  <tr>
-    <td><code>proposer_config.fee_recipient</code></td>
-    <td>
-    Optional. Required if validator instance public key is provided via <code>proposer_config</code>.  <br /> <br /> 
-    <strong>Type:</strong> ETH address. 42 characters long hexstring. <br /> <br /> 
-    <strong>Note:</strong> Use this to map a single validator key to a single ETH fee recipient address.  <br /> <br /> 
-    <strong>Example:</strong> <code>"0x012345670FCE8a85ec7055A5F8b2bE214B3DaeFd3"</code>
-    </td>
-  </tr>
-  <tr>
-    <td><code>proposer_config.builder</code></td>
-    <td>
-    Optional. A configuration object that contains <code>enable</code> and <code>gas_limit</code> properties.<br /> <br /> 
-    <strong>Type:</strong> Object<br /> <br /> 
-    <strong>Note:</strong> Applicable only when using custom block builders. If you don't run a builder, you can ignore this.
-    </td>
-  </tr>
-  <tr>
-    <td><code>..builder.enabled</code></td>
-    <td>
-    Optional. Sets whether or not the validator registration is enabled or not.<br /> <br /> 
-    <strong>Type:</strong> bool <br /> <br /> 
-    <strong>Note:</strong> Applicable only when using custom block builders. If you don't run a builder, you can ignore this.<br /> <br /> 
-    <strong>Example:</strong> <code>true</code> 
-    </td>
-  </tr>
-  <tr>
-    <td><code>..builder.gas_limit</code></td>
-    <td>
-    Optional. Sets an upper gas limit (in gwei) for block builders.<br /> <br /> 
-    <strong>Type:</strong> string(uint64) <br /> <br /> 
-    <strong>Note:</strong> Applicable only when using custom block builders. If you don't run a builder, you can ignore this. Block limits can only change a fixed amount per proposal - the default limit is 30M gwei. <br /> <br /> 
-    <strong>Example:</strong> <code>"35000000"</code>
-    </td>
-  </tr>
-  <tr>
-    <td><code>default_config</code></td>
-    <td>
-    Required. 
-    </td>
-  </tr>
-  <tr>
-    <td><code>default_config.fee_recipient</code></td>
-    <td>
-    Required.<br /> <br /> 
-    <strong>Type:</strong> ETH address. 42 characters long hexstring. <br /> <br /> 
-    <strong>Note:</strong> This sets the default ETH address for all remaining validator public keys that don’t have 1:1 mapping already from the <code>proposer_config</code> member. <br /> <br />
-    <strong>Example:</strong> <code>"0x012345670FCE8a85ec7055A5F8b2bE214B3DaeFd3"</code> 
-    </td>
-  </tr>
-   <tr>
-    <td><code>default_config.builder</code></td>
-    <td>
-    Optional. A configuration object that contains <code>enable</code> and <code>gas_limit</code> properties.<br /> <br /> 
-    <strong>Type:</strong> Object<br /> <br /> 
-    <strong>Note:</strong> Applicable only when using custom block builders. If you don't run a builder, you can ignore this.
-    </td>
-  </tr>
-  <tr>
-    <td><code>..builder.enabled</code></td>
-    <td>
-    Optional.<br /> <br /> 
-    <strong>Type:</strong> bool <br /> <br /> 
-    <strong>Note:</strong> Sets whether or not the MEV builder validator registration is enabled or not. Applicable only when using custom block builders. If you don't run a builder, you can ignore this.  <br /> <br /> 
-    <strong>Example:</strong> <code>true</code> 
-    </td>
-  </tr>
-  <tr>
-    <td><code>..builder.gas_limit</code></td>
-    <td>
-    Optional. Sets a gas limit upper limit (in gwei) for block builders. <br /> <br /> 
-    <strong>Type:</strong> string(uint64) <br /> <br /> 
-    <strong>Note:</strong> Applicable only when using custom block builders. If you don't run a builder, you can ignore this. Block limits can only change a fixed amount per proposal - the default limit is 30M gwei.<br /> <br />
-    <strong>Example:</strong> <code>"35000000"</code>  
-    </td>
-  </tr>
-</table>
 
 
-### Configuring Fee Recipient on your beacon node
+   </TabItem>
+   <TabItem value="yaml">
 
-A fee recipient address can be configured on your beacon node instance by using the `suggested-fee-recipient` flag.
+
+```
+---
+proposer_config:
+  '<VALIDATOR PUBLIC KEY>':
+    fee_recipient: '<WALLET ADDRESS>'
+    builder:
+      enabled: true
+      gas_limit: '30000000'
+  '<VALIDATOR PUBLIC KEY>':
+    fee_recipient: '<WALLET ADDRESS>'
+    builder:
+      enabled: true
+      gas_limit: '30000000'
+default_config:
+  fee_recipient: '<WALLET ADDRESS>'
+  builder:
+      enabled: true
+      gas_limit: '30000000'
+
+```
 
 
-<table>
-  <tr>
-    <th style={{minWidth: 240 + 'px'}}>Flag</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td><code>suggested-fee-recipient</code></td>
-    <td>
-    Sets a default ETH address for all validator public keys. <br /> <br />
-    <strong>Example</strong>: <code>--suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9</code> <br /> <br />
-    <strong>Note</strong>: When a fee recipient address is configured on both the validator client instance and beacon node, the validator client instance configuration will be prioritized, and the beacon node configuration will function as a fallback configuration. 
-    </td>
-  </tr>
-</table>
+   </TabItem>
+</Tabs>
 
-<br />
 
-Note that when configuring fee recipient on your beacon node, the beacon node will cache the fee recipient address locally.
+New property definitions are as follows:
 
-## Configuring Fee Recipient through Web UI
+ - `builder`: An object containing key-value pairs related to builder configuration. Applicable only when using custom block builders. If you don't run a builder, you can ignore this.
+ - `enabled`: A boolean value that determines whether or not the MEV builder validator registration is enabled. Applicable only when using custom block builders. If you don't run a builder, you can ignore this. `false` by default.
+ - `gas_limit`: A gas limit. Default limit is 30M gwei - `30000000`.
+
+
+
+
+### Advanced: Configure fee recipient through the Web UI
 
 <img style={{maxWidth: 700 + 'px'}} src={FeeRecipientPng} /> 
 
-The fee recipient can also be set through the <a href='../prysm-usage/web-interface'>web UI</a> on the dashboard. The UI uses the <a href='../how-prysm-works/keymanager-api'>Key Manager APIs</a> to set the fee recipient.
+Your fee recipient wallet address can also be set through the <a href='../prysm-usage/web-interface'>Web UI</a> dashboard. The Web UI uses the <a href='../how-prysm-works/keymanager-api'>Key Manager APIs</a> to set the fee recipient.
  
 :::warning Fee Recipient changes from UI/API don't persist on client restart
 
@@ -290,6 +205,23 @@ If you configure your fee recipient wallet address through the web UI or Keymana
 See [this issue](https://github.com/prysmaticlabs/prysm/issues/11322) to track the status of configuration persistence, and use the `--proposer-settings-file` or `--proposer-settings-url` flags for persistent validator settings in the meantime.
 
 :::
+
+
+## Frequently asked questions
+
+**How do I know if fee recipient was properly configured?** <br />
+If you don't see any errors after issuing one of the above commands, your fee recipient address has been successfully configured.
+
+**What happened to `fee-recipient-config-file`?** <br />
+`fee-recipient-config-file` and `fee-recipient-config-url` flags are deprecated and have been replaced with `proposer-settings-file` and `proposer-settings-url` flags as of Prysm v2.1.3.
+
+**How do I ensure that builders receive my fee recipient wallet address?** <br />
+When `enable-builder` is set to `true` on your validator, you can use either the `--suggested-fee-recipient` flag or the JSON/YAML configuration method to communicate your fee recipient wallet address to builders.
+
+**When should I set my own `gas_limit`, and how do I know what to set?** <br />
+This is an advanced configuration property related to custom builders (MEV) that most users won't have to think about. In general, large gas limits will result in you not being able to include many transactions in a block, while using low values won't be as profitable.  See [https://github.com/ethereum/builder-specs/issues/17](https://github.com/ethereum/builder-specs/issues/17) for related discussion.
+
+
 
 ------------------
 
