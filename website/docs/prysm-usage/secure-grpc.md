@@ -4,6 +4,10 @@ title: Secure gRPC connections
 sidebar_label: Secure gRPC connections
 ---
 
+import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
+
+<HeaderBadgesWidget />
+
 This document will help advanced users create and configure TLS certificates to allow for secure gRPC connections to their beacon nodes.
 
 :::tip Pro-Tip

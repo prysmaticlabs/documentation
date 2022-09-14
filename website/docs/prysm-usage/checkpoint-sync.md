@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
-<HeaderBadgesWidget commaDelimitedContributors="Kasey,Mick,James" lastVerifiedDateString="August 24th, 2022" lastVerifiedVersionString="v3.0.0" />
+<HeaderBadgesWidget commaDelimitedContributors="Kasey,Mick,James" lastVerifiedDateString="September 12th, 2022" lastVerifiedVersionString="v3.1.1" />
 
 :::caution Public Preview
 
@@ -62,7 +62,6 @@ level=info msg="requesting <your configured checkpoint sync endpoint>"
 The above instructions tell you how to **request** checkpoint state from another node. If you want to **serve** these requests, run a fully synced node with the following flags:
 
  - `--enable-debug-rpc-endpoints`: The [Beacon Node API for retrieving a BeaconState](https://ethereum.github.io/beacon-APIs/#/Debug/getStateV2) is a debug endpoint - this flag tells Prysm to enable the endpoint so checkpoint sync requests can be served through your beacon node's RPC gateway provider endpoint.
- - `--grpc-max-msg-size=65568081`: By default, Prysm caps the size of its RPC responses. This flag configures a cap that allows Prysm to serve checkpoint sync requests with checkpoint state files.
 
 Note that **this is entirely optional**. The beacon node *requesting* the checkpoint state from this node doesn't need these flags.
 

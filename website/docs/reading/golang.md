@@ -4,6 +4,10 @@ title: Golang resources
 sidebar_label: Golang resources
 ---
 
+import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
+
+<HeaderBadgesWidget />
+
 ## Getting to know Golang
 
 * [The Go Programming Language](https://www.amazon.com/Programming-Language-Addison-Wesley-Professional-Computing/dp/0134190440)  \(Only recommended book\)

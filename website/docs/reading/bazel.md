@@ -4,6 +4,10 @@ title: About Bazel
 sidebar_label: About Bazel
 ---
 
+import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
+
+<HeaderBadgesWidget />
+
 This page explains why Prysm uses a special build system called [Bazel](https://bazel.build) to compile everything in our monorepository.
 
 ## Why Bazel?

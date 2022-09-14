@@ -4,6 +4,10 @@ title: Initial synchronization
 sidebar_label: Initial synchronization
 ---
 
+import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
+
+<HeaderBadgesWidget />
+
 ## Overview of the Feature
 
 import Tabs from '@theme/Tabs';

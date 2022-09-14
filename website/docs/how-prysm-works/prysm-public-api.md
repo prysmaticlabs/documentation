@@ -5,6 +5,10 @@ sidebar_label: Prysm-specific API
 description: This section contains service definitions and gRPC instructions to interact with the Prysm public API.
 ---
 
+import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
+
+<HeaderBadgesWidget />
+
 :::info This API is only used by Prysm
 For a standard API that all Ethereum beacon nodes implement, see [here](/docs/how-prysm-works/ethereum-public-api). Over the next few quarters, we plan on deprecating this API and replacing it with the standard API.
 :::

@@ -4,6 +4,10 @@ title: Switch to a new client
 sidebar_label: Switch to a new client
 ---
 
+import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
+
+<HeaderBadgesWidget />
+
 This document provides guidance on moving from Prysm to a new consensus-layer client like Teku, Lighthouse, or Nimbus.
 
 :::danger Slashing Prevention

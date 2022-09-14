@@ -4,6 +4,10 @@ title: Import & export slashing protection history
 sidebar_label: Import & export slashing protection history
 ---
 
+import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
+
+<HeaderBadgesWidget />
+
 This section explains how to import a slashing protection history file into Prysm as well as how to export your validators' slashing protection history to move between computers or between Ethereum consensus client implementations.
 
 ## What is slashing protection?

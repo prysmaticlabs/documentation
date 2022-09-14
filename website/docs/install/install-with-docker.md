@@ -13,7 +13,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 Prysm can be installed on Windows, GNU/Linux, and MacOS systems with Docker. We use [Bazel](https://bazel.build) to push preconfigured Docker images to a publicly accessible Google Cloud container registry. 
 
-:::tip Not familiar with docker? Try our quickstart
+:::tip Not familiar with Docker? Try our quickstart
 
 This guidance is targeted at users who are already comfortable with Docker. See our [Quickstart](/docs/install/install-with-script) for beginner-friendly installation instructions.
 
@@ -86,7 +86,7 @@ These commands will automatically install dependencies.
 
 ## Configure ports (optional)
 
-We recommend opening up ports `tcp/13000` and `udp/12000` on your router and firewall to improve peer-to-peer connectivity. Refer to your operating system and router documentation for port configuration instructions. With this complete, appending `--p2p-host-ip=$(curl -s ident.me)` to your beacon node startup command will configure Prysm to use your newly opened ports.
+We recommend opening up ports `tcp/13000` and `udp/12000` on your router and firewall to improve peer-to-peer connectivity. Refer to your operating system and router documentation for port configuration instructions. With this complete, appending `--p2p-host-ip=$(curl -s ident.me)` to your beacon node startup command will configure Prysm to use your newly opened ports. Refer to [Configure ports and firewalls](../prysm-usage/p2p-host-ip.md) for more information.
 
 <div class='hide-tabs'>
 
@@ -124,7 +124,9 @@ Next, use Docker to tell your beacon node to connect to your local execution nod
 docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node \
   gcr.io/prysmaticlabs/prysm/beacon-chain:stable \
   --datadir=/data \
+  --jwt-secret=<YOUR_JWT_SECRET> \
   --rpc-host=0.0.0.0 \
+  --grpc-gateway-host=0.0.0.0 \
   --monitoring-host=0.0.0.0 \
   --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT>
 ```
@@ -138,7 +140,9 @@ Download the Goerli-Prater genesis state from [Github](https://github.com/eth-cl
 docker run -it -v $HOME/.eth2:/data -v /path/to/genesis.ssz:/genesis/genesis.ssz -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node \
   gcr.io/prysmaticlabs/prysm/beacon-chain:stable \
   --datadir=/data \
+  --jwt-secret=<YOUR_JWT_SECRET> \
   --rpc-host=0.0.0.0 \
+  --grpc-gateway-host=0.0.0.0 \
   --monitoring-host=0.0.0.0 \
   --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> \
   --genesis-state=/genesis/genesis.ssz \
@@ -154,7 +158,9 @@ Download the Sepolia genesis state from [Github](https://github.com/eth-clients/
 docker run -it -v $HOME/.eth2:/data -v /path/to/genesis.ssz:/genesis/genesis.ssz -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node \
   gcr.io/prysmaticlabs/prysm/beacon-chain@sha256:bf9b95661c71ad60f633ee14cf352a668d550076471154cf80dfef8fce0bb41e \
   --datadir=/data \
+  --jwt-secret=<YOUR_JWT_SECRET> \
   --rpc-host=0.0.0.0 \
+  --grpc-gateway-host=0.0.0.0 \
   --monitoring-host=0.0.0.0 \
   --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> \
   --genesis-state=/genesis/genesis.ssz \
@@ -170,7 +176,9 @@ Download the Ropsten genesis state from [Github](https://github.com/eth-clients/
 docker run -it -v $HOME/.eth2:/data -v /path/to/genesis.ssz:/genesis/genesis.ssz -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node \
   gcr.io/prysmaticlabs/prysm/beacon-chain@sha256:bf9b95661c71ad60f633ee14cf352a668d550076471154cf80dfef8fce0bb41e \
   --datadir=/data \
+  --jwt-secret=<YOUR_JWT_SECRET> \
   --rpc-host=0.0.0.0 \
+  --grpc-gateway-host=0.0.0.0 \
   --monitoring-host=0.0.0.0 \
   --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> \
   --genesis-state=/genesis/genesis.ssz \
@@ -196,7 +204,7 @@ To ensure that your Docker image has access to a data directory, mount a local d
       <TabItem value="mainnet">
 
 ```text
-docker run -it -v %LOCALAPPDATA%\Eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp gcr.io/prysmaticlabs/prysm/beacon-chain:stable --datadir=/data --rpc-host=0.0.0.0 --monitoring-host=0.0.0.0 --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT>
+docker run -it -v %LOCALAPPDATA%\Eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp gcr.io/prysmaticlabs/prysm/beacon-chain:stable --datadir=/data --jwt-secret=<YOUR_JWT_SECRET> --rpc-host=0.0.0.0 --grpc-gateway-host=0.0.0.0 --monitoring-host=0.0.0.0 --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> 
 ```
 
   </TabItem>
@@ -205,7 +213,7 @@ docker run -it -v %LOCALAPPDATA%\Eth2:/data -p 4000:4000 -p 13000:13000 -p 12000
 Download the Goerli-Prater genesis state from [Github](https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz) to a local file. Then issue the following command:
 
 ```text
-docker run -it -v %LOCALAPPDATA%\Eth2:/data -v \path\to\genesis.ssz:/genesis/genesis.ssz -p 4000:4000 -p 13000:13000 -p 12000:12000/udp gcr.io/prysmaticlabs/prysm/beacon-chain:stable --datadir=/data --rpc-host=0.0.0.0 --monitoring-host=0.0.0.0 --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> --genesis-state=/genesis/genesis.ssz --prater
+docker run -it -v %LOCALAPPDATA%\Eth2:/data -v \path\to\genesis.ssz:/genesis/genesis.ssz -p 4000:4000 -p 13000:13000 -p 12000:12000/udp gcr.io/prysmaticlabs/prysm/beacon-chain:stable --datadir=/data --jwt-secret=<YOUR_JWT_SECRET> --rpc-host=0.0.0.0 --grpc-gateway-host=0.0.0.0 --monitoring-host=0.0.0.0 --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> --genesis-state=/genesis/genesis.ssz --prater
 ```
 
   </TabItem>
@@ -214,7 +222,7 @@ docker run -it -v %LOCALAPPDATA%\Eth2:/data -v \path\to\genesis.ssz:/genesis/gen
 Download the Sepolia genesis state from [Github](https://github.com/eth-clients/merge-testnets/blob/main/sepolia/genesis.ssz) to a local file, then run
 
 ```text
-docker run -it -v %LOCALAPPDATA%\Eth2:/data -v \path\to\genesis.ssz:/genesis/genesis.ssz -p 4000:4000 -p 13000:13000 -p 12000:12000/udp gcr.io/prysmaticlabs/prysm/beacon-chain@sha256:bf9b95661c71ad60f633ee14cf352a668d550076471154cf80dfef8fce0bb41e --datadir=/data --rpc-host=0.0.0.0 --monitoring-host=0.0.0.0 --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> --genesis-state=/genesis/genesis.ssz --sepolia
+docker run -it -v %LOCALAPPDATA%\Eth2:/data -v \path\to\genesis.ssz:/genesis/genesis.ssz -p 4000:4000 -p 13000:13000 -p 12000:12000/udp gcr.io/prysmaticlabs/prysm/beacon-chain@sha256:bf9b95661c71ad60f633ee14cf352a668d550076471154cf80dfef8fce0bb41e --datadir=/data --jwt-secret=<YOUR_JWT_SECRET> --rpc-host=0.0.0.0 --grpc-gateway-host=0.0.0.0 --monitoring-host=0.0.0.0 --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> --genesis-state=/genesis/genesis.ssz --sepolia
 ```
 
   </TabItem>
@@ -223,7 +231,7 @@ docker run -it -v %LOCALAPPDATA%\Eth2:/data -v \path\to\genesis.ssz:/genesis/gen
 Download the Ropsten genesis state from [Github](https://github.com/eth-clients/merge-testnets/blob/main/ropsten-beacon-chain/genesis.ssz) to a local file, then run
 
 ```text
-docker run -it -v %LOCALAPPDATA%\Eth2:/data -v \path\to\genesis.ssz:/genesis/genesis.ssz -p 4000:4000 -p 13000:13000 -p 12000:12000/udp gcr.io/prysmaticlabs/prysm/beacon-chain@sha256:bf9b95661c71ad60f633ee14cf352a668d550076471154cf80dfef8fce0bb41e --datadir=/data --rpc-host=0.0.0.0 --monitoring-host=0.0.0.0 --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> --genesis-state=/genesis/genesis.ssz --ropsten
+docker run -it -v %LOCALAPPDATA%\Eth2:/data -v \path\to\genesis.ssz:/genesis/genesis.ssz -p 4000:4000 -p 13000:13000 -p 12000:12000/udp gcr.io/prysmaticlabs/prysm/beacon-chain@sha256:bf9b95661c71ad60f633ee14cf352a668d550076471154cf80dfef8fce0bb41e --datadir=/data --jwt-secret=<YOUR_JWT_SECRET> --rpc-host=0.0.0.0 --grpc-gateway-host=0.0.0.0 --monitoring-host=0.0.0.0 --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> --genesis-state=/genesis/genesis.ssz --ropsten
 ```
 
 
@@ -377,7 +385,7 @@ docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/u
   --clear-db \
   --rpc-host=0.0.0.0 \
   --monitoring-host=0.0.0.0 \
-  --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT>
+  --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> 
 ```
 
 </TabItem>
@@ -393,6 +401,13 @@ docker run -it -v %LOCALAPPDATA%\Eth2:/data -p 4000:4000 -p 13000:13000 -p 12000
 
 </div>
 </div>
+
+
+## Frequently asked questions
+
+**Why do we set `--rpc-host` and `--grpc-gateway-host` to `0.0.0.0`?** <br />
+This tells your Docker container to to "listen" for connections from outside of your container, allowing you (and other services) to reach your RPC endpoint(s). See [Configure ports and firewalls](../prysm-usage/p2p-host-ip.md) for more information.
+
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 

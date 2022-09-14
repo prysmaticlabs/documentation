@@ -12,7 +12,7 @@ import NetworkLayersPng from '@site/static/img/network-layers.png';
 
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
-<HeaderBadgesWidget />
+<HeaderBadgesWidget commaDelimitedContributors="Mick" />
 
 Ethereum is a decentralized **network** of **nodes** that communicate via peer-to-peer connections. These connections are formed by computers running Ethereum's specialized client software:
 
@@ -107,21 +107,18 @@ Every network's execution layer works with (and only with) its corresponding "pa
 
 ## Frequently asked questions
 
-**Can I run an execution node without running a beacon node?**
-
+**Can I run an execution node without running a beacon node?** <br/>
 No. Although this is possible pre-Merge, all Ethereum network participants will need to run both an execution node and a beacon node.
 
-**What happened to miners?**
-
+**What happened to miners?** <br/>
 The concept of mining exists only in the domain of proof-of-work consensus. After The Merge, Ethereum's consensus will be managed by a proof-of-stake mechanism, which replaces miners with validators.
 
-**Where do slashers come into play?**
-
+**Where do slashers come into play?** <br/>
 Slashers, like validators, use specialized pieces of consensus-layer client software to fulfill a critical responsibility for the Ethereum network. Slashers attempt to detect and punish malicious validators. Learn more by reading our [Slasher documentation](../prysm-usage/slasher.md).
 
-**How do I get testnet ETH?**
-
+**How do I get testnet ETH?** <br/>
 We recommend using [Paradigm's MultiFaucet](https://faucet.paradigm.xyz/). If that doesn't work, you can ask the community for testnet ETH on either the [Prysm Discord server](https://discord.gg/prysmaticlabs) or on [r/ethstaker](https://www.reddit.com/r/ethstaker).
+
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 

@@ -4,6 +4,10 @@ title: End-to-end tests
 sidebar_label: End-to-end tests
 ---
 
+import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
+
+<HeaderBadgesWidget />
+
 Even the best unit tests won't prevent bugs from creeping into the system. They test small pieces of code in isolation, but it might be the interaction between different modules/packages/subsystems that causes issues. Prysm consist of two separate components, the beacon chain and the validator, that interact with each other in non-trivial ways. Additionally, the system contacts an Eth1 endpoint to access various information about the Eth1 chain. It is therefore very important to find integration bugs as soon as possible. The way Prysm achieves this is through having an E2E (end-to-end) test module. Tests inside this module are ran on every PR build, which greatly increases confidence that new code can safely be merged.
 
 ## Running E2E tests

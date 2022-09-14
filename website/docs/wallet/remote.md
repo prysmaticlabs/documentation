@@ -4,6 +4,9 @@ title: Configure a remote signing wallet
 sidebar_label: Configure a remote signing wallet
 ---
 
+import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
+
+<HeaderBadgesWidget />
 
 :::caution Deprecated Content
 

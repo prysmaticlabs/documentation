@@ -22,6 +22,10 @@
         },
         {
             "type": "doc",
+            "id": "monitoring/checking-status"
+        },
+        {
+            "type": "doc",
             "id": "troubleshooting/issues-errors"
         },
         {
@@ -65,10 +69,6 @@
                 {
                     "type": "doc",
                     "id": "prysm-usage/checkpoint-sync"
-                },
-                {
-                    "type": "doc",
-                    "id": "monitoring/checking-status"
                 },
                 {
                     "type": "doc",

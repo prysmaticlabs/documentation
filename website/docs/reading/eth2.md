@@ -4,6 +4,10 @@ title: Ethereum reading resources
 sidebar_label: Ethereum readings
 ---
 
+import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
+
+<HeaderBadgesWidget />
+
 This page serves material necessary to catch up with the current state of Ethereum proof-of-stake development and provides readers with the knowledge required to begin making meaningful contributions to the Prysm client. Whether you are an expert on all things Ethereum or are new to the blockchain world entirely, there are appropriate resources here that will help you get up to speed.
 
 ## **Ethereum fundamentals**
