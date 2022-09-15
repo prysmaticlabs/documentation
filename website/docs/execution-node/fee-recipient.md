@@ -43,7 +43,7 @@ Your fee recipient wallet address can be configured on both your beacon node and
  - **Beacon node**: `./prysm.sh beacon-chain --suggested-fee-recipient=<WALLET ADDRESS>`
  - **Validator**: `./prysm.sh validator --suggested-fee-recipient=<WALLET ADDRESS>`
 
-For example: `./prysm.sh validator --suggested-fee-recipient=0xCHANGEME012345c769F504hs287200a`.
+For example: `./prysm.sh validator --suggested-fee-recipient=0xCHANGEME012345c769F504hs287200aF50400a`.
 
 If your validator is running multiple keys (for example, staking 64 ETH using two validator public keys that have been imported into a single validator client instance), all validator public keys will use the wallet address specified through the `--suggested-fee-recipient` flag. You can optionally associate different fee recipient wallet addresses to individual validator public keys using the JSON/YAML configuration method detailed in the following section.
 
