@@ -40,8 +40,8 @@ Your fee recipient wallet address can be configured on your **validator client i
 
 Your fee recipient wallet address can be configured on both your beacon node and validator through the `--suggested-fee-recipient` flag:
 
- - **Beacon node**: `./prysm.sh validator --suggested-fee-recipient=<WALLET ADDRESS>`
- - **Validator**: `./prysm.sh beacon-chain --suggested-fee-recipient=<WALLET ADDRESS>`
+ - **Beacon node**: `./prysm.sh beacon-chain --suggested-fee-recipient=<WALLET ADDRESS>`
+ - **Validator**: `./prysm.sh validator --suggested-fee-recipient=<WALLET ADDRESS>`
 
 For example: `./prysm.sh validator --suggested-fee-recipient=0x52FfeB84540173B15eEC5a486FdB5c769F50400a`.
 
