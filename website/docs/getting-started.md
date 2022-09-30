@@ -19,7 +19,7 @@ The following table of contents provides a descriptive overview of Prysm's docum
 </div>
 <div class='panel'>
 <a href='prepare-for-merge'>Configure for The Merge</a>
-<p><strong>Current Prysm users</strong> can follow this guidance to ensure that their nodes and validators are running post-Merge configuration.</p>
+<p><strong>Current Prysm users</strong> who are running pre-Merge configuration can follow this guidance for post-Merge configuration instructions.</p>
 </div>
 <div class='panel'>
 <a href='security-best-practices'>Security best practices</a>
