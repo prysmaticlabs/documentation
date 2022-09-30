@@ -99,7 +99,7 @@ Every network's execution layer works with (and only with) its corresponding "pa
     <tr>
       <td>Ropsten</td>
       <td>Ropsten</td>
-      <td>Consensus-layer Ropsten is a new network that was created to facilitate Merge testing. This network pair was one of the first pairs that was Merge-tested (see <a href='https://www.youtube.com/watch?v=2OfRuKSPjjw'>Ethereum Merge: Stage 1 - Ropsten Network Upgrade</a> for a livestream of the event).<br/><br/>This network pair mints and manages <strong>Ropsten ETH</strong>, a type of testnet ETH used exclusively within this network pair. <strong>This network will be deprecated after The Merge.</strong></td>
+      <td>Consensus-layer Ropsten was created to facilitate Merge testing (see <a href='https://www.youtube.com/watch?v=2OfRuKSPjjw'>Ethereum Merge: Stage 1 - Ropsten Network Upgrade</a> for a recorded livestream of the Ropsten Merge).<br/><br/>This network pair minted and managed <strong>Ropsten ETH</strong>, a type of testnet ETH used exclusively within this network pair. <strong>This network is deprecated as of October 5th, 2022.</strong></td>
     </tr>
 </table>
 
@@ -111,7 +111,7 @@ Every network's execution layer works with (and only with) its corresponding "pa
 No. Although this is possible pre-Merge, all Ethereum network participants will need to run both an execution node and a beacon node.
 
 **What happened to miners?** <br/>
-The concept of mining exists only in the domain of proof-of-work consensus. After The Merge, Ethereum's consensus will be managed by a proof-of-stake mechanism, which replaces miners with validators.
+Mining is a proof-of-work consensus mechanism. Ethereum's consensus is now driven by a proof-of-stake mechanism, which replaces miners with validators.
 
 **Where do slashers come into play?** <br/>
 Slashers, like validators, use specialized pieces of consensus-layer client software to fulfill a critical responsibility for the Ethereum network. Slashers attempt to detect and punish malicious validators. Learn more by reading our [Slasher documentation](../prysm-usage/slasher.md).

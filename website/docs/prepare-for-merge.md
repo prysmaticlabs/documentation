@@ -1,7 +1,7 @@
 ---
 id: prepare-for-merge
-title: Prepare for The Merge
-sidebar_label: Prepare for The Merge
+title: Configure for The Merge
+sidebar_label: Configure for The Merge
 ---
 
 import Tabs from '@theme/Tabs';
@@ -14,7 +14,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 :::info New user?
 
-This guidance is targeted at users who are already running Prysm. If you're starting from scratch, see our [Quickstart](./install/install-with-script.md).
+This guidance is targeted at users who are running a node and/or validator using **pre-Merge configuration**. If you're starting from scratch, see our [Quickstart](./install/install-with-script.md).
 
 :::
 
@@ -56,14 +56,14 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
         <div class='input-container'><input id="cl-2" type='checkbox'/><span class='done'></span></div>
         <div class='guidance-container'>
             <label for="cl-2">Review "Before and now"</label>
-            <p>The <a href='#the-merge-before-and-now'>Before and now</a> section below gives you a high-level overview of the items that you need to keep in mind while preparing for The Merge. See the Ethereum.org <a href='https://blog.ethereum.org/2022/08/24/mainnet-merge-announcement/'>Merge announcement</a> and <a href='https://launchpad.ethereum.org/en/merge-readiness'>Merge readiness checklist</a> for more detailed information.</p>
+            <p>The <a href='#the-merge-before-and-now'>Before and now</a> section below gives you a high-level comparison between pre-Merge and post-Merge configuration. See the Ethereum.org <a href='https://blog.ethereum.org/2022/08/24/mainnet-merge-announcement/'>Merge announcement</a> and <a href='https://launchpad.ethereum.org/en/merge-readiness'>Merge readiness checklist</a> for more detailed information.</p>
         </div>
     </div>
     <div class='task'>
         <div class='input-container'><input id="cl-prereqs" type='checkbox'/><span class='done'></span></div>
         <div class='guidance-container'>
             <label for="cl-prereqs">Review system requirements</label>
-            <p>Review the <a href='#post-merge-system-requirements'>post-Merge system requirements</a> section below to ensure that your configuration will support The Merge. Note that <strong>a 2TB+ SSD is highly recommended</strong>.</p>
+            <p>Review the <a href='#post-merge-system-requirements'>post-Merge system requirements</a> section below. Note that <strong>a 2TB+ SSD is highly recommended</strong>.</p>
         </div>
     </div>
     <div class='task'>
@@ -145,7 +145,7 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
 ## The Merge: Before and now
 
 | Before                                                                                                         | Now                                                                                                                                      |
-|----------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|
+| -------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
 | You don't need to run a local execution client. You can use a service like Infura instead.                     | You **do** need to run an execution client. You **can't** use Infura as an execution endpoint provider.                                  |
 | The HTTP connection between beacon node and execution node doesn't need to be authenticated using a JWT token. | The HTTP connection between beacon node and execution node **does** need to be authenticated using a JWT token.                          |
 | Beacon nodes connect to execution nodes on port `8545` by default when using HTTP.                             | Beacon nodes connect to execution nodes on port **`8551`** by default when using HTTP.                                                   |
@@ -193,7 +193,7 @@ import SingletonWarningPartial from '@site/docs/partials/_singleton-warning-part
 
 :::tip Congratulations!
 
-You’re now ready for The Merge. If you have any questions, feel free ask them on our [Discord](https://discord.gg/prysmaticlabs).
+You’re now running a post-Merge configuration. If you have any questions, feel free ask them on our [Discord](https://discord.gg/prysmaticlabs).
 
 :::
 
@@ -201,7 +201,7 @@ You’re now ready for The Merge. If you have any questions, feel free ask them 
 ## Frequently asked questions
 
 **I'm currently running a validator on Ethereum Mainnet. When should I make changes?** <br />
-You can now make these changes, regardless of the network you're running on.
+You should make these changes now, regardless of the network you're running on.
 
 **Can I use IPC post-Merge?** <br />
 Yes. You also won't have to worry about JWT if you use IPC. See our [Quickstart](./install/install-with-script.md) for IPC instructions.

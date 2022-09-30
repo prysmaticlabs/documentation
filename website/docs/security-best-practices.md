@@ -33,7 +33,7 @@ If your validator goes offline, you can lose some of your staked ETH [<a href='#
  
 While it's possible to optimize your client instance architecture for high-availability and redundancy, we encourage validators to **keep it simple**. Complex validator architectures run the risk of accidentally engaging in slashable behavior. This can result in slashing [<a href='#footnote-4'>4</a>], which is a far steeper price to pay than the occasional downtime penalty.
 
- - **Essential**: Ensure that you have adequate disk space. [We recommend having 100GB of SSD storage available](https://docs.prylabs.network/docs/install/install-with-script#recommended-specifications). After [The Merge](https://ethereum.org/en/upgrades/merge/), this recommendation will increase to 1-2 TB if you're also running an [execution client](https://docs.prylabs.network/docs/execution-node/configuring-for-prysm) on the same computer.
+ - **Essential**: Ensure that you have adequate disk space. [We recommend having 1-2 TB of SSD storage available](https://docs.prylabs.network/docs/install/install-with-script).
  - **Essential**: Use SSDs, not spinning disks.
  - **Essential**: Periodically check your disk space to ensure that it's not being consumed by another application.
  - **Essential**: Use a network monitoring service [<a href='#footnote-5'>5</a>] to configure alerts when something isn't right with your validator.
@@ -134,7 +134,7 @@ Migrating your validator from one machine to another is a delicate process that 
 ## Mitigation worksheet
 
 | Risk event                                                                  | I'll proactively minimize risk by... | I'll notice when... | I'll respond by... |
-|-----------------------------------------------------------------------------|--------------------------------------|---------------------|--------------------|
+| --------------------------------------------------------------------------- | ------------------------------------ | ------------------- | ------------------ |
 | My ISP goes offline.                                                        |                                      |                     |                    |
 | There's a power outage.                                                     |                                      |                     |                    |
 | My disks fail.                                                              |                                      |                     |                    |

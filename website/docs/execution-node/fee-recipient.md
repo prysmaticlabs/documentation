@@ -12,21 +12,19 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 
-:::tip Configure this before The Merge
+:::tip Configure this or lose money
 
-If you don't configure your fee recipient wallet address before The Merge, your priority fee earnings will be deposited into a [burn address](https://etherscan.io/address/0x0000000000000000000000000000000000000000).
+If you don't configure your fee recipient wallet address, your priority fee earnings will be deposited into a [burn address](https://etherscan.io/address/0x0000000000000000000000000000000000000000).
 
 :::
 
-**Fee Recipient** is a feature that lets you specify a priority fee recipient address on your validator client instance and beacon node. 
+**Fee Recipient** is a feature that lets you specify a priority fee recipient address on your validator client instance and beacon node.
 
-Your fee recipient wallet address is a **standard Ethereum wallet address**, just like the wallet address used when sending and receiving tokens from Metamask. After [The Merge](https://ethereum.org/en/upgrades/merge/), execution clients will begin depositing priority fees into this address whenever your validator client proposes a new block.
+Your fee recipient wallet address is a **standard Ethereum wallet address**, just like the wallet address used when sending and receiving tokens from Metamask. Execution clients deposit priority fees into this address whenever your validator client proposes a new block.
 
 ## Background
 
-When users pay gas to submit transactions to the Ethereum network, they can specify a **priority fee**. Priority fees are like tips. End-users use priority fees to incentivize block proposers to prioritize the inclusion of particular transactions in the blocks that they propose.
-
-Miners currently collect these priority fees. After The Merge, proof-of-work will be replaced with proof-of-stake. At this point, validators will collect these priority fees <a class="footnote" href='#footnote-1'>[1]</a>.
+When users pay gas to submit transactions to the Ethereum network, they can specify a **priority fee**. Priority fees are like tips. End-users pay priority fees to incentivize block proposers to prioritize the inclusion of particular transactions in the blocks that they propose.
 
 Priority fees are captured by execution clients in the execution layer <a class="footnote" href='#footnote-2'>[2]</a>, so validator clients need to tell execution clients where to forward the fees. This "forwarding address" is referred to as your **fee recipient** wallet address.
 

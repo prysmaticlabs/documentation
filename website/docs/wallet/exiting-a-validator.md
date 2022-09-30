@@ -22,7 +22,7 @@ After providing confirmation, your validator node will initiate the voluntary ex
 
 :::caution 
 
-Although validator nodes can voluntarily exit, you won't be able to withdraw your staked funds or re-enroll your validator until withdrawal functionality is implemented, which will likely happen soon after The Merge. Visit the [Ethereum Validator FAQ](https://launchpad.ethereum.org/en/faq) to learn more.
+Although validator nodes can voluntarily exit, you won't be able to withdraw your staked funds or re-enroll your validator until withdrawal functionality is implemented, which will likely happen soon. Visit the [Ethereum Validator FAQ](https://launchpad.ethereum.org/en/faq) to learn more.
 
 :::
 
