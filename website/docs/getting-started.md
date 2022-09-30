@@ -18,8 +18,8 @@ The following table of contents provides a descriptive overview of Prysm's docum
 <p><strong>New Prysm users</strong> can follow this guidance to get started with Prysm.</p>
 </div>
 <div class='panel'>
-<a href='prepare-for-merge'>Prepare for The Merge</a>
-<p><strong>Current Prysm users</strong> can follow this guidance to prepare their nodes and validators for <a href='https://ethereum.org/en/upgrades/merge/'>The Merge</a>, an ongoing event that transitions Ethereum from proof-of-work to proof-of-stake.</p>
+<a href='prepare-for-merge'>Configure for The Merge</a>
+<p><strong>Current Prysm users</strong> can follow this guidance to ensure that their nodes and validators are running post-Merge configuration.</p>
 </div>
 <div class='panel'>
 <a href='security-best-practices'>Security best practices</a>
@@ -63,11 +63,7 @@ The following table of contents provides a descriptive overview of Prysm's docum
 </div>
 <div class='panel'>
 <a href='execution-node/authentication'>Configure JWT authentication</a>
-<p>After The Merge, Prysm will need to securely connect to a local execution node. This how-to shows you how to form this secure connection using a JWT token.</p>
-</div>
-<div class='panel'>
-<a href='execution-node/authentication'>Configure execution node</a>
-<p>After The Merge, Prysm will need to securely connect to a local execution node. This how-to shows you how to configure Geth, Besu, or Nethermind.</p>
+<p>Prysm needs to securely connect to a local execution node. This how-to shows you how to form this secure connection using a JWT token.</p>
 </div>
 <div class='panel'>
 <a href='prysm-usage/staying-up-to-date'>Update and downgrade Prysm</a>
