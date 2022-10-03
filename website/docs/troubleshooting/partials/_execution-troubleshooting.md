@@ -31,4 +31,8 @@
       <td><code>403 signature invalid</code></td>
       <td>This is usually caused by invalid JWT configuration. If you're using HTTP-JWT to connect your EN-BN, ensure that both EN and BN are configured to use the same JWT secret. Different files are OK (eg when your EN and BN are on different machines), but the secret within each JWT file should be the same. See <a href='https://docs.prylabs.network/docs/execution-node/authentication'>Configure JWT authentication</a> for more information.</td>
     </tr>
+    <tr>
+      <td><code>Beacon client online, but never received consensus updates</code></td>
+      <td>Your beacon node probably needs more time to sync. See [github.com/ethereum/go-ethereum/issues/25753](https://github.com/ethereum/go-ethereum/issues/25753) for more information.</td>
+    </tr>
 </table>
