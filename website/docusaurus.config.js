@@ -57,7 +57,10 @@ module.exports = {
         algolia: {
             apiKey: 'd56b00e670b1ea4c44047c2d34807f6d',
             indexName: 'prysmaticlabs_prysm',
-            algoliaOptions: {}
+            algoliaOptions: {
+                contextualSearch: false,
+                disableUserPersonalization: true
+            }
         },
         googleAnalytics: {
             trackingID: 'UA-139640266-2',
