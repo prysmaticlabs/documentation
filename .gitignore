@@ -13,3 +13,5 @@ website/node_modules
 website/i18n/*
 
 website/static/img/~$Prysm_Docs.pptx
+
+*.vscode
