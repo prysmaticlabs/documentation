@@ -71,7 +71,9 @@ The Beginner's Introduction to Prysm uses diagrams to help you visualize Ethereu
 Keeping all of your client software on a single machine keeps things simple, which aligns with our [security best practices](../security-best-practices.md).
 
 **Can I use Prysm on a Mac M1 ARM chip?** <br />
-Mac M1 ARM chips currently require users to run Prysm through <a href='https://support.apple.com/en-us/HT211861'>Rosetta</a>. See our <a href='https://github.com/prysmaticlabs/prysm/issues/9385'>open bug</a> for details.
+Yes. Choose **one** of the following actions to ensure that Prysm can run on your M1:
+ 1. Set an environment variable: `export PRYSM_ALLOW_UNVERIFIED_BINARIES=1`. See [Apple's Terminal User Guide: Use environment variables](https://support.apple.com/guide/terminal/use-environment-variables-apd382cc5fa-4f58-4449-b20a-41c53c006f8f/mac) for detailed instructions.
+ 2. Run Prysm through <a href='https://support.apple.com/en-us/HT211861'>Rosetta</a>. See our <a href='https://github.com/prysmaticlabs/prysm/issues/9385'>open bug</a> for more information.
 
 **Do I need to configure JWT if I'm using IPC instead of HTTP?** <br />
 No.

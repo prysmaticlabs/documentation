@@ -55,7 +55,7 @@ Instead of using the `Go` tool to build Prysm, our team relies on the [Bazel](ht
 
 ### Dependencies
 
-* [Bazelisk](https://docs.bazel.build/versions/main/install-bazelisk.html) this will automatically manage the version of ***Bazel*** required. 
+* [Bazelisk](https://bazel.build/install/bazelisk) this will automatically manage the version of ***Bazel*** required. 
 * The `cmake` package installed
 * The `git` package installed
 * `libssl-dev` installed
@@ -71,10 +71,10 @@ Bazelisk is a launcher for Bazel which automatically downloads and installs an a
 
 You can install Bazelisk in multiple ways, including:
 
-* npm install -g @bazel/bazelisk
-* Using a binary release for Linux, macOS, or Windows [(Download binaries)](https://github.com/bazelbuild/bazelisk/releases)
-* Using Homebrew on macOS
-* By compiling from source using Go: go get github.com/bazelbuild/bazelisk
+* Using [a binary release](https://github.com/bazelbuild/bazelisk/releases) for Linux, macOS, or Windows
+* Using npm: `npm install -g @bazel/bazelisk`
+* Using Homebrew on macOS: `brew install bazelisk`
+* By compiling from source using Go: `go install github.com/bazelbuild/bazelisk@latest`
 
 
 ## Install Prysm using Bazel
@@ -83,8 +83,8 @@ Clone Prysm's [main repository](https://github.com/prysmaticlabs/prysm). Make su
 
 ```text
 git clone https://github.com/prysmaticlabs/prysm
-git checkout <version>
 cd prysm
+git checkout <version>
 ```
 
 Build both the beacon chain node and the validator client:
