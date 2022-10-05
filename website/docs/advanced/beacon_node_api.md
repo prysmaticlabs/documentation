@@ -14,7 +14,7 @@ The beacon chain is the coordinator of Ethereum proof-of-stake. It is responsibl
 
 By default, the Prysm beacon node saves the state of the chain locally in a database every 2048 slots or 64 epochs. For clarity, a slot is every 12 seconds and 32 slots make an epoch. Hence the beacon node, by default, saves the state on a per 64 epochs basis. Should more detailed information on historical slots be required, these can be requested retrospectively. However, there will be a time delay whilst the data is requested and retrieved. 
 
-:::tip If you wish to shorten the API respond delay, we recommend saving the state once per epoch. Aditional storage will be required
+:::tip If you wish to shorten the API respond delay, we recommend saving the state once per epoch. Additional storage will be required
 In addition to having to download the slot/epoch data there will be an increased local storage requirement, potentially by a multiple of 32 should all data be requested. 
 :::
 
