@@ -49,8 +49,8 @@ import TabItem from '@theme/TabItem';
                         {label: 'Windows', value: 'win'}
                         ]}>
                         <TabItem className="unclickable-element" value="label"></TabItem>
-                        <TabItem value="others"><p>You can check your Geth execution node's sync status by running <code>geth attach</code> and then <code>eth.syncing</code> from a separate terminal window. A sync status of <code>false</code> indicates that your node is fully synced.</p></TabItem>
-                        <TabItem value="win"><p>You can check your Geth execution node's sync status by running <code>geth attach ipc:\\.\pipe\geth.ipc</code> and then <code>eth.syncing</code> from a separate terminal window. A sync status of <code>false</code> indicates that your node is fully synced.</p></TabItem>
+                        <TabItem value="others"><p>You can check your Geth execution node's sync status by running <code>geth attach</code> (IPC) or <code>geth attach http://localhost:8545</code> (HTTP) from a separate terminal. Then type <code>eth.syncing</code>. A sync status of <code>false</code> indicates that your node is fully synced.</p></TabItem>
+                        <TabItem value="win"><p>You can check your Geth execution node's sync status by running <code>geth attach ipc:\\.\pipe\geth.ipc</code> (IPC) or <code>geth attach http://localhost:8545</code> (HTTP) from a separate terminal. Then type <code>eth.syncing</code>. A sync status of <code>false</code> indicates that your node is fully synced.</p></TabItem>
                     </Tabs>
                 </TabItem>
                 </Tabs>
