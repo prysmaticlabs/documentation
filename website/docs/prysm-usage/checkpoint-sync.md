@@ -27,7 +27,7 @@ After configuring checkpoint sync, we strongly recommend [verifying the authenti
 
 ## Option 1: Configure checkpoint sync via network request
 
-Start your Prysm beacon node with the `--checkpoint-sync-url` flag set to a fully synced beacon node's RPC gateway provider endpoint. This endpoint is usually exposed via port `3500`. Set the `--genesis-beacon-api-url` flag to the same URL if you want to fetch the genesis state along with the `BeaconState` and `SignedBeaconBlock`.
+Start your Prysm beacon node with the `--checkpoint-sync-url` flag set to a fully synced beacon node's RPC gateway provider endpoint. This endpoint is usually exposed via port `3500`. Set the `--genesis-beacon-api-url` flag to the same URL if you want to fetch the genesis state along with the `BeaconState` and `SignedBeaconBlock`. You may also use a public beacon chain checkpoint sync endpoint at your own risk at https://eth-clients.github.io/checkpoint-sync-endpoints/ .
 
 The following command starts a beacon node with checkpoint sync configured to pull checkpoint state from another local beacon node's RPC endpoint using port `3500`:
 
@@ -181,11 +181,7 @@ Yes. Checkpoint sync is a network-agnostic feature. You can even use it on local
 No - checkpoint sync requires a fresh, unused data directory.
 
 **Are there any publicly available, trustworthy checkpoint sync endpoints that I can use?** <br/>
-The Ethereum Foundation DevOps team runs a handful of checkpoint sync endpoints that can be used for testnets:
-
- - Goerli/Prater: https://goerli.checkpoint-sync.ethdevops.io
- - Ropsten: https://ropsten.checkpoint-sync.ethdevops.io
- - Sepolia: https://sepolia.checkpoint-sync.ethdevops.io
+A community maintained list of public Beacon Chain checkpoint sync endpoints is maintained: https://eth-clients.github.io/checkpoint-sync-endpoints/
 
 Feel free to ask on our [Discord server](https://discord.gg/prysmaticlabs) if you need help identifying a **Mainnet** checkpoint state provider.
 
