@@ -119,24 +119,16 @@ Example in bash
         {label: 'Ropsten', value: 'ropsten'}
     ]}>
     <TabItem className="unclickable-element" value="label"></TabItem>
-    <TabItem value="mainnet">
-    ```example in bash
+    <TabItem value="mainnet"><pre><code>
     ./prysm.sh prysmctl sign voluntary-exit --public-keys=="0x8b91f34c039c348f73c2dda492998e268c2815a433f59a6667258267739947dcfc8ade6823b3f1f3cfef824497eb113c"
-    ```
-    </TabItem>
-    <TabItem value="goerli-prater">
-    ```example in bash
+    </code></pre></TabItem>
+    <TabItem value="goerli-prater"><pre><code>
     ./prysm.sh prysmctl sign voluntary-exit --public-keys=="0x8b91f34c039c348f73c2dda492998e268c2815a433f59a6667258267739947dcfc8ade6823b3f1f3cfef824497eb113c" --goerli
-    ```
-    </TabItem>
-    <TabItem value="sepolia">
-     ```example in bash
+    </code></pre></TabItem>
+    <TabItem value="sepolia"><pre><code>
     ./prysm.sh prysmctl sign voluntary-exit --public-keys=="0x8b91f34c039c348f73c2dda492998e268c2815a433f59a6667258267739947dcfc8ade6823b3f1f3cfef824497eb113c" --sepolia
-    ```
-    </TabItem>
+    </code></pre></TabItem>
 </Tabs>
-
-
 
 ### Advanced: Exiting with Web3signer
 
