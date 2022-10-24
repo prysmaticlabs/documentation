@@ -116,7 +116,6 @@ Example in bash
         {label: 'Mainnet', value: 'mainnet'},
         {label: 'Goerli-Prater', value: 'goerli-prater'},
         {label: 'Sepolia', value: 'sepolia'},
-        {label: 'Ropsten', value: 'ropsten'}
     ]}>
     <TabItem className="unclickable-element" value="label"></TabItem>
     <TabItem value="mainnet"><pre><code>
