@@ -110,6 +110,7 @@ bazel run //prysmctl --config=release -- sign voluntary-exit --public-keys=="0x8
 
 Validator Exit is also supported on testnet and devnet with corresponding flags.
 
+Example in bash
 <Tabs className="tabgroup-with-label network-tabgroup" groupId="network" defaultValue="mainnet" values={[
         {label: 'Network:', value: 'label'},
         {label: 'Mainnet', value: 'mainnet'},
@@ -118,10 +119,21 @@ Validator Exit is also supported on testnet and devnet with corresponding flags.
         {label: 'Ropsten', value: 'ropsten'}
     ]}>
     <TabItem className="unclickable-element" value="label"></TabItem>
-    <TabItem value="mainnet"></TabItem>
-    <TabItem value="goerli-prater"></TabItem>
-    <TabItem value="sepolia"></TabItem>
-    <TabItem value="ropsten"></TabItem>
+    <TabItem value="mainnet">
+    ```example in bash
+    ./prysm.sh prysmctl sign voluntary-exit --public-keys=="0x8b91f34c039c348f73c2dda492998e268c2815a433f59a6667258267739947dcfc8ade6823b3f1f3cfef824497eb113c"
+    ```
+    </TabItem>
+    <TabItem value="goerli-prater">
+    ```example in bash
+    ./prysm.sh prysmctl sign voluntary-exit --public-keys=="0x8b91f34c039c348f73c2dda492998e268c2815a433f59a6667258267739947dcfc8ade6823b3f1f3cfef824497eb113c" --goerli
+    ```
+    </TabItem>
+    <TabItem value="sepolia">
+     ```example in bash
+    ./prysm.sh prysmctl sign voluntary-exit --public-keys=="0x8b91f34c039c348f73c2dda492998e268c2815a433f59a6667258267739947dcfc8ade6823b3f1f3cfef824497eb113c" --sepolia
+    ```
+    </TabItem>
 </Tabs>
 
 
