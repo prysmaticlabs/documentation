@@ -67,7 +67,7 @@ Instead of using the `Go` tool to build Prysm, our team relies on the [Bazel](ht
 
 ## Install Bazel using Bazelisk
 
-Bazelisk is a launcher for Bazel which automatically downloads and installs an appropriate version of Bazel. Use Bazelisk to automtically manage the version of Bazel required.  
+Bazelisk is a launcher for Bazel which automatically downloads and installs an appropriate version of Bazel. Use Bazelisk to automatically manage the version of Bazel required.  
 
 You can install Bazelisk in multiple ways, including:
 
@@ -112,7 +112,7 @@ To run a beacon node, you'll need access to an execution node. See [Configure ex
 
 ## Run a beacon node
 
-Note: <YOUR_ETH_EXECUTION_NODE_ENDPOINT> is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`.
+Note: `<YOUR_ETH_EXECUTION_NODE_ENDPOINT>` is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8545` for geth) or an IPC path such as `/path/to/geth.ipc`.
 
 import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidimensional-content-controls-partial.md';
 
@@ -177,7 +177,7 @@ The correct address for the launchpad is https://launchpad.ethereum.org and the 
 
 :::
 
-Throughout the process, you'll be asked to generate new validator credentials using the official Ethereum deposit command-line-tool [here](https://github.com/ethereum/eth2.0-deposit-cli). Make sure you use the `mainnet` option when generating keys with the deposit CLI. During the process, you will have generated a `validator_keys` folder under the `eth2.0-deposit-cli` directory. Copy the path to the `validator_keys` folder under the `eth2.0-deposit-cli` directory you created during the launchpad process. For example, if your eth2.0-deposit-cli installation is in your `$HOME` (or `%LOCALAPPDATA%` on Windows) directory, you can then run the following command to import your keys:
+Throughout the process, you'll be asked to generate new validator credentials using the official Ethereum deposit command-line-tool [here](https://github.com/ethereum/eth2.0-deposit-cli). Make sure you use the `mainnet` option when generating keys with the deposit CLI. During the process, you will have generated a `validator_keys` folder under the `eth2.0-deposit-cli` directory. Copy the path to the `validator_keys` folder under the `eth2.0-deposit-cli` directory you created during the launchpad process. For example, if your `eth2.0-deposit-cli` installation is in your `$HOME` (or `%LOCALAPPDATA%` on Windows) directory, you can then run the following command to import your keys:
 
 ```text
 bazel run //validator:validator -- accounts import --keys-dir=$HOME/eth2.0-deposit-cli/validator_keys --accept-terms-of-use
