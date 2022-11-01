@@ -10,7 +10,7 @@ import JwtGuidancePartial from '@site/docs/partials/_jwt-guidance-partial.md';
 
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
-<HeaderBadgesWidget commaDelimitedContributors="Mick,Raul,James" lastVerifiedDateString="September 12th, 2022" lastVerifiedVersionString="v3.1.1" />
+<HeaderBadgesWidget commaDelimitedContributors="Mick,Raul,James" lastVerifiedDateString="September 12th, 2022" lastVerifiedVersionString="v3.1.2" />
 
 :::info New user?
 
@@ -34,8 +34,8 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
     <div class='task'>
         <div class='input-container'><input id="cl-1" type='checkbox'/><span class='done'></span></div>
         <div class='guidance-container'>
-            <label for="cl-1">Use Prysm v3.1.1</label>
-            <p>Prysm <a href='https://github.com/prysmaticlabs/prysm/releases/tag/v3.1.1'>v3.1.1</a> supports <strong>post-Merge</strong> configuration.</p>
+            <label for="cl-1">Use Prysm v3.1.2</label>
+            <p>Prysm <a href='https://github.com/prysmaticlabs/prysm/releases/tag/v3.1.2'>v3.1.2</a> supports <strong>post-Merge</strong> configuration.</p>
         </div>
     </div>
     <div class='task'>
@@ -49,7 +49,7 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
         <div class='input-container'><input id="cl-6" type='checkbox'/><span class='done'></span></div>
         <div class='guidance-container'>
             <label for="cl-6">Verify your Prysm version</label>
-            <p>Verify that you're running Prysm <code>v3.1.1</code> by issuing the following command: <code>prysm.sh beacon-chain --version</code> (Linux) <code>prysm.bat beacon-chain --version</code> (Windows).</p>
+            <p>Verify that you're running Prysm <code>v3.1.2</code> by issuing the following command: <code>prysm.sh beacon-chain --version</code> (Linux) <code>prysm.bat beacon-chain --version</code> (Windows).</p>
         </div>
     </div>
     <div class='task'>
