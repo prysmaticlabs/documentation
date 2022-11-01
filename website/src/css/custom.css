@@ -588,6 +588,12 @@ header > h1 {
 .header-badges .header-badge .emoji-avatar {
   margin-right: 8px !important;
 }
+.header-badges .header-badge.love-badge {
+  padding-right: 12px;
+}
+.header-badges .header-badge.love-badge > .badge-avatar {
+  font-size: 13px;
+}
 .margin-vert--md {
   margin: 0 !important;
 }

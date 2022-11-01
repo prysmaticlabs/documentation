@@ -51,7 +51,7 @@ export const HeaderBadgesWidget = ({ commaDelimitedContributors, lastVerifiedDat
 						<span class="badge-avatar emoji-avatar">✏️</span>
 						<span class="badge-label">Request an update</span>
 					</a>
-					<a class="header-badge" href='https://offchain.medium.com/the-merge-2-0-offchain-labs-acquires-prysmatic-labs-the-leading-ethereum-consensus-client-team-9eab169c5fb6'>
+					<a class="header-badge love-badge" href='https://offchain.medium.com/the-merge-2-0-offchain-labs-acquires-prysmatic-labs-the-leading-ethereum-consensus-client-team-9eab169c5fb6'>
 						<span class="badge-avatar emoji-avatar">❤️</span>
 						<span class="badge-label">Prysm + Offchain = ❤️</span>
 					</a>
