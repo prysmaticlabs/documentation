@@ -475,6 +475,16 @@ footer.docusaurus-mt-lg {
   background-color: #22292f;
   color: white;
 }
+.navbar::before {
+  content: "<div class='persistent-banner'><span>🎉 Prysmatic Labs has joined Offchain Labs to scale Ethereum! <a href='https://medium.com/prysmatic-labs/prysmatic-is-being-acquired-by-offchain-labs-frequently-asked-questions-answers-c5e5af219bf0'></a></span></div>";
+}
+.persistent-banner {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  text-align: center;
+}
 .navbar--fixed-top {
   border-bottom: 3px solid var(--prysm-pink);
 }
@@ -587,12 +597,6 @@ header > h1 {
 }
 .header-badges .header-badge .emoji-avatar {
   margin-right: 8px !important;
-}
-.header-badges .header-badge.love-badge {
-  padding-right: 12px;
-}
-.header-badges .header-badge.love-badge > .badge-avatar {
-  font-size: 13px;
 }
 .margin-vert--md {
   margin: 0 !important;
