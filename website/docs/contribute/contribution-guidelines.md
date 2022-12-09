@@ -46,6 +46,8 @@ Example output:
 go version go1.16 darwin/amd64
 ```
 
+Having problems on windows 11 with the instructions above? Or for an easy windows10+11 environment using WSL [click here](/docs/contribute/windows-wsl-vscode).
+
 ### Building and testing Prysm with Go
 
 The Prysm project is a large monorepo containing all sorts of tools and services that implement the Ethereum protocol. We use Go for everything we do in development, helping everyone have reproducible builds. If you want to build the whole project, you can run the following command:
