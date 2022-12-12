@@ -8,7 +8,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <HeaderBadgesWidget />
 
-The below instructions will setup Windows 10 and 11 with WSL and Visual Studio code. This guide does not support previous windows versions. At the time of writing this article Windows 11 will not work with the standard instructions.
+The below instructions will setup Windows 10+11 with WSL and Visual Studio code. This guide does not support previous windows versions because WSL was available starting with Windows 10. At the time of writing this article Windows 11+10 will not work with the standard instructions.
 
 ### Setting up Windows 10/11 environment with WSL and Visual Studio Code
 
