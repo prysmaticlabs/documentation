@@ -46,7 +46,7 @@ Example output:
 go version go1.16 darwin/amd64
 ```
 
-Having problems on windows 11 with the instructions above? Or for an easy windows10+11 environment using WSL [click here](/docs/contribute/windows-wsl-vscode).
+Having problems on Windows 11/10 with the instructions above? Or for an easy Windows11+10 environment using WSL [click here](/docs/contribute/windows-wsl-vscode).
 
 ### Building and testing Prysm with Go
 
