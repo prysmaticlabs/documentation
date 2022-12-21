@@ -35,4 +35,12 @@
       <td><code>Beacon client online, but never received consensus updates</code></td>
       <td>Your beacon node probably needs more time to sync. See [github.com/ethereum/go-ethereum/issues/25753](https://github.com/ethereum/go-ethereum/issues/25753) for more information.</td>
     </tr>
+    <tr>
+      <td>If you see: <code>“State heal in progress”</code></td>
+      <td>Geth goes into state heal during sync it just takes a long time for it to go through should start syncing on beacon node after the state heal.</td>
+    </tr>
+    <tr>
+      <td><code>Forkchoice requested sync to new head</code></td>
+      <td>Your execution client is syncing now.</td>
+    </tr>
 </table>
