@@ -25,8 +25,7 @@ Devnets are critical for developers working on the protocol as well as smart con
 
 Notwithstanding, more complex applications may want an environment that is closer to a **real Ethereum blockchain**, and setting up a local chain from scratch is the best approach. This blog post will help you understand how to set up your own, **local Ethereum chain** from scratch that migrates to proof-of-stake in **minutes**.
 
-Setting up
-==========
+## Setting up
 
 With Ethereum switching to proof-of-stake, there are a bunch of buzzwords flying around:
 
@@ -39,8 +38,7 @@ Today, running an Ethereum node means simply installing a client such as [go-eth
 
 Prysm is an open source, Go implementation of the Ethereum proof-of-stake protocol. It can be used to run a node+validator on mainnet and testnet environments with ease, and is highly configurable to meet users’ needs.
 
-Easy setup using Docker
-=======================
+## Easy setup using Docker
 
 To get started, install [Docker](https://docs.docker.com/get-docker/) and [Docker Compose](https://docs.docker.com/compose/install/) for your system. If you are on MacOS, you should adjust your settings on Docker desktop to provide more resources to your Docker containers. Go to Preferences -> Resources and give around 4 CPUs and 8Gb of memory if possible for a smooth installation.
 
@@ -95,8 +93,7 @@ You now have access to the normal, Ethereum JSON-RPC APIs on http://localhost:85
 
 This development net is a great way to understand the internals of Ethereum proof-of-stake and to mess around with the different settings that make the system possible.
 
-Manual setup built from source
-==============================
+## Manual setup built from source
 
 All you will need for a manual installation guide is the Go programming language and `git`. Install the latest version of Go [here](https://go.dev/doc/install), and verify your installation with:
 
@@ -131,12 +128,11 @@ Clone the go-ethereum repository and build it:
 
 You will now have all the executables you need to run the the software for the devnet.
 
-Configuration files
--------------------
+### Configuration files
 
 You will need configuration files for setting up Prysm and Go-Ethereum.
 
-### Prysm
+#### Prysm
 
 On the Prysm side, create a file called `config.yml` in your `devnet` folder containing the following:
 
@@ -165,7 +161,7 @@ On the Prysm side, create a file called `config.yml` in your `devnet` folder con
 
 The configuration above contains information about the different hard-fork versions that are required for Prysm to run, and has some custom parameters to make running your devnet easier. It’s important to note that you can change any of these settings as desired. To see the full list of configuration options you can change, see [here](https://docs.prylabs.network/docs/prysm-usage/parameters/).
 
-### Go-Ethereum
+#### Go-Ethereum
 
 On the go-ethereum side, you will need to set-up a private key that will help advance the chain from genesis by mining up until it reaches **proof-of-stake** mode. Create a file called `secret.json` inside of your `devnet` folder with the following:
 
@@ -176,10 +172,10 @@ Next, save the following file as `genesis.json` inside of your devnet folder as 
 
 The file above sets up the genesis configuration for go-ethereum, which seeds certain accounts with an ETH balance and deploys a validator deposit contract at address `0x4242424242424242424242424242424242424242` which is used for new validators to deposit 32 ETH and join the proof-of-stake chain. The account that we are running go-ethereum with, `0x123463a4b065722e99115d6c222f267d9cabb524`, will have an ETH balance you can use to submit transactions on your devnet.
 
-Running the devnet
-------------------
 
-### Go-Ethereum
+### Running the devnet
+
+#### Go-Ethereum
 
 Next, we will start by running **go-ethereum** in our `devnet` folder:
 
@@ -196,7 +192,7 @@ You can check the ETH balance in the geth console by typing in
 
 `eth.getBalance("0x123463a4b065722e99115d6c222f267d9cabb524")` which should show `2e+22`
 
-### Prysm
+#### Prysm
 
 We will then need to run a Prysm beacon node and a validator client. Prysm will need a **genesis state** which is essentially some data that tells it the initial set of validators. We will be creating a genesis state from a deterministic set of keys below:
 
@@ -231,8 +227,7 @@ and the Prysm validator client soon after:
       --config-file=config.yml
     
 
-Expected output
----------------
+### Expected output
 
 Your go-ethereum node should look as follows:
 
@@ -252,8 +247,8 @@ Upon entering proof-of-stake mode, once the mining difficulty hits **50** in go-
 
 ![Image](https://user-images.githubusercontent.com/5572669/186052296-03c18e6f-17f2-4d94-830d-ba7522cc09c8.png)
 
-Adding Prysm peers to your network
-----------------------------------
+
+### Adding Prysm peers to your network
 
 You can add additional, Prysm beacon chain peers to your proof-of-stake devnet by running the similar command as your first beacon node, but with a few tweaks. In a terminal window, use the following command:
 
