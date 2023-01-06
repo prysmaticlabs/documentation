@@ -173,9 +173,9 @@ Next, save the following file as `genesis.json` inside of your devnet folder as 
 The file above sets up the genesis configuration for go-ethereum, which seeds certain accounts with an ETH balance and deploys a validator deposit contract at address `0x4242424242424242424242424242424242424242` which is used for new validators to deposit 32 ETH and join the proof-of-stake chain. The account that we are running go-ethereum with, `0x123463a4b065722e99115d6c222f267d9cabb524`, will have an ETH balance you can use to submit transactions on your devnet.
 
 
-### Running the devnet
+## Running the devnet
 
-#### Go-Ethereum
+### Go-Ethereum
 
 Next, we will start by running **go-ethereum** in our `devnet` folder:
 
@@ -192,7 +192,7 @@ You can check the ETH balance in the geth console by typing in
 
 `eth.getBalance("0x123463a4b065722e99115d6c222f267d9cabb524")` which should show `2e+22`
 
-#### Prysm
+### Prysm
 
 We will then need to run a Prysm beacon node and a validator client. Prysm will need a **genesis state** which is essentially some data that tells it the initial set of validators. We will be creating a genesis state from a deterministic set of keys below:
 
@@ -248,7 +248,7 @@ Upon entering proof-of-stake mode, once the mining difficulty hits **50** in go-
 ![Image](https://user-images.githubusercontent.com/5572669/186052296-03c18e6f-17f2-4d94-830d-ba7522cc09c8.png)
 
 
-### Adding Prysm peers to your network
+## Adding Prysm peers to your network
 
 You can add additional, Prysm beacon chain peers to your proof-of-stake devnet by running the similar command as your first beacon node, but with a few tweaks. In a terminal window, use the following command:
 
