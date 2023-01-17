@@ -69,7 +69,7 @@
     </tr>
     <tr>
     <td><code>ERROR p2p: Failed to broadcast attestation error=could not publish message: unable to find requisite number of peers for topic /eth2/4a26c58b/beacon_attestation_15/ssz_snappy, 0 peers found to publish to: context deadline exceeded</code></td>
-      <td>Node appears to be having peering issues</td>
+      <td>Node appears to be having peering issues. See <a href='https://docs.prylabs.network/docs/prysm-usage/p2p-host-ip#incoming-p2p-connection-prerequisites'>Configure ports and firewalls for improved peer-to-peer connectivity</a> for more information.</td>
     </tr>
     <tr>
     <td><code>level=warning msg="Block is not processed" error="could not process block: could not validate new payload: timeout from http.Client: received an undefined ee error" prefix=initial-sync</code></td>
