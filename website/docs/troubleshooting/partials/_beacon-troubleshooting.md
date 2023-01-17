@@ -65,7 +65,7 @@
     </tr>
     <tr>
     <td><code>ERROR p2p: Failed to find peers error=unable to find requisite number of peers for topic /eth2/4a26c58b/beacon_attestation_15/ssz_snappy - only 0 out of 1 peers were able to be found</code></td>
-      <td>Node appears to be having peering issues</td>
+      <td>Node appears to be having peering issues. See <a href='https://docs.prylabs.network/docs/prysm-usage/p2p-host-ip#incoming-p2p-connection-prerequisites'>Configure ports and firewalls for improved peer-to-peer connectivity</a> for more information.</td>
     </tr>
     <tr>
     <td><code>ERROR p2p: Failed to broadcast attestation error=could not publish message: unable to find requisite number of peers for topic /eth2/4a26c58b/beacon_attestation_15/ssz_snappy, 0 peers found to publish to: context deadline exceeded</code></td>
@@ -77,6 +77,6 @@
     </tr>
     <tr>
     <td><code>ERROR powchain: could not get eth1 block hash: could not query header with height 11184524: not found</code></td>
-      <td>Your execution client might still be syncing.</td>
+      <td>Your execution client might still be syncing. Syncing can be a fairly long process but if it’s already been over a week, we recommend that you investigate further and feel free to ask us questions on our Discord server.</td>
     </tr>
 </table>
