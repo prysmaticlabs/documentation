@@ -12,6 +12,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 ![Grafana dashboard for prysm node and validator](/img/dashboard_overview.png "Grafana dashboard for prysm node and validator")
 
+To view your validator's details, visit [beaconcha.in/validator/](https://beaconcha.in/validators).
 
 ### Getting account metrics
  Ensure metrics have been activated by visiting the following dashboards:
