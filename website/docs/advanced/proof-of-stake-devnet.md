@@ -168,7 +168,7 @@ On the go-ethereum side, you will need to set-up a private key that will help ad
     2e0834786285daccd064ca17f1654f67b4aef298acbb82cef9ec422fb4975622
     
 
-Next, save the following file as `genesis.json` inside of your devnet folder as well:
+Next, save the following [file](https://github.com/rauljordan/eth-pos-devnet/blob/master/execution/genesis.json) as `genesis.json` inside of your devnet folder as well:
 
 The file above sets up the genesis configuration for go-ethereum, which seeds certain accounts with an ETH balance and deploys a validator deposit contract at address `0x4242424242424242424242424242424242424242` which is used for new validators to deposit 32 ETH and join the proof-of-stake chain. The account that we are running go-ethereum with, `0x123463a4b065722e99115d6c222f267d9cabb524`, will have an ETH balance you can use to submit transactions on your devnet.
 
