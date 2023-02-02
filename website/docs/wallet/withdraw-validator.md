@@ -3,7 +3,7 @@ id: withdraw-validator
 title: Withdraw your validator
 sidebar_label: Withdraw your validator
 ---
-
+import BeaconChainPng from '@site/static/img/beaconchain_validator.png'
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <HeaderBadgesWidget commaDelimitedContributors="Raul,James" lastVerifiedDateString="February 2nd, 2023" lastVerifiedVersionString="v3.2.0" />
@@ -143,8 +143,8 @@ pip3 install -r requirements.txt
 
 For this step, you will also need to retrieve your validator’s **withdrawal credentials** from Ethereum. You can retrieve this these credentials from block explorers such as [https://beaconcha.in](https://beaconcha.in). Search for your validator, then navigate to the “deposit” tab in that page, and you’ll find the withdrawal credentials near the bottom of the page and you can copy the value from there.
 
-import BeaconChainPng from '@site/static/img/beaconchain_validator.png'
-<img style={{maxWidth: 700 + 'px'}} src={BeaconChainPng} /> 
+
+<img  src={BeaconChainPng} /> 
 
 It will look something like the example below, and is different for all validators.
 
@@ -275,7 +275,7 @@ In this step, you will submit your signed requests to the Ethereum network using
 
 **Install Prysmctl with separate tabs for (Docker / Bazel / Source)**
 
-Source
+**Source**
 
 Dependencies:
 
