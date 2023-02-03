@@ -8,7 +8,7 @@ import {FetchCLIHelp} from '../../src/fetchCliHelp.js';
 
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
-<HeaderBadgesWidget commaDelimitedContributors="Raul" />
+<HeaderBadgesWidget commaDelimitedContributors="Raul, James" />
 
 This section lists the various flags used to customise the startup process of Prysm.
 
@@ -27,6 +27,12 @@ You can use the `--graffiti` validator flag to add a string to your proposed blo
 :::
 
 <FetchCLIHelp prysmComponent={"validator"}/>
+
+## prysmctl Configuration
+
+Below are all the available configuration parameters for prysmctl. please refer to the [use prysmctl guide](prysmctl.md) for download and installation instructions.
+
+<FetchCLIHelp prysmComponent={"prysmctl"}/>
 
 ## Client Stats Configuration
 
