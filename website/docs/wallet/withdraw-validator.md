@@ -4,7 +4,7 @@ title: Withdraw your validator
 sidebar_label: Withdraw your validator
 ---
 import BeaconChainPng from '@site/static/img/beaconchain_validator.png'
-import CapellaWithdrawalPng from '@site/static/img/capella_withdrawal.png'
+import CapellaWithdrawalPng from '@site/static/img/capella-withdrawal.png'
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <HeaderBadgesWidget commaDelimitedContributors="Raul,James" lastVerifiedDateString="February 2nd, 2023" lastVerifiedVersionString="v3.2.0" />
