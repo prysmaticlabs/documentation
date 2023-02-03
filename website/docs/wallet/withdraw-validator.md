@@ -20,7 +20,7 @@ Withdrawals are not yet available as a feature on Ethereum mainnet, and are curr
 
 In the **Capella/Shanghai Ethereum** upgrade, stakers will be able to withdraw their validator(s)’ funds from staking on the network. When withdrawing, stakers can either choose to 
 
-(a) **partially withdraw** their ***earnings***, that is, all value staked above 32 ETH, and continue validating
+(a) **partially withdraw** their **earnings**, that is, all value staked above 32 ETH, and continue validating
 
 OR 
 
@@ -37,7 +37,7 @@ Beyond these docs for the Prysm client, a comprehensive FAQ has been published [
 - **Staker:** The person or entity managing validators on Ethereum
 - **Voluntary exit:** Validators that are currently active on Ethereum can choose to **exit** the network, marking them as exited and exempting them from any staking responsibilities. In order to **withdraw** a validator’s balance completely, a voluntary exit must be submitted to Ethereum and must complete first.
 - **Full validator withdrawal:** This means withdrawing your entire stake on Ethereum, exiting your validator, and withdrawing your entire balance to an Ethereum address of your choosing. Full validator withdrawals need a validator to exit first, which can take time depending on how large the exit queue is. Performing a full withdrawal requires submitting a voluntary exit first.
-- **Partial validator withdrawal:*** This means withdrawing your validator’s **earnings** only. That is, if you are staking 33.3 ETH, you can withdraw 3.3 ETH using a partial withdrawal. Your validator does **not** need to exit, and you will continue to validate normally. Partial withdrawals do not go through an exit queue, and they complete as soon as the request makes it into a block on-chain.
+- **Partial validator withdrawal:** This means withdrawing your validator’s **earnings** only. That is, if you are staking 33.3 ETH, you can withdraw 3.3 ETH using a partial withdrawal. Your validator does **not** need to exit, and you will continue to validate normally. Partial withdrawals do not go through an exit queue, and they complete as soon as the request makes it into a block on-chain.
 - **Capella/Shanghai Ethereum Upgrade:** Ethereum network upgrades bring major feature additions to the network as a result of significant work from Ethereum client teams. This spring, an upgrade known as Capella/Shanghai will make validator withdrawals on mainnet. The upgrade has two names because there are two pieces of software being upgraded: consensus clients such as Prysm, and execution clients such as go-ethereum.
 - **Validator mnemonic, HD wallet mnemonic, or validator seed phrase:** A mnemonic in this context is the 24 word secret that you received upon creating your validator(s), which is the ultimate credential that gives you access to withdrawing your validator(s). For many, this was generated when they first interacted with the ethereum staking CLI to prepare their validator deposits. We will refer to this as your validator mnemonic throughout this document
 - **Validator withdrawal credentials:** Each validator has data known as “withdrawal credentials” which can be fetched from your beacon node or from a block explorer such as [https://beaconcha.in](https://beaconcha.in) or [https://beaconscan.com](https://beaconscan.com) by looking at the “deposits” tab and seeing your credentials there. You will need these for this guide.
@@ -68,7 +68,7 @@ Partial withdrawals only withdraw your validator earnings to an Ethereum address
 
 ### Partial withdrawals of your earnings will continue indefinitely to your Ethereum address of your choice
 
-Once a partial withdrawal is included on-chain, earnings will continue to accrue in the Ethereum address you initially specified. This address **********************************cannot be changed********************************** once set, so you must ensure it is protected and one you have custody over.
+Once a partial withdrawal is included on-chain, earnings will continue to accrue in the Ethereum address you initially specified. This address **cannot be changed** once set, so you must ensure it is protected and one you have custody over.
 
 ### Once you tell Ethereum the address you want to withdraw your validator to, you cannot change it back
 
@@ -279,7 +279,7 @@ In this step, you will submit your signed requests to the Ethereum network using
 
 Dependencies:
 
-- [Bazelisk](https://bazel.build/install/bazelisk) this will automatically manage the version of ***Bazel*** required.
+- [Bazelisk](https://bazel.build/install/bazelisk) this will automatically manage the version of **Bazel** required.
 - The `cmake` package installed
 - The `git` package installed
 - `libssl-dev` installed
@@ -411,7 +411,7 @@ A: Using and storing the mnemonic on an open internet puts private keys used for
 
 A: Withdrawal public keys that begin with `0x01` are set to begin withdrawing either partially as in withdrawing earnings or fully if the associated validator has exited. The associated execution address can be found at the end of the withdrawal credentials i.e. `0x010000000000000000000000a94f5374fce5edbc8e2a8697c15331677e6ebf0b` There are several ways to check this:
 
-1. [`/eth/v1/beacon/states/{state_id}/validators/{validator_id}`](https://ethereum.github.io/beacon-APIs/?urls.primaryName=dev#/Beacon/getStateValidator) ****Beacon API endpoint will return the `withdrawal_credential` information
+1. [`/eth/v1/beacon/states/{state_id}/validators/{validator_id}`](https://ethereum.github.io/beacon-APIs/?urls.primaryName=dev#/Beacon/getStateValidator) Beacon API endpoint will return the `withdrawal_credential` information
 2. `ethdo validator info --validator=<yourvalidatorIndex> --verbose` command with [EthDo](https://github.com/wealdtech/ethdo)
 
 **Q: Can I reset my withdrawal address after setting it up once before?**
