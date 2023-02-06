@@ -91,7 +91,7 @@ bazel run //validator --config=release -- accounts voluntary-exit
 <TabItem value="win">
 
 ```
-prysmctl validator exit --wallet-dir=<path/to/wallet> --beacon-rpc-provider=127.0.0.1:4000 
+prysmctl validator exit --wallet-dir=<path/to/wallet> --beacon-rpc-provider=<127.0.0.1:4000>
 ```
 
 **Using Prysm.bat**
