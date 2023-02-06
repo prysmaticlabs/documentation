@@ -38,12 +38,13 @@ Although validator nodes can voluntarily exit, funds won't be withdrawable until
 <TabItem value="lin">
 
 ```
-prysmctl validator exit --wallet-dir=<path/to/wallet> --beacon-rpc-provider=127.0.0.1:4000 
+prysmctl validator exit --wallet-dir=<path/to/wallet> --beacon-rpc-provider=<127.0.0.1:4000> 
 ```
+prysmctl is not accessible from prysm.sh and will need to be built from source or downloaded from our release page.
 
 :::caution
 
-previous command  that will depricate in the future:
+previous command  that will deprecate in the future:
 
 ```bash
 ./prysm.sh validator accounts voluntary-exit
@@ -53,11 +54,15 @@ previous command  that will depricate in the future:
 
 **Using Docker**
 
-
+```text
+docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
+  gcr.io/prysmaticlabs/prysm/prysmctl:latest \
+  validator exit --wallet-dir=/wallet --beacon-rpc-provider=<127.0.0.1:4000> 
+```
 
 :::caution
 
-previous command that will depricate in the future:
+previous command that will deprecate in the future:
 
 ```text
 docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
@@ -69,10 +74,12 @@ docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
 
 **Using Bazel**
 
-
+```bash
+bazel run //prysmctl --config=release -- validator exit --wallet-dir=/wallet --beacon-rpc-provider=<127.0.0.1:4000> 
+```
 :::caution
 
-previous command that will depricate in the future:
+previous command that will deprecate in the future:
 
 ```bash
 bazel run //validator --config=release -- accounts voluntary-exit
@@ -83,28 +90,72 @@ bazel run //validator --config=release -- accounts voluntary-exit
 </TabItem>
 <TabItem value="win">
 
+```
+prysmctl validator exit --wallet-dir=<path/to/wallet> --beacon-rpc-provider=127.0.0.1:4000 
+```
+
 **Using Prysm.bat**
+
+```
+prysmctl validator exit --wallet-dir=<path/to/wallet> --beacon-rpc-provider=<127.0.0.1:4000> 
+```
+prysmctl is not accessible from prysm.bat and will need to be built from source or downloaded from our release page.
+
+:::caution
+
+previous command that will deprecate in the future:
 
 ```bash
 prysm.bat validator accounts voluntary-exit
 ```
 
+:::
+
 **Using Docker**
 
 ```text
+docker run -it -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet \
+  gcr.io/prysmaticlabs/prysm/prysmctl:latest \
+  validator exit --wallet-dir=/wallet --beacon-rpc-provider=<127.0.0.1:4000> 
+```
+
+:::caution
+
+previous command that will deprecate in the future:
+```text
 docker run -it -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet gcr.io/prysmaticlabs/prysm/validator:latest accounts voluntary-exit --wallet-dir=/wallet
 ```
+:::
 
 </TabItem>
 <TabItem value="arm">
 
-**Using Prysm.sh**
+```
+prysmctl validator exit --wallet-dir=<path/to/wallet> --beacon-rpc-provider=<127.0.0.1:4000> 
+```
+prysmctl is not accessible from prysm.sh and will need to be built from source or downloaded from our release page.
+
+:::caution
+
+previous command  that will deprecate in the future:
 
 ```bash
 ./prysm.sh validator accounts voluntary-exit
 ```
 
+:::
+
 **Using Docker**
+
+```text
+docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
+  gcr.io/prysmaticlabs/prysm/prysmctl:latest \
+  validator exit --wallet-dir=/wallet --beacon-rpc-provider=<127.0.0.1:4000> 
+```
+
+:::caution
+
+previous command that will deprecate in the future:
 
 ```text
 docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
@@ -112,15 +163,27 @@ docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
   accounts voluntary-exit --wallet-dir=/wallet
 ```
 
+:::
+
 **Using Bazel**
+
+```bash
+bazel run //prysmctl --config=release -- validator exit --wallet-dir=/wallet --beacon-rpc-provider=<127.0.0.1:4000> 
+```
+:::caution
+
+previous command that will deprecate in the future:
 
 ```bash
 bazel run //validator --config=release -- accounts voluntary-exit
 ```
 
+:::
+
 </TabItem>
 </Tabs>
 
+**note:** commands being deprecated have not been removed yet, and should replicate commands in `prysmctl` 
 
 ## Prompt Phrase for exiting the validator
 By using the following phrase in the user prompt, you confirm all understanding of the consequences of exiting the validator.
