@@ -271,44 +271,8 @@ Move the generated `bls_to_execution_changes-*.json` file to an online environme
 
 ### Step 2: Submitting your signed request to the Ethereum network
 
-In this step, you will submit your signed requests to the Ethereum network using a tool provided by the Prysm project called `prysmctl`. You’ll need access to a synced beacon node to proceed with this step (it does not need to be a Prysm beacon node)
+In this step, you will submit your signed requests to the Ethereum network using a tool provided by the Prysm project called `prysmctl`. Learn how to download and install the prysmctl tool from our [guide](../prysm-usage/prysmctl.md) or check commands on [Command-line options](../prysm-usage/parameters.md). You’ll need access to a synced beacon node to proceed with this step (it does not need to be a Prysm beacon node)
 
-**Install Prysmctl with separate tabs for (Docker / Bazel / Source)**
-
-**Source**
-
-Dependencies:
-
-- [Bazelisk](https://bazel.build/install/bazelisk) this will automatically manage the version of **Bazel** required.
-- The `cmake` package installed
-- The `git` package installed
-- `libssl-dev` installed
-- `libgmp-dev` installed
-- `libtinfo5` installed
-- `libprotoc` version 3.14 installed
-
-**Install Bazel through Bazelisk**
-
-Bazelisk is a launcher for Bazel which automatically downloads and installs an appropriate version of Bazel. Use Bazelisk to automatically manage the version of Bazel required.
-
-You can install Bazelisk in multiple ways, including:
-
-- Using [a binary release](https://github.com/bazelbuild/bazelisk/releases) for Linux, macOS, or Windows
-- Using npm: `npm install -g @bazel/bazelisk`
-- Using Homebrew on macOS: `brew install bazelisk`
-- By compiling from source using Go: `go install github.com/bazelbuild/bazelisk@latest`
-
-**Clone the Prysm project locally**
-
-Clone Prysm's [main repository](https://github.com/prysmaticlabs/prysm). Make sure you switch to the latest version (the latest version number can be found from the [releases page](https://github.com/prysmaticlabs/prysm/releases)). Once cloned, enter the directory:
-
-`git clone https://github.com/prysmaticlabs/prysm && cd prysm`
-
-Build Prysm ctl
-
-`bazel build //cmd/prysmctl --config=release`
-
-Bazel will automatically pull and install any dependencies as well, including Go and necessary compilers.
 
 Once Prysmctl is installed, you can use the `prysmctl validator withdraw` command, which will ask for terms of service acceptance and confirmation of command by providing additional flags, and also a path to the bls_to_execution_changes file from the previous step.
 
