@@ -57,7 +57,7 @@ Validator withdrawals require your validator to exit first, as exits do not happ
 
 ### Full withdrawals are not immediate
 
-Making a **full-validator withdrawal** means that you must exit your validator first. Validator exits have a queue that can only process a few items every few minutes, so your exit can take days or weeks depending on how big this queue grows. The reason there is an exit queue is for the security of the network. Having bounds on validator churn is important towards guaranteeing safety properties of the chain and keeping consensus stable. There is also a queue for activating validators in addition to exiting them. Withdrawals, full or partial, are processed at the same rate of 16 validators per block.
+Making a **full-validator withdrawal** means that you must exit your validator first. Validator exits have a queue that can only process a few items every few minutes, so your exit can take days or weeks depending on how big this queue grows. The reason there is an exit queue is for the security of the network. Having bounds on validator churn is important towards guaranteeing safety properties of the chain and keeping consensus stable. There is also a queue for activating validators in addition to exiting them. Withdrawals, full or partial, are processed at a rate of at most 16 validators per block.
 
 ### Full withdrawals are irreversible
 
