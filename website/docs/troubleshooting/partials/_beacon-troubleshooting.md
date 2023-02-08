@@ -55,4 +55,28 @@
       <td><code>beacon node doesn't have a parent in db with root...</code></td>
       <td>If you see blocks advancing, then this can usually be ignored. If you don't see blocks advancing, there are likely other warnings and/or errors that will help you troubleshoot.</td>
     </tr>
+    <tr>
+    <td><code>ERROR sync: Could not handle p2p pubsub error=could not process block: could not validate new payload: timeout from http.Client: received an undefined ee error topic=/eth2/4a26c58b/beacon_block/ssz_snappy</code></td>
+      <td>Your execution client is taking too long to process a payload, if you continuously see this error it might be an indication that your execution client is stressed.</td>
+    </tr>
+    <tr>
+    <td>If you see: <code>ERROR main: could not get ancestor state: failed to retrieve state from db: failed to unmarshal encoding: incorrect size</code></td>
+      <td>Your db might be corrupted</td>
+    </tr>
+    <tr>
+    <td><code>ERROR p2p: Failed to find peers error=unable to find requisite number of peers for topic /eth2/4a26c58b/beacon_attestation_15/ssz_snappy - only 0 out of 1 peers were able to be found</code></td>
+      <td>Node appears to be having peering issues. See <a href='https://docs.prylabs.network/docs/prysm-usage/p2p-host-ip#incoming-p2p-connection-prerequisites'>Configure ports and firewalls for improved peer-to-peer connectivity</a> for more information.</td>
+    </tr>
+    <tr>
+    <td><code>ERROR p2p: Failed to broadcast attestation error=could not publish message: unable to find requisite number of peers for topic /eth2/4a26c58b/beacon_attestation_15/ssz_snappy, 0 peers found to publish to: context deadline exceeded</code></td>
+      <td>Node appears to be having peering issues. See <a href='https://docs.prylabs.network/docs/prysm-usage/p2p-host-ip#incoming-p2p-connection-prerequisites'>Configure ports and firewalls for improved peer-to-peer connectivity</a> for more information.</td>
+    </tr>
+    <tr>
+    <td><code>level=warning msg="Block is not processed" error="could not process block: could not validate new payload: timeout from http.Client: received an undefined ee error" prefix=initial-sync</code></td>
+      <td>Your execution client is taking too long to process a payload, if you continuously see this error it might be an indication that your execution client is stressed.</td>
+    </tr>
+    <tr>
+    <td><code>ERROR powchain: could not get eth1 block hash: could not query header with height 11184524: not found</code></td>
+      <td>Your execution client might still be syncing. Syncing can be a fairly long process but if it’s already been over a week, we recommend that you investigate further and feel free to ask us questions on our Discord server.</td>
+    </tr>
 </table>

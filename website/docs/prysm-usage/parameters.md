@@ -8,19 +8,15 @@ import {FetchCLIHelp} from '../../src/fetchCliHelp.js';
 
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
-<HeaderBadgesWidget commaDelimitedContributors="Raul" />
+<HeaderBadgesWidget commaDelimitedContributors="Raul,James" />
 
-This section lists the various flags used to customise the startup process of Prysm.
+Prysm's client software can be configured using flags and YAML files. This document provides a comprehensive list of all available flags and their descriptions. The flag descriptions that you see in this document are generated from code comments within the latest Prysm release.
 
-## Beacon Node Configuration 
-
-Below are all the available configuration parameters for the Prysm beacon node grouped by functionality. All information is retrieved from the latest Prysm release.
+## Beacon node flags
 
 <FetchCLIHelp prysmComponent={"beacon-chain"}/>
 
-## Validator Configuration 
-
-Below are all the available configuration parameters for Prysm validator client grouped by functionality. All information is retrieved from the latest Prysm release.
+## Validator flags
 
 :::tip Graffiti
 You can use the `--graffiti` validator flag to add a string to your proposed blocks, which will be seen on the block explorer. I.e; `<startup command> --graffiti "Prysm is awesome!"`
@@ -28,23 +24,26 @@ You can use the `--graffiti` validator flag to add a string to your proposed blo
 
 <FetchCLIHelp prysmComponent={"validator"}/>
 
-## Client Stats Configuration
+## `prysmctl` flags
 
-Below are all the available configuration parameters for Prysm client stats software: an optional service that can report process metrics to third-parties such as block explorers. You can read more about this [here](/docs/prysm-usage/client-stats).
+Refer to the [Use prysmctl](prysmctl.md) for `prysmctl` download and installation instructions.
+
+<FetchCLIHelp prysmComponent={"prysmctl"}/>
+
+## Client stats flags
+
+Prysm's client stats service is an optional utility that reports process metrics to third-parties such as block explorers. Refer to our [client stats documentation](/docs/prysm-usage/client-stats) for more information.
 
 <FetchCLIHelp prysmComponent={"client-stats"}/>
 
-## Loading Parameters via a .YAML File
+## Loading parameters from a YAML file
 
-:::info
-Loading parameters via .YAML file is optional.
-:::
+You can optionally configure Prysm to load flag values from a `.yaml` file. Consider this option if you're looking for a streamlined terminal experience or unique, portable configuration profiles.
 
-Prysm now supports loading flag values from a specified `.yaml` file. Defining parameters in this way cuts back on terminal clutter and allows unique startup profiles to be saved independently.
-
-The below steps show how place a common Prysm flag into a YAML file and how to specify it at start up.
+The below steps show how place a common Prysm flag into a YAML file, and how to specify the YAML file when Prysm starts up.
 
 ### GNU\Linux, Mac, ARM64
+
 1. In your Prysm working directory, create a `.yaml` file and open it in a text editor.
 
 2. Add the following lines to the file before closing and saving:
@@ -62,6 +61,7 @@ or for a validator like so:
 ```
 
 ### Windows
+
 1. In your Prysm working directory, create a `.yaml` file and open it in a text editor.
 
 2. Add the following lines to the file before closing and saving:
