@@ -12,10 +12,12 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-:::caution
+
+
+:::caution Public Preview
+**This feature is currently in public preview** and may change significantly as we receive feedback from users like you. Join our [Discord server](https://discord.gg/prysmaticlabs) to share your feedback.
 Withdrawals are not yet available as a feature on Ethereum mainnet, and are currently only available on development test networks for trial at the time of writing (February 1st, 2023). The instructions in this document WILL NOT work on mainnet and are subject to change by the time withdrawals are available on mainnet.
 :::
-
 
 ## Background
 <img  src={CapellaWithdrawalPng} /> 
