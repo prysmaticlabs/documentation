@@ -143,6 +143,10 @@
             {
               "type": "doc",
               "id": "wallet/exiting-a-validator"
+            },
+            {
+                "type": "doc",
+                "id": "wallet/withdraw-validator"
             }
           ]
         },
