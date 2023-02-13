@@ -208,6 +208,10 @@
         },
         {
           "type": "doc",
+          "id": "how-prysm-works/validator-lifecycle"
+        },
+        {
+          "type": "doc",
           "id": "wallet/introduction"
         },
         {
@@ -287,10 +291,6 @@
             {
               "type": "doc",
               "id": "how-prysm-works/prysm-validator-client"
-            },
-            {
-              "type": "doc",
-              "id": "how-prysm-works/validator-lifecycle"
             },
             {
               "type": "doc",
