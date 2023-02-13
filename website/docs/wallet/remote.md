@@ -10,7 +10,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 :::caution Deprecated Content
 
-**This content is now deprecated.** See [Configure Web3Signer](./we3signer.md) for the latest and recommended remote signing guidance.
+**This content is now deprecated.** See [Configure Web3Signer](./web3signer.md) for the latest and recommended remote signing guidance.
 
 :::
 
