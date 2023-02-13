@@ -32,6 +32,8 @@ After providing confirmation, voluntary exit request will be broadcasted through
 
 Although validator nodes can voluntarily exit, funds won't be withdrawable until after Capella/Shanghai hardfork and the `bls-to-exeuction-change` command is available. Learn more on how to withdraw earnings or fully withdraw your validator once available in [our guide](withdraw-validator.md)
 
+The `validator-exit command` only supports gRPC, which means that the specified `beacon-rpc-provider` needs to be a Prysm beacon node (because Prysm's beacon node client is the only client that supports gRPC)
+
 :::
 
 <Tabs
