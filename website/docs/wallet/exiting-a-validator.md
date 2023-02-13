@@ -11,18 +11,28 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Voluntarily exiting your validator from the Ethereum network is a one time command using the [prysmctl tool](../prysm-usage/prysmctl.md). **note:** previously uses a command under the validator client, and can still be accessed that way.
 
- 1. Ensure access to a fully synced beacon node. 
- 1. Issue the `validator exit` command to your validator and providing access to your validator keys through the `--wallet-dir` flag or [web3signer](web3signer.md) and the `--beacon-rpc-provider`flag to the synced beacon node (examples provided below).
- 2. Select the account(s) that should be exited. This step can be skipped by specifying the account(s) via the `--public-keys` flag when issuing the `validator exit` command.
- 3. Confirm your understanding of the consequences of exiting your validator by typing `Exit my validator` when prompted.
+:::caution Public Preview
+
+**This document is currently in public preview** and may change significantly as we receive feedback from users like you. Join our [Discord server](https://discord.gg/prysmaticlabs) or click the `Request an Update` button above to share your feedback.
+
+:::
+
+
+Voluntarily exiting your validator from the Ethereum network is a one time command using the [prysmctl tool](../prysm-usage/prysmctl.md). Note that this operation was previously facilitated by a command exposed by the Prysm validator client, and can still be accessed that way. At a high level, you'll follow these steps to exit your validator:
+
+ 1. Ensure that you have access to a fully synced beacon node.
+ 2. Issue the `validator exit` command to your validator and allow the beacon node to access to your validator keys through the `--wallet-dir` flag or [web3signer](web3signer.md) and the `--beacon-rpc-provider` flag (examples provided below).
+ 3. Select the account(s) that should be exited. This step can be skipped by specifying the account(s) via the `--public-keys` flag when issuing the `validator exit` command.
+ 4. Confirm your understanding of the consequences of exiting your validator by typing `Exit my validator` when prompted.
 
 After providing confirmation, voluntary exit request will be broadcasted through your beacon node. Visit our [Command-line options documentation](../prysm-usage/parameters.md) for more configuration options.
 
 :::caution 
 
-Although validator nodes can voluntarily exit, funds won't be withdrawable until after Capella/Shanghai hardfork and the bls-to-exeuction-change command is available. Learn more on how to withdraw earnings or fully withdraw your validator once available in [our guide](withdraw-validator.md)
+Although validator nodes can voluntarily exit, funds won't be withdrawable until after Capella/Shanghai hardfork and the `bls-to-exeuction-change` command is available. Learn more on how to withdraw earnings or fully withdraw your validator once available in [our guide](withdraw-validator.md)
+
+The `validator-exit command` only supports gRPC, which means that the specified `beacon-rpc-provider` needs to be a Prysm beacon node (because Prysm's beacon node client is the only client that supports gRPC)
 
 :::
 
@@ -40,11 +50,11 @@ Although validator nodes can voluntarily exit, funds won't be withdrawable until
 ```
 prysmctl validator exit --wallet-dir=<path/to/wallet> --beacon-rpc-provider=<127.0.0.1:4000> 
 ```
-prysmctl is not accessible from prysm.sh and will need to be built from source or downloaded from our release page.
+
+`prysmctl` is not accessible from `prysm.sh` and will need to be built from source or downloaded from our release page.
 
 :::caution
-
-previous command  that will deprecate in the future:
+The following command is a soon-to-be-deprecated alternative that you should avoid using:
 
 ```bash
 ./prysm.sh validator accounts voluntary-exit
@@ -62,7 +72,7 @@ docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
 
 :::caution
 
-previous command that will deprecate in the future:
+The following command is a soon-to-be-deprecated alternative that you should avoid using:
 
 ```text
 docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
@@ -79,7 +89,7 @@ bazel run //prysmctl --config=release -- validator exit --wallet-dir=/wallet --b
 ```
 :::caution
 
-previous command that will deprecate in the future:
+The following command is a soon-to-be-deprecated alternative that you should avoid using:
 
 ```bash
 bazel run //validator --config=release -- accounts voluntary-exit
@@ -99,11 +109,12 @@ prysmctl validator exit --wallet-dir=<path/to/wallet> --beacon-rpc-provider=<127
 ```
 prysmctl validator exit --wallet-dir=<path/to/wallet> --beacon-rpc-provider=<127.0.0.1:4000> 
 ```
-prysmctl is not accessible from prysm.bat and will need to be built from source or downloaded from our release page.
+
+`prysmctl` is not accessible from `prysm.bat` and will need to be built from source or downloaded from our release page.
 
 :::caution
 
-previous command that will deprecate in the future:
+The following command is a soon-to-be-deprecated alternative that you should avoid using:
 
 ```bash
 prysm.bat validator accounts voluntary-exit
@@ -121,7 +132,8 @@ docker run -it -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet \
 
 :::caution
 
-previous command that will deprecate in the future:
+The following command is a soon-to-be-deprecated alternative that you should avoid using:
+
 ```text
 docker run -it -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet gcr.io/prysmaticlabs/prysm/validator:latest accounts voluntary-exit --wallet-dir=/wallet
 ```
@@ -133,11 +145,12 @@ docker run -it -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet gcr.io/p
 ```
 prysmctl validator exit --wallet-dir=<path/to/wallet> --beacon-rpc-provider=<127.0.0.1:4000> 
 ```
-prysmctl is not accessible from prysm.sh and will need to be built from source or downloaded from our release page.
+
+`prysmctl` is not accessible from `prysm.sh` and will need to be built from source or downloaded from our release page.
 
 :::caution
 
-previous command  that will deprecate in the future:
+The following command is a soon-to-be-deprecated alternative that you should avoid using:
 
 ```bash
 ./prysm.sh validator accounts voluntary-exit
@@ -155,7 +168,7 @@ docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
 
 :::caution
 
-previous command that will deprecate in the future:
+The following command is a soon-to-be-deprecated alternative that you should avoid using:
 
 ```text
 docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
@@ -172,7 +185,7 @@ bazel run //prysmctl --config=release -- validator exit --wallet-dir=/wallet --b
 ```
 :::caution
 
-previous command that will deprecate in the future:
+The following command is a soon-to-be-deprecated alternative that you should avoid using:
 
 ```bash
 bazel run //validator --config=release -- accounts voluntary-exit
@@ -183,11 +196,8 @@ bazel run //validator --config=release -- accounts voluntary-exit
 </TabItem>
 </Tabs>
 
-**note:** commands being deprecated have not been removed yet, and should replicate commands in `prysmctl` 
+**Note:** The above-referenced commands that are being deprecated have not been removed yet, but mirror those found in `prysmctl`.
 
-## Prompt Phrase for exiting the validator
-By using the following phrase in the user prompt, you confirm all understanding of the consequences of exiting the validator.
-`Exit my validator`
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
