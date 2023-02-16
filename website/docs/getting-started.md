@@ -135,7 +135,7 @@ The following table of contents provides a descriptive overview of Prysm's docum
 </div>
 <div class='panel'>
 <a href='wallet/exiting-a-validator'>Exit your validator</a>
-<p>Learn how to voluntarily exit your validator from Ethereum's consensus layer Beacon Chain network.</p>
+<p>Learn how to voluntarily exit your validator from Ethereum Beacon Chain.</p>
 </div>
 <div class='panel'>
 <a href='wallet/withdraw-validator'>Withdraw your earnings or fully withdraw your validator</a>
