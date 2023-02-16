@@ -139,7 +139,7 @@ The following table of contents provides a descriptive overview of Prysm's docum
 </div>
 <div class='panel'>
 <a href='wallet/withdraw-validator'>Withdraw your earnings or fully withdraw your validator</a>
-<p>Learn how to withdraw your earnings or fully withdraw your validator from Ethereum's consensus layer Beacon Chain network.</p>
+<p>Learn how to withdraw your validator's earnings, or entire stake, from Ethereum's Beacon Chain.</p>
 </div>
 <div class='panel secondary-panel section-title'>
 
