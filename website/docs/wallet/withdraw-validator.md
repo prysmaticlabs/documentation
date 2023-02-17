@@ -6,7 +6,6 @@ style_notes: Consistently address reader as "you", use contractions to keep the 
 ---
 
 import BeaconChainPng from '@site/static/img/beaconchain_validator.png'
-import CapellaWithdrawalPng from '@site/static/img/capella-withdrawal.png'
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <HeaderBadgesWidget commaDelimitedContributors="Raul,James" lastVerifiedDateString="February 2nd, 2023" lastVerifiedVersionString="v3.2.0" />
@@ -21,8 +20,6 @@ import TabItem from '@theme/TabItem';
 
 Note that withdrawals **aren't yet available on Ethereum mainnet**; this functionality is currently being validated on test networks. The instructions in this document won't work on Ethereum mainnet and may change significantly as the feature is stabilized on test networks.
 :::
-
-<img  src={CapellaWithdrawalPng} /> 
 
 The **Capella/Shanghai Ethereum** upgrade lets you withdraw your validator nodes' staked Ethereum in one of two ways: 
 
@@ -41,6 +38,7 @@ Familiarity with the following resources and terms will help you confidently com
 <!-- TODO: These terms can now be moved into Glossary CMS and embedded via quicklooks to further streamline the content experience - ping Mick if you'd like to help with this. -->
 
 - [The Ethereum Foundation Withdrawals FAQ](https://notes.ethereum.org/@launchpad/withdrawals-faq): A client-agnostic overview of important information regarding Ethereum validator withdrawals.
+- **Validator Life Cycle**: guide to [validator life cycles](../how-prysm-works/validator-lifecycle.md).
 - **Validator**: The on-chain representation of a validator node and its staked Ethereum.
 - **Validator index:** A unique numeric ID assigned to a validator when activated. You can see this validator index in your Prysm validator client logs, or in block explorers such as [https://beaconcha.in](https://beaconcha.in) and [https://beaconscan.com](https://beaconscan.com) by looking it up using your public key. You will need to know the validator indices of the validators you wish to withdraw through this guide. Only activated validators can begin the exit and withdrawal processes.
 - **Staker:** The person or entity managing Ethereum validators.
