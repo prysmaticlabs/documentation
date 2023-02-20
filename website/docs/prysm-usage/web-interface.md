@@ -20,6 +20,36 @@ Sincerely,
 The Prysm Team
 :::
 
+:::info
+## FAQ on Prysm UI Deprecation.
+
+**Q:What does it mean for the Web UI to be removed?**
+
+A: The web UI and its associated API endpoints ( aside from the keymanager APIs) will be marked for deprecation for the current hard fork and fully removed in a future hard fork. 
+You may see logs that mention that an endpoint is marked for deprecation and should no longer be used in the future. Our team will continue to provide support as users transition to alternative solutions.
+
+**Q: Where can I view my validator metrics such as attestations without the Web UI**
+
+A: Users will need to migrate to using [grafana dashboards](./monitoring/grafana-dashboard.md) or our [individual validator monitoring guide](./individual-validator-monitoring.md) as well as look to online block explorers. Please let us know if any of these do not cover your usecase and provide any feedback on how we can improve our monitoring tools. 
+
+**Q: How do I recover a prysm wallet from a mnemonic without the Web UI?**
+
+A: Prysm wallets (derived wallets) can be recovered with the associated mnemonic using the [staking-deposit-cli](https://github.com/ethereum/staking-deposit-cli). We recommend you do this recovery in an offline environment.
+
+**Q: How do I set a fee recipient without the Web UI**
+
+A: Community provided UI solutions will continue to provide a graphical interface to setting your fee recipient via the client standard [keymanager APIs](https://ethereum.github.io/keymanager-APIs/). Alternatively, the Prysm team can provide a way to set the fee recipient via the [prysmctl tool](./prysmctl.md).
+
+**Q: How do I exit my validator without the Web UI**
+
+A: A cli command through the prysmctl tool or validator client can be used to exit the validator. Learn more about that [here](../wallet/exiting-a-validator.md).
+
+**Q: How do I export slashing protection without the Web UI**
+
+A: A cli command through the validator client can provide slashing protection exports, Community provided UI solutions can also provide this information via the client standard [keymanager APIs](https://ethereum.github.io/keymanager-APIs/) when removing a local validator. Learn more about it [here](../wallet/slashing-protection.md).
+
+:::
+
 ## What is Prysm's web UI?
 
 The Prysm Web UI is a locally hosted website that is launched from the validator client to provide users with a visual alternative to the validator cli( command-line interface).
