@@ -165,7 +165,7 @@ The following table of contents provides a descriptive overview of Prysm's docum
 </div>
 <div class='panel'>
 <a href='prysm-usage/web-interface'>Use Prysm's Web UI</a>
-<p>Prysm's Web UI can be used to monitor and configure your beacon node and validator on <code>localhost</code> using an app-like interface.</p>
+<p><span class="text-red" >Warning(This feature is being marked for deprecation at a future hard fork):</span>Prysm's Web UI can be used to monitor and configure your beacon node and validator on <code>localhost</code> using an app-like interface.</p>
 </div>
 <div class='panel secondary-panel section-title'>
 
