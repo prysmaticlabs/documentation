@@ -36,10 +36,6 @@ Losing peers can be due to the following reasons:
 2. Prysm is using a ton of memory or system resources and perhaps you ran out of memory. Ensure you meet the minimum specifications for running Prysm specified in our installation pages for your operating system.
 3. A bug in our software that can affect your p2p connectivity. It is known that certain versions have issues with peers on operating systems such as Windows, so you could try [downgrading](/docs/prysm-usage/staying-up-to-date) to see if your issue is resolved. If this is the case, talk to our team on [Discord](https://discord.gg/prysmaticlabs) letting us know you had this issue.
 
-#### I have an issue in the web UI, getting errors, what can I do?
-
-The web UI is still in beta meaning there are bound to be UI bugs or other issues that we need to resolve. If you ran into a bug, please file a bug report [here](https://github.com/prysmaticlabs/prysm-web-ui/issues/new) with a thorough description of your problem and screenshots if possible.
-
 #### My CPU/RAM usage is huge, what’s going on?
 
 Memory management is an ongoing process for our team - we are constantly working on improving the experience of running a node itself. For now, these are the specs we recommend (these values will go down over time):

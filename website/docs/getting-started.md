@@ -164,8 +164,8 @@ The following table of contents provides a descriptive overview of Prysm's docum
 <p>Learn how to collect beacon node and validator metrics using Prysm's <code>client-stats</code> utility. This can be used to relay metrics data to the beaconcha.in stats service.</p>
 </div>
 <div class='panel'>
-<a href='prysm-usage/web-interface'>Use Prysm's Web UI</a>
-<p>Prysm's Web UI can be used to monitor and configure your beacon node and validator on <code>localhost</code> using an app-like interface.</p>
+<a href='prysm-usage/web-interface'>Use Prysm's Web UI (Deprecated)</a>
+<p><b>Warning: This feature is being marked for deprecation. </b>Prysm's Web UI can be used to monitor and configure your beacon node and validator on <code>localhost</code> using an app-like interface.</p>
 </div>
 <div class='panel secondary-panel section-title'>
 
