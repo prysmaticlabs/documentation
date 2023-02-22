@@ -16,7 +16,7 @@ Prysm's validator accounts are extensible enough to allow for the most basic set
 
 Out of the box, Prysm supports 3 basic kinds of wallets that encompass many different use-cases. In order of highest to lowest security:
 
-1. **Remote signing wallet**: (most secure) An advanced kind of wallet in which validator keys and signing requests are processed by a remote server via gRPC (view our remote server [reference implementation](https://github.com/prysmaticlabs/remote-signer)).
+1. **Remote signing wallet (marked for removal)**: [superseded by [web3signer](web3signer.md)] ~~An advanced kind of wallet in which validator keys and signing requests are processed by a remote server via gRPC (view our remote server [reference implementation](https://github.com/prysmaticlabs/remote-signer)).~~
 2. **non-HD wallet**: (good security) A simple wallet in which accounts are password protected and validator keys are generated non-deterministically. This is the recommended approach if you want to import an account from the [Ethereum launchpad](https://launchpad.ethereum.org/) and you can read dedicated instructions [here](/docs/wallet/nondeterministic).
 3. **HD wallet**: (least security) A common type of blockchain wallet which is generated from a english mnemonic, able to create new accounts deterministically. The encrypted seed is stored on day encrypted by a strong password. Given you are tying your HD wallet to the validator client, it is less secure than simply importing validating keys you need from an external source or running a remote signer. 
 
@@ -63,7 +63,13 @@ HD wallets are password protected via a high-entropy, strong password, and allow
 
 [Create and use an HD wallet](https://docs.prylabs.network/docs/wallet/deterministic)
 
-## Remote signing wallet
+## Remote signing wallet (marked for removal) 
+
+:::caution
+
+This feature will be removed in Prysm V4 at the next hardfork Capella/Shanghai and has been superseded by [web3signer](web3signer.md)
+
+:::
 
 This is the **most** secure type of wallet. Some advanced users may wish to run a remote-signer server, which handles the retrieval of keys and signing of Ethereum beacon chain requests. A Prysm validator client can then connect securely via [gRPC](https://grpc.io) to the remote server and perform its validating duties by relying on the server for the information it needs. Most advanced cloud deployments should likely use this approach, as it is the most customizable.
 
@@ -101,7 +107,6 @@ If you are running a **simple import wallet (non-HD)**, we keep an encrypted fil
 
 If you are running an **HD wallet**, we store your encrypted wallet seed under your wallet path in a file named `encrypted.seed.json`. This file is protected by a strong password you set during wallet creation, and we do not store your password.
 
-If you are running a **remote signer wallet**, we do not store anything on disk except for the remote server credential information, such as the remote address and path to the TLS certificates required to establish a connection.
 
 #### Why is my validator losing ETH despite my setup appearing ok?
 

@@ -8,9 +8,11 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <HeaderBadgesWidget />
 
-:::caution Deprecated Content
+:::caution Marked for Removal
 
-**This content is now deprecated.** See [Configure Web3Signer](./web3signer.md) for the latest and recommended remote signing guidance.
+The Prysm remote signer and remote signing wallet **will be fully removed** in Prysm V4 used for the Capella/Shanghai hardfork. This feature has been superseded by the web3signer which is supported among all clients.
+
+See [Configure Web3Signer](./web3signer.md) for the latest and recommended remote signing guidance.
 
 :::
 
