@@ -8,6 +8,48 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <HeaderBadgesWidget />
 
+:::caution
+Dear Prysmers,
+
+We would like to take a moment to inform you of an important update regarding our software. After careful consideration, we have made the difficult decision to deprecate our web UI. While we understand that this news may be disappointing, please know that it was not a decision we made lightly. We recognize that many of you have been loyal users of our software and have come to rely on its features and capabilities. Please know that this decision was made with your best interests in mind. We believe that by deprecating our web UI, we can focus our efforts on the core needs of the consensus client, bringing more software that is more resilient, more maintainable, and more sustainable. 
+
+We understand that this may cause some inconvenience and disruption, and we want to assure you that we will do everything we can to make this transition as smooth as possible. 
+We will continue to provide support for our software for a limited period of time to help you with the transition to alternative solutions. We are also open to any feedback or suggestions you may have, as we strive to improve our products and services; reach out to us on our discord.
+
+Sincerely,
+The Prysm Team
+:::
+
+:::info
+## FAQ on Prysm UI Deprecation.
+
+**Q:What does it mean for the Web UI to be removed?**
+
+A: The web UI and its associated API endpoints ( aside from the keymanager APIs) will be marked for deprecation for the current hard fork and fully removed in a future hard fork. 
+You may see logs that mention that an endpoint is marked for deprecation and should no longer be used in the future. Our team will continue to provide support as users transition to alternative solutions.
+
+**Q: Where can I view my validator metrics such as attestations without the Web UI**
+
+A: Users will need to migrate to using [grafana dashboards](./monitoring/grafana-dashboard.md) or our [individual validator monitoring guide](./individual-validator-monitoring.md) as well as look to online block explorers. Please let us know if any of these do not cover your usecase and provide any feedback on how we can improve our monitoring tools. 
+
+**Q: How do I recover a prysm wallet from a mnemonic without the Web UI?**
+
+A: Prysm wallets (derived wallets) can be recovered with the associated mnemonic using the [staking-deposit-cli](https://github.com/ethereum/staking-deposit-cli). We recommend you do this recovery in an offline environment.
+
+**Q: How do I set a fee recipient without the Web UI**
+
+A: Community provided UI solutions will continue to provide a graphical interface to setting your fee recipient via the client standard [keymanager APIs](https://ethereum.github.io/keymanager-APIs/). Alternatively, the Prysm team can provide a way to set the fee recipient via the [prysmctl tool](./prysmctl.md).
+
+**Q: How do I exit my validator without the Web UI**
+
+A: A cli command through the prysmctl tool or validator client can be used to exit the validator. Learn more about that [here](../wallet/exiting-a-validator.md).
+
+**Q: How do I export slashing protection without the Web UI**
+
+A: A cli command through the validator client can provide slashing protection exports, Community provided UI solutions can also provide this information via the client standard [keymanager APIs](https://ethereum.github.io/keymanager-APIs/) when removing a local validator. Learn more about it [here](../wallet/slashing-protection.md).
+
+:::
+
 ## What is Prysm's web UI?
 
 The Prysm Web UI is a locally hosted website that is launched from the validator client to provide users with a visual alternative to the validator cli( command-line interface).

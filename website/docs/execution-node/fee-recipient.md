@@ -190,7 +190,7 @@ New property definitions are as follows:
 
 
 
-### Advanced: Configure fee recipient through the Web UI
+### Advanced: Configure fee recipient through the Web UI (Warning: feature to be deprecated)
 
 <img style={{maxWidth: 700 + 'px'}} src={FeeRecipientPng} /> 
 
