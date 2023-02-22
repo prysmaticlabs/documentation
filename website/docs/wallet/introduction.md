@@ -67,7 +67,7 @@ HD wallets are password protected via a high-entropy, strong password, and allow
 
 :::caution
 
-This feature will be removed in a future hardfork and has been superseded by [web3signer](web3signer.md)
+This feature will be removed in Prysm V4 at the next hardfork Capella/Shanghai and has been superseded by [web3signer](web3signer.md)
 
 :::
 
@@ -107,7 +107,6 @@ If you are running a **simple import wallet (non-HD)**, we keep an encrypted fil
 
 If you are running an **HD wallet**, we store your encrypted wallet seed under your wallet path in a file named `encrypted.seed.json`. This file is protected by a strong password you set during wallet creation, and we do not store your password.
 
-If you are running a **remote signer wallet**, we do not store anything on disk except for the remote server credential information, such as the remote address and path to the TLS certificates required to establish a connection.
 
 #### Why is my validator losing ETH despite my setup appearing ok?
 

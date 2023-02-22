@@ -10,7 +10,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 :::caution Marked for Removal
 
-The Prysm remote signer and remote signing wallet is **marked for removal** at an upcoming hardfork. This feature has been superseded by the web3signer which is supported among all clients.
+The Prysm remote signer and remote signing wallet **will be fully removed** in Prysm V4 used for the Capella/Shanghai hardfork. This feature has been superseded by the web3signer which is supported among all clients.
 
 See [Configure Web3Signer](./web3signer.md) for the latest and recommended remote signing guidance.
 
