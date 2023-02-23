@@ -17,10 +17,6 @@ Binaries for the latest `prysmctl` tool can be found on the [latest prysm releas
 
 The binaries can be run through a terminal directly and won't need installation. Please refer to the **list commands** section for additional information.
 
-:::info
-    Windows users should run through binaries as some users may have issues building through bazel. 
-:::
-
 ### Install via source
 
 Dependencies:
