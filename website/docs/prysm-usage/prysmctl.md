@@ -6,14 +6,16 @@ sidebar_label: Use prysmctl
 
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
-<HeaderBadgesWidget commaDelimitedContributors="James" lastVerifiedDateString="February 3rd, 2023" lastVerifiedVersionString="v3.2.0"/>
+<HeaderBadgesWidget commaDelimitedContributors="James" lastVerifiedDateString="February 23rd, 2023" lastVerifiedVersionString="v3.2.0"/>
 
 `prysmctl` is a command-line utility for common and one-off Ethereum proof-of-stake tasks, like helping users with validator exits or withdrawals. Most `prysmctl` commands require access to a fully synced beacon node.
 
 
-### Install via binaries
+### Run via binaries
 
 Binaries for the latest `prysmctl` tool can be found on the [latest prysm release page](https://github.com/prysmaticlabs/prysm/releases). Each binary is a unique version with its own set of features. New releases may include new features for `prysmctl` that will need to be downloaded separately.
+
+The binaries can be run through a terminal directly and won't need installation. Please refer to the **list commands** section for additional information.
 
 ### Install via source
 
@@ -29,6 +31,10 @@ Dependencies:
 - `libprotoc` version 3.14 installed
 
 #### Install Bazelisk
+
+:::caution
+    Windows users should run through binaries as some users may have issues building through bazel. 
+:::
 
 Bazelisk is a launcher for Bazel which automatically downloads and installs the version of Bazel that you need. There are several ways to install Bazelisk:
 
