@@ -34,6 +34,10 @@ Although validator nodes can voluntarily exit, funds won't be withdrawable until
 
 The `validator-exit command` only supports gRPC, which means that the specified `beacon-rpc-provider` needs to be a Prysm beacon node (because Prysm's beacon node client is the only client that supports gRPC)
 
+:::info
+
+Examples below use the local prysm wallet, if you are using [web3signer](web3signer.md), replace the `wallet-dir` flag with the flags used to run the validator with web3signer. 
+
 :::
 
 <Tabs
