@@ -190,8 +190,12 @@ By calling the command above, you should go through an interactive process that 
 1. **Your mnemonic language**. You can see the different options available, where English is one of the options, among others
 2. **The network** you wish to perform this operation for. Select the `zhejiang` network for this tutorial
 3. Enter your **mnemonic** next
-4. Next, you will be asked for your starting index when you created your validators read more about hd wallets [here](https://eips.ethereum.org/EIPS/eip-2334#path). For **most users**, this will be 0 unless you created validators from a non default index.
-5. You will then be asked the **validator** **indices** for the validators you wish to generate the message for. You can find your validator indices on block explorers such as [https://beaconcha.in](https://beaconcha.in) or in your Prysm validator client logs. For example, the validator with public key `0x8078c7f4ab6f9eaaf59332b745be8834434af4ab3c741899abcff93563544d2e5a89acf2bec1eda2535610f253f73ee6` on [https://beacocha.in](https://beacocha.in) has validator index 8 by navigating to its [page](https://beaconcha.in/validator/8)
+4. Next, you will be asked for your starting index when you created your validators,read more about hd wallets [here](https://eips.ethereum.org/EIPS/eip-2334#path). For **most users**, this will be 0 unless you created validators from a non default index.
+```info
+The validator starting index can be found by looking into the original `deposit.json` file used for staking. Inside the json file you can count each validator's public key in sequential order starting from 0.
+Based on which validator you would like to withdraw in step 5. The starting index may differ if you are skipping some validators to withdraw from. There are other niche cases where the mnemonic is used for deposit generation multiple times resulting in a different validator starting index.
+```
+5. You will then be asked the **validator** **indices** for the validators you wish to generate the message for. You can find your validator indices on block explorers such as [https://beaconcha.in](https://beaconcha.in) or in your Prysm validator client logs. For example, the validator with public key `0x8078c7f4ab6f9eaaf59332b745be8834434af4ab3c741899abcff93563544d2e5a89acf2bec1eda2535610f253f73ee6` on [https://beacocha.in](https://beacocha.in) has validator index 8 by navigating to its [page](https://beaconcha.in/validator/8). **note** validator indices need to be provided sequentially in the order of original creation, you can find the order in your original deposit.json file.
 6. Next you will be asked for your **withdrawal credentials,** which you should now have if you followed this guide
 7. Next you will be asked for the Ethereum address you wish to use to receive your withdrawn funds. This needs to be checksummed, and you can get it from your wallet or a block explorer. **You cannot change this once it is set on-chain**, so triple check it before proceeding.
 
@@ -352,11 +356,11 @@ A: After the Capella/Shanghai hardfork withdrawals will be enabled. This is expe
 
 **Q: My keys were compromised, can I still withdraw?**
 
-A: You are still able to send the message as long as you have access the to mnemonic and can produce the signed `blstoexecutionchange` message to submit. Depending on where the keys were compromised there may be different protection programs to apply for to "frontrun" the compromiser. Please seek out the ethstaker community on [reddit](https://www.reddit.com/r/ethstaker/) or [discord](https://discord.gg/urhv3xby) for more details if this applies to you.
+A: You are still able to send the message as long as you have access to the mnemonic and can produce the signed `blstoexecutionchange` message to submit. Depending on where the keys were compromised there may be different protection programs to apply for to "frontrun" the compromiser. Please seek out the ethstaker community on [reddit](https://www.reddit.com/r/ethstaker/) or [discord](https://discord.gg/urhv3xby) for more details if this applies to you.
 
 **Q: I forgot my mnemonic, what can I do?**
 
-A: The mnemonic is a requirement to enabling withdraws in most cases, In some niche cases where users have both their validator keystore and withdrawal private keys they can still fully withdrawal safely without the mnemonic, but unless both are in possession one would not be able to produce the signed `blstoexecutionchange` message. It's important to stay calm and collected and continue searching or see help as needed. The ethstaker community provides an active support network on [reddit](https://www.reddit.com/r/ethstaker/) and [discord](https://discord.gg/urhv3xby)
+A: In most cases the mnemonic is a requirement to enabling withdraws; there are some niche cases where users have both their validator keystore and withdrawal private keys they can still fully withdrawal safely without the mnemonic, but unless both are in possession one would not be able to produce the signed `blstoexecutionchange` message. It's important to stay calm and collected and continue searching or see help as needed. The ethstaker community provides an active support network on [reddit](https://www.reddit.com/r/ethstaker/) and [discord](https://discord.gg/urhv3xby)
 
 **Q: I accidentally used my mnemonic on an open internet setting to generate the .json file, what happens?**
 
@@ -388,6 +392,10 @@ A: Prysm processes messages last-in-first-out(LIFO) by design which means the la
 **Q: Can withdrawal addresses be set to smart contracts?**
 
 A: Yes, however only account balances will change and there will be no associated triggering of smart contract logic. Read [https://eips.ethereum.org/EIPS/eip-4895](https://eips.ethereum.org/EIPS/eip-4895) for more reasoning.
+
+**Q: I am a non technical user, how can I set my withdrawals in a safe way?**
+
+A: The guide will still provide a safe way to generate the signed `blstoexecutionchange` messages in an offline environment. From there if you're willing to take a small risk on inclusion guarantees some block scanners like beaconcha.in will provide front ends to drag and drop the messages for inclusion to set the withdrawal address. 
 
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
