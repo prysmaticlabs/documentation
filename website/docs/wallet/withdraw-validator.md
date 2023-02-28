@@ -352,7 +352,7 @@ A: After the Capella/Shanghai hardfork withdrawals will be enabled. This is expe
 
 **Q: My keys were compromised, can I still withdraw?**
 
-A: You are still able to send the message as long as you have access the to mnemonic and can produce the signed `blstoexecutionchange` message to submit. Depending on where the keys were compromised there may be different protection programs to apply for to "frontrun" the compromiser, please seek out the ethstaker community on [reddit](https://www.reddit.com/r/ethstaker/) or [discord](https://discord.gg/urhv3xby) for more details if this applies to you.
+A: You are still able to send the message as long as you have access the to mnemonic and can produce the signed `blstoexecutionchange` message to submit. Depending on where the keys were compromised there may be different protection programs to apply for to "frontrun" the compromiser. Please seek out the ethstaker community on [reddit](https://www.reddit.com/r/ethstaker/) or [discord](https://discord.gg/urhv3xby) for more details if this applies to you.
 
 **Q: I forgot my mnemonic, what can I do?**
 
