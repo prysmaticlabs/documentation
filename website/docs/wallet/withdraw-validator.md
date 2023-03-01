@@ -196,7 +196,7 @@ By calling the command above, you should go through an interactive process that 
 Inside the original `deposit.json` file used for staking file you can count each validator's public key in sequential order starting from 0.
 The validator starting index is the index of the first validator key you would like to withdraw (i.e. validator key 1 has an index of 0, validator key 2 has an index of 1 etc.).
 For most stakers, the validator starting index should be set to 0 for withdrawing all their validator keys, however the validator starting index will be different if you choose to skip withdrawing some validators. 
-There are other niche cases where the mnemonic is used for deposit generation multiple times resulting in a different validator starting index.
+There are other niche cases where the mnemonic is used for deposit generation multiple times, resulting in a different validator starting index.
 :::
 
 5. You will then be asked the **validator** **indices** for the validators you wish to generate the message for. You can find your validator indices on block explorers such as [https://beaconcha.in](https://beaconcha.in) or in your Prysm validator client logs. For example, the validator with public key `0x8078c7f4ab6f9eaaf59332b745be8834434af4ab3c741899abcff93563544d2e5a89acf2bec1eda2535610f253f73ee6` on [https://beacocha.in](https://beacocha.in) has validator index 8 by navigating to its [page](https://beaconcha.in/validator/8). 
