@@ -405,7 +405,7 @@ A: Yes, however only account balances will change and there will be no associate
 
 **Q: I am a non technical user, how can I set my withdrawals in a safe way?**
 
-A: The guide will still provide a safe way to generate the signed `blstoexecutionchange` messages in an offline environment. From there if you're willing to take a small risk on inclusion guarantees some block scanners like beaconcha.in will provide front ends to drag and drop the messages for inclusion to set the withdrawal address. 
+A: The guide will still provide a safe way to generate the signed `blstoexecutionchange` messages in an offline environment. From there, if you're willing to take a small risk on inclusion guarantees, some block scanners like beaconcha.in will provide front ends to drag and drop the messages for inclusion to set the withdrawal address. 
 
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
