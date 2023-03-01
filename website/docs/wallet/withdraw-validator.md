@@ -190,7 +190,8 @@ By calling the command above, you should go through an interactive process that 
 1. **Your mnemonic language**. You can see the different options available, where English is one of the options, among others
 2. **The network** you wish to perform this operation for. Select the `zhejiang` network for this tutorial
 3. Enter your **mnemonic** next
-4. Next, you will be asked for your starting index when you created your validators (read more about hd wallets [here](https://eips.ethereum.org/EIPS/eip-2334#path)). For **most users**, this will be 0 unless you created validators from a non default index.
+4. Next, you will be asked for the starting index you used to create your validators,read more about hd wallets [here](https://eips.ethereum.org/EIPS/eip-2334#path). For **most users**, this will be 0 unless you created validators from a non default index.
+
 
 :::info
 Inside the original `deposit.json` file used for staking you can count each validator's public key in sequential order starting from 0.
@@ -370,7 +371,7 @@ A: You are still able to send the message as long as you have access to the mnem
 
 **Q: I forgot my mnemonic, what can I do?**
 
-A: In most cases the mnemonic is a requirement to enabling withdraws; there are some niche cases where users have both their validator keystore and withdrawal private keys they can still fully withdrawal safely without the mnemonic, but unless both are in possession one would not be able to produce the signed `blstoexecutionchange` message. It's important to stay calm and collected and continue searching or see help as needed. The ethstaker community provides an active support network on [reddit](https://www.reddit.com/r/ethstaker/) and [discord](https://discord.gg/urhv3xby)
+A: In most cases the mnemonic is a requirement to enabling withdraws; there are some niche cases where users have both their validator keystore and withdrawal private keys they can still fully withdraw safely without the mnemonic, but unless both are in possession one would not be able to produce the signed `blstoexecutionchange` message. It's important to stay calm and collected and continue searching or see help as needed. The ethstaker community provides an active support network on [reddit](https://www.reddit.com/r/ethstaker/) and [discord](https://discord.gg/urhv3xby)
 
 **Q: I accidentally used my mnemonic on an open internet setting to generate the .json file, what happens?**
 
