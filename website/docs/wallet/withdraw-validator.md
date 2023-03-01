@@ -190,7 +190,7 @@ By calling the command above, you should go through an interactive process that 
 1. **Your mnemonic language**. You can see the different options available, where English is one of the options, among others
 2. **The network** you wish to perform this operation for. Select the `zhejiang` network for this tutorial
 3. Enter your **mnemonic** next
-4. Next, you will be asked for the starting index you used to create your validators,read more about hd wallets [here](https://eips.ethereum.org/EIPS/eip-2334#path). For **most users**, this will be 0 unless you created validators from a non default index.
+4. Next, you will be asked for the starting index you used to create your validators (read more about hd wallets [here](https://eips.ethereum.org/EIPS/eip-2334#path)). For **most users**, this will be 0 unless you created validators from a non default index.
 
 
 :::info
