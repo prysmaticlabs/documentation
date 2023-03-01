@@ -199,7 +199,7 @@ For most stakers, the validator starting index should be set to 0 for withdrawin
 There are other niche cases where the mnemonic is used for deposit generation multiple times, resulting in a different validator starting index.
 :::
 
-5. You will then be asked the **validator** **indices** for the validators you wish to generate the message for. You can find your validator indices on block explorers such as [https://beaconcha.in](https://beaconcha.in) or in your Prysm validator client logs. For example, the validator with public key `0x8078c7f4ab6f9eaaf59332b745be8834434af4ab3c741899abcff93563544d2e5a89acf2bec1eda2535610f253f73ee6` on [https://beacocha.in](https://beacocha.in) has validator index 8 by navigating to its [page](https://beaconcha.in/validator/8). 
+5. You will then be asked the **validator indices** for the validators you wish to generate the message for. You can find your validator indices on block explorers such as [https://beaconcha.in](https://beaconcha.in) or in your Prysm validator client logs. For example, the validator with public key `0x8078c7f4ab6f9eaaf59332b745be8834434af4ab3c741899abcff93563544d2e5a89acf2bec1eda2535610f253f73ee6` on [https://beacocha.in](https://beacocha.in) has validator index 8, which you can verify by navigating to its [page](https://beaconcha.in/validator/8). 
 
 :::info
   validator indices need to be provided sequentially without skipped indices in the order of original creation, you can find the order in your original `deposit.json` file. 
