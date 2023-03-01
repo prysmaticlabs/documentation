@@ -193,11 +193,19 @@ By calling the command above, you should go through an interactive process that 
 4. Next, you will be asked for your starting index when you created your validators,read more about hd wallets [here](https://eips.ethereum.org/EIPS/eip-2334#path). For **most users**, this will be 0 unless you created validators from a non default index.
 
 :::info
-The validator starting index can be found by looking into the original `deposit.json` file used for staking. Inside the json file you can count each validator's public key in sequential order starting from 0.
-Based on which validator you would like to withdraw in step 5. The starting index may differ if you are skipping some validators to withdraw from. There are other niche cases where the mnemonic is used for deposit generation multiple times resulting in a different validator starting index.
+Inside the original `deposit.json` file used for staking file you can count each validator's public key in sequential order starting from 0.
+The validator starting index is the index of the first validator key you would like to withdraw (i.e. validator key 1 has an index of 0, validator key 2 has an index of 1).
+For most stakers, the validator starting index should be set to 0 for withdrawing all their validator keys, however the validator starting index will be different if you choose to skip withdrawing some validators. 
+There are other niche cases where the mnemonic is used for deposit generation multiple times resulting in a different validator starting index.
 :::
 
-5. You will then be asked the **validator** **indices** for the validators you wish to generate the message for. You can find your validator indices on block explorers such as [https://beaconcha.in](https://beaconcha.in) or in your Prysm validator client logs. For example, the validator with public key `0x8078c7f4ab6f9eaaf59332b745be8834434af4ab3c741899abcff93563544d2e5a89acf2bec1eda2535610f253f73ee6` on [https://beacocha.in](https://beacocha.in) has validator index 8 by navigating to its [page](https://beaconcha.in/validator/8). **note** validator indices need to be provided sequentially in the order of original creation, you can find the order in your original deposit.json file.
+5. You will then be asked the **validator** **indices** for the validators you wish to generate the message for. You can find your validator indices on block explorers such as [https://beaconcha.in](https://beaconcha.in) or in your Prysm validator client logs. For example, the validator with public key `0x8078c7f4ab6f9eaaf59332b745be8834434af4ab3c741899abcff93563544d2e5a89acf2bec1eda2535610f253f73ee6` on [https://beacocha.in](https://beacocha.in) has validator index 8 by navigating to its [page](https://beaconcha.in/validator/8). 
+
+:::info
+  validator indices need to be provided sequentially without skipped indices in the order of original creation, you can find the order in your original `deposit.json` file. 
+  The entire process needs to be repeated and will require either merging of the output files or 
+:::
+
 6. Next you will be asked for your **withdrawal credentials,** which you should now have if you followed this guide
 7. Next you will be asked for the Ethereum address you wish to use to receive your withdrawn funds. This needs to be checksummed, and you can get it from your wallet or a block explorer. **You cannot change this once it is set on-chain**, so triple check it before proceeding.
 
