@@ -203,7 +203,7 @@ There are other niche cases where the mnemonic is used for deposit generation mu
 
 :::info
   validator indices need to be provided sequentially without skipped indices in the order of original creation, you can find the order in your original `deposit.json` file. 
-  The entire process needs to be repeated and will require either merging of the output files or 
+  The `generate-bls-to-execution-change` command needs to be repeated in cases where multiple validator keys that are not in sequential order need to be withdrawn, and will require either merging of the output files or multiple `blstoexecutionchange` submissions.
 :::
 
 6. Next you will be asked for your **withdrawal credentials,** which you should now have if you followed this guide
