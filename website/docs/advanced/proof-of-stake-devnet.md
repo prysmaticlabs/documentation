@@ -180,7 +180,7 @@ The file above sets up the genesis configuration for go-ethereum, which seeds ce
 Next, we will start by running **go-ethereum** in our `devnet` folder:
 
     ./geth --datadir=gethdata init genesis.json
-    ./geth --datadir=gethdata account import sk.json
+    ./geth --datadir=gethdata account import secret.json
     
 
 The last command will ask you to input a password for your secret key. You can just hit enter twice to leave it empty. Next, run geth using the command below
