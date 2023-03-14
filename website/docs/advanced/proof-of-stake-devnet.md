@@ -152,7 +152,6 @@ On the Prysm side, create a file called `config.yml` in your `devnet` folder con
     TERMINAL_TOTAL_DIFFICULTY: 50
 
     # Capella
-    CAPELLA_FORK_EPOCH: 6
     CAPELLA_FORK_VERSION: 0x20000092
     
     # Time parameters
@@ -209,7 +208,6 @@ This will out a file `genesis.ssz` in your `devnet` folder. Now, run the Prysm b
       --datadir=beacondata \
       --min-sync-peers=0 \
       --genesis-state=genesis.ssz \
-      --interop-eth1data-votes \
       --bootstrap-node= \
       --chain-config-file=config.yml \
       --config-file=config.yml \
@@ -282,7 +280,6 @@ Then, run a second Prysm beacon node as follows:
       --datadir=beacondata2 \
       --min-sync-peers=1 \
       --genesis-state=genesis.ssz \
-      --interop-eth1data-votes \
       --bootstrap-node= \
       --chain-config-file=config.yml \
       --config-file=config.yml \
