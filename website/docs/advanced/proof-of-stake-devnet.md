@@ -105,12 +105,12 @@ You should see an output showing you the version you have installed. Next, creat
     mkdir devnet && cd devnet
     
 
-The instructions below are running with Prysm commit [cb9b5e8f6e91adc8c6cdb2ca39708703e88c0b63](https://github.com/prysmaticlabs/prysm/commit/cb9b5e8f6e91adc8c6cdb2ca39708703e88c0b63) and go-ethereum commit [890e2efca2111c790c6d5eb55e29981816ee1fe9](https://github.com/ethereum/go-ethereum/commit/890e2efca2111c790c6d5eb55e29981816ee1fe9)
+The instructions below are running with Prysm commit [7d5d30ac94d77a40237b56924d32d325374de730](https://github.com/prysmaticlabs/prysm/commit/7d5d30ac94d77a40237b56924d32d325374de730) and go-ethereum commit [c8a6b7100c56255a9cde580be59136beb8d28b8e](https://github.com/ethereum/go-ethereum/commit/c8a6b7100c56255a9cde580be59136beb8d28b8e)
 
 Clone the Prysm repository and build the following binaries. We’ll be outputting them to the `devnet` folder:
 
     git clone https://github.com/prysmaticlabs/prysm && cd prysm
-    git checkout cb9b5e8f6e91adc8c6cdb2ca39708703e88c0b63
+    git checkout 7d5d30ac94d77a40237b56924d32d325374de730
     go build -o=../beacon-chain ./cmd/beacon-chain
     go build -o=../validator ./cmd/validator
     go build -o=../prysmctl ./cmd/prysmctl
@@ -120,7 +120,7 @@ Clone the Prysm repository and build the following binaries. We’ll be outputti
 Clone the go-ethereum repository and build it:
 
     git clone https://github.com/ethereum/go-ethereum && cd go-ethereum
-    git checkout 23ac8df15302bbde098cab6d711abdd24843d66a
+    git checkout c8a6b7100c56255a9cde580be59136beb8d28b8e
     make geth
     cp ./build/bin/geth ../geth
     cd ..
@@ -150,6 +150,10 @@ On the Prysm side, create a file called `config.yml` in your `devnet` folder con
     BELLATRIX_FORK_EPOCH: 4
     BELLATRIX_FORK_VERSION: 0x20000091
     TERMINAL_TOTAL_DIFFICULTY: 50
+
+    # Capella
+    CAPELLA_FORK_EPOCH: 6
+    CAPELLA_FORK_VERSION: 0x20000092
     
     # Time parameters
     SECONDS_PER_SLOT: 12
@@ -180,12 +184,12 @@ The file above sets up the genesis configuration for go-ethereum, which seeds ce
 Next, we will start by running **go-ethereum** in our `devnet` folder:
 
     ./geth --datadir=gethdata init genesis.json
-    ./geth --datadir=gethdata account import sk.json
+    ./geth --datadir=gethdata account import secret.json
     
 
 The last command will ask you to input a password for your secret key. You can just hit enter twice to leave it empty. Next, run geth using the command below
 
-    ./geth --http --http.api "eth,engine" --datadir=gethdata --allow-insecure-unlock --unlock="0x123463a4b065722e99115d6c222f267d9cabb524" --password="" --nodiscover console --syncmode=full --mine
+    ./geth --http --http.api "eth,engine" --datadir=gethdata --allow-insecure-unlock --unlock="0x123463a4b065722e99115d6c222f267d9cabb524" --password="" --nodiscover console --syncmode=full --mine --miner.etherbase=0x123463a4b065722e99115d6c222f267d9cabb524
     
 
 You can check the ETH balance in the geth console by typing in
@@ -204,7 +208,7 @@ This will out a file `genesis.ssz` in your `devnet` folder. Now, run the Prysm b
     ./beacon-chain \
       --datadir=beacondata \
       --min-sync-peers=0 \
-      --interop-genesis-state=genesis.ssz \
+      --genesis-state=genesis.ssz \
       --interop-eth1data-votes \
       --bootstrap-node= \
       --chain-config-file=config.yml \
@@ -277,7 +281,7 @@ Then, run a second Prysm beacon node as follows:
     ./beacon-chain \
       --datadir=beacondata2 \
       --min-sync-peers=1 \
-      --interop-genesis-state=genesis.ssz \
+      --genesis-state=genesis.ssz \
       --interop-eth1data-votes \
       --bootstrap-node= \
       --chain-config-file=config.yml \
