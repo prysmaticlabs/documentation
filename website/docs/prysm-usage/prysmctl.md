@@ -61,6 +61,11 @@ Bazel will automatically pull and install any dependencies as well, including Go
 ./prysmctl --help
 ```
 
+**Using Docker**
+```
+docker run -it gcr.io/prysmaticlabs/prysm/cmd/prysmctl:latest --help
+```
+
 The `—help` flag will provide a list of commands, subcommands, and flags to use.
 
 Commands can also be found in our [Prysm parameter documentation](https://docs.prylabs.network/docs/prysm-usage/parameters)
