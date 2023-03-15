@@ -105,12 +105,12 @@ You should see an output showing you the version you have installed. Next, creat
     mkdir devnet && cd devnet
     
 
-The instructions below are running with Prysm commit [7d5d30ac94d77a40237b56924d32d325374de730](https://github.com/prysmaticlabs/prysm/commit/7d5d30ac94d77a40237b56924d32d325374de730) and go-ethereum commit [c8a6b7100c56255a9cde580be59136beb8d28b8e](https://github.com/ethereum/go-ethereum/commit/c8a6b7100c56255a9cde580be59136beb8d28b8e)
+The instructions below are running with Prysm commit [be4ef54482025b216554e6a5ff0c6e3d1a398d0b](https://github.com/prysmaticlabs/prysm/commit/be4ef54482025b216554e6a5ff0c6e3d1a398d0b) and go-ethereum commit [c8a6b7100c56255a9cde580be59136beb8d28b8e](https://github.com/ethereum/go-ethereum/commit/c8a6b7100c56255a9cde580be59136beb8d28b8e)
 
 Clone the Prysm repository and build the following binaries. We’ll be outputting them to the `devnet` folder:
 
     git clone https://github.com/prysmaticlabs/prysm && cd prysm
-    git checkout 7d5d30ac94d77a40237b56924d32d325374de730
+    git checkout be4ef54482025b216554e6a5ff0c6e3d1a398d0b
     go build -o=../beacon-chain ./cmd/beacon-chain
     go build -o=../validator ./cmd/validator
     go build -o=../prysmctl ./cmd/prysmctl
