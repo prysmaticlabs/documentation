@@ -199,7 +199,7 @@ You can check the ETH balance in the geth console by typing in
 
 We will then need to run a Prysm beacon node and a validator client. Prysm will need a **genesis state** which is essentially some data that tells it the initial set of validators. We will be creating a genesis state from a deterministic set of keys below:
 
-    ./prysmctl testnet generate-genesis --num-validators=64 --output-ssz=genesis.ssz --chain-config-file=config.yml
+    ./prysmctl testnet generate-genesis --num-validators=64 --output-ssz=genesis.ssz --chain-config-file=config.yml --override-eth1data=true
     
 
 This will out a file `genesis.ssz` in your `devnet` folder. Now, run the Prysm beacon node soon after:
