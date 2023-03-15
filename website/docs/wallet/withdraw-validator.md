@@ -14,13 +14,6 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 
-
-:::caution Public Preview
-**This feature is currently in public preview** and may change significantly as we receive feedback from users like you. Join our [Discord server](https://discord.gg/prysmaticlabs) to share your feedback.
-
-Note that withdrawals **aren't yet available on Ethereum mainnet**; this functionality is currently being validated on test networks. The instructions in this document won't work on Ethereum mainnet and may change significantly as the feature is stabilized on test networks.
-:::
-
 The **Capella/Shanghai Ethereum** upgrade lets you withdraw your validator nodes' staked Ethereum in one of two ways: 
 
  1. **Partial (earnings) withdrawal**: This option lets you withdaw your earnings (that is, all value staked above 32 ETH) and continue validating.
@@ -90,10 +83,6 @@ In order to withdraw, you should have the following items ready:
 <TabItem value="partial">
 
 ## Option 1: Partial (earnings) withdrawals
-
-:::caution
-**DO NOT ATTEMPT TO CHANGE YOUR BLS KEYS ON MAINNET** until the client software is ready to accept your BLS key changes. This is feature is not yet available on mainnet at the time of writing on February 1st, 2023
-:::
 
 This section walks you through the process of performing a **partial validator withdrawal**, allowing you to withdraw staked balances above 32 ETH for each of your active Ethereum validators.
 
@@ -337,9 +326,6 @@ and you should see a response that contains withdrawal credentials that should h
 
 ## Option 2: Full withdrawals
 
-:::caution
-**DO NOT ATTEMPT TO CHANGE YOUR BLS KEYS ON MAINNET** until the client software is ready to accept your BLS key changes. This is feature is not yet available on mainnet at the time of writing on February 1st, 2023
-:::
 
 To fully withdraw a validator and its earnings, your validator needs to also be exited in addition to having its [withdrawal credentials](https://github.com/ethereum/consensus-specs/blob/master/specs/phase0/validator.md#withdrawal-credentials) changed.
 
