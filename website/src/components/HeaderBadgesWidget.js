@@ -4,6 +4,8 @@ import BrowserOnly from '@docusaurus/BrowserOnly';
 export const HeaderBadgesWidget = ({ commaDelimitedContributors, lastVerifiedDateString, lastVerifiedVersionString }) => {
 	let githubUsernames = {
 		Mick: "symbolpunk",
+		Radek: "rkapka",
+		Sammy: "saolyn",
 		Raul: "rauljordan",
 		Terence: "terencechain",
 		James: "james-prysm",
