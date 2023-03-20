@@ -6,7 +6,7 @@ sidebar_label: Exit your validator
 
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
-<HeaderBadgesWidget  commaDelimitedContributors="James" lastVerifiedDateString="February 3rd, 2023" lastVerifiedVersionString="v3.2.0"/>
+<HeaderBadgesWidget  commaDelimitedContributors="James" lastVerifiedDateString="March 20th, 2023" lastVerifiedVersionString="v4.0.0"/>
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
