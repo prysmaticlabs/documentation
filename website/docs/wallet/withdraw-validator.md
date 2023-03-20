@@ -8,7 +8,7 @@ style_notes: Consistently address reader as "you", use contractions to keep the 
 import BeaconChainPng from '@site/static/img/beaconchain_validator.png'
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
-<HeaderBadgesWidget commaDelimitedContributors="Raul,James,Radek,Sammy" lastVerifiedDateString="March 1st, 2023" lastVerifiedVersionString="v3.2.0" />
+<HeaderBadgesWidget commaDelimitedContributors="Raul,James,Radek,Sammy" lastVerifiedDateString="March 20th, 2023" lastVerifiedVersionString="v4.0.0" />
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
