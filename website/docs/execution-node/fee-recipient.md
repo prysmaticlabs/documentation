@@ -6,7 +6,7 @@ sidebar_label: Configure Fee Recipient
 import FeeRecipientPng from '@site/static/img/fee-recipient-ui.png'
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
-<HeaderBadgesWidget commaDelimitedContributors="James,Mick" lastVerifiedDateString="September 12th, 2022" lastVerifiedVersionString="v3.1.2" />
+<HeaderBadgesWidget commaDelimitedContributors="James,Mick" lastVerifiedDateString="September 12th, 2022" lastVerifiedVersionString="v4.0.0" />
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
