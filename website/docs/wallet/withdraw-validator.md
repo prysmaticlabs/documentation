@@ -13,6 +13,11 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+:::caution Public Preview
+**This feature is currently in public preview** and may change significantly as we receive feedback from users like you. Join our [Discord server](https://discord.gg/prysmaticlabs) to share your feedback.
+
+Note that withdrawals **aren't yet available on Ethereum mainnet**; this functionality is currently being validated on test networks. The instructions in this document won't work on Ethereum mainnet and may change significantly as the feature is stabilized on test networks.
+:::
 
 The **Capella/Shanghai Ethereum** upgrade lets you withdraw your validator nodes' staked Ethereum in one of two ways: 
 
