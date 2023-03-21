@@ -123,8 +123,7 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
 <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
         {label: 'Goerli-Prater', value: 'goerli-prater'},
-        {label: 'Sepolia', value: 'sepolia'},
-        {label: 'Ropsten', value: 'ropsten'}
+        {label: 'Sepolia', value: 'sepolia'}
     ]}>
       <TabItem value="mainnet">
 
@@ -152,15 +151,6 @@ bazel run //beacon-chain --config=release -- --execution-endpoint=<YOUR_ETH_EXEC
 
 
   </TabItem>
-      <TabItem value="ropsten">
-
-Download the Ropsten genesis state from [Github](https://github.com/eth-clients/merge-testnets/blob/main/ropsten-beacon-chain/genesis.ssz) to a local file, then run
-
-```text
-bazel run //beacon-chain --config=release -- --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> --ropsten --genesis-state=/path/to/genesis.ssz
-```
-
-  </TabItem>
 </Tabs>
 
 </div>
@@ -169,7 +159,7 @@ bazel run //beacon-chain --config=release -- --execution-endpoint=<YOUR_ETH_EXEC
 
 Ensure that your beacon node is fully synced before proceeding. See [Check node and validator status](../monitoring/checking-status.md) for detailed status-checking instructions.
 
-Navigate to the [Mainnet Launchpad](https://launchpad.ethereum.org/summary) and follow the instructions. If you want to participate in the **testnet**, you can navigate to the [Goerli-Prater](https://goerli.launchpad.ethereum.org/summary/) or [Ropsten](https://ropsten.launchpad.ethereum.org/summary) launchpads.
+Navigate to the [Mainnet Launchpad](https://launchpad.ethereum.org/summary) and follow the instructions. If you want to participate in the **testnet**, you can navigate to the [Goerli-Prater](https://goerli.launchpad.ethereum.org/summary/).
 
 :::danger Exercise extreme caution
 
