@@ -8,7 +8,7 @@ style_notes: Consistently address reader as "you", use contractions to keep the 
 import BeaconChainPng from '@site/static/img/beaconchain_validator.png'
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
-<HeaderBadgesWidget commaDelimitedContributors="Raul,James,Radek,Sammy" lastVerifiedDateString="March 1st, 2023" lastVerifiedVersionString="v3.2.0" />
+<HeaderBadgesWidget commaDelimitedContributors="Raul,James,Radek,Sammy" lastVerifiedDateString="March 21st, 2023" lastVerifiedVersionString="v3.2.2" />
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -102,13 +102,26 @@ This section walks you through the process of performing a **partial validator w
 The first step for submitting partial withdrawals for your validator is to sign a message setting the Ethereum address you wish to receive your funds at. This request is known as a **BLS to Execution Change**.
 
 First, install the Ethereum [staking-deposit-cli](https://github.com/ethereum/staking-deposit-cli) locally by building it from source, which is our recommendation.  Building the code yourself is the most secure way of using it, and for something as crucial as a tool that deals with your mnemonic, we recommend following this path. Alternatively, the project provides [binaries](https://github.com/ethereum/staking-deposit-cli/releases) that are available to use at your own risk.
+<Tabs
+  groupId="staking-deposit-cli-install"
+  defaultValue="release"
+  values={[
+    {label: 'download latest release', value: 'release'},
+    {label: 'install from source', value: 'source'},
+  ]
+}>
+<TabItem value="release">
 
-**Installation steps from source**
+download the latest release from https://github.com/ethereum/staking-deposit-cli/releases according to your operating system. This feature is supported starting from release `v2.5.0`.
+</TabItem>
+<TabItem value="source">
+
+For advanced users you can look to install from source using the following steps
 
 As a prerequisite, you will need to install [Python3](https://www.python.org/downloads/) and pip3 on your system as well as [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git), which can be installed through different means for various operating systems. Next, clone the project’s codebase locally in a terminal window:
 
 ```go
-git clone -b bls-to-execution-change git@github.com:ethereum/staking-deposit-cli.git
+git clone https://github.com/ethereum/staking-deposit-cli.git
 ```
 
 Next, run the following commands to setup an environment for its dependencies:
@@ -125,6 +138,8 @@ Install dependencies:
 python3 setup.py install
 pip3 install -r requirements.txt
 ```
+</TabItem>
+</Tabs>
 
 ### Step 2: Get your validator withdrawal credentials ready
 
@@ -181,9 +196,28 @@ We recommend doing this next step *without* an Internet connection to be maximal
 
 Here’s the command to get started with the process. This command will **not** submit your signed message to the network yet, and will only generate the data needed for the next steps.
 
+<Tabs
+  groupId="staking-deposit-cli-run"
+  defaultValue="release"
+  values={[
+    {label: 'downloaded from release', value: 'release'},
+    {label: 'installed from source', value: 'source'},
+  ]
+}>
+<TabItem value="release">
+navigate to the downloaded release, extract it, and open a terminal in the extracted folder.
+
+```jsx
+./deposit generate-bls-to-execution-change
+```
+</TabItem>
+
+<TabItem value="source">
 ```jsx
 python ./staking_deposit/deposit.py generate-bls-to-execution-change
 ```
+</TabItem>
+</Tabs>
 
 By calling the command above, you should go through an interactive process that will ask you for the following information:
 
@@ -264,11 +298,7 @@ Once you complete the above, you’ll have a file contained in the `bls_to_execu
 ]
 ```
 
-The above demonstrates two different validators withdrawing - one with validator index `838`, the other with validator index `20303`. You can optionally verify each element is correct by checking if the “from_bls_pubkey” values hash to those validators’ withdrawal credentials:
-
-```rust
-echo 0x$(echo -n 'b89bebc699769726a502c8e9971bd3172227c61aea4a6578a7a4f94b547dcba5bac16a89108b6b6a1fe3695d1a874a0b' | xxd -r -p | sha256sum | cut -d ' ' -f 1)
-```
+The above demonstrates two different validators withdrawing - one with validator index `838`, the other with validator index `20303`.
 
 Move the generated `bls_to_execution_changes-*.json` file to an online environment that has access to a synced beacon node for the next step.
 
