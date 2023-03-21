@@ -258,11 +258,7 @@ Once you complete the above, you’ll have a file contained in the `bls_to_execu
 ]
 ```
 
-The above demonstrates two different validators withdrawing - one with validator index `838`, the other with validator index `20303`. You can optionally verify each element is correct by checking if the “from_bls_pubkey” values hash to those validators’ withdrawal credentials:
-
-```rust
-echo 0x$(echo -n 'b89bebc699769726a502c8e9971bd3172227c61aea4a6578a7a4f94b547dcba5bac16a89108b6b6a1fe3695d1a874a0b' | xxd -r -p | sha256sum | cut -d ' ' -f 1)
-```
+The above demonstrates two different validators withdrawing - one with validator index `838`, the other with validator index `20303`.
 
 Move the generated `bls_to_execution_changes-*.json` file to an online environment that has access to a synced beacon node for the next step.
 
