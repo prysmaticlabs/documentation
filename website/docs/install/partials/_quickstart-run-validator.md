@@ -14,16 +14,12 @@ Download the latest stable version of the deposit CLI from the [Staking Deposit 
     <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
         {label: 'Goerli-Prater', value: 'goerli-prater'},
-        {label: 'Ropsten', value: 'ropsten'}
     ]}>
       <TabItem value="mainnet">
         <pre><code>deposit.exe new-mnemonic --num_validators=1 --mnemonic_language=english</code></pre>
       </TabItem>
       <TabItem value="goerli-prater">
         <pre><code>deposit.exe new-mnemonic --num_validators=1 --mnemonic_language=english --chain=prater</code></pre>
-      </TabItem>
-      <TabItem value="ropsten">
-        <pre><code>deposit.exe new-mnemonic --num_validators=1 --mnemonic_language=english --chain=ropsten</code></pre>
       </TabItem>
     </Tabs>
     <p>Follow the CLI prompts to generate your keys. This will give you the following artifacts:</p>
@@ -39,8 +35,7 @@ Download the latest stable version of the deposit CLI from the [Staking Deposit 
     <p>Copy the <code>validator_keys</code> folder to your primary machine's <code>consensus</code> folder. Run the following command to import your keystores, replacing <code>&lt;YOUR_FOLDER_PATH&gt;</code> with the full path to your <code>consensus/validator_keys</code> folder:</p>
     <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
-        {label: 'Goerli-Prater', value: 'goerli-prater'},
-        {label: 'Ropsten', value: 'ropsten'}
+        {label: 'Goerli-Prater', value: 'goerli-prater'}
     ]}>
       <TabItem value="mainnet">
         <pre><code>prysm.bat validator accounts import --keys-dir=&lt;YOUR_FOLDER_PATH&gt;</code></pre>
@@ -62,35 +57,19 @@ Download the latest stable version of the deposit CLI from the [Staking Deposit 
         <p>Someone should be able to give you the GöETH you need. You can then deposit 32 GöETH into the Prater testnet’s deposit contract via the Launchpad page. Exercise extreme caution throughout this procedure - <strong>never send real ETH to the testnet deposit contract.</strong> Finally, run the following command to start your validator, replacing <code>&lt;YOUR_FOLDER_PATH&gt;</code> with the full path to your <code>consensus</code> folder:</p>
         <pre><code>prysm.bat validator --wallet-dir=&lt;YOUR_FOLDER_PATH&gt; --prater</code></pre>      
       </TabItem>
-      <TabItem value="ropsten">
-        <pre><code>prysm.bat validator accounts import --keys-dir=&lt;YOUR_FOLDER_PATH&gt; --ropsten</code></pre>
-        <p>You’ll be prompted to specify a wallet directory twice. Provide the path to your <code>consensus</code> folder for both prompts. You should see <code>Successfully imported 1 accounts, view all of them by running accounts list</code> when your account has been successfully imported into Prysm.</p>
-        <p>Next, go to the <a href='https://ropsten.launchpad.ethereum.org/en/upload-deposit-data'>Ropsten Launchpad’s deposit data upload page</a> and upload your <code>deposit_data-*.json</code> file. You’ll be prompted to connect your wallet.</p>
-        <p>If you need rEth, head over to one of the following Discord servers:</p>
-        <ul>
-          <li><a href='https://discord.io/ethstaker'>r/EthStaker Discord</a></li>
-          <li><a href='https://discord.gg/prysmaticlabs'>Prysm Discord server</a></li>
-        </ul>
-        <p>Someone should be able to give you the rETH you need. You can then deposit 32 rETH into the Ropsten testnet’s deposit contract via the Launchpad page. Exercise extreme caution throughout this procedure - <strong>never send real ETH to the testnet deposit contract.</strong> Finally, run the following command to start your validator, replacing <code>&lt;YOUR_FOLDER_PATH&gt;</code> with the full path to your <code>consensus</code> folder:</p>
-        <pre><code>prysm.bat validator --wallet-dir=&lt;YOUR_FOLDER_PATH&gt; --ropsten</code></pre>      
-      </TabItem>
     </Tabs>
   </TabItem>
   <TabItem value="others">
     <p>Run the following command to create your mnemonic phrase and keys:</p>
     <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
-        {label: 'Goerli-Prater', value: 'goerli-prater'},
-        {label: 'Ropsten', value: 'ropsten'}
+        {label: 'Goerli-Prater', value: 'goerli-prater'}
     ]}>
       <TabItem value="mainnet">
         <pre><code>./deposit new-mnemonic --num_validators=1 --mnemonic_language=english</code></pre>
       </TabItem>
       <TabItem value="goerli-prater">
         <pre><code>./deposit new-mnemonic --num_validators=1 --mnemonic_language=english --chain=prater</code></pre>
-      </TabItem>
-      <TabItem value="ropsten">
-        <pre><code>./deposit new-mnemonic --num_validators=1 --mnemonic_language=english --chain=ropsten</code></pre>
       </TabItem>
     </Tabs>
     <p>Follow the CLI prompts to generate your keys. This will give you the following artifacts:</p>
@@ -106,8 +85,7 @@ Download the latest stable version of the deposit CLI from the [Staking Deposit 
     <p>Copy the <code>validator_keys</code> folder to your primary machine's <code>consensus</code> folder. Run the following command to import your keystores, replacing <code>&lt;YOUR_FOLDER_PATH&gt;</code> with the full path to your <code>consensus/validator_keys</code> folder:</p>
     <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
-        {label: 'Goerli-Prater', value: 'goerli-prater'},
-        {label: 'Ropsten', value: 'ropsten'}
+        {label: 'Goerli-Prater', value: 'goerli-prater'}
     ]}>
       <TabItem value="mainnet">
         <pre><code>./prysm.sh validator accounts import --keys-dir=&lt;YOUR_FOLDER_PATH&gt;</code></pre>
@@ -127,18 +105,6 @@ Download the latest stable version of the deposit CLI from the [Staking Deposit 
         </ul>
         <p>Someone should be able to give you the GöETH you need. You can then deposit 32 GöETH into the Prater testnet’s deposit contract via the Launchpad page. Exercise extreme caution throughout this procedure - <strong>never send real ETH to the testnet deposit contract.</strong>  Finally, run the following command to start your validator, replacing <code>&lt;YOUR_FOLDER_PATH&gt;</code> with the full path to your <code>consensus</code> folder:</p>
         <pre><code>./prysm.sh validator --wallet-dir=&lt;YOUR_FOLDER_PATH&gt; --prater</code></pre>    
-      </TabItem>
-      <TabItem value="ropsten">
-        <pre><code>./prysm.sh validator accounts import --keys-dir=&lt;YOUR_FOLDER_PATH&gt; --ropsten</code></pre>
-        <p>You’ll be prompted to specify a wallet directory twice. Provide the path to your <code>consensus</code> folder for both prompts. You should see <code>Successfully imported 1 accounts, view all of them by running accounts list</code> when your account has been successfully imported into Prysm.</p>
-        <p>Next, go to the <a href='https://ropsten.launchpad.ethereum.org/en/upload-deposit-data'>Ropsten Launchpad’s deposit data upload page</a> and upload your <code>deposit_data-*.json</code> file. You’ll be prompted to connect your wallet.</p>
-        <p>If you need rETH, head over to one of the following Discord servers:</p>
-        <ul>
-          <li><a href='https://discord.io/ethstaker'>r/EthStaker Discord</a></li>
-          <li><a href='https://discord.gg/prysmaticlabs'>Prysm Discord server</a></li>
-        </ul>
-        <p>Someone should be able to give you the rETH you need. You can then deposit 32 rETH into the Ropsten testnet’s deposit contract via the Launchpad page. Exercise extreme caution throughout this procedure - <strong>never send real ETH to the testnet deposit contract.</strong>  Finally, run the following command to start your validator, replacing <code>&lt;YOUR_FOLDER_PATH&gt;</code> with the full path to your <code>consensus</code> folder:</p>
-        <pre><code>./prysm.sh validator --wallet-dir=&lt;YOUR_FOLDER_PATH&gt; --ropsten</code></pre>    
       </TabItem>
     </Tabs>
   </TabItem>

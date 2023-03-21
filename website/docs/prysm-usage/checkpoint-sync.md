@@ -110,7 +110,7 @@ The two exported `*.ssz` files are your `BeaconState` and `SignedBeaconBlock` fi
 curl -H "Accept: application/octet-stream"  http://localhost:3500/eth/v1/debug/beacon/states/genesis > genesis.ssz
 ```
 
-You can also just manually download the genesis state from GitHub: [Goerli-Prater](https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz) | [Sepolia](https://github.com/eth-clients/merge-testnets/blob/main/sepolia/genesis.ssz) | [Ropsten](https://github.com/eth-clients/merge-testnets/blob/main/ropsten-beacon-chain/genesis.ssz)
+You can also just manually download the genesis state from GitHub: [Goerli-Prater](https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz) | [Sepolia](https://github.com/eth-clients/merge-testnets/blob/main/sepolia/genesis.ssz)
 
 Use the following command to start your beacon node with checkpoint sync configured to use this checkpoint state:
 
