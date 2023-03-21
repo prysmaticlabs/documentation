@@ -143,22 +143,20 @@ pip3 install -r requirements.txt
 
 ### Step 2: Get your validator withdrawal credentials ready
 
-For this step, you will also need to retrieve your validator’s **withdrawal credentials** from Ethereum. You can retrieve this these credentials from block explorers such as [https://beaconcha.in](https://beaconcha.in). Search for your validator, then navigate to the “deposit” tab in that page, and you’ll find the withdrawal credentials near the bottom of the page and you can copy the value from there.
+For this step, you will also need to retrieve your validator’s **withdrawal_credentials** from Ethereum. 
+you can find the `withdrawal_credentials` for each associated validator in your original deposit_data-XXX.json file when you first used the launchpad.
 
-
-<img  src={BeaconChainPng} /> 
-
-It will look something like the example below, and is different for all validators.
+This is an example of what the `withdrawal_credentials` field value would look like.
 
 ```rust
 0x00500b3bf612bed69e888edeb045f590c3f37251e3e049c0732f3adaa57ea3f6
 ```
 
-You can also fetch this from your Prysm beacon node by reading it from the API:
+You can also find this value by sending a request to your synced beacon node via this [Beacon API endpoint](https://ethereum.github.io/beacon-APIs/?urls.primaryName=dev#/Beacon/getStateValidator) and providing your validator index or public key:
 
 ```rust
 curl -X 'GET' \
-  'http://YOUR_PRYSM_NODE_HOST:3500/eth/v1/beacon/states/head/validators/YOUR_VALIDATOR_INDEX' \
+  'http://YOUR_PRYSM_NODE_HOST:3500/eth/v1/beacon/states/head/validators/YOUR_VALIDATOR_INDEX_OR_PUBLIC_KEY' \
   -H 'accept: application/json'
 ```
 
@@ -223,7 +221,7 @@ python ./staking_deposit/deposit.py generate-bls-to-execution-change
 By calling the command above, you should go through an interactive process that will ask you for the following information:
 
 1. **Your mnemonic language**. You can see the different options available, where English is one of the options, among others
-2. **The network** you wish to perform this operation for. Select the `zhejiang` network for this tutorial
+2. **The network** you wish to perform this operation for. example: `mainnet`,`goerli`,`sepolia` or `zhejiang`. This tutorial uses the `zhejiang` testnet as an **example**.
 3. Enter your **mnemonic** next
 4. Next, you will be asked for the starting index you used to create your validators (read more about hd wallets [here](https://eips.ethereum.org/EIPS/eip-2334#path)). For **most users**, this will be 0 unless you created validators from a non default index.
 
