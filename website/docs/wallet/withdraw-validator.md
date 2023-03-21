@@ -298,7 +298,10 @@ Once you complete the above, you’ll have a file contained in the `bls_to_execu
 ]
 ```
 
-The above demonstrates two different validators withdrawing - one with validator index `838`, the other with validator index `20303`.
+The above demonstrates two different validators withdrawing - one with validator index `838`, the other with validator index `20303`. 
+:::caution
+Make sure the `validator_index` corresponds to the correct chosen `to_execution_address`. Once this message is accepted on submission you will not be able to change it again!
+:::
 
 Move the generated `bls_to_execution_changes-*.json` file to an online environment that has access to a synced beacon node for the next step.
 
