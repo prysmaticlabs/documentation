@@ -213,6 +213,7 @@ navigate to the downloaded release, extract it, and open a terminal in the extra
 </TabItem>
 
 <TabItem value="source">
+
 ```jsx
 python ./staking_deposit/deposit.py generate-bls-to-execution-change
 ```
@@ -299,6 +300,7 @@ Once you complete the above, you’ll have a file contained in the `bls_to_execu
 ```
 
 The above demonstrates two different validators withdrawing - one with validator index `838`, the other with validator index `20303`. 
+
 :::caution
 Make sure the `validator_index` corresponds to the correct chosen `to_execution_address`. Once this message is accepted on submission you will not be able to change it again!
 :::
