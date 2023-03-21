@@ -5,7 +5,6 @@ sidebar_label: Withdraw your validator
 style_notes: Consistently address reader as "you", use contractions to keep the tone conversational, iterate on succinct articulation, minimize duplication
 ---
 
-import BeaconChainPng from '@site/static/img/beaconchain_validator.png'
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <HeaderBadgesWidget commaDelimitedContributors="Raul,James,Radek,Sammy" lastVerifiedDateString="March 21st, 2023" lastVerifiedVersionString="v3.2.2" />
