@@ -407,7 +407,7 @@ A: In most cases the mnemonic is a requirement to enabling withdraws; there are 
 
 **Q: I accidentally used my mnemonic on an open internet setting to generate the .json file, what happens?**
 
-A: Using and storing the mnemonic on an open internet puts private keys used for withdrawals at increased risk. Unless the machine was compromised there should be any immediate consequences, however, the longer the mnemonic stays on an open network the more it will be exposed to future risk. 
+A: Using and storing the mnemonic on an open internet puts private keys used for withdrawals at increased risk. Unless the machine was compromised there should not be any immediate consequences, however, the longer the mnemonic stays on an open network the more it will be exposed to future risk. 
 
 **Q: How can I check if my withdrawal address is set?**
 
