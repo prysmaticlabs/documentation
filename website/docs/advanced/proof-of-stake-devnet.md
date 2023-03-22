@@ -10,7 +10,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 :::info
 
-This how-to is a copy of Raul Jordan's [How to Set Up an Ethereum Proof-of-Stake Devnet in Minutes](https://rauljordan.com/how-to-setup-a-proof-of-stake-devnet/).
+This how-to is an updated copy of Raul Jordan's [How to Set Up an Ethereum Proof-of-Stake Devnet in Minutes](https://rauljordan.com/how-to-setup-a-proof-of-stake-devnet/).
 
 :::
 
