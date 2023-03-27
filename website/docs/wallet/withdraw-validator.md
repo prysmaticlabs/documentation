@@ -7,12 +7,10 @@ style_notes: Consistently address reader as "you", use contractions to keep the 
 
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
-<HeaderBadgesWidget commaDelimitedContributors="Raul,James,Radek,Sammy" lastVerifiedDateString="March 21st, 2023" lastVerifiedVersionString="v3.2.2" />
+<HeaderBadgesWidget commaDelimitedContributors="Raul,James,Radek,Sammy" lastVerifiedDateString="March 20th, 2023" lastVerifiedVersionString="v4.0.0" />
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-
-
 
 :::caution Public Preview
 **This feature is currently in public preview** and may change significantly as we receive feedback from users like you. Join our [Discord server](https://discord.gg/prysmaticlabs) to share your feedback.
@@ -89,10 +87,6 @@ In order to withdraw, you should have the following items ready:
 <TabItem value="partial">
 
 ## Option 1: Partial (earnings) withdrawals
-
-:::caution
-**DO NOT ATTEMPT TO CHANGE YOUR BLS KEYS ON MAINNET** until the client software is ready to accept your BLS key changes. This is feature is not yet available on mainnet at the time of writing on February 1st, 2023
-:::
 
 This section walks you through the process of performing a **partial validator withdrawal**, allowing you to withdraw staked balances above 32 ETH for each of your active Ethereum validators.
 
@@ -311,7 +305,7 @@ In this step, you will submit your signed requests to the Ethereum network using
 Once Prysmctl is installed, you can use the `prysmctl validator withdraw` command, which will ask for terms of service acceptance and confirmation of command by providing additional flags, and also a path to the bls_to_execution_changes file from the previous step.
 
 ```jsx
-bazel run //prysmctl -- validator withdraw --beacon-node-host=<node-url> --path=<bls_to_execution_changes-*.json>
+bazel run //cmd/prysmctl -- validator withdraw --beacon-node-host=<node-url> --path=<bls_to_execution_changes-*.json>
 ```
 
 This command will extract data from the `bls_to_execution_changes-*.json` call the Beacon API endpoint on the synced Beacon Node and validate if it’s in the pool:
@@ -354,7 +348,12 @@ Apply the `--verify-only` flag to the prysmctl validator withdrawal command to v
 
 ### Step 8: Confirm your withdrawal
 
-Ethereum Proof of Stake Block Scanners like [Beaconcha.in](http://Beaconcha.in) do plan to include features to track withdrawals, but there are a few ways to confirm in your local beacon node. 
+You can track your withdrawal on an Ethereum Proof of Stake Block Scanner. Some examples listed below and will be based on network.
+
+- [Beaconcha.in](http://Beaconcha.in): [mainnet](https://beaconcha.in/validators/withdrawals), [goerli](https://goerli.beaconcha.in/validators/withdrawals), [sepolia](https://sepolia.beaconcha.in/validators/withdrawals), [zhejiang](https://zhejiang.beaconcha.in/validators/withdrawals)
+- [Etherscan.io](https://etherscan.io/): [goerli](https://goerli.etherscan.io/txsBeaconWithdrawal), [sepolia](https://sepolia.etherscan.io/txsBeaconWithdrawal)
+
+you can also confirm the `withdrawal_credentials` updated by querying your local beacon node. 
 
 ```rust
 curl -X 'GET' \
@@ -364,14 +363,15 @@ curl -X 'GET' \
 
 and you should see a response that contains withdrawal credentials that should have changed to the `0x01` format which includes your Ethereum execution address.
 
+### Done: Receiving partial withdrawals after `withdrawal_credentials` are updated is automatic, but will take time.
+
+Once your `withdrawal_credentials` field on the validator is updated to the `0x01` prefix all withdrawal actions are complete. Withdrawals of earnings over 32Eth will be automatically sent to the chosen ethereum address when a block proposer includes your validator in its block. **Note that a maximum to 16 validators can have their balances withdrawn per block so delay times may vary before seeing the values appear in the ethereum address.**
+
 </TabItem>
 <TabItem value="full">
 
 ## Option 2: Full withdrawals
 
-:::caution
-**DO NOT ATTEMPT TO CHANGE YOUR BLS KEYS ON MAINNET** until the client software is ready to accept your BLS key changes. This is feature is not yet available on mainnet at the time of writing on February 1st, 2023
-:::
 
 To fully withdraw a validator and its earnings, your validator needs to also be exited in addition to having its [withdrawal credentials](https://github.com/ethereum/consensus-specs/blob/master/specs/phase0/validator.md#withdrawal-credentials) changed.
 
@@ -380,10 +380,16 @@ Please follow our [exiting-a-validator how-to](exiting-a-validator.md).
 Refer to the above partial withdrawal guidance to change your validator's withdrawal credentials.
 
 :::caution
-Instructions for setting your withdrawal address do not need to be repeated if withdrawal_credentials are updated to the `0x01` prefix.
+Instructions for setting your withdrawal address do not need to be repeated if withdrawal_credentials are updated to the `0x01` prefix. 
 :::
 
-Once the validator is both exited as well as having its withdrawal credentials changed, the validator will automatically be withdrawn when a block proposer processes the withdrawal. **Note that a maximum of 16 withdrawals can be processed per block.**
+### Done: Receiving full withdrawals after `withdrawal_credentials` are updated and validator is fully exited is automatic, but will take time.
+
+Once the validator is both exited as well as having its `withdrawal_credentials` changed to the `0x01` prefix, the validator will automatically have its full balance withdrawn into the chosen ethereum address when a block proposer includes your validator in its block. **Note that a maximum to 16 validators can have their balances withdrawn per block so delay times may vary before seeing the values appear in the ethereum address.**
+
+:::caution
+Slashed or involuntarily exited validators will still need to go through the process of updating `withdrawal_credentials` to fully withdraw its remaining balance.
+:::
 
 </TabItem>
 </Tabs>

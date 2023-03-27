@@ -6,18 +6,10 @@ sidebar_label: Exit your validator
 
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
-<HeaderBadgesWidget  commaDelimitedContributors="James" lastVerifiedDateString="February 3rd, 2023" lastVerifiedVersionString="v3.2.0"/>
+<HeaderBadgesWidget  commaDelimitedContributors="James" lastVerifiedDateString="March 20th, 2023" lastVerifiedVersionString="v4.0.0"/>
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-
-
-:::caution Public Preview
-
-**This document is currently in public preview** and may change significantly as we receive feedback from users like you. Join our [Discord server](https://discord.gg/prysmaticlabs) or click the `Request an Update` button above to share your feedback.
-
-:::
-
 
 Voluntarily exiting your validator from the Ethereum network is a one time command using the [prysmctl tool](../prysm-usage/prysmctl.md). Note that this operation was previously facilitated by a command exposed by the Prysm validator client, and can still be accessed that way. At a high level, you'll follow these steps to exit your validator:
 
