@@ -348,7 +348,12 @@ Apply the `--verify-only` flag to the prysmctl validator withdrawal command to v
 
 ### Step 8: Confirm your withdrawal
 
-Ethereum Proof of Stake Block Scanners like [Beaconcha.in](http://Beaconcha.in) do plan to include features to track withdrawals, but there are a few ways to confirm in your local beacon node. 
+You can track your withdrawal on an Ethereum Proof of Stake Block Scanner. Some examples listed below and will be based on network.
+
+- [Beaconcha.in](http://Beaconcha.in): [mainnet](https://beaconcha.in/validators/withdrawals),[goerli](https://goerli.beaconcha.in/validators/withdrawals), [sepolia](https://sepolia.beaconcha.in/validators/withdrawals), [zhejiang](https://zhejiang.beaconcha.in/validators/withdrawals)
+- [Etherscan.io](https://etherscan.io/): [goerli](https://goerli.etherscan.io/txsBeaconWithdrawal),[sepolia](https://sepolia.etherscan.io/txsBeaconWithdrawal)
+
+you can also confirm the `withdrawal_credentials` updated by querying your local beacon node. 
 
 ```rust
 curl -X 'GET' \
