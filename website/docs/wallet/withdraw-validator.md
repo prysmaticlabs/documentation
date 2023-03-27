@@ -358,7 +358,7 @@ curl -X 'GET' \
 
 and you should see a response that contains withdrawal credentials that should have changed to the `0x01` format which includes your Ethereum execution address.
 
-### Receiving withdrawal balances after `withdrawal_credentials` are updated is automatic, but will take time.
+### Done: Receiving partial withdrawals after `withdrawal_credentials` are updated is automatic, but will take time.
 
 Once your `withdrawal_credentials` field on the validator is updated to the `0x01` prefix all withdrawal actions are complete. Withdrawals of earnings over 32Eth will be automatically sent to the chosen ethereum address when a block proposer includes your validator in its block. **Note that a maximum to 16 validators can have their balances withdrawn per block so delay times may vary before seeing the values appear in the ethereum address.**
 
@@ -378,7 +378,7 @@ Refer to the above partial withdrawal guidance to change your validator's withdr
 Instructions for setting your withdrawal address do not need to be repeated if withdrawal_credentials are updated to the `0x01` prefix. 
 :::
 
-### Receiving withdrawal balances after `withdrawal_credentials` are updated is automatic, but will take time.
+### Done: Receiving full withdrawals after `withdrawal_credentials` are updated and validator is fully exited is automatic, but will take time.
 
 Once the validator is both exited as well as having its `withdrawal_credentials` changed to the `0x01` prefix, the validator will automatically have its full balance withdrawn into the chosen ethereum address when a block proposer includes your validator in its block. **Note that a maximum to 16 validators can have their balances withdrawn per block so delay times may vary before seeing the values appear in the ethereum address.**
 
