@@ -305,7 +305,7 @@ In this step, you will submit your signed requests to the Ethereum network using
 Once Prysmctl is installed, you can use the `prysmctl validator withdraw` command, which will ask for terms of service acceptance and confirmation of command by providing additional flags, and also a path to the bls_to_execution_changes file from the previous step.
 
 ```jsx
-bazel run //prysmctl -- validator withdraw --beacon-node-host=<node-url> --path=<bls_to_execution_changes-*.json>
+bazel run //cmd/prysmctl -- validator withdraw --beacon-node-host=<node-url> --path=<bls_to_execution_changes-*.json>
 ```
 
 This command will extract data from the `bls_to_execution_changes-*.json` call the Beacon API endpoint on the synced Beacon Node and validate if it’s in the pool:
@@ -358,6 +358,10 @@ curl -X 'GET' \
 
 and you should see a response that contains withdrawal credentials that should have changed to the `0x01` format which includes your Ethereum execution address.
 
+### Receiving withdrawal balances after `withdrawal_credentials` are updated is automatic, but will take time.
+
+Once your `withdrawal_credentials` field on the validator is updated to the `0x01` prefix all withdrawal actions are complete. Withdrawals of earnings over 32Eth will be automatically sent to the chosen ethereum address when a block proposer includes your validator in its block. **Note that a maximum to 16 validators can have their balances withdrawn per block so delay times may vary before seeing the values appear in the ethereum address.**
+
 </TabItem>
 <TabItem value="full">
 
@@ -371,10 +375,16 @@ Please follow our [exiting-a-validator how-to](exiting-a-validator.md).
 Refer to the above partial withdrawal guidance to change your validator's withdrawal credentials.
 
 :::caution
-Instructions for setting your withdrawal address do not need to be repeated if withdrawal_credentials are updated to the `0x01` prefix.
+Instructions for setting your withdrawal address do not need to be repeated if withdrawal_credentials are updated to the `0x01` prefix. 
 :::
 
-Once the validator is both exited as well as having its withdrawal credentials changed, the validator will automatically be withdrawn when a block proposer processes the withdrawal. **Note that a maximum of 16 withdrawals can be processed per block.**
+### Receiving withdrawal balances after `withdrawal_credentials` are updated is automatic, but will take time.
+
+Once the validator is both exited as well as having its `withdrawal_credentials` changed to the `0x01` prefix, the validator will automatically have its full balance withdrawn into the chosen ethereum address when a block proposer includes your validator in its block. **Note that a maximum to 16 validators can have their balances withdrawn per block so delay times may vary before seeing the values appear in the ethereum address.**
+
+:::caution
+Slashed or involuntarily exited validators will still need to go through the process of updating `withdrawal_credentials` to fully withdraw its remaining balance.
+:::
 
 </TabItem>
 </Tabs>
