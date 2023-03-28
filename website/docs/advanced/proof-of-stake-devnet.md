@@ -6,11 +6,11 @@ sidebar_label: Configure a devnet
 
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
-<HeaderBadgesWidget commaDelimitedContributors="Raul" />
+<HeaderBadgesWidget commaDelimitedContributors="Raul, Sammy, James" lastVerifiedDateString="March 22nd, 2023" />
 
 :::info
 
-This how-to is a copy of Raul Jordan's [How to Set Up an Ethereum Proof-of-Stake Devnet in Minutes](https://rauljordan.com/how-to-setup-a-proof-of-stake-devnet/).
+This how-to is an updated copy of Raul Jordan's [How to Set Up an Ethereum Proof-of-Stake Devnet in Minutes](https://rauljordan.com/how-to-setup-a-proof-of-stake-devnet/).
 
 :::
 
@@ -103,14 +103,10 @@ All you will need for a manual installation guide is the Go programming language
 You should see an output showing you the version you have installed. Next, create a folder called `devnet` and change directory into it
 
     mkdir devnet && cd devnet
-    
-
-The instructions below are running with Prysm commit [cb9b5e8f6e91adc8c6cdb2ca39708703e88c0b63](https://github.com/prysmaticlabs/prysm/commit/cb9b5e8f6e91adc8c6cdb2ca39708703e88c0b63) and go-ethereum commit [890e2efca2111c790c6d5eb55e29981816ee1fe9](https://github.com/ethereum/go-ethereum/commit/890e2efca2111c790c6d5eb55e29981816ee1fe9)
 
 Clone the Prysm repository and build the following binaries. We’ll be outputting them to the `devnet` folder:
 
     git clone https://github.com/prysmaticlabs/prysm && cd prysm
-    git checkout cb9b5e8f6e91adc8c6cdb2ca39708703e88c0b63
     go build -o=../beacon-chain ./cmd/beacon-chain
     go build -o=../validator ./cmd/validator
     go build -o=../prysmctl ./cmd/prysmctl
@@ -120,7 +116,6 @@ Clone the Prysm repository and build the following binaries. We’ll be outputti
 Clone the go-ethereum repository and build it:
 
     git clone https://github.com/ethereum/go-ethereum && cd go-ethereum
-    git checkout 23ac8df15302bbde098cab6d711abdd24843d66a
     make geth
     cp ./build/bin/geth ../geth
     cd ..
@@ -150,6 +145,9 @@ On the Prysm side, create a file called `config.yml` in your `devnet` folder con
     BELLATRIX_FORK_EPOCH: 4
     BELLATRIX_FORK_VERSION: 0x20000091
     TERMINAL_TOTAL_DIFFICULTY: 50
+
+    # Capella
+    CAPELLA_FORK_VERSION: 0x20000092
     
     # Time parameters
     SECONDS_PER_SLOT: 12
@@ -160,6 +158,10 @@ On the Prysm side, create a file called `config.yml` in your `devnet` folder con
     
 
 The configuration above contains information about the different hard-fork versions that are required for Prysm to run, and has some custom parameters to make running your devnet easier. It’s important to note that you can change any of these settings as desired. To see the full list of configuration options you can change, see [here](https://docs.prylabs.network/docs/prysm-usage/parameters/).
+```
+NOTICE: The config will need to be updated for each hard-fork.
+```
+
 
 #### Go-Ethereum
 
@@ -185,8 +187,9 @@ Next, we will start by running **go-ethereum** in our `devnet` folder:
 
 The last command will ask you to input a password for your secret key. You can just hit enter twice to leave it empty. Next, run geth using the command below
 
-    ./geth --http --http.api "eth,engine" --datadir=gethdata --allow-insecure-unlock --unlock="0x123463a4b065722e99115d6c222f267d9cabb524" --password="" --nodiscover console --syncmode=full --mine
+    ./geth --http --http.api "eth,engine" --datadir=gethdata --allow-insecure-unlock --unlock="0x123463a4b065722e99115d6c222f267d9cabb524" --password="" --nodiscover console --syncmode=full --mine --miner.etherbase=0x123463a4b065722e99115d6c222f267d9cabb524
     
+`miner.etherbase` can be any Ethereum address, in this case we just use the same address `0x123463a4b065722e99115d6c222f267d9cabb524` as it is an example. For more information about geth you can consult the documentation [here](https://geth.ethereum.org/docs).
 
 You can check the ETH balance in the geth console by typing in
 
@@ -196,16 +199,16 @@ You can check the ETH balance in the geth console by typing in
 
 We will then need to run a Prysm beacon node and a validator client. Prysm will need a **genesis state** which is essentially some data that tells it the initial set of validators. We will be creating a genesis state from a deterministic set of keys below:
 
-    ./prysmctl testnet generate-genesis --num-validators=64 --output-ssz=genesis.ssz --chain-config-file=config.yml
+    ./prysmctl testnet generate-genesis --num-validators=64 --output-ssz=genesis.ssz --chain-config-file=config.yml --override-eth1data=true
     
+More information about `prysmctl` and all available commands can be found [here](https://docs.prylabs.network/docs/prysm-usage/prysmctl).
 
 This will out a file `genesis.ssz` in your `devnet` folder. Now, run the Prysm beacon node soon after:
 
     ./beacon-chain \
       --datadir=beacondata \
       --min-sync-peers=0 \
-      --interop-genesis-state=genesis.ssz \
-      --interop-eth1data-votes \
+      --genesis-state=genesis.ssz \
       --bootstrap-node= \
       --chain-config-file=config.yml \
       --config-file=config.yml \
@@ -277,8 +280,7 @@ Then, run a second Prysm beacon node as follows:
     ./beacon-chain \
       --datadir=beacondata2 \
       --min-sync-peers=1 \
-      --interop-genesis-state=genesis.ssz \
-      --interop-eth1data-votes \
+      --genesis-state=genesis.ssz \
       --bootstrap-node= \
       --chain-config-file=config.yml \
       --config-file=config.yml \

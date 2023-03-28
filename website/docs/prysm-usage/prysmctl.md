@@ -6,7 +6,7 @@ sidebar_label: Use prysmctl
 
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
-<HeaderBadgesWidget commaDelimitedContributors="James" lastVerifiedDateString="February 23rd, 2023" lastVerifiedVersionString="v3.2.0"/>
+<HeaderBadgesWidget commaDelimitedContributors="James" lastVerifiedDateString="March 20th, 2023" lastVerifiedVersionString="v4.0.0"/>
 
 `prysmctl` is a command-line utility for common and one-off Ethereum proof-of-stake tasks, like helping users with validator exits or withdrawals. Most `prysmctl` commands require access to a fully synced beacon node.
 
