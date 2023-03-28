@@ -61,44 +61,6 @@ glue hawk service repeat album stable arctic piece kiss arrive viable labor conn
 HD wallets are password protected via a high-entropy, strong password, and allow for easy creation of as many validator account as you wish.
 
 [Create and use an HD wallet](https://docs.prylabs.network/docs/wallet/deterministic)
-
-<<<<<<< HEAD
-=======
-## Remote signing wallet (marked for removal) 
-
-:::caution
-
-This feature will be removed in Prysm V4 at the next hardfork Capella/Shanghai and has been superseded by [web3signer](web3signer.md)
-
-:::
-
-This is the **most** secure type of wallet. Some advanced users may wish to run a remote-signer server, which handles the retrieval of keys and signing of Ethereum beacon chain requests. A Prysm validator client can then connect securely via [gRPC](https://grpc.io) to the remote server and perform its validating duties by relying on the server for the information it needs. Most advanced cloud deployments should likely use this approach, as it is the most customizable.
-
-To be compliant with a Prysm remote signing wallet, your remote signing server needs to implement the gRPC API specified in Prysm [here](https://github.com/prysmaticlabs/prysm/blob/7fff4ec41165e6581dda352b362d77fc6ca2710d/proto/validator/accounts/v2/keymanager.proto#L12).
-
-```go
-service RemoteSigner {
-    // ListPublicKeysResponse managed by a remote signer.
-    rpc ListValidatingPublicKeys(google.protobuf.Empty) returns (ListPublicKeysResponse) {
-        option (google.api.http) = {
-            get: "/accounts/v2/remote/accounts"
-        };
-    }
-
-    // Sign a remote request via gRPC.
-    rpc Sign(SignRequest) returns (SignResponse) {
-        option (google.api.http) = {
-            post: "/accounts/v2/remote/sign"
-        };
-    }
-}
-```
-
-We have also a created a reference remote signer implementation, maintained as an open source, Apache 2 project on Github [here](https://github.com/prysmaticlabs/remote-signer) as a starting point.
-
-[Create and use a remote signing wallet](https://docs.prylabs.network/docs/wallet/remote)
-
->>>>>>> master
 ## Frequently asked questions
 
 As you run your validator, you might run into unexpected errors or situations in which things aren't working as expected. Here are our answers to some of the most frequently asked questions.
@@ -109,10 +71,6 @@ If you are running a **simple import wallet (non-HD)**, we keep an encrypted fil
 
 If you are running an **HD wallet**, we store your encrypted wallet seed under your wallet path in a file named `encrypted.seed.json`. This file is protected by a strong password you set during wallet creation, and we do not store your password.
 
-<<<<<<< HEAD
-=======
-
->>>>>>> master
 #### Why is my validator losing ETH despite my setup appearing ok?
 
 If your validator client is running fine without errors but you're seeing your validator balance decrease, it is typically a sign your beacon node is either (a) crashed, (b) not synced to the chain head. This might also mean your beacon node doesn't have any peers and is likely not connected to anyone. To debug this problem, please read our guide on checking [everything is running as expected](/docs/monitoring/is-everything-fine). If this still does not resolve your issue, you can get in touch with our team on [Discord](https://discord.gg/prysmaticlabs) anytime.
