@@ -229,7 +229,7 @@ In this step, you will submit your signed requests to the Ethereum network using
 Once prysmctl is downloaded, you can use the `prysmctl validator withdraw` command, which will ask for terms of service acceptance and confirmation of command by providing additional flags, and also a path to the bls_to_execution_changes file from the previous step.
 
 :::info
-default beacon node REST <node-url> is `http://localhost:3500` aka `http://127.0.0.1:3500`
+default beacon node REST `<node-url>` is `http://localhost:3500` aka `http://127.0.0.1:3500`
 :::
 
 ```jsx
