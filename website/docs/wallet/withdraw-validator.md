@@ -33,14 +33,13 @@ Withdrawals are initiated by updating the `withdrawal_credentials` field on the 
 
 We will be covering the following steps in this guide:
 
-1. downloading [staking-deposit-cli](https://github.com/ethereum/staking-deposit-cli)
-2. running the [staking-deposit-cli](https://github.com/ethereum/staking-deposit-cli) in an `offline` environment with your mnemonic to generate the `blstoexecutionchange` message(s)
-3. verify the `blstoexecutionchange` message(s) that the corresponding validator will set to the chosen Ethereum address
-4. migrate the `blstoexecutionchange` message(s) back to an `online` environment
-5. download the [latest prysmctl](https://github.com/prysmaticlabs/prysm/releases)
-6. run the prysmctl with the `blstoexecutionchange` message(s) against a synced prysm beacon node to change the validator's `withdrawal_credentials`
-7. wait and verify changes to `withdrawal_credentials`
-8. wait for balances to appear in the chosen Ethereum address
+- download [staking-deposit-cli](https://github.com/ethereum/staking-deposit-cli)
+- gather validator information for the [staking-deposit-cli](https://github.com/ethereum/staking-deposit-cli)
+- run the [staking-deposit-cli](https://github.com/ethereum/staking-deposit-cli) in an `offline` environment with your mnemonic to generate the `blstoexecutionchange` message(s)
+- verify the `blstoexecutionchange` message(s) that the corresponding validator will set to the chosen Ethereum address and migrate the `blstoexecutionchange` message(s) back to an `online` environment
+- download the [latest prysmctl](https://github.com/prysmaticlabs/prysm/releases) and run the prysmctl with the `blstoexecutionchange` message(s) to change the validator's `withdrawal_credentials`
+- monitor for your requested update to `withdrawal_credentials`
+- wait for balances to appear in the chosen Ethereum address
 
 ### Reference information
 - [The Ethereum Foundation Withdrawals FAQ](https://notes.ethereum.org/@launchpad/withdrawals-faq): A client-agnostic overview of important information regarding Ethereum validator withdrawals.
@@ -71,50 +70,14 @@ In order to withdraw, you should have the following items ready:
 
 This section walks you through the process of performing a **partial validator withdrawal**, allowing you to withdraw staked balances above 32 ETH for each of your active Ethereum validators.
 
-### Step 1: Sign a request to set your Ethereum withdrawal address
+### Step 1: Download the `staking_deposit-cli` used for signing the request to updating the withdrawal(s) address.
 
 The first step for submitting partial withdrawals for your validator is to sign a message setting the Ethereum address you wish to receive your funds at. This request is known as a **BLS to Execution Change**.
 
-First, install the Ethereum [staking-deposit-cli](https://github.com/ethereum/staking-deposit-cli) locally by building it from source, which is our recommendation.  Building the code yourself is the most secure way of using it, and for something as crucial as a tool that deals with your mnemonic, we recommend following this path. Alternatively, the project provides [binaries](https://github.com/ethereum/staking-deposit-cli/releases) that are available to use at your own risk.
-<Tabs
-  groupId="staking-deposit-cli-install"
-  defaultValue="release"
-  values={[
-    {label: 'download latest release', value: 'release'},
-    {label: 'install from source', value: 'source'}
-  ]}>
-<TabItem value="release">
+To do this you will need to download the latest Ethereum [staking-deposit-cli](https://github.com/ethereum/staking-deposit-cli/releases) according to your operating system. This feature is supported starting from release `v2.5.0`. 
+Once downloaded, extract downloaded content into a local folder or flash drive ( there should be a `deposit` script inside) to be migrated into an offline environment in step 3.
 
-download the latest release from https://github.com/ethereum/staking-deposit-cli/releases according to your operating system. This feature is supported starting from release `v2.5.0`.
-</TabItem>
-<TabItem value="source">
-
-For advanced users you can look to install from source using the following steps
-
-As a prerequisite, you will need to install [Python3](https://www.python.org/downloads/) and pip3 on your system as well as [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git), which can be installed through different means for various operating systems. Next, clone the project’s codebase locally in a terminal window:
-
-```go
-git clone https://github.com/ethereum/staking-deposit-cli.git
-```
-
-Next, run the following commands to setup an environment for its dependencies:
-
-```
-pip3 install virtualenv
-virtualenv venv
-source venv/bin/activate
-```
-
-Install dependencies:
-
-```
-python3 setup.py install
-pip3 install -r requirements.txt
-```
-</TabItem>
-</Tabs>
-
-### Step 2: Get your validator withdrawal credentials ready
+### Step 2: gather validator information such as your current `withdrawal_credentials`
 
 For this step, you will also need to retrieve your validator’s **withdrawal_credentials** from Ethereum. 
 you can find the `withdrawal_credentials` for each associated validator in your original deposit_data-XXX.json file when you first used the launchpad.
@@ -157,39 +120,21 @@ Your withdrawal credentials will be visible in the response to this request - ke
 }
 ```
 
-### Step 3: Sign your BLS to Execution change
-
-Now that the staking deposit tool is executable, you can then use it to generate your signed **[BLS to Execution](https://github.com/ethereum/staking-deposit-cli/blob/bls-to-execution-change/README.md#generate-bls-to-execution-change-arguments)** request. You need to use your mnemonic for this step, so doing it offline is key and ensuring you do not paste your mnemonic anywhere else than necessary.
+### Step 3: run the [staking-deposit-cli](https://github.com/ethereum/staking-deposit-cli) in an `offline` environment with your mnemonic to generate the `blstoexecutionchange` message(s)
 
 :::caution
 We recommend doing this next step *without* an Internet connection to be maximally secure. Either turn off the internet before introducing your mnemonic for signing or migrate to an air-gapped environment to continue the following steps.
 :::
 
+Now that the staking deposit tool is executable, you can then use it to generate your signed **[BLS to Execution](https://github.com/ethereum/staking-deposit-cli/blob/bls-to-execution-change/README.md#generate-bls-to-execution-change-arguments)** request. You need to use your mnemonic for this step, so doing it offline is key and ensuring you do not paste your mnemonic anywhere else than necessary.
+
 Here’s the command to get started with the process. This command will **not** submit your signed message to the network yet, and will only generate the data needed for the next steps.
 
-<Tabs
-  groupId="staking-deposit-cli-run"
-  defaultValue="release"
-  values={[
-    {label: 'downloaded from release', value: 'release'},
-    {label: 'installed from source', value: 'source'},
-  ]
-}>
-<TabItem value="release">
-navigate to the downloaded release, extract it, and open a terminal in the extracted folder.
+navigate to the extracted `deposit` script is after downloading and extracting the `staking-deposit-cli`.
 
 ```jsx
 ./deposit generate-bls-to-execution-change
 ```
-</TabItem>
-
-<TabItem value="source">
-
-```jsx
-python ./staking_deposit/deposit.py generate-bls-to-execution-change
-```
-</TabItem>
-</Tabs>
 
 By calling the command above, you should go through an interactive process that will ask you for the following information:
 
@@ -244,7 +189,7 @@ Success!
 Your SignedBLSToExecutionChange JSON file can be found at: /home/me/Desktop/code/python/staking-deposit-cli/bls_to_execution_changes
 ```
 
-### Step 4: Verify your output
+### Step 4: verify the `blstoexecutionchange` message(s) that the corresponding validator will set to the chosen Ethereum address
 
 Once you complete the above, you’ll have a file contained in the `bls_to_execution_changes/` folder of your [staking-deposit-cli](https://github.com/ethereum/staking-deposit-cli). It will represent a list of BLS to execution messages that have been signed with your private keys and are ready to submit to Ethereum. Here’s what a sample file of these looks like. Example output with placeholder values:
 
@@ -277,11 +222,15 @@ Make sure the `validator_index` corresponds to the correct chosen `to_execution_
 
 Move the generated `bls_to_execution_changes-*.json` file to an online environment that has access to a synced beacon node for the next step.
 
-### Step 5: Submit your signed request to the Ethereum network
+### Step 5: submit your signed `blstoexecutionchange` message(s) to the Ethereum network using prysmctl
 
 In this step, you will submit your signed requests to the Ethereum network using a tool provided by the Prysm project called `prysmctl`. Learn how to download and install the prysmctl tool from our [guide](../prysm-usage/prysmctl.md) or check commands on [Command-line options](../prysm-usage/parameters.md). You’ll need access to a synced beacon node to proceed with this step (it does not need to be a Prysm beacon node)
 
-Once Prysmctl is installed, you can use the `prysmctl validator withdraw` command, which will ask for terms of service acceptance and confirmation of command by providing additional flags, and also a path to the bls_to_execution_changes file from the previous step.
+Once prysmctl is downloaded, you can use the `prysmctl validator withdraw` command, which will ask for terms of service acceptance and confirmation of command by providing additional flags, and also a path to the bls_to_execution_changes file from the previous step.
+
+:::info
+default beacon node REST <node-url> is `http://localhost:3500` aka `http://127.0.0.1:3500`
+:::
 
 ```jsx
 bazel run //cmd/prysmctl -- validator withdraw --beacon-node-host=<node-url> --path=<bls_to_execution_changes-*.json>
@@ -384,7 +333,8 @@ A: If the withdrawal credentials already begin with `0x01` it will not be able t
 
 **Q: When can I withdraw?**
 
-A: After the Capella/Shanghai hardfork withdrawals will be enabled. This is expected to go live this spring, 2023.
+A: After the Capella/Shanghai hardfork withdrawals will be enabled. The time frame is different per network, but mainnet will be after 22:27:35 UTC on Apr. 12, 2023. 
+   our team member has provided this guide on [when should i submit withdrawals](https://hackmd.io/@potuz/H1P8X5xZn)
 
 **Q: What is the difference between partial and full withdrawals?**
 
