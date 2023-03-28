@@ -122,10 +122,6 @@
             },
             {
               "type": "doc",
-              "id": "wallet/remote"
-            },
-            {
-              "type": "doc",
               "id": "wallet/nondeterministic"
             },
             {
