@@ -7,7 +7,7 @@ style_notes: Consistently address reader as "you", use contractions to keep the 
 
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
-<HeaderBadgesWidget commaDelimitedContributors="Raul,James,Radek,Sammy" lastVerifiedDateString="March 20th, 2023" lastVerifiedVersionString="v4.0.0" />
+<HeaderBadgesWidget commaDelimitedContributors="Raul,James,Radek,Sammy" lastVerifiedDateString="March 28th, 2023" lastVerifiedVersionString="v4.0.0" />
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -25,45 +25,26 @@ The **Capella/Shanghai Ethereum** upgrade lets you withdraw your validator nodes
 
 In this how-to, you'll learn how to perform both types of withdrawals.
 
+## In a nutshell
 
+Withdrawals are initiated by updating the `withdrawal_credentials` field on the validator with an Ethereum address of your choosing using your mnemonic. 
 
+**note: updating the `withdrawal_credentials` is irreversible, so you must carefully verify the Ethereum address you choose**
 
-## Before you begin
+We will be covering the following steps in this guide:
 
-Familiarity with the following resources and terms will help you confidently complete this guide:
+1. downloading [staking-deposit-cli](https://github.com/ethereum/staking-deposit-cli)
+2. running the [staking-deposit-cli](https://github.com/ethereum/staking-deposit-cli) in an `offline` environment with your mnemonic to generate the `blstoexecutionchange` message(s)
+3. verify the `blstoexecutionchange` message(s) that the corresponding validator will set to the chosen Ethereum address
+4. migrate the `blstoexecutionchange` message(s) back to an `online` environment
+5. download the [latest prysmctl](https://github.com/prysmaticlabs/prysm/releases)
+6. run the prysmctl with the `blstoexecutionchange` message(s) against a synced prysm beacon node to change the validator's `withdrawal_credentials`
+7. wait and verify changes to `withdrawal_credentials`
+8. wait for balances to appear in the chosen Ethereum address
 
-<!-- TODO: These terms can now be moved into Glossary CMS and embedded via quicklooks to further streamline the content experience - ping Mick if you'd like to help with this. -->
-
+### Reference information
 - [The Ethereum Foundation Withdrawals FAQ](https://notes.ethereum.org/@launchpad/withdrawals-faq): A client-agnostic overview of important information regarding Ethereum validator withdrawals.
 - **Validator Life Cycle**: guide to [validator life cycles](../how-prysm-works/validator-lifecycle.md).
-- **Validator**: The on-chain representation of a validator node and its staked Ethereum.
-- **Validator index:** A unique numeric ID assigned to a validator when activated. You can see this validator index in your Prysm validator client logs, or in block explorers such as [https://beaconcha.in](https://beaconcha.in) and [https://beaconscan.com](https://beaconscan.com) by looking it up using your public key. You will need to know the validator indices of the validators you wish to withdraw through this guide. Only activated validators can begin the exit and withdrawal processes.
-- **Staker:** The person or entity managing Ethereum validators.
-- **Voluntary exit:** Validators that are currently active on Ethereum can choose to **exit** the network, marking them as exited and exempting them from any staking responsibilities. In order to **withdraw** a validator’s balance completely, a voluntary exit must be submitted to Ethereum and must complete first.
-- **Full validator withdrawal:** The process of withdrawing your entire stake on Ethereum, exiting your validator, and withdrawing your entire balance to an Ethereum address of your choosing. Full validator withdrawals need a validator to exit first, which can take time depending on how large the exit queue is. Performing a full withdrawal requires submitting a voluntary exit first.
-- **Partial validator withdrawal:** The process of withdrawing your validator’s **earnings** only. That is, if you're staking 33.3 ETH, you can withdraw 1.3 ETH using a partial withdrawal. Your validator does **not** need to exit, and you will continue to validate normally. Partial withdrawals do not go through an exit queue, but will only be processed at a maximum of 16 validators at a time per block.
-- **Capella/Shanghai Ethereum Upgrade:** Ethereum network upgrades bring major feature additions to the network as a result of significant work from Ethereum client teams. This spring, an upgrade known as Capella/Shanghai will make validator withdrawals on mainnet. The upgrade has two names because there are two pieces of software being upgraded: consensus clients such as Prysm, and execution clients such as go-ethereum.
-- **Validator mnemonic, HD wallet mnemonic, or validator seed phrase:** A mnemonic in this context is the 24 word secret that you received upon creating your validator(s), which is the ultimate credential that gives you access to withdrawing your validator(s). For many, this was generated when they first interacted with the ethereum staking CLI to prepare their validator deposits. We will refer to this as your validator mnemonic throughout this document
-- **Validator withdrawal credentials:** Each validator has data known as “withdrawal credentials” which can be fetched from your beacon node or from a block explorer such as [https://beaconcha.in](https://beaconcha.in) or [https://beaconscan.com](https://beaconscan.com) by looking at the “deposits” tab and seeing your credentials there. You will need these for this guide.
-- **Ethereum execution address:** Referred to also as an Ethereum address, this is a standard address to an Ethereum account which you can view in block explorers such as Etherscan. Your validator’s balance, upon a full withdrawal, will be available at an Ethereum address of your choosing.
-- **BLS key:** Your validators use a key format known as [BLS](../how-prysm-works/bls-signature-aggregation-and-cryptography.md), which is used exclusively for staking. Validators have 4 kinds of BLS keys: validator public key, validator private key, withdrawal public key, and withdrawal private key. only the validator public key can be viewed on staking explorers such as [https://beaconcha.in](https://beaconcha.in), and private keys, which are secret, are used for signing. Not to be confused with an Ethereum address. The validator mnemonic can be used to access all 4 keys which are important for setting the Ethereum address for withdrawing.
-- **BLS to Execution Change:** In order to withdraw your validator, Ethereum needs to associate an **Ethereum execution address** with your validator’s **keys**. Underneath the hood, submitting a bls-to-execution-change (withdrawal) request updates the [withdrawal credentials](https://github.com/ethereum/consensus-specs/blob/master/specs/phase0/validator.md#withdrawal-credentials) which tells Ethereum “I want to withdraw my validator balance to this specific Ethereum address”. When you see the terms BLS to Execution or bls_to_exec used, it refers to this action. **note:** withdrawal request and bls-to-execution-change are used interchangeably.
-- **Pool:** Upon submission of a validator exit request or bls-to-execution-change request, the message will sit in a special place in memory ( the pool ) to be broadcasted across your peers. Since only the block proposers can include these requests and there is a limit to the number of requests included per block, sometimes if the pool becomes too full your message may be dropped and not included. If this happens, a re-submission of the request may be required.
-
-## Important guidelines
-
-When withdrawing your validator, keep the following guidelines in mind:
-
- 1. **Validators must be fully exited to trigger a full withdrawal:** Full validator withdrawals require your validator to exit first, as exits do not happen automatically. You will need to submit a voluntary exit by following our documentation [here](exiting-a-validator.md). Once your validator exits, it will no longer need to perform its responsibilities after some time (there can be a delay if the validator is part of a sync committee or recently slashed) . The ordering of requests for setting withdrawal credentials or exiting does not matter, once a validator has both its withdrawal credentials updated as well as in an exited state funds will automatically be added to the chosen execution address when processed.
- 2. **Full withdrawals are not immediate:** Making a **full-validator withdrawal** means that you must exit your validator first. Validator exits have a queue that can only process a few items every few minutes, so your exit can take days or weeks depending on how big this queue grows. The reason there is an exit queue is for the security of the network. Having bounds on validator churn is important towards guaranteeing safety properties of the chain and keeping consensus stable. There is also a queue for activating validators in addition to exiting them. Withdrawals, full or partial, are processed at a rate of at most 16 validators per block.
- 3. **Full withdrawals are irreversible:** Validator exits are irreversible, and so are full validator withdrawals. Once you exit, you cannot do anything with your validator except for withdraw it. Once you perform a full withdrawal, you will receive your validator balance at the Ethereum address of your choosing, and you cannot revert this action. You could use your withdrawn funds to spin up another separate validator if you wish, however.
- 4. **Partial withdrawals do not exit your validator:** Partial withdrawals only withdraw your validator earnings to an Ethereum address of your choosing, but do not exit nor require an exit from your validator. That is, if you are running a validator that has a balance of 33.3 ETH, you can perform a bls-to-execution-change request to initiate the partial withdrawal of 1.3 ETH and automatic withdrawals of earnings over 32ETH in the future. Your validator will continue to operate normally
- 5. **Partial withdrawals of your earnings will continue indefinitely to your Ethereum address of your choice:** Once a partial withdrawal is included on-chain, earnings will continue to accrue in the Ethereum address you initially specified. This address **cannot be changed** once set, so you must ensure it is protected and one you have custody over. **note: there is only one withdrawal address and this is the same address that will be used for full withdrawals
- 6. **Smart contract addresses can be used as the withdrawal address but can not trigger functions:** Smart contract addresses set as the withdrawal credential will only update balances and not trigger any logic. Read [https://eips.ethereum.org/EIPS/eip-4895](https://eips.ethereum.org/EIPS/eip-4895) for more reasoning.
- 7. **Once you tell Ethereum the address you want to withdraw your validator to, you cannot change it back**: In order to withdraw, you must tell Ethereum the address you wish to use to receive the withdrawn funds for that particular validator. Once you submit this signed message, **you cannot change it**, so make sure you pick an Ethereum address you intend to withdraw to indefinitely and that the address is intended for the corresponding validator key. The withdrawal address will be the same whether partial or full withdrawal so this is the most important step to watch out for when triggering a withdrawal.
- 8. **It can take a while for your BLS to Execution request to be completed, so do not panic if this is the case:** Once you submit a BLS to Exec request to tell Ethereum the address you want to use in order to receive your withdrawn funds, it goes through several processing pipelines that might take a bit longer than expected. If your beacon node has also received many other requests for BLS to exec changes, your initial request could be dropped and you may need to try again, so do not panic if you have submitted a request and nothing has happened yet. Prysm will include last-seen messages first when proposing blocks, so to avoid messages being dropped and timely includes it is better to wait a few hours or days after the fork.
- 9. **Slashed or previously exited validators are still able to withdraw:** If any of your validators have been slashed since launch and exited from the chain forcefully, or if you exited a long time ago, you can still withdraw your remaining balance normally. To do so, you will just need to submit a BLS to execution change request by following the step-by-step guide to performing a full withdrawal in this document.
-
 
 ## Prepare to withdraw
 
@@ -100,9 +81,8 @@ First, install the Ethereum [staking-deposit-cli](https://github.com/ethereum/st
   defaultValue="release"
   values={[
     {label: 'download latest release', value: 'release'},
-    {label: 'install from source', value: 'source'},
-  ]
-}>
+    {label: 'install from source', value: 'source'}
+  ]}>
 <TabItem value="release">
 
 download the latest release from https://github.com/ethereum/staking-deposit-cli/releases according to your operating system. This feature is supported starting from release `v2.5.0`.
@@ -217,7 +197,6 @@ By calling the command above, you should go through an interactive process that 
 2. **The network** you wish to perform this operation for. example: `mainnet`,`goerli`,`sepolia` or `zhejiang`. This tutorial uses the `zhejiang` testnet as an **example**.
 3. Enter your **mnemonic** next
 4. Next, you will be asked for the starting index you used to create your validators (read more about hd wallets [here](https://eips.ethereum.org/EIPS/eip-2334#path)). For **most users**, this will be 0 unless you created validators from a non default index.
-
 
 :::info
 Inside the original `deposit.json` file used for staking you can count each validator's public key in sequential order starting from 0.
@@ -399,9 +378,25 @@ Slashed or involuntarily exited validators will still need to go through the pro
 
 <!-- TODO: These questions can now be moved into FAQ CMS and embedded both here and within our root-level FAQ - ping Mick if you'd like to help with this. -->
 
+**Q: I updated my `withdrawal_credentials` already; can I update it again?**
+
+A: If the withdrawal credentials already begin with `0x01` it will not be able to change to a different execution address. **note: please choose your withdrawal address very carefully as you can only have it set to an address once**
+
 **Q: When can I withdraw?**
 
 A: After the Capella/Shanghai hardfork withdrawals will be enabled. This is expected to go live this spring, 2023.
+
+**Q: What is the difference between partial and full withdrawals?**
+
+A: Partial withdrawals only require an updated `withdrawal_credentials` field and will only send earnings over 32 ETH to the chosen withdrawal address. Full withdrawals require the validator to be fully exited in addition to 
+
+**Q: I submitted my `blstoexecutionchange` why isn't my `withdrawal_credentials` updated?**
+
+A: Once you submit a BLS to Exec request to tell Ethereum the address you want to use in order to receive your withdrawn funds, it goes through several processing pipelines that might take a bit longer than expected. If your beacon node has also received many other requests for BLS to exec changes, your initial request could be dropped and you may need to try again, so do not panic if you have submitted a request and nothing has happened yet. Prysm will include last-seen messages first when proposing blocks, so to avoid messages being dropped and timely includes it is better to wait a few hours or days after the fork.
+
+**Q: I set my `withdrawal_credentials` but I am not fully withdrawn. How do I fully withdraw?**
+
+A: Full validator withdrawals require your validator to exit first, as exits do not happen automatically. You will need to submit a voluntary exit by following our documentation [here](exiting-a-validator.md). Once your validator exits, it will no longer need to perform its responsibilities after some time (there can be a delay if the validator is part of a sync committee or recently slashed) . The ordering of requests for setting withdrawal credentials or exiting does not matter, once a validator has both its withdrawal credentials updated as well as in an exited state funds will automatically be added to the chosen execution address when processed. **note:** this process will take sometime as withdrawals, full or partial, are processed at a rate of at most 16 validators per block.
 
 **Q: My keys were compromised, can I still withdraw?**
 
@@ -422,9 +417,7 @@ A: Withdrawal public keys that begin with `0x01` are set to begin withdrawing ei
 1. [`/eth/v1/beacon/states/{state_id}/validators/{validator_id}`](https://ethereum.github.io/beacon-APIs/?urls.primaryName=dev#/Beacon/getStateValidator) Beacon API endpoint will return the `withdrawal_credential` information
 2. `ethdo validator info --validator=<yourvalidatorIndex> --verbose` command with [EthDo](https://github.com/wealdtech/ethdo)
 
-**Q: Can I reset my withdrawal address after setting it up once before?**
-
-A: If the withdrawal credentials already begin with `0x01` it will not be able to change to a different execution address. 
+  You can also check your favorite block explorer such as [beaconcha.in](https://beaconcha.in/validators/withdrawals) and [etherscan.io](https://etherscan.io/) which will have pages to display beaconchain withdrawals based on the network.
 
 **Q: How long do I have to wait for withdrawals?**
 
@@ -442,9 +435,29 @@ A: Prysm processes messages last-in-first-out(LIFO) by design which means the la
 
 A: Yes, however only account balances will change and there will be no associated triggering of smart contract logic. Read [https://eips.ethereum.org/EIPS/eip-4895](https://eips.ethereum.org/EIPS/eip-4895) for more reasoning.
 
+**Q: My validator was slashed or forcefully exited, can I still withdraw my remaining balance?**
+
+A: If any of your validators have been slashed since launch and exited from the chain forcefully, or if you exited a long time ago, you can still withdraw your remaining balance normally. To do so, you will just need to submit a BLS to execution change request by following the step-by-step guide to performing a full withdrawal in this document.
+
 **Q: I am a non technical user, how can I set my withdrawals in a safe way?**
 
 A: The guide will still provide a safe way to generate the signed `blstoexecutionchange` messages in an offline environment. From there, if you're willing to take a small risk on inclusion guarantees, some block scanners like beaconcha.in will provide front ends to drag and drop the messages for inclusion to set the withdrawal address. 
+
+## Glossary
+<!-- TODO: These terms can now be moved into Glossary CMS and embedded via quicklooks to further streamline the content experience - ping Mick if you'd like to help with this. -->
+- **Validator**: The on-chain representation of a validator node and its staked Ethereum.
+- **Validator index:** A unique numeric ID assigned to a validator when activated. You can see this validator index in your Prysm validator client logs, or in block explorers such as [https://beaconcha.in](https://beaconcha.in) and [https://beaconscan.com](https://beaconscan.com) by looking it up using your public key. You will need to know the validator indices of the validators you wish to withdraw through this guide. Only activated validators can begin the exit and withdrawal processes.
+- **Staker:** The person or entity managing Ethereum validators.
+- **Voluntary exit:** Validators that are currently active on Ethereum can choose to **exit** the network, marking them as exited and exempting them from any staking responsibilities. In order to **withdraw** a validator’s balance completely, a voluntary exit must be submitted to Ethereum and must complete first.
+- **Full validator withdrawal:** The process of withdrawing your entire stake on Ethereum, exiting your validator, and withdrawing your entire balance to an Ethereum address of your choosing. Full validator withdrawals need a validator to exit first, which can take time depending on how large the exit queue is. Performing a full withdrawal requires submitting a voluntary exit first.
+- **Partial validator withdrawal:** The process of withdrawing your validator’s **earnings** only. That is, if you're staking 33.3 ETH, you can withdraw 1.3 ETH using a partial withdrawal. Your validator does **not** need to exit, and you will continue to validate normally. Partial withdrawals do not go through an exit queue, but will only be processed at a maximum of 16 validators at a time per block.
+- **Capella/Shanghai Ethereum Upgrade:** Ethereum network upgrades bring major feature additions to the network as a result of significant work from Ethereum client teams. This spring, an upgrade known as Capella/Shanghai will make validator withdrawals on mainnet. The upgrade has two names because there are two pieces of software being upgraded: consensus clients such as Prysm, and execution clients such as go-ethereum.
+- **Validator mnemonic, HD wallet mnemonic, or validator seed phrase:** A mnemonic in this context is the 24 word secret that you received upon creating your validator(s), which is the ultimate credential that gives you access to withdrawing your validator(s). For many, this was generated when they first interacted with the ethereum staking CLI to prepare their validator deposits. We will refer to this as your validator mnemonic throughout this document
+- **Validator withdrawal credentials:** Each validator has data known as “withdrawal credentials” which can be fetched from your beacon node or from a block explorer such as [https://beaconcha.in](https://beaconcha.in) or [https://beaconscan.com](https://beaconscan.com) by looking at the “deposits” tab and seeing your credentials there. You will need these for this guide.
+- **Ethereum execution address:** Referred to also as an Ethereum address, this is a standard address to an Ethereum account which you can view in block explorers such as Etherscan. Your validator’s balance, upon a full withdrawal, will be available at an Ethereum address of your choosing.
+- **BLS key:** Your validators use a key format known as [BLS](../how-prysm-works/bls-signature-aggregation-and-cryptography.md), which is used exclusively for staking. Validators have 4 kinds of BLS keys: validator public key, validator private key, withdrawal public key, and withdrawal private key. only the validator public key can be viewed on staking explorers such as [https://beaconcha.in](https://beaconcha.in), and private keys, which are secret, are used for signing. Not to be confused with an Ethereum address. The validator mnemonic can be used to access all 4 keys which are important for setting the Ethereum address for withdrawing.
+- **BLS to Execution Change:** In order to withdraw your validator, Ethereum needs to associate an **Ethereum execution address** with your validator’s **keys**. Underneath the hood, submitting a bls-to-execution-change (withdrawal) request updates the [withdrawal credentials](https://github.com/ethereum/consensus-specs/blob/master/specs/phase0/validator.md#withdrawal-credentials) which tells Ethereum “I want to withdraw my validator balance to this specific Ethereum address”. When you see the terms BLS to Execution or bls_to_exec used, it refers to this action. **note:** withdrawal request and bls-to-execution-change are used interchangeably.
+- **Pool:** Upon submission of a validator exit request or bls-to-execution-change request, the message will sit in a special place in memory ( the pool ) to be broadcasted across your peers. Since only the block proposers can include these requests and there is a limit to the number of requests included per block, sometimes if the pool becomes too full your message may be dropped and not included. If this happens, a re-submission of the request may be required.
 
 
 import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
