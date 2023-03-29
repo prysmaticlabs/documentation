@@ -75,8 +75,41 @@ This section walks you through the process of performing a **partial validator w
 The first step for submitting partial withdrawals for your validator is to sign a message setting the Ethereum address you wish to receive your funds at. This request is known as a **BLS to Execution Change**.
 
 To do this you will need to download the latest Ethereum [staking-deposit-cli](https://github.com/ethereum/staking-deposit-cli/releases) according to your operating system. This feature is supported starting from release `v2.5.0`. 
-Once downloaded, extract downloaded content into a local folder or flash drive ( there should be a `deposit` script inside) to be migrated into an offline environment in step 3.
+Once downloaded, extract downloaded content ( a .tar.gz file ) into a local folder or flash drive ( there should be a `deposit` script inside) to be migrated into an offline environment in step 3.
 
+below are example commands to fetch and download `v2.5.0` for each operating system through a terminal at the current location.
+
+<Tabs
+  groupId="staking-deposit-cli"
+  defaultValue="linux-amd"
+  values={[
+    {label: 'linux-amd', value: 'linux-amd'},
+    {label: 'linux-arm', value: 'linux-amd'},
+    {label: 'windows-amd', value: 'windows-amd'},
+    {label: 'mac-amd', value: 'mac-amd'},
+  ]
+}>
+<TabItem value="linux-amd">
+```
+curl -LO  https://github.com/ethereum/staking-deposit-cli/releases/download/v2.5.0/staking_deposit-cli-d7b5304-linux-amd64.tar.gz
+```
+</TabItem>
+<TabItem value="linux-arm">
+```
+curl -LO  https://github.com/ethereum/staking-deposit-cli/releases/download/v2.5.0/staking_deposit-cli-d7b5304-linux-arm64.tar.gz
+```
+</TabItem>
+<TabItem value="windows-amd">
+```
+curl -LO  https://github.com/ethereum/staking-deposit-cli/releases/download/v2.5.0/staking_deposit-cli-d7b5304-windows-amd64.zip
+```
+</TabItem>
+<TabItem value="mac-amd">
+```
+curl -LO  https://github.com/ethereum/staking-deposit-cli/releases/download/v2.5.0/staking_deposit-cli-d7b5304-darwin-amd64.tar.gz
+```
+</TabItem>
+</Tabs>
 ### Step 2: gather validator information such as your current `withdrawal_credentials`
 
 For this step, you will also need to retrieve your validator’s **withdrawal_credentials** from Ethereum. 
