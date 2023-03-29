@@ -114,6 +114,7 @@ curl -LO  https://github.com/ethereum/staking-deposit-cli/releases/download/v2.5
 ```
 </TabItem>
 </Tabs>
+
 ### Step 2: gather validator information such as your current `withdrawal_credentials`
 
 For this step, you will also need to retrieve your validator’s **withdrawal_credentials** from Ethereum. 
@@ -261,7 +262,7 @@ Move the generated `bls_to_execution_changes-*.json` file to an online environme
 
 ### Step 5: submit your signed `blstoexecutionchange` message(s) to the Ethereum network using prysmctl
 
-In this step, you will submit your signed requests to the Ethereum network using a tool provided by the Prysm project called `prysmctl`. Learn how to download and install the prysmctl tool from our [guide](../prysm-usage/prysmctl.md) or check commands on [Command-line options](../prysm-usage/parameters.md). You’ll need access to a synced beacon node to proceed with this step (it does not need to be a Prysm beacon node)
+In this step, you will submit your signed requests to the Ethereum network using a tool provided by the Prysm project called `prysmctl`. Learn how to download and install the prysmctl tool from our [guide](../prysm-usage/prysmctl.md) or check commands on [Command-line options](../prysm-usage/parameters.md). You’ll need access to a synced beacon node to proceed with this step (it does not need to be a Prysm beacon node).
 
 Once prysmctl is downloaded, you can use the `prysmctl validator withdraw` command, which will ask for terms of service acceptance and confirmation of command by providing additional flags, and also a path to the bls_to_execution_changes file from the previous step.
 
@@ -289,6 +290,22 @@ docker run -it -v $HOME/path/to/bls_to_execution:/bls_dir \
 ```
 
 Note that this approach requires mounting of the bls_to_execution_changes-*.json file
+
+:::info
+
+prysmctl's withdraw command is only available after the capella/shanghai hardfork on each specific network.
+
+You may also directly call the Beacon API endpoint through the following script.
+To do this you must replace the `<node-url>` as well as the `<post-request-content>` with the contents of our `blstoexecutionchange` message file
+
+```
+curl -X 'POST' \
+  '<node-url>/eth/v1/beacon/pool/bls_to_execution_changes' \
+  -H 'accept: */*' \
+  -H 'Content-Type: application/json' \
+  -d '<post-request-content>'
+```
+:::
 
 ### Step 6: Confirm submission
 
