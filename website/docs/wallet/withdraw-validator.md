@@ -29,7 +29,7 @@ In this how-to, you'll learn how to perform both types of withdrawals.
 
 Withdrawals are initiated by updating the `withdrawal_credentials` field on the validator with an Ethereum address of your choosing using your mnemonic. 
 
-**note: updating the `withdrawal_credentials` is irreversible, so you must carefully verify the Ethereum address you choose**
+**note: updating the `withdrawal_credentials` is irreversible, so you must carefully verify the Ethereum address you wish to receive your funds in**
 
 We will be covering the following steps in this guide:
 
