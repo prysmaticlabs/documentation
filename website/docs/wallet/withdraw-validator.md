@@ -90,21 +90,25 @@ below are example commands to fetch and download `v2.5.0` for each operating sys
   ]
 }>
 <TabItem value="linux-amd">
+
 ```
 curl -LO  https://github.com/ethereum/staking-deposit-cli/releases/download/v2.5.0/staking_deposit-cli-d7b5304-linux-amd64.tar.gz
 ```
 </TabItem>
 <TabItem value="linux-arm">
+
 ```
 curl -LO  https://github.com/ethereum/staking-deposit-cli/releases/download/v2.5.0/staking_deposit-cli-d7b5304-linux-arm64.tar.gz
 ```
 </TabItem>
 <TabItem value="windows-amd">
+
 ```
 curl -LO  https://github.com/ethereum/staking-deposit-cli/releases/download/v2.5.0/staking_deposit-cli-d7b5304-windows-amd64.zip
 ```
 </TabItem>
 <TabItem value="mac-amd">
+
 ```
 curl -LO  https://github.com/ethereum/staking-deposit-cli/releases/download/v2.5.0/staking_deposit-cli-d7b5304-darwin-amd64.tar.gz
 ```
