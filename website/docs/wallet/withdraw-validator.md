@@ -84,7 +84,7 @@ below are example commands to fetch and download `v2.5.0` for each operating sys
   defaultValue="linux-amd"
   values={[
     {label: 'linux-amd', value: 'linux-amd'},
-    {label: 'linux-arm', value: 'linux-amd'},
+    {label: 'linux-arm', value: 'linux-arm'},
     {label: 'windows-amd', value: 'windows-amd'},
     {label: 'mac-amd', value: 'mac-amd'},
   ]
