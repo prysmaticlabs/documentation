@@ -113,13 +113,13 @@ Extract the downloaded content. You should see a `deposit` script. To be extra s
 
 ### Step 2: Prepare your withdrawal credentials
 
-For this step, you'll need to retrieve your validator’s **withdrawal_credentials**. You can find the `withdrawal_credentials` for each of your validators in the `deposit_data-XXX.json` file that was generated when you first used the staking launchpad. This is an example of what the `withdrawal_credentials` field value would look like.
+Retrieve your validator’s **withdrawal_credentials** from the `deposit_data-XXX.json` file that was generated when you first used the staking launchpad. The `withdrawal_credentials` value looks like this:
 
 ```rust
 0x00500b3bf612bed69e888edeb045f590c3f37251e3e049c0732f3adaa57ea3f6
 ```
 
-If you don't have this file, you can retrieve your `withdrawal_credentials` by sending a request to your synced beacon node via this [Beacon API endpoint](https://ethereum.github.io/beacon-APIs/?urls.primaryName=dev#/Beacon/getStateValidator) and providing your validator index or public key:
+If you don't have the `deposit_data-XXX.json` file, you can retrieve your `withdrawal_credentials` by sending a request to your synced beacon node via this [Beacon API endpoint](https://ethereum.github.io/beacon-APIs/?urls.primaryName=dev#/Beacon/getStateValidator) and providing your validator index or public key:
 
 ```rust
 curl -X 'GET' \
