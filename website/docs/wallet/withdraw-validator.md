@@ -12,8 +12,6 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<!-- tightening this up a little - it's ok if it deviates from the template as long as the deviation is useful -->
-
 :::caution Public Preview
 
 Withdrawals **aren't yet available on Ethereum mainnet**. The instructions in this document may change significantly as the feature is stabilized on test networks. Join our [Discord server](https://discord.gg/prysmaticlabs) to share your feedback on this procedure.
@@ -25,13 +23,8 @@ The **Capella/Shanghai Ethereum** upgrade lets you withdraw your validator nodes
  1. **Partial (earnings) withdrawal**: This option lets you withdraw your earnings (that is, all value staked above 32 ETH) and continue validating.
  2. **Full withdrawal**: This option lets you liquidate your entire stake and earnings, effectively liquidating your validator node(s) and exiting the network.
 
-<!-- concisely set prior knowledge expectations -->
 
 In this how-to, you'll learn how to perform both types of withdrawals. Familiarity with Ethereum wallets, mnemonic phrases, and command lines is expected.
-
-<!-- I'd consider removing the detailed preview and reference information -->
-
-<!-- starting with "Prerequisites" is a pattern we can normalize -->
 
 ## Prerequisites
 
@@ -58,18 +51,12 @@ We'll install other dependencies as we go. <!-- we provide prysmctl instructions
 
 This section walks you through the process of performing a **partial validator withdrawal**, allowing you to withdraw staked balances above 32 ETH for each of your active Ethereum validators.
 
-<!-- consider keeping the headers less jargony, progressively disclosing the jargon/complexity within the body text, as needed -->
 
 ### Step 1: Download `staking-deposit-cli`
 
-<!-- simply said -->
-
 We need to send a message to the network that says "I authorize a partial withdrawal of my validator's staked ETH to an address that I own". This message is called a **BLS to Execution Change**. We create this message by signing the withdrawal request with your validator's private key using a utility called `staking-deposit-cli`.
 
-<!-- we can assume that our readers will know to download the right version for their OS -->
-<!-- provide the installation instructions, and then tell them what to do with it, so that the procedure can be followed linearly without "going back" or bouncing around too much -->
-
-Download the latest Ethereum [staking-deposit-cli](https://github.com/ethereum/staking-deposit-cli/releases) using one of the following commands:
+Download the latest Ethereum [staking-deposit-cli](https://github.com/ethereum/staking-deposit-cli/releases) (example uses `v2.5.0`) using one of the following commands:
 
 <Tabs
   groupId="staking-deposit-cli"
@@ -107,11 +94,7 @@ curl -LO  https://github.com/ethereum/staking-deposit-cli/releases/download/v2.5
 </TabItem>
 </Tabs>
 
-<!-- realistically, I'm not sure if we can expect everyone to have an airgapped machine sitting around, so we can frame this as an optional best practice -->
-
-Extract the downloaded content. You should see a `deposit` script. To be extra secure, move the extracted contents into an external storage device and prepare to move them to an "air gapped" machine (one that hasn't ever been connected to the internet).
-
-<!-- said simply -->
+Extract the downloaded content. You should see a `deposit` script. You will need to use this script while disconnected from the internet, but to be extra secure, move the extracted contents into an external storage device and prepare to move them to an "air gapped" machine (one that hasn't ever been connected to the internet).
 
 ### Step 2: Prepare your withdrawal credentials
 
