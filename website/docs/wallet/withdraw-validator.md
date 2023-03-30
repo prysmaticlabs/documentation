@@ -2,7 +2,7 @@
 id: withdraw-validator
 title: Withdraw your validator
 sidebar_label: Withdraw your validator
-style_notes: Consistently address reader as "you", use contractions to keep the tone conversational, iterate on succinct articulation, minimize duplication
+style_guide_internal: https://www.notion.so/arbitrum/Style-and-convention-guide-Docs-dafaf8d1ce34433d88c1ef3b4b99c19c
 ---
 
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
@@ -12,49 +12,37 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-:::caution Public Preview
-**This feature is currently in public preview** and may change significantly as we receive feedback from users like you. Join our [Discord server](https://discord.gg/prysmaticlabs) to share your feedback.
+<!-- tightening this up a little - it's ok if it deviates from the template as long as the deviation is useful -->
 
-Note that withdrawals **aren't yet available on Ethereum mainnet**; this functionality is currently being validated on test networks. The instructions in this document won't work on Ethereum mainnet and may change significantly as the feature is stabilized on test networks.
+:::caution Public Preview
+
+Withdrawals **aren't yet available on Ethereum mainnet**. The instructions in this document may change significantly as the feature is stabilized on test networks. Join our [Discord server](https://discord.gg/prysmaticlabs) to share your feedback on this procedure.
+
 :::
 
 The **Capella/Shanghai Ethereum** upgrade lets you withdraw your validator nodes' staked Ethereum in one of two ways: 
 
- 1. **Partial (earnings) withdrawal**: This option lets you withdaw your earnings (that is, all value staked above 32 ETH) and continue validating.
+ 1. **Partial (earnings) withdrawal**: This option lets you withdraw your earnings (that is, all value staked above 32 ETH) and continue validating.
  2. **Full withdrawal**: This option lets you liquidate your entire stake and earnings, effectively liquidating your validator node(s) and exiting the network.
 
-In this how-to, you'll learn how to perform both types of withdrawals.
+<!-- concisely set prior knowledge expectations -->
 
-## In a nutshell
+In this how-to, you'll learn how to perform both types of withdrawals. Familiarity with Ethereum wallets, mnemonic phrases, and command lines is expected.
 
-Withdrawals are initiated by updating the `withdrawal_credentials` field on the validator to an Ethereum address of your choosing using your mnemonic. 
+<!-- I'd consider removing the detailed preview and reference information -->
 
-**note: updating the `withdrawal_credentials` is irreversible, so you must carefully verify the Ethereum address you wish to receive your funds in**
+<!-- starting with "Prerequisites" is a pattern we can normalize -->
 
-We will be covering the following steps in this guide:
+## Prerequisites
 
-- download [staking-deposit-cli](https://github.com/ethereum/staking-deposit-cli)
-- gather validator information for the [staking-deposit-cli](https://github.com/ethereum/staking-deposit-cli)
-- run the [staking-deposit-cli](https://github.com/ethereum/staking-deposit-cli) in an `offline` environment with your mnemonic to generate the `blstoexecutionchange` message(s)
-- verify the `blstoexecutionchange` message(s) that the corresponding validator will set to the chosen Ethereum address and migrate the `blstoexecutionchange` message(s) back to an `online` environment
-- download the [latest prysmctl](https://github.com/prysmaticlabs/prysm/releases) and run the prysmctl with the `blstoexecutionchange` message(s) to change the validator's `withdrawal_credentials`
-- monitor for your requested update to `withdrawal_credentials`
-- wait for balances to appear in the chosen Ethereum address
+1. **Your validator mnemonic**: You'll use this to authorize your validator withdrawal request(s). <!-- accessible accuracy > technical precision whenever technical precision isn't needed -->
+2. **Access to a beacon node**: You'll need to connect your validator to a beacon node in order to submit your withdrawal request. Visit our [quickstart](../install/install-with-script.md) for instructions if you need them.
+3. **Stable version of the staking-deposit-cli installed**: The [staking-deposit-cli](https://github.com/ethereum/staking-deposit-cli) is a command-line tool provided by the Ethereum research team. We'll use this to authorize your withdrawal. We recommend building this from source or otherwise verifying the binaries as a security best practice.
+4. **Familiarity with [The Ethereum Foundation Withdrawals FAQ](https://notes.ethereum.org/@launchpad/withdrawals-faq)**: A client-agnostic overview of important information regarding Ethereum validator withdrawals.
+5. **Time to focus:** This is a time-consuming procedure making a mistake can be expensive. Be vigilant against scammers; never share your mnemonic; take your time; ping us [on Discord](https://discord.gg/prysmaticlabs) if you have any questions.
 
-### Reference information
-- [The Ethereum Foundation Withdrawals FAQ](https://notes.ethereum.org/@launchpad/withdrawals-faq): A client-agnostic overview of important information regarding Ethereum validator withdrawals.
-- **Validator Life Cycle**: guide to [validator life cycles](../how-prysm-works/validator-lifecycle.md).
 
-## Prepare to withdraw
-
-In order to withdraw, you should have the following items ready:
-
-1. **Your validator mnemonic**: you will need it in order to sign your validator withdrawal request(s).
-2. **Access to a beacon node:** you will need to connect to an Ethereum beacon node, such as Prysm’s, in order to submit your withdrawal request. For instructions on running a beacon node, see our quickstart guide on running a node [here](../install/install-with-script.md).
-3. **Stable version of the staking-deposit-cli installed**: the [staking-deposit-cli](https://github.com/ethereum/staking-deposit-cli) is a command-line tool provided by the Ethereum research team which allows stakers to sign a BLS to execution message. This is the message that signals Ethereum the address you want to use for withdrawing your validator(s). In our step-by-step guide, we recommend building this from source or verifying the binaries provided as a security best practice.
-4. **Stable version of prysmctl installed:** Prysm provides a tool called `prysmctl` which makes it easy to submit your signed BLS to execution requests to a beacon node. We’ll be referring to it throughout this guide.
-5. **Remain calm and collected:** Performing a withdrawal can be stressful. However, by explaining the concepts and security practices outlined in this guide, we hope to make this process easier for all stakers running Prysm. Be mindful of the tools you install, and be mindful of any scams around the time of withdrawals being enabled. No website nor individual should ask you to share your mnemonic, and therefore you should keep it as protected as possible throughout the process.
-
+We'll install other dependencies as we go. <!-- we provide prysmctl instructions below so we can remove it here and set expectations to minimize duplication -->
 
 <Tabs
   groupId="withdrawals"
@@ -70,14 +58,18 @@ In order to withdraw, you should have the following items ready:
 
 This section walks you through the process of performing a **partial validator withdrawal**, allowing you to withdraw staked balances above 32 ETH for each of your active Ethereum validators.
 
-### Step 1: Download the `staking_deposit-cli` used for signing the request to updating the withdrawal(s) address.
+<!-- consider keeping the headers less jargony, progressively disclosing the jargon/complexity within the body text, as needed -->
 
-The first step for submitting partial withdrawals for your validator is to sign a message setting the Ethereum address you wish to receive your funds at. This request is known as a **BLS to Execution Change**.
+### Step 1: Download `staking-deposit-cli`
 
-To do this you will need to download the latest Ethereum [staking-deposit-cli](https://github.com/ethereum/staking-deposit-cli/releases) according to your operating system. This feature is supported starting from release `v2.5.0`. 
-Once downloaded, extract downloaded content ( a .tar.gz file ) into a local folder or flash drive ( there should be a `deposit` script inside) to be migrated into an offline environment in step 3.
+<!-- simply said -->
 
-below are example commands to fetch and download `v2.5.0` for each operating system through a terminal at the current location.
+We need to send a message to the network that says "I authorize a partial withdrawal of my validator's staked ETH to an address that I own". This message is called a **BLS to Execution Change**. We create this message by signing the withdrawal request with your validator's private key using a utility called `staking-deposit-cli`.
+
+<!-- we can assume that our readers will know to download the right version for their OS -->
+<!-- provide the installation instructions, and then tell them what to do with it, so that the procedure can be followed linearly without "going back" or bouncing around too much -->
+
+Download the latest Ethereum [staking-deposit-cli](https://github.com/ethereum/staking-deposit-cli/releases) using one of the following commands:
 
 <Tabs
   groupId="staking-deposit-cli"
@@ -115,18 +107,21 @@ curl -LO  https://github.com/ethereum/staking-deposit-cli/releases/download/v2.5
 </TabItem>
 </Tabs>
 
-### Step 2: gather validator information such as your current `withdrawal_credentials`
+<!-- realistically, I'm not sure if we can expect everyone to have an airgapped machine sitting around, so we can frame this as an optional best practice -->
 
-For this step, you will also need to retrieve your validator’s **withdrawal_credentials** from Ethereum. 
-you can find the `withdrawal_credentials` for each associated validator in your original deposit_data-XXX.json file when you first used the launchpad.
+Extract the downloaded content. You should see a `deposit` script. To be extra secure, move the extracted contents into an external storage device and prepare to move them to an "air gapped" machine (one that hasn't ever been connected to the internet).
 
-This is an example of what the `withdrawal_credentials` field value would look like.
+<!-- said simply -->
+
+### Step 2: Prepare your withdrawal credentials
+
+Retrieve your validator’s **withdrawal_credentials** from the `deposit_data-XXX.json` file that was generated when you first used the staking launchpad. The `withdrawal_credentials` value looks like this:
 
 ```rust
 0x00500b3bf612bed69e888edeb045f590c3f37251e3e049c0732f3adaa57ea3f6
 ```
 
-You can also find this value by sending a request to your synced beacon node via this [Beacon API endpoint](https://ethereum.github.io/beacon-APIs/?urls.primaryName=dev#/Beacon/getStateValidator) and providing your validator index or public key:
+If you don't have the `deposit_data-XXX.json` file, you can retrieve your `withdrawal_credentials` by sending a request to your synced beacon node via this [Beacon API endpoint](https://ethereum.github.io/beacon-APIs/?urls.primaryName=dev#/Beacon/getStateValidator) and providing your validator index or public key:
 
 ```rust
 curl -X 'GET' \
@@ -134,7 +129,7 @@ curl -X 'GET' \
   -H 'accept: application/json'
 ```
 
-Your withdrawal credentials will be visible in the response to this request - keep your eyes open for `withdrawal_credentials`. Example output with placeholder values:
+Your withdrawal credentials will be visible in the response to this request - look for `withdrawal_credentials`. Example output with placeholder values:
 
 
 ```rust
