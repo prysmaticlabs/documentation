@@ -3,6 +3,9 @@ id: bls-cryptography
 title: BLS cryptography
 sidebar_label: BLS cryptography
 ---
+import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
+
+<HeaderBadgesWidget commaDelimitedContributors="James" lastVerifiedDateString="April 5th, 2023" lastVerifiedVersionString="v4.0.1" />
 
 A major obstacle for Ethereum in the effort to move into a [Proof-of -Stake](../terminology.md#proof-of-stake-pos) model was verifying cryptographic signatures efficiently enough to reach scalability expectations; for this task, **Boneh-Lynn-Shacham signatures (BLS)** were chosen.
 
