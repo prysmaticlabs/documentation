@@ -12,8 +12,6 @@ Prysm supports the official [Keymanager APIs](https://github.com/ethereum/keyman
 
 All Prysm Validator Client APIs require the use of the `--web` flag. 
 
-Quicktest
-
 Please refer to the "local keystores APIs" to manage locally stored validator keys.
 
 Please refer to the "remote keystores APIs" to manage public key settings for Web3Signer; go to our Web3Signer docs page for more information.
