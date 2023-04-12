@@ -12,10 +12,8 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <HeaderBadgesWidget commaDelimitedContributors="Mick,Raul,James" lastVerifiedDateString="March 20th, 2023" lastVerifiedVersionString="v4.0.0" />
 
-:::info New user?
-
-This guidance is targeted at users who are running a node and/or validator using **pre-Merge configuration**. If you're starting from scratch, see our [Quickstart](./install/install-with-script.md).
-
+:::Caution DEPRECATION NOTICE: Ethereum is post merge, use our quickstart guide.
+   The contents of this document was to help validators using **pre-Merge configuration** to migrate post merge. This is no longer required as Etheruem is already post merge. see our [Quickstart](./install/install-with-script.md) going forward.
 :::
 
 ## Select a configuration

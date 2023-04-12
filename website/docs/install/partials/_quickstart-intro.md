@@ -1,13 +1,6 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-:::info Already running a node?
-
-This guidance is targeted at new users. If you're already running a node, see [Configure for The Merge](../../prepare-for-merge.md).
-
-:::
-
-
 ## Select a configuration 
 
 If you're looking for the simplest configuration, select `Geth` and `IPC`:
