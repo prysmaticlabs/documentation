@@ -10,7 +10,7 @@ import JwtGuidancePartial from '@site/docs/partials/_jwt-guidance-partial.md';
 
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
-<HeaderBadgesWidget commaDelimitedContributors="Mick,Raul,James" lastVerifiedDateString="March 20th, 2023" lastVerifiedVersionString="v4.0.0" />
+<HeaderBadgesWidget commaDelimitedContributors="Mick,Raul,James" lastVerifiedDateString="April 12th, 2023" lastVerifiedVersionString="v4.0.0" />
 
 :::Caution DEPRECATION NOTICE: Ethereum is post merge, use our quickstart guide.
    The contents of this document was to help validators using **pre-Merge configuration** to migrate post merge. This is no longer required as Etheruem is already post merge. see our [Quickstart](./install/install-with-script.md) going forward.
