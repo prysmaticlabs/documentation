@@ -249,7 +249,7 @@ Once prysmctl is downloaded, you can use the `prysmctl validator withdraw` comma
 default beacon node REST `<node-url>` is `http://localhost:3500` aka `http://127.0.0.1:3500`
 :::
 
-Open a terminal in the location where you downloaded the prysmctl binaries and run the following command
+Open a terminal in the location where you downloaded the prysmctl binaries and run the following command.
 
 ```jsx
 ./prysmctl validator withdraw --beacon-node-host=<node-url> --path=<bls_to_execution_changes-*.json>
