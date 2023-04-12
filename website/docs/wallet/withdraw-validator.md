@@ -249,16 +249,13 @@ Once prysmctl is downloaded, you can use the `prysmctl validator withdraw` comma
 default beacon node REST `<node-url>` is `http://localhost:3500` aka `http://127.0.0.1:3500`
 :::
 
+Open a terminal in the location where you downloaded the prysmctl binaries.
+
 ```jsx
-bazel run //cmd/prysmctl -- validator withdraw --beacon-node-host=<node-url> --path=<bls_to_execution_changes-*.json>
+./prysmctl validator withdraw --beacon-node-host=<node-url> --path=<bls_to_execution_changes-*.json>
 ```
 
 This command will extract data from the `bls_to_execution_changes-*.json` call the Beacon API endpoint on the synced Beacon Node and validate if it’s in the pool:
-
-
-```jsx
-prysmctl validator withdraw --beacon-node-host=<node-url> --path=<bls_to_execution_changes-*.json>
-```
 
 **Using docker:**
 
