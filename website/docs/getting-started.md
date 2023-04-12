@@ -18,6 +18,10 @@ The following table of contents provides a descriptive overview of Prysm's docum
 <p><strong>New Prysm users</strong> can follow this guidance to get started with Prysm.</p>
 </div>
 <div class='panel'>
+<a href='wallet/withdraw-validator'>Withdraw your earnings or fully withdraw your validator</a>
+<p>Learn how to withdraw your validator's earnings, or entire stake, from Ethereum's Beacon Chain.</p>
+</div>
+<div class='panel'>
 <a href='security-best-practices'>Security best practices</a>
 <p>Learn how to <strong>minimize risk</strong> as a validator. The guidelines provided in this document are client-agnostic (they apply to Prysm and other clients, too).</p>
 </div>
