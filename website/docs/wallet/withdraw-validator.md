@@ -170,8 +170,9 @@ Validators spanning across different mnemonics will need to be counted separatel
 5. You will then be asked the **validator indices** for the validators you wish to generate the message for. You can find your validator indices on block explorers such as [https://beaconcha.in](https://beaconcha.in) or in your Prysm validator client logs. For example, the validator with public key `0x8078c7f4ab6f9eaaf59332b745be8834434af4ab3c741899abcff93563544d2e5a89acf2bec1eda2535610f253f73ee6` on [https://beaconcha.in](https://beaconcha.in) has validator index 8, which you can verify by navigating to its [page](https://beaconcha.in/validator/8). 
 
 :::info
-  Validator indices need to be provided sequentially without skipped indices in the order of original creation. You can find the order in your original `deposit.json` file. 
+  Validator indices need to be provided sequentially without skipped indices in the order of original creation. You can typically find the order in your original `deposit.json` file. 
   The `generate-bls-to-execution-change` command needs to be repeated in cases where multiple validator keys that are not in sequential order need to be withdrawn, and will require either merging of the output files or multiple `blstoexecutionchange` submissions.
+  In the case of validators requiring different withdrawal addresses you will need to also repeat this process using the validator start index of the validator that the different withdrawal address.
 :::
 
 6. Next you will be asked for your **withdrawal credentials,** which you should now have if you followed this guide
@@ -247,9 +248,11 @@ Once prysmctl is downloaded, you can use the `prysmctl validator withdraw` comma
 
 :::info
 default beacon node REST `<node-url>` is `http://localhost:3500` aka `http://127.0.0.1:3500`
+
 :::
 
-Open a terminal in the location where you downloaded the prysmctl binaries and run the following command.
+Open a terminal in the location where you downloaded the prysmctl binaries, rename the file to prysmctl, and run the following command.
+Some users will need to give permissions to the the downloaded binaries to be executable. Linux users can do this by right clicking the file, going to permissions, and clicking the `Allow executing file as program` checkmark. This may be different for each operating system.
 
 ```jsx
 ./prysmctl validator withdraw --beacon-node-host=<node-url> --path=<bls_to_execution_changes-*.json>
