@@ -12,12 +12,6 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-:::caution Public Preview
-
-Withdrawals **aren't yet available on Ethereum mainnet**. The instructions in this document may change significantly as the feature is stabilized on test networks. Join our [Discord server](https://discord.gg/prysmaticlabs) to share your feedback on this procedure.
-
-:::
-
 The **Capella/Shanghai Ethereum** upgrade lets you withdraw your validator nodes' staked Ethereum in one of two ways: 
 
  1. **Partial (earnings) withdrawal**: This option lets you withdraw your earnings (that is, all value staked above 32 ETH) and continue validating.
@@ -270,8 +264,6 @@ docker run -it -v $HOME/path/to/bls_to_execution:/bls_dir \
 Note that this approach requires mounting of the bls_to_execution_changes-*.json file
 
 :::info
-
-prysmctl's withdraw command is only available after the capella/shanghai hardfork on each specific network.
 
 You may also directly call the Beacon API endpoint through the following script.
 To do this you must replace the `<node-url>` as well as the `<post-request-content>` with the contents of our `blstoexecutionchange` message file
