@@ -28,11 +28,7 @@ The `validator-exit command` only supports gRPC, which means that the specified 
 
 :::
 
-:::info
-
 Examples below use the local prysm wallet, if you are using [web3signer](web3signer.md), replace the `wallet-dir` flag with the flags used to run the validator with web3signer. 
-
-:::
 
 <Tabs
   groupId="operating-systems"
