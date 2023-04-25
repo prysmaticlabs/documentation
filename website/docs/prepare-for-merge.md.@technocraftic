@@ -208,6 +208,6 @@ Yes. You also won't have to worry about JWT if you use IPC. See our [Quickstart]
 No - at this time, a full node is required.
 
 
-import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
+import {RequestUpdate_0x6CdEb50cc536b1b0a6B02B86d06e620BB2385036 from '@site/src/components/RequestUpdate.js';
 
-<RequestUpdateWidget />
+
