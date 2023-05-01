@@ -215,7 +215,8 @@ This will out a file `genesis.ssz` in your `devnet` folder. Now, run the Prysm b
       --chain-id=32382 \
       --execution-endpoint=http://localhost:8551 \
       --accept-terms-of-use \
-      --jwt-secret=gethdata/geth/jwtsecret
+      --jwt-secret=gethdata/geth/jwtsecret \
+      --contract-deployment-block=0
     
 
 and the Prysm validator client soon after:
