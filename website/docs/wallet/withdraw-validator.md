@@ -399,7 +399,7 @@ A: Each block can add 16 `blstoexecutionchange`messages as well as process 16 wi
 
 **Q: Does using custom builders with Prysm support withdrawals?**
 
-A: custom builders/mev relays are supported for running withdrawals.
+A: Custom builders/mev relays are supported for running withdrawals.
 
 **Q: In what order does Prysm process the bls-to-execution-change message pool?**
 
