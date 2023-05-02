@@ -257,7 +257,7 @@ This will extract data from the `bls_to_execution_changes-*.json` call the Beaco
 
 ```jsx
 docker run -it -v $HOME/path/to/bls_to_execution:/bls_dir \
-  gcr.io/prysmaticlabs/prysm/prysmctl:latest \
+  gcr.io/prysmaticlabs/prysm/cmd/prysmctl:latest \
   validator withdraw -beacon-node-host=<node-url> --path=/bls_dir
 ```
 

@@ -120,7 +120,7 @@ prysm.bat validator accounts voluntary-exit
 
 ```text
 docker run -it -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet \
-  gcr.io/prysmaticlabs/prysm/prysmctl:latest \
+  gcr.io/prysmaticlabs/prysm/cmd/prysmctl:latest \
   validator exit --wallet-dir=/wallet --beacon-rpc-provider=<127.0.0.1:4000> 
 ```
 
@@ -156,7 +156,7 @@ The following command is a soon-to-be-deprecated alternative that you should avo
 
 ```text
 docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
-  gcr.io/prysmaticlabs/prysm/prysmctl:latest \
+  gcr.io/prysmaticlabs/prysm/cmd/prysmctl:latest \
   validator exit --wallet-dir=/wallet --beacon-rpc-provider=<127.0.0.1:4000> 
 ```
 
