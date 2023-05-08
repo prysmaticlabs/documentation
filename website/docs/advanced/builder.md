@@ -19,7 +19,8 @@ Censorship
 :::
 
 ## Builder Configuration
-<img style={{maxWidth: 600 + 'px'}} src={BuilderPng} /> 
+
+<img style={{maxWidth: 800 + 'px'}} src={BuilderPng} /> 
 
 <Tabs
   groupId="configure-builder"
@@ -30,10 +31,30 @@ Censorship
   ]
 }>
 <TabItem value="add">
-test
+
+## 1. Validator Client
+
+## 2. Beacon Node
+
+## 3. Is Builder Configured?
+
+## 4. Local Execution Client
+
+## 5. Custom Builder via Relay URL
+
 </TabItem>
 <TabItem value="remove">
-test
+
+## 1. Validator Client
+
+## 2. Beacon Node
+
+## 3. Is Builder Configured?
+
+## 4. Local Execution Client
+
+## 5. Custom Builder via Relay URL
+
 </TabItem>
 </Tabs>
 
