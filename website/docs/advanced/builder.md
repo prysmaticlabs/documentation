@@ -1,7 +1,7 @@
 ---
 id: builder
-title: MEV builder usage
-sidebar_label:  MEV builder usage
+title: Configure MEV Builder
+sidebar_label: Configure MEV Builder
 ---
 
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
@@ -61,11 +61,14 @@ The beacon node must also be configured to enable builder via the `--http-mev-re
 
 To use a Builder the beacon node needs to start with the `--http-mev-relay` flag pointed to an active running relay.
 The ETHStaker community provides a list of some of the relays that can be used as well as any censorship they may have [here](https://github.com/eth-educators/ethstaker-guides/blob/main/MEV-relay-list.md). 
-Each Relay's URL will correspond to a specific network and will need to be chosen accordingly.
+Each Relay's URL will correspond to a specific network and will need to be chosen accordingly. i.e. running beacon node on mainnet will require the mainnet relay.
 
 ### circuit breaker
 
-is a feature when using 
+is a safety feature for falling back to local execution when using the Builder.
+This occurs when the builder or client using the builder endpoints encounter issues which cause missed blocks. 
+By default the circuit breaker will be triggered after 3 slots are consecutively missed or 5 slots are missed in an epoch, but this can be configured through the `--max-builder-consecutive-missed-slots` and `max-builder-epoch-missed-slots` flags.
+
 
 ## 3. Is Builder Configured?
 
