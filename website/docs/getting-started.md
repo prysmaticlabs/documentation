@@ -51,6 +51,10 @@ The following table of contents provides a descriptive overview of Prysm's docum
 <a href='install/install-with-bazel'>Build from source</a>
 <p>Learn how to build Prysm from source using Bazel.</p>
 </div>
+<div class='panel'>
+<a href='advanced/builder'>configure MEV builder</a>
+<p>Learn how to run your beacon node with a MEV builder via a relay. This is an advanced option requiring some technical prowess and poses some risks as a validator.</p>
+</div>
 <div class='panel section-title'>
 
 ## How-tos
@@ -72,10 +76,6 @@ The following table of contents provides a descriptive overview of Prysm's docum
 <div class='panel'>
 <a href='prysm-usage/checkpoint-sync'>Sync from a checkpoint</a>
 <p>Syncing from a checkpoint significantly reduces the time it takes for Prysm's beacon node to sync by piggypacking off of another fully-synced node.</p>
-</div>
-<div class='panel'>
-<a href='advanced/builder'>configure MEV builder</a>
-<p>Learn how to run your beacon node with a MEV builder via a relay. This is an advanced option requiring some technical prowess and poses some risks as a validator.</p>
 </div>
 <div class='panel'>
 <a href='monitoring/checking-status'>Check node and validator status</a>

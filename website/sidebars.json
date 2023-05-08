@@ -64,6 +64,10 @@
         },
         {
           "type": "doc",
+          "id": "advanced/builder"
+        },
+        {
+          "type": "doc",
           "id": "prysm-usage/prysmctl"
         },
         {
