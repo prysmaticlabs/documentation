@@ -20,6 +20,7 @@ Censorship
 
 ## Builder Configuration
 <img style={{maxWidth: 600 + 'px'}} src={BuilderPng} /> 
+
 <Tabs
   groupId="configure-builder"
   defaultValue="add"
@@ -34,8 +35,7 @@ test
 <TabItem value="remove">
 test
 </TabItem>
-
-
+</Tabs>
 
 ## Warning - potential side effects
 
