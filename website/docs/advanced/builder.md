@@ -59,8 +59,10 @@ The beacon node must also be configured to enable builder via the `--http-mev-re
 
 ## 2. Beacon Node
 
-To use a Builder the beacon node needs to start with the `--http-mev-relay` flag pointed to an active running relay.
-The ETHStaker community provides a list of some of the relays that can be used as well as any censorship they may have [here](https://github.com/eth-educators/ethstaker-guides/blob/main/MEV-relay-list.md). 
+To use a Builder the beacon node needs to start with the following configuration:
+
+- `--http-mev-relay` flag pointed to an active running relay (5.Builder via Relay URL).
+
 Each Relay's URL will correspond to a specific network and will need to be chosen accordingly. i.e. running beacon node on mainnet will require the mainnet relay.
 
 ### circuit breaker
@@ -69,15 +71,29 @@ is a safety feature for falling back to local execution when using the Builder.
 This occurs when the builder or client using the builder endpoints encounter issues which cause missed blocks. 
 By default the circuit breaker will be triggered after 3 slots are consecutively missed or 5 slots are missed in an epoch, but this can be configured through the `--max-builder-consecutive-missed-slots` and `max-builder-epoch-missed-slots` flags.
 
+:::info
+
+The beacon node should still be running with a 4.local execution client at all times in case of fall back.
+:::
 
 ## 3. Is Builder Configured?
 
-When proposing a block, the following is checked before attempting to use the Builder through the relay. 
+When a validator is proposing a block, the following is checked before attempting to use the Builder through the relay.
+- `--http-mev-relay` flag was provided and is pointed to an active relay of the correct network
+- circuit breaker is not triggered 
+- validator is registered (beacon API was successfully called to save to local storage)
+
+If all checks are satisfied then 5. Builder via Relay URL will be used to get the execution payload which contains the transactions and build a blinded block. However, if the checks do not pass then the beacon node will fall back to 4. Local Execution Client.
 
 
 ## 4. Local Execution Client
 
+It is expected that your local execution client is running as usual and will be used in case the Builder does not pass the `Is Builder Configured?` check. The Execution client should be synced and running alongside your beacon node. 
+
 ## 5. Builder via Relay URL
+
+The ETHStaker community provides a list of some of the relays that can be used as well as any censorship they may have [here](https://github.com/eth-educators/ethstaker-guides/blob/main/MEV-relay-list.md). 
+
 
 </TabItem>
 <TabItem value="remove">
