@@ -21,8 +21,10 @@ This guide is for advanced Prysm Users and there are risks with using a Custom B
 ## Builder Configuration
 
 
-
 <img style={{maxWidth: 846 + 'px'}} src={BuilderPng} /> 
+
+### MEV Flow
+
 
 <Tabs
   groupId="configure-builder"
@@ -55,6 +57,7 @@ The validator client will use the `proposer-settings` to call the beacon node's 
 Only validators that are active will be registered against the builder. Registrations for applicable validators will be pushed at the start of the validator client and at the start of each epoch. Success of the API is not guaranteed and will try again at the start of each epoch.
 
 The beacon node must also be configured to enable builder via the `--http-mev-relay` flag.
+
 :::
 
 ## 2. Beacon Node
@@ -74,6 +77,21 @@ By default the circuit breaker will be triggered after 3 slots are consecutively
 :::info
 
 The beacon node should still be running with a 4.local execution client at all times in case of fall back.
+
+:::
+
+## Enable Registration Cache
+
+`--enable-registration-cache` flag will enable storage of validator registrations in a cache instead of bolt db when starting the beacon node. The cache will enable the following features.
+  - in memory storage of the validator registrations, this clears all vaidator registrations on restart.
+  - validator registrations will expire after 3 epochs unless sent consistently from the validator client.
+This feature solves the unintended issue of wanting some validators unregistered while maintaining mev boost on others. In the future the db used to store registrations will be removed completely and the flag will no longer be required for this feature. validator settings will be persisted on the validator client side.
+
+:::caution
+
+This feature is currently `not ready` for [Keymanager-API's](../how-prysm-works/keymanager-api.md) use as restarting the validator and beacon node (especially during upgrades) will clear the validator settings for validator registrations. 
+Current persisted values in the db will start but will not be migrated to the cache.
+
 :::
 
 ## 3. Is Builder Configured?
@@ -88,7 +106,7 @@ If all checks are satisfied then 5. Builder via Relay URL will be used to get th
 
 ## 4. Local Execution Client
 
-It is expected that your local execution client is running as usual and will be used in case the Builder does not pass the `Is Builder Configured?` check. The Execution client should be synced and running alongside your beacon node. 
+local execution clients such as `geth` or `nethermind` must continue to run as usual even while using a Builder and will be used in case the Builder does not pass the `Is Builder Configured?` check. The Execution client should be synced and running alongside your beacon node. No additional changes need to be made to the execution client.
 
 ## 5. Builder via Relay URL
 
