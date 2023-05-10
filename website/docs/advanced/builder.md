@@ -18,12 +18,15 @@ This guide is for advanced Prysm Users and there are risks with using a Custom B
 
 :::
 
-## Builder Configuration
+TODO: explain MEV and what builders are
 
+## Builder Configuration
 
 <img style={{maxWidth: 846 + 'px'}} src={BuilderPng} /> 
 
-### MEV Flow
+### Builder Lifecycle
+
+TODO: explain high level builder configuration and lifecycle as it pertains to prysm
 
 
 <Tabs
@@ -110,7 +113,9 @@ local execution clients such as `geth` or `nethermind` must continue to run as u
 
 ## 5. Builder via Relay URL
 
-The ETHStaker community provides a list of some of the relays that can be used as well as any censorship they may have [here](https://github.com/eth-educators/ethstaker-guides/blob/main/MEV-relay-list.md). 
+TODO: example builders vs Relay
+
+The ETHStaker community provides a list of some of the relays that can be used as well as any censorship they may have [here](https://github.com/eth-educators/ethstaker-guides/blob/main/MEV-relay-list.md). You can also run your own locally such as MEV boost but each relayer on the list will have their own instructions on how to run. If running your own instead of using a provided url due to latency, you will simple need to update your `--http-mev-relay` flag on your beacon node with the appropriate url where your 
 
 
 </TabItem>
