@@ -21,21 +21,23 @@ There are risks to using a builder and may result in missed rewards, missed prop
 
 The following guide explains the options to configure the Prysm client to use a [custom builder](https://docs.flashbots.net/flashbots-mev-boost/block-builders) via a [relay](https://docs.flashbots.net/flashbots-mev-boost/relay). This configuration is accomplished through flags and settings used on the validator client as well as the beacon node, and will NOT cover how to run your own relay,builder,mev-boost. 
 
+### Builder Lifecycle
+
+1. Sign a validator registration request: This request contains validator `proposer_settings` with fields like `fee_recipient`,`gas_limit` and the current timestamp to be signed.
+2. Submit signed validator registrations to the builder: call the [beacon api endpoint](https://ethereum.github.io/beacon-APIs/?urls.primaryName=dev#/Validator/registerValidator) which calls a [build api endpoint](https://ethereum.github.io/builder-specs/#/Builder/registerValidator) on the builder for the registration. some builders will allow for you to query which validators are registered currently.
+3. Validator selected as a block proposer: extracting MEV will only be applicable when your validator has its turn to propose a block. 
+4. Check if builder is configured: The beacon node does a check to see if the builder is properly configured and the proposing validator is registered. You will not be able to retrieve a blinded block if you do not pass the builder is configured check.
+5. Get and verify a blinded block: If the builder is configured the beacon node will call the [builder API](/eth/v1/builder/header/{slot}/{parent_hash}/{pubkey}) to get a payload header which is used to produce the blinded block. There are several steps of verification in this process.
+6. Sign the blinded block: once the blinded block passes internal validation it is signed.
+7. Submit the blinded block to the builder to get the full execution payload: the signed blinded block is returned to the builder via the [builder API](https://ethereum.github.io/builder-specs/#/Builder/submitBlindedBlock) for the full payload. At this point the validator will no longer have the power to propose a block other than the builder's block or risk being slashed as the builder holds the validator's signature. 
+8. Un-blind the block with the full payload: using the response of the builder, the blinded block can be converted into a full block with the full execution payload.
+9. broadcast the full block: the full block at this point broadcasted to the network.
+
+Within several steps of this process whether there are failures in validator or bad connections or bad configurations the beacon node will attempt to fall back to local execution which will connect back to a normal execution client for a proper block.
+
 ## Builder Configuration
 
 <img style={{maxWidth: 846 + 'px'}} src={BuilderPng} /> 
-
-### Builder Lifecycle
-
-1. Sign a validator registration request
-2. Submit signed validator registrations to the builder
-3. Validator selected as a block proposer
-4. Check if builder is configured
-5. Get and verify a blinded block
-6. Sign the blinded block
-7. Submit the blinded block to the builder to get the full execution payload
-8. Un-blind the block with the full payload
-9. broadcast the full block
 
 <Tabs
   groupId="configure-builder"
