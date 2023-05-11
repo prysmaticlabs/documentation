@@ -13,12 +13,13 @@ import TabItem from '@theme/TabItem';
 import BuilderPng from '@site/static/img/builder.png';
 
 :::caution
-This guide is for advanced Prysm Users and there are risks with using a Custom Builder
 
+This guide is for advanced Prysm Users to configure their client for the purposes of extracting MEV. 
+There are risks to using a builder and may result in missed rewards, missed proposals, censored transactions, omitted transactions, and even slashing when used incorrectly. The Prysm team does not provide guidance on which builders/relays are recommended but lists are available for you to make judgement on based on your own values. 
 
 :::
 
-TODO: explain MEV and what builders are
+The following guide explains the options to configure the Prysm client to use a [custom builder](https://docs.flashbots.net/flashbots-mev-boost/block-builders) via a [relay](https://docs.flashbots.net/flashbots-mev-boost/relay). This configuration is accomplished through flags and settings used on the validator client as well as the beacon node, and will NOT cover how to run your own relay,builder,mev-boost. 
 
 ## Builder Configuration
 
@@ -26,8 +27,15 @@ TODO: explain MEV and what builders are
 
 ### Builder Lifecycle
 
-TODO: explain high level builder configuration and lifecycle as it pertains to prysm
-
+1. Sign a validator registration request
+2. Submit signed validator registrations to the builder
+3. Validator selected as a block proposer
+4. Check if builder is configured
+5. Get and verify a blinded block
+6. Sign the blinded block
+7. Submit the blinded block to the builder to get the full execution payload
+8. Un-blind the block with the full payload
+9. broadcast the full block
 
 <Tabs
   groupId="configure-builder"
@@ -123,13 +131,9 @@ The ETHStaker community provides a list of some of the relays that can be used a
 
 ## 1. Validator Client
 
-
-
 ## 2. Beacon Node
 
 ## 3. Is Builder Configured?
-
-
 
 ## 4. Local Execution Client
 
@@ -138,8 +142,12 @@ The ETHStaker community provides a list of some of the relays that can be used a
 </TabItem>
 </Tabs>
 
-## Warning - potential side effects
-
 ## Frequently asked questions
 
-## Glossary
+Q: What are the risks of running prysm with a custom builder instead of using local execution?
+
+Q: Do I need to run my execution client while using a custom builder?
+
+Q: How do I recover if circuit breaker is triggered?
+
+Q: 
