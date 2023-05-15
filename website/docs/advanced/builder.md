@@ -14,12 +14,12 @@ import BuilderPng from '@site/static/img/builder.png';
 
 :::caution
 
-This guide is for advanced Prysm Users to configure their client for the purposes of extracting MEV. 
+This guide is for advanced Prysm Users to configure their client for the purposes of extracting [MEV](https://ethereum.org/en/developers/docs/mev/). 
 There are risks to using a builder and may result in missed rewards, missed proposals, censored transactions, omitted transactions, and even slashing when used incorrectly. The Prysm team does not provide guidance on which builders/relays are recommended but lists are available for you to make judgement on based on your own values. 
 
 :::
 
-The following guide explains the options to configure the Prysm client to use a [custom builder](https://docs.flashbots.net/flashbots-mev-boost/block-builders) via a [relay](https://docs.flashbots.net/flashbots-mev-boost/relay). This configuration is accomplished through flags and settings used on the validator client as well as the beacon node, and will NOT cover how to run your own relay,builder,mev-boost. 
+The following guide explains the options to configure the Prysm client to use a [custom builder](https://docs.flashbots.net/flashbots-mev-boost/block-builders) via a [relay](https://docs.flashbots.net/flashbots-mev-boost/relay), a middle ware to connect validators to block builders. This configuration is accomplished through flags and settings used on the validator client as well as the beacon node, and will NOT cover how to run your own relay,builder,mev-boost, please refer to their respective guides to update this info. Prysm will use the builder via the relay to produce execution payloads that hold the transactions that bring the most value to the validator instead of the execution client. The execution client will still be needed for Prysm for the purposes of syncing and fallback incase there is an issue with using the builder. The builder will only be used in the event of a validator proposal.
 
 ### Builder Lifecycle
 
@@ -107,6 +107,10 @@ Current persisted values in the db will start but will not be migrated to the ca
 
 :::
 
+### Parallel Execution
+
+`--build-block-parallel` flag on the beacon node will construct the consensus and execution portions of the beacon block in parallel to improve speed and efficiency. 
+
 ## 3. Is Builder Configured?
 
 When a validator is proposing a block, the following is checked before attempting to use the Builder through the relay.
@@ -123,10 +127,7 @@ local execution clients such as `geth` or `nethermind` must continue to run as u
 
 ## 5. Builder via Relay URL
 
-TODO: example builders vs Relay
-
 The ETHStaker community provides a list of some of the relays that can be used as well as any censorship they may have [here](https://github.com/eth-educators/ethstaker-guides/blob/main/MEV-relay-list.md). You can also run your own locally such as MEV boost but each relayer on the list will have their own instructions on how to run. If running your own instead of using a provided url due to latency, you will simple need to update your `--http-mev-relay` flag on your beacon node with the appropriate url where your 
-
 
 </TabItem>
 <TabItem value="remove">
@@ -146,10 +147,16 @@ The ETHStaker community provides a list of some of the relays that can be used a
 
 ## Frequently asked questions
 
-Q: What are the risks of running prysm with a custom builder instead of using local execution?
+Q: What are the risks of running Prysm with a custom builder instead of using local execution?
+
+A:
 
 Q: Do I need to run my execution client while using a custom builder?
 
+A:
+
 Q: How do I recover if circuit breaker is triggered?
+
+A:
 
 Q: 
