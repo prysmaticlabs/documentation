@@ -49,7 +49,7 @@ Within several steps of this process whether there are failures in validator or 
 }>
 <TabItem value="add">
 
-## 1. Validator Client
+## 1. Validator Client: register validator
 
 validator `proposer-settings` will need to be configured to set through the one of the following ways to `register` the validator against the builder. Having your validator registered against the builder is a requirement for using custom builders.
 
@@ -73,7 +73,7 @@ The beacon node must also be configured to enable builder via the `--http-mev-re
 
 :::
 
-## 2. Beacon Node
+## 2. Beacon Node: connect to builder
 
 To use a Builder the beacon node needs to start with the following configuration:
 
@@ -121,26 +121,55 @@ When a validator is proposing a block, the following is checked before attemptin
 If all checks are satisfied then 5. Builder via Relay URL will be used to get the execution payload which contains the transactions and build a blinded block. However, if the checks do not pass then the beacon node will fall back to 4. Local Execution Client.
 
 
-## 4. Local Execution Client
+## 4. Local Execution Client: kept in sync and up to date
 
-local execution clients such as `geth` or `nethermind` must continue to run as usual even while using a Builder and will be used in case the Builder does not pass the `Is Builder Configured?` check. The Execution client should be synced and running alongside your beacon node. No additional changes need to be made to the execution client.
+local execution clients such as `geth` or `nethermind` must continue to run as usual even while using a builder and will be used in case the builder does not pass the `Is Builder Configured?` check. The execution client should be synced and running alongside your beacon node and earnings from the block will be compared to the earnings from the builder's payload. If the local execution payload fails then the entire function will fail.
 
-## 5. Builder via Relay URL
+## 5. Builder: connected via relay URL
 
-The ETHStaker community provides a list of some of the relays that can be used as well as any censorship they may have [here](https://github.com/eth-educators/ethstaker-guides/blob/main/MEV-relay-list.md). You can also run your own locally such as MEV boost but each relayer on the list will have their own instructions on how to run. If running your own instead of using a provided url due to latency, you will simple need to update your `--http-mev-relay` flag on your beacon node with the appropriate url where your 
+The ETHStaker community provides a list of some of the relays that can be used as well as any censorship they may have [here](https://github.com/eth-educators/ethstaker-guides/blob/main/MEV-relay-list.md). You can also run your own locally such as MEV boost but each relayer on the list will have their own instructions on how to run. If running your own instead of using a provided url due to latency, you will simply need to update your `--http-mev-relay` flag on your beacon node with the appropriate url for the specific network in use. The relay will connect to a builder which connects to block searchers. 
+
+:::info
+
+Make sure you are using the correct version that supports the current version of the beacon node. Hardforks will typically require updates to relays.
+
+
+:::
 
 </TabItem>
 <TabItem value="remove">
 
-## 1. Validator Client
+## 1. Validator Client: unregister validator
 
-## 2. Beacon Node
+### validator registration expiration
+
+:::caution
+
+There is currently an issue with unregistering validators in the db, it's suggested to reregister while using the `--enable-registration-cache` flag on the beacon node so that registrations can properly unregister.
+
+:::
+
+
+## 2. Beacon Node: remove builder related flags
+
+The following flag should be removed to disable builder use on the beacon node.
+ - `--http-mev-relay` flag
+The following flags will be disabled after this flag is removed.
+ - `--max-builder-consecutive-missed-slots`
+ - `max-builder-epoch-missed-slots`
 
 ## 3. Is Builder Configured?
 
-## 4. Local Execution Client
+Once the appropriate flags are fully removed this check shouldn't pass and will fall back to local execution.
 
-## 5. Builder via Relay URL
+## 4. Local Execution Client: kept the same
+
+
+
+## 5. Builder: remove relay URL
+
+removing the `--http-mev-relay` flag from the beacon node will disconnect the 
+
 
 </TabItem>
 </Tabs>
@@ -159,4 +188,14 @@ Q: How do I recover if circuit breaker is triggered?
 
 A:
 
-Q: 
+Q: What happens if the execution client goes down while connected to the builder?
+
+A: The earnings from the local payload will be compared to the earnings from the mev payload and will error if local execution is offline or unavailable.
+
+Q: My setup is no-longer using the builder, what happened?
+
+A:
+
+Q: What if the earnings from the builder is lower than the local execution?
+
+A:
