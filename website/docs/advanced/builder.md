@@ -24,7 +24,7 @@ The following guide explains the options to configure the Prysm client to use a 
 ### Builder Lifecycle
 
 1. Sign a validator registration request: This request contains validator `proposer_settings` with fields like `fee_recipient`,`gas_limit` and the current timestamp to be signed.
-2. Submit signed validator registrations to the builder: call the [beacon api endpoint](https://ethereum.github.io/beacon-APIs/?urls.primaryName=dev#/Validator/registerValidator) which calls a [build api endpoint](https://ethereum.github.io/builder-specs/#/Builder/registerValidator) on the builder for the registration. some relayers will allow for you to query which validators are registered currently.
+2. Submit signed validator registrations to the builder: call the [beacon api endpoint](https://ethereum.github.io/beacon-APIs/?urls.primaryName=dev#/Validator/registerValidator) which calls a [build api endpoint](https://ethereum.github.io/builder-specs/#/Builder/registerValidator) on the builder for the registration. some relays will allow for you to query which validators are registered currently.
 3. Validator selected as a block proposer: extracting MEV will only be applicable when your validator has its turn to propose a block. 
 4. Check if builder is configured: The beacon node does a check to see if the builder is properly configured and the proposing validator is registered. You will not be able to retrieve a blinded block if you do not pass the builder is configured check.
 5. Get and verify a blinded block: If the builder is configured the beacon node will call the [builder API](https://ethereum.github.io/builder-specs/#/Builder/getHeader) to get a payload header which is used to produce the blinded block. There are several steps of verification in this process.
@@ -125,11 +125,11 @@ local execution clients such as `geth` or `nethermind` must continue to run as u
 
 ## 5. Builder: connected via relay URL
 
-The ETHStaker community provides a list of some of the relays that can be used as well as any censorship they may have [here](https://github.com/eth-educators/ethstaker-guides/blob/main/MEV-relay-list.md). You can also run your own locally such as MEV boost but each relayer on the list will have their own instructions on how to run. If running your own instead of using a provided url due to latency, you will simply need to update your `--http-mev-relay` flag on your beacon node with the appropriate url for the specific network in use. The relay will connect to a builder which connects to block searchers. 
+The ETHStaker community provides a list of some of the relays that can be used as well as any censorship they may have [here](https://github.com/eth-educators/ethstaker-guides/blob/main/MEV-relay-list.md). You can also run your own locally such as MEV boost but each relay on the list will have their own instructions on how to run. If running your own instead of using a provided url due to latency, you will simply need to update your `--http-mev-relay` flag on your beacon node with the appropriate url for the specific network in use. The relay will connect to a builder which connects to block searchers. 
 
 :::info
 
-Make sure you are using the correct version that supports the current version of the beacon node. Hardforks will typically require updates to relays.
+Make sure you are using the correct version that supports the current version of the beacon node. Hard-forks will typically require updates to relays.
 
 
 :::
@@ -179,33 +179,33 @@ The execution client can safely continue to run as is with no changes. Once the 
 
 ## 5. Builder: remove relay URL
 
-removing the `--http-mev-relay` flag from the beacon node will disconnect the builder. Once removed you can safely turn off your builder related services such as your mevboost/relays.
+removing the `--http-mev-relay` flag from the beacon node will disconnect the builder. Once removed you can safely turn off your builder related services such as your mev boost or relays.
 
 </TabItem>
 </Tabs>
 
 ## Frequently asked questions
 
-Q: What are the risks of running Prysm with a custom builder instead of using local execution?
+**Q:** What are the risks of running Prysm with a custom builder instead of using local execution?
 
-A:
+**A:** The custom builder whether connected through mev boost or as a relay url will need to be updated consistently with the Prysm adding to another layer of complexity. Depending on the relay used some rewards may be missed due to the relay's connectivity or any builder bugs. Transactions may be censored under certain conditions prior to builders being in protocol through PBS. 
 
-Q: Do I need to run my execution client while using a custom builder?
+**Q:** Do I need to run my execution client while using a custom builder?
 
-A:
+**A:** Yes, the execution client will perform standard tasks and also be the fallback mechanism if the builder is not working correctly. 
 
-Q: How do I recover if circuit breaker is triggered?
+**Q:** How do I recover if circuit breaker is triggered?
 
-A:
+**A:** Once the circuit breaker is triggered local execution will continue to be used until both conditions max consecutive slots missed, and slots missed in epoch are no longer true. Beacon node does not need to be restarted.
 
-Q: What happens if the execution client goes down while connected to the builder?
+**Q:** What happens if the execution client goes down while connected to the builder?
 
-A: The earnings from the local payload will be compared to the earnings from the mev payload and will error if local execution is offline or unavailable.
+**A:** The earnings from the local payload will be compared to the earnings from the mev payload and will error if local execution is offline or unavailable.
 
-Q: My setup is no-longer using the builder, what happened?
+**Q:** My setup is no-longer using the builder, what happened?
 
-A:
+**A:** The relay url may be incorrect, the relay could be down whether outdated compared to your ethereum node setup or a bug, the circuit breaker could have been triggered. 
 
-Q: What if the earnings from the builder is lower than the local execution?
+**Q:** What if the earnings from the builder is lower than the local execution?
 
-A:
+**A:** The block from local execution will be used, this could also be triggered though `--local-block-value-boost` if the earnings from the builder doesn't past some percentage threshold.
