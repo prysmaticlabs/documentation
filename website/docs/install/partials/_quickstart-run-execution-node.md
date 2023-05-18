@@ -112,8 +112,8 @@ import TabItem from '@theme/TabItem';
             {label: 'JWT', value: 'jwt'},
             {label: 'IPC', value: 'ipc'}
             ]}>
-                <TabItem value="jwt"><pre><code>geth --sepolia --http --http.api eth,net,engine,admin --authrpc.jwtsecret /path/to/jwt.hex --override.terminaltotaldifficulty 17000000000000000</code></pre></TabItem>
-                <TabItem value="ipc"><pre><code>geth --sepolia --http --http.api eth,net,engine,admin --override.terminaltotaldifficulty 17000000000000000</code></pre></TabItem>
+                <TabItem value="jwt"><pre><code>geth --sepolia --http --http.api eth,net,engine,admin --authrpc.jwtsecret /path/to/jwt.hex</code></pre></TabItem>
+                <TabItem value="ipc"><pre><code>geth --sepolia --http --http.api eth,net,engine,admin</code></pre></TabItem>
             </Tabs>
       </TabItem>
     </Tabs>
