@@ -204,7 +204,7 @@ removing the `--http-mev-relay` flag from the beacon node will disconnect the bu
 
 **Q:** My setup is no-longer using the builder, what happened?
 
-**A:** The relay url may be incorrect, the relay could be down whether outdated compared to your ethereum node setup or a bug, the circuit breaker could have been triggered. 
+**A:** There are multiple reasons why this could happen, including an incorrect relay URL, a relay that is offline or outdated compared to your Ethereum node setup, or a possible bug. Additionally, it's possible that the circuit breaker has been activated.
 
 **Q:** What if the earnings from the builder are lower than the local execution?
 
