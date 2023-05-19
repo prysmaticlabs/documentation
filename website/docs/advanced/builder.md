@@ -208,4 +208,4 @@ removing the `--http-mev-relay` flag from the beacon node will disconnect the bu
 
 **Q:** What if the earnings from the builder is lower than the local execution?
 
-**A:** The block from local execution will be used, this could also be triggered though `--local-block-value-boost` if the earnings from the builder doesn't past some percentage threshold.
+**A:** The block from local execution will be used, this could also be triggered through `--local-block-value-boost` if the earnings from the builder don't pass some percentage threshold.
