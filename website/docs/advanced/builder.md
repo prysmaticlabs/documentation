@@ -23,7 +23,7 @@ The following guide explains the options to configure the Prysm client to use a 
 
 ### Builder Lifecycle
 
-1. Sign a validator registration request: This request contains validator `proposer_settings` with fields like `fee_recipient`,`gas_limit` and the current timestamp to be signed.
+1. Sign a validator registration request: This request contains validator `proposer_settings` with fields like `fee_recipient`, `gas_limit` and the current timestamp to be signed.
 2. Submit signed validator registrations to the builder: call the [beacon api endpoint](https://ethereum.github.io/beacon-APIs/?urls.primaryName=dev#/Validator/registerValidator) which calls a [build api endpoint](https://ethereum.github.io/builder-specs/#/Builder/registerValidator) on the builder for the registration. some relays will allow for you to query which validators are registered currently.
 3. Validator selected as a block proposer: extracting MEV will only be applicable when your validator has its turn to propose a block. 
 4. Check if builder is configured: The beacon node does a check to see if the builder is properly configured and the proposing validator is registered. You will not be able to retrieve a blinded block if you do not pass the builder is configured check.
