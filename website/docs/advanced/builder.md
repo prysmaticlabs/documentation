@@ -81,7 +81,7 @@ To use a Builder the beacon node needs to start with the following configuration
 
 Each Relay's URL will correspond to a specific network and will need to be chosen accordingly. i.e. running beacon node on mainnet will require the mainnet relay.
 
-### circuit breaker
+### Circuit breaker
 
 is a safety feature for falling back to local execution when using the Builder.
 This occurs when the builder or client using the builder endpoints encounter issues which cause missed blocks. 
