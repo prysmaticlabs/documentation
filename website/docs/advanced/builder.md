@@ -31,7 +31,7 @@ The provided guide offers explanations on configuring the Prysm client to utiliz
 6. Sign the blinded block: once the blinded block passes internal validation it is signed. At this point, the validator will no longer have the power to propose a block other than the builder's block or risk being slashed as the builder holds the validator's signature. 
 7. Submit the blinded block to the builder to get the full execution payload: the signed blinded block is returned to the builder via the [builder API](https://ethereum.github.io/builder-specs/#/Builder/submitBlindedBlock) for the full payload. 
 8. Un-blind the block with the full payload: using the response of the builder, the blinded block can be converted into a full block with the full execution payload.
-9. broadcast the full block: the full block at this point broadcasted to the network.
+9. broadcast the full block: the full block at this point is broadcasted to the network.
 
 Within several steps of this process whether there are failures in validator or bad connections or bad configurations the beacon node will attempt to fall back to local execution which will connect back to a normal execution client for a proper block.
 
