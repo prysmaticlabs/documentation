@@ -202,7 +202,7 @@ removing the `--http-mev-relay` flag from the beacon node will disconnect the bu
 
 **A:** The earnings from the local payload will be compared to the earnings from the mev payload and will error if local execution is offline or unavailable.
 
-**Q:** My setup is no-longer using the builder, what happened?
+**Q:** My setup is no longer using the builder, what happened?
 
 **A:** There are multiple reasons why this could happen, including an incorrect relay URL, a relay that is offline or outdated compared to your Ethereum node setup, or a possible bug. Additionally, it's possible that the circuit breaker has been activated.
 
