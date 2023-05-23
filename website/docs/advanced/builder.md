@@ -147,7 +147,7 @@ Update the following configurations and restart the validator client to stop per
 
 :::caution
 
-There is currently an issue with un-registering validators in the db, it's suggested to re-register while using the `--enable-registration-cache` flag on the beacon node so that registrations can properly unregister.
+There is currently an issue with unregistering validators in the db, it's suggested to re-register while using the `--enable-registration-cache` flag on the beacon node so that registrations can properly unregister.
 
 :::
 
