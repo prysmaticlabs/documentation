@@ -109,7 +109,7 @@ Current persisted values in the db will start but will not be migrated to the ca
 
 `--local-block-value-boost` flag is a float64 value that provides an additional percentage to multiply local block value. Use builder block if: `builder_bid_value * 100 > local_block_value * (local-block-value-boost + 100)`. This will encourage your setup to use the local execution if the value earned is not above your threshold, helping to mitigate censorship concerns.
 
-## 3. Is Builder Configured?
+## 3. Is builder configured?
 
 When a validator is proposing a block, the following is checked before attempting to use the Builder through the relay.
 - `--http-mev-relay` flag was provided and is pointed to mev-boost or an active relay of the correct network
