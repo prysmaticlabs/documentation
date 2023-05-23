@@ -85,7 +85,7 @@ Each relay's URL will correspond to a specific network and will need to be chose
 
 The circuit breaker is a safety feature for falling back to local execution when using a builder.
 This occurs when the builder or client using the builder endpoints encounter issues which cause missed blocks. 
-By default the circuit breaker will be triggered after 3 slots are consecutively missed or 5 slots are missed in an epoch, but this can be configured through the `--max-builder-consecutive-missed-slots` and `max-builder-epoch-missed-slots` flags.
+By default, the circuit breaker will be triggered after 3 slots are consecutively missed or 5 slots are missed in an epoch, but this can be configured through the `--max-builder-consecutive-missed-slots` and `max-builder-epoch-missed-slots` flags.
 
 ## Enable registration cache
 
