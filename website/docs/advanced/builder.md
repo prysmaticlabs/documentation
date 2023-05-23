@@ -51,7 +51,7 @@ Within several steps of this process whether there are failures in the validator
 
 ## 1. Validator Client: register validator
 
-validator `proposer-settings` will need to be configured to set through the one of the following ways to `register` the validator against the builder. Having your validator registered against the builder is a requirement for using custom builders.
+Validator `proposer-settings` will need to be configured to set through one of the following ways to `register` the validator against the builder. Having your validator registered against the builder is a requirement for using custom builders.
 
 The builder can be configured through the `proposer-settings` in the following ways.
  - starting with the `--proposer-settings-file` flag providing it with an appropriate json or yaml file that includes builder settings. Guide and example on this configuration [here](../execution-node/fee-recipient.md#advanced-configure-mev-builder-and-gas-limit).
