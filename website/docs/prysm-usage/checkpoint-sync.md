@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
-<HeaderBadgesWidget commaDelimitedContributors="Kasey,Mick,James" lastVerifiedDateString="September 12th, 2022" lastVerifiedVersionString="v4.0.0" />
+<HeaderBadgesWidget commaDelimitedContributors="Kasey,James" />
 
 **Checkpoint sync** is a feature that significantly speeds up the initial sync between your beacon node and the Beacon Chain. With checkpoint sync configured, your beacon node will begin syncing from a recently finalized checkpoint instead of syncing from genesis. This can make installations, validator migrations, recoveries, and testnet deployments *way* faster.
 
@@ -203,6 +203,4 @@ Prysm offers a `--weak-subjectivity-checkpoint` flag that allows you to specify 
 Special thanks to the authors of *How to: Checkpoint Sync* for providing the endpoints and verification procedure used in this guide.
 
 
-import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateWidget />

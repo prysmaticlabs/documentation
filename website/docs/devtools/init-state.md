@@ -126,7 +126,7 @@ FSM Manager is a container used to group machines together, for easier managemen
 While event handlers operate on FSMs, they are not registered with machines themselves but with the queue, this is done for reasons of efficiency (machines are constantly removed and re-added, so are kept as simple as possible). When an event occurs (for example `Tick` event occurs every 200 milliseconds), each known FSM is passed to the corresponding event handler, depending on FSM’s current state. Here is the list of event handlers, required FSM start states and their corresponding handlers:
 
 | Event         | Required FSM state | Event Handler                                                                                                                                                             |
-|---------------|--------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ------------- | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Tick          | New                | [Queue.onScheduleEvent()](https://github.com/prysmaticlabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_queue.go#L281)       |
 | Tick          | Data parsed        | [Queue.onReadyToSendEvent()](https://github.com/prysmaticlabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_queue.go#L334)    |
 | Tick          | Skipped            | [Queue.onProcessSkippedEvent()](https://github.com/prysmaticlabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_queue.go#L383) |
@@ -139,7 +139,7 @@ The above table is easy to read: for example it is easy to see that in order for
 Below is a state transition table (depending on input there might be several possible transitions for a given event -- only one of which is valid, as our FSMs are deterministic):
 
 | State/Event       | New               | Scheduled       | Data Parsed       | Skipped | Data Sent   |
-|-------------------|-------------------|-----------------|-------------------|---------|-------------|
+| ----------------- | ----------------- | --------------- | ----------------- | ------- | ----------- |
 | **Tick**          | Scheduled Skipped |                 | Data Sent Skipped | New     | New Skipped |
 | **Data Received** |                   | Data Parsed New |                   |         |             |
 
@@ -401,7 +401,7 @@ bazel test //beacon-chain/sync/initial-sync:go_default_test --test_arg=-test.v -
 The `--test_filter` can be empty (all tests will then be run), or specify a pattern to match:
 
 | --test_filter     | Component to be tested       |
-|-------------------|------------------------------|
+| ----------------- | ---------------------------- |
 | TestBlocksQueue   | All blocks queue tests.      |
 | TestBlocksFetcher | All blocks fetcher tests.    |
 | TestStateMachine  | All FSM related tests.       |
@@ -430,6 +430,3 @@ bazel run //beacon-chain -- --datadir=$HOME/prysm  \
   --enable-debug-rpc-endpoints --prater
 ```
 
-import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
-
-<RequestUpdateWidget />

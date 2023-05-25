@@ -34,26 +34,28 @@ When users stake 32 ETH to participate in Ethereum's proof-of-stake consensus me
 <br />
 
 <table>
-    <tr>
-        <th style={{minWidth: 170 + 'px'}}>Component</th> 
-        <th>Description</th>
-    </tr>
-    <tr>
-      <td><strong>Ethereum node</strong><br />aka "Node"</td>
-      <td>An Ethereum node is an <strong>execution node</strong> and <strong>beacon node</strong> working together. Ethereum nodes communicate peer-to-peer to secure the Ethereum network, and require both <strong>execution-layer client software</strong> and <strong>consensus-layer client software</strong>.</td>
-    </tr> 
-    <tr>
-      <td><strong>Execution node</strong></td>
-      <td>Execution nodes use execution client software to process transactions and smart contracts in Ethereum's <strong>execution layer</strong>. Nethermind, Besu, and Go Ethereum (Geth) are examples of execution client software.<br /> <br />An execution node will talk to other execution nodes via peer-to-peer networking, and to a local beacon node.</td>
-    </tr>
-    <tr>
-      <td><strong>Beacon node</strong></td>
-      <td>Beacon nodes use beacon node client software to coordinate Ethereum's proof-of-stake consensus. Prysm, Teku, Lighthouse, and Nimbus are consensus clients that contain both beacon node and validator client software. <br /> <br />A beacon node will talk to other beacon nodes via peer-to-peer networking, to a local execution node, and (optionally) to a local validator.</td>
-    </tr>
-    <tr>
-      <td><strong>Validator</strong></td>
-      <td>Validator clients are specialized software that let people stake 32 ETH as collateral within Ethereum's <strong>consensus layer</strong>. Validators are responsible for proposing blocks within Ethereum's proof-of-stake consensus mechanism, and will fully replace proof-of-work miners after <a href='https://ethereum.org/en/upgrades/merge/'>The Merge</a>. <br /> <br />A validator will talk only to a local beacon node. A validator's beacon node tells the validator what work to do, and broadcasts the validator's work to the Ethereum network as the validator performs its duties.</td>
-    </tr>
+    <tbody>
+      <tr>
+          <th style={{minWidth: 170 + 'px'}}>Component</th> 
+          <th>Description</th>
+      </tr>
+      <tr>
+        <td><strong>Ethereum node</strong><br />aka "Node"</td>
+        <td>An Ethereum node is an <strong>execution node</strong> and <strong>beacon node</strong> working together. Ethereum nodes communicate peer-to-peer to secure the Ethereum network, and require both <strong>execution-layer client software</strong> and <strong>consensus-layer client software</strong>.</td>
+      </tr> 
+      <tr>
+        <td><strong>Execution node</strong></td>
+        <td>Execution nodes use execution client software to process transactions and smart contracts in Ethereum's <strong>execution layer</strong>. Nethermind, Besu, and Go Ethereum (Geth) are examples of execution client software.<br /> <br />An execution node will talk to other execution nodes via peer-to-peer networking, and to a local beacon node.</td>
+      </tr>
+      <tr>
+        <td><strong>Beacon node</strong></td>
+        <td>Beacon nodes use beacon node client software to coordinate Ethereum's proof-of-stake consensus. Prysm, Teku, Lighthouse, and Nimbus are consensus clients that contain both beacon node and validator client software. <br /> <br />A beacon node will talk to other beacon nodes via peer-to-peer networking, to a local execution node, and (optionally) to a local validator.</td>
+      </tr>
+      <tr>
+        <td><strong>Validator</strong></td>
+        <td>Validator clients are specialized software that let people stake 32 ETH as collateral within Ethereum's <strong>consensus layer</strong>. Validators are responsible for proposing blocks within Ethereum's proof-of-stake consensus mechanism, and will fully replace proof-of-work miners after <a href='https://ethereum.org/en/upgrades/merge/'>The Merge</a>. <br /> <br />A validator will talk only to a local beacon node. A validator's beacon node tells the validator what work to do, and broadcasts the validator's work to the Ethereum network as the validator performs its duties.</td>
+      </tr>
+    </tbody>
 </table>
 
 
@@ -115,6 +117,3 @@ Slashers, like validators, use specialized pieces of consensus-layer client soft
 We recommend using [Paradigm's MultiFaucet](https://faucet.paradigm.xyz/). If that doesn't work, you can ask the community for testnet ETH on either the [Prysm Discord server](https://discord.gg/prysmaticlabs) or on [r/ethstaker](https://www.reddit.com/r/ethstaker).
 
 
-import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
-
-<RequestUpdateWidget />

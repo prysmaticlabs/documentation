@@ -63,6 +63,3 @@ Version(s) used:
 <!--- Anything else to add?
 ```
 
-import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
-
-<RequestUpdateWidget />

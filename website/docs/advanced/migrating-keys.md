@@ -201,13 +201,13 @@ You can also run the accounts backup command non-interactively by using the foll
 
 **Flag Usage**
 
-| Flag          | Usage         |
-| ------------- |:-------------|
-| `--wallet-dir` | Path to a wallet directory (default: "$HOME/Eth2Validators/prysm-wallet-v2")
-| `--wallet-password-file` | Path to a plain-text, .txt file containing your wallet's password.
-| `--backup-dir`     | Path to a directory where accounts will be backed up into a zip file. (default: $HOME/Eth2Validators/)
-| `--backup-public-keys`	| Comma-separated list of public key hex strings to specify which validator accounts to backup.
-| `--backup-password-file` |	Path to a plain-text, .txt file containing the desired password for your backed up accounts.
+| Flag                     | Usage                                                                                                  |
+| ------------------------ | :----------------------------------------------------------------------------------------------------- |
+| `--wallet-dir`           | Path to a wallet directory (default: "$HOME/Eth2Validators/prysm-wallet-v2")                           |
+| `--wallet-password-file` | Path to a plain-text, .txt file containing your wallet's password.                                     |
+| `--backup-dir`           | Path to a directory where accounts will be backed up into a zip file. (default: $HOME/Eth2Validators/) |
+| `--backup-public-keys`   | Comma-separated list of public key hex strings to specify which validator accounts to backup.          |
+| `--backup-password-file` | Path to a plain-text, .txt file containing the desired password for your backed up accounts.           |
 
 
 ### Step 3:  Importing Validator accounts
@@ -358,6 +358,4 @@ Once complete, verify the account removal using the validator accounts list comm
 
 No. After successfully importing your slashing protection history from A -> B, you can discard A. If you need to migrate from B -> C, B's slashing protection history is all you need to export/import.
 
-import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateWidget />

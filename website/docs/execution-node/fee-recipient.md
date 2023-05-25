@@ -6,7 +6,7 @@ sidebar_label: Configure Fee Recipient
 import FeeRecipientPng from '@site/static/img/fee-recipient-ui.png'
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
-<HeaderBadgesWidget commaDelimitedContributors="James,Mick" lastVerifiedDateString="September 12th, 2022" lastVerifiedVersionString="v4.0.0" />
+<HeaderBadgesWidget commaDelimitedContributors="James" />
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -26,7 +26,7 @@ Your fee recipient wallet address is a **standard Ethereum wallet address**, jus
 
 When users pay gas to submit transactions to the Ethereum network, they can specify a **priority fee**. Priority fees are like tips. End-users pay priority fees to incentivize block proposers to prioritize the inclusion of particular transactions in the blocks that they propose.
 
-Priority fees are captured by execution clients in the execution layer <a class="footnote" href='#footnote-2'>[2]</a>, so validator clients need to tell execution clients where to forward the fees. This "forwarding address" is referred to as your **fee recipient** wallet address.
+Priority fees are captured by execution clients in the execution layer <a className="footnote" href='#footnote-2'>[2]</a>, so validator clients need to tell execution clients where to forward the fees. This "forwarding address" is referred to as your **fee recipient** wallet address.
 
 
 ## Configure fee recipient
@@ -230,6 +230,4 @@ Footnotes:
 <strong id="footnote-1">2.</strong> See <a href='../concepts/nodes-networks'>Nodes and Networks</a> for a quick refresher on the fundamentals of Ethereum nodes. <br />
 
 
-import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateWidget />

@@ -31,13 +31,13 @@ You'll need to set a **strong** password for your new HD wallet, containing at l
 Then select **HD** wallet when prompted. You can also create a wallet **non-interactively** by using the following command line flags, which are also viewable by typing `./prysm.sh validator wallet create --help`.
 
 
-| Flag          | Usage         |
-| ------------- |:-------------|
-| `--wallet-dir` | Path to a wallet directory (default: "$HOME/Eth2Validators/prysm-wallet-v2")
-| `--keymanager-kind`     | Type of wallet to create, either "direct", "derived, or "remote" (default "derived")
-| `--wallet-password-file` | Path to a plain-text, password.txt file to lock your wallet
-|`--mnemonic-25th-word-file`| (Advanced) Path to a plain-text, .txt file containing a 25th word passphrase for your mnemonic for HD wallets.
-|`--skip-mnemonic-25th-word-check` | Allows for skipping the check for a mnemonic 25th word passphrase for HD wallets.
+| Flag                              | Usage                                                                                                          |
+| --------------------------------- | :------------------------------------------------------------------------------------------------------------- |
+| `--wallet-dir`                    | Path to a wallet directory (default: "$HOME/Eth2Validators/prysm-wallet-v2")                                   |
+| `--keymanager-kind`               | Type of wallet to create, either "direct", "derived, or "remote" (default "derived")                           |
+| `--wallet-password-file`          | Path to a plain-text, password.txt file to lock your wallet                                                    |
+| `--mnemonic-25th-word-file`       | (Advanced) Path to a plain-text, .txt file containing a 25th word passphrase for your mnemonic for HD wallets. |
+| `--skip-mnemonic-25th-word-check` | Allows for skipping the check for a mnemonic 25th word passphrase for HD wallets.                              |
 
 Here's a full example on how to create an HD wallet at `$HOME/myhdwallet`
 
@@ -68,10 +68,10 @@ Enter how many accounts you would like to recover: 2
 Your accounts are generated deterministically from your recovery phrase, so you had 100 validator accounts on the wallet you want to recover, you can easily do so in Prysm.
 :::
 
-| Flag          | Usage         |
-| ------------- |:-------------|
-| `--wallet-dir` | Path to a wallet directory (default: "$HOME/Eth2Validators/prysm-wallet-v2")
-| `--num-accounts` | Total number of accounts to recover from the wallet (default 1)
+| Flag             | Usage                                                                        |
+| ---------------- | :--------------------------------------------------------------------------- |
+| `--wallet-dir`   | Path to a wallet directory (default: "$HOME/Eth2Validators/prysm-wallet-v2") |
+| `--num-accounts` | Total number of accounts to recover from the wallet (default 1)              |
 
 ### List validator accounts
 
@@ -122,14 +122,11 @@ personally-conscious-echidna
 
 You can also run the `accounts list` command **non-interactively** by using the following command line flags, which are also viewable by typing `./prysm.sh validator accounts list --help`.
 
-| Flag          | Usage         |
-| ------------- |:-------------|
-| `--wallet-dir` | Path to a wallet directory (default: "$HOME/Eth2Validators/prysm-wallet-v2").
-| `--wallet-password-file` | Path to plain-text file containing your wallet's password.
-| `--show-deposit-data` | Display raw eth1 tx deposit data for validator accounts.
-| `--show-private-keys` | Display the private keys for validator accounts.
+| Flag                     | Usage                                                                         |
+| ------------------------ | :---------------------------------------------------------------------------- |
+| `--wallet-dir`           | Path to a wallet directory (default: "$HOME/Eth2Validators/prysm-wallet-v2"). |
+| `--wallet-password-file` | Path to plain-text file containing your wallet's password.                    |
+| `--show-deposit-data`    | Display raw eth1 tx deposit data for validator accounts.                      |
+| `--show-private-keys`    | Display the private keys for validator accounts.                              |
 
 
-import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
-
-<RequestUpdateWidget />

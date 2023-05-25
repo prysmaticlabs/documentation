@@ -62,7 +62,7 @@ message Message {
 This enables an HTTP REST to gRPC mapping, as shown below:
 
 | HTTP                      | gRPC                                  |
-|:--------------------------|:--------------------------------------|
+| :------------------------ | :------------------------------------ |
 | `GET /v1/messages/123456` | `GetMessage(name: "messages/123456")` |
 
 ### JSON mapping
@@ -79,6 +79,3 @@ For more details on JSON mapping for other types, view the relevant section in t
 * [Protocol Buffer Basics: Go](https://developers.google.com/protocol-buffers/docs/gotutorial)
 * [Transcoding gRPC to JSON/HTTP using Envoy](https://blog.jdriven.com/2018/11/transcoding-grpc-to-http-json-using-envoy/)
 
-import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
-
-<RequestUpdateWidget />
