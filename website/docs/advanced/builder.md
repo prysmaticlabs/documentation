@@ -35,7 +35,7 @@ The provided guide offers explanations on configuring the Prysm client to utiliz
 
 Within several steps of this process whether there are failures in the validator or bad connections or bad configurations the beacon node will attempt to fall back to local execution which will connect back to a normal execution client for a proper block.
 
-## Builder Configuration
+## Builder configuration
 
 <img style={{maxWidth: 846 + 'px'}} src={BuilderPng} /> 
 
