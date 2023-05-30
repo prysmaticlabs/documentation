@@ -435,6 +435,3 @@ Then change all your docker run commands to use that version tag. For example, i
 For **major version bumps** such as from `v1.0.0` to `v2.0.0`, you cannot downgrade as these are meant to be backwards incompatible changes.
 
 
-import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
-
-<RequestUpdateWidget />

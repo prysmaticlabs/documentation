@@ -2,7 +2,7 @@ import {GenerateTroubleshootingReportWidget} from '@site/src/components/Generate
 
 <GenerateTroubleshootingReportWidget />
 
-<div class='troubleshooting-report-area'>
+<div className='troubleshooting-report-area'>
     <p>Execution node startup command</p>
     <span><strong>Tip:</strong> We recommend redacting wallet addresses, IP addresses, and other personal information as a general operational security best practice.</span>
     <textarea id="el-cmd" rows="3" placeholder='Paste something like "Nethermind.Runner --JsonRpc.Enabled true --JsonRpc.JwtSecretFile=../consensus/jwt.hex" (or Docker config) here...'></textarea>
@@ -13,6 +13,6 @@ import {GenerateTroubleshootingReportWidget} from '@site/src/components/Generate
     <p>Unexpected output</p>
     <span><strong>Tip:</strong> Paste the ~100 lines of output before and including the output you're asking about.</span>
     <textarea id="output" rows="3" placeholder='Paste your unexpected output here...'></textarea>
-    <a id='generate-report' class='generate-report'>Generate troubleshooting report</a>
-    <div id='generated-report' class='generated-report'>Complete the checklist above before generating...</div>
+    <a id='generate-report' className='generate-report'>Generate troubleshooting report</a>
+    <div id='generated-report' className='generated-report'>Complete the checklist above before generating...</div>
 </div>

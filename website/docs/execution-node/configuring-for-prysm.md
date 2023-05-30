@@ -14,7 +14,7 @@ If you're looking for end-to-end configuration guidance, refer to our [Quickstar
 
 :::
 
-<div class='execution-node-guide'>
+<div className='execution-node-guide'>
 
 ## Select a configuration 
 
@@ -24,7 +24,7 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
 
 <MultidimensionalContentControlsPartial />
 
-<div class='hide-tabs'>
+<div className='hide-tabs'>
 
 import QuickstartRunExecutionNodeJWTPartial from '@site/docs/install/partials/_quickstart-run-execution-node.md';
 
@@ -36,6 +36,3 @@ Congratulations - you’re now running an <strong>execution node</strong> that y
 
 </div>
 
-import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
-
-<RequestUpdateWidget />

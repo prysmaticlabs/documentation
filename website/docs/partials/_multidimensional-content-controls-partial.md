@@ -5,7 +5,7 @@ import {MultiDimensionalContentWidget} from '@site/src/components/MultiDimension
 
 <MultiDimensionalContentWidget />
 
-<div class='quickstart-tabs'>
+<div className='quickstart-tabs'>
 
 <Tabs className="tabgroup-with-label os-tabgroup" groupId="os" defaultValue="others" values={[
     {label: 'Operating system:', value: 'label'},

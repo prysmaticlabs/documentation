@@ -6,7 +6,7 @@ sidebar_label: Configure a devnet
 
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
-<HeaderBadgesWidget commaDelimitedContributors="Raul, Sammy, James" lastVerifiedDateString="March 22nd, 2023" />
+<HeaderBadgesWidget commaDelimitedContributors="Raul, Sammy, James" />
 
 :::info
 

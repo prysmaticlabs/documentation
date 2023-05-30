@@ -18,6 +18,3 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 * [Go Official Website](https://golang.org/)
 
 
-import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
-
-<RequestUpdateWidget />
