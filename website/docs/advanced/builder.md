@@ -101,7 +101,7 @@ Current persisted values in the db will start but will not be migrated to the ca
 
 :::
 
-### Parallel Execution
+### Parallel execution
 
 `--build-block-parallel` flag on the beacon node will construct the consensus and execution portions of the beacon block in parallel to improve speed and efficiency. 
 
