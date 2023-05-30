@@ -14,6 +14,3 @@ A [validator](validator-clients.md) is queued in the full [Proof-of-Stake](/docs
 
 For more information and current developments, see the official [Ethereum consensus specification](https://github.com/ethereum/consensus-specs)
 
-import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
-
-<RequestUpdateWidget />

@@ -9,9 +9,9 @@ import TabItem from '@theme/TabItem';
 
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
-<HeaderBadgesWidget lastVerifiedDateString="September 12th, 2022" lastVerifiedVersionString="v4.0.0" />
+<HeaderBadgesWidget />
 
-<div class='status-guide'>
+<div className='status-guide'>
 
 ## Select a configuration 
 
@@ -33,6 +33,4 @@ Running into unexpected output? Generate a **troubleshooting report** using our 
 
 <br />
 
-import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateWidget />

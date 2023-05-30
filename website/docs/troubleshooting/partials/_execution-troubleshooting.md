@@ -1,4 +1,5 @@
 <table>
+    <tbody>
     <tr>
         <th style={{minWidth: 180 + 'px'}}>Scenario</th> 
         <th>Solution</th>
@@ -43,4 +44,5 @@
       <td><code>Forkchoice requested sync to new head</code></td>
       <td>Your execution client is syncing now.</td>
     </tr>
+    </tbody>
 </table>

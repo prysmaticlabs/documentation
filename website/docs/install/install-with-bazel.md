@@ -23,34 +23,36 @@ This guidance is targeted at users who are already comfortable with Bazel and st
 Instead of using the `Go` tool to build Prysm, our team relies on the [Bazel](https://bazel.build) build system used by major companies to manage monorepositories. Bazel provides reproducible builds and a sandboxed environment that ensures everyone building Prysm has the same experience and can build our entire project from a single command. For more detailed rationale on why Bazel, how it works in Prysm, and all important information about how exactly building from source works, read our rationale [here](/docs/reading/bazel).
 
 
-<div class='bazel-guide'>
+<div className='bazel-guide'>
 
 ## Review system requirements
 
 <table>
-    <tr>
-        <th>Minimum</th>
-        <th>Recommended</th>
-    </tr>
-    <tr>
-      <td>
-        <ul> 
-          <li><strong>OS</strong>: 64-bit Linux, Mac OS X 10.14+, Windows 64-bit</li> 
-          <li><strong>CPU</strong>: Intel Core i5–760 or AMD FX-8100 or better</li> 
-          <li><strong>Memory</strong>: 8GB RAM</li> 
-          <li><strong>Storage</strong>: SSD with 20GB+ available</li> 
-          <li><strong>Internet</strong>: Broadband connection</li> 
-          <li><strong>Software</strong>: The latest release of <a href='https://docs.docker.com/install/'>Docker</a> installed.</li> 
-        </ul> 
-      </td>
-      <td>
-        <ul> 
-          <li><strong>CPU</strong>: Intel Core i7–4770 or AMD FX-8310 or better</li> 
-          <li><strong>Memory</strong>: 16GB RAM</li> 
-          <li><strong>Storage</strong>: SSD with 100GB+ available</li> 
-        </ul> 
-      </td>
-    </tr> 
+    <tbody>
+      <tr>
+          <th>Minimum</th>
+          <th>Recommended</th>
+      </tr>
+      <tr>
+        <td>
+          <ul> 
+            <li><strong>OS</strong>: 64-bit Linux, Mac OS X 10.14+, Windows 64-bit</li> 
+            <li><strong>CPU</strong>: Intel Core i5–760 or AMD FX-8100 or better</li> 
+            <li><strong>Memory</strong>: 8GB RAM</li> 
+            <li><strong>Storage</strong>: SSD with 20GB+ available</li> 
+            <li><strong>Internet</strong>: Broadband connection</li> 
+            <li><strong>Software</strong>: The latest release of <a href='https://docs.docker.com/install/'>Docker</a> installed.</li> 
+          </ul> 
+        </td>
+        <td>
+          <ul> 
+            <li><strong>CPU</strong>: Intel Core i7–4770 or AMD FX-8310 or better</li> 
+            <li><strong>Memory</strong>: 16GB RAM</li> 
+            <li><strong>Storage</strong>: SSD with 100GB+ available</li> 
+          </ul> 
+        </td>
+      </tr> 
+    </tbody>
 </table>
 
 ### Dependencies
@@ -118,7 +120,7 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
 
 <MultidimensionalContentControlsPartial />
 
-<div class='hide-tabs'>
+<div className='hide-tabs'>
 
 <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
@@ -301,6 +303,4 @@ Which will deploy all images with the tags specified in [here](https://github.co
 By default, this will deploy to Prysmatic Labs' Google Container Registry namespace: `gcr.io/prysmaticlabs/prysm`, which you will not have authentication access to, so make sure you edit the image tags to your appropriate registry and authenticate as needed.
 
 
-import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateWidget />

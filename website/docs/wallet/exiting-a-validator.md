@@ -6,7 +6,7 @@ sidebar_label: Exit your validator
 
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
-<HeaderBadgesWidget  commaDelimitedContributors="James" lastVerifiedDateString="March 20th, 2023" lastVerifiedVersionString="v4.0.0"/>
+<HeaderBadgesWidget  commaDelimitedContributors="James"/>
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -193,6 +193,4 @@ bazel run //validator --config=release -- accounts voluntary-exit
 **Note:** The above-referenced commands that are being deprecated have not been removed yet, but mirror those found in `prysmctl`.
 
 
-import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateWidget />

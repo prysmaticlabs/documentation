@@ -19,7 +19,7 @@ This guidance is targeted at users who are already comfortable with Docker. See 
 
 :::
 
-<div class='docker-guide'>
+<div className='docker-guide'>
 
 <p><strong>Select a configuration</strong>:</p>
 
@@ -31,29 +31,31 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
 ## Review system requirements
 
 <table>
-    <tr>
-        <th>Minimum</th>
-        <th>Recommended</th>
-    </tr>
-    <tr>
-      <td>
-        <ul> 
-          <li><strong>OS</strong>: 64-bit Linux, Mac OS X 10.14+, Windows 64-bit</li> 
-          <li><strong>CPU</strong>: Intel Core i5–760 or AMD FX-8100 or better</li> 
-          <li><strong>Memory</strong>: 8GB RAM</li> 
-          <li><strong>Storage</strong>: SSD with 20GB+ available</li> 
-          <li><strong>Internet</strong>: Broadband connection</li> 
-          <li><strong>Software</strong>: The latest release of <a href='https://docs.docker.com/install/'>Docker</a> installed.</li> 
-        </ul> 
-      </td>
-      <td>
-        <ul> 
-          <li><strong>CPU</strong>: Intel Core i7–4770 or AMD FX-8310 or better</li> 
-          <li><strong>Memory</strong>: 16GB RAM</li> 
-          <li><strong>Storage</strong>: SSD with 100GB+ available</li> 
-        </ul> 
-      </td>
-    </tr> 
+    <tbody>
+      <tr>
+          <th>Minimum</th>
+          <th>Recommended</th>
+      </tr>
+      <tr>
+        <td>
+          <ul> 
+            <li><strong>OS</strong>: 64-bit Linux, Mac OS X 10.14+, Windows 64-bit</li> 
+            <li><strong>CPU</strong>: Intel Core i5–760 or AMD FX-8100 or better</li> 
+            <li><strong>Memory</strong>: 8GB RAM</li> 
+            <li><strong>Storage</strong>: SSD with 20GB+ available</li> 
+            <li><strong>Internet</strong>: Broadband connection</li> 
+            <li><strong>Software</strong>: The latest release of <a href='https://docs.docker.com/install/'>Docker</a> installed.</li> 
+          </ul> 
+        </td>
+        <td>
+          <ul> 
+            <li><strong>CPU</strong>: Intel Core i7–4770 or AMD FX-8310 or better</li> 
+            <li><strong>Memory</strong>: 16GB RAM</li> 
+            <li><strong>Storage</strong>: SSD with 100GB+ available</li> 
+          </ul> 
+        </td>
+      </tr> 
+    </tbody>
 </table>
 
 
@@ -88,7 +90,7 @@ These commands will automatically install dependencies.
 
 We recommend opening up ports `tcp/13000` and `udp/12000` on your router and firewall to improve peer-to-peer connectivity. Refer to your operating system and router documentation for port configuration instructions. With this complete, appending `--p2p-host-ip=$(curl -s ident.me)` to your beacon node startup command will configure Prysm to use your newly opened ports. Refer to [Configure ports and firewalls](../prysm-usage/p2p-host-ip.md) for more information.
 
-<div class='hide-tabs'>
+<div className='hide-tabs'>
 
 ## Run a beacon node
 
@@ -380,6 +382,4 @@ docker run -it -v %LOCALAPPDATA%\Eth2:/data -p 4000:4000 -p 13000:13000 -p 12000
 This tells your Docker container to to "listen" for connections from outside of your container, allowing you (and other services) to reach your RPC endpoint(s). See [Configure ports and firewalls](../prysm-usage/p2p-host-ip.md) for more information.
 
 
-import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateWidget />

@@ -10,9 +10,9 @@ import ClientStackPng from '@site/static/img/client-stack.png';
 
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
-<HeaderBadgesWidget commaDelimitedContributors="Mick" lastVerifiedDateString="September 12th, 2022" lastVerifiedVersionString="v4.0.0" />
+<HeaderBadgesWidget commaDelimitedContributors="Mick" />
 
-<div class='quickstart'>
+<div className='quickstart'>
 
 import QuickstartIntroPartial from '@site/docs/install/partials/_quickstart-intro.md';
 
@@ -26,7 +26,7 @@ import QuickstartPrereqsPartial from '@site/docs/install/partials/_quickstart-pr
 
 ## Step 2: Install Prysm
 
-<div class='hide-tabs'>
+<div className='hide-tabs'>
 
 import QuickstartInstallPrysmPartial from '@site/docs/install/partials/_quickstart-install-prysm.md';
 
@@ -130,6 +130,4 @@ TODO
 **What are withdrawal keys and validator keys?** <br />
 TODO: explain in context of this guide -->
 
-import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateWidget />

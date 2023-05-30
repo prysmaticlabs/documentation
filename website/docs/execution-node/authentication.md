@@ -16,13 +16,13 @@ This guidance is relevant only if your beacon node is connecting to your executi
 
 First, <strong>select a configuration</strong>:
 
-<div class='jwt-guide'>
+<div className='jwt-guide'>
 
 import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidimensional-content-controls-partial.md';
 
 <MultidimensionalContentControlsPartial />
 
-<div class='hide-tabs'>
+<div className='hide-tabs'>
 
 import JwtGuidancePartial from '@site/docs/partials/_jwt-guidance-partial.md';
 
@@ -39,6 +39,3 @@ Congrats! You're now using JWT authentication.
 
 :::
 
-import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
-
-<RequestUpdateWidget />

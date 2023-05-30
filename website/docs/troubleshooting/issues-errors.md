@@ -51,7 +51,5 @@ import GenerateTroubleshootingReportPartial from '@site/docs/troubleshooting/par
 <GenerateTroubleshootingReportPartial />
 
 
-import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateWidget />
 

@@ -1,4 +1,5 @@
 <table>
+    <tbody>
     <tr>
         <th style={{minWidth: 180 + 'px'}}>Scenario</th> 
         <th>Solution</th>
@@ -79,4 +80,5 @@
     <td><code>ERROR powchain: could not get eth1 block hash: could not query header with height 11184524: not found</code></td>
       <td>Your execution client might still be syncing. Syncing can be a fairly long process but if it’s already been over a week, we recommend that you investigate further and feel free to ask us questions on our Discord server.</td>
     </tr>
+    </tbody>
 </table>

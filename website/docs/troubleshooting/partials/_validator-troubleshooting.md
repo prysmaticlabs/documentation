@@ -1,4 +1,5 @@
 <table>
+    <tbody>
     <tr>
         <th style={{minWidth: 180 + 'px'}}>Scenario</th> 
         <th>Solution</th>
@@ -27,4 +28,5 @@
     <td><code>Could not request attestation to sign at slot error=rpc error: code = Unavailable desc = the node is currently optimistic and cannot serve validators</code></td>
       <td>This usually means that your execution client isn't yet synchronized. Visit <a href='../monitoring/checking-status'>Check Node and Validator Status</a>. </td>
     </tr>
+    </tbody>
 </table>
