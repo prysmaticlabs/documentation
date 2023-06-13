@@ -151,7 +151,7 @@ There is currently an issue with unregistering validators in the db, it's sugges
 
 :::
 
-The registration will expire in the `cache` after `3 epochs` without a new call to the [register validator Beacon API](https://ethereum.github.io/beacon-APIs/?urls.primaryName=dev#/Validator/registerValidator). 
+The registration will expire in the cache after 3 epochs without a new call to the [register validator Beacon API](https://ethereum.github.io/beacon-APIs/?urls.primaryName=dev#/Validator/registerValidator). 
 
 ## 2. Beacon Node: remove builder related flags
 
