@@ -105,7 +105,7 @@ Current persisted values in the db will start but will not be migrated to the ca
 
 `--build-block-parallel` flag on the beacon node will construct the consensus and execution portions of the beacon block in parallel to improve speed and efficiency. 
 
-### prioritizing local blocks
+### Prioritizing local blocks
 
 `--local-block-value-boost` flag is a float64 value that provides an additional percentage to multiply local block value. Use builder block if: `builder_bid_value * 100 > local_block_value * (local-block-value-boost + 100)`. This will encourage your setup to use the local execution if the value earned is not above your threshold, helping to mitigate censorship concerns.
 
