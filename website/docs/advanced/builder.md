@@ -164,7 +164,7 @@ The [register validator Beacon API](https://ethereum.github.io/beacon-APIs/?urls
 
 :::
 
-The following flags will be disabled after this flag is removed, and can optionally be removed.
+The following flags will be disabled after this flag is removed, and can safely be removed:
  - `--max-builder-consecutive-missed-slots`
  - `--max-builder-epoch-missed-slots`
  - `--local-block-value-boost`
