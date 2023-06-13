@@ -56,7 +56,7 @@ Validator `proposer-settings` will need to be configured to set through one of t
 The builder can be configured through the `proposer-settings` in the following ways:
  - starting with the `--proposer-settings-file` flag providing it with an appropriate json or yaml file that includes builder settings. Guide and example on this configuration can be found [here](../execution-node/fee-recipient.md#advanced-configure-mev-builder-and-gas-limit).
  - starting  with the `--proposer-settings-url` flag where the response includes the builder settings. Guide and example on this configuration can be found [here](../execution-node/fee-recipient.md#advanced-configure-mev-builder-and-gas-limit).
- - starting the validator client with `--proposer-settings-file` or `--proposer-settings-url` flag with no builder settings but providing the `--enable-builder` flag instead
+ - starting the validator client with `--proposer-settings-file` or `--proposer-settings-url` flag with no builder settings but providing the `--enable-builder` flag instead. Optionally, you can also add the `--suggested-gas-limit` to adjust the default gas limit for the builder, this only applies with `--enable-builder`.
  - starting with the `--suggested-fee-recipient` and `--enable-builder` flags. **note:**  `--proposer-settings-file` or `--proposer-settings-url` flags with builder settings will override values provided from `--suggested-fee-recipient` and `--enable-builder`flags.
 
 :::info
@@ -139,6 +139,7 @@ Make sure you are using the correct version that supports the current version of
 
 Update the following configurations and restart the validator client to stop the periodic registration of the validator. 
 - remove the `--enable-builder` flag.
+- remove the `--suggested-gas-limit` flag, though it should already be disabled once removing the `--enable-builder` flag.
 - remove all wanted references of the `builder` field from the associated file/json for the validators you no longer want to register within the `--proposer-settings-file` and `--proposer-settings-url` flag.
 
 ### Validator registration expiration
