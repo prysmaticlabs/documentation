@@ -121,7 +121,7 @@ If all checks are satisfied, then 5. Builder: connected via relay URL will be us
 
 ## 4. Local execution client: kept in sync and up to date
 
-local execution clients such as `geth` or `nethermind` must continue to run as usual even while using a builder and will be used in case the builder does not pass the `Is Builder Configured?` check. The execution client should be synced and running alongside your beacon node and earnings from the block will be compared to the earnings from the builder's payload. If the local execution payload fails then the entire function will fail.
+Local execution clients such as Geth or Nethermind must continue to run as usual even while using a builder and will be used in case the builder does not pass the `Is Builder Configured?` check. The execution client should be synced and running alongside your beacon node, and earnings from the block will be compared to the earnings from the builder's payload. If the local execution payload fails then the entire function will fail.
 
 ## 5. Builder: connected via relay URL
 
