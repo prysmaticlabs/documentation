@@ -119,7 +119,7 @@ When a validator is proposing a block, the following is checked before attemptin
 If all checks are satisfied then 5. Builder via Relay URL will be used to get the execution payload which contains the transactions and build a blinded block. However, if the checks do not pass then the beacon node will fall back to 4. Local Execution Client.
 
 
-## 4. Local Execution Client: kept in sync and up to date
+## 4. Local execution client: kept in sync and up to date
 
 local execution clients such as `geth` or `nethermind` must continue to run as usual even while using a builder and will be used in case the builder does not pass the `Is Builder Configured?` check. The execution client should be synced and running alongside your beacon node and earnings from the block will be compared to the earnings from the builder's payload. If the local execution payload fails then the entire function will fail.
 
