@@ -96,7 +96,7 @@ This feature solves the unintended issue of wanting some validators unregistered
 
 :::caution
 
-This feature is currently `not ready` for [Keymanager-API's](../how-prysm-works/keymanager-api.md) use as restarting the validator and beacon node (especially during upgrades) will clear the validator settings for validator registrations. 
+This feature is currently **not ready** for [Keymanager-API's](../how-prysm-works/keymanager-api.md) use as restarting the validator and beacon node (especially during upgrades) will clear the validator settings for validator registrations. 
 Current persisted values in the db will start but will not be migrated to the cache.
 
 :::
