@@ -111,7 +111,7 @@ Current persisted values in the db will start but will not be migrated to the ca
 
 ## 3. Is builder configured?
 
-When a validator is proposing a block, the following is checked before attempting to use the Builder through the relay.
+When a validator is proposing a block, the following is checked before attempting to use the builder through the relay:
 - `--http-mev-relay` flag was provided and is pointed to mev-boost or an active relay of the correct network
 - circuit breaker is not triggered 
 - validator is registered (beacon API was successfully called to save to local storage)
