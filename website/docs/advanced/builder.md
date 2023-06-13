@@ -194,7 +194,7 @@ removing the `--http-mev-relay` flag from the beacon node will disconnect the bu
 
 **A:** Yes, the execution client will perform standard tasks and also be the fallback mechanism if the builder is not working correctly. 
 
-**Q:** How do I recover if circuit breaker is triggered?
+**Q:** How do I recover if the circuit breaker is triggered?
 
 **A:** Once the circuit breaker is triggered, local execution will continue to be used until both conditions: max consecutive slots missed and slots missed in epoch are no longer true. The beacon node does not need to be restarted.
 
