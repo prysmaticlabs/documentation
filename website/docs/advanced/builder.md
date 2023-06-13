@@ -139,7 +139,7 @@ Make sure you are using the correct version that supports the current version of
 
 ## 1. Validator Client: unregister validator
 
-Update the following configurations and restart the validator client to stop periodic registration of the validator. 
+Update the following configurations and restart the validator client to stop the periodic registration of the validator. 
 - remove the `--enable-builder` flag.
 - remove all wanted references of the `builder` field from the associated file/json for the validators you no longer want to register with in the `--proposer-settings-file` and `--proposer-settings-url` flag.
 
