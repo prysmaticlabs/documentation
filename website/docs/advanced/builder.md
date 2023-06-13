@@ -155,7 +155,7 @@ The registration will expire in the `cache` after `3 epochs` without a new call 
 
 ## 2. Beacon Node: remove builder related flags
 
-The following flag should be removed to disable builder use on the beacon node.
+The following flag should be removed to disable builder use on the beacon node:
  - `--http-mev-relay` flag
 
 :::info
