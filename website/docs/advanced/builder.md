@@ -90,7 +90,7 @@ By default, the circuit breaker will be triggered after 3 slots are consecutivel
 ## Enable registration cache
 
 `--enable-registration-cache` flag will enable storage of validator registrations in a cache instead of bolt db when starting the beacon node. The cache will enable the following features:
-  - in memory storage of the validator registrations, this clears all validator registrations on restart.
+  - in-memory storage of the validator registrations, this clears all validator registrations on restart.
   - validator registrations will expire after 3 epochs unless sent consistently from the validator client.
 This feature solves the unintended issue of wanting some validators unregistered while maintaining mev boost on others. In the future the db used to store registrations will be removed completely and the flag will no longer be required for this feature. Validator settings will be persisted on the validator client side.
 
