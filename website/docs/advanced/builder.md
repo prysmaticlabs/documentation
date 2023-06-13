@@ -54,7 +54,7 @@ Within several steps of this process whether there are failures in the validator
 Validator `proposer-settings` will need to be configured to set through one of the following ways to `register` the validator against the builder. Having your validator registered against the builder is a requirement for using custom builders.
 
 The builder can be configured through the `proposer-settings` in the following ways:
- - starting with the `--proposer-settings-file` flag providing it with an appropriate json or yaml file that includes builder settings. Guide and example on this configuration [here](../execution-node/fee-recipient.md#advanced-configure-mev-builder-and-gas-limit).
+ - starting with the `--proposer-settings-file` flag providing it with an appropriate json or yaml file that includes builder settings. Guide and example on this configuration can be found [here](../execution-node/fee-recipient.md#advanced-configure-mev-builder-and-gas-limit).
  - starting  with the `--proposer-settings-url` flag where the response includes the builder settings. Guide and example on this configuration can be found [here](../execution-node/fee-recipient.md#advanced-configure-mev-builder-and-gas-limit).
  - starting the validator client with  `--proposer-settings-file` or `--proposer-settings-url` flag with no builder settings but providing the `--enable-builder` flag instead
  - starting with the `--suggested-fee-recipient` and `--enable-builder` flags. **note:**  `--proposer-settings-file` or `--proposer-settings-url` flags with builder settings will override values provided from `--suggested-fee-recipient` and `--enable-builder`flags.
