@@ -206,6 +206,6 @@ removing the `--http-mev-relay` flag from the beacon node will disconnect the bu
 
 **A:** There are multiple reasons why this could happen, including an incorrect relay URL, a relay that is offline or outdated compared to your Ethereum node setup, or a possible bug. Additionally, it's possible that the circuit breaker has been activated.
 
-**Q:** What if the earnings from the builder are lower than the local execution?
+**Q:** What if the earnings from the builder are lower than from local execution?
 
 **A:** The block from local execution will be used, this could also be triggered through `--local-block-value-boost` if the earnings from the builder don't pass some percentage threshold.
