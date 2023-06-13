@@ -42,11 +42,7 @@ Within several steps of this process whether there are failures in the validator
 <Tabs
   groupId="configure-builder"
   defaultValue="add"
-  values={[
-    {label: 'Add Builder', value: 'add'},
-    {label: 'Remove Builder', value: 'remove'},
-  ]
-}>
+  values={[{label: 'Add Builder', value: 'add'},{label: 'Remove Builder', value: 'remove'}]}>
 <TabItem value="add">
 
 ## 1. Validator Client: register validator
