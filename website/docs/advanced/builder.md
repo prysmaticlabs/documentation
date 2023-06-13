@@ -73,7 +73,7 @@ The beacon node must also be configured to enable builder via the `--http-mev-re
 
 :::
 
-## 2. Beacon Node: connect to builder
+## 2. Beacon Node: connect to the builder
 
 To use a builder the beacon node needs to start with the following configuration:
 
