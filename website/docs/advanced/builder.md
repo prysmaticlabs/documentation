@@ -169,7 +169,7 @@ The following flags will be disabled after this flag is removed, and can safely 
  - `--max-builder-epoch-missed-slots`
  - `--local-block-value-boost`
 
-## 3. Is Builder Configured?
+## 3. Is builder configured?
 
 Once the appropriate flags are fully removed this check shouldn't pass and will fall back to local execution.
 
