@@ -63,7 +63,7 @@ The builder can be configured through the `proposer-settings` in the following w
 
 Validators updated through the [Keymanager-API's](../how-prysm-works/keymanager-api.md) fee recipient APIs will take on the default `proposer-settings` provided.
 
-if `--enable-builder` is provided without `--suggested-fee-recipient`, or `--proposer-settings-file`, or  `--proposer-settings-url` an error is thrown.
+If `--enable-builder` is provided without `--suggested-fee-recipient` or `--proposer-settings-file` or  `--proposer-settings-url`, an error is thrown.
 
 The validator client will use the `proposer-settings` to call the beacon node's [Beacon API](https://ethereum.github.io/beacon-APIs/?urls.primaryName=dev#/Validator/registerValidator), which calls the builder via the [Builder API](https://ethereum.github.io/builder-specs/#/Builder/registerValidator).
 
