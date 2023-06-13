@@ -75,7 +75,7 @@ The beacon node must also be configured to enable builder via the `--http-mev-re
 
 ## 2. Beacon Node: connect to builder
 
-To use a Builder the beacon node needs to start with the following configuration:
+To use a builder the beacon node needs to start with the following configuration:
 
 - `--http-mev-relay` flag pointed to a mev boost instance or running relay (5. Builder: connected via relay URL).
 
