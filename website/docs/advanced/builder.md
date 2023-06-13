@@ -179,7 +179,7 @@ The execution client can safely continue to run as is with no changes. Once the 
 
 ## 5. Builder: remove relay URL
 
-removing the `--http-mev-relay` flag from the beacon node will disconnect the builder. Once removed you can safely turn off your builder related services such as your mev boost or relays.
+removing the `--http-mev-relay` flag from the beacon node will disconnect the builder. Once removed, you can safely turn off your builder related services such as your mev boost or relays.
 
 </TabItem>
 </Tabs>
