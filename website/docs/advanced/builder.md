@@ -116,7 +116,7 @@ When a validator is proposing a block, the following is checked before attemptin
 - circuit breaker is not triggered 
 - validator is registered (beacon API was successfully called to save to local storage)
 
-If all checks are satisfied then 5. Builder via Relay URL will be used to get the execution payload which contains the transactions and build a blinded block. However, if the checks do not pass then the beacon node will fall back to 4. Local Execution Client.
+If all checks are satisfied, then 5. Builder: connected via relay URL will be used to get the execution payload (which contains the transactions) and build a blinded block. However, if the checks do not pass, then the beacon node will fall back to 4. Local Execution Client.
 
 
 ## 4. Local execution client: kept in sync and up to date
