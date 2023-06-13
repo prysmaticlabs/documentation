@@ -173,7 +173,7 @@ The following flags will be disabled after this flag is removed, and can safely 
 
 Once the appropriate flags are fully removed this check shouldn't pass and will fall back to local execution.
 
-## 4. Local Execution Client: kept the same
+## 4. Local execution client: kept the same
 
 The execution client can safely continue to run as is with no changes. Once the validator client and beacon node have their settings changed to local execution that is enough to set back. 
 
