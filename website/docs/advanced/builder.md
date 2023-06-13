@@ -188,7 +188,7 @@ removing the `--http-mev-relay` flag from the beacon node will disconnect the bu
 
 **Q:** What are the risks of running Prysm with a custom builder instead of using local execution?
 
-**A:** The custom builder whether connected through mev boost or as a relay url will need to be updated consistently with the Prysm adding to another layer of complexity. Depending on the relay used some rewards may be missed due to the relay's connectivity or any builder bugs. Transactions may be censored under certain conditions prior to builders being in protocol through PBS. 
+**A:** The custom builder, whether connected through mev boost or as a relay URL, will need to be updated consistently with Prysm, adding another layer of complexity. Depending on the relay used some rewards may be missed due to the relay's connectivity or any builder bugs. Transactions may be censored under certain conditions.
 
 **Q:** Do I need to run my execution client while using a custom builder?
 
