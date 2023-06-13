@@ -63,7 +63,7 @@ The builder can be configured through the `proposer-settings` in the following w
 
 Validators updated through the [Keymanager-API's](../how-prysm-works/keymanager-api.md) fee recipient APIs will take on the default `proposer-settings` provided.
 
-If `--enable-builder` is provided without `--suggested-fee-recipient` or `--proposer-settings-file` or  `--proposer-settings-url`, an error is thrown.
+If `--enable-builder` is provided without `--suggested-fee-recipient` or `--proposer-settings-file` or  `--proposer-settings-url`, an error is thrown. **note:** this will be updated in a future release to allow enabling builder without other proposer-settings provided, in that case the validator will skip using the builder if a fee recipient is not set.
 
 The validator client will use the `proposer-settings` to call the beacon node's [Beacon API](https://ethereum.github.io/beacon-APIs/?urls.primaryName=dev#/Validator/registerValidator), which calls the builder via the [Builder API](https://ethereum.github.io/builder-specs/#/Builder/registerValidator).
 
@@ -89,21 +89,19 @@ By default, the circuit breaker will be triggered after 3 slots are consecutivel
 
 ## Enable registration cache
 
-`--enable-registration-cache` flag will enable storage of validator registrations in a cache instead of bolt db when starting the beacon node. The cache will enable the following features:
+`--enable-registration-cache` flag will enable storage of validator registrations in a cache instead of bolt db when starting the beacon node. The cache will enable:
   - in-memory storage of the validator registrations, this clears all validator registrations on restart.
-  - validator registrations will expire after 3 epochs unless sent consistently from the validator client.
 This feature solves the unintended issue of wanting some validators unregistered while maintaining mev boost on others. In the future the db used to store registrations will be removed completely and the flag will no longer be required for this feature. Validator settings will be persisted on the validator client side.
 
 :::caution
 
-This feature is currently **not ready** for [Keymanager-API's](../how-prysm-works/keymanager-api.md) use as restarting the validator and beacon node (especially during upgrades) will clear the validator settings for validator registrations. 
-Current persisted values in the db will start but will not be migrated to the cache.
+This feature is currently **not ready** for [Keymanager-API's](../how-prysm-works/keymanager-api.md) to use as restarting the validator and beacon node (especially during upgrades) will clear the validator settings for validator registrations.
 
 :::
 
 ### Parallel execution
 
-`--build-block-parallel` flag on the beacon node will construct the consensus and execution portions of the beacon block in parallel to improve speed and efficiency. 
+By default the beacon node will construct the consensus and execution portions of the beacon block in parallel to improve speed and efficiency. `--disable-build-block-parallel` flag can be added to prevent node from building in parallel and will build sequentially. 
 
 ### Prioritizing local blocks
 
@@ -114,7 +112,7 @@ Current persisted values in the db will start but will not be migrated to the ca
 When a validator is proposing a block, the following is checked before attempting to use the builder through the relay:
 - `--http-mev-relay` flag was provided and is pointed to mev-boost or an active relay of the correct network
 - circuit breaker is not triggered 
-- validator is registered (beacon API was successfully called to save to local storage)
+- validator is registered (beacon API was successfully called and validator registration info is stored in the beacon node's db)
 
 If all checks are satisfied, then 5. Builder: connected via relay URL will be used to get the execution payload (which contains the transactions) and build a blinded block. However, if the checks do not pass, then the beacon node will fall back to 4. Local Execution Client.
 
@@ -148,10 +146,9 @@ Update the following configurations and restart the validator client to stop the
 :::caution
 
 There is currently an issue with unregistering validators in the db. It's suggested to re-register while using the `--enable-registration-cache` flag on the beacon node so that registrations can properly unregister.
-
 :::
 
-The registration will expire in the cache after 3 epochs without a new call to the [register validator Beacon API](https://ethereum.github.io/beacon-APIs/?urls.primaryName=dev#/Validator/registerValidator). 
+Validator registration cache can be cleared via a restart of the beacon node.
 
 ## 2. Beacon Node: remove builder related flags
 
