@@ -160,7 +160,7 @@ The following flag should be removed to disable builder use on the beacon node:
 
 :::info
 
-The [register validator Beacon API](https://ethereum.github.io/beacon-APIs/?urls.primaryName=dev#/Validator/registerValidator) will also stop working with the removal of the `--http-mev-relay` flag and will no longer know the url to mev-boost or the active relay.
+The [register validator Beacon API](https://ethereum.github.io/beacon-APIs/?urls.primaryName=dev#/Validator/registerValidator) will also stop working with the removal of the `--http-mev-relay` flag and will no longer know the URL to mev-boost or the active relay.
 
 :::
 
