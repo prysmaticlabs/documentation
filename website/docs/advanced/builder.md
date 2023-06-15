@@ -50,10 +50,10 @@ In case of failures in the validator, such as bad connections or incorrect confi
 To `register` the validator against the builder and enable the use of custom builders, the `proposer-settings` will need to be configured.
 
 There are several ways to configure this setting.
-- to configure the builder settings, start by using the `--proposer-settings-file` flag and provide it with a suitable JSON or YAML file. This file should include the necessary configuration for the builder. For detailed guidance and an example of this configuration, refer to the [MEV Builder and Gas Limit configuration guide](../execution-node/fee-recipient.md#advanced-configure-mev-builder-and-gas-limit).
- - starting  with the `--proposer-settings-url` flag where the response includes the builder settings. Guide and example on this configuration can be found [here](../execution-node/fee-recipient.md#advanced-configure-mev-builder-and-gas-limit).
- - starting the validator client with `--proposer-settings-file` or `--proposer-settings-url` flag with no builder settings but providing the `--enable-builder` flag instead. Optionally, you can also add the `--suggested-gas-limit` to adjust the default gas limit for the builder, this only applies with `--enable-builder`.
- - starting with the `--suggested-fee-recipient` and `--enable-builder` flags. **note:**  `--proposer-settings-file` or `--proposer-settings-url` flags with builder settings will override values provided from `--suggested-fee-recipient` and `--enable-builder`flags.
+- if configuring with the `--proposer-settings-file` flag and provide it with a suitable JSON or YAML file. This file should include the necessary configuration for the builder. For detailed guidance and an example of this configuration, refer to the [MEV Builder and Gas Limit configuration guide](../execution-node/fee-recipient.md#advanced-configure-mev-builder-and-gas-limit).
+ - if configuring with the `--proposer-settings-url` flag provide a url that returns the JSON response with the suitable proposer-settings. A guide and example on this configuration can be found [here](../execution-node/fee-recipient.md#advanced-configure-mev-builder-and-gas-limit).
+ - if configuring with the `--proposer-settings-file` or `--proposer-settings-url` flag with no builder settings but providing the `--enable-builder` flag instead. Optionally, you can also add the `--suggested-gas-limit` to adjust the default gas limit for the builder, this only applies with `--enable-builder`.
+ - if configuring with the `--suggested-fee-recipient` and `--enable-builder` flags. **note:**  `--proposer-settings-file` or `--proposer-settings-url` flags with builder settings will override values provided from `--suggested-fee-recipient` and `--enable-builder`flags.
 
 :::info
 
