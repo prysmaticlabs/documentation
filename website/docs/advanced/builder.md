@@ -63,7 +63,7 @@ If `--enable-builder` is provided without `--suggested-fee-recipient` or `--prop
 
 The validator client will use the `proposer-settings` to call the beacon node's [Beacon API](https://ethereum.github.io/beacon-APIs/?urls.primaryName=dev#/Validator/registerValidator), which calls the builder via the [Builder API](https://ethereum.github.io/builder-specs/#/Builder/registerValidator).
 
-Only validators that are active will be registered against the builder. Registrations for applicable validators will be pushed at the start of the validator client and at the start of each epoch. The success of the API is not guaranteed and will try again at the start of each epoch.
+Registration against the builder will only occur for active validators. Registration for eligible validators occurs at the beginning of the validator clients execution and at the start of each epoch. It is important to note that the success of the API is not guaranteed, and the client will attempt registration again at the start of each epoch.
 
 The beacon node must also be configured to enable the builder via the `--http-mev-relay` flag.
 
