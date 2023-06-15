@@ -61,7 +61,7 @@ Validators updated through the [Keymanager-API's](../how-prysm-works/keymanager-
 
 If `--enable-builder` is provided without `--suggested-fee-recipient` or `--proposer-settings-file` or  `--proposer-settings-url`, an error is thrown. **note:** this will be updated in a future release to allow enabling builder without other proposer-settings provided, in that case the validator will skip using the builder if a fee recipient is not set.
 
-The validator client will use the `proposer-settings` to call the beacon node's [Beacon API](https://ethereum.github.io/beacon-APIs/?urls.primaryName=dev#/Validator/registerValidator), which calls the builder via the [Builder API](https://ethereum.github.io/builder-specs/#/Builder/registerValidator).
+The validator client utilizes `proposer-settings` to interact with the beacon node's [Beacon API](https://ethereum.github.io/beacon-APIs/?urls.primaryName=dev#/Validator/registerValidator). Subsequently, the beacon node calls the builder by making use of the [Builder API](https://ethereum.github.io/builder-specs/#/Builder/registerValidator).
 
 Registration against the builder will only occur for active validators. Registration for eligible validators occurs at the beginning of the validator clients execution and at the start of each epoch. It is important to note that the success of the API is not guaranteed, and the client will attempt registration again at the start of each epoch.
 
