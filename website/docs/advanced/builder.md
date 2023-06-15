@@ -65,7 +65,7 @@ The validator client will use the `proposer-settings` to call the beacon node's 
 
 Only validators that are active will be registered against the builder. Registrations for applicable validators will be pushed at the start of the validator client and at the start of each epoch. The success of the API is not guaranteed and will try again at the start of each epoch.
 
-The beacon node must also be configured to enable builder via the `--http-mev-relay` flag.
+The beacon node must also be configured to enable the builder via the `--http-mev-relay` flag.
 
 :::
 
