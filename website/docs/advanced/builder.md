@@ -33,7 +33,7 @@ The provided guide offers explanations on configuring the Prysm client to utiliz
 8. Un-blind the block with the full payload: using the response of the builder, the blinded block can be converted into a full block with the full execution payload.
 9. broadcast the full block: the full block at this point is broadcasted to the network.
 
-Within several steps of this process whether there are failures in the validator or bad connections or bad configurations the beacon node will attempt to fall back to local execution which will connect back to a normal execution client for a proper block.
+In case of failures in the validator, such as bad connections or incorrect configurations, the beacon node will attempt to fall back to local execution, reconnecting to a regular execution client to ensure proper block processing.
 
 ## Builder configuration
 
