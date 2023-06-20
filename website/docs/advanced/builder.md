@@ -194,7 +194,7 @@ removing the `--http-mev-relay` flag from the beacon node will disconnect the bu
 
 **Q:** What happens if the execution client goes down while connected to the builder?
 
-**A:** The earnings from the local payload will be compared to the earnings from the mev payload and will error if local execution is offline or unavailable.
+**A:** The earnings from the local execution payload will be compared to the bid from the builder payload and will error if local execution is offline or unavailable. 
 
 **Q:** My setup is no longer using the builder. What happened?
 
