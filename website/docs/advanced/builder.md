@@ -169,7 +169,7 @@ Once the appropriate flags are fully removed this check shouldn't pass and will 
 
 ## 4. Local execution client: kept the same
 
-The execution client can safely continue to run as is with no changes. Once the validator client and beacon node have their settings changed to local execution that is enough to set back. 
+The execution client can safely continue to run "as-is" with no changes. Once the validator client and beacon node have their settings updated and restarted without builder changes, blocks will continue to be produced through with the payloads from local execution.
 
 ## 5. Builder: remove relay URL
 
