@@ -124,7 +124,6 @@ The ETHStaker community provides a list of some of the relays that can be used a
 
 Make sure you are using the correct version that supports the current version of the beacon node. Hard-forks will typically require updates to relays.
 
-
 :::
 
 </TabItem>
