@@ -63,7 +63,7 @@ If the `--enable-builder` flag is used without providing `--suggested-fee-recipi
 
 The validator client utilizes `proposer-settings` to interact with the beacon node's [Beacon API](https://ethereum.github.io/beacon-APIs/?urls.primaryName=dev#/Validator/registerValidator). Subsequently, the beacon node calls the builder by making use of the [Builder API](https://ethereum.github.io/builder-specs/#/Builder/registerValidator).
 
-Registration against the builder will only occur for active validators. Registration for eligible validators occurs at the beginning of the validator clients execution and at the start of each epoch. It is important to note that the success of the API is not guaranteed, and the client will attempt registration again at the start of each epoch.
+Registration against the builder will only occur for active validators. Registration for eligible validators occurs at the beginning of the validator clients execution and at the middle of each epoch. It is important to note that the success of the API is not guaranteed, and the client will attempt registration again at the middle of each epoch.
 
 The beacon node must also be configured to enable the builder via the `--http-mev-relay` flag.
 
@@ -83,17 +83,13 @@ The circuit breaker is a safety feature for falling back to local execution when
 This occurs when the builder or client using the builder endpoints encounters issues that cause missed blocks. 
 By default, the circuit breaker will be triggered after 3 slots are consecutively missed or 5 slots are missed in an epoch, but this can be configured through the `--max-builder-consecutive-missed-slots` and `max-builder-epoch-missed-slots` flags.
 
-## Enable registration cache
+## Registration cache
 
-`--enable-registration-cache` flag will enable storage of validator registrations in a cache instead of bolt db when starting the beacon node. The cache will enable:
+validator registrations for Builder APIs are stored in a cache by default as of `4.0.7` instead of bolt db when starting the beacon node. The cache will enable:
   - in-memory storage of the validator registrations, this clears all validator registrations on restart.
 This feature solves the unintended issue of wanting some validators unregistered while maintaining mev boost on others. In the future the db used to store registrations will be removed completely and the flag will no longer be required for this feature. Validator settings will be persisted on the validator client side.
 
-:::caution
-
-This feature is currently **not ready** for [Keymanager-API's](../how-prysm-works/keymanager-api.md) to use as restarting the validator and beacon node (especially during upgrades) will clear the validator settings for validator registrations.
-
-:::
+`--disable-registration-cache` flag can be used on the beacon node to fall back onto the using the bolt db. **note** values stored in the bolt db will not be cleared and you will not be able to unregister validators unless using the cache and restarting.
 
 ### Parallel execution
 
@@ -135,15 +131,6 @@ Update the following configurations and restart the validator client to stop the
 - remove the `--enable-builder` flag.
 - remove the `--suggested-gas-limit` flag, though it should already be disabled once removing the `--enable-builder` flag.
 - remove all wanted references of the `builder` field from the associated file/json for the validators you no longer want to register within the `--proposer-settings-file` and `--proposer-settings-url` flag.
-
-### Validator registration expiration
-
-:::caution
-
-There is currently an issue with unregistering validators in the db. It's suggested to re-register while using the `--enable-registration-cache` flag on the beacon node so that registrations can properly unregister.
-:::
-
-Validator registration cache can be cleared via a restart of the beacon node.
 
 ## 2. Beacon Node: remove builder related flags
 
