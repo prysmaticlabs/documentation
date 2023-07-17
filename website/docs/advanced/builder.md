@@ -19,12 +19,6 @@ There are risks to using a builder which may result in missed rewards, missed pr
 
 :::
 
-The provided guide offers explanations on configuring the Prysm client to utilize a [custom builder](https://docs.flashbots.net/flashbots-mev-boost/block-builders) through a [relay](https://docs.flashbots.net/flashbots-mev-boost/relay). The relay acts as a middleware that connects validators to block builders. This configuration involves both the validator client and the beacon node. It's important to note this guide does not cover setting up your own relay, builder, or MEV-boost software. 
-
-:::info
-In the Prysm client, the builder is used through the relay to get transactions that maximize the validator's benefits, prioritizing them over local ones. However, the execution client will still be necessary as a fallback option in case any issues arise while utilizing the builder. The builder will only come into play when there is a validator proposal.
-:::
-
 ### Builder lifecycle
 
 1. Sign a validator registration request: This request contains validator `proposer_settings` with fields like `fee_recipient`, `gas_limit` and the current timestamp to be signed.
@@ -53,25 +47,9 @@ In case of failures in the validator, such as bad connections or incorrect confi
 
 To `register` the validator against the builder and enable the use of custom builders, the `proposer-settings` will need to be configured.
 
-There are several ways to configure this setting.
-- if configuring with the `--proposer-settings-file` flag and provide it with a suitable JSON or YAML file. This file should include the necessary configuration for the builder. For detailed guidance and an example of this configuration, refer to the [MEV Builder and Gas Limit configuration guide](../execution-node/fee-recipient.md#advanced-configure-mev-builder-and-gas-limit).
- - if configuring with the `--proposer-settings-url` flag provide a url that returns the JSON response with the suitable proposer-settings. A guide and example on this configuration can be found [here](../execution-node/fee-recipient.md#advanced-configure-mev-builder-and-gas-limit).
- - if configuring with the `--proposer-settings-file` or `--proposer-settings-url` flag with no builder settings but providing the `--enable-builder` flag instead. Optionally, you can also add the `--suggested-gas-limit` to adjust the default gas limit for the builder, this only applies with `--enable-builder`.
- - if configuring with the `--suggested-fee-recipient` and `--enable-builder` flags. **note:**  `--proposer-settings-file` or `--proposer-settings-url` flags with builder settings will override values provided from `--suggested-fee-recipient` and `--enable-builder`flags.
+It is **recommended** to configure with the validator client with the `--suggested-fee-recipient` and `--enable-builder` flags. All validators will be registered periodically by using the `--enable-builder` flag.
+**note:**  `--proposer-settings-file` or `--proposer-settings-url` flags with builder settings will override values provided from `--suggested-fee-recipient` and `--enable-builder`flags.
 
-:::info
-
-Validators updated through the [Keymanager-API's](../how-prysm-works/keymanager-api.md) fee recipient APIs will take on the default `proposer-settings` provided.
-
-If the `--enable-builder` flag is used without providing `--suggested-fee-recipient`, `--proposer-settings-file`, or `--proposer-settings-url` it will override builder settings from the db if proposer settings are saved, or it will set default builder settings and only save to the db if fee-recipient settings are saved through the keymanager APIs.
-
-The validator client utilizes `proposer-settings` to interact with the beacon node's [Beacon API](https://ethereum.github.io/beacon-APIs/?urls.primaryName=dev#/Validator/registerValidator). Subsequently, the beacon node calls the builder by making use of the [Builder API](https://ethereum.github.io/builder-specs/#/Builder/registerValidator).
-
-Registration against the builder will only occur for active validators. Registration for eligible validators occurs at the beginning of the validator clients execution and at the middle of each epoch. It is important to note that the success of the API is not guaranteed, and the client will attempt registration again at the middle of each epoch.
-
-The beacon node must also be configured to enable the builder via the `--http-mev-relay` flag.
-
-:::
 
 ## 2. Beacon Node: connect to the builder
 
@@ -81,27 +59,6 @@ To use a builder the beacon node needs to start with the following configuration
 
 Each relay's URL will correspond to a specific network and will need to be chosen accordingly, i.e. running a beacon node on mainnet will require the mainnet relay.
 
-### Circuit breaker
-
-The circuit breaker is a safety feature for falling back to local execution when using a builder.
-This occurs when the builder or client using the builder endpoints encounters issues that cause missed blocks. 
-By default, the circuit breaker will be triggered after 3 slots are consecutively missed or 5 slots are missed in an epoch, but this can be configured through the `--max-builder-consecutive-missed-slots` and `max-builder-epoch-missed-slots` flags.
-
-## Registration cache
-
-validator registrations for Builder APIs are stored in a cache by default as of `4.0.7` instead of bolt db when starting the beacon node. The cache will enable:
-  - in-memory storage of the validator registrations, this clears all validator registrations on restart.
-This feature solves the unintended issue of wanting some validators unregistered while maintaining mev boost on others. In the future the db used to store registrations will be removed completely and the flag will no longer be required for this feature. Validator settings will be persisted on the validator client side.
-
-`--disable-registration-cache` flag can be used on the beacon node to fall back onto the using the bolt db. **note** values stored in the bolt db will not be cleared and you will not be able to unregister validators unless using the cache and restarting.
-
-### Parallel execution
-
-By default the beacon node will construct the consensus and execution portions of the beacon block in parallel to improve speed and efficiency. `--disable-build-block-parallel` flag can be added to prevent node from building in parallel and will build sequentially. 
-
-### Prioritizing local blocks
-
-`--local-block-value-boost` flag is a float64 value that provides an additional percentage to multiply the local block value. Use builder block if: `builder_bid_value * 100 > local_block_value * (local-block-value-boost + 100)`. This will encourage your setup to use the local execution if the value earned is not above your threshold, helping to mitigate censorship concerns.
 
 ## 3. Is builder configured?
 
@@ -167,7 +124,62 @@ removing the `--http-mev-relay` flag from the beacon node will disconnect the bu
 </TabItem>
 </Tabs>
 
+
+## Advanced Validator Client Configurations
+
+### Advanced Validator Registration
+There are other ways to configure your validator registrations for more granular control on which validator keys should be registered to use the custom builder and which ones should use local execution.
+In these cases you would replace the `--suggested-fee-recipient` flag with  `--proposer-settings-file` flag or `--proposer-settings-url` flag.
+- if configuring with the `--proposer-settings-file` flag and provide it with a suitable JSON or YAML file. This file should include the necessary configuration for the builder. For detailed guidance and an example of this configuration, refer to the [MEV Builder and Gas Limit configuration guide](../execution-node/fee-recipient.md#advanced-configure-mev-builder-and-gas-limit).
+ - if configuring with the `--proposer-settings-url` flag provide a url that returns the JSON response with the suitable proposer-settings. A guide and example on this configuration can be found [here](../execution-node/fee-recipient.md#advanced-configure-mev-builder-and-gas-limit).
+ - if configuring with the `--proposer-settings-file` or `--proposer-settings-url` flag with no builder settings but providing the `--enable-builder` flag instead. Optionally, you can also add the `--suggested-gas-limit` to adjust the default gas limit for the builder, this only applies with `--enable-builder`.
+ 
+:::info
+
+Validators updated through the [Keymanager-API's](../how-prysm-works/keymanager-api.md) fee recipient APIs will take on the default `proposer-settings` provided.
+
+If the `--enable-builder` flag is used without providing `--suggested-fee-recipient`, `--proposer-settings-file`, or `--proposer-settings-url` it will override builder settings from the db if proposer settings are saved, or it will set default builder settings and only save to the db if fee-recipient settings are saved through the keymanager APIs.
+
+The validator client utilizes `proposer-settings` to interact with the beacon node's [Beacon API](https://ethereum.github.io/beacon-APIs/?urls.primaryName=dev#/Validator/registerValidator). Subsequently, the beacon node calls the builder by making use of the [Builder API](https://ethereum.github.io/builder-specs/#/Builder/registerValidator).
+
+Registration against the builder will only occur for active validators. Registration for eligible validators occurs at the beginning of the validator clients execution and at the middle of each epoch. It is important to note that the success of the API is not guaranteed, and the client will attempt registration again at the middle of each epoch.
+
+The beacon node must also be configured to enable the builder via the `--http-mev-relay` flag.
+
+:::
+
+## Advanced Beacon Node Configurations
+
+### Circuit breaker
+
+The circuit breaker is a safety feature for falling back to local execution when using a builder.
+This occurs when the builder or client using the builder endpoints encounters issues that cause missed blocks. 
+By default, the circuit breaker will be triggered after 3 slots are consecutively missed or 5 slots are missed in an epoch, but this can be configured through the `--max-builder-consecutive-missed-slots` and `max-builder-epoch-missed-slots` flags.
+
+## Registration cache
+
+validator registrations for Builder APIs are stored in a cache by default as of `4.0.7` instead of bolt db when starting the beacon node. The cache will enable:
+  - in-memory storage of the validator registrations, this clears all validator registrations on restart.
+This feature solves the unintended issue of wanting some validators unregistered while maintaining mev boost on others. In the future the db used to store registrations will be removed completely and the flag will no longer be required for this feature. Validator settings will be persisted on the validator client side.
+
+`--disable-registration-cache` flag can be used on the beacon node to fall back onto the using the bolt db. **note** values stored in the bolt db will not be cleared and you will not be able to unregister validators unless using the cache and restarting.
+
+### Parallel execution
+
+By default the beacon node will construct the consensus and execution portions of the beacon block in parallel to improve speed and efficiency. `--disable-build-block-parallel` flag can be added to prevent node from building in parallel and will build sequentially. 
+
+### Prioritizing local blocks
+
+`--local-block-value-boost` flag is a float64 value that provides an additional percentage to multiply the local block value. Use builder block if: `builder_bid_value * 100 > local_block_value * (local-block-value-boost + 100)`. This will encourage your setup to use the local execution if the value earned is not above your threshold, helping to mitigate censorship concerns.
+
+
 ## Frequently asked questions
+
+The provided guide offered explanations on configuring the Prysm client to utilize a [custom builder](https://docs.flashbots.net/flashbots-mev-boost/block-builders) through a [relay](https://docs.flashbots.net/flashbots-mev-boost/relay). The relay acts as a middleware that connects validators to block builders. This configuration involves both the validator client and the beacon node. It's important to note this guide does not cover setting up your own relay, builder, or MEV-boost software. 
+
+:::info
+In the Prysm client, the builder is used through the relay to get transactions that maximize the validator's benefits, prioritizing them over local ones. However, the execution client will still be necessary as a fallback option in case any issues arise while utilizing the builder. The builder will only come into play when there is a validator proposal.
+:::
 
 **Q:** What are the risks of running Prysm with a custom builder instead of using local execution?
 
