@@ -156,7 +156,7 @@ The circuit breaker is a safety feature for falling back to local execution when
 This occurs when the builder or client using the builder endpoints encounters issues that cause missed blocks. 
 By default, the circuit breaker will be triggered after 3 slots are consecutively missed or 5 slots are missed in an epoch, but this can be configured through the `--max-builder-consecutive-missed-slots` and `max-builder-epoch-missed-slots` flags.
 
-## Registration cache
+### Registration cache
 
 validator registrations for Builder APIs are stored in a cache by default as of `4.0.7` instead of bolt db when starting the beacon node. The cache will enable:
   - in-memory storage of the validator registrations, this clears all validator registrations on restart.
