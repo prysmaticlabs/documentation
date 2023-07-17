@@ -19,7 +19,11 @@ There are risks to using a builder which may result in missed rewards, missed pr
 
 :::
 
-The provided guide offers explanations on configuring the Prysm client to utilize a [custom builder](https://docs.flashbots.net/flashbots-mev-boost/block-builders) through a [relay](https://docs.flashbots.net/flashbots-mev-boost/relay). The relay acts as a middleware that connects validators to block builders. This configuration involves adjusting flags and settings on both the validator client and the beacon node. It's important to note that this guide does not cover setting up your own relay, builder, or MEV-boost (a middleware aggregator of relays). For detailed instructions on those components, please refer to their respective guides for up-to-date information. In the Prysm client, the builder is used through the relay to produce execution payloads containing transactions that maximize the validator's benefits, prioritizing them over the execution client. However, the execution client will still be necessary for Prysm to handle synchronization and serve as a fallback option in case any issues arise while utilizing the builder. The builder will only come into play when there is a validator proposal.
+The provided guide offers explanations on configuring the Prysm client to utilize a [custom builder](https://docs.flashbots.net/flashbots-mev-boost/block-builders) through a [relay](https://docs.flashbots.net/flashbots-mev-boost/relay). The relay acts as a middleware that connects validators to block builders. This configuration involves both the validator client and the beacon node. It's important to note this guide does not cover setting up your own relay, builder, or MEV-boost software. 
+
+:::info
+In the Prysm client, the builder is used through the relay to get transactions that maximize the validator's benefits, prioritizing them over local ones. However, the execution client will still be necessary as a fallback option in case any issues arise while utilizing the builder. The builder will only come into play when there is a validator proposal.
+:::
 
 ### Builder lifecycle
 
