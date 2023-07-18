@@ -24,8 +24,7 @@ There are risks to using a builder which may result in missed rewards, missed pr
 <details>
   <summary>Builder lifecycle</summary>
   <div>
-    <div>
-    1. Sign a validator registration request: This request contains validator `proposer_settings` with fields like `fee_recipient`, `gas_limit` and the current timestamp to be signed.
+     1. Sign a validator registration request: This request contains validator `proposer_settings` with fields like `fee_recipient`, `gas_limit` and the current timestamp to be signed.
     2. Submit signed validator registrations to the builder: call the [beacon api endpoint](https://ethereum.github.io/beacon-APIs/?urls.primaryName=dev#/Validator/registerValidator) which calls a [build api endpoint](https://ethereum.github.io/builder-specs/#/Builder/registerValidator) on the builder for the registration. some relays will allow you to query which validators are registered currently.
     3. Validator selected as a block proposer: extracting MEV will only be applicable when your validator has its turn to propose a block. 
     4. Check if the builder is configured: The beacon node does a check to see if the builder is properly configured and the proposing validator is registered. You will not be able to retrieve a blinded block if you do not pass the builder configuration check.
@@ -36,7 +35,6 @@ There are risks to using a builder which may result in missed rewards, missed pr
     9. Broadcast the full block: the full block at this point is broadcasted to the network.
 
     In case of failures in the validator, such as bad connections or incorrect configurations, the beacon node will attempt to fall back to local execution, reconnecting to a regular execution client to ensure proper block processing.
-    </div>
   </div>
 </details>
 
