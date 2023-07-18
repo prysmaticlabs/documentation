@@ -51,7 +51,12 @@ The following table of contents provides a descriptive overview of Prysm's docum
 <a href='install/install-with-bazel'>Build from source</a>
 <p>Learn how to build Prysm from source using Bazel.</p>
 </div>
+<div class='panel'>
+<a href='advanced/builder'>configure MEV builder</a>
+<p>Learn how to run your beacon node with a MEV builder via a relay. This is an advanced option requiring some technical prowess and poses some risks as a validator.</p>
+</div>
 <div className='panel section-title'>
+
 
 ## How-tos
 
