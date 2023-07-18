@@ -19,19 +19,28 @@ There are risks to using a builder which may result in missed rewards, missed pr
 
 :::
 
-### Builder lifecycle
+## Learn about the Builder Lifecycle
 
-1. Sign a validator registration request: This request contains validator `proposer_settings` with fields like `fee_recipient`, `gas_limit` and the current timestamp to be signed.
-2. Submit signed validator registrations to the builder: call the [beacon api endpoint](https://ethereum.github.io/beacon-APIs/?urls.primaryName=dev#/Validator/registerValidator) which calls a [build api endpoint](https://ethereum.github.io/builder-specs/#/Builder/registerValidator) on the builder for the registration. some relays will allow you to query which validators are registered currently.
-3. Validator selected as a block proposer: extracting MEV will only be applicable when your validator has its turn to propose a block. 
-4. Check if the builder is configured: The beacon node does a check to see if the builder is properly configured and the proposing validator is registered. You will not be able to retrieve a blinded block if you do not pass the builder configuration check.
-5. Get and verify a blinded block: If the builder is configured, the beacon node will call the [builder API](https://ethereum.github.io/builder-specs/#/Builder/getHeader) to get a payload header which is used to produce the blinded block. There are several steps of verification in this process.
-6. Sign the blinded block: once the blinded block passes internal validation it is signed. At this point, the validator will no longer have the power to propose a block other than the builder's block or risk being slashed as the builder holds the validator's signature. 
-7. Submit the blinded block to the builder to get the full execution payload: the signed blinded block is returned to the builder via the [builder API](https://ethereum.github.io/builder-specs/#/Builder/submitBlindedBlock) for the full payload. 
-8. Un-blind the block with the full payload: using the response of the builder, the blinded block can be converted into a full block with the full execution payload.
-9. Broadcast the full block: the full block at this point is broadcasted to the network.
+<details>
+  <summary>Builder lifecycle</summary>
+  <div>
+    <div>
+    1. Sign a validator registration request: This request contains validator `proposer_settings` with fields like `fee_recipient`, `gas_limit` and the current timestamp to be signed.
+    2. Submit signed validator registrations to the builder: call the [beacon api endpoint](https://ethereum.github.io/beacon-APIs/?urls.primaryName=dev#/Validator/registerValidator) which calls a [build api endpoint](https://ethereum.github.io/builder-specs/#/Builder/registerValidator) on the builder for the registration. some relays will allow you to query which validators are registered currently.
+    3. Validator selected as a block proposer: extracting MEV will only be applicable when your validator has its turn to propose a block. 
+    4. Check if the builder is configured: The beacon node does a check to see if the builder is properly configured and the proposing validator is registered. You will not be able to retrieve a blinded block if you do not pass the builder configuration check.
+    5. Get and verify a blinded block: If the builder is configured, the beacon node will call the [builder API](https://ethereum.github.io/builder-specs/#/Builder/getHeader) to get a payload header which is used to produce the blinded block. There are several steps of verification in this process.
+    6. Sign the blinded block: once the blinded block passes internal validation it is signed. At this point, the validator will no longer have the power to propose a block other than the builder's block or risk being slashed as the builder holds the validator's signature. 
+    7. Submit the blinded block to the builder to get the full execution payload: the signed blinded block is returned to the builder via the [builder API](https://ethereum.github.io/builder-specs/#/Builder/submitBlindedBlock) for the full payload. 
+    8. Un-blind the block with the full payload: using the response of the builder, the blinded block can be converted into a full block with the full execution payload.
+    9. Broadcast the full block: the full block at this point is broadcasted to the network.
 
-In case of failures in the validator, such as bad connections or incorrect configurations, the beacon node will attempt to fall back to local execution, reconnecting to a regular execution client to ensure proper block processing.
+    In case of failures in the validator, such as bad connections or incorrect configurations, the beacon node will attempt to fall back to local execution, reconnecting to a regular execution client to ensure proper block processing.
+    </div>
+  </div>
+</details>
+
+
 
 ## Builder configuration
 
