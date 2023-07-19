@@ -14,7 +14,7 @@ This section explains everything about how to manage validator accounts using Pr
 Prysm's validator accounts are extensible enough to allow for the most basic setup all the way to advanced production setups where security is paramount.
 :::
 
-Out of the box, Prysm supports 3 basic kinds of wallets that encompass many different use-cases. In order of highest to lowest security:
+Out of the box, Prysm supports 3 basic kinds of wallets that encompasses many different use-cases. In order of highest to lowest security:
 
 1. **non-HD wallet**: (good security) A simple wallet in which accounts are password protected and validator keys are generated non-deterministically. This is the recommended approach if you want to import an account from the [Ethereum launchpad](https://launchpad.ethereum.org/) and you can read dedicated instructions [here](/docs/wallet/nondeterministic).
 2. **HD wallet**: (least security) A common type of blockchain wallet which is generated from a english mnemonic, able to create new accounts deterministically. The encrypted seed is stored on day encrypted by a strong password. Given you are tying your HD wallet to the validator client, it is less secure than simply importing validating keys you need from an external source or running a remote signer. 
