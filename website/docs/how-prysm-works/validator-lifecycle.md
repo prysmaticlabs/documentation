@@ -16,7 +16,7 @@ This section discusses the  lifecycle of a [validator](validator-clients.md) as 
 Prysm's [validator](validator-clients.md) client will report that the state of a particular validator is UNKNOWN when it loads validator keys that have not yet submitted a valid deposit to the [Ethereum proof-of-work chain](/docs/terminology#eth1) [validator deposit contract](./validator-deposit-contract).
 
 ## DEPOSITED State
-Once a valid transaction has been submitted to the [validator deposit contract](./validator-deposit-contract), your [beacon node](./beacon-node) will will detect the presence of the transaction on the ETH1 chain and your [validator](validator-clients.md) client will now report being in the DEPOSITED state.
+Once a valid transaction has been submitted to the [validator deposit contract](./validator-deposit-contract), your [beacon node](./beacon-node) will detect the presence of the transaction on the ETH1 chain and your [validator](validator-clients.md) client will now report being in the DEPOSITED state.
 
 ## PENDING State
 
@@ -40,10 +40,10 @@ If a slashable event is included in a block while a validator is either ACTIVE, 
   #### [Missed Attestation Penalties](https://github.com/ethereum/consensus-specs/blob/dev/specs/phase0/beacon-chain.md#rewards-and-penalties-1)
   A penalty equivalent to that incurred by an inactive validator, issued every epoch until the validator leaves the exit queue
   #### [Attack Multiplier Penalty](https://github.com/ethereum/consensus-specs/blob/dev/specs/phase0/beacon-chain.md#slashings)
-  A penalty proportional to three times the number of other slashings in the past 8192 epochs (4 eeks, ~36 days), applied 4096 epochs (2 eeks, ~18 days) after the slashing event was first included in a block.  Under normal circumstances this penalty is quite small, however in the event that a large number of slashings occur in a short time frame, this penalty can be as high as 32 ETH.
+  A penalty proportional to three times the number of other slashings in the past 8192 epochs (4 weeks, ~36 days), applied 4096 epochs (2 weeks, ~18 days) after the slashing event was first included in a block.  Under normal circumstances this penalty is quite small, however in the event that a large number of slashings occur in a short time frame, this penalty can be as high as 32 ETH.
 
 ## EXITED State
-In the case that the validator has reached the exited state voluntarily, the funds will become withdrawable after 256 epochs (~27 hours).  If the validator was slashed, this delay is extended to 4 eeks (2048 epochs*4 or ~36 days).  If a slashable event is included in a block before funds have been withdrawn, the validator will move back to the SLASHING state causing withdrawal delays to reset.
+In the case that the validator has reached the exited state voluntarily, the funds will become withdrawable after 256 epochs (~27 hours).  If the validator was slashed, this delay is extended to 4 weeks (2048 epochs*4 or ~36 days).  If a slashable event is included in a block before funds have been withdrawn, the validator will move back to the SLASHING state causing withdrawal delays to reset.
 > **NOTICE:** Funds will not be able to be withdrawn from validators until transactions are introduced after Ethereum proof-of-stake merges with the current Ethereum chain
 
 
