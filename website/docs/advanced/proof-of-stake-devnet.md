@@ -81,8 +81,8 @@ Your Prysm beacon node and validator client should also be functional:
 
 This sets up a single node development network with 64 deterministically-generated validator keys to drive the creation of blocks in an Ethereum proof-of-stake chain. Here's how it works:
 
-1.  We initialize a **go-ethereum**, proof-of-work development node from a [genesis config](https://github.com/rauljordan/eth-pos-devnet/blob/master/execution/genesis.json)
-2.  We initialize a **Prysm beacon chain**, proof-of-stake development node from a [genesis config](https://github.com/rauljordan/eth-pos-devnet/blob/master/consensus/config.yml)
+1.  We initialize a **go-ethereum**, proof-of-work development node from a [genesis config](https://github.com/OffchainLabs/eth-pos-devnet/blob/master/execution/genesis.json)
+2.  We initialize a **Prysm beacon chain**, proof-of-stake development node from a [genesis config](https://github.com/OffchainLabs/eth-pos-devnet/blob/master/consensus/config.yml)
 3.  We then start mining in **go-ethereum**, and concurrently run proof-of-stake using Prysm
 4.  Once the mining difficulty of the go-ethereum node reaches 50, the **node switches to proof-of-stake mode** by letting Prysm drive the consensus of blocks
 
