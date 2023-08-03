@@ -33,8 +33,8 @@ With Ethereum switching to proof-of-stake, there are a bunch of buzzwords flying
 
 Today, running an Ethereum node means simply installing a client such as [go-ethereum](https://github.com/ethereum/go-ethereum) and running a simple command to sync the chain. After the switch to proof-of-stake, running an "Ethereum node" will require **two components**:
 
-1.  **execution client software** in charge of processing transactions and smart contracts. This is go-ethereum
-2.  **consensus client software** in charge of running the proof-of-stake logic. This tutorial will use the [Prysm](https://github.com/prysmaticlabs/prysm) implemntation, which my team develops.
+1.  **execution client software** in charge of processing transactions and smart contracts. This is go-ethereum.
+2.  **consensus client software** in charge of running the proof-of-stake logic. This tutorial will use the [Prysm](https://github.com/prysmaticlabs/prysm) implementation, which my team develops.
 
 Prysm is an open source, Go implementation of the Ethereum proof-of-stake protocol. It can be used to run a node+validator on mainnet and testnet environments with ease, and is highly configurable to meet users’ needs.
 
@@ -44,13 +44,12 @@ To get started, install [Docker](https://docs.docker.com/get-docker/) and [Docke
 
 Next, clone a repository containing the configuration needed to run a local devnet with Docker here:
 
-    git clone https://github.com/rauljordan/eth-pos-devnet && cd eth-pos-devnet
-    
+    git clone https://github.com/OffchainLabs/eth-pos-devnet && cd eth-pos-devnet
 
 Finally, simply run docker compose inside of the repository above.
 
     docker-compose up -d
-    
+
 
 Boom! Your network is up and running.
 
@@ -133,26 +132,26 @@ On the Prysm side, create a file called `config.yml` in your `devnet` folder con
 
     CONFIG_NAME: interop
     PRESET_BASE: interop
-    
+
     # Genesis
     GENESIS_FORK_VERSION: 0x20000089
-    
-    # Altair
-    ALTAIR_FORK_EPOCH: 2
-    ALTAIR_FORK_VERSION: 0x20000090
-    
-    # Merge
-    BELLATRIX_FORK_EPOCH: 4
-    BELLATRIX_FORK_VERSION: 0x20000091
-    TERMINAL_TOTAL_DIFFICULTY: 50
 
-    # Capella
+    # Altair
+    ALTAIR_FORK_EPOCH: 0
+    ALTAIR_FORK_VERSION: 0x20000090
+
+    # Merge
+    BELLATRIX_FORK_EPOCH: 0
+    BELLATRIX_FORK_VERSION: 0x20000091
+    TERMINAL_TOTAL_DIFFICULTY: 0
+
+    CAPELLA_FORK_EPOCH: 2
     CAPELLA_FORK_VERSION: 0x20000092
-    
+
     # Time parameters
     SECONDS_PER_SLOT: 12
     SLOTS_PER_EPOCH: 6
-    
+
     # Deposit contract
     DEPOSIT_CONTRACT_ADDRESS: 0x4242424242424242424242424242424242424242
     
@@ -199,7 +198,7 @@ You can check the ETH balance in the geth console by typing in
 
 We will then need to run a Prysm beacon node and a validator client. Prysm will need a **genesis state** which is essentially some data that tells it the initial set of validators. We will be creating a genesis state from a deterministic set of keys below:
 
-    ./prysmctl testnet generate-genesis --num-validators=64 --output-ssz=genesis.ssz --chain-config-file=config.yml --override-eth1data=true
+    ./prysmctl testnet generate-genesis --fork=bellatrix --num-validators=64 --output-ssz=genesis.ssz --chain-config-file=config.yml --override-eth1data=true
     
 More information about `prysmctl` and all available commands can be found [here](https://docs.prylabs.network/docs/prysm-usage/prysmctl).
 
@@ -217,7 +216,6 @@ This will out a file `genesis.ssz` in your `devnet` folder. Now, run the Prysm b
       --accept-terms-of-use \
       --jwt-secret=gethdata/geth/jwtsecret \
       --contract-deployment-block=0
-    
 
 and the Prysm validator client soon after:
 
