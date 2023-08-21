@@ -218,7 +218,7 @@ By default the beacon node will construct the consensus and execution portions o
 
 ### Prioritizing local blocks
 
-`--local-block-value-boost` flag is a float64 value that provides an additional percentage to multiply the local block value. Use builder block if: `builder_bid_value * 100 > local_block_value * (local-block-value-boost + 100)`. This will encourage your setup to use the local execution if the value earned is not above your threshold, helping to mitigate censorship concerns.
+`--local-block-value-boost` flag is an Uint64 value that provides an additional percentage to multiply the local block value. Use builder block if: `builder_bid_value * 100 > local_block_value * (local-block-value-boost + 100)`. This will encourage your setup to use the local execution if the value earned is not above your threshold, helping to mitigate censorship concerns.
 
 
 ## Frequently asked questions
