@@ -47,8 +47,8 @@ import TabItem from '@theme/TabItem';
             {label: 'JWT', value: 'jwt'},
             {label: 'IPC', value: 'ipc'}
             ]}>
-                <TabItem value="jwt"><pre><code>Nethermind.Runner --config holesky --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.JwtSecretFile=/path/to/jwt.hex --Merge.TerminalTotalDifficulty 17000000000000000</code></pre></TabItem>
-                <TabItem value="ipc"><pre><code>Nethermind.Runner --config holesky --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.IpcUnixDomainSocketPath=/path/to/&lt;your.ipc&gt; --Merge.TerminalTotalDifficulty 17000000000000000</code></pre></TabItem>
+                <TabItem value="jwt"><pre><code>Nethermind.Runner --config holesky --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.JwtSecretFile=/path/to/jwt.hex</code></pre></TabItem>
+                <TabItem value="ipc"><pre><code>Nethermind.Runner --config holesky --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.IpcUnixDomainSocketPath=/path/to/&lt;your.ipc&gt;</code></pre></TabItem>
             </Tabs>
       </TabItem>
     </Tabs>
