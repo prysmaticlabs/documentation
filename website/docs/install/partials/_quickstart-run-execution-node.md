@@ -94,7 +94,7 @@ import TabItem from '@theme/TabItem';
             {label: 'JWT', value: 'jwt'},
             {label: 'IPC', value: 'ipc'}
             ]}>
-                <TabItem value="jwt"><pre><code>besu --network=holesky --rpc-http-enabled --engine-jwt-enabled=true --engine-jwt-secret=/path/to/jwt.hex --engine-host-allowlist="*" --override-genesis-config="terminalTotalDifficulty=17000000000000000"</code></pre></TabItem>
+                <TabItem value="jwt"><pre><code>besu --network=holesky --rpc-http-enabled --engine-jwt-enabled=true --engine-jwt-secret=/path/to/jwt.hex --engine-host-allowlist="*"</code></pre></TabItem>
                 <TabItem value="ipc"><div className="admonition admonition-danger alert alert--info"><div className="admonition-content"><p>Content under construction.</p></div></div></TabItem>
             </Tabs>
       </TabItem>
