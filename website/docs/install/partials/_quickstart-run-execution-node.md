@@ -13,6 +13,7 @@ import TabItem from '@theme/TabItem';
         {label: 'Mainnet', value: 'mainnet'},
         {label: 'Goerli-Prater', value: 'goerli-prater'},
         {label: 'Sepolia', value: 'sepolia'},
+        {label: 'Holesky', value: 'holesky'},
     ]}>
       <TabItem value="mainnet">
         <Tabs className='tabs-hidden-in-jwt-guide' groupId="protocol" defaultValue="jwt" values={[
@@ -41,6 +42,15 @@ import TabItem from '@theme/TabItem';
                 <TabItem value="ipc"><pre><code>Nethermind.Runner --config sepolia --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.IpcUnixDomainSocketPath=/path/to/&lt;your.ipc&gt; --Merge.TerminalTotalDifficulty 17000000000000000</code></pre></TabItem>
             </Tabs>
       </TabItem>
+      <TabItem value="holesky">
+        <Tabs className='tabs-hidden-in-jwt-guide' groupId="protocol" defaultValue="jwt" values={[
+            {label: 'JWT', value: 'jwt'},
+            {label: 'IPC', value: 'ipc'}
+            ]}>
+                <TabItem value="jwt"><pre><code>Nethermind.Runner --config holesky --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.JwtSecretFile=/path/to/jwt.hex --Merge.TerminalTotalDifficulty 17000000000000000</code></pre></TabItem>
+                <TabItem value="ipc"><pre><code>Nethermind.Runner --config holesky --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.IpcUnixDomainSocketPath=/path/to/&lt;your.ipc&gt; --Merge.TerminalTotalDifficulty 17000000000000000</code></pre></TabItem>
+            </Tabs>
+      </TabItem>
     </Tabs>
     <p>See Nethermind's <a href='https://docs.nethermind.io/nethermind/ethereum-client/configuration'>command-line options</a> for parameter definitions.</p>
   </TabItem>
@@ -49,7 +59,8 @@ import TabItem from '@theme/TabItem';
     <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
         {label: 'Goerli-Prater', value: 'goerli-prater'},
-        {label: 'Sepolia', value: 'sepolia'}
+        {label: 'Sepolia', value: 'sepolia'},
+        {label: 'Holesky', value: 'holesky'},
     ]}>
       <TabItem value="mainnet">
           <Tabs className='tabs-hidden-in-jwt-guide'  groupId="protocol" defaultValue="jwt" values={[
@@ -78,6 +89,15 @@ import TabItem from '@theme/TabItem';
                 <TabItem value="ipc"><div className="admonition admonition-danger alert alert--info"><div className="admonition-content"><p>Content under construction.</p></div></div></TabItem>
             </Tabs>
       </TabItem>
+      <TabItem value="holesky">
+        <Tabs className='tabs-hidden-in-jwt-guide'  groupId="protocol" defaultValue="jwt" values={[
+            {label: 'JWT', value: 'jwt'},
+            {label: 'IPC', value: 'ipc'}
+            ]}>
+                <TabItem value="jwt"><pre><code>besu --network=holesky --rpc-http-enabled --engine-jwt-enabled=true --engine-jwt-secret=/path/to/jwt.hex --engine-host-allowlist="*" --override-genesis-config="terminalTotalDifficulty=17000000000000000"</code></pre></TabItem>
+                <TabItem value="ipc"><div className="admonition admonition-danger alert alert--info"><div className="admonition-content"><p>Content under construction.</p></div></div></TabItem>
+            </Tabs>
+      </TabItem>
     </Tabs>
     <p>See Besu's <a href='https://besu.hyperledger.org/en/stable/Reference/CLI/CLI-Syntax/'>command-line options</a> for parameter definitions.</p>
   </TabItem>
@@ -87,7 +107,8 @@ import TabItem from '@theme/TabItem';
     <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
         {label: 'Goerli-Prater', value: 'goerli-prater'},
-        {label: 'Sepolia', value: 'sepolia'}
+        {label: 'Sepolia', value: 'sepolia'},
+        {label: 'Holesky', value: 'holesky'},
     ]}>
       <TabItem value="mainnet">
         <Tabs className='tabs-hidden-in-jwt-guide'  groupId="protocol" defaultValue="jwt" values={[
@@ -114,6 +135,15 @@ import TabItem from '@theme/TabItem';
             ]}>
                 <TabItem value="jwt"><pre><code>geth --sepolia --http --http.api eth,net,engine,admin --authrpc.jwtsecret /path/to/jwt.hex</code></pre></TabItem>
                 <TabItem value="ipc"><pre><code>geth --sepolia --http --http.api eth,net,engine,admin</code></pre></TabItem>
+            </Tabs>
+      </TabItem>
+      <TabItem value="holesky">
+        <Tabs className='tabs-hidden-in-jwt-guide'  groupId="protocol" defaultValue="jwt" values={[
+            {label: 'JWT', value: 'jwt'},
+            {label: 'IPC', value: 'ipc'}
+            ]}>
+                <TabItem value="jwt"><pre><code>geth --holesky --http --http.api eth,net,engine,admin --authrpc.jwtsecret /path/to/jwt.hex</code></pre></TabItem>
+                <TabItem value="ipc"><pre><code>geth --holesky --http --http.api eth,net,engine,admin</code></pre></TabItem>
             </Tabs>
       </TabItem>
     </Tabs>
