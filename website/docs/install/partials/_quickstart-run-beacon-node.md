@@ -59,8 +59,7 @@ import TabItem from '@theme/TabItem';
             ]}>
                 <TabItem value="jwt"><pre><code>prysm.bat beacon-chain --execution-endpoint=http://localhost:8551 --holesky --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9 --jwt-secret=jwt.hex --genesis-state=genesis.ssz</code></pre></TabItem>
                 <TabItem value="ipc">
-                <div className="admonition admonition-info alert alert--info"><div className="admonition-content"><p><code>--http-web3provider</code> is deprecated and has been replaced with <code>--execution-endpoint</code>, but IPC currently only works through <code>--http-web3provider</code> on Windows. This will be fixed in our next release. You can safely ignore any related "deprecated flag" warnings you see in the meantime.</p></div></div>
-                <pre><code>prysm.bat beacon-chain --http-web3provider=//./pipe/&lt;your.ipc&gt; --holesky --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9 --genesis-state=genesis.ssz</code></pre></TabItem>
+                <pre><code>prysm.bat beacon-chain --execution-endpoint=//./pipe/&lt;your.ipc&gt; --holesky --suggested-fee-recipient=0x01234567722E6b0000012BFEBf6177F1D2e9758D9 --genesis-state=genesis.ssz</code></pre></TabItem>
             </Tabs>
       </TabItem>
     </Tabs>
