@@ -145,8 +145,13 @@ On the Prysm side, create a file called `config.yml` in your `devnet` folder con
     BELLATRIX_FORK_VERSION: 0x20000091
     TERMINAL_TOTAL_DIFFICULTY: 0
 
-    CAPELLA_FORK_EPOCH: 2
+    # Capella
+    CAPELLA_FORK_EPOCH: 0
     CAPELLA_FORK_VERSION: 0x20000092
+    MAX_WITHDRAWALS_PER_PAYLOAD: 16
+
+    # Deneb
+    DENEB_FORK_VERSION: 0x20000093
 
     # Time parameters
     SECONDS_PER_SLOT: 12
@@ -186,9 +191,7 @@ Next, we will start by running **go-ethereum** in our `devnet` folder:
 
 The last command will ask you to input a password for your secret key. You can just hit enter twice to leave it empty. Next, run geth using the command below
 
-    ./geth --http --http.api "eth,engine" --datadir=gethdata --allow-insecure-unlock --unlock="0x123463a4b065722e99115d6c222f267d9cabb524" --password="" --nodiscover console --syncmode=full --mine --miner.etherbase=0x123463a4b065722e99115d6c222f267d9cabb524
-    
-`miner.etherbase` can be any Ethereum address, in this case we just use the same address `0x123463a4b065722e99115d6c222f267d9cabb524` as it is an example. For more information about geth you can consult the documentation [here](https://geth.ethereum.org/docs).
+    ./geth --http --http.api "eth,net,web3" --datadir=gethdata --allow-insecure-unlock --unlock="0x123463a4b065722e99115d6c222f267d9cabb524" --password="" --nodiscover console --syncmode=full
 
 You can check the ETH balance in the geth console by typing in
 
@@ -198,7 +201,7 @@ You can check the ETH balance in the geth console by typing in
 
 We will then need to run a Prysm beacon node and a validator client. Prysm will need a **genesis state** which is essentially some data that tells it the initial set of validators. We will be creating a genesis state from a deterministic set of keys below:
 
-    ./prysmctl testnet generate-genesis --fork=bellatrix --num-validators=64 --output-ssz=genesis.ssz --chain-config-file=config.yml --override-eth1data=true
+    ./prysmctl testnet generate-genesis --fork=capella --num-validators=64 --genesis-time-delay=15 --output-ssz=genesis.ssz --chain-config-file=config.yml
     
 More information about `prysmctl` and all available commands can be found [here](https://docs.prylabs.network/docs/prysm-usage/prysmctl).
 
@@ -209,13 +212,17 @@ This will out a file `genesis.ssz` in your `devnet` folder. Now, run the Prysm b
       --min-sync-peers=0 \
       --genesis-state=genesis.ssz \
       --bootstrap-node= \
+      --interop-eth1data-votes \
       --chain-config-file=config.yml \
       --config-file=config.yml \
       --chain-id=32382 \
       --execution-endpoint=http://localhost:8551 \
       --accept-terms-of-use \
       --jwt-secret=gethdata/geth/jwtsecret \
-      --contract-deployment-block=0
+      --contract-deployment-block=0 \
+      --suggested-fee-recipient=0x123463a4b065722e99115d6c222f267d9cabb524 \
+      --minimum-peers-per-subnet=0 \
+      --enable-debug-rpc-endpoints \
 
 and the Prysm validator client soon after:
 
@@ -224,9 +231,7 @@ and the Prysm validator client soon after:
       --accept-terms-of-use \
       --interop-num-validators=64 \
       --interop-start-index=0 \
-      --force-clear-db \
       --chain-config-file=config.yml \
-      --config-file=config.yml
     
 
 ### Expected output
