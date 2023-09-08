@@ -125,7 +125,8 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
 <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
         {label: 'Goerli-Prater', value: 'goerli-prater'},
-        {label: 'Sepolia', value: 'sepolia'}
+        {label: 'Sepolia', value: 'sepolia'},
+        {label: 'Holesky', value: 'holesky'}
     ]}>
       <TabItem value="mainnet">
 
@@ -153,6 +154,17 @@ bazel run //beacon-chain --config=release -- --execution-endpoint=<YOUR_ETH_EXEC
 
 
   </TabItem>
+      <TabItem value="holesky">
+
+Download the Holesky genesis state from [Github](https://github.com/eth-clients/holesky/blob/main/custom_config_data/genesis.ssz) to a local file, then run
+
+```text
+bazel run //beacon-chain --config=release -- --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> --holesky --genesis-state=/path/to/genesis.ssz
+```
+
+
+  </TabItem>
+
 </Tabs>
 
 </div>
