@@ -163,7 +163,7 @@ On the Prysm side, create a file called `config.yml` in your `devnet` folder con
 
 The configuration above contains information about the different hard-fork versions that are required for Prysm to run, and has some custom parameters to make running your devnet easier. It’s important to note that you can change any of these settings as desired. To see the full list of configuration options you can change, see [here](https://docs.prylabs.network/docs/prysm-usage/parameters/).
 ```
-NOTICE: The config will need to be updated for each hard-fork.
+NOTICE: The config will need to be updated for each hard-fork. If the above configuration is outdated you can copy the latest `config.yml` from [here](https://github.com/OffchainLabs/eth-pos-devnet/blob/master/consensus/config.yml).
 ```
 
 
