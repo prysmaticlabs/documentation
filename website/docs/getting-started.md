@@ -248,9 +248,6 @@ The following table of contents provides a descriptive overview of Prysm's docum
 <a href='devtools/net-design'>Network design</a>
 </div>
 <div className='panel'>
-<a href='devtools/extending-apis'>Extending APIs</a>
-</div>
-<div className='panel'>
 <a href='how-prysm-works/architecture-overview'>Architecture overview</a>
 </div>
 <div className='panel'>
