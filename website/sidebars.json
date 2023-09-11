@@ -278,10 +278,6 @@
             },
             {
               "type": "doc",
-              "id": "devtools/extending-apis"
-            },
-            {
-              "type": "doc",
               "id": "how-prysm-works/architecture-overview"
             },
             {
