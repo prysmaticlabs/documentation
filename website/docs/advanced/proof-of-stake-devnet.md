@@ -34,7 +34,7 @@ With Ethereum switching to proof-of-stake, there are a bunch of buzzwords flying
 Today, running an Ethereum node means simply installing a client such as [go-ethereum](https://github.com/ethereum/go-ethereum) and running a simple command to sync the chain. After the switch to proof-of-stake, running an "Ethereum node" will require **two components**:
 
 1.  **execution client software** in charge of processing transactions and smart contracts. This is go-ethereum
-2.  **consensus client software** in charge of running the proof-of-stake logic. This tutorial will use the [Prysm](https://github.com/prysmaticlabs/prysm) implemntation, which my team develops.
+2.  **consensus client software** in charge of running the proof-of-stake logic. This tutorial will use the [Prysm](https://github.com/prysmaticlabs/prysm) implementation, which my team develops.
 
 Prysm is an open source, Go implementation of the Ethereum proof-of-stake protocol. It can be used to run a node+validator on mainnet and testnet environments with ease, and is highly configurable to meet users’ needs.
 
