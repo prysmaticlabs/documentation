@@ -16,6 +16,8 @@ Below is a list of third-party block explorer services displaying statistics abo
 
 beaconcha.in is a beacon chain explorer maintained by [Bitfly](https://www.bitfly.at).
 
+## [ethstakers.club](https://ethstakers.club/)
+
 ## Mirrors and Forks
 
 This sections lists open source mirrors of forks of original, major block explorers. [Redot](https://redot.com) maintains two open-source mirrors that are forks of Bitfly's original work [beaconcha.in](https://beaconcha.in) at
