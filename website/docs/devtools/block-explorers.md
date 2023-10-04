@@ -12,6 +12,10 @@ Below is a list of third-party block explorer services displaying statistics abo
 
 ## [beacon.etherscan.io](https://beacon.etherscan.io)
 
+## [ethstakers.club](https://ethstakers.club/)
+
+Offers similar features to beaconcha.in, capable of monitoring 32,000 validators in real-time and indicating if any validator is set to propose in the next epoch.
+
 ## [beaconcha.in](https://beaconcha.in/)
 
 beaconcha.in is a beacon chain explorer maintained by [Bitfly](https://www.bitfly.at).
