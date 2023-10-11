@@ -19,9 +19,9 @@ At runtime, the beacon node initialises and maintains a number of services that 
 * A [**blockchain** **service**](#blockchain-service) which processes incoming blocks from the network, advances the beacon chain's state, and applies a fork choice rule to select the best head block.
 * An [**operations service**](#operations-service) prepares information contained in beacon blocks received from peers \(such as block deposits and attestations\) for inclusion into new validator blocks.
 * A [**core package** ](#core-package) containing Ethereum beacon-chain core functions, utilities, and state transitions required for conformity with the protocol.
-* A [**sync service**](#sync-service) which both queries nodes across the network to ensure latest [canonical head](/docs/terminology#canonical-head-block) and state are synced and processes incoming block announcements from peers.
-* An [**ETH 1.0 service**](#eth1-service) that listens to latest event logs from the validator deposit contract and the ETH 1.0 blockchain.
-* A [**public RPC server**](#public-rpc-server) that requests information about the beacon chain's state, the latest block, validator information, etcetera.
+* A [**sync service**](#sync-service) which both queries nodes across the network to ensure the latest [canonical head](/docs/terminology#canonical-head-block) and state are synced and processes incoming block announcements from peers.
+* An [**ETH 1.0 service**](#eth1-service) that listens to the latest event logs from the validator deposit contract and the ETH 1.0 blockchain.
+* A [**public RPC server**](#public-rpc-server) that requests information about the beacon chain's state, the latest block, validator information, et cetera.
 * A [**P2P server**](p2p-networking) which handles the life cycle of peer connections and facilitates broadcasting across the network.
 * A **full test suite** for running simulation on Ethereum beacon chain state transitions, benchmarks and conformity tests across clients.
 
@@ -29,9 +29,9 @@ We isolate each of these services into separate packages, each responsible for i
 
 ## Blockchain service
 
-The blockchain service is arguably the most important part of the project, as it allows the network to reach consensus on the state of the protocol itself. It is responsible for handling the life cycle of blocks, and applies the [fork choice rule](/docs/terminology#fork-choice-rule) and [state transition function](/docs/terminology#state-transition-function) provided by the [core package](#core-package) to advance the beacon chain.
+The blockchain service is arguably the most important part of the project, as it allows the network to reach consensus on the state of the protocol itself. It is responsible for handling the life cycle of blocks, and applying the [fork choice rule](/docs/terminology#fork-choice-rule) and [state transition function](/docs/terminology#state-transition-function) provided by the [core package](#core-package) to advance the beacon chain.
 
-In Ethereum, blocks can be proposed in intervals known as _slots_, which are period of seconds. During a slot, proposers are assigned to create and send blocks into the beacon node for acceptance. It is possible, however, that proposer may fail to do their job at their assigned slot; in this case, the blockchain service processes skipped slots appropriately to ensure that the chain does not stall.
+In Ethereum, blocks can be proposed in intervals known as _slots_, where each slot is a period of 12 seconds. During a slot, proposers are assigned to create and send blocks into the beacon node for acceptance. It is possible, however, that the proposer may fail to do their job at their assigned slot; in this case, the blockchain service processes skipped slots appropriately to ensure that the chain does not stall.
 
 ## Operations service
 
