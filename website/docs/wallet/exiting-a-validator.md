@@ -18,6 +18,12 @@ Voluntarily exiting your validator from the Ethereum network is a one time comma
  3. Select the account(s) that should be exited. This step can be skipped by specifying the account(s) via the `--public-keys` flag when issuing the `validator exit` command.
  4. Confirm your understanding of the consequences of exiting your validator by typing `Exit my validator` when prompted.
 
+:::tip
+
+Looking for a particular phrase to perform a voluntary exit in Prysm? Read step 4 in the above steps!
+
+:::
+
 After providing confirmation, voluntary exit request will be broadcasted through your beacon node. Visit our [Command-line options documentation](../prysm-usage/parameters.md) for more configuration options.
 
 :::caution 
