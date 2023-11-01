@@ -116,7 +116,7 @@ Next, use Docker to tell your beacon node to connect to your local execution nod
 
 <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
-        {label: 'Goerli-Prater', value: 'goerli-prater'},
+        {label: 'Goerli', value: 'goerli'},
         {label: 'Sepolia', value: 'sepolia'}
     ]}>
       <TabItem value="mainnet">
@@ -133,9 +133,9 @@ docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/u
 ```
 
   </TabItem>
-      <TabItem value="goerli-prater">
+      <TabItem value="goerli">
 
-Download the Goerli-Prater genesis state from [Github](https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz) to a local file. Then issue the following command:
+Download the Goerli genesis state from [Github](https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz) to a local file. Then issue the following command:
 
 ```text
 docker run -it -v $HOME/.eth2:/data -v /path/to/genesis.ssz:/genesis/genesis.ssz -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node \
@@ -181,7 +181,7 @@ To ensure that your Docker image has access to a data directory, mount a local d
 
 <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
-        {label: 'Goerli-Prater', value: 'goerli-prater'},
+        {label: 'Goerli', value: 'goerli'},
         {label: 'Sepolia', value: 'sepolia'}
     ]}>
       <TabItem value="mainnet">
@@ -191,9 +191,9 @@ docker run -it -v %LOCALAPPDATA%\Eth2:/data -p 4000:4000 -p 13000:13000 -p 12000
 ```
 
   </TabItem>
-      <TabItem value="goerli-prater">
+      <TabItem value="goerli">
 
-Download the Goerli-Prater genesis state from [Github](https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz) to a local file. Then issue the following command:
+Download the Goerli genesis state from [Github](https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz) to a local file. Then issue the following command:
 
 ```text
 docker run -it -v %LOCALAPPDATA%\Eth2:/data -v \path\to\genesis.ssz:/genesis/genesis.ssz -p 4000:4000 -p 13000:13000 -p 12000:12000/udp gcr.io/prysmaticlabs/prysm/beacon-chain:stable --datadir=/data --jwt-secret=<YOUR_JWT_SECRET> --rpc-host=0.0.0.0 --grpc-gateway-host=0.0.0.0 --monitoring-host=0.0.0.0 --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> --genesis-state=/genesis/genesis.ssz --prater
@@ -253,7 +253,7 @@ The Ethereum launchpad URL is `https://launchpad.ethereum.org` and the only, off
 
 :::
 
-Use the [Mainnet Launchpad](https://launchpad.ethereum.org/summary) to deposit your 32 ETH. If you want to participate in the **testnet**, use the [Goerli-Prater](https://goerli.launchpad.ethereum.org/en/) launchpad.
+Use the [Mainnet Launchpad](https://launchpad.ethereum.org/summary) to deposit your 32 ETH. If you want to participate in the **testnet**, use the [Goerli](https://goerli.launchpad.ethereum.org/en/) launchpad.
 
 Throughout the process, you'll be asked to generate new validator credentials using the [official Ethereum deposit command-line-tool](https://github.com/ethereum/eth2.0-deposit-cli). Make sure you use the `mainnet` option when generating keys with the deposit CLI. During the process, you will have generated a `validator_keys` folder under the `eth2.0-deposit-cli` directory. You can import all of your validator keys into Prysm from that folder in the next step.
 

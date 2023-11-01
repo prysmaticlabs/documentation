@@ -173,7 +173,7 @@ If you have any questions, feel free to visit our [Discord](https://discord.gg/p
 
 Footnotes:
 
-<strong id='footnote-1'>1</strong>. Learn more about the Goerli-Prater testnet <a href='https://goerli.launchpad.ethereum.org/en/'>here on Ethereum.org</a>. <br />
+<strong id='footnote-1'>1</strong>. Learn more about the Goerli testnet <a href='https://goerli.launchpad.ethereum.org/en/'>here on Ethereum.org</a>. <br />
 <strong id='footnote-2'>2</strong>. BitMex recently posted research that provides hard numbers on penalties and rewards: <a href='https://blog.bitmex.com/ethereums-proof-of-stake-system-calculating-penalties-rewards/'>Ethereum's Proof of Stake System - Calculating Penalties and Rewards</a>. Collin Myers has also created an <a href='https://docs.google.com/spreadsheets/d/15tmPOvOgi3wKxJw7KQJKoUe-uonbYR6HF7u83LR5Mj4/edit#gid=1018097491'>Ethereum calculator</a>. <br />
 <strong id='footnote-3'>3</strong>. See <a href='https://www.reddit.com/r/ethstaker/comments/nnwfx1/why_you_should_stop_worrying_about_your/'>Why you should stop worrying about your validator's uptime and start embracing the chaos instead</a>. <br />
 <strong id='footnote-4'>4</strong>. See <a href='https://medium.com/prysmatic-labs/eth2-slashing-prevention-tips-f6faa5025f50'>Eth2 Slashing Prevention Tips</a> to learn more about slashing.<br />

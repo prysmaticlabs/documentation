@@ -40,8 +40,6 @@ import QuickstartRunExecutionNodeJWTPartial from '@site/docs/install/partials/_q
 
 <QuickstartRunExecutionNodeJWTPartial />
 
-Congratulations - you’re now running an <strong>execution node</strong> in Ethereum’s execution layer.
-
 ## Step 4: Run a beacon node using Prysm
 
 import QuickstartRunBeaconNodePartial from '@site/docs/install/partials/_quickstart-run-beacon-node.md';
@@ -122,7 +120,7 @@ Yes - you can use [checkpoint sync](https://docs.prylabs.network/docs/prysm-usag
 This is usually an indication that your validator isn't able to communicate with your beacon node, or your beacon node isn't able to connect to your execution node.
 
 **How long does it take for my validator to be selected to propose a new block?** <br />
-At the time of this writing, a ballpark estimate is **around a week**. Every 12 seconds a new block is proposed, and your validator has a one in [total number of active validators] chance of being chosen, so this duration can vary significantly from one validator to the next.
+At the time of this writing, a ballpark estimate is **around every four months** on mainnet. Every 12 seconds a new block is proposed, and your validator has a one in [total number of active validators] chance of being chosen, so this duration can vary significantly from one validator to the next.
 
 <!-- **Can I run a full node and validator client on a Raspberry Pi?** <br />
 TODO
