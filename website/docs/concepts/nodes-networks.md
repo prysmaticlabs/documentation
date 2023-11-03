@@ -79,27 +79,22 @@ Every network's execution layer works with (and only with) its corresponding "pa
 
 <table>
     <tr>
-        <th style={{minWidth: 160 + 'px'}}>EL network</th> 
-        <th style={{minWidth: 160 + 'px'}}>CL network</th>
+        <th style={{minWidth: 160 + 'px'}}>network</th> 
         <th>Description</th>
     </tr>
     <tr>
-      <td>Mainnet</td>
       <td>Mainnet</td>
       <td>When people refer to Ethereum, they're usually referring to Ethereum Mainnet, which refers to a pair of networks: execution-layer (EL) Mainnet and consensus-layer (CL) Mainnet. CL Mainnet is commonly referred to as the Beacon Chain.<br/><br/>This network pair mints and manages real <strong>ETH</strong>.</td>
     </tr> 
     <tr>
       <td>Goerli</td>
-      <td>Prater</td>
-      <td>The Goerli is the test network that most people use when learning how to configure their validator for the first time.<br/><br/>This network mints and manages <strong>Goerli ETH</strong>, a type of testnet ETH used exclusively within this network.</td>
+      <td>Goerli is a network that was created to protocol and staking testing. Most people use it when learning how to configure their validator for the first time. In some places, you may read the term <strong>Goerli-Prater</strong> instead of <strong>Goerli</strong>. Pre-merge, for this network, the name of the execution layer was <strong>Goerli</strong>, and the name of the consensus layer was <strong>Prater</strong>. Post merge, the name <strong>Prater</strong> was deprecated and only <strong>Goerli</strong> remains.<br/><br/>This network mints and manages <strong>Goerli ETH</strong>, a type of testnet ETH used exclusively within this network.<br/><br/><strong>Warning: </strong> The Goerli network is intended to be deprecated in 2024. If you consider staking on a test network, please use Holesky. </td>
     </tr>
     <tr>
       <td>Sepolia</td>
-      <td>Sepolia</td>
-      <td>Sepolia is a network that was created to facilitate testing. The <a href='../install/install-with-script'>Prysm Quickstart</a> shows you how to configure a node on Sepolia. Note that this is a permissioned network, so you can run a node on Sepolia, but not a validator.<br/><br/>This network pair mints and manages <strong>SepplETH</strong>, a type of testnet ETH used exclusively within this network pair.</td>
+      <td>Sepolia is a network that was created to smart contract testing. The <a href='../install/install-with-script'>Prysm Quickstart</a> shows you how to configure a node on Sepolia. Note that this is a permissioned network, so you can run a node on Sepolia, but not a validator.<br/><br/>This network pair mints and manages <strong>Sepolia ETH</strong>, a type of testnet ETH used exclusively within this network pair.</td>
     </tr>
     <tr>
-      <td>Holesky</td>
       <td>Holesky</td>
       <td>Holesky is a merged-from-genesis public Ethereum testnet which will replace Goerli as a
       staking, infrastructure, and protocol-developer testnet. This network is primarily focused on
