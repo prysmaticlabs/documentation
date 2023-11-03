@@ -33,8 +33,8 @@ With Ethereum switching to proof-of-stake, there are a bunch of buzzwords flying
 
 Today, running an Ethereum node means simply installing a client such as [go-ethereum](https://github.com/ethereum/go-ethereum) and running a simple command to sync the chain. After the switch to proof-of-stake, running an "Ethereum node" will require **two components**:
 
-1.  **execution client software** in charge of processing transactions and smart contracts. This is go-ethereum
-2.  **consensus client software** in charge of running the proof-of-stake logic. This tutorial will use the [Prysm](https://github.com/prysmaticlabs/prysm) implemntation, which my team develops.
+1.  **execution client software** in charge of processing transactions and smart contracts. This is go-ethereum.
+2.  **consensus client software** in charge of running the proof-of-stake logic. This tutorial will use the [Prysm](https://github.com/prysmaticlabs/prysm) implementation, which my team develops.
 
 Prysm is an open source, Go implementation of the Ethereum proof-of-stake protocol. It can be used to run a node+validator on mainnet and testnet environments with ease, and is highly configurable to meet users’ needs.
 
@@ -89,7 +89,7 @@ This sets up a single node development network with 64 deterministically-generat
 
 The development net is fully functional and allows for the deployment of smart contracts and all the features that also come with the Prysm consensus client such as its rich set of APIs for retrieving data from the blockchain.
 
-You now have access to the normal, Ethereum JSON-RPC APIs on http://localhost:8545 and the new consensus client APIs for the beacon chain on http://localhost:3500. You can see a list of available API endpoints for the beacon chain client [here](https://ethereum.github.io/beacon-APIs/)
+You now have access to the normal, Ethereum JSON-RPC APIs on [http://localhost:8545](http://localhost:8545) and the new consensus client APIs for the beacon chain on [http://localhost:3500](http://localhost:3500). You can see a list of available API endpoints for the beacon chain client [here](https://ethereum.github.io/beacon-APIs/).
 
 This development net is a great way to understand the internals of Ethereum proof-of-stake and to mess around with the different settings that make the system possible.
 

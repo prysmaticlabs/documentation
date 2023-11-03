@@ -131,35 +131,35 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
       <TabItem value="mainnet">
 
 ```text
-bazel run //beacon-chain --config=release -- --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT>
+bazel run //cmd/beacon-chain --config=release --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> --mainnet
 ```
 
   </TabItem>
       <TabItem value="goerli">
 
-Download the Goerli genesis state from [Github](https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz) to a local file. Then issue the following command:
+Download the Goerli genesis state from [Github](https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz) to a local file. In the following command, replace `<PATH_TO_GENESIS>` by the path of the genesis state you just downloaded and run it:
 
 ```text
-bazel run //beacon-chain --config=release -- --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> --prater --genesis-state=/path/to/genesis.ssz
+bazel run //cmd/beacon-chain --config=release -- --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> --goerli --genesis-state=<PATH_TO_GENESIS>
 ```
 
   </TabItem>
       <TabItem value="sepolia">
 
-Download the Sepolia genesis state from [Github](https://github.com/eth-clients/merge-testnets/blob/main/sepolia/genesis.ssz) to a local file, then run
+Download the Sepolia genesis state from [Github](https://github.com/eth-clients/merge-testnets/blob/main/sepolia/genesis.ssz) to a local file. In the following command, replace `<PATH_TO_GENESIS>` by the path of the genesis state you just downloaded and run it:
 
 ```text
-bazel run //beacon-chain --config=release -- --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> --sepolia --genesis-state=/path/to/genesis.ssz
+bazel run //cmd/beacon-chain --config=release -- --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> --sepolia --genesis-state=<PATH_TO_GENESIS>
 ```
 
 
   </TabItem>
       <TabItem value="holesky">
 
-Download the Holesky genesis state from [Github](https://github.com/eth-clients/holesky/blob/main/custom_config_data/genesis.ssz) to a local file, then run
+Download the Holesky genesis state from [Github](https://github.com/eth-clients/holesky/blob/main/custom_config_data/genesis.ssz) to a local file. In the following command, replace `<PATH_TO_GENESIS>` by the path of the genesis state you just downloaded and run it:
 
 ```text
-bazel run //beacon-chain --config=release -- --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> --holesky --genesis-state=/path/to/genesis.ssz
+bazel run //cmd/beacon-chain --config=release -- --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> --holesky --genesis-state=<PATH_TO_GENESIS>
 ```
 
 
@@ -184,13 +184,13 @@ The correct address for the launchpad is https://launchpad.ethereum.org and the 
 Throughout the process, you'll be asked to generate new validator credentials using the official Ethereum deposit command-line-tool [here](https://github.com/ethereum/eth2.0-deposit-cli). Make sure you use the `mainnet` option when generating keys with the deposit CLI. During the process, you will have generated a `validator_keys` folder under the `eth2.0-deposit-cli` directory. Copy the path to the `validator_keys` folder under the `eth2.0-deposit-cli` directory you created during the launchpad process. For example, if your `eth2.0-deposit-cli` installation is in your `$HOME` (or `%LOCALAPPDATA%` on Windows) directory, you can then run the following command to import your keys:
 
 ```text
-bazel run //validator:validator -- accounts import --keys-dir=$HOME/eth2.0-deposit-cli/validator_keys --accept-terms-of-use
+bazel run //cmd/validator:validator -- accounts import --keys-dir=$HOME/eth2.0-deposit-cli/validator_keys --accept-terms-of-use
 ```
 
 Next, open a second terminal window and issue the followimg command to start your validator.
 
 ```text
-bazel run //validator --config=release
+bazel run //cmd/validator --config=release
 ```
 
 
@@ -198,7 +198,7 @@ bazel run //validator --config=release
 
 Please note it will take time for nodes in the network to process a deposit. To understand the timeline of becoming a validator and how long it takes on average, see [this knowledge base](https://kb.beaconcha.in/ethereum-2.0-depositing). In the meantime, leave both terminal windows open and running; once the validator is activated by the ETH2 network, it will immediately begin receiving tasks and performing its responsibilities. If the eth2 chain has not yet started, the validator will be ready to start proposing blocks and signing votes as soon as the genesis time is reached.
 
-To check on the status of your validator, we recommend checking out the popular block explorers: [beaconcha.in](https://beaconcha.in) by Bitfly and [beacon.etherscan.io](https://beacon.etherscan.io) by the Etherscan team.
+To check on the status of your validator, we recommend checking out the popular block explorers: [beaconcha.in](https://beaconcha.in) by Bitfly and [beaconscan.com](https://beaconscan.com) by the Etherscan team.
 
 ![image](https://i.imgur.com/CDNc6Ft.png)
 
@@ -221,11 +221,17 @@ We do not write our own Dockerfiles, as Bazel provides us a more sandboxed, simp
 
 #### Regular Docker images
 
-At the moment, Prysm docker images can only be built on **Linux** operating systems. The standard images are very thin wrappers around the Prysm beacon-chain and validator binaries, and do not contain any other typical components of Docker images such as a bash shell. These are the Docker images we ship to all users, and you can build them yourself as follows:
+:::info Windows / Mac
+
+At the moment, building Prysm docker images is only supported on **Linux** operating systems.
+
+:::
+
+ The standard images are very thin wrappers around the Prysm beacon-chain and validator binaries, and do not contain any other typical components of Docker images such as a bash shell. These are the Docker images we ship to all users, and you can build them yourself as follows:
 
 ```bash
-bazel build //beacon-chain:image_bundle --config=release
-bazel build //validator:image_bundle --config=release
+bazel build //cmd/beacon-chain:image_bundle --config=release
+bazel build //cmd/validator:image_bundle --config=release
 ```
 
 The tags for the images are specified [here](https://github.com/prysmaticlabs/prysm/blob/ff329df808ad68fbe79d11c73121fa6a7a0c0f29/cmd/beacon-chain/BUILD.bazel#L58) for the beacon-chain and [here](https://github.com/prysmaticlabs/prysm/blob/ff329df808ad68fbe79d11c73121fa6a7a0c0f29/cmd/validator/BUILD.bazel#L59) for the validator. The default image tags for these images are:
@@ -240,22 +246,13 @@ gcr.io/prysmaticlabs/prysm/validator:latest
 
 You can edit these in the links above to your liking.
 
-#### Alpine images
-
-Prysm also provides Alpine images built using:
-
-```bash
-bazel build //beacon-chain:image_bundle_alpine --config=release
-bazel build //validator:image_bundle_alpine --config=release
-```
-
 #### Debug images
 
 Prysm also provides debug images built using:
 
 ```bash
-bazel build //beacon-chain:image_bundle_debug --config=release
-bazel build //validator:image_bundle_debug --config=release
+bazel build //cmd/beacon-chain:image_bundle_debug --config=release
+bazel build //cmd/validator:image_bundle_debug --config=release
 ```
 
 ### Running images
@@ -263,8 +260,8 @@ bazel build //validator:image_bundle_debug --config=release
 You can load the images into your local Docker daemon by first building a `.tar` file as follows for your desired image bundle:
 
 ```text
-bazel build cmd/beacon-chain:image_bundle.tar
-bazel build cmd/validator:image_bundle.tar
+bazel build //cmd/beacon-chain:image_bundle.tar
+bazel build //cmd/validator:image_bundle.tar
 ```
 
 Then, you can load it into Docker with:
@@ -306,8 +303,8 @@ See:
 To push the actual images, you do not need to build the image bundle beforehand. You can do a simple:
 
 ```text
-bazel run //beacon-chain:push_images --config=release
-bazel run //validator:push_images --config=release
+bazel run //cmd/beacon-chain:push_images --config=release
+bazel run //cmd/validator:push_images --config=release
 ```
 
 Which will deploy all images with the tags specified in [here](https://github.com/prysmaticlabs/prysm/blob/ff329df808ad68fbe79d11c73121fa6a7a0c0f29/cmd/beacon-chain/BUILD.bazel#L58) for the beacon-chain and [here](https://github.com/prysmaticlabs/prysm/blob/ff329df808ad68fbe79d11c73121fa6a7a0c0f29/cmd/validator/BUILD.bazel#L59) for the validator. 
