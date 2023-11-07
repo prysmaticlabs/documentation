@@ -19,7 +19,7 @@ This how-to is an updated copy of Raul Jordan's [How to Set Up an Ethereum Proof
 
 With Ethereum having finally transitioned to proof-of-stake, many people are wondering how to set up a local testing environment given so much has changed.
 
-Running nodes has become easier over the past year, with go-ethereum taking around 2 days to sync and some hyper-optimized clients such as Akula or Erigon taking a week to sync an entire, _archival_ node. It is true that setting up a node on mainnet today is easier than ever. However, developers often want to set up their own, local blockchain for testing purposes. We call these **development networks** or **devnets**.
+Running nodes has become easier over the past few years, with go-ethereum taking around 1 day to sync and some hyper-optimized clients such Reth or Erigon taking less than a week to sync an entire, _archival_ node. It is true that setting up a node on mainnet today is easier than ever. However, developers often want to set up their own, local blockchain for testing purposes. We call these **development networks** or **devnets**.
 
 Devnets are critical for developers working on the protocol as well as smart contract developers that want to run their own chain using their own initial state. However, the latter need can be satisfied by tools such as [Foundry](https://github.com/foundry-rs/foundry/) which runs a “simulated” Ethereum environment that is enough for testing many contract interactions.
 
@@ -31,12 +31,12 @@ With Ethereum switching to proof-of-stake, there are a bunch of buzzwords flying
 
 > "Consensus", "Execution", "the Merge", What does it all mean???
 
-Today, running an Ethereum node means simply installing a client such as [go-ethereum](https://github.com/ethereum/go-ethereum) and running a simple command to sync the chain. After the switch to proof-of-stake, running an "Ethereum node" will require **two components**:
+Today, running an Ethereum node require **two components**:
 
-1.  **execution client software** in charge of processing transactions and smart contracts. This is go-ethereum.
+1.  **execution client software** in charge of processing transactions and smart contracts. Example of execution client softwares are: [geth](geth.ethereum.org), [besu](https://besu.hyperledger.org/), [erigon](https://github.com/ledgerwatch/erigon), [nethermind](https://nethermind.io/) or [reth](https://paradigmxyz.github.io/reth/).
 2.  **consensus client software** in charge of running the proof-of-stake logic. This tutorial will use the [Prysm](https://github.com/prysmaticlabs/prysm) implementation, which my team develops.
 
-Prysm is an open source, Go implementation of the Ethereum proof-of-stake protocol. It can be used to run a node+validator on mainnet and testnet environments with ease, and is highly configurable to meet users’ needs.
+Prysm is an open source, Go implementation of the Ethereum proof-of-stake protocol. It can be used to run a node+validator client on mainnet and testnet environments with ease, and is highly configurable to meet users’ needs.
 
 ## Easy setup using Docker
 
