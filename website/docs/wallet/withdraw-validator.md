@@ -140,7 +140,7 @@ Now that the staking deposit tool is executable, you can then use it to generate
 
 Here’s the command to get started with the process. This command will **not** submit your signed message to the network yet, and will only generate the data needed for the next steps.
 
-navigate to the extracted `deposit` script is after downloading and extracting the `staking-deposit-cli`.
+navigate to the extracted `deposit` script after downloading and extracting the `staking-deposit-cli`.
 
 ```jsx
 ./deposit generate-bls-to-execution-change
@@ -246,7 +246,7 @@ default beacon node REST `<node-url>` is `http://localhost:3500` aka `http://127
 :::
 
 Open a terminal in the location where you downloaded the prysmctl binaries, rename the file to prysmctl, and run the following command.
-Some users will need to give permissions to the the downloaded binaries to be executable. Linux users can do this by right clicking the file, going to permissions, and clicking the `Allow executing file as program` checkmark. This may be different for each operating system.
+Some users will need to give permissions to the downloaded binaries to be executable. Linux users can do this by right clicking the file, going to permissions, and clicking the `Allow executing file as program` checkmark. This may be different for each operating system.
 
 ```jsx
 ./prysmctl validator withdraw --beacon-node-host=<node-url> --path=<bls_to_execution_changes-*.json>
@@ -370,7 +370,7 @@ A: Once you submit a BLS to Exec request to tell Ethereum the address you want t
 
 **Q: I set my `withdrawal_credentials` but I am not fully withdrawn. How do I fully withdraw?**
 
-A: Full validator withdrawals require your validator to exit first, as exits do not happen automatically. You will need to submit a voluntary exit by following our documentation [here](exiting-a-validator.md). Once your validator exits, it will no longer need to perform its responsibilities after some time (there can be a delay if the validator is part of a sync committee or recently slashed) . The ordering of requests for setting withdrawal credentials or exiting does not matter, once a validator has both its withdrawal credentials updated as well as in an exited state funds will automatically be added to the chosen execution address when processed. **note:** this process will take sometime as withdrawals, full or partial, are processed at a rate of at most 16 validators per block.
+A: Full validator withdrawals require your validator to exit first, as exits do not happen automatically. You will need to submit a voluntary exit by following our documentation [here](exiting-a-validator.md). Once your validator exits, it will no longer need to perform its responsibilities after some time (there can be a delay if the validator is part of a sync committee or recently slashed) . The ordering of requests for setting withdrawal credentials or exiting does not matter, once a validator has both its withdrawal credentials updated as well as in an exited state funds will automatically be added to the chosen execution address when processed. **note:** this process will take some time as withdrawals, full or partial, are processed at a rate of at most 16 validators per block.
 
 **Q: My keys were compromised, can I still withdraw?**
 
