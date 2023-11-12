@@ -14,13 +14,13 @@ Bug reports are critical to the rapid development of the Prysm client. In order 
 
 Duplicate tickets are a hinderance to the development process and, as such, it is crucial to first check through Prysm's existing issues to see if what you are experiencing has already been indexed.
 
-To do so, head over to the [issue page](https://github.com/prysmaticlabs/prysm/issues) and enter some related keywords into the search bar. This may include a sample from the output or specific components it affects. If this is unsuccessful, check the [issue labels index](https://github.com/prysmaticlabs/prysm/labels) for related catagories and review the tickets within.
+To do so, head over to the [issue page](https://github.com/prysmaticlabs/prysm/issues) and enter some related keywords into the search bar. This may include a sample from the output or specific components it affects. If this is unsuccessful, check the [issue labels index](https://github.com/prysmaticlabs/prysm/labels) for related categories and review the tickets within.
 
 If searches have shown the issue in question has not been reported yet, feel free to open up a new issue ticket.
 
 ## Writing quality bug reports
 
-A good bug report is structured to help the developers and contributors visualise the issue in the clearest way possible. It's important to be concise and use comprehensive language, while also providing all relevant information on-hand. Use short and accurate sentences without any unnecessary additions, and include all existing specifications with a list of steps to reproduce the expected problem. Issues that cannot be reproduced **cannot be solved**.
+A good bug report is structured to help the developers and contributors visualize the issue in the clearest way possible. It's important to be concise and use comprehensive language, while also providing all relevant information on-hand. Use short and accurate sentences without any unnecessary additions, and include all existing specifications with a list of steps to reproduce the expected problem. Issues that cannot be reproduced **cannot be solved**.
 
 If you are experiencing multiple issues, it is best to open each as a separate ticket. This allows them to be closed individually as they are resolved.
 
