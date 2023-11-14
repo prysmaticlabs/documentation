@@ -58,11 +58,15 @@ Bazelisk is a launcher for Bazel which automatically downloads and installs the 
 
 Clone Prysm's [main repository](https://github.com/prysmaticlabs/prysm). Switch to the latest version (the latest version number can be found on the [releases page](https://github.com/prysmaticlabs/prysm/releases)). Once cloned, enter the directory:
 
-`git clone https://github.com/prysmaticlabs/prysm && cd prysm`
+```
+git clone https://github.com/prysmaticlabs/prysm && cd prysm
+``````
 
 #### Build `prysmctl`
 
-`bazel build //cmd/prysmctl --config=release`
+```
+bazel build //cmd/prysmctl --config=release
+```
 
 Bazel will automatically pull and install any dependencies as well, including Go and necessary compilers.
 
@@ -77,9 +81,9 @@ Bazel will automatically pull and install any dependencies as well, including Go
 docker run -it gcr.io/prysmaticlabs/prysm/cmd/prysmctl:latest --help
 ```
 
-The `—help` flag will provide a list of commands, subcommands, and flags to use.
+The `—-help` flag will provide a list of commands, subcommands, and flags to use.
 
-Commands can also be found in our [Prysm parameter documentation](https://docs.prylabs.network/docs/prysm-usage/parameters)
+Commands can also be found in our [Prysm parameter documentation](./parameters)
 
 ### Frequently asked questions
 
