@@ -116,7 +116,7 @@ Next, use Docker to tell your beacon node to connect to your local execution nod
 
 <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
-        {label: 'Goerli-Prater', value: 'goerli-prater'},
+        {label: 'Goerli', value: 'goerli'},
         {label: 'Sepolia', value: 'sepolia'}
     ]}>
       <TabItem value="mainnet">
@@ -133,9 +133,9 @@ docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/u
 ```
 
   </TabItem>
-      <TabItem value="goerli-prater">
+      <TabItem value="goerli">
 
-Download the Goerli-Prater genesis state from [Github](https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz) to a local file. Then issue the following command:
+Download the Goerli genesis state from [Github](https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz) to a local file. Then issue the following command:
 
 ```text
 docker run -it -v $HOME/.eth2:/data -v /path/to/genesis.ssz:/genesis/genesis.ssz -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node \
@@ -147,13 +147,13 @@ docker run -it -v $HOME/.eth2:/data -v /path/to/genesis.ssz:/genesis/genesis.ssz
   --monitoring-host=0.0.0.0 \
   --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> \
   --genesis-state=/genesis/genesis.ssz \
-  --prater
+  --goerli
 ```
 
   </TabItem>
       <TabItem value="sepolia">
 
-Download the Sepolia genesis state from [Github](https://github.com/eth-clients/merge-testnets/blob/main/sepolia/genesis.ssz) to a local file, then run
+Download the Sepolia genesis state from [Github](https://github.com/eth-clients/merge-testnets/blob/main/sepolia/genesis.ssz) to a local file, then run:
 
 ```text
 docker run -it -v $HOME/.eth2:/data -v /path/to/genesis.ssz:/genesis/genesis.ssz -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node \
@@ -181,7 +181,7 @@ To ensure that your Docker image has access to a data directory, mount a local d
 
 <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
-        {label: 'Goerli-Prater', value: 'goerli-prater'},
+        {label: 'Goerli', value: 'goerli'},
         {label: 'Sepolia', value: 'sepolia'}
     ]}>
       <TabItem value="mainnet">
@@ -191,9 +191,9 @@ docker run -it -v %LOCALAPPDATA%\Eth2:/data -p 4000:4000 -p 13000:13000 -p 12000
 ```
 
   </TabItem>
-      <TabItem value="goerli-prater">
+      <TabItem value="goerli">
 
-Download the Goerli-Prater genesis state from [Github](https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz) to a local file. Then issue the following command:
+Download the Goerli genesis state from [Github](https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz) to a local file. Then issue the following command:
 
 ```text
 docker run -it -v %LOCALAPPDATA%\Eth2:/data -v \path\to\genesis.ssz:/genesis/genesis.ssz -p 4000:4000 -p 13000:13000 -p 12000:12000/udp gcr.io/prysmaticlabs/prysm/beacon-chain:stable --datadir=/data --jwt-secret=<YOUR_JWT_SECRET> --rpc-host=0.0.0.0 --grpc-gateway-host=0.0.0.0 --monitoring-host=0.0.0.0 --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> --genesis-state=/genesis/genesis.ssz --prater
@@ -202,7 +202,7 @@ docker run -it -v %LOCALAPPDATA%\Eth2:/data -v \path\to\genesis.ssz:/genesis/gen
   </TabItem>
       <TabItem value="sepolia">
 
-Download the Sepolia genesis state from [Github](https://github.com/eth-clients/merge-testnets/blob/main/sepolia/genesis.ssz) to a local file, then run
+Download the Sepolia genesis state from [Github](https://github.com/eth-clients/merge-testnets/blob/main/sepolia/genesis.ssz) to a local file, then run:
 
 ```text
 docker run -it -v %LOCALAPPDATA%\Eth2:/data -v \path\to\genesis.ssz:/genesis/genesis.ssz -p 4000:4000 -p 13000:13000 -p 12000:12000/udp gcr.io/prysmaticlabs/prysm/beacon-chain@sha256:bf9b95661c71ad60f633ee14cf352a668d550076471154cf80dfef8fce0bb41e --datadir=/data --jwt-secret=<YOUR_JWT_SECRET> --rpc-host=0.0.0.0 --grpc-gateway-host=0.0.0.0 --monitoring-host=0.0.0.0 --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> --genesis-state=/genesis/genesis.ssz --sepolia
@@ -211,7 +211,7 @@ docker run -it -v %LOCALAPPDATA%\Eth2:/data -v \path\to\genesis.ssz:/genesis/gen
   </TabItem>
       <TabItem value="holesky">
 
-Download the Holesky genesis state from [Github](https://github.com/eth-clients/holesky/blob/main/custom_config_data/genesis.ssz) to a local file, then run
+Download the Holesky genesis state from [Github](https://github.com/eth-clients/holesky/blob/main/custom_config_data/genesis.ssz) to a local file, then run:
 
 ```text
 docker run -it -v %LOCALAPPDATA%\Eth2:/data -v \path\to\genesis.ssz:/genesis/genesis.ssz -p 4000:4000 -p 13000:13000 -p 12000:12000/udp gcr.io/prysmaticlabs/prysm/beacon-chain@sha256:bf9b95661c71ad60f633ee14cf352a668d550076471154cf80dfef8fce0bb41e --datadir=/data --jwt-secret=<YOUR_JWT_SECRET> --rpc-host=0.0.0.0 --grpc-gateway-host=0.0.0.0 --monitoring-host=0.0.0.0 --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> --genesis-state=/genesis/genesis.ssz --holesky
@@ -222,6 +222,14 @@ docker run -it -v %LOCALAPPDATA%\Eth2:/data -v \path\to\genesis.ssz:/genesis/gen
 
 </TabItem>
 </Tabs>
+
+:::warning Fee recipient
+
+**You plan to run a validator?**
+
+Consider using `--suggested-fee-recipient` on your beacon node. See [How to configure Fee Recipient](../execution-node/fee-recipient.md) for more information about this feature.
+
+:::
 
 ## Run a validator
 
@@ -253,7 +261,7 @@ The Ethereum launchpad URL is `https://launchpad.ethereum.org` and the only, off
 
 :::
 
-Use the [Mainnet Launchpad](https://launchpad.ethereum.org/summary) to deposit your 32 ETH. If you want to participate in the **testnet**, use the [Goerli-Prater](https://goerli.launchpad.ethereum.org/en/) launchpad.
+Use the [Mainnet Launchpad](https://launchpad.ethereum.org/summary) to deposit your 32 ETH. If you want to participate in the **testnet**, use the [Goerli](https://goerli.launchpad.ethereum.org/en/) launchpad.
 
 Throughout the process, you'll be asked to generate new validator credentials using the [official Ethereum deposit command-line-tool](https://github.com/ethereum/eth2.0-deposit-cli). Make sure you use the `mainnet` option when generating keys with the deposit CLI. During the process, you will have generated a `validator_keys` folder under the `eth2.0-deposit-cli` directory. You can import all of your validator keys into Prysm from that folder in the next step.
 
@@ -293,7 +301,7 @@ docker run -it -v %LOCALAPPDATA%\eth2.0-deposit-cli\validator_keys:/keys -v %LOC
 
 ### Run validator
 
-Open a second terminal window. Issue the following command to start the validator:
+Open a second terminal window. Issue the following command to start the validator by replacing `<YOUR_WALLET_ADDRESS>` by the address of a wallet you own. See [How to configure Fee Recipient](../execution-node/fee-recipient.md) for more information about this feature:
 
 
 <Tabs
@@ -314,13 +322,14 @@ docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
   --beacon-rpc-provider=127.0.0.1:4000 \
   --wallet-dir=/wallet \
   --datadir=/validatorDB
+  --suggested-fee-recipient=<YOUR_WALLET_ADDRESS>
 ```
 
 </TabItem>
 <TabItem value="win">
 
 ```text
-docker run -it -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet -v %LOCALAPPDATA%\Eth2:/validatorDB --network="host" --name validator gcr.io/prysmaticlabs/prysm/validator:stable --beacon-rpc-provider=127.0.0.1:4000 --wallet-dir=/wallet --datadir=/validatorDB
+docker run -it -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet -v %LOCALAPPDATA%\Eth2:/validatorDB --network="host" --name validator gcr.io/prysmaticlabs/prysm/validator:stable --beacon-rpc-provider=127.0.0.1:4000 --wallet-dir=/wallet --datadir=/validatorDB --suggested-fee-recipient=<YOUR_WALLET_ADDRESS>
 ```
 
 </TabItem>
@@ -330,7 +339,7 @@ docker run -it -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet -v %LOCA
 
 :::tip Congratulations! 
 
-You’re now running a <strong>full Ethereum node</strong> and a <strong>validator</strong>.
+You’re now running a <strong>full Ethereum node</strong> and a <strong>validator client</strong>.
 
 :::
 

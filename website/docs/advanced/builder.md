@@ -15,7 +15,7 @@ import BuilderPng from '@site/static/img/builder.png';
 :::caution
 
 This guide is for advanced Prysm users to configure their client for the purposes of extracting [MEV](https://ethereum.org/en/developers/docs/mev/). 
-There are risks to using a builder which may result in missed rewards, missed proposals, censored transactions, omitted transactions, and even slashing when used incorrectly. The Prysm team does not provide guidance on which builders/relays are recommended but lists are available for you to make a judgement based on your own values. 
+There are risks to using a builder which may result in missed rewards, missed proposals, censored transactions or omitted transactions. The Prysm team does not provide guidance on which builders/relays are recommended but lists are available for you to make a judgement based on your own values. 
 
 :::
 
@@ -38,8 +38,8 @@ There are risks to using a builder which may result in missed rewards, missed pr
               href="https://ethereum.github.io/builder-specs/#/Builder/registerValidator"
               target="_blank"
               rel="noreferrer noopener">
-              build api endpoint
-            </a> on the builder for the registration. some relays will allow you to query which validators are registered currently.
+              builder api endpoint
+            </a> on the builder for the registration. Some relays will allow you to query which validators are registered currently.
       </li>
       <li> 
        Validator selected as a block proposer: extracting MEV will only be applicable when your validator has its turn to propose a block. 
@@ -64,7 +64,7 @@ There are risks to using a builder which may result in missed rewards, missed pr
               target="_blank"
               rel="noreferrer noopener">
               builder API
-            </a> for the full payload. 
+            </a> for the full payload. When the builder gets the signed blinded block, it broadcasts the signed un-blinded block to the network, <strong>then</strong> it sends back the signed un-blinded block to the proposer.
       </li>
       <li> 
         Un-blind the block with the full payload: using the response of the builder, the blinded block can be converted into a full block with the full execution payload.
@@ -103,7 +103,7 @@ It is **recommended** to configure with the validator client with the `--suggest
 
 To use a builder the beacon node needs to start with the following configuration:
 
-- `--http-mev-relay` flag pointed to a MEV-boost instance or running relay (5. Builder: connected via relay URL).
+- `--http-mev-relay` flag pointed to any [Builder API](https://ethereum.github.io/builder-specs/) compatible endpoint. The most common use case is to target a [MEV-Boost](https://boost.flashbots.net/) instance. A less common use case is to directly target a relay (5. Builder: connected via relay URL).
 
 Each relay's URL will correspond to a specific network and will need to be chosen accordingly, i.e. running a beacon node on mainnet will require the mainnet relay.
 
@@ -111,7 +111,7 @@ Each relay's URL will correspond to a specific network and will need to be chose
 ## 3. Is builder configured?
 
 When a validator is proposing a block, the following is checked before attempting to use the builder through the relay:
-- `--http-mev-relay` flag was provided and is pointed to mev-boost or an active relay of the correct network
+- `--http-mev-relay` flag was provided and is pointed to MEV-Boost or an active relay of the correct network
 - circuit breaker is not triggered 
 - validator is registered (beacon API was successfully called and validator registration info is stored in the beacon node's db)
 
@@ -123,7 +123,7 @@ Local execution clients such as Geth or Nethermind must continue to run as usual
 
 ## 5. Builder: connected via relay URL
 
-The ETHStaker community provides a list of some of the relays that can be used as well as any censorship they may have [here](https://github.com/eth-educators/ethstaker-guides/blob/main/MEV-relay-list.md). You can also run your own relay locally such as MEV boost but each relay on the list will have their own instructions on how to run it. If running your own relay, instead of using a provided URL due to latency, you will simply need to update the `--http-mev-relay` flag on your beacon node with the appropriate URL for the specific network in use. The relay will connect to a builder which connects to block searchers. 
+The ETHStaker community provides a list of some of the relays that can be used as well as any censorship they may have [here](https://github.com/eth-educators/ethstaker-guides/blob/main/MEV-relay-list.md). You can also run your own relay locally such as MEV-Boost but each relay on the list will have their own instructions on how to run it. If running your own relay, instead of using a provided URL due to latency, you will simply need to update the `--http-mev-relay` flag on your beacon node with the appropriate URL for the specific network in use. The relay will connect to a builder which connects to block searchers. 
 
 :::info
 
@@ -148,7 +148,7 @@ The following flag should be removed to disable builder use on the beacon node:
 
 :::info
 
-The [register validator Beacon API](https://ethereum.github.io/beacon-APIs/?urls.primaryName=dev#/Validator/registerValidator) will also stop working with the removal of the `--http-mev-relay` flag and will no longer know the URL to mev-boost or the active relay.
+The [register validator Beacon API](https://ethereum.github.io/beacon-APIs/?urls.primaryName=dev#/Validator/registerValidator) will also stop working with the removal of the `--http-mev-relay` flag and will no longer know the URL to MEV-Boost or the active relay.
 
 :::
 
@@ -167,7 +167,7 @@ The execution client can safely continue to run "as-is" with no changes. Once th
 
 ## 5. Builder: remove relay URL
 
-removing the `--http-mev-relay` flag from the beacon node will disconnect the builder. Once removed, you can safely turn off your builder related services such as your mev boost or relays.
+removing the `--http-mev-relay` flag from the beacon node will disconnect the builder. Once removed, you can safely turn off your builder related services such as your MEV-Boost or relays.
 
 </TabItem>
 </Tabs>
@@ -206,11 +206,11 @@ By default, the circuit breaker will be triggered after 3 slots are consecutivel
 
 ### Registration cache
 
-validator registrations for Builder APIs are stored in a cache by default as of `4.0.7` instead of bolt db when starting the beacon node. The cache will enable:
+Validator registrations for Builder APIs are stored in a cache by default as of `4.0.7` instead of bolt db when starting the beacon node. The cache will enable:
   - in-memory storage of the validator registrations, this clears all validator registrations on restart.
-This feature solves the unintended issue of wanting some validators unregistered while maintaining mev boost on others. In the future the db used to store registrations will be removed completely and the flag will no longer be required for this feature. Validator settings will be persisted on the validator client side.
+This feature solves the unintended issue of wanting some validators unregistered while maintaining MEV-Boost on others. In the future the db used to store registrations will be removed completely and the flag will no longer be required for this feature. Validator settings will be persisted on the validator client side.
 
-`--disable-registration-cache` flag can be used on the beacon node to fall back onto the using the bolt db. **note** values stored in the bolt db will not be cleared and you will not be able to unregister validators unless using the cache and restarting.
+`--disable-registration-cache` flag can be used on the beacon node to fall back onto the using the bolt db. **note:** values stored in the bolt db will not be cleared and you will not be able to unregister validators unless using the cache and restarting.
 
 ### Parallel execution
 
@@ -218,12 +218,12 @@ By default the beacon node will construct the consensus and execution portions o
 
 ### Prioritizing local blocks
 
-`--local-block-value-boost` flag is a Uint64 value that provides an additional percentage to multiply the local block value. Use builder block if: `builder_bid_value * 100 > local_block_value * (local-block-value-boost + 100)`. This will encourage your setup to use the local execution if the value earned is not above your threshold, helping to mitigate censorship concerns.
+`--local-block-value-boost` flag is a `uint64` value that provides an additional percentage to multiply the local block value. Use builder block if: `builder_bid_value * 100 > local_block_value * (local-block-value-boost + 100)`. This will encourage your setup to use the local execution if the value earned is not above your threshold, helping to mitigate censorship concerns.
 
 
 ## Frequently asked questions
 
-The provided guide offered explanations on configuring the Prysm client to utilize a [custom builder](https://docs.flashbots.net/flashbots-mev-boost/block-builders) through a [relay](https://docs.flashbots.net/flashbots-mev-boost/relay). The relay acts as a middleware that connects validators to block builders. This configuration involves both the validator client and the beacon node. It's important to note this guide does not cover setting up your own relay, builder, or MEV-boost software. 
+The provided guide offered explanations on configuring the Prysm client to utilize a [custom builder](https://docs.flashbots.net/flashbots-mev-boost/block-builders) through a [relay](https://docs.flashbots.net/flashbots-mev-boost/relay). The relay acts as a middleware that connects validators to block builders. This configuration involves both the validator client and the beacon node. It's important to note this guide does not cover setting up your own relay, builder, or MEV-Boost software. 
 
 :::info
 In the Prysm client, the builder is used through the relay to get transactions that maximize the validator's benefits, prioritizing them over local ones. However, the execution client will still be necessary as a fallback option in case any issues arise while utilizing the builder. The builder will only come into play when there is a validator proposal.
@@ -231,7 +231,7 @@ In the Prysm client, the builder is used through the relay to get transactions t
 
 **Q:** What are the risks of running Prysm with a custom builder instead of using local execution?
 
-**A:** The custom builder, whether connected through mev boost or as a relay URL, will need to be updated consistently with Prysm, adding another layer of complexity. Depending on the relay used some rewards may be missed due to the relay's connectivity or any builder bugs. Transactions may be censored under certain conditions.
+**A:** The custom builder, whether connected through MEV-Boost or as a relay URL, will need to be updated consistently with Prysm, adding another layer of complexity. Depending on the relay used some rewards may be missed due to the relay's connectivity or any builder bugs. Transactions may be censored under certain conditions.
 
 **Q:** Do I need to run my execution client while using a custom builder?
 
