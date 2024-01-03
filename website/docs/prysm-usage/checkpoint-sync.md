@@ -149,7 +149,9 @@ To verify that the checkpoint state you're using is legitimate, follow these ste
 1. Navigate to `http://localhost:3500/eth/v1/beacon/headers/finalized` using your browser.
 2. Find the `slot` number and `state_root` value.
 3. Use a trusted blockchain explorer to verify the `state_root`. To be extra safe, follow this procedure using multiple blockchain explorers. Using `beaconcha.in` as an example, navigate to one of the following pages, replacing `SLOT` with the `slot` you pulled from your browser:
-   - **Prater**: https://prater.beaconcha.in/slot/SLOT
+   - **Goerli**: https://goerli.beaconcha.in/slot/SLOT
+   - **Sepolia**: https://sepolia.beaconcha.in/slot/SLOT
+   - **Holesky**: https://holesky.beaconcha.in/slot/SLOT
    - **Mainnet**: https://beaconcha.in/slot/SLOT
 4. Ensure that the `state_root` reported by the blockchain explorer matches the `state_root` you pulled from your browser. If you don't see a match, feel free to reach out to us on [Discord](https://discord.gg/prysmaticlabs) and we'll help you troubleshoot.
 
@@ -175,7 +177,7 @@ Yes. Checkpoint sync is a network-agnostic feature. You can even use it on local
 No - checkpoint sync requires a fresh, unused data directory.
 
 **Are there any publicly available, trustworthy checkpoint sync endpoints that I can use?** <br/>
-A community maintained list of public Beacon Chain checkpoint sync endpoints is maintained: https://eth-clients.github.io/checkpoint-sync-endpoints/
+A [community maintained list](https://eth-clients.github.io/checkpoint-sync-endpoints/) of public Beacon Chain checkpoint sync endpoints is maintained.
 
 Feel free to ask on our [Discord server](https://discord.gg/prysmaticlabs) if you need help identifying a **Mainnet** checkpoint state provider.
 

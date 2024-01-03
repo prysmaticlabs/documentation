@@ -112,13 +112,13 @@ You’ll be managing two types of keys: validator keys and withdrawal keys. Prys
  - **Advanced**: Generate your wallet and keys using new, airgapped hardware that has never been - and will never be - connected to the internet.
  - **Advanced**: Use a metal wallet to protect your mnemonic phrase [<a href='#footnote-12'>12</a>]. 
  - **Advanced**: Build the key generation software from source - don’t trust third-party binaries.
- - **Advanced**: Use a [Web3Signer](https://docs.prylabs.network/docs/wallet/web3signer/) to maintain separation between your keys and client software.
+ - **Advanced**: Use [Web3Signer](https://docs.prylabs.network/docs/wallet/web3signer/) to maintain separation between your keys and client software.
 
 ## Troubleshooting
 Ethereum and its client software are constantly improving. This constant change means that unexpected things may happen that require troubleshooting. 
   
  - **Essential**: Expect unexpected things to happen.
- - **Essential**: Be prepared to engage with the [Prysm Discord server](https://discord.gg/prysmaticlabs), [r/ethstaker](https://www.reddit.com/r/ethstaker/), and the [EthStaker Discord server](https://discord.io/ethstaker) if you need help troubleshooting issues.
+ - **Essential**: Be prepared to engage with the [Prysm Discord server](https://discord.gg/prysmaticlabs), [r/ethstaker](https://www.reddit.com/r/ethstaker/), and the [EthStaker Discord server](https://discord.gg/ethstaker) if you need help troubleshooting issues.
  - **Essential**: When sharing logs, be sure to redact personally identifiable information and metadata that can be used to identify your validator.
  - **Essential**: Learn how to [inspect Prysm's performance](https://docs.prylabs.network/docs/monitoring/is-everything-fine).
  - **Essential**: Familiarize yourself with [Prysm's P2P connectivity guidance](https://docs.prylabs.network/docs/prysm-usage/p2p-host-ip).
@@ -181,8 +181,8 @@ Footnotes:
 <strong id='footnote-6'>6</strong>. See <a href='https://www.youtube.com/watch?v=txgOVDTemPQ'>How to monitor your ETH 2 Validator with Google Cloud</a> for a demonstration of this type of solution. <br />
 <strong id='footnote-7'>7</strong>. See <a href='https://medium.com/prysmatic-labs/eth2-slashing-prevention-tips-f6faa5025f50'>Eth2 Slashing Prevention Tips</a> by Raul Jordan. <br />
 <strong id='footnote-8'>8</strong>. See <a href='https://www.reddit.com/r/ethstaker/comments/oa6m2o/my_validator_got_slashed/'>this discussion on Reddit</a> for an example of how an honest scripting mistake can result in slashing. The Ethereum ecosystem is growing quickly - this requires all participants to exercise an abundance of caution. <br />
-<strong id='footnote-9'>9</strong>. CoinCashew demonstrates firewall configuration best practices <a href='https://www.coincashew.com/coins/overview-eth/guide-or-how-to-setup-a-validator-on-eth2-mainnet/part-i-installation/guide-or-security-best-practices-for-a-eth2-validator-beaconchain-node#configure-your-firewall'>here</a>. <br />
-<strong id='footnote-10'>10</strong>. CoinCashew demonstrates root account administration <a href='https://www.coincashew.com/coins/overview-eth/guide-or-how-to-setup-a-validator-on-eth2-mainnet/part-i-installation/guide-or-security-best-practices-for-a-eth2-validator-beaconchain-node#disable-root-account'>here</a>. <br />
-<strong id='footnote-11'>11</strong>. CoinCashew demonstrates SSH authentication <a href='https://www.coincashew.com/coins/overview-eth/guide-or-how-to-setup-a-validator-on-eth2-mainnet/part-i-installation/guide-or-security-best-practices-for-a-eth2-validator-beaconchain-node#disable-ssh-password-authentication-and-use-ssh-keys-only'>here</a>. <br />
+<strong id='footnote-9'>9</strong>. CoinCashew demonstrates firewall configuration best practices <a href='https://www.coincashew.com/coins/overview-eth/archived-guides/guide-or-how-to-setup-a-validator-on-eth2-mainnet/part-i-installation/step-2-configuring-node#enable-firewall'>here</a>. <br />
+<strong id='footnote-10'>10</strong>. CoinCashew demonstrates root account administration <a href='https://www.coincashew.com/coins/overview-eth/testnet-holesky-validator/step-2-configuring-node#disabling-root-login-and-password-based-login'>here</a>. <br />
+<strong id='footnote-11'>11</strong>. CoinCashew demonstrates SSH authentication <a href='https://www.coincashew.com/coins/overview-eth/testnet-holesky-validator/step-2-configuring-node#hardening-ssh-access'>here</a>. <br />
 <strong id='footnote-12'>12</strong>. See <a href='https://jlopp.github.io/metal-bitcoin-storage-reviews/'>Metal Bitcoin Seed Storage Reviews</a> by Jameson Lopp. <br />
 <strong id='footnote-13'>13</strong>. StakingRewards has a live rewards calculator <a href='https://www.stakingrewards.com/earn/ethereum-2-0/'>here</a>.   <br />

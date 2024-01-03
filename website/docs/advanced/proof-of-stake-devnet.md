@@ -89,7 +89,7 @@ This sets up a single node development network with 64 deterministically-generat
 
 The development net is fully functional and allows for the deployment of smart contracts and all the features that also come with the Prysm consensus client such as its rich set of APIs for retrieving data from the blockchain.
 
-You now have access to the normal, Ethereum JSON-RPC APIs on http://localhost:8545 and the new consensus client APIs for the beacon chain on http://localhost:3500. You can see a list of available API endpoints for the beacon chain client [here](https://ethereum.github.io/beacon-APIs/)
+You now have access to the normal, Ethereum JSON-RPC APIs on [http://localhost:8545](http://localhost:8545) and the new consensus client APIs for the beacon chain on [http://localhost:3500](http://localhost:3500). You can see a list of available API endpoints for the beacon chain client [here](https://ethereum.github.io/beacon-APIs/).
 
 This development net is a great way to understand the internals of Ethereum proof-of-stake and to mess around with the different settings that make the system possible.
 
