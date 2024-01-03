@@ -140,7 +140,7 @@ Now that the staking deposit tool is executable, you can then use it to generate
 
 Here’s the command to get started with the process. This command will **not** submit your signed message to the network yet, and will only generate the data needed for the next steps.
 
-navigate to the extracted `deposit` script after downloading and extracting the `staking-deposit-cli`.
+Navigate to the extracted `deposit` script is after downloading and extracting the `staking-deposit-cli`.
 
 ```jsx
 ./deposit generate-bls-to-execution-change
