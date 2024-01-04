@@ -26,9 +26,7 @@ While the default setting is sufficient for regular beacon chain functionality, 
 
 ## Beacon chain API information  
 
-Full details of the Ethereum beacon API are available here: 
-
-The Prysm documenation portal [Ethreum public API] (https://docs.prylabs.network/docs/how-prysm-works/prysm-public-api)
+Full details of the Ethereum beacon API are available in the [Ethereum public API section](../how-prysm-works/ethereum-public-api.md). 
 
 ## Command line/Configuration file usage:
 
@@ -54,6 +52,4 @@ If you are running Prysm and specifying command line flags via a configuration f
 slots-per-archive-point: 32 
 ```
 
-import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateWidget />

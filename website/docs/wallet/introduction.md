@@ -6,7 +6,7 @@ sidebar_label: Keys, wallets, and accounts
 
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
-<HeaderBadgesWidget  commaDelimitedContributors="James" lastVerifiedDateString="February 20th, 2023"/>
+<HeaderBadgesWidget  commaDelimitedContributors="James" />
 
 This section explains everything about how to manage validator accounts using Prysm's built-in wallet, as well as setup instructions for different types of wallets including HD (hierarchical deterministic), and non-HD wallets.
 
@@ -14,7 +14,7 @@ This section explains everything about how to manage validator accounts using Pr
 Prysm's validator accounts are extensible enough to allow for the most basic setup all the way to advanced production setups where security is paramount.
 :::
 
-Out of the box, Prysm supports 3 basic kinds of wallets that encompass many different use-cases. In order of highest to lowest security:
+Out of the box, Prysm supports 3 basic kinds of wallets that encompasses many different use-cases. In order of highest to lowest security:
 
 1. **non-HD wallet**: (good security) A simple wallet in which accounts are password protected and validator keys are generated non-deterministically. This is the recommended approach if you want to import an account from the [Ethereum launchpad](https://launchpad.ethereum.org/) and you can read dedicated instructions [here](/docs/wallet/nondeterministic).
 2. **HD wallet**: (least security) A common type of blockchain wallet which is generated from a english mnemonic, able to create new accounts deterministically. The encrypted seed is stored on day encrypted by a strong password. Given you are tying your HD wallet to the validator client, it is less secure than simply importing validating keys you need from an external source or running a remote signer. 
@@ -88,6 +88,3 @@ If you're encountering an unexpected issue that causes your client to crash or t
 You can stop being a validator by issuing a **voluntary exit**, which is a special type of object included in the Ethereum beacon chain that signifies your validator is ready to stop validating and securely exit the validator set. Although during phase 0 of Ethereum consensus, you will **not** be able to withdraw your staking rewards, you can still issue a voluntary exit. You can find instructions for this process [here](/docs/wallet/exiting-a-validator).
 
 
-import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
-
-<RequestUpdateWidget />

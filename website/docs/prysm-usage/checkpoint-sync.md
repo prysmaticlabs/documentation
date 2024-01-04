@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
-<HeaderBadgesWidget commaDelimitedContributors="Kasey,Mick,James" lastVerifiedDateString="September 12th, 2022" lastVerifiedVersionString="v4.0.0" />
+<HeaderBadgesWidget commaDelimitedContributors="Kasey,James" />
 
 **Checkpoint sync** is a feature that significantly speeds up the initial sync between your beacon node and the Beacon Chain. With checkpoint sync configured, your beacon node will begin syncing from a recently finalized checkpoint instead of syncing from genesis. This can make installations, validator migrations, recoveries, and testnet deployments *way* faster.
 
@@ -110,7 +110,7 @@ The two exported `*.ssz` files are your `BeaconState` and `SignedBeaconBlock` fi
 curl -H "Accept: application/octet-stream"  http://localhost:3500/eth/v1/debug/beacon/states/genesis > genesis.ssz
 ```
 
-You can also just manually download the genesis state from GitHub: [Goerli-Prater](https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz) | [Sepolia](https://github.com/eth-clients/merge-testnets/blob/main/sepolia/genesis.ssz)
+You can also just manually download the genesis state from GitHub: [Goerli](https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz) | [Sepolia](https://github.com/eth-clients/merge-testnets/blob/main/sepolia/genesis.ssz)
 
 Use the following command to start your beacon node with checkpoint sync configured to use this checkpoint state:
 
@@ -149,7 +149,9 @@ To verify that the checkpoint state you're using is legitimate, follow these ste
 1. Navigate to `http://localhost:3500/eth/v1/beacon/headers/finalized` using your browser.
 2. Find the `slot` number and `state_root` value.
 3. Use a trusted blockchain explorer to verify the `state_root`. To be extra safe, follow this procedure using multiple blockchain explorers. Using `beaconcha.in` as an example, navigate to one of the following pages, replacing `SLOT` with the `slot` you pulled from your browser:
-   - **Prater**: https://prater.beaconcha.in/slot/SLOT
+   - **Goerli**: https://goerli.beaconcha.in/slot/SLOT
+   - **Sepolia**: https://sepolia.beaconcha.in/slot/SLOT
+   - **Holesky**: https://holesky.beaconcha.in/slot/SLOT
    - **Mainnet**: https://beaconcha.in/slot/SLOT
 4. Ensure that the `state_root` reported by the blockchain explorer matches the `state_root` you pulled from your browser. If you don't see a match, feel free to reach out to us on [Discord](https://discord.gg/prysmaticlabs) and we'll help you troubleshoot.
 
@@ -175,7 +177,7 @@ Yes. Checkpoint sync is a network-agnostic feature. You can even use it on local
 No - checkpoint sync requires a fresh, unused data directory.
 
 **Are there any publicly available, trustworthy checkpoint sync endpoints that I can use?** <br/>
-A community maintained list of public Beacon Chain checkpoint sync endpoints is maintained: https://eth-clients.github.io/checkpoint-sync-endpoints/
+A [community maintained list](https://eth-clients.github.io/checkpoint-sync-endpoints/) of public Beacon Chain checkpoint sync endpoints is maintained.
 
 Feel free to ask on our [Discord server](https://discord.gg/prysmaticlabs) if you need help identifying a **Mainnet** checkpoint state provider.
 
@@ -203,6 +205,4 @@ Prysm offers a `--weak-subjectivity-checkpoint` flag that allows you to specify 
 Special thanks to the authors of *How to: Checkpoint Sync* for providing the endpoints and verification procedure used in this guide.
 
 
-import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateWidget />

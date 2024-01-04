@@ -194,7 +194,7 @@ This sync mode requests subsets of the chain to multiple peers, perhaps even wit
 For example, if we were to request blocks 10 through 25 from 4 peers:
 
 | **Peer #** | **Batch Block Requests** |
-|------------|--------------------------|
+| ---------- | ------------------------ |
 | Peer 1     | 10, 14, 18, 22           |
 | Peer 2     | 11, 15, 19, 23           |
 | Peer 3     | 12, 16, 20, 24           |
@@ -214,7 +214,7 @@ For example, if we were to request blocks 10 through 25 from 4 peers:
 In the event that there is a failure for any subset of the requested range, the remaining blocks will be split across the remaining peers. For example, if peer 3 was disconnected without responding, we would round robin block requests for blocks [12, 24], [16], and [20]. 
 
 | Peer # | Batch Block Requests          |
-|--------|-------------------------------|
+| ------ | ----------------------------- |
 | Peer 1 | 10, 14, 18, 22                |
 | Peer 2 | 11, 15, 19, 23                |
 | Peer 3 | 12, 16, 20, 24 (disconnected) |
@@ -311,16 +311,16 @@ GossipSub as our pubsub library is mostly implemented already with the [libp2p G
 
 **Parameters**
 
-| Parameter Name | Description                      | Value |
-|----------------|----------------------------------|-------|
-| D              | Topic stable mesh target count   | 6     |
-| D_low          | Topic stable mesh low watermark  | 4     |
-| D_high         | Topic stable mesh high watermark | 12    |
-|  D_lazy  |  Gossip target  |  6 ||
-|  fanout_ttl  |  TTL for fanout maps for topics we are not subscribed to but have published to, in seconds  |  60  |
-|  gossip_advertise  |  Number of windows to gossip about  |  3  |
-|  gossip_history  |  Number of heartbeat intervals to retain message IDs  |  5  |
-|  heartbeat_internal  |  Frequency of heartbeat, in seconds  |  1  | 
+| Parameter Name     | Description                                                                               | Value |
+| ------------------ | ----------------------------------------------------------------------------------------- | ----- |
+| D                  | Topic stable mesh target count                                                            | 6     |
+| D_low              | Topic stable mesh low watermark                                                           | 4     |
+| D_high             | Topic stable mesh high watermark                                                          | 12    |
+| D_lazy             | Gossip target                                                                             | 6     |  |
+| fanout_ttl         | TTL for fanout maps for topics we are not subscribed to but have published to, in seconds | 60    |
+| gossip_advertise   | Number of windows to gossip about                                                         | 3     |
+| gossip_history     | Number of heartbeat intervals to retain message IDs                                       | 5     |
+| heartbeat_internal | Frequency of heartbeat, in seconds                                                        | 1     |
 
 
 Conveniently, these values are the default for libp2p GossipSub. See [godoc](https://godoc.org/github.com/libp2p/go-libp2p-pubsub#pkg-variables). However, we should specify these within Prysm to avoid any upstream change breaking interoperability compatibility. Separating these values from hard coded constants will require an upstream PR as it is not configurable. Enabling this functionality can be a bounty and prioritized at P2/P3. At a minimum, we can write a unit test that would fail if any of these config's change since the variables are public.
@@ -459,6 +459,3 @@ Similar to the sync migration, the existing mapping will be prefixed with deprec
 16*1240 (deposit) = 19840  
 16*112 (voluntaryexit) = 1792  
   
-import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
-
-<RequestUpdateWidget />

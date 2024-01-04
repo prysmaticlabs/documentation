@@ -44,11 +44,11 @@ Then select **non-HD** wallet when prompted. You can also create a wallet **non-
 You'll need to set a **strong** password for your wallet, containing at least 1 uppercase letter, 1 number, a special character, and be at least 8 characters long. Any unicode characters can be used for passwords.
 :::
 
-| Flag          | Usage         |
-| ------------- |:-------------|
-| `--wallet-dir` | Path to a wallet directory (default: "$HOME/Eth2Validators/prysm-wallet-v2")
-| `--wallet-password-file` | Path to a file containing your wallet's password for automatic unlocking
-| `--keymanager-kind`     | Type of wallet to create, either "imported", "derived, or "remote" (default "derived")
+| Flag                     | Usage                                                                                  |
+| ------------------------ | :------------------------------------------------------------------------------------- |
+| `--wallet-dir`           | Path to a wallet directory (default: "$HOME/Eth2Validators/prysm-wallet-v2")           |
+| `--wallet-password-file` | Path to a file containing your wallet's password for automatic unlocking               |
+| `--keymanager-kind`      | Type of wallet to create, either "imported", "derived, or "remote" (default "derived") |
 
 Here's a full example on how to create a non-HD wallet at `$HOME/mynonhdwallet`.
 ```bash
@@ -87,10 +87,10 @@ personally-conscious-echidna
 
 You can also run the `accounts list` command **non-interactively** by using the following command line flags, which are also viewable by typing `./prysm.sh validator accounts list --help.
 
-| Flag          | Usage         |
-| ------------- |:-------------|
-| `--wallet-dir` | Path to a wallet directory (default: "$HOME/Eth2Validators/prysm-wallet-v2")
-| `--wallet-password-file`     | Path to a plain-text file containing your wallet password
+| Flag                     | Usage                                                                        |
+| ------------------------ | :--------------------------------------------------------------------------- |
+| `--wallet-dir`           | Path to a wallet directory (default: "$HOME/Eth2Validators/prysm-wallet-v2") |
+| `--wallet-password-file` | Path to a plain-text file containing your wallet password                    |
 
 
 ### Backup validator accounts
@@ -110,14 +110,11 @@ You can backup validator accounts from your imported wallet using the following 
 
 You can also run the `accounts backup` command **non-interactively** by using the following command line flags, which are also viewable by typing `./prysm.sh validator accounts backup --help.
 
-| Flag          | Usage         |
-| ------------- |:-------------|
-|`--wallet-dir`| Path to a wallet directory on-disk for Prysm validator accounts. (default: $HOME/Eth2Validators/prysm-wallet-v2)
-|`--wallet-password-file`| Path to a plain-text, .txt file containing your wallet password.
-|`--backup-dir`| Path to a directory where accounts will be backed up into a zip file. (default: $HOME/Eth2Validators/)
-|`--backup-public-keys`| Comma-separated list of public key hex strings to specify which validator accounts to backup.
-|`--backup-password-file`| Path to a plain-text, .txt file containing the desired password for your backed up accounts.
+| Flag                     | Usage                                                                                                            |
+| ------------------------ | :--------------------------------------------------------------------------------------------------------------- |
+| `--wallet-dir`           | Path to a wallet directory on-disk for Prysm validator accounts. (default: $HOME/Eth2Validators/prysm-wallet-v2) |
+| `--wallet-password-file` | Path to a plain-text, .txt file containing your wallet password.                                                 |
+| `--backup-dir`           | Path to a directory where accounts will be backed up into a zip file. (default: $HOME/Eth2Validators/)           |
+| `--backup-public-keys`   | Comma-separated list of public key hex strings to specify which validator accounts to backup.                    |
+| `--backup-password-file` | Path to a plain-text, .txt file containing the desired password for your backed up accounts.                     |
 
-import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
-
-<RequestUpdateWidget />

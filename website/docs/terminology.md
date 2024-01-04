@@ -47,6 +47,3 @@ A data storage paradigm designed for storing, retrieving, and managing hash tabl
 A function evaluated by the client that takes, as input, the set of blocks and other messages that have been produced, and outputs to the client what the 'canonical chain' is.
 
 
-import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
-
-<RequestUpdateWidget />

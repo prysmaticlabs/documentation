@@ -16,6 +16,10 @@ Below is a list of third-party block explorer services displaying statistics abo
 
 beaconcha.in is a beacon chain explorer maintained by [Bitfly](https://www.bitfly.at).
 
+## [ethstakers.club](https://ethstakers.club/)
+
+Offers similar features to beaconcha.in, capable of monitoring 32,000 validators in real-time and indicating if any validator is set to propose in the next epoch.
+
 ## Mirrors and Forks
 
 This sections lists open source mirrors of forks of original, major block explorers. [Redot](https://redot.com) maintains two open-source mirrors that are forks of Bitfly's original work [beaconcha.in](https://beaconcha.in) at
@@ -29,6 +33,3 @@ Their respective Github repositories are:
 - [eth2-redot-com](https://github.com/AtlantPlatform/eth2-redot-com)
 
 
-import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
-
-<RequestUpdateWidget />

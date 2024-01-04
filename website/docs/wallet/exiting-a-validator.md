@@ -6,7 +6,7 @@ sidebar_label: Exit your validator
 
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
-<HeaderBadgesWidget  commaDelimitedContributors="James" lastVerifiedDateString="March 20th, 2023" lastVerifiedVersionString="v4.0.0"/>
+<HeaderBadgesWidget  commaDelimitedContributors="James"/>
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -18,19 +18,23 @@ Voluntarily exiting your validator from the Ethereum network is a one time comma
  3. Select the account(s) that should be exited. This step can be skipped by specifying the account(s) via the `--public-keys` flag when issuing the `validator exit` command.
  4. Confirm your understanding of the consequences of exiting your validator by typing `Exit my validator` when prompted.
 
+:::tip
+
+Looking for a particular phrase to perform a voluntary exit in Prysm? Read step 4 in the above steps!
+
+:::
+
 After providing confirmation, voluntary exit request will be broadcasted through your beacon node. Visit our [Command-line options documentation](../prysm-usage/parameters.md) for more configuration options.
 
 :::caution 
 
-Although validator nodes can voluntarily exit, funds won't be withdrawable until after Capella/Shanghai hardfork and the `bls-to-exeuction-change` command is available. Learn more on how to withdraw earnings or fully withdraw your validator once available in [our guide](withdraw-validator.md)
+Voluntarily exiting will not withdraw fund, validators must have their `withdrawal_credentials` updated in addition to exiting to withdraw the entire balance. Learn more on how to withdraw earnings or fully withdraw your validator in [our guide](withdraw-validator.md)
 
 The `validator-exit command` only supports gRPC, which means that the specified `beacon-rpc-provider` needs to be a Prysm beacon node (because Prysm's beacon node client is the only client that supports gRPC)
 
-:::info
+:::
 
 Examples below use the local prysm wallet, if you are using [web3signer](web3signer.md), replace the `wallet-dir` flag with the flags used to run the validator with web3signer. 
-
-:::
 
 <Tabs
   groupId="operating-systems"
@@ -122,7 +126,7 @@ prysm.bat validator accounts voluntary-exit
 
 ```text
 docker run -it -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet \
-  gcr.io/prysmaticlabs/prysm/prysmctl:latest \
+  gcr.io/prysmaticlabs/prysm/cmd/prysmctl:latest \
   validator exit --wallet-dir=/wallet --beacon-rpc-provider=<127.0.0.1:4000> 
 ```
 
@@ -158,7 +162,7 @@ The following command is a soon-to-be-deprecated alternative that you should avo
 
 ```text
 docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
-  gcr.io/prysmaticlabs/prysm/prysmctl:latest \
+  gcr.io/prysmaticlabs/prysm/cmd/prysmctl:latest \
   validator exit --wallet-dir=/wallet --beacon-rpc-provider=<127.0.0.1:4000> 
 ```
 
@@ -195,6 +199,4 @@ bazel run //validator --config=release -- accounts voluntary-exit
 **Note:** The above-referenced commands that are being deprecated have not been removed yet, but mirror those found in `prysmctl`.
 
 
-import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateWidget />

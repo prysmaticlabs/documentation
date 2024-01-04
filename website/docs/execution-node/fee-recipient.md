@@ -6,7 +6,7 @@ sidebar_label: Configure Fee Recipient
 import FeeRecipientPng from '@site/static/img/fee-recipient-ui.png'
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
-<HeaderBadgesWidget commaDelimitedContributors="James,Mick" lastVerifiedDateString="September 12th, 2022" lastVerifiedVersionString="v4.0.0" />
+<HeaderBadgesWidget commaDelimitedContributors="James" />
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -26,7 +26,7 @@ Your fee recipient wallet address is a **standard Ethereum wallet address**, jus
 
 When users pay gas to submit transactions to the Ethereum network, they can specify a **priority fee**. Priority fees are like tips. End-users pay priority fees to incentivize block proposers to prioritize the inclusion of particular transactions in the blocks that they propose.
 
-Priority fees are captured by execution clients in the execution layer <a class="footnote" href='#footnote-2'>[2]</a>, so validator clients need to tell execution clients where to forward the fees. This "forwarding address" is referred to as your **fee recipient** wallet address.
+Priority fees are captured by execution clients in the execution layer <a className="footnote" href='#footnote-1'>[1]</a>, so validator clients need to tell execution clients where to forward the fees. This "forwarding address" is referred to as your **fee recipient** wallet address.
 
 
 ## Configure fee recipient
@@ -46,7 +46,7 @@ For example: `./prysm.sh validator --suggested-fee-recipient=0xCHANGEME012345c76
 If your validator is running multiple keys (for example, staking 64 ETH using two validator public keys that have been imported into a single validator client instance), all validator public keys will use the wallet address specified through the `--suggested-fee-recipient` flag. You can optionally associate different fee recipient wallet addresses to individual validator public keys using the JSON/YAML configuration method detailed in the following section.
 
 
-### Configure fee recipient via JSON/YAML (validator only)
+### Configure fee recipient via JSON/YAML (validator client only)
 
 You can assign different wallet addresses to each of your validator public keys using JSON/YAML configuration. Fee recipient address assignments specified through JSON/YAML override those configured through the `--suggested-fee-recipient` flag. This method of configuration uses the following JSON/YAML schema:
 
@@ -225,11 +225,4 @@ This is an advanced configuration property related to custom builders (MEV) that
 
 Footnotes:
 
-<strong id="footnote-1">1.</strong> The <a href='https://github.com/ethereum/consensus-specs/blob/master/specs/bellatrix/validator.md#block-proposal'>Bellatrix -- Honest Validator spec</a> contains Fee Recipient implementation details pertaining to validator clients. The <a href='https://github.com/ethereum/consensus-specs/blob/master/specs/bellatrix/beacon-chain.md#executionpayload'>Bellatrix -- The Beacon Chain spec</a> contains Fee Recipient implementation details pertaining to beacon nodes. <br /><br />
-
-<strong id="footnote-1">2.</strong> See <a href='../concepts/nodes-networks'>Nodes and Networks</a> for a quick refresher on the fundamentals of Ethereum nodes. <br />
-
-
-import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
-
-<RequestUpdateWidget />
+<strong id="footnote-1">1.</strong> See <a href='../concepts/nodes-networks'>Nodes and Networks</a> for a quick refresher on the fundamentals of Ethereum nodes. <br /><br />

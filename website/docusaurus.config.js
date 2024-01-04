@@ -8,6 +8,7 @@ module.exports = {
     favicon: 'img/Prysm.svg',
     organizationName: 'Prysmatic Labs',
     projectName: 'prysm-docs',
+
     customFields: {
         image: 'img/Prysm.svg',
     },
@@ -54,17 +55,6 @@ module.exports = {
             copyright: `Copyright © ${new Date().getFullYear()} Prysmatic Labs, LLC., Validator Deposit Contract 0x00000000219ab540356cbb839cbe05303d7705fa`,
             links: [],
         },
-        algolia: {
-            apiKey: 'd56b00e670b1ea4c44047c2d34807f6d',
-            indexName: 'prysmaticlabs_prysm',
-            algoliaOptions: {
-                contextualSearch: false,
-                disableUserPersonalization: true
-            }
-        },
-        googleAnalytics: {
-            trackingID: 'UA-139640266-2',
-        },
         prism: {
             theme: require('prism-react-renderer/themes/dracula'),
         },
@@ -80,6 +70,7 @@ module.exports = {
                     routeBasePath: 'docs',
                     showLastUpdateTime: false,
                     showLastUpdateAuthor: false,
+                    breadcrumbs: false,
                     sidebarPath: require.resolve('./sidebars.json'),
                     editUrl: 'https://github.com/prysmaticlabs/documentation/edit/master/website/',
                 },
@@ -92,5 +83,15 @@ module.exports = {
                 },
             },
         ],
-    ]
+    ],
+    plugins: [
+        [
+            '@docusaurus/plugin-google-analytics',
+            {
+                trackingID: 'UA-139640266-2',
+                anonymizeIP: true,
+            },
+        ],
+        require.resolve("docusaurus-lunr-search"),
+    ],
 };

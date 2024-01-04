@@ -10,9 +10,9 @@ import ClientStackPng from '@site/static/img/client-stack.png';
 
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
-<HeaderBadgesWidget commaDelimitedContributors="Mick" lastVerifiedDateString="September 12th, 2022" lastVerifiedVersionString="v4.0.0" />
+<HeaderBadgesWidget commaDelimitedContributors="Mick" />
 
-<div class='quickstart'>
+<div className='quickstart'>
 
 import QuickstartIntroPartial from '@site/docs/install/partials/_quickstart-intro.md';
 
@@ -26,7 +26,7 @@ import QuickstartPrereqsPartial from '@site/docs/install/partials/_quickstart-pr
 
 ## Step 2: Install Prysm
 
-<div class='hide-tabs'>
+<div className='hide-tabs'>
 
 import QuickstartInstallPrysmPartial from '@site/docs/install/partials/_quickstart-install-prysm.md';
 
@@ -39,8 +39,6 @@ In this step, you'll install an execution-layer client that Prysm's beacon node 
 import QuickstartRunExecutionNodeJWTPartial from '@site/docs/install/partials/_quickstart-run-execution-node.md';
 
 <QuickstartRunExecutionNodeJWTPartial />
-
-Congratulations - you’re now running an <strong>execution node</strong> in Ethereum’s execution layer.
 
 ## Step 4: Run a beacon node using Prysm
 
@@ -122,7 +120,7 @@ Yes - you can use [checkpoint sync](https://docs.prylabs.network/docs/prysm-usag
 This is usually an indication that your validator isn't able to communicate with your beacon node, or your beacon node isn't able to connect to your execution node.
 
 **How long does it take for my validator to be selected to propose a new block?** <br />
-At the time of this writing, a ballpark estimate is **around a week**. Every 12 seconds a new block is proposed, and your validator has a one in [total number of active validators] chance of being chosen, so this duration can vary significantly from one validator to the next.
+At the time of this writing, a ballpark estimate is **around every four months** on mainnet. Every 12 seconds a new block is proposed, and your validator has a one in [total number of active validators] chance of being chosen, so this duration can vary significantly from one validator to the next.
 
 <!-- **Can I run a full node and validator client on a Raspberry Pi?** <br />
 TODO
@@ -130,6 +128,4 @@ TODO
 **What are withdrawal keys and validator keys?** <br />
 TODO: explain in context of this guide -->
 
-import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateWidget />

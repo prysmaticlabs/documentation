@@ -79,6 +79,3 @@ Both Keymanager APIs are only supported when the beacon chain syncs.
 :::
 
 
-import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
-
-<RequestUpdateWidget />

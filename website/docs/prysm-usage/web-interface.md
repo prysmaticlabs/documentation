@@ -107,7 +107,7 @@ The web UI runs by default on port 7500 of the validator client if you are runni
 The available parameters to customize are:
 
 | Flag                  | Usage                                                                  |
-|-----------------------|:-----------------------------------------------------------------------|
+| --------------------- | :--------------------------------------------------------------------- |
 | `--grpc-gateway-host` | The host for the validator client's JSON-HTTP API, default `127.0.0.1` |
 | `--grpc-gateway-port` | The port for the validator client's JSON-HTTP API, default `7500`      |
 
@@ -140,7 +140,7 @@ If your browser cache was cleared, you're running on a new browser, or validator
 ### HTTP Error Codes
 
 | Error Code | Reason                                                                                                                                                         |
-|------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ---------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 503 or 0   | No server response, services having difficulty communicating, meaning network problems, or services being un available, or even firewalls or adblock settings. |
 | 401        | Unauthorized, requiring to reauthenticate with the special url                                                                                                 |
 | 500        | Internal Server Error, something failed internally in Prysm services                                                                                           |
@@ -178,6 +178,3 @@ for authentication in develop you may use any token in the url query parameter i
 run `npm run start:staging` will run a 'like' production build where the backend expects to be connected to `localhost:7500`. You will need to start the validator client with `--web` but interact with your angular application on `localhost:4200`.
 
 
-import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
-
-<RequestUpdateWidget />

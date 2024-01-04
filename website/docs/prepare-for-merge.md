@@ -10,12 +10,10 @@ import JwtGuidancePartial from '@site/docs/partials/_jwt-guidance-partial.md';
 
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
-<HeaderBadgesWidget commaDelimitedContributors="Mick,Raul,James" lastVerifiedDateString="March 20th, 2023" lastVerifiedVersionString="v4.0.0" />
+<HeaderBadgesWidget commaDelimitedContributors="Raul,James" />
 
-:::info New user?
-
-This guidance is targeted at users who are running a node and/or validator using **pre-Merge configuration**. If you're starting from scratch, see our [Quickstart](./install/install-with-script.md).
-
+:::Caution DEPRECATION NOTICE: Ethereum is post merge, use our quickstart guide.
+   The contents of this document was to help validators using **pre-Merge configuration** to migrate post merge. This is no longer required as Etheruem is already post merge. see our [Quickstart](./install/install-with-script.md) going forward.
 :::
 
 ## Select a configuration
@@ -28,48 +26,48 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
 ## Merge preparation checklist
 
 
-<div class='hide-tabs mergeprep-guide'>
+<div className='hide-tabs mergeprep-guide'>
 
-<div class='checklist'>
-    <div class='task'>
-        <div class='input-container'><input id="cl-1" type='checkbox'/><span class='done'></span></div>
-        <div class='guidance-container'>
-            <label for="cl-1">Use Prysm v4.0.0</label>
+<div className='checklist'>
+    <div className='task'>
+        <div className='input-container'><input id="cl-1" type='checkbox'/><span className='done'></span></div>
+        <div className='guidance-container'>
+            <label htmlFor="cl-1">Use Prysm v4.0.0</label>
             <p>Prysm <a href='https://github.com/prysmaticlabs/prysm/releases/tag/v4.0.0'>v4.0.0</a> supports <strong>post-Merge</strong> configuration.</p>
         </div>
     </div>
-    <div class='task'>
-        <div class='input-container'><input id="cl-5" type='checkbox'/><span class='done'></span></div>
-        <div class='guidance-container'>
-            <label for="cl-5">Unset <code>USE_PRYSM_VERSION</code></label>
+    <div className='task'>
+        <div className='input-container'><input id="cl-5" type='checkbox'/><span className='done'></span></div>
+        <div className='guidance-container'>
+            <label htmlFor="cl-5">Unset <code>USE_PRYSM_VERSION</code></label>
             <p>If you've ever set the <code>USE_PRYSM_VERSION</code> environment variable to use a release candidate, either clear it via <code>UNSET USE_PRYSM_VERSION</code> (Linux/MacOS) or <code>set USE_PRYSM_VERSION=</code> (Windows).</p>
         </div>
     </div>
-        <div class='task'>
-        <div class='input-container'><input id="cl-6" type='checkbox'/><span class='done'></span></div>
-        <div class='guidance-container'>
-            <label for="cl-6">Verify your Prysm version</label>
+        <div className='task'>
+        <div className='input-container'><input id="cl-6" type='checkbox'/><span className='done'></span></div>
+        <div className='guidance-container'>
+            <label htmlFor="cl-6">Verify your Prysm version</label>
             <p>Verify that you're running Prysm <code>v4.0.0</code> by issuing the following command: <code>prysm.sh beacon-chain --version</code> (Linux) <code>prysm.bat beacon-chain --version</code> (Windows).</p>
         </div>
     </div>
-    <div class='task'>
-        <div class='input-container'><input id="cl-2" type='checkbox'/><span class='done'></span></div>
-        <div class='guidance-container'>
-            <label for="cl-2">Review "Before and now"</label>
+    <div className='task'>
+        <div className='input-container'><input id="cl-2" type='checkbox'/><span className='done'></span></div>
+        <div className='guidance-container'>
+            <label htmlFor="cl-2">Review "Before and now"</label>
             <p>The <a href='#the-merge-before-and-now'>Before and now</a> section below gives you a high-level comparison between pre-Merge and post-Merge configuration. See the Ethereum.org <a href='https://blog.ethereum.org/2022/08/24/mainnet-merge-announcement/'>Merge announcement</a> and <a href='https://launchpad.ethereum.org/en/merge-readiness'>Merge readiness checklist</a> for more detailed information.</p>
         </div>
     </div>
-    <div class='task'>
-        <div class='input-container'><input id="cl-prereqs" type='checkbox'/><span class='done'></span></div>
-        <div class='guidance-container'>
-            <label for="cl-prereqs">Review system requirements</label>
+    <div className='task'>
+        <div className='input-container'><input id="cl-prereqs" type='checkbox'/><span className='done'></span></div>
+        <div className='guidance-container'>
+            <label htmlFor="cl-prereqs">Review system requirements</label>
             <p>Review the <a href='#post-merge-system-requirements'>post-Merge system requirements</a> section below. Note that <strong>a 2TB+ SSD is highly recommended</strong>.</p>
         </div>
     </div>
-    <div class='task'>
-        <div class='input-container'><input id="cl-3" type='checkbox'/><span class='done'></span></div>
-        <div class='guidance-container'>
-            <label for="cl-3">Use a Merge-ready version of your execution client</label>
+    <div className='task'>
+        <div className='input-container'><input id="cl-3" type='checkbox'/><span className='done'></span></div>
+        <div className='guidance-container'>
+            <label htmlFor="cl-3">Use a Merge-ready version of your execution client</label>
             <p>
                 <Tabs className="tabgroup-with-label" groupId="execution-clients" defaultValue="geth" values={[
                 {label: 'Execution client:', value: 'label'},
@@ -91,10 +89,10 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
             {label: 'Besu', value: 'besu'}
             ]}>
         <TabItem value="geth">
-            <div class='task'>
-                <div class='input-container'><input id="cl-4" type='checkbox'/><span class='done'></span></div>
-                <div class='guidance-container'>
-                    <label for="cl-4">Update Geth now</label>
+            <div className='task'>
+                <div className='input-container'><input id="cl-4" type='checkbox'/><span className='done'></span></div>
+                <div className='guidance-container'>
+                    <label htmlFor="cl-4">Update Geth now</label>
                     <p>Geth 1.10.22 contains a regression. Update to <a href='https://github.com/ethereum/go-ethereum/releases'>v1.10.23+</a> if you haven't already.</p>
                 </div>
             </div>
@@ -108,34 +106,34 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
         {label: 'IPC', value: 'ipc'}
     ]}>
         <TabItem value="jwt">
-            <div class='task'>
-                <div class='input-container'><input id="cl-7" type='checkbox'/><span class='done'></span></div>
-                <div class='guidance-container'>
-                    <label for="cl-7">Configure JWT</label>
+            <div className='task'>
+                <div className='input-container'><input id="cl-7" type='checkbox'/><span className='done'></span></div>
+                <div className='guidance-container'>
+                    <label htmlFor="cl-7">Configure JWT</label>
                     <p>If you're not using IPC to connect your beacon node and execution node, ensure that both your execution node and beacon node are configured to use JWT authentication. These instructions are included below, and are also available here: <a href='./execution-node/authentication'>Configure JWT</a></p>
                 </div>
             </div>
         </TabItem>
         <TabItem value="ipc"></TabItem>
     </Tabs>
-    <div class='task'>
-        <div class='input-container'><input id="cl-8" type='checkbox'/><span class='done'></span></div>
-        <div class='guidance-container'>
-            <label for="cl-8">Update your firewall</label>
+    <div className='task'>
+        <div className='input-container'><input id="cl-8" type='checkbox'/><span className='done'></span></div>
+        <div className='guidance-container'>
+            <label htmlFor="cl-8">Update your firewall</label>
             <p>If you're not using IPC to connect your beacon node and execution node, your beacon node will need to connect to its execution node on port <code>8551</code>. Previously, port <code>8545</code> was used. If your beacon node and execution node are on different host machines, ensure that your firewall rules are updated accordingly, and refer to <a href='./prysm-usage/p2p-host-ip'>Configure ports and firewalls for improved network connectivity</a> for general connectivity improvement tips.</p>
         </div>
     </div>
-    <div class='task'>
-        <div class='input-container'><input id="cl-9" type='checkbox'/><span class='done'></span></div>
-        <div class='guidance-container'>
-            <label for="cl-9">Configure a fee recipient address</label>
+    <div className='task'>
+        <div className='input-container'><input id="cl-9" type='checkbox'/><span className='done'></span></div>
+        <div className='guidance-container'>
+            <label htmlFor="cl-9">Configure a fee recipient address</label>
             <p>If you're running a validator, configuring a fee recipient address will allow you to earn what were previously miners' transaction fee tips. Instructions are provided below, and also here: <a href='./execution-node/fee-recipient'>Configure a Fee Recipient address</a>.</p>
         </div>
     </div>
-    <div class='task'>
-        <div class='input-container'><input id="cl-expected" type='checkbox'/><span class='done'></span></div>
-        <div class='guidance-container'>
-            <label for="cl-expected">Ensure that Prysm is running as expected</label>
+    <div className='task'>
+        <div className='input-container'><input id="cl-expected" type='checkbox'/><span className='done'></span></div>
+        <div className='guidance-container'>
+            <label htmlFor="cl-expected">Ensure that Prysm is running as expected</label>
             <p>See <a href='./monitoring/checking-status'>Check node and validator status</a> to learn how to check the status of your execution node, beacon node, and validator node.</p>
         </div>
     </div>
@@ -210,6 +208,4 @@ Yes. You also won't have to worry about JWT if you use IPC. See our [Quickstart]
 No - at this time, a full node is required.
 
 
-import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
 
-<RequestUpdateWidget />

@@ -99,6 +99,3 @@ func UpdateBeaconState(currentState *pb.BeaconState, blockCh chan<- *types.Block
 }
 ```
 
-import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
-
-<RequestUpdateWidget />
