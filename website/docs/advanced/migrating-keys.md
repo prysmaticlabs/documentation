@@ -168,7 +168,7 @@ To Identify the account(s) loaded in your validator, issue the following command
 ```sh
 prysm.bat validator accounts list
 ```
-This will produce output in the format of account number, three words seperated by a hyphon (-) and the public keys of each account. The output will be similar to this: 
+This will produce output in the format of account number, three words separated by a hyphen (-) and the public keys of each account. The output will be similar to this: 
 
 ```sh
 Account 0 | three-random-words
@@ -320,7 +320,7 @@ bazel run //validator -- slashing-protection-history import --datadir=/path/to/v
 
 ### Step 5:  Verification and restarting the validator client
 
-It is highly recommended that the validator process on the original, migrated validator is stopped and disabled to ensure it is not restarted automatically or accidently. 
+It is highly recommended that the validator process on the original, migrated validator is stopped and disabled to ensure it is not restarted automatically or accidentally. 
 
 On the original system, with the validator process stopped, remove the account(s) using the process below: 
 
@@ -335,7 +335,7 @@ On the original system, with the validator process stopped, remove the account(s
 ```sh
 prysm.bat validator accounts delete
 ```
-This will produce output in the same format as the list function, three words identifying the account seperated by a hyphon (-) and the public keys of each account, the output will be similar to this: 
+This will produce output in the same format as the list function, three words identifying the account separated by a hyphen (-) and the public keys of each account, the output will be similar to this: 
 
 ```sh
 Use the arrow keys to navigate 

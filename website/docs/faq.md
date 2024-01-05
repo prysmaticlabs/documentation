@@ -221,7 +221,7 @@ Proposing a block is a factor of random chance depending on the number of active
 
 #### Can I get back my ETH? How can I withdraw my validator gains?
 
-Deposits into Ethereum proof-of-stake are one-way in the beginning. Functionality of withdrawing gains transferring ETH won’t be available until Ethereum is fully using proof-of-stake (ETA 2022).
+Yes, as of the capella hardfork partial and full withdrawals of validators is enabled. Please use our [guide to withdraw your validator](./wallet/withdraw-validator.md)
 
 #### Where can I read more about the incentive model in Ethereum proof-of-stake?
 
