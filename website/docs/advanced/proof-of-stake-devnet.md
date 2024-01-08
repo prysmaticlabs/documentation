@@ -19,7 +19,7 @@ This how-to is an updated copy of Raul Jordan's [How to Set Up an Ethereum Proof
 
 With Ethereum having finally transitioned to proof-of-stake, many people are wondering how to set up a local testing environment given so much has changed.
 
-Running nodes has become easier over the past year, with go-ethereum taking around 2 days to sync and some hyper-optimized clients such as Akula or Erigon taking a week to sync an entire, _archival_ node. It is true that setting up a node on mainnet today is easier than ever. However, developers often want to set up their own, local blockchain for testing purposes. We call these **development networks** or **devnets**.
+Running nodes has become easier over the past year, with go-ethereum taking around 2 days to sync and some hyper-optimized clients such as Erigon taking a week to sync an entire, _archival_ node. It is true that setting up a node on mainnet today is easier than ever. However, developers often want to set up their own, local blockchain for testing purposes. We call these **development networks** or **devnets**.
 
 Devnets are critical for developers working on the protocol as well as smart contract developers that want to run their own chain using their own initial state. However, the latter need can be satisfied by tools such as [Foundry](https://github.com/foundry-rs/foundry/) which runs a “simulated” Ethereum environment that is enough for testing many contract interactions.
 
@@ -121,7 +121,7 @@ Clone the go-ethereum repository and build it:
     cd ..
     
 
-You will now have all the executables you need to run the the software for the devnet.
+You will now have all the executables you need to run the software for the devnet.
 
 ### Configuration files
 

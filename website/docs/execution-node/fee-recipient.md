@@ -195,14 +195,6 @@ New property definitions are as follows:
 <img style={{maxWidth: 700 + 'px'}} src={FeeRecipientPng} /> 
 
 Your fee recipient wallet address can also be set through the <a href='../prysm-usage/web-interface'>Web UI</a> dashboard. The Web UI uses the <a href='../how-prysm-works/keymanager-api'>Key Manager APIs</a> to set the fee recipient.
- 
-:::warning Fee Recipient changes from UI/API don't persist on client restart
-
-If you configure your fee recipient wallet address through the web UI or Keymanager APIs, your configuration **will not persist** if you restart your validator client.
-
-See [this issue](https://github.com/prysmaticlabs/prysm/issues/11322) to track the status of configuration persistence, and use the `--proposer-settings-file` or `--proposer-settings-url` flags for persistent validator settings in the meantime.
-
-:::
 
 
 ## Frequently asked questions

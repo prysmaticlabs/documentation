@@ -15,7 +15,7 @@ import BuilderPng from '@site/static/img/builder.png';
 :::caution
 
 This guide is for advanced Prysm users to configure their client for the purposes of extracting [MEV](https://ethereum.org/en/developers/docs/mev/). 
-There are risks to using a builder which may result in missed rewards, missed proposals, censored transactions or omitted transactions. The Prysm team does not provide guidance on which builders/relays are recommended but lists are available for you to make a judgement based on your own values. 
+There are risks to using a builder which may result in missed rewards, missed proposals, censored transactions or omitted transactions. The Prysm team does not provide guidance on which builders/relays are recommended but lists are available for you to make a judgment based on your own values. 
 
 :::
 
@@ -64,10 +64,10 @@ There are risks to using a builder which may result in missed rewards, missed pr
               target="_blank"
               rel="noreferrer noopener">
               builder API
-            </a> for the full payload. When the builder gets the signed blinded block, it broadcasts the signed un-blinded block to the network, <strong>then</strong> it sends back the signed un-blinded block to the proposer.
+            </a> for the full payload. When the builder gets the signed blinded block, it broadcasts the signed un-blinded block to the network, <strong>then</strong> it sends back the signed unblinded block to the proposer.
       </li>
       <li> 
-        Un-blind the block with the full payload: using the response of the builder, the blinded block can be converted into a full block with the full execution payload.
+        Unblind the block with the full payload: using the response of the builder, the blinded block can be converted into a full block with the full execution payload.
       </li>
       <li> 
         Broadcast the full block: the full block at this point is broadcasted to the network.

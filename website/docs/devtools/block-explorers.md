@@ -22,14 +22,12 @@ Offers similar features to beaconcha.in, capable of monitoring 32,000 validators
 
 ## Mirrors and Forks
 
-This sections lists open source mirrors of forks of original, major block explorers. [Redot](https://redot.com) maintains two open-source mirrors that are forks of Bitfly's original work [beaconcha.in](https://beaconcha.in) at
+This sections lists open source mirrors of forks of original, major block explorers.
 
 - [ethscan.org](https://ethscan.org)
-- [eth2.redot.com](https://eth2.redot.com)
 
 Their respective Github repositories are:
 
-- [nobd/ethscan-org](https://github.com/nobd/ethscan-org)
-- [eth2-redot-com](https://github.com/AtlantPlatform/eth2-redot-com)
+- [nobd/ethscan-org](https://github.com/cornucopiaa/ethscan-org)
 
 

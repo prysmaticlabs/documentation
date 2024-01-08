@@ -174,7 +174,7 @@ Prysm's current implementation syncs forward-only. Backfilling will be supported
 Yes. Checkpoint sync is a network-agnostic feature. You can even use it on local devnets.
 
 **Can I use checkpoint sync with an existing, partially synced database?** <br/>
-No - checkpoint sync requires a fresh, unused data directory.
+No - checkpoint sync requires a fresh, unused data directory. If you've partially synced in the past you will have to manually delete your directory and start from scratch, or run the beacon node with the `--clear-db` or `--force-clear-db` option.
 
 **Are there any publicly available, trustworthy checkpoint sync endpoints that I can use?** <br/>
 A [community maintained list](https://eth-clients.github.io/checkpoint-sync-endpoints/) of public Beacon Chain checkpoint sync endpoints is maintained.
