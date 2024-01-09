@@ -129,33 +129,7 @@ You will need configuration files for setting up Prysm and Go-Ethereum.
 
 #### Prysm
 
-On the Prysm side, create a file called `config.yml` in your `devnet` folder containing the following:
-
-    CONFIG_NAME: interop
-    PRESET_BASE: interop
-    
-    # Genesis
-    GENESIS_FORK_VERSION: 0x20000089
-    
-    # Altair
-    ALTAIR_FORK_EPOCH: 2
-    ALTAIR_FORK_VERSION: 0x20000090
-    
-    # Merge
-    BELLATRIX_FORK_EPOCH: 4
-    BELLATRIX_FORK_VERSION: 0x20000091
-    TERMINAL_TOTAL_DIFFICULTY: 50
-
-    # Capella
-    CAPELLA_FORK_VERSION: 0x20000092
-    
-    # Time parameters
-    SECONDS_PER_SLOT: 12
-    SLOTS_PER_EPOCH: 6
-    
-    # Deposit contract
-    DEPOSIT_CONTRACT_ADDRESS: 0x4242424242424242424242424242424242424242
-    
+On the Prysm side, save this [configuration file](https://github.com/rauljordan/eth-pos-devnet/blob/master/consensus/config.yml) as `config.yml` into your `devnet` folder.    
 
 The configuration above contains information about the different hard-fork versions that are required for Prysm to run, and has some custom parameters to make running your devnet easier. It’s important to note that you can change any of these settings as desired. To see the full list of configuration options you can change, see [here](https://docs.prylabs.network/docs/prysm-usage/parameters/).
 ```
