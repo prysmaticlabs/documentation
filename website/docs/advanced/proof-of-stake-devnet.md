@@ -44,13 +44,12 @@ To get started, install [Docker](https://docs.docker.com/get-docker/) and [Docke
 
 Next, clone a repository containing the configuration needed to run a local devnet with Docker here:
 
-    git clone https://github.com/rauljordan/eth-pos-devnet && cd eth-pos-devnet
-    
+    git clone https://github.com/OffchainLabs/eth-pos-devnet && cd eth-pos-devnet
 
 Finally, simply run docker compose inside of the repository above.
 
     docker-compose up -d
-    
+
 
 Boom! Your network is up and running.
 
@@ -82,8 +81,8 @@ Your Prysm beacon node and validator client should also be functional:
 
 This sets up a single node development network with 64 deterministically-generated validator keys to drive the creation of blocks in an Ethereum proof-of-stake chain. Here's how it works:
 
-1.  We initialize a **go-ethereum**, proof-of-work development node from a [genesis config](https://github.com/rauljordan/eth-pos-devnet/blob/master/execution/genesis.json)
-2.  We initialize a **Prysm beacon chain**, proof-of-stake development node from a [genesis config](https://github.com/rauljordan/eth-pos-devnet/blob/master/consensus/config.yml)
+1.  We initialize a **go-ethereum**, proof-of-work development node from a [genesis config](https://github.com/OffchainLabs/eth-pos-devnet/blob/master/execution/genesis.json)
+2.  We initialize a **Prysm beacon chain**, proof-of-stake development node from a [genesis config](https://github.com/OffchainLabs/eth-pos-devnet/blob/master/consensus/config.yml)
 3.  We then start mining in **go-ethereum**, and concurrently run proof-of-stake using Prysm
 4.  Once the mining difficulty of the go-ethereum node reaches 50, the **node switches to proof-of-stake mode** by letting Prysm drive the consensus of blocks
 
@@ -133,33 +132,38 @@ On the Prysm side, create a file called `config.yml` in your `devnet` folder con
 
     CONFIG_NAME: interop
     PRESET_BASE: interop
-    
+
     # Genesis
     GENESIS_FORK_VERSION: 0x20000089
-    
+
     # Altair
-    ALTAIR_FORK_EPOCH: 2
+    ALTAIR_FORK_EPOCH: 0
     ALTAIR_FORK_VERSION: 0x20000090
-    
+
     # Merge
-    BELLATRIX_FORK_EPOCH: 4
+    BELLATRIX_FORK_EPOCH: 0
     BELLATRIX_FORK_VERSION: 0x20000091
-    TERMINAL_TOTAL_DIFFICULTY: 50
+    TERMINAL_TOTAL_DIFFICULTY: 0
 
     # Capella
+    CAPELLA_FORK_EPOCH: 0
     CAPELLA_FORK_VERSION: 0x20000092
-    
+    MAX_WITHDRAWALS_PER_PAYLOAD: 16
+
+    # Deneb
+    DENEB_FORK_VERSION: 0x20000093
+
     # Time parameters
     SECONDS_PER_SLOT: 12
     SLOTS_PER_EPOCH: 6
-    
+
     # Deposit contract
     DEPOSIT_CONTRACT_ADDRESS: 0x4242424242424242424242424242424242424242
     
 
 The configuration above contains information about the different hard-fork versions that are required for Prysm to run, and has some custom parameters to make running your devnet easier. It’s important to note that you can change any of these settings as desired. To see the full list of configuration options you can change, see [here](https://docs.prylabs.network/docs/prysm-usage/parameters/).
 ```
-NOTICE: The config will need to be updated for each hard-fork.
+NOTICE: The config will need to be updated for each hard-fork. If the above configuration is outdated you can copy the latest `config.yml` from [here](https://github.com/OffchainLabs/eth-pos-devnet/blob/master/consensus/config.yml).
 ```
 
 
@@ -187,9 +191,7 @@ Next, we will start by running **go-ethereum** in our `devnet` folder:
 
 The last command will ask you to input a password for your secret key. You can just hit enter twice to leave it empty. Next, run geth using the command below
 
-    ./geth --http --http.api "eth,engine" --datadir=gethdata --allow-insecure-unlock --unlock="0x123463a4b065722e99115d6c222f267d9cabb524" --password="" --nodiscover console --syncmode=full --mine --miner.etherbase=0x123463a4b065722e99115d6c222f267d9cabb524
-    
-`miner.etherbase` can be any Ethereum address, in this case we just use the same address `0x123463a4b065722e99115d6c222f267d9cabb524` as it is an example. For more information about geth you can consult the documentation [here](https://geth.ethereum.org/docs).
+    ./geth --http --http.api "eth,net,web3" --datadir=gethdata --allow-insecure-unlock --unlock="0x123463a4b065722e99115d6c222f267d9cabb524" --password="" --nodiscover console --syncmode=full
 
 You can check the ETH balance in the geth console by typing in
 
@@ -199,7 +201,7 @@ You can check the ETH balance in the geth console by typing in
 
 We will then need to run a Prysm beacon node and a validator client. Prysm will need a **genesis state** which is essentially some data that tells it the initial set of validators. We will be creating a genesis state from a deterministic set of keys below:
 
-    ./prysmctl testnet generate-genesis --num-validators=64 --output-ssz=genesis.ssz --chain-config-file=config.yml --override-eth1data=true
+    ./prysmctl testnet generate-genesis --fork=capella --num-validators=64 --genesis-time-delay=15 --output-ssz=genesis.ssz --chain-config-file=config.yml
     
 More information about `prysmctl` and all available commands can be found [here](https://docs.prylabs.network/docs/prysm-usage/prysmctl).
 
@@ -210,14 +212,17 @@ This will out a file `genesis.ssz` in your `devnet` folder. Now, run the Prysm b
       --min-sync-peers=0 \
       --genesis-state=genesis.ssz \
       --bootstrap-node= \
+      --interop-eth1data-votes \
       --chain-config-file=config.yml \
       --config-file=config.yml \
       --chain-id=32382 \
       --execution-endpoint=http://localhost:8551 \
       --accept-terms-of-use \
       --jwt-secret=gethdata/geth/jwtsecret \
-      --contract-deployment-block=0
-    
+      --contract-deployment-block=0 \
+      --suggested-fee-recipient=0x123463a4b065722e99115d6c222f267d9cabb524 \
+      --minimum-peers-per-subnet=0 \
+      --enable-debug-rpc-endpoints \
 
 and the Prysm validator client soon after:
 
@@ -226,9 +231,7 @@ and the Prysm validator client soon after:
       --accept-terms-of-use \
       --interop-num-validators=64 \
       --interop-start-index=0 \
-      --force-clear-db \
       --chain-config-file=config.yml \
-      --config-file=config.yml
     
 
 ### Expected output
