@@ -187,7 +187,7 @@ Clone the go-ethereum repository and build it:
     cd ..
     
 
-You will now have all the executables you need to run the the software for the devnet.
+You will now have all the executables you need to run the software for the devnet.
 
 ### Configuration files
 
