@@ -431,7 +431,7 @@ Now let's check again the balance of the source and the target account.
 - The source account should now contain `19.999 ETH` (minus fees paid for the transaction)
 - The target account should now contain exactly `1 ETH`.
 
-### Send ETH using Metamask
+### Send ETH using MetaMask
 
 You need to import the private key corresponding to the `0x123463a4b065722e99115d6c222f267d9cabb524` address into MetaMask.
 
@@ -456,7 +456,7 @@ You can see you have 0 ETH instead of the 20.000 ETH expected. We need to connec
 
 Fill the fields as following:
 - `Network name`: `Personnal ETH devnet` (This is informative, choose what you want.)
-- `New RPC URL`: `http://localhost:8545` (This will connect Metamask to your local go-ethereum instance to submit transactions.)
+- `New RPC URL`: `http://localhost:8545` (This will connect MetaMask to your local go-ethereum instance to submit transactions.)
 - `Chain ID`: `32382` (This must be the same that the one in the `config.ChainId` in the `genesis.json` file)
 - `Currency symbol`: `pdETH` (For personal devnet ETH. This is informative, choose what you want.)
 

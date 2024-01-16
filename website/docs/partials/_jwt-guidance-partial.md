@@ -4,7 +4,7 @@ import JwtGenerationPartial from '@site/docs/partials/_jwt-generation-partial.md
 
 <JwtGenerationPartial />
 
-## Configure execution node
+## Configure an execution node
 
 Your execution node needs to **expose a new port** and then **use the JWT token** to authenticate your beacon node's connection to that port.
 
