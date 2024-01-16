@@ -19,7 +19,7 @@ example:
 --validators-external-signer-url=http://localhost:9000
 ```
 
-It is recommended to use `https`` for the Web3Signer url. Prysm currently supports one to one on Web3Signer and does not support multiple key management systems with the same validator client. Prysm does not support partial local and partial remote key management. Web3signer does not support authentication between the validator client and the signer.
+It is recommended to use `https` for the Web3Signer url. Prysm currently supports one to one on Web3Signer and does not support multiple key management systems with the same validator client. Prysm does not support partial local and partial remote key management. Web3signer does not support authentication between the validator client and the signer.
 
 
 - `--validators-external-signer-public-keys`: Comma separated list of public validator keys in hex format or an external url endpoint for the validator to retrieve public keys in JSON format.
