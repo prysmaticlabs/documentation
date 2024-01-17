@@ -114,7 +114,7 @@ import TabItem from '@theme/TabItem';
   </TabItem>
 </Tabs>
 
-<div className='hidden-in-jwt-guide hidden-in-mergeprep-guide'>
+<div>
 
 Syncing from a checkpoint usually takes a couple of minutes. See [Sync from a checkpoint](../../prysm-usage/checkpoint-sync.md) for more information about this feature.
 
@@ -127,15 +127,15 @@ Syncing from a checkpoint usually takes a couple of minutes. See [Sync from a ch
     <TabItem value="mainnet">
       If you wish to sync from genesis, you need to remove <code>--checkpoint-sync-url</code> and <code>--genesis-beacon-api-url</code> flags from the previous command. Syncing from genesis usually takes a couple days, but it can take longer depending on your network and hardware specs.
     </TabItem>
-    <TabItem value="Goerli">
+    <TabItem value="goerli">
       If you wish to sync from genesis, you need to remove <code>--checkpoint-sync-url</code> and <code>--genesis-beacon-api-url</code> flags from the previous command and add the <code>--genesis-state=genesis.ssz</code> flag. Syncing from genesis usually takes a couple days, but it can take longer depending on your network and hardware specs.
       Download the <a href='https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz'>Goerli genesis state from Github</a> into your <code>consensus</code> directory.
     </TabItem>
-    <TabItem value="Sepolia">
+    <TabItem value="sepolia">
       If you wish to sync from genesis, you need to remove <code>--checkpoint-sync-url</code> and <code>--genesis-beacon-api-url</code> flags from the previous command and add the <code>--genesis-state=genesis.ssz</code> flag. Syncing from genesis usually takes a couple days, but it can take longer depending on your network and hardware specs.
       Download the <a href='https://github.com/eth-clients/merge-testnets/blob/main/sepolia/genesis.ssz'>Sepolia genesis state from Github</a> into your <code>consensus</code> directory.
     </TabItem>
-     <TabItem value="Holesky">
+     <TabItem value="holesky">
       If you wish to sync from genesis, you need to remove <code>--checkpoint-sync-url</code> and <code>--genesis-beacon-api-url</code> flags from the previous command and add the <code>--genesis-state=genesis.ssz</code> flag. Syncing from genesis usually takes a couple days, but it can take longer depending on your network and hardware specs.
       Download the <a href='https://github.com/eth-clients/holesky/blob/main/custom_config_data/genesis.ssz'>Holesky genesis state from Github</a> into your <code>consensus</code> directory.
     </TabItem>
@@ -144,6 +144,6 @@ Syncing from a checkpoint usually takes a couple of minutes. See [Sync from a ch
 If you are planning to run a validator, it is <strong>strongly</strong> advised to use the <code>--suggested-fee-recipient=<WALLET ADDRESS\></code> option. When your validator proposes a block, it will allow you to earn block priority fees, also sometimes called "tips".
 
 
-<p className="hidden-in-mergeprep-guide">Congratulations - you’re now running a <strong>full Ethereum node</strong>. To check the status of your node, visit <a href='https://docs.prylabs.network/docs/monitoring/checking-status'>Check node and validator status</a>.</p>
+<p>Congratulations - you’re now running a <strong>full Ethereum node</strong>. To check the status of your node, visit <a href='https://docs.prylabs.network/docs/monitoring/checking-status'>Check node and validator status</a>.</p>
 
 </div>
