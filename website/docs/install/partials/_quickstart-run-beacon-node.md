@@ -129,15 +129,15 @@ Syncing from a checkpoint usually takes a couple of minutes. See [Sync from a ch
     </TabItem>
     <TabItem value="goerli">
       If you wish to sync from genesis, you need to remove <code>--checkpoint-sync-url</code> and <code>--genesis-beacon-api-url</code> flags from the previous command and add the <code>--genesis-state=genesis.ssz</code> flag. Syncing from genesis usually takes a couple days, but it can take longer depending on your network and hardware specs.
-      Download the <a href='https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz'>Goerli genesis state from Github</a> into your <code>consensus</code> directory.
+      Download the <a href='https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz'>Goerli genesis.ssz from Github</a> into your <code>consensus</code> directory.
     </TabItem>
     <TabItem value="sepolia">
       If you wish to sync from genesis, you need to remove <code>--checkpoint-sync-url</code> and <code>--genesis-beacon-api-url</code> flags from the previous command and add the <code>--genesis-state=genesis.ssz</code> flag. Syncing from genesis usually takes a couple days, but it can take longer depending on your network and hardware specs.
-      Download the <a href='https://github.com/eth-clients/merge-testnets/blob/main/sepolia/genesis.ssz'>Sepolia genesis state from Github</a> into your <code>consensus</code> directory.
+      Download the <a href='https://github.com/eth-clients/merge-testnets/blob/main/sepolia/genesis.ssz'>Sepolia genesis.ssz from Github</a> into your <code>consensus</code> directory.
     </TabItem>
      <TabItem value="holesky">
       If you wish to sync from genesis, you need to remove <code>--checkpoint-sync-url</code> and <code>--genesis-beacon-api-url</code> flags from the previous command and add the <code>--genesis-state=genesis.ssz</code> flag. Syncing from genesis usually takes a couple days, but it can take longer depending on your network and hardware specs.
-      Download the <a href='https://github.com/eth-clients/holesky/blob/main/custom_config_data/genesis.ssz'>Holesky genesis state from Github</a> into your <code>consensus</code> directory.
+      Download the <a href='https://github.com/eth-clients/holesky/blob/main/custom_config_data/genesis.ssz'>Holesky genesis.ssz from Github</a> into your <code>consensus</code> directory.
     </TabItem>
 </Tabs>
 
