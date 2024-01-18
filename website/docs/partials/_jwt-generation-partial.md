@@ -39,6 +39,15 @@ USE_PRYSM_VERSION=v4.0.0
 
 Prysm will output a `jwt.hex` file path.
 
+Move your `jwt.hex` file in your `ethereum` directory:
+
+```
+📂ethereum
+┣ 📂consensus
+┣ 📂execution
+┣ 📄jwt.hex
+```
+
 
 
 :::caution

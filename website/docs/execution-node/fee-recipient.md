@@ -20,13 +20,13 @@ If you don't configure your fee recipient wallet address, your priority fee earn
 
 **Fee Recipient** is a feature that lets you specify a priority fee recipient address on your validator client instance and beacon node.
 
-Your fee recipient wallet address is a **standard Ethereum wallet address**, just like the wallet address used when sending and receiving tokens from Metamask. Execution clients deposit priority fees into this address whenever your validator client proposes a new block.
+Your fee recipient wallet address is a **standard Ethereum wallet address**, just like the wallet address used when sending and receiving tokens from MetaMask. Execution clients deposit priority fees into this address whenever your validator client proposes a new block.
 
 ## Background
 
 When users pay gas to submit transactions to the Ethereum network, they can specify a **priority fee**. Priority fees are like tips. End-users pay priority fees to incentivize block proposers to prioritize the inclusion of particular transactions in the blocks that they propose.
 
-Priority fees are captured by execution clients in the execution layer <a className="footnote" href='#footnote-2'>[2]</a>, so validator clients need to tell execution clients where to forward the fees. This "forwarding address" is referred to as your **fee recipient** wallet address.
+Priority fees are captured by execution clients in the execution layer <a className="footnote" href='#footnote-1'>[1]</a>, so validator clients need to tell execution clients where to forward the fees. This "forwarding address" is referred to as your **fee recipient** wallet address.
 
 
 ## Configure fee recipient
@@ -38,15 +38,25 @@ Your fee recipient wallet address can be configured on your **validator client i
 
 Your fee recipient wallet address can be configured on both your beacon node and validator through the `--suggested-fee-recipient` flag:
 
- - **Beacon node**: `./prysm.sh beacon-chain --suggested-fee-recipient=<WALLET ADDRESS>`
- - **Validator**: `./prysm.sh validator --suggested-fee-recipient=<WALLET ADDRESS>`
+ **Beacon node:** 
 
-For example: `./prysm.sh validator --suggested-fee-recipient=0xCHANGEME012345c769F504hs287200aF50400a`.
+    ./prysm.sh beacon-chain --suggested-fee-recipient=<WALLET ADDRESS>
+
+
+ **Validator client:**
+ 
+    ./prysm.sh validator --suggested-fee-recipient=<WALLET ADDRESS>
+
+
+
+For example:
+
+    ./prysm.sh validator --suggested-fee-recipient=0xCHANGEME012345c769F504hs287200aF50400a
 
 If your validator is running multiple keys (for example, staking 64 ETH using two validator public keys that have been imported into a single validator client instance), all validator public keys will use the wallet address specified through the `--suggested-fee-recipient` flag. You can optionally associate different fee recipient wallet addresses to individual validator public keys using the JSON/YAML configuration method detailed in the following section.
 
 
-### Configure fee recipient via JSON/YAML (validator only)
+### Configure fee recipient via JSON/YAML (validator client only)
 
 You can assign different wallet addresses to each of your validator public keys using JSON/YAML configuration. Fee recipient address assignments specified through JSON/YAML override those configured through the `--suggested-fee-recipient` flag. This method of configuration uses the following JSON/YAML schema:
 
@@ -195,14 +205,6 @@ New property definitions are as follows:
 <img style={{maxWidth: 700 + 'px'}} src={FeeRecipientPng} /> 
 
 Your fee recipient wallet address can also be set through the <a href='../prysm-usage/web-interface'>Web UI</a> dashboard. The Web UI uses the <a href='../how-prysm-works/keymanager-api'>Key Manager APIs</a> to set the fee recipient.
- 
-:::warning Fee Recipient changes from UI/API don't persist on client restart
-
-If you configure your fee recipient wallet address through the web UI or Keymanager APIs, your configuration **will not persist** if you restart your validator client.
-
-See [this issue](https://github.com/prysmaticlabs/prysm/issues/11322) to track the status of configuration persistence, and use the `--proposer-settings-file` or `--proposer-settings-url` flags for persistent validator settings in the meantime.
-
-:::
 
 
 ## Frequently asked questions
@@ -225,9 +227,4 @@ This is an advanced configuration property related to custom builders (MEV) that
 
 Footnotes:
 
-<strong id="footnote-1">1.</strong> The <a href='https://github.com/ethereum/consensus-specs/blob/master/specs/bellatrix/validator.md#block-proposal'>Bellatrix -- Honest Validator spec</a> contains Fee Recipient implementation details pertaining to validator clients. The <a href='https://github.com/ethereum/consensus-specs/blob/master/specs/bellatrix/beacon-chain.md#executionpayload'>Bellatrix -- The Beacon Chain spec</a> contains Fee Recipient implementation details pertaining to beacon nodes. <br /><br />
-
-<strong id="footnote-1">2.</strong> See <a href='../concepts/nodes-networks'>Nodes and Networks</a> for a quick refresher on the fundamentals of Ethereum nodes. <br />
-
-
-
+<strong id="footnote-1">1.</strong> See <a href='../concepts/nodes-networks'>Nodes and Networks</a> for a quick refresher on the fundamentals of Ethereum nodes. <br /><br />
