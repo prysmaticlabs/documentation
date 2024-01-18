@@ -150,7 +150,7 @@ Run the following command to create your mnemonic (a unique and <strong>highly s
     <p>Exercise extreme caution throughout this procedure - <strong>never send real ETH to the testnet deposit contract.</strong></p>
   </TabItem>
 </Tabs>
-<p>Finally, run the following command to start your validator, replacing <code>&lt;YOUR_FOLDER_PATH&gt;</code> with the full path to your <code>consensus</code> folder and <code>&lt;YOUR_WALLET_ADDRESS&gt;</code> by the adress of a wallet you own. When your validator proposes a block, it will allow you to earn block priority fees, also sometimes called "tips". See <a href='../execution-node/fee-recipient'>How to configure Fee Recipient</a> for more information about this feature:</p>
+<p>Finally, run the following command to start your validator, replacing <code>&lt;YOUR_FOLDER_PATH&gt;</code> with the full path to your <code>consensus</code> folder and <code>&lt;YOUR_WALLET_ADDRESS&gt;</code> by the address of a wallet you own. When your validator proposes a block, it will allow you to earn block priority fees, also sometimes called "tips". See <a href='../execution-node/fee-recipient'>How to configure Fee Recipient</a> for more information about this feature:</p>
 
 <Tabs groupId="os" defaultValue="others" values={[
     {label: 'Windows', value: 'win'},
@@ -200,7 +200,7 @@ Run the following command to create your mnemonic (a unique and <strong>highly s
   </TabItem>
 </Tabs>
 
-<p>You may wonder why you need to use the <code>--suggested-fee-recipient</code> in both beacon node and validator client. The reason is it is possible to plug multiple validator clients the the same beacon node. If no <code>--suggested-fee-recipient</code> is set on a validator client, then the beacon node will fallback on its own <code>--suggested-fee-recipient</code> when proposing a block.</p>
+<p>You may wonder why you need to use the <code>--suggested-fee-recipient</code> in both beacon node and validator client. The reason is it is possible to plug multiple validator clients to the same beacon node. If no <code>--suggested-fee-recipient</code> is set on a validator client, then the beacon node will fallback on its own <code>--suggested-fee-recipient</code> when proposing a block.</p>
 <p>If no <code>--suggested-fee-recipient</code> is set neither on the validator client nor on the beacon node, the corresponding tips will be sent to the burn address, and forever lost,</p>
 
 :::tip Congratulations! 

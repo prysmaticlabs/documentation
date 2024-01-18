@@ -246,7 +246,7 @@ default beacon node REST `<node-url>` is `http://localhost:3500` aka `http://127
 :::
 
 Open a terminal in the location where you downloaded the prysmctl binaries, rename the file to prysmctl, and run the following command.
-Some users will need to give permissions to the the downloaded binaries to be executable. Linux users can do this by right clicking the file, going to permissions, and clicking the `Allow executing file as program` checkmark. This may be different for each operating system.
+Some users will need to give permissions to the downloaded binaries to be executable. Linux users can do this by right clicking the file, going to permissions, and clicking the `Allow executing file as program` checkmark. This may be different for each operating system.
 
 ```jsx
 ./prysmctl validator withdraw --beacon-node-host=<node-url> --path=<bls_to_execution_changes-*.json>
