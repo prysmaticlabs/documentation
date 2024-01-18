@@ -9,10 +9,10 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <HeaderBadgesWidget />
 
-Prysm supports the official [Eth Beacon Node API specification](https://ethereum.github.io/beacon-APIs/), the official API standard developed by the Ethereum R&D team. The specification describes a RESTful set of endpoints which should be implemented by an Eth beacon node or a third-party service. This reduces the overhead of having to learn a new set of APIs when trying out a different client, and it allows network participants to reliably talk to each other over HTTP. As an example of an external service implementing the spec, Infura's beacon chain API is described [here](https://infura.io/docs/eth2#tag/Beacon).
+Prysm supports the official [Eth Beacon Node API specification](https://ethereum.github.io/beacon-APIs/), the official API standard developed by the Ethereum R&D team. The specification describes a RESTful set of endpoints which should be implemented by an ETH beacon node or a third-party service. This reduces the overhead of having to learn a new set of APIs when trying out a different client, and it allows network participants to reliably talk to each other over HTTP.
 
 :::caution The official Ethereum specification contains multiple definitions
-As of the time of writing, there are three definitions: [v1](https://ethereum.github.io/beacon-APIs/?urls.primaryName=v1), [v2.0.0](https://ethereum.github.io/beacon-APIs/) and [dev](https://ethereum.github.io/beacon-APIs/?urls.primaryName=dev). `dev` is an unstable version and supporting it is **not** to be expected.
+As of the time of writing, there are three definitions: [v1](https://ethereum.github.io/beacon-APIs/?urls.primaryName=v1), [v2.x.x](https://ethereum.github.io/beacon-APIs/) and [dev](https://ethereum.github.io/beacon-APIs/?urls.primaryName=dev). `dev` is an unstable version and supporting it is **not** to be expected.
 :::
 
 ## Performing requests against a local Prysm node
@@ -37,6 +37,3 @@ By default the beacon node runs with all available set of APIs enabled. You migh
 If you're experiencing timeouts when using endpoints that require passing a `state_id`, such as `/eth/v1/beacon/states/{state_id}/validators`, and you pass in a state more than a few epochs in the past, consider lowering the value of the `--slots-per-archive-point` flag. The smaller the value, the faster it is to fetch states. For historical state fetching we recommend setting the value to `64` or even `32`. Mind you that decreasing the value will result in the beacon DB taking much more space. Unfortunately there's a trade-off between speed and storage size.
 
 
-import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
-
-<RequestUpdateWidget />

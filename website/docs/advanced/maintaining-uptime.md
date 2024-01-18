@@ -57,6 +57,3 @@ User=YOUR_USER
 WantedBy=default.target
 ```
 
-import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
-
-<RequestUpdateWidget />

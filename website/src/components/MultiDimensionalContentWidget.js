@@ -1,60 +1,58 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 
 export const MultiDimensionalContentWidget = () => {
-
 	let getAllTabElements = function () {
 		var tabElements = document.querySelectorAll('.quickstart-tabs .tabs__item');
 		return tabElements;
-	}
+	};
 
 	let getByText = function (text) {
 		var allElements = getAllTabElements();
 		var selectedElement;
-		// docusaurus seems to be stripping away some array extensions like find()...
 		allElements.forEach(el => {
 			if (el.innerHTML == text) {
 				selectedElement = el;
 			}
-		})
+		});
 		return selectedElement;
-	}
+	};
 
 	let disableByText = function (text) {
 		var targetElement = getByText(text);
 		targetElement.classList.add('disabled-tab');
-	}
+	};
 
 	let enableByText = function (text) {
 		var targetElement = getByText(text);
 		targetElement.classList.remove('disabled-tab');
-	}
+	};
 
 	let selectByText = function (text) {
 		console.log("selecting " + text + '...');
 		var targetElement = getByText(text);
 		targetElement.click();
-	}
+	};
 
 	let isSelectedByText = function (text) {
 		var targetElement = getByText(text);
 		var isSelected = targetElement.classList.contains('tabs__item--active');
 		return isSelected;
-	}
+	};
 
 	let jwtOnly = function () {
 		var isOnAuthPage = window.location.href.indexOf('/authentication') > -1;
 		return isOnAuthPage;
-	}
+	};
 
 	let isViewingMergePrep = function () {
 		var isOnMergePrepPage = window.location.href.indexOf('/prepare-for-merge') > -1;
 		return isOnMergePrepPage;
-	}
+	};
 
 	let scrollDownASmidge = function () {
-		window.scrollBy(0, 10)
-	}
+		window.scrollBy(0, 10);
+	};
 
 	let toggleUpdated = function (element) {
 		var parent = element.parentElement;
@@ -62,8 +60,8 @@ export const MultiDimensionalContentWidget = () => {
 		parent.classList.add('updated');
 		setTimeout(function () {
 			parent.classList.remove('updated');
-		}, 2000)
-	}
+		}, 2000);
+	};
 
 	let stashConfig = function () {
 		var selectedOS, selectedNetwork, selectedEL, selectedENBN;
@@ -75,10 +73,12 @@ export const MultiDimensionalContentWidget = () => {
 
 		if (isSelectedByText('Mainnet'))
 			selectedNetwork = "Mainnet";
-		else if (isSelectedByText('Goerli-Prater'))
-			selectedNetwork = "Goerli-Prater";
+		else if (isSelectedByText('Goerli'))
+			selectedNetwork = "Goerli";
 		else if (isSelectedByText('Sepolia'))
 			selectedNetwork = "Sepolia";
+		else if (isSelectedByText('Holesky'))
+			selectedNetwork = "Holesky"
 
 		if (isSelectedByText('Geth'))
 			selectedEL = "Geth";
@@ -97,12 +97,13 @@ export const MultiDimensionalContentWidget = () => {
 		tabWidget.dataset.selectedNetwork = selectedNetwork;
 		tabWidget.dataset.selectedEL = selectedEL;
 		tabWidget.dataset.selectedENBN = selectedENBN;
-	}
+	};
 
 	let bindTabs = function () {
 		setTimeout(function () {
 			if (jwtOnly()) {
-				setTimeout(function () { selectByText('HTTP-JWT'); stashConfig(); }, 50)
+				// hack to make sure the tabs are rendered before we try to manipulate them
+				setTimeout(function () { selectByText('HTTP-JWT'); stashConfig(); }, 50);
 				disableByText('IPC');
 			}
 
@@ -111,7 +112,6 @@ export const MultiDimensionalContentWidget = () => {
 				var isLabel = element.textContent.indexOf(":") > -1;
 
 				if (isLabel) {
-					// unbind so tab can't be selected
 					element.outerHTML = element.outerHTML;
 				} else {
 					element.addEventListener("click", function (event) {
@@ -127,7 +127,7 @@ export const MultiDimensionalContentWidget = () => {
 							enableByText('IPC');
 						} else if (textContent == 'IPC') {
 							if (jwtOnly()) {
-								setTimeout(function () { selectByText('HTTP-JWT'); }, 50)
+								setTimeout(function () { selectByText('HTTP-JWT'); }, 50);
 								disableByText('IPC');
 							} else {
 								if (isSelectedByText('Besu')) {
@@ -141,16 +141,18 @@ export const MultiDimensionalContentWidget = () => {
 
 						toggleUpdated(targetElement);
 						stashConfig();
-					}, false)
+					}, false);
 				}
 			});
 			stashConfig();
-		}, 100)
-	}
+		}, 100);
+	};
 
-	return (
-		<BrowserOnly>
-			{() => { bindTabs() }}
-		</BrowserOnly>
-	);
+	useEffect(() => {
+		if (typeof window !== 'undefined') {
+			bindTabs();
+		}
+	}, []);
+
+	return null;
 };

@@ -33,13 +33,13 @@ This is the log that most users will want to keep track, the typical log reads a
 ```shell
 INFO monitor  "Attestation included" BalanceChange=12652 CorrectHead=true CorrectSource=true CorrectTarget=true Head=0x68656c6c6f2d InclusionSlot=9433 NewBalance=32230000000 Slot=9432 Source=0x68656c6c6f2d Target=0x68656c6c6f2d ValidatorIndex=2
 ```
-It informs us that an attestation by validator 2 was included. The balance change between the previous reported balance changing event and this event was 12652 GWei. It also shows the current balance of this validator. This attestation voted correctly and timely for Head, Source and Target. It gives us the leading digits of the hashes for Head, Source and Target blocks. it tells us what is the slot in which this attestation was included (9433) and the slot that the validator attested for (9432). Thus, this attestation had an inclusion distance of 1.
+It informs us that an attestation by validator 2 was included. The balance change between the previous reported balance changing event and this event was 12652 GWei. It also shows the current balance of this validator. This attestation voted correctly and timely for Head, Source and Target. It gives us the leading digits of the hashes for Head, Source and Target blocks. It tells us what is the slot in which this attestation was included (9433) and the slot that the validator attested for (9432). Thus, this attestation had an inclusion distance of 1.
 
 Associated to this event, the monitor emits the following metrics
-- inclusion_slot: a gauge vector of all the inclusion slots of attestations.
-- timely_head:  a counter of correctly and timely voted head attestations.
-- timely_target: a counter of correctly and timely voted target.
-- timely_source: a counter of correctly and timely voted source.
+- `inclusion_slot`: A gauge vector of all the inclusion slots of attestations.
+- `timely_head`:  A counter of correctly and timely voted head attestations.
+- `timely_target`: A counter of correctly and timely voted target.
+- `timely_source`: A counter of correctly and timely voted source.
 
 These metrics are parameterized by validator index, not public key as you may be used to from the validator client metrics.
 
@@ -55,7 +55,7 @@ In the event that one of the tracked validators was slashed, the monitor will lo
 ```shell
 INFO monitor "Proposer slashing was included" ProposerIndex=2 Root1=0xae219327ef71 Root2=0x92120efa2ae3 SlashingSlot=122931 Slot=122942
 ```
-here `SlashingSlot` indicates the slot in which the proposer had two different blocks proposed. The field  `Slot` is the slot in which the slashing was included.
+Here `SlashingSlot` indicates the slot in which the proposer had two different blocks proposed. The field  `Slot` is the slot in which the slashing was included.
 and for attester slashings:
 ```shell
 INFO monitor "Attester slashing was included" AttesterIndex=15 Root1=0x483eaf932ef1 Root2=0x921843eca827 Slot=12042 Slot1=12039 Slot2=11803 SourceEpoch1=367 SourceEpoch2=368 TargetEpoch1=370 TargetEpoch2=369
@@ -109,6 +109,3 @@ The field `AttestationInclusion` reports the percentage of attestations that hav
 
 The validator monitor does not keep a history of performance, it only tracks the *latest event* and keeps an aggregated total of performance. The *balance changing events* are attestation inclusion, proposed blocks inclusion and sync committee inclusion. When the monitor reports a field `BalanceChange` it means the difference between the balance right after processing the block that triggered the event, and the balance after the previous balance changing event. In particular, when an attestation is included the balance is not changed by the included attestation since attestation reward is given at epoch transition. Therefore the balance change reported, assuming no other events like sync committee contributions and block proposals were reported during the epoch, refers to the reward given by the *previous* attestation. 
 
-import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
-
-<RequestUpdateWidget />

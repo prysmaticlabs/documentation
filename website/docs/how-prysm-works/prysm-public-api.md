@@ -62,12 +62,12 @@ message Message {
 This enables an HTTP REST to gRPC mapping, as shown below:
 
 | HTTP                      | gRPC                                  |
-|:--------------------------|:--------------------------------------|
+| :------------------------ | :------------------------------------ |
 | `GET /v1/messages/123456` | `GetMessage(name: "messages/123456")` |
 
 ### JSON mapping
 
-The majority of field primitive types for Ethereum are either `bytes` or `uint64`. The canonical JSON mapping for those fields are a Base64 encoded string for `bytes`, or a string representation of `uint64`. Since JavaScript loses precision for values over [MAX\_SAFE\_INTEGER](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_SAFE_INTEGER), uint64 must be a JSON string in order to accommodate those values. If the field value has not changed and is still set to protobuf's default, this field will be omitted from the JSON encoding entirely.
+The majority of field primitive types for Ethereum are either `bytes` or `uint64`. The canonical JSON mapping for those fields are a Base64 encoded string for `bytes`, or a string representation of `uint64`. Since JavaScript loses precision for values over [MAX\_SAFE\_INTEGER](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_SAFE_INTEGER), `uint64` must be a JSON string in order to accommodate those values. If the field value has not changed and is still set to protobuf's default, this field will be omitted from the JSON encoding entirely.
 
 For more details on JSON mapping for other types, view the relevant section in the [proto3 language guide](https://developers.google.com/protocol-buffers/docs/proto3#json).
 
@@ -75,10 +75,7 @@ For more details on JSON mapping for other types, view the relevant section in t
 
 * [Awesome gRPC](https://github.com/grpc-ecosystem/awesome-grpc)
 * [Google's API Style Guide](https://cloud.google.com/apis/design/)
-* [Language reference for protoc3](https://developers.google.com/protocol-buffers/docs/proto3)
+* [Language reference for proto 3](https://developers.google.com/protocol-buffers/docs/proto3)
 * [Protocol Buffer Basics: Go](https://developers.google.com/protocol-buffers/docs/gotutorial)
 * [Transcoding gRPC to JSON/HTTP using Envoy](https://blog.jdriven.com/2018/11/transcoding-grpc-to-http-json-using-envoy/)
 
-import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
-
-<RequestUpdateWidget />

@@ -10,7 +10,7 @@
     },
     {
       "type": "doc",
-      "id": "prepare-for-merge"
+      "id": "wallet/withdraw-validator"
     },
     {
       "type": "doc",
@@ -61,6 +61,10 @@
         {
           "type": "doc",
           "id": "execution-node/configuring-for-prysm"
+        },
+        {
+          "type": "doc",
+          "id": "advanced/builder"
         },
         {
           "type": "doc",
@@ -119,10 +123,6 @@
             {
               "type": "doc",
               "id": "wallet/deterministic"
-            },
-            {
-              "type": "doc",
-              "id": "wallet/remote"
             },
             {
               "type": "doc",
@@ -275,10 +275,6 @@
             {
               "type": "doc",
               "id": "devtools/net-design"
-            },
-            {
-              "type": "doc",
-              "id": "devtools/extending-apis"
             },
             {
               "type": "doc",

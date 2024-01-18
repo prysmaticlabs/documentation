@@ -22,7 +22,7 @@ Prysmatic requires all code to adhere to correct commentary conventions for any 
 // ExecuteStateTransition transforms the current state of a beacon node by applying the
 // transformations specified in the official Ethereum Serenity specification.
 func ExecuteStateTransition(state *pb.BeaconState, block *pb.BeaconBlock) (*pb.BeaconState, error) {
-...
+  ...
 }
 ```
 
@@ -31,7 +31,7 @@ func ExecuteStateTransition(state *pb.BeaconState, block *pb.BeaconBlock) (*pb.B
 ```go
 // This function executes a state transition.
 func ExecuteStateTransition(state *pb.BeaconState, block *pb.BeaconBlock) (*pb.BeaconState, error) {
-...
+  ...
 }
 ```
 
@@ -44,16 +44,20 @@ Ensure your names are clear, concise and make no assumptions about your code wit
 ```go
 // justificationUpperLimit defines a ceiling after which a block cannot pass processing conditions
 // as defined in the Ethereum Serenity specification.
-justificationUpperLimit := params.BeaconConfig().SlotDuration*params.BeaconConfig().JustificationBoundary
-If block.Slot() > justificationUpperLimit {
-...
+slotDuration := params.BeaconConfig().SlotDuration
+justificationBoundary := params.BeaconConfig().JustificationBoundary
+justificationUpperLimit := slotDuration * justificationBoundary
+
+if block.Slot() > justificationUpperLimit {
+  ...
 }
 ```
 
 #### Bad \(uses magic numbers with no explanation or context\):
 
 ```go
-If block.Slot() > 12032*(23 + 45 % 15) {
+if block.Slot() > 12032*(23 + 45 % 15) {
+  ...
 }
 ```
 
@@ -65,16 +69,17 @@ For example:
 
 ```go
 func UpdateBeaconState(currentState *pb.BeaconState, blockCh chan<- *types.Block) {
-  For {
+  for {
     select {
-      Case block :=<-blockCh:
-        If err != processBlock(block); err != nil {
-          log.Errorf(“block failed processing conditions: %v”, err)
-        }
-        newState := executeStateTransition(currentState, block)
-        // BAD: This can lead to a critical, inconsistent state! The line below will save to DB
-        // DB even if block failed processing conditions!
-        db.SaveState(newState)
+    case block := <-blockCh:
+      if err := processBlock(block); err != nil {
+        log.Errorf("block failed processing conditions: %v", err)
+      }
+
+      newState := executeStateTransition(currentState, block)
+      // BAD: This can lead to a critical, inconsistent state! The line below will save to DB
+      // DB even if block failed processing conditions!
+      db.SaveState(newState)
     }
   }
 }
@@ -84,21 +89,19 @@ Instead, ensure to handle all errors in critical code paths appropriately. The e
 
 ```go
 func UpdateBeaconState(currentState *pb.BeaconState, blockCh chan<- *types.Block) {
-  For {
+  for {
     select {
-      Case block :=<-blockCh:
-        If err != processBlock(block); err != nil {
-          log.Errorf(“block failed processing conditions: %v”, err)
-          // GOOD: The line below won't save to DB if block failed processing conditions.
-          continue
-        }
-        newState := executeStateTransition(currentState, block)
-        db.SaveState(newState)
+    case block := <-blockCh:
+      if err := processBlock(block); err != nil {
+        log.Errorf("block failed processing conditions: %v", err)
+        // GOOD: The line below won't save to DB if block failed processing conditions.
+        continue
+      }
+
+      newState := executeStateTransition(currentState, block)
+      db.SaveState(newState)
     }
   }
 }
 ```
 
-import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
-
-<RequestUpdateWidget />

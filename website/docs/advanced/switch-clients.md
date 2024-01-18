@@ -14,9 +14,9 @@ This document provides guidance on moving from Prysm to a new consensus-layer cl
 
 The following best practices will help minimize the risk of [slashing](../concepts/slashing.md) while migrating between clients:
 
-1.	Never run more than a single validator process with the same keys loaded
-2.	Maintain and utilize slashing protection
-3.	Accept downtime as part of a successful migration
+1.	Never run more than a single validator process with the same keys loaded.
+2.	Maintain and utilize slashing protection.
+3.	Accept downtime as part of a successful migration.
 
 ::: 
 
@@ -27,11 +27,11 @@ Regardless of which client you are switching to, the first step of the process w
 
 Installation documentation links for each client can be found below:
 
-Prysm: https://nimbus.guide/quick-start.html  
-Teku: https://docs.teku.consensys.net/en/latest/HowTo/Get-Started/Installation-Options/Install-Binaries/    
-Nimbus: https://nimbus.guide/quick-start.html  
-Lighthouse: https://lighthouse-book.sigmaprime.io/installation.html  
-Lodestar: https://chainsafe.github.io/lodestar/installation/  
+- Prysm: https://docs.prylabs.network/docs/install/install-with-script
+- Teku: https://docs.teku.consensys.io/development/get-started/install/install-binaries
+- Nimbus: https://nimbus.guide/quick-start.html  
+- Lighthouse: https://lighthouse-book.sigmaprime.io/installation.html  
+- Lodestar: https://chainsafe.github.io/lodestar/getting-started/quick-start 
 
 ### Step 2: Stop and Disable Prysm
 
@@ -39,7 +39,7 @@ Ensuring you stop and disable Prysm is critical to avoiding slashing events befo
 
 Disabling Prysm prevents it from automatically starting up again after a reboot. 
 
-Remove Prysm's validator keys as an added protection by following [these](http://localhost:3000/docs/advanced/migrating-keys#step-5--verification-and-restarting-the-validator-client) instructions above.  
+Remove Prysm's validator keys as an added protection by following [these](http://localhost:3000/docs/advanced/migrating-keys#step-5--verification-and-restarting-the-validator-client) instructions.  
 
 ### Step 3: Export slashing protection history
 
@@ -57,7 +57,7 @@ Teku, Nimbus, and Lighthouse all use port 9000 for both TCP and UDP.
 
 ### Step 5: Import Validator Keys
 
-To minimise slashing risk, wait until at least 1 full epoch has elapsed between stopping prysm and importing your validator keys, approximately 6.5 minutes, before proceeding. The inactivity leak cost is negligible compared to the cost of getting slashed.  
+To minimize slashing risk, wait until at least 1 full epoch has elapsed between stopping prysm and importing your validator keys, approximately 6.5 minutes, before proceeding. The inactivity leak cost is negligible compared to the cost of getting slashed.  
 
 Once that amount of time has passed, import your validator keys into the respective validator client you wish to run.  
  
@@ -72,7 +72,8 @@ Once that amount of time has passed, import your validator keys into the respect
   ]
 }>
 
-
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 <TabItem value="nim">
 
@@ -82,19 +83,19 @@ https://nimbus.guide/migration.html#step-3---import-your-validator-keys-into-nim
 
 <TabItem value="lit">
 
-https://lighthouse-book.sigmaprime.io/validator-import-launchpad.html#1-run-the-lighthouse-account-validator-import-command
+https://lighthouse-book.sigmaprime.io/validator-manager-create.html
 
 </TabItem>
 
 <TabItem value="tek">
 
-https://docs.teku.consensys.net/en/latest/HowTo/Get-Started/Connect/Connect-To-Mainnet/#run-the-validator-and-beacon-node-as-a-single-process
+https://docs.teku.consensys.io/get-started/connect/mainnet#create-a-password-file-for-each-validator-key
 
 </TabItem>
 
 <TabItem value="lod">
 
-https://chainsafe.github.io/lodestar/usage/key-management/#import-a-validator-keystore-from-deposit-launch-pad
+https://chainsafe.github.io/lodestar/validator-management/validator-management/#import-a-validator-keystore-from-your-wallet-to-lodestar
 
 </TabItem>
 </Tabs>
@@ -136,7 +137,7 @@ https://docs.teku.consensys.net/en/stable/HowTo/Prevent-Slashing/
 
 <TabItem value="lod">
 
-https://chainsafe.github.io/lodestar/reference/cli/#account-validator-slashing-protection
+https://chainsafe.github.io/lodestar/validator-management/validator-cli/#validator-slashing-protection-import
 
 </TabItem>
 </Tabs>
@@ -146,9 +147,6 @@ https://chainsafe.github.io/lodestar/reference/cli/#account-validator-slashing-p
 
 Ensure your beacon node is fully synced with the network by checking your clients logs prior to starting your validator. Once it is fully synced, start the validator.  
 
-Search a block explorer like https://beaconcha.in/ with your validator's public key to confirm that your validator is now active!
+Search a block explorer like https://beaconcha.in with your validator's public key to confirm that your validator is now active!
 
 
-import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
-
-<RequestUpdateWidget />

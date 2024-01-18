@@ -60,10 +60,10 @@ This page serves material necessary to catch up with the current state of Ethere
 * [Ethereum Blog](https://blog.ethereum.org/)
 * [News from Ben Edgington](https://hackmd.io/@benjaminion/eth2_news)
 
-### Prater Testnet Blockchain
+### Goerli Testnet Blockchain
 
-* [Launchpad](https://prater.launchpad.ethereum.org/en/)
-* [Beacon Chain Explorer](https://prater.beaconcha.in/)
+* [Launchpad](https://goerli.launchpad.ethereum.org/en/)
+* [Beacon Chain Explorer](https://goerli.beaconcha.in/)
 
 ### Mainnet Blockchain
 
@@ -138,6 +138,3 @@ This page serves material necessary to catch up with the current state of Ethere
 * [Ewasm community meetup at ETHBuenosAires](https://www.youtube.com/watch?v=qDzrbj7dtyU)
 
 
-import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
-
-<RequestUpdateWidget />

@@ -34,26 +34,28 @@ When users stake 32 ETH to participate in Ethereum's proof-of-stake consensus me
 <br />
 
 <table>
-    <tr>
-        <th style={{minWidth: 170 + 'px'}}>Component</th> 
-        <th>Description</th>
-    </tr>
-    <tr>
-      <td><strong>Ethereum node</strong><br />aka "Node"</td>
-      <td>An Ethereum node is an <strong>execution node</strong> and <strong>beacon node</strong> working together. Ethereum nodes communicate peer-to-peer to secure the Ethereum network, and require both <strong>execution-layer client software</strong> and <strong>consensus-layer client software</strong>.</td>
-    </tr> 
-    <tr>
-      <td><strong>Execution node</strong></td>
-      <td>Execution nodes use execution client software to process transactions and smart contracts in Ethereum's <strong>execution layer</strong>. Nethermind, Besu, and Go Ethereum (Geth) are examples of execution client software.<br /> <br />An execution node will talk to other execution nodes via peer-to-peer networking, and to a local beacon node.</td>
-    </tr>
-    <tr>
-      <td><strong>Beacon node</strong></td>
-      <td>Beacon nodes use beacon node client software to coordinate Ethereum's proof-of-stake consensus. Prysm, Teku, Lighthouse, and Nimbus are consensus clients that contain both beacon node and validator client software. <br /> <br />A beacon node will talk to other beacon nodes via peer-to-peer networking, to a local execution node, and (optionally) to a local validator.</td>
-    </tr>
-    <tr>
-      <td><strong>Validator</strong></td>
-      <td>Validator clients are specialized software that let people stake 32 ETH as collateral within Ethereum's <strong>consensus layer</strong>. Validators are responsible for proposing blocks within Ethereum's proof-of-stake consensus mechanism, and will fully replace proof-of-work miners after <a href='https://ethereum.org/en/upgrades/merge/'>The Merge</a>. <br /> <br />A validator will talk only to a local beacon node. A validator's beacon node tells the validator what work to do, and broadcasts the validator's work to the Ethereum network as the validator performs its duties.</td>
-    </tr>
+    <tbody>
+      <tr>
+          <th style={{minWidth: 170 + 'px'}}>Component</th> 
+          <th>Description</th>
+      </tr>
+      <tr>
+        <td><strong>Ethereum node</strong><br />aka "Node"</td>
+        <td>An Ethereum node is an <strong>execution node</strong> and <strong>beacon node</strong> working together. Ethereum nodes communicate peer-to-peer to secure the Ethereum network, and require both <strong>execution-layer client software</strong> and <strong>consensus-layer client software</strong>.</td>
+      </tr> 
+      <tr>
+        <td><strong>Execution node</strong></td>
+        <td>Execution nodes use execution client software to process transactions and smart contracts in Ethereum's <strong>execution layer</strong>. Nethermind, Besu, and Go Ethereum (Geth) are examples of execution client software.<br /> <br />An execution node will talk to other execution nodes via peer-to-peer networking, and to a local beacon node.</td>
+      </tr>
+      <tr>
+        <td><strong>Beacon node</strong></td>
+        <td>Beacon nodes use beacon node client software to coordinate Ethereum's proof-of-stake consensus. Prysm, Teku, Lighthouse, and Nimbus are consensus clients that contain both beacon node and validator client software. <br /> <br />A beacon node will talk to other beacon nodes via peer-to-peer networking, to a local execution node, and (optionally) to a local validator.</td>
+      </tr>
+      <tr>
+        <td><strong>Validator</strong></td>
+        <td>Validator clients are specialized software that let people stake 32 ETH as collateral within Ethereum's <strong>consensus layer</strong>. Validators are responsible for proposing blocks within Ethereum's proof-of-stake consensus mechanism, and will fully replace proof-of-work miners after <a href='https://ethereum.org/en/upgrades/merge/'>The Merge</a>. <br /> <br />A validator will talk only to a local beacon node. A validator's beacon node tells the validator what work to do, and broadcasts the validator's work to the Ethereum network as the validator performs its duties.</td>
+      </tr>
+    </tbody>
 </table>
 
 
@@ -77,24 +79,29 @@ Every network's execution layer works with (and only with) its corresponding "pa
 
 <table>
     <tr>
-        <th style={{minWidth: 160 + 'px'}}>EL network</th> 
-        <th style={{minWidth: 160 + 'px'}}>CL network</th>
+        <th style={{minWidth: 160 + 'px'}}>network</th> 
         <th>Description</th>
     </tr>
     <tr>
-      <td>Mainnet</td>
       <td>Mainnet</td>
       <td>When people refer to Ethereum, they're usually referring to Ethereum Mainnet, which refers to a pair of networks: execution-layer (EL) Mainnet and consensus-layer (CL) Mainnet. CL Mainnet is commonly referred to as the Beacon Chain.<br/><br/>This network pair mints and manages real <strong>ETH</strong>.</td>
     </tr> 
     <tr>
       <td>Goerli</td>
-      <td>Prater</td>
-      <td>The Goerli-Prater pair is the test network that most people use when learning how to configure their validator for the first time. After Sepolia, Goerli-Prater will be Merge-tested.<br/><br/>This network pair mints and manages <strong>Goerli ETH</strong>, a type of testnet ETH used exclusively within this network pair.</td>
+      <td>Goerli is a network that was created to protocol and staking testing. Most people use it when learning how to configure their validator for the first time. In some places, you may read the term <strong>Goerli-Prater</strong> instead of <strong>Goerli</strong>. Pre-merge, for this network, the name of the execution layer was <strong>Goerli</strong>, and the name of the consensus layer was <strong>Prater</strong>. Post merge, the name <strong>Prater</strong> was deprecated and only <strong>Goerli</strong> remains.<br/><br/>This network mints and manages <strong>Goerli ETH</strong>, a type of testnet ETH used exclusively within this network.<br/><br/><strong>Warning: </strong> The Goerli network is intended to be deprecated in 2024. If you consider staking on a test network, please use Holesky. </td>
     </tr>
     <tr>
       <td>Sepolia</td>
-      <td>Sepolia</td>
-      <td>Consensus-layer Sepolia is a new network that was created to facilitate testing. The <a href='../install/install-with-script'>Prysm Quickstart</a> shows you how to configure a Merge-ready node on Sepolia. Note that this is a permissioned network, so you can run a node on Sepolia, but not a validator.<br/><br/>This network pair mints and manages <strong>SepplETH</strong>, a type of testnet ETH used exclusively within this network pair.</td>
+      <td>Sepolia is a network that was created to smart contract testing. The <a href='../install/install-with-script'>Prysm Quickstart</a> shows you how to configure a node on Sepolia. Note that this is a permissioned network, so you can run a node on Sepolia, but not a validator.<br/><br/>This network pair mints and manages <strong>Sepolia ETH</strong>, a type of testnet ETH used exclusively within this network pair.</td>
+    </tr>
+    <tr>
+      <td>Holesky</td>
+      <td>Holesky is a merged-from-genesis public Ethereum testnet which will replace Goerli as a
+      staking, infrastructure, and protocol-developer testnet. This network is primarily focused on
+      testing the Ethereum protocol. For testing decentralized applications, smart contracts, and
+      other EVM functionality, use Sepolia. <br/><br/> See <a
+      href="https://github.com/eth-clients/holesky">github.com/eth-clients/holesky</a> for more
+      information.</td>
     </tr>
 </table>
 
@@ -114,7 +121,3 @@ Slashers, like validators, use specialized pieces of consensus-layer client soft
 **How do I get testnet ETH?** <br/>
 We recommend using [Paradigm's MultiFaucet](https://faucet.paradigm.xyz/). Alchemy also has a [free Sepolia faucet](https://sepoliafaucet.com). If that doesn't work, you can ask the community for testnet ETH on either the [Prysm Discord server](https://discord.gg/prysmaticlabs) or on [r/ethstaker](https://www.reddit.com/r/ethstaker). 
 
-
-import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
-
-<RequestUpdateWidget />

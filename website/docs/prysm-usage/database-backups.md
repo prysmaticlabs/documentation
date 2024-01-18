@@ -8,30 +8,26 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <HeaderBadgesWidget />
 
-This section outlines how to perform database backups for your beacon node and validator client. Both services expose an **HTTP backup endpoint** which is the **safest way** to trigger a database backup.
+This section outlines how to perform database backups for your beacon node and validator client. The validator client services expose an **HTTP backup endpoint** which is the **safest way** to trigger a database backup.
 
-:::danger Doing manual folder backups is not safe
-If you perform backups by manually copying the validator database while the client is running, you risk copying a corrupted database! You might be copying the folder right when the validator is in the middle of writing data to the database, and could end up with a bad backup. For this reason, HTTP backups are the way to go.
+:::danger Doing manual folder backups while the cllient is running is not safe
+If you perform backups by manually copying the database while the client is running, you risk copying a corrupted database! You might be copying the folder right when the client is in the middle of writing data to the database, and could end up with a bad backup.
 :::
 
 ## Beacon node
 
-Both the beacon node and validator use an embedded key-value store as a database called [BoltDB](https://github.com/boltdb/bolt) to store all important information. Backing up your beacon node database is a good practice, although **not critical** to being able to validate in Ethereum consensus. if you want to perform a backup, here's the safest way to do it.
+### Backing up the database manually
 
-:::danger Backing up the database can lead to OOM for large databases. 
-In event your system memory is insufficient performing a backup can lead to an out of memory exception. The webhook performs the backup in-memory by copying all the separate buckets from the source database to the backup database. If the source database is large, performing the backup might take too long and lead to an inconsistent backup database. In the event the source database is large ( > 20 Gb), as in mainnet right now, it is recommended to not perform the backup via the webhook. Instead manual backups should be utilised where the beacon node is stopped and then the database file is copied via the filesystem.  
-:::
+Your first need to find your base directory. If you don't usually run your beacon node with the `--datadir` option, then you can find the base directory by running your beacon node with
+the `--help` option. It will vary depending the operating system you use.
 
-### Backing up the Database via a Webhook
+For MacOS, it is:
 
-As the note above describes, we highly recommend performing manual backups of the database while your beacon node and validator are stopped rather than using a webhook. Due to performance limitations, it is safer to take a manual approach while your software is stopped.
+    --datadir value      Data directory for the databases. (default: "/Users/<user>/Library/Eth2")
 
-Add the following flags to your beacon node:
+If you usually run your beacon node with the `--datadir` option, then your base directory is the one specified by the `--datadir` option.
 
-- `--enable-db-backup-webhook`: Serve an http server to initiate database backups. The handler is served on the beacon node's monitoring host and port. Default endpoint is `http://127.0.0.1:8080/db/backup` if the flag is enabled.
-- `--db-backup-output-dir`: Folder path to where backups will be output to, such as `/path/to/mybackups`. If the directory exists, make sure the permissions for that directory is `0700`.
-
-Now, your beacon node will expose an HTTP endpoint `http://monitoringhost:monitoringport/db/backup`, which is `http://127.0.0.1:8080/db/backup` by default. You can hit this endpoint using curl or any other tool you prefer, and a backup will initiate which will be output to your `--db-backup-output-dir` path.
+Finally, your database is located in the `beaconchaindata` subdirectory, at the `beaconchain.db` file.
 
 ### Restoring from a backup
 
@@ -61,7 +57,7 @@ prysm.sh beacon-chain db restore --restore-source-file=/path/to/backup --restore
 **Using Bazel**
 
 ```sh
-bazel run //beacon-chain -- db restore --restore-source-file=/path/to/backup --restore-target-dir=/path/to/desired/datadir
+bazel run //cmd/beacon-chain -- db restore --restore-source-file=/path/to/backup --restore-target-dir=/path/to/desired/datadir
 ```
 
 </TabItem>
@@ -85,7 +81,7 @@ prysm.sh beacon-chain db restore --restore-source-file=/path/to/backup --restore
 **Using Bazel**
 
 ```sh
-bazel run //beacon-chain -- db restore --restore-source-file=/path/to/backup --restore-target-dir=/path/to/desired/datadir
+bazel run //cmd/beacon-chain -- db restore --restore-source-file=/path/to/backup --restore-target-dir=/path/to/desired/datadir
 ```
 
 </TabItem>
@@ -100,7 +96,7 @@ prysm.sh beacon-chain db restore --restore-source-file=/path/to/backup --restore
 **Using Bazel**
 
 ```sh
-bazel run //beacon-chain -- db restore --restore-source-file=/path/to/backup --restore-target-dir=/path/to/desired/datadir
+bazel run //cmd/beacon-chain -- db restore --restore-source-file=/path/to/backup --restore-target-dir=/path/to/desired/datadir
 ```
 
 </TabItem>
@@ -143,7 +139,7 @@ prysm.sh validator db restore --restore-source-file=/path/to/backup --restore-ta
 **Using Bazel**
 
 ```sh
-bazel run //validator -- db restore --restore-source-file=/path/to/backup --restore-target-dir=/path/to/desired/datadir
+bazel run //cmd/validator -- db restore --restore-source-file=/path/to/backup --restore-target-dir=/path/to/desired/datadir
 ```
 
 </TabItem>
@@ -167,7 +163,7 @@ prysm.sh validator db restore --restore-source-file=/path/to/backup --restore-ta
 **Using Bazel**
 
 ```sh
-bazel run //validator -- db restore --restore-source-file=/path/to/backup --restore-target-dir=/path/to/desired/datadir
+bazel run //cmd/validator -- db restore --restore-source-file=/path/to/backup --restore-target-dir=/path/to/desired/datadir
 ```
 
 </TabItem>
@@ -182,13 +178,10 @@ prysm.sh validator db restore --restore-source-file=/path/to/backup --restore-ta
 **Using Bazel**
 
 ```sh
-bazel run //validator -- db restore --restore-source-file=/path/to/backup --restore-target-dir=/path/to/desired/datadir
+bazel run //cmd/validator -- db restore --restore-source-file=/path/to/backup --restore-target-dir=/path/to/desired/datadir
 ```
 
 </TabItem>
 </Tabs>
 
 
-import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
-
-<RequestUpdateWidget />

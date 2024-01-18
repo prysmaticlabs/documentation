@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
-<HeaderBadgesWidget commaDelimitedContributors="Nishant,Raul,Mick" lastVerifiedDateString="September 12th, 2022" lastVerifiedVersionString="v3.1.2"/>
+<HeaderBadgesWidget commaDelimitedContributors="Nishant,Raul"/>
 
 
 :::info Knowledge Check
@@ -60,7 +60,7 @@ Note that both consensus and execution clients allow you to customize many of th
 
 When configuring `Allow inbound` rules, consider tying the rule to an IP address when possible. For example, if your beacon node on `Machine A` is connecting to a remote execution node on `Machine B`, `Machine B`'s `Allow inbound and outbound traffic over 8551` rule should be tied to `Machine A's` public IP address. More information about IP addresses and port forwarding is available below.
 
-<div class='port-guide'>
+<div className='port-guide'>
 
 ## Determine your IP addresses
 
@@ -68,7 +68,7 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
 
 <MultidimensionalContentControlsPartial />
 
-<div class='hide-tabs'>
+<div className='hide-tabs'>
 
 
 <Tabs groupId="os" defaultValue="others" values={[
@@ -152,6 +152,3 @@ You can perform the same test using `30303/TCP` to test your execution node's di
 See [Check your node and validator status](../monitoring/checking-status.md) for a comprehensive status checklist.
 
 
-import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
-
-<RequestUpdateWidget />

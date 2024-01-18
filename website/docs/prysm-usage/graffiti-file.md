@@ -101,6 +101,3 @@ Example output:
 ![image](/img/graffiti-default.png)
 
 
-import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
-
-<RequestUpdateWidget />

@@ -5,7 +5,7 @@ import {MultiDimensionalContentWidget} from '@site/src/components/MultiDimension
 
 <MultiDimensionalContentWidget />
 
-<div class='quickstart-tabs'>
+<div className='quickstart-tabs'>
 
 <Tabs className="tabgroup-with-label os-tabgroup" groupId="os" defaultValue="others" values={[
     {label: 'Operating system:', value: 'label'},
@@ -20,13 +20,15 @@ import {MultiDimensionalContentWidget} from '@site/src/components/MultiDimension
 <Tabs className="tabgroup-with-label network-tabgroup" groupId="network" defaultValue="mainnet" values={[
         {label: 'Network:', value: 'label'},
         {label: 'Mainnet', value: 'mainnet'},
-        {label: 'Goerli-Prater', value: 'goerli-prater'},
-        {label: 'Sepolia', value: 'sepolia'}
+        {label: 'Goerli', value: 'goerli'},
+        {label: 'Sepolia', value: 'sepolia'},
+        {label: 'Holesky', value: 'holesky'}
     ]}>
     <TabItem className="unclickable-element" value="label"></TabItem>
     <TabItem value="mainnet"></TabItem>
-    <TabItem value="goerli-prater"></TabItem>
+    <TabItem value="goerli"></TabItem>
     <TabItem value="sepolia"></TabItem>
+    <TabItem value="holesky"></TabItem>
 </Tabs>
 
 <Tabs className="tabgroup-with-label hidden-in-docker-guide el-tabgroup" groupId="execution-clients" defaultValue="geth" values={[

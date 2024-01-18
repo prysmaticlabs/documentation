@@ -21,7 +21,7 @@ When a Prysm client is initialised out of the box, it starts a variety of servic
 * A [**public RPC server**](/docs/how-prysm-works/prysm-public-api) to request data about network state, blocks, validators etc.
 * A [**persistent key-value store**](/docs/how-prysm-works/database-backend-boltdb) in the form of a database \([BoltDB](/docs/how-prysm-works/database-backend-boltdb)\).
 * A [**P2P networking framework and server**](/docs/how-prysm-works/p2p-networking) to connect with other beacon nodes.
-* **Monitoring and metrics gathering technologies** [**Grafana**](https://grafana.com/) and [**Prometheus**](https://prometheus.io) track everything. happening across beacon nodes in the network.
+* **Monitoring and metrics gathering technologies** [**Grafana**](https://grafana.com/) and [**Prometheus**](https://prometheus.io) track everything that's happening across beacon nodes in the network.
 
 ## Prysm client functionality
 
@@ -34,6 +34,3 @@ The beacon chain runs through a distributed network of nodes known as [beacon no
 Each of these components and their roles in the Prysm client are explained within the following sections of this documentation. If you have any questions, please stop by our [Discord](https://discord.gg/prysmaticlabs).
 
 
-import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
-
-<RequestUpdateWidget />

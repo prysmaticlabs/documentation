@@ -107,7 +107,7 @@ You will then find the slashing protection JSON file in your specified /path/to/
 **Using Bazel**
 
 ```sh
-bazel run //validator -- slashing-protection-history export --datadir=/path/to/your/validator/db --slashing-protection-export-dir=/path/to/desired/outputdir
+bazel run //cmd/validator -- slashing-protection-history export --datadir=/path/to/your/validator/db --slashing-protection-export-dir=/path/to/desired/outputdir
 ```
 
 </TabItem>
@@ -147,7 +147,7 @@ You will then find the slashing protection JSON file in your specified /path/to/
 **Using Bazel**
 
 ```sh
-bazel run //validator -- slashing-protection-history export --datadir=/path/to/your/validator/db --slashing-protection-export-dir=/path/to/desired/outputdir
+bazel run //cmd/validator -- slashing-protection-history export --datadir=/path/to/your/validator/db --slashing-protection-export-dir=/path/to/desired/outputdir
 ```
 
 </TabItem>
@@ -162,7 +162,7 @@ prysm.sh validator slashing-protection-history export --datadir=/path/to/your/va
 **Using Bazel**
 
 ```sh
-bazel run //validator -- slashing-protection-history export --datadir=/path/to/your/validator/db --slashing-protection-export-dir=/path/to/desired/outputdir
+bazel run //cmd/validator -- slashing-protection-history export --datadir=/path/to/your/validator/db --slashing-protection-export-dir=/path/to/desired/outputdir
 ```
 
 </TabItem>
@@ -199,7 +199,7 @@ docker run -it -v /path/to/desiredimportfile.json:/import/desiredimportfile.json
 **Using Bazel**
 
 ```sh
-bazel run //validator -- slashing-protection-history import --datadir=/path/to/your/validator/db --slashing-protection-json-file=/path/to/desiredimportfile
+bazel run //cmd/validator -- slashing-protection-history import --datadir=/path/to/your/validator/db --slashing-protection-json-file=/path/to/desiredimportfile
 ```
 
 </TabItem>
@@ -234,7 +234,7 @@ docker run -it -v /path/to/desiredimportfile.json:/import/desiredimportfile.json
 **Using Bazel**
 
 ```sh
-bazel run //validator -- slashing-protection-history import --datadir=/path/to/your/validator/db --slashing-protection-json-file=/path/to/desiredimportfile
+bazel run //cmd/validator -- slashing-protection-history import --datadir=/path/to/your/validator/db --slashing-protection-json-file=/path/to/desiredimportfile
 ```
 
 </TabItem>
@@ -249,7 +249,7 @@ prysm.sh validator slashing-protection-history import --datadir=/path/to/your/va
 **Using Bazel**
 
 ```sh
-bazel run //validator -- slashing-protection-history import --datadir=/path/to/your/validator/db --slashing-protection-json-file=/path/to/desiredimportfile
+bazel run //cmd/validator -- slashing-protection-history import --datadir=/path/to/your/validator/db --slashing-protection-json-file=/path/to/desiredimportfile
 ```
 
 </TabItem>
@@ -283,6 +283,3 @@ Prysm will output a success message upon successful import. An error message wil
 Absolutely - feel free to send us a message on [Discord](https://discord.com/invite/prysmaticlabs) and someone from our team will be happy to help.
 
 
-import {RequestUpdateWidget} from '@site/src/components/RequestUpdateWidget.js';
-
-<RequestUpdateWidget />
