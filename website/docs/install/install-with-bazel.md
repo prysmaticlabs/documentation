@@ -107,7 +107,7 @@ Bazel will automatically pull and install any dependencies as well, including Go
 
 :::
 
-To run a beacon node, you'll need access to an execution node. See [Configure execution node](/docs/execution-node/configuring-for-prysm) for detailed instructions if you don't already have an execution node configured.
+To run a beacon node, you'll need access to an execution node. See [Configure an execution node](/docs/execution-node/configuring-for-prysm) for detailed instructions if you don't already have an execution node configured.
 
 
 

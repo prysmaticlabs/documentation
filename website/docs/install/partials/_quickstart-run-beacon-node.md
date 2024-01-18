@@ -31,34 +31,31 @@ import TabItem from '@theme/TabItem';
         </Tabs>
       </TabItem>
       <TabItem value="goerli">
-        <p className='hidden-in-jwt-guide'>Download the <a href='https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz'>Goerli genesis state from Github</a> into your <code>consensus</code> directory. Then use the following command to start a beacon node that connects to your local execution node by replacing <code>&lt;PATH_TO_IPC_FILE&gt;</code> by the path to the IPC file the execution client created for you during the previous step:</p>
         <Tabs groupId="protocol" defaultValue="jwt" values={[
           {label: 'JWT', value: 'jwt'},
           {label: 'IPC', value: 'ipc'}
         ]}>
-          <TabItem value="jwt"><pre><code>prysm.bat beacon-chain --execution-endpoint=http://localhost:8551 --goerli --jwt-secret=&lt;PATH_TO_JWT_FILE&gt; --genesis-state=genesis.ssz --checkpoint-sync-url=https://goerli.beaconstate.info --genesis-beacon-api-url=https://goerli.beaconstate.info</code></pre></TabItem>
-          <TabItem value="ipc"><pre><code>prysm.bat beacon-chain --execution-endpoint=&lt;PATH_TO_IPC_FILE&gt; --goerli --genesis-state=genesis.ssz --checkpoint-sync-url=https://goerli.beaconstate.ethstaker.cc --genesis-beacon-api-url=https://goerli.beaconstate.ethstaker.cc</code></pre></TabItem>
+          <TabItem value="jwt"><pre><code>prysm.bat beacon-chain --execution-endpoint=http://localhost:8551 --goerli --jwt-secret=&lt;PATH_TO_JWT_FILE&gt;  --checkpoint-sync-url=https://goerli.beaconstate.info --genesis-beacon-api-url=https://goerli.beaconstate.info</code></pre></TabItem>
+          <TabItem value="ipc"><pre><code>prysm.bat beacon-chain --execution-endpoint=&lt;PATH_TO_IPC_FILE&gt; --goerli --checkpoint-sync-url=https://goerli.beaconstate.ethstaker.cc --genesis-beacon-api-url=https://goerli.beaconstate.ethstaker.cc</code></pre></TabItem>
         </Tabs>
         <p>You may wonder why the previous link contains the "Prater" word instead of "Goerli". The reason is, in the pre-merge world, "Goerli" was the name of the execution layer for this testnet, and "Prater" the name of the consensus layer for this testnet. Post-merge, the name "Prater" was deprecated and now only "Goerli" remains.</p>
       </TabItem>
       <TabItem value="sepolia">
-        <p className='hidden-in-jwt-guide'>Download the <a href='https://github.com/eth-clients/merge-testnets/blob/main/sepolia/genesis.ssz'>Sepolia genesis state from Github</a> into your <code>consensus</code> directory. Then use the following command to start a beacon node that connects to your local execution node by replacing <code>&lt;PATH_TO_IPC_FILE&gt;</code> by the path to the IPC file the execution client created for you during the previous step:</p>
         <Tabs groupId="protocol" defaultValue="jwt" values={[
           {label: 'JWT', value: 'jwt'},
           {label: 'IPC', value: 'ipc'}
         ]}>
-          <TabItem value="jwt"><pre><code>prysm.bat beacon-chain --execution-endpoint=http://localhost:8551 --sepolia --jwt-secret=&lt;PATH_TO_JWT_FILE&gt; --genesis-state=genesis.ssz --checkpoint-sync-url=https://sepolia.beaconstate.info --genesis-beacon-api-url=https://sepolia.beaconstate.info</code></pre></TabItem>
-          <TabItem value="ipc"><pre><code>prysm.bat beacon-chain --execution-endpoint=&lt;PATH_TO_IPC_FILE&gt; --sepolia --genesis-state=genesis.ssz --checkpoint-sync-url=https://sepolia.beaconstate.info --genesis-beacon-api-url=https://sepolia.beaconstate.info</code></pre></TabItem>
+          <TabItem value="jwt"><pre><code>prysm.bat beacon-chain --execution-endpoint=http://localhost:8551 --sepolia --jwt-secret=&lt;PATH_TO_JWT_FILE&gt;  --checkpoint-sync-url=https://sepolia.beaconstate.info --genesis-beacon-api-url=https://sepolia.beaconstate.info</code></pre></TabItem>
+          <TabItem value="ipc"><pre><code>prysm.bat beacon-chain --execution-endpoint=&lt;PATH_TO_IPC_FILE&gt; --sepolia --checkpoint-sync-url=https://sepolia.beaconstate.info --genesis-beacon-api-url=https://sepolia.beaconstate.info</code></pre></TabItem>
         </Tabs>
       </TabItem>
       <TabItem value="holesky">
-        <p className='hidden-in-jwt-guide'>Download the <a href='https://github.com/eth-clients/holesky/blob/main/custom_config_data/genesis.ssz'>Holesky genesis state from Github</a> into your <code>consensus</code> directory. Then use the following command to start a beacon node that connects to your local execution node by replacing <code>&lt;PATH_TO_IPC_FILE&gt;</code> by the path to the IPC file the execution client created for you during the previous step:</p>
         <Tabs groupId="protocol" defaultValue="jwt" values={[
           {label: 'JWT', value: 'jwt'},
           {label: 'IPC', value: 'ipc'}
         ]}>
-          <TabItem value="jwt"><pre><code>prysm.bat beacon-chain --execution-endpoint=http://localhost:8551 --holesky --jwt-secret=&lt;PATH_TO_JWT_FILE&gt; --genesis-state=genesis.ssz --checkpoint-sync-url=https://holesky.beaconstate.info --genesis-beacon-api-url=https://holesky.beaconstate.info</code></pre></TabItem>
-          <TabItem value="ipc"><pre><code>prysm.bat beacon-chain --execution-endpoint=&lt;PATH_TO_IPC_FILE&gt; --holesky --genesis-state=genesis.ssz --checkpoint-sync-url=https://holesky.beaconstate.info --genesis-beacon-api-url=https://holesky.beaconstate.info</code></pre></TabItem>
+          <TabItem value="jwt"><pre><code>prysm.bat beacon-chain --execution-endpoint=http://localhost:8551 --holesky --jwt-secret=&lt;PATH_TO_JWT_FILE&gt;  --checkpoint-sync-url=https://holesky.beaconstate.info --genesis-beacon-api-url=https://holesky.beaconstate.info</code></pre></TabItem>
+          <TabItem value="ipc"><pre><code>prysm.bat beacon-chain --execution-endpoint=&lt;PATH_TO_IPC_FILE&gt; --holesky --checkpoint-sync-url=https://holesky.beaconstate.info --genesis-beacon-api-url=https://holesky.beaconstate.info</code></pre></TabItem>
         </Tabs>
       </TabItem>
     </Tabs>
@@ -86,49 +83,67 @@ import TabItem from '@theme/TabItem';
         </Tabs>
       </TabItem>
       <TabItem value="goerli">
-        <p className='hidden-in-jwt-guide'>Download the <a href='https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz'>Goerli genesis state from Github</a> into your <code>consensus</code> directory. Then use the following command to start a beacon node that connects to your local execution node by replacing <code>&lt;PATH_TO_IPC_FILE&gt;</code> by the path to the IPC file the execution client created for you during the previous step:</p>
         <Tabs groupId="protocol" defaultValue="jwt" values={[
           {label: 'JWT', value: 'jwt'},
           {label: 'IPC', value: 'ipc'}
           ]}>
-            <TabItem value="jwt"><pre><code>./prysm.sh beacon-chain --execution-endpoint=http://localhost:8551 --goerli --jwt-secret=&lt;PATH_TO_JWT_FILE&gt; --genesis-state=genesis.ssz --checkpoint-sync-url=https://goerli.beaconstate.info --genesis-beacon-api-url=https://goerli.beaconstate.info</code></pre></TabItem>
-            <TabItem value="ipc"><pre><code>./prysm.sh beacon-chain --execution-endpoint=&lt;PATH_TO_IPC_FILE&gt; --goerli --genesis-state=genesis.ssz --checkpoint-sync-url=https://goerli.beaconstate.info --genesis-beacon-api-url=https://goerli.beaconstate.info</code></pre></TabItem>
+            <TabItem value="jwt"><pre><code>./prysm.sh beacon-chain --execution-endpoint=http://localhost:8551 --goerli --jwt-secret=&lt;PATH_TO_JWT_FILE&gt;  --checkpoint-sync-url=https://goerli.beaconstate.info --genesis-beacon-api-url=https://goerli.beaconstate.info</code></pre></TabItem>
+            <TabItem value="ipc"><pre><code>./prysm.sh beacon-chain --execution-endpoint=&lt;PATH_TO_IPC_FILE&gt; --goerli --checkpoint-sync-url=https://goerli.beaconstate.info --genesis-beacon-api-url=https://goerli.beaconstate.info</code></pre></TabItem>
           </Tabs>
           <p>You may wonder why the previous link contains the "Prater" word instead of "Goerli". The reason is, in the pre-merge world, "Goerli" was the name of the execution layer for this testnet, and "Prater" the name of the consensus layer for this testnet. Post-merge, the name "Prater" was deprecated and now only "Goerli" remains.</p>
       </TabItem>
       <TabItem value="sepolia">
-        <p className='hidden-in-jwt-guide'>Download the <a href='https://github.com/eth-clients/merge-testnets/blob/main/sepolia/genesis.ssz'>Sepolia genesis state from Github</a> into your <code>consensus</code> directory. Then use the following command to start a beacon node that connects to your local execution node by replacing <code>&lt;PATH_TO_IPC_FILE&gt;</code> by the path to the IPC file the execution client created for you during the previous step:</p>
         <Tabs groupId="protocol" defaultValue="jwt" values={[
           {label: 'JWT', value: 'jwt'},
           {label: 'IPC', value: 'ipc'}
         ]}>
-          <TabItem value="jwt"><pre><code>./prysm.sh beacon-chain --execution-endpoint=http://localhost:8551 --sepolia --jwt-secret=&lt;PATH_TO_JWT_FILE&gt; --genesis-state=genesis.ssz --checkpoint-sync-url=https://sepolia.beaconstate.info --genesis-beacon-api-url=https://sepolia.beaconstate.info</code></pre></TabItem>
-          <TabItem value="ipc"><pre><code>./prysm.sh beacon-chain --execution-endpoint=&lt;PATH_TO_IPC_FILE&gt; --sepolia --genesis-state=genesis.ssz --checkpoint-sync-url=https://sepolia.beaconstate.info --genesis-beacon-api-url=https://sepolia.beaconstate.info</code></pre></TabItem>
+          <TabItem value="jwt"><pre><code>./prysm.sh beacon-chain --execution-endpoint=http://localhost:8551 --sepolia --jwt-secret=&lt;PATH_TO_JWT_FILE&gt;  --checkpoint-sync-url=https://sepolia.beaconstate.info --genesis-beacon-api-url=https://sepolia.beaconstate.info</code></pre></TabItem>
+          <TabItem value="ipc"><pre><code>./prysm.sh beacon-chain --execution-endpoint=&lt;PATH_TO_IPC_FILE&gt; --sepolia --checkpoint-sync-url=https://sepolia.beaconstate.info --genesis-beacon-api-url=https://sepolia.beaconstate.info</code></pre></TabItem>
           </Tabs>
       </TabItem>
       <TabItem value="holesky">
-        <p className='hidden-in-jwt-guide'>Download the <a href='https://github.com/eth-clients/holesky/blob/main/custom_config_data/genesis.ssz'>Holesky genesis state from Github</a> into your <code>consensus</code> directory. Then use the following command to start a beacon node that connects to your local execution node by replacing <code>&lt;PATH_TO_IPC_FILE&gt;</code> by the path to the IPC file the execution client created for you during the previous step:</p>
         <Tabs groupId="protocol" defaultValue="jwt" values={[
           {label: 'JWT', value: 'jwt'},
           {label: 'IPC', value: 'ipc'}
         ]}>
-          <TabItem value="jwt"><pre><code>./prysm.sh beacon-chain --execution-endpoint=http://localhost:8551 --holesky --jwt-secret=&lt;PATH_TO_JWT_FILE&gt; --genesis-state=genesis.ssz --checkpoint-sync-url=https://holesky.beaconstate.info --genesis-beacon-api-url=https://holesky.beaconstate.info</code></pre></TabItem>
-          <TabItem value="ipc"><pre><code>./prysm.sh beacon-chain --execution-endpoint=&lt;PATH_TO_IPC_FILE&gt; --holesky --genesis-state=genesis.ssz --checkpoint-sync-url=https://holesky.beaconstate.info --genesis-beacon-api-url=https://holesky.beaconstate.info</code></pre></TabItem>
+          <TabItem value="jwt"><pre><code>./prysm.sh beacon-chain --execution-endpoint=http://localhost:8551 --holesky --jwt-secret=&lt;PATH_TO_JWT_FILE&gt;  --checkpoint-sync-url=https://holesky.beaconstate.info --genesis-beacon-api-url=https://holesky.beaconstate.info</code></pre></TabItem>
+          <TabItem value="ipc"><pre><code>./prysm.sh beacon-chain --execution-endpoint=&lt;PATH_TO_IPC_FILE&gt; --holesky --checkpoint-sync-url=https://holesky.beaconstate.info --genesis-beacon-api-url=https://holesky.beaconstate.info</code></pre></TabItem>
         </Tabs>
       </TabItem>
     </Tabs>
   </TabItem>
 </Tabs>
 
-<div className='hidden-in-jwt-guide hidden-in-mergeprep-guide'>
+<div>
 
 Syncing from a checkpoint usually takes a couple of minutes. See [Sync from a checkpoint](../../prysm-usage/checkpoint-sync.md) for more information about this feature.
 
-If you wish to sync from genesis, you need to remove <code>--checkpoint-sync-url</code> and <code>--genesis-beacon-api-url</code> flags from the previous command. Syncing from genesis usually takes a couple days, but it can take longer depending on your network and hardware specs.
+<Tabs groupId="network" defaultValue="mainnet" values={[
+      {label: 'Mainnet', value: 'mainnet'},
+      {label: 'Goerli', value: 'goerli'},
+      {label: 'Sepolia', value: 'sepolia'},
+      {label: 'Holesky', value: 'holesky'}
+    ]}>
+    <TabItem value="mainnet">
+      If you wish to sync from genesis, you need to remove <code>--checkpoint-sync-url</code> and <code>--genesis-beacon-api-url</code> flags from the previous command. Syncing from genesis usually takes a couple days, but it can take longer depending on your network and hardware specs.
+    </TabItem>
+    <TabItem value="goerli">
+      If you wish to sync from genesis, you need to remove <code>--checkpoint-sync-url</code> and <code>--genesis-beacon-api-url</code> flags from the previous command and add the <code>--genesis-state=genesis.ssz</code> flag. Syncing from genesis usually takes a couple days, but it can take longer depending on your network and hardware specs.
+      Download the <a href='https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz'>Goerli genesis.ssz from Github</a> into your <code>consensus</code> directory.
+    </TabItem>
+    <TabItem value="sepolia">
+      If you wish to sync from genesis, you need to remove <code>--checkpoint-sync-url</code> and <code>--genesis-beacon-api-url</code> flags from the previous command and add the <code>--genesis-state=genesis.ssz</code> flag. Syncing from genesis usually takes a couple days, but it can take longer depending on your network and hardware specs.
+      Download the <a href='https://github.com/eth-clients/merge-testnets/blob/main/sepolia/genesis.ssz'>Sepolia genesis.ssz from Github</a> into your <code>consensus</code> directory.
+    </TabItem>
+     <TabItem value="holesky">
+      If you wish to sync from genesis, you need to remove <code>--checkpoint-sync-url</code> and <code>--genesis-beacon-api-url</code> flags from the previous command and add the <code>--genesis-state=genesis.ssz</code> flag. Syncing from genesis usually takes a couple days, but it can take longer depending on your network and hardware specs.
+      Download the <a href='https://github.com/eth-clients/holesky/blob/main/custom_config_data/genesis.ssz'>Holesky genesis.ssz from Github</a> into your <code>consensus</code> directory.
+    </TabItem>
+</Tabs>
 
 If you are planning to run a validator, it is <strong>strongly</strong> advised to use the <code>--suggested-fee-recipient=<WALLET ADDRESS\></code> option. When your validator proposes a block, it will allow you to earn block priority fees, also sometimes called "tips".
 
 
-<p className="hidden-in-mergeprep-guide">Congratulations - you’re now running a <strong>full Ethereum node</strong>. To check the status of your node, visit <a href='https://docs.prylabs.network/docs/monitoring/checking-status'>Check node and validator status</a>.</p>
+<p>Congratulations - you’re now running a <strong>full Ethereum node</strong>. To check the status of your node, visit <a href='https://docs.prylabs.network/docs/monitoring/checking-status'>Check node and validator status</a>.</p>
 
 </div>

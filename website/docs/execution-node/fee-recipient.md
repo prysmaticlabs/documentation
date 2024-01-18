@@ -20,7 +20,7 @@ If you don't configure your fee recipient wallet address, your priority fee earn
 
 **Fee Recipient** is a feature that lets you specify a priority fee recipient address on your validator client instance and beacon node.
 
-Your fee recipient wallet address is a **standard Ethereum wallet address**, just like the wallet address used when sending and receiving tokens from Metamask. Execution clients deposit priority fees into this address whenever your validator client proposes a new block.
+Your fee recipient wallet address is a **standard Ethereum wallet address**, just like the wallet address used when sending and receiving tokens from MetaMask. Execution clients deposit priority fees into this address whenever your validator client proposes a new block.
 
 ## Background
 
@@ -38,10 +38,20 @@ Your fee recipient wallet address can be configured on your **validator client i
 
 Your fee recipient wallet address can be configured on both your beacon node and validator through the `--suggested-fee-recipient` flag:
 
- - **Beacon node**: `./prysm.sh beacon-chain --suggested-fee-recipient=<WALLET ADDRESS>`
- - **Validator**: `./prysm.sh validator --suggested-fee-recipient=<WALLET ADDRESS>`
+ **Beacon node:** 
 
-For example: `./prysm.sh validator --suggested-fee-recipient=0xCHANGEME012345c769F504hs287200aF50400a`.
+    ./prysm.sh beacon-chain --suggested-fee-recipient=<WALLET ADDRESS>
+
+
+ **Validator client:**
+ 
+    ./prysm.sh validator --suggested-fee-recipient=<WALLET ADDRESS>
+
+
+
+For example:
+
+    ./prysm.sh validator --suggested-fee-recipient=0xCHANGEME012345c769F504hs287200aF50400a
 
 If your validator is running multiple keys (for example, staking 64 ETH using two validator public keys that have been imported into a single validator client instance), all validator public keys will use the wallet address specified through the `--suggested-fee-recipient` flag. You can optionally associate different fee recipient wallet addresses to individual validator public keys using the JSON/YAML configuration method detailed in the following section.
 
