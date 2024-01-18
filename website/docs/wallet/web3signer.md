@@ -19,17 +19,17 @@ example:
 --validators-external-signer-url=http://localhost:9000
 ```
 
-It is recommended to use https for the web3signer url. Prysm currently supports one to one on web3signer and does not support multiple key management systems with the same validator client. Prysm does not support partial local and partial remote key management. Web3signer does not support authentication between the validator client and the signer.
+It is recommended to use `https` for the Web3Signer url. Prysm currently supports one to one on Web3Signer and does not support multiple key management systems with the same validator client. Prysm does not support partial local and partial remote key management. Web3signer does not support authentication between the validator client and the signer.
 
 
-`--validators-external-signer-public-keys`: comma separated list of public validator keys in hex format or an external url endpoint for the validator to retrieve public keys in JSON format.
+- `--validators-external-signer-public-keys`: Comma separated list of public validator keys in hex format or an external url endpoint for the validator to retrieve public keys in JSON format.
 
-hex example: 
+HEX example: 
 ```
 --validators-external-signer-public-keys=0xa99a...e44c,0xb89b...4a0b
 ```
 
-url example:
+URL example:
 ```
 --validators-external-signer-public-keys=https://web3signer.com/api/v1/eth2/publicKeys
 ```
@@ -71,7 +71,7 @@ Prysm Web Interface can only support local keys and will not support the Web3Sig
 :::
 
 :::warning Only supports Web3Signer currently
-the remote keymanager API only currently supports Web3Signer types, please use the regular keymanager API for locally stored keys.
+The remote keymanager API only currently supports Web3Signer types, please use the regular keymanager API for locally stored keys.
 :::
 
 :::tip Beacon Chain needs to be synced for use

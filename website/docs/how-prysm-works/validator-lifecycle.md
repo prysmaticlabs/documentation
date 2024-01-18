@@ -16,7 +16,7 @@ This section discusses the lifecycle of a [validator](validator-clients.md) as d
 Prysm's [validator](validator-clients.md) client will report that the state of a particular validator is UNKNOWN when it loads validator keys that have not yet submitted a valid deposit to the [Ethereum proof-of-work chain](/docs/terminology#eth1) [validator deposit contract](./validator-deposit-contract).
 
 ## DEPOSITED State
-Once a valid transaction has been submitted to the [validator deposit contract](./validator-deposit-contract), your [beacon node](./beacon-node) will will detect the presence of the transaction on the ETH1 chain and your [validator](validator-clients.md) client will now report being in the DEPOSITED state.
+Once a valid transaction has been submitted to the [validator deposit contract](./validator-deposit-contract), your [beacon node](./beacon-node) will detect the presence of the transaction on the ETH1 chain and your [validator](validator-clients.md) client will now report being in the DEPOSITED state.
 
 ## PENDING State
 

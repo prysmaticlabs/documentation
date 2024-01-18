@@ -36,8 +36,8 @@ import TabItem from '@theme/TabItem';
                 {label: 'JWT', value: 'jwt'},
                 {label: 'IPC', value: 'ipc'}
               ]}>
-                <TabItem value="jwt"><pre><code>Nethermind.Runner --config mainnet --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.JwtSecretFile=&lt;PATH_TO_JWT_FILE&gt;</code></pre></TabItem>
-                <TabItem value="ipc"><pre><code>Nethermind.Runner --config mainnet --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.IpcUnixDomainSocketPath=&lt;PATH_TO_IPC_FILE&gt;</code></pre></TabItem>
+                <TabItem value="jwt"><pre><code>nethermind --config mainnet --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.JwtSecretFile=&lt;PATH_TO_JWT_FILE&gt;</code></pre></TabItem>
+                <TabItem value="ipc"><pre><code>nethermind --config mainnet --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.IpcUnixDomainSocketPath=&lt;PATH_TO_IPC_FILE&gt;</code></pre></TabItem>
               </Tabs>
             </TabItem>
             <TabItem value="goerli">
@@ -45,8 +45,8 @@ import TabItem from '@theme/TabItem';
                   {label: 'JWT', value: 'jwt'},
                   {label: 'IPC', value: 'ipc'}
                   ]}>
-                      <TabItem value="jwt"><pre><code>Nethermind.Runner --config goerli --JsonRpc.Enabled true  --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.JwtSecretFile=&lt;PATH_TO_JWT_FILE&gt</code></pre></TabItem>
-                      <TabItem value="ipc"><pre><code>Nethermind.Runner --config goerli --JsonRpc.Enabled true  --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.IpcUnixDomainSocketPath=&lt;PATH_TO_IPC_FILE&gt;</code></pre></TabItem>
+                      <TabItem value="jwt"><pre><code>nethermind --config goerli --JsonRpc.Enabled true  --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.JwtSecretFile=&lt;PATH_TO_JWT_FILE&gt</code></pre></TabItem>
+                      <TabItem value="ipc"><pre><code>nethermind --config goerli --JsonRpc.Enabled true  --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.IpcUnixDomainSocketPath=&lt;PATH_TO_IPC_FILE&gt;</code></pre></TabItem>
                   </Tabs>
             </TabItem>
             <TabItem value="sepolia">
@@ -54,8 +54,8 @@ import TabItem from '@theme/TabItem';
                   {label: 'JWT', value: 'jwt'},
                   {label: 'IPC', value: 'ipc'}
                   ]}>
-                      <TabItem value="jwt"><pre><code>Nethermind.Runner --config sepolia --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true--JsonRpc.JwtSecretFile=&lt;PATH_TO_JWT_FILE&gt</code></pre></TabItem>
-                      <TabItem value="ipc"><pre><code>Nethermind.Runner --config sepolia --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.IpcUnixDomainSocketPath=&lt;PATH_TO_IPC_FILE&gt;</code></pre></TabItem>
+                      <TabItem value="jwt"><pre><code>nethermind --config sepolia --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true--JsonRpc.JwtSecretFile=&lt;PATH_TO_JWT_FILE&gt</code></pre></TabItem>
+                      <TabItem value="ipc"><pre><code>nethermind --config sepolia --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.IpcUnixDomainSocketPath=&lt;PATH_TO_IPC_FILE&gt;</code></pre></TabItem>
                   </Tabs>
             </TabItem>
             <TabItem value="holesky">
@@ -63,8 +63,8 @@ import TabItem from '@theme/TabItem';
                   {label: 'JWT', value: 'jwt'},
                   {label: 'IPC', value: 'ipc'}
                   ]}>
-                      <TabItem value="jwt"><pre><code>Nethermind.Runner --config holesky --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true--JsonRpc.JwtSecretFile=&lt;PATH_TO_JWT_FILE&gt;</code></pre></TabItem>
-                      <TabItem value="ipc"><pre><code>Nethermind.Runner --config holesky --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.IpcUnixDomainSocketPath=/path/to/&lt;your.ipc&gt;</code></pre></TabItem>
+                      <TabItem value="jwt"><pre><code>nethermind --config holesky --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true--JsonRpc.JwtSecretFile=&lt;PATH_TO_JWT_FILE&gt;</code></pre></TabItem>
+                      <TabItem value="ipc"><pre><code>nethermind --config holesky --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.IpcUnixDomainSocketPath=/path/to/&lt;your.ipc&gt;</code></pre></TabItem>
                   </Tabs>
             </TabItem>
           </Tabs>
@@ -81,8 +81,8 @@ import TabItem from '@theme/TabItem';
                 {label: 'JWT', value: 'jwt'},
                 {label: 'IPC', value: 'ipc'}
               ]}>
-                <TabItem value="jwt"><pre><code>./Nethermind.Runner --config mainnet --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.JwtSecretFile=&lt;PATH_TO_JWT_FILE&gt;</code></pre></TabItem>
-                <TabItem value="ipc"><pre><code>./Nethermind.Runner --config mainnet --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.IpcUnixDomainSocketPath=&lt;PATH_TO_IPC_FILE&gt;</code></pre></TabItem>
+                <TabItem value="jwt"><pre><code>./nethermind --config mainnet --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.JwtSecretFile=&lt;PATH_TO_JWT_FILE&gt;</code></pre></TabItem>
+                <TabItem value="ipc"><pre><code>./nethermind --config mainnet --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.IpcUnixDomainSocketPath=&lt;PATH_TO_IPC_FILE&gt;</code></pre></TabItem>
               </Tabs>
             </TabItem>
             <TabItem value="goerli">
@@ -90,8 +90,8 @@ import TabItem from '@theme/TabItem';
                   {label: 'JWT', value: 'jwt'},
                   {label: 'IPC', value: 'ipc'}
                   ]}>
-                      <TabItem value="jwt"><pre><code>./Nethermind.Runner --config goerli --JsonRpc.Enabled true  --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.JwtSecretFile=&lt;PATH_TO_JWT_FILE&gt</code></pre></TabItem>
-                      <TabItem value="ipc"><pre><code>./Nethermind.Runner --config goerli --JsonRpc.Enabled true  --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.IpcUnixDomainSocketPath=&lt;PATH_TO_IPC_FILE&gt;</code></pre></TabItem>
+                      <TabItem value="jwt"><pre><code>./nethermind --config goerli --JsonRpc.Enabled true  --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.JwtSecretFile=&lt;PATH_TO_JWT_FILE&gt</code></pre></TabItem>
+                      <TabItem value="ipc"><pre><code>./nethermind --config goerli --JsonRpc.Enabled true  --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.IpcUnixDomainSocketPath=&lt;PATH_TO_IPC_FILE&gt;</code></pre></TabItem>
                   </Tabs>
             </TabItem>
             <TabItem value="sepolia">
@@ -99,8 +99,8 @@ import TabItem from '@theme/TabItem';
                   {label: 'JWT', value: 'jwt'},
                   {label: 'IPC', value: 'ipc'}
                   ]}>
-                      <TabItem value="jwt"><pre><code>./Nethermind.Runner --config sepolia --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true--JsonRpc.JwtSecretFile=&lt;PATH_TO_JWT_FILE&gt</code></pre></TabItem>
-                      <TabItem value="ipc"><pre><code>./Nethermind.Runner --config sepolia --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.IpcUnixDomainSocketPath=&lt;PATH_TO_IPC_FILE&gt;</code></pre></TabItem>
+                      <TabItem value="jwt"><pre><code>./nethermind --config sepolia --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true--JsonRpc.JwtSecretFile=&lt;PATH_TO_JWT_FILE&gt</code></pre></TabItem>
+                      <TabItem value="ipc"><pre><code>./nethermind --config sepolia --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.IpcUnixDomainSocketPath=&lt;PATH_TO_IPC_FILE&gt;</code></pre></TabItem>
                   </Tabs>
             </TabItem>
             <TabItem value="holesky">
@@ -108,8 +108,8 @@ import TabItem from '@theme/TabItem';
                   {label: 'JWT', value: 'jwt'},
                   {label: 'IPC', value: 'ipc'}
                   ]}>
-                      <TabItem value="jwt"><pre><code>./Nethermind.Runner --config holesky --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true--JsonRpc.JwtSecretFile=&lt;PATH_TO_JWT_FILE&gt;</code></pre></TabItem>
-                      <TabItem value="ipc"><pre><code>./Nethermind.Runner --config holesky --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.IpcUnixDomainSocketPath=/path/to/&lt;your.ipc&gt;</code></pre></TabItem>
+                      <TabItem value="jwt"><pre><code>./nethermind --config holesky --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true--JsonRpc.JwtSecretFile=&lt;PATH_TO_JWT_FILE&gt;</code></pre></TabItem>
+                      <TabItem value="ipc"><pre><code>./nethermind --config holesky --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.IpcUnixDomainSocketPath=/path/to/&lt;your.ipc&gt;</code></pre></TabItem>
                   </Tabs>
             </TabItem>
           </Tabs>

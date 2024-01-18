@@ -17,7 +17,7 @@ The following best practices will help minimize the risk of [slashing](../concep
 1.	Never run more than a single validator process with the same keys loaded.
 2.  Delete your keys from the old machine before starting your new machine.
 3.	Maintain and utilize slashing protection.
-4.	Accept some downtime as part of a successful migration. We recommend waiting at least 1 epoch (roughly 10 minutes) between "old machine off" and "new machine on".
+4.	Accept some downtime as part of a successful migration. We recommend waiting at least 2 epochs (roughly 13 minutes) between "old machine off" and "new machine on".
 
 :::
 
@@ -75,7 +75,7 @@ docker run -it -v /path/to/outputdir:/output -v /path/to/wallet:/wallet gcr.io/p
 **Using Bazel**
 
 ```sh
-bazel run //validator -- slashing-protection-history export --datadir=/path/to/validatorDb --slashing-protection-export-dir=/path/to/desired/outputdir
+bazel run //cmd/validator -- slashing-protection-history export --datadir=/path/to/validatorDb --slashing-protection-export-dir=/path/to/desired/outputdir
 ```
 
 The first time you run the process you will be asked to accept or decline the terms and conditions. Once accepted, the process exports the slashing protection JSON file in your specified `/path/to/outputdir` folder.
@@ -118,7 +118,7 @@ docker run -it -v /path/to/outputdir:/output -v /path/to/wallet:/wallet gcr.io/p
 **Using Bazel**
 
 ```sh
-bazel run //validator -- slashing-protection-history export --datadir=/path/to/validatorDb --slashing-protection-export-dir=/path/to/desired/outputdir
+bazel run //cmd/validator -- slashing-protection-history export --datadir=/path/to/validatorDb --slashing-protection-export-dir=/path/to/desired/outputdir
 ```
 
 The first time you run the process you will be asked to accept or decline the terms and conditions. Once accepted, the process exports the slashing protection JSON file in your specified /path/to/outputdir folder.
@@ -135,7 +135,7 @@ The first time you run the process you will be asked to accept or decline the te
 **Using Bazel**
 
 ```sh
-bazel run //validator -- slashing-protection-history export --datadir=/path/to/validatorDb --slashing-protection-export-dir=/path/to/desired/outputdir
+bazel run //cmd/validator -- slashing-protection-history export --datadir=/path/to/validatorDb --slashing-protection-export-dir=/path/to/desired/outputdir
 ```
 
 The first time you run the process you will be asked to accept or decline the terms and conditions. Once accepted, the process exports the slashing protection JSON file in your specified /path/to/outputdir folder.
@@ -168,7 +168,7 @@ To Identify the account(s) loaded in your validator, issue the following command
 ```sh
 prysm.bat validator accounts list
 ```
-This will produce output in the format of account number, three words seperated by a hyphon (-) and the public keys of each account. The output will be similar to this: 
+This will produce output in the format of account number, three words separated by a hyphen (-) and the public keys of each account. The output will be similar to this: 
 
 ```sh
 Account 0 | three-random-words
@@ -261,7 +261,7 @@ docker run -it -v /path/to/desiredimportfile.json:/import/desiredimportfile.json
 **Using Bazel**
 
 ```sh
-bazel run //validator -- slashing-protection-history import --datadir=/path/to/validatorDb --slashing-protection-json-file=/path/to/desiredimportfile
+bazel run //cmd/validator -- slashing-protection-history import --datadir=/path/to/validatorDb --slashing-protection-json-file=/path/to/desiredimportfile
 ```
 
 </TabItem>
@@ -296,7 +296,7 @@ docker run -it -v /path/to/desiredimportfile.json:/import/desiredimportfile.json
 **Using Bazel**
 
 ```sh
-bazel run //validator -- slashing-protection-history import --datadir=/path/to/validatorDb --slashing-protection-json-file=/path/to/desiredimportfile
+bazel run //cmd/validator -- slashing-protection-history import --datadir=/path/to/validatorDb --slashing-protection-json-file=/path/to/desiredimportfile
 ```
 
 </TabItem>
@@ -311,7 +311,7 @@ bazel run //validator -- slashing-protection-history import --datadir=/path/to/v
 **Using Bazel**
 
 ```sh
-bazel run //validator -- slashing-protection-history import --datadir=/path/to/validatorDb --slashing-protection-json-file=/path/to/desiredimportfile
+bazel run //cmd/validator -- slashing-protection-history import --datadir=/path/to/validatorDb --slashing-protection-json-file=/path/to/desiredimportfile
 ```
 
 </TabItem>
@@ -320,7 +320,7 @@ bazel run //validator -- slashing-protection-history import --datadir=/path/to/v
 
 ### Step 5:  Verification and restarting the validator client
 
-It is highly recommended that the validator process on the original, migrated validator is stopped and disabled to ensure it is not restarted automatically or accidently. 
+It is highly recommended that the validator process on the original, migrated validator is stopped and disabled to ensure it is not restarted automatically or accidentally. 
 
 On the original system, with the validator process stopped, remove the account(s) using the process below: 
 
@@ -335,7 +335,7 @@ On the original system, with the validator process stopped, remove the account(s
 ```sh
 prysm.bat validator accounts delete
 ```
-This will produce output in the same format as the list function, three words identifying the account seperated by a hyphon (-) and the public keys of each account, the output will be similar to this: 
+This will produce output in the same format as the list function, three words identifying the account separated by a hyphen (-) and the public keys of each account, the output will be similar to this: 
 
 ```sh
 Use the arrow keys to navigate 

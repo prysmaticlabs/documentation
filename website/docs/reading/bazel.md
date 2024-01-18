@@ -12,7 +12,7 @@ This page explains why Prysm uses a special build system called [Bazel](https://
 
 ## Why Bazel?
 
-Instead of using the `Go` tool to build Prysm, our team relies on the [Bazel](https://bazel.build) build system used by major companies such as Google, Uber, Coinbase, and more to manage monorepositories. Bazel provides reproducible builds and a sandboxed environment that ensures everyone building Prysm has the same experience and can build our entire project from a single command. The rationale for why we chose this system comes down to three major problems we need solved as part of our software development process:
+Instead of using the `go` tool to build Prysm, our team relies on the [Bazel](https://bazel.build) build system used by major companies such as Google, Uber, Coinbase, and more to manage monorepositories. Bazel provides reproducible builds and a sandboxed environment that ensures everyone building Prysm has the same experience and can build our entire project from a single command. The rationale for why we chose this system comes down to three major problems we need solved as part of our software development process:
 
 - Bugs introduced as a result of the developer's environment being different than that being shipped to users
 - Messy dependency management when dealing with a monorepo with multiple programming languages
@@ -40,15 +40,13 @@ Thankfully, Prysm also builds with `go` and `go` modules as well, so your code e
 
 ## BUILD Files
 
-Building with Bazel requires every directory and every package to have a BUILD.bazel file which tells it how it should build the code in question.
+Building with Bazel requires every directory and every package to have a `BUILD.bazel` file which tells it how it should build the code in question.
 
 ### Do I have to edit BUILD files myself?
 
 Most of the time, developers will not need to edit BUILD files themselves. Instead, they can use the following tool:
 
-```text
-bazel run //:gazelle -- fix
-```
+    bazel run //:gazelle -- fix
 
 which will edit all BUILD files that need to be changed based on any dependencies that were imported or any files that were added.
 
@@ -63,7 +61,7 @@ A large problem in monorepos is, of course, dealing with dependency management. 
 
 Bazel's query tool allows you to create graph visualizations of your entire dependency tree, making it a lot more robust and standardized compared to other methods of managing dependencies in a project.
 
-All dependencies in the Prysm monorepo live in a file called `deps.bzl` at the top-level of the repository [here](https://github.com/prysmaticlabs/prysm/blob/develop/deps.bzl)
+All dependencies in the Prysm monorepo live in a file called `deps.bzl` at the top-level of the repository [here](https://github.com/prysmaticlabs/prysm/blob/develop/deps.bzl).
 
 ### How to add new dependencies
 
@@ -81,7 +79,17 @@ To read comprehensive instructions on how to build Prysm's docker images for you
 
 ### With Bazel
 
-Everything in Prysm can be built with Bazel using `bazel build //...`. For example, the beacon node can be built with `bazel build //beacon-chain --config=release`. The `--config=release` will apply all compile-time optimizations to the code, and build everything including C dependencies and our cryptography from source. Every package in the Prysm monorepo can be build with `bazel build`.
+Everything in Prysm can be built with Bazel using
+
+    bazel build //...
+
+For example, the beacon node can be built with
+
+    bazel build /cmd/beacon-chain --config=release 
+    
+The `--config=release` will apply all compile-time optimizations to the code, and build everything including C dependencies and our cryptography from source. Every package in the Prysm monorepo can be build with
+
+    bazel build
 
 ### With Go
 
