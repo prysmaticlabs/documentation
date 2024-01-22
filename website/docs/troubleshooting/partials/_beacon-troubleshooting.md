@@ -10,7 +10,11 @@
       <ul>
           <li>Your beacon node might be suffering from connectivity problems. Visit <a href='/docs/prysm-usage/p2p-host-ip'>Improve P2P connectivity</a> for connectivity troubleshooting guidance. Ensure that your firewall isn't restricting any <strong>outbound</strong> ports for Prysm.</li>
           <li>You may be using an incorrect genesis state or network flag. Every test network requires its own genesis state and network flag. Visit our <a href='../install/install-with-script'>Quickstart</a> for the latest test network parameters.</li>
-          <li> If you are using Windows it could be an issue with Time Sync program (net time), one user's solution was using the google time servers and changing it to 10 min sync interval. https://github.com/prysmaticlabs/prysm/issues/13431#issuecomment-1891167396 and a similar issue here https://github.com/prysmaticlabs/prysm/issues/8144 </li>
+          <li> 
+          :::caution
+          If you are using `Windows` it could be an issue with Time Sync program (net time), one user's solution was using the google time servers and changing it to 10 min sync interval. <a href='https://github.com/prysmaticlabs/prysm/issues/13431#issuecomment-1891167396'>issue 13431 </a> and a similar issue here <a href='https://github.com/prysmaticlabs/prysm/issues/8144'> issue 8144 </a>
+          :::
+          </li>
       </ul>
       </td>
     </tr>
