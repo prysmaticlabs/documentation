@@ -217,6 +217,10 @@
         {
           "type": "doc",
           "id": "concepts/slashing"
+        },
+        {
+          "type": "doc",
+          "id": "concepts/blobs"
         }
       ]
     },
