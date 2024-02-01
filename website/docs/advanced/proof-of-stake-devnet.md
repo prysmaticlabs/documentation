@@ -177,6 +177,18 @@ Clone the Prysm repository and build the following binaries. We’ll be outputti
     go build -o=../validator ./cmd/validator
     go build -o=../prysmctl ./cmd/prysmctl
     cd ..
+
+If you get the following error:
+
+    Caught SIGILL in blst_cgo_init, consult <blst>/bindings/go/README.md.
+
+You may use this set of commands instead:
+
+    git clone https://github.com/prysmaticlabs/prysm && cd prysm
+    CGO_CFLAGS="-O2 -D__BLST_PORTABLE__" go build -o=../beacon-chain ./cmd/beacon-chain
+    CGO_CFLAGS="-O2 -D__BLST_PORTABLE__" go build -o=../validator ./cmd/validator
+    CGO_CFLAGS="-O2 -D__BLST_PORTABLE__" go build -o=../prysmctl ./cmd/prysmctl
+    cd ..
     
 
 Clone the go-ethereum repository and build it:
