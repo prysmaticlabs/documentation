@@ -54,6 +54,17 @@ This will build the project by downloading dependencies as Go modules.
 All code we check into our repo needs to have sufficient tests to ensure it is maintainable and works as expected.
 
 Many tests rely on the Bazel build system, thus testing with `go test` may not work.
+
+If you decide to do so and if you get the following error:
+
+    Caught SIGILL in blst_cgo_init, consult <blst>/bindings/go/README.md.
+
+Please define the following environment variable when running tests:
+
+    CGO_CFLAGS="-O2 -D__BLST_PORTABLE__"
+
+It is particulary useful when running tests / debug in your IDE without using bazel.
+
 See the [next section](#building-and-testing-prysm-with-bazel) for instructions on testing with prysm.
 
 ### Building and testing Prysm with Bazel
