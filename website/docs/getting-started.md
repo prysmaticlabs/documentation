@@ -15,22 +15,23 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 ## Upcoming Hardfork: Deneb/Cancun Q1 2024 (February)
 
-Requirements: Upgraded Prysm (validator & beacon node) / Upgraded Execution client
-New Data Storage requirement from [EIP-4844](https://eips.ethereum.org/EIPS/eip-4844): 52GB ~ 104GB storage requirement increase caused by new blob retention requirements. read more [here](./concepts/blobs.md)
+New Requirements: 
 
-New EIP features
+- upgrade Prysm (validator & beacon node)
+- upgrade Execution client
+- New data storage requirement from [EIP-4844](https://eips.ethereum.org/EIPS/eip-4844): 52GB ~ 104GB storage requirement increase caused by new blob retention requirements. read more [here](./concepts/blobs.md)
+
+New EIP features in Hardfork: ( EIPs related directly to Prysm are marked)
 
 - [EIP-1153](https://eips.ethereum.org/EIPS/eip-1153): Transient storage opcodes
-- [EIP-4788](https://eips.ethereum.org/EIPS/eip-4788): Beacon block root in the EVM
-- [EIP-4844](https://eips.ethereum.org/EIPS/eip-4844): Shard Blob Transactions
+- [EIP-4788](https://eips.ethereum.org/EIPS/eip-4788): Beacon block root in the EVM  (Prysm)
+- [EIP-4844](https://eips.ethereum.org/EIPS/eip-4844): Shard Blob Transactions (Prysm)
 - [EIP-5656](https://eips.ethereum.org/EIPS/eip-5656): MCOPY - Memory copying instruction
 - [EIP-6780](https://eips.ethereum.org/EIPS/eip-6780): SELFDESTRUCT only in same transaction
-- [EIP-7044](https://eips.ethereum.org/EIPS/eip-7044): Perpetually Valid Signed Voluntary Exits
-- [EIP-7045](https://eips.ethereum.org/EIPS/eip-7045): Increase Max Attestation Inclusion Slot
-- [EIP-7514](https://eips.ethereum.org/EIPS/eip-7514): Add Max Epoch Churn Limit
+- [EIP-7044](https://eips.ethereum.org/EIPS/eip-7044): Perpetually Valid Signed Voluntary Exits (Prysm)
+- [EIP-7045](https://eips.ethereum.org/EIPS/eip-7045): Increase Max Attestation Inclusion Slot  (Prysm)
+- [EIP-7514](https://eips.ethereum.org/EIPS/eip-7514): Add Max Epoch Churn Limit  (Prysm)
 - [EIP-7516](https://eips.ethereum.org/EIPS/eip-7516): BLOBBASEFEE opcode
-
-Prysm directly impacted by: [EIP-4844](https://eips.ethereum.org/EIPS/eip-4844),[EIP-4788](https://eips.ethereum.org/EIPS/eip-4788),[EIP-7044](https://eips.ethereum.org/EIPS/eip-7044),[EIP-7045](https://eips.ethereum.org/EIPS/eip-7045), and [EIP-7514](https://eips.ethereum.org/EIPS/eip-7514).
 
 :::
 
