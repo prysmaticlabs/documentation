@@ -13,7 +13,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 :::info
 
-## Upcoming Hardfork: Deneb/Cancun Q1 2024 (February)
+## Upcoming Hardfork: Deneb/Cancun Q1 2024 ([March](https://github.com/ethereum/consensus-specs/pull/3597/files))
 
 New Requirements: 
 
