@@ -17,9 +17,9 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 New Requirements: 
 
-- upgrade Prysm (validator & beacon node)
-- upgrade Execution client
-- New data storage requirement from [EIP-4844](https://eips.ethereum.org/EIPS/eip-4844): 52GB ~ 104GB storage requirement increase caused by new blob retention requirements. read more [here](./concepts/blobs.md)
+- Upgrade Prysm (validator & beacon node)
+- Upgrade Execution client
+- New blob retention requirements (52GB ~ 104GB). read more [here](./concepts/blobs.md)
 
 New EIP features in Hardfork: ( EIPs related directly to Prysm are marked)
 
