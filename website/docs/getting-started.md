@@ -11,6 +11,30 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 [Prysm](https://github.com/prysmaticlabs/prysm) is an [Ethereum](https://ethereum.org/en/developers/docs/intro-to-ethereum/) [proof-of-stake](https://ethereum.org/en/developers/docs/consensus-mechanisms/pos/) client written in [Go](https://golang.org). You can use Prysm to participate in Ethereum's [decentralized economy](https://ethereum.org/en/developers/docs/web2-vs-web3/) by [running a node](./install/install-with-script.md) and, if you have [32 ETH to stake](https://ethereum.org/en/staking/), a [validator client](./install/install-with-script.md#step-6-run-a-validator-using-prysm). If you're new to Ethereum, you may enjoy our beginner-friendly [Nodes and networks](./concepts/nodes-networks.md) explainer.
 
+:::info
+
+## Upcoming Hardfork: Deneb/Cancun Q1 2024 ([March](https://github.com/ethereum/consensus-specs/pull/3597/files))
+
+New Requirements: 
+
+- Upgrade Prysm (validator & beacon node)
+- Upgrade Execution client
+- New blob retention requirements (52GB ~ 104GB). read more [here](./concepts/blobs.md)
+
+New EIP features in Hardfork: ( EIPs related directly to Prysm are marked)
+
+- [EIP-1153](https://eips.ethereum.org/EIPS/eip-1153): Transient storage opcodes
+- [EIP-4788](https://eips.ethereum.org/EIPS/eip-4788): Beacon block root in the EVM  (Prysm)
+- [EIP-4844](https://eips.ethereum.org/EIPS/eip-4844): Shard Blob Transactions (Prysm)
+- [EIP-5656](https://eips.ethereum.org/EIPS/eip-5656): MCOPY - Memory copying instruction
+- [EIP-6780](https://eips.ethereum.org/EIPS/eip-6780): SELFDESTRUCT only in same transaction
+- [EIP-7044](https://eips.ethereum.org/EIPS/eip-7044): Perpetually Valid Signed Voluntary Exits (Prysm)
+- [EIP-7045](https://eips.ethereum.org/EIPS/eip-7045): Increase Max Attestation Inclusion Slot  (Prysm)
+- [EIP-7514](https://eips.ethereum.org/EIPS/eip-7514): Add Max Epoch Churn Limit  (Prysm)
+- [EIP-7516](https://eips.ethereum.org/EIPS/eip-7516): BLOBBASEFEE opcode
+
+:::
+
 The following table of contents provides a descriptive overview of Prysm's documentation:
 
 <div className='panel'>
