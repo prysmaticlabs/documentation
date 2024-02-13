@@ -6,7 +6,7 @@ sidebar_label: Configure MEV Builder
 
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
-<HeaderBadgesWidget commaDelimitedContributors="James" lastVerifiedDateString="May 18th, 2023" lastVerifiedVersionString="v4.0.2" />
+<HeaderBadgesWidget commaDelimitedContributors="James" lastVerifiedDateString="May 18th, 2023"/>
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

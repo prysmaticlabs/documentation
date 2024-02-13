@@ -1,3 +1,5 @@
+var prysmVersion = "v5.0.0";
+
 module.exports = {
     title: 'Prysm',
     tagline: 'Ethereum consensus implementation written entirely in Go.',
@@ -11,6 +13,7 @@ module.exports = {
 
     customFields: {
         image: 'img/Prysm.svg',
+        prysmVersion: prysmVersion,
     },
     trailingSlash: false,
     scripts: ['https://buttons.github.io/buttons.js'],
@@ -26,8 +29,8 @@ module.exports = {
             items: [{
                 type: 'docsVersion',
                 position: 'left',
-                to: 'https://github.com/prysmaticlabs/prysm/releases/tag/v4.0.0',
-                label: 'v4.0.0',
+                to: 'https://github.com/prysmaticlabs/prysm/releases/tag/'+prysmVersion,
+                label: prysmVersion,
             },
             {
                 to: 'docs/install/install-with-script',

@@ -87,38 +87,14 @@ Where you'll see the following output
 INFO accounts: (wallet path) /Users/johndoe/Library/Eth2Validators/prysm-wallet-v2
 
 Showing **1** validator account
-View the eth1 deposit transaction data for your accounts by running `validator accounts list --show-deposit-data
+View the eth1 deposit transaction data for your accounts by running `validator accounts list
 
 personally-conscious-echidna
-[withdrawal public key] 0xa9c19b160cdc5c6dd74bf5a528d53b9a196ab8dda550e7e5858d84bf356952a310b826e269b9b462293f1c2812263161
 [validating public key] 0x971d780edfe98743f41cdcdba8521548fc343ffcd958e90968c4f1cc5a2e9b6ea11a984397c34c6cc13e9d4e8d14ce1e
 [created at] 16 minutes ago
 ```
 
-You can view the `deposit_data` needed to send 32ETH to the Ethereum validator deposit contract for your validator accounts by optionally passing in a `--show-deposit-data` flag as follows.
-
-```bash
-./prysm.sh validator accounts list --show-deposit-data
-```
-
-Where you'll see the following output
-
-```bash
-INFO accounts: (wallet path) /Users/johndoe/Library/Eth2Validators/prysm-wallet-v2
-
-Showing **1** validator account
-
-personally-conscious-echidna
-[withdrawal public key] 0xa9c19b160cdc5c6dd74bf5a528d53b9a196ab8dda550e7e5858d84bf356952a310b826e269b9b462293f1c2812263161
-[validating public key] 0x971d780edfe98743f41cdcdba8521548fc343ffcd958e90968c4f1cc5a2e9b6ea11a984397c34c6cc13e9d4e8d14ce1e
-[created at] 16 minutes ago
-
-========================Deposit Data===============================
-
-0x2289511800000000000000000000000000000000000000000...
-
-===================================================================
-```
+You can view the `deposit_data` needed to send 32ETH to the Ethereum validator deposit contract 
 
 You can also run the `accounts list` command **non-interactively** by using the following command line flags, which are also viewable by typing `./prysm.sh validator accounts list --help`.
 
@@ -126,7 +102,6 @@ You can also run the `accounts list` command **non-interactively** by using the 
 | ------------------------ | :---------------------------------------------------------------------------- |
 | `--wallet-dir`           | Path to a wallet directory (default: "$HOME/Eth2Validators/prysm-wallet-v2"). |
 | `--wallet-password-file` | Path to plain-text file containing your wallet's password.                    |
-| `--show-deposit-data`    | Display raw eth1 tx deposit data for validator accounts.                      |
 | `--show-private-keys`    | Display the private keys for validator accounts.                              |
 
 
