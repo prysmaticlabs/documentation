@@ -13,7 +13,7 @@ import { PrysmVersion } from '@site/src/components/version.js';
 
 <HeaderBadgesWidget commaDelimitedContributors="Raul,James" />
 
-:::Caution DEPRECATION NOTICE: Ethereum is post merge, use our quickstart guide.
+:::caution DEPRECATION NOTICE: Ethereum is post merge, use our quickstart guide.
    The contents of this document was to help validators using **pre-Merge configuration** to migrate post merge. This is no longer required as Etheruem is already post merge. see our [Quickstart](./install/install-with-script.md) going forward.
 :::
 
@@ -48,7 +48,7 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
         <div className='input-container'><input id="cl-6" type='checkbox'/><span className='done'></span></div>
         <div className='guidance-container'>
             <label htmlFor="cl-6">Verify your Prysm version</label>
-            <p>Verify that you're running Prysm <code><PrysmVersion/></code> by issuing the following command: <code>prysm.sh beacon-chain --version</code> (Linux) <code>prysm.bat beacon-chain --version</code> (Windows).</p>
+            <p>Verify that you're running Prysm <PrysmVersion/> by issuing the following command: <code>prysm.sh beacon-chain --version</code> (Linux) <code>prysm.bat beacon-chain --version</code> (Windows).</p>
         </div>
     </div>
     <div className='task'>

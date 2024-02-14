@@ -16,12 +16,14 @@ The HTTP connection between your beacon node and execution node needs to be auth
   <TabItem className="unclickable-element" value="label"></TabItem>
   <TabItem value="win">
 
-  ## Optional. This command is necessary only if you've previously configured USE_PRYSM_VERSION
+  ## Optional - This command is necessary only if you've previously configured `USE_PRYSM_VERSION`
+
   <code>
   SET USE_PRYSM_VERSION=<PrysmVersion/>
   </code>
  
-  ## Required.
+  ## Required
+
   <code>
   prysm.bat beacon-chain generate-auth-secret
   </code>
@@ -29,7 +31,7 @@ The HTTP connection between your beacon node and execution node needs to be auth
   </TabItem>
   <TabItem value="others">
 
-   ## Optional. This command is necessary only if you've previously configured USE_PRYSM_VERSION
+   ## Optional - This command is necessary only if you've previously configured `USE_PRYSM_VERSION`
 
   <code>
   <span>SET USE_PRYSM_VERSION=<PrysmVersion/></span>
