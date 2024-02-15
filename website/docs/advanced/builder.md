@@ -4,10 +4,6 @@ title: Configure MEV Builder
 sidebar_label: Configure MEV Builder
 ---
 
-import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
-
-<HeaderBadgesWidget commaDelimitedContributors="James" lastVerifiedDateString="May 18th, 2023" lastVerifiedVersionString="v4.0.2" />
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import BuilderPng from '@site/static/img/builder.png';

@@ -51,6 +51,7 @@ Bazelisk is a launcher for Bazel which automatically downloads and installs the 
 
 - Using [a binary release](https://github.com/bazelbuild/bazelisk/releases) for Linux, macOS, or Windows
 - Using npm: `npm install -g @bazel/bazelisk`
+- Using apt: https://bazel.build/install/ubuntu
 - Using Homebrew on macOS: `brew install bazelisk`
 - By compiling from source using Go: `go install github.com/bazelbuild/bazelisk@latest`
 

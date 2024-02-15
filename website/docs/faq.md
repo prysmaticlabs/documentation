@@ -5,6 +5,7 @@ sidebar_label: Frequently asked questions
 ---
 
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
+import { PrysmVersion } from '@site/src/components/version.js';
 
 <HeaderBadgesWidget />
 
@@ -117,7 +118,8 @@ Upgrading Prysm is done differently depending on your operating system and insta
 
 #### How can I downgrade Prysm to an older version?
 
-Upgrading Prysm is done differently depending on your operating system and installation method. Please note that downgrading may not be as easy as upgrading as some versions may not be backward compatible and you will need to perform extra steps. For example, migrating down from v1.x to v1.0.x has breaking changes that require you to also rollback your database.
+Upgrading Prysm is done differently depending on your operating system and installation method. Please note that downgrading may not be as easy as upgrading as some versions may not be backward compatible and you will need to perform extra steps. For example, migrating down from <PrysmVersion minorOverride="1"/> to  <PrysmVersion  minorOverride="0"/> 
+has breaking changes that require you to also rollback your database. Downgrading major versions will not be possible.
 
 We prepared comprehensive instructions here in our docs portal on [upgrading and downgrading Prysm](/docs/prysm-usage/staying-up-to-date).
 

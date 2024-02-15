@@ -9,10 +9,11 @@ import TabItem from '@theme/TabItem';
 import JwtGuidancePartial from '@site/docs/partials/_jwt-guidance-partial.md';
 
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
+import { PrysmVersion } from '@site/src/components/version.js';
 
 <HeaderBadgesWidget commaDelimitedContributors="Raul,James" />
 
-:::Caution DEPRECATION NOTICE: Ethereum is post merge, use our quickstart guide.
+:::caution DEPRECATION NOTICE: Ethereum is post merge, use our quickstart guide.
    The contents of this document was to help validators using **pre-Merge configuration** to migrate post merge. This is no longer required as Etheruem is already post merge. see our [Quickstart](./install/install-with-script.md) going forward.
 :::
 
@@ -32,8 +33,8 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
     <div className='task'>
         <div className='input-container'><input id="cl-1" type='checkbox'/><span className='done'></span></div>
         <div className='guidance-container'>
-            <label htmlFor="cl-1">Use Prysm v4.0.0</label>
-            <p>Prysm <a href='https://github.com/prysmaticlabs/prysm/releases/tag/v4.0.0'>v4.0.0</a> supports <strong>post-Merge</strong> configuration.</p>
+            <label htmlFor="cl-1">Use Prysm <PrysmVersion/></label>
+            <p>Prysm <PrysmVersion includeLink={true}/> supports <strong>post-Merge</strong> configuration.</p>
         </div>
     </div>
     <div className='task'>
@@ -47,7 +48,7 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
         <div className='input-container'><input id="cl-6" type='checkbox'/><span className='done'></span></div>
         <div className='guidance-container'>
             <label htmlFor="cl-6">Verify your Prysm version</label>
-            <p>Verify that you're running Prysm <code>v4.0.0</code> by issuing the following command: <code>prysm.sh beacon-chain --version</code> (Linux) <code>prysm.bat beacon-chain --version</code> (Windows).</p>
+            <p>Verify that you're running Prysm <PrysmVersion/> by issuing the following command: <code>prysm.sh beacon-chain --version</code> (Linux) <code>prysm.bat beacon-chain --version</code> (Windows).</p>
         </div>
     </div>
     <div className='task'>
