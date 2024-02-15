@@ -87,11 +87,10 @@ Where you'll see the following output
 INFO accounts: (wallet path) /Users/johndoe/Library/Eth2Validators/prysm-wallet-v2
 
 Showing **1** validator account
-View the eth1 deposit transaction data for your accounts by running `validator accounts list`
 
-personally-conscious-echidna
-[validating public key] 0x971d780edfe98743f41cdcdba8521548fc343ffcd958e90968c4f1cc5a2e9b6ea11a984397c34c6cc13e9d4e8d14ce1e
-[created at] 16 minutes ago
+Account 0 | personally-conscious-echidna
+[validating public key] 0xa6669aa0381c06470b9a6faf8abf4194ad5148a62e461cbef5a6bc4d292026f58b992c4cf40e50552d301cef19da75b9
+[validating private key] 0x50cabc13435fcbde9d240fe720aff84f8557a6c1c445211b904f1a9620668241
 ```
 
 You can view the `deposit_data` needed to send 32ETH to the Ethereum validator deposit contract 

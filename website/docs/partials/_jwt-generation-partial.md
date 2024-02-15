@@ -21,7 +21,8 @@ The HTTP connection between your beacon node and execution node needs to be auth
   <code>
   SET USE_PRYSM_VERSION=<PrysmVersion/>
   </code>
- 
+
+
   ## Required
 
   <code>
@@ -35,9 +36,10 @@ The HTTP connection between your beacon node and execution node needs to be auth
 
   <code>
   <span>SET USE_PRYSM_VERSION=<PrysmVersion/></span>
- </code>
+  </code>
 
-  ## Required.
+
+  ## Required
   
    <code>
   ./prysm.sh beacon-chain generate-auth-secret
