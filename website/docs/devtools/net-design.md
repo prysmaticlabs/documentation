@@ -136,7 +136,7 @@ message RecentBeaconBlocksRequest {
 }
 ```
 
-***Encoding Registration***
+***Encoding Registration:***
 In the p2p service, there will be an encoding protocol string mapping to an encoding. 
 
 ```go
@@ -175,7 +175,7 @@ Note that p2p Sends must wait for a maximum of TTFB_TIMEOUT (time to first byte)
 
 Peers are added to the peerstore from those that are discovered through our discovery protocol. Then Hello requests are sent to all peers which are in our peerstore and we wait for the corresponding hello responses from them. If the response doesn’t arrive in time(ex 5s), we disconnect from those peers. For those that respond with their own corresponding hello responses, we then validate their hello messages, if its invalid we then disconnect with them. If not we begin initial sync as described above. 
 
- Since sending and responding to hello requests is a core part of the initial handshake, we will have to use a connection handler, which performs this whenever we dial a peer or vice versa. This ensures that peers that connect to us and are able to propagate messages are only those that are validated according to the protocol  
+ Since sending and responding to hello requests is a core part of the initial handshake, we will have to use a connection handler, which performs this whenever we dial a peer or vice versa. This ensures that peers that connect to us and are able to propagate messages are only those that are validated according to the protocol.  
 
 ```go
 func setupPeerHandShake(h host.Host, helloHandler sync.RPCHandler) {
@@ -185,7 +185,7 @@ func setupPeerHandShake(h host.Host, helloHandler sync.RPCHandler) {
 }
 ```
 
-The above describes how we would handle the peer connection in the callback, we would validate each newly added peer using the hello rpc handler. This ensures any application logic stays in the sync package instead of the p2p package
+The above describes how we would handle the peer connection in the callback, we would validate each newly added peer using the hello rpc handler. This ensures any application logic stays in the sync package instead of the p2p package.
 
 **Round-Robin Batch Block Sync**
 
