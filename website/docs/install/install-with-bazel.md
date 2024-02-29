@@ -124,7 +124,6 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
 
 <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
-        {label: 'Goerli', value: 'goerli'},
         {label: 'Sepolia', value: 'sepolia'},
         {label: 'Holesky', value: 'holesky'}
     ]}>
@@ -132,15 +131,6 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
 
 ```text
 bazel run //cmd/beacon-chain --config=release --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> --mainnet
-```
-
-  </TabItem>
-      <TabItem value="goerli">
-
-Download the Goerli genesis state from [Github](https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz) to a local file. In the following command, replace `<PATH_TO_GENESIS>` by the path of the genesis state you just downloaded and run it:
-
-```text
-bazel run //cmd/beacon-chain --config=release -- --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> --goerli --genesis-state=<PATH_TO_GENESIS>
 ```
 
   </TabItem>
@@ -173,7 +163,7 @@ bazel run //cmd/beacon-chain --config=release -- --execution-endpoint=<YOUR_ETH_
 
 Ensure that your beacon node is fully synced before proceeding. See [Check node and validator status](../monitoring/checking-status.md) for detailed status-checking instructions.
 
-Navigate to the [Mainnet Launchpad](https://launchpad.ethereum.org/summary) and follow the instructions. If you want to participate in the **testnet**, you can navigate to the [Goerli](https://goerli.launchpad.ethereum.org/summary/).
+Navigate to the [Mainnet Launchpad](https://launchpad.ethereum.org/summary) and follow the instructions. If you want to participate in the **testnet**, you can navigate to the [Holesky](https://holesky.launchpad.ethereum.org/summary/).
 
 :::danger Exercise extreme caution
 

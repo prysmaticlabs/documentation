@@ -149,7 +149,7 @@ Navigate to the extracted `deposit` script is after downloading and extracting t
 By calling the command above, you should go through an interactive process that will ask you for the following information:
 
 1. **Your mnemonic language**. You can see the different options available, where English is one of the options, among others
-2. **The network** you wish to perform this operation for. Example: `mainnet`, `goerli`, `sepolia` or `holesky`. This tutorial uses the `holesky` testnet as an **example**.
+2. **The network** you wish to perform this operation for. Example: `mainnet`, `sepolia` or `holesky`. This tutorial uses the `holesky` testnet as an **example**.
 3. Enter your **mnemonic** next
 4. Next, you will be asked for the starting index you used to create your validators (read more about hd wallets [here](https://eips.ethereum.org/EIPS/eip-2334#path)). For **most users**, this will be 0 unless you created validators from a non default index.
 
@@ -178,7 +178,7 @@ Below is an example of running through the interactive process explained above:
 ./deposit generate-bls-to-execution-change
 Please choose your language ['1. العربية', '2. ελληνικά', '3. English', '4. Français', '5. Bahasa melayu', '6. Italiano', '7. 日本語', '8. 한국어', '9. Português do Brasil', '10. român', '11. Türkçe', '12. 简体中文']:  [English]: english
 
-Please choose the (mainnet or testnet) network/chain name ['mainnet', 'goerli', 'sepolia', 'zhejiang', 'holesky']:  [mainnet]: holesky
+Please choose the (mainnet or testnet) network/chain name ['mainnet', 'sepolia', 'zhejiang', 'holesky']:  [mainnet]: holesky
 
 Please enter your mnemonic separated by spaces (" "). Note: you only need to enter the first 4 letters of each word if you'd prefer.: 
 bike shoe attitude violin fun life punch enhance attend bright voyage wheel clutch taxi high health siren jealous tell female upon firm manual wage
@@ -302,8 +302,8 @@ Apply the `--verify-only` flag to the prysmctl validator withdrawal command to v
 
 You can track your withdrawal on an Ethereum Proof of Stake Block Scanner. Some examples listed below and will be based on network.
 
-- [Beaconcha.in](http://Beaconcha.in): [mainnet](https://beaconcha.in/validators/withdrawals), [goerli](https://goerli.beaconcha.in/validators/withdrawals), [sepolia](https://sepolia.beaconcha.in/validators/withdrawals), [holesky](https://holesky.beaconcha.in/validators/withdrawals)
-- [Etherscan.io](https://etherscan.io/): [mainnet](https://etherscan.io/txsBeaconWithdrawal), [goerli](https://goerli.etherscan.io/txsBeaconWithdrawal), [sepolia](https://sepolia.etherscan.io/txsBeaconWithdrawal), [holesky](https://holesky.etherscan.io/txsBeaconWithdrawal)
+- [Beaconcha.in](http://Beaconcha.in): [mainnet](https://beaconcha.in/validators/withdrawals), [sepolia](https://sepolia.beaconcha.in/validators/withdrawals), [holesky](https://holesky.beaconcha.in/validators/withdrawals)
+- [Etherscan.io](https://etherscan.io/): [mainnet](https://etherscan.io/txsBeaconWithdrawal), [sepolia](https://sepolia.etherscan.io/txsBeaconWithdrawal), [holesky](https://holesky.etherscan.io/txsBeaconWithdrawal)
 
 you can also confirm the `withdrawal_credentials` updated by querying your local beacon node. 
 

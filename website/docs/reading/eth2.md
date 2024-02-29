@@ -60,10 +60,10 @@ This page serves material necessary to catch up with the current state of Ethere
 * [Ethereum Blog](https://blog.ethereum.org/)
 * [News from Ben Edgington](https://hackmd.io/@benjaminion/eth2_news)
 
-### Goerli Testnet Blockchain
+### Holesky Testnet Blockchain
 
-* [Launchpad](https://goerli.launchpad.ethereum.org/en/)
-* [Beacon Chain Explorer](https://goerli.beaconcha.in/)
+* [Launchpad](https://holesky.launchpad.ethereum.org/en/)
+* [Beacon Chain Explorer](https://holesky.beaconcha.in/)
 
 ### Mainnet Blockchain
 

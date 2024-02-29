@@ -27,7 +27,6 @@ import TabItem from '@theme/TabItem';
         <TabItem value="win">        
           <Tabs groupId="network" defaultValue="mainnet" values={[
             {label: 'Mainnet', value: 'mainnet'},
-            {label: 'Goerli', value: 'goerli'},
             {label: 'Sepolia', value: 'sepolia'},
             {label: 'Holesky', value: 'holesky'},
           ]}>
@@ -39,15 +38,6 @@ import TabItem from '@theme/TabItem';
                 <TabItem value="jwt"><pre><code>nethermind --config mainnet --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.JwtSecretFile=&lt;PATH_TO_JWT_FILE&gt;</code></pre></TabItem>
                 <TabItem value="ipc"><pre><code>nethermind --config mainnet --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.IpcUnixDomainSocketPath=&lt;PATH_TO_IPC_FILE&gt;</code></pre></TabItem>
               </Tabs>
-            </TabItem>
-            <TabItem value="goerli">
-                <Tabs className='tabs-hidden-in-jwt-guide' groupId="protocol" defaultValue="jwt" values={[
-                  {label: 'JWT', value: 'jwt'},
-                  {label: 'IPC', value: 'ipc'}
-                  ]}>
-                      <TabItem value="jwt"><pre><code>nethermind --config goerli --JsonRpc.Enabled true  --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.JwtSecretFile=&lt;PATH_TO_JWT_FILE&gt</code></pre></TabItem>
-                      <TabItem value="ipc"><pre><code>nethermind --config goerli --JsonRpc.Enabled true  --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.IpcUnixDomainSocketPath=&lt;PATH_TO_IPC_FILE&gt;</code></pre></TabItem>
-                  </Tabs>
             </TabItem>
             <TabItem value="sepolia">
               <Tabs className='tabs-hidden-in-jwt-guide' groupId="protocol" defaultValue="jwt" values={[
@@ -72,7 +62,6 @@ import TabItem from '@theme/TabItem';
         <TabItem value="others">        
           <Tabs groupId="network" defaultValue="mainnet" values={[
             {label: 'Mainnet', value: 'mainnet'},
-            {label: 'Goerli', value: 'goerli'},
             {label: 'Sepolia', value: 'sepolia'},
             {label: 'Holesky', value: 'holesky'},
           ]}>
@@ -84,15 +73,6 @@ import TabItem from '@theme/TabItem';
                 <TabItem value="jwt"><pre><code>./nethermind --config mainnet --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.JwtSecretFile=&lt;PATH_TO_JWT_FILE&gt;</code></pre></TabItem>
                 <TabItem value="ipc"><pre><code>./nethermind --config mainnet --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.IpcUnixDomainSocketPath=&lt;PATH_TO_IPC_FILE&gt;</code></pre></TabItem>
               </Tabs>
-            </TabItem>
-            <TabItem value="goerli">
-                <Tabs className='tabs-hidden-in-jwt-guide' groupId="protocol" defaultValue="jwt" values={[
-                  {label: 'JWT', value: 'jwt'},
-                  {label: 'IPC', value: 'ipc'}
-                  ]}>
-                      <TabItem value="jwt"><pre><code>./nethermind --config goerli --JsonRpc.Enabled true  --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.JwtSecretFile=&lt;PATH_TO_JWT_FILE&gt</code></pre></TabItem>
-                      <TabItem value="ipc"><pre><code>./nethermind --config goerli --JsonRpc.Enabled true  --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.IpcUnixDomainSocketPath=&lt;PATH_TO_IPC_FILE&gt;</code></pre></TabItem>
-                  </Tabs>
             </TabItem>
             <TabItem value="sepolia">
               <Tabs className='tabs-hidden-in-jwt-guide' groupId="protocol" defaultValue="jwt" values={[
@@ -122,7 +102,6 @@ import TabItem from '@theme/TabItem';
     <p>Run the following command to start your execution node replacing <code>&lt;PATH_TO_JWT_FILE&gt;</code> by the path to the JWT file generated during the previous step:</p>
     <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
-        {label: 'Goerli', value: 'goerli'},
         {label: 'Sepolia', value: 'sepolia'},
         {label: 'Holesky', value: 'holesky'},
     ]}>
@@ -132,15 +111,6 @@ import TabItem from '@theme/TabItem';
             {label: 'IPC', value: 'ipc'}
             ]}>
                 <TabItem value="jwt"><pre><code>besu --network=mainnet --rpc-http-enabled --engine-jwt-enabled=true --engine-jwt-secret=&lt;PATH_TO_JWT_FILE&gt; --engine-host-allowlist="*"</code></pre></TabItem>
-                <TabItem value="ipc"><div className="admonition admonition-danger alert alert--info"><div className="admonition-content"><p>Content under construction.</p></div></div></TabItem>
-            </Tabs>
-      </TabItem>
-      <TabItem value="goerli">
-        <Tabs className='tabs-hidden-in-jwt-guide'  groupId="protocol" defaultValue="jwt" values={[
-            {label: 'JWT', value: 'jwt'},
-            {label: 'IPC', value: 'ipc'}
-            ]}>
-                <TabItem value="jwt"><pre><code>besu --network=goerli --rpc-http-enabled --engine-jwt-enabled=true --engine-jwt-secret=&lt;PATH_TO_JWT_FILE&gt; --engine-host-allowlist="*"</code></pre></TabItem>
                 <TabItem value="ipc"><div className="admonition admonition-danger alert alert--info"><div className="admonition-content"><p>Content under construction.</p></div></div></TabItem>
             </Tabs>
       </TabItem>
@@ -186,7 +156,6 @@ import TabItem from '@theme/TabItem';
       <TabItem value="win">
         <Tabs groupId="network" defaultValue="mainnet" values={[
             {label: 'Mainnet', value: 'mainnet'},
-            {label: 'Goerli', value: 'goerli'},
             {label: 'Sepolia', value: 'sepolia'},
             {label: 'Holesky', value: 'holesky'},
         ]}>
@@ -197,15 +166,6 @@ import TabItem from '@theme/TabItem';
                 ]}>
                     <TabItem value="jwt"><pre><code>geth --mainnet --http --http.api eth,net,engine,admin --authrpc.jwtsecret=&lt;PATH_TO_JWT_FILE&gt; </code></pre></TabItem>
                     <TabItem value="ipc"><pre><code>geth --mainnet --http --http.api eth,net,engine,admin --ipcpath=&lt;PATH_TO_IPC_FILE&gt;</code></pre></TabItem>
-            </Tabs>
-          </TabItem>
-          <TabItem value="goerli">
-            <Tabs className='tabs-hidden-in-jwt-guide'  groupId="protocol" defaultValue="jwt" values={[
-                {label: 'JWT', value: 'jwt'},
-                {label: 'IPC', value: 'ipc'}
-                ]}>
-                    <TabItem value="jwt"><pre><code>geth --goerli --http --http.api eth,net,engine,admin --authrpc.jwtsecret=&lt;PATH_TO_JWT_FILE&gt; </code></pre></TabItem>
-                    <TabItem value="ipc"><pre><code>geth --goerli --http --http.api eth,net,engine,admin --ipcpath=&lt;PATH_TO_IPC_FILE&gt;</code></pre></TabItem>
             </Tabs>
           </TabItem>
           <TabItem value="sepolia">
@@ -231,7 +191,6 @@ import TabItem from '@theme/TabItem';
       <TabItem value="others">
         <Tabs groupId="network" defaultValue="mainnet" values={[
             {label: 'Mainnet', value: 'mainnet'},
-            {label: 'Goerli', value: 'goerli'},
             {label: 'Sepolia', value: 'sepolia'},
             {label: 'Holesky', value: 'holesky'},
         ]}>
@@ -242,15 +201,6 @@ import TabItem from '@theme/TabItem';
                 ]}>
                     <TabItem value="jwt"><pre><code>./geth --mainnet --http --http.api eth,net,engine,admin --authrpc.jwtsecret=&lt;PATH_TO_JWT_FILE&gt; </code></pre></TabItem>
                     <TabItem value="ipc"><pre><code>./geth --mainnet --http --http.api eth,net,engine,admin --ipcpath=&lt;PATH_TO_IPC_FILE&gt;</code></pre></TabItem>
-            </Tabs>
-          </TabItem>
-          <TabItem value="goerli">
-            <Tabs className='tabs-hidden-in-jwt-guide'  groupId="protocol" defaultValue="jwt" values={[
-                {label: 'JWT', value: 'jwt'},
-                {label: 'IPC', value: 'ipc'}
-                ]}>
-                    <TabItem value="jwt"><pre><code>./geth --goerli --http --http.api eth,net,engine,admin --authrpc.jwtsecret=&lt;PATH_TO_JWT_FILE&gt; </code></pre></TabItem>
-                    <TabItem value="ipc"><pre><code>./geth --goerli --http --http.api eth,net,engine,admin --ipcpath=&lt;PATH_TO_IPC_FILE&gt;</code></pre></TabItem>
             </Tabs>
           </TabItem>
           <TabItem value="sepolia">
