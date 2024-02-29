@@ -12,6 +12,13 @@ This section discusses the lifecycle of a [validator](validator-clients.md) as d
 
 ![Validator Lifecycle Diagram](/img/validator-lifecycle.png)
 
+:::info
+
+After the Deneb hardfork
+- [EIP-7514](https://eips.ethereum.org/EIPS/eip-7514): Add Max Epoch Churn Limit: reduces activations from 4 ~ 16 per epoch to 4 ~ 8 per epoch
+
+:::
+
 ## UNKNOWN State
 Prysm's [validator](validator-clients.md) client will report that the state of a particular validator is UNKNOWN when it loads validator keys that have not yet submitted a valid deposit to the [Ethereum proof-of-work chain](/docs/terminology#eth1) [validator deposit contract](./validator-deposit-contract).
 
@@ -20,7 +27,7 @@ Once a valid transaction has been submitted to the [validator deposit contract](
 
 ## PENDING State
 
-The current specification for [processing deposits](https://github.com/ethereum/consensus-specs/blob/dev/specs/phase0/validator.md#process-deposit) requires a `ETH1_FOLLOW_DISTANCE`(minimum of 2048 ETH1 blocks, ~8 hours, to ensure stability of the chain) plus `EPOCHS_PER_ETH1_VOTING_PERIOD` (64 epochs, ~6.8 hours, to organize a sizable committee for voting) before deposits can be processed into the Ethereum beacon chain. The validator is then assigned an index number and placed into a queue for activation. The beacon chain can process the deposits of 4 ~ 16 new validators per finalized epoch, the difference in the number is determined by the number of total active validators on the chain. Once a validator has reached the front of the queue, it is assigned an activation epoch after an additional 4~5 epochs (~31 minutes).
+The current specification for [processing deposits](https://github.com/ethereum/consensus-specs/blob/dev/specs/phase0/validator.md#process-deposit) requires a `ETH1_FOLLOW_DISTANCE`(minimum of 2048 ETH1 blocks, ~8 hours, to ensure stability of the chain) plus `EPOCHS_PER_ETH1_VOTING_PERIOD` (64 epochs, ~6.8 hours, to organize a sizable committee for voting) before deposits can be processed into the Ethereum beacon chain. The validator is then assigned an index number and placed into a queue for activation. The beacon chain can process the deposits of 4 ~ 8 new validators per finalized epoch, the difference in the number is determined by the number of total active validators on the chain. Once a validator has reached the front of the queue, it is assigned an activation epoch after an additional 4~5 epochs (~31 minutes).
 
 ## ACTIVE State
 
