@@ -73,8 +73,6 @@ export const MultiDimensionalContentWidget = () => {
 
 		if (isSelectedByText('Mainnet'))
 			selectedNetwork = "Mainnet";
-		else if (isSelectedByText('Goerli'))
-			selectedNetwork = "Goerli";
 		else if (isSelectedByText('Sepolia'))
 			selectedNetwork = "Sepolia";
 		else if (isSelectedByText('Holesky'))

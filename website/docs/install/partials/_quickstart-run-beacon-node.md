@@ -11,7 +11,6 @@ import TabItem from '@theme/TabItem';
   <TabItem value="win">
     <Tabs groupId="network" defaultValue="mainnet" values={[
       {label: 'Mainnet', value: 'mainnet'},
-      {label: 'Goerli', value: 'goerli'},
       {label: 'Sepolia', value: 'sepolia'},
       {label: 'Holesky', value: 'holesky'}
     ]}>
@@ -29,16 +28,6 @@ import TabItem from '@theme/TabItem';
             <pre><code>prysm.bat beacon-chain --execution-endpoint=&lt;PATH_TO_IPC_FILE&gt; --mainnet --checkpoint-sync-url=https://beaconstate.info --genesis-beacon-api-url=https://beaconstate.info</code></pre>
           </TabItem>
         </Tabs>
-      </TabItem>
-      <TabItem value="goerli">
-        <Tabs groupId="protocol" defaultValue="jwt" values={[
-          {label: 'JWT', value: 'jwt'},
-          {label: 'IPC', value: 'ipc'}
-        ]}>
-          <TabItem value="jwt"><pre><code>prysm.bat beacon-chain --execution-endpoint=http://localhost:8551 --goerli --jwt-secret=&lt;PATH_TO_JWT_FILE&gt;  --checkpoint-sync-url=https://goerli.beaconstate.info --genesis-beacon-api-url=https://goerli.beaconstate.info</code></pre></TabItem>
-          <TabItem value="ipc"><pre><code>prysm.bat beacon-chain --execution-endpoint=&lt;PATH_TO_IPC_FILE&gt; --goerli --checkpoint-sync-url=https://goerli.beaconstate.ethstaker.cc --genesis-beacon-api-url=https://goerli.beaconstate.ethstaker.cc</code></pre></TabItem>
-        </Tabs>
-        <p>You may wonder why the previous link contains the "Prater" word instead of "Goerli". The reason is, in the pre-merge world, "Goerli" was the name of the execution layer for this testnet, and "Prater" the name of the consensus layer for this testnet. Post-merge, the name "Prater" was deprecated and now only "Goerli" remains.</p>
       </TabItem>
       <TabItem value="sepolia">
         <Tabs groupId="protocol" defaultValue="jwt" values={[
@@ -63,7 +52,6 @@ import TabItem from '@theme/TabItem';
   <TabItem value="others">
     <Tabs groupId="network" defaultValue="mainnet" values={[
       {label: 'Mainnet', value: 'mainnet'},
-      {label: 'Goerli', value: 'goerli'},
       {label: 'Sepolia', value: 'sepolia'},
       {label: 'Holesky', value: 'holesky'}
     ]}>
@@ -81,16 +69,6 @@ import TabItem from '@theme/TabItem';
             <pre><code>./prysm.sh beacon-chain --execution-endpoint=&lt;PATH_TO_IPC_FILE&gt; --mainnet --checkpoint-sync-url=https://beaconstate.info --genesis-beacon-api-url=https://beaconstate.info</code></pre>
           </TabItem>
         </Tabs>
-      </TabItem>
-      <TabItem value="goerli">
-        <Tabs groupId="protocol" defaultValue="jwt" values={[
-          {label: 'JWT', value: 'jwt'},
-          {label: 'IPC', value: 'ipc'}
-          ]}>
-            <TabItem value="jwt"><pre><code>./prysm.sh beacon-chain --execution-endpoint=http://localhost:8551 --goerli --jwt-secret=&lt;PATH_TO_JWT_FILE&gt;  --checkpoint-sync-url=https://goerli.beaconstate.info --genesis-beacon-api-url=https://goerli.beaconstate.info</code></pre></TabItem>
-            <TabItem value="ipc"><pre><code>./prysm.sh beacon-chain --execution-endpoint=&lt;PATH_TO_IPC_FILE&gt; --goerli --checkpoint-sync-url=https://goerli.beaconstate.info --genesis-beacon-api-url=https://goerli.beaconstate.info</code></pre></TabItem>
-          </Tabs>
-          <p>You may wonder why the previous link contains the "Prater" word instead of "Goerli". The reason is, in the pre-merge world, "Goerli" was the name of the execution layer for this testnet, and "Prater" the name of the consensus layer for this testnet. Post-merge, the name "Prater" was deprecated and now only "Goerli" remains.</p>
       </TabItem>
       <TabItem value="sepolia">
         <Tabs groupId="protocol" defaultValue="jwt" values={[
@@ -120,20 +98,15 @@ Syncing from a checkpoint usually takes a couple of minutes. See [Sync from a ch
 
 <Tabs groupId="network" defaultValue="mainnet" values={[
       {label: 'Mainnet', value: 'mainnet'},
-      {label: 'Goerli', value: 'goerli'},
       {label: 'Sepolia', value: 'sepolia'},
       {label: 'Holesky', value: 'holesky'}
     ]}>
     <TabItem value="mainnet">
       If you wish to sync from genesis, you need to remove <code>--checkpoint-sync-url</code> and <code>--genesis-beacon-api-url</code> flags from the previous command. Syncing from genesis usually takes a couple days, but it can take longer depending on your network and hardware specs.
     </TabItem>
-    <TabItem value="goerli">
-      If you wish to sync from genesis, you need to remove <code>--checkpoint-sync-url</code> and <code>--genesis-beacon-api-url</code> flags from the previous command and add the <code>--genesis-state=genesis.ssz</code> flag. Syncing from genesis usually takes a couple days, but it can take longer depending on your network and hardware specs.
-      Download the <a href='https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz'>Goerli genesis.ssz from Github</a> into your <code>consensus</code> directory.
-    </TabItem>
     <TabItem value="sepolia">
       If you wish to sync from genesis, you need to remove <code>--checkpoint-sync-url</code> and <code>--genesis-beacon-api-url</code> flags from the previous command and add the <code>--genesis-state=genesis.ssz</code> flag. Syncing from genesis usually takes a couple days, but it can take longer depending on your network and hardware specs.
-      Download the <a href='https://github.com/eth-clients/merge-testnets/blob/main/sepolia/genesis.ssz'>Sepolia genesis.ssz from Github</a> into your <code>consensus</code> directory.
+      Download the <a href='https://github.com/eth-clients/sepolia/blob/main/bepolia/genesis.ssz'>Sepolia genesis.ssz from Github</a> into your <code>consensus</code> directory.
     </TabItem>
      <TabItem value="holesky">
       If you wish to sync from genesis, you need to remove <code>--checkpoint-sync-url</code> and <code>--genesis-beacon-api-url</code> flags from the previous command and add the <code>--genesis-state=genesis.ssz</code> flag. Syncing from genesis usually takes a couple days, but it can take longer depending on your network and hardware specs.

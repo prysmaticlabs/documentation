@@ -136,11 +136,11 @@ import TabItem from '@theme/TabItem';
                 <Tabs className="tabgroup-with-label" groupId="network" defaultValue="mainnet" values={[
                         {label: 'Network:', value: 'label'},
                         {label: 'Mainnet', value: 'mainnet'},
-                        {label: 'Goerli', value: 'goerli'},
+                        {label: 'Holesky', value: 'holesky'},
                         {label: 'Sepolia', value: 'sepolia'}
                     ]}>
                     <TabItem value="mainnet">Paste your validator's public key (available in your <code>deposit_data-*.json</code> file) into a <a href='https://beaconcha.in'>blockchain explorer like beaconcha.in</a> to check the status of your validator.</TabItem>
-                    <TabItem value="goerli">Paste your validator's public key (available in your <code>deposit_data-*.json</code> file) into a <a href='https://goerli.beaconcha.in/'>Goerli blockchain explorer like beaconcha.in</a> to check the status of your validator.</TabItem>
+                    <TabItem value="holesky">Paste your validator's public key (available in your <code>deposit_data-*.json</code> file) into a <a href='https://holesky.beaconcha.in/'>blockchain explorer like beaconcha.in</a> to check the status of your validator.</TabItem>
                     <TabItem value="sepolia">Running a validator on Sepolia is currently unsupported as Sepolia is a permissioned network, so there's nothing to do here.</TabItem>
                 </Tabs>
             </div>

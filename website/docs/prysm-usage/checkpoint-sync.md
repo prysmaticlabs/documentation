@@ -95,22 +95,22 @@ You should see the following output if your export was successful:
 
 ```bash
 INFO[0000] requesting http://localhost:3500/eth/v2/debug/beacon/states/finalized
-INFO[0001] detected supported config in remote finalized state, name=goerli, fork=bellatrix
+INFO[0001] detected supported config in remote finalized state, name=holesky, fork=bellatrix
 INFO[0001] requesting http://localhost:3500/eth/v2/beacon/blocks/0x766bdce4c70b6ee991bd68f8065d73e3990895b1953f6b931baae0502d8cbfcf
 INFO[0001] BeaconState slot=3041920, Block slot=3041920
 INFO[0001] BeaconState htr=0x34ebc10f191706afbbccb0c3c39679632feef0453fe842bda264e432e9e31011d, Block state_root=0x34ebc10f191706afbbccb0c3c39679632feef0453fe842bda264e432e9e31011
 INFO[0001] BeaconState latest_block_header htr=0x766bdce4c70b6ee991bd68f8065d73e3990895b1953f6b931baae0502d8cbfcfd, block htr=0x766bdce4c70b6ee991bd68f8065d73e3990895b1953f6b931baae0502d8cbfcf
-INFO[0001] saved ssz-encoded block to to block_goerli_bellatrix_3041920-0x766bdce4c70b6ee991bd68f8065d73e3990895b1953f6b931baae0502d8cbfcf.ssz
-INFO[0001] saved ssz-encoded state to to state_goerli_bellatrix_3041920-0x34ebc10f191706afbbccb0c3c39679632feef0453fe842bda264e432e9e31011.ssz
+INFO[0001] saved ssz-encoded block to to block_holesky_bellatrix_3041920-0x766bdce4c70b6ee991bd68f8065d73e3990895b1953f6b931baae0502d8cbfcf.ssz
+INFO[0001] saved ssz-encoded state to to state_holesky_bellatrix_3041920-0x34ebc10f191706afbbccb0c3c39679632feef0453fe842bda264e432e9e31011.ssz
 ```
 
-The two exported `*.ssz` files are your `BeaconState` and `SignedBeaconBlock` files. Their filenames combine their file type (`state`, `block`), the network (`goerli`), the fork name (`bellatrix`), the slot (`2397120`) and the state or block root in hex encoding. The `checkpoint save` command doesn't export the required genesis state, but the genesis state can be downloaded via `curl` or `wget` using the following command:
+The two exported `*.ssz` files are your `BeaconState` and `SignedBeaconBlock` files. Their filenames combine their file type (`state`, `block`), the network (`holesky`), the fork name (`bellatrix`), the slot (`2397120`) and the state or block root in hex encoding. The `checkpoint save` command doesn't export the required genesis state, but the genesis state can be downloaded via `curl` or `wget` using the following command:
 
 ```
 curl -H "Accept: application/octet-stream"  http://localhost:3500/eth/v1/debug/beacon/states/genesis > genesis.ssz
 ```
 
-You can also just manually download the genesis state from GitHub: [Goerli](https://github.com/eth-clients/eth2-networks/raw/master/shared/prater/genesis.ssz) | [Sepolia](https://github.com/eth-clients/merge-testnets/blob/main/sepolia/genesis.ssz)
+You can also just manually download the genesis state from GitHub: [holesky](https://github.com/eth-clients/holesky/blob/main/custom_config_data/genesis.ssz) | [Sepolia](https://github.com/eth-clients/sepolia/blob/main/bepolia/genesis.ssz)
 
 Use the following command to start your beacon node with checkpoint sync configured to use this checkpoint state:
 
@@ -122,8 +122,8 @@ Use the following command to start your beacon node with checkpoint sync configu
 
 ```bash
 ./prysm.bat beacon-chain \
---checkpoint-block=$PWD/block_goerli_bellatrix_3041920-0x766bdce4c70b6ee991bd68f8065d73e3990895b1953f6b931baae0502d8cbfcf.ssz \
---checkpoint-state=$PWD/state_goerli_bellatrix_3041920-0x34ebc10f191706afbbccb0c3c39679632feef0453fe842bda264e432e9e31011.ssz \
+--checkpoint-block=$PWD/block_holesky_bellatrix_3041920-0x766bdce4c70b6ee991bd68f8065d73e3990895b1953f6b931baae0502d8cbfcf.ssz \
+--checkpoint-state=$PWD/state_holesky_bellatrix_3041920-0x34ebc10f191706afbbccb0c3c39679632feef0453fe842bda264e432e9e31011.ssz \
 --genesis-state=$PWD/genesis.ssz
 ```
     
@@ -132,8 +132,8 @@ Use the following command to start your beacon node with checkpoint sync configu
 
 ```bash
 ./prysm.sh beacon-chain \
---checkpoint-block=$PWD/block_goerli_bellatrix_3041920-0x766bdce4c70b6ee991bd68f8065d73e3990895b1953f6b931baae0502d8cbfcf.ssz \
---checkpoint-state=$PWD/state_goerli_bellatrix_3041920-0x34ebc10f191706afbbccb0c3c39679632feef0453fe842bda264e432e9e31011.ssz \
+--checkpoint-block=$PWD/block_holesky_bellatrix_3041920-0x766bdce4c70b6ee991bd68f8065d73e3990895b1953f6b931baae0502d8cbfcf.ssz \
+--checkpoint-state=$PWD/state_holesky_bellatrix_3041920-0x34ebc10f191706afbbccb0c3c39679632feef0453fe842bda264e432e9e31011.ssz \
 --genesis-state=$PWD/genesis.ssz
 ```
 
@@ -149,7 +149,6 @@ To verify that the checkpoint state you're using is legitimate, follow these ste
 1. Navigate to `http://localhost:3500/eth/v1/beacon/headers/finalized` using your browser.
 2. Find the `slot` number and `state_root` value.
 3. Use a trusted blockchain explorer to verify the `state_root`. To be extra safe, follow this procedure using multiple blockchain explorers. Using `beaconcha.in` as an example, navigate to one of the following pages, replacing `SLOT` with the `slot` you pulled from your browser:
-   - **Goerli**: https://goerli.beaconcha.in/slot/SLOT
    - **Sepolia**: https://sepolia.beaconcha.in/slot/SLOT
    - **Holesky**: https://holesky.beaconcha.in/slot/SLOT
    - **Mainnet**: https://beaconcha.in/slot/SLOT
