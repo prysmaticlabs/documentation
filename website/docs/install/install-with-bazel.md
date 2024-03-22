@@ -217,11 +217,14 @@ At the moment, building Prysm docker images is only supported on **Linux** opera
 
 :::
 
- The standard images are very thin wrappers around the Prysm beacon-chain and validator binaries, and do not contain any other typical components of Docker images such as a bash shell. These are the Docker images we ship to all users, and you can build them yourself as follows:
+ The standard images are very thin wrappers around the Prysm beacon-chain and validator binaries, and do not contain any other typical components of Docker images such as a bash shell. These are the Docker images we ship to all users, and you can build them yourself by creating a docker tarball and then importing it into your local docker machine as follows:
 
 ```bash
-bazel build //cmd/beacon-chain:image_bundle --config=release
-bazel build //cmd/validator:image_bundle --config=release
+bazel build //cmd/beacon-chain:oci_image_tarball --config=release
+docker load -i bazel-bin/cmd/beacon-chain/oci_image_tarball/tarball.tar
+
+bazel build //cmd/validator:oci_image_tarball --config=release
+docker load -i bazel-bin/cmd/validator/oci_image_tarball/tarball.tar
 ```
 
 The tags for the images are specified [here](https://github.com/prysmaticlabs/prysm/blob/ff329df808ad68fbe79d11c73121fa6a7a0c0f29/cmd/beacon-chain/BUILD.bazel#L58) for the beacon-chain and [here](https://github.com/prysmaticlabs/prysm/blob/ff329df808ad68fbe79d11c73121fa6a7a0c0f29/cmd/validator/BUILD.bazel#L59) for the validator. The default image tags for these images are:
@@ -236,41 +239,49 @@ gcr.io/prysmaticlabs/prysm/validator:latest
 
 You can edit these in the links above to your liking.
 
-#### Debug images
-
-Prysm also provides debug images built using:
-
-```bash
-bazel build //cmd/beacon-chain:image_bundle_debug --config=release
-bazel build //cmd/validator:image_bundle_debug --config=release
-```
-
 ### Running images
 
 You can load the images into your local Docker daemon by first building a `.tar` file as follows for your desired image bundle:
 
 ```text
-bazel build //cmd/beacon-chain:image_bundle.tar
-bazel build //cmd/validator:image_bundle.tar
+bazel build //cmd/beacon-chain:oci_image_tarball --config=release
+bazel build //cmd/validator:oci_image_tarball --config=release
 ```
 
 Then, you can load it into Docker with:
 ```text
-docker load -i bazel-bin/my/image/helloworld.tar
+docker load -i bazel-bin/cmd/beacon-chain/oci_image_tarball/tarball.tar
 ```
 
 For example, you may see output such as this:
 
 ```
-docker load -i bazel-bin/cmd/beacon-chain/image_bundle.tar
-fd6fa224ea91: Loading layer [==================================================>]  3.031MB/3.031MB
-87c9f1582ca0: Loading layer [==================================================>]  15.44MB/15.44MB
-231bdbae9aea: Loading layer [==================================================>]  1.966MB/1.966MB
-a6dc470c72b7: Loading layer [==================================================>]  10.24kB/10.24kB
-a0de9c673ef6: Loading layer [==================================================>]  56.37MB/56.37MB
-84ff92691f90: Loading layer [==================================================>]  10.24kB/10.24kB
+docker load -i bazel-bin/cmd/beacon-chain/oci_image_tarball/tarball.tar
+54ad2ec71039: Loading layer [==================================================>]  103.7kB/103.7kB
+6fbdf253bbc2: Loading layer [==================================================>]   21.2kB/21.2kB
+7bea6b893187: Loading layer [==================================================>]  716.5kB/716.5kB
+ff5700ec5418: Loading layer [==================================================>]     317B/317B
+d52f02c6501c: Loading layer [==================================================>]     198B/198B
+e624a5370eca: Loading layer [==================================================>]     113B/113B
+1a73b54f556b: Loading layer [==================================================>]     385B/385B
+d2d7ec0f6756: Loading layer [==================================================>]     355B/355B
+4cb10dd2545b: Loading layer [==================================================>]  130.6kB/130.6kB
+f33e343848bd: Loading layer [==================================================>]  5.846MB/5.846MB
+714f56238fb5: Loading layer [==================================================>]  2.063MB/2.063MB
+c8beeff22ce7: Loading layer [==================================================>]  968.6kB/968.6kB
+bb0331ba4692: Loading layer [==================================================>]  131.2kB/131.2kB
+dcecd3d0367d: Loading layer [==================================================>]  741.3kB/741.3kB
+5bf213caca44: Loading layer [==================================================>]  52.43kB/52.43kB
+15ae1a71094f: Loading layer [==================================================>]     237B/237B
+8100be62255a: Loading layer [==================================================>]  2.944MB/2.944MB
+613cf7104c89: Loading layer [==================================================>]  380.1kB/380.1kB
+53797c1406d2: Loading layer [==================================================>]  7.856MB/7.856MB
+a9df51aa7dad: Loading layer [==================================================>]  35.52kB/35.52kB
+964a1c4d70ad: Loading layer [==================================================>]  24.31kB/24.31kB
+467f01356216: Loading layer [==================================================>]  109.5kB/109.5kB
+95ea3e93204b: Loading layer [==================================================>]  318.6kB/318.6kB
+17eb06822adc: Loading layer [==================================================>]  40.37MB/40.37MB
 Loaded image: gcr.io/prysmaticlabs/prysm/beacon-chain:latest
-Loaded image: prysmaticlabs/prysm-beacon-chain:latest
 ```
 
 ### Pushing to a container registry
@@ -293,8 +304,8 @@ See:
 To push the actual images, you do not need to build the image bundle beforehand. You can do a simple:
 
 ```text
-bazel run //cmd/beacon-chain:push_images --config=release
-bazel run //cmd/validator:push_images --config=release
+bazel run //cmd/beacon-chain:push_images --config=release -- --tag latest --repository gcr.io/prysmaticlabs/prysm/beacon-chain
+bazel run //cmd/validator:push_images --config=release -- --tag latest --repository gcr.io/prysmaticlabs/prysm/beacon-chain 
 ```
 
 Which will deploy all images with the tags specified in [here](https://github.com/prysmaticlabs/prysm/blob/ff329df808ad68fbe79d11c73121fa6a7a0c0f29/cmd/beacon-chain/BUILD.bazel#L58) for the beacon-chain and [here](https://github.com/prysmaticlabs/prysm/blob/ff329df808ad68fbe79d11c73121fa6a7a0c0f29/cmd/validator/BUILD.bazel#L59) for the validator. 
