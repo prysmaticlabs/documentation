@@ -223,10 +223,10 @@ import TabItem from '@theme/TabItem';
           </TabItem>
         </Tabs>
       </TabItem>
-      <p>See Geth's <a href='https://geth.ethereum.org/docs/interface/command-line-options'>command-line options</a> for parameter definitions.</p>
     </Tabs>
   </TabItem>
 </Tabs>
+  <p>See Geth's <a href='https://geth.ethereum.org/docs/interface/command-line-options'>command-line options</a> for parameter definitions.</p>
 
 The execution layer client cannot sync without an attached beacon node. We'll see how to setup a beacon node in the next step.
 
