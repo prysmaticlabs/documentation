@@ -29,7 +29,9 @@ First, create a local clone of Prysm.
 
 Then link your local repository to your newly created fork.
 
+```sh
     git remote add myprysmrepo https://github.com/<your_github_user_name>/prysm.git
+```
 
 Finally, ensure Go is installed and working on your machine:
 
@@ -57,7 +59,9 @@ Many tests rely on the Bazel build system, thus testing with `go test` may not w
 
 If you decide to do so and if you get the following error:
 
+```
     Caught SIGILL in blst_cgo_init, consult <blst>/bindings/go/README.md.
+```
 
 Please define the following environment variable when running tests:
 
@@ -160,11 +164,13 @@ If there are conflicts between your edits and those made by others since you sta
 
 Open those files, and you will see lines inserted by Git that identify the conflicts:
 
+```
     <<<<<< HEAD
     Other developers’ version of the conflicting code
     ======
     Your version of the conflicting code
     '>>>>> Your Commit
+```
 
 The code from the Prysm repository is inserted between `<<<` and `===` while the change you have made is inserted between `===` and `>>>>`. Remove everything between `<<<<` and `>>>` and replace it with code that resolves the conflict. Repeat the process for all files listed by Git status to have conflicts.
 
