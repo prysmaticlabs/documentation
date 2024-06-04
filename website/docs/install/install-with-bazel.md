@@ -130,7 +130,7 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
       <TabItem value="mainnet">
 
 ```text
-bazel run //cmd/beacon-chain --config=release --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> --mainnet
+bazel run //cmd/beacon-chain --config=release -- --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> --mainnet
 ```
 
   </TabItem>
