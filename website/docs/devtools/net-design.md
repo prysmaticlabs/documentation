@@ -48,7 +48,7 @@ For interoperability we will be using SECIO for securing sessions over transport
 - Digest: SHA-256.
 - Identity: Secp256k1
 
-In SECIO, channel negotiation begins with a proposal phase,  where we exchange information from each peer which declares the ephemeral key generation curve, the cipher for encryption , and the hash algorithm. If the proposal has any of the fields set incorrectly from the specified interoperability requirements stated above, we reject the peer and disconnect with them. Additioanlly the local peer’s public key, which is used to generate its Peer ID, is also given in the proposal message. This public key is generated using the secp256k1 curve. After performing the key exchange, generating the shared secret and  creating the signer and HMAC signer we can initiate a secure channel with the other peer. 
+In SECIO, channel negotiation begins with a proposal phase,  where we exchange information from each peer which declares the ephemeral key generation curve, the cipher for encryption , and the hash algorithm. If the proposal has any of the fields set incorrectly from the specified interoperability requirements stated above, we reject the peer and disconnect with them. Additionally the local peer’s public key, which is used to generate its Peer ID, is also given in the proposal message. This public key is generated using the secp256k1 curve. After performing the key exchange, generating the shared secret and  creating the signer and HMAC signer we can initiate a secure channel with the other peer. 
 
 ##  Current Status in Prysm
 
