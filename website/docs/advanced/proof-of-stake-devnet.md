@@ -266,7 +266,7 @@ And the last one is:
 which corresponds to `1694203366`, and which defines the genesis time of the chain.
 The fact that `timestamp` is equal to `config.shanghaiTime` tells that the chain will start directly at the time of the Shanghai upgrade.
 
-We want to start our nodes **before** the gensis time of the chain, so we need to move these two fields into the future.
+We want to start our nodes **before** the genesis time of the chain, so we need to move these two fields into the future.
 
 To do that, in the `devnet` directory, let's run:
 
@@ -279,7 +279,7 @@ This command takes `config.yaml`, `genesis.json` and some other parameters in in
 - `genesis.ssz` will be used later in Prysm.
 
 Let's detail some used options:
-- `--num-validators 64` deterministically creates 64 validators in the output file specified by `--output-ssz`. Runnning two times this command will generate two times the same set of validators. In this output file, the field named `genesis_validators_root` contains the merkle root of data related to the initial set of validators.
+- `--num-validators 64` deterministically creates 64 validators in the output file specified by `--output-ssz`. Running two times this command will generate two times the same set of validators. In this output file, the field named `genesis_validators_root` contains the merkle root of data related to the initial set of validators.
 - `--genesis-time-delay 600` modifies `timestamp` and a `config.shanghaiTime` in the file specified by `--geth-genesis-json-out` 600 seconds (10 minutes) in the future.  We use 10 minutes to be sure you will be able to read the rest of this tutorial and to launch all the clients without rushing before the end of this delay. You can of course reduce it to a few seconds later.
 
 `genesis.ssz` is a binary file and is not easily readable. If you want to see the content of this file, you can add to the previous command the flag `--output-json <path to a file>`. It will outputs a human readable equivalent file to `genesis.ssz`.
