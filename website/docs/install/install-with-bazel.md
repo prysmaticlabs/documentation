@@ -130,7 +130,7 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
       <TabItem value="mainnet">
 
 ```text
-bazel run //cmd/beacon-chain --config=release --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> --mainnet
+bazel run //cmd/beacon-chain --config=release -- --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> --mainnet
 ```
 
   </TabItem>
@@ -211,19 +211,35 @@ We do not write our own Dockerfiles, as Bazel provides us a more sandboxed, simp
 
 #### Regular Docker images
 
-:::info Windows / Mac
+:::info Windows
 
-At the moment, building Prysm docker images is only supported on **Linux** operating systems.
+At the moment, building Prysm docker images is only supported on **Linux** and **MacOS** operating systems.
 
 :::
 
  The standard images are very thin wrappers around the Prysm beacon-chain and validator binaries, and do not contain any other typical components of Docker images such as a bash shell. These are the Docker images we ship to all users, and you can build them yourself by creating a docker tarball and then importing it into your local docker machine as follows:
 
+##### For AMD / x86 architecture
+
 ```bash
+# Beacon node
 bazel build //cmd/beacon-chain:oci_image_tarball --config=release
 docker load -i bazel-bin/cmd/beacon-chain/oci_image_tarball/tarball.tar
 
+# Validator client
 bazel build //cmd/validator:oci_image_tarball --config=release
+docker load -i bazel-bin/cmd/validator/oci_image_tarball/tarball.tar
+```
+
+##### For ARM architecture (including Apple M1/M2/M3)
+
+```bash
+# Beacon node
+bazel build //cmd/beacon-chain:oci_image_tarball --platforms=@io_bazel_rules_go//go/toolchain:linux_arm64_cgo --config=release
+docker load -i bazel-bin/cmd/beacon-chain/oci_image_tarball/tarball.tar
+
+# Validator client
+bazel build //cmd/validator:oci_image_tarball  --platforms=@io_bazel_rules_go//go/toolchain:linux_arm64_cgo --config=release
 docker load -i bazel-bin/cmd/validator/oci_image_tarball/tarball.tar
 ```
 
