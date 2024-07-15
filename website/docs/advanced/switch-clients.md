@@ -31,7 +31,7 @@ Installation documentation links for each client can be found below:
 - Teku: https://docs.teku.consensys.io/development/get-started/install/install-binaries
 - Nimbus: https://nimbus.guide/quick-start.html  
 - Lighthouse: https://lighthouse-book.sigmaprime.io/installation.html  
-- Lodestar: https://chainsafe.github.io/lodestar/getting-started/quick-start 
+- Lodestar: https://chainsafe.github.io/lodestar/run/getting-started/quick-start
 
 ### Step 2: Stop and Disable Prysm
 
@@ -95,7 +95,7 @@ https://docs.teku.consensys.io/get-started/connect/mainnet#create-a-password-fil
 
 <TabItem value="lod">
 
-https://chainsafe.github.io/lodestar/validator-management/validator-management/#import-a-validator-keystore-from-your-wallet-to-lodestar
+https://chainsafe.github.io/lodestar/run/validator-management/vc-configuration#import-a-validator-keystore-to-lodestar
 
 </TabItem>
 </Tabs>
@@ -137,7 +137,7 @@ https://docs.teku.consensys.net/en/stable/HowTo/Prevent-Slashing/
 
 <TabItem value="lod">
 
-https://chainsafe.github.io/lodestar/validator-management/validator-cli/#validator-slashing-protection-import
+https://chainsafe.github.io/lodestar/run/validator-management/validator-cli#validator-slashing-protection-import
 
 </TabItem>
 </Tabs>
