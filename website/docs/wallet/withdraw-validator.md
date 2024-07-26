@@ -349,7 +349,7 @@ Slashed or involuntarily exited validators will still need to go through the pro
 
 ## Frequently asked questions
 
-<!-- TODO: These questions can now be moved into FAQ CMS and embedded both here and within our root-level FAQ - ping Mick if you'd like to help with this. -->
+<!-- TODO: These questions can now be moved into FAQ CMS and embedded both here and within our root-level FAQ -->
 
 **Q: I updated my `withdrawal_credentials` already; can I update it again?**
 
@@ -413,7 +413,7 @@ A: If any of your validators have been slashed since launch and exited from the 
 A: The guide will still provide a safe way to generate the signed `blstoexecutionchange` messages in an offline environment. From there, if you're willing to take a small risk on inclusion guarantees, some block scanners like beaconcha.in will provide front ends to drag and drop the messages for inclusion to set the withdrawal address. 
 
 ## Glossary
-<!-- TODO: These terms can now be moved into Glossary CMS and embedded via quicklooks to further streamline the content experience - ping Mick if you'd like to help with this. -->
+<!-- TODO: These terms can now be moved into Glossary CMS and embedded via quicklooks to further streamline the content experience -->
 - **Validator**: The on-chain representation of a validator node and its staked Ethereum.
 - **Validator index:** A unique numeric ID assigned to a validator when activated. You can see this validator index in your Prysm validator client logs, or in block explorers such as [https://beaconcha.in](https://beaconcha.in) and [https://beaconscan.com](https://beaconscan.com) by looking it up using your public key. You will need to know the validator indices of the validators you wish to withdraw through this guide. Only activated validators can begin the exit and withdrawal processes.
 - **Staker:** The person or entity managing Ethereum validators.

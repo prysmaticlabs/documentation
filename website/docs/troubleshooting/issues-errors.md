@@ -6,7 +6,7 @@ sidebar_label: Troubleshooting
 
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
-<HeaderBadgesWidget commaDelimitedContributors="Nishant,Mick" />
+<HeaderBadgesWidget />
 
 ## Select a configuration
 
