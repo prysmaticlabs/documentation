@@ -3,7 +3,6 @@ import BrowserOnly from '@docusaurus/BrowserOnly';
 
 export const HeaderBadgesWidget = ({ commaDelimitedContributors }) => {
 	let githubUsernames = {
-		Mick: "symbolpunk",
 		Radek: "rkapka",
 		Sammy: "saolyn",
 		Raul: "rauljordan",
@@ -12,7 +11,6 @@ export const HeaderBadgesWidget = ({ commaDelimitedContributors }) => {
 		Kasey: "kasey",
 		Potuz: "potuz",
 		Nishant: "nisdas",
-		Clarin: "clarin-dy"
 	};
 
 	let buildAuthorBadge = function (authorNickname, index) {
