@@ -1,3 +1,8 @@
+Co-Authored/creator Nathaniel Hooker
+@deuces9ers
+
+
+
 ---
 id: authentication
 title: Configure JWT authentication
