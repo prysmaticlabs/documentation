@@ -8,7 +8,9 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <HeaderBadgesWidget />
 
-[Web3Signer](https://github.com/ConsenSys/web3signer) is an open-source remote signing service developed by Consensys. Prysm users can use this tool as an alternative to storing keys locally. Web3Signer uses REST APIs.
+[Web3Signer](https://github.com/ConsenSys/web3signer) is an open-source remote signing service developed by Consensys. Prysm users can use this tool as an alternative to storing keys locally. Web3Signer uses REST APIs to sign transactions and messages.
+
+Web3Signer follows the [Remote Signing API](https://github.com/ethereum/remote-signing-api) specification.
 
 Prysm supports the use of Web3Signer the following flags:
 
@@ -17,6 +19,13 @@ Prysm supports the use of Web3Signer the following flags:
 example:
 ```
 --validators-external-signer-url=http://localhost:9000
+```
+
+the flag is also aliased to `--remote-signer-url`
+
+example:
+```
+--remote-signer-url=http://localhost:9000
 ```
 
 It is recommended to use `https` for the Web3Signer url. Prysm currently supports one to one on Web3Signer and does not support multiple key management systems with the same validator client. Prysm does not support partial local and partial remote key management. Web3signer does not support authentication between the validator client and the signer.
@@ -32,6 +41,13 @@ HEX example:
 URL example:
 ```
 --validators-external-signer-public-keys=https://web3signer.com/api/v1/eth2/publicKeys
+```
+
+The flag is also aliased to `--remote-signer-keys`
+
+example:
+```
+--remote-signer-keys=0xa99a...e44c,0xb89b...4a0b
 ```
 
 URLs will only pull once and does not poll. Additional keys can be added or removed via the Remote Keymanager API.
@@ -78,4 +94,25 @@ The remote keymanager API only currently supports Web3Signer types, please use t
 Both Keymanager APIs are only supported when the beacon chain syncs.
 :::
 
+## Public Key Persistence
 
+The public keys set on the validator for a remote signer are `NOT` persisted by `DEFAULT`. 
+This means that if the validator client restarts, only the public keys set via flag options will be used on the validator and keys set via the Remote Keymanager API will be lost.
+
+Keys can be persisted by setting the `--validators-external-signer-key-file` set to a file path.
+
+example:
+```
+--validators-external-signer-key-file=/path/to/keyfile.txt
+```
+the flag is also aliased to `--remote-signer-keys-file`
+
+example:
+```
+--remote-signer-keys-file=/path/to/keyfile.txt
+```
+Keys updated via the Remote Keymanager API will be persisted to the file as a hex string, one key per line.
+
+If the file is removed or the file is empty, the validator will revert to the public keys set via the `--validators-external-signer-public-keys` flag.
+
+On restart, the validator will read the file and set the public keys from the file.
