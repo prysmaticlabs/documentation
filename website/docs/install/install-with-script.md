@@ -10,7 +10,7 @@ import ClientStackPng from '@site/static/img/client-stack.png';
 
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
-<HeaderBadgesWidget commaDelimitedContributors="Mick" />
+<HeaderBadgesWidget />
 
 <div className='quickstart'>
 
