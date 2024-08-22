@@ -124,7 +124,7 @@ The Ethereum consensus API implemented by Prysm is maintained as a separate repo
 
 ### Making your first contribution
 
-Each time you begin a set of changes, ensure that you are working on a new branch that you have created as opposed to the `master` of your local repository. By keeping your changes segregated in this branch, merging your changes into the main repository later will be much simpler for the team.
+Each time you begin a set of changes, ensure that you are working on a new branch that you have created as opposed to the `develop` of your local repository. By keeping your changes segregated in this branch, merging your changes into the main repository later will be much simpler for the team.
 
 To create a local branch for `git` to checkout, issue the command:
 
@@ -140,9 +140,9 @@ To fetch changes to the Prysm repository since your last session:
 
     git fetch origin
 
-Then synchronize your master branch:
+Then synchronize your develop branch:
 
-    git pull origin master
+    git pull origin develop
 
 To stage the changed files that are be committed, issue the command:
 
@@ -173,6 +173,10 @@ When you are ready, use git push to move your local copy of the changes to your 
     git push myrepo feature-in-progress-branch
 
 #### Opening a pull request
+
+:::info
+If your change is user facing, ensure that your changeset includes an entry to the CHANGELOG.md file!
+:::
 
 Navigate to your fork of the repository on Github. In the upper left where the current branch is listed, change the branch to your newly created one. Open the files that you have worked on and ensure they include your changes.
 
