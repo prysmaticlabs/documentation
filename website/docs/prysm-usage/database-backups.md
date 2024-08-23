@@ -23,7 +23,9 @@ the `--help` option. It will vary depending the operating system you use.
 
 For MacOS, it is:
 
+```sh
     --datadir value      Data directory for the databases. (default: "/Users/<user>/Library/Eth2")
+```
 
 If you usually run your beacon node with the `--datadir` option, then your base directory is the one specified by the `--datadir` option.
 

@@ -1,4 +1,5 @@
 var prysmVersion = "v5.0.0";
+import { themes } from 'prism-react-renderer';
 
 module.exports = {
     title: 'Prysm',
@@ -59,7 +60,7 @@ module.exports = {
             links: [],
         },
         prism: {
-            theme: require('prism-react-renderer/themes/dracula'),
+            theme: themes.dracula,
         },
         ogImage: 'img/Prysm.svg',
         twitterImage: 'img/Prysm.svg',

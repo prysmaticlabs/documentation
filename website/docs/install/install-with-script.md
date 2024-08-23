@@ -14,13 +14,13 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <div className='quickstart'>
 
-import QuickstartIntroPartial from '@site/docs/install/partials/_quickstart-intro.md';
+import QuickstartIntroPartial from '@site/docs/install/partials/\_quickstart-intro.md';
 
 <QuickstartIntroPartial />
 
 ## Step 1: Review prerequisites and best practices
 
-import QuickstartPrereqsPartial from '@site/docs/install/partials/_quickstart-prereqs.md';
+import QuickstartPrereqsPartial from '@site/docs/install/partials/\_quickstart-prereqs.md';
 
 <QuickstartPrereqsPartial />
 
@@ -28,7 +28,7 @@ import QuickstartPrereqsPartial from '@site/docs/install/partials/_quickstart-pr
 
 <div className='hide-tabs'>
 
-import QuickstartInstallPrysmPartial from '@site/docs/install/partials/_quickstart-install-prysm.md';
+import QuickstartInstallPrysmPartial from '@site/docs/install/partials/\_quickstart-install-prysm.md';
 
 <QuickstartInstallPrysmPartial />
 
@@ -36,21 +36,19 @@ import QuickstartInstallPrysmPartial from '@site/docs/install/partials/_quicksta
 
 In this step, you'll install an execution-layer client that Prysm's beacon node will connect to.
 
-import QuickstartRunExecutionNodeJWTPartial from '@site/docs/install/partials/_quickstart-run-execution-node.md';
+import QuickstartRunExecutionNodeJWTPartial from '@site/docs/install/partials/\_quickstart-run-execution-node.md';
 
 <QuickstartRunExecutionNodeJWTPartial />
 
 ## Step 4: Run a beacon node using Prysm
 
-import QuickstartRunBeaconNodePartial from '@site/docs/install/partials/_quickstart-run-beacon-node.md';
+import QuickstartRunBeaconNodePartial from '@site/docs/install/partials/\_quickstart-run-beacon-node.md';
 
 <QuickstartRunBeaconNodePartial />
 
-
 ## Step 5: Run a validator using Prysm
 
-
-import QuickstartRunValidatorPartial from '@site/docs/install/partials/_quickstart-run-validator.md';
+import QuickstartRunValidatorPartial from '@site/docs/install/partials/\_quickstart-run-validator.md';
 
 <QuickstartRunValidatorPartial />
 
@@ -58,7 +56,7 @@ import QuickstartRunValidatorPartial from '@site/docs/install/partials/_quicksta
 
 </div>
 
--------
+---
 
 ## Frequently asked questions
 
@@ -70,8 +68,9 @@ Keeping all of your client software on a single machine keeps things simple, whi
 
 **Can I use Prysm on a Mac M1 ARM chip?** <br />
 Yes. Choose **one** of the following actions to ensure that Prysm can run on your M1:
- 1. Set an environment variable: `export PRYSM_ALLOW_UNVERIFIED_BINARIES=1`. See [Apple's Terminal User Guide: Use environment variables](https://support.apple.com/guide/terminal/use-environment-variables-apd382cc5fa-4f58-4449-b20a-41c53c006f8f/mac) for detailed instructions.
- 2. Run Prysm through <a href='https://support.apple.com/en-us/HT211861'>Rosetta</a>. See our <a href='https://github.com/prysmaticlabs/prysm/issues/9385'>open bug</a> for more information.
+
+1.  Set an environment variable: `export PRYSM_ALLOW_UNVERIFIED_BINARIES=1`. See [Apple's Terminal User Guide: Use environment variables](https://support.apple.com/guide/terminal/use-environment-variables-apd382cc5fa-4f58-4449-b20a-41c53c006f8f/mac) for detailed instructions.
+2.  Run Prysm through <a href='https://support.apple.com/en-us/HT211861'>Rosetta</a>. See our <a href='https://github.com/prysmaticlabs/prysm/issues/9385'>open bug</a> for more information.
 
 **Do I need to configure JWT if I'm using IPC instead of HTTP?** <br />
 No.
@@ -83,8 +82,7 @@ We recommend **closing** TCP port `8545` to the internet and keeping TCP and UDP
 No. See [Nodes and networks](../concepts/nodes-networks.md) for more information.
 
 **Can I stake with less than 32 ETH?** <br />
-Yes! <a href='https://ethereum.org/en/staking/pools/'>Pooled staking</a> lets you stake with less than 32 ETH. 
-
+Yes! <a href='https://ethereum.org/en/staking/pools/'>Pooled staking</a> lets you stake with less than 32 ETH.
 
 **What should I do if I can't run a node using my own hardware?** <br />
 You can delegate hardware management to <a href='https://ethereum.org/en/staking/saas/'>staking as a service</a> providers.
@@ -101,11 +99,12 @@ Yes. You can tell your execution client to overflow into a specific drive by (TO
 **Can I use an external SSD connected via USB?** <br />
 Yes, but your USB connection introduces a possible point of failure. If you do this, avoid connecting your SSD to your computer through a USB hub - instead, connect it directly.
 
-**Can I use a light client as my local execution client so I don't have to download so much data?**  <br />
+**Can I use a light client as my local execution client so I don't have to download so much data?** <br />
 No, a full execution node is needed.
 
 **Why do I need to run my own execution client?** <br />
 The Merge introduced a new Engine API that allows consensus-layer clients to communicate with execution-layer clients. Teku docs contain a great explainer here: <a href='https://docs.teku.consensys.net/en/latest/Concepts/Merge/'>The Merge</a>.
+
 <!--TODO: develop our own knowledge base with conceptual content -->
 
 **What happens if my execution client goes down? Will I be penalized?** <br />
@@ -113,8 +112,8 @@ Yes. Downtime penalties are minimal but we recommend having uptime and downtime 
 
 **My beacon node is taking a long time to sync. Is there any way I can speed it up?** <br />
 Yes - you can use [checkpoint sync](https://docs.prylabs.network/docs/prysm-usage/checkpoint-sync) to start your beacon node's synchronization from a checkpoint rather than from genesis. This is actually a more secure way to run your beacon node.
-<!--TODO: explain why -->
 
+<!--TODO: explain why -->
 
 **My proposals aren't working, but my attestations are. What's going on?** <br />
 This is usually an indication that your validator isn't able to communicate with your beacon node, or your beacon node isn't able to connect to your execution node.
@@ -130,5 +129,3 @@ TODO
 
 **What are withdrawal keys and validator keys?** <br />
 TODO: explain in context of this guide -->
-
-

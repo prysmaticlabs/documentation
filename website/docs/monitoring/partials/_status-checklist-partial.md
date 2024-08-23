@@ -97,7 +97,8 @@ import TabItem from '@theme/TabItem';
             <div className='input-container'><input id="st-4" type='checkbox'/><span className='done'></span></div>
             <div className='guidance-container'>
                 <label htmlFor="st-4">6. Beacon node sync status</label>
-                <p>You can check your beacon node's <a href='https://ethereum.github.io/beacon-APIs/?urls.primaryName=dev#/Node/getSyncingStatus'>sync status</a> by running <code>curl http://localhost:3500/eth/v1/node/syncing | jq</code> from a separate terminal window. When you see <code>"is_syncing":false</code>, your beacon node is fully synchronized with the beacon chain. When you see <code>"is_optimistic":false</code>, your beacon node sees that your execution node is either 1) not yet started, 2) hasn't synced past the merge block or 3) fully synchronized with the execution-layer blockchain.
+                <p>
+                    You can check your beacon node's <a href='https://ethereum.github.io/beacon-APIs/?urls.primaryName=dev#/Node/getSyncingStatus'>sync status</a> by running <code>curl http://localhost:3500/eth/v1/node/syncing | jq</code> from a separate terminal window. When you see <code>"is_syncing":false</code>, your beacon node is fully synchronized with the beacon chain. When you see <code>"is_optimistic":false</code>, your beacon node sees that your execution node is either 1) not yet started, 2) hasn't synced past the merge block or 3) fully synchronized with the execution-layer blockchain.
                 </p>
             </div>
         </div>
@@ -105,7 +106,9 @@ import TabItem from '@theme/TabItem';
             <div className='input-container'><input id="st-5" type='checkbox'/><span className='done'></span></div>
             <div className='guidance-container'>
                 <label htmlFor="st-5">7. Beacon node peer connectivity</label>
-                <p>You should periodically see more than a few peers reported through your beacon node's log output. Look for output in the format of <code>peers=12</code>. You can issue <code>curl http://localhost:8080/healthz</code> from a separate terminal window to check connectivity status. If you see <code>currentConnectionError: no contract code at given address</code>, your execution node may still be syncing. Otherwise, if you don't see any errors, your beacon node is connected to peers.</p>
+                <p>
+                    You should periodically see more than a few peers reported through your beacon node's log output. Look for output in the format of <code>peers=12</code>. You can issue <code>curl http://localhost:8080/healthz</code> from a separate terminal window to check connectivity status. If you see <code>currentConnectionError: no contract code at given address</code>, your execution node may still be syncing. Otherwise, if you don't see any errors, your beacon node is connected to peers.
+                </p>
             </div>
         </div>
         <div className='task'>
@@ -139,7 +142,7 @@ import TabItem from '@theme/TabItem';
                         {label: 'Holesky', value: 'holesky'},
                         {label: 'Sepolia', value: 'sepolia'}
                     ]}>
-                    <TabItem value="mainnet">Paste your validator's public key (available in your <code>deposit_data-*.json</code> file) into a <a href='https://beaconcha.in'>blockchain explorer like beaconcha.in</a> to check the status of your validator.</TabItem>
+                    <TabItem value="mainnet">Paste your validator's public key (available in your `deposit_data-*.json` file) into a <a href='https://beaconcha.in'>blockchain explorer like beaconcha.in</a> to check the status of your validator.</TabItem>
                     <TabItem value="holesky">Paste your validator's public key (available in your <code>deposit_data-*.json</code> file) into a <a href='https://holesky.beaconcha.in/'>blockchain explorer like beaconcha.in</a> to check the status of your validator.</TabItem>
                     <TabItem value="sepolia">Running a validator on Sepolia is currently unsupported as Sepolia is a permissioned network, so there's nothing to do here.</TabItem>
                 </Tabs>
