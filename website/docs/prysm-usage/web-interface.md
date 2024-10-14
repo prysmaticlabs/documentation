@@ -101,15 +101,19 @@ upon completion of onboarding, your web page should always redirect you to the m
 The web UI runs by default on port 7500 of the validator client if you are running with the `--web` flag. To customize this port, change the following flag to your liking:
 
 ```
---grpc-gateway-port (default: 7500 for validator)
+--http-port (default: 7500 for validator)
 ```
 
 The available parameters to customize are:
 
 | Flag                  | Usage                                                                  |
 | --------------------- | :--------------------------------------------------------------------- |
-| `--grpc-gateway-host` | The host for the validator client's JSON-HTTP API, default `127.0.0.1` |
-| `--grpc-gateway-port` | The port for the validator client's JSON-HTTP API, default `7500`      |
+| `--http-host` | The host for the validator client's JSON-HTTP API, default `127.0.0.1` |
+| `--http-port` | The port for the validator client's JSON-HTTP API, default `7500`      |
+
+:::caution
+`http-host` and `http-port` have replaced `--grpc-gateway-host` and `--grpc-gateway-port` respectively.
+:::
 
 ### Wallet Directory
 
