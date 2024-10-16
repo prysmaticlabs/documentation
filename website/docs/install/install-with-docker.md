@@ -235,7 +235,7 @@ import FullSyncWarningPartial from '@site/docs/partials/_full-sync-warning-parti
 Check the sync status of your node with the following command:
 
 ```text
-curl http://localhost:3500/eth/v1alpha1/node/syncing
+curl http://localhost:3500/eth/v1/node/syncing
 ```
 
 If your node is done synchronizing, you will see the response:
