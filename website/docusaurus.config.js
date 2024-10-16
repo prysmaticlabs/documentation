@@ -1,4 +1,4 @@
-var prysmVersion = "v5.1.1";
+var prysmVersion = "v5.1.2";
 
 module.exports = {
     title: 'Prysm',
