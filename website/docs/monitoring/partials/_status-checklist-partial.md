@@ -119,7 +119,8 @@ import TabItem from '@theme/TabItem';
             <div className='input-container'><input id="st-7" type='checkbox'/><span className='done'></span></div>
             <div className='guidance-container'>
                 <label htmlFor="st-7">9. Beacon node ↔ execution node connectivity</label>
-                <p>Issue <code>curl http://localhost:3500/eth/v1alpha1/node/eth1/connections</code> from a separate terminal window. If you see <code>currentConnectionError: no contract code at given address</code>, your execution node may still be syncing. Otherwise, if you don't see any errors, your beacon node is connected to your execution node. This output can be interpreted as "EN-BN connection is healthy": <code>&#123;"currentAddress":"http://localhost:8551","currentConnectionError":"","addresses":["http://localhost:8551"],"connectionErrors":[]&#125;</code></p>
+                <p>In a separate terminal window, run <code>curl http://localhost:3500/eth/v1/node/syncing</code>. 
+                If the response shows `"el_offline": false`, it can be interpreted as the "EN-BN connection is healthy". However, if you see `"is_optimistic": true`, it may indicate that the execution node is still syncing or experiencing other issues. For more information about this endpoint, visit <a href='https://ethereum.github.io/beacon-APIs/?urls.primaryName=dev#/Node/getSyncingStatus'>the beacon API documentation</a>.</p>
             </div>
         </div>
         <div className='task'>
