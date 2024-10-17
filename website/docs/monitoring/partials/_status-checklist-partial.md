@@ -119,8 +119,8 @@ import TabItem from '@theme/TabItem';
             <div className='input-container'><input id="st-7" type='checkbox'/><span className='done'></span></div>
             <div className='guidance-container'>
                 <label htmlFor="st-7">9. Beacon node ↔ execution node connectivity</label>
-                <p>Issue <code>curl http://localhost:3500/eth/v1/node/syncing</code> from a separate terminal window. 
-                `"el_offline": false` in the response can be interpreted as "EN-BN connection is healthy". Otherwise, observing the fields `"is_optimistic":true` may indicate that the execution node is still syncing or may have other issues. more details on this endpoint found on <a href='https://ethereum.github.io/beacon-APIs/?urls.primaryName=dev#/Node/getSyncingStatus'>the beacon API site</a></p>
+                <p>In a separate terminal window, run <code>curl http://localhost:3500/eth/v1/node/syncing</code>. 
+                If the response shows `"el_offline": false`, it can be interpreted as the "EN-BN connection is healthy". However, if you see `"is_optimistic": true`, it may indicate that the execution node is still syncing or experiencing other issues. For more information about this endpoint, visit <a href='https://ethereum.github.io/beacon-APIs/?urls.primaryName=dev#/Node/getSyncingStatus'>the beacon API documentation</a>.</p>
             </div>
         </div>
         <div className='task'>
