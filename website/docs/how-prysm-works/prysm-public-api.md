@@ -25,51 +25,13 @@ Prysm implements its API by using the popular [gRPC](https://grpc.io) project cr
 The API's purpose is a means of communication between your beacon node and your validator client. Because of this it is not protected against external malicious users. Some endpoints are vulnerable to Denial-of-Service attacks, while others may disclose information about your beacon node. The communication between the beacon node and the validator client should be done privately, either on the same machine or through an SSH connection.
 :::
 
-By default, the beacon node exposes a [gRPC](https://grpc.io) API on host `127.0.0.1:4000`, which is accessed by the validator client. This is not an HTTP endpoint, so you will not be able to perform API queries via HTTP on that port. However, we also expose a JSON-HTTP endpoint on `127.0.0.1:3500` by default for your needs. If you want to query information such as the chainhead from your local beacon node, you can call:
+By default, the beacon node exposes a [gRPC](https://grpc.io) API on host `127.0.0.1:4000`, which is accessed by the validator client. This is not an HTTP endpoint, so you will not be able to perform API queries via HTTP on that port. 
+Instead of using a regular curl command you will need to use `gRPCurl` or a similar tool to make API calls via your terminal.
 
-```
-http://127.0.0.1:3500/eth/v1alpha1/beacon/chainhead
-```
-
-## Disabling the API
-
-By default the beacon node runs with all available set of APIs enabled. You might want to disable one or more APIs, for example for security reasons. The `--http-modules` flags allows fine-grained control over which APIs are available on your node.
-
-## RESTful endpoints \(gRPC Transcoding\)
-
-All of the gRPC services should define JSON over HTTP endpoints by specifying [HTTPRules](https://github.com/googleapis/googleapis/blob/master/google/api/http.proto). Developers may choose to bundle a REST service of gRPC with their client implementation binaries, or alternatively, they may use a JSON encoding proxy such as [Envoy Proxy](https://www.envoyproxy.io/), etc.
-
-For more information on gRPC transcoding, see the examples found [here](https://github.com/googleapis/googleapis/blob/master/google/api/http.proto#L45).
-
-Code sample:
-
-```text
-service Messaging {
-    rpc GetMessage(GetMessageRequest) returns (Message) {
-        option (google.api.http) = {
-            get: "/v1/{name=messages/*}"
-        };
-    }
-}
-message GetMessageRequest {
-    string name = 1; // Mapped to URL Path.
-}
-message Message {
-    string text = 1; // The resource content.
-}
-```
-
-This enables an HTTP REST to gRPC mapping, as shown below:
-
-| HTTP                      | gRPC                                  |
-| :------------------------ | :------------------------------------ |
-| `GET /v1/messages/123456` | `GetMessage(name: "messages/123456")` |
-
-### JSON mapping
-
-The majority of field primitive types for Ethereum are either `bytes` or `uint64`. The canonical JSON mapping for those fields are a Base64 encoded string for `bytes`, or a string representation of `uint64`. Since JavaScript loses precision for values over [MAX\_SAFE\_INTEGER](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_SAFE_INTEGER), `uint64` must be a JSON string in order to accommodate those values. If the field value has not changed and is still set to protobuf's default, this field will be omitted from the JSON encoding entirely.
-
-For more details on JSON mapping for other types, view the relevant section in the [proto3 language guide](https://developers.google.com/protocol-buffers/docs/proto3#json).
+:::caution as of v5.1.1 HTTP for gRPC endpoints is no longer supported
+As of v5.1.1, gRPC gateway was removed from Prysm and no longer supports HTTP for gRPC endpoints.
+Some Prysm specific endpoints are still supported via REST under the prysm/v1 namespace.
+:::
 
 ### gRPC tooling and resources
 
@@ -78,4 +40,5 @@ For more details on JSON mapping for other types, view the relevant section in t
 * [Language reference for proto 3](https://developers.google.com/protocol-buffers/docs/proto3)
 * [Protocol Buffer Basics: Go](https://developers.google.com/protocol-buffers/docs/gotutorial)
 * [Transcoding gRPC to JSON/HTTP using Envoy](https://blog.jdriven.com/2018/11/transcoding-grpc-to-http-json-using-envoy/)
+* [gRPCurl](https://github.com/fullstorydev/grpcurl)
 
