@@ -167,7 +167,7 @@ TODO
 -->
 
 **Does Prysm's implementation of checkpoint sync support backfilling?**
-Prysm's current implementation syncs forward-only. Backfilling will be supported in a future Prysm release. Note that backfilling isn't required to run a validator - it's only required if you want to run an archive node, support other peers, or query chain history through your beacon node.
+Yes. Backfill can be enabled by running the beacon node with the `--enable-experimental-backfill` option. By default Prysm will backfill the last 5 months worth of blocks.
 
 **Can I use checkpoint sync on any network?** <br/>
 Yes. Checkpoint sync is a network-agnostic feature. You can even use it on local devnets.
