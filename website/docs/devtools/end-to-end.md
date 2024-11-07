@@ -8,7 +8,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <HeaderBadgesWidget />
 
-Even the best unit tests won't prevent bugs from creeping into the system. They test small pieces of code in isolation, but it might be the interaction between different modules/packages/subsystems that causes issues. Prysm consist of two separate components, the beacon chain and the validator, that interact with each other in non-trivial ways. Additionally, the system contacts an Eth1 endpoint to access various information about the Eth1 chain. It is therefore very important to find integration bugs as soon as possible. The way Prysm achieves this is through having an E2E (end-to-end) test module. Tests inside this module are ran on every PR build, which greatly increases confidence that new code can safely be merged.
+Even the best unit tests won't prevent bugs from creeping into the system. They test small pieces of code in isolation, but it might be the interaction between different modules/packages/subsystems that causes issues. Prysm consist of two separate components, the beacon chain and the validator, that interact with each other in non-trivial ways. Additionally, the system contacts an Eth1 endpoint to access various information about the Eth1 chain. It is therefore very important to find integration bugs as soon as possible. The way Prysm achieves this is through having an E2E (end-to-end) test module. Tests inside this module are run on every PR build, which greatly increases confidence that new code can safely be merged.
 
 ## Running E2E tests
 
@@ -74,7 +74,7 @@ Each evaluator has a name, a policy (which we will cover later) and an evaluatio
 
 ### Policies
 
-Not every invariant can be checked at every epoch. As an example, the Altair fork transition invariant should be asserted only after the Altair hard fork occurred. Evaluator timings are controlled with policies, which are simple functions returning boolean values, with `true` indicating that the evaluator should be ran for a specific epoch. All policies can be found in https://github.com/prysmaticlabs/prysm/tree/develop/testing/endtoend/policies.
+Not every invariant can be checked at every epoch. As an example, the Altair fork transition invariant should be asserted only after the Altair hard fork occurred. Evaluator timings are controlled with policies, which are simple functions returning boolean values, with `true` indicating that the evaluator should be run for a specific epoch. All policies can be found in https://github.com/prysmaticlabs/prysm/tree/develop/testing/endtoend/policies.
 
 ## Investigating failures
 
@@ -120,7 +120,7 @@ The directory of the `test.log` file contains a `test.output` directory, which i
 endtoend_test.go:279: E2E test ended in error: failed to start the ETH1 miner: exit status 1
 ```
 
-The uzipped output file contains a `eth1-init_miner.log` file with the following contents:
+The unzipped output file contains a `eth1-init_miner.log` file with the following contents:
 
 > Fatal: Failed to read genesis file: open /home/user/.cache/bazel/\_bazel\_user/ec3daeb6ce0cd7052bf7c79ca31f19c6/sandbox/linux-sandbox/1779/execroot/prysm/bazel-out/k8-fastbuild-ST-02d640e6fd05/bin/testing/endtoend/go\_default\_test\_/go\_default\_test.runfiles/com\_github\_ethereum\_go\_ethereum/cmd/geth/geth_/genesiss.json: no such file or directory
 
