@@ -12,7 +12,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 Web3Signer follows the [Remote Signing API](https://github.com/ethereum/remote-signing-api) specification.
 
-Prysm supports the use of Web3Signer the following flags:
+Prysm supports the use of Web3Signer with the following flags:
 
 `--validators-external-signer-url` : base URL for the Web3Signer.
 
