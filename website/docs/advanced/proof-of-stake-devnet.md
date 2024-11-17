@@ -24,7 +24,7 @@ Notwithstanding, more complex applications may want an environment that is close
 
 ## Setting up
 
-Today, running an Ethereum node require **two components**:
+Today, running an Ethereum node requires **two components**:
 
 1.  **execution client software** in charge of processing transactions and smart contracts. Example of execution client softwares are: [go-ethereum](https://geth.ethereum.org), [besu](https://besu.hyperledger.org/), [erigon](https://github.com/ledgerwatch/erigon), [nethermind](https://nethermind.io/) or [reth](https://paradigmxyz.github.io/reth/).
 2.  **consensus client software** in charge of running the proof-of-stake logic. This tutorial will use the [Prysm](https://github.com/prysmaticlabs/prysm) implementation, which my team develops.
