@@ -243,7 +243,7 @@ bazel build //cmd/validator:oci_image_tarball  --platforms=@io_bazel_rules_go//g
 docker load -i bazel-bin/cmd/validator/oci_image_tarball/tarball.tar
 ```
 
-The tags for the images are specified [here](https://github.com/prysmaticlabs/prysm/blob/ff329df808ad68fbe79d11c73121fa6a7a0c0f29/cmd/beacon-chain/BUILD.bazel#L58) for the beacon-chain and [here](https://github.com/prysmaticlabs/prysm/blob/ff329df808ad68fbe79d11c73121fa6a7a0c0f29/cmd/validator/BUILD.bazel#L59) for the validator. The default image tags for these images are:
+The tags for the images are specified [here](https://github.com/prysmaticlabs/prysm/blob/b23c562b67487390907e86af28b54e0a76c4c390/tools/prysm_image.bzl#L82). The default image tags for these images are:
 
 
 <!-- todo: RC links to gcr.io -->
