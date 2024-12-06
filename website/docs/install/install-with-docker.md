@@ -391,7 +391,7 @@ docker run -it -v %LOCALAPPDATA%\Eth2:/data -p 4000:4000 -p 13000:13000 -p 12000
 :::info
 `http-host` and `http-port` have replaced `--grpc-gateway-host` and `--grpc-gateway-port` respectively.
 :::
-This tells your Docker container to to "listen" for connections from outside of your container, allowing you (and other services) to reach your RPC endpoint(s). See [Configure ports and firewalls](../prysm-usage/p2p-host-ip.md) for more information.
+This tells your Docker container to "listen" for connections from outside of your container, allowing you (and other services) to reach your RPC endpoint(s). See [Configure ports and firewalls](../prysm-usage/p2p-host-ip.md) for more information.
 
 
 
