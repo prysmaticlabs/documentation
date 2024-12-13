@@ -431,7 +431,7 @@ Now, send `1 ETH` from our address `0x123463a4b065722e99115d6c222f267d9cabb524` 
         value: web3.toWei(1, "ether")
     })
 
-Just after doing that, go-ethereum logs should containt:
+Just after doing that, go-ethereum logs should contain:
 
     INFO [01-10|15:42:22.550] Submitted transaction                    hash=0x4ac2a0e386ed41d8c56cf83226c44eba0858170a0964941b1f722dd54bb79e4d from=0x123463a4B065722E99115D6c222f267d9cABb524 nonce=0 recipient=0x123C0ffeE567BeeF890DECadE123FaDe456BeD78 value=1,000,000,000,000,000,000
     INFO [01-10|15:42:23.246] Updated payload                          id=0xd1f71f92ca68ab12 number=79 hash=da5ebe..271e9d txs=1 withdrawals=0 gas=21000 fees=2.1e-05 root=088b29..07ccf1 elapsed="365.625µs"
@@ -467,7 +467,7 @@ Enter the private key listed earlier. Now MetaMask should recognise you as the o
 You can see you have 0 ETH instead of the 20.000 ETH expected. We need to connect MetaMask to your devnet. Click on the top left button in MetaMask, then click on `Add network`, and then on `Add a network manually`.
 
 Fill the fields as following:
-- `Network name`: `Personnal ETH devnet` (This is informative, choose what you want.)
+- `Network name`: `Personal ETH devnet` (This is informative, choose what you want.)
 - `New RPC URL`: `http://localhost:8545` (This will connect MetaMask to your local go-ethereum instance to submit transactions.)
 - `Chain ID`: `32382` (This must be the same that the one in the `config.ChainId` in the `genesis.json` file)
 - `Currency symbol`: `pdETH` (For personal devnet ETH. This is informative, choose what you want.)
