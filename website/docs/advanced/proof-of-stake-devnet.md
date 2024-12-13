@@ -18,7 +18,7 @@ With Ethereum having finally transitioned to proof-of-stake, many people are won
 
 Running nodes has become easier over the past few years, with go-ethereum taking around 1 day to sync and some hyper-optimized clients such Reth or Erigon taking less than a week to sync an entire, _archival_ node. It is true that setting up a node on mainnet today is easier than ever. However, developers often want to set up their own, local blockchain for testing purposes. We call these **development networks** or **devnets**.
 
-Devnets are critical for developers working on the protocol as well as smart contract developers that want to run their own chain using their own initial state. However, the latter need can be satisfied by tools such as [Foundry](https://github.com/foundry-rs/foundry/) which runs a “simulated” Ethereum environment that is enough for testing many contract interactions.
+Devnets are critical for developers working on the protocol as well as smart contract developers who want to run their own chain using their own initial state. However, the latter need can be satisfied by tools such as [Foundry](https://github.com/foundry-rs/foundry/) which runs a “simulated” Ethereum environment that is enough for testing many contract interactions.
 
 Notwithstanding, more complex applications may want an environment that is closer to a **real Ethereum blockchain**, and setting up a local chain from scratch is the best approach. This section will help you understand how to set up your own, **local Ethereum chain** from scratch.
 
