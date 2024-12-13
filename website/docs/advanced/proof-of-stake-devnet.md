@@ -26,7 +26,7 @@ Notwithstanding, more complex applications may want an environment that is close
 
 Today, running an Ethereum node require **two components**:
 
-1.  **execution client software** in charge of processing transactions and smart contracts. Example of execution client softwares are: [go-ethereum](https://geth.ethereum.org), [besu](https://besu.hyperledger.org/), [erigon](https://github.com/ledgerwatch/erigon), [nethermind](https://nethermind.io/) or [reth](https://paradigmxyz.github.io/reth/).
+1.  **execution client software** in charge of processing transactions and smart contracts. Example of execution client software are: [go-ethereum](https://geth.ethereum.org), [besu](https://besu.hyperledger.org/), [erigon](https://github.com/ledgerwatch/erigon), [nethermind](https://nethermind.io/) or [reth](https://paradigmxyz.github.io/reth/).
 2.  **consensus client software** in charge of running the proof-of-stake logic. This tutorial will use the [Prysm](https://github.com/prysmaticlabs/prysm) implementation, which my team develops.
 
 Prysm is an open source, Go implementation of the Ethereum proof-of-stake protocol. It can be used to run a node+validator client on mainnet and testnet environments with ease, and is highly configurable to meet users’ needs.
@@ -398,7 +398,7 @@ Your Prysm validator client should look as follows:
     ...
 
     
-## Using our newsly created devnet.
+## Using our newly created devnet.
 The devnet you just launched is a full-fledged Ethereum network. This means you can deploy smart contracts, call these smart contracts, send some Ethers from one account to an other etc...
 
 ### Send ETH using the go-ethereum console.
@@ -431,7 +431,7 @@ Now, send `1 ETH` from our address `0x123463a4b065722e99115d6c222f267d9cabb524` 
         value: web3.toWei(1, "ether")
     })
 
-Just after doing that, go-ethereum logs should containt:
+Just after doing that, go-ethereum logs should contain:
 
     INFO [01-10|15:42:22.550] Submitted transaction                    hash=0x4ac2a0e386ed41d8c56cf83226c44eba0858170a0964941b1f722dd54bb79e4d from=0x123463a4B065722E99115D6c222f267d9cABb524 nonce=0 recipient=0x123C0ffeE567BeeF890DECadE123FaDe456BeD78 value=1,000,000,000,000,000,000
     INFO [01-10|15:42:23.246] Updated payload                          id=0xd1f71f92ca68ab12 number=79 hash=da5ebe..271e9d txs=1 withdrawals=0 gas=21000 fees=2.1e-05 root=088b29..07ccf1 elapsed="365.625µs"

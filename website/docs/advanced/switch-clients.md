@@ -49,7 +49,7 @@ We have a section dedicated to exporting and importing slashing protection histo
 
 ### Step 4: Update port forwarding
 
-This step is not required for nodes which are running on a virtual public cloud, but keep in mind - nodes will be required to run a an execution client locally post merge!  
+This step is not required for nodes which are running on a virtual public cloud, but keep in mind - nodes will be required to run an execution client locally post merge!  
 
 By default, Prysm uses TCP/13000 and UDP/12000. Remove those two rules and replace them with the appropriate port forwards for the client you are switching to. The process will be very similar to the steps laid out [here.](https://docs.prylabs.network/docs/prysm-usage/p2p-host-ip#port-forwarding) 
 
@@ -145,7 +145,7 @@ https://chainsafe.github.io/lodestar/run/validator-management/validator-cli#vali
 
 ### Step 7: Start the New Validator
 
-Ensure your beacon node is fully synced with the network by checking your clients logs prior to starting your validator. Once it is fully synced, start the validator.  
+Ensure your beacon node is fully synced with the network by checking your client's logs prior to starting your validator. Once it is fully synced, start the validator.  
 
 Search a block explorer like https://beaconcha.in with your validator's public key to confirm that your validator is now active!
 

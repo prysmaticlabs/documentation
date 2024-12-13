@@ -31,7 +31,7 @@ The migration process is straightforward and not too dissimilar to backing up an
 Exporting the slashing protection database is a real-time process and can be undertaken at any time. During migration, you should run the export once you have stopped the validator you are migrating away from. This ensures all validator actions are captured and subsequently imported into the new validator process.  
 :::
 
-To export your slashing protection history, use Prysm's built in commands which will work with any installation method.
+To export your slashing protection history, use Prysm's built-in commands which will work with any installation method.
 
 :::info
 
