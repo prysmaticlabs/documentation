@@ -156,7 +156,7 @@ By calling the command above, you should go through an interactive process that 
 :::info
 Inside the original `deposit.json` file used for staking you can count each validator's public key in sequential order starting from 0.
 The validator starting index is the index of the first validator key you would like to withdraw (i.e. validator key 1 has an index of 0, validator key 2 has an index of 1, etc...).
-For most stakers, the validator starting index should be set to 0 for withdrawing all their validator keys, however the validator sftarting index will be different if you choose to skip withdrawing some validators. 
+For most stakers, the validator starting index should be set to 0 for withdrawing all their validator keys, however the validator starting index will be different if you choose to skip withdrawing some validators. 
 There are other niche cases where the mnemonic is used for deposit generation multiple times, resulting in a different validator starting index. 
 Validators spanning across different mnemonics will need to be counted separately with starting index as 0 on each of them.
 :::
