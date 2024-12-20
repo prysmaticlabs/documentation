@@ -209,7 +209,7 @@ You will need configuration files for setting up go-ethereum and Prysm.
 
 ##### JWT secret
 To communicate through the engine API, go-ethereum and Prysm need to share a common JWT token.
-In your `devnet` directory, create a `jwt.hex` file and put the following JWT token inside. (You can use any valid JWT token you wish, this one is only an working example.)
+In your `devnet` directory, create a `jwt.hex` file and put the following JWT token inside. (You can use any valid JWT token you wish, this one is only a working example.)
 
     0xfad2709d0bb03bf0e8ba3c99bea194575d3e98863133d1af638ed056d1d59345
 
