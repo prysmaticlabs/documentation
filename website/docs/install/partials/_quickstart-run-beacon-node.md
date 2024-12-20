@@ -2,7 +2,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <p className='hidden-in-jwt-guide hidden-in-mergeprep-guide'>In this step, you'll run a beacon node using Prysm.</p>
-<p>There is two main ways to sync a beacon node: from genesis, and from a checkpoint. It is safer and a considerably faster to sync from a checkpoint. When syncing from a checkpoint, the simplest is to connect to a checkpoint sync endpoint. A non exhaustive <a href='https://eth-clients.github.io/checkpoint-sync-endpoints'> list of checkpoint sync endpoints</a> is available.</p>
+<p>There are two main ways to sync a beacon node: from genesis, and from a checkpoint. It is safer and a considerably faster to sync from a checkpoint. When syncing from a checkpoint, the simplest is to connect to a checkpoint sync endpoint. A non exhaustive <a href='https://eth-clients.github.io/checkpoint-sync-endpoints'> list of checkpoint sync endpoints</a> is available.</p>
 <p>In the following examples, we'll use the checkpoint sync endpoint provided by <a href='https://beaconstate.info/'>beaconstate.info</a>. <strong>Feel free to use the one you want.</strong></p>
 <Tabs groupId="os" defaultValue="others" values={[
     {label: 'Windows', value: 'win'},
