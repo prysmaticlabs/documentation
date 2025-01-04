@@ -106,7 +106,7 @@ Syncing from a checkpoint usually takes a couple of minutes. See [Sync from a ch
     </TabItem>
     <TabItem value="sepolia">
       If you wish to sync from genesis, you need to remove <code>--checkpoint-sync-url</code> and <code>--genesis-beacon-api-url</code> flags from the previous command and add the <code>--genesis-state=genesis.ssz</code> flag. Syncing from genesis usually takes a couple days, but it can take longer depending on your network and hardware specs.
-      Download the <a href='https://github.com/eth-clients/sepolia/blob/main/bepolia/genesis.ssz'>Sepolia genesis.ssz from Github</a> into your <code>consensus</code> directory.
+      Download the <a href='https://github.com/eth-clients/sepolia/blob/main/metadata/genesis.ssz'>Sepolia genesis.ssz from Github</a> into your <code>consensus</code> directory.
     </TabItem>
      <TabItem value="holesky">
       If you wish to sync from genesis, you need to remove <code>--checkpoint-sync-url</code> and <code>--genesis-beacon-api-url</code> flags from the previous command and add the <code>--genesis-state=genesis.ssz</code> flag. Syncing from genesis usually takes a couple days, but it can take longer depending on your network and hardware specs.

@@ -110,7 +110,7 @@ The two exported `*.ssz` files are your `BeaconState` and `SignedBeaconBlock` fi
 curl -H "Accept: application/octet-stream"  http://localhost:3500/eth/v1/debug/beacon/states/genesis > genesis.ssz
 ```
 
-You can also just manually download the genesis state from GitHub: [holesky](https://github.com/eth-clients/holesky/blob/main/custom_config_data/genesis.ssz) | [Sepolia](https://github.com/eth-clients/sepolia/blob/main/bepolia/genesis.ssz)
+You can also just manually download the genesis state from GitHub: [holesky](https://github.com/eth-clients/holesky/blob/main/custom_config_data/genesis.ssz) | [Sepolia](https://github.com/eth-clients/sepolia/blob/main/metadata/genesis.ssz)
 
 Use the following command to start your beacon node with checkpoint sync configured to use this checkpoint state:
 
