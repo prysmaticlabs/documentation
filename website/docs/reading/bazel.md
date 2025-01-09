@@ -85,7 +85,7 @@ Everything in Prysm can be built with Bazel using
 
 For example, the beacon node can be built with
 
-    bazel build /cmd/beacon-chain --config=release 
+    bazel build //cmd/beacon-chain --config=release 
     
 The `--config=release` will apply all compile-time optimizations to the code, and build everything including C dependencies and our cryptography from source. Every package in the Prysm monorepo can be build with
 
