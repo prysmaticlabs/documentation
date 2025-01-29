@@ -187,7 +187,7 @@ There wasn’t an obvious trigger that we were able to inspect. All the major me
 - 05:00 Nishant again looks at the grafana charts but notices that there hasn’t been justification or finality for 15 mins. However all other metrics and charts are normal and there isn’t a directly obvious explanation for it. 
 - 05:05 Nishant notices that the p2p message count has dropped by a very large amount, which explains the long period without finality in the current chain. With very little attestations being sent over the wire, we have a large drop in participation rates and therefore a drop in justification and finality.
 - 05:37 Nishant tries to rollout the current master image to all production pods.
-- 05:50 The rollout does not bring any tangible results, with there being no justifcation or finality still. At this point it has been more than 50 epochs since finality.
+- 05:50 The rollout does not bring any tangible results, with there being no justification or finality still. At this point it has been more than 50 epochs since finality.
 - 07:30 Now high grpc failure rates happen across all pods. At this moment it has been more than a 100 epochs since finality. Due to that this brings a lot of stress on the beacon-node with regards to forkchoice when determining the current head.
 - 07:40 Nishant now reverts the connection manager fix and tries to roll the old image out to the experimental pods.
 - 08:30 The fix however, takes a very long time to rollout due to the slow sync, which displays 2 hours to sync till the current chain head. Nishant then deploys a new fix which includes a recently merged PR for faster sync processing.
