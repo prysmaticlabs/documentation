@@ -24,7 +24,7 @@ Read more at [EIP-6110](https://eips.ethereum.org/EIPS/eip-6110).
 
 These requests are used to withdraw validator funds from the Beacon Chain to the execution layer. A validator is able to withdraw their funds by having their withdrawal credentials set to an execution address and be fully exited. This request allows the set execution address to trigger the validator exit process, which was previously only possible through calling the [`/eth/v1/beacon/pool/bls_to_execution_changes`Beacon API endpoint on the consensus layer](https://ethereum.github.io/beacon-APIs/?urls.primaryName=dev#/Beacon/submitPoolBLSToExecutionChange). 
 
-Triggering the withdrawal request is done by system calling the withdrawal requests contract as a transaction or using one of the community provided resources such as: TODO
+Triggering the withdrawal request is done by system calling the withdrawal requests contract as a transaction or using one of the community provided resources.
 
 Read more at [EIP-7002](https://eips.ethereum.org/EIPS/eip-7002).
 
@@ -32,6 +32,6 @@ Read more at [EIP-7002](https://eips.ethereum.org/EIPS/eip-7002).
 
 These are new requests that are used to consolidate validator balances on the Beacon Chain or simply raise the max effective balance of an existing validator. Previously the max effective balance was set to 32 ETH and the request allows the validator to raise the max effective balance to 2048 ETH. This is useful for operators that want to run less validator keys on a single validator client while still allowing them to earn scaling staking rewards based on the effective balance. Validators may also want to restake their earnings and earn compounding rewards without having to redeposit their funds, this can also be done through this request. When the request is processed the validator's withdrawal credentials will be set with a new `COMPOUNDING_WITHDRAWAL_PREFIX`.
 
-Triggering the consolidation request is done by system calling the consolidations requests contract as a transaction or using one of the community provided resources such as: TODO
+Triggering the consolidation request is done by system calling the consolidations requests contract as a transaction or using one of the community provided resources.
 
 Read more at [EIP-7251](https://eips.ethereum.org/EIPS/eip-7251).
