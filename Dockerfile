@@ -1,30 +1,26 @@
-FROM node:16-alpine as builder
+FROM node:20-alpine as builder
 
-RUN apk add --no-cache \
-    autoconf \
-    automake \
-    bash \
-    g++ \
-    libc6-compat \
-    libjpeg-turbo-dev \
-    libpng-dev \
-    make \
-    nasm
+# Only install minimal dependencies needed for Node.js builds
+RUN apk add --no-cache libc6-compat
 
 WORKDIR /app/website
-COPY ./website /app/website
 
-COPY ./website/package.json ./website/package-lock.json ./
+# Copy package files first to leverage Docker cache
+COPY ./website/package*.json ./
 
-# Storing node modules on a separate layer will prevent unnecessary npm installs at each build
-RUN npm i -g npm@7.24.2
+# Install dependencies
 RUN npm ci
-RUN mv ./node_modules .
 
+# Copy source files
+COPY ./website ./
+
+# Build the site
 RUN npm run build
 
-# Copy only the dist dir.
-FROM caddy
+# Production stage
+FROM caddy:alpine
+
+# Remove default caddy files
 RUN rm -rf /usr/share/caddy/html/*
 
 COPY --from=builder /app/website/build /usr/share/caddy/html
