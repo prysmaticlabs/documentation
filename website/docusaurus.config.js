@@ -3,8 +3,8 @@ var prysmVersion = "v5.1.2";
 module.exports = {
     title: 'Prysm',
     tagline: 'Ethereum consensus implementation written entirely in Go.',
-    url: 'https://docs.prylabs.network',
-    baseUrl: '/',
+    url: 'https://offchainlab.com',
+    baseUrl: '/prysm',
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'throw',
     favicon: 'img/Prysm.svg',
@@ -24,12 +24,12 @@ module.exports = {
             logo: {
                 alt: "Prysm logo",
                 src: 'img/logo2.png',
-                href: '/docs/getting-started',
+                href: '/prysm/docs/getting-started',
             },
             items: [{
                 type: 'docsVersion',
                 position: 'left',
-                to: 'https://github.com/prysmaticlabs/prysm/releases/tag/'+prysmVersion,
+                to: 'https://github.com/prysmaticlabs/prysm/releases/tag/' + prysmVersion,
                 label: prysmVersion,
             },
             {
@@ -52,7 +52,7 @@ module.exports = {
         footer: {
             logo: {
                 alt: "Prysm Eth2 Docs",
-                href: '/docs/getting-started',
+                href: '/prysm/docs/getting-started',
                 src: 'img/Prysm.svg',
             },
             copyright: `Copyright © ${new Date().getFullYear()} Prysmatic Labs, LLC., Validator Deposit Contract 0x00000000219ab540356cbb839cbe05303d7705fa`,

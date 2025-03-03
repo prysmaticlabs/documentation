@@ -30,7 +30,7 @@
     </tr>
     <tr>
       <td><code>could not get ancestor state: failed to unmarshal encoding: incorrect size</code></td>
-      <td>This usually indicates that your beacon node's data has become corrupt. Try restarting your beacon node with a new or cleared data directory. Consider using <a href='https://docs.prylabs.network/docs/prysm-usage/checkpoint-sync'>Checkpoint Sync</a> to reduce sync time.</td>
+      <td>This usually indicates that your beacon node's data has become corrupt. Try restarting your beacon node with a new or cleared data directory. Consider using <a href='/prysm/docs/prysm-usage/checkpoint-sync'>Checkpoint Sync</a> to reduce sync time.</td>
     </tr>
     <tr>
       <td><code>could not process block: could not process block header: parent root 0x... does not match the latest block header signing root in state</code></td>
@@ -49,11 +49,11 @@
         <code>warning msg="Batch is not processed" error="could not process block in batch: timeout from http.Client: received an undefined ee error. </code><br/><br/>
         <code>warning msg="Batch is not processed" error="could not process block in batch: got an unexpected error in JSON-RPC response: 403 Forbidden: signature is invalid</code>
       </td>
-      <td>These errors are usually caused by invalid JWT configuration. If you're using HTTP-JWT to connect your EN-BN, ensure that both EN and BN are configured to use the same JWT secret. Different files are OK (eg when your EN and BN are on different machines), but the secret within each JWT file should be the same. See <a href='https://docs.prylabs.network/docs/execution-node/authentication'>Configure JWT authentication</a> for more information.</td>
+      <td>These errors are usually caused by invalid JWT configuration. If you're using HTTP-JWT to connect your EN-BN, ensure that both EN and BN are configured to use the same JWT secret. Different files are OK (eg when your EN and BN are on different machines), but the secret within each JWT file should be the same. See <a href='/prysm/docs/execution-node/authentication'>Configure JWT authentication</a> for more information.</td>
     </tr>
     <tr>
       <td><code>weak-subjectivity-checkpoint not provided. Prysm recommends providing a weak subjectivity checkpoint for nodes synced from genesis</code></td>
-      <td>You can safely ignore this warning - it will be removed in an upcoming Prysm release. See <a href='https://docs.prylabs.network/docs/prysm-usage/checkpoint-sync'>How to configure Checkpoint Sync</a> if you'd like to learn more about checkpoint sync.</td>
+      <td>You can safely ignore this warning - it will be removed in an upcoming Prysm release. See <a href='/prysm/docs/prysm-usage/checkpoint-sync'>How to configure Checkpoint Sync</a> if you'd like to learn more about checkpoint sync.</td>
     </tr>
     <tr>
       <td><code>beacon node doesn't have a parent in db with root...</code></td>
@@ -69,11 +69,11 @@
     </tr>
     <tr>
     <td><code>ERROR p2p: Failed to find peers error=unable to find requisite number of peers for topic /eth2/4a26c58b/beacon_attestation_15/ssz_snappy - only 0 out of 1 peers were able to be found</code></td>
-      <td>Node appears to be having peering issues. See <a href='https://docs.prylabs.network/docs/prysm-usage/p2p-host-ip#incoming-p2p-connection-prerequisites'>Configure ports and firewalls for improved peer-to-peer connectivity</a> for more information.</td>
+      <td>Node appears to be having peering issues. See <a href='/prysm/docs/prysm-usage/p2p-host-ip#incoming-p2p-connection-prerequisites'>Configure ports and firewalls for improved peer-to-peer connectivity</a> for more information.</td>
     </tr>
     <tr>
     <td><code>ERROR p2p: Failed to broadcast attestation error=could not publish message: unable to find requisite number of peers for topic /eth2/4a26c58b/beacon_attestation_15/ssz_snappy, 0 peers found to publish to: context deadline exceeded</code></td>
-      <td>Node appears to be having peering issues. See <a href='https://docs.prylabs.network/docs/prysm-usage/p2p-host-ip#incoming-p2p-connection-prerequisites'>Configure ports and firewalls for improved peer-to-peer connectivity</a> for more information.</td>
+      <td>Node appears to be having peering issues. See <a href='/prysm/docs/prysm-usage/p2p-host-ip#incoming-p2p-connection-prerequisites'>Configure ports and firewalls for improved peer-to-peer connectivity</a> for more information.</td>
     </tr>
     <tr>
     <td><code>level=warning msg="Block is not processed" error="could not process block: could not validate new payload: timeout from http.Client: received an undefined ee error" prefix=initial-sync</code></td>

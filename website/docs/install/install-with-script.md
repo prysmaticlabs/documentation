@@ -112,7 +112,7 @@ The Merge introduced a new Engine API that allows consensus-layer clients to com
 Yes. Downtime penalties are minimal but we recommend having uptime and downtime alerts configured for your execution node, beacon node, and validator if possible.
 
 **My beacon node is taking a long time to sync. Is there any way I can speed it up?** <br />
-Yes - you can use [checkpoint sync](https://docs.prylabs.network/docs/prysm-usage/checkpoint-sync) to start your beacon node's synchronization from a checkpoint rather than from genesis. This is actually a more secure way to run your beacon node.
+Yes - you can use [checkpoint sync](/prysm/docs/prysm-usage/checkpoint-sync) to start your beacon node's synchronization from a checkpoint rather than from genesis. This is actually a more secure way to run your beacon node.
 <!--TODO: explain why -->
 
 

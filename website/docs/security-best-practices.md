@@ -8,7 +8,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <HeaderBadgesWidget />
 
-Ethereum's transition to proof-of-stake is made possible by validators who each stake 32 ETH into the [validator deposit contract](https://docs.prylabs.network/docs/how-prysm-works/validator-deposit-contract/). These validators accept the responsibility to uphold the integrity of the Ethereum network in exchange for staking rewards.
+Ethereum's transition to proof-of-stake is made possible by validators who each stake 32 ETH into the [validator deposit contract](/prysm/docs/how-prysm-works/validator-deposit-contract/). These validators accept the responsibility to uphold the integrity of the Ethereum network in exchange for staking rewards.
 
 Validators are rewarded for maintaining highly available, trustworthy validator client instances. The security best practices in this guide will help you fulfill this responsibility by helping you minimize risk across a variety of security aspects. Within each aspect, you'll find **recommended**, **advanced**, and **Linux-specific** guidance.
 
@@ -34,14 +34,14 @@ If your validator goes offline, you can lose some of your staked ETH [<a href='#
  
 While it's possible to optimize your client instance architecture for high-availability and redundancy, we encourage validators to **keep it simple**. Complex validator architectures run the risk of accidentally engaging in slashable behavior. This can result in slashing [<a href='#footnote-4'>4</a>], which is a far steeper price to pay than the occasional downtime penalty.
 
- - **Essential**: Ensure that you have adequate disk space. [We recommend having 1-2 TB of SSD storage available](https://docs.prylabs.network/docs/install/install-with-script).
+ - **Essential**: Ensure that you have adequate disk space. [We recommend having 1-2 TB of SSD storage available](/prysm/docs/install/install-with-script).
  - **Essential**: Use SSDs, not spinning disks.
  - **Essential**: Periodically check your disk space to ensure that it's not being consumed by another application.
  - **Essential**: Use a network monitoring service [<a href='#footnote-5'>5</a>] to configure alerts when something isn't right with your validator.
  - **Advanced**: Use an uninterruptible power supply (UPS) to protect your computer from issues related to power outages.
  - **Advanced**: Configure automatic boot / AC auto-recovery in your BIOS.
  - **Advanced**: Ensure that your beacon node and/or validator automatically start running when you reboot your machine.
- - **Advanced**: Configure [Prometheus and Grafana](https://docs.prylabs.network/docs/prysm-usage/monitoring/grafana-dashboard/) to help you visualize real-time validator metrics.
+ - **Advanced**: Configure [Prometheus and Grafana](/prysm/docs/prysm-usage/monitoring/grafana-dashboard/) to help you visualize real-time validator metrics.
  - **Advanced**: Use a web-based uptime monitoring solution to monitor your validator's uptime with periodic ping-response checks [<a href='#footnote-6'>6</a>].
  - **Advanced**: Configure your validator client's machine to periodically ping a secondary machine with your validator status. If the secondary machine doesn't receive an expected ping from your validator, raise an alert.
 
@@ -62,7 +62,7 @@ Put simply: Ethereum gently discourages downtime with paper cuts. But it uses a 
  
  - **Essential**: Never run your validating keys in two places at the same time.
  - **Essential**: Avoid over-engineering your validator setup. Keep it simple so your validator doesn't accidentally behave maliciously.
- - **Essential**: If you migrate your validator client to another machine, don't migrate your keys without also [migrating your slashing protection history](https://docs.prylabs.network/docs/wallet/slashing-protection/). If you lose your slashing protection history, we recommend waiting few epochs before starting your validator.
+ - **Essential**: If you migrate your validator client to another machine, don't migrate your keys without also [migrating your slashing protection history](/prysm/docs/wallet/slashing-protection/). If you lose your slashing protection history, we recommend waiting few epochs before starting your validator.
 
 
 
@@ -107,12 +107,12 @@ You’ll be managing two types of keys: validator keys and withdrawal keys. Prys
  - **Essential**: Don't use external devices that you don't trust.
  - **Essential**: Keep your mnemonic phrase in a safe place, offline.
  - **Essential**: Generate your wallet and keys on trusted hardware with the internet turned off.
- - **Essential**: Review [Prysm’s security considerations](https://docs.prylabs.network/docs/wallet/introduction#security-considerations) before generating your wallet and keys.
+ - **Essential**: Review [Prysm’s security considerations](/prysm/docs/wallet/introduction#security-considerations) before generating your wallet and keys.
  - **Essential**: Keep your wallet mnemonic phrase and withdrawal keys physically separated from your validator client.
  - **Advanced**: Generate your wallet and keys using new, airgapped hardware that has never been - and will never be - connected to the internet.
  - **Advanced**: Use a metal wallet to protect your mnemonic phrase [<a href='#footnote-12'>12</a>]. 
  - **Advanced**: Build the key generation software from source - don’t trust third-party binaries.
- - **Advanced**: Use [Web3Signer](https://docs.prylabs.network/docs/wallet/web3signer/) to maintain separation between your keys and client software.
+ - **Advanced**: Use [Web3Signer](/prysm/docs/wallet/web3signer/) to maintain separation between your keys and client software.
 
 ## Troubleshooting
 Ethereum and its client software are constantly improving. This constant change means that unexpected things may happen that require troubleshooting. 
@@ -120,14 +120,14 @@ Ethereum and its client software are constantly improving. This constant change 
  - **Essential**: Expect unexpected things to happen.
  - **Essential**: Be prepared to engage with the [Prysm Discord server](https://discord.gg/prysmaticlabs), [r/ethstaker](https://www.reddit.com/r/ethstaker/), and the [EthStaker Discord server](https://discord.gg/ethstaker) if you need help troubleshooting issues.
  - **Essential**: When sharing logs, be sure to redact personally identifiable information and metadata that can be used to identify your validator.
- - **Essential**: Learn how to [inspect Prysm's performance](https://docs.prylabs.network/docs/monitoring/is-everything-fine).
- - **Essential**: Familiarize yourself with [Prysm's P2P connectivity guidance](https://docs.prylabs.network/docs/prysm-usage/p2p-host-ip).
- - **Essential**: Review [the Prysm FAQ](https://docs.prylabs.network/docs/faq).
+ - **Essential**: Learn how to [inspect Prysm's performance](/prysm/docs/monitoring/is-everything-fine).
+ - **Essential**: Familiarize yourself with [Prysm's P2P connectivity guidance](/prysm/docs/prysm-usage/p2p-host-ip).
+ - **Essential**: Review [the Prysm FAQ](/prysm/docs/faq).
 
 ## Migration security
 Migrating your validator from one machine to another is a delicate process that requires attention to detail. Migrating between machines significantly increases the risk of slashing.
   
- - **Essential**: Review [Prysm's migration guidance](https://docs.prylabs.network/docs/advanced/migrating-keys) for a detailed overview of the process and considerations.
+ - **Essential**: Review [Prysm's migration guidance](/prysm/docs/advanced/migrating-keys) for a detailed overview of the process and considerations.
  - **Essential**: Never run more than a single validator process with the same keys loaded.
  - **Essential**: Accept downtime as part of a successful migration.
  - **Essential**: Maintain and utilize slashing protection.
@@ -135,7 +135,7 @@ Migrating your validator from one machine to another is a delicate process that 
 ## Mitigation worksheet
 
 | Risk event                                                                  | I'll proactively minimize risk by... | I'll notice when... | I'll respond by... |
-| --------------------------------------------------------------------------- | ------------------------------------ | ------------------- | ------------------ |
+|-----------------------------------------------------------------------------|--------------------------------------|---------------------|--------------------|
 | My ISP goes offline.                                                        |                                      |                     |                    |
 | There's a power outage.                                                     |                                      |                     |                    |
 | My disks fail.                                                              |                                      |                     |                    |

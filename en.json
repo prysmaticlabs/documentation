@@ -70,7 +70,7 @@
         "title": "P2P Networking",
         "sidebar_label": "P2P Networking"
       },
-      "/docs/how-prysm-works/beacon-node": {
+      "/prysm/docs/how-prysm-works/beacon-node": {
         "title": "Prysm Beacon Node",
         "sidebar_label": "Prysm Beacon Node"
       },
