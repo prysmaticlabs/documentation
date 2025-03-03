@@ -28,7 +28,7 @@ Update: the team addressed almost all of the findings. Mapping between issues an
 
 **Completion Date**: October 13, 2020
 
-**Report link**: [Quantstamp - Prysm Phase 0 Final Report.pdf](/assets/Quantstamp_Prysm_Phase_0_Final_Report.pdf)
+**Report link**: [Quantstamp - Prysm Phase 0 Final Report.pdf](/prysm/docs/assets/Quantstamp_Prysm_Phase_0_Final_Report.pdf)
 
 ## Trail of Bits
 
@@ -73,4 +73,4 @@ multiple scenarios.
 
 **Completion Date**: October 6, 2020
 
-**Report link**: [Trail of Bits - Prysm Phase 0 Final Report.pdf](/assets/Trail_of_Bits_Prysm_Phase_0_Final_Report.pdf)
+**Report link**: [Trail of Bits - Prysm Phase 0 Final Report.pdf](/prysm/docs/assets/Trail_of_Bits_Prysm_Phase_0_Final_Report.pdf)
