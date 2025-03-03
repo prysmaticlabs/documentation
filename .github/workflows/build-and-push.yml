@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - master
+    tags:
+      - 'v*'
+  release:
+    types: [published]
 
 env:
   AWS_REGION: us-west-2
