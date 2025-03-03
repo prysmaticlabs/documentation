@@ -1,5 +1,4 @@
-## docker build -t gcr.io/prysmaticlabs/documentation
-FROM node:15-alpine as builder
+FROM node:16-alpine as builder
 
 RUN apk add --no-cache \
     autoconf \
