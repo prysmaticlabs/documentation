@@ -45,8 +45,7 @@ jobs:
           # Try to get the most recent tag
           GIT_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "")
           if [[ -n "$GIT_TAG" ]]; then
-            # Remove 'v' prefix if present
-            VERSION=${GIT_TAG#v}
+            VERSION=${GIT_TAG}
           else
             # Development version with commit sha
             VERSION="dev.$(git rev-parse --short HEAD)"
@@ -61,7 +60,6 @@ jobs:
           push: true
           tags: |
             ${{ env.ECR_REGISTRY }}/${{ env.ECR_REPOSITORY }}:${{ steps.get_version.outputs.version }}
-            ${{ env.ECR_REGISTRY }}/${{ env.ECR_REPOSITORY }}:latest
 
       # Commented out: Helm chart update
       # - name: Checkout helm charts repo
