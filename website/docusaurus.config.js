@@ -3,7 +3,7 @@ var prysmVersion = "v5.1.2";
 module.exports = {
     title: 'Prysm',
     tagline: 'Ethereum consensus implementation written entirely in Go.',
-    url: 'https://offchainlab.com',
+    url: 'https://offchainlabs.com',
     baseUrl: '/prysm',
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'throw',
