@@ -133,8 +133,8 @@ This section is currently out of date. Refer to Grafana's [The new unified alert
 ## Creating and importing dashboards
 
 1. The dashboard can now be customised to the users preferences. There are two examples that can be used:
-- [Dashboard designed for small amount of validator keys](/prysm/docs/assets/grafana-dashboards/small_amount_validators.json)
-- [Dashboard designed for more than 10 validator keys](/prysm/docs/assets/grafana-dashboards/big_amount_validators.json)
+- [Dashboard designed for small amount of validator keys](/assets/grafana-dashboards/small_amount_validators.json)
+- [Dashboard designed for more than 10 validator keys](/assets/grafana-dashboards/big_amount_validators.json)
 
 2. To import this json into the Grafana dashboard, click on the **+** icon on the left menu and select `Import dashboard``, 
 
