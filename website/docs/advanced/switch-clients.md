@@ -27,7 +27,7 @@ Regardless of which client you are switching to, the first step of the process w
 
 Installation documentation links for each client can be found below:
 
-- Prysm: https://docs.prylabs.network/docs/install/install-with-script
+- Prysm: /prysm/docs/install/install-with-script
 - Teku: https://docs.teku.consensys.io/development/get-started/install/install-binaries
 - Nimbus: https://nimbus.guide/quick-start.html  
 - Lighthouse: https://lighthouse-book.sigmaprime.io/installation.html  
@@ -45,13 +45,13 @@ Remove Prysm's validator keys as an added protection by following [these](http:/
 
 Ensure that you stop Prysm before exporting slashing protection in order to capture all validator actions. 
 
-We have a section dedicated to exporting and importing slashing protection history [here.](https://docs.prylabs.network/docs/wallet/slashing-protection) Follow the steps regarding exporting slashing protection history. 
+We have a section dedicated to exporting and importing slashing protection history [here.](/prysm/docs/wallet/slashing-protection) Follow the steps regarding exporting slashing protection history. 
 
 ### Step 4: Update port forwarding
 
 This step is not required for nodes which are running on a virtual public cloud, but keep in mind - nodes will be required to run a an execution client locally post merge!  
 
-By default, Prysm uses TCP/13000 and UDP/12000. Remove those two rules and replace them with the appropriate port forwards for the client you are switching to. The process will be very similar to the steps laid out [here.](https://docs.prylabs.network/docs/prysm-usage/p2p-host-ip#port-forwarding) 
+By default, Prysm uses TCP/13000 and UDP/12000. Remove those two rules and replace them with the appropriate port forwards for the client you are switching to. The process will be very similar to the steps laid out [here.](/prysm/docs/prysm-usage/p2p-host-ip#port-forwarding) 
 
 Teku, Nimbus, and Lighthouse all use port 9000 for both TCP and UDP. 
 

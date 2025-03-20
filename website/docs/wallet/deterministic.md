@@ -10,7 +10,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 ## Background
 
-Prysm features a built-in hierarchical deterministic (HD) wallet. HD wallets let you create new validator private keys deterministically from a seed phrase, shown as an English mnemonic following the [BIP-39 standard](https://en.bitcoin.it/wiki/Seed_phrase) upon wallet creation. If you created a deposit using the official [Ethereum launchpad](https://launchpad.ethereum.org/) and want to run Prysm using it, see our dedicated instructions [here](/docs/install/install-with-script).
+Prysm features a built-in hierarchical deterministic (HD) wallet. HD wallets let you create new validator private keys deterministically from a seed phrase, shown as an English mnemonic following the [BIP-39 standard](https://en.bitcoin.it/wiki/Seed_phrase) upon wallet creation. If you created a deposit using the official [Ethereum launchpad](https://launchpad.ethereum.org/) and want to run Prysm using it, see our dedicated instructions [here](/prysm/docs/install/install-with-script).
 
 Validator private keys are encrypted with the wallet's password using the [EIP-2335](https://eips.ethereum.org/EIPS/eip-2335) `keystore.json` standard for storing BLS12-381 private keys. This `keystore.json` file, along with its derivation path, comprises an **account** in an HD wallet.
 
@@ -32,7 +32,7 @@ Then select **HD** wallet when prompted. You can also create a wallet **non-inte
 
 
 | Flag                              | Usage                                                                                                          |
-| --------------------------------- | :------------------------------------------------------------------------------------------------------------- |
+|-----------------------------------|:---------------------------------------------------------------------------------------------------------------|
 | `--wallet-dir`                    | Path to a wallet directory (default: "$HOME/Eth2Validators/prysm-wallet-v2")                                   |
 | `--keymanager-kind`               | Type of wallet to create, either "direct", "derived, or "remote" (default "derived")                           |
 | `--wallet-password-file`          | Path to a plain-text, password.txt file to lock your wallet                                                    |
@@ -69,7 +69,7 @@ Your accounts are generated deterministically from your recovery phrase, so you 
 :::
 
 | Flag             | Usage                                                                        |
-| ---------------- | :--------------------------------------------------------------------------- |
+|------------------|:-----------------------------------------------------------------------------|
 | `--wallet-dir`   | Path to a wallet directory (default: "$HOME/Eth2Validators/prysm-wallet-v2") |
 | `--num-accounts` | Total number of accounts to recover from the wallet (default 1)              |
 
@@ -98,7 +98,7 @@ You can view the `deposit_data` needed to send 32ETH to the Ethereum validator d
 You can also run the `accounts list` command **non-interactively** by using the following command line flags, which are also viewable by typing `./prysm.sh validator accounts list --help`.
 
 | Flag                     | Usage                                                                         |
-| ------------------------ | :---------------------------------------------------------------------------- |
+|--------------------------|:------------------------------------------------------------------------------|
 | `--wallet-dir`           | Path to a wallet directory (default: "$HOME/Eth2Validators/prysm-wallet-v2"). |
 | `--wallet-password-file` | Path to plain-text file containing your wallet's password.                    |
 | `--show-private-keys`    | Display the private keys for validator accounts.                              |

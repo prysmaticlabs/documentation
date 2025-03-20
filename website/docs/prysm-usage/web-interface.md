@@ -62,7 +62,7 @@ The website at this time does not provide additional metrics over those that you
 
 To begin, follow the instructions to run Prysm in mainnet or testnet:
 
-- [Joining Mainnet](/docs/install/install-with-script)
+- [Joining Mainnet](/prysm/docs/install/install-with-script)
 
 To launch the web interface, you will need to restart your validator client from step 1 with the `--web` flag. This will allow you to access the web interface by default on `http://localhost:7500` if running on the same computer as your validator client and using `prysm.sh`, `prysm.bat` or building from source.
 
@@ -106,8 +106,8 @@ The web UI runs by default on port 7500 of the validator client if you are runni
 
 The available parameters to customize are:
 
-| Flag                  | Usage                                                                  |
-| --------------------- | :--------------------------------------------------------------------- |
+| Flag          | Usage                                                                  |
+|---------------|:-----------------------------------------------------------------------|
 | `--http-host` | The host for the validator client's JSON-HTTP API, default `127.0.0.1` |
 | `--http-port` | The port for the validator client's JSON-HTTP API, default `7500`      |
 
@@ -144,7 +144,7 @@ If your browser cache was cleared, you're running on a new browser, or validator
 ### HTTP Error Codes
 
 | Error Code | Reason                                                                                                                                                         |
-| ---------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 503 or 0   | No server response, services having difficulty communicating, meaning network problems, or services being un available, or even firewalls or adblock settings. |
 | 401        | Unauthorized, requiring to reauthenticate with the special url                                                                                                 |
 | 500        | Internal Server Error, something failed internally in Prysm services                                                                                           |

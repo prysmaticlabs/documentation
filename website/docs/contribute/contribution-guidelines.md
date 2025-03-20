@@ -120,7 +120,7 @@ If you want to add a new dependency to Prysm, please adhere to the guidelines fo
 
 ### Contributing to the Ethereum consensus API
 
-The Ethereum consensus API implemented by Prysm is maintained as a separate repository than Prysm. You can read more about how to contribute specifically to the API [here](/docs/how-prysm-works/prysm-public-api#contributing).
+The Ethereum consensus API implemented by Prysm is maintained as a separate repository than Prysm. You can read more about how to contribute specifically to the API [here](/prysm/docs/how-prysm-works/prysm-public-api#contributing).
 
 ### Making your first contribution
 

@@ -16,9 +16,9 @@ This section outlines the step-by-step process for how to keep Prysm up to date,
 
 There are three main ways of installing Prysm:
 
-* [Using the Prysm installation script (Recommended)](/docs/install/install-with-script)
-* [Using Docker](/docs/install/install-with-docker)
-* [Building from source with Bazel (Advanced)](/docs/install/install-with-bazel)
+* [Using the Prysm installation script (Recommended)](/prysm/docs/install/install-with-script)
+* [Using Docker](/prysm/docs/install/install-with-docker)
+* [Building from source with Bazel (Advanced)](/prysm/docs/install/install-with-bazel)
 
 ## Recommended versions
 
