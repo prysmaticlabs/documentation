@@ -8,7 +8,7 @@ export default function Footer() {
         <section class="sitemap">
            <div>
             <h5>Docs</h5>
-            <a href="getting-started">Developer Quickstart</a>
+            <a href="/docs/getting-started">Developer Quickstart</a>
            </div>
            <div>
             <h5>Community</h5>
