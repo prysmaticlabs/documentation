@@ -683,7 +683,6 @@ html[data-theme='dark'] .header-badge .badge-label {
 @media (max-width: 736px) {
   .nav-footer {
     text-align: center;
-    margin: auto;
   }
   .nav-home {
     margin: auto !important;
