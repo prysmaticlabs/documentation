@@ -27,7 +27,7 @@ Regardless of which client you are switching to, the first step of the process w
 
 Installation documentation links for each client can be found below:
 
-- Prysm: ../install/install-with-script
+- Prysm: [Instructions](../install/install-with-script)
 - Teku: https://docs.teku.consensys.io/development/get-started/install/install-binaries
 - Nimbus: https://nimbus.guide/quick-start.html  
 - Lighthouse: https://lighthouse-book.sigmaprime.io/installation.html  
@@ -39,7 +39,7 @@ Ensuring you stop and disable Prysm is critical to avoiding slashing events befo
 
 Disabling Prysm prevents it from automatically starting up again after a reboot. 
 
-Remove Prysm's validator keys as an added protection by following [these](http://localhost:3000/docs/advanced/migrating-keys#step-5--verification-and-restarting-the-validator-client) instructions.  
+Remove Prysm's validator keys as an added protection by following [these](./migrating-keys#step-5--verification-and-restarting-the-validator-client) instructions.  
 
 ### Step 3: Export slashing protection history
 
