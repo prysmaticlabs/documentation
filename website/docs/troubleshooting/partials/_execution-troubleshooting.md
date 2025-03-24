@@ -22,7 +22,7 @@
     </tr>
     <tr>
     <td><code>the method engine_exchangeTransitionConfigurationV1 does not exist/is not available</code></td>
-    <td>Users have resolved this Geth error by 1) updating to the <a href='https://github.com/ethereum/go-ethereum/releases'>latest version of Geth</a> and 2) ensuring that both Prysm and Geth are configured to <a href='./execution-node/authentication'>use JWT</a> (if you're connecting your beacon node to Geth over HTTP). Configuring Geth to use a fresh data directory may also resolve this warning. </td>
+    <td>Users have resolved this Geth error by 1) updating to the <a href='https://github.com/ethereum/go-ethereum/releases'>latest version of Geth</a> and 2) ensuring that both Prysm and Geth are configured to <a href='/docs/execution-node/authentication'>use JWT</a> (if you're connecting your beacon node to Geth over HTTP). Configuring Geth to use a fresh data directory may also resolve this warning. </td>
     </tr>
     <tr>
       <td><code>ERROR powchain: Unable to process past deposit contract logs, perhaps your execution client is not fully synced error=Receipt not available for 'To' block '14957457'.</code></td>
@@ -30,7 +30,7 @@
     </tr>
     <tr>
       <td><code>403 signature invalid</code></td>
-      <td>This is usually caused by invalid JWT configuration. If you're using HTTP-JWT to connect your EN-BN, ensure that both EN and BN are configured to use the same JWT secret. Different files are OK (eg when your EN and BN are on different machines), but the secret within each JWT file should be the same. See <a href='./execution-node/authentication'>Configure JWT authentication</a> for more information.</td>
+      <td>This is usually caused by invalid JWT configuration. If you're using HTTP-JWT to connect your EN-BN, ensure that both EN and BN are configured to use the same JWT secret. Different files are OK (eg when your EN and BN are on different machines), but the secret within each JWT file should be the same. See <a href='/docs/execution-node/authentication'>Configure JWT authentication</a> for more information.</td>
     </tr>
     <tr>
       <td><code>Beacon client online, but never received consensus updates</code></td>

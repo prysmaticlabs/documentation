@@ -14,7 +14,7 @@ import TabItem from '@theme/TabItem';
             <div className='input-container'><input id="tc-2" type='checkbox'/><span className='done'></span></div>
             <div className='guidance-container'>
                 <label htmlFor="tc-2">2. Check Quickstart Configurations</label>
-                <p>Many common issues are resolved by the steps in our <a target="_blank" href='../install/install-with-script'>Quickstart guide</a>. We recommend reviewing the quickstart guide before continuing below.</p>
+                <p>Many common issues are resolved by the steps in our <a target="_blank" href='/docs/install/install-with-script'>Quickstart guide</a>. We recommend reviewing the quickstart guide before continuing below.</p>
             </div>
         </div>
         <div className='task'>

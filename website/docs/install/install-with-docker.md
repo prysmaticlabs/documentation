@@ -15,7 +15,7 @@ Prysm can be installed on Windows, GNU/Linux, and MacOS systems with Docker. We 
 
 :::tip Not familiar with Docker? Try our quickstart
 
-This guidance is targeted at users who are already comfortable with Docker. See our [Quickstart](./install/install-with-script) for beginner-friendly installation instructions.
+This guidance is targeted at users who are already comfortable with Docker. See our [Quickstart](./install-with-script) for beginner-friendly installation instructions.
 
 :::
 
@@ -100,7 +100,7 @@ We recommend opening up ports `tcp/13000` and `udp/12000` on your router and fir
 
 :::
 
-If you're not already running an execution node, refer to our [Quickstart](./install/install-with-script) for beginner-friendly execution node installation instructions.
+If you're not already running an execution node, refer to our [Quickstart](./install-with-script) for beginner-friendly execution node installation instructions.
 
 Next, use Docker to tell your beacon node to connect to your local execution node. Note that `<YOUR_ETH_EXECUTION_NODE_ENDPOINT>` is either an HTTP endpoint `http://host:port` or an IPC path such as `/path/to/geth.ipc`.
 
@@ -392,6 +392,3 @@ docker run -it -v %LOCALAPPDATA%\Eth2:/data -p 4000:4000 -p 13000:13000 -p 12000
 `http-host` and `http-port` have replaced `--grpc-gateway-host` and `--grpc-gateway-port` respectively.
 :::
 This tells your Docker container to to "listen" for connections from outside of your container, allowing you (and other services) to reach your RPC endpoint(s). See [Configure ports and firewalls](../prysm-usage/p2p-host-ip.md) for more information.
-
-
-

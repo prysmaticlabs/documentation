@@ -94,7 +94,7 @@ import TabItem from '@theme/TabItem';
 
 <div>
 
-Syncing from a checkpoint usually takes a couple of minutes. See [Sync from a checkpoint](../../prysm-usage/checkpoint-sync.md) for more information about this feature.
+Syncing from a checkpoint usually takes a couple of minutes. See [Sync from a checkpoint](/docs/prysm-usage/checkpoint-sync) for more information about this feature.
 
 <Tabs groupId="network" defaultValue="mainnet" values={[
       {label: 'Mainnet', value: 'mainnet'},
@@ -117,6 +117,6 @@ Syncing from a checkpoint usually takes a couple of minutes. See [Sync from a ch
 If you are planning to run a validator, it is <strong>strongly</strong> advised to use the <code>--suggested-fee-recipient=<WALLET ADDRESS\></code> option. When your validator proposes a block, it will allow you to earn block priority fees, also sometimes called "tips".
 
 
-<p>Congratulations - you’re now running a <strong>full Ethereum node</strong>. To check the status of your node, visit <a href='./monitoring/checking-status'>Check node and validator status</a>.</p>
+<p>Congratulations - you're now running a <strong>full Ethereum node</strong>. To check the status of your node, visit <a href='/docs/monitoring/checking-status'>Check node and validator status</a>.</p>
 
 </div>

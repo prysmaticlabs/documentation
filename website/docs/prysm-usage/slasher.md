@@ -8,7 +8,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <HeaderBadgesWidget />
 
-This section provides instructions on how to run [slasher](https://github.com/prysmaticlabs/prysm/tree/develop/beacon-chain/slasher) as an **optional** process to report slashable offenses on Ethereum proof-of-stake.  If slasher detects a slashable offense, proof is sent to the [beacon-chain node](./how-prysm-works/beacon-node/) for inclusion in a block.  [Validators](./how-prysm-works/prysm-validator-client/) earn a small whistleblower reward for including this proof into a block.  
+This section provides instructions on how to run [slasher](https://github.com/prysmaticlabs/prysm/tree/develop/beacon-chain/slasher) as an **optional** process to report slashable offenses on Ethereum proof-of-stake.  If slasher detects a slashable offense, proof is sent to the [beacon-chain node](../how-prysm-works/beacon-node) for inclusion in a block.  [Validators](../how-prysm-works/prysm-validator-client) earn a small whistleblower reward for including this proof into a block.  
 
 :::tip Slasher Requires Significant Disk Space
 Slasher is essentially a beacon node with **superpowers**. It uses significantly more disk space when running on mainnet.
@@ -70,5 +70,3 @@ An alternative implementation for slashing prevention is the use of slasher itse
 ## Further Reading
 
 We recommend reading our piece on [slashing prevention tips](https://medium.com/prysmatic-labs/eth2-slashing-prevention-tips-f6faa5025f50) which has more detailed information on how to protect your own validator from being slashed, the document also clarifies a number of common misconceptions.
-
-

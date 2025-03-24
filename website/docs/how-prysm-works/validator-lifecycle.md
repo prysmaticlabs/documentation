@@ -8,7 +8,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <HeaderBadgesWidget />
 
-This section discusses the lifecycle of a [validator](validator-clients.md) as defined by [Ethereum consensus specifications](https://github.com/ethereum/consensus-specs).
+This section discusses the lifecycle of a [validator](./prysm-validator-client) as defined by [Ethereum consensus specifications](https://github.com/ethereum/consensus-specs).
 
 ![Validator Lifecycle Diagram](/img/validator-lifecycle.png)
 
@@ -20,10 +20,10 @@ After the Deneb hardfork
 :::
 
 ## UNKNOWN State
-Prysm's [validator](validator-clients.md) client will report that the state of a particular validator is UNKNOWN when it loads validator keys that have not yet submitted a valid deposit to the [Ethereum proof-of-work chain](./terminology#eth1) [validator deposit contract](./validator-deposit-contract).
+Prysm's [validator](./prysm-validator-client) client will report that the state of a particular validator is UNKNOWN when it loads validator keys that have not yet submitted a valid deposit to the [Ethereum proof-of-work chain](../terminology#eth1) [validator deposit contract](./validator-deposit-contract).
 
 ## DEPOSITED State
-Once a valid transaction has been submitted to the [validator deposit contract](./validator-deposit-contract), your [beacon node](./beacon-node) will detect the presence of the transaction on the ETH1 chain and your [validator](validator-clients.md) client will now report being in the DEPOSITED state.
+Once a valid transaction has been submitted to the [validator deposit contract](./validator-deposit-contract), your [beacon node](./beacon-node) will detect the presence of the transaction on the ETH1 chain and your [validator](./prysm-validator-client) client will now report being in the DEPOSITED state.
 
 ## PENDING State
 
@@ -31,7 +31,7 @@ The current specification for [processing deposits](https://github.com/ethereum/
 
 ## ACTIVE State
 
-Once the activation epoch arrives, the validator is activated and assigned responsibilities including [proposing](./terminology#propose) or [attesting](./terminology#attest) to blocks on the beacon chain. Validators receive either rewards or penalties to the initial deposit based upon their overall performance. If a validator's balance drops below 16 ETH (typically due to inactivity), it will be ejected. Ejections are treated the same as a voluntary exits.
+Once the activation epoch arrives, the validator is activated and assigned responsibilities including [proposing](../terminology#propose) or [attesting](../terminology#attest) to blocks on the beacon chain. Validators receive either rewards or penalties to the initial deposit based upon their overall performance. If a validator's balance drops below 16 ETH (typically due to inactivity), it will be ejected. Ejections are treated the same as a voluntary exits.
 
 ## Withdrawals
 

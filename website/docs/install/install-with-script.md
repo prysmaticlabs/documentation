@@ -66,7 +66,7 @@ import QuickstartRunValidatorPartial from '@site/docs/install/partials/_quicksta
 This usually takes a few hours if your disk I/O is relatively slow. If it remains in this state for more than a day, your disk might not be able to write data as fast as the chain head advances. The most straightforward way to resolve this is using an SSD.
 
 **Why do you recommend putting everything on a single machine?** <br />
-Keeping all of your client software on a single machine keeps things simple, which aligns with our [security best practices](../security-best-practices.md).
+Keeping all of your client software on a single machine keeps things simple, which aligns with our [security best practices](/docs/security-best-practices).
 
 **Can I use Prysm on a Mac M1 ARM chip?** <br />
 Yes. Choose **one** of the following actions to ensure that Prysm can run on your M1:
@@ -112,7 +112,7 @@ The Merge introduced a new Engine API that allows consensus-layer clients to com
 Yes. Downtime penalties are minimal but we recommend having uptime and downtime alerts configured for your execution node, beacon node, and validator if possible.
 
 **My beacon node is taking a long time to sync. Is there any way I can speed it up?** <br />
-Yes - you can use [checkpoint sync](./prysm-usage/checkpoint-sync) to start your beacon node's synchronization from a checkpoint rather than from genesis. This is actually a more secure way to run your beacon node.
+Yes - you can use [checkpoint sync](/docs/prysm-usage/checkpoint-sync) to start your beacon node's synchronization from a checkpoint rather than from genesis. This is actually a more secure way to run your beacon node.
 <!--TODO: explain why -->
 
 
@@ -130,5 +130,3 @@ TODO
 
 **What are withdrawal keys and validator keys?** <br />
 TODO: explain in context of this guide -->
-
-

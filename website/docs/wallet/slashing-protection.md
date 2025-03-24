@@ -24,7 +24,7 @@ To protect itself from accidentally being slashed due to some software bug or ot
 
 ## How to use slashing protection
 
-Basic slashing protection is **enabled** by default using a database that keeps track of objects your validator has previously signed in order to prevent it from signing the same message again causing a violation and getting slashed. If you want to use a more advanced, *remote* slashing protection, see our section on how to use **slasher** [here](./prysm-usage/slasher).
+Basic slashing protection is **enabled** by default using a database that keeps track of objects your validator has previously signed in order to prevent it from signing the same message again causing a violation and getting slashed. If you want to use a more advanced, *remote* slashing protection, see our section on how to use **slasher** [here](../prysm-usage/slasher).
 
 
 ## Slashing protection history standard format
@@ -281,5 +281,3 @@ Prysm will output a success message upon successful import. An error message wil
 **I'm nervous about this procedure... can I have some help?**
 
 Absolutely - feel free to send us a message on [Discord](https://discord.com/invite/prysmaticlabs) and someone from our team will be happy to help.
-
-

@@ -135,7 +135,7 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
         <div className='input-container'><input id="cl-expected" type='checkbox'/><span className='done'></span></div>
         <div className='guidance-container'>
             <label htmlFor="cl-expected">Ensure that Prysm is running as expected</label>
-            <p>See <a href='./monitoring/checking-status'>Check node and validator status</a> to learn how to check the status of your execution node, beacon node, and validator node.</p>
+            <p>See <a href='/docs/monitoring/checking-status'>Check node and validator status</a> to learn how to check the status of your execution node, beacon node, and validator node.</p>
         </div>
     </div>
 </div>
@@ -144,7 +144,7 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
 ## The Merge: Before and now
 
 | Before                                                                                                         | Now                                                                                                                                      |
-| -------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+|----------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|
 | You don't need to run a local execution client. You can use a service like Infura instead.                     | You **do** need to run an execution client. You **can't** use Infura as an execution endpoint provider.                                  |
 | The HTTP connection between beacon node and execution node doesn't need to be authenticated using a JWT token. | The HTTP connection between beacon node and execution node **does** need to be authenticated using a JWT token.                          |
 | Beacon nodes connect to execution nodes on port `8545` by default when using HTTP.                             | Beacon nodes connect to execution nodes on port **`8551`** by default when using HTTP.                                                   |
@@ -192,7 +192,7 @@ import SingletonWarningPartial from '@site/docs/partials/_singleton-warning-part
 
 :::tip Congratulations!
 
-You’re now running a post-Merge configuration. If you have any questions, feel free ask them on our [Discord](https://discord.gg/prysmaticlabs).
+You're now running a post-Merge configuration. If you have any questions, feel free ask them on our [Discord](https://discord.gg/prysmaticlabs).
 
 :::
 
@@ -207,6 +207,3 @@ Yes. You also won't have to worry about JWT if you use IPC. See our [Quickstart]
 
 **Can I use a light node with Prysm, or do I need to run a full execution node?** <br />
 No - at this time, a full node is required.
-
-
-

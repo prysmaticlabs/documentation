@@ -35,4 +35,3 @@ Congratulations - you’re now running an <strong>execution node</strong> that y
 </div>
 
 </div>
-

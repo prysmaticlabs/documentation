@@ -16,7 +16,7 @@ Prysm's validator accounts are extensible enough to allow for the most basic set
 
 Out of the box, Prysm supports 3 basic kinds of wallets that encompasses many different use-cases. In order of highest to lowest security:
 
-1. **non-HD wallet**: (good security) A simple wallet in which accounts are password protected and validator keys are generated non-deterministically. This is the recommended approach if you want to import an account from the [Ethereum launchpad](https://launchpad.ethereum.org/) and you can read dedicated instructions [here](./wallet/nondeterministic).
+1. **non-HD wallet**: (good security) A simple wallet in which accounts are password protected and validator keys are generated non-deterministically. This is the recommended approach if you want to import an account from the [Ethereum launchpad](https://launchpad.ethereum.org/) and you can read dedicated instructions [here](./nondeterministic).
 2. **HD wallet**: (least security) A common type of blockchain wallet which is generated from a english mnemonic, able to create new accounts deterministically. The encrypted seed is stored on day encrypted by a strong password. Given you are tying your HD wallet to the validator client, it is less secure than simply importing validating keys you need from an external source or running a remote signer. 
 
 At the core of Prysm's validator accounts lies the notion of a validator private key, which is stored in a password-protected, keystore.json file. Prysm supports the ability to manage many validator accounts, making it easy to import and export them as well as easily list all the account info in your wallet. Prysm is compliant with the [EIP-2335](https://eips.ethereum.org/EIPS/eip-2335) standards for storing Ethereum consensus validator private keys, making it possible to move keys between different Ethereum consensus client implementations.
@@ -48,7 +48,7 @@ wallet-directory/
         all-accounts.keystore.json
 ```
 
-[Create and use a non-HD wallet](./wallet/nondeterministic)
+[Create and use a non-HD wallet](./nondeterministic)
 
 ## HD wallets
 
@@ -60,7 +60,7 @@ glue hawk service repeat album stable arctic piece kiss arrive viable labor conn
 
 HD wallets are password protected via a high-entropy, strong password, and allow for easy creation of as many validator account as you wish.
 
-[Create and use an HD wallet](./wallet/deterministic)
+[Create and use an HD wallet](./deterministic)
 ## Frequently asked questions
 
 As you run your validator, you might run into unexpected errors or situations in which things aren't working as expected. Here are our answers to some of the most frequently asked questions.
@@ -73,7 +73,7 @@ If you are running an **HD wallet**, we store your encrypted wallet seed under y
 
 #### Why is my validator losing ETH despite my setup appearing ok?
 
-If your validator client is running fine without errors but you're seeing your validator balance decrease, it is typically a sign your beacon node is either (a) crashed, (b) not synced to the chain head. This might also mean your beacon node doesn't have any peers and is likely not connected to anyone. To debug this problem, please read our guide on checking [everything is running as expected](./monitoring/is-everything-fine). If this still does not resolve your issue, you can get in touch with our team on [Discord](https://discord.gg/prysmaticlabs) anytime.
+If your validator client is running fine without errors but you're seeing your validator balance decrease, it is typically a sign your beacon node is either (a) crashed, (b) not synced to the chain head. This might also mean your beacon node doesn't have any peers and is likely not connected to anyone. To debug this problem, please read our guide on checking [everything is running as expected](../monitoring/is-everything-fine). If this still does not resolve your issue, you can get in touch with our team on [Discord](https://discord.gg/prysmaticlabs) anytime.
 
 #### How can I use a hardware wallet with my validator?
 
@@ -85,6 +85,4 @@ If you're encountering an unexpected issue that causes your client to crash or t
 
 #### How can I stop being a validator?
 
-You can stop being a validator by issuing a **voluntary exit**, which is a special type of object included in the Ethereum beacon chain that signifies your validator is ready to stop validating and securely exit the validator set. Although during phase 0 of Ethereum consensus, you will **not** be able to withdraw your staking rewards, you can still issue a voluntary exit. You can find instructions for this process [here](./wallet/exiting-a-validator).
-
-
+You can stop being a validator by issuing a **voluntary exit**, which is a special type of object included in the Ethereum beacon chain that signifies your validator is ready to stop validating and securely exit the validator set. Although during phase 0 of Ethereum consensus, you will **not** be able to withdraw your staking rewards, you can still issue a voluntary exit. You can find instructions for this process [here](./exiting-a-validator).

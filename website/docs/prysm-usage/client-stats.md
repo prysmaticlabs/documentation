@@ -54,7 +54,7 @@ or
     prysm.bat client-stats --validator-metrics-url=http://localhost:8081/metrics --beacon-node-metrics-url=http://localhost:8080/metrics --clientstats-api-url=https://beaconcha.in/api/v1/stats/{apikey}/{machineName}
 
 If you see an error message that `PROCESS can be beacon-chain, validator, or slasher.`, you need to manually update the `prysm.sh` or `prysm.bat` file to
-its latest version, see [download instructions](./install/install-with-script).
+its latest version, see [download instructions](../install/install-with-script).
 
 # What metrics does client-stats collect?
 

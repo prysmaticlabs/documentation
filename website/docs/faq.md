@@ -165,7 +165,7 @@ Your node is running the popular [prometheus](https://prometheus.io/) server for
 
 #### Can I run this on a raspberry pi? What are the instructions?
 
-Yes, we currently support arm 64-bit architectures such as the raspberry pi 4 and they go out as part of our pre-compiled binary releases [here](https://github.com/prysmaticlabs/prysm/releases). Our documentation portal has instructions on how to run the entire installation process [here](./install/install-with-script). However, we recommend using more powerful hardware in mainnet conditions. 
+Yes, we currently support arm 64-bit architectures such as the raspberry pi 4 and they go out as part of our pre-compiled binary releases [here](https://github.com/prysmaticlabs/prysm/releases). Our documentation portal has instructions on how to run the entire installation process [here](./install/install-with-script.md). However, we recommend using more powerful hardware in mainnet conditions. 
 
 ### Validator keys and validator deposits
 
@@ -232,4 +232,3 @@ Yes, as of the capella hardfork partial and full withdrawals of validators is en
 #### What is balance and what is effective balance?
 
 Your validator balance is the actual amount of ETH you have from being a validator in Ethereum. It can go up or down every epoch depending on your participation. Effective balance is a bit different. It is a value that lags behind your actual balance and is used exclusively to determine rewards and penalties for your validator. It has a max value of 32ETH, but your regular balance is uncapped. You can read more about the purpose of effective balance in this excellent post by Attestant [here](https://www.attestant.io/posts/understanding-validator-effective-balance/).
-

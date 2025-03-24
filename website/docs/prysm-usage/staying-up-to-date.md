@@ -16,9 +16,9 @@ This section outlines the step-by-step process for how to keep Prysm up to date,
 
 There are three main ways of installing Prysm:
 
-* [Using the Prysm installation script (Recommended)](./install/install-with-script)
-* [Using Docker](./install/install-with-docker)
-* [Building from source with Bazel (Advanced)](./install/install-with-bazel)
+* [Using the Prysm installation script (Recommended)](../install/install-with-script)
+* [Using Docker](/docs/install/install-with-docker)
+* [Building from source with Bazel (Advanced)](/docs/install/install-with-bazel)
 
 ## Recommended versions
 
@@ -455,5 +455,3 @@ Then change all your docker run commands to use that version tag. For example, i
 ### Downgrading between major version bumps
 
 For **major version bumps** such as from <PrysmVersion/> to <PrysmVersion majorOverride="4"/>, you cannot downgrade as these are meant to be backwards incompatible changes.
-
-
