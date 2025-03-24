@@ -4,15 +4,15 @@ module.exports = {
     title: 'Prysm',
     tagline: 'Ethereum consensus implementation written entirely in Go.',
     url: 'https://offchainlabs.com',
-    baseUrl: '/prysm/',
+    baseUrl: '/',
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'throw',
-    favicon: '/prysm/img/Prysm.svg',
+    favicon: '/img.svg',
     organizationName: 'Prysmatic Labs',
     projectName: 'prysm-docs',
 
     customFields: {
-        image: '/prysm/img/Prysm.svg',
+        image: '/img.svg',
         prysmVersion: prysmVersion,
     },
     trailingSlash: false,
@@ -23,13 +23,13 @@ module.exports = {
             title: "Prysm Documentation",
             logo: {
                 alt: "Prysm logo",
-                src: '/prysm/img/logo2.png',
-                href: '/prysm/docs/getting-started',
+                src: '/img/logo2.png',
+                href: '/docs/getting-started',
             },
             items: [{
                 type: 'docsVersion',
                 position: 'left',
-                to: 'https://github.com/prysmaticlabs/prysm/releases/tag/' + prysmVersion,
+                to: 'https://github.comaticlabs/releases/tag/' + prysmVersion,
                 label: prysmVersion,
             },
             {
@@ -38,12 +38,12 @@ module.exports = {
                 position: 'right',
             },
             {
-                href: 'https://github.com/prysmaticlabs/prysm',
+                href: 'https://github.comaticlabs',
                 label: 'GitHub',
                 position: 'right',
             },
             {
-                href: 'https://discord.gg/prysmaticlabs',
+                href: 'https://discord.ggaticlabs',
                 label: 'Discord',
                 position: 'right',
             },
@@ -52,8 +52,8 @@ module.exports = {
         footer: {
             logo: {
                 alt: "Prysm Eth2 Docs",
-                href: '/prysm/docs/getting-started',
-                src: '/prysm/img/Prysm.svg',
+                href: '/docs/getting-started',
+                src: '/img.svg',
             },
             copyright: `Copyright © ${new Date().getFullYear()} Prysmatic Labs, LLC., Validator Deposit Contract 0x00000000219ab540356cbb839cbe05303d7705fa`,
             links: [],
@@ -61,8 +61,8 @@ module.exports = {
         prism: {
             theme: require('prism-react-renderer/themes/dracula'),
         },
-        ogImage: '/prysm/img/Prysm.svg',
-        twitterImage: '/prysm/img/Prysm.svg',
+        ogImage: '/img.svg',
+        twitterImage: '/img.svg',
     },
     presets: [
         [
@@ -75,7 +75,7 @@ module.exports = {
                     showLastUpdateAuthor: false,
                     breadcrumbs: false,
                     sidebarPath: require.resolve('./sidebars.json'),
-                    editUrl: 'https://github.com/prysmaticlabs/documentation/edit/master/website/',
+                    editUrl: 'https://github.comaticlabs/documentation/edit/master/website/',
                 },
                 theme: {
                     customCss: require.resolve('./src/css/custom.css'),
