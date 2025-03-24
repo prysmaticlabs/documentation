@@ -13,14 +13,14 @@ Prysm can be installed on GNU/Linux, MacOS, and Arm64 using our build tool, [Baz
 
 :::tip Not familiar with Bazel? Try our quickstart
 
-This guidance is targeted at users who are already comfortable with Bazel and staking. See our [Quickstart](/prysm/docs/install/install-with-script) for beginner-friendly installation instructions.
+This guidance is targeted at users who are already comfortable with Bazel and staking. See our [Quickstart](./install/install-with-script) for beginner-friendly installation instructions.
 
 :::
 
 
 ## Why Bazel?
 
-Instead of using the `Go` tool to build Prysm, our team relies on the [Bazel](https://bazel.build) build system used by major companies to manage monorepositories. Bazel provides reproducible builds and a sandboxed environment that ensures everyone building Prysm has the same experience and can build our entire project from a single command. For more detailed rationale on why Bazel, how it works in Prysm, and all important information about how exactly building from source works, read our rationale [here](/prysm/docs/reading/bazel).
+Instead of using the `Go` tool to build Prysm, our team relies on the [Bazel](https://bazel.build) build system used by major companies to manage monorepositories. Bazel provides reproducible builds and a sandboxed environment that ensures everyone building Prysm has the same experience and can build our entire project from a single command. For more detailed rationale on why Bazel, how it works in Prysm, and all important information about how exactly building from source works, read our rationale [here](./reading/bazel).
 
 
 <div className='bazel-guide'>
@@ -107,7 +107,7 @@ Bazel will automatically pull and install any dependencies as well, including Go
 
 :::
 
-To run a beacon node, you'll need access to an execution node. See [Configure an execution node](/prysm/docs/execution-node/configuring-for-prysm) for detailed instructions if you don't already have an execution node configured.
+To run a beacon node, you'll need access to an execution node. See [Configure an execution node](./execution-node/configuring-for-prysm) for detailed instructions if you don't already have an execution node configured.
 
 
 
@@ -204,7 +204,7 @@ We do not write our own Dockerfiles, as Bazel provides us a more sandboxed, simp
 
 ### Dependencies needed
 
-* All specified dependencies for building with Bazel [here](/prysm/docs/install/install-with-bazel#dependencies)
+* All specified dependencies for building with Bazel [here](./install/install-with-bazel#dependencies)
 * Python installed and available in your computer
 
 ### Build process

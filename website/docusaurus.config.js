@@ -4,7 +4,7 @@ module.exports = {
     title: 'Prysm',
     tagline: 'Ethereum consensus implementation written entirely in Go.',
     url: 'https://offchainlabs.com',
-    baseUrl: '/',
+    baseUrl: '/prysm/',
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'throw',
     favicon: '/img.svg',

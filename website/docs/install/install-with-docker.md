@@ -15,7 +15,7 @@ Prysm can be installed on Windows, GNU/Linux, and MacOS systems with Docker. We 
 
 :::tip Not familiar with Docker? Try our quickstart
 
-This guidance is targeted at users who are already comfortable with Docker. See our [Quickstart](/prysm/docs/install/install-with-script) for beginner-friendly installation instructions.
+This guidance is targeted at users who are already comfortable with Docker. See our [Quickstart](./install/install-with-script) for beginner-friendly installation instructions.
 
 :::
 
@@ -100,7 +100,7 @@ We recommend opening up ports `tcp/13000` and `udp/12000` on your router and fir
 
 :::
 
-If you're not already running an execution node, refer to our [Quickstart](/prysm/docs/install/install-with-script) for beginner-friendly execution node installation instructions.
+If you're not already running an execution node, refer to our [Quickstart](./install/install-with-script) for beginner-friendly execution node installation instructions.
 
 Next, use Docker to tell your beacon node to connect to your local execution node. Note that `<YOUR_ETH_EXECUTION_NODE_ENDPOINT>` is either an HTTP endpoint `http://host:port` or an IPC path such as `/path/to/geth.ipc`.
 
