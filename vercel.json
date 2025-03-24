@@ -1,0 +1,12 @@
+{
+    "rewrites": [
+      { 
+        "source": "/:path*", 
+        "destination": "/:path*.html"
+      },
+      { 
+        "source": "/prysm/:path*", 
+        "destination": "/:path*" 
+      }
+    ]
+}
