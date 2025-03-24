@@ -33,7 +33,7 @@ module.exports = {
                 label: prysmVersion,
             },
             {
-                to: 'docs/install/install-with-script',
+                to: '/prysm/docs/install/install-with-script',
                 label: 'Quick Install',
                 position: 'right',
             },
@@ -70,7 +70,7 @@ module.exports = {
             {
                 docs: {
                     path: './docs',
-                    routeBasePath: 'docs',
+                    routeBasePath: '/prysm/docs',
                     showLastUpdateTime: false,
                     showLastUpdateAuthor: false,
                     breadcrumbs: false,
