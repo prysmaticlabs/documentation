@@ -1,19 +1,12 @@
 {
-  "rewrites": [
-    { 
-      "source": "/prysm/(.*)", 
-      "destination": "/$1" 
-    },
-    { 
-      "source": "/(.*)", 
-      "destination": "/$1.html",
-      "has": [
-        {
-          "type": "header",
-          "key": "accept",
-          "value": "text/html"
-        }
-      ]
-    }
-  ]
+    "rewrites": [
+      { 
+        "source": "/:path*", 
+        "destination": "/:path*.html"
+      },
+      { 
+        "source": "/prysm/:path*", 
+        "destination": "/:path*" 
+      }
+    ]
 }
