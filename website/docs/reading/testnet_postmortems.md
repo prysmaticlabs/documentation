@@ -30,6 +30,9 @@ As part of our day to day job in building eth2 with our Prysm project, we are ta
 - https://github.com/hyperledger/besu/pull/8346
 
 **Impact:** Holesky was down for roughly 2 weeks and is still in a fragile state. We were able to test our clients dealing with long non-finality and some key design decisions should be discussed as well as disaster recovery plans for the future. Pectra testnet testing for most CL features was pushed back several weeks as we try to recover. Hoodi, a replacement testnet, is being spun up.
+some statistics
+- since slot 3710963 we've had roughly 56k validators slashed. Not all of these are caused by the recovery process, but most are related to the incident. This number is smaller than the expected number of slashed validators, so validators should be slashed retroactively.
+- an exit queue of about 1M validators.
 
 **Detection:** Reviewing Dora interface tracking the chain and seeing the forked chain. Initially thought as a minority client (Reth,Erigon) issue but then realized it was a majority client (Geth, Nethermind, Besu) issue.
 
