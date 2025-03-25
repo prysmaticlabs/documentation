@@ -52,7 +52,7 @@ In SECIO, channel negotiation begins with a proposal phase,  where we exchange i
 
 ##  Current Status in Prysm
 
-Currently in Prysm we do use SECIO for securing sessions, and a Peer’s identity is generated using the Secp256k1 curve. However we haven’t enforced that the ephemeral key generation curve, cipher for encryption and hash algorithm are the ones that are required for interoperability We would need to strictly define these when peers are making their initial proposal. If they do not adhere to them, we reject and disconnect from those peers. 
+Currently in Prysm we do use SECIO for securing sessions, and a Peer’s identity is generated using the Secp256k1 curve. However we haven’t enforced that the ephemeral key generation curve, cipher for encryption and hash algorithm are the ones that are required for interoperability. We would need to strictly define these when peers are making their initial proposal. If they do not adhere to them, we reject and disconnect from those peers. 
 
 **Protocol Negotiation**
 We must use the multistream-select specification with id [/multistream/1.0.0](https://github.com/multiformats/multistream-select/)
