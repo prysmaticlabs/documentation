@@ -1,4 +1,3 @@
-// src/theme/Footer/index.js
 import React from 'react';
 import OffchainLabsLogo from '@site/static/images/logo-white.png';
 
