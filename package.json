@@ -1,0 +1,26 @@
+{
+  "name": "prysm-documentation",
+  "scripts": {
+    "docusaurus": "docusaurus",
+    "examples": "docusaurus examples",
+    "start": "docusaurus start",
+    "build": "docusaurus build && node scripts/postbuild.js",
+    "publish-gh-pages": "docusaurus publish",
+    "write-translations": "docusaurus write-translations",
+    "version": "docusaurus version",
+    "rename-version": "docusaurus rename-version",
+    "swizzle": "docusaurus swizzle"
+  },
+  "devDependencies": {
+    "@docusaurus/core": "^2.4.1",
+    "@docusaurus/preset-classic": "^2.4.1",
+    "react": "16.13.1",
+    "react-dom": "16.13.1"
+  },
+  "dependencies": {
+    "@docusaurus/theme-search-algolia": "^2.4.1",
+    "classnames": "^2.3.1",
+    "clsx": "1.1.1",
+    "docusaurus-lunr-search": "^2.3.2"
+  }
+}
