@@ -8,6 +8,7 @@
   "redirects": [
     { "source": "/", "destination": "/prysm/docs/", "permanent": true },
     { "source": "/prysm", "destination": "/prysm/docs/", "permanent": true },
-    { "source": "/prysm/docs", "destination": "/prysm/docs/", "permanent": true }
+    { "source": "/prysm/docs", "destination": "/prysm/docs/", "permanent": true },
+    { "source": "/prysm/docs/getting-started", "destination": "/prysm/docs/", "permanent": true }
   ]
 }
