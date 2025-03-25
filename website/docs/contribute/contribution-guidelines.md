@@ -19,7 +19,7 @@ Once you are a bit more familiar with the concepts behind Ethereum and are ready
 To develop Prysm, you'll need the following:
 
 - A modern Windows, MacOS X, or Minux operating system
-- Go 1.21 version installed, download and install [here](https://golang.org/dl/)
+- Go 1.22 version installed, download and install [here](https://golang.org/dl/)
 - The `git` package installed
 - A code editor such as [Visual Studio Code](https://code.visualstudio.com/download) or Jetbrains' [Goland IDE](https://www.jetbrains.com/go/) or your preferred one
 
@@ -37,7 +37,7 @@ Finally, ensure Go is installed and working on your machine:
 
 Example output:
 
-    go version go1.21.5 darwin/arm64
+    go version go1.22.11 linux/amd64
 
 ### Building and testing Prysm with Go
 
