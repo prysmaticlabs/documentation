@@ -423,7 +423,7 @@ Variations include: stopping and restarting, stopping for a long time and then r
 # Remove previous data:
 rm -r ~/prysm/beaconchaindata ~/prysm/network-keys
 # Assuming you have geth node running locally, run init-sync on holesky
-bazel run /beacon-chain -- --datadir=$HOME/prysm  \
+bazel run //beacon-chain -- --datadir=$HOME/prysm  \
   --verbosity=debug \
   --p2p-max-peers=500 \
   --execution-endpoint=$HOME/Library/Ethereum/holesky/geth.ipc \ 
