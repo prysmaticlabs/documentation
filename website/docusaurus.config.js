@@ -1,101 +1,126 @@
 var prysmVersion = "v5.1.2";
 
 module.exports = {
-    title: 'Prysm',
-    tagline: 'Ethereum consensus implementation written entirely in Go.',
+    title: 'My Site',
+    tagline: 'Dinosaurs are cool',
     url: `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` || 'http://localhost',
     baseUrl: '/prysm/',
     onBrokenLinks: 'throw',
-    onBrokenMarkdownLinks: 'throw',
-    favicon: '/img.svg',
-    organizationName: 'Prysmatic Labs',
-    projectName: 'prysm-docs',
+    onBrokenMarkdownLinks: 'warn',
+    favicon: 'img/favicon.ico',
     trailingSlash: true,
 
-    customFields: {
-        image: '/img.svg',
-        prysmVersion: prysmVersion,
-    },
-    trailingSlash: false,
-    scripts: ['https://buttons.github.io/buttons.js'],
+    // GitHub pages deployment config.
+    // If you aren't using GitHub pages, you don't need these.
+    organizationName: 'facebook', // Usually your GitHub org/user name.
+    projectName: 'docusaurus', // Usually your repo name.
 
-    themeConfig: {
-        navbar: {
-            title: "Prysm Documentation",
-            logo: {
-                alt: "Prysm logo",
-                src: '/img/logo2.png',
-                href: '/docs/getting-started',
-            },
-            items: [{
-                type: 'docsVersion',
-                position: 'left',
-                to: 'https://github.comaticlabs/releases/tag/' + prysmVersion,
-                label: prysmVersion,
-            },
-            {
-                to: 'docs/install/install-with-script',
-                label: 'Quick Install',
-                position: 'right',
-            },
-            {
-                href: 'https://github.comaticlabs',
-                label: 'GitHub',
-                position: 'right',
-            },
-            {
-                href: 'https://discord.ggaticlabs',
-                label: 'Discord',
-                position: 'right',
-            },
-            ],
-        },
-        footer: {
-            logo: {
-                alt: "Prysm Eth2 Docs",
-                href: '/docs/getting-started',
-                src: '/img.svg',
-            },
-            copyright: `Copyright © ${new Date().getFullYear()} Prysmatic Labs, LLC., Validator Deposit Contract 0x00000000219ab540356cbb839cbe05303d7705fa`,
-            links: [],
-        },
-        prism: {
-            theme: require('prism-react-renderer/themes/dracula'),
-        },
-        ogImage: '/img.svg',
-        twitterImage: '/img.svg',
+    // Even if you don't use internalization, you can use this field to set useful
+    // metadata like html lang. For example, if your site is Chinese, you may want
+    // to replace "en" with "zh-Hans".
+    i18n: {
+        defaultLocale: 'en',
+        locales: ['en'],
     },
+
     presets: [
         [
-            '@docusaurus/preset-classic',
-            {
+            'classic',
+            /** @type {import('@docusaurus/preset-classic').Options} */
+            ({
                 docs: {
-                    path: './docs',
-                    routeBasePath: 'docs',
-                    showLastUpdateTime: false,
-                    showLastUpdateAuthor: false,
-                    breadcrumbs: false,
-                    sidebarPath: require.resolve('./sidebars.json'),
-                    editUrl: 'https://github.comaticlabs/documentation/edit/master/website/',
+                    sidebarPath: require.resolve('./sidebars.js'),
+                    // Please change this to your repo.
+                    // Remove this to remove the "edit this page" links.
+                    editUrl:
+                        'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+                },
+                blog: {
+                    showReadingTime: true,
+                    // Please change this to your repo.
+                    // Remove this to remove the "edit this page" links.
+                    editUrl:
+                        'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
                 },
                 theme: {
                     customCss: require.resolve('./src/css/custom.css'),
                 },
-                sitemap: {
-                    changefreq: 'weekly',
-                    priority: 0.5,
+            }),
+        ],
+    ],
+
+    themeConfig:
+        /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+        ({
+            navbar: {
+                title: 'My Site',
+                logo: {
+                    alt: 'My Site Logo',
+                    src: 'img/logo.svg',
                 },
+                items: [
+                    {
+                        type: 'doc',
+                        docId: 'intro',
+                        position: 'left',
+                        label: 'Tutorial',
+                    },
+                    { to: '/blog', label: 'Blog', position: 'left' },
+                    {
+                        href: 'https://github.com/facebook/docusaurus',
+                        label: 'GitHub',
+                        position: 'right',
+                    },
+                ],
             },
-        ],
-    ],
-    plugins: [
-        [
-            '@docusaurus/plugin-google-analytics',
-            {
-                trackingID: 'UA-139640266-2',
-                anonymizeIP: true,
+            footer: {
+                style: 'dark',
+                links: [
+                    {
+                        title: 'Docs',
+                        items: [
+                            {
+                                label: 'Tutorial',
+                                to: '/docs/intro',
+                            },
+                        ],
+                    },
+                    {
+                        title: 'Community',
+                        items: [
+                            {
+                                label: 'Stack Overflow',
+                                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+                            },
+                            {
+                                label: 'Discord',
+                                href: 'https://discordapp.com/invite/docusaurus',
+                            },
+                            {
+                                label: 'Twitter',
+                                href: 'https://twitter.com/docusaurus',
+                            },
+                        ],
+                    },
+                    {
+                        title: 'More',
+                        items: [
+                            {
+                                label: 'Blog',
+                                to: '/blog',
+                            },
+                            {
+                                label: 'GitHub',
+                                href: 'https://github.com/facebook/docusaurus',
+                            },
+                        ],
+                    },
+                ],
+                copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
             },
-        ],
-        require.resolve("docusaurus-lunr-search"),
-    ],
+            prism: {
+                theme: lightCodeTheme,
+                darkTheme: darkCodeTheme,
+            },
+        }),
 };
