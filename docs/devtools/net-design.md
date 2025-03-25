@@ -384,7 +384,7 @@ For discovery we currently use Multicast DNS and Kademlia DHT. DiscV5 is roughly
 
 An Ethereum Node Record which is defined [here](https://eips.ethereum.org/EIPS/eip-778), requires at least the IP address of the node and its UDP port.  In each of the node records stored, a node’s liveness is periodically validated, and if the node doesn’t respond its record is deleted. 
 
-On a positive note the reference implementation is in go over [here](https://github.com/ethereum/go-ethereum/tree/master/p2p/discv5), we wouldn’t have to implement it, since we can just use this version.
+On a positive note the reference implementation is in go over [here](https://github.com/ethereum/devp2p/blob/master/discv5/discv5.md), we wouldn’t have to implement it, since we can just use this version.
 
 Discovery Communication is authenticated using session keys which are established in the handshake. There are different ways to save node records, either you could utilise an in-memory db for a temporary store or you could spin off a leveldb instance which can be persisted across sessions. For Prysm it would be easier for each node to simply have an in-memory db which  stores all the node records, we can look to have a persisted store for mainnet where we can analyse trade offs to this approach. 
 

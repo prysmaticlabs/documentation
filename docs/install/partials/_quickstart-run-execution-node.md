@@ -133,7 +133,7 @@ import TabItem from '@theme/TabItem';
             </Tabs>
       </TabItem>
     </Tabs>
-    <p>See Besu's <a href='https://besu.hyperledger.org/en/stable/Reference/CLI/CLI-Syntax/'>command-line options</a> for parameter definitions.</p>
+    <p>See Besu's <a href='https://besu.hyperledger.org/stable/public-networks/reference/cli/options'>command-line options</a> for parameter definitions.</p>
   </TabItem>
   <TabItem value="geth">
     <p className='hidden-in-jwt-guide hidden-in-mergeprep-guide'>Download and run the latest 64-bit stable release of <strong>Geth</strong> for your operating system from the <a href='https://geth.ethereum.org/downloads/'>Geth downloads page</a>.</p> 

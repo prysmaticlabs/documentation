@@ -105,7 +105,7 @@ Yes, but your USB connection introduces a possible point of failure. If you do t
 No, a full execution node is needed.
 
 **Why do I need to run my own execution client?** <br />
-The Merge introduced a new Engine API that allows consensus-layer clients to communicate with execution-layer clients. Teku docs contain a great explainer here: <a href='https://docs.teku.consensys.net/en/latest/Concepts/Merge/'>The Merge</a>.
+The Merge introduced a new Engine API that allows consensus-layer clients to communicate with execution-layer clients. Additional information about the merge is available here: <a href='https://ethereum.org/en/roadmap/merge/'>The Merge</a>.
 <!--TODO: develop our own knowledge base with conceptual content -->
 
 **What happens if my execution client goes down? Will I be penalized?** <br />
