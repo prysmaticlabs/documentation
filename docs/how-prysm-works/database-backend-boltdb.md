@@ -49,7 +49,7 @@ var (
 The newly created bucket is added to the `NewDB` constructor in `db/db.go`, like so:
 
 ```go
-/ NewDB initializes a new DB. If the genesis block and states do not exist, this method creates it.
+// NewDB initializes a new DB. If the genesis block and states do not exist, this method creates it.
 func NewDB(dirPath string) (*BeaconDB, error) {
     if err := os.MkdirAll(dirPath, 0700); err != nil {
         return nil, err
