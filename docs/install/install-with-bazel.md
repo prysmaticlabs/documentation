@@ -235,11 +235,11 @@ docker load -i bazel-bin/cmd/validator/oci_image_tarball/tarball.tar
 
 ```bash
 # Beacon node
-bazel build //cmd/beacon-chain:oci_image_tarball --platforms=@io_bazel_rules_go/go/toolchain:linux_arm64_cgo --config=release
+bazel build //cmd/beacon-chain:oci_image_tarball --platforms=@io_bazel_rules_go//go/toolchain:linux_arm64_cgo --config=release
 docker load -i bazel-bin/cmd/beacon-chain/oci_image_tarball/tarball.tar
 
 # Validator client
-bazel build //cmd/validator:oci_image_tarball  --platforms=@io_bazel_rules_go/go/toolchain:linux_arm64_cgo --config=release
+bazel build //cmd/validator:oci_image_tarball  --platforms=@io_bazel_rules_go//go/toolchain:linux_arm64_cgo --config=release
 docker load -i bazel-bin/cmd/validator/oci_image_tarball/tarball.tar
 ```
 
