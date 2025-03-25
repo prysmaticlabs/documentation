@@ -140,9 +140,9 @@ index 220e7efd5..46092bd73 100644
 @@ -36,7 +36,11 @@ func (vs *Server) GetBlock(ctx context.Context, req *ethpb.BlockRequest) (*ethpb
         }
 
-        / Retrieve the parent block as the current head of the canonical chain.
+        // Retrieve the parent block as the current head of the canonical chain.
 -       parent := vs.HeadFetcher.HeadBlock()
-+/     parent := vs.HeadFetcher.HeadBlock()
++//     parent := vs.HeadFetcher.HeadBlock()
 +       parent, err := vs.BeaconDB.HeadBlock(ctx)
 +       if err != nil {
 +               return nil, err
