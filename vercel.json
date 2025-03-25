@@ -9,9 +9,5 @@
     { "source": "/", "destination": "/prysm/docs/", "permanent": true },
     { "source": "/prysm", "destination": "/prysm/docs/", "permanent": true },
     { "source": "/prysm/docs", "destination": "/prysm/docs/", "permanent": true }
-  ],
-  "routes": [
-    { "handle": "filesystem" },
-    { "src": "/(.*)", "status": 404, "dest": "/prysm/docs/404/" }
   ]
 }
