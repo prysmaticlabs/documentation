@@ -23,6 +23,11 @@ module.exports = {
         locales: ['en'],
     },
 
+    // Add plugins array for search functionality
+    plugins: [
+        require.resolve("docusaurus-lunr-search"),
+    ],
+
     presets: [
         [
             'classic',
