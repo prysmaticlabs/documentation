@@ -12,6 +12,6 @@
   ],
   "routes": [
     { "handle": "filesystem" },
-    { "src": "/(.*)", "status": 404, "dest": "/prysm/docs/404.html" }
+    { "src": "/(.*)", "status": 404, "dest": "/prysm/docs/404/" }
   ]
 }
