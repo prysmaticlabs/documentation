@@ -3,13 +3,14 @@ var prysmVersion = "v5.1.2";
 module.exports = {
     title: 'Prysm',
     tagline: 'Ethereum consensus implementation written entirely in Go.',
-    url: 'https://offchainlabs.com',
+    url: `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` || 'http://localhost',
     baseUrl: '/prysm/',
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'throw',
     favicon: '/img.svg',
     organizationName: 'Prysmatic Labs',
     projectName: 'prysm-docs',
+    trailingSlash: true,
 
     customFields: {
         image: '/img.svg',

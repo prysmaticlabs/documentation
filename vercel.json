@@ -1,12 +1,6 @@
 {
-    "rewrites": [
-      { 
-        "source": "/:path*", 
-        "destination": "/:path*.html"
-      },
-      { 
-        "source": "/prysm/:path*", 
-        "destination": "/:path*" 
-      }
-    ]
+  "rewrites": [
+    { "source": "/prysm/:path*", "destination": "/:path*" }
+  ],
+  "trailingSlash": true
 }
