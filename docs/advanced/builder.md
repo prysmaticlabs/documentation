@@ -10,7 +10,7 @@ import BuilderPng from '@site/static/images/builder.png';
 
 :::caution
 
-This guide is for advanced Prysm users to configure their client for the purposes of extracting [MEV](https://ethereum.org/en/developers/mev/). 
+This guide is for advanced Prysm users to configure their client for the purposes of extracting [MEV](https://ethereum.org/en/developers/docs/mev/). 
 There are risks to using a builder which may result in missed rewards, missed proposals, censored transactions or omitted transactions. The Prysm team does not provide guidance on which builders/relays are recommended but lists are available for you to make a judgment based on your own values. 
 
 :::
