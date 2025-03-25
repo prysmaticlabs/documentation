@@ -21,12 +21,12 @@ This page serves material necessary to catch up with the current state of Ethere
 * [Ethereum Wiki](https://eth.wiki/)
 * [Ethereum Research](https://ethresear.ch/)
 * [Ethereum White Paper](https://github.com/ethereum/wiki/wiki/White-Paper)
-* [What is Hashing?](https://blockgeeks.com/guides/what-is-hashing/)
+* [What is Hashing?](https://web.archive.org/web/20220517042416/https://blockgeeks.com/guides/what-is-hashing/)
 * [Hashing Algorithms and Security](https://www.youtube.com/watch?v=b4b8ktEV4Bg)
 * [Understanding Merkle Trees](https://www.codeproject.com/Articles/1176140/Understanding-Merkle-Trees-Why-use-them-who-uses-t)
 * [Ethereum Block Architecture](https://ethereum.stackexchange.com/questions/268/ethereum-block-architecture/6413#6413)
-* [What is an Ethereum Token?](https://blockgeeks.com/guides/ethereum-token/)
-* [What is Ethereum Gas?](https://blockgeeks.com/guides/ethereum-gas-step-by-step-guide/)
+* [What is an Ethereum Token?](https://web.archive.org/web/20220517042416/https://blockgeeks.com/guides/ethereum-token/)
+* [What is Ethereum Gas?](https://web.archive.org/web/20220517042416/https://blockgeeks.com/guides/ethereum-gas-step-by-step-guide/)
 * [Client Implementations](https://eth.wiki/eth1/clients)
 
 ## **ETH2 fundamentals**
@@ -43,8 +43,8 @@ This page serves material necessary to catch up with the current state of Ethere
 
 ### Sharding
 
-* [Blockchain Scalability: Why?](https://blockgeeks.com/guides/blockchain-scalability/)
-* [What Are Ethereum Nodes and Sharding](https://blockgeeks.com/guides/what-are-ethereum-nodes-and-sharding/)
+* [Blockchain Scalability: Why?](https://web.archive.org/web/20220517042416/https://blockgeeks.com/guides/blockchain-scalability/)
+* [What Are Ethereum Nodes and Sharding](https://web.archive.org/web/20220517042416/https://blockgeeks.com/guides/what-are-ethereum-nodes-and-sharding/)
 * [How to Scale Ethereum: Sharding Explained](https://medium.com/prysmatic-labs/how-to-scale-ethereum-sharding-explained-ba2e283b7fce)
 * [Sharding FAQ](https://eth.wiki/sharding/Sharding-FAQs)
 * [Sharding Introduction: R&D Compendium](https://eth.wiki/en/sharding/sharding-introduction-r-d-compendium)
@@ -94,7 +94,7 @@ This page serves material necessary to catch up with the current state of Ethere
 
 ### Serenity research posts
 
-* [Sharding v2.1 Spec](https://notes.ethereum.org/SCIg8AH5SA-O4C1G1LYZHQ)
+* [Sharding Spec](https://ethereum.github.io/consensus-specs/specs/_features/sharding/beacon-chain/)
 * [Casper/Sharding/Beacon Chain FAQs](https://notes.ethereum.org/9MMuzWeFTTSg-3Tz_YeiBA?view)
 * [RETIRED! Sharding Phase 1 Spec](https://ethresear.ch/t/sharding-phase-1-spec-retired/1407/92)
 * [Exploring the Proposer/Collator Spec and Why it Was Retired](https://ethresear.ch/t/exploring-the-proposer-collator-split/1632/24)
@@ -136,5 +136,3 @@ This page serves material necessary to catch up with the current state of Ethere
 * [Why eWASM? by Alex Beregszaszi](https://www.youtube.com/watch?v=VF7f_s2P3U0)
 * [Panel: entire eWASM team discussion and Q&A](https://youtu.be/ThvForkdPyc?t=119)
 * [Ewasm community meetup at ETHBuenosAires](https://www.youtube.com/watch?v=qDzrbj7dtyU)
-
-

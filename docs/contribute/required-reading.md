@@ -18,12 +18,12 @@ This page serves material that is necessary to catch up with the current state o
 
 ### **Blockchain fundamentals**
 
-* [What is Blockchain Technology? A Step by Step Guide for Beginners](https://blockgeeks.com/guides/what-is-blockchain-technology/)
-* [What is Bitcoin? A Step by Step Guide for Beginners](https://blockgeeks.com/guides/what-is-bitcoin/)
-* [The Science Behind Cryptocurrencies' Cryptography](https://blockgeeks.com/guides/cryptocurrencies-cryptography/)
-* [The Ins and Outs of Cryptographic Hash Functions](https://blockgeeks.com/guides/cryptographic-hash-functions/)
-* [Blockchain Glossary from A-Z](https://blockgeeks.com/guides/blockchain-glossary-from-a-z/)
-* [Blockchain Addresses 101: What Are They?](https://blockgeeks.com/guides/blockchain-address-101/)
+* [What is Blockchain Technology? A Step by Step Guide for Beginners](https://web.archive.org/web/20220517042416/https://blockgeeks.com/guides/what-is-blockchain-technology/)
+* [What is Bitcoin? A Step by Step Guide for Beginners](https://web.archive.org/web/20220517042416/https://blockgeeks.com/guides/what-is-bitcoin/)
+* [The Science Behind Cryptocurrencies' Cryptography](https://web.archive.org/web/20220517042416/https://blockgeeks.com/guides/cryptocurrencies-cryptography/)
+* [The Ins and Outs of Cryptographic Hash Functions](https://web.archive.org/web/20220517042416/https://blockgeeks.com/guides/cryptographic-hash-functions/)
+* [Blockchain Glossary from A-Z](https://web.archive.org/web/20220517042416/https://blockgeeks.com/guides/blockchain-glossary-from-a-z/)
+* [Blockchain Addresses 101: What Are They?](https://web.archive.org/web/20220517042416/https://blockgeeks.com/guides/blockchain-address-101/)
 
 ### **Ethereum fundamentals**
 
@@ -31,33 +31,33 @@ This page serves material that is necessary to catch up with the current state o
 * [How Does Ethereum Work Anyway?](https://medium.com/@preethikasireddy/how-does-ethereum-work-anyway-22d1df506369)
 * [Ethereum Introduction](https://github.com/ethereum/wiki/wiki/Ethereum-introduction)
 * [Ethereum Frequently Asked Questions](https://github.com/ethereum/wiki/wiki/FAQs)
-* [What is Hashing?](https://blockgeeks.com/guides/what-is-hashing/)
+* [What is Hashing?](https://web.archive.org/web/20220517042416/https://blockgeeks.com/guides/what-is-hashing/)
 * [Hashing Algorithms and Security](https://www.youtube.com/watch?v=b4b8ktEV4Bg)
 * [Understanding Merkle Trees](https://www.codeproject.com/Articles/1176140/Understanding-Merkle-Trees-Why-use-them-who-uses-t)
 * [Ethereum White Paper](https://github.com/ethereum/wiki/wiki/White-Paper)
 * [Ethereum Block Architecture](https://ethereum.stackexchange.com/questions/268/ethereum-block-architecture/6413#6413)
 * [Ethereum Beige Paper](https://github.com/chronaeon/beigepaper/blob/master/beigepaper.pdf)
-* [What is an Ethereum Token?](https://blockgeeks.com/guides/ethereum-token/)
-* [What is Ethereum Gas?](https://blockgeeks.com/guides/ethereum-gas-step-by-step-guide/)
+* [What is an Ethereum Token?](https://web.archive.org/web/20220517042416/https://blockgeeks.com/guides/ethereum-token/)
+* [What is Ethereum Gas?](https://web.archive.org/web/20220517042416/https://blockgeeks.com/guides/ethereum-gas-step-by-step-guide/)
 
 ### **Consensus**
 
 * [Bitcoin Original White Paper](https://bitcoin.org/bitcoin.pdf)
-* [Basic Primer: Blockchain Consensus](https://blockgeeks.com/guides/blockchain-consensus/)
+* [Basic Primer: Blockchain Consensus](https://web.archive.org/web/20220517042416/https://blockgeeks.com/guides/blockchain-consensus/)
 * [Understanding Blockchain Fundamentals: Byzantine Fault Tolerance](https://medium.com/loom-network/understanding-blockchain-fundamentals-part-1-byzantine-fault-tolerance-245f46fe8419)
 * [Understanding Blockchain Fundamentals: Proof of Work vs. Proof of Stake](https://medium.com/loom-network/understanding-blockchain-fundamentals-part-2-proof-of-work-proof-of-stake-b6ae907c7edb)
-* [Proof of Work vs. Proof of Stake](https://blockgeeks.com/guides/proof-of-work-vs-proof-of-stake/)
+* [Proof of Work vs. Proof of Stake](https://web.archive.org/web/20220517042416/https://blockgeeks.com/guides/proof-of-work-vs-proof-of-stake/)
 * [Proof of Stake FAQ](https://github.com/ethereum/wiki/wiki/Proof-of-Stake-FAQ)
 * [How Does Ethereum Mining Work?](https://www.coindesk.com/information/ethereum-mining-works/)
 * [ETHash Algorithm](https://github.com/ethereum/wiki/wiki/Ethash)
 
 ### **Smart Contracts, dApps, and cryptoeconomics**
 
-* [What are dApps? The New Decentralized Future](https://blockgeeks.com/guides/dapps/)
-* [How to Learn Solidity](https://blockgeeks.com/guides/solidity/)
+* [What are dApps? The New Decentralized Future](https://web.archive.org/web/20220517042416/https://blockgeeks.com/guides/dapps/)
+* [How to Learn Solidity](https://web.archive.org/web/20220517042416/https://blockgeeks.com/guides/solidity/)
 * [Ethereum Development Tutorial](https://github.com/ethereum/wiki/wiki/Ethereum-Development-Tutorial)
-* [What is Cryptocurrency Game Theory?](https://blockgeeks.com/guides/cryptocurrency-game-theory/)
-* [What is Cryptoeconomics?](https://blockgeeks.com/guides/what-is-cryptoeconomics/)
+* [What is Cryptocurrency Game Theory?](https://web.archive.org/web/20220517042416/https://blockgeeks.com/guides/cryptocurrency-game-theory/)
+* [What is Cryptoeconomics?](https://web.archive.org/web/20220517042416/https://blockgeeks.com/guides/what-is-cryptoeconomics/)
 * [Mechanism Design for Cryptoeconomic Applications](https://medium.com/blockchannel/a-crash-course-in-mechanism-design-for-cryptoeconomic-applications-a9f06ab6a976)
 * [Cryptoeconomics: An Introduction](https://cryptoeconomics.study/)
 
@@ -97,8 +97,8 @@ This section covers the minimum sharding knowledge requirements for both Prysm's
 
 ### For part-time contributors
 
-* [Blockchain Scalability: Why?](https://blockgeeks.com/guides/blockchain-scalability/)
-* [What Are Ethereum Nodes and Sharding](https://blockgeeks.com/guides/what-are-ethereum-nodes-and-sharding/)
+* [Blockchain Scalability: Why?](https://web.archive.org/web/20220517042416/https://blockgeeks.com/guides/blockchain-scalability/)
+* [What Are Ethereum Nodes and Sharding](https://web.archive.org/web/20220517042416/https://blockgeeks.com/guides/what-are-ethereum-nodes-and-sharding/)
 * [How to Scale Ethereum: Sharding Explained](https://medium.com/prysmatic-labs/how-to-scale-ethereum-sharding-explained-ba2e283b7fce)
 * [Sharding FAQ](https://github.com/ethereum/wiki/wiki/Sharding-FAQ)
 * [Sharding Introduction: R&D Compendium](https://github.com/ethereum/wiki/wiki/Sharding-introduction-R&D-compendium)
@@ -119,7 +119,7 @@ After reading the sharding material for part-time contributors, it is important 
 
 **Serenity research posts**
 
-* [Sharding v2.1 Spec](https://notes.ethereum.org/SCIg8AH5SA-O4C1G1LYZHQ)
+* [Sharding Spec](https://ethereum.github.io/consensus-specs/specs/_features/sharding/beacon-chain/)
 * [Casper/Sharding/Beacon Chain FAQs](https://notes.ethereum.org/9MMuzWeFTTSg-3Tz_YeiBA?view)
 * [RETIRED! Sharding Phase 1 Spec](https://ethresear.ch/t/sharding-phase-1-spec-retired/1407/92)
 * [Exploring the Proposer/Collator Spec and Why it Was Retired](https://ethresear.ch/t/exploring-the-proposer-collator-split/1632/24)
