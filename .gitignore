@@ -2,17 +2,14 @@
 .idea
 
 node_modules
+.docusaurus
+build/
+i18n/*
 
-lib/core/metadata.js
-lib/core/MetadataBlog.js
-
-website/translated_docs
-website/build/
-website/yarn.lock
-website/node_modules
-website/i18n/*
-
-website/static/img/~$Prysm_Docs.pptx
+static/img/~$Prysm_Docs.pptx
 
 *.vscode
 *.vscode/*
+
+# Vercel
+.vercel
