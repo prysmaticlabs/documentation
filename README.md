@@ -21,7 +21,7 @@ Below are steps for initializing and reproducing this portal for development.
 ## Running the development server
 
 1. From the root directory, run the local web server using `npm start`.
-2. Load the example site at http://localhost:3000 if it did not already open automatically. If port 3000 has already been taken, another port will be used. Look at the console messages to see which.
+2. Load the example site at http://localhost:3000/prsym/docs if it did not already open automatically. If port 3000 has already been taken, another port will be used. Look at the console messages to see which.
 
    You should see the example site loaded in your web browser. There's also a LiveReload server running, and any changes made to the docs and files in the project directory will cause the page to refresh.
 
