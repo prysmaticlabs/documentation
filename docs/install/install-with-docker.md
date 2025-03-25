@@ -153,7 +153,7 @@ docker run -it -v $HOME/.eth2:/data -v /path/to/genesis.ssz:/genesis/genesis.ssz
   </TabItem>
    <TabItem value="holesky">
 
-Download the Holesky genesis state from [Github](https://github.com/eth-clients/holesky/blob/main/custom_config_data/genesis.ssz) to a local file, then run:
+Download the Holesky genesis state from [Github](https://github.com/eth-clients/holesky/blob/main/metadata/genesis.ssz) to a local file, then run:
 
 ```text
 docker run -it -v $HOME/.eth2:/data -v /path/to/genesis.ssz:/genesis/genesis.ssz -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node \
@@ -202,7 +202,7 @@ docker run -it -v %LOCALAPPDATA%\Eth2:/data -v \path\to\genesis.ssz:/genesis/gen
   </TabItem>
       <TabItem value="holesky">
 
-Download the Holesky genesis state from [Github](https://github.com/eth-clients/holesky/blob/main/custom_config_data/genesis.ssz) to a local file, then run:
+Download the Holesky genesis state from [Github](https://github.com/eth-clients/holesky/blob/main/metadata/genesis.ssz) to a local file, then run:
 
 ```text
 docker run -it -v %LOCALAPPDATA%\Eth2:/data -v \path\to\genesis.ssz:/genesis/genesis.ssz -p 4000:4000 -p 13000:13000 -p 12000:12000/udp gcr.io/prysmaticlabs/prysm/beacon-chain@sha256:bf9b95661c71ad60f633ee14cf352a668d550076471154cf80dfef8fce0bb41e --datadir=/data --jwt-secret=<YOUR_JWT_SECRET> --rpc-host=0.0.0.0 --http-host=0.0.0.0 --monitoring-host=0.0.0.0 --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> --genesis-state=/genesis/genesis.ssz --holesky
