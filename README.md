@@ -1,37 +1,53 @@
 # Prysm Documentation Portal
 
-This repository houses all the documentation pertaining to the Prysm client and Ethereum 2. It is generated with [Docusaurus](https://github.com/facebook/docusaurus). 
+This repository houses all the documentation pertaining to the Prysm client and Ethereum. It is generated with [Docusaurus](https://github.com/facebook/docusaurus) and deployed with [Vercel](https://vercel.com/).
 
-Below are steps for initialising and reproducing this portal for development.
+Below are steps for initializing and reproducing this portal for development.
 
 ## Dependencies
 
-1.  The latest version of [Node](https://nodejs.org/en/download/) installed. 
-2. The latest version of [Yarn](https://yarnpkg.com/en/docs/install) installed. (Optional, but recommended)
+1. The latest version of [Node](https://nodejs.org/en/download/) installed.
+2. npm (comes with Node.js)
 
-    > You have to be on Node >= 8.x and Yarn >= 1.5.
+   > You have to be on Node >= 8.x.
 
 ## Installation
 
 1. Clone this repository.
-2. Enter the newly cloned repo and enter the `website` directory.
-3. Issue the command `npm install`
+2. Enter the newly cloned repo.
+3. Issue the command `npm install`.
 4. Wait for the installation process to complete.
 
-## Running the development server  
+## Running the development server
 
-1. From within the `website` directory, run the local web server using `yarn start` or `npm start`.
-2.  Load the example site at http://localhost:3000 if it did not already open automatically. If port 3000 has already been taken, another port will be used. Look at the console messages to see which.
+1. From the root directory, run the local web server using `npm start`.
+2. Load the example site at http://localhost:3000 if it did not already open automatically. If port 3000 has already been taken, another port will be used. Look at the console messages to see which.
 
-    You should see the example site loaded in your web browser. There's also a LiveReload server running, and any changes made to the docs and files in the `website` directory will cause the page to refresh.
-    
-    
+   You should see the example site loaded in your web browser. There's also a LiveReload server running, and any changes made to the docs and files in the project directory will cause the page to refresh.
+
 ## Building Static HTML Pages
 
-To create a static build of the documentation portal, run the following script from the `website` directory:
+To create a static build of the documentation portal, run the following script from the root directory:
 
 ```bash
-yarn run build # or `npm run build`
+npm run build
 ```
 
-This will generate a `build` subdirectory within the `website` directory, containing the `.html` files from all of the docs and other files included in `pages`.
+This will generate a `build` directory containing the `.html` files from all of the docs and other files included in `pages`.
+
+## Deployment with Vercel
+
+This project is configured to be deployed with Vercel. The `vercel.json` file in the root directory contains the necessary configuration for deployment.
+
+To deploy:
+
+1. Push your changes to GitHub.
+2. Connect your GitHub repository to Vercel.
+3. Vercel will automatically build and deploy the site.
+
+Alternatively, you can use the Vercel CLI to deploy from your local machine:
+
+```bash
+npm install -g vercel
+vercel
+```
