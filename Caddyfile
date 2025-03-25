@@ -1,8 +1,0 @@
-http://docs.prylabs.network
-root * /usr/share/caddy/html
-file_server
-uri strip_suffix .html
-rewrite /docs/ /docs/getting-started
-rewrite /docs /docs/getting-started
-header Access-Control-Allow-Origin *
-header Access-Control-Request-Method GET,OPTIONS
