@@ -1,5 +1,5 @@
 {
-  "buildCommand": "npx docusaurus build --out-dir build/prysm/docs",
+  "buildCommand": "npx docusaurus build --out-dir build/prysm/docs && node scripts/postbuild.js",
   "outputDirectory": "build",
   "framework": "docusaurus",
   "installCommand": "npm install",
