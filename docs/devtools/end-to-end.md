@@ -96,13 +96,13 @@ If one or more evaluators fail, we get a console output similar to the following
     --- PASS: TestEndToEnd_MinimalConfig/all_nodes_have_same_head_1 (0.10s)
     --- PASS: TestEndToEnd_MinimalConfig/metrics_check_epoch_1 (0.11s)
 FAIL
-FAIL: /testing/endtoend:go_default_test (see /home/user/.cache/bazel/_bazel_user/ec3daeb6ce0cd7052bf7c79ca31f19c6/execroot/prysm/bazel-out/k8-fastbuild-ST-02d640e6fd05/testlogs/testing/endtoend/go_default_test/test.log)
-Target /testing/endtoend:go_default_test up-to-date:
+FAIL: //testing/endtoend:go_default_test (see /home/user/.cache/bazel/_bazel_user/ec3daeb6ce0cd7052bf7c79ca31f19c6/execroot/prysm/bazel-out/k8-fastbuild-ST-02d640e6fd05/testlogs/testing/endtoend/go_default_test/test.log)
+Target //testing/endtoend:go_default_test up-to-date:
   bazel-out/k8-fastbuild-ST-02d640e6fd05/bin/testing/endtoend/go_default_test_/go_default_test
 INFO: Elapsed time: 235.338s, Critical Path: 235.16s
 INFO: 2 processes: 1 internal, 1 linux-sandbox.
 INFO: Build completed, 1 test FAILED, 2 total actions
-/testing/endtoend:go_default_test                                       FAILED in 235.1s
+//testing/endtoend:go_default_test                                       FAILED in 235.1s
   /home/user/.cache/bazel/_bazel_user/ec3daeb6ce0cd7052bf7c79ca31f19c6/execroot/prysm/bazel-out/k8-fastbuild-ST-02d640e6fd05/testlogs/testing/endtoend/go_default_test/test.log
 
 INFO: Build completed, 1 test FAILED, 2 total actions
