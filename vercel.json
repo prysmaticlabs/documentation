@@ -1,0 +1,13 @@
+{
+  "buildCommand": "npx docusaurus build --out-dir build/prysm/docs",
+  "outputDirectory": "build",
+  "framework": "docusaurus",
+  "installCommand": "npm install",
+  "trailingSlash": true,
+  "cleanUrls": true,
+  "redirects": [
+    { "source": "/", "destination": "/prysm/docs/", "permanent": true },
+    { "source": "/prysm", "destination": "/prysm/docs/", "permanent": true },
+    { "source": "/prysm/docs", "destination": "/prysm/docs/", "permanent": true }
+  ]
+}
