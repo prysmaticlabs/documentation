@@ -17,7 +17,7 @@ Binaries for the latest `prysmctl` tool can be found on the [latest prysm releas
 
 :::info
 
-Some users will need to give permissions to the downloaded binaries to be executable. Linux users can do this by right clicking the file, going to permissions, and clicking the `Allow executing file as program` checkmark. This may be different for each operating system.
+Some users will need to give permissions to the downloaded binaries to be executable. Linux users can do this by right-clicking the file, going to permissions, and clicking the `Allow executing file as program` checkmark. This may be different for each operating system.
 
 :::
 

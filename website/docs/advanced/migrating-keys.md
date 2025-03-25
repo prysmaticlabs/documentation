@@ -31,7 +31,7 @@ The migration process is straightforward and not too dissimilar to backing up an
 Exporting the slashing protection database is a real-time process and can be undertaken at any time. During migration, you should run the export once you have stopped the validator you are migrating away from. This ensures all validator actions are captured and subsequently imported into the new validator process.  
 :::
 
-To export your slashing protection history, use Prysm's built in commands which will work with any installation method.
+To export your slashing protection history, use Prysm's built-in commands which will work with any installation method.
 
 :::info
 
@@ -194,7 +194,7 @@ You can backup validator accounts from your wallet using the following command:
 ```sh
 prysm.bat validator accounts backup
 ```
-You will now be prompted for the wallet password. Once entered, you will be guided through the backup process where you will able to select individual or all accounts to backup and the location where the backup file is created. You will also be prompted for a **"password"** for the backup file, **it is important to keep a note of this for use during the import process**. 
+You will now be prompted for the wallet password. Once entered, you will be guided through the backup process where you will be able to select individual or all accounts to backup and the location where the backup file is created. You will also be prompted for a **"password"** for the backup file, **it is important to keep a note of this for use during the import process**. 
 
 You can also run the accounts backup command non-interactively by using the following command line flags, which are also viewable by appending --help to the command line listed above:
 
