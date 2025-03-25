@@ -10,7 +10,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 Below is a list of third-party block explorer services displaying statistics about Ethereum proof-of-stake.
 
-## [beacon.etherscan.io](https://beacon.etherscan.io)
+## [beaconscan.io](https://beaconscan.com/)
 
 ## [beaconcha.in](https://beaconcha.in/)
 
