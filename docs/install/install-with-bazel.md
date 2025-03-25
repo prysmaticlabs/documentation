@@ -307,7 +307,7 @@ Loaded image: gcr.io/prysmaticlabs/prysm/beacon-chain:latest
 You can use these rules to access private images using standard Docker
 authentication methods.  e.g. to utilize the [Google Container Registry](
 https://gcr.io). See
-[here](https://cloud.google.com/container-registry/advanced-authentication) for authentication methods.
+[here](https://cloud.google.com/container-registry/docs/advanced-authentication) for authentication methods.
 
 See:
 * [Amazon ECR Docker Credential Helper](
