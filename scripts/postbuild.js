@@ -1,27 +1,36 @@
 const fs = require('fs');
 const path = require('path');
 
-// Source paths (using clean URLs format)
-const sourcePath1 = path.join(__dirname, '../build/prysm/docs/404');
-const sourcePath2 = path.join(__dirname, '../build/prysm/docs/404/index');
+function copyRecursive(src, dest) {
+    // Create destination directory
+    if (!fs.existsSync(dest)) {
+        fs.mkdirSync(dest, { recursive: true });
+    }
 
-// Target paths in build root
-const targetPath1 = path.join(__dirname, '../build/404');
-const targetPath2 = path.join(__dirname, '../build/404/index');
+    // Read source directory
+    const entries = fs.readdirSync(src, { withFileTypes: true });
 
-// Ensure target directory exists
-const targetDir = path.join(__dirname, '../build/404');
-if (!fs.existsSync(targetDir)) {
-    fs.mkdirSync(targetDir, { recursive: true });
+    for (const entry of entries) {
+        const srcPath = path.join(src, entry.name);
+        const destPath = path.join(dest, entry.name);
+
+        if (entry.isDirectory()) {
+            copyRecursive(srcPath, destPath);
+        } else {
+            fs.copyFileSync(srcPath, destPath);
+        }
+    }
 }
 
-// Copy the files
+// Source and target paths
+const source404Dir = path.join(__dirname, '../build/prysm/docs/404');
+const target404Dir = path.join(__dirname, '../build/404');
+
 try {
-    // Copy both versions to root
-    fs.copyFileSync(sourcePath1, targetPath1);
-    fs.copyFileSync(sourcePath2, targetPath2);
-    console.log('Successfully copied 404 files to build root');
+    // Copy the entire 404 directory structure
+    copyRecursive(source404Dir, target404Dir);
+    console.log('Successfully copied 404 directory to build root');
 } catch (err) {
-    console.error('Error copying 404 files:', err);
+    console.error('Error copying 404 directory:', err);
     process.exit(1);
 }
