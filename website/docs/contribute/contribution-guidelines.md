@@ -63,7 +63,7 @@ Please define the following environment variable when running tests:
 
     CGO_CFLAGS="-O2 -D__BLST_PORTABLE__"
 
-It is particulary useful when running tests / debug in your IDE without using bazel.
+It is particularly useful when running tests / debug in your IDE without using bazel.
 
 See the [next section](#building-and-testing-prysm-with-bazel) for instructions on testing with prysm.
 
