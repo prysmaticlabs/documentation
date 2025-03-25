@@ -16,3 +16,4 @@ website/static/img/~$Prysm_Docs.pptx
 
 *.vscode
 *.vscode/*
+/build
