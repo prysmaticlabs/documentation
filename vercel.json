@@ -1,7 +1,7 @@
 {
   "buildCommand": "npx docusaurus build --out-dir build/prysm/docs",
   "outputDirectory": "build",
-  "framework": "docusaurus",
+  "framework": "docusaurus-2",
   "installCommand": "npm install",
   "trailingSlash": true,
   "cleanUrls": true,
