@@ -12,6 +12,103 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 As part of our day to day job in building eth2 with our Prysm project, we are tasked with maintaining a high integrity cloud deployment that runs several nodes in our testnet. Additionally, we are always on call to determine problems which arise in the network and must be addressed by the team. This page outlines a collection of incident reports and their resolutions from catastrophic events in our testnet. We hope it will shed more light on our devops process and how we tackle the hard problems managing a distributed system such as eth2 entails.
 
+### Incorrect deposit contract configurations for GETH, Besu, and Nethermind clients (Incident #8)
+
+**Date:** 2025/02/24
+
+**Authors:** James
+
+**Status:** Root cause identified, Resolved, Network still recovering and will be superseded by Hoodi testnet
+
+**Network:** Holesky
+
+**Summary:** Shortly after the Holesky Testnet Hardfork on February 24, 2025, at 21:55 UTC (4:55 p.m. ET) things went south with a fork in the chain. At first it appeared that Reth and Erigon forked off with 70% of the network on another chain, but 3 clients (Geth, Nethermind, Besu) started getting stuck on block 3419724. This resulted from the 3 client teams having incorrect deposit contract addresses (specific for Holesky and affected by the Pectra hardfork). The EL clients released patches, but the bad majority chain already got justified. Prysm Team worked to stabilize our Holesky nodes by creating a hacked branch to maintain liveliness on the minor correct chain. There was a discovery of several issues in the Prysm node caused by the changes in the hard fork that are later described in this document. Eventually we were able to have Holesky finalize on the correct chain but validators that should be slashed are not yet slashed and other validators continue to exit. It will take several weeks (at least 18 days) for validators to be ejected and plans for a future testnet are being discussed as large protocols will need time to redeploy and test Holesky changes around staking.  
+
+**Reference issues:**
+- https://github.com/ethereum/go-ethereum/pull/31247
+- https://github.com/NethermindEth/nethermind/pull/8265
+- https://github.com/hyperledger/besu/pull/8346
+
+**Impact:** Holesky was down for roughly 2 weeks. We were able to test our clients dealing with long non-finality and some key design decisions should be discussed as well as disaster recovery plans for the future. Pectra testnet testing for most CL features was pushed back several weeks as we try to recover. Hoodi, a replacement testnet, is being spun up.
+some statistics
+- since slot 3710963 we've had roughly 56k validators slashed. Not all of these are caused by the recovery process, but most are related to the incident. This number is smaller than the expected number of slashed validators, so validators should be slashed retroactively.
+- an exit queue of about 1M validators.
+- some operators are choosing to move to hoodi resulting in more missed slots.
+- network is still finalizing with ~78% of the network.
+- 32617 validators have exited slashed statuses and 2341 validators have exited non-slashed statuses.
+
+**Detection:** Reviewing Dora interface tracking the chain and seeing the forked chain. Initially thought as a minority client (Reth,Erigon) issue but then realized it was a majority client (Geth, Nethermind, Besu) issue.
+
+**Root Causes:** The 3 leading execution layer clients (Geth, Nethermind, Besu) had incorrect deposit contract addresses (specific for Holesky and affected by the Pectra hardfork). This resulted in a justified epoch on a bad majority chain.
+Other issues were discovered in the Prysm node as a result of the non finalization period.
+
+**Trigger:** The Pectra hardfork
+
+**Resolution:** 
+- creating a [hacked branch](https://github.com/prysmaticlabs/prysm/compare/develop...hackSync) to maintain liveliness on the minor correct chain
+- coordinate validators to point to synced notes on the correct minority chain to finalize on the correct chain.
+- slash violating validators that voted on both the bad majority chain and the correct minority chain, and exit them.
+- add new deposits to stablize and recover the network.
+- create a new Testnet called Hoodi to continue to test the hardfork for major protocols like Lido.
+- 
+
+#### Where we got lucky
+- Slashers couldn’t keep up and slash all violating validators so it allowed us to continue increasing participation with validators that should have been slashed over several days to finally finalize Holesky. This should have saved us some time overall.
+
+#### Timeline
+
+2025-02-24 (all times UTC)
+- 21:55:00 Holesky executed the Pectra hardfork.
+- 22:30:00 Prysm Team starts looking into possible issues after Roman from the Reth team discovered `the hash you and we compute is 0x40a656c88b9ceb7d6251adc8819228a98ae26511faa246cb88004ca402a9f642
+the hash on dora is 0x46028626ebfc941c6077f0bf972e938eea74ec1478ebb03e3aa4437cd0ed9b25`.
+- 22:56:00 Stokes confirms hash and suggests it's an EL bug not a CL bug.
+- 23:00:00 Georgios from Reth confirms the 3 clients (Geth, Nethermind, Besu) have incorrect deposit contract addresses (specific for Holesky and affected by the Pectra hardfork).
+
+2025-02-25 (all times UTC)
+- 00:24:00 Patches are released for Geth, Nethermind, Besu and Prysm team updates Holesky Prysm nodes.
+- 01:19:00 Prysm nodes are stuck on sync so we try to wipe EL DBs; This turns out to be a big mistake later on causing issues with resyncIfBehind() because we have no anchor to determine the correct minority fork. We already have justified the epoch on the bad majority chain.
+- 14:29:00 Potuz tries to fix our syncing issue by manually blacklisting the bad block in a [hacked branch](https://github.com/prysmaticlabs/prysm/commit/34a68715b857dca4aad0c696e2864d4896ea7916) 
+- 15:54:00 Roman asks clients to update ENR based on marek from Nethermind's hackmd.
+- 18:29:00 Emergency war room meeting among core devs to discuss the issue, discussions on using https://ethpandaops.io/data/snapshots/ to help with syncing.
+- 21:54:00 Prysm nodes are still unhealthy, and Preston suggests to write last snapshot so we don't keep redownloading every time on container init.
+
+2025-02-26 (all times UTC)
+- 03:47:00 Roman starts collecting information on who has validators on Holesky to coordinate attestations and proposals while nodes are syncing.
+- 07:12:00 Nishant fixes an Electra attester slashing bug in Prysm.
+- 18:02:00 Terence announces Prysm nodes rejoining Holesky.
+
+2025-02-27 (all times UTC)
+- 00:18:00 pk910 announces a pectra devnet 7 with 1M validators as a temporary replacement of Holesky.
+- 11:00:00 Lodestar and Lighthouse announce fixes to OOM issues in their clients.
+- 14:00:00 ACD begins and discusses efforts on saving the network, Potuz proposes a coordinated effort to hail marry a finalized checkpoint on the minority chain set for the next day. Validators who participate in this will most likely be slashed due to double voting. Remaining time is spent syncing more Prysm nodes and validating the steps to remove slashing protection.
+
+2025-02-28 (all times UTC)
+- 15:00:00 The coordinated client effort to finalize the chain begins, but miss the needed amount reaching only 53%. Prysm has a bug with deleting unaggregated attestations and the pool keeps growing. We add a commit to the hacked branch to avoid this situation. The rest of the day is spent trying to sync Prysm nodes but without much success.
+
+2025-03-01 (all times UTC)
+- 13:00:00 Nishant attempts to add Potuz's sync from head to the hacked branch
+Because the Holesky issue couldn’t happen on Sepolia, focus shifts to Sepolia while we maintain liveliness on Holesky and continue to get validators propose. Sepolia suffers a bug that’s different from Holesky and will not be added to this timeline.
+
+2025-03-10 (all times UTC)
+- 14:00:00 Attempts to point Prysm VCs to other beacon nodes fail due to different interpretations of the eth/v1/beacon/states/head/validators endpoint. The validators appear stuck under unknown status because Lighthouse nodes don’t return any validators when an empty list of validator statuses are provided. The performance still isn’t great because of getDuties design.
+- 15:10:00 We finally gather enough validator participation and avoid slashing to finalize the Holesky chain.
+
+#### what went wrong
+- 3 execution clients had the wrong deposit contract for the Holesky testnet resulting in a wrong majority chain.
+- The wrong majority chain justified making it more difficult to recover.
+- Ran into disk space issues with pod allocations.
+- Had to add hacks in Prysm to reject bad block manually and prevent resyncs.
+- We had trouble getting good peers so we manually added a rejection of the bad block on rpc sync as well as updated our bootstrap nodes’ ENRs for good boot nodes.
+- Optimistic syncing makes it difficult to sync to the right minority chain, but the EL snap syncing requires the CL to optimistically sync. At one point we had 8 Prysm nodes synced to tip but all the ELs were in optimistic status and therefore not yet usable…
+- Random restarts in our infrastructure affected our liveliness stability strategy and set us back. There doesn’t seem to be a good way to avoid this with kubernetes pods. 
+- We had an issue with handling attester slashings and failing gossip validation.
+- Even with attester slashing fix the CPU kept blowing up when processing slashings.
+- We had more difficulties syncing because our architecture has difficulty handling periods of 2000+ empty blocks.
+- Uncovered old GetDuties REST API bug - calling the committees endpoint blows up the performance. 
+- We ran into an issue with unaggregated attestations not deleting correctly and our pool blowing up.
+- Slashers weren't keeping up with slashing the violating validators.
+
+
 ### Not Receiving P2P Blocks (Incident #7)
 
 **Date:** 2020/04/18
