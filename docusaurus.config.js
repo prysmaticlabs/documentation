@@ -17,6 +17,7 @@ module.exports = {
     staticDirectories: ['static'],
 
     customFields: {
+        image: 'images/Prysm.svg',
         prysmVersion: prysmVersion,
     },
     trailingSlash: true,
