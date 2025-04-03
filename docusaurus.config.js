@@ -66,11 +66,11 @@ module.exports = {
         prism: {
             theme: require('prism-react-renderer/themes/dracula'),
         },
+        metadata: [
+            { name: 'description', content: 'Join our community of innovators shaping the decentralized future. Your node matters.' }
+        ],
+        image: 'images/prysm_together.png'
     },
-    metadata: [
-        { name: 'description', content: 'Join our community of innovators shaping the decentralized future. Your node matters.' }
-    ],
-    image: 'images/prysm_together.png',
     presets: [
         [
             '@docusaurus/preset-classic',
