@@ -119,7 +119,7 @@ After reading the sharding material for part-time contributors, it is important 
 
 **Serenity research posts**
 
-* [Sharding Spec](https://ethereum.github.io/consensus-specs/specs/_features/sharding/beacon-chain/)
+* [Sharding Spec](https://ethereum.github.io/consensus-specs/specs/_deprecated/sharding/beacon-chain/)
 * [Casper/Sharding/Beacon Chain FAQs](https://notes.ethereum.org/9MMuzWeFTTSg-3Tz_YeiBA?view)
 * [RETIRED! Sharding Phase 1 Spec](https://ethresear.ch/t/sharding-phase-1-spec-retired/1407/92)
 * [Exploring the Proposer/Collator Spec and Why it Was Retired](https://ethresear.ch/t/exploring-the-proposer-collator-split/1632/24)
