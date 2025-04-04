@@ -10,7 +10,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 This section discusses the lifecycle of a [validator](validator-clients.md) as defined by [Ethereum consensus specifications](https://github.com/ethereum/consensus-specs).
 
-![Validator Lifecycle Diagram](/images/validator-lifecycle.png)
+![Validator Lifecycle Diagram](/images/validator-lifecycle-electra.png)
 
 :::info
 
@@ -23,11 +23,11 @@ After the Deneb hardfork
 Prysm's [validator](validator-clients.md) client will report that the state of a particular validator is UNKNOWN when it loads validator keys that have not yet submitted a valid deposit to the [Ethereum proof-of-work chain](/terminology#eth1) [validator deposit contract](/how-prysm-works/validator-deposit-contract).
 
 ## DEPOSITED State
-Once a valid transaction has been submitted to the [validator deposit contract](/how-prysm-works/validator-deposit-contract), your [beacon node](/how-prysm-works/beacon-node) will detect the presence of the transaction on the ETH1 chain and your [validator](validator-clients.md) client will now report being in the DEPOSITED state.
+Once a valid transaction has been submitted to the [validator deposit contract](/how-prysm-works/validator-deposit-contract), your [beacon node](/how-prysm-works/beacon-node) will detect the presence of the transaction on the ETH1 chain and your [validator](validator-clients.md) client will now report being in the DEPOSITED state. Within the next finalization period the validator will be added to the beacon state as a pending deposit. Learn about execution requestions [here](/concepts/execution-requests).
 
 ## PENDING State
 
-The current specification for [processing deposits](https://github.com/ethereum/consensus-specs/blob/dev/specs/phase0/validator.md#process-deposit) requires a `ETH1_FOLLOW_DISTANCE`(minimum of 2048 ETH1 blocks, ~8 hours, to ensure stability of the chain) plus `EPOCHS_PER_ETH1_VOTING_PERIOD` (64 epochs, ~6.8 hours, to organize a sizable committee for voting) before deposits can be processed into the Ethereum beacon chain. The validator is then assigned an index number and placed into a queue for activation. The beacon chain can process the deposits of 4 ~ 8 new validators per finalized epoch, the difference in the number is determined by the number of total active validators on the chain. Once a validator has reached the front of the queue, it is assigned an activation epoch after an additional 4~5 epochs (~31 minutes).
+The current specification for [processing pending deposits](https://github.com/ethereum/consensus-specs/blob/dev/specs/electra/beacon-chain.md#new-process_pending_deposits) before deposits can be included in the Ethereum beacon chain. The validator is then assigned an index number and placed into a queue for activation. **note** There is a transition period before deposit requests are received in which case the follow distance still applies, not relevant a few weeks after the Electra hard fork. The max pending deposits that can be processed per epoch is capped, however not all pending deposits equate to activating a validator, some deposits are top-ups which are still included in this queue, validator activation limits are still the same. The beacon chain can activate 4 ~ 8 new validators per finalized epoch, the difference in the number is determined by the number of total active validators on the chain. Once a validator has reached the front of the queue, it is assigned an activation epoch after an additional 4~5 epochs (~31 minutes).
 
 ## ACTIVE State
 
