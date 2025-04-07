@@ -1,8 +1,9 @@
 ---
 id: getting-started
-title:  Table of contents
+title:  Prysm Documentation
 sidebar_label: Table of contents
 slug: /
+description: Join our community of innovators shaping the decentralized future. Your node matters.
 ---
 
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';

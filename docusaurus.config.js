@@ -66,8 +66,7 @@ module.exports = {
         prism: {
             theme: require('prism-react-renderer/themes/dracula'),
         },
-        ogImage: 'images/Prysm.svg',
-        twitterImage: 'images/Prysm.svg',
+        image: 'images/prysm_together.png'
     },
     presets: [
         [
