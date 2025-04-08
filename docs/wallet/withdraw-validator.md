@@ -24,7 +24,7 @@ In this how-to, you'll learn how to perform both types of withdrawals. Familiari
 
 1. **Your validator mnemonic**: You'll use this to authorize your validator withdrawal request(s). <!-- accessible accuracy > technical precision whenever technical precision isn't needed -->
 2. **Access to a beacon node**: You'll need to connect your validator to a beacon node in order to submit your withdrawal request. Visit our [quickstart](/install/install-with-script.md) for instructions if you need them.
-3. **Stable version of the staking-deposit-cli installed**: The [staking-deposit-cli](https://github.com/ethereum/staking-deposit-cli) is a command-line tool provided by the Ethereum research team. We'll use this to authorize your withdrawal. We recommend building this from source or otherwise verifying the binaries as a security best practice.
+3. **Stable version of the `staking-deposit-cli` installed**: The [staking-deposit-cli](https://github.com/ethereum/staking-deposit-cli) is a command-line tool provided by the Ethereum research team. We'll use this to authorize your withdrawal. We recommend building this from source or otherwise verifying the binaries as a security best practice.
 4. **Familiarity with [The Ethereum Foundation Withdrawals FAQ](https://notes.ethereum.org/@launchpad/withdrawals-faq)**: A client-agnostic overview of important information regarding Ethereum validator withdrawals.
 5. **Time to focus:** This is a time-consuming procedure, making a mistake can be expensive. Be vigilant against scammers; never share your mnemonic; take your time; ping us [on Discord](https://discord.gg/prysmaticlabs) if you have any questions.
 
@@ -35,8 +35,8 @@ We'll install other dependencies as we go. <!-- we provide prysmctl instructions
   groupId="withdrawals"
   defaultValue="partial"
   values={[
-    {label: 'partial withdrawal', value: 'partial'},
-    {label: 'full withdrawal', value: 'full'},
+    {label: 'Partial withdrawal', value: 'partial'},
+    {label: 'Full withdrawal', value: 'full'},
   ]
 }>
 <TabItem value="partial">
@@ -238,14 +238,14 @@ Move the generated `bls_to_execution_changes-*.json` file to an online environme
 
 In this step, you will submit your signed requests to the Ethereum network using a tool provided by the Prysm project called `prysmctl`. Learn how to download and install the prysmctl tool from our [guide](/prysm-usage/prysmctl.md) or check commands on [Command-line options](/prysm-usage/parameters.md). You’ll need access to a synced beacon node to proceed with this step (it does not need to be a Prysm beacon node).
 
-Once prysmctl is downloaded, you can use the `prysmctl validator withdraw` command, which will ask for terms of service acceptance and confirmation of command by providing additional flags, and also a path to the bls_to_execution_changes file from the previous step.
+Once `prysmctl` is downloaded, you can use the `prysmctl validator withdraw` command, which will ask for terms of service acceptance and confirmation of command by providing additional flags, and also a path to the bls_to_execution_changes file from the previous step.
 
 :::info
 default beacon node REST `<node-url>` is `http://localhost:3500` aka `http://127.0.0.1:3500`
 
 :::
 
-Open a terminal in the location where you downloaded the prysmctl binaries, rename the file to prysmctl, and run the following command.
+Open a terminal in the location where you downloaded the `prysmctl` binaries, rename the file to `prysmctl`, and run the following command.
 Some users will need to give permissions to the downloaded binaries to be executable. Linux users can do this by right clicking the file, going to permissions, and clicking the `Allow executing file as program` checkmark. This may be different for each operating system.
 
 ```jsx
@@ -261,7 +261,7 @@ docker run -it -v $HOME/path/to/bls_to_execution:/bls_dir \
   validator withdraw -beacon-node-host=<node-url> --path=/bls_dir
 ```
 
-Note that this approach requires mounting of the bls_to_execution_changes-*.json file
+Note that this approach requires mounting of the `bls_to_execution_changes-*.json` file
 
 :::info
 
