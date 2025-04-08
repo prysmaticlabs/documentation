@@ -119,7 +119,7 @@ Local execution clients such as Geth or Nethermind must continue to run as usual
 
 ## 5. Builder: connected via relay URL
 
-The ETHStaker community provides a list of some of the relays that can be used as well as any censorship they may have [here](https://github.com/eth-educators/ethstaker-guides/blob/main/MEV-relay-list.md). You can also run your own relay locally such as MEV-Boost but each relay on the list will have their own instructions on how to run it. If running your own relay, instead of using a provided URL due to latency, you will simply need to update the `--http-mev-relay` flag on your beacon node with the appropriate URL for the specific network in use. The relay will connect to a builder which connects to block searchers. 
+The EthStaker community provides a list of some of the relays that can be used as well as any censorship they may have [here](https://github.com/eth-educators/ethstaker-guides/blob/main/MEV-relay-list.md). You can also run your own relay locally such as MEV-Boost but each relay on the list will have their own instructions on how to run it. If running your own relay, instead of using a provided URL due to latency, you will simply need to update the `--http-mev-relay` flag on your beacon node with the appropriate URL for the specific network in use. The relay will connect to a builder which connects to block searchers. 
 
 :::info
 

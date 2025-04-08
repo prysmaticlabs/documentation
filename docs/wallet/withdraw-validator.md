@@ -369,11 +369,11 @@ A: Full validator withdrawals require your validator to exit first, as exits do 
 
 **Q: My keys were compromised, can I still withdraw?**
 
-A: You are still able to send the message as long as you have access to the mnemonic and can produce the signed `blstoexecutionchange` message to submit. Depending on where the keys were compromised there may be different protection programs to apply for to "frontrun" the compromiser. Please seek out the ethstaker community on [reddit](https://www.reddit.com/r/ethstaker/) or [discord](https://discord.gg/ethstaker) for more details if this applies to you.
+A: You are still able to send the message as long as you have access to the mnemonic and can produce the signed `blstoexecutionchange` message to submit. Depending on where the keys were compromised there may be different protection programs to apply for to "frontrun" the compromiser. Please seek out the EthStaker community on [reddit](https://www.reddit.com/r/ethstaker/) or [discord](https://discord.gg/ethstaker) for more details if this applies to you.
 
 **Q: I forgot my mnemonic, what can I do?**
 
-A: In most cases the mnemonic is a requirement to enabling withdraws; there are some niche cases where users have both their validator keystore and withdrawal private keys they can still fully withdraw safely without the mnemonic, but unless both are in possession one would not be able to produce the signed `blstoexecutionchange` message. It's important to stay calm and collected and continue searching or see help as needed. The ethstaker community provides an active support network on [reddit](https://www.reddit.com/r/ethstaker/) and [discord](https://discord.gg/ethstaker).
+A: In most cases the mnemonic is a requirement to enabling withdraws; there are some niche cases where users have both their validator keystore and withdrawal private keys they can still fully withdraw safely without the mnemonic, but unless both are in possession one would not be able to produce the signed `blstoexecutionchange` message. It's important to stay calm and collected and continue searching or see help as needed. The EthStaker community provides an active support network on [reddit](https://www.reddit.com/r/ethstaker/) and [discord](https://discord.gg/ethstaker).
 
 **Q: I accidentally used my mnemonic on an open internet setting to generate the .json file, what happens?**
 
