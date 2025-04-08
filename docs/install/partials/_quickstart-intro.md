@@ -11,7 +11,7 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
 
 ## Introduction
 
-Prysm is an implementation of the [Ethereum proof-of-stake consensus specification](https://github.com/ethereum/consensus-specs). In this quickstart, you’ll use Prysm to run an Ethereum node and optionally a validator client. This will let you stake 32 `ETH using hardware that you manage.
+Prysm is an implementation of the [Ethereum proof-of-stake consensus specification](https://github.com/ethereum/consensus-specs). In this quickstart, you’ll use Prysm to run an Ethereum node and optionally a validator client. This will let you stake 32 `ETH` using hardware that you manage.
 `
 This is a beginner-friendly guide. Familiarity with the command line is expected, but otherwise this guide makes no assumptions about your technical skills or prior knowledge.
 
@@ -25,7 +25,7 @@ At a high level, we'll walk through the following flow:
 
 :::info Knowledge Check
 
-**Not familiar with nodes, networks, and related terminology?** Consider reading [Nodes and networks](/concepts/nodes-networks.md) before proceeding. 
+Not familiar with nodes, networks, and related terminology? Consider reading [Nodes and networks](/concepts/nodes-networks.md) before proceeding. 
 
 :::
 
