@@ -249,8 +249,8 @@ The tags for the images are specified [here](https://github.com/OffchainLabs/pry
 <!-- todo: RC links to gcr.io -->
 
 ```text
-gcr.io/OffchainLabs/prysm/beacon-chain:latest
-gcr.io/OffchainLabs/prysm/validator:latest
+gcr.io/offchainlabs/prysm/beacon-chain:latest
+gcr.io/offchainlabs/prysm/validator:latest
 ```
 
 You can edit these in the links above to your liking.
@@ -297,7 +297,7 @@ a9df51aa7dad: Loading layer [==================================================>
 467f01356216: Loading layer [==================================================>]  109.5kB/109.5kB
 95ea3e93204b: Loading layer [==================================================>]  318.6kB/318.6kB
 17eb06822adc: Loading layer [==================================================>]  40.37MB/40.37MB
-Loaded image: gcr.io/OffchainLabs/prysm/beacon-chain:latest
+Loaded image: gcr.io/offchainlabs/prysm/beacon-chain:latest
 ```
 
 ### Pushing to a container registry
@@ -320,10 +320,10 @@ See:
 To push the actual images, you do not need to build the image bundle beforehand. You can do a simple:
 
 ```text
-bazel run //cmd/beacon-chain:push_images --config=release -- --tag latest --repository gcr.io/OffchainLabs/prysm/beacon-chain
-bazel run //cmd/validator:push_images --config=release -- --tag latest --repository gcr.io/OffchainLabs/prysm/beacon-chain 
+bazel run //cmd/beacon-chain:push_images --config=release -- --tag latest --repository gcr.io/offchainlabs/prysm/beacon-chain
+bazel run //cmd/validator:push_images --config=release -- --tag latest --repository gcr.io/offchainlabs/prysm/beacon-chain 
 ```
 
 Which will deploy all images with the tags specified in [here](https://github.com/OffchainLabs/prysm/blob/ff329df808ad68fbe79d11c73121fa6a7a0c0f29/cmd/beacon-chain/BUILD.bazel#L58) for the beacon-chain and [here](https://github.com/OffchainLabs/prysm/blob/ff329df808ad68fbe79d11c73121fa6a7a0c0f29/cmd/validator/BUILD.bazel#L59) for the validator. 
 
-By default, this will deploy to Prysm Google Container Registry namespace: `gcr.io/OffchainLabs/prysm`, which you will not have authentication access to, so make sure you edit the image tags to your appropriate registry and authenticate as needed.
+By default, this will deploy to Prysm Google Container Registry namespace: `gcr.io/offchainlabs/prysm`, which you will not have authentication access to, so make sure you edit the image tags to your appropriate registry and authenticate as needed.

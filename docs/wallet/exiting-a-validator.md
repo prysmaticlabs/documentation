@@ -66,7 +66,7 @@ The following command is a soon-to-be-deprecated alternative that you should avo
 
 ```text
 docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
-  gcr.io/OffchainLabs/prysm/cmd/prysmctl:latest \
+  gcr.io/offchainlabs/prysm/cmd/prysmctl:latest \
   validator exit --wallet-dir=/wallet --beacon-rpc-provider=<127.0.0.1:4000> 
 ```
 
@@ -76,7 +76,7 @@ The following command is a soon-to-be-deprecated alternative that you should avo
 
 ```text
 docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
-  gcr.io/OffchainLabs/prysm/validator:latest \
+  gcr.io/offchainlabs/prysm/validator:latest \
   accounts voluntary-exit --wallet-dir=/wallet
 ```
 
@@ -126,7 +126,7 @@ prysm.bat validator accounts voluntary-exit
 
 ```text
 docker run -it -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet \
-  gcr.io/OffchainLabs/prysm/cmd/prysmctl:latest \
+  gcr.io/offchainlabs/prysm/cmd/prysmctl:latest \
   validator exit --wallet-dir=/wallet --beacon-rpc-provider=<127.0.0.1:4000> 
 ```
 
@@ -135,7 +135,7 @@ docker run -it -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet \
 The following command is a soon-to-be-deprecated alternative that you should avoid using:
 
 ```text
-docker run -it -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet gcr.io/OffchainLabs/prysm/validator:latest accounts voluntary-exit --wallet-dir=/wallet
+docker run -it -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet gcr.io/offchainlabs/prysm/validator:latest accounts voluntary-exit --wallet-dir=/wallet
 ```
 :::
 
@@ -162,7 +162,7 @@ The following command is a soon-to-be-deprecated alternative that you should avo
 
 ```text
 docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
-  gcr.io/OffchainLabs/prysm/cmd/prysmctl:latest \
+  gcr.io/offchainlabs/prysm/cmd/prysmctl:latest \
   validator exit --wallet-dir=/wallet --beacon-rpc-provider=<127.0.0.1:4000> 
 ```
 
@@ -172,7 +172,7 @@ The following command is a soon-to-be-deprecated alternative that you should avo
 
 ```text
 docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
-  gcr.io/OffchainLabs/prysm/validator:latest \
+  gcr.io/offchainlabs/prysm/validator:latest \
   accounts voluntary-exit --wallet-dir=/wallet
 ```
 

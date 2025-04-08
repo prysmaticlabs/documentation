@@ -102,7 +102,7 @@ If you are running using docker and the :stable tag for Prysm, stable will alway
 
 ```
 CONTAINER ID        IMAGE                  COMMAND                  CREATED             STATUS              PORTS               NAMES
-371d6675888b        gcr.io/OffchainLabs/prysm/validator:stable            "validator"              6 days ago
+371d6675888b        gcr.io/offchainlabs/prysm/validator:stable            "validator"              6 days ago
 ```
 </TabItem>
 <TabItem value="bazel">

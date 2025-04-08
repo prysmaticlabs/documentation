@@ -79,7 +79,7 @@ Bazel will automatically pull and install any dependencies as well, including Go
 
 **Using Docker**
 ```
-docker run -it gcr.io/OffchainLabs/prysm/cmd/prysmctl:latest --help
+docker run -it gcr.io/offchainlabs/prysm/cmd/prysmctl:latest --help
 ```
 
 The `—-help` flag will provide a list of commands, subcommands, and flags to use.

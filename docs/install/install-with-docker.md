@@ -71,16 +71,16 @@ Next, pull the Prysm images:
 
 ```text
 ## stable, without Busybox debugging tools
-docker pull gcr.io/OffchainLabs/prysm/validator:stable
-docker pull gcr.io/OffchainLabs/prysm/beacon-chain:stable
+docker pull gcr.io/offchainlabs/prysm/validator:stable
+docker pull gcr.io/offchainlabs/prysm/beacon-chain:stable
 
 ## latest, without Busybox debugging tools
-docker pull gcr.io/OffchainLabs/prysm/validator:latest
-docker pull gcr.io/OffchainLabs/prysm/beacon-chain:latest
+docker pull gcr.io/offchainlabs/prysm/validator:latest
+docker pull gcr.io/offchainlabs/prysm/beacon-chain:latest
 
 ## latest, with Busybox debugging tools
-docker pull gcr.io/OffchainLabs/prysm/validator:latest-alpine
-docker pull gcr.io/OffchainLabs/prysm/beacon-chain:latest-alpine
+docker pull gcr.io/offchainlabs/prysm/validator:latest-alpine
+docker pull gcr.io/offchainlabs/prysm/beacon-chain:latest-alpine
 ```
 
 These commands will automatically install dependencies. 
@@ -123,7 +123,7 @@ Next, use Docker to tell your beacon node to connect to your local execution nod
 
 ```text
 docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node \
-  gcr.io/OffchainLabs/prysm/beacon-chain:stable \
+  gcr.io/offchainlabs/prysm/beacon-chain:stable \
   --datadir=/data \
   --jwt-secret=<YOUR_JWT_SECRET> \
   --rpc-host=0.0.0.0 \
@@ -139,7 +139,7 @@ Download the Sepolia genesis state from [Github](https://github.com/eth-clients/
 
 ```text
 docker run -it -v $HOME/.eth2:/data -v /path/to/genesis.ssz:/genesis/genesis.ssz -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node \
-  gcr.io/OffchainLabs/prysm/beacon-chain@sha256:bf9b95661c71ad60f633ee14cf352a668d550076471154cf80dfef8fce0bb41e \
+  gcr.io/offchainlabs/prysm/beacon-chain@sha256:bf9b95661c71ad60f633ee14cf352a668d550076471154cf80dfef8fce0bb41e \
   --datadir=/data \
   --jwt-secret=<YOUR_JWT_SECRET> \
   --rpc-host=0.0.0.0 \
@@ -157,7 +157,7 @@ Download the Holesky genesis state from [Github](https://github.com/eth-clients/
 
 ```text
 docker run -it -v $HOME/.eth2:/data -v /path/to/genesis.ssz:/genesis/genesis.ssz -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node \
-  gcr.io/OffchainLabs/prysm/beacon-chain@sha256:bf9b95661c71ad60f633ee14cf352a668d550076471154cf80dfef8fce0bb41e \
+  gcr.io/offchainlabs/prysm/beacon-chain@sha256:bf9b95661c71ad60f633ee14cf352a668d550076471154cf80dfef8fce0bb41e \
   --datadir=/data \
   --jwt-secret=<YOUR_JWT_SECRET> \
   --rpc-host=0.0.0.0 \
@@ -187,7 +187,7 @@ To ensure that your Docker image has access to a data directory, mount a local d
       <TabItem value="mainnet">
 
 ```text
-docker run -it -v %LOCALAPPDATA%\Eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp gcr.io/OffchainLabs/prysm/beacon-chain:stable --datadir=/data --jwt-secret=<YOUR_JWT_SECRET> --rpc-host=0.0.0.0 --http-host=0.0.0.0 --monitoring-host=0.0.0.0 --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> 
+docker run -it -v %LOCALAPPDATA%\Eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp gcr.io/offchainlabs/prysm/beacon-chain:stable --datadir=/data --jwt-secret=<YOUR_JWT_SECRET> --rpc-host=0.0.0.0 --http-host=0.0.0.0 --monitoring-host=0.0.0.0 --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> 
 ```
 
   </TabItem>
@@ -196,7 +196,7 @@ docker run -it -v %LOCALAPPDATA%\Eth2:/data -p 4000:4000 -p 13000:13000 -p 12000
 Download the Sepolia genesis state from [Github](https://github.com/eth-clients/sepolia/blob/main/metadata/genesis.ssz) to a local file, then run:
 
 ```text
-docker run -it -v %LOCALAPPDATA%\Eth2:/data -v \path\to\genesis.ssz:/genesis/genesis.ssz -p 4000:4000 -p 13000:13000 -p 12000:12000/udp gcr.io/OffchainLabs/prysm/beacon-chain@sha256:bf9b95661c71ad60f633ee14cf352a668d550076471154cf80dfef8fce0bb41e --datadir=/data --jwt-secret=<YOUR_JWT_SECRET> --rpc-host=0.0.0.0 --http-host=0.0.0.0 --monitoring-host=0.0.0.0 --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> --genesis-state=/genesis/genesis.ssz --sepolia
+docker run -it -v %LOCALAPPDATA%\Eth2:/data -v \path\to\genesis.ssz:/genesis/genesis.ssz -p 4000:4000 -p 13000:13000 -p 12000:12000/udp gcr.io/offchainlabs/prysm/beacon-chain@sha256:bf9b95661c71ad60f633ee14cf352a668d550076471154cf80dfef8fce0bb41e --datadir=/data --jwt-secret=<YOUR_JWT_SECRET> --rpc-host=0.0.0.0 --http-host=0.0.0.0 --monitoring-host=0.0.0.0 --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> --genesis-state=/genesis/genesis.ssz --sepolia
 ```
 
   </TabItem>
@@ -205,7 +205,7 @@ docker run -it -v %LOCALAPPDATA%\Eth2:/data -v \path\to\genesis.ssz:/genesis/gen
 Download the Holesky genesis state from [Github](https://github.com/eth-clients/holesky/blob/main/metadata/genesis.ssz) to a local file, then run:
 
 ```text
-docker run -it -v %LOCALAPPDATA%\Eth2:/data -v \path\to\genesis.ssz:/genesis/genesis.ssz -p 4000:4000 -p 13000:13000 -p 12000:12000/udp gcr.io/OffchainLabs/prysm/beacon-chain@sha256:bf9b95661c71ad60f633ee14cf352a668d550076471154cf80dfef8fce0bb41e --datadir=/data --jwt-secret=<YOUR_JWT_SECRET> --rpc-host=0.0.0.0 --http-host=0.0.0.0 --monitoring-host=0.0.0.0 --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> --genesis-state=/genesis/genesis.ssz --holesky
+docker run -it -v %LOCALAPPDATA%\Eth2:/data -v \path\to\genesis.ssz:/genesis/genesis.ssz -p 4000:4000 -p 13000:13000 -p 12000:12000/udp gcr.io/offchainlabs/prysm/beacon-chain@sha256:bf9b95661c71ad60f633ee14cf352a668d550076471154cf80dfef8fce0bb41e --datadir=/data --jwt-secret=<YOUR_JWT_SECRET> --rpc-host=0.0.0.0 --http-host=0.0.0.0 --monitoring-host=0.0.0.0 --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> --genesis-state=/genesis/genesis.ssz --holesky
 ```
 
   </TabItem>
@@ -275,7 +275,7 @@ docker run -it -v $HOME/eth2.0-deposit-cli/validator_keys:/keys \
   -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
   --name validator \
   --accept-terms-of-use \
-  gcr.io/OffchainLabs/prysm/validator:stable \
+  gcr.io/offchainlabs/prysm/validator:stable \
   accounts import --keys-dir=/keys --wallet-dir=/wallet
 ```
 
@@ -283,7 +283,7 @@ docker run -it -v $HOME/eth2.0-deposit-cli/validator_keys:/keys \
 <TabItem value="win">
 
 ```text
-docker run -it -v %LOCALAPPDATA%\eth2.0-deposit-cli\validator_keys:/keys -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet gcr.io/OffchainLabs/prysm/validator:stable accounts import --keys-dir=/keys --wallet-dir=/wallet --accept-terms-of-use
+docker run -it -v %LOCALAPPDATA%\eth2.0-deposit-cli\validator_keys:/keys -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet gcr.io/offchainlabs/prysm/validator:stable accounts import --keys-dir=/keys --wallet-dir=/wallet --accept-terms-of-use
 ```
 
 </TabItem>
@@ -309,7 +309,7 @@ Open a second terminal window. Issue the following command to start the validato
 docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
   -v $HOME/Eth2:/validatorDB \
   --network="host" --name validator \
-  gcr.io/OffchainLabs/prysm/validator:stable \
+  gcr.io/offchainlabs/prysm/validator:stable \
   --beacon-rpc-provider=127.0.0.1:4000 \
   --wallet-dir=/wallet \
   --datadir=/validatorDB
@@ -320,7 +320,7 @@ docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
 <TabItem value="win">
 
 ```text
-docker run -it -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet -v %LOCALAPPDATA%\Eth2:/validatorDB --network="host" --name validator gcr.io/OffchainLabs/prysm/validator:stable --beacon-rpc-provider=127.0.0.1:4000 --wallet-dir=/wallet --datadir=/validatorDB --suggested-fee-recipient=<YOUR_WALLET_ADDRESS>
+docker run -it -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet -v %LOCALAPPDATA%\Eth2:/validatorDB --network="host" --name validator gcr.io/offchainlabs/prysm/validator:stable --beacon-rpc-provider=127.0.0.1:4000 --wallet-dir=/wallet --datadir=/validatorDB --suggested-fee-recipient=<YOUR_WALLET_ADDRESS>
 ```
 
 </TabItem>
@@ -362,7 +362,7 @@ To recreate a deleted container and refresh the chain database, issue the start 
 
 ```text
 docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node \
-  gcr.io/OffchainLabs/prysm/beacon-chain:latest \
+  gcr.io/offchainlabs/prysm/beacon-chain:latest \
   --datadir=/data \
   --clear-db \
   --rpc-host=0.0.0.0 \
@@ -374,7 +374,7 @@ docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/u
 <TabItem value="win">
 
 ```text
-docker run -it -v %LOCALAPPDATA%\Eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node gcr.io/OffchainLabs/prysm/beacon-chain:latest --datadir=/data --clear-db --monitoring-host=0.0.0.0 --rpc-host=0.0.0.0 --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT>
+docker run -it -v %LOCALAPPDATA%\Eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node gcr.io/offchainlabs/prysm/beacon-chain:latest --datadir=/data --clear-db --monitoring-host=0.0.0.0 --rpc-host=0.0.0.0 --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT>
 ```
 
 </TabItem>
