@@ -22,7 +22,7 @@ There are three main ways of installing Prysm:
 
 ## Recommended versions
 
-Regardless of your installation method, we always recommend you are running the latest version in our [releases page](https://github.com/prysmaticlabs/prysm/releases) on Github, specified in [semver](https://semver.org/) format such as <PrysmVersion/>. You can check your Prysm version by running your beacon node or validator with the `--version` flag. For example, if using `prysm.sh` to run the beacon node, you would run:
+Regardless of your installation method, we always recommend you are running the latest version in our [releases page](https://github.com/prysmaticlabs/prysm/releases) on GitHub, specified in [semver](https://semver.org/) format such as <PrysmVersion/>. You can check your Prysm version by running your beacon node or validator with the `--version` flag. For example, if using `prysm.sh` to run the beacon node, you would run:
 
 ```
 ./prysm.sh beacon-chain --version
@@ -31,11 +31,15 @@ Regardless of your installation method, we always recommend you are running the 
 You should see a message that says `Using prysm version` and prints the version number. If you have set environment variable `USE_PRYSM_VERSION` to a specific version, the prysm.sh script will not automatically update your client. Unset the environment variable or set it to a recent version, then restart your processes with prysm.sh.
 
 :::warning Double Check Running Processes
+
 Running `./prysm.sh beacon-chain --version` may not reflect the version of the currently running process. After verifying the version with `prysm.sh`, be sure to check that your process was restarted recently to pick up the latest version. Alternatively, you can query the `/metrics` page for the `prysm_version` value on port `8080` or `8081` for the beacon-chain node and validator node, respectively.
+
 :::
 
 :::info Always Run a Stable Release
+
 If you are running docker or building from source, we **never** recommend running from the `:latest` docker tag nor the `master` branch of Prysm. We always recommend using `:stable` if running Docker, or using a specific version tag from our latest releases. Likewise for Bazel, we recommend doing a `git checkout <COMMIT_HASH>` where `<COMMIT_HASH>` is for our latest release version
+
 :::
 
 ## How to subscribe for updates
@@ -47,7 +51,9 @@ Prysm has two official channels for release updates: our [Discord](https://disco
 Updating in Prysm can incur a few seconds downtime depending on your installation method. Every validator will attest once per epoch (every 6.4 minutes on average), while proposals are more rare. To check your next assigned slot to attest or propose, we recommend checking your validator on [beaconcha.in](https://beaconcha.in). Although missing a single validator duty is not a big deal, you can wait to update right after you attest or propose for optimal performance.
 
 :::tip Missing a single validator duty is not a big deal
+
 Missing a single duty is really not a big deal for your validator profitability. Unless you want to be at the top of the [leaderboard](https://beaconcha.in/validators/leaderboard), do not worry too much. You will be profitable again in no time once your validator is up next epoch.
+
 :::
 
 import Tabs from '@theme/Tabs';

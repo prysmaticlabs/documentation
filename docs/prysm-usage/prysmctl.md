@@ -21,43 +21,45 @@ Some users will need to give permissions to the downloaded binaries to be execut
 
 :::
 
-Example of running prysmctl by opening a terminal at the installed location after renaming.
+Example of running prysmctl by opening a terminal at the installed location after renaming:
 ```
 ./prysmctl --help
 ```
 
-The binaries can be run through a terminal directly and won't need installation. Please refer to the **list commands** section for additional information. 
+The binaries can be run through a terminal directly and won't need installation. Please refer to the [list commands](#list-commands section for additional information. 
 
 ### Install via source
 
 Dependencies:
 
-- [Bazelisk](https://bazel.build/install/bazelisk) - this will automatically manage the version of **Bazel** required.
+- [Bazelisk](https://bazel.build/install/bazelisk) - this will automatically manage the version of **Bazel** required.
 - [golang](https://go.dev/) installed
-- The `cmake` package installed
-- The `git` package installed
-- `libssl-dev` installed
-- `libgmp-dev` installed
-- `libtinfo5` installed
-- `libprotoc` version 3.14 installed
+- The `cmake` package installed
+- The `git` package installed
+- `libssl-dev` installed
+- `libgmp-dev` installed
+- `libtinfo5` installed
+- `libprotoc` version 3.14 installed
 
 #### Install Bazelisk
 
 :::caution
-    Windows users should run through binaries as some users may have issues building through bazel. 
+
+Windows users should run through binaries as some users may have issues building through bazel. 
+
 :::
 
 Bazelisk is a launcher for Bazel which automatically downloads and installs the version of Bazel that you need. There are several ways to install Bazelisk:
 
-- Using [a binary release](https://github.com/bazelbuild/bazelisk/releases) for Linux, macOS, or Windows
-- Using npm: `npm install -g @bazel/bazelisk`
+- Using [a binary release](https://github.com/bazelbuild/bazelisk/releases) for Linux, macOS, or Windows
+- Using npm: `npm install -g @bazel/bazelisk`
 - Using apt: https://bazel.build/install/ubuntu
-- Using Homebrew on macOS: `brew install bazelisk`
-- By compiling from source using Go: `go install github.com/bazelbuild/bazelisk@latest`
+- Using Homebrew on macOS: `brew install bazelisk`
+- By compiling from source using Go: `go install github.com/bazelbuild/bazelisk@latest`
 
 #### Clone the Prysm project locally
 
-Clone Prysm's [main repository](https://github.com/prysmaticlabs/prysm). Switch to the latest version (the latest version number can be found on the [releases page](https://github.com/prysmaticlabs/prysm/releases)). Once cloned, enter the directory:
+Clone Prysm's [main repository](https://github.com/prysmaticlabs/prysm). Switch to the latest version (the latest version number can be found on the [releases page](https://github.com/prysmaticlabs/prysm/releases)). Once cloned, enter the directory:
 
 ```
 git clone https://github.com/prysmaticlabs/prysm && cd prysm
@@ -88,11 +90,9 @@ Commands can also be found in our [Prysm parameter documentation](/prysm-usage/p
 
 ### Frequently asked questions
 
-**Q: One of the Prysm guides tells me to use a `prysmctl` command that isn't available. What do I do?**
+#### One of the Prysm guides tells me to use a `prysmctl` command that isn't available. What do I do?
+You may be using an older version of `prysmctl` and are required to download a newer version. 
 
-A: You may be using an older version of `prysmctl` and are required to download a newer version. 
-
-**Q: Is `prysmctl` accessible from prysm.sh, prysm.s1, or prysm.bat?**
-
-A: No. This utility will only be accessible by building from source or by downloading binaries for specific versions of Prysm.
+#### Is `prysmctl` accessible from prysm.sh, prysm.s1, or prysm.bat?
+No. This utility will only be accessible by building from source or by downloading binaries for specific versions of Prysm.
 

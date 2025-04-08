@@ -14,13 +14,13 @@ import TabItem from '@theme/TabItem';
 Voluntarily exiting your validator from the Ethereum network is a one time command using the [prysmctl tool](/prysm-usage/prysmctl.md). Note that this operation was previously facilitated by a command exposed by the Prysm validator client, and can still be accessed that way. At a high level, you'll follow these steps to exit your validator:
 
  1. Ensure that you have access to a fully synced beacon node.
- 2. Issue the `validator exit` command to your validator and allow the beacon node to access to your validator keys through the `--wallet-dir` flag or [web3signer](web3signer.md) and the `--beacon-rpc-provider` flag (examples provided below).
+ 2. Issue the `validator exit` command to your validator and allow the beacon node to access to your validator keys through the `--wallet-dir` flag or [Web3Signer](web3signer.md) and the `--beacon-rpc-provider` flag (examples provided below).
  3. Select the account(s) that should be exited. This step can be skipped by specifying the account(s) via the `--public-keys` flag when issuing the `validator exit` command.
  4. Confirm your understanding of the consequences of exiting your validator by typing `Exit my validator` when prompted.
 
 :::tip
 
-Looking for a particular phrase to perform a voluntary exit in Prysm? Read step 4 in the above steps!
+Looking for a particular phrase to perform a voluntary exit in Prysm? Read Step 4 in the above steps!
 
 :::
 
@@ -34,7 +34,7 @@ The `validator-exit command` only supports gRPC, which means that the specified 
 
 :::
 
-Examples below use the local prysm wallet, if you are using [web3signer](web3signer.md), replace the `wallet-dir` flag with the flags used to run the validator with web3signer. 
+Examples below use the local Prysm wallet, if you are using [Web3Signer](web3signer.md), replace the `wallet-dir` flag with the flags used to run the validator with Web3Signer. 
 
 <Tabs
   groupId="operating-systems"
@@ -196,4 +196,8 @@ bazel run //cmd/validator --config=release -- accounts voluntary-exit
 </TabItem>
 </Tabs>
 
-**Note:** The above-referenced commands that are being deprecated have not been removed yet, but mirror those found in `prysmctl`.
+:::note
+
+The above-referenced commands that are being deprecated have not been removed yet, but mirror those found in `prysmctl`.
+
+:::

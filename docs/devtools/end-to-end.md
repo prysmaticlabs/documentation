@@ -46,7 +46,7 @@ type ComponentRunner interface {
 
 There are several types that implement this interface and they can all be found in https://github.com/prysmaticlabs/prysm/tree/develop/testing/endtoend/components.
 
-E2E requires appropriate regular version updates for certain components that run on binary such as web3signer. Currently, E2E can only support 1 version of a component at a time.
+E2E requires appropriate regular version updates for certain components that run on binary such as Web3Signer. Currently, E2E can only support 1 version of a component at a time.
 
 Running components correctly is not a simple task. We can't simply start up all components at the same time and expect the system to work. The beacon node requires a running boot node to be able to find peers, as well as an Eth1 node with blocks that include deposits for validators that will be used during the test. This means we need a combination of synchronous and asynchronous behavior. This is achieved by the use of goroutines and the `ComponentRunner` interface inside `run()` in https://github.com/prysmaticlabs/prysm/blob/develop/testing/endtoend/endtoend_test.go.
 
