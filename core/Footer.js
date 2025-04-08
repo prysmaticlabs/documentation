@@ -46,12 +46,6 @@ class Footer extends React.Component {
           </div>
           <div>
             <h5>Community</h5>
-            <a
-              href="https://gitter.im/prysmaticlabs/prysm"
-              target="_blank"
-              rel="noreferrer noopener">
-              Gitter
-            </a>
             <a href="https://discord.com/invite/prysmaticlabs">Discord</a>
             <a
               href="https://twitter.com/prylabs"
