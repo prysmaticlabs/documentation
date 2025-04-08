@@ -8,11 +8,11 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <HeaderBadgesWidget />
 
-There are a number of ways to help out the project for people of all skillsets and experience levels. If you are unsure where you may be best suited, stop by either our [**Discord**](https://discord.gg/prysmaticlabs) and a member of the team or community will be happy to answer questions and offer some direction.
+There are a number of ways to help out the project for people of all skillsets and experience levels. If you are unsure where you may be best suited, stop by either our [**Discord**](https://discord.gg/prysm) and a member of the team or community will be happy to answer questions and offer some direction.
 
 ## Getting Started
 
-Once you are a bit more familiar with the concepts behind Ethereum and are ready to write some code, head over and explore Prysm's [open issues on Github](https://github.com/prysmaticlabs/prysm/issues). We recommend looking for issues tagged with the `Good First Issue` label if it is your first contribution. If you are still unsure about how to tackle a bug or a feature, our team is always available on [Discord](https://discord.gg/prysmaticlabs). Sign in to your Github account, then navigate to [the official Prysm repository](https://github.com/prysmaticlabs/prysm/). In the upper right hand corner of the page, click the `Fork` button. This will create a copy of the Prysm repository on your account that can be edited for pull requests.
+Once you are a bit more familiar with the concepts behind Ethereum and are ready to write some code, head over and explore Prysm's [open issues on Github](https://github.com/OffchainLabs/prysm/issues). We recommend looking for issues tagged with the `Good First Issue` label if it is your first contribution. If you are still unsure about how to tackle a bug or a feature, our team is always available on [Discord](https://discord.gg/OffchainLabs). Sign in to your Github account, then navigate to [the official Prysm repository](https://github.com/OffchainLabs/prysm/). In the upper right hand corner of the page, click the `Fork` button. This will create a copy of the Prysm repository on your account that can be edited for pull requests.
 
 ### Setting up your environment
 
@@ -25,7 +25,7 @@ To develop Prysm, you'll need the following:
 
 First, create a local clone of Prysm.
 
-    git clone https://github.com/prysmaticlabs/prysm.git && cd prysm
+    git clone https://github.com/OffchainLabs/prysm.git && cd prysm
 
 Then link your local repository to your newly created fork.
 
@@ -85,7 +85,7 @@ Other binaries in our codebase use a similar command to build. If you want to ru
 
 Where you can specify any amount of command line arguments you need based on the available flags of the item you're running.
 
-In order to write code for the Prysm codebase comfortably with Bazel, we recommend using either [Visual Studio Code](https://code.visualstudio.com/download) with its [Bazel plugin](https://marketplace.visualstudio.com/items?itemName=BazelBuild.vscode-bazel), or any [Jetbrains IDE](https://www.jetbrains.com/) with the [Bazel plugin](https://plugins.jetbrains.com/plugin/8609-bazel) ([Goland](https://www.jetbrains.com/go/) is a great choice, used by most of the Prysmatic Labs team). 
+In order to write code for the Prysm codebase comfortably with Bazel, we recommend using either [Visual Studio Code](https://code.visualstudio.com/download) with its [Bazel plugin](https://marketplace.visualstudio.com/items?itemName=BazelBuild.vscode-bazel), or any [Jetbrains IDE](https://www.jetbrains.com/) with the [Bazel plugin](https://plugins.jetbrains.com/plugin/8609-bazel) ([Goland](https://www.jetbrains.com/go/) is a great choice, used by most of the Prysm team). 
 
 You can also find various other types of IDE support for Bazel in the official Bazel documentation [here](https://docs.bazel.build/versions/master/ide.html). Once you have your coding environment set-up, you'll be well-equipped to contribute to Ethereum!
 
@@ -116,7 +116,7 @@ You can also run our full, end-to-end test suite with:
 
 #### Adding dependencies
 
-If you want to add a new dependency to Prysm, please adhere to the guidelines found in our [DEPENDENCIES.md](https://github.com/prysmaticlabs/prysm/blob/master/DEPENDENCIES.md) document.
+If you want to add a new dependency to Prysm, please adhere to the guidelines found in our [DEPENDENCIES.md](https://github.com/OffchainLabs/prysm/blob/master/DEPENDENCIES.md) document.
 
 ### Contributing to the Ethereum consensus API
 
@@ -180,7 +180,7 @@ If your change is user facing, ensure that your changeset includes an entry to t
 
 Navigate to your fork of the repository on Github. In the upper left where the current branch is listed, change the branch to your newly created one. Open the files that you have worked on and ensure they include your changes.
 
-Navigate to [https://github.com/prysmaticlabs/prysm/pulls](https://github.com/prysmaticlabs/prysm/pulls) and click on the `New pull request` button. In the `base` box on the left, leave the default selection `base: develop` the branch that you want your changes to be applied to. In the `compare` box on the right, select the branch containing the changes you want to apply. You will then be asked to answer a few questions about your pull request. Pull requests should have enough context about what you are working on, how you are solving a problem, and reference all necessary information for your reviewers to help.
+Navigate to [https://github.com/OffchainLabs/prysm/pulls](https://github.com/OffchainLabs/prysm/pulls) and click on the `New pull request` button. In the `base` box on the left, leave the default selection `base: develop` the branch that you want your changes to be applied to. In the `compare` box on the right, select the branch containing the changes you want to apply. You will then be asked to answer a few questions about your pull request. Pull requests should have enough context about what you are working on, how you are solving a problem, and reference all necessary information for your reviewers to help.
 
 After you complete the questionnaire, the pull request will appear in the list of pull requests.
 

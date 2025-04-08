@@ -61,17 +61,17 @@ A large problem in monorepos is, of course, dealing with dependency management. 
 
 Bazel's query tool allows you to create graph visualizations of your entire dependency tree, making it a lot more robust and standardized compared to other methods of managing dependencies in a project.
 
-All dependencies in the Prysm monorepo live in a file called `deps.bzl` at the top-level of the repository [here](https://github.com/prysmaticlabs/prysm/blob/develop/deps.bzl).
+All dependencies in the Prysm monorepo live in a file called `deps.bzl` at the top-level of the repository [here](https://github.com/OffchainLabs/prysm/blob/develop/deps.bzl).
 
 ### How to add new dependencies
 
-Adding new dependencies to Prysm requires specific changes. We have prepared a comprehensive [DEPENDENCIES.md](https://github.com/prysmaticlabs/prysm/blob/master/DEPENDENCIES.md) explaining the required process.
+Adding new dependencies to Prysm requires specific changes. We have prepared a comprehensive [DEPENDENCIES.md](https://github.com/OffchainLabs/prysm/blob/master/DEPENDENCIES.md) explaining the required process.
 
 ## Bazel and Docker
 
 A common question we get is: "where are Prysm's Dockerfiles?". With Bazel, we get a ton of benefits in terms of optimizing our deployment and release process. In particular, we use [`bazel rules docker`](https://github.com/bazelbuild/rules_docker) which provides us the ability to specify a base, barebones image, and essentially builds our binary and creates a Docker container as a simple wrapper over our binaries. 
 
-We do not write our own Dockerfiles, as Bazel provides us a more sandboxed, simple experience with all of its benefits. To see an example use of `bazel rules docker` for how we build a particular package, see [here](https://github.com/prysmaticlabs/prysm/blob/aa389c82a157008741450ba1e04d898924734432/tools/bootnode/BUILD.bazel#L36). 
+We do not write our own Dockerfiles, as Bazel provides us a more sandboxed, simple experience with all of its benefits. To see an example use of `bazel rules docker` for how we build a particular package, see [here](https://github.com/OffchainLabs/prysm/blob/aa389c82a157008741450ba1e04d898924734432/tools/bootnode/BUILD.bazel#L36). 
 
 To read comprehensive instructions on how to build Prysm's docker images for your own use, see [here](/install/install-with-bazel).
 

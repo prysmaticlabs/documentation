@@ -20,7 +20,7 @@ export const PrysmVersion = ({ includeLink = false, majorOverride = null, minorO
   }
   // Reconstruct the version string with the potential minor version override
   const version = `${major}.${minor}.${patch}`;
-  const currentVersionLink = `https://github.com/prysmaticlabs/prysm/releases/tag/${version}`;
+  const currentVersionLink = `https://github.com/OffchainLabs/prysm/releases/tag/${version}`;
 
   return includeLink ? (
     <span><a href={currentVersionLink} target="_blank" rel="noopener noreferrer">{version}</a></span>

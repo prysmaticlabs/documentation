@@ -13,7 +13,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 ### Run via binaries
 
-Binaries for the latest `prysmctl` tool can be found on the [latest prysm release page](https://github.com/prysmaticlabs/prysm/releases). Each binary is a unique version with its own set of features. New releases may include new features for `prysmctl` that will need to be downloaded separately. The installed binaries will need to be renamed to `prysmctl` to use the example below. 
+Binaries for the latest `prysmctl` tool can be found on the [latest prysm release page](https://github.com/OffchainLabs/prysm/releases). Each binary is a unique version with its own set of features. New releases may include new features for `prysmctl` that will need to be downloaded separately. The installed binaries will need to be renamed to `prysmctl` to use the example below. 
 
 :::info
 
@@ -57,10 +57,10 @@ Bazelisk is a launcher for Bazel which automatically downloads and installs the 
 
 #### Clone the Prysm project locally
 
-Clone Prysm's [main repository](https://github.com/prysmaticlabs/prysm). Switch to the latest version (the latest version number can be found on the [releases page](https://github.com/prysmaticlabs/prysm/releases)). Once cloned, enter the directory:
+Clone Prysm's [main repository](https://github.com/OffchainLabs/prysm). Switch to the latest version (the latest version number can be found on the [releases page](https://github.com/OffchainLabs/prysm/releases)). Once cloned, enter the directory:
 
 ```
-git clone https://github.com/prysmaticlabs/prysm && cd prysm
+git clone https://github.com/OffchainLabs/prysm && cd prysm
 ``````
 
 #### Build `prysmctl`
@@ -79,7 +79,7 @@ Bazel will automatically pull and install any dependencies as well, including Go
 
 **Using Docker**
 ```
-docker run -it gcr.io/prysmaticlabs/prysm/cmd/prysmctl:latest --help
+docker run -it gcr.io/OffchainLabs/prysm/cmd/prysmctl:latest --help
 ```
 
 The `—-help` flag will provide a list of commands, subcommands, and flags to use.

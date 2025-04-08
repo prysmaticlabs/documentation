@@ -11,7 +11,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 <HeaderBadgesWidget />
 
 
-[Prysm](https://github.com/prysmaticlabs/prysm) is an [Ethereum](https://ethereum.org/en/developers/docs/intro-to-ethereum/) [proof-of-stake](https://ethereum.org/en/developers/docs/consensus-mechanisms/pos/) client written in [Go](https://golang.org). You can use Prysm to participate in Ethereum's [decentralized economy](https://ethereum.org/en/developers/docs/web2-vs-web3/) by [running a node](./install/install-with-script.md) and, if you have [32 ETH to stake](https://ethereum.org/en/staking/), a [validator client](./install/install-with-script.md#step-6-run-a-validator-using-prysm). If you're new to Ethereum, you may enjoy our beginner-friendly [Nodes and networks](./concepts/nodes-networks.md) explainer.
+[Prysm](https://github.com/OffchainLabs/prysm) is an [Ethereum](https://ethereum.org/en/developers/docs/intro-to-ethereum/) [proof-of-stake](https://ethereum.org/en/developers/docs/consensus-mechanisms/pos/) client written in [Go](https://golang.org). You can use Prysm to participate in Ethereum's [decentralized economy](https://ethereum.org/en/developers/docs/web2-vs-web3/) by [running a node](./install/install-with-script.md) and, if you have [32 ETH to stake](https://ethereum.org/en/staking/), a [validator client](./install/install-with-script.md#step-6-run-a-validator-using-prysm). If you're new to Ethereum, you may enjoy our beginner-friendly [Nodes and networks](./concepts/nodes-networks.md) explainer.
 
 The following table of contents provides a descriptive overview of Prysm's documentation:
 
@@ -288,7 +288,7 @@ The following table of contents provides a descriptive overview of Prysm's docum
 <a href='audits/phase0'>Security audits</a>
 </div>
 <div className='panel'>
-<a href='licenses/prysmatic-labs'>Prysm license</a>
+<a href='licenses/prysm'>Prysm license</a>
 </div>
 <div className='panel'>
 <a href='reading/eth2'>Ethereum learning resources</a>
@@ -320,4 +320,4 @@ The following table of contents provides a descriptive overview of Prysm's docum
 
 ## Need assistance?
 
-Join our [Discord](https://discord.gg/prysmaticlabs) server - a member of the team or our community will be happy to help.
+Join our [Discord](https://discord.gg/prysm) server - a member of the team or our community will be happy to help.

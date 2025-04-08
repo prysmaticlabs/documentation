@@ -47,12 +47,12 @@ class Footer extends React.Component {
           <div>
             <h5>Community</h5>
             <a
-              href="https://gitter.im/prysmaticlabs/prysm"
+              href="https://gitter.im/OffchainLabs/prysm"
               target="_blank"
               rel="noreferrer noopener">
               Gitter
             </a>
-            <a href="https://discord.com/invite/prysmaticlabs">Discord</a>
+            <a href="https://discord.gg/prysm">Discord</a>
             <a
               href="https://twitter.com/prylabs"
               target="_blank"
@@ -62,13 +62,13 @@ class Footer extends React.Component {
           </div>
           <div>
             <h5>More</h5>
-            <a href={"https://medium.com/prysmatic-labs"}>Blog</a>
-            <a href="https://github.com/prysmaticlabs/prysm">GitHub</a>
+            <a href={"https://medium.com/OffchainLabs"}>Blog</a>
+            <a href="https://github.com/OffchainLabs/prysm">GitHub</a>
             <a
               className="github-button"
-              href="https://github.com/prysmaticlabs/prysm"
+              href="https://github.com/OffchainLabs/prysm"
               data-icon="octicon-star"
-              data-count-href="/prysmaticlabs/prysm"
+              data-count-href="/OffchainLabs/prysm"
               data-show-count="true"
               data-count-aria-label="# stargazers on GitHub"
               aria-label="Star Prysm on GitHub">

@@ -23,7 +23,7 @@ Initial sync serves the following purposes:
 
 * Fallback synchronization mechanism when node falls behind its peers while performing the regular synchronization.
 
-**Where the feature lives in Prysm:** The feature is fully contained within the following folder/package: [/beacon-chain/sync/initial-sync/](https://github.com/prysmaticlabs/prysm/tree/develop/beacon-chain/sync/initial-sync)
+**Where the feature lives in Prysm:** The feature is fully contained within the following folder/package: [/beacon-chain/sync/initial-sync/](https://github.com/OffchainLabs/prysm/tree/develop/beacon-chain/sync/initial-sync)
 
 **Technologies used:** [go-libp2p](https://github.com/libp2p/go-libp2p)
 
@@ -81,7 +81,7 @@ Available synchronization functionality is exposed via `initalsync.Service`, wit
 
 Another purpose of the service object is to be the glue between blocks queue and blocks processor: it makes sure that the queue is started and blocks received are forwarded to the processor.
 
-See: [service.go](https://github.com/prysmaticlabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/service.go#L46), [round_robin.go](https://github.com/prysmaticlabs/prysm/blob/develop/beacon-chain/sync/initial-sync/round_robin.go)
+See: [service.go](https://github.com/OffchainLabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/service.go#L46), [round_robin.go](https://github.com/OffchainLabs/prysm/blob/develop/beacon-chain/sync/initial-sync/round_robin.go)
 
 ###   Blocks Queue
 
@@ -89,13 +89,13 @@ Blocks queue is the core component managing higher level block fetching from the
 
 Queue operates in the following manner:
 
-- When started, queue creates the internal fetcher service, which is responsible for lower level data fetching functionality i.e. queue manages the overall scheduling process, while blocks fetcher is responsible for talking to peers, requesting and processing their data (see [blocks_queue.go:newBlocksQueue](https://github.com/prysmaticlabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_queue.go#L100). Block fetcher exposes the output channel which the queue keeps waiting on up until all the necessary blocks are fetched, at that point the queue closes the fetcher's context thus closing that sub-service as well see: [blocks_queue.go:loop](https://github.com/prysmaticlabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_queue.go#L255).
+- When started, queue creates the internal fetcher service, which is responsible for lower level data fetching functionality i.e. queue manages the overall scheduling process, while blocks fetcher is responsible for talking to peers, requesting and processing their data (see [blocks_queue.go:newBlocksQueue](https://github.com/OffchainLabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_queue.go#L100). Block fetcher exposes the output channel which the queue keeps waiting on up until all the necessary blocks are fetched, at that point the queue closes the fetcher's context thus closing that sub-service as well see: [blocks_queue.go:loop](https://github.com/OffchainLabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_queue.go#L255).
 
 - In order to keep FSMs as lightweight as possible, queue registers event handlers with itself instead of registering them with each individual machine. Each handler function accepts FSM as an argument (thus event handlers are fully aware on which machine they operate on).
 
 - Queue relies on the FSM manager to create/remove FSMs. In order to allow concurrent scheduling of different batches of blocks, queue relies on several machines (currently 8). FSMs are used to track the state of different block request ranges (whether blocks in that range have been requested, already fetched, sent down the pipeline etc).
 
-- Once the fetcher is initialized and event handlers are registered, the queue enters an event listening [loop](https://github.com/prysmaticlabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_queue.go#L165), with only two available event types: `Tick` and `Data Received`. The `Tick` event is nothing more than a time ticker triggering different events handlers on FSMs (depending on their current state) on a regular basis (currently every 200 milliseconds). The `Data received` event is triggered asynchronously on read from the output channel of the fetcher i.e. when the fetcher returns some data to parse and pass over to block processors.
+- Once the fetcher is initialized and event handlers are registered, the queue enters an event listening [loop](https://github.com/OffchainLabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_queue.go#L165), with only two available event types: `Tick` and `Data Received`. The `Tick` event is nothing more than a time ticker triggering different events handlers on FSMs (depending on their current state) on a regular basis (currently every 200 milliseconds). The `Data received` event is triggered asynchronously on read from the output channel of the fetcher i.e. when the fetcher returns some data to parse and pass over to block processors.
 
 **Available events handlers:**
 
@@ -109,11 +109,11 @@ Queue operates in the following manner:
 
 - *On a skipped machine:* this event handler is triggered when a `Tick` event occurs on a stuck machine, that's a machine that stays in a given state for too long, and is marked as `Skipped`, this handler is responsible for resetting such machines.
 
-See: [blocks_queue.go](https://github.com/prysmaticlabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_queue.go#L73), [Queue.onScheduleEvent()](https://github.com/prysmaticlabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_queue.go#L281), [Queue.onDataReceivedEvent()](https://github.com/prysmaticlabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_queue.go#L299), [Queue.onReadyToSendEvent()](https://github.com/prysmaticlabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_queue.go#L334), [Queue.onProcessSkippedEvent()](https://github.com/prysmaticlabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_queue.go#L383), [Queue.onCheckStaleEvent()](https://github.com/prysmaticlabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_queue.go#L442)
+See: [blocks_queue.go](https://github.com/OffchainLabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_queue.go#L73), [Queue.onScheduleEvent()](https://github.com/OffchainLabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_queue.go#L281), [Queue.onDataReceivedEvent()](https://github.com/OffchainLabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_queue.go#L299), [Queue.onReadyToSendEvent()](https://github.com/OffchainLabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_queue.go#L334), [Queue.onProcessSkippedEvent()](https://github.com/OffchainLabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_queue.go#L383), [Queue.onCheckStaleEvent()](https://github.com/OffchainLabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_queue.go#L442)
 
 ###   FSM Manager and FSMs
 
-Each FSM [(see fsm.go:stateMachine)](https://github.com/prysmaticlabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/fsm.go#L43)  has the following data associated with it:
+Each FSM [(see fsm.go:stateMachine)](https://github.com/OffchainLabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/fsm.go#L43)  has the following data associated with it:
 
 **Start Slot:** beginning of the range of blocks to pull into a given machine. The end slot is determined by the batch size, which is a predefined constant (currently 64).
 
@@ -121,17 +121,17 @@ Each FSM [(see fsm.go:stateMachine)](https://github.com/prysmaticlabs/prysm/blob
 
 **Blocks:** fetched blocks; provided by the fetcher via its output channel.
 
-FSM Manager is a container used to group machines together, for easier management and traversal. It is queue’s responsibility to make sure that `Start Slot` uniquely identifies the machine: there’s no point in having a machine with the same start slots, as machines are fetching batches of a constant size starting from the start slot, therefore machines with the same start slot will essentially fetch the same block range (albeit, possibly, from the different peers). Of course sometimes such a redundancy is unavoidable: in cases when the beacon node’s head cannot be advanced, machines with slots equal to that of some previously used machines can be spawned (see how machines are reset in [onProcessSkippedEvent()](https://github.com/prysmaticlabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_queue.go#L419) event handler).
+FSM Manager is a container used to group machines together, for easier management and traversal. It is queue’s responsibility to make sure that `Start Slot` uniquely identifies the machine: there’s no point in having a machine with the same start slots, as machines are fetching batches of a constant size starting from the start slot, therefore machines with the same start slot will essentially fetch the same block range (albeit, possibly, from the different peers). Of course sometimes such a redundancy is unavoidable: in cases when the beacon node’s head cannot be advanced, machines with slots equal to that of some previously used machines can be spawned (see how machines are reset in [onProcessSkippedEvent()](https://github.com/OffchainLabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_queue.go#L419) event handler).
 
 While event handlers operate on FSMs, they are not registered with machines themselves but with the queue, this is done for reasons of efficiency (machines are constantly removed and re-added, so are kept as simple as possible). When an event occurs (for example `Tick` event occurs every 200 milliseconds), each known FSM is passed to the corresponding event handler, depending on FSM’s current state. Here is the list of event handlers, required FSM start states and their corresponding handlers:
 
 | Event         | Required FSM state | Event Handler                                                                                                                                                             |
 |---------------|--------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Tick          | New                | [Queue.onScheduleEvent()](https://github.com/prysmaticlabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_queue.go#L281)       |
-| Tick          | Data parsed        | [Queue.onReadyToSendEvent()](https://github.com/prysmaticlabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_queue.go#L334)    |
-| Tick          | Skipped            | [Queue.onProcessSkippedEvent()](https://github.com/prysmaticlabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_queue.go#L383) |
-| Tick          | Sent               | [Queue.onCheckStaleEvent()](https://github.com/prysmaticlabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_queue.go#L442)     |
-| Data Received | Scheduled          | [Queue.onDataReceivedEvent()](https://github.com/prysmaticlabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_queue.go#L299)   |
+| Tick          | New                | [Queue.onScheduleEvent()](https://github.com/OffchainLabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_queue.go#L281)       |
+| Tick          | Data parsed        | [Queue.onReadyToSendEvent()](https://github.com/OffchainLabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_queue.go#L334)    |
+| Tick          | Skipped            | [Queue.onProcessSkippedEvent()](https://github.com/OffchainLabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_queue.go#L383) |
+| Tick          | Sent               | [Queue.onCheckStaleEvent()](https://github.com/OffchainLabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_queue.go#L442)     |
+| Data Received | Scheduled          | [Queue.onDataReceivedEvent()](https://github.com/OffchainLabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_queue.go#L299)   |
 
 
 The above table is easy to read: for example it is easy to see that in order for an FSM to be passed to `onDataReceivedEvent()` handler, it must be in a `Scheduled` state and `Data Received` event must occur (that’s fetcher should write something into its output channel).
@@ -145,14 +145,14 @@ Below is a state transition table (depending on input there might be several pos
 
 Refer to [FSM state transitions diagram](#fsm-state-transitions-diagram) for further details.
 
-See: [fsm.go:stateMachineManager](https://github.com/prysmaticlabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/fsm.go#L35) 
+See: [fsm.go:stateMachineManager](https://github.com/OffchainLabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/fsm.go#L35) 
 
 
 **Machines lifetime**
 
 When queue operates, FSMs are constantly being created and removed:
 
-- Whenever a queue has less than a [predefined](https://github.com/prysmaticlabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_queue.go#L31) number of machines (currently 8), a new machine is added.
+- Whenever a queue has less than a [predefined](https://github.com/OffchainLabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_queue.go#L31) number of machines (currently 8), a new machine is added.
 - Once a machine is outdated (its data is processed, or it features a block range that has already been passed by the currently known head, or it is in a stuck or invalid state), it is removed from the FSM manager.
 
 This is done to optimize the runtime and make code more simple to understand (had we decided to reuse the machines it would have required a lot of orchestration code - but right now, queue implementation is very simple and gets the job done).
@@ -161,19 +161,19 @@ So, whenever we need to implement some complex algorithm it almost always has to
 
 Being able to algorithmically select a range of blocks (which will be reset if stuck, and if it gets blocks, those blocks will be eventually pushed into the queue and towards the block processors -- automatically) is one of the main benefits of using FSMs.
 
-See: [blocks_queue_utils.go:resetFromFork()](https://github.com/prysmaticlabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_queue_utils.go#L11) and [blocks_queue_utils.go:resetFromSlot()](https://github.com/prysmaticlabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_queue_utils.go#L44)
+See: [blocks_queue_utils.go:resetFromFork()](https://github.com/OffchainLabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_queue_utils.go#L11) and [blocks_queue_utils.go:resetFromSlot()](https://github.com/OffchainLabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_queue_utils.go#L44)
 
 ###   Blocks Fetcher
 
-The fetcher component (see [blocks_fetcher.go:blocksFetcher](https://github.com/prysmaticlabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_queue_utils.go#L44)) is responsible for handling p2p communication, and does the actual data requesting and fetching. It is a very simple component operating in the following way:
+The fetcher component (see [blocks_fetcher.go:blocksFetcher](https://github.com/OffchainLabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_queue_utils.go#L44)) is responsible for handling p2p communication, and does the actual data requesting and fetching. It is a very simple component operating in the following way:
 
 - Fetcher manages two channels: one for incoming fetching requests and the other for sending fetched data back to requesters. All this is done asynchronously, of course!
 
-- Fetcher is smart enough to honour rate limits and while being highly concurrent, never requests at a higher pace than is allowed by Prysm beacon nodes (see [getPeerLock()](https://github.com/prysmaticlabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_fetcher_peers.go#L21)). So, fetching nodes should never receive a bad score from fellow Prysm peers (while it is theoretically possible that other clients still consider our fetcher aggressive, in reality Prysm has one of the strictest limits, thus in practice this has never happened).
+- Fetcher is smart enough to honour rate limits and while being highly concurrent, never requests at a higher pace than is allowed by Prysm beacon nodes (see [getPeerLock()](https://github.com/OffchainLabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_fetcher_peers.go#L21)). So, fetching nodes should never receive a bad score from fellow Prysm peers (while it is theoretically possible that other clients still consider our fetcher aggressive, in reality Prysm has one of the strictest limits, thus in practice this has never happened).
 
 - All the low level details (like checking that enough peers are available, filtering out less useful peers, handling p2p errors) of data requesting is abstracted within the fetcher service.
 
-See: [blocks_fetcher.go](https://github.com/prysmaticlabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_fetcher.go#L68), [blocks_fetcher_peers.go](https://github.com/prysmaticlabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_fetcher_peers.go#L1), [blocks_fetcher_utils.go](https://github.com/prysmaticlabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_fetcher_utils.go#L1)
+See: [blocks_fetcher.go](https://github.com/OffchainLabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_fetcher.go#L68), [blocks_fetcher_peers.go](https://github.com/OffchainLabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_fetcher_peers.go#L1), [blocks_fetcher_utils.go](https://github.com/OffchainLabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_fetcher_utils.go#L1)
 
 **Noteworthy code in the feature**
 
@@ -185,7 +185,7 @@ Normally, there are no more than a handful of non-finalized epochs, and once ini
 
 Regular synchronization cannot handle such fork branching, and node eventually falls behind the highest expected slot (if counting time slots from the genesis up to the current clock time). Once that happens, the system falls back to initial synchronization, which needs to be able to not only synchronize with the majority of  known peers, but handle the case when that majority is dynamic i.e. be capable to backtrack from some unfavourable fork, which is no longer voted for by the current majority of known peers (while it was supported by previous majority just 10 minutes ago!).
 
-Our backtracking algorithm is pretty simple (code is abridged, see full version [here](https://github.com/prysmaticlabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_fetcher_utils.go#L1470):)
+Our backtracking algorithm is pretty simple (code is abridged, see full version [here](https://github.com/OffchainLabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_fetcher_utils.go#L1470):)
 
 
 ```go
@@ -237,7 +237,7 @@ nonSkippedSlotAfter(slot):
         when block with slot > than argument slot is found, return it
 ```
 
-And the corresponding implementation can be found in [blocks_fetcher_utils.go:nonSkippedSlotAfter](https://github.com/prysmaticlabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_fetcher_utils.go#L34), here it signature:
+And the corresponding implementation can be found in [blocks_fetcher_utils.go:nonSkippedSlotAfter](https://github.com/OffchainLabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_fetcher_utils.go#L34), here it signature:
 
 ```go
 // nonSkippedSlotAfter checks slots after the given one in an attempt to find
@@ -252,7 +252,7 @@ func (f *blocksFetcher) nonSkippedSlotAfter(slot uint64) (uint64, error) {}
 
 The procedure is quite optimized, for instance, within a single request, node samples 16 future epochs are at once (so the pace is 16x32=512 blocks/request, when looking for a non-skipped slot). Hence even non-skipped slots which are significantly in the futre are found very quickly.
 
-See: [blocks_queue.go:onProcessSkippedEvent()](https://github.com/prysmaticlabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_queue.go#L383)
+See: [blocks_queue.go:onProcessSkippedEvent()](https://github.com/OffchainLabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_queue.go#L383)
 
 ###   Utilizing peer scorer
 
@@ -260,7 +260,7 @@ Since we are dealing with a public decentralized network, we cannot assume that 
 
 In order to avoid being stuck with a single unresponsive peer, our first fetcher implementation shuffled peers before selecting one to fetch data from. We have improved upon this method and now score peers on their behaviour and increase the probability of selecting high scoring peers, thus utilizing our mesh more efficiently.
 
-We have quite sophisticated scoring mechanisms already in place, and we’re [continuingly](https://github.com/prysmaticlabs/prysm/issues/6622) building on them. Currently, the peer scorer service is able to track peer’s performance (on how many requests, how many useful blocks -- that’s blocks advancing the head -- have been returned). Peers scoring higher will have a better chance of being selected (see [blocks_fetcher_peers.go](https://github.com/prysmaticlabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_fetcher_peers.go#L94) for full code):
+We have quite sophisticated scoring mechanisms already in place, and we’re [continuingly](https://github.com/OffchainLabs/prysm/issues/6622) building on them. Currently, the peer scorer service is able to track peer’s performance (on how many requests, how many useful blocks -- that’s blocks advancing the head -- have been returned). Peers scoring higher will have a better chance of being selected (see [blocks_fetcher_peers.go](https://github.com/OffchainLabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_fetcher_peers.go#L94) for full code):
 ```go
 // filterPeers returns a transformed list of peers, weight sorted by scores 
 // and capacity remaining.
@@ -298,7 +298,7 @@ Not only do we filter by score, we also take into account the remaining capacity
 ## Testing
 
 **Unit tests and mocks, how to write tests for the feature:**
-Since initial synchronization interacts heavily with the P2P layer, we rely on mocks to simulate network mesh. The easiest way to start the test is to use [initializeTestServices()](https://github.com/prysmaticlabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/initial_sync_test.go#L74):
+Since initial synchronization interacts heavily with the P2P layer, we rely on mocks to simulate network mesh. The easiest way to start the test is to use [initializeTestServices()](https://github.com/OffchainLabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/initial_sync_test.go#L74):
 
 ```go
 // Get chain, network, and database objects. 
@@ -307,7 +307,7 @@ Since initial synchronization interacts heavily with the P2P layer, we rely on m
 mc, p2p, db := initializeTestServices(t, []uint64{}, []*peerData{})
 ```
 
-See, [TestBlocksQueue_Loop()](https://github.com/prysmaticlabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_queue_test.go#L134) as an example of testing block syncing as a whole.
+See, [TestBlocksQueue_Loop()](https://github.com/OffchainLabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_queue_test.go#L134) as an example of testing block syncing as a whole.
 
 If you need more control on node’s known state, or on peer’s known state, we also have the following helper methods for that:
 
@@ -386,8 +386,8 @@ queue := newBlocksQueue(ctx, &blocksQueueConfig{
 ```
 
 For even better illustration on customized setups, please, see the following tests:
-- [TestBlocksQueue_stuckWhenHeadIsSetToOrphanedBlock()](https://github.com/prysmaticlabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_queue_test.go#L134)
-- [TestBlocksQueue_stuckInUnfavourableFork()](https://github.com/prysmaticlabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_queue_test.go#L1026)
+- [TestBlocksQueue_stuckWhenHeadIsSetToOrphanedBlock()](https://github.com/OffchainLabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_queue_test.go#L134)
+- [TestBlocksQueue_stuckInUnfavourableFork()](https://github.com/OffchainLabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_queue_test.go#L1026)
 
 
 **Runtime testing and usage**
@@ -409,7 +409,7 @@ The `--test_filter` can be empty (all tests will then be run), or specify a patt
 
 
 
-To run tests using vanilla Go, just use `go test` (to understand the reasons for passing the `develop` tag see our [DEPENDENCIES](https://github.com/prysmaticlabs/prysm/blob/develop/DEPENDENCIES.md#running-tests)):
+To run tests using vanilla Go, just use `go test` (to understand the reasons for passing the `develop` tag see our [DEPENDENCIES](https://github.com/OffchainLabs/prysm/blob/develop/DEPENDENCIES.md#running-tests)):
 
 ```
 go test ./beacon-chain/sync/initial-sync -v -failfast -tags develop -run TestBlocksQueue

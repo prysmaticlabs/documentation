@@ -28,7 +28,7 @@ export const HeaderBadgesWidget = ({ commaDelimitedContributors }) => {
 			{() =>
 				<div className="header-badges">
 					{(commaDelimitedContributors != null ? commaDelimitedContributors.split(',').map((contributor, index) => buildAuthorBadge(contributor, index)) : null)}
-					<a className="header-badge" href={`https://github.com/prysmaticlabs/documentation/issues/new?title=Docs update request: ${new URL(window.location.href).pathname}&body=Source: ${window.location.href}%0A%0ARequest: (how can we help?)`}>
+					<a className="header-badge" href={`https://github.com/OffchainLabs/documentation/issues/new?title=Docs update request: ${new URL(window.location.href).pathname}&body=Source: ${window.location.href}%0A%0ARequest: (how can we help?)`}>
 						<span className="badge-avatar emoji-avatar">✏️</span>
 						<span className="badge-label">Request an update</span>
 					</a>

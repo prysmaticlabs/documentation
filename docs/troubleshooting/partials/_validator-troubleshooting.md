@@ -14,7 +14,7 @@
     </tr>
     <tr>
       <td>Can't import accounts, stuck in a loop. You see <code>Could not import accounts: could not write accounts: file already exists without proper 0600 permissions</code></td>
-      <td>This usually happens when the account you're using doesn't have permission to read and write to the target directory. See <a href='https://github.com/prysmaticlabs/prysm/issues/11130#issuecomment-1199984124'>this GitHub issue</a> for a workaround.</td>
+      <td>This usually happens when the account you're using doesn't have permission to read and write to the target directory. See <a href='https://github.com/OffchainLabs/prysm/issues/11130#issuecomment-1199984124'>this GitHub issue</a> for a workaround.</td>
     </tr>
     <tr>
       <td><code>level=warning msg="Failed to update proposer settings" error="could not submit signed registrations to beacon node: rpc error: code = InvalidArgument desc = Could not register block builder: could not register validator(s): unsupported error code: 502: did not receive 200 response from API: Builder API validator registration unsuccessful" prefix=validator slot=5069888</code></td>
