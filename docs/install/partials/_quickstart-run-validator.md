@@ -107,7 +107,7 @@ Run the following command to create your mnemonic (a unique and <strong>highly s
 ]}>
   <TabItem value="mainnet">
     <p>Next, go to the <a href='https://launchpad.ethereum.org/en/upload-deposit-data'>Mainnet Launchpad’s deposit data upload page</a> and upload your <code>deposit_data-*.json</code> file. You’ll be prompted to connect your wallet.</p>
-    <p>You can then deposit 32 ETH into the Mainnet deposit contract via the Launchpad page. Exercise extreme caution throughout this procedure.</p>
+    <p>You can then deposit 32 `ETH` into the Mainnet deposit contract via the Launchpad page. Exercise extreme caution throughout this procedure.</p>
   </TabItem>
   <TabItem value="sepolia">
     <p>Sepolia has a permissioned validators set. You cannot create a new validator on this network. If you are interested in running a validator on a testnet, please choose an other testnet, like Holesky.</p>

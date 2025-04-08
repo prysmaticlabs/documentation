@@ -167,7 +167,7 @@ Navigate to the [Mainnet Launchpad](https://launchpad.ethereum.org/summary) and 
 
 :::danger Exercise extreme caution
 
-The correct address for the launchpad is https://launchpad.ethereum.org and the only, official validator deposit contract is [0x00000000219ab540356cbb839cbe05303d7705fa](https://etherscan.io/address/0x00000000219ab540356cbb839cbe05303d7705fa). Don't send ETH directly to the contract - use the Ethereum.org launchpad instead.
+The correct address for the launchpad is https://launchpad.ethereum.org and the only, official validator deposit contract is [0x00000000219ab540356cbb839cbe05303d7705fa](https://etherscan.io/address/0x00000000219ab540356cbb839cbe05303d7705fa). Don't send `ETH` directly to the contract - use the Ethereum.org launchpad instead.
 
 :::
 

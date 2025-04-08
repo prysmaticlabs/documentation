@@ -111,7 +111,7 @@ This page serves material necessary to catch up with the current state of Ethere
 
 ### Serenity-related conference talks
 
-* [Sharding Presentation by Vitalik from IC3-ETH Bootcamp](https://vod.video.cornell.edu/media/Sharding+-+Vitalik+Buterin/1_1xezsfb4/97851101)
+* [Sharding Presentation by Vitalik from IC3-Ethereum Bootcamp](https://vod.video.cornell.edu/media/Sharding+-+Vitalik+Buterin/1_1xezsfb4/97851101)
 * [Latest Research and Sharding by Justin Drake from Tech Crunch](https://www.youtube.com/watch?v=J6xO7DH20Js)
 * [Beacon Casper Chain by Vitalik and Justin Drake](https://www.youtube.com/watch?v=GAywmwGToUI)
 * [Proofs of Custody by Vitalik and Justin Drake](https://www.youtube.com/watch?v=jRcS9D_gw_o)
@@ -119,7 +119,7 @@ This page serves material necessary to catch up with the current state of Ethere
 * [Ethereum Sharding from EDCon by Justin Drake](https://www.youtube.com/watch?v=J4rylD6w2S4)
 * [Casper CBC and Sharding by Vlad Zamfir](https://www.youtube.com/watch?v=qDa4xjQq1RE&t=1951s)
 * [Casper FFG in Depth by Carl](https://www.youtube.com/watch?v=uQ3IqLDf-oo)
-* [Ethereum & Scalability Technology from Asia Pacific ETH meet up by Hsiao Wei](https://www.youtube.com/watch?v=GhuWWShfqBI)
+* [Ethereum & Scalability Technology from Asia Pacific Ethereum meet up by Hsiao Wei](https://www.youtube.com/watch?v=GhuWWShfqBI)
 
 ### Ethereum Virtual Machine
 

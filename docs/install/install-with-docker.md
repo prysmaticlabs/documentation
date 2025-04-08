@@ -248,7 +248,7 @@ If your node is done synchronizing, you will see the response:
 
 :::danger Exercise caution
 
-The Ethereum launchpad URL is `https://launchpad.ethereum.org` and the only, official validator deposit contract is [0x00000000219ab540356cbb839cbe05303d7705fa](https://etherscan.io/address/0x00000000219ab540356cbb839cbe05303d7705fa). Don't send ETH directly to the contract - deposit your stake through Ethereum.org launchpad.
+The Ethereum launchpad URL is `https://launchpad.ethereum.org` and the only, official validator deposit contract is [0x00000000219ab540356cbb839cbe05303d7705fa](https://etherscan.io/address/0x00000000219ab540356cbb839cbe05303d7705fa). Don't send `ETH` directly to the contract - deposit your stake through Ethereum.org launchpad.
 
 :::
 

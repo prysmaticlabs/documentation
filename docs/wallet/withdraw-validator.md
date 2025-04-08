@@ -14,7 +14,7 @@ import TabItem from '@theme/TabItem';
 
 The **Capella/Shanghai Ethereum** upgrade lets you withdraw your validator nodes' staked Ethereum in one of two ways: 
 
- 1. **Partial (earnings) withdrawal**: This option lets you withdraw your earnings (that is, all value staked above 32 ETH) and continue validating.
+ 1. **Partial (earnings) withdrawal**: This option lets you withdraw your earnings (that is, all value staked above 32 `ETH`) and continue validating.
  2. **Full withdrawal**: This option lets you liquidate your entire stake and earnings, effectively liquidating your validator node(s) and exiting the network.
 
 
@@ -43,12 +43,12 @@ We'll install other dependencies as we go. <!-- we provide prysmctl instructions
 
 ## Option 1: Partial (earnings) withdrawals
 
-This section walks you through the process of performing a **partial validator withdrawal**, allowing you to withdraw staked balances above 32 ETH for each of your active Ethereum validators.
+This section walks you through the process of performing a **partial validator withdrawal**, allowing you to withdraw staked balances above 32 `ETH` for each of your active Ethereum validators.
 
 
 ### Step 1: Download `staking-deposit-cli`
 
-We need to send a message to the network that says "I authorize a partial withdrawal of my validator's staked ETH to an address that I own". This message is called a **BLS to Execution Change**. We create this message by signing the withdrawal request with your validator's private key using a utility called `staking-deposit-cli`.
+We need to send a message to the network that says "I authorize a partial withdrawal of my validator's staked `ETH` to an address that I own". This message is called a **BLS to Execution Change**. We create this message by signing the withdrawal request with your validator's private key using a utility called `staking-deposit-cli`.
 
 Download the latest Ethereum [staking-deposit-cli](https://github.com/ethereum/staking-deposit-cli/releases) (example uses `v2.7.0`) using one of the following commands:
 
@@ -317,7 +317,7 @@ and you should see a response that contains withdrawal credentials that should h
 
 ### Done: Receiving partial withdrawals after `withdrawal_credentials` are updated is automatic, but will take time.
 
-Once your `withdrawal_credentials` field on the validator is updated to the `0x01` prefix all withdrawal actions are complete. Withdrawals of earnings over 32 ETH will be automatically sent to the chosen ethereum address when a block proposer includes your validator in its block. **Note that a maximum to 16 validators can have their balances withdrawn per block so delay times may vary before seeing the values appear in the ethereum address.**
+Once your `withdrawal_credentials` field on the validator is updated to the `0x01` prefix all withdrawal actions are complete. Withdrawals of earnings over 32 `ETH` will be automatically sent to the chosen Ethereum address when a block proposer includes your validator in its block. **Note that a maximum to 16 validators can have their balances withdrawn per block so delay times may vary before seeing the values appear in the Ethereum address.**
 
 </TabItem>
 <TabItem value="full">
@@ -337,7 +337,7 @@ Instructions for setting your withdrawal address do not need to be repeated if w
 
 ### Done: Receiving full withdrawals after `withdrawal_credentials` are updated and validator is fully exited is automatic, but will take time.
 
-Once the validator is both exited as well as having its `withdrawal_credentials` changed to the `0x01` prefix, the validator will automatically have its full balance withdrawn into the chosen ethereum address when a block proposer includes your validator in its block. **Note that a maximum to 16 validators can have their balances withdrawn per block so delay times may vary before seeing the values appear in the ethereum address.**
+Once the validator is both exited as well as having its `withdrawal_credentials` changed to the `0x01` prefix, the validator will automatically have its full balance withdrawn into the chosen Ethereum address when a block proposer includes your validator in its block. **Note that a maximum to 16 validators can have their balances withdrawn per block so delay times may vary before seeing the values appear in the Ethereum address.**
 
 :::caution
 Slashed or involuntarily exited validators will still need to go through the process of updating `withdrawal_credentials` to fully withdraw its remaining balance.
@@ -357,7 +357,7 @@ A: If the withdrawal credentials already begin with `0x01` it will not be able t
 
 **Q: What is the difference between partial and full withdrawals?**
 
-A: Partial withdrawals only require an updated `withdrawal_credentials` field and will only send earnings over 32 ETH to the chosen withdrawal address. Full withdrawals require the validator to be fully exited in addition to 
+A: Partial withdrawals only require an updated `withdrawal_credentials` field and will only send earnings over 32 `ETH` to the chosen withdrawal address. Full withdrawals require the validator to be fully exited in addition to 
 
 **Q: I submitted my `blstoexecutionchange` why isn't my `withdrawal_credentials` updated?**
 
@@ -419,8 +419,8 @@ A: The guide will still provide a safe way to generate the signed `blstoexecutio
 - **Staker:** The person or entity managing Ethereum validators.
 - **Voluntary exit:** Validators that are currently active on Ethereum can choose to **exit** the network, marking them as exited and exempting them from any staking responsibilities. In order to **withdraw** a validator’s balance completely, a voluntary exit must be submitted to Ethereum and must complete first.
 - **Full validator withdrawal:** The process of withdrawing your entire stake on Ethereum, exiting your validator, and withdrawing your entire balance to an Ethereum address of your choosing. Full validator withdrawals need a validator to exit first, which can take time depending on how large the exit queue is. Performing a full withdrawal requires submitting a voluntary exit first.
-- **Partial validator withdrawal:** The process of withdrawing your validator’s **earnings** only. That is, if you're staking 33.3 ETH, you can withdraw 1.3 ETH using a partial withdrawal. Your validator does **not** need to exit, and you will continue to validate normally. Partial withdrawals do not go through an exit queue, but will only be processed at a maximum of 16 validators at a time per block.
-- **Validator mnemonic, HD wallet mnemonic, or validator seed phrase:** A mnemonic in this context is the 24 word secret that you received upon creating your validator(s), which is the ultimate credential that gives you access to withdrawing your validator(s). For many, this was generated when they first interacted with the ethereum staking CLI to prepare their validator deposits. We will refer to this as your validator mnemonic throughout this document
+- **Partial validator withdrawal:** The process of withdrawing your validator’s **earnings** only. That is, if you're staking 33.3 `ETH`, you can withdraw 1.3 `ETH` using a partial withdrawal. Your validator does **not** need to exit, and you will continue to validate normally. Partial withdrawals do not go through an exit queue, but will only be processed at a maximum of 16 validators at a time per block.
+- **Validator mnemonic, HD wallet mnemonic, or validator seed phrase:** A mnemonic in this context is the 24 word secret that you received upon creating your validator(s), which is the ultimate credential that gives you access to withdrawing your validator(s). For many, this was generated when they first interacted with the Ethereum staking CLI to prepare their validator deposits. We will refer to this as your validator mnemonic throughout this document
 - **Validator withdrawal credentials:** Each validator has data known as “withdrawal credentials” which can be fetched from your beacon node or from a block explorer such as [https://beaconcha.in](https://beaconcha.in) or [https://beaconscan.com](https://beaconscan.com) by looking at the “deposits” tab and seeing your credentials there. You will need these for this guide.
 - **Ethereum execution address:** Referred to also as an Ethereum address, this is a standard address to an Ethereum account which you can view in block explorers such as Etherscan. Your validator’s balance, upon a full withdrawal, will be available at an Ethereum address of your choosing.
 - **BLS key:** Your validators use a key format known as [BLS](/how-prysm-works/bls-signature-aggregation-and-cryptography.md), which is used exclusively for staking. Validators have 4 kinds of BLS keys: validator public key, validator private key, withdrawal public key, and withdrawal private key. only the validator public key can be viewed on staking explorers such as [https://beaconcha.in](https://beaconcha.in), and private keys, which are secret, are used for signing. Not to be confused with an Ethereum address. The validator mnemonic can be used to access all 4 keys which are important for setting the Ethereum address for withdrawing.

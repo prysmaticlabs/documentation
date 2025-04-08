@@ -1,6 +1,6 @@
 ---
 id: install-with-script
-title: "Quickstart: Run a node and (optionally) stake ETH using Prysm"
+title: "Quickstart: Run a node and (optionally) stake `ETH` using Prysm"
 sidebar_label: "Quickstart: Run a node"
 ---
 
@@ -82,8 +82,8 @@ We recommend **closing** TCP port `8545` to the internet and keeping TCP and UDP
 **Can you mix and match networks between execution layer and consensus layer?** <br />
 No. See [Nodes and networks](/concepts/nodes-networks.md) for more information.
 
-**Can I stake with less than 32 ETH?** <br />
-Yes! <a href='https://ethereum.org/en/staking/pools/'>Pooled staking</a> lets you stake with less than 32 ETH. 
+**Can I stake with less than 32 `ETH`?** <br />
+Yes! <a href='https://ethereum.org/en/staking/pools/'>Pooled staking</a> lets you stake with less than 32 `ETH`. 
 
 
 **What should I do if I can't run a node using my own hardware?** <br />
@@ -122,7 +122,7 @@ This is usually an indication that your validator isn't able to communicate with
 **How long does it take for my validator to be selected to propose a new block?** <br />
 At the time of this writing, a ballpark estimate is **around every four months** on mainnet. Every 12 seconds a new block is proposed, and your validator has a one in [total number of active validators] chance of being chosen, so this duration can vary significantly from one validator to the next.
 
-**If your getting the error: " Error during ethereum runner start System.TypeInitializationException: The type initializer for 'Nethermi56k1' threw an exception.---> System.DllNotFoundException: Dll was not found. "**
+**If your getting the error: " Error during Ethereum runner start System.TypeInitializationException: The type initializer for 'Nethermi56k1' threw an exception.---> System.DllNotFoundException: Dll was not found. "**
 on windows 10, this should fix the error: "winget install Microsoft.VCRedist.2015+.x64"
 
 <!-- **Can I run a full node and validator client on a Raspberry Pi?** <br />

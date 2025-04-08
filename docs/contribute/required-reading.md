@@ -144,7 +144,7 @@ After reading the sharding material for part-time contributors, it is important 
 * [Ethereum Sharding from EDCon by Justin Drake](https://www.youtube.com/watch?v=J4rylD6w2S4)
 * [Casper CBC and Sharding by Vlad Zamfir](https://www.youtube.com/watch?v=qDa4xjQq1RE&t=1951s)
 * [Casper FFG in Depth by Carl](https://www.youtube.com/watch?v=uQ3IqLDf-oo)
-* [Ethereum & Scalability Technology from Asia Pacific ETH meet up by Hsiao Wei](https://www.youtube.com/watch?v=GhuWWShfqBI)
+* [Ethereum & Scalability Technology from Asia Pacific Ethereum meet up by Hsiao Wei](https://www.youtube.com/watch?v=GhuWWShfqBI)
 
 ## Getting to know Golang
 
