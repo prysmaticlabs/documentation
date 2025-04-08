@@ -78,7 +78,7 @@ module.exports = {
                     showLastUpdateAuthor: false,
                     breadcrumbs: false,
                     sidebarPath: require.resolve('./sidebars.json'),
-                    editUrl: 'https://github.com/OffchainLabs/documentation/edit/master/',
+                    editUrl: 'https://github.com/OffchainLabs/prysm-documentation/edit/master/',
                 },
                 blog: false,
                 theme: {
