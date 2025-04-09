@@ -53,7 +53,7 @@ if block.Slot() > justificationUpperLimit {
 }
 ```
 
-#### Bad \(uses magic numbers with no explanation or context\):
+#### Bad (uses magic numbers with no explanation or context):
 
 ```go
 if block.Slot() > 12032*(23 + 45 % 15) {
@@ -63,7 +63,7 @@ if block.Slot() > 12032*(23 + 45 % 15) {
 
 ## Error handling
 
-Always handle fatal situations gracefully through informative error messaging or logging. Error handling is critical in code paths where critical state mutations occur which affect data persisted to disk. In particular, not handling an error gracefully a few lines above where data is written to disk can cause the system to remain in an inconsistent state \(one of the most critical types of failures\).
+Always handle fatal situations gracefully through informative error messaging or logging. Error handling is critical in code paths where critical state mutations occur which affect data persisted to disk. In particular, not handling an error gracefully a few lines above where data is written to disk can cause the system to remain in an inconsistent state (one of the most critical types of failures).
 
 For example:
 

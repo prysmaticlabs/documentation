@@ -19,7 +19,7 @@ When a Prysm client is initialised out of the box, it starts a variety of servic
 * A [**beacon node**](/how-prysm-works/beacon-node) which powers the beacon chain at the core of Ethereum consensus.
 * A [**validator client**](/how-prysm-works/prysm-validator-client) connects to the beacon node and manages staking keypairs.
 * A [**public RPC server**](/how-prysm-works/prysm-public-api) to request data about network state, blocks, validators etc.
-* A [**persistent key-value store**](/how-prysm-works/database-backend-boltdb) in the form of a database \([BoltDB](/how-prysm-works/database-backend-boltdb)\).
+* A [**persistent key-value store**](/how-prysm-works/database-backend-boltdb) in the form of a database ([BoltDB](/how-prysm-works/database-backend-boltdb)).
 * A [**P2P networking framework and server**](/how-prysm-works/p2p-networking) to connect with other beacon nodes.
 * **Monitoring and metrics gathering technologies** [**Grafana**](https://grafana.com/) and [**Prometheus**](https://prometheus.io) track everything that's happening across beacon nodes in the network.
 
@@ -32,5 +32,3 @@ Shards themselves are similar to the current Ethereum execution chain, which sto
 The beacon chain runs through a distributed network of nodes known as [beacon nodes](/how-prysm-works/beacon-node). Participants who want to run a beacon node and help secure the network can stake 32 `ETH` to have their [validator client](/how-prysm-works/prysm-validator-client) join the overall pool of validators, whom have the responsibility of [proposing](/terminology#propose) and [attesting](/terminology#attest) to new blocks on the beacon chain. This deposit does not come out of nowhere however; validators transfer Ether from the [ETH1](/terminology#eth1) chain to the system through the use of a [validator deposit contract](/how-prysm-works/validator-deposit-contract).
 
 Each of these components and their roles in the Prysm client are explained within the following sections of this documentation. If you have any questions, please stop by our [Discord](https://discord.gg/prysmaticlabs).
-
-

@@ -18,19 +18,26 @@ As of the time of writing, there are three definitions: [v1](https://ethereum.gi
 ## Performing requests against a local Prysm node
 
 :::danger Do not publicly expose the API
+
 The API's purpose is a means of communication between your beacon node and your validator client. Because of this it is not protected against external malicious users. Some endpoints are vulnerable to Denial-of-Service attacks, while others may disclose information about your beacon node. The communication between the beacon node and the validator client should be done privately, either on the same machine or through an SSH connection.
+
 :::
 
+
 :::caution
+
 `http-host` and `http-port` have replaced `--grpc-gateway-host` and `--grpc-gateway-port` respectively.
+
 :::
 
 The API is exposed by default on `127.0.0.1:3500`. The host can be changed by manipulating the `--http-host` flag and the port can be modified with the `--http-port` flag. 
 
 Performing a request is straightforward - simply concatenate the host with the port and the API's URL, providing any required URL and query parameters. As an example, the finalized state's root can be obtained using:
+
 ```
 http://127.0.0.1:3500/eth/v1/beacon/states/finalized/root
 ```
+
 Notice that in this example the `{state_id}` URL parameter has been replaced with the literal value `finalized`. Please read the specification carefully to understand how each endpoint behaves.
 
 ## Disabling the API

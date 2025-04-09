@@ -29,12 +29,12 @@ There are risks to using a builder which may result in missed rewards, missed pr
               href="https://ethereum.github.io/beacon-APIs/?urls.primaryName=dev#/Validator/registerValidator"
               target="_blank"
               rel="noreferrer noopener">
-              beacon api endpoint
+              beacon API endpoint
             </a> which calls a <a
               href="https://ethereum.github.io/builder-specs/#/Builder/registerValidator"
               target="_blank"
               rel="noreferrer noopener">
-              builder api endpoint
+              builder API endpoint
             </a> on the builder for the registration. Some relays will allow you to query which validators are registered currently.
       </li>
       <li> 
@@ -101,7 +101,7 @@ To use a builder the beacon node needs to start with the following configuration
 
 - `--http-mev-relay` flag pointed to any [Builder API](https://ethereum.github.io/builder-specs/) compatible endpoint. The most common use case is to target a [MEV-Boost](https://boost.flashbots.net/) instance. A less common use case is to directly target a relay (5. Builder: connected via relay URL).
 
-Each relay's URL will correspond to a specific network and will need to be chosen accordingly, i.e. running a beacon node on mainnet will require the mainnet relay.
+Each relay's URL will correspond to a specific network and will need to be chosen accordingly, i.e., running a beacon node on mainnet will require the mainnet relay.
 
 
 ## 3. Is builder configured?
@@ -111,7 +111,7 @@ When a validator is proposing a block, the following is checked before attemptin
 - circuit breaker is not triggered 
 - validator is registered (beacon API was successfully called and validator registration info is stored in the beacon node's db)
 
-If all checks are satisfied, then 5. Builder: connected via relay URL will be used to get the execution payload (which contains the transactions) and build a blinded block. However, if the checks do not pass, then the beacon node will fall back to 4. Local Execution Client.
+If all checks are satisfied, then we go to [Step 5](#5-builder-connected-via-relay-url) which will be used to get the execution payload (which contains the transactions) and build a blinded block. However, if the checks do not pass, then the beacon node will proceed to [Step 4](#4-local-execution-client-kept-in-sync-and-up-to-date).
 
 ## 4. Local execution client: kept in sync and up to date
 
@@ -198,7 +198,7 @@ The beacon node must also be configured to enable the builder via the `--http-me
 
 The circuit breaker is a safety feature for falling back to local execution when using a builder.
 This occurs when the builder or client using the builder endpoints encounters issues that cause missed blocks. 
-By default, the circuit breaker will be triggered after 3 slots are consecutively missed or 5 slots are missed in an epoch, but this can be configured through the `--max-builder-consecutive-missed-slots` and `max-builder-epoch-missed-slots` flags.
+By default, the circuit breaker will be triggered after three slots are consecutively missed or five slots are missed in an epoch, but this can be configured through the `--max-builder-consecutive-missed-slots` and `max-builder-epoch-missed-slots` flags.
 
 ### Registration cache
 
@@ -206,7 +206,13 @@ Validator registrations for Builder APIs are stored in a cache by default as of 
   - in-memory storage of the validator registrations, this clears all validator registrations on restart.
 This feature solves the unintended issue of wanting some validators unregistered while maintaining MEV-Boost on others. In the future the db used to store registrations will be removed completely and the flag will no longer be required for this feature. Validator settings will be persisted on the validator client side.
 
-`--disable-registration-cache` flag can be used on the beacon node to fall back onto the using the bolt db. **note:** values stored in the bolt db will not be cleared and you will not be able to unregister validators unless using the cache and restarting.
+`--disable-registration-cache` flag can be used on the beacon node to fall back onto the using the bolt db. 
+
+:::note
+
+Values stored in the bolt db will not be cleared and you will not be able to unregister validators unless using the cache and restarting.
+
+:::
 
 ### Parallel execution
 
@@ -225,26 +231,20 @@ The provided guide offered explanations on configuring the Prysm client to utili
 In the Prysm client, the builder is used through the relay to get transactions that maximize the validator's benefits, prioritizing them over local ones. However, the execution client will still be necessary as a fallback option in case any issues arise while utilizing the builder. The builder will only come into play when there is a validator proposal.
 :::
 
-**Q:** What are the risks of running Prysm with a custom builder instead of using local execution?
+#### What are the risks of running Prysm with a custom builder instead of using local execution?
+The custom builder, whether connected through MEV-Boost or as a relay URL, will need to be updated consistently with Prysm, adding another layer of complexity. Depending on the relay used some rewards may be missed due to the relay's connectivity or any builder bugs. Transactions may be censored under certain conditions.
 
-**A:** The custom builder, whether connected through MEV-Boost or as a relay URL, will need to be updated consistently with Prysm, adding another layer of complexity. Depending on the relay used some rewards may be missed due to the relay's connectivity or any builder bugs. Transactions may be censored under certain conditions.
+#### Do I need to run my execution client while using a custom builder?
+Yes, the execution client will perform standard tasks and also be the fallback mechanism if the builder is not working correctly. 
 
-**Q:** Do I need to run my execution client while using a custom builder?
+#### How do I recover if the circuit breaker is triggered?
+Once the circuit breaker is triggered, local execution will continue to be used until both conditions: max consecutive slots missed and slots missed in epoch are no longer true. The beacon node does not need to be restarted.
 
-**A:** Yes, the execution client will perform standard tasks and also be the fallback mechanism if the builder is not working correctly. 
+#### What happens if the execution client goes down while connected to the builder?
+The earnings from the local execution payload will be compared to the bid from the builder payload and will error if local execution is offline or unavailable. 
 
-**Q:** How do I recover if the circuit breaker is triggered?
+#### My setup is no longer using the builder. What happened?
+There are multiple reasons why this could happen, including an incorrect relay URL, a relay that is offline or outdated compared to your Ethereum node setup, or a possible bug. Additionally, it's possible that the circuit breaker has been activated.
 
-**A:** Once the circuit breaker is triggered, local execution will continue to be used until both conditions: max consecutive slots missed and slots missed in epoch are no longer true. The beacon node does not need to be restarted.
-
-**Q:** What happens if the execution client goes down while connected to the builder?
-
-**A:** The earnings from the local execution payload will be compared to the bid from the builder payload and will error if local execution is offline or unavailable. 
-
-**Q:** My setup is no longer using the builder. What happened?
-
-**A:** There are multiple reasons why this could happen, including an incorrect relay URL, a relay that is offline or outdated compared to your Ethereum node setup, or a possible bug. Additionally, it's possible that the circuit breaker has been activated.
-
-**Q:** What if the earnings from the builder are lower than from local execution?
-
-**A:** The block from local execution will be used. This could also be triggered through `--local-block-value-boost` if the earnings from the builder don't pass some percentage threshold.
+#### What if the earnings from the builder are lower than from local execution?
+The block from local execution will be used. This could also be triggered through `--local-block-value-boost` if the earnings from the builder don't pass some percentage threshold.

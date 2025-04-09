@@ -10,7 +10,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 Although [beacon nodes](/how-prysm-works/beacon-node) handle network synchronisation, drawing consensus and performing several other low-level functions, the role of [validators](/terminology#validator) whom stake `ETH` to in order to perform block [proposals](/terminology#propose) and [attestations](/terminology#attest) are an equally critical component of the Ethereum beacon chain.
 
-As mentioned, validators have two responsibilities: to [propose](/terminology#propose) \(or produce\) blocks known as beacon blocks, which contain consensus information about shards across the network, or to [attest](/terminology#attest) \(or vote on\) the validity of blocks that have already been produced.
+As mentioned, validators have two responsibilities: to [propose](/terminology#propose) (or produce) blocks known as beacon blocks, which contain consensus information about shards across the network, or to [attest](/terminology#attest) (or vote on) the validity of blocks that have already been produced.
 
 ![Validator](/images/prysm-validator.png)
 
@@ -28,8 +28,8 @@ In order of operations, the client:
 
 1. Waits for the event log signaling a start to have occurred in the [validator deposit contract](/how-prysm-works/validator-deposit-contract).
 2. Checks if public key corresponding to the validator instance has been activated on the beacon chain.
-3. A validator is assigned to a shard either as a[ proposer](/terminology#proposal-propose) \(creator\) or [attester](/terminology#attestation-attest) \(voter\).
-4. The validator then has a ticker that works every slot \(6 seconds\). If the slot ticks at the validator's assigned slot, a beacon block is either [proposed](/terminology#propose) or [attested](/terminology#attest), depending on assigned role.
+3. A validator is assigned to a shard either as a[ proposer](/terminology#proposal-propose) \(creator\) or [attester](/terminology#attestation-attest) (voter).
+4. The validator then has a ticker that works every slot (6 seconds). If the slot ticks at the validator's assigned slot, a beacon block is either [proposed](/terminology#propose) or [attested](/terminology#attest), depending on assigned role.
 5. This repeats forever until the validator decides to exit the system voluntarily, or is penalized by the system for either acting maliciously or being idle when assigned tasks to perform.
 
 As mentioned, every validator instance represents 32 `ETH` being staked in the network. In Prysm, this is currently the default; however, the Prysm validator also supports running multiple keypairs that correspond to multiple validators in a single runtime, simplifying the process of deploying several validator instances for those whom want to stake more funds to help secure the network.  To run multiple keypairs, they must be encrypted with the same password and kept in the same directory.
@@ -58,4 +58,3 @@ A [block proposal](/terminology#propose) must include several items to meet the 
 3. An attestation bitfield is constructed using the validator index.
 4. The attestation key is then signed with a [validator](/terminology#validator)'s private key.
 5. Halfway through the slot duration, the attestation is sent to the beacon node via [gRPC](/how-prysm-works/prysm-public-api).
-
