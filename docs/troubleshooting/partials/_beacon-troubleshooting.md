@@ -11,7 +11,7 @@
           <li>Your beacon node might be suffering from connectivity problems. Visit <a href='/prysm-usage/p2p-host-ip'>Improve P2P connectivity</a> for connectivity troubleshooting guidance. Ensure that your firewall isn't restricting any <strong>outbound</strong> ports for Prysm.</li>
           <li>You may be using an incorrect genesis state or network flag. Every test network requires its own genesis state and network flag. Visit our <a href='/install/install-with-script'>Quickstart</a> for the latest test network parameters.</li>
           <li> 
-          <strong>Warning:</strong> If you are using <strong>Windows</strong> and you are losing peers it could be an issue with Time Sync program (net time), one user's solution was using the google time servers and changing it to 10 min sync interval. <a href='https://github.com/prysmaticlabs/prysm/issues/13431#issuecomment-1891167396'>issue 13431 </a> and a similar issue here <a href='https://github.com/prysmaticlabs/prysm/issues/8144'> issue 8144 </a>
+          <strong>Warning:</strong> If you are using <strong>Windows</strong> and you are losing peers it could be an issue with Time Sync program (net time), one user's solution was using the google time servers and changing it to 10 min sync interval. <a href='https://github.com/OffchainLabs/prysm/issues/13431#issuecomment-1891167396'>issue 13431 </a> and a similar issue here <a href='https://github.com/OffchainLabs/prysm/issues/8144'> issue 8144 </a>
           </li>
       </ul>
       </td>
@@ -34,7 +34,7 @@
     </tr>
     <tr>
       <td><code>could not process block: could not process block header: parent root 0x... does not match the latest block header signing root in state</code></td>
-      <td>This error is being actively investigated. See <a href='https://github.com/prysmaticlabs/prysm/issues/11279'>this open issue</a> for more information.</td>
+      <td>This error is being actively investigated. See <a href='https://github.com/OffchainLabs/prysm/issues/11279'>this open issue</a> for more information.</td>
     </tr>
     <tr>
       <td><code>Could not check configuration values between execution and consensus client" error="method not found" prefix=powchain</code></td>

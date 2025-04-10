@@ -116,7 +116,7 @@ Run the following command to create your mnemonic (a unique and <strong>highly s
     <p>If you need HolETH, head over to one of the following Discord servers:</p>
     <ul>
       <li><a href='https://discord.gg/ethstaker'>r/EthStaker Discord</a></li>
-      <li><a href='https://discord.gg/prysmaticlabs'>Prysm Discord server</a></li>
+      <li><a href='https://discord.gg/prysm'>Prysm Discord server</a></li>
     </ul>
     <p>Someone should be able to give you the HolETH you need.</p>
     <p>Next, go to the <a href='https://holesky.launchpad.ethereum.org/en/upload-deposit-data'>Holesky Launchpad’s deposit data upload page</a> and upload your <code>deposit_data-*.json</code> file. You’ll be prompted to connect your wallet.</p>

@@ -69,7 +69,7 @@ import TabItem from '@theme/TabItem';
 **Using Docker**
 
 ```sh
-docker run -it -v /path/to/outputdir:/output -v /path/to/wallet:/wallet gcr.io/prysmaticlabs/prysm/validator:stable -- slashing-protection-history export --datadir=/path/to/validatorDb --slashing-protection-export-dir=/output
+docker run -it -v /path/to/outputdir:/output -v /path/to/wallet:/wallet gcr.io/offchainlabs/prysm/validator:stable -- slashing-protection-history export --datadir=/path/to/validatorDb --slashing-protection-export-dir=/output
 ```
 
 **Using Bazel**
@@ -93,7 +93,7 @@ prysm.bat validator slashing-protection-history export --datadir=\path\to\valida
 **Using Docker**
 
 ```sh
-docker run -it -v \path\to\outputdir:/output -v \path\to\wallet:/wallet gcr.io/prysmaticlabs/prysm/validator:stable --slashing-protection-history export --datadir=/path/to/validatorDb --slashing-protection-export-dir=/output
+docker run -it -v \path\to\outputdir:/output -v \path\to\wallet:/wallet gcr.io/offchainlabs/prysm/validator:stable --slashing-protection-history export --datadir=/path/to/validatorDb --slashing-protection-export-dir=/output
 ```
 
 Note that `datadir` should point to the directory containing your `validator.db` file. For example: `/direct/validator.db`.
@@ -112,7 +112,7 @@ The first time you run the process you will be asked to accept or decline the te
 **Using Docker**
 
 ```sh
-docker run -it -v /path/to/outputdir:/output -v /path/to/wallet:/wallet gcr.io/prysmaticlabs/prysm/validator:stable -- slashing-protection-history export --datadir=/path/to/validatorDb --slashing-protection-export-dir=/output
+docker run -it -v /path/to/outputdir:/output -v /path/to/wallet:/wallet gcr.io/offchainlabs/prysm/validator:stable -- slashing-protection-history export --datadir=/path/to/validatorDb --slashing-protection-export-dir=/output
 ```
 
 **Using Bazel**
@@ -255,7 +255,7 @@ To import a slashing protection JSON file (all Ethereum consensus clients use th
 **Using Docker**
 
 ```sh
-docker run -it -v /path/to/desiredimportfile.json:/import/desiredimportfile.json -v /path/to/wallet:/wallet gcr.io/prysmaticlabs/prysm/validator:stable -- slashing-protection-history import --datadir=/path/to/validatorDb --slashing-protection-json-file=/import/desiredimportfile.json
+docker run -it -v /path/to/desiredimportfile.json:/import/desiredimportfile.json -v /path/to/wallet:/wallet gcr.io/offchainlabs/prysm/validator:stable -- slashing-protection-history import --datadir=/path/to/validatorDb --slashing-protection-json-file=/import/desiredimportfile.json
 ```
 
 **Using Bazel**
@@ -275,7 +275,7 @@ prysm.bat validator slashing-protection-history import --datadir=\path\to\valida
 **Using Docker**
 
 ```sh
-docker run -it -v \path\to\desiredimportfile.json:/import/desiredimportfile.json -v \path\to\wallet:/wallet gcr.io/prysmaticlabs/prysm/validator:stable -- slashing-protection-history import --datadir=/path/to/validatorDb --slashing-protection-json-file=/import/desiredimportfile.json
+docker run -it -v \path\to\desiredimportfile.json:/import/desiredimportfile.json -v \path\to\wallet:/wallet gcr.io/offchainlabs/prysm/validator:stable -- slashing-protection-history import --datadir=/path/to/validatorDb --slashing-protection-json-file=/import/desiredimportfile.json
 ```
 
 </TabItem>
@@ -290,7 +290,7 @@ docker run -it -v \path\to\desiredimportfile.json:/import/desiredimportfile.json
 **Using Docker**
 
 ```sh
-docker run -it -v /path/to/desiredimportfile.json:/import/desiredimportfile.json -v /path/to/wallet:/wallet gcr.io/prysmaticlabs/prysm/validator:stable -- slashing-protection-history import --datadir=/wallet --slashing-protection-json-file=/import/desiredimportfile.json
+docker run -it -v /path/to/desiredimportfile.json:/import/desiredimportfile.json -v /path/to/wallet:/wallet gcr.io/offchainlabs/prysm/validator:stable -- slashing-protection-history import --datadir=/wallet --slashing-protection-json-file=/import/desiredimportfile.json
 ```
 
 **Using Bazel**

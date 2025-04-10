@@ -75,7 +75,7 @@ This page serves material necessary to catch up with the current state of Ethere
 
 ### Client Implementations
 
-* [Prysm](https://github.com/prysmaticlabs/prysm) developed in Golang and maintained by [Prysmatic Labs](https://prysmaticlabs.com/)
+* [Prysm](https://github.com/OffchainLabs/prysm) developed in Golang and maintained by [Offchain Labs](https://offchainlabs.com/prysm)
 * [Lighthouse](https://github.com/sigp/lighthouse) developed in Rust and maintained by [Sigma Prime](https://sigmaprime.io/)
 * [Lodestar](https://github.com/ChainSafe/lodestar) developed in TypeScript and maintained by [ChainSafe Systems](https://chainsafe.io/)
 * [Nimbus](https://github.com/status-im/nimbus-eth2) developed in Nim and maintained by [status](https://status.im/)

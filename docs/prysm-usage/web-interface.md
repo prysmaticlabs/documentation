@@ -152,11 +152,11 @@ If your browser cache was cleared, you're running on a new browser, or validator
 
 ### Reporting Issues
 
-Please create a [github issue](https://github.com/prysmaticlabs) or contact the team on [Discord](https://discord.gg/prysmaticlabs) to report an issue
+Please create a [github issue](https://github.com/OffchainLabs/prysm) or contact the team on [Discord](https://discord.gg/prysm) to report an issue
 
 ## Contributing
 
-The web interface is open source and located at [github.com/prysmaticlabs/prysm-web-ui](https://github.com/prysmaticlabs/prysm-web-ui). It is an Angular application, and we always welcome your help!
+The web interface is open source and located at [github.com/OffchainLabs/prysm-web-ui](https://github.com/OffchainLabs/prysm-web-ui). It is an Angular application, and we always welcome your help!
 
 ### Prerequisites
 

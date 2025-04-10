@@ -49,7 +49,7 @@ From time to time you'll also see this kind of log:
 
      INFO p2p: Peer summary activePeers=70 inbound=59 outbound=7
 
-If you notice anything concerning or have any questions, feel free to get in touch with us on [Discord](https://discord.gg/prysmaticlabs).
+If you notice anything concerning or have any questions, feel free to get in touch with us on [Discord](https://discord.gg/prysm).
 
 ## Expected behavior: Validator client
 
@@ -76,5 +76,5 @@ A healthy `Active` validator client will produce `INFO` logs that look like this
     INFO validator: Submitted new attestations AggregatorIndices=[] AttesterIndices=[...] BeaconBlockRoot=0x5e3a3cb822d6 CommitteeIndex=13 Slot=8186914 SourceEpoch=255840 SourceRoot=0xa02cc7706494 TargetEpoch=255841 TargetRoot=0x72d7a888b2f0
 
 
-If you notice anything concerning or have any questions, feel free to get in touch with us on [Discord](https://discord.gg/prysmaticlabs).
+If you notice anything concerning or have any questions, feel free to get in touch with us on [Discord](https://discord.gg/prysm).
 

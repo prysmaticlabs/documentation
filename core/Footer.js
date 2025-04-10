@@ -56,13 +56,13 @@ class Footer extends React.Component {
           </div>
           <div>
             <h5>More</h5>
-            <a href={"https://medium.com/prysmatic-labs"}>Blog</a>
-            <a href="https://github.com/prysmaticlabs/prysm">GitHub</a>
+            <a href={"https://medium.com/OffchainLabs"}>Blog</a>
+            <a href="https://github.com/OffchainLabs/prysm">GitHub</a>
             <a
               className="github-button"
-              href="https://github.com/prysmaticlabs/prysm"
+              href="https://github.com/OffchainLabs/prysm"
               data-icon="octicon-star"
-              data-count-href="/prysmaticlabs/prysm"
+              data-count-href="/OffchainLabs/prysm"
               data-show-count="true"
               data-count-aria-label="# stargazers on GitHub"
               aria-label="Star Prysm on GitHub">

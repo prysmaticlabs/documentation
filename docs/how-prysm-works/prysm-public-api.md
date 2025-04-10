@@ -13,7 +13,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 For a standard API that all Ethereum beacon nodes implement, see [here](/how-prysm-works/ethereum-public-api). Over the next few quarters, we plan on deprecating this API and replacing it with the standard API.
 :::
 
-One of the required components of nodes in the Ethereum beacon chain network is to expose an API server for outside interaction. This API is critical for running validators on Ethereum, as validator clients can connect to nodes and query their API to figure out their assigned duties, to submit block proposals, and more. Prysm's Ethereum consensus API schema is maintained in Prysm itself here: [github.com/prysmaticlabs/prysm/proto](https://github.com/prysmaticlabs/prysm/tree/develop/proto) and is implemented by Prysm beacon nodes and validators.
+One of the required components of nodes in the Ethereum beacon chain network is to expose an API server for outside interaction. This API is critical for running validators on Ethereum, as validator clients can connect to nodes and query their API to figure out their assigned duties, to submit block proposals, and more. Prysm's Ethereum consensus API schema is maintained in Prysm itself here: [github.com/OffchainLabs/prysm/proto](https://github.com/OffchainLabs/prysm/tree/develop/proto) and is implemented by Prysm beacon nodes and validators.
 
 ![gRPC](/images/grpc-logo2.png)
 

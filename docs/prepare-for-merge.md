@@ -183,7 +183,7 @@ import FullSyncWarningPartial from '@site/docs/partials/_full-sync-warning-parti
 
 <FullSyncWarningPartial />
 
-Other than ensuring that you're using the [latest stable Prysm release](https://github.com/prysmaticlabs/prysm/releases), validator client configuration doesn't need to be updated for The Merge. A fee recipient address can optionally be configured on your validator node if you want redundancy or multiple fee recipient addresses. See [Configure a Fee Recipient address](/execution-node/fee-recipient.md) to learn more.
+Other than ensuring that you're using the [latest stable Prysm release](https://github.com/OffchainLabs/prysm/releases), validator client configuration doesn't need to be updated for The Merge. A fee recipient address can optionally be configured on your validator node if you want redundancy or multiple fee recipient addresses. See [Configure a Fee Recipient address](/execution-node/fee-recipient.md) to learn more.
 
 import SingletonWarningPartial from '@site/docs/partials/_singleton-warning-partial.md';
 
@@ -192,7 +192,7 @@ import SingletonWarningPartial from '@site/docs/partials/_singleton-warning-part
 
 :::tip Congratulations!
 
-You’re now running a post-Merge configuration. If you have any questions, feel free ask them on our [Discord](https://discord.gg/prysmaticlabs).
+You’re now running a post-Merge configuration. If you have any questions, feel free ask them on our [Discord](https://discord.gg/prysm).
 
 :::
 
