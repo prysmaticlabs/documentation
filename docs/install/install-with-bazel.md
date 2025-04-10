@@ -81,10 +81,10 @@ You can install Bazelisk in multiple ways, including:
 
 ## Install Prysm using Bazel
 
-Clone Prysm's [main repository](https://github.com/prysmaticlabs/prysm). Make sure you switch to the latest version (the latest version number can be found from the [releases page](https://github.com/prysmaticlabs/prysm/releases)). Once cloned, enter the directory:
+Clone Prysm's [main repository](https://github.com/OffchainLabs/prysm). Make sure you switch to the latest version (the latest version number can be found from the [releases page](https://github.com/OffchainLabs/prysm/releases)). Once cloned, enter the directory:
 
 ```text
-git clone https://github.com/prysmaticlabs/prysm
+git clone https://github.com/OffchainLabs/prysm
 cd prysm
 git checkout <version>
 ```
@@ -200,7 +200,7 @@ To check on the status of your validator, we recommend checking out the popular 
 
 We use Bazel to build the Docker images for Prysm as well. This section outlines comprehensive instructions on how to build them by yourself, run them in Docker, and push to an image registry if desired. In particular, we use [`bazel rules docker`](https://github.com/bazelbuild/rules_docker) which provides us the ability to specify a base, barebones image, and essentially builds our binary and creates a Docker container as a simple wrapper over our binaries.
 
-We do not write our own Dockerfiles, as Bazel provides us a more sandboxed, simple experience with all of its benefits. To see an example use of `bazel rules docker` for how we build a particular package, see [here](https://github.com/prysmaticlabs/prysm/blob/aa389c82a157008741450ba1e04d898924734432/tools/bootnode/BUILD.bazel#L36). 
+We do not write our own Dockerfiles, as Bazel provides us a more sandboxed, simple experience with all of its benefits. To see an example use of `bazel rules docker` for how we build a particular package, see [here](https://github.com/OffchainLabs/prysm/blob/aa389c82a157008741450ba1e04d898924734432/tools/bootnode/BUILD.bazel#L36). 
 
 ### Dependencies needed
 
@@ -243,14 +243,14 @@ bazel build //cmd/validator:oci_image_tarball  --platforms=@io_bazel_rules_go//g
 docker load -i bazel-bin/cmd/validator/oci_image_tarball/tarball.tar
 ```
 
-The tags for the images are specified [here](https://github.com/prysmaticlabs/prysm/blob/b23c562b67487390907e86af28b54e0a76c4c390/tools/prysm_image.bzl#L82). The default image tags for these images are:
+The tags for the images are specified [here](https://github.com/OffchainLabs/prysm/blob/b23c562b67487390907e86af28b54e0a76c4c390/tools/prysm_image.bzl#L82). The default image tags for these images are:
 
 
 <!-- todo: RC links to gcr.io -->
 
 ```text
-gcr.io/prysmaticlabs/prysm/beacon-chain:latest
-gcr.io/prysmaticlabs/prysm/validator:latest
+gcr.io/offchainlabs/prysm/beacon-chain:latest
+gcr.io/offchainlabs/prysm/validator:latest
 ```
 
 You can edit these in the links above to your liking.
@@ -297,7 +297,7 @@ a9df51aa7dad: Loading layer [==================================================>
 467f01356216: Loading layer [==================================================>]  109.5kB/109.5kB
 95ea3e93204b: Loading layer [==================================================>]  318.6kB/318.6kB
 17eb06822adc: Loading layer [==================================================>]  40.37MB/40.37MB
-Loaded image: gcr.io/prysmaticlabs/prysm/beacon-chain:latest
+Loaded image: gcr.io/offchainlabs/prysm/beacon-chain:latest
 ```
 
 ### Pushing to a container registry
@@ -320,10 +320,10 @@ See:
 To push the actual images, you do not need to build the image bundle beforehand. You can do a simple:
 
 ```text
-bazel run //cmd/beacon-chain:push_images --config=release -- --tag latest --repository gcr.io/prysmaticlabs/prysm/beacon-chain
-bazel run //cmd/validator:push_images --config=release -- --tag latest --repository gcr.io/prysmaticlabs/prysm/beacon-chain 
+bazel run //cmd/beacon-chain:push_images --config=release -- --tag latest --repository gcr.io/offchainlabs/prysm/beacon-chain
+bazel run //cmd/validator:push_images --config=release -- --tag latest --repository gcr.io/offchainlabs/prysm/beacon-chain 
 ```
 
-Which will deploy all images with the tags specified in [here](https://github.com/prysmaticlabs/prysm/blob/ff329df808ad68fbe79d11c73121fa6a7a0c0f29/cmd/beacon-chain/BUILD.bazel#L58) for the beacon-chain and [here](https://github.com/prysmaticlabs/prysm/blob/ff329df808ad68fbe79d11c73121fa6a7a0c0f29/cmd/validator/BUILD.bazel#L59) for the validator. 
+Which will deploy all images with the tags specified in [here](https://github.com/OffchainLabs/prysm/blob/ff329df808ad68fbe79d11c73121fa6a7a0c0f29/cmd/beacon-chain/BUILD.bazel#L58) for the beacon-chain and [here](https://github.com/OffchainLabs/prysm/blob/ff329df808ad68fbe79d11c73121fa6a7a0c0f29/cmd/validator/BUILD.bazel#L59) for the validator. 
 
-By default, this will deploy to Prysmatic Labs' Google Container Registry namespace: `gcr.io/prysmaticlabs/prysm`, which you will not have authentication access to, so make sure you edit the image tags to your appropriate registry and authenticate as needed.
+By default, this will deploy to Prysm Google Container Registry namespace: `gcr.io/offchainlabs/prysm`, which you will not have authentication access to, so make sure you edit the image tags to your appropriate registry and authenticate as needed.

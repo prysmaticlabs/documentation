@@ -31,6 +31,6 @@ Shards themselves are similar to the current Ethereum execution chain, which sto
 
 The beacon chain runs through a distributed network of nodes known as [beacon nodes](/how-prysm-works/beacon-node). Participants who want to run a beacon node and help secure the network can stake 32 ETH to have their [validator client](/how-prysm-works/prysm-validator-client) join the overall pool of validators, whom have the responsibility of [proposing](/terminology#propose) and [attesting](/terminology#attest) to new blocks on the beacon chain. This deposit does not come out of nowhere however; validators transfer Ether from the [ETH1](/terminology#eth1) chain to the system through the use of a [validator deposit contract](/how-prysm-works/validator-deposit-contract).
 
-Each of these components and their roles in the Prysm client are explained within the following sections of this documentation. If you have any questions, please stop by our [Discord](https://discord.gg/prysmaticlabs).
+Each of these components and their roles in the Prysm client are explained within the following sections of this documentation. If you have any questions, please stop by our [Discord](https://discord.gg/prysm).
 
 

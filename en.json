@@ -90,12 +90,9 @@
         "title": "What is Prysm?",
         "sidebar_label": "What is Prysm?"
       },
-      "licenses/prysmatic-labs": {
-        "title": "Prysmatic Labs",
-        "sidebar_label": "Prysmatic Labs"
-      },
-      "licenses/third-parties": {
-        "title": "licenses/third-parties"
+      "licenses/prysm": {
+        "title": "Prysm License",
+        "sidebar_label": "Prysm License"
       }
     },
     "links": {

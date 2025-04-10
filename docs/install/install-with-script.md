@@ -71,7 +71,7 @@ Keeping all of your client software on a single machine keeps things simple, whi
 **Can I use Prysm on a Mac M1 ARM chip?** <br />
 Yes. Choose **one** of the following actions to ensure that Prysm can run on your M1:
  1. Set an environment variable: `export PRYSM_ALLOW_UNVERIFIED_BINARIES=1`. See [Apple's Terminal User Guide: Use environment variables](https://support.apple.com/guide/terminal/use-environment-variables-apd382cc5fa-4f58-4449-b20a-41c53c006f8f/mac) for detailed instructions.
- 2. Run Prysm through <a href='https://support.apple.com/en-us/HT211861'>Rosetta</a>. See our <a href='https://github.com/prysmaticlabs/prysm/issues/9385'>open bug</a> for more information.
+ 2. Run Prysm through <a href='https://support.apple.com/en-us/HT211861'>Rosetta</a>. See our <a href='https://github.com/OffchainLabs/prysm/issues/9385'>open bug</a> for more information.
 
 **Do I need to configure JWT if I'm using IPC instead of HTTP?** <br />
 No.

@@ -18,16 +18,16 @@ import TabItem from '@theme/TabItem';
 
 #### How do I troubleshoot errors?
 
-If your beacon node or validator logs display an `ERROR`, go to our [open issues](https://github.com/prysmaticlabs/prysm/issues) to see if someone has reported the same problem before. If this doesn't help, note the **Prysm version you're running** and your **operating system**, and then file a bug report [here](https://github.com/prysmaticlabs/prysm/issues/new?assignees=&labels=&template=bug_report.md). You can also ask our community on [discord](https://discord.gg/prysmaticlabs) about your error and we'll take a look as soon as possible.
+If your beacon node or validator logs display an `ERROR`, go to our [open issues](https://github.com/OffchainLabs/prysm/issues) to see if someone has reported the same problem before. If this doesn't help, note the **Prysm version you're running** and your **operating system**, and then file a bug report [here](https://github.com/OffchainLabs/prysm/issues/new?assignees=&labels=&template=bug_report.md). You can also ask our community on [discord](https://discord.gg/OffchainLabs) about your error and we'll take a look as soon as possible.
 
 #### My validator is losing money, what's going on?
 
 1. Try restarting your machine and associated processes.
-1. See if your node or validator client crashed. You can view the logs of the process to see if there were any `ERROR` logs. If so, please file a bug report or talk to our team on [discord](https://discord.gg/prysmaticlabs). A fatal crash is quite serious and something we'll investigate right away.
+1. See if your node or validator client crashed. You can view the logs of the process to see if there were any `ERROR` logs. If so, please file a bug report or talk to our team on [discord](https://discord.gg/prysm). A fatal crash is quite serious and something we'll investigate right away.
 2. Check your network connectivity. You can improve this by following our tips [here](/prysm-usage/p2p-host-ip) which can help you find better peers, improve attestation effectiveness, and more.
 3. Check your system resource usage, perhaps your node is using excess CPU and RAM. Depending on your operating system, there are different ways to do this.
 
-If you still need help, note your **Prysm version** and **operating system**, and then reach out to our team on [Discord](https://discord.gg/prysmaticlabs). Providing as much information as possible will help us troubleshoot your issue.
+If you still need help, note your **Prysm version** and **operating system**, and then reach out to our team on [Discord](https://discord.gg/prysm). Providing as much information as possible will help us troubleshoot your issue.
 
 #### My node suddenly lost peers, what can I do?
 
@@ -35,7 +35,7 @@ Losing peers can be due to the following reasons:
 
 1. Your network connectivity has problems. You can check how to improve it with some of our tips [here](/prysm-usage/p2p-host-ip).
 2. Prysm is using a ton of memory or system resources and perhaps you ran out of memory. Ensure you meet the minimum specifications for running Prysm specified in our installation pages for your operating system.
-3. A bug in our software that can affect your p2p connectivity. It is known that certain versions have issues with peers on operating systems such as Windows, so you could try [downgrading](/prysm-usage/staying-up-to-date) to see if your issue is resolved. If this is the case, talk to our team on [Discord](https://discord.gg/prysmaticlabs) letting us know you had this issue.
+3. A bug in our software that can affect your p2p connectivity. It is known that certain versions have issues with peers on operating systems such as Windows, so you could try [downgrading](/prysm-usage/staying-up-to-date) to see if your issue is resolved. If this is the case, talk to our team on [Discord](https://discord.gg/prysm) letting us know you had this issue.
 
 #### My CPU/RAM usage is huge, what’s going on?
 
@@ -54,7 +54,7 @@ Memory: 8GB RAM
 Storage: 20GB available space SSD
 Internet: Broadband connection
 
-If that still does not help, please file an issue with our team on Github [here](https://github.com/prysmaticlabs/prysm/issues/new?template=bug_report.md).
+If that still does not help, please file an issue with our team on Github [here](https://github.com/OffchainLabs/prysm/issues/new?template=bug_report.md).
 
 #### I got slashed! Why? How can I avoid getting slashed?
 
@@ -98,16 +98,16 @@ prysm.bat beacon-chain --version
 </TabItem>
 <TabItem value="docker">
 
-If you are running using docker and the :stable tag for Prysm, stable will always point to our latest [release](https://github.com/prysmaticlabs/prysm/releases). Otherwise, you can run the command `docker ps` to see your running docker containers. The suffix of your image name after the colon is the version you are running.
+If you are running using docker and the :stable tag for Prysm, stable will always point to our latest [release](https://github.com/OffchainLabs/prysm/releases). Otherwise, you can run the command `docker ps` to see your running docker containers. The suffix of your image name after the colon is the version you are running.
 
 ```
 CONTAINER ID        IMAGE                  COMMAND                  CREATED             STATUS              PORTS               NAMES
-371d6675888b        gcr.io/prysmaticlabs/prysm/validator:stable            "validator"              6 days ago
+371d6675888b        gcr.io/offchainlabs/prysm/validator:stable            "validator"              6 days ago
 ```
 </TabItem>
 <TabItem value="bazel">
 
-If you are using Bazel, it means you are building Prysm from source. You can do `git log` and you will see the current commit hash you are running at the top. You can then visit our [releases page](https://github.com/prysmaticlabs/prysm/releases) to check what version the commit hash corresponds to.
+If you are using Bazel, it means you are building Prysm from source. You can do `git log` and you will see the current commit hash you are running at the top. You can then visit our [releases page](https://github.com/OffchainLabs/prysm/releases) to check what version the commit hash corresponds to.
 
 </TabItem>
 </Tabs>
@@ -152,7 +152,7 @@ Verifying binary integrity.
 beacon-chain-v1.1.0-linux-amd64: OK
 gpg: Signature made Mon Jan 18 13:03:57 2021 PST
 gpg:                using RSA key 0AE0051D647BA3C1A917AF4072E33E4DF1A5036E
-gpg: Good signature from "Preston Van Loon <preston@prysmaticlabs.com>" [unknown]
+gpg: Good signature from "Preston Van Loon <preston@OffchainLabs.com>" [unknown]
 gpg: WARNING: This key is not certified with a trusted signature!
 gpg:          There is no indication that the signature belongs to the owner.
 ```
@@ -165,7 +165,7 @@ Your node is running the popular [prometheus](https://prometheus.io/) server for
 
 #### Can I run this on a raspberry pi? What are the instructions?
 
-Yes, we currently support arm 64-bit architectures such as the raspberry pi 4 and they go out as part of our pre-compiled binary releases [here](https://github.com/prysmaticlabs/prysm/releases). Our documentation portal has instructions on how to run the entire installation process [here](/install/install-with-script). However, we recommend using more powerful hardware in mainnet conditions. 
+Yes, we currently support arm 64-bit architectures such as the raspberry pi 4 and they go out as part of our pre-compiled binary releases [here](https://github.com/OffchainLabs/prysm/releases). Our documentation portal has instructions on how to run the entire installation process [here](/install/install-with-script). However, we recommend using more powerful hardware in mainnet conditions. 
 
 ### Validator keys and validator deposits
 
@@ -200,7 +200,7 @@ Yes, this is possible however we recommend against it. We recommend you deposit 
 
 Adding new validators to your already-running Prysm instance is quite simple! Go through the launchpad process again, generate a new deposit keystore using the Ethereum validator deposit cli, then run the `validator accounts import` command again as you used when you added your first validator key. Note that **you don't need to create a new mnemonic** when you do this. **Restart the validator client** after importing the new keystore for the changes to take effect.
 
-You can then confirm your validator was added by running `validator accounts list`. Let us know on [discord](https://discord.gg/prysmaticlabs) if you still have issues.
+You can then confirm your validator was added by running `validator accounts list`. Let us know on [discord](https://discord.gg/OffchainLabs) if you still have issues.
 
 ### Ethereum proof-of-stake specific questions
 

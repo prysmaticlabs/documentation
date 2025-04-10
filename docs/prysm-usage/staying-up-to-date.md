@@ -22,7 +22,7 @@ There are three main ways of installing Prysm:
 
 ## Recommended versions
 
-Regardless of your installation method, we always recommend you are running the latest version in our [releases page](https://github.com/prysmaticlabs/prysm/releases) on Github, specified in [semver](https://semver.org/) format such as <PrysmVersion/>. You can check your Prysm version by running your beacon node or validator with the `--version` flag. For example, if using `prysm.sh` to run the beacon node, you would run:
+Regardless of your installation method, we always recommend you are running the latest version in our [releases page](https://github.com/OffchainLabs/prysm/releases) on Github, specified in [semver](https://semver.org/) format such as <PrysmVersion/>. You can check your Prysm version by running your beacon node or validator with the `--version` flag. For example, if using `prysm.sh` to run the beacon node, you would run:
 
 ```
 ./prysm.sh beacon-chain --version
@@ -40,7 +40,7 @@ If you are running docker or building from source, we **never** recommend runnin
 
 ## How to subscribe for updates
 
-Prysm has two official channels for release updates: our [Discord](https://discord.gg/prysmaticlabs) and our [mailing list](https://groups.google.com/g/prysm-dev). All releases will be notified via those channels, and we always recommend reading our release notes on Github in case there are **breaking changes** to running a node. Our team avoids breaking changes whenever possible, and we will make it clear in our release notes or in releases ahead of time that breaking changes are coming.
+Prysm has two official channels for release updates: our [Discord](https://discord.gg/prysm) and our [mailing list](https://groups.google.com/g/prysm-dev). All releases will be notified via those channels, and we always recommend reading our release notes on Github in case there are **breaking changes** to running a node. Our team avoids breaking changes whenever possible, and we will make it clear in our release notes or in releases ahead of time that breaking changes are coming.
 
 ## How to securely upgrade Prysm
 
@@ -74,13 +74,13 @@ If you are running `prysm.sh`, all it takes to upgrade to the latest release is 
 To update your Prysm with Docker, we recommend just pulling our `:stable` tag, which will always point to our latest release.
 
 ```text
-docker pull gcr.io/prysmaticlabs/prysm/beacon-chain:stable
-docker pull gcr.io/prysmaticlabs/prysm/validator:stable
+docker pull gcr.io/OffchainLabs/prysm/beacon-chain:stable
+docker pull gcr.io/OffchainLabs/prysm/validator:stable
 ```
 
 **Using Bazel**
 
-To run our latest release with Bazel, you can look up our [releases page](https://github.com/prysmaticlabs/prysm/releases), look at the commit hash of the latest release, then do `git checkout COMMIT_HASH`. Afterwards, you can re-run your beacon chain and validator as you ran them earlier with Bazel.
+To run our latest release with Bazel, you can look up our [releases page](https://github.com/OffchainLabs/prysm/releases), look at the commit hash of the latest release, then do `git checkout COMMIT_HASH`. Afterwards, you can re-run your beacon chain and validator as you ran them earlier with Bazel.
 
 </TabItem>
 <TabItem value="win">
@@ -94,8 +94,8 @@ If you are running `prysm.bat`, all it takes to upgrade to the latest release is
 To update your Prysm with Docker, we recommend just pulling our `:stable` tag, which will always point to our latest release.
 
 ```text
-docker pull gcr.io/prysmaticlabs/prysm/beacon-chain:stable
-docker pull gcr.io/prysmaticlabs/prysm/validator:stable
+docker pull gcr.io/OffchainLabs/prysm/beacon-chain:stable
+docker pull gcr.io/OffchainLabs/prysm/validator:stable
 ```
 
 </TabItem>
@@ -110,13 +110,13 @@ If you are running `prysm.sh`, all it takes to upgrade to the latest release is 
 To update your Prysm with Docker, we recommend just pulling our `:stable` tag, which will always point to our latest release.
 
 ```text
-docker pull gcr.io/prysmaticlabs/prysm/beacon-chain:stable
-docker pull gcr.io/prysmaticlabs/prysm/validator:stable
+docker pull gcr.io/OffchainLabs/prysm/beacon-chain:stable
+docker pull gcr.io/OffchainLabs/prysm/validator:stable
 ```
 
 **Using Bazel**
 
-To run our latest release with Bazel, you can look up our [releases page](https://github.com/prysmaticlabs/prysm/releases), look at the commit hash of the latest release, then do `git checkout COMMIT_HASH`. Afterwards, you can re-run your beacon chain and validator as you ran them earlier with Bazel.
+To run our latest release with Bazel, you can look up our [releases page](https://github.com/OffchainLabs/prysm/releases), look at the commit hash of the latest release, then do `git checkout COMMIT_HASH`. Afterwards, you can re-run your beacon chain and validator as you ran them earlier with Bazel.
 
 
 </TabItem>
@@ -131,8 +131,8 @@ If you are running `prysm.sh`, all it takes to upgrade to the latest release is 
 To update your Prysm with Docker, we recommend just pulling our `:stable` tag, which will always point to our latest release.
 
 ```text
-docker pull gcr.io/prysmaticlabs/prysm/beacon-chain:stable
-docker pull gcr.io/prysmaticlabs/prysm/validator:stable
+docker pull gcr.io/OffchainLabs/prysm/beacon-chain:stable
+docker pull gcr.io/OffchainLabs/prysm/validator:stable
 ```
 
 </TabItem>
@@ -162,17 +162,17 @@ If you are downgrading between **patch versions**, which means only the last num
 
 If you are running `prysm.sh`, all it takes to downgrade to a previous release is to stop your beacon node and validator (wait for the process to close down gracefully). 
 
-Then, find the Prysm version you wish to run from our [releases page](https://github.com/prysmaticlabs/prysm/releases),such as <PrysmVersion/> , then run the command <code>set USE_PRYSM_VERSION=<PrysmVersion/></code>.
+Then, find the Prysm version you wish to run from our [releases page](https://github.com/OffchainLabs/prysm/releases),such as <PrysmVersion/> , then run the command <code>set USE_PRYSM_VERSION=<PrysmVersion/></code>.
 
 Then, restart it with the same command you used to start the process. The script will automatically use the release you specified.
 
 **Using Docker**
 
-To run a previous Prysm version with Docker, choose the release you want to run, then change all your docker run commands to use that version tag. For example, instead of <code>docker run gcr.io/prysmaticlabs/prysm:stable</code>, do <code>docker run gcr.io/prysmaticlabs/prysm:<PrysmVersion/></code> if you want to run version <PrysmVersion/>.
+To run a previous Prysm version with Docker, choose the release you want to run, then change all your docker run commands to use that version tag. For example, instead of <code>docker run gcr.io/OffchainLabs/prysm:stable</code>, do <code>docker run gcr.io/OffchainLabs/prysm:<PrysmVersion/></code> if you want to run version <PrysmVersion/>.
 
 **Using Bazel**
 
-To run our latest release with Bazel, you can look up our [releases page](https://github.com/prysmaticlabs/prysm/releases), look at the release tag you want to run, such as <PrysmVersion/>, then do <strong>git checkout <PrysmVersion/></strong> Afterwards, you can re-run your beacon chain and validator as you ran them earlier with Bazel.
+To run our latest release with Bazel, you can look up our [releases page](https://github.com/OffchainLabs/prysm/releases), look at the release tag you want to run, such as <PrysmVersion/>, then do <strong>git checkout <PrysmVersion/></strong> Afterwards, you can re-run your beacon chain and validator as you ran them earlier with Bazel.
 
 **Using Systemd**
   
@@ -211,13 +211,13 @@ Once you do that, the prysm beacon and validator are locked in that version, so 
 
 If you are running `prysm.bat`, all it takes to downgrade to a previous release is to stop your beacon node and validator (wait for the process to close down gracefully). 
 
-Then, find the Prysm version you wish to run from our [releases page](https://github.com/prysmaticlabs/prysm/releases), such as <PrysmVersion/> , then run the command <code>set USE_PRYSM_VERSION=<PrysmVersion/></code>.
+Then, find the Prysm version you wish to run from our [releases page](https://github.com/OffchainLabs/prysm/releases), such as <PrysmVersion/> , then run the command <code>set USE_PRYSM_VERSION=<PrysmVersion/></code>.
 
 Then, restart it with the same command you used to start the process. The script will automatically use the release you specified.
 
 **Using Docker**
 
-To run a previous Prysm version with Docker, choose the release you want to run, then change all your docker run commands to use that version tag. For example, instead of <code>docker run gcr.io/prysmaticlabs/prysm:stable</code>, do <code>docker run gcr.io/prysmaticlabs/prysm:<PrysmVersion/></code> if you want to run version <PrysmVersion/>.
+To run a previous Prysm version with Docker, choose the release you want to run, then change all your docker run commands to use that version tag. For example, instead of <code>docker run gcr.io/OffchainLabs/prysm:stable</code>, do <code>docker run gcr.io/OffchainLabs/prysm:<PrysmVersion/></code> if you want to run version <PrysmVersion/>.
 
 </TabItem>
 <TabItem value="mac">
@@ -226,17 +226,17 @@ To run a previous Prysm version with Docker, choose the release you want to run,
 
 If you are running `prysm.sh`, all it takes to downgrade to a previous release is to stop your beacon node and validator (wait for the process to close down gracefully). 
 
-Then, find the Prysm version you wish to run from our [releases page](https://github.com/prysmaticlabs/prysm/releases), then run the command <code>export USE_PRYSM_VERSION=<PrysmVersion/></code>.
+Then, find the Prysm version you wish to run from our [releases page](https://github.com/OffchainLabs/prysm/releases), then run the command <code>export USE_PRYSM_VERSION=<PrysmVersion/></code>.
 
 Then, restart it with the same command you used to start the process. The script will automatically use the release you specified.
 
 **Using Docker**
 
-To run a previous Prysm version with Docker, choose the release you want to run, then change all your docker run commands to use that version tag. For example, instead of <code>docker run gcr.io/prysmaticlabs/prysm:stable</code>, do <code>docker run gcr.io/prysmaticlabs/prysm:<PrysmVersion/></code> if you want to run version <PrysmVersion/>.
+To run a previous Prysm version with Docker, choose the release you want to run, then change all your docker run commands to use that version tag. For example, instead of <code>docker run gcr.io/OffchainLabs/prysm:stable</code>, do <code>docker run gcr.io/OffchainLabs/prysm:<PrysmVersion/></code> if you want to run version <PrysmVersion/>.
 
 **Using Bazel**
 
-To run our latest release with Bazel, you can look up our [releases page](https://github.com/prysmaticlabs/prysm/releases), look at the release tag you want to run, such as <PrysmVersion/>, then do <code>git checkout <PrysmVersion/></code> Afterwards, you can re-run your beacon chain and validator as you ran them earlier with Bazel.
+To run our latest release with Bazel, you can look up our [releases page](https://github.com/OffchainLabs/prysm/releases), look at the release tag you want to run, such as <PrysmVersion/>, then do <code>git checkout <PrysmVersion/></code> Afterwards, you can re-run your beacon chain and validator as you ran them earlier with Bazel.
 
 </TabItem>
 <TabItem value="arm">
@@ -245,13 +245,13 @@ To run our latest release with Bazel, you can look up our [releases page](https:
 
 If you are running `prysm.sh`, all it takes to downgrade to a previous release is to stop your beacon node and validator (wait for the process to close down gracefully). 
 
-Then, find the Prysm version you wish to run from our [releases page](https://github.com/prysmaticlabs/prysm/releases), then run the command <code>export USE_PRYSM_VERSION=<PrysmVersion/></code>.
+Then, find the Prysm version you wish to run from our [releases page](https://github.com/OffchainLabs/prysm/releases), then run the command <code>export USE_PRYSM_VERSION=<PrysmVersion/></code>.
 
 Then, restart it with the same command you used to start the process. The script will automatically use the release you specified.
 
 **Using Docker**
 
-To run a previous Prysm version with Docker, choose the release you want to run, then change all your docker run commands to use that version tag. For example, instead of <code>docker run gcr.io/prysmaticlabs/prysm:stable</code>, do <code>docker run gcr.io/prysmaticlabs/prysm:<PrysmVersion/></code> if you want to run version <PrysmVersion/>.
+To run a previous Prysm version with Docker, choose the release you want to run, then change all your docker run commands to use that version tag. For example, instead of <code>docker run gcr.io/OffchainLabs/prysm:stable</code>, do <code>docker run gcr.io/OffchainLabs/prysm:<PrysmVersion/></code> if you want to run version <PrysmVersion/>.
 
 </TabItem>
 </Tabs>
@@ -294,7 +294,7 @@ Next up, run our database rollback command to make sure your database is going t
 prysm.sh validator db migrate down --datadir=/path/to/folder
 ```
 
-Then, find the Prysm version you wish to run from our [releases page](https://github.com/prysmaticlabs/prysm/releases).then run the command <code>export USE_PRYSM_VERSION=<PrysmVersion/></code>.
+Then, find the Prysm version you wish to run from our [releases page](https://github.com/OffchainLabs/prysm/releases).then run the command <code>export USE_PRYSM_VERSION=<PrysmVersion/></code>.
 
 Then, restart it with the same command you used to start the process. The script will automatically use the release you specified.
 
@@ -307,15 +307,15 @@ Next, we recommend backing up any important important folders such as your beaco
 Next up, run our database rollback command to make sure your database is going to be compatible with your new version. Find the folder where your `validator.db` file lives, then run:
 
 ```
-docker run -v /path/to/folder:/data gcr.io/prysmaticlabs/prysm/validator:stable db migrate down --datadir=/data
+docker run -v /path/to/folder:/data gcr.io/OffchainLabs/prysm/validator:stable db migrate down --datadir=/data
 ```
 
-Then change all your docker run commands to use that version tag. For example, instead of <code>docker run gcr.io/prysmaticlabs/prysm:stable</code>, do <code>docker run gcr.io/prysmaticlabs/prysm:<PrysmVersion/></code> if you want to run version <PrysmVersion/>.
+Then change all your docker run commands to use that version tag. For example, instead of <code>docker run gcr.io/OffchainLabs/prysm:stable</code>, do <code>docker run gcr.io/OffchainLabs/prysm:<PrysmVersion/></code> if you want to run version <PrysmVersion/>.
 
 
 **Using Bazel**
 
-To run our latest release with Bazel, you can look up our [releases page](https://github.com/prysmaticlabs/prysm/releases), look at the release tag you want to run, such as <PrysmVersion/>.
+To run our latest release with Bazel, you can look up our [releases page](https://github.com/OffchainLabs/prysm/releases), look at the release tag you want to run, such as <PrysmVersion/>.
 
 Next, we recommend backing up any important important folders such as your beacon node data directory and the validator wallet is important. You can simply make copies of the directories and keep them safe in case the downgrade process goes wrong. 
 
@@ -342,7 +342,7 @@ Next up, run our database rollback command to make sure your database is going t
 prysm.bat validator db migrate down --datadir=\path\to\folder
 ```
 
-Then, find the Prysm version you wish to run from our [releases page](https://github.com/prysmaticlabs/prysm/releases), such as <PrysmVersion/> , then run the command <code>set USE_PRYSM_VERSION=<PrysmVersion/></code>.
+Then, find the Prysm version you wish to run from our [releases page](https://github.com/OffchainLabs/prysm/releases), such as <PrysmVersion/> , then run the command <code>set USE_PRYSM_VERSION=<PrysmVersion/></code>.
 
 :::warning
 
@@ -364,10 +364,10 @@ Next, we recommend backing up any important important folders such as your beaco
 Next up, run our database rollback command to make sure your database is going to be compatible with your new version. Find the folder where your `validator.db` file lives, then run:
 
 ```
-docker run -v \path\to\folder:/data gcr.io/prysmaticlabs/prysm/validator:stable db migrate down --datadir=/data
+docker run -v \path\to\folder:/data gcr.io/OffchainLabs/prysm/validator:stable db migrate down --datadir=/data
 ```
 
-Then change all your docker run commands to use that version tag. For example, instead of <code>docker run gcr.io/prysmaticlabs/prysm:stable</code>, do <code>docker run gcr.io/prysmaticlabs/prysm:<PrysmVersion/></code> if you want to run version <PrysmVersion/>.
+Then change all your docker run commands to use that version tag. For example, instead of <code>docker run gcr.io/OffchainLabs/prysm:stable</code>, do <code>docker run gcr.io/OffchainLabs/prysm:<PrysmVersion/></code> if you want to run version <PrysmVersion/>.
 
 </TabItem>
 <TabItem value="mac">
@@ -384,7 +384,7 @@ Next up, run our database rollback command to make sure your database is going t
 prysm.sh validator db migrate down --datadir=/path/to/folder
 ```
 
-Then, find the Prysm version you wish to run from our [releases page](https://github.com/prysmaticlabs/prysm/releases), such as <PrysmVersion/> , then run the command <code>set USE_PRYSM_VERSION=<PrysmVersion/></code>.
+Then, find the Prysm version you wish to run from our [releases page](https://github.com/OffchainLabs/prysm/releases), such as <PrysmVersion/> , then run the command <code>set USE_PRYSM_VERSION=<PrysmVersion/></code>.
 
 Then, restart it with the same command you used to start the process. The script will automatically use the release you specified.
 
@@ -397,14 +397,14 @@ Next, we recommend backing up any important important folders such as your beaco
 Next up, run our database rollback command to make sure your database is going to be compatible with your new version. Find the folder where your `validator.db` file lives, then run:
 
 ```
-docker run -v /path/to/folder:/data gcr.io/prysmaticlabs/prysm/validator:stable db migrate down --datadir=/data
+docker run -v /path/to/folder:/data gcr.io/OffchainLabs/prysm/validator:stable db migrate down --datadir=/data
 ```
 
-Then change all your docker run commands to use that version tag. For example, instead of <code>docker run gcr.io/prysmaticlabs/prysm:stable</code>, do <code>docker run gcr.io/prysmaticlabs/prysm:<PrysmVersion/></code> if you want to run version <PrysmVersion/>.
+Then change all your docker run commands to use that version tag. For example, instead of <code>docker run gcr.io/OffchainLabs/prysm:stable</code>, do <code>docker run gcr.io/OffchainLabs/prysm:<PrysmVersion/></code> if you want to run version <PrysmVersion/>.
 
 **Using Bazel**
 
-To run our latest release with Bazel, you can look up our [releases page](https://github.com/prysmaticlabs/prysm/releases), look at the release tag you want to run, such as <PrysmVersion/>.
+To run our latest release with Bazel, you can look up our [releases page](https://github.com/OffchainLabs/prysm/releases), look at the release tag you want to run, such as <PrysmVersion/>.
 
 Next, we recommend backing up any important important folders such as your beacon node data directory and the validator wallet is important. You can simply make copies of the directories and keep them safe in case the downgrade process goes wrong. 
 
@@ -431,7 +431,7 @@ Next up, run our database rollback command to make sure your database is going t
 prysm.sh validator db migrate down --datadir=/path/to/folder
 ```
 
-Then, find the Prysm version you wish to run from our [releases page](https://github.com/prysmaticlabs/prysm/releases), such as <PrysmVersion/> , then run the command <code>set USE_PRYSM_VERSION=<PrysmVersion/></code>.
+Then, find the Prysm version you wish to run from our [releases page](https://github.com/OffchainLabs/prysm/releases), such as <PrysmVersion/> , then run the command <code>set USE_PRYSM_VERSION=<PrysmVersion/></code>.
 
 Then, restart it with the same command you used to start the process. The script will automatically use the release you specified.
 
@@ -444,10 +444,10 @@ Next, we recommend backing up any important important folders such as your beaco
 Next up, run our database rollback command to make sure your database is going to be compatible with your new version. Find the folder where your `validator.db` file lives, then run:
 
 ```
-docker run -v /path/to/folder:/data gcr.io/prysmaticlabs/prysm/validator:stable db migrate down --datadir=/data
+docker run -v /path/to/folder:/data gcr.io/OffchainLabs/prysm/validator:stable db migrate down --datadir=/data
 ```
 
-Then change all your docker run commands to use that version tag. For example, instead of <code>docker run gcr.io/prysmaticlabs/prysm:stable</code>, do <code>docker run gcr.io/prysmaticlabs/prysm:<PrysmVersion/></code> if you want to run version <PrysmVersion/>.
+Then change all your docker run commands to use that version tag. For example, instead of <code>docker run gcr.io/OffchainLabs/prysm:stable</code>, do <code>docker run gcr.io/OffchainLabs/prysm:<PrysmVersion/></code> if you want to run version <PrysmVersion/>.
 
 </TabItem>
 </Tabs>

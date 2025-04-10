@@ -12,7 +12,7 @@ module.exports = {
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'throw',
     favicon: 'images/Prysm.svg',
-    organizationName: 'Prysmatic Labs',
+    organizationName: 'Offchain Labs',
     projectName: 'prysm-docs',
     staticDirectories: ['static'],
 
@@ -34,7 +34,7 @@ module.exports = {
             items: [{
                 type: 'docsVersion',
                 position: 'left',
-                to: 'https://github.com/prysmaticlabs/prysm/releases/tag/' + prysmVersion,
+                to: 'https://github.com/OffchainLabs/prysm/releases/tag/' + prysmVersion,
                 label: prysmVersion,
             },
             {
@@ -43,12 +43,12 @@ module.exports = {
                 position: 'right',
             },
             {
-                href: 'https://github.com/prysmaticlabs/prysm',
+                href: 'https://github.com/OffchainLabs/prysm',
                 label: 'GitHub',
                 position: 'right',
             },
             {
-                href: 'https://discord.gg/prysmaticlabs',
+                href: 'https://discord.gg/prysm',
                 label: 'Discord',
                 position: 'right',
             },
@@ -60,7 +60,7 @@ module.exports = {
                 href: '/prysm/docs/',
                 src: 'images/Prysm.svg',
             },
-            copyright: `Copyright © ${new Date().getFullYear()} Prysmatic Labs, LLC., Validator Deposit Contract 0x00000000219ab540356cbb839cbe05303d7705fa`,
+            copyright: `Copyright © ${new Date().getFullYear()} Offchain Labs, Inc., Validator Deposit Contract 0x00000000219ab540356cbb839cbe05303d7705fa`,
             links: [],
         },
         prism: {
@@ -78,7 +78,7 @@ module.exports = {
                     showLastUpdateAuthor: false,
                     breadcrumbs: false,
                     sidebarPath: require.resolve('./sidebars.json'),
-                    editUrl: 'https://github.com/prysmaticlabs/documentation/edit/master/',
+                    editUrl: 'https://github.com/OffchainLabs/prysm-documentation/edit/master/',
                 },
                 blog: false,
                 theme: {
