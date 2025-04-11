@@ -82,7 +82,7 @@ Discv5 is not a hard requirement for our testnets, as we can continue supporting
 
 ###   Handshake / Protocol Negotiation
  
-The [existing peer negotiation](https://github.com/prysmaticlabs/prysm/blob/715b9cd5bab695637d629b0dfa71a48d8f457524/shared/p2p/negotiation.go#L23) can be mostly reused. The key difference here is that we'll need to maintain a peerstore abstraction where we keep track of the hello messages and potentially continuously update the peerstore abstraction with new values as we learn about them (TODO in a follow up design, as needed). 
+The [existing peer negotiation](https://github.com/OffchainLabs/prysm/blob/715b9cd5bab695637d629b0dfa71a48d8f457524/shared/p2p/negotiation.go#L23) can be mostly reused. The key difference here is that we'll need to maintain a peerstore abstraction where we keep track of the hello messages and potentially continuously update the peerstore abstraction with new values as we learn about them (TODO in a follow up design, as needed). 
 
 For a Prysm testnet implementation, we’ll set the fork version to the first 4 bytes of the deposit contract address. This will provide clear separation between testnet deployments.  
 
@@ -152,7 +152,7 @@ As part of the p2p constructor arguments, the p2p service will know which encode
 func (*p2p) Encoding() NetworkEncoding
 ```
 
-The middleware can look up the type, initialize a pointer to an empty object of that type and pass the pointer with the network bytes to the encoding to hydrate the object from bytes by calling p2p.Encoding().DecodeTo(payload, to) where to is a newly initialized pointer. The logic here will look very similar to the logic that we see in [RegisterTopic](https://github.com/prysmaticlabs/prysm/blob/715b9cd5bab695637d629b0dfa71a48d8f457524/shared/p2p/service.go#L260) today.
+The middleware can look up the type, initialize a pointer to an empty object of that type and pass the pointer with the network bytes to the encoding to hydrate the object from bytes by calling p2p.Encoding().DecodeTo(payload, to) where to is a newly initialized pointer. The logic here will look very similar to the logic that we see in [RegisterTopic](https://github.com/OffchainLabs/prysm/blob/715b9cd5bab695637d629b0dfa71a48d8f457524/shared/p2p/service.go#L260) today.
 
 ###   Initial Sync
 In this iteration of the networking design, initial synchronizing of a validator with an empty database will be similar to the sync workflow of Ethereum 1.0 where the node syncs from the genesis event. The workflow for initial sync will be as follows:

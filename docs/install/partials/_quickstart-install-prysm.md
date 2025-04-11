@@ -17,7 +17,7 @@ Create a folder called `ethereum` on your SSD, and then two subfolders within it
     <p>Navigate to your <code>consensus</code> directory and run the following commands:</p>
 
 ```
-curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.bat --output prysm.bat
+curl https://raw.githubusercontent.com/OffchainLabs/prysm/master/prysm.bat --output prysm.bat
 reg add HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1
 ```
 
@@ -27,7 +27,7 @@ reg add HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1
     <p>Navigate to your <code>consensus</code> directory and run the following commands:</p>
 
 ```
-curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --output prysm.sh && chmod +x prysm.sh
+curl https://raw.githubusercontent.com/OffchainLabs/prysm/master/prysm.sh --output prysm.sh && chmod +x prysm.sh
 ```
 
   <p>This will download the Prysm client and make it executable.</p>

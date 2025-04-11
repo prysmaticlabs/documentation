@@ -20,7 +20,7 @@ bazel test //testing/endtoend:go_default_test --//proto:network=minimal --test_f
 
 ## How are E2E tests special?
 
-E2E tests are located in https://github.com/prysmaticlabs/prysm/tree/develop/testing/endtoend. They are regular Go tests enhanced by Bazel. The main reason why we need Bazel is to prepare binaries for components executed by the test, including the beacon node and validator. This means we are testing the system as a whole, including all inter-process communication. E2E uses a dedicated beacon config that overrides several important parameters, such as time-related values (we don't want the test to take too long given that it's supposed to run for several epochs).
+E2E tests are located in https://github.com/OffchainLabs/prysm/tree/develop/testing/endtoend. They are regular Go tests enhanced by Bazel. The main reason why we need Bazel is to prepare binaries for components executed by the test, including the beacon node and validator. This means we are testing the system as a whole, including all inter-process communication. E2E uses a dedicated beacon config that overrides several important parameters, such as time-related values (we don't want the test to take too long given that it's supposed to run for several epochs).
 
 :::info
 
@@ -46,11 +46,11 @@ type ComponentRunner interface {
 }
 ```
 
-There are several types that implement this interface and they can all be found in https://github.com/prysmaticlabs/prysm/tree/develop/testing/endtoend/components.
+There are several types that implement this interface and they can all be found in https://github.com/OffchainLabs/prysm/tree/develop/testing/endtoend/components.
 
 E2E requires appropriate regular version updates for certain components that run on binary such as Web3Signer. Currently, E2E can only support one version of a component at a time.
 
-Running components correctly is not a simple task. We can't simply start up all components at the same time and expect the system to work. The beacon node requires a running boot node to be able to find peers, as well as an Eth1 node with blocks that include deposits for validators that will be used during the test. This means we need a combination of synchronous and asynchronous behavior. This is achieved by the use of goroutines and the `ComponentRunner` interface inside `run()` in https://github.com/prysmaticlabs/prysm/blob/develop/testing/endtoend/endtoend_test.go.
+Running components correctly is not a simple task. We can't simply start up all components at the same time and expect the system to work. The beacon node requires a running boot node to be able to find peers, as well as an Eth1 node with blocks that include deposits for validators that will be used during the test. This means we need a combination of synchronous and asynchronous behavior. This is achieved by the use of goroutines and the `ComponentRunner` interface inside `run()` in https://github.com/OffchainLabs/prysm/blob/develop/testing/endtoend/endtoend_test.go.
 
 ### Evaluators
 
@@ -65,7 +65,7 @@ type Evaluator struct {
 }
 ```
 
-The purpose of an evaluator is to assert an invariant that the system must hold in order to run properly. Examples of such invariants include the ability to undergo a fork transition or the ability to find peers in the network. All evaluators can be found in https://github.com/prysmaticlabs/prysm/tree/develop/testing/endtoend/evaluators.
+The purpose of an evaluator is to assert an invariant that the system must hold in order to run properly. Examples of such invariants include the ability to undergo a fork transition or the ability to find peers in the network. All evaluators can be found in https://github.com/OffchainLabs/prysm/tree/develop/testing/endtoend/evaluators.
 
 Each evaluator has a name, a policy (which we will cover later) and an evaluation function. The evaluation function is the actual code that asserts if the system behaves correctly. If the invariant is broken, an error is returned from the function, and the test is stopped and considered failed.
 
@@ -76,7 +76,7 @@ Each evaluator has a name, a policy (which we will cover later) and an evaluatio
 
 ### Policies
 
-Not every invariant can be checked at every epoch. As an example, the Altair fork transition invariant should be asserted only after the Altair hard fork occurred. Evaluator timings are controlled with policies, which are simple functions returning boolean values, with `true` indicating that the evaluator should be ran for a specific epoch. All policies can be found in https://github.com/prysmaticlabs/prysm/tree/develop/testing/endtoend/policies.
+Not every invariant can be checked at every epoch. As an example, the Altair fork transition invariant should be asserted only after the Altair hard fork occurred. Evaluator timings are controlled with policies, which are simple functions returning boolean values, with `true` indicating that the evaluator should be ran for a specific epoch. All policies can be found in https://github.com/OffchainLabs/prysm/tree/develop/testing/endtoend/policies.
 
 ## Investigating failures
 
@@ -130,7 +130,7 @@ The issue here is that our repo contains a static file named `genesis.json` that
 
 ## Testing features
 
-Prysm supports [feature flags](https://github.com/prysmaticlabs/prysm/blob/develop/config/features/README.md), which are very useful when we want to test a particular feature before making it a standard in production. Sometimes you might want to run E2E with your feature flag enabled. To do this, go to https://github.com/prysmaticlabs/prysm/blob/develop/config/features/flags.go and append your flag to `E2EBeaconChainFlags`:
+Prysm supports [feature flags](https://github.com/OffchainLabs/prysm/blob/develop/config/features/README.md), which are very useful when we want to test a particular feature before making it a standard in production. Sometimes you might want to run E2E with your feature flag enabled. To do this, go to https://github.com/OffchainLabs/prysm/blob/develop/config/features/flags.go and append your flag to `E2EBeaconChainFlags`:
 
 ```
 var E2EBeaconChainFlags = []string{

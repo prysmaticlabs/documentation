@@ -99,7 +99,7 @@ prysm.sh validator slashing-protection-history export --datadir=/path/to/your/va
 **Using Docker**
 
 ```sh
-docker run -it -v /path/to/outputdir:/output -v /path/to/wallet:/wallet gcr.io/prysmaticlabs/prysm/validator:stable -- slashing-protection-history export --datadir=/path/to/your/validator/db --slashing-protection-export-dir=/output
+docker run -it -v /path/to/outputdir:/output -v /path/to/wallet:/wallet gcr.io/offchainlabs/prysm/validator:stable -- slashing-protection-history export --datadir=/path/to/your/validator/db --slashing-protection-export-dir=/output
 ```
 
 You will then find the slashing protection JSON file in your specified /path/to/outputdir folder.
@@ -122,7 +122,7 @@ prysm.bat validator slashing-protection-history export --datadir=/path/to/your/v
 **Using Docker**
 
 ```sh
-docker run -it -v \path\to\outputdir:/output -v \path\to\wallet:/wallet gcr.io/prysmaticlabs/prysm/validator:stable -- slashing-protection-history export --datadir=/path/to/your/validator/db --slashing-protection-export-dir=/output
+docker run -it -v \path\to\outputdir:/output -v \path\to\wallet:/wallet gcr.io/offchainlabs/prysm/validator:stable -- slashing-protection-history export --datadir=/path/to/your/validator/db --slashing-protection-export-dir=/output
 ```
 
 You will then find the slashing protection JSON file in your specified \path\to\outputdir folder.
@@ -139,7 +139,7 @@ prysm.sh validator slashing-protection-history export --datadir=/path/to/your/va
 **Using Docker**
 
 ```sh
-docker run -it -v /path/to/outputdir:/output -v /path/to/wallet:/wallet gcr.io/prysmaticlabs/prysm/validator:stable -- slashing-protection-history export --datadir=/path/to/your/validator/db --slashing-protection-export-dir=/output
+docker run -it -v /path/to/outputdir:/output -v /path/to/wallet:/wallet gcr.io/offchainlabs/prysm/validator:stable -- slashing-protection-history export --datadir=/path/to/your/validator/db --slashing-protection-export-dir=/output
 ```
 
 You will then find the slashing protection JSON file in your specified /path/to/outputdir folder.
@@ -193,7 +193,7 @@ prysm.sh validator slashing-protection-history import --datadir=/path/to/your/va
 **Using Docker**
 
 ```sh
-docker run -it -v /path/to/desiredimportfile.json:/import/desiredimportfile.json -v /path/to/wallet:/wallet gcr.io/prysmaticlabs/prysm/validator:stable -- slashing-protection-history import --datadir=/path/to/your/validator/db --slashing-protection-json-file=/import/desiredimportfile.json
+docker run -it -v /path/to/desiredimportfile.json:/import/desiredimportfile.json -v /path/to/wallet:/wallet gcr.io/offchainlabs/prysm/validator:stable -- slashing-protection-history import --datadir=/path/to/your/validator/db --slashing-protection-json-file=/import/desiredimportfile.json
 ```
 
 **Using Bazel**
@@ -213,7 +213,7 @@ prysm.bat validator slashing-protection-history import --datadir=/path/to/your/v
 **Using Docker**
 
 ```sh
-docker run -it -v \path\to\desiredimportfile.json:/import/desiredimportfile.json -v \path\to\wallet:/wallet gcr.io/prysmaticlabs/prysm/validator:stable -- slashing-protection-history import --datadir=/path/to/your/validator/db --slashing-protection-json-file=/import/desiredimportfile.json
+docker run -it -v \path\to\desiredimportfile.json:/import/desiredimportfile.json -v \path\to\wallet:/wallet gcr.io/offchainlabs/prysm/validator:stable -- slashing-protection-history import --datadir=/path/to/your/validator/db --slashing-protection-json-file=/import/desiredimportfile.json
 ```
 
 </TabItem>
@@ -228,7 +228,7 @@ prysm.sh validator slashing-protection-history import --datadir=/path/to/your/va
 **Using Docker**
 
 ```sh
-docker run -it -v /path/to/desiredimportfile.json:/import/desiredimportfile.json -v /path/to/wallet:/wallet gcr.io/prysmaticlabs/prysm/validator:stable -- slashing-protection-history import --datadir=/path/to/your/validator/db --slashing-protection-json-file=/import/desiredimportfile.json
+docker run -it -v /path/to/desiredimportfile.json:/import/desiredimportfile.json -v /path/to/wallet:/wallet gcr.io/offchainlabs/prysm/validator:stable -- slashing-protection-history import --datadir=/path/to/your/validator/db --slashing-protection-json-file=/import/desiredimportfile.json
 ```
 
 **Using Bazel**
@@ -279,4 +279,4 @@ Prysm will output a success message upon successful import. An error message wil
 
 #### I'm nervous about this procedure... can I have some help?
 
-Absolutely - feel free to send us a message on [Discord](https://discord.com/invite/prysmaticlabs) and someone from our team will be happy to help.
+Absolutely - feel free to send us a message on [Discord](https://discord.gg/prysm) and someone from our team will be happy to help.

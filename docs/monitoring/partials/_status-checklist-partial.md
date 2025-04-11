@@ -112,7 +112,7 @@ import TabItem from '@theme/TabItem';
             <div className='input-container'><input id="st-6" type='checkbox'/><span className='done'></span></div>
             <div className='guidance-container'>
                 <label htmlFor="st-6">8. Beacon node version</label>
-                <p>Ensure that you're using the <a href='https://github.com/prysmaticlabs/prysm/releases'>latest stable Prysm release</a>. Check Prysm's version by issuing the following command: <code>prysm.sh beacon-chain --version</code> (Linux) <code>prysm.bat beacon-chain --version</code> (Windows).</p>
+                <p>Ensure that you're using the <a href='https://github.com/OffchainLabs/prysm/releases'>latest stable Prysm release</a>. Check Prysm's version by issuing the following command: <code>prysm.sh beacon-chain --version</code> (Linux) <code>prysm.bat beacon-chain --version</code> (Windows).</p>
             </div>
         </div>
         <div className='task'>
@@ -157,7 +157,7 @@ import TabItem from '@theme/TabItem';
             <div className='input-container'><input id="st-11" type='checkbox'/><span className='done'></span></div>
             <div className='guidance-container'>
                 <label htmlFor="st-11">13. Troubleshooting report</label>
-                <p>Issue still not resolved? <a href='#generate-troubleshooting-report'>Generate a troubleshooting report below</a>. Head over to <a href='https://discord.gg/prysmaticlabs'>Discord</a> and paste your report for additional troubleshooting assistance.</p>
+                <p>Issue still not resolved? <a href='#generate-troubleshooting-report'>Generate a troubleshooting report below</a>. Head over to <a href='https://discord.gg/prysm'>Discord</a> and paste your report for additional troubleshooting assistance.</p>
             </div>
         </div>
     </div>
