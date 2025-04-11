@@ -349,7 +349,7 @@ This section ocntains documents targeted at developers who want to contribute to
 
 ---
 
-#### [Prysm license](/licenses/prysmatic-labs.md)
+#### [Prysm license](/licenses/prysm.md)
 
 ---
 
