@@ -63,14 +63,15 @@ scrape_configs:
       - targets: ['localhost:8082']
 ```
 
-4. In the same directory, double-click the **prometheus** file (with extension `.exe` in Windows) to start Prometheus,
-or do so in a terminal by issuing the command:
+4. In the same directory, double-click the **prometheus** file (with extension `.exe` in Windows) to start Prometheus, or do so in a terminal by issuing the command:
 ```
 ./prometheus
 ```
   A terminal will open presenting the Prometheus log. 
  
-  > **NOTICE:** Prometheus' default data logging time is 15 days. To extend dashboard statistics to 31 days, add `--storage.tsdb.retention.time=31d` to this startup command.
+:::caution Notice 
+Prometheus' default data logging time is 15 days. To extend dashboard statistics to 31 days, add `--storage.tsdb.retention.time=31d` to this startup command.
+:::
 
 5. Navigate to [http://localhost:9090/graph](http://localhost:9090/graph) in a browser. It will present a page similar to this:
 ![Prometheus page](/images/prometheus_page.png "Prometheus page")
@@ -147,4 +148,6 @@ For those running their node and validators on separate machines, simply modify 
 * [Finding a **private IP**](/prysm-usage/p2p-host-ip/#private-ip-addresses)
 * [Finding a **public IP**](/prysm-usage/p2p-host-ip/#public-ip-addresses)
 
-> **NOTICE:** In case of public IPs, [port forwarding](/prysm-usage/p2p-host-ip/#port-forwarding) may need to be configured.
+:::info
+In case of public IPs, [port forwarding](/prysm-usage/p2p-host-ip/#port-forwarding) may need to be configured.
+:::

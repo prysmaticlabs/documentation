@@ -28,7 +28,7 @@
           <td><strong>Validator</strong></td>
           <td>
           <ul>
-            <li>Lets you stake ETH, propose + validate blocks, earn staking rewards + transaction fee tips.</li>
+            <li>Lets you stake `ETH`, propose + validate blocks, earn staking rewards + transaction fee tips.</li>
           </ul>
           </td>
           <td>
@@ -36,8 +36,8 @@
               <li>Everything above, plus...</li>    
               <li><strong>Software:</strong> Validator client, browser-based crypto wallet (instructions below)</li>   
               <li><strong>Hardware:</strong> (Recommended) A new machine that has never been connected to the internet that you can use to securely generate your mnemonic phrase and keypair</li>     
-              <li><strong>32 ETH</strong> (Mainnet)</li>
-              <li><strong>32 testnet ETH</strong> (Testnets)</li> 
+              <li><strong>32 `ETH`</strong> (Mainnet)</li>
+              <li><strong>32 testnet `ETH`</strong> (Testnets)</li> 
             </ul> 
           </td>
       </tr>
@@ -48,11 +48,11 @@
 
 ### Best practices
 
-- **If you're staking ETH as a validator, try this guide on a testnet first**, *then* mainnet.
+- **If you're staking `ETH` as a validator**, try this guide on a testnet first, *then* mainnet.
 - **Keep things simple**. This guidance assumes all client software will run on a single machine.
 - **Review the latest advisories** for the network(s) that you're using: [Holesky](https://holesky.launchpad.ethereum.org/en/) or [Mainnet](https://launchpad.ethereum.org/en/).
 - Review all of our [published security best practices](/security-best-practices).
-- **Join the community** - join our [mailing list](https://groups.google.com/g/prysm-dev), the [Prysm Discord server](https://discord.gg/prysm), [r/ethstaker](https://www.reddit.com/r/ethstaker/), and the [EthStaker Discord server](https://discord.gg/ethstaker) for updates and support.
+- **Join the community**: Join our [mailing list](https://groups.google.com/g/prysm-dev), the [Prysm Discord server](https://discord.gg/prysm), [r/ethstaker](https://www.reddit.com/r/ethstaker/), and the [EthStaker Discord server](https://discord.gg/ethstaker) for updates and support.
 
 </div>
 

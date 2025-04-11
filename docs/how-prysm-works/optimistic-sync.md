@@ -18,23 +18,23 @@ In this document we cover optimistic sync and its detailed implementation in Pry
 
 We describe Prysm's API to deal with optimistic sync, describing what the involved functions do, but not **how they do it**. For example, we describe that [SetOptimisticToInvalid](https://github.com/OffchainLabs/prysm/blob/develop/beacon-chain/forkchoice/doubly-linked-tree/optimistic_sync.go#L10) prunes invalid nodes from the forkchoice tree, but do not explain how this pruning is achieved. 
 
-## 1 What is optimistic sync?
+## 1. What is optimistic sync?
 
-Simply put, optimistic sync allows a consensus layer client (CLC) to import, process, and consider a beacon block for its forkchoice head, even though it has not validated its execution payload. Thus, syncing this block *optimistically* hoping that the block will be eventually validated by the execution layer client (ELC). 
+Simply put, optimistic sync allows a Consensus Layer Client (CLC) to import, process, and consider a beacon block for its forkchoice head, even though it has not validated its execution payload. Thus, syncing this block *optimistically* hoping that the block will be eventually validated by the Execution Layer Client (ELC). 
 
 Optimistic sync was devised because of the different mechanisms utilized by the CLC and the ELC to sync. Most ELC use a syncing mechanism called *snap sync* by which they download a snapshot of the current state from their P2P network, and then proceed to download backwards the blocks and transactions filling its history. Since after the merge, the CLC drives the ELC, without a mechanism to allow the execution layer to sync independently from the consensus layer, it would never catch up to head. The most obvious alternative, known as *lockstep syncing* consists of starting with a synced state, and importing one block at a time, importing first from the consensus layer and passing down the execution payload to the execution layer. Current sync block times show that syncing a small network like Kiln would take over a couple of weeks in lockstep mode on a decent server. There is a more sensible alternative to optimistic sync using the *Light client protocol* which we will not cover in this document.  
 
 ### The happy case
-From the user's perspective, the overwhelming majority of nodes that are  optimistically syncing are nodes that have just been started. The CLC can use checkpoint sync and be in sync in under 2 minutes. Snapshot sync for the ELC on the other hand will take much longer. Until the ELC catches up on head, the CLC may continue to import and keep syncing the beaconchain in optimistic mode. There are few edge cases in this situation. All edge cases and subtle considerations happen when an otherwise synced node, falls into optimistic sync due to an unforeseen circumstance. 
+From the user's perspective, the overwhelming majority of nodes that are  optimistically syncing are nodes that have just been started. The CLC can use checkpoint sync and be in sync in under two minutes. Snapshot sync for the ELC on the other hand will take much longer. Until the ELC catches up on head, the CLC may continue to import and keep syncing the beacon chain in optimistic mode. There are few edge cases in this situation. All edge cases and subtle considerations happen when an otherwise synced node, falls into optimistic sync due to an unforeseen circumstance. 
 
-## 2 Specification
+## 2. Specification
 
 ### 2.1 Which blocks can be imported optimistically?
 
 The specification of optimistic sync is fairly simple. A node makes the following validations on a beacon block to decide if it can be imported or not into its forkchoice/database. If the block fails consensus validation (signature, operations, right proposer, etc, but excluding execution payload validation), then reject the block and do not import it. Assuming that we have a beacon block that passes this validation. The following blocks are allowed to be imported:
 
 - If the block is pre-merge (ie. it does not include an execution payload). 
-- If the parent of the block is post-merge (ie. it does include an execution payload).
+- If the parent of the block is post-merge (i.e., it does include an execution payload).
 
 This leaves only a merge block itself unaccounted for, that is a block which does include an execution payload, but it is the **first** block in the chain to do so. In this case an extra rule is applied:
 
@@ -114,7 +114,7 @@ A node that is optimistically syncing the beacon chain in this conditions will n
 
 With the assumption that the majority of the chain will justify a checkpoint after the merge in less than `SAFE_SLOTS_TO_IMPORT_OPTIMISTICALLY`, then it is safe to import optimistically the merge block, knowing that at least this many slots have passed and we will have an honest justified checkpoint available to jump, in case this merge block is not valid. 
 
-## 3 Implementation in Prysm
+## 3. Implementation in Prysm
 
 Prysm's implementation of optimistic sync involves several different packages. It principally touches the forkchoice and blockchain packages as it changes the core handling of beacon blocks. But it also touches the database (package kv) and the sync package (during init sync and pubsub validation) and the RPC endpoints.  In this section we will cover all the paths added in each package. 
 
@@ -263,7 +263,7 @@ Notice that any orphaned block in the database, even those older than the last v
 
 The last validated checkpoint is updated only when we finalize a new checkpoint and thus its pruned from forkchoice. The corresponding function is [SaveLastValidatedCheckpoint](https://github.com/OffchainLabs/prysm/blob/develop/beacon-chain/db/kv/validated_checkpoint.go#L32) and is called from [updateFinalized](https://github.com/OffchainLabs/prysm/blob/develop/beacon-chain/blockchain/process_block_helpers.go#L139). This latter function is called both from `onBlock` and `onBlockBatch` when processing a block in regular or init sync that updates finalization. 
 
-## 4 Some edge cases and unsolved problems
+## 4. Some edge cases and unsolved problems
 
 ### 4.1 Justification reversal after pruning
 Most of the edge cases with optimistic sync happen in the presence of invalid payload. We have already described the situation with [Forkchoice Poisoning](#forkchoice-poisoning). The following similar situations have been described in the issues [10782](https://github.com/OffchainLabs/prysm/issues/10782) and [10777](https://github.com/OffchainLabs/prysm/issues/10777). They are variations of the same phenomenon: an INVALID chain is imported and it updates justification, even though the justification checkpoint is VALID, the node may be deadlocked. 
@@ -284,5 +284,3 @@ This problem was found independently by many and there are different ad-hoc impl
 ### 4.2 Timeouts and unhandled errors
 
 Another common themes for bugs with optimistic sync is the handling of timeouts and unhandled errors from the ELC. When the ELC timesout on a call to `notifyNewPayload`, it has not replied neither saying that it has fully validated the block nor that it is SYNCING. Ironically, this means that a node that was previously lock-stepping is not to be considered optimistic and can actually attest to its previous head, and propose a block based on its previous head. We are not allowed however to import a block which the ELC has not returned of of VALID, INVALID, ACCEPTED or SYNCING. The following situation has happened in a couple of merged networks and shadow forks: the ELC timesout the CLC does not send any new payload since it can't import any block. The CLC should consider resending either `notifyNewPayload`  or `notifyForkchoiceUpdate` to the ELC if it has timedout and the CLC is not importing a new block because of this. 
-
-

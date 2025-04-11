@@ -11,7 +11,9 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 This section outlines how to perform database backups for your beacon node and validator client. The validator client services expose an **HTTP backup endpoint** which is the **safest way** to trigger a database backup.
 
 :::danger Doing manual folder backups while the cllient is running is not safe
+
 If you perform backups by manually copying the database while the client is running, you risk copying a corrupted database! You might be copying the folder right when the client is in the middle of writing data to the database, and could end up with a bad backup.
+
 :::
 
 ## Beacon node

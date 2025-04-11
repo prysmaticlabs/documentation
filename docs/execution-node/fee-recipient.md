@@ -53,7 +53,7 @@ For example:
 
     ./prysm.sh validator --suggested-fee-recipient=0xCHANGEME012345c769F504hs287200aF50400a
 
-If your validator is running multiple keys (for example, staking 64 ETH using two validator public keys that have been imported into a single validator client instance), all validator public keys will use the wallet address specified through the `--suggested-fee-recipient` flag. You can optionally associate different fee recipient wallet addresses to individual validator public keys using the JSON/YAML configuration method detailed in the following section.
+If your validator is running multiple keys (for example, staking 64 `ETH` using two validator public keys that have been imported into a single validator client instance), all validator public keys will use the wallet address specified through the `--suggested-fee-recipient` flag. You can optionally associate different fee recipient wallet addresses to individual validator public keys using the JSON/YAML configuration method detailed in the following section.
 
 
 ### Configure fee recipient via JSON/YAML (validator client only)
@@ -209,16 +209,16 @@ Your fee recipient wallet address can also be set through the <a href='/prysm-us
 
 ## Frequently asked questions
 
-**How do I know if fee recipient was properly configured?** <br />
+#### How do I know if fee recipient was properly configured?
 If you don't see any errors after issuing one of the above commands, your fee recipient address has been successfully configured.
 
-**What happened to `fee-recipient-config-file`?** <br />
+#### What happened to `fee-recipient-config-file`?
 `fee-recipient-config-file` and `fee-recipient-config-url` flags are deprecated and have been replaced with `proposer-settings-file` and `proposer-settings-url` flags as of Prysm v2.1.3.
 
-**How do I ensure that builders receive my fee recipient wallet address?** <br />
+#### How do I ensure that builders receive my fee recipient wallet address?
 When `enable-builder` is set to `true` on your validator, you can use either the `--suggested-fee-recipient` flag or the JSON/YAML configuration method to communicate your fee recipient wallet address to builders.
 
-**When should I set my own `gas_limit`, and how do I know what to set?** <br />
+#### When should I set my own `gas_limit`, and how do I know what to set?
 This is an advanced configuration property related to custom builders (MEV) that most users won't have to think about. In general, large gas limits will result in you not being able to include many transactions in a block, while using low values won't be as profitable.  See [https://github.com/ethereum/builder-specs/issues/17](https://github.com/ethereum/builder-specs/issues/17) for related discussion.
 
 

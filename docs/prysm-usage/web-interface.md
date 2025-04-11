@@ -21,42 +21,36 @@ The Prysm Team
 :::
 
 :::info
+
 ## FAQ on Prysm UI Deprecation.
 
-**Q:What does it mean for the Web UI to be removed?**
-
-A: The web UI and its associated API endpoints ( aside from the keymanager APIs) will be marked for deprecation for the current hard fork and fully removed in a future hard fork. 
+#### What does it mean for the Web UI to be removed?
+The web UI and its associated API endpoints ( aside from the keymanager APIs) will be marked for deprecation for the current hard fork and fully removed in a future hard fork. 
 You may see logs that mention that an endpoint is marked for deprecation and should no longer be used in the future. Our team will continue to provide support as users transition to alternative solutions.
 
-**Q: Where can I view my validator metrics such as attestations without the Web UI**
+#### Where can I view my validator metrics such as attestations without the Web UI
+Users will need to migrate to using [grafana dashboards](./monitoring/grafana-dashboard.md) or our [individual validator monitoring guide](./individual-validator-monitoring.md) as well as look to online block explorers. Please let us know if any of these do not cover your usecase and provide any feedback on how we can improve our monitoring tools. 
 
-A: Users will need to migrate to using [grafana dashboards](./monitoring/grafana-dashboard.md) or our [individual validator monitoring guide](./individual-validator-monitoring.md) as well as look to online block explorers. Please let us know if any of these do not cover your usecase and provide any feedback on how we can improve our monitoring tools. 
+#### How do I recover a prysm wallet from a mnemonic without the Web UI?
+Prysm wallets (derived wallets) can be recovered with the associated mnemonic using the [staking-deposit-cli](https://github.com/ethereum/staking-deposit-cli). We recommend you do this recovery in an offline environment.
 
-**Q: How do I recover a prysm wallet from a mnemonic without the Web UI?**
+#### How do I set a fee recipient without the Web UI
+Community provided UI solutions will continue to provide a graphical interface to setting your fee recipient via the client standard [keymanager APIs](https://ethereum.github.io/keymanager-APIs/). Alternatively, the Prysm team can provide a way to set the fee recipient via the [prysmctl tool](./prysmctl.md).
 
-A: Prysm wallets (derived wallets) can be recovered with the associated mnemonic using the [staking-deposit-cli](https://github.com/ethereum/staking-deposit-cli). We recommend you do this recovery in an offline environment.
+#### How do I exit my validator without the Web UI
+A CLI command through the `prysmctl` tool or validator client can be used to exit the validator. Learn more about that [here](/wallet/exiting-a-validator.md).
 
-**Q: How do I set a fee recipient without the Web UI**
-
-A: Community provided UI solutions will continue to provide a graphical interface to setting your fee recipient via the client standard [keymanager APIs](https://ethereum.github.io/keymanager-APIs/). Alternatively, the Prysm team can provide a way to set the fee recipient via the [prysmctl tool](./prysmctl.md).
-
-**Q: How do I exit my validator without the Web UI**
-
-A: A cli command through the prysmctl tool or validator client can be used to exit the validator. Learn more about that [here](/wallet/exiting-a-validator.md).
-
-**Q: How do I export slashing protection without the Web UI**
-
-A: A cli command through the validator client can provide slashing protection exports, Community provided UI solutions can also provide this information via the client standard [keymanager APIs](https://ethereum.github.io/keymanager-APIs/) when removing a local validator. Learn more about it [here](/wallet/slashing-protection.md).
+#### How do I export slashing protection without the Web UI
+A CLI command through the validator client can provide slashing protection exports, Community provided UI solutions can also provide this information via the client standard [keymanager APIs](https://ethereum.github.io/keymanager-APIs/) when removing a local validator. Learn more about it [here](/wallet/slashing-protection.md).
 
 :::
 
 ## What is Prysm's web UI?
-
-The Prysm Web UI is a locally hosted website that is launched from the validator client to provide users with a visual alternative to the validator cli( command-line interface).
+The Prysm Web UI is a locally hosted website that is launched from the validator client to provide users with a visual alternative to the validator CLI(Command-Line Interface).
 
 The website will provide users with a visual way to set up their Prysm Wallet, manage their keys, and provide information on the current state of their validator. You will also be able to see a peer map for users who decide to share their location among the peers in their network.
 
-The website at this time does not provide additional metrics over those that you would find on your Grafana dashboards or beaconcha.in.
+The website at this time does not provide additional metrics over those that you would find on your Grafana dashboards or beacon chain.
 
 ## Launching and Logging In
 
@@ -76,23 +70,29 @@ example of URL in logs
 ```
 
 :::tip Print your unique authentication URL again
+
 Sometimes your browser cache gets cleared requiring you to reauthenticate, or you want to retrieve a new URL with token without restarting the validator.
 In that case, you can run the following command `validator web generate-auth-token`
+
 :::
 
 :::warning Auth Token must be located inside the wallet directory you are running the validator on
+
 The `--wallet-dir` flag can also be added to the `validator web generate-auth-token` command to specify the specific location where the auth token would apply. This is important when running the validator with a wallet directory that is not in the default directory. When this happens the website may return an invalid token page.
+
 :::
 
-:::tip 3rd party tools
-Third party tools such as DAppNode will initialize the user without use of the cli commands and will automatically redirect users to the dashboard. These tools will typically use the generated `auth-token` file located in the Prysm Wallet directory.
+:::tip Third-party tools
+
+Third party tools such as DAppNode will initialize the user without use of the CLI commands and will automatically redirect users to the dashboard. These tools will typically use the generated `auth-token` file located in the Prysm Wallet directory.
+
 :::
 
 If it is the first time you have ran your Prysm validator and have not yet created a wallet, you will be faced with a wallet creation screen allowing you to import the keystores generated from the Ethereum `deposit-cli`.
 
 ![Image](/images/walletcreate.png)
 
-upon completion of onboarding, your web page should always redirect you to the main dashboard.
+Upon completion of onboarding, your web page should always redirect you to the main dashboard.
 
 ## Configuration
 
@@ -112,7 +112,9 @@ The available parameters to customize are:
 | `--http-port` | The port for the validator client's JSON-HTTP API, default `7500`      |
 
 :::caution
+
 `http-host` and `http-port` have replaced `--grpc-gateway-host` and `--grpc-gateway-port` respectively.
+
 :::
 
 ### Wallet Directory
@@ -130,7 +132,9 @@ ssh -L 7500:127.0.0.1:7500 user@host_ip
 where you replace `user@host_ip` with the user and host ip address of the remote machine you are trying to access. This will forward all requests from your home computer's localhost:7500 to the remote instance's localhost:7500, allowing you to visit `http://localhost:7500` from your favorite browser and then access the validator web interface! This is the safest approach to access it, as you are exposing the web interface to the open Internet.
 
 :::warning Please use HTTPS
+
 If you plan to expose the website to the open Internet, please look into protecting yourself with HTTPS. Prysm web does not come with certificates or HTTPS pre-configured. If you are running Prysm Web on the open internet without HTTPS you are running at your own risk.
+
 :::
 
 ## Troubleshooting
@@ -161,20 +165,24 @@ The web interface is open source and located at [github.com/OffchainLabs/prysm-w
 ### Prerequisites
 
 - latest node
-- ide (i.e. visual studio code)
+- IDE (i.e., visual studio code)
 
 after cloning the repo navigate to where the `package.json` file and run `npm install` to retrieve the dependencies you will need.
 
 ### Running in Develop
 
-run `npm start` in the folder path where `package.json` lives and open the website on `localhost:4200`.
+Run `npm start` in the folder path where `package.json` lives and open the website on `localhost:4200`.
 
 :::warning Web UI in development mode uses mock data by default
+
 The recommended way to run prysm web is from the validator client itself via the `--web` flag. If you are building the web UI from source and doing `npm start`, you **will be using fake, mock data!** Keep that in mind if you are trying to use real accounts with the web UI.
+
 :::
 
+
 :::tip Develop URL login
-for authentication in develop you may use any token in the url query parameter i.e. `localhost:4200/initialize?token=anytoken`
+For authentication in develop you may use any token in the url query parameter i.e., `localhost:4200/initialize?token=anytoken`
+
 :::
 
 ### Running in Staging

@@ -14,7 +14,7 @@ This guidance is relevant only if your beacon node is connecting to your executi
 
 :::
 
-First, <strong>select a configuration</strong>:
+First, **select a configuration**:
 
 <div className='jwt-guide'>
 

@@ -17,18 +17,18 @@ The following best practices will help minimize the risk of [slashing](/concepts
 1.	Never run more than a single validator process with the same keys loaded.
 2.  Delete your keys from the old machine before starting your new machine.
 3.	Maintain and utilize slashing protection.
-4.	Accept some downtime as part of a successful migration. We recommend waiting at least 2 epochs (roughly 13 minutes) between "old machine off" and "new machine on".
+4.	Accept some downtime as part of a successful migration. We recommend waiting at least two epochs (roughly 13 minutes) between "old machine off" and "new machine on."
 
 :::
 
-## Migration Process
-
 The migration process is straightforward and not too dissimilar to backing up and restoring important data.  
 
-### Step 1: Export slashing protection history
+## Step 1: Export slashing protection history
 
 :::tip Stop the Validator
+
 Exporting the slashing protection database is a real-time process and can be undertaken at any time. During migration, you should run the export once you have stopped the validator you are migrating away from. This ensures all validator actions are captured and subsequently imported into the new validator process.  
+
 :::
 
 To export your slashing protection history, use Prysm's built in commands which will work with any installation method.
@@ -60,19 +60,19 @@ import TabItem from '@theme/TabItem';
 
 
 
-**Using the Prysm installation script**
+### Using the Prysm installation script
 
 ```sh
 ./prysm.sh validator slashing-protection-history export --datadir=/path/to/validatorDb --slashing-protection-export-dir=/path/to/desired/outputdir
 ```
 
-**Using Docker**
+### Using Docker
 
 ```sh
 docker run -it -v /path/to/outputdir:/output -v /path/to/wallet:/wallet gcr.io/offchainlabs/prysm/validator:stable -- slashing-protection-history export --datadir=/path/to/validatorDb --slashing-protection-export-dir=/output
 ```
 
-**Using Bazel**
+### Using Bazel
 
 ```sh
 bazel run //cmd/validator -- slashing-protection-history export --datadir=/path/to/validatorDb --slashing-protection-export-dir=/path/to/desired/outputdir
@@ -83,14 +83,14 @@ The first time you run the process you will be asked to accept or decline the te
 </TabItem>
 <TabItem value="win">
 
-**Using the Prysm installation script**
+### Using the Prysm installation script
 
 ```sh
 prysm.bat validator slashing-protection-history export --datadir=\path\to\validatorDb --slashing-protection-export-dir=\path\to\desired\outputdir
 ```
 
 
-**Using Docker**
+### Using Docker
 
 ```sh
 docker run -it -v \path\to\outputdir:/output -v \path\to\wallet:/wallet gcr.io/offchainlabs/prysm/validator:stable --slashing-protection-history export --datadir=/path/to/validatorDb --slashing-protection-export-dir=/output
@@ -103,19 +103,19 @@ The first time you run the process you will be asked to accept or decline the te
 </TabItem>
 <TabItem value="mac">
 
-**Using the Prysm installation script**
+### Using the Prysm installation script
 
 ```sh
 ./prysm.sh validator slashing-protection-history export --datadir=/path/to/validatorDb --slashing-protection-export-dir=/path/to/desired/outputdir
 ```
 
-**Using Docker**
+### Using Docker
 
 ```sh
 docker run -it -v /path/to/outputdir:/output -v /path/to/wallet:/wallet gcr.io/offchainlabs/prysm/validator:stable -- slashing-protection-history export --datadir=/path/to/validatorDb --slashing-protection-export-dir=/output
 ```
 
-**Using Bazel**
+### Using Bazel
 
 ```sh
 bazel run //cmd/validator -- slashing-protection-history export --datadir=/path/to/validatorDb --slashing-protection-export-dir=/path/to/desired/outputdir
@@ -126,13 +126,13 @@ The first time you run the process you will be asked to accept or decline the te
 </TabItem>
 <TabItem value="arm">
 
-**Using the Prysm installation script**
+### Using the Prysm installation script
 
 ```sh
 ./prysm.sh validator slashing-protection-history export --datadir=\path\to\validatorDb --slashing-protection-export-dir=\path\to\desired\outputdir
 ```
 
-**Using Bazel**
+### Using Bazel
 
 ```sh
 bazel run //cmd/validator -- slashing-protection-history export --datadir=/path/to/validatorDb --slashing-protection-export-dir=/path/to/desired/outputdir
@@ -145,25 +145,27 @@ The first time you run the process you will be asked to accept or decline the te
 
 
 
-### Step 2:  Verify and Backup Validator accounts
+## Step 2: Verify and Backup Validator accounts
 
 An important aspect of managing Validator accounts is ensuring you know which account(s) you are working with. This enables you to verify the account(s) loaded in the validator prior to starting or taking any other action using the validator process, and can help reduce the risk of running the same account on more than one validator instance. 
 
 
 :::tip Wallet Password needed 
+
 You will need the password to the validator wallet in order to undertake Delete, List, Backup or Import actions.   
+
 :::
 
-#### Identify Accounts 
+### Identify Accounts 
 To Identify the account(s) loaded in your validator, issue the following command:
 
-**Using Linux/MacOS based systems**
+### Using Linux/MacOS based systems
 
 ```sh
 ./prysm.sh validator accounts list
 ```
 
-**Using Windows based systems**
+### Using Windows based systems
 
 ```sh
 prysm.bat validator accounts list
@@ -179,17 +181,17 @@ Account 1 | words-three-random
 
 We recommend that you keep an accurate and up-to-date record of the name (three word and public key combinations) of your account(s) for management and verification purposes.
  
- #### Backup
+### Backup
  
 You can backup validator accounts from your wallet using the following command:
 
-**Using Linux/MacOS based systems**
+### Using Linux/MacOS based systems
 
 ```sh
 ./prysm.sh validator accounts backup
 ```
 
-**Using Windows based systems**
+### Using Windows based systems
 
 ```sh
 prysm.bat validator accounts backup
@@ -199,7 +201,7 @@ You will now be prompted for the wallet password. Once entered, you will be guid
 You can also run the accounts backup command non-interactively by using the following command line flags, which are also viewable by appending --help to the command line listed above:
 
 
-**Flag Usage**
+#### Flag Usage
 
 | Flag                     | Usage                                                                                                  |
 |--------------------------|:-------------------------------------------------------------------------------------------------------|
@@ -210,17 +212,17 @@ You can also run the accounts backup command non-interactively by using the foll
 | `--backup-password-file` | Path to a plain-text, .txt file containing the desired password for your backed up accounts.           |
 
 
-### Step 3:  Importing Validator accounts
+## Step 3:  Importing Validator accounts
 
 Expand (unzip) the backup file created above. The file will contain one JSON file for each account in the validator. Once the JSON files have been created, import them using the following command:
 
-**Using Linux/MacOS based systems**
+### Using Linux/MacOS based systems
 
 ```sh
 ./prysm.sh validator accounts import --keys-dir=/path/to/keystore-file.json
 ```
 
-**Using Windows based systems**
+### Using Windows based systems
 
 ```sh
 prysm.bat validator accounts import --keys-dir=\path\to\keystore-file.json
@@ -228,9 +230,9 @@ prysm.bat validator accounts import --keys-dir=\path\to\keystore-file.json
 
 This will import all files that are valid EIP-2335 keystores, such as those generated by the backup process above or the official Ethereum deposit launchpad's command-line tool. 
 
-The files you are importing must have the prefix "keystore-" using the defaults in backup will typically create a zip file containing the sequential keystores for the validators. If you have 1 validator account the zip file will typically contain the file keystore-0.json. If you have 3 validator accounts the keystore will typically contain keystore-0.json, keystore-1.json and keystore-2.json.  
+The files you are importing must have the prefix "keystore-" using the defaults in backup will typically create a zip file containing the sequential keystores for the validators. If you have 1 validator account the zip file will typically contain the file keystore-0.json. If you have three validator accounts the keystore will typically contain keystore-0.json, keystore-1.json and keystore-2.json.  
 
-### Step 4: Importing slashing protection history
+## Step 4: Importing slashing protection history
 
 To import a slashing protection JSON file (all Ethereum consensus clients use the same format defined in EIP-3076) use the appropriate installation method for your Prysm validator.
 
@@ -246,19 +248,19 @@ To import a slashing protection JSON file (all Ethereum consensus clients use th
 }>
 <TabItem value="lin">
 
-**Using the Prysm installation script**
+### Using the Prysm installation script
 
 ```sh
 ./prysm.sh validator slashing-protection-history import --datadir=/path/to/validatorDb --slashing-protection-json-file=/path/to/desiredimportfile
 ```
 
-**Using Docker**
+### Using Docker
 
 ```sh
 docker run -it -v /path/to/desiredimportfile.json:/import/desiredimportfile.json -v /path/to/wallet:/wallet gcr.io/offchainlabs/prysm/validator:stable -- slashing-protection-history import --datadir=/path/to/validatorDb --slashing-protection-json-file=/import/desiredimportfile.json
 ```
 
-**Using Bazel**
+### Using Bazel
 
 ```sh
 bazel run //cmd/validator -- slashing-protection-history import --datadir=/path/to/validatorDb --slashing-protection-json-file=/path/to/desiredimportfile
@@ -267,12 +269,12 @@ bazel run //cmd/validator -- slashing-protection-history import --datadir=/path/
 </TabItem>
 <TabItem value="win">
 
-**Using the Prysm installation script**
+### Using the Prysm installation script
 
 ```sh
 prysm.bat validator slashing-protection-history import --datadir=\path\to\validatorDb --slashing-protection-json-file=\path\to\desiredimportfile
 ```
-**Using Docker**
+### Using Docker
 
 ```sh
 docker run -it -v \path\to\desiredimportfile.json:/import/desiredimportfile.json -v \path\to\wallet:/wallet gcr.io/offchainlabs/prysm/validator:stable -- slashing-protection-history import --datadir=/path/to/validatorDb --slashing-protection-json-file=/import/desiredimportfile.json
@@ -281,19 +283,19 @@ docker run -it -v \path\to\desiredimportfile.json:/import/desiredimportfile.json
 </TabItem>
 <TabItem value="mac">
 
-**Using the Prysm installation script**
+### Using the Prysm installation script
 
 ```sh
 ./prysm.sh validator slashing-protection-history import --datadir=/path/to/validatorDb --slashing-protection-json-file=/path/to/desiredimportfile
 ```
 
-**Using Docker**
+### Using Docker
 
 ```sh
 docker run -it -v /path/to/desiredimportfile.json:/import/desiredimportfile.json -v /path/to/wallet:/wallet gcr.io/offchainlabs/prysm/validator:stable -- slashing-protection-history import --datadir=/wallet --slashing-protection-json-file=/import/desiredimportfile.json
 ```
 
-**Using Bazel**
+### Using Bazel
 
 ```sh
 bazel run //cmd/validator -- slashing-protection-history import --datadir=/path/to/validatorDb --slashing-protection-json-file=/path/to/desiredimportfile
@@ -302,13 +304,13 @@ bazel run //cmd/validator -- slashing-protection-history import --datadir=/path/
 </TabItem>
 <TabItem value="arm">
 
-**Using the Prysm installation script**
+### Using the Prysm installation script
 
 ```sh
 ./prysm.sh validator slashing-protection-history import --datadir=/path/to/validatorDb --slashing-protection-json-file=/path/to/desiredimportfile
 ```
 
-**Using Bazel**
+### Using Bazel
 
 ```sh
 bazel run //cmd/validator -- slashing-protection-history import --datadir=/path/to/validatorDb --slashing-protection-json-file=/path/to/desiredimportfile
@@ -318,19 +320,19 @@ bazel run //cmd/validator -- slashing-protection-history import --datadir=/path/
 </Tabs>
 
 
-### Step 5:  Verification and restarting the validator client
+## Step 5:  Verification and restarting the validator client
 
 It is highly recommended that the validator process on the original, migrated validator is stopped and disabled to ensure it is not restarted automatically or accidentally. 
 
 On the original system, with the validator process stopped, remove the account(s) using the process below: 
 
-**Using Linux/MacOS based systems**
+### Using Linux/MacOS based systems
 
 ```sh
 ./prysm.sh validator accounts delete 
 ```
 
-**Using Windows based systems**
+### Using Windows based systems
 
 ```sh
 prysm.bat validator accounts delete
@@ -354,6 +356,5 @@ Once complete, verify the account removal using the validator accounts list comm
 
 ## Frequently asked questions
 
-**When I migrate my slashing protection history from Machine A -> Machine B, or Client A -> Client B, do I need to retain A's slashing protection history after importing to B?**
-
+#### When I migrate my slashing protection history from Machine A -> Machine B, or Client A -> Client B, do I need to retain A's slashing protection history after importing to B?
 No. After successfully importing your slashing protection history from A -> B, you can discard A. If you need to migrate from B -> C, B's slashing protection history is all you need to export/import.

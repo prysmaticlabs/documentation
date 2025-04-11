@@ -22,15 +22,19 @@ Prysm implements its API by using the popular [gRPC](https://grpc.io) project cr
 ## Calling the API on your local beacon node
 
 :::danger Do not publicly expose the API
+
 The API's purpose is a means of communication between your beacon node and your validator client. Because of this it is not protected against external malicious users. Some endpoints are vulnerable to Denial-of-Service attacks, while others may disclose information about your beacon node. The communication between the beacon node and the validator client should be done privately, either on the same machine or through an SSH connection.
+
 :::
 
 By default, the beacon node exposes a [gRPC](https://grpc.io) API on host `127.0.0.1:4000`, which is accessed by the validator client. This is not an HTTP endpoint, so you will not be able to perform API queries via HTTP on that port. 
-Instead of using a regular curl command you will need to use `gRPCurl` or a similar tool to make API calls via your terminal.
+Instead of using a regular `curl` command you will need to use `gRPCurl` or a similar tool to make API calls via your terminal.
 
 :::caution as of v5.1.1 HTTP for gRPC endpoints is no longer supported
+
 As of v5.1.1, gRPC gateway was removed from Prysm and no longer supports HTTP for gRPC endpoints.
 Some Prysm specific endpoints are still supported via REST under the prysm/v1 namespace.
+
 :::
 
 ### gRPC tooling and resources
@@ -41,4 +45,3 @@ Some Prysm specific endpoints are still supported via REST under the prysm/v1 na
 * [Protocol Buffer Basics: Go](https://developers.google.com/protocol-buffers/gotutorial)
 * [Transcoding gRPC to JSON/HTTP using Envoy](https://blog.jdriven.com/2018/11/transcoding-grpc-to-http-json-using-envoy/)
 * [gRPCurl](https://github.com/fullstorydev/grpcurl)
-

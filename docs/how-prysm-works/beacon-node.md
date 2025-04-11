@@ -8,7 +8,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <HeaderBadgesWidget />
 
-The beacon-chain node shipped with Prysm is the keystone component of the Ethereum proof-of-stake protocol. It is responsible for running a full [Proof-of-Stake](/terminology#proof-of-stake-pos) blockchain, known as a beacon chain, which uses distributed consensus to agree on blocks both [proposed](/terminology#propose) and [attested](/terminology#attest) on by [validators](/terminology#validator) in the network. Beacon nodes communicate their processed blocks to their peers via a P2P \(peer-to-peer\) network, which also manages the lifecycle process of active [validator clients](/how-prysm-works/prysm-validator-client).
+The beacon-chain node shipped with Prysm is the keystone component of the Ethereum proof-of-stake protocol. It is responsible for running a full [Proof-of-Stake](/terminology#proof-of-stake-pos) blockchain, known as a beacon chain, which uses distributed consensus to agree on blocks both [proposed](/terminology#propose) and [attested](/terminology#attest) on by [validators](/terminology#validator) in the network. Beacon nodes communicate their processed blocks to their peers via a P2P (peer-to-peer) network, which also manages the lifecycle process of active [validator clients](/how-prysm-works/prysm-validator-client).
 
 ![Beacon node](/images/prysm-beacon-chain.png)
 
@@ -17,7 +17,7 @@ The beacon-chain node shipped with Prysm is the keystone component of the Ethere
 At runtime, the beacon node initialises and maintains a number of services that are all vital to providing all the features of Ethereum proof-of-stake. In no particular order, these services include:
 
 * A [**blockchain** **service**](#blockchain-service) which processes incoming blocks from the network, advances the beacon chain's state, and applies a fork choice rule to select the best head block.
-* An [**operations service**](#operations-service) prepares information contained in beacon blocks received from peers \(such as block deposits and attestations\) for inclusion into new validator blocks.
+* An [**operations service**](#operations-service) prepares information contained in beacon blocks received from peers (such as block deposits and attestations) for inclusion into new validator blocks.
 * A [**core package** ](#core-package) containing Ethereum beacon-chain core functions, utilities, and state transitions required for conformity with the protocol.
 * A [**sync service**](#sync-service) which both queries nodes across the network to ensure the latest [canonical head](/terminology#canonical-head-block) and state are synced and processes incoming block announcements from peers.
 * An [**ETH 1.0 service**](#eth1-service) that listens to the latest event logs from the validator deposit contract and the ETH 1.0 blockchain.

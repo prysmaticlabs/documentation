@@ -41,7 +41,7 @@ A non-HD wallet is the most basic sort of wallet, storing all information on-dis
 Then select **non-HD** wallet when prompted. You can also create a wallet **non-interactively** by using the following command line flags, which are also viewable by typing `./prysm.sh validator wallet create --help.
 
 :::info
-You'll need to set a **strong** password for your wallet, containing at least 1 uppercase letter, 1 number, a special character, and be at least 8 characters long. Any unicode characters can be used for passwords.
+You'll need to set a **strong** password for your wallet, containing at least one uppercase letter, one number, a special character, and be at least eight characters long. Any unicode characters can be used for passwords.
 :::
 
 | Flag                     | Usage                                                                                  |
@@ -57,7 +57,7 @@ Here's a full example on how to create a non-HD wallet at `$HOME/mynonhdwallet`.
 
 ### Import validator accounts
 
-You can import validator keystores from a separate folder into your wallet with the following command
+You can import validator keystores from a separate folder into your wallet with the following command:
 
 ```bash
 ./prysm.sh validator accounts import --keys-dir=/path/to/keystores
@@ -67,13 +67,13 @@ This will import all files that are valid [EIP-2335](https://eips.ethereum.org/E
 
 ### List validator accounts
 
-You can list all validator accounts in your non-HD wallet using the following command
+You can list all validator accounts in your non-HD wallet using the following command:
 
 ```bash
 ./prysm.sh validator accounts list
 ```
 
-Where you'll see the following output
+Where you'll see the following output:
 
 ```bash
 INFO accounts: (wallet path) /Users/johndoe/Library/Eth2Validators/prysm-wallet-v2
@@ -85,7 +85,7 @@ personally-conscious-echidna
 [created at] 16 minutes ago
 ```
 
-You can also run the `accounts list` command **non-interactively** by using the following command line flags, which are also viewable by typing `./prysm.sh validator accounts list --help.
+You can also run the `accounts list` command **non-interactively** by using the following command line flags, which are also viewable by typing: `./prysm.sh validator accounts list --help`.
 
 | Flag                     | Usage                                                                        |
 | ------------------------ | :--------------------------------------------------------------------------- |

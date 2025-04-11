@@ -11,7 +11,9 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 This document will help advanced users create and configure TLS certificates to allow for secure gRPC connections to their beacon nodes.
 
 :::tip Pro-Tip
+
 The only practical use for using secure gRPC is in the case of connecting a beacon node that is being hosted remotely. For configurations in which the beacon node and validator reside on the same host system, these steps are not required nor recommended.
+
 :::
 
 A beacon node, by default, hosts a gRPC server on host `127.0.0.1` and port 4000, allowing any other process, such as a validator client, to establish an insecure connection on that port. The beacon node can also allow for secure, TLS connections if ran with the `--tls-cert=/path/to/cert.pem` and `--tls-key=/path/to/cert.key` flags, ensuring all connections via gRPC are secured. 
@@ -44,7 +46,11 @@ This will generate an output like so:
 
 ## Generating self-signed TLS certificates
 
-  > **NOTICE:** Creating a self-signed certificate is fine for simple TLS connections, though if the deployment will see public usage, it is always recommended to obtain valid certificates from a trusted certificate authority instead.
+:::caution 
+
+Creating a self-signed certificate is fine for simple TLS connections, though if the deployment will see public usage, it is always recommended to obtain valid certificates from a trusted certificate authority instead.
+
+:::
 
 1. Install [openssl](https://www.openssl.org/) for your operating system. 
 
@@ -54,7 +60,7 @@ This will generate an output like so:
     openssl genrsa -out ca.key 4096
     ```
 
-3. Create a self-signed root certificate
+3. Create a self-signed root certificate:
 
     ```text
     openssl req -new -x509 -key ca.key -sha256 -subj "/C=US/ST=NJ/O=CA, Inc." -days 365 -out ca.cert

@@ -8,7 +8,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <HeaderBadgesWidget />
 
-As stated, Ethereum consensus is a distributed and decentralised peer-to-peer \(P2P\) network. To accomplish this connectivity, Prysm has decided to utilise the popular [libp2p](https://libp2p.io/) project developed by [Protocol Labs](https://protocol.ai/).
+As stated, Ethereum consensus is a distributed and decentralised peer-to-peer (P2P) network. To accomplish this connectivity, Prysm has decided to utilise the popular [libp2p](https://libp2p.io/) project developed by [Protocol Labs](https://protocol.ai/).
 
 #### Why libp2p?
 

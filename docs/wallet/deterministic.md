@@ -25,7 +25,7 @@ To start using the HD wallet, you can create a new wallet using:
 ```
 
 :::info
-You'll need to set a **strong** password for your new HD wallet, containing at least 1 uppercase letter, 1 number, a special character, and be at least 8 characters long. Any unicode characters can be used for your wallet password.
+You'll need to set a **strong** password for your new HD wallet, containing at least one uppercase letter, one number, a special character, and be at least eight characters long. Any unicode characters can be used for your wallet password.
 :::
 
 Then select **HD** wallet when prompted. You can also create a wallet **non-interactively** by using the following command line flags, which are also viewable by typing `./prysm.sh validator wallet create --help`.
@@ -47,7 +47,7 @@ Here's a full example on how to create an HD wallet at `$HOME/myhdwallet`
 
 ### Wallet recovery
 
-You can fully recover an HD wallet along with all its accounts from a 24-word english mnemonic phrase generated during the wallet's creation process (which you should have stored offline). To recover your HD wallet in Prysm, you can run
+You can fully recover an HD wallet along with all its accounts from a 24-word english mnemonic phrase generated during the wallet's creation process (which you should have stored offline). To recover your HD wallet in Prysm, you can run:
 
 ```bash
 ./prysm.sh validator wallet recover
@@ -75,13 +75,13 @@ Your accounts are generated deterministically from your recovery phrase, so you 
 
 ### List validator accounts
 
-You can list all validator accounts in your HD wallet using the following command
+You can list all validator accounts in your HD wallet using the following command:
 
 ```bash
 ./prysm.sh validator accounts list
 ```
 
-Where you'll see the following output
+Where you'll see the following output:
 
 ```bash
 INFO accounts: (wallet path) /Users/johndoe/Library/Eth2Validators/prysm-wallet-v2
@@ -93,7 +93,7 @@ Account 0 | personally-conscious-echidna
 [validating private key] 0x50cabc13435fcbde9d240fe720aff84f8557a6c1c445211b904f1a9620668241
 ```
 
-You can view the `deposit_data` needed to send 32ETH to the Ethereum validator deposit contract 
+You can view the `deposit_data` needed to send 32 `ETH` to the Ethereum validator deposit contract.
 
 You can also run the `accounts list` command **non-interactively** by using the following command line flags, which are also viewable by typing `./prysm.sh validator accounts list --help`.
 

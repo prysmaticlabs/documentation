@@ -22,9 +22,9 @@ You can use Docker to run your beacon node and validators as background services
 
 ### Systemd (Linux)
 
-Linux systems allow for easy running of services in the background through a daemon process called [systemd](https://www.digitalocean.com/community/tutorials/systemd-essentials-working-with-services-units-and-the-journal). You can follow the tutorial posted by [Digital Ocean](https://www.digitalocean.com/community/tutorials/systemd-essentials-working-with-services-units-and-the-journal) on setting up systemd services.
+Linux systems allow for easy running of services in the background through a daemon process called [`systemd`](https://www.digitalocean.com/community/tutorials/systemd-essentials-working-with-services-units-and-the-journal). You can follow the tutorial posted by [Digital Ocean](https://www.digitalocean.com/community/tutorials/systemd-essentials-working-with-services-units-and-the-journal) on setting up `systemd` services.
 
-You can run your beacon node with the following systemd configuration, where you can modify some of the fields and flags to your liking. Assuming your prysm.sh script is at `/home/prysm/prysm.sh`.
+You can run your beacon node with the following `systemd` configuration, where you can modify some of the fields and flags to your liking. Assuming your `prysm.sh` script is at `/home/prysm/prysm.sh`.
 
 ```text
 [Unit]
@@ -40,7 +40,7 @@ User=YOUR_USER
 WantedBy=default.target
 ```
 
-You can also run your validator client in systemd using the following configuration.
+You can also run your validator client in `systemd` using the following configuration.
 
 ```text
 [Unit]
@@ -56,4 +56,3 @@ User=YOUR_USER
 [Install]
 WantedBy=default.target
 ```
-
