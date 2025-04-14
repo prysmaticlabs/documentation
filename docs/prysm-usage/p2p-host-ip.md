@@ -14,10 +14,9 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 :::info Knowledge Check
 
-**Not familiar with nodes, networks, and related terminology?** Consider reading [Nodes and networks](/concepts/nodes-networks.md) before proceeding. 
+Not familiar with nodes, networks, and related terminology? Consider reading [Nodes and networks](/concepts/nodes-networks.md) before proceeding. 
 
 :::
-
 
 In some cases, small changes to your port and firewall configuration can significantly improve your node's **peer-to-peer connectivity**. Improved peer-to-peer connectivity benefits the broader Ethereum ecosystem by making blockchain data more available, and it can also help your validator find more work (and earn a little more ETH).
 
@@ -29,7 +28,11 @@ In this how-to, we'll walk through the following tasks:
  4. Configure your beacon node to [broadcast your public IP address](#broadcast-your-public-ip-address).
  5. [Verify your node's discoverability](#verify-your-nodes-discoverability) by using a TCP lookup tool.
 
-Note that **as long as you can complete the [Status checklist](/monitoring/checking-status.md) without error, this isn't required**. These are optimizations targeted at power users.
+:::note
+
+As long as you can complete the [Status checklist](/monitoring/checking-status.md) without error, this isn't required. These are optimizations targeted at power users.
+
+:::
 
 ## Configure your firewall
 
@@ -141,7 +144,7 @@ Use the [MX Toolbox TCP Lookup tool](https://mxtoolbox.com/SuperTool.aspx?):
 
 `https://mxtoolbox.com/SuperTool.aspx?action=tcp%3a{Your-Public-IP-Address}%3a13000&run=toolpage`
 
-Note the above placeholder for `Your-Public-IP-Address`, and the specification of `13000/TCP`.
+Take note of the above placeholder for `Your-Public-IP-Address`, and the specification of `13000/TCP`.
 
 If you see the following results, your beacon node is highly discoverable:
 
@@ -150,5 +153,3 @@ If you see the following results, your beacon node is highly discoverable:
 You can perform the same test using `30303/TCP` to test your execution node's discoverability. 
 
 See [Check your node and validator status](/monitoring/checking-status.md) for a comprehensive status checklist.
-
-

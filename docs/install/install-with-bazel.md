@@ -136,7 +136,7 @@ bazel run //cmd/beacon-chain --config=release -- --execution-endpoint=<YOUR_ETH_
   </TabItem>
       <TabItem value="sepolia">
 
-Download the Sepolia genesis state from [Github](https://github.com/eth-clients/merge-testnets/blob/main/sepolia/genesis.ssz) to a local file. In the following command, replace `<PATH_TO_GENESIS>` by the path of the genesis state you just downloaded and run it:
+Download the Sepolia genesis state from [GitHub](https://github.com/eth-clients/merge-testnets/blob/main/sepolia/genesis.ssz) to a local file. In the following command, replace `<PATH_TO_GENESIS>` by the path of the genesis state you just downloaded and run it:
 
 ```text
 bazel run //cmd/beacon-chain --config=release -- --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> --sepolia --genesis-state=<PATH_TO_GENESIS>
@@ -146,7 +146,7 @@ bazel run //cmd/beacon-chain --config=release -- --execution-endpoint=<YOUR_ETH_
   </TabItem>
       <TabItem value="holesky">
 
-Download the Holesky genesis state from [Github](https://github.com/eth-clients/holesky/blob/main/metadata/genesis.ssz) to a local file. In the following command, replace `<PATH_TO_GENESIS>` by the path of the genesis state you just downloaded and run it:
+Download the Holesky genesis state from [GitHub](https://github.com/eth-clients/holesky/blob/main/metadata/genesis.ssz) to a local file. In the following command, replace `<PATH_TO_GENESIS>` by the path of the genesis state you just downloaded and run it:
 
 ```text
 bazel run //cmd/beacon-chain --config=release -- --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> --holesky --genesis-state=<PATH_TO_GENESIS>
@@ -167,7 +167,7 @@ Navigate to the [Mainnet Launchpad](https://launchpad.ethereum.org/summary) and 
 
 :::danger Exercise extreme caution
 
-The correct address for the launchpad is https://launchpad.ethereum.org and the only, official validator deposit contract is [0x00000000219ab540356cbb839cbe05303d7705fa](https://etherscan.io/address/0x00000000219ab540356cbb839cbe05303d7705fa). Don't send ETH directly to the contract - use the Ethereum.org launchpad instead.
+The correct address for the launchpad is https://launchpad.ethereum.org and the only, official validator deposit contract is [0x00000000219ab540356cbb839cbe05303d7705fa](https://etherscan.io/address/0x00000000219ab540356cbb839cbe05303d7705fa). Don't send `ETH` directly to the contract - use the Ethereum.org launchpad instead.
 
 :::
 
@@ -217,7 +217,7 @@ At the moment, building Prysm docker images is only supported on **Linux** and *
 
 :::
 
- The standard images are very thin wrappers around the Prysm beacon-chain and validator binaries, and do not contain any other typical components of Docker images such as a bash shell. These are the Docker images we ship to all users, and you can build them yourself by creating a docker tarball and then importing it into your local docker machine as follows:
+ The standard images are very thin wrappers around the Prysm beacon-chain and validator binaries, and do not contain any other typical components of Docker images such as a bash shell. These are the Docker images we ship to all users, and you can build them yourself by creating a docker tarball and then importing it into your local Docker machine as follows:
 
 ##### For AMD / x86 architecture
 
@@ -305,7 +305,7 @@ Loaded image: gcr.io/offchainlabs/prysm/beacon-chain:latest
 #### Authentication
 
 You can use these rules to access private images using standard Docker
-authentication methods.  e.g. to utilize the [Google Container Registry](
+authentication methods.  e.g., to utilize the [Google Container Registry](
 https://gcr.io). See
 [here](https://cloud.google.com/container-registry/docs/advanced-authentication) for authentication methods.
 

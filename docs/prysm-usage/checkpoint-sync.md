@@ -158,7 +158,7 @@ Note that there are many blockchain explorers - we recommend doing your own rese
 
 ## Frequently asked questions
 
-**Is checkpoint sync less secure than syncing from genesis?** <br/>
+#### Is checkpoint sync less secure than syncing from genesis?
 No. It's actually considered *more* secure thanks to the protections against long-range attacks afforded by [Weak Subjectivity](https://blog.ethereum.org/2014/11/25/proof-stake-learned-love-weak-subjectivity/).
 
 <!--
@@ -166,36 +166,36 @@ No. It's actually considered *more* secure thanks to the protections against lon
 TODO
 -->
 
-**Does Prysm's implementation of checkpoint sync support backfilling?**
+#### Does Prysm's implementation of checkpoint sync support backfilling?
 Yes. Backfill can be enabled by running the beacon node with the `--enable-experimental-backfill` option. By default Prysm will backfill the last 5 months worth of blocks.
 
-**Can I use checkpoint sync on any network?** <br/>
+#### Can I use checkpoint sync on any network?
 Yes. Checkpoint sync is a network-agnostic feature. You can even use it on local devnets.
 
-**Can I use checkpoint sync with an existing, partially synced database?** <br/>
+#### Can I use checkpoint sync with an existing, partially synced database?
 No - checkpoint sync requires a fresh, unused data directory. If you've partially synced in the past you will have to manually delete your directory and start from scratch, or run the beacon node with the `--clear-db` or `--force-clear-db` option.
 
-**Are there any publicly available, trustworthy checkpoint sync endpoints that I can use?** <br/>
+#### Are there any publicly available, trustworthy checkpoint sync endpoints that I can use?
 A [community maintained list](https://eth-clients.github.io/checkpoint-sync-endpoints/) of public Beacon Chain checkpoint sync endpoints is maintained.
 
 Feel free to ask on our [Discord server](https://discord.gg/prysm) if you need help identifying a **Mainnet** checkpoint state provider.
 
-**Do I need to provide a genesis state when using checkpoint sync on Mainnet?** <br/>
+#### Do I need to provide a genesis state when using checkpoint sync on Mainnet?
 No. Mainnet's genesis state is embedded within Prysm.
 
-**Can I use Infura as a checkpoint state provider?** <br/>
+#### Can I use Infura as a checkpoint state provider?
 Yes. Note that you can't use Infura as an execution node endpoint provider (as was the case pre-Merge), but you can use it as a checkpoint state provider.
 
-**I started a beacon node with checkpoint sync enabled. Can I have other nodes pull checkpoint state from this node right away, or do I need to wait for it to become fully synced?** <br/>
+#### I started a beacon node with checkpoint sync enabled. Can I have other nodes pull checkpoint state from this node right away, or do I need to wait for it to become fully synced?
 Block and state are immediately finalized upon import, so your first node should be able to serve checkpoint sync requests to other clients without having to wait.
 
-**Does my execution client need to be fully synced before my beacon node can use checkpoint sync?** <br/>
+#### Does my execution client need to be fully synced before my beacon node can use checkpoint sync?
 Similar to what happens when you sync from genesis, if your execution client isn't fully synced, your beacon node will go into optimistic sync mode. You'll be able to follow the chain, but any validators connected to your beacon node won't be able to propose.
 
-**How does checkpoint sync relate to weak subjectivity checkpoints?**
+#### How does checkpoint sync relate to weak subjectivity checkpoints?
 Prysm offers a `--weak-subjectivity-checkpoint` flag that allows you to specify a weak subjectivity checkpoint. With this flag specified, your beacon node will ensure that it reconstructs a historical chain that matches the checkpoint root at the given epoch. This can offer the same level of weak subjectivity protection that checkpoint sync offers. See [Weak Subjectivity](https://blog.ethereum.org/2014/11/25/proof-stake-learned-love-weak-subjectivity/) to learn more.
 
-**Where can I learn more about checkpoint sync?** <br/>
+#### Where can I learn more about checkpoint sync?
 
  - [Checkpoint Sync Safety](https://www.symphonious.net/2022/05/21/checkpoint-sync-safety/) by Adrian Sutton
  - [How to: Checkpoint Sync](https://notes.ethereum.org/@launchpad/checkpoint-sync) by members of the Ethereum Foundation

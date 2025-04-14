@@ -13,8 +13,6 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-**What the feature is for:**
-
 Initial sync serves the following purposes:
 
 * Synchronizing from the last known node’s head (can be at genesis) to the highest finalized epoch known by the surrounding peers.
@@ -33,7 +31,7 @@ What problems are being addressed:
 
 The challenges for the initial sync implementers can be summarized as the following;
 
-- Peers surrounding the node can be bogus, non-responsive or even evil (that’s serving incoherent or wrong data on purpose). The trick is to make sure that blocks are being processed at a high pace, with good peers utilized to the fullest without danger of being eclipsed i.e. whether peer is considered good/bad is highly dependent on context and is dynamic in nature, so peer status should be updated regularly and a bad peer now may be a good choice to fetch from at some future moment.
+- Peers surrounding the node can be bogus, non-responsive or even evil (that’s serving incoherent or wrong data on purpose). The trick is to make sure that blocks are being processed at a high pace, with good peers utilized to the fullest without danger of being eclipsed i.e., whether peer is considered good/bad is highly dependent on context and is dynamic in nature, so peer status should be updated regularly and a bad peer now may be a good choice to fetch from at some future moment.
 
 - Incoming block list is sequential, but in order to utilize available resources better and increase throughput, we need to fetch data concurrently. That can be redundant at times, and it is important to make sure that block processors are not caught in livelock (where they are just spinning on the very same redundant data), nor starving (when they are processing blocks at a higher pace than block fetchers are capable of providing).
 
@@ -57,7 +55,7 @@ To keep track of the state, the queue utilizes finite state machines (FSMs): blo
 
 (here E - is normally a tick event, and actions are selected from available event handlers depending on the initial state S).
 
-FSMs are responsible for managing state transitions (fetch request queued, block batch requested, blocks received, data processed etc), but the actual fetching of data is handled by another major component of the init-sync system: block fetcher. This is done to decouple block queuing and actual block fetching: different state machines request different ranges concurrently. Of course, this may end up in some redundancy (when the earliest machine’s blocks are on some wrong fork and the next FSMs cannot proceed without resetting and re-requesting data of that first machine).
+FSMs are responsible for managing state transitions (fetch request queued, block batch requested, blocks received, data processed, etc.), but the actual fetching of data is handled by another major component of the init-sync system: block fetcher. This is done to decouple block queuing and actual block fetching: different state machines request different ranges concurrently. Of course, this may end up in some redundancy (when the earliest machine’s blocks are on some wrong fork and the next FSMs cannot proceed without resetting and re-requesting data of that first machine).
 
 ## Service Design Diagram 
 
@@ -83,17 +81,17 @@ Another purpose of the service object is to be the glue between blocks queue and
 
 See: [service.go](https://github.com/OffchainLabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/service.go#L46), [round_robin.go](https://github.com/OffchainLabs/prysm/blob/develop/beacon-chain/sync/initial-sync/round_robin.go)
 
-###   Blocks Queue
+### Blocks Queue
 
 Blocks queue is the core component managing higher level block fetching from the surrounding peers. 
 
 Queue operates in the following manner:
 
-- When started, queue creates the internal fetcher service, which is responsible for lower level data fetching functionality i.e. queue manages the overall scheduling process, while blocks fetcher is responsible for talking to peers, requesting and processing their data (see [blocks_queue.go:newBlocksQueue](https://github.com/OffchainLabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_queue.go#L100). Block fetcher exposes the output channel which the queue keeps waiting on up until all the necessary blocks are fetched, at that point the queue closes the fetcher's context thus closing that sub-service as well see: [blocks_queue.go:loop](https://github.com/OffchainLabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_queue.go#L255).
+- When started, queue creates the internal fetcher service, which is responsible for lower level data fetching functionality i.e., queue manages the overall scheduling process, while blocks fetcher is responsible for talking to peers, requesting and processing their data (see [blocks_queue.go:newBlocksQueue](https://github.com/OffchainLabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_queue.go#L100). Block fetcher exposes the output channel which the queue keeps waiting on up until all the necessary blocks are fetched, at that point the queue closes the fetcher's context thus closing that sub-service as well see: [blocks_queue.go:loop](https://github.com/OffchainLabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_queue.go#L255).
 
 - In order to keep FSMs as lightweight as possible, queue registers event handlers with itself instead of registering them with each individual machine. Each handler function accepts FSM as an argument (thus event handlers are fully aware on which machine they operate on).
 
-- Queue relies on the FSM manager to create/remove FSMs. In order to allow concurrent scheduling of different batches of blocks, queue relies on several machines (currently 8). FSMs are used to track the state of different block request ranges (whether blocks in that range have been requested, already fetched, sent down the pipeline etc).
+- Queue relies on the FSM manager to create/remove FSMs. In order to allow concurrent scheduling of different batches of blocks, queue relies on several machines (currently eight). FSMs are used to track the state of different block request ranges (whether blocks in that range have been requested, already fetched, sent down the pipeline, etc.).
 
 - Once the fetcher is initialized and event handlers are registered, the queue enters an event listening [loop](https://github.com/OffchainLabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_queue.go#L165), with only two available event types: `Tick` and `Data Received`. The `Tick` event is nothing more than a time ticker triggering different events handlers on FSMs (depending on their current state) on a regular basis (currently every 200 milliseconds). The `Data received` event is triggered asynchronously on read from the output channel of the fetcher i.e. when the fetcher returns some data to parse and pass over to block processors.
 
@@ -103,7 +101,7 @@ Queue operates in the following manner:
 
 - *On data received:* this event handler is triggered when a `Data Received` event occurs on a machine (if machine is not in `Scheduled` state, incoming data is ignored).
 
-- *On ready to send:* this event handler is triggered when a `Tick` event occurs on a machine with `Data Parsed` state i.e. machine that has incoming data placed into it.
+- *On ready to send:* this event handler is triggered when a `Tick` event occurs on a machine with `Data Parsed` state i.e., machine that has incoming data placed into it.
 
 - *On a stale machine:* this event handler is triggered when a `Tick` event occurs on an unresponsive machine, the main purpose of this handler is to mark the machine as skipped, so that `On a skipped machine` handler resets it.
 
@@ -169,9 +167,9 @@ The fetcher component (see [blocks_fetcher.go:blocksFetcher](https://github.com/
 
 - Fetcher manages two channels: one for incoming fetching requests and the other for sending fetched data back to requesters. All this is done asynchronously, of course!
 
-- Fetcher is smart enough to honour rate limits and while being highly concurrent, never requests at a higher pace than is allowed by Prysm beacon nodes (see [getPeerLock()](https://github.com/OffchainLabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_fetcher_peers.go#L21)). So, fetching nodes should never receive a bad score from fellow Prysm peers (while it is theoretically possible that other clients still consider our fetcher aggressive, in reality Prysm has one of the strictest limits, thus in practice this has never happened).
+- Fetcher is smart enough to honour rate limits and while being highly concurrent, never requests at a higher pace than is allowed by Prysm beacon nodes (see [`getPeerLock`()](https://github.com/OffchainLabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_fetcher_peers.go#L21)). So, fetching nodes should never receive a bad score from fellow Prysm peers (while it is theoretically possible that other clients still consider our fetcher aggressive, in reality Prysm has one of the strictest limits, thus in practice this has never happened).
 
-- All the low level details (like checking that enough peers are available, filtering out less useful peers, handling p2p errors) of data requesting is abstracted within the fetcher service.
+- All the low level details (like checking that enough peers are available, filtering out less useful peers, handling P2P errors) of data requesting is abstracted within the fetcher service.
 
 See: [blocks_fetcher.go](https://github.com/OffchainLabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_fetcher.go#L68), [blocks_fetcher_peers.go](https://github.com/OffchainLabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_fetcher_peers.go#L1), [blocks_fetcher_utils.go](https://github.com/OffchainLabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_fetcher_utils.go#L1)
 
@@ -183,7 +181,7 @@ There are several very interesting add-ons to the main synchronization procedure
 
 Normally, there are no more than a handful of non-finalized epochs, and once initial synchronization is complete, the regular synchronization is capable of proceeding by obtaining new blocks, validating them, and applying fork-choice rule. But occasionally, the whole network is unable to reach consensus and forked branches start to occur, and can even get quite long. This is especially prevalent during test networks (see [Medalla Incident](https://medium.com/prysmatic-labs/eth2-medalla-testnet-incident-f7fbc3cc934a) post-mortem), where there’s no real ether at stake.
 
-Regular synchronization cannot handle such fork branching, and node eventually falls behind the highest expected slot (if counting time slots from the genesis up to the current clock time). Once that happens, the system falls back to initial synchronization, which needs to be able to not only synchronize with the majority of  known peers, but handle the case when that majority is dynamic i.e. be capable to backtrack from some unfavourable fork, which is no longer voted for by the current majority of known peers (while it was supported by previous majority just 10 minutes ago!).
+Regular synchronization cannot handle such fork branching, and node eventually falls behind the highest expected slot (if counting time slots from the genesis up to the current clock time). Once that happens, the system falls back to initial synchronization, which needs to be able to not only synchronize with the majority of  known peers, but handle the case when that majority is dynamic i.e. be capable to backtrack from some unfavourable fork, which is no longer voted for by the current majority of known peers (while it was supported by previous majority just ten minutes ago!).
 
 Our backtracking algorithm is pretty simple (code is abridged, see full version [here](https://github.com/OffchainLabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_fetcher_utils.go#L1470):)
 
@@ -392,7 +390,7 @@ For even better illustration on customized setups, please, see the following tes
 
 **Runtime testing and usage**
 
-To run unit tests using bazel:
+To run unit tests using Bazel:
 
 ```
 bazel test //beacon-chain/sync/initial-sync:go_default_test --test_arg=-test.v --test_output=streamed --test_arg=-test.failfast --nocache_test_results --test_filter=
@@ -417,7 +415,9 @@ go test ./beacon-chain/sync/initial-sync -v -failfast -tags develop -run TestBlo
 
 When it comes to system and integration testing, generally one is expected to do it manually: run the beacon node and see whether it was able to sync from genesis to the latest head. 
 
-Variations include: stopping and restarting, stopping for a long time and then restarting, switching off access to the internet etc etc. Here is one way to do it:
+Variations include: stopping and restarting, stopping for a long time and then restarting, switching off access to the internet, etc. 
+
+Here is one way to do it:
 
 ```
 # Remove previous data:

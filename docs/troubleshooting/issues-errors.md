@@ -43,7 +43,7 @@ import TroubleshootingAllPartial from '@site/docs/troubleshooting/partials/_trou
 
  1. Complete the above troubleshooting checklist
  2. Fill in the below form
- 3. Click `Generate troubleshooting report`
+ 3. Click **Generate troubleshooting report**
  4. Copy and paste the **generated report text** into [Discord](https://discord.gg/prysm) when asking for support
 
 import GenerateTroubleshootingReportPartial from '@site/docs/troubleshooting/partials/_generate-troubleshooting-report.md';

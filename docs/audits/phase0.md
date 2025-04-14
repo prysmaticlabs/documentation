@@ -15,7 +15,7 @@ Prysmatic Labs' implementation for Phase 0 of Ethereum proof-of-stake has receiv
 Quantstamp has reviewed the whole codebase of the Prysm client implementation. We have found a number of issues spanning all severity levels. Some of the high severity issues
 were resolved before completion of the review. Overall the code is well-written. There are many ways, however, in which it can be improved to follow best practices. For example, code
 clones are relatively common. Furthermore, despite being mostly self-documenting, inline code documentation is lacking. We have no doubt that it would be useful for future contributors.
-Despite being accompanied by the official ETH 2.0 documentation, the implementation is very nuanced and complex. The code does not always follow the specification (or it is not clear
+Despite being accompanied by the official `ETH` 2.0 documentation, the implementation is very nuanced and complex. The code does not always follow the specification (or it is not clear
 that it does). We found a number of issues that span both the specification and the implementation. Although we aggregated some of them in the "Adherence to Specification" section,
 they are of utmost importance and we highly recommend addressing each and every of them as if they were actual vulnerabilities.
 

@@ -13,7 +13,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 Prysm can be installed on Windows, GNU/Linux, and MacOS systems with Docker. We use [Bazel](https://bazel.build) to push preconfigured Docker images to a publicly accessible Google Cloud container registry. 
 
-:::tip Not familiar with Docker? Try our quickstart
+:::tip Not familiar with Docker? Try our Quickstart
 
 This guidance is targeted at users who are already comfortable with Docker. See our [Quickstart](/install/install-with-script) for beginner-friendly installation instructions.
 
@@ -135,7 +135,7 @@ docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/u
   </TabItem>
       <TabItem value="sepolia">
 
-Download the Sepolia genesis state from [Github](https://github.com/eth-clients/sepolia/blob/main/metadata/genesis.ssz) to a local file, then run:
+Download the Sepolia genesis state from [GitHub](https://github.com/eth-clients/sepolia/blob/main/metadata/genesis.ssz) to a local file, then run:
 
 ```text
 docker run -it -v $HOME/.eth2:/data -v /path/to/genesis.ssz:/genesis/genesis.ssz -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node \
@@ -153,7 +153,7 @@ docker run -it -v $HOME/.eth2:/data -v /path/to/genesis.ssz:/genesis/genesis.ssz
   </TabItem>
    <TabItem value="holesky">
 
-Download the Holesky genesis state from [Github](https://github.com/eth-clients/holesky/blob/main/metadata/genesis.ssz) to a local file, then run:
+Download the Holesky genesis state from [GitHub](https://github.com/eth-clients/holesky/blob/main/metadata/genesis.ssz) to a local file, then run:
 
 ```text
 docker run -it -v $HOME/.eth2:/data -v /path/to/genesis.ssz:/genesis/genesis.ssz -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node \
@@ -193,7 +193,7 @@ docker run -it -v %LOCALAPPDATA%\Eth2:/data -p 4000:4000 -p 13000:13000 -p 12000
   </TabItem>
       <TabItem value="sepolia">
 
-Download the Sepolia genesis state from [Github](https://github.com/eth-clients/sepolia/blob/main/metadata/genesis.ssz) to a local file, then run:
+Download the Sepolia genesis state from [GitHub](https://github.com/eth-clients/sepolia/blob/main/metadata/genesis.ssz) to a local file, then run:
 
 ```text
 docker run -it -v %LOCALAPPDATA%\Eth2:/data -v \path\to\genesis.ssz:/genesis/genesis.ssz -p 4000:4000 -p 13000:13000 -p 12000:12000/udp gcr.io/offchainlabs/prysm/beacon-chain@sha256:bf9b95661c71ad60f633ee14cf352a668d550076471154cf80dfef8fce0bb41e --datadir=/data --jwt-secret=<YOUR_JWT_SECRET> --rpc-host=0.0.0.0 --http-host=0.0.0.0 --monitoring-host=0.0.0.0 --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> --genesis-state=/genesis/genesis.ssz --sepolia
@@ -202,7 +202,7 @@ docker run -it -v %LOCALAPPDATA%\Eth2:/data -v \path\to\genesis.ssz:/genesis/gen
   </TabItem>
       <TabItem value="holesky">
 
-Download the Holesky genesis state from [Github](https://github.com/eth-clients/holesky/blob/main/metadata/genesis.ssz) to a local file, then run:
+Download the Holesky genesis state from [GitHub](https://github.com/eth-clients/holesky/blob/main/metadata/genesis.ssz) to a local file, then run:
 
 ```text
 docker run -it -v %LOCALAPPDATA%\Eth2:/data -v \path\to\genesis.ssz:/genesis/genesis.ssz -p 4000:4000 -p 13000:13000 -p 12000:12000/udp gcr.io/offchainlabs/prysm/beacon-chain@sha256:bf9b95661c71ad60f633ee14cf352a668d550076471154cf80dfef8fce0bb41e --datadir=/data --jwt-secret=<YOUR_JWT_SECRET> --rpc-host=0.0.0.0 --http-host=0.0.0.0 --monitoring-host=0.0.0.0 --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> --genesis-state=/genesis/genesis.ssz --holesky
@@ -244,11 +244,11 @@ If your node is done synchronizing, you will see the response:
 {"syncing":false}%
 ```
 
-### Stake your ETH
+### Stake your `ETH`
 
 :::danger Exercise caution
 
-The Ethereum launchpad URL is `https://launchpad.ethereum.org` and the only, official validator deposit contract is [0x00000000219ab540356cbb839cbe05303d7705fa](https://etherscan.io/address/0x00000000219ab540356cbb839cbe05303d7705fa). Don't send ETH directly to the contract - deposit your stake through Ethereum.org launchpad.
+The Ethereum launchpad URL is `https://launchpad.ethereum.org` and the only, official validator deposit contract is [0x00000000219ab540356cbb839cbe05303d7705fa](https://etherscan.io/address/0x00000000219ab540356cbb839cbe05303d7705fa). Don't send `ETH` directly to the contract - deposit your stake through Ethereum.org launchpad.
 
 :::
 
@@ -392,6 +392,3 @@ docker run -it -v %LOCALAPPDATA%\Eth2:/data -p 4000:4000 -p 13000:13000 -p 12000
 `http-host` and `http-port` have replaced `--grpc-gateway-host` and `--grpc-gateway-port` respectively.
 :::
 This tells your Docker container to to "listen" for connections from outside of your container, allowing you (and other services) to reach your RPC endpoint(s). See [Configure ports and firewalls](/prysm-usage/p2p-host-ip.md) for more information.
-
-
-
