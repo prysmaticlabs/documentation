@@ -14,7 +14,7 @@ Dear Prysmers,
 We would like to take a moment to inform you of an important update regarding our software. After careful consideration, we have made the difficult decision to deprecate our web UI. While we understand that this news may be disappointing, please know that it was not a decision we made lightly. We recognize that many of you have been loyal users of our software and have come to rely on its features and capabilities. Please know that this decision was made with your best interests in mind. We believe that by deprecating our web UI, we can focus our efforts on the core needs of the consensus client, bringing more software that is more resilient, more maintainable, and more sustainable. 
 
 We understand that this may cause some inconvenience and disruption, and we want to assure you that we will do everything we can to make this transition as smooth as possible. 
-We will continue to provide support for our software for a limited period of time to help you with the transition to alternative solutions. We are also open to any feedback or suggestions you may have, as we strive to improve our products and services; reach out to us on our discord.
+We will continue to provide support for our software for a limited period of time to help you with the transition to alternative solutions. We are also open to any feedback or suggestions you may have, as we strive to improve our products and services; reach out to us on our Discord.
 
 Sincerely,
 The Prysm Team
