@@ -12,14 +12,14 @@ There are a number of ways to help out the project for people of all skillsets a
 
 ## Getting Started
 
-Once you are a bit more familiar with the concepts behind Ethereum and are ready to write some code, head over and explore Prysm's [open issues on GitHub](https://github.com/OffchainLabs/prysm/issues). We recommend looking for issues tagged with the **Good First Issue** label if it is your first contribution. If you are still unsure about how to tackle a bug or a feature, our team is always available on [Discord](https://discord.gg/OffchainLabs). Sign in to your GitHub account, then navigate to [the official Prysm repository](https://github.com/OffchainLabs/prysm/). In the upper right hand corner of the page, click the **Fork** button. This will create a copy of the Prysm repository on your account that can be edited for pull requests.
+Once you are a bit more familiar with the concepts behind Ethereum and are ready to write some code, head over and explore Prysm's [open issues on GitHub](https://github.com/OffchainLabs/prysm/issues). We recommend looking for issues tagged with the **Good First Issue** label if it is your first contribution. If you are still unsure about how to tackle a bug or a feature, our team is always available on [Discord](https://discord.gg/prysm). Sign in to your GitHub account, then navigate to [the official Prysm repository](https://github.com/OffchainLabs/prysm/). In the upper right hand corner of the page, click the **Fork** button. This will create a copy of the Prysm repository on your account that can be edited for pull requests.
 
 ### Setting up your environment
 
 To develop Prysm, you'll need the following:
 
 - A modern Windows, MacOS X, or Minux operating system
-- Go 1.21 version installed, download and install [here](https://golang.org/dl/)
+- Go 1.24 version installed, download and install [here](https://golang.org/dl/)
 - The `git` package installed
 - A code editor such as [Visual Studio Code](https://code.visualstudio.com/download) or Jetbrains' [Goland IDE](https://www.jetbrains.com/go/) or your preferred one
 
@@ -37,7 +37,7 @@ Finally, ensure Go is installed and working on your machine:
 
 Example output:
 
-    go version go1.21.5 darwin/arm64
+    go version go1.24.0 darwin/arm64
 
 ### Building and testing Prysm with Go
 
