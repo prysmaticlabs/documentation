@@ -18,7 +18,7 @@ import TabItem from '@theme/TabItem';
 
 #### How do I troubleshoot errors?
 
-If your beacon node or validator logs display an `ERROR`, go to our [open issues](https://github.com/OffchainLabs/prysm/issues) to see if someone has reported the same problem before. If this doesn't help, note the **Prysm version you're running** and your **operating system**, and then file a bug report [here](https://github.com/OffchainLabs/prysm/issues/new?assignees=&labels=&template=bug_report.md). You can also ask our community on [discord](https://discord.gg/OffchainLabs) about your error and we'll take a look as soon as possible.
+If your beacon node or validator logs display an `ERROR`, go to our [open issues](https://github.com/OffchainLabs/prysm/issues) to see if someone has reported the same problem before. If this doesn't help, note the **Prysm version you're running** and your **operating system**, and then file a bug report [here](https://github.com/OffchainLabs/prysm/issues/new?assignees=&labels=&template=bug_report.md). You can also ask our community on [discord](https://discord.gg/prysm) about your error and we'll take a look as soon as possible.
 
 #### My validator is losing money, what's going on?
 
@@ -200,7 +200,7 @@ Yes, this is possible however we recommend against it. We recommend you deposit 
 
 Adding new validators to your already-running Prysm instance is quite simple! Go through the launchpad process again, generate a new deposit keystore using the Ethereum validator deposit cli, then run the `validator accounts import` command again as you used when you added your first validator key. Note that **you don't need to create a new mnemonic** when you do this. **Restart the validator client** after importing the new keystore for the changes to take effect.
 
-You can then confirm your validator was added by running `validator accounts list`. Let us know on [discord](https://discord.gg/OffchainLabs) if you still have issues.
+You can then confirm your validator was added by running `validator accounts list`. Let us know on [discord](https://discord.gg/prysm) if you still have issues.
 
 ### Ethereum proof-of-stake specific questions
 
