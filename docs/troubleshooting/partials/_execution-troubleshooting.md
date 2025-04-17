@@ -17,7 +17,7 @@
       <td>Some users have reported peer-to-peer connectivity issues that were caused by old binaries or old data directories. Try using a new data directory, make sure you're using the latest version of your execution client software, and review <a href='/prysm-usage/p2p-host-ip'>Configure ports and firewalls for improved network connectivity</a> for port configuration guidance.</td>
     </tr>
     <tr>
-      <td>I'm running on mainnet, but I see a testnet ( Holesky, etc) specified in my output logs</td>
+      <td>I'm running on mainnet, but I see a testnet ( Holesky, etc.) specified in my output logs</td>
       <td>Your execution client may be using an old binary, or an old database. Try using a new data directory, and make sure you're using the latest version of your execution client software.</td>
     </tr>
     <tr>
