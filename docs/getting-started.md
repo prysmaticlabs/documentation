@@ -14,7 +14,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 :::info
 
-## Upcoming Hardfork: Electra/Prague Q1 2025 
+## Upcoming Hardfork: Electra/Prague [May 7th,2025](https://ethereum-magicians.org/t/all-core-devs-consensus-acdc-154/23340/3)
 
 New Requirements: 
 
