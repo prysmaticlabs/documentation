@@ -27,8 +27,7 @@ Once a valid transaction has been submitted to the [validator deposit contract](
 
 ## PENDING State
 
-Before a deposit can appear in the Beacon Chain it must pass through [process_pending_deposits](https://github.com/ethereum/consensus-specs/blob/dev/specs/electra/beacon-chain.md#new-process_pending_deposits) . Once processed, the depositor—if new—receives a validator index and enters the activation queue. During the brief transition window after the Electra hard fork the usual follow‑distance rule still withholds deposits, but this becomes irrelevant after a few weeks as sufficient epochs have finalised. 
-GitHub
+Before a deposit can appear in the Beacon Chain it must pass through [process_pending_deposits](https://github.com/ethereum/consensus-specs/blob/dev/specs/electra/beacon-chain.md#new-process_pending_deposits) . Once processed, the depositor—if new—receives a validator index and enters the activation queue. During the brief transition window after the Electra hard fork the usual follow‑distance rule still withholds deposits, but this becomes irrelevant after a few weeks as sufficient epochs have finalized.
 
 Only a capped number of pending deposits are handled each epoch. Because the queue also includes balance top‑ups, not every item results in a new validator. The activation churn limit is unchanged: the chain may activate 4 – 8 validators per finalised epoch, the exact number scaling with the total active‑validator count. When a validator reaches the front of the queue it receives an activation_epoch; the validator becomes active four to five epochs later—about 31 minutes in real time.
 
