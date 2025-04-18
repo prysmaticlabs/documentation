@@ -27,7 +27,10 @@ Once a valid transaction has been submitted to the [validator deposit contract](
 
 ## PENDING State
 
-The current specification for [processing pending deposits](https://github.com/ethereum/consensus-specs/blob/dev/specs/electra/beacon-chain.md#new-process_pending_deposits) before deposits can be included in the Ethereum beacon chain. The validator is then assigned an index number and placed into a queue for activation. **Note** there is a transition period before deposit requests are received in which case the follow distance still applies, but it's not relevant a few weeks after the Electra hard fork. The max pending deposits that can be processed per epoch is capped, however not all pending deposits equate to activating a validator, some deposits are top-ups which are still included in this queue, validator activation limits are still the same. The beacon chain can activate 4 ~ 8 new validators per finalized epoch, the difference in the number is determined by the number of total active validators on the chain. Once a validator has reached the front of the queue, it is assigned an activation epoch after an additional 4~5 epochs (~31 minutes).
+Before a deposit can appear in the Beacon Chain it must pass through [process_pending_deposits](https://github.com/ethereum/consensus-specs/blob/dev/specs/electra/beacon-chain.md#new-process_pending_deposits) . Once processed, the depositor—if new—receives a validator index and enters the activation queue. During the brief transition window after the Electra hard fork the usual follow‑distance rule still withholds deposits, but this becomes irrelevant after a few weeks as sufficient epochs have finalised. 
+GitHub
+
+Only a capped number of pending deposits are handled each epoch. Because the queue also includes balance top‑ups, not every item results in a new validator. The activation churn limit is unchanged: the chain may activate 4 – 8 validators per finalised epoch, the exact number scaling with the total active‑validator count. When a validator reaches the front of the queue it receives an activation_epoch; the validator becomes active four to five epochs later—about 31 minutes in real time.
 
 ## ACTIVE State
 
