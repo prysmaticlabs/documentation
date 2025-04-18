@@ -11,7 +11,9 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 This section provides instructions on how to run [slasher](https://github.com/OffchainLabs/prysm/tree/develop/beacon-chain/slasher) as an **optional** process to report slashable offenses on Ethereum proof-of-stake.  If slasher detects a slashable offense, proof is sent to the [beacon-chain node](/how-prysm-works/beacon-node/) for inclusion in a block.  [Validators](/how-prysm-works/prysm-validator-client/) earn a small whistleblower reward for including this proof into a block.  
 
 :::tip Slasher Requires Significant Disk Space
+
 Slasher is essentially a beacon node with **superpowers**. It uses significantly more disk space when running on mainnet.
+
 :::
 
 ## System requirements
@@ -37,17 +39,17 @@ These hardware specifications are recommended, but not required to run the Prysm
 
 ## What is Slashing
 
-Slashing occurs when there is evidence a validator has acted against the Ethereum network. Ethereum proof of stake works on a penalty-based incentive mechanism to heavily discourage actions on the network that could cause instability, malicious forking and conflicting information from validators. Slashing does not need to have been the result of malicious intent, it could also happen accidentally via misconfiguration. If a validator acts in a way that can confuse or disrupt the integrity of the system, the protocol removes, or **slashes**, a portion of the offending validator's existing stake, causing a gradual loss of ETH over time until the validator is forcefully ejected from the network and marked as SLASHED. This is an **irreversible** process.
+Slashing occurs when there is evidence a validator has acted against the Ethereum network. Ethereum proof of stake works on a penalty-based incentive mechanism to heavily discourage actions on the network that could cause instability, malicious forking and conflicting information from validators. Slashing does not need to have been the result of malicious intent, it could also happen accidentally via misconfiguration. If a validator acts in a way that can confuse or disrupt the integrity of the system, the protocol removes, or **slashes**, a portion of the offending validator's existing stake, causing a gradual loss of `ETH` over time until the validator is forcefully ejected from the network and marked as `SLASHED`. This is an **irreversible** process.
 
 The main purpose of slashing is to discourage attacks against the Ethereum proof-of-stake network that might otherwise be cheap to perform such as trivially creating conflicting forks where validators attest on a different view of historical checkpoints.
 
-A validator that correctly follows the protocol should never emit a slashable vote during normal operation. Validators will not be slashed for simply being offline (*however, they may be penalized*).
+A validator that correctly follows the protocol should never emit a slashable vote during normal operation. Validators will not be slashed for simply being offline (however, they may be penalized).
 
 ## What is a Slasher
 
 **Slasher** is the name of software that can detect slashable events from validators and report them to the protocol. You can think of a slasher as the network “police”. Running a slasher is **optional**. In order to detect slashable messages, the slasher records the attesting and proposing history for every validator on the network, then cross references this history with what has been broadcasted to find slashable messages such as double blocks or surrounding votes.
 
-In theory all the network needs is *1 honest, properly functioning slasher* to monitor the network because any slashings found are propagated to the entire network for it to be put into a block as soon as possible.
+In theory all the network needs is *one honest, properly functioning slasher* to monitor the network because any slashings found are propagated to the entire network for it to be put into a block as soon as possible.
 
 Running a slasher is not meant to be profitable. Slashing is meant to be rare and whistleblower rewards are purposefully low.  Running a slasher is meant to be an *altruistic action*, and as stated, only a single, honest, properly functioning slasher needs to be active in the network to catch slashable offenses. Thankfully, this is a low bar to entry, and we envision quite a lot of users and entities will run slashers to ensure network security.
 

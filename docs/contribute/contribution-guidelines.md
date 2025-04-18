@@ -8,18 +8,18 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <HeaderBadgesWidget />
 
-There are a number of ways to help out the project for people of all skillsets and experience levels. If you are unsure where you may be best suited, stop by either our [**Discord**](https://discord.gg/prysm) and a member of the team or community will be happy to answer questions and offer some direction.
+There are a number of ways to help out the project for people of all skillsets and experience levels. If you are unsure where you may be best suited, stop by either our [Discord](https://discord.gg/prysm) and a member of the team or community will be happy to answer questions and offer some direction.
 
 ## Getting Started
 
-Once you are a bit more familiar with the concepts behind Ethereum and are ready to write some code, head over and explore Prysm's [open issues on Github](https://github.com/OffchainLabs/prysm/issues). We recommend looking for issues tagged with the `Good First Issue` label if it is your first contribution. If you are still unsure about how to tackle a bug or a feature, our team is always available on [Discord](https://discord.gg/OffchainLabs). Sign in to your Github account, then navigate to [the official Prysm repository](https://github.com/OffchainLabs/prysm/). In the upper right hand corner of the page, click the `Fork` button. This will create a copy of the Prysm repository on your account that can be edited for pull requests.
+Once you are a bit more familiar with the concepts behind Ethereum and are ready to write some code, head over and explore Prysm's [open issues on GitHub](https://github.com/OffchainLabs/prysm/issues). We recommend looking for issues tagged with the **Good First Issue** label if it is your first contribution. If you are still unsure about how to tackle a bug or a feature, our team is always available on [Discord](https://discord.gg/prysm). Sign in to your GitHub account, then navigate to [the official Prysm repository](https://github.com/OffchainLabs/prysm/). In the upper right hand corner of the page, click the **Fork** button. This will create a copy of the Prysm repository on your account that can be edited for pull requests.
 
 ### Setting up your environment
 
 To develop Prysm, you'll need the following:
 
 - A modern Windows, MacOS X, or Minux operating system
-- Go 1.21 version installed, download and install [here](https://golang.org/dl/)
+- Go 1.24 version installed, download and install [here](https://golang.org/dl/)
 - The `git` package installed
 - A code editor such as [Visual Studio Code](https://code.visualstudio.com/download) or Jetbrains' [Goland IDE](https://www.jetbrains.com/go/) or your preferred one
 
@@ -37,7 +37,7 @@ Finally, ensure Go is installed and working on your machine:
 
 Example output:
 
-    go version go1.21.5 darwin/arm64
+    go version go1.24.0 darwin/arm64
 
 ### Building and testing Prysm with Go
 
@@ -168,7 +168,7 @@ Open those files, and you will see lines inserted by Git that identify the confl
 
 The code from the Prysm repository is inserted between `<<<` and `===` while the change you have made is inserted between `===` and `>>>>`. Remove everything between `<<<<` and `>>>` and replace it with code that resolves the conflict. Repeat the process for all files listed by Git status to have conflicts.
 
-When you are ready, use git push to move your local copy of the changes to your fork of the repository on Github.
+When you are ready, use git push to move your local copy of the changes to your fork of the repository on GitHub.
 
     git push myrepo feature-in-progress-branch
 
@@ -178,9 +178,9 @@ When you are ready, use git push to move your local copy of the changes to your 
 If your change is user facing, ensure that your changeset includes an entry to the CHANGELOG.md file!
 :::
 
-Navigate to your fork of the repository on Github. In the upper left where the current branch is listed, change the branch to your newly created one. Open the files that you have worked on and ensure they include your changes.
+Navigate to your fork of the repository on GitHub. In the upper left where the current branch is listed, change the branch to your newly created one. Open the files that you have worked on and ensure they include your changes.
 
-Navigate to [https://github.com/OffchainLabs/prysm/pulls](https://github.com/OffchainLabs/prysm/pulls) and click on the `New pull request` button. In the `base` box on the left, leave the default selection `base: develop` the branch that you want your changes to be applied to. In the `compare` box on the right, select the branch containing the changes you want to apply. You will then be asked to answer a few questions about your pull request. Pull requests should have enough context about what you are working on, how you are solving a problem, and reference all necessary information for your reviewers to help.
+Navigate to [https://github.com/OffchainLabs/prysm/pulls](https://github.com/OffchainLabs/prysm/pulls) and click on the **New pull request** button. In the `base` box on the left, leave the default selection `base: develop` the branch that you want your changes to be applied to. In the `compare` box on the right, select the branch containing the changes you want to apply. You will then be asked to answer a few questions about your pull request. Pull requests should have enough context about what you are working on, how you are solving a problem, and reference all necessary information for your reviewers to help.
 
 After you complete the questionnaire, the pull request will appear in the list of pull requests.
 

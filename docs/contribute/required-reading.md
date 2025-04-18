@@ -9,14 +9,16 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 <HeaderBadgesWidget />
 
 :::danger Deprecated
+
 This page is deprecated and no longer maintained. It may not have accurate information.
+
 :::
 
 This page serves material that is necessary to catch up with the current state of Ethereum development, and equips readers with the knowledge required to begin making meaningful contributions to the Prysm project. Whether you are an expert on all things Ethereum or are new to the blockchain world entirely, there are appropriate resources here that will help you get up to speed swiftly.
 
 ## Blockchain and Ethereum basics
 
-### **Blockchain fundamentals**
+### Blockchain fundamentals
 
 * [What is Blockchain Technology? A Step by Step Guide for Beginners](https://web.archive.org/web/20220517042416/https://blockgeeks.com/guides/what-is-blockchain-technology/)
 * [What is Bitcoin? A Step by Step Guide for Beginners](https://web.archive.org/web/20220517042416/https://blockgeeks.com/guides/what-is-bitcoin/)
@@ -25,7 +27,7 @@ This page serves material that is necessary to catch up with the current state o
 * [Blockchain Glossary from A-Z](https://web.archive.org/web/20220517042416/https://blockgeeks.com/guides/blockchain-glossary-from-a-z/)
 * [Blockchain Addresses 101: What Are They?](https://web.archive.org/web/20220517042416/https://blockgeeks.com/guides/blockchain-address-101/)
 
-### **Ethereum fundamentals**
+### Ethereum fundamentals
 
 * [What is Ethereum?](http://ethdocs.org/en/latest/introduction/what-is-ethereum.html)
 * [How Does Ethereum Work Anyway?](https://medium.com/@preethikasireddy/how-does-ethereum-work-anyway-22d1df506369)
@@ -40,7 +42,7 @@ This page serves material that is necessary to catch up with the current state o
 * [What is an Ethereum Token?](https://web.archive.org/web/20220517042416/https://blockgeeks.com/guides/ethereum-token/)
 * [What is Ethereum Gas?](https://web.archive.org/web/20220517042416/https://blockgeeks.com/guides/ethereum-gas-step-by-step-guide/)
 
-### **Consensus**
+### Consensus
 
 * [Bitcoin Original White Paper](https://bitcoin.org/bitcoin.pdf)
 * [Basic Primer: Blockchain Consensus](https://web.archive.org/web/20220517042416/https://blockgeeks.com/guides/blockchain-consensus/)
@@ -51,7 +53,7 @@ This page serves material that is necessary to catch up with the current state o
 * [How Does Ethereum Mining Work?](https://www.coindesk.com/information/ethereum-mining-works/)
 * [ETHash Algorithm](https://github.com/ethereum/wiki/wiki/Ethash)
 
-### **Smart Contracts, dApps, and cryptoeconomics**
+### Smart Contracts, dApps, and cryptoeconomics
 
 * [What are dApps? The New Decentralized Future](https://web.archive.org/web/20220517042416/https://blockgeeks.com/guides/dapps/)
 * [How to Learn Solidity](https://web.archive.org/web/20220517042416/https://blockgeeks.com/guides/solidity/)
@@ -61,21 +63,21 @@ This page serves material that is necessary to catch up with the current state o
 * [Mechanism Design for Cryptoeconomic Applications](https://medium.com/blockchannel/a-crash-course-in-mechanism-design-for-cryptoeconomic-applications-a9f06ab6a976)
 * [Cryptoeconomics: An Introduction](https://cryptoeconomics.study/)
 
-### **Peer-to-peer networking**
+### Peer-to-peer networking
 
 * [Ethereum Peer to Peer Networking](https://github.com/ethereum/go-ethereum/wiki/Peer-to-Peer)
 * [How Does the P2P on Ethereum Work?](https://www.reddit.com/r/ethereum/comments/3918u0/how_does_the_p2p_network_on_ethereum_work/)
 * [How Does Kademlia Work?](http://gleamly.com/article/introduction-kademlia-dht-how-it-works)
 * [Kademlia Protocol](http://www.divms.uiowa.edu/~ghosh/kademlia.pdf)
 
-### **Ethereum Virtual Machine**
+### Ethereum Virtual Machine
 
 * [What is the Ethereum Virtual Machine?](https://themerkle.com/what-is-the-ethereum-virtual-machine/)
 * [Ethereum VM](https://medium.com/@jeff.ethereum/go-ethereums-jit-evm-27ef88277520)
 * [Ethereum Protocol Subtleties](https://github.com/ethereum/wiki/wiki/Subtleties)
 * [Awesome Ethereum Virtual Machine](https://github.com/ethereum/wiki/wiki/Ethereum-Virtual-Machine-%28EVM%29-Awesome-List)
 
-### **Ethereum-flavoured WebAssembly**
+### Ethereum-flavored WebAssembly
 
 * [eWASM background, motivation, goals, and design](https://github.com/ewasm/design)
 * [The current eWASM spec](https://github.com/ewasm/design/blob/master/eth_interface.md)
@@ -84,9 +86,9 @@ This page serves material that is necessary to catch up with the current state o
 * [Panel: entire eWASM team discussion and Q&A](https://youtu.be/ThvForkdPyc?t=119)
 * [Ewasm community meetup at ETHBuenosAires](https://www.youtube.com/watch?v=qDzrbj7dtyU)
 
-### **Ethereum client implementations**
+### Ethereum client implementations
 
-* [Geth](https://github.com/ethereum/go-ethereum) \(known also as go-ethereum\) is the Golang implementation of [ETH1](/terminology#eth1)
+* [Geth](https://github.com/ethereum/go-ethereum) (known also as go-ethereum) is the Golang implementation of [ETH1](/terminology#eth1)
 * [Parity](https://github.com/paritytech/parity) the fastest and most performant implementation - written in Rust
 * [Trinity](https://github.com/ethereum/py-evm/tree/master/trinity) new project implements Ethereum in Python
 * [Cpp-Ethereum](https://github.com/ethereum/cpp-ethereum) a C++ implementation of Ethereum
@@ -144,11 +146,11 @@ After reading the sharding material for part-time contributors, it is important 
 * [Ethereum Sharding from EDCon by Justin Drake](https://www.youtube.com/watch?v=J4rylD6w2S4)
 * [Casper CBC and Sharding by Vlad Zamfir](https://www.youtube.com/watch?v=qDa4xjQq1RE&t=1951s)
 * [Casper FFG in Depth by Carl](https://www.youtube.com/watch?v=uQ3IqLDf-oo)
-* [Ethereum & Scalability Technology from Asia Pacific ETH meet up by Hsiao Wei](https://www.youtube.com/watch?v=GhuWWShfqBI)
+* [Ethereum & Scalability Technology from Asia Pacific Ethereum meet up by Hsiao Wei](https://www.youtube.com/watch?v=GhuWWShfqBI)
 
 ## Getting to know Golang
 
-* [The Go Programming Language \(Only Recommended Book\)](https://www.amazon.com/Programming-Language-Addison-Wesley-Professional-Computing/dp/0134190440)
+* [The Go Programming Language (Only Recommended Book)](https://www.amazon.com/Programming-Language-Addison-Wesley-Professional-Computing/dp/0134190440)
 * [Ethereum Development with Go](https://goethereumbook.org)
 * [How to Write Go Code](http://golang.org/doc/code.html)
 * [The Go Programming Language Tour](http://tour.golang.org/)

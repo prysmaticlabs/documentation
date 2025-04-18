@@ -13,7 +13,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 We aim to achieve a design that will specify the networking requirements needed for interoperability and Mainnet in the Prysm Client.
 
 **Background** 
-Networking is a critical component in building out a client and for communicating and interfacing with other ETH 2.0 clients. The requirements for both interoperability and mainnet are specified in this [doc](https://github.com/ethereum/eth2.0-specs/blob/dev/specs/phase0/p2p-interface.md) in the specs repository. This document will primarily deal with the three core aspects required for communicating with other clients. 
+Networking is a critical component in building out a client and for communicating and interfacing with other Ethereum 2.0 clients. The requirements for both interoperability and mainnet are specified in this [doc](https://github.com/ethereum/eth2.0-specs/blob/dev/specs/phase0/p2p-interface.md) in the specs repository. This document will primarily deal with the three core aspects required for communicating with other clients. 
 
   - 1) How peers are discovered 
   - 2) How messages are propagated through the network(gossip).

@@ -9,7 +9,9 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 <HeaderBadgesWidget />
 
 :::danger Alpha testing
+
 This functionality is in its early stage alpha testing and may not be fully functional at this time. 
+
 :::
 
 This section provides instructions on how to run the `client-stats` CLI utility to collect metrics from your Prysm validator or beacon node processes and push them to the [beaconcha.in](https://beaconcha.in)  stats service.
@@ -19,7 +21,9 @@ This section provides instructions on how to run the `client-stats` CLI utility 
 In order to ensure that running `client-stats` is an intentional action on the part of the user, we have chosen to break it out into a separate executable that needs to be run on its own. It can be run on the same host as the validator client and/or beacon node, or on a separate host with access to the remote host ip and port.
 
 :::danger Do not run a second validator
+
 You need to run the `client-stats` executable, **not** another instance of `validator`. You could get yourself slashed if running a second instance of `validator`.
+
 :::
 
 ## API URL
