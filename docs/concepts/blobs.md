@@ -31,12 +31,12 @@ The most significant impact on node operators is the increased storage requireme
 = 52GB~104GB
 ```
 
-By default these blobs will be retained for 4096 epochs ,and Prysm will prune the oldest blobs once the retention period is reached.
+By default these blobs will be retained for 4096 epochs, and Prysm will prune the oldest blobs once the retention period is reached.
 
 Retention periods and storage paths can be configured using the following flags.
 
 ### New Flags
 
-`--blob-path` : Location for blob storage. Default location will be a 'blobs' directory next to the beacon db. i.e. `--data-dir=/path/to/storage`
+`--blob-path` : Location for blob storage. Default location will be a 'blobs' directory next to the beacon db. i.e., `--data-dir=/path/to/storage`
 
 `--blob-retention-epochs` :  Override the default blob retention period (measured in epochs). The node will exit with an error at startup if the value is less than the default of 4096 epochs. i.e. `--blob-retention-epochs=6000`
