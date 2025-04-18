@@ -224,13 +224,17 @@ Consider using `--suggested-fee-recipient` on your beacon node. See [How to conf
 
 ## Run a validator
 
-import SingletonWarningPartial from '@site/docs/partials/_singleton-warning-partial.md';
+:::warning Multiple validator instances
 
-<SingletonWarningPartial />
+Ensure that you're not running multiple instances of the same validator public key, especially if you're using scripts or other forms of automation. If the Ethereum network detects two instances of the same validator key submitting proposals, attestations, or votes, it may assume malicious intent and slash accordingly.
 
-import FullSyncWarningPartial from '@site/docs/partials/_full-sync-warning-partial.md';
+:::
 
-<FullSyncWarningPartial />
+:::caution
+
+Verify that your beacon node and execution node are both fully synced. If you're not fully synced, you risk being penalized and losing some of your staked ETH.
+
+:::
 
 Check the sync status of your node with the following command:
 

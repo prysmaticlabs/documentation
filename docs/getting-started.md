@@ -310,14 +310,6 @@ The following table of contents provides a descriptive overview of Prysm's docum
 
 <div className='panel secondary-panel section-title'>
 
-## Deprecated
-
-</div>
-<div className='panel'>
-<a href='prepare-for-merge'>Configure for The Merge</a>
-<p><strong>Current Prysm users</strong> who are running pre-Merge configuration can follow this guidance for post-Merge configuration instructions.</p>
-</div>
-
 ## Need assistance?
 
 Join our [Discord](https://discord.gg/prysm) server - a member of the team or our community will be happy to help.
