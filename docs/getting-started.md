@@ -22,11 +22,11 @@ New Requirements:
 - Upgrade Execution client
 - New blob retention requirements (100GB ~ 150GB). read more [here](./concepts/blobs.md)
 
-New EIP features in Hardfork: ( EIPs related directly to Prysm are marked)
+New EIP features in Hard fork: (EIPs related directly to Prysm are marked)
 
 - [EIP-2537: Precompile for BLS12-381 curve operations](https://github.com/ethereum/EIPs/blob/f27ddf2b0af7e862a967ee38ceeaa7d980786ca1/EIPS/eip-2537.md)
 - [EIP-2935: Save historical block hashes in state](https://github.com/ethereum/EIPs/blob/f27ddf2b0af7e862a967ee38ceeaa7d980786ca1/EIPS/eip-2935.md)
-- [EIP-6110: Supply validator deposits on chain](https://github.com/ethereum/EIPs/blob/f27ddf2b0af7e862a967ee38ceeaa7d980786ca1/EIPS/eip-6110.md) (prysm)
+- [EIP-6110: Supply validator deposits onchain](https://github.com/ethereum/EIPs/blob/f27ddf2b0af7e862a967ee38ceeaa7d980786ca1/EIPS/eip-6110.md) (prysm)
 - [EIP-7002: Execution layer triggerable withdrawals](https://github.com/ethereum/EIPs/blob/f27ddf2b0af7e862a967ee38ceeaa7d980786ca1/EIPS/eip-7002.md) (prysm)
 - [EIP-7251: Increase the MAX_EFFECTIVE_BALANCE](https://github.com/ethereum/EIPs/blob/f27ddf2b0af7e862a967ee38ceeaa7d980786ca1/EIPS/eip-7251.md) (prysm)
 - [EIP-7549: Move committee index outside Attestation](https://github.com/ethereum/EIPs/blob/f27ddf2b0af7e862a967ee38ceeaa7d980786ca1/EIPS/eip-7549.md) (prysm)

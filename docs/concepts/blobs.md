@@ -28,7 +28,7 @@ One design decision in the implementation of EIP-4844 to verify blobs and to ena
 The most significant impact on node operators is the increased storage requirement. Node runners have a new slightly increased storage requirement 
 
 ```
-131928 blob ssz byte size * blobs retention period ( 18 days or 4,096 epochs) * 32 potential blocks per epoch * 6~9 Blob sidecars per block 
+131928 blob ssz byte size * blobs retention period (18 days or 4,096 epochs) * 32 potential blocks per epoch * 6~9 Blob sidecars per block 
 
 = 100GB~150GB
 ```
@@ -39,6 +39,6 @@ Retention periods and storage paths can be configured using the following flags.
 
 ### New Flags
 
-`--blob-path` : Location for blob storage. Default location will be a 'blobs' directory next to the beacon db. i.e. `--data-dir=/path/to/storage`
+`--blob-path`: Location for blob storage. Default location will be a 'blobs' directory next to the beacon db. i.e., `--data-dir=/path/to/storage`
 
-`--blob-retention-epochs` :  Override the default blob retention period (measured in epochs). The node will exit with an error at startup if the value is less than the default of 4096 epochs. i.e. `--blob-retention-epochs=6000`
+`--blob-retention-epochs`: Override the default blob retention period (measured in epochs). The node will exit with an error at startup if the value is less than the default of 4096 epochs. i.e., `--blob-retention-epochs=6000`
