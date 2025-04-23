@@ -153,6 +153,7 @@ To verify that the checkpoint state you're using is legitimate, follow these ste
 2. Find the `slot` number and `state_root` value.
 3. Use a trusted blockchain explorer to verify the `state_root`. To be extra safe, follow this procedure using multiple blockchain explorers. Using `beaconcha.in` as an example, navigate to one of the following pages, replacing `SLOT` with the `slot` you pulled from your browser:
    - **Sepolia**: https://sepolia.beaconcha.in/slot/SLOT
+   - **Holesky**: https://holesky.beaconcha.in/slot/SLOT
    - **Mainnet**: https://beaconcha.in/slot/SLOT
 4. Ensure that the `state_root` reported by the blockchain explorer matches the `state_root` you pulled from your browser. If you don't see a match, feel free to reach out to us on [Discord](https://discord.gg/prysm) and we'll help you troubleshoot.
 
