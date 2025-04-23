@@ -10,7 +10,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 ## Expected behavior: Beacon node
 
-When running a beacon node for the first time from a checktpoint, the beacon node will first sync the chain up to the head.
+When running a beacon node for the first time from a checkpoint, the beacon node will first sync the chain up to the head.
 
 Logs should look like:
 

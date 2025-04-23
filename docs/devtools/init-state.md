@@ -95,21 +95,21 @@ Queue operates in the following manner:
 
 - Once the fetcher is initialized and event handlers are registered, the queue enters an event listening [loop](https://github.com/OffchainLabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_queue.go#L165), with only two available event types: `Tick` and `Data Received`. The `Tick` event is nothing more than a time ticker triggering different events handlers on FSMs (depending on their current state) on a regular basis (currently every 200 milliseconds). The `Data received` event is triggered asynchronously on read from the output channel of the fetcher i.e. when the fetcher returns some data to parse and pass over to block processors.
 
-**Available events handlers:**
+#### Available events handlers:
 
-- *On schedule:* this event handler is triggered when a `Tick` event occurs on a machine in a `New` state.
+- **On schedule:** this event handler is triggered when a `Tick` event occurs on a machine in a `New` state.
 
-- *On data received:* this event handler is triggered when a `Data Received` event occurs on a machine (if machine is not in `Scheduled` state, incoming data is ignored).
+- **On data received:** this event handler is triggered when a `Data Received` event occurs on a machine (if machine is not in `Scheduled` state, incoming data is ignored).
 
-- *On ready to send:* this event handler is triggered when a `Tick` event occurs on a machine with `Data Parsed` state i.e., machine that has incoming data placed into it.
+- **On ready to send:** this event handler is triggered when a `Tick` event occurs on a machine with `Data Parsed` state i.e., machine that has incoming data placed into it.
 
-- *On a stale machine:* this event handler is triggered when a `Tick` event occurs on an unresponsive machine, the main purpose of this handler is to mark the machine as skipped, so that `On a skipped machine` handler resets it.
+- **On a stale machine:** this event handler is triggered when a `Tick` event occurs on an unresponsive machine, the main purpose of this handler is to mark the machine as skipped, so that `On a skipped machine` handler resets it.
 
-- *On a skipped machine:* this event handler is triggered when a `Tick` event occurs on a stuck machine, that's a machine that stays in a given state for too long, and is marked as `Skipped`, this handler is responsible for resetting such machines.
+- **On a skipped machine:** this event handler is triggered when a `Tick` event occurs on a stuck machine, that's a machine that stays in a given state for too long, and is marked as `Skipped`, this handler is responsible for resetting such machines.
 
 See: [blocks_queue.go](https://github.com/OffchainLabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_queue.go#L73), [Queue.onScheduleEvent()](https://github.com/OffchainLabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_queue.go#L281), [Queue.onDataReceivedEvent()](https://github.com/OffchainLabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_queue.go#L299), [Queue.onReadyToSendEvent()](https://github.com/OffchainLabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_queue.go#L334), [Queue.onProcessSkippedEvent()](https://github.com/OffchainLabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_queue.go#L383), [Queue.onCheckStaleEvent()](https://github.com/OffchainLabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_queue.go#L442)
 
-###   FSM Manager and FSMs
+### FSM Manager and FSMs
 
 Each FSM [(see fsm.go:stateMachine)](https://github.com/OffchainLabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/fsm.go#L43)  has the following data associated with it:
 
@@ -146,7 +146,7 @@ Refer to [FSM state transitions diagram](#fsm-state-transitions-diagram) for fur
 See: [fsm.go:stateMachineManager](https://github.com/OffchainLabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/fsm.go#L35) 
 
 
-**Machines lifetime**
+#### Machines lifetime
 
 When queue operates, FSMs are constantly being created and removed:
 
@@ -163,7 +163,7 @@ See: [blocks_queue_utils.go:resetFromFork()](https://github.com/OffchainLabs/pry
 
 ###   Blocks Fetcher
 
-The fetcher component (see [blocks_fetcher.go:blocksFetcher](https://github.com/OffchainLabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_queue_utils.go#L44)) is responsible for handling p2p communication, and does the actual data requesting and fetching. It is a very simple component operating in the following way:
+The fetcher component (see [blocks_fetcher.go:blocksFetcher](https://github.com/OffchainLabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_queue_utils.go#L44)) is responsible for handling P2P communication, and does the actual data requesting and fetching. It is a very simple component operating in the following way:
 
 - Fetcher manages two channels: one for incoming fetching requests and the other for sending fetched data back to requesters. All this is done asynchronously, of course!
 
@@ -173,15 +173,17 @@ The fetcher component (see [blocks_fetcher.go:blocksFetcher](https://github.com/
 
 See: [blocks_fetcher.go](https://github.com/OffchainLabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_fetcher.go#L68), [blocks_fetcher_peers.go](https://github.com/OffchainLabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_fetcher_peers.go#L1), [blocks_fetcher_utils.go](https://github.com/OffchainLabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_fetcher_utils.go#L1)
 
-**Noteworthy code in the feature**
+:::info Noteworthy code in the feature
 
 There are several very interesting add-ons to the main synchronization procedure, making it more robust and useful. In this section, we will briefly cover them (feel free to dive into the code deeper -- it should be easy to follow).
+
+:::
 
 ###   Backtracking procedure
 
 Normally, there are no more than a handful of non-finalized epochs, and once initial synchronization is complete, the regular synchronization is capable of proceeding by obtaining new blocks, validating them, and applying fork-choice rule. But occasionally, the whole network is unable to reach consensus and forked branches start to occur, and can even get quite long. This is especially prevalent during test networks (see [Medalla Incident](https://medium.com/prysmatic-labs/eth2-medalla-testnet-incident-f7fbc3cc934a) post-mortem), where there’s no real ether at stake.
 
-Regular synchronization cannot handle such fork branching, and node eventually falls behind the highest expected slot (if counting time slots from the genesis up to the current clock time). Once that happens, the system falls back to initial synchronization, which needs to be able to not only synchronize with the majority of  known peers, but handle the case when that majority is dynamic i.e. be capable to backtrack from some unfavourable fork, which is no longer voted for by the current majority of known peers (while it was supported by previous majority just ten minutes ago!).
+Regular synchronization cannot handle such fork branching, and node eventually falls behind the highest expected slot (if counting time slots from the genesis up to the current clock time). Once that happens, the system falls back to initial synchronization, which needs to be able to not only synchronize with the majority of  known peers, but handle the case when that majority is dynamic i.e., be capable to backtrack from some unfavorable fork, which is no longer voted for by the current majority of known peers (while it was supported by previous majority just ten minutes ago!).
 
 Our backtracking algorithm is pretty simple (code is abridged, see full version [here](https://github.com/OffchainLabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_fetcher_utils.go#L1470):)
 
@@ -215,9 +217,9 @@ func (f *blocksFetcher) findFork(..., slot uint64) (*forkData, error) {
 Essentially, all we are doing is querying our peer list for peers with a non-finalized known slot higher than that which our node was able to progress to. Then, out of those peers, the peers list is randomized and they are queried to find a peer with blocks our node hasn’t as yet seen. Once such a peer is found, we need to backtrack (hence the name!) on that peer from the slot starting at our node’s head backwards in history until the common ancestor block is found (or until the predefined limit is reached, to avoid infinite/overly long loops). Once a common ancestor is found, node tries to build on top of that alternative fork. While seemingly trivial, this procedure has worked extremely well.
 
 ###   Handling skipped blocks
-At each slot a block can be proposed. If this doesn’t happen, the block is considered as skipped. There might be lots of consecutive skipped blocks, but our queue has only 8 FSMs (so, can look no further than 8x64 = 512 blocks “into the future”). How do you overcome such a limitation, where the normal queue range of vision is 512 next slots, and the first non-skipped block is 10K+ slots away?
+At each slot a block can be proposed. If this doesn’t happen, the block is considered as skipped. There might be lots of consecutive skipped blocks, but our queue has only eight FSMs (so, can look no further than 8x64 = 512 blocks “into the future”). How do you overcome such a limitation, where the normal queue range of vision is 512 next slots, and the first non-skipped block is 10K+ slots away?
 
-A simple trick is used: when all machines are in `Skipped` state, meaning we are stuck, the first 7 machines are reset normally (**the first machine's starting slot is the current known head slot, the second machine is +64 slots, and so on, and so forth**), but the last state machine is reset from a slot, possibly very far in future, where the first non-skipped block is found. So, if the last machine is set to start fetching within range where the next non-skipped block lives, then it will be able to fetch that block, and thus advance our node’s head slot. The only problem is finding that starting slot for this last FSM, and doing so efficiently i.e. without simply querying each and every slot up until we find a non-empty one (which can be 10K+ slots away).
+A simple trick is used: when all machines are in `Skipped` state, meaning we are stuck, the first seven machines are reset normally (**the first machine's starting slot is the current known head slot, the second machine is +64 slots, and so on, and so forth**), but the last state machine is reset from a slot, possibly very far in future, where the first non-skipped block is found. So, if the last machine is set to start fetching within range where the next non-skipped block lives, then it will be able to fetch that block, and thus advance our node’s head slot. The only problem is finding that starting slot for this last FSM, and doing so efficiently i.e., without simply querying each and every slot up until we find a non-empty one (which can be 10K+ slots away).
 
 We’ve devised an algorithm that is capable of looking ahead 50K+ slots (instead of only 512), and even further (for 50K we have unit tests proving the statement):
 
@@ -256,7 +258,7 @@ See: [blocks_queue.go:onProcessSkippedEvent()](https://github.com/OffchainLabs/p
 
 Since we are dealing with a public decentralized network, we cannot assume that each peer behaves correctly, and there might be bogus, unresponsive, or even malicious peers. 
 
-In order to avoid being stuck with a single unresponsive peer, our first fetcher implementation shuffled peers before selecting one to fetch data from. We have improved upon this method and now score peers on their behaviour and increase the probability of selecting high scoring peers, thus utilizing our mesh more efficiently.
+In order to avoid being stuck with a single unresponsive peer, our first fetcher implementation shuffled peers before selecting one to fetch data from. We have improved upon this method and now score peers on their behavior and increase the probability of selecting high scoring peers, thus utilizing our mesh more efficiently.
 
 We have quite sophisticated scoring mechanisms already in place, and we’re [continuingly](https://github.com/OffchainLabs/prysm/issues/6622) building on them. Currently, the peer scorer service is able to track peer’s performance (on how many requests, how many useful blocks -- that’s blocks advancing the head -- have been returned). Peers scoring higher will have a better chance of being selected (see [blocks_fetcher_peers.go](https://github.com/OffchainLabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_fetcher_peers.go#L94) for full code):
 ```go
@@ -388,7 +390,7 @@ For even better illustration on customized setups, please, see the following tes
 - [TestBlocksQueue_stuckInUnfavourableFork()](https://github.com/OffchainLabs/prysm/blob/ce397ce797c33dbcf77fa7670c356844ef6aad43/beacon-chain/sync/initial-sync/blocks_queue_test.go#L1026)
 
 
-**Runtime testing and usage**
+### Runtime testing and usage
 
 To run unit tests using Bazel:
 

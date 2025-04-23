@@ -63,7 +63,7 @@ Please define the following environment variable when running tests:
 
     CGO_CFLAGS="-O2 -D__BLST_PORTABLE__"
 
-It is particulary useful when running tests / debug in your IDE without using bazel.
+It is particulary useful when running tests / debug in your IDE without using Bazel.
 
 See the [next section](#building-and-testing-prysm-with-bazel) for instructions on testing with prysm.
 
@@ -85,13 +85,13 @@ Other binaries in our codebase use a similar command to build. If you want to ru
 
 Where you can specify any amount of command line arguments you need based on the available flags of the item you're running.
 
-In order to write code for the Prysm codebase comfortably with Bazel, we recommend using either [Visual Studio Code](https://code.visualstudio.com/download) with its [Bazel plugin](https://marketplace.visualstudio.com/items?itemName=BazelBuild.vscode-bazel), or any [Jetbrains IDE](https://www.jetbrains.com/) with the [Bazel plugin](https://plugins.jetbrains.com/plugin/8609-bazel) ([Goland](https://www.jetbrains.com/go/) is a great choice, used by most of the Prysm team). 
+In order to write code for the Prysm codebase comfortably with Bazel, we recommend using either [Visual Studio Code](https://code.visualstudio.com/download) with its [Bazel plugin](https://marketplace.visualstudio.com/items?itemName=BazelBuild.vscode-bazel), or any [Jetbrains IDE](https://www.jetbrains.com/) with the [Bazel plugin](https://plugins.jetbrains.com/plugin/8609-bazel) ([GoLand](https://www.jetbrains.com/go/) is a great choice, used by most of the Prysm team). 
 
 You can also find various other types of IDE support for Bazel in the official Bazel documentation [here](https://docs.bazel.build/versions/master/ide.html). Once you have your coding environment set-up, you'll be well-equipped to contribute to Ethereum!
 
 #### Running Bazel tests
 
-All code we check into our repo needs to have sufficient tests to ensure it is maintainable and works as expected. We use bazel to run all of our test suites in Prysm. If there is a particular subfolder you want to test, such as `beacon-chain/node`, you can run the command:
+All code we check into our repo needs to have sufficient tests to ensure it is maintainable and works as expected. We use Bazel to run all of our test suites in Prysm. If there is a particular subfolder you want to test, such as `beacon-chain/node`, you can run the command:
 
     bazel test //beacon-chain/node:go_default_test
 
@@ -175,7 +175,9 @@ When you are ready, use git push to move your local copy of the changes to your 
 #### Opening a pull request
 
 :::info
+
 If your change is user facing, ensure that your changeset includes an entry to the CHANGELOG.md file!
+
 :::
 
 Navigate to your fork of the repository on GitHub. In the upper left where the current branch is listed, change the branch to your newly created one. Open the files that you have worked on and ensure they include your changes.

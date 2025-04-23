@@ -48,15 +48,15 @@ When the CLC receives a block with an embedded execution payload, it notifies th
 
 When Prysm receives a block, after the pubsub validation, and assuming regular sync, it enters the blockchain package via the function [ReceiveBlock](https://github.com/OffchainLabs/prysm/blob/develop/beacon-chain/blockchain/receive_block.go#L38) and eventually [onBlock](https://github.com/OffchainLabs/prysm/blob/develop/beacon-chain/blockchain/process_block.go#L96) is called. At this stage, the consensus aspects of this block have been verified. We call `notifyNewPayload` and await the return of the ELC. There are five possible outcomes of this call:
 
- 1. VALID
- 2. INVALID
- 3. ACCEPTED/SYNCING
+ 1. `VALID`
+ 2. `INVALID`
+ 3. `ACCEPTED`/`SYNCING`
  4. Timeout (the ELC has not replied)
  5. Error (something went wrong in the call)
 
 Dealing with each one of them requires a different set of careful considerations, roughly ordered by level of difficulty. When we receive `VALID` as a reply, we can simply import the block, this block is not optimistic as it has been fully validated. 
 
-When we receive `INVALID` a series of checks need to be carried out, we will go over them in the following sections of this document. It suffices to say that for a non-optimistic node (i.e., a node that has been syncing in lockstep) when it receives an `INVALID` response from this call, its processing is very simple: we just do not import this block, it has failed validation, we mark the block as invalid and `onBlock` (and subsequently [ReceiveBlock](https://github.com/OffchainLabs/prysm/blob/develop/beacon-chain/blockchain/receive_block.go#L380)) will return with an error, without affecting core logic. What triggers optimistic sync is the response in 3) ACCEPTED/SYNCING. Both replies are treated in the exact same way by Prysm, but it is useful to understand the different semantics from the point of view of the ELC. Suppose we are following a chain that is following like this:
+When we receive `INVALID` a series of checks need to be carried out, we will go over them in the following sections of this document. It suffices to say that for a non-optimistic node (i.e., a node that has been syncing in lockstep) when it receives an `INVALID` response from this call, its processing is very simple: we just do not import this block, it has failed validation, we mark the block as invalid and `onBlock` (and subsequently [ReceiveBlock](https://github.com/OffchainLabs/prysm/blob/develop/beacon-chain/blockchain/receive_block.go#L380)) will return with an error, without affecting core logic. What triggers optimistic sync is the response in 3) `ACCEPTED`/`SYNCING`. Both replies are treated in the exact same way by Prysm, but it is useful to understand the different semantics from the point of view of the ELC. Suppose we are following a chain that is following like this:
 
 ![](https://i.imgur.com/wMobZC2.png)
 
@@ -93,7 +93,7 @@ If the block `F` is therefore `ACCEPTED` or `SYNCING`, we will run the checks in
 
 ### 2.3 Optimistic Node
 
-It may happen that after importing this block `F` it becomes head. In this case we will inform the ELC by calling `notifyForkchoiceUpdated`. The engine is now **required** to execute and validate block `F` if it hasn't done so already. Some engines (eg geth) would have already validated the block if the fork was not long enough. In this case they will return immediately `VALID` or `INVALID`. Other engines may not have executed it, specifically, if they haven't executed even block `E`, or if they do not even have block `E`, they will return `SYNCING`. In this case, the CLC has already imported the block `F`, which is now its current head, and it has been imported optimistically. When this happens we say that **the node is optimistic**. 
+It may happen that after importing this block `F` it becomes head. In this case we will inform the ELC by calling `notifyForkchoiceUpdated`. The engine is now **required** to execute and validate block `F` if it hasn't done so already. Some engines (e.g., geth) would have already validated the block if the fork was not long enough. In this case they will return immediately `VALID` or `INVALID`. Other engines may not have executed it, specifically, if they haven't executed even block `E`, or if they do not even have block `E`, they will return `SYNCING`. In this case, the CLC has already imported the block `F`, which is now its current head, and it has been imported optimistically. When this happens we say that **the node is optimistic**. 
 
 <mark>An optimistic node may not act on its head: it cannot propose a block, it cannot attest to an optimistic head and cannot sign sync committee duties.</mark> It may (and should) however gossip optimistic blocks.
 
@@ -116,7 +116,7 @@ With the assumption that the majority of the chain will justify a checkpoint aft
 
 ## 3. Implementation in Prysm
 
-Prysm's implementation of optimistic sync involves several different packages. It principally touches the forkchoice and blockchain packages as it changes the core handling of beacon blocks. But it also touches the database (package kv) and the sync package (during init sync and pubsub validation) and the RPC endpoints.  In this section we will cover all the paths added in each package. 
+Prysm's implementation of optimistic sync involves several different packages. It principally touches the forkchoice and blockchain packages as it changes the core handling of beacon blocks. But it also touches the database (package kv) and the sync package (during `init` sync and `pubsub` validation) and the RPC endpoints.  In this section we will cover all the paths added in each package. 
 
 ### 3.1 Forkchoice package
 
@@ -128,7 +128,7 @@ func (f *ForkChoice) SetOptimisticToValid(ctx context.Context, root [fieldparams
 
 This function simply takes the HTR of the block and it sets its optimistic status to `VALID`. It also sets the optimistic status of any ancestor to `VALID` since a block cannot be fully validated if its ancestors were not. 
 
-If a block that was imported optimistically later becomes `INVALID`, this can be notified with the function [SetOptimisticToInvalid](https://github.com/OffchainLabs/prysm/blob/develop/beacon-chain/forkchoice/doubly-linked-tree/optimistic_sync.go#L10):
+If a block that was imported optimistically later becomes `INVALID`, this can be notified with the function [`SetOptimisticToInvalid`](https://github.com/OffchainLabs/prysm/blob/develop/beacon-chain/forkchoice/doubly-linked-tree/optimistic_sync.go#L10):
 
 ```go
 func (s *Store) setOptimisticToInvalid(ctx context.Context, root, parentRoot, payloadHash [32]byte) ([][32]byte, error)
@@ -273,7 +273,7 @@ Consider the following diagram:
 ![](https://i.imgur.com/N3b9LMM.jpg)
 
 
-At the beginning of Epoch 10 the justified epoch is 9, the justified checkpoint is pointed by block `A`. The epoch advances fine but the ELC is still syncing, therefore this node is taking blocks optimistically. Block `C`  in epoch 10 may have or may not have enough attestations to justify Epoch 10, but its own post-state justification checkpoint is still block `A` in Epoch 9, as justification is updated only on epoch processing.  Block `D` is the first block imported in epoch 11 and it is the first one to justify block B in epoch 10. At this point the forkchoice store's justification checkpoint updates to block `B` in epoch 10. The chain advances and when importing the block `E` the ELC has fully synced and returns `INVALID`, with a LVH pointing to the fork block `X`. We call forkchoice's `SetOptimisticToInvalid` and remove all invalid blocks in the chain `D`--` E` . How should we update Head? the block `C` is not eligible for head since its justification point is `A` with Epoch 9 and the store's justification is `B` with Epoch 10. At this point the node is deadlocked. It cannot import any block unless the very next block that is imported realizes the justification at Epoch 10. If it doesn't it will fail in the same way, by not being eligible for Head, and therefore that node (and possibly all the honest chain built on it) will never be imported. 
+At the beginning of Epoch 10 the justified epoch is 9, the justified checkpoint is pointed by block `A`. The epoch advances fine but the ELC is still syncing, therefore this node is taking blocks optimistically. Block `C` in epoch 10 may have or may not have enough attestations to justify Epoch 10, but its own post-state justification checkpoint is still block `A` in Epoch 9, as justification is updated only on epoch processing.  Block `D` is the first block imported in epoch 11 and it is the first one to justify block B in epoch 10. At this point the forkchoice store's justification checkpoint updates to block `B` in epoch 10. The chain advances and when importing the block `E` the ELC has fully synced and returns `INVALID`, with a LVH pointing to the fork block `X`. We call forkchoice's `SetOptimisticToInvalid` and remove all invalid blocks in the chain `D`--` E` . How should we update Head? the block `C` is not eligible for head since its justification point is `A` with Epoch 9 and the store's justification is `B` with Epoch 10. At this point the node is deadlocked. It cannot import any block unless the very next block that is imported realizes the justification at Epoch 10. If it doesn't it will fail in the same way, by not being eligible for Head, and therefore that node (and possibly all the honest chain built on it) will never be imported. 
 
 Notice that this may happen during optimistic syncing of the merge block, precisely in the situation that the [forkchoice poisoning](#forkchoice-poisoning) attack described. In this case, even with the prevision of `SAFE_SLOTS_TO_IMPORT_OPTIMISTICALLY`, we would be deadlocked. 
 

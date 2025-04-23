@@ -22,7 +22,11 @@ To view your validator's details, visit [beaconcha.in/validators](https://beacon
 
 If you are using a custom `--monitoring-host` for these processes, such as an IP address, then just change `localhost` to the custom host you are using. 
 
-**Note:** Running a slasher isn't mandatory for staking, only people that are running a slasher can find the metrics at the port 8082. For those that don't run a slasher, all instructions that follow remain correct.
+:::note
+
+Running a slasher isn't mandatory for staking, only people that are running a slasher can find the metrics at the port 8082. For those that don't run a slasher, all instructions that follow remain correct.
+
+:::
 
 ## Installing Prometheus
 
@@ -149,5 +153,7 @@ For those running their node and validators on separate machines, simply modify 
 * [Finding a **public IP**](/prysm-usage/p2p-host-ip/#public-ip-addresses)
 
 :::info
+
 In case of public IPs, [port forwarding](/prysm-usage/p2p-host-ip/#port-forwarding) may need to be configured.
+
 :::

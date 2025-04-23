@@ -10,7 +10,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 This page serves material necessary to catch up with the current state of Ethereum proof-of-stake development and provides readers with the knowledge required to begin making meaningful contributions to the Prysm client. Whether you are an expert on all things Ethereum or are new to the blockchain world entirely, there are appropriate resources here that will help you get up to speed.
 
-## **Ethereum fundamentals**
+## Ethereum fundamentals
 
 ### Introduction
 
@@ -29,9 +29,13 @@ This page serves material necessary to catch up with the current state of Ethere
 * [What is Ethereum Gas?](https://web.archive.org/web/20220517042416/https://blockgeeks.com/guides/ethereum-gas-step-by-step-guide/)
 * [Client Implementations](https://eth.wiki/eth1/clients)
 
-## **ETH2 fundamentals**
+## ETH2 fundamentals
 
-*Disclaimer: Because some parts of Ethereum consensus are still an active area of research and/or development, some resources may be outdated.* 
+:::note Disclaimer
+
+Because some parts of Ethereum consensus are still an active area of research and/or development, some resources may be outdated.
+
+:::
 
 ### Introduction and specifications
 
