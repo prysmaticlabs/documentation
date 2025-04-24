@@ -14,7 +14,7 @@ This section explains everything about how to manage validator accounts using Pr
 Prysm's validator accounts are extensible enough to allow for the most basic setup all the way to advanced production setups where security is paramount.
 :::
 
-Out of the box, Prysm supports 3 basic kinds of wallets that encompasses many different use-cases. In order of highest to lowest security:
+Out of the box, Prysm supports three basic kinds of wallets that encompasses many different use-cases. In order of highest to lowest security:
 
 1. **non-HD wallet**: (good security) A simple wallet in which accounts are password protected and validator keys are generated non-deterministically. This is the recommended approach if you want to import an account from the [Ethereum launchpad](https://launchpad.ethereum.org/) and you can read dedicated instructions [here](/wallet/nondeterministic).
 2. **HD wallet**: (least security) A common type of blockchain wallet which is generated from a english mnemonic, able to create new accounts deterministically. The encrypted seed is stored on day encrypted by a strong password. Given you are tying your HD wallet to the validator client, it is less secure than simply importing validating keys you need from an external source or running a remote signer. 
@@ -23,9 +23,9 @@ At the core of Prysm's validator accounts lies the notion of a validator private
 
 ### Security considerations
 
-Security for your keys is a big topic, but at its core, it is important to clarify the role of the private keys in Ethereum consensus. When you generate a validator key, you actually generate 2 different ones: a **withdrawal key** and a **validating key**. The withdrawal key should be stored offline, and can be used to withdraw your gains in the future as it is not used during the validating process. Your validating key, however, needs to be accessible by your running validator client software **at all times**.
+Security for your keys is a big topic, but at its core, it is important to clarify the role of the private keys in Ethereum consensus. When you generate a validator key, you actually generate two different ones: a **withdrawal key** and a **validating key**. The withdrawal key should be stored offline, and can be used to withdraw your gains in the future as it is not used during the validating process. Your validating key, however, needs to be accessible by your running validator client software **at all times**.
 
-As a validator, you're expected to be consistently online to produce blocks and vote on others' blocks, as this is how you get rewarded for participating in Ethereum consensus. To do this, your software needs to have instant access to your validating key, also referred to often as a "hot key" or access to a "hot wallet". Keeping your withdrawal key, or wallet mnemonic _far away_ from your validator client is what will give you **optimal security** in Ethereum consensus. If someone were to steal your validating keys, they wouldn't be able to withdraw your validator's staked ETH.
+As a validator, you're expected to be consistently online to produce blocks and vote on others' blocks, as this is how you get rewarded for participating in Ethereum consensus. To do this, your software needs to have instant access to your validating key, also referred to often as a "hot key" or access to a "hot wallet". Keeping your withdrawal key, or wallet mnemonic _far away_ from your validator client is what will give you **optimal security** in Ethereum consensus. If someone were to steal your validating keys, they wouldn't be able to withdraw your validator's staked `ETH`.
 
 :::tip Keeping your wallet safe
 When creating an HD wallet, you'll be given a 24-word mnemonic phrase which you need to store safely. Make sure you write it down somewhere safe offline, and do not leave traces of it on your computer. If someone gets ahold of this mnemonic, they can steal all your accounts!
@@ -71,9 +71,9 @@ If you are running a **simple import wallet (non-HD)**, we keep an encrypted fil
 
 If you are running an **HD wallet**, we store your encrypted wallet seed under your wallet path in a file named `encrypted.seed.json`. This file is protected by a strong password you set during wallet creation, and we do not store your password.
 
-#### Why is my validator losing ETH despite my setup appearing ok?
+#### Why is my validator losing `ETH` despite my setup appearing ok?
 
-If your validator client is running fine without errors but you're seeing your validator balance decrease, it is typically a sign your beacon node is either (a) crashed, (b) not synced to the chain head. This might also mean your beacon node doesn't have any peers and is likely not connected to anyone. To debug this problem, please read our guide on checking [everything is running as expected](/monitoring/is-everything-fine). If this still does not resolve your issue, you can get in touch with our team on [Discord](https://discord.gg/prysmaticlabs) anytime.
+If your validator client is running fine without errors but you're seeing your validator balance decrease, it is typically a sign your beacon node is either (a) crashed, (b) not synced to the chain head. This might also mean your beacon node doesn't have any peers and is likely not connected to anyone. To debug this problem, please read our guide on checking [everything is running as expected](/monitoring/is-everything-fine). If this still does not resolve your issue, you can get in touch with our team on [Discord](https://discord.gg/prysm) anytime.
 
 #### How can I use a hardware wallet with my validator?
 
@@ -81,10 +81,8 @@ At the moment, there is no built-in hardware wallet support for validators, but 
 
 #### Help! Something is messed up with the validator and I can't start it
 
-If you're encountering an unexpected issue that causes your client to crash or throw errors you cannot understand, you can always talk to your team on [Discord](https://discord.gg/prysmaticlabs).
+If you're encountering an unexpected issue that causes your client to crash or throw errors you cannot understand, you can always talk to your team on [Discord](https://discord.gg/prysm).
 
 #### How can I stop being a validator?
 
 You can stop being a validator by issuing a **voluntary exit**, which is a special type of object included in the Ethereum beacon chain that signifies your validator is ready to stop validating and securely exit the validator set. Although during phase 0 of Ethereum consensus, you will **not** be able to withdraw your staking rewards, you can still issue a voluntary exit. You can find instructions for this process [here](/wallet/exiting-a-validator).
-
-

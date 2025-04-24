@@ -16,11 +16,11 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
 
 ## Troubleshooting checklist
 
-If you're running into unexpected outputs or errors, use the following checklist to check the status of your configuration. In many cases, this checklist will help you independently resolve your issue. If you still need help after completing this checklist, you can generate a [**troubleshooting report** below](#generate-troubleshooting-report) and paste it into [Discord](https://discord.gg/prysmaticlabs) when asking for support.
+If you're running into unexpected outputs or errors, use the following checklist to check the status of your configuration. In many cases, this checklist will help you independently resolve your issue. If you still need help after completing this checklist, you can generate a [**troubleshooting report** below](#generate-troubleshooting-report) and paste it into [Discord](https://discord.gg/prysm) when asking for support.
 
 :::tip Thank you!
 
-Prysmatic Labs is a small but mighty team of engineers who are working hard to support [The Merge](https://ethereum.org/en/upgrades/merge/). **Using this checklist is very helpful** because it can reduce the time that it takes to gather information, allowing us to focus on Merge engineering and monitoring. Thank you for helping us!
+The Prysm team is a small but mighty team of engineers who are working hard to support [The Merge](https://ethereum.org/en/upgrades/merge/). **Using this checklist is very helpful** because it can reduce the time that it takes to gather information, allowing us to focus on Merge engineering and monitoring. Thank you for helping us!
 
 :::
 
@@ -43,8 +43,8 @@ import TroubleshootingAllPartial from '@site/docs/troubleshooting/partials/_trou
 
  1. Complete the above troubleshooting checklist
  2. Fill in the below form
- 3. Click `Generate troubleshooting report`
- 4. Copy and paste the **generated report text** into [Discord](https://discord.gg/prysmaticlabs) when asking for support
+ 3. Click **Generate troubleshooting report**
+ 4. Copy and paste the **generated report text** into [Discord](https://discord.gg/prysm) when asking for support
 
 import GenerateTroubleshootingReportPartial from '@site/docs/troubleshooting/partials/_generate-troubleshooting-report.md';
 

@@ -16,25 +16,25 @@ This content was previously [published on HackMD](https://hackmd.io/5NhsX8FvSm2G
 
 In this document we cover optimistic sync and its detailed implementation in Prysm. We explain the numerous subtle edge cases that arise because of it and the mitigation factors to some attacks that arise when several nodes are optimistic. We start with a high level introduction to what optimistic sync is and how it is specified, and then move to the specific details within Prysm's implementation. 
 
-We describe Prysm's API to deal with optimistic sync, describing what the involved functions do, but not **how they do it**. For example, we describe that [SetOptimisticToInvalid](https://github.com/prysmaticlabs/prysm/blob/develop/beacon-chain/forkchoice/doubly-linked-tree/optimistic_sync.go#L10) prunes invalid nodes from the forkchoice tree, but do not explain how this pruning is achieved. 
+We describe Prysm's API to deal with optimistic sync, describing what the involved functions do, but not **how they do it**. For example, we describe that [SetOptimisticToInvalid](https://github.com/OffchainLabs/prysm/blob/develop/beacon-chain/forkchoice/doubly-linked-tree/optimistic_sync.go#L10) prunes invalid nodes from the forkchoice tree, but do not explain how this pruning is achieved. 
 
-## 1 What is optimistic sync?
+## 1. What is optimistic sync?
 
-Simply put, optimistic sync allows a consensus layer client (CLC) to import, process, and consider a beacon block for its forkchoice head, even though it has not validated its execution payload. Thus, syncing this block *optimistically* hoping that the block will be eventually validated by the execution layer client (ELC). 
+Simply put, optimistic sync allows a Consensus Layer Client (CLC) to import, process, and consider a beacon block for its forkchoice head, even though it has not validated its execution payload. Thus, syncing this block *optimistically* hoping that the block will be eventually validated by the Execution Layer Client (ELC). 
 
 Optimistic sync was devised because of the different mechanisms utilized by the CLC and the ELC to sync. Most ELC use a syncing mechanism called *snap sync* by which they download a snapshot of the current state from their P2P network, and then proceed to download backwards the blocks and transactions filling its history. Since after the merge, the CLC drives the ELC, without a mechanism to allow the execution layer to sync independently from the consensus layer, it would never catch up to head. The most obvious alternative, known as *lockstep syncing* consists of starting with a synced state, and importing one block at a time, importing first from the consensus layer and passing down the execution payload to the execution layer. Current sync block times show that syncing a small network like Kiln would take over a couple of weeks in lockstep mode on a decent server. There is a more sensible alternative to optimistic sync using the *Light client protocol* which we will not cover in this document.  
 
 ### The happy case
-From the user's perspective, the overwhelming majority of nodes that are  optimistically syncing are nodes that have just been started. The CLC can use checkpoint sync and be in sync in under 2 minutes. Snapshot sync for the ELC on the other hand will take much longer. Until the ELC catches up on head, the CLC may continue to import and keep syncing the beaconchain in optimistic mode. There are few edge cases in this situation. All edge cases and subtle considerations happen when an otherwise synced node, falls into optimistic sync due to an unforeseen circumstance. 
+From the user's perspective, the overwhelming majority of nodes that are  optimistically syncing are nodes that have just been started. The CLC can use checkpoint sync and be in sync in under two minutes. Snapshot sync for the ELC on the other hand will take much longer. Until the ELC catches up on head, the CLC may continue to import and keep syncing the beacon chain in optimistic mode. There are few edge cases in this situation. All edge cases and subtle considerations happen when an otherwise synced node, falls into optimistic sync due to an unforeseen circumstance. 
 
-## 2 Specification
+## 2. Specification
 
 ### 2.1 Which blocks can be imported optimistically?
 
 The specification of optimistic sync is fairly simple. A node makes the following validations on a beacon block to decide if it can be imported or not into its forkchoice/database. If the block fails consensus validation (signature, operations, right proposer, etc, but excluding execution payload validation), then reject the block and do not import it. Assuming that we have a beacon block that passes this validation. The following blocks are allowed to be imported:
 
 - If the block is pre-merge (ie. it does not include an execution payload). 
-- If the parent of the block is post-merge (ie. it does include an execution payload).
+- If the parent of the block is post-merge (i.e., it does include an execution payload).
 
 This leaves only a merge block itself unaccounted for, that is a block which does include an execution payload, but it is the **first** block in the chain to do so. In this case an extra rule is applied:
 
@@ -44,9 +44,9 @@ This last rule, which is the only rule from the consensus layer side preventing 
 
 ### 2.2 The engine API
 
-When the CLC receives a block with an embedded execution payload, it notifies the ELC via two different engine API RPC calls: [engine_newPayloadv1](https://ethereum.github.io/execution-apis/api-documentation/#engine_newPayloadV1) and [engine_forkchoiceUpdateV1](https://ethereum.github.io/execution-apis/api-documentation/#engine_forkchoiceUpdatedV1). These are wrapped internally within Prysm in the blockchain's package methods [notifyNewPayload](https://github.com/prysmaticlabs/prysm/blob/develop/beacon-chain/blockchain/execution_engine.go#L160) and [notifyForkchoiceUpdate](https://github.com/prysmaticlabs/prysm/blob/develop/beacon-chain/blockchain/execution_engine.go#L36). These functions are used in different stages of block processing and have different semantics for the ELC. We call `notifyNewPayload` to inform the ELC that this payload is available and request its validation. We call `notifyForkchoceUpdate` to inform the ELC that our head has changed and that it should react accordingly (changing the current execution state, the list of canonical blocks, etc). 
+When the CLC receives a block with an embedded execution payload, it notifies the ELC via two different engine API RPC calls: [engine_newPayloadv1](https://ethereum.github.io/execution-apis/api-documentation/#engine_newPayloadV1) and [engine_forkchoiceUpdateV1](https://ethereum.github.io/execution-apis/api-documentation/#engine_forkchoiceUpdatedV1). These are wrapped internally within Prysm in the blockchain's package methods [notifyNewPayload](https://github.com/OffchainLabs/prysm/blob/develop/beacon-chain/blockchain/execution_engine.go#L160) and [notifyForkchoiceUpdate](https://github.com/OffchainLabs/prysm/blob/develop/beacon-chain/blockchain/execution_engine.go#L36). These functions are used in different stages of block processing and have different semantics for the ELC. We call `notifyNewPayload` to inform the ELC that this payload is available and request its validation. We call `notifyForkchoceUpdate` to inform the ELC that our head has changed and that it should react accordingly (changing the current execution state, the list of canonical blocks, etc). 
 
-When Prysm receives a block, after the pubsub validation, and assuming regular sync, it enters the blockchain package via the function [ReceiveBlock](https://github.com/prysmaticlabs/prysm/blob/develop/beacon-chain/blockchain/receive_block.go#L38) and eventually [onBlock](https://github.com/prysmaticlabs/prysm/blob/develop/beacon-chain/blockchain/process_block.go#L96) is called. At this stage, the consensus aspects of this block have been verified. We call `notifyNewPayload` and await the return of the ELC. There are five possible outcomes of this call:
+When Prysm receives a block, after the pubsub validation, and assuming regular sync, it enters the blockchain package via the function [ReceiveBlock](https://github.com/OffchainLabs/prysm/blob/develop/beacon-chain/blockchain/receive_block.go#L38) and eventually [onBlock](https://github.com/OffchainLabs/prysm/blob/develop/beacon-chain/blockchain/process_block.go#L96) is called. At this stage, the consensus aspects of this block have been verified. We call `notifyNewPayload` and await the return of the ELC. There are five possible outcomes of this call:
 
  1. VALID
  2. INVALID
@@ -56,7 +56,7 @@ When Prysm receives a block, after the pubsub validation, and assuming regular s
 
 Dealing with each one of them requires a different set of careful considerations, roughly ordered by level of difficulty. When we receive `VALID` as a reply, we can simply import the block, this block is not optimistic as it has been fully validated. 
 
-When we receive `INVALID` a series of checks need to be carried out, we will go over them in the following sections of this document. It suffices to say that for a non-optimistic node (ie. a node that has been syncing in lockstep) when it receives an `INVALID` response from this call, its processing is very simple: we just do not import this block, it has failed validation, we mark the block as invalid and `onBlock` (and subsequently [ReceiveBlock](https://github.com/prysmaticlabs/prysm/blob/develop/beacon-chain/blockchain/receive_block.go#L380)) will return with an error, without affecting core logic. What triggers optimistic sync is the response in 3) ACCEPTED/SYNCING. Both replies are treated in the exact same way by Prysm, but it is useful to understand the different semantics from the point of view of the ELC. Suppose we are following a chain that is following like this:
+When we receive `INVALID` a series of checks need to be carried out, we will go over them in the following sections of this document. It suffices to say that for a non-optimistic node (ie. a node that has been syncing in lockstep) when it receives an `INVALID` response from this call, its processing is very simple: we just do not import this block, it has failed validation, we mark the block as invalid and `onBlock` (and subsequently [ReceiveBlock](https://github.com/OffchainLabs/prysm/blob/develop/beacon-chain/blockchain/receive_block.go#L380)) will return with an error, without affecting core logic. What triggers optimistic sync is the response in 3) ACCEPTED/SYNCING. Both replies are treated in the exact same way by Prysm, but it is useful to understand the different semantics from the point of view of the ELC. Suppose we are following a chain that is following like this:
 
 ![](https://i.imgur.com/wMobZC2.png)
 
@@ -114,13 +114,13 @@ A node that is optimistically syncing the beacon chain in this conditions will n
 
 With the assumption that the majority of the chain will justify a checkpoint after the merge in less than `SAFE_SLOTS_TO_IMPORT_OPTIMISTICALLY`, then it is safe to import optimistically the merge block, knowing that at least this many slots have passed and we will have an honest justified checkpoint available to jump, in case this merge block is not valid. 
 
-## 3 Implementation in Prysm
+## 3. Implementation in Prysm
 
 Prysm's implementation of optimistic sync involves several different packages. It principally touches the forkchoice and blockchain packages as it changes the core handling of beacon blocks. But it also touches the database (package kv) and the sync package (during init sync and pubsub validation) and the RPC endpoints.  In this section we will cover all the paths added in each package. 
 
 ### 3.1 Forkchoice package
 
-The forkchoice package keeps track of the optimistic status of each node. This is required as an optimistic node cannot perform its duties. When inserting a node, it is by default considered optimistic. Its status can be changed to fully validated with the function [SetOptimisticToValid](https://github.com/prysmaticlabs/prysm/blob/develop/beacon-chain/forkchoice/doubly-linked-tree/forkchoice.go#L378):
+The forkchoice package keeps track of the optimistic status of each node. This is required as an optimistic node cannot perform its duties. When inserting a node, it is by default considered optimistic. Its status can be changed to fully validated with the function [SetOptimisticToValid](https://github.com/OffchainLabs/prysm/blob/develop/beacon-chain/forkchoice/doubly-linked-tree/forkchoice.go#L378):
 
 ```go
 func (f *ForkChoice) SetOptimisticToValid(ctx context.Context, root [fieldparams.RootLength]byte) error
@@ -128,7 +128,7 @@ func (f *ForkChoice) SetOptimisticToValid(ctx context.Context, root [fieldparams
 
 This function simply takes the HTR of the block and it sets its optimistic status to VALID. It also sets the optimistic status of any ancestor to VALID since a block cannot be fully validated if its ancestors weren't. 
 
-If a block that was imported optimistically later becomes INVALID, this can be notified with the function [SetOptimisticToInvalid](https://github.com/prysmaticlabs/prysm/blob/develop/beacon-chain/forkchoice/doubly-linked-tree/optimistic_sync.go#L10):
+If a block that was imported optimistically later becomes INVALID, this can be notified with the function [SetOptimisticToInvalid](https://github.com/OffchainLabs/prysm/blob/develop/beacon-chain/forkchoice/doubly-linked-tree/optimistic_sync.go#L10):
 
 ```go
 func (s *Store) setOptimisticToInvalid(ctx context.Context, root, parentRoot, payloadHash [32]byte) ([][32]byte, error)
@@ -184,7 +184,7 @@ Finally, forkchoice returns the optimistic status of a blockroot via the exposed
 ```
 
 ### Blockchain package
-We have already described at a high level the changes in the blockchain package in the previous section. The main function during block processing in regular sync is the function [onBlock](https://github.com/prysmaticlabs/prysm/blob/develop/beacon-chain/blockchain/process_block.go#L96). This function executes the state transition and calls the execution engine via `notifyNewPayload`.
+We have already described at a high level the changes in the blockchain package in the previous section. The main function during block processing in regular sync is the function [onBlock](https://github.com/OffchainLabs/prysm/blob/develop/beacon-chain/blockchain/process_block.go#L96). This function executes the state transition and calls the execution engine via `notifyNewPayload`.
 
 #### 3.2.1 `notifyNewPayload`
 
@@ -198,11 +198,11 @@ it returns `true` when the payload has been fully validated and is VALID. It ret
 
 The function returns an error if either the block was deemed INVALID or an unhandled execution engine error was returned. 
 
-If the return from the execution engine is INVALID, within `notifyNewPayload` we call the blockchain function `SetOptimisticToInvalid` described above, to obtain the list of blockroots that have been previously imported optimistically and we now know were in fact INVALID. These blocks, and their corresponding state summaries and states have been imported to our database. We call [removeInvalidBlockAndState](https://github.com/prysmaticlabs/prysm/blob/0ed5007d2e51874f158d4bc8dbd632b1b547b3d7/beacon-chain/blockchain/execution_engine.go#L305) from the `blockchain` package. This function simply takes the list of invalid roots and removes the corresponding blocks from the database and the states from the state cache. 
+If the return from the execution engine is INVALID, within `notifyNewPayload` we call the blockchain function `SetOptimisticToInvalid` described above, to obtain the list of blockroots that have been previously imported optimistically and we now know were in fact INVALID. These blocks, and their corresponding state summaries and states have been imported to our database. We call [removeInvalidBlockAndState](https://github.com/OffchainLabs/prysm/blob/0ed5007d2e51874f158d4bc8dbd632b1b547b3d7/beacon-chain/blockchain/execution_engine.go#L305) from the `blockchain` package. This function simply takes the list of invalid roots and removes the corresponding blocks from the database and the states from the state cache. 
 
 #### 3.2.2 `notifyForkchoiceUpdate`
 
-The other situation where we have to deal with optimistic status during `onBlock` is when we call `notifyForkchoiceUpdate`, this function is called from `onBlock` by calling first [notifyEngineIfChangedHead](https://github.com/prysmaticlabs/prysm/blob/develop/beacon-chain/blockchain/receive_attestation.go#L174). 
+The other situation where we have to deal with optimistic status during `onBlock` is when we call `notifyForkchoiceUpdate`, this function is called from `onBlock` by calling first [notifyEngineIfChangedHead](https://github.com/OffchainLabs/prysm/blob/develop/beacon-chain/blockchain/receive_attestation.go#L174). 
 
 `notifyForkchoiceUpdate` has a more complicated logic in regard to optimistic status. If the response from the ELC is VALID, then it informs forkchoice via `SetOptimisticToValid` (recall the block has been already inserted to forkchoice if its to become head). If it is SYNCING then it returns without doing anything. The reason for this is that the default for a forkchoice node is to be optimistic, and a transition VALID -> SYNCING would be a bug in the ELC. 
 
@@ -236,11 +236,11 @@ It is important to keep this path in mind when considering forkchoice changes, t
 
 #### 3.2.4 Init sync
 
-The path for init sync is very similar to sections [3.2.1](#321-notifynewpayload) and [3.2.2](#322-notifyforkchoiceupdate). The main block processing function during init sync is the function [onBlockBatch](https://github.com/prysmaticlabs/prysm/blob/develop/beacon-chain/blockchain/process_block.go#L282). This function does essentially the same processing as `onBlock` but it takes consecutive batches of blocks to do signature verification by aggregation. In what regards to optimistic syncing the behavior is the same as in regular sync: for each block a call to  `notifyNewPayload` is made. However only after the full batch has been processed and verified, it is inserted in forkchoice. Only the last block inserted is considered for optimistic sync, namely if this block is VALID, then the whole batch is considered VALID, otherwise the whole batch is considered optimistic. Since the batch is linear, we only call `notifyForkchoiceUpdate` in the last block of the batch. 
+The path for init sync is very similar to sections [3.2.1](#321-notifynewpayload) and [3.2.2](#322-notifyforkchoiceupdate). The main block processing function during init sync is the function [onBlockBatch](https://github.com/OffchainLabs/prysm/blob/develop/beacon-chain/blockchain/process_block.go#L282). This function does essentially the same processing as `onBlock` but it takes consecutive batches of blocks to do signature verification by aggregation. In what regards to optimistic syncing the behavior is the same as in regular sync: for each block a call to  `notifyNewPayload` is made. However only after the full batch has been processed and verified, it is inserted in forkchoice. Only the last block inserted is considered for optimistic sync, namely if this block is VALID, then the whole batch is considered VALID, otherwise the whole batch is considered optimistic. Since the batch is linear, we only call `notifyForkchoiceUpdate` in the last block of the batch. 
 
 ### 3.3 (g)RPC API
 
-A CLC is required to respond to requests for blocks, state information, head information, etc. The node is required to provide optimistic status information in its reply. Many of the endpoints simply add a JSON field `is_optimistic` that results `true` when the corresponding block has been inserted optimistically or `false` when it has been fully validated. The beacon node ultimately calls the two functions [IsOptimistic](https://github.com/prysmaticlabs/prysm/blob/develop/beacon-chain/blockchain/chain_info.go#L301) and [IsOptimisticForRoot](https://github.com/prysmaticlabs/prysm/blob/develop/beacon-chain/blockchain/chain_info.go#L322).
+A CLC is required to respond to requests for blocks, state information, head information, etc. The node is required to provide optimistic status information in its reply. Many of the endpoints simply add a JSON field `is_optimistic` that results `true` when the corresponding block has been inserted optimistically or `false` when it has been fully validated. The beacon node ultimately calls the two functions [IsOptimistic](https://github.com/OffchainLabs/prysm/blob/develop/beacon-chain/blockchain/chain_info.go#L301) and [IsOptimisticForRoot](https://github.com/OffchainLabs/prysm/blob/develop/beacon-chain/blockchain/chain_info.go#L322).
 
 The former is just a wrapper around the latter, it fetches the head root of the node and calls the latter. The latter returns whether the block with the given root is optimistic. It does so by calling first forkchoice's `IsOptimistic` and if it fails it checks with the database as explained in the next section.
 
@@ -257,16 +257,16 @@ It is important, and dangerous to not act in optimistic node. From a network per
 
 ### 3.4 Database
 
-We have described in section [3.1](#31-forkchoice-package) that the forkchoice package is responsible for tracking the optimistic status of imported nodes. Forkchoice however prunes nodes after finalization and we can finalize during optimistic mode. If we require optimistic information about an ancient block we request this information from the database. The database tracks the last *validated checkpoint*. This is a checkpoint by which any canonical block older than it is considered VALID, and any block that is not in forkchoice and that is newer than the last validated checkpoint, is optimistic. The function to obtain this information is [LastValidatedCheckpoint](https://github.com/prysmaticlabs/prysm/blob/develop/beacon-chain/db/kv/validated_checkpoint.go#L13). 
+We have described in section [3.1](#31-forkchoice-package) that the forkchoice package is responsible for tracking the optimistic status of imported nodes. Forkchoice however prunes nodes after finalization and we can finalize during optimistic mode. If we require optimistic information about an ancient block we request this information from the database. The database tracks the last *validated checkpoint*. This is a checkpoint by which any canonical block older than it is considered VALID, and any block that is not in forkchoice and that is newer than the last validated checkpoint, is optimistic. The function to obtain this information is [LastValidatedCheckpoint](https://github.com/OffchainLabs/prysm/blob/develop/beacon-chain/db/kv/validated_checkpoint.go#L13). 
 
-Notice that any orphaned block in the database, even those older than the last validated checkpoint, will be served as  optimistic, even though they may have been fully validated. This is a compromise to avoid complicated setups as we [previously had designed](https://www.notion.so/prysmaticlabs/Optimistic-blocks-storage-05d0832243ce46b4bd36e422e8f8e15f#85e6baf047eb4d16b9d0fc2ca6ad8569). 
+Notice that any orphaned block in the database, even those older than the last validated checkpoint, will be served as  optimistic, even though they may have been fully validated. This is a compromise to avoid complicated setups as we [previously had designed](https://www.notion.so/OffchainLabs/Optimistic-blocks-storage-05d0832243ce46b4bd36e422e8f8e15f#85e6baf047eb4d16b9d0fc2ca6ad8569). 
 
-The last validated checkpoint is updated only when we finalize a new checkpoint and thus its pruned from forkchoice. The corresponding function is [SaveLastValidatedCheckpoint](https://github.com/prysmaticlabs/prysm/blob/develop/beacon-chain/db/kv/validated_checkpoint.go#L32) and is called from [updateFinalized](https://github.com/prysmaticlabs/prysm/blob/develop/beacon-chain/blockchain/process_block_helpers.go#L139). This latter function is called both from `onBlock` and `onBlockBatch` when processing a block in regular or init sync that updates finalization. 
+The last validated checkpoint is updated only when we finalize a new checkpoint and thus its pruned from forkchoice. The corresponding function is [SaveLastValidatedCheckpoint](https://github.com/OffchainLabs/prysm/blob/develop/beacon-chain/db/kv/validated_checkpoint.go#L32) and is called from [updateFinalized](https://github.com/OffchainLabs/prysm/blob/develop/beacon-chain/blockchain/process_block_helpers.go#L139). This latter function is called both from `onBlock` and `onBlockBatch` when processing a block in regular or init sync that updates finalization. 
 
-## 4 Some edge cases and unsolved problems
+## 4. Some edge cases and unsolved problems
 
 ### 4.1 Justification reversal after pruning
-Most of the edge cases with optimistic sync happen in the presence of invalid payload. We have already described the situation with [Forkchoice Poisoning](#forkchoice-poisoning). The following similar situations have been described in the issues [10782](https://github.com/prysmaticlabs/prysm/issues/10782) and [10777](https://github.com/prysmaticlabs/prysm/issues/10777). They are variations of the same phenomenon: an INVALID chain is imported and it updates justification, even though the justification checkpoint is VALID, the node may be deadlocked. 
+Most of the edge cases with optimistic sync happen in the presence of invalid payload. We have already described the situation with [Forkchoice Poisoning](#forkchoice-poisoning). The following similar situations have been described in the issues [10782](https://github.com/OffchainLabs/prysm/issues/10782) and [10777](https://github.com/OffchainLabs/prysm/issues/10777). They are variations of the same phenomenon: an INVALID chain is imported and it updates justification, even though the justification checkpoint is VALID, the node may be deadlocked. 
 
 Consider the following diagram:
 
@@ -284,5 +284,3 @@ This problem was found independently by many and there are different ad-hoc impl
 ### 4.2 Timeouts and unhandled errors
 
 Another common themes for bugs with optimistic sync is the handling of timeouts and unhandled errors from the ELC. When the ELC timesout on a call to `notifyNewPayload`, it has not replied neither saying that it has fully validated the block nor that it is SYNCING. Ironically, this means that a node that was previously lock-stepping is not to be considered optimistic and can actually attest to its previous head, and propose a block based on its previous head. We are not allowed however to import a block which the ELC has not returned of of VALID, INVALID, ACCEPTED or SYNCING. The following situation has happened in a couple of merged networks and shadow forks: the ELC timesout the CLC does not send any new payload since it can't import any block. The CLC should consider resending either `notifyNewPayload`  or `notifyForkchoiceUpdate` to the ELC if it has timedout and the CLC is not importing a new block because of this. 
-
-

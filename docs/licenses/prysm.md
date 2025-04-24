@@ -1,8 +1,8 @@
 ---
-id: prysmatic-labs
-title: Prysmatic Labs
+id: prysm
+title: Prysm Licenses
 sidebar_label: Prysm License
-description: Relevant licenses for Prysm and the various materials produced by Prysmatic Labs.
+description: Relevant licenses for Prysm and the various materials produced by the Prysm team at Offchain Labs.
 ---
 
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';

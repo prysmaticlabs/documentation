@@ -15,14 +15,14 @@ Prysmatic Labs' implementation for Phase 0 of Ethereum proof-of-stake has receiv
 Quantstamp has reviewed the whole codebase of the Prysm client implementation. We have found a number of issues spanning all severity levels. Some of the high severity issues
 were resolved before completion of the review. Overall the code is well-written. There are many ways, however, in which it can be improved to follow best practices. For example, code
 clones are relatively common. Furthermore, despite being mostly self-documenting, inline code documentation is lacking. We have no doubt that it would be useful for future contributors.
-Despite being accompanied by the official ETH 2.0 documentation, the implementation is very nuanced and complex. The code does not always follow the specification (or it is not clear
+Despite being accompanied by the official `ETH` 2.0 documentation, the implementation is very nuanced and complex. The code does not always follow the specification (or it is not clear
 that it does). We found a number of issues that span both the specification and the implementation. Although we aggregated some of them in the "Adherence to Specification" section,
 they are of utmost importance and we highly recommend addressing each and every of them as if they were actual vulnerabilities.
 
 Finally, many pieces of the code lack unit tests, and hence, relatively low coverage. We highly recommend adding meaningful unit tests and improving the coverage to maximize code
 quality.
 
-Update: the team addressed almost all of the findings. Mapping between issues and solutions is present in [PR#6327](https://github.com/prysmaticlabs/prysm/pull/6327).
+Update: the team addressed almost all of the findings. Mapping between issues and solutions is present in [PR#6327](https://github.com/OffchainLabs/prysm/pull/6327).
 
 **Status**: Completed
 
@@ -35,7 +35,7 @@ Update: the team addressed almost all of the findings. Mapping between issues an
 From September 8 through October 2, 2020, the Ethereum Foundation and Prysmatic Labs
 engaged Trail of Bits to review the security of Prysm. Trail of Bits conducted this
 assessment over the course of 8 person-weeks with three engineers working from
-[245c18784eda370ea3218e8704651edad763978d](https://github.com/prysmaticlabs/prysm/tree/245c18784eda370ea3218e8704651edad763978d) from the Prysm repository.
+[245c18784eda370ea3218e8704651edad763978d](https://github.com/OffchainLabs/prysm/tree/245c18784eda370ea3218e8704651edad763978d) from the Prysm repository.
 During the first week, Trail of Bits familiarized ourselves with the codebase build and test
 systems, investigated fuzzing targets, and ran the existing fuzzers with no crashes. We ran
 automated tools to produce jumping off points for investigation including, but not limited

@@ -8,13 +8,13 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <HeaderBadgesWidget />
 
-Prysmatic Labs sticks to the official [Effective Go guidelines](https://golang.org/doc/effective_go.html), and all code committed to Prysm's master branch goes through extensive lint tools that check formatting correctness and review potential security flaws in the code itself.
+Prysm sticks to the official [Effective Go guidelines](https://golang.org/doc/effective_go.html), and all code committed to Prysm's master branch goes through extensive lint tools that check formatting correctness and review potential security flaws in the code itself.
 
 For a recommended book on the Go language, see 'The Go Programming Language' by Alan A. A. Donovan and Brian Kernighan, available for purchase on Amazon [here](https://www.amazon.com/Programming-Language-Addison-Wesley-Professional-Computing/dp/0134190440).
 
 ## Code comments
 
-Prysmatic requires all code to adhere to correct commentary conventions for any new packages in order to generate proper Godocs.
+Prysm requires all code to adhere to correct commentary conventions for any new packages in order to generate proper Godocs.
 
 #### Good:
 
@@ -53,7 +53,7 @@ if block.Slot() > justificationUpperLimit {
 }
 ```
 
-#### Bad \(uses magic numbers with no explanation or context\):
+#### Bad (uses magic numbers with no explanation or context):
 
 ```go
 if block.Slot() > 12032*(23 + 45 % 15) {
@@ -63,7 +63,7 @@ if block.Slot() > 12032*(23 + 45 % 15) {
 
 ## Error handling
 
-Always handle fatal situations gracefully through informative error messaging or logging. Error handling is critical in code paths where critical state mutations occur which affect data persisted to disk. In particular, not handling an error gracefully a few lines above where data is written to disk can cause the system to remain in an inconsistent state \(one of the most critical types of failures\).
+Always handle fatal situations gracefully through informative error messaging or logging. Error handling is critical in code paths where critical state mutations occur which affect data persisted to disk. In particular, not handling an error gracefully a few lines above where data is written to disk can cause the system to remain in an inconsistent state (one of the most critical types of failures).
 
 For example:
 
