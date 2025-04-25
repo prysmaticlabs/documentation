@@ -173,7 +173,7 @@ If you have any questions, feel free to visit our [Discord](https://discord.gg/p
 
 Footnotes:
 
-<strong id='footnote-1'>1</strong>. Learn more about the Holesky testnet <a href='https://holesky.launchpad.ethereum.org/en/'>here on Ethereum.org</a>. <br />
+<strong id='footnote-1'>1</strong>. Learn more about the Hoodi testnet <a href='https://hoodi.launchpad.ethereum.org/'>here on Ethereum.org</a>. <br />
 <strong id='footnote-2'>2</strong>. BitMex recently posted research that provides hard numbers on penalties and rewards: <a href='https://blog.bitmex.com/ethereums-proof-of-stake-system-calculating-penalties-rewards/'>Ethereum's Proof of Stake System - Calculating Penalties and Rewards</a>. Collin Myers has also created an <a href='https://docs.google.com/spreadsheets/d/15tmPOvOgi3wKxJw7KQJKoUe-uonbYR6HF7u83LR5Mj4/edit#gid=1018097491'>Ethereum calculator</a>. <br />
 <strong id='footnote-3'>3</strong>. See <a href='https://www.reddit.com/r/ethstaker/comments/nnwfx1/why_you_should_stop_worrying_about_your/'>Why you should stop worrying about your validator's uptime and start embracing the chaos instead</a>. <br />
 <strong id='footnote-4'>4</strong>. See <a href='https://medium.com/prysmatic-labs/eth2-slashing-prevention-tips-f6faa5025f50'>Eth2 Slashing Prevention Tips</a> to learn more about slashing.<br />
@@ -182,7 +182,7 @@ Footnotes:
 <strong id='footnote-7'>7</strong>. See <a href='https://medium.com/prysmatic-labs/eth2-slashing-prevention-tips-f6faa5025f50'>Eth2 Slashing Prevention Tips</a> by Raul Jordan. <br />
 <strong id='footnote-8'>8</strong>. See <a href='https://www.reddit.com/r/ethstaker/comments/oa6m2o/my_validator_got_slashed/'>this discussion on Reddit</a> for an example of how an honest scripting mistake can result in slashing. The Ethereum ecosystem is growing quickly - this requires all participants to exercise an abundance of caution. <br />
 <strong id='footnote-9'>9</strong>. CoinCashew demonstrates firewall configuration best practices <a href='https://www.coincashew.com/coins/overview-eth/archived-guides/guide-or-how-to-setup-a-validator-on-eth2-mainnet/part-i-installation/step-2-configuring-node#enable-firewall'>here</a>. <br />
-<strong id='footnote-10'>10</strong>. CoinCashew demonstrates root account administration <a href='https://www.coincashew.com/coins/overview-eth/testnet-holesky-validator/step-2-configuring-node#disabling-root-login-and-password-based-login'>here</a>. <br />
-<strong id='footnote-11'>11</strong>. CoinCashew demonstrates SSH authentication <a href='https://www.coincashew.com/coins/overview-eth/testnet-holesky-validator/step-2-configuring-node#hardening-ssh-access'>here</a>. <br />
+<strong id='footnote-10'>10</strong>. CoinCashew demonstrates root account administration <a href='https://www.coincashew.com/coins/overview-eth/testnet-hoodi/step-2-configuring-node'>here</a>. <br />
+<strong id='footnote-11'>11</strong>. CoinCashew demonstrates SSH authentication <a href='https://www.coincashew.com/coins/overview-eth/testnet-hoodi/step-2-configuring-node#hardening-ssh-access'>here</a>. <br />
 <strong id='footnote-12'>12</strong>. See <a href='https://jlopp.github.io/metal-bitcoin-storage-reviews/'>Metal Bitcoin Seed Storage Reviews</a> by Jameson Lopp. <br />
 <strong id='footnote-13'>13</strong>. StakingRewards has a live rewards calculator <a href='https://www.stakingrewards.com/earn/ethereum-2-0/'>here</a>.   <br />

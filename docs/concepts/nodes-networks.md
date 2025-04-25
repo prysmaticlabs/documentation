@@ -91,12 +91,9 @@ Every network's execution layer works with (and only with) its corresponding "pa
       <td>Sepolia is a network that was created to smart contract testing. The <a href='/install/install-with-script'>Prysm Quickstart</a> shows you how to configure a node on Sepolia. Note that this is a permissioned network, so you can run a node on Sepolia, but not a validator.<br/><br/>This network pair mints and manages <strong>Sepolia `ETH`</strong>, a type of testnet `ETH` used exclusively within this network pair.</td>
     </tr>
     <tr>
-      <td>Holesky</td>
-      <td>Holesky is a merged-from-genesis public Ethereum testnet which will replace Goerli as a
-      staking, infrastructure, and protocol-developer testnet. This network is primarily focused on
-      testing the Ethereum protocol. For testing decentralized applications, smart contracts, and
-      other EVM functionality, use Sepolia. <br/><br/> See <a
-      href="https://github.com/eth-clients/holesky">github.com/eth-clients/holesky</a> for more
+      <td>Hoodi</td>
+      <td>Hoodi the second long-standing, merged-from-genesis, public Ethereum testnet. Hoodi will replace Holešky as a staking, infrastructure and protocol-developer testnet in 2025. For testing decentralized applications, smart contracts, and other EVM functionality, please use Sepolia! <br/><br/> See <a
+      href="https://github.com/eth-clients/hoodi">github.com/eth-clients/hoodi</a> for more
       information.</td>
     </tr>
 </table>

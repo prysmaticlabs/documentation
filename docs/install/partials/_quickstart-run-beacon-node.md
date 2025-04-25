@@ -12,7 +12,7 @@ import TabItem from '@theme/TabItem';
     <Tabs groupId="network" defaultValue="mainnet" values={[
       {label: 'Mainnet', value: 'mainnet'},
       {label: 'Sepolia', value: 'sepolia'},
-      {label: 'Holesky', value: 'holesky'}
+      {label: 'Hoodi', value: 'hoodi'}
     ]}>
       <TabItem value="mainnet">
         <Tabs groupId="protocol" defaultValue="jwt" values={[
@@ -38,13 +38,13 @@ import TabItem from '@theme/TabItem';
           <TabItem value="ipc"><pre><code>prysm.bat beacon-chain --execution-endpoint=&lt;PATH_TO_IPC_FILE&gt; --sepolia --checkpoint-sync-url=https://sepolia.beaconstate.info --genesis-beacon-api-url=https://sepolia.beaconstate.info</code></pre></TabItem>
         </Tabs>
       </TabItem>
-      <TabItem value="holesky">
+      <TabItem value="hoodi">
         <Tabs groupId="protocol" defaultValue="jwt" values={[
           {label: 'JWT', value: 'jwt'},
           {label: 'IPC', value: 'ipc'}
         ]}>
-          <TabItem value="jwt"><pre><code>prysm.bat beacon-chain --execution-endpoint=http://localhost:8551 --holesky --jwt-secret=&lt;PATH_TO_JWT_FILE&gt;  --checkpoint-sync-url=https://holesky.beaconstate.info --genesis-beacon-api-url=https://holesky.beaconstate.info</code></pre></TabItem>
-          <TabItem value="ipc"><pre><code>prysm.bat beacon-chain --execution-endpoint=&lt;PATH_TO_IPC_FILE&gt; --holesky --checkpoint-sync-url=https://holesky.beaconstate.info --genesis-beacon-api-url=https://holesky.beaconstate.info</code></pre></TabItem>
+          <TabItem value="jwt"><pre><code>prysm.bat beacon-chain --execution-endpoint=http://localhost:8551 --hoodi --jwt-secret=&lt;PATH_TO_JWT_FILE&gt;  --checkpoint-sync-url=https://hoodi.beaconstate.info --genesis-beacon-api-url=https://hoodi.beaconstate.info</code></pre></TabItem>
+          <TabItem value="ipc"><pre><code>prysm.bat beacon-chain --execution-endpoint=&lt;PATH_TO_IPC_FILE&gt; --hoodi --checkpoint-sync-url=https://hoodi.beaconstate.info --genesis-beacon-api-url=https://hoodi.beaconstate.info</code></pre></TabItem>
         </Tabs>
       </TabItem>
     </Tabs>
@@ -53,7 +53,7 @@ import TabItem from '@theme/TabItem';
     <Tabs groupId="network" defaultValue="mainnet" values={[
       {label: 'Mainnet', value: 'mainnet'},
       {label: 'Sepolia', value: 'sepolia'},
-      {label: 'Holesky', value: 'holesky'}
+      {label: 'Hoodi', value: 'hoodi'}
     ]}>
       <TabItem value="mainnet">
         <Tabs groupId="protocol" defaultValue="jwt" values={[
@@ -79,13 +79,13 @@ import TabItem from '@theme/TabItem';
           <TabItem value="ipc"><pre><code>./prysm.sh beacon-chain --execution-endpoint=&lt;PATH_TO_IPC_FILE&gt; --sepolia --checkpoint-sync-url=https://sepolia.beaconstate.info --genesis-beacon-api-url=https://sepolia.beaconstate.info</code></pre></TabItem>
           </Tabs>
       </TabItem>
-      <TabItem value="holesky">
+      <TabItem value="hoodi">
         <Tabs groupId="protocol" defaultValue="jwt" values={[
           {label: 'JWT', value: 'jwt'},
           {label: 'IPC', value: 'ipc'}
         ]}>
-          <TabItem value="jwt"><pre><code>./prysm.sh beacon-chain --execution-endpoint=http://localhost:8551 --holesky --jwt-secret=&lt;PATH_TO_JWT_FILE&gt;  --checkpoint-sync-url=https://holesky.beaconstate.info --genesis-beacon-api-url=https://holesky.beaconstate.info</code></pre></TabItem>
-          <TabItem value="ipc"><pre><code>./prysm.sh beacon-chain --execution-endpoint=&lt;PATH_TO_IPC_FILE&gt; --holesky --checkpoint-sync-url=https://holesky.beaconstate.info --genesis-beacon-api-url=https://holesky.beaconstate.info</code></pre></TabItem>
+          <TabItem value="jwt"><pre><code>./prysm.sh beacon-chain --execution-endpoint=http://localhost:8551 --hoodi --jwt-secret=&lt;PATH_TO_JWT_FILE&gt;  --checkpoint-sync-url=https://hoodi.beaconstate.info --genesis-beacon-api-url=https://hoodi.beaconstate.info</code></pre></TabItem>
+          <TabItem value="ipc"><pre><code>./prysm.sh beacon-chain --execution-endpoint=&lt;PATH_TO_IPC_FILE&gt; --hoodi --checkpoint-sync-url=https://hoodi.beaconstate.info --genesis-beacon-api-url=https://hoodi.beaconstate.info</code></pre></TabItem>
         </Tabs>
       </TabItem>
     </Tabs>
@@ -99,7 +99,7 @@ Syncing from a checkpoint usually takes a couple of minutes. See [Sync from a ch
 <Tabs groupId="network" defaultValue="mainnet" values={[
       {label: 'Mainnet', value: 'mainnet'},
       {label: 'Sepolia', value: 'sepolia'},
-      {label: 'Holesky', value: 'holesky'}
+      {label: 'Hoodi', value: 'hoodi'}
     ]}>
     <TabItem value="mainnet">
       If you wish to sync from genesis, you need to remove <code>--checkpoint-sync-url</code> and <code>--genesis-beacon-api-url</code> flags from the previous command. Syncing from genesis usually takes a couple days, but it can take longer depending on your network and hardware specs.
@@ -108,9 +108,9 @@ Syncing from a checkpoint usually takes a couple of minutes. See [Sync from a ch
       If you wish to sync from genesis, you need to remove <code>--checkpoint-sync-url</code> and <code>--genesis-beacon-api-url</code> flags from the previous command and add the <code>--genesis-state=genesis.ssz</code> flag. Syncing from genesis usually takes a couple days, but it can take longer depending on your network and hardware specs.
       Download the <a href='https://github.com/eth-clients/sepolia/blob/main/metadata/genesis.ssz'>Sepolia genesis.ssz from Github</a> into your <code>consensus</code> directory.
     </TabItem>
-     <TabItem value="holesky">
+     <TabItem value="hoodi">
       If you wish to sync from genesis, you need to remove <code>--checkpoint-sync-url</code> and <code>--genesis-beacon-api-url</code> flags from the previous command and add the <code>--genesis-state=genesis.ssz</code> flag. Syncing from genesis usually takes a couple days, but it can take longer depending on your network and hardware specs.
-      Download the <a href='https://github.com/eth-clients/holesky/tree/main/metadata/genesis.ssz'>Holesky genesis.ssz from Github</a> into your <code>consensus</code> directory.
+      Download the <a href='https://github.com/eth-clients/hoodi/blob/314f727fc019c449905e16c84977415c91e62a30/metadata/genesis.ssz#L2'>Hoodi genesis.ssz from Github</a> into your <code>consensus</code> directory.
     </TabItem>
 </Tabs>
 
