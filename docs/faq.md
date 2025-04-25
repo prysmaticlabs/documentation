@@ -18,7 +18,7 @@ import TabItem from '@theme/TabItem';
 
 #### How do I troubleshoot errors?
 
-If your beacon node or validator logs display an `ERROR`, go to our [open issues](https://github.com/OffchainLabs/prysm/issues) to see if someone has reported the same problem before. If this doesn't help, note the **Prysm version you're running** and your **operating system**, and then file a bug report [here](https://github.com/OffchainLabs/prysm/issues/new?assignees=&labels=&template=bug_report.md). You can also ask our community on [Discord](https://discord.gg/OffchainLabs) about your error and we'll take a look as soon as possible.
+If your beacon node or validator logs display an `ERROR`, go to our [open issues](https://github.com/OffchainLabs/prysm/issues) to see if someone has reported the same problem before. If this doesn't help, note the **Prysm version you're running** and your **operating system**, and then file a bug report [here](https://github.com/OffchainLabs/prysm/issues/new?assignees=&labels=&template=bug_report.md). You can also ask our community on [Discord](https://discord.gg/prysm) about your error and we'll take a look as soon as possible.
 
 #### My validator is losing money, what's going on?
 
@@ -27,7 +27,7 @@ If your beacon node or validator logs display an `ERROR`, go to our [open issues
 2. Check your network connectivity. You can improve this by following our tips [here](/prysm-usage/p2p-host-ip) which can help you find better peers, improve attestation effectiveness, and more.
 3. Check your system resource usage, perhaps your node is using excess CPU and RAM. Depending on your operating system, there are different ways to do this.
 
-If you still need help, note your **Prysm version** and **operating system**, and then reach out to our team on [Discord](https://discord.gg/prysm). Providing as much information as possible will help us troubleshoot your issue.
+If you still need help, note your **Prysm version** and **operating system**, and then reach out to our team on [Discord](https://discord.gg/OffchainLabs). Providing as much information as possible will help us troubleshoot your issue.
 
 #### My node suddenly lost peers, what can I do?
 
