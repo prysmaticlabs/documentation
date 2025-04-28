@@ -19,7 +19,9 @@ Prysm's client software can be configured using flags and YAML files. This docum
 ## Validator flags
 
 :::tip Graffiti
-You can use the `--graffiti` validator flag to add a string to your proposed blocks, which will be seen on the block explorer. I.e., `<startup command> --graffiti "Prysm is awesome!"`
+
+You can use the `--graffiti` validator flag to add a string to your proposed blocks, which will be seen on the block explorer (i.e., `<startup command> --graffiti "Prysm is awesome!"`)
+
 :::
 
 <FetchCLIHelp prysmComponent={"validator"}/>

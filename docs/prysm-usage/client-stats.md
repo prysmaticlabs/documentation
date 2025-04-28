@@ -14,7 +14,7 @@ This functionality is in its early stage alpha testing and may not be fully func
 
 :::
 
-This section provides instructions on how to run the `client-stats` CLI utility to collect metrics from your Prysm validator or beacon node processes and push them to the [beaconcha.in](https://beaconcha.in)  stats service.
+This section provides instructions on how to run the `client-stats` CLI utility to collect metrics from your Prysm validator or beacon node processes and push them to the [beaconcha.in](https://beaconcha.in) stats service.
 
 ## Why is this a separate process?
 
@@ -27,7 +27,7 @@ You need to run the `client-stats` executable, **not** another instance of `vali
 :::
 
 ## API URL
-The [beaconcha.in](https://beaconcha.in) `client-stats` collection endpoint is authenticated via an api key embedded in the server UEL path. A unique identifier for the machine name can also be added to the path. When you configure your account with [beaconcha.in](https://beaconcha.in) they will give you the api key, simply replace `{apikey}` in the example commands below. If you do not wish to use the machine name feature, that part of the path can simply be excluded. For example, to specify a machine name:
+The [beaconcha.in](https://beaconcha.in) `client-stats` collection endpoint is authenticated via an API key embedded in the server UEL path. A unique identifier for the machine name can also be added to the path. When you configure your account with [beaconcha.in](https://beaconcha.in) they will give you the API key, simply replace `{apikey}` in the example commands below. If you do not wish to use the machine name feature, that part of the path can simply be excluded. For example, to specify a machine name:
 
     https://beaconcha.in/api/v1/stats/{apikey}/{machineName}
 

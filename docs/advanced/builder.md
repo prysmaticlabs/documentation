@@ -99,7 +99,7 @@ It is **recommended** to configure with the validator client with the `--suggest
 
 To use a builder the beacon node needs to start with the following configuration:
 
-- `--http-mev-relay` flag pointed to any [Builder API](https://ethereum.github.io/builder-specs/) compatible endpoint. The most common use case is to target a [MEV-Boost](https://boost.flashbots.net/) instance. A less common use case is to directly target a relay (5. Builder: connected via relay URL).
+- `--http-mev-relay` flag pointed to any [Builder API](https://ethereum.github.io/builder-specs/) compatible endpoint. The most common use case is to target a [MEV-Boost](https://boost.flashbots.net/) instance. A less common use case is to directly target a relay ([5. Builder: connected via relay URL](#5-builder-connected-via-relay-url)).
 
 Each relay's URL will correspond to a specific network and will need to be chosen accordingly, i.e., running a beacon node on mainnet will require the mainnet relay.
 
@@ -228,7 +228,9 @@ By default the beacon node will construct the consensus and execution portions o
 The provided guide offered explanations on configuring the Prysm client to utilize a [custom builder](https://docs.flashbots.net/flashbots-mev-boost/block-builders) through a [relay](https://docs.flashbots.net/flashbots-mev-boost/relay). The relay acts as a middleware that connects validators to block builders. This configuration involves both the validator client and the beacon node. It's important to note this guide does not cover setting up your own relay, builder, or MEV-Boost software. 
 
 :::info
+
 In the Prysm client, the builder is used through the relay to get transactions that maximize the validator's benefits, prioritizing them over local ones. However, the execution client will still be necessary as a fallback option in case any issues arise while utilizing the builder. The builder will only come into play when there is a validator proposal.
+
 :::
 
 #### What are the risks of running Prysm with a custom builder instead of using local execution?

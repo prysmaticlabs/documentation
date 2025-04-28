@@ -70,8 +70,10 @@ The purpose of an evaluator is to assert an invariant that the system must hold 
 Each evaluator has a name, a policy (which we will cover later) and an evaluation function. The evaluation function is the actual code that asserts if the system behaves correctly. If the invariant is broken, an error is returned from the function, and the test is stopped and considered failed.
 
 :::info
+
 - Evaluators are executed at the beginning of an epoch.
 - The list of evaluators to run is specified by each test separately.
+
 :::
 
 ### Policies
