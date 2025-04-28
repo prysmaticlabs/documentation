@@ -194,7 +194,7 @@ default_config:
 New property definitions are as follows:
 
  - `builder`: An object containing key-value pairs related to builder configuration. Applicable only when using custom block builders. If you don't run a builder, you can ignore this.
- - `enabled`: A boolean value that determines whether or not the MEV builder validator registration is enabled. Applicable only when using custom block builders. If you don't run a builder, you can ignore this. `false` by default.
+ - `enabled`: A boolean value that determines whether or not the MEV builder validator registration is enabled. Applicable only when using custom block builders. If you don't run a builder, you can ignore this. `false` is the default.
  - `gas_limit`: A gas limit. Default limit is 30M gwei - `30000000`.
 
 

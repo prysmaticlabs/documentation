@@ -8,7 +8,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <HeaderBadgesWidget />
 
-Although [beacon nodes](/how-prysm-works/beacon-node) handle network synchronisation, drawing consensus and performing several other low-level functions, the role of [validators](/terminology#validator) whom stake `ETH` to in order to perform block [proposals](/terminology#propose) and [attestations](/terminology#attest) are an equally critical component of the Ethereum beacon chain.
+Although [beacon nodes](/how-prysm-works/beacon-node) handle network synchronization, drawing consensus and performing several other low-level functions, the role of [validators](/terminology#validator) whom stake `ETH` to in order to perform block [proposals](/terminology#propose) and [attestations](/terminology#attest) are an equally critical component of the Ethereum beacon chain.
 
 As mentioned, validators have two responsibilities: to [propose](/terminology#propose) (or produce) blocks known as beacon blocks, which contain consensus information about shards across the network, or to [attest](/terminology#attest) (or vote on) the validity of blocks that have already been produced.
 

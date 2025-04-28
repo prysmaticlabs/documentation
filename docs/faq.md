@@ -18,16 +18,16 @@ import TabItem from '@theme/TabItem';
 
 #### How do I troubleshoot errors?
 
-If your beacon node or validator logs display an `ERROR`, go to our [open issues](https://github.com/OffchainLabs/prysm/issues) to see if someone has reported the same problem before. If this doesn't help, note the **Prysm version you're running** and your **operating system**, and then file a bug report [here](https://github.com/OffchainLabs/prysm/issues/new?assignees=&labels=&template=bug_report.md). You can also ask our community on [discord](https://discord.gg/prysm) about your error and we'll take a look as soon as possible.
+If your beacon node or validator logs display an `ERROR`, go to our [open issues](https://github.com/OffchainLabs/prysm/issues) to see if someone has reported the same problem before. If this doesn't help, note the **Prysm version you're running** and your **operating system**, and then file a bug report [here](https://github.com/OffchainLabs/prysm/issues/new?assignees=&labels=&template=bug_report.md). You can also ask our community on [Discord](https://discord.gg/prysm) about your error and we'll take a look as soon as possible.
 
 #### My validator is losing money, what's going on?
 
 1. Try restarting your machine and associated processes.
-1. See if your node or validator client crashed. You can view the logs of the process to see if there were any `ERROR` logs. If so, please file a bug report or talk to our team on [discord](https://discord.gg/prysm). A fatal crash is quite serious and something we'll investigate right away.
+1. See if your node or validator client crashed. You can view the logs of the process to see if there were any `ERROR` logs. If so, please file a bug report or talk to our team on [Discord](https://discord.gg/prysm). A fatal crash is quite serious and something we'll investigate right away.
 2. Check your network connectivity. You can improve this by following our tips [here](/prysm-usage/p2p-host-ip) which can help you find better peers, improve attestation effectiveness, and more.
 3. Check your system resource usage, perhaps your node is using excess CPU and RAM. Depending on your operating system, there are different ways to do this.
 
-If you still need help, note your **Prysm version** and **operating system**, and then reach out to our team on [Discord](https://discord.gg/prysm). Providing as much information as possible will help us troubleshoot your issue.
+If you still need help, note your **Prysm version** and **operating system**, and then reach out to our team on [Discord](https://discord.gg/OffchainLabs). Providing as much information as possible will help us troubleshoot your issue.
 
 #### My node suddenly lost peers, what can I do?
 
@@ -98,7 +98,7 @@ prysm.bat beacon-chain --version
 </TabItem>
 <TabItem value="docker">
 
-If you are running using docker and the :stable tag for Prysm, stable will always point to our latest [release](https://github.com/OffchainLabs/prysm/releases). Otherwise, you can run the command `docker ps` to see your running docker containers. The suffix of your image name after the colon is the version you are running.
+If you are running using docker and the :stable tag for Prysm, stable will always point to our latest [release](https://github.com/OffchainLabs/prysm/releases). Otherwise, you can run the command `docker ps` to see your running Docker containers. The suffix of your image name after the colon is the version you are running.
 
 ```
 CONTAINER ID        IMAGE                  COMMAND                  CREATED             STATUS              PORTS               NAMES
@@ -135,7 +135,7 @@ It's always good to keep offline backups of important files such as the original
 
 #### I am running into issues running geth, how can I get help?
 
-For help with running geth specifically, the [go-ethereum discord](https://discord.com/invite/nthXNEv) is the most reliable source of help.
+For help with running geth specifically, the [go-ethereum Discord](https://discord.com/invite/nthXNEv) is the most reliable source of help.
 
 #### How often should I perform database backups?
 
@@ -143,7 +143,7 @@ The Prysm beacon node and validator allow performing database backups in case yo
 
 #### Seeing a warning regarding binary signature not being trusted when downloading Prysm, should I be worried?
 
-When downloading the Prysm precompiled binaries such as with prysm.sh or prysm.bat, you might see the following output
+When downloading the Prysm precompiled binaries such as with `prysm.sh` or `prysm.bat`, you might see the following output
 
 ```
 Latest Prysm version is v1.1.0.
@@ -157,15 +157,15 @@ gpg: WARNING: This key is not certified with a trusted signature!
 gpg:          There is no indication that the signature belongs to the owner.
 ```
 
-Regarding the WARNING above, it means that the signature is correctly signed by the owner, however, since Prysm does not yet provide official linux packages nor windows trusted certs, you will get a warning that it might not have been Preston Van Loon that actually signed the binary, since there is no way to verify the integrity with a trusted authority. If binary integrity and security matter the most to you, building and running open source software from source is the best way to have full confidence the software you are running is a result of code you can inspect yourself.
+Regarding the **warning** bove, it means that the signature is correctly signed by the owner, however, since Prysm does not yet provide official linux packages nor windows trusted certs, you will get a warning that it might not have been Preston Van Loon that actually signed the binary, since there is no way to verify the integrity with a trusted authority. If binary integrity and security matter the most to you, building and running open source software from source is the best way to have full confidence the software you are running is a result of code you can inspect yourself.
 
 #### How can I view the metrics of my node? How can I visualize them?
 
-Your node is running the popular [prometheus](https://prometheus.io/) server for metrics collection which displays its data by default on localhost:8080/metrics. You can visualize these metrics by connecting them to a [grafana](https://grafana.com/) instance.
+Your node is running the popular [Prometheus](https://prometheus.io/) server for metrics collection which displays its data by default on localhost:8080/metrics. You can visualize these metrics by connecting them to a [Grafana](https://grafana.com/) instance.
 
 #### Can I run this on a raspberry pi? What are the instructions?
 
-Yes, we currently support arm 64-bit architectures such as the raspberry pi 4 and they go out as part of our pre-compiled binary releases [here](https://github.com/OffchainLabs/prysm/releases). Our documentation portal has instructions on how to run the entire installation process [here](/install/install-with-script). However, we recommend using more powerful hardware in mainnet conditions. 
+Yes, we currently support arm 64-bit architectures such as the Raspberry Pi 4 and they go out as part of our pre-compiled binary releases [here](https://github.com/OffchainLabs/prysm/releases). Our documentation portal has instructions on how to run the entire installation process [here](/install/install-with-script). However, we recommend using more powerful hardware in mainnet conditions. 
 
 ### Validator keys and validator deposits
 
@@ -200,7 +200,7 @@ Yes, this is possible however we recommend against it. We recommend you deposit 
 
 Adding new validators to your already-running Prysm instance is quite simple! Go through the launchpad process again, generate a new deposit keystore using the Ethereum validator deposit cli, then run the `validator accounts import` command again as you used when you added your first validator key. Note that **you don't need to create a new mnemonic** when you do this. **Restart the validator client** after importing the new keystore for the changes to take effect.
 
-You can then confirm your validator was added by running `validator accounts list`. Let us know on [discord](https://discord.gg/prysm) if you still have issues.
+You can then confirm your validator was added by running `validator accounts list`. Let us know on [Discord](https://discord.gg/OffchainLabs) if you still have issues.
 
 ### Ethereum proof-of-stake specific questions
 

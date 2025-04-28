@@ -168,7 +168,7 @@ If you are downgrading between **patch versions**, which means only the last num
 
 If you are running `prysm.sh`, all it takes to downgrade to a previous release is to stop your beacon node and validator (wait for the process to close down gracefully). 
 
-Then, find the Prysm version you wish to run from our [releases page](https://github.com/OffchainLabs/prysm/releases),such as <PrysmVersion/> , then run the command <code>set USE_PRYSM_VERSION=<PrysmVersion/></code>.
+Then, find the Prysm version you wish to run from our [releases page](https://github.com/OffchainLabs/prysm/releases),such as <PrysmVersion/>, then run the command <code>set USE_PRYSM_VERSION=<PrysmVersion/></code>.
 
 Then, restart it with the same command you used to start the process. The script will automatically use the release you specified.
 
@@ -208,7 +208,7 @@ After you finish editing both of the files, you need to reload the service unit
 sudo systemctl daemon-reload
 ```
 
-Once you do that, the prysm beacon and validator are locked in that version, so you need to always update it. If you want to go back to the automatic upgrades after reboot, you just need to remove the `Environment` key.
+Once you do that, the Prysm beacon and validator are locked in that version, so you need to always update it. If you want to go back to the automatic upgrades after reboot, you just need to remove the `Environment` key.
 
 </TabItem>
 <TabItem value="win">

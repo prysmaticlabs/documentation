@@ -18,7 +18,7 @@ Not familiar with nodes, networks, and related terminology? Consider reading [No
 
 :::
 
-In some cases, small changes to your port and firewall configuration can significantly improve your node's **peer-to-peer connectivity**. Improved peer-to-peer connectivity benefits the broader Ethereum ecosystem by making blockchain data more available, and it can also help your validator find more work (and earn a little more ETH).
+In some cases, small changes to your port and firewall configuration can significantly improve your node's **peer-to-peer connectivity**. Improved peer-to-peer connectivity benefits the broader Ethereum ecosystem by making blockchain data more available, and it can also help your validator find more work (and earn a little more `ETH`).
 
 In this how-to, we'll walk through the following tasks:
 
@@ -55,11 +55,15 @@ The following firewall rules should be configured on any local operating system,
 | `8551/TCP`      | Block all traffic.                  | Your beacon node connects to your execution node's [Engine API](https://github.com/ethereum/execution-apis/blob/main/src/engine/specification.md) using this port. Inbound and outbound traffic should be allowed through this port only if your local beacon node is connecting to a remote execution node. |
 | `4000/TCP`      | Block all traffic.                  | Your validator uses this port to connect to your beacon node via [gRPC](https://grpc.io). Inbound and outbound traffic should be allowed through this port only if your local validator is connecting to a remote beacon node.                                                                               |
 | `*/UDP+TCP`     | Allow outbound traffic.             | To [discover](https://github.com/ethereum/devp2p/wiki/Discovery-Overview) peers, Prysm's beacon node dials out through random ports. Allowing outbound TCP/UDP traffic from any port will help Prysm find peers.                                                                                             |
-| `13000/TCP`     | Allow inbound and outbound traffic. | After we discover peers, we dial them through this port to establish an ongoing connection for [libp2p](https://libp2p.io/) and through which all gossip/p2p request and responses will flow.                                                                                                                |
+| `13000/TCP`     | Allow inbound and outbound traffic. | After we discover peers, we dial them through this port to establish an ongoing connection for [`libp2p`](https://libp2p.io/) and through which all gossip/p2p request and responses will flow.                                                                                                                |
 | `12000/UDP`     | Allow inbound and outbound traffic. | Your beacon node exposes this UDP port so that other Ethereum nodes can discover your node, request chain data, and provide chain data.                                                                                                                                                                      |
 | `30303/TCP+UDP` | Allow inbound and outbound traffic. | `30303/TCP` is your execution node's listener port, while `30303/UDP` is its discovery port. This rule lets your execution node connect to other peers. Note that some clients use `30301` by default.                                                                                                       |
 
-Note that both consensus and execution clients allow you to customize many of these ports. The above table of rules is based on default port values. 
+:::note
+
+Both consensus and execution clients allow you to customize many of these ports. The above table of rules is based on default port values.
+
+:::
 
 When configuring `Allow inbound` rules, consider tying the rule to an IP address when possible. For example, if your beacon node on `Machine A` is connecting to a remote execution node on `Machine B`, `Machine B`'s `Allow inbound and outbound traffic over 8551` rule should be tied to `Machine A's` public IP address. More information about IP addresses and port forwarding is available below.
 

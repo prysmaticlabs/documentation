@@ -121,7 +121,7 @@ docker run -it -v /path/to/outputdir:/output -v /path/to/wallet:/wallet gcr.io/o
 bazel run //cmd/validator -- slashing-protection-history export --datadir=/path/to/validatorDb --slashing-protection-export-dir=/path/to/desired/outputdir
 ```
 
-The first time you run the process you will be asked to accept or decline the terms and conditions. Once accepted, the process exports the slashing protection JSON file in your specified /path/to/outputdir folder.
+The first time you run the process you will be asked to accept or decline the terms and conditions. Once accepted, the process exports the slashing protection JSON file in your specified `/path/to/outputdir` folder.
 
 </TabItem>
 <TabItem value="arm">
@@ -138,7 +138,7 @@ The first time you run the process you will be asked to accept or decline the te
 bazel run //cmd/validator -- slashing-protection-history export --datadir=/path/to/validatorDb --slashing-protection-export-dir=/path/to/desired/outputdir
 ```
 
-The first time you run the process you will be asked to accept or decline the terms and conditions. Once accepted, the process exports the slashing protection JSON file in your specified /path/to/outputdir folder.
+The first time you run the process you will be asked to accept or decline the terms and conditions. Once accepted, the process exports the slashing protection JSON file in your specified `/path/to/outputdir` folder.
 
 </TabItem>
 </Tabs>

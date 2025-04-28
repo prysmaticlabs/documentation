@@ -8,7 +8,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <HeaderBadgesWidget />
 
-Prysm sticks to the official [Effective Go guidelines](https://golang.org/doc/effective_go.html), and all code committed to Prysm's master branch goes through extensive lint tools that check formatting correctness and review potential security flaws in the code itself.
+Prysm adheres to the official [Effective Go guidelines](https://golang.org/doc/effective_go.html), and all code committed to Prysm's master branch goes through extensive lint tools that check formatting correctness and review potential security flaws in the code itself.
 
 For a recommended book on the Go language, see 'The Go Programming Language' by Alan A. A. Donovan and Brian Kernighan, available for purchase on Amazon [here](https://www.amazon.com/Programming-Language-Addison-Wesley-Professional-Computing/dp/0134190440).
 

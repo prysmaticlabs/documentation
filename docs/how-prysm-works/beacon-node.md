@@ -14,7 +14,7 @@ The beacon-chain node shipped with Prysm is the keystone component of the Ethere
 
 ## Beacon node functionality
 
-At runtime, the beacon node initialises and maintains a number of services that are all vital to providing all the features of Ethereum proof-of-stake. In no particular order, these services include:
+At runtime, the beacon node initializes and maintains a number of services that are all vital to providing all the features of Ethereum proof-of-stake. In no particular order, these services include:
 
 * A [**blockchain** **service**](#blockchain-service) which processes incoming blocks from the network, advances the beacon chain's state, and applies a fork choice rule to select the best head block.
 * An [**operations service**](#operations-service) prepares information contained in beacon blocks received from peers (such as block deposits and attestations) for inclusion into new validator blocks.
@@ -29,7 +29,7 @@ We isolate each of these services into separate packages, each responsible for i
 
 ## Blockchain service
 
-The blockchain service is arguably the most important part of the project, as it allows the network to reach consensus on the state of the protocol itself. It is responsible for handling the life cycle of blocks, and applying the [fork choice rule](/terminology#fork-choice-rule) and [state transition function](/terminology#state-transition-function) provided by the [core package](#core-package) to advance the beacon chain.
+The blockchain service is arguably the most important part of the project, as it allows the network to reach consensus on the state of the protocol itself. It is responsible for handling the lifecycle of blocks, and applying the [fork choice rule](/terminology#fork-choice-rule) and [state transition function](/terminology#state-transition-function) provided by the [core package](#core-package) to advance the beacon chain.
 
 In Ethereum, blocks can be proposed in intervals known as _slots_, where each slot is a period of 12 seconds. During a slot, proposers are assigned to create and send blocks into the beacon node for acceptance. It is possible, however, that the proposer may fail to do their job at their assigned slot; in this case, the blockchain service processes skipped slots appropriately to ensure that the chain does not stall.
 
