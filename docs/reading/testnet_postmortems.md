@@ -267,7 +267,7 @@ index 220e7efd5..46092bd73 100644
 
 **Resolution:** This was finally resolved when we scaled down our relay nodes and restarted all our out of sync production pods. The p2p message rate for attestations finally increased back to their normal levels and we got justification and finality soon after.
 
-**Detection:** Pinged in discord when time since last finalized epoch was greater than 10.
+**Detection:** Pinged in Discord when time since last finalized epoch was greater than 10.
 
 #### Lessons Learned
 
@@ -280,7 +280,7 @@ There wasn’t an obvious trigger that we were able to inspect. All the major me
 #### Timeline
 
 2019-01-01 (all times UTC)
-- 04:50 Nishant notices a ping on discord indicating that it has been more than 10 epochs since finality. Looking at the grafana charts, it seemed normal, so Nishant ignored it thinking it would resolve by itself.
+- 04:50 Nishant notices a ping on Discord indicating that it has been more than 10 epochs since finality. Looking at the grafana charts, it seemed normal, so Nishant ignored it thinking it would resolve by itself.
 - 05:00 Nishant again looks at the grafana charts but notices that there hasn’t been justification or finality for 15 mins. However all other metrics and charts are normal and there isn’t a directly obvious explanation for it. 
 - 05:05 Nishant notices that the p2p message count has dropped by a very large amount, which explains the long period without finality in the current chain. With very little attestations being sent over the wire, we have a large drop in participation rates and therefore a drop in justification and finality.
 - 05:37 Nishant tries to rollout the current master image to all production pods.
@@ -315,7 +315,7 @@ There wasn’t an obvious trigger that we were able to inspect. All the major me
 
 **Resolution:** Rolled back to prior image, scaled down statefulset pods that were unable to sync and left archival+experimental pods on, eventually achieved justification and finality.
 
-**Detection:** Ping on discord. gRPC success rate alerts at low-levels: ProposeBlock, RequestAttestation.
+**Detection:** Ping on Discord. gRPC success rate alerts at low-levels: ProposeBlock, RequestAttestation.
 
 #### Lessons Learned
 
@@ -331,11 +331,11 @@ We thankfully had archival and experimental pods that were working fine and as s
 
 #### Timeline
 2019-11-23 (all times Central Standard Time)
-- 03:07 - We receive an alert on discord for > 10 epochs since finality in the network
+- 03:07 - We receive an alert on Discord for > 10 epochs since finality in the network
 - 03:11 - ProposeBlock gRPC success rate drops to 83%
 - 09:00 - Nishant raises issues about archival nodes being the potential offenders of the situation
 - 09:31 - Nishant suggest scaling down archival nodes to 0, Preston runs the commands
-- 09:40 - Scaling down does not work - we receive an alert in discord mentioning > 25 epochs since finality
+- 09:40 - Scaling down does not work - we receive an alert in Discord mentioning > 25 epochs since finality
 - 09:53 - Preston has observes very long times for spans in jaeger in proposing a block, suggesting there is some sort of mutex deadlock going on. Signatures failing on request block with the message `parent root does not match the latest block header signing root in state`
 - 10:00 - Raul begins investigating, looking in more detail at jaeger spans to increase likeliness of lock being the root cause
 - 10:16 - Raul identifies large monitoring gap in Jaeger, with the most expensive operation in forkchoice.OnBlock not having a span. Looking at Prysm PR #4086 shows a function `updateCheckpoints` called in forkchoice.OnBlock without a span, providing high likelihood it is the offender
@@ -510,7 +510,7 @@ Only thing I think of is get_head did not filter out b144 based on "block tree r
 
 **Resolution:** Full testnet restart, scheduled for November 4th.
 
-**Detection:** Ping on twitter / gitter / discord. Chain stalled alert.
+**Detection:** Ping on Twitter / Gitter / Discord. Chain stalled alert.
 
 #### Lessons Learned
 **What went well**

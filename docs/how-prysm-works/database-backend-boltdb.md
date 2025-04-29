@@ -8,7 +8,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <HeaderBadgesWidget />
 
-BoltDB is the persistent [key-value store](/terminology#key-value-store) database utilised by the Prysm client. A piece of software that Prysm initially inherited from its origins as a [Geth](https://geth.ethereum.org/) fork was its storage engine, LevelDB. As a simple embedded [key-value store](/terminology#key-value-store) written in Go, LevelDB worked well; however, after observing a number of corruption-related issues, it was decided to survey some other options for the project.
+BoltDB is the persistent [key-value store](/terminology#key-value-store) database utilized by the Prysm client. A piece of software that Prysm initially inherited from its origins as a [Geth](https://geth.ethereum.org/) fork was its storage engine, LevelDB. As a simple embedded [key-value store](/terminology#key-value-store) written in Go, LevelDB worked well; however, after observing a number of corruption-related issues, it was decided to survey some other options for the project.
 
 ![BoltDB](/images/boltdb.png)
 

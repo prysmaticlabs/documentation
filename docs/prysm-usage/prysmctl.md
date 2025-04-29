@@ -21,7 +21,7 @@ Some users will need to give permissions to the downloaded binaries to be execut
 
 :::
 
-Example of running prysmctl by opening a terminal at the installed location after renaming:
+Example of running `prysmctl` by opening a terminal at the installed location after renaming:
 ```
 ./prysmctl --help
 ```

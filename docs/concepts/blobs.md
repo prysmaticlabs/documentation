@@ -33,7 +33,7 @@ The most significant impact on node operators is the increased storage requireme
 = 100GB~150GB
 ```
 
-By default these blobs will be retained for 4096 epochs ,and Prysm will prune the oldest blobs once the retention period is reached.
+By default these blobs will be retained for 4096 epochs, and Prysm will prune the oldest blobs once the retention period is reached.
 
 Retention periods and storage paths can be configured using the following flags.
 

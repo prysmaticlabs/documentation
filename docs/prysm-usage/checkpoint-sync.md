@@ -57,8 +57,11 @@ The above instructions tell you how to **request** checkpoint state from another
 
  - `--enable-debug-rpc-endpoints`: The [Beacon Node API for retrieving a BeaconState](https://ethereum.github.io/beacon-APIs/#/Debug/getStateV2) is a debug endpoint - this flag tells Prysm to enable the endpoint so checkpoint sync requests can be served through your beacon node's RPC gateway provider endpoint.
 
-Note that **this is entirely optional**. The beacon node *requesting* the checkpoint state from this node doesn't need these flags.
+:::note This is optional
 
+The beacon node *requesting* the checkpoint state from this node doesn't need these flags.
+
+:::
 
 ## Option 2 (Advanced): Configure checkpoint sync via file export/import
 
@@ -154,7 +157,11 @@ To verify that the checkpoint state you're using is legitimate, follow these ste
    - **Mainnet**: https://beaconcha.in/slot/SLOT
 4. Ensure that the `state_root` reported by the blockchain explorer matches the `state_root` you pulled from your browser. If you don't see a match, feel free to reach out to us on [Discord](https://discord.gg/prysm) and we'll help you troubleshoot.
 
-Note that there are many blockchain explorers - we recommend doing your own research to identify the latest, most trustworthy services. We've used `beaconcha.in` only as an example, not as a recommendation.
+:::note
+
+There are many blockchain explorers - we recommend doing your own research to identify the latest, most trustworthy services. We've used `beaconcha.in` only as an example, not as a recommendation.
+
+:::
 
 ## Frequently asked questions
 
@@ -167,7 +174,7 @@ TODO
 -->
 
 #### Does Prysm's implementation of checkpoint sync support backfilling?
-Yes. Backfill can be enabled by running the beacon node with the `--enable-experimental-backfill` option. By default Prysm will backfill the last 5 months worth of blocks.
+Yes. Backfill can be enabled by running the beacon node with the `--enable-experimental-backfill` option. By default Prysm will backfill the last five months worth of blocks.
 
 #### Can I use checkpoint sync on any network?
 Yes. Checkpoint sync is a network-agnostic feature. You can even use it on local devnets.
@@ -202,6 +209,3 @@ Prysm offers a `--weak-subjectivity-checkpoint` flag that allows you to specify 
  - [WS sync in practice](https://notes.ethereum.org/@djrtwo/ws-sync-in-practice) by Danny Ryan
  
 Special thanks to the authors of *How to: Checkpoint Sync* for providing the endpoints and verification procedure used in this guide.
-
-
-
