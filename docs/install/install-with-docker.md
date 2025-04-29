@@ -153,7 +153,7 @@ docker run -it -v $HOME/.eth2:/data -v /path/to/genesis.ssz:/genesis/genesis.ssz
   </TabItem>
    <TabItem value="hoodi">
 
-Download the Hoodi genesis state from [GitHub](https://github.com/eth-clients/hoodi/blob/314f727fc019c449905e16c84977415c91e62a30/metadata/genesis.ssz#L2) to a local file, then run:
+Download the Hoodi genesis state from [GitHub](https://github.com/eth-clients/hoodi/blob/main/metadata/genesis.ssz) to a local file, then run:
 
 ```text
 docker run -it -v $HOME/.eth2:/data -v /path/to/genesis.ssz:/genesis/genesis.ssz -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node \

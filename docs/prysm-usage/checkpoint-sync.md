@@ -94,23 +94,23 @@ $ go run github.com/OffchainLabs/prysm/v3/cmd/prysmctl checkpoint-sync download 
 You should see the following output if your export was successful:
 
 ```bash
-INFO[0000] requesting http://localhost:3500/eth/v2/debug/beacon/states/finalized
-INFO[0001] detected supported config in remote finalized state, name=hoodi, fork=bellatrix
-INFO[0001] requesting http://localhost:3500/eth/v2/beacon/blocks/0x766bdce4c70b6ee991bd68f8065d73e3990895b1953f6b931baae0502d8cbfcf
+INFO[0000] requesting http://localhost:3500/eth/v3/debug/beacon/states/finalized
+INFO[0001] detected supported config in remote finalized state, name=hoodi, fork=electra
+INFO[0001] requesting http://localhost:3500/eth/v3/beacon/blocks/0x766bdce4c70b6ee991bd68f8065d73e3990895b1953f6b931baae0502d8cbfcf
 INFO[0001] BeaconState slot=3041920, Block slot=3041920
 INFO[0001] BeaconState htr=0x34ebc10f191706afbbccb0c3c39679632feef0453fe842bda264e432e9e31011d, Block state_root=0x34ebc10f191706afbbccb0c3c39679632feef0453fe842bda264e432e9e31011
 INFO[0001] BeaconState latest_block_header htr=0x766bdce4c70b6ee991bd68f8065d73e3990895b1953f6b931baae0502d8cbfcfd, block htr=0x766bdce4c70b6ee991bd68f8065d73e3990895b1953f6b931baae0502d8cbfcf
-INFO[0001] saved ssz-encoded block to to block_hoodi_bellatrix_3041920-0x766bdce4c70b6ee991bd68f8065d73e3990895b1953f6b931baae0502d8cbfcf.ssz
-INFO[0001] saved ssz-encoded state to to state_hoodi_bellatrix_3041920-0x34ebc10f191706afbbccb0c3c39679632feef0453fe842bda264e432e9e31011.ssz
+INFO[0001] saved ssz-encoded block to to block_hoodi_electra_3041920-0x766bdce4c70b6ee991bd68f8065d73e3990895b1953f6b931baae0502d8cbfcf.ssz
+INFO[0001] saved ssz-encoded state to to state_hoodi_electra_3041920-0x34ebc10f191706afbbccb0c3c39679632feef0453fe842bda264e432e9e31011.ssz
 ```
 
-The two exported `*.ssz` files are your `BeaconState` and `SignedBeaconBlock` files. Their filenames combine their file type (`state`, `block`), the network (`hoodi`), the fork name (`bellatrix`), the slot (`2397120`) and the state or block root in hex encoding. The `checkpoint save` command doesn't export the required genesis state, but the genesis state can be downloaded via `curl` or `wget` using the following command:
+The two exported `*.ssz` files are your `BeaconState` and `SignedBeaconBlock` files. Their filenames combine their file type (`state`, `block`), the network (`hoodi`), the fork name (`electra`), the slot (`2397120`) and the state or block root in hex encoding. The `checkpoint save` command doesn't export the required genesis state, but the genesis state can be downloaded via `curl` or `wget` using the following command:
 
 ```
 curl -H "Accept: application/octet-stream"  http://localhost:3500/eth/v1/debug/beacon/states/genesis > genesis.ssz
 ```
 
-You can also just manually download the genesis state from GitHub: [Hoodi](https://github.com/eth-clients/hoodi/blob/314f727fc019c449905e16c84977415c91e62a30/metadata/genesis.ssz#L2ssz) | [Sepolia](https://github.com/eth-clients/sepolia/blob/main/metadata/genesis.ssz)
+You can also just manually download the genesis state from GitHub: [Hoodi](https://github.com/eth-clients/hoodi/blob/main/metadata/genesis.ssz) | [Sepolia](https://github.com/eth-clients/sepolia/blob/main/metadata/genesis.ssz)
 
 Use the following command to start your beacon node with checkpoint sync configured to use this checkpoint state:
 
@@ -122,8 +122,8 @@ Use the following command to start your beacon node with checkpoint sync configu
 
 ```bash
 ./prysm.bat beacon-chain \
---checkpoint-block=$PWD/block_hoodi_bellatrix_3041920-0x766bdce4c70b6ee991bd68f8065d73e3990895b1953f6b931baae0502d8cbfcf.ssz \
---checkpoint-state=$PWD/state_hoodi_bellatrix_3041920-0x34ebc10f191706afbbccb0c3c39679632feef0453fe842bda264e432e9e31011.ssz \
+--checkpoint-block=$PWD/block_hoodi_electra_3041920-0x766bdce4c70b6ee991bd68f8065d73e3990895b1953f6b931baae0502d8cbfcf.ssz \
+--checkpoint-state=$PWD/state_hoodi_electra_3041920-0x34ebc10f191706afbbccb0c3c39679632feef0453fe842bda264e432e9e31011.ssz \
 --genesis-state=$PWD/genesis.ssz
 ```
     
@@ -132,8 +132,8 @@ Use the following command to start your beacon node with checkpoint sync configu
 
 ```bash
 ./prysm.sh beacon-chain \
---checkpoint-block=$PWD/block_hoodi_bellatrix_3041920-0x766bdce4c70b6ee991bd68f8065d73e3990895b1953f6b931baae0502d8cbfcf.ssz \
---checkpoint-state=$PWD/state_hoodi_bellatrix_3041920-0x34ebc10f191706afbbccb0c3c39679632feef0453fe842bda264e432e9e31011.ssz \
+--checkpoint-block=$PWD/block_hoodi_electra_3041920-0x766bdce4c70b6ee991bd68f8065d73e3990895b1953f6b931baae0502d8cbfcf.ssz \
+--checkpoint-state=$PWD/state_hoodi_electra_3041920-0x34ebc10f191706afbbccb0c3c39679632feef0453fe842bda264e432e9e31011.ssz \
 --genesis-state=$PWD/genesis.ssz
 ```
 

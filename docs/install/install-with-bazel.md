@@ -146,7 +146,7 @@ bazel run //cmd/beacon-chain --config=release -- --execution-endpoint=<YOUR_ETH_
   </TabItem>
       <TabItem value="hoodi">
 
-Download the Hoodi genesis state from [GitHub](https://github.com/eth-clients/hoodi/blob/314f727fc019c449905e16c84977415c91e62a30/metadata/genesis.ssz#L2) to a local file. In the following command, replace `<PATH_TO_GENESIS>` by the path of the genesis state you just downloaded and run it:
+Download the Hoodi genesis state from [GitHub](https://github.com/eth-clients/hoodi/blob/main/metadata/genesis.ssz) to a local file. In the following command, replace `<PATH_TO_GENESIS>` by the path of the genesis state you just downloaded and run it:
 
 ```text
 bazel run //cmd/beacon-chain --config=release -- --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> --hoodi --genesis-state=<PATH_TO_GENESIS>
