@@ -21,12 +21,12 @@ import {MultiDimensionalContentWidget} from '@site/src/components/MultiDimension
         {label: 'Network:', value: 'label'},
         {label: 'Mainnet', value: 'mainnet'},
         {label: 'Sepolia', value: 'sepolia'},
-        {label: 'Holesky', value: 'holesky'}
+        {label: 'Hoodi', value: 'hoodi'}
     ]}>
     <TabItem className="unclickable-element" value="label"></TabItem>
     <TabItem value="mainnet"></TabItem>
     <TabItem value="sepolia"></TabItem>
-    <TabItem value="holesky"></TabItem>
+    <TabItem value="hoodi"></TabItem>
 </Tabs>
 
 <Tabs className="tabgroup-with-label hidden-in-docker-guide el-tabgroup" groupId="execution-clients" defaultValue="geth" values={[

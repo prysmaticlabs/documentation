@@ -28,7 +28,7 @@ import TabItem from '@theme/TabItem';
           <Tabs groupId="network" defaultValue="mainnet" values={[
             {label: 'Mainnet', value: 'mainnet'},
             {label: 'Sepolia', value: 'sepolia'},
-            {label: 'Holesky', value: 'holesky'},
+            {label: 'Hoodi', value: 'hoodi'},
           ]}>
             <TabItem value="mainnet">
               <Tabs className='tabs-hidden-in-jwt-guide' groupId="protocol" defaultValue="jwt" values={[
@@ -48,13 +48,13 @@ import TabItem from '@theme/TabItem';
                       <TabItem value="ipc"><pre><code>nethermind --config sepolia --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.IpcUnixDomainSocketPath=&lt;PATH_TO_IPC_FILE&gt;</code></pre></TabItem>
                   </Tabs>
             </TabItem>
-            <TabItem value="holesky">
+            <TabItem value="hoodi">
               <Tabs className='tabs-hidden-in-jwt-guide' groupId="protocol" defaultValue="jwt" values={[
                   {label: 'JWT', value: 'jwt'},
                   {label: 'IPC', value: 'ipc'}
                   ]}>
-                      <TabItem value="jwt"><pre><code>nethermind --config holesky --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true--JsonRpc.JwtSecretFile=&lt;PATH_TO_JWT_FILE&gt;</code></pre></TabItem>
-                      <TabItem value="ipc"><pre><code>nethermind --config holesky --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.IpcUnixDomainSocketPath=/path/to/&lt;your.ipc&gt;</code></pre></TabItem>
+                      <TabItem value="jwt"><pre><code>nethermind --config hoodi --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true--JsonRpc.JwtSecretFile=&lt;PATH_TO_JWT_FILE&gt;</code></pre></TabItem>
+                      <TabItem value="ipc"><pre><code>nethermind --config hoodi --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.IpcUnixDomainSocketPath=/path/to/&lt;your.ipc&gt;</code></pre></TabItem>
                   </Tabs>
             </TabItem>
           </Tabs>
@@ -63,7 +63,7 @@ import TabItem from '@theme/TabItem';
           <Tabs groupId="network" defaultValue="mainnet" values={[
             {label: 'Mainnet', value: 'mainnet'},
             {label: 'Sepolia', value: 'sepolia'},
-            {label: 'Holesky', value: 'holesky'},
+            {label: 'Hoodi', value: 'hoodi'},
           ]}>
             <TabItem value="mainnet">
               <Tabs className='tabs-hidden-in-jwt-guide' groupId="protocol" defaultValue="jwt" values={[
@@ -83,13 +83,13 @@ import TabItem from '@theme/TabItem';
                       <TabItem value="ipc"><pre><code>./nethermind --config sepolia --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.IpcUnixDomainSocketPath=&lt;PATH_TO_IPC_FILE&gt;</code></pre></TabItem>
                   </Tabs>
             </TabItem>
-            <TabItem value="holesky">
+            <TabItem value="hoodi">
               <Tabs className='tabs-hidden-in-jwt-guide' groupId="protocol" defaultValue="jwt" values={[
                   {label: 'JWT', value: 'jwt'},
                   {label: 'IPC', value: 'ipc'}
                   ]}>
-                      <TabItem value="jwt"><pre><code>./nethermind --config holesky --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true--JsonRpc.JwtSecretFile=&lt;PATH_TO_JWT_FILE&gt;</code></pre></TabItem>
-                      <TabItem value="ipc"><pre><code>./nethermind --config holesky --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.IpcUnixDomainSocketPath=/path/to/&lt;your.ipc&gt;</code></pre></TabItem>
+                      <TabItem value="jwt"><pre><code>./nethermind --config hoodi --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true--JsonRpc.JwtSecretFile=&lt;PATH_TO_JWT_FILE&gt;</code></pre></TabItem>
+                      <TabItem value="ipc"><pre><code>./nethermind --config hoodi --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.IpcUnixDomainSocketPath=/path/to/&lt;your.ipc&gt;</code></pre></TabItem>
                   </Tabs>
             </TabItem>
           </Tabs>
@@ -103,7 +103,7 @@ import TabItem from '@theme/TabItem';
     <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
         {label: 'Sepolia', value: 'sepolia'},
-        {label: 'Holesky', value: 'holesky'},
+        {label: 'Hoodi', value: 'hoodi'},
     ]}>
       <TabItem value="mainnet">
           <Tabs className='tabs-hidden-in-jwt-guide'  groupId="protocol" defaultValue="jwt" values={[
@@ -123,12 +123,12 @@ import TabItem from '@theme/TabItem';
                 <TabItem value="ipc"><div className="admonition admonition-danger alert alert--info"><div className="admonition-content"><p>Content under construction.</p></div></div></TabItem>
             </Tabs>
       </TabItem>
-      <TabItem value="holesky">
+      <TabItem value="hoodi">
         <Tabs className='tabs-hidden-in-jwt-guide'  groupId="protocol" defaultValue="jwt" values={[
             {label: 'JWT', value: 'jwt'},
             {label: 'IPC', value: 'ipc'}
             ]}>
-                <TabItem value="jwt"><pre><code>besu --network=holesky --rpc-http-enabled --engine-jwt-enabled=true --engine-jwt-secret=&lt;PATH_TO_JWT_FILE&gt; --engine-host-allowlist="*"</code></pre></TabItem>
+                <TabItem value="jwt"><pre><code>besu --network=hoodi --rpc-http-enabled --engine-jwt-enabled=true --engine-jwt-secret=&lt;PATH_TO_JWT_FILE&gt; --engine-host-allowlist="*"</code></pre></TabItem>
                 <TabItem value="ipc"><div className="admonition admonition-danger alert alert--info"><div className="admonition-content"><p>Content under construction.</p></div></div></TabItem>
             </Tabs>
       </TabItem>
@@ -157,7 +157,7 @@ import TabItem from '@theme/TabItem';
         <Tabs groupId="network" defaultValue="mainnet" values={[
             {label: 'Mainnet', value: 'mainnet'},
             {label: 'Sepolia', value: 'sepolia'},
-            {label: 'Holesky', value: 'holesky'},
+            {label: 'Hoodi', value: 'hoodi'},
         ]}>
           <TabItem value="mainnet">
             <Tabs className='tabs-hidden-in-jwt-guide'  groupId="protocol" defaultValue="jwt" values={[
@@ -177,13 +177,13 @@ import TabItem from '@theme/TabItem';
                     <TabItem value="ipc"><pre><code>geth --sepolia --http --http.api eth,net,engine,admin --ipcpath=&lt;PATH_TO_IPC_FILE&gt;</code></pre></TabItem>
             </Tabs>
           </TabItem>
-          <TabItem value="holesky">
+          <TabItem value="hoodi">
             <Tabs className='tabs-hidden-in-jwt-guide'  groupId="protocol" defaultValue="jwt" values={[
                 {label: 'JWT', value: 'jwt'},
                 {label: 'IPC', value: 'ipc'}
                 ]}>
-                    <TabItem value="jwt"><pre><code>geth --holesky --http --http.api eth,net,engine,admin --authrpc.jwtsecret=&lt;PATH_TO_JWT_FILE&gt;</code></pre></TabItem>
-                    <TabItem value="ipc"><pre><code>geth --holesky --http --http.api eth,net,engine,admin --ipcpath=&lt;PATH_TO_IPC_FILE&gt;</code></pre></TabItem>
+                    <TabItem value="jwt"><pre><code>geth --hoodi --http --http.api eth,net,engine,admin --authrpc.jwtsecret=&lt;PATH_TO_JWT_FILE&gt;</code></pre></TabItem>
+                    <TabItem value="ipc"><pre><code>geth --hoodi --http --http.api eth,net,engine,admin --ipcpath=&lt;PATH_TO_IPC_FILE&gt;</code></pre></TabItem>
             </Tabs>
           </TabItem>
         </Tabs>
@@ -192,7 +192,7 @@ import TabItem from '@theme/TabItem';
         <Tabs groupId="network" defaultValue="mainnet" values={[
             {label: 'Mainnet', value: 'mainnet'},
             {label: 'Sepolia', value: 'sepolia'},
-            {label: 'Holesky', value: 'holesky'},
+            {label: 'Hoodi', value: 'hoodi'},
         ]}>
           <TabItem value="mainnet">
             <Tabs className='tabs-hidden-in-jwt-guide'  groupId="protocol" defaultValue="jwt" values={[
@@ -212,13 +212,13 @@ import TabItem from '@theme/TabItem';
                     <TabItem value="ipc"><pre><code>./geth --sepolia --http --http.api eth,net,engine,admin --ipcpath=&lt;PATH_TO_IPC_FILE&gt;</code></pre></TabItem>
             </Tabs>
           </TabItem>
-          <TabItem value="holesky">
+          <TabItem value="hoodi">
             <Tabs className='tabs-hidden-in-jwt-guide'  groupId="protocol" defaultValue="jwt" values={[
                 {label: 'JWT', value: 'jwt'},
                 {label: 'IPC', value: 'ipc'}
                 ]}>
-                    <TabItem value="jwt"><pre><code>./geth --holesky --http --http.api eth,net,engine,admin --authrpc.jwtsecret=&lt;PATH_TO_JWT_FILE&gt;</code></pre></TabItem>
-                    <TabItem value="ipc"><pre><code>./geth --holesky --http --http.api eth,net,engine,admin --ipcpath=&lt;PATH_TO_IPC_FILE&gt;</code></pre></TabItem>
+                    <TabItem value="jwt"><pre><code>./geth --hoodi --http --http.api eth,net,engine,admin --authrpc.jwtsecret=&lt;PATH_TO_JWT_FILE&gt;</code></pre></TabItem>
+                    <TabItem value="ipc"><pre><code>./geth --hoodi --http --http.api eth,net,engine,admin --ipcpath=&lt;PATH_TO_IPC_FILE&gt;</code></pre></TabItem>
             </Tabs>
           </TabItem>
         </Tabs>

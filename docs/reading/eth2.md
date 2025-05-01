@@ -64,10 +64,10 @@ Because some parts of Ethereum consensus are still an active area of research an
 * [Ethereum Blog](https://blog.ethereum.org/)
 * [News from Ben Edgington](https://hackmd.io/@benjaminion/eth2_news)
 
-### Holesky Testnet Blockchain
+### Hoodi Testnet Blockchain
 
-* [Launchpad](https://holesky.launchpad.ethereum.org/en/)
-* [Beacon Chain Explorer](https://holesky.beaconcha.in/)
+* [Launchpad](https://hoodi.launchpad.ethereum.org/)
+* [Beacon Chain Explorer](https://hoodi.beaconcha.in/)
 
 ### Mainnet Blockchain
 

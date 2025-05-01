@@ -14,7 +14,7 @@ Run the following command to create your mnemonic (a unique and <strong>highly s
     <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
         {label: 'Sepolia', value: 'sepolia'},
-        {label: 'Holesky', value: 'holesky'},
+        {label: 'Hoodi', value: 'hoodi'},
     ]}>
       <TabItem value="mainnet">
         <pre><code>deposit.exe new-mnemonic --num_validators=1 --mnemonic_language=english --chain=mainnet</code></pre>
@@ -22,8 +22,8 @@ Run the following command to create your mnemonic (a unique and <strong>highly s
       <TabItem value="sepolia">
         <pre><code>deposit.exe new-mnemonic --num_validators=1 --mnemonic_language=english --chain=sepolia</code></pre>
       </TabItem>
-      <TabItem value="holesky">
-        <pre><code>deposit.exe new-mnemonic --num_validators=1 --mnemonic_language=english --chain=holesky</code></pre>
+      <TabItem value="hoodi">
+        <pre><code>deposit.exe new-mnemonic --num_validators=1 --mnemonic_language=english --chain=hoodi</code></pre>
       </TabItem>
     </Tabs>
   </TabItem>
@@ -31,7 +31,7 @@ Run the following command to create your mnemonic (a unique and <strong>highly s
     <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
         {label: 'Sepolia', value: 'sepolia'},
-        {label: 'Holesky', value: 'holesky'},
+        {label: 'Hoodi', value: 'hoodi'},
     ]}>
       <TabItem value="mainnet">
         <pre><code>./deposit new-mnemonic --num_validators=1 --mnemonic_language=english --chain=mainnet</code></pre>
@@ -39,8 +39,8 @@ Run the following command to create your mnemonic (a unique and <strong>highly s
       <TabItem value="sepolia">
         <pre><code>./deposit new-mnemonic --num_validators=1 --mnemonic_language=english --chain=sepolia</code></pre>
       </TabItem>
-      <TabItem value="holesky">
-        <pre><code>./deposit new-mnemonic --num_validators=1 --mnemonic_language=english --chain=holesky</code></pre>
+      <TabItem value="hoodi">
+        <pre><code>./deposit new-mnemonic --num_validators=1 --mnemonic_language=english --chain=hoodi</code></pre>
       </TabItem>
     </Tabs>
   </TabItem>
@@ -66,7 +66,7 @@ Run the following command to create your mnemonic (a unique and <strong>highly s
     <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
         {label: 'Sepolia', value: 'sepolia'},
-        {label: 'Holesky', value: 'holesky'},
+        {label: 'Hoodi', value: 'hoodi'},
     ]}>
       <TabItem value="mainnet">
         <pre><code>prysm.bat validator accounts import --keys-dir=&lt;YOUR_FOLDER_PATH&gt; --mainnet</code></pre>
@@ -74,8 +74,8 @@ Run the following command to create your mnemonic (a unique and <strong>highly s
       <TabItem value="sepolia">
         <pre><code>prysm.bat validator accounts import --keys-dir=&lt;YOUR_FOLDER_PATH&gt; --sepolia</code></pre>
       </TabItem>
-      <TabItem value="holesky">
-        <pre><code>prysm.bat validator accounts import --keys-dir=&lt;YOUR_FOLDER_PATH&gt; --holesky</code></pre>
+      <TabItem value="hoodi">
+        <pre><code>prysm.bat validator accounts import --keys-dir=&lt;YOUR_FOLDER_PATH&gt; --hoodi</code></pre>
       </TabItem>
     </Tabs>
   </TabItem>
@@ -83,7 +83,7 @@ Run the following command to create your mnemonic (a unique and <strong>highly s
     <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
         {label: 'Sepolia', value: 'sepolia'},
-        {label: 'Holesky', value: 'holesky'},
+        {label: 'Hoodi', value: 'hoodi'},
     ]}>
       <TabItem value="mainnet">
         <pre><code>./prysm.sh validator accounts import --keys-dir=&lt;YOUR_FOLDER_PATH&gt; --mainnet</code></pre>
@@ -91,8 +91,8 @@ Run the following command to create your mnemonic (a unique and <strong>highly s
       <TabItem value="sepolia">
         <pre><code>./prysm.sh validator accounts import --keys-dir=&lt;YOUR_FOLDER_PATH&gt; --sepolia</code></pre>
       </TabItem>
-      <TabItem value="holesky">
-        <pre><code>./prysm.sh validator accounts import --keys-dir=&lt;YOUR_FOLDER_PATH&gt; --holesky</code></pre>
+      <TabItem value="hoodi">
+        <pre><code>./prysm.sh validator accounts import --keys-dir=&lt;YOUR_FOLDER_PATH&gt; --hoodi</code></pre>
       </TabItem>
     </Tabs>
   </TabItem>
@@ -103,24 +103,25 @@ Run the following command to create your mnemonic (a unique and <strong>highly s
 <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
         {label: 'Sepolia', value: 'sepolia'},
-        {label: 'Holesky', value: 'holesky'},
+        {label: 'Hoodi', value: 'hoodi'},
 ]}>
   <TabItem value="mainnet">
     <p>Next, go to the <a href='https://launchpad.ethereum.org/en/upload-deposit-data'>Mainnet Launchpad’s deposit data upload page</a> and upload your <code>deposit_data-*.json</code> file. You’ll be prompted to connect your wallet.</p>
     <p>You can then deposit 32 `ETH` into the Mainnet deposit contract via the Launchpad page. Exercise extreme caution throughout this procedure.</p>
   </TabItem>
   <TabItem value="sepolia">
-    <p>Sepolia has a permissioned validators set. You cannot create a new validator on this network. If you are interested in running a validator on a testnet, please choose an other testnet, like Holesky.</p>
+    <p>Sepolia has a permissioned validators set. You cannot create a new validator on this network. If you are interested in running a validator on a testnet, please choose an other testnet, like Hoodi.</p>
   </TabItem>
-  <TabItem value="holesky">
-    <p>If you need HolETH, head over to one of the following Discord servers:</p>
+  <TabItem value="hoodi">
+    <p>If you need assistance, head over to one of the following Discord servers:</p>
     <ul>
       <li><a href='https://discord.gg/ethstaker'>r/EthStaker Discord</a></li>
       <li><a href='https://discord.gg/prysm'>Prysm Discord server</a></li>
     </ul>
-    <p>Someone should be able to give you the HolETH you need.</p>
-    <p>Next, go to the <a href='https://holesky.launchpad.ethereum.org/en/upload-deposit-data'>Holesky Launchpad’s deposit data upload page</a> and upload your <code>deposit_data-*.json</code> file. You’ll be prompted to connect your wallet.</p>
+
+    <p>Next, go to the <a href='https://hoodi.launchpad.ethereum.org/'>Hoodi Launchpad’s deposit data upload page</a> and upload your <code>deposit_data-*.json</code> file. You’ll be prompted to connect your wallet.</p>
     <p>Exercise extreme caution throughout this procedure - <strong>never send real `ETH` to the testnet deposit contract.</strong></p>
+
   </TabItem>
 </Tabs>
 <p>Finally, run the following command to start your validator, replacing <code>&lt;YOUR_FOLDER_PATH&gt;</code> with the full path to your <code>consensus</code> folder and <code>&lt;YOUR_WALLET_ADDRESS&gt;</code> by the address of a wallet you own. When your validator proposes a block, it will allow you to earn block priority fees, also sometimes called "tips". See <a href='/execution-node/fee-recipient'>How to configure Fee Recipient</a> for more information about this feature:</p>
@@ -133,7 +134,7 @@ Run the following command to create your mnemonic (a unique and <strong>highly s
     <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
         {label: 'Sepolia', value: 'sepolia'},
-        {label: 'Holesky', value: 'holesky'},
+        {label: 'Hoodi', value: 'hoodi'},
     ]}>
       <TabItem value="mainnet">
         <pre><code>prysm.bat validator --wallet-dir=&lt;YOUR_FOLDER_PATH&gt; --mainnet --suggested-fee-recipient=&lt;YOUR_WALLET_ADDRESS>&gt;</code></pre>
@@ -141,8 +142,8 @@ Run the following command to create your mnemonic (a unique and <strong>highly s
       <TabItem value="sepolia">
         <pre><code>prysm.bat validator --wallet-dir=&lt;YOUR_FOLDER_PATH&gt; --sepolia --suggested-fee-recipient=&lt;YOUR_WALLET_ADDRESS>&gt;</code></pre>
       </TabItem>
-      <TabItem value="holesky">
-        <pre><code>prysm.bat validator --wallet-dir=&lt;YOUR_FOLDER_PATH&gt; --holesky --suggested-fee-recipient=&lt;YOUR_WALLET_ADDRESS>&gt;</code></pre>
+      <TabItem value="hoodi">
+        <pre><code>prysm.bat validator --wallet-dir=&lt;YOUR_FOLDER_PATH&gt; --hoodi --suggested-fee-recipient=&lt;YOUR_WALLET_ADDRESS>&gt;</code></pre>
       </TabItem>
     </Tabs>
   </TabItem>
@@ -150,7 +151,7 @@ Run the following command to create your mnemonic (a unique and <strong>highly s
     <Tabs groupId="network" defaultValue="mainnet" values={[
         {label: 'Mainnet', value: 'mainnet'},
         {label: 'Sepolia', value: 'sepolia'},
-        {label: 'Holesky', value: 'holesky'},
+        {label: 'Hoodi', value: 'hoodi'},
     ]}>
       <TabItem value="mainnet">
         <pre><code>./prysm.sh validator --wallet-dir=&lt;YOUR_FOLDER_PATH&gt; --mainnet --suggested-fee-recipient=&lt;YOUR_WALLET_ADDRESS>&gt;</code></pre>
@@ -158,8 +159,8 @@ Run the following command to create your mnemonic (a unique and <strong>highly s
       <TabItem value="sepolia">
         <pre><code>./prysm.sh validator --wallet-dir=&lt;YOUR_FOLDER_PATH&gt; --sepolia --suggested-fee-recipient=&lt;YOUR_WALLET_ADDRESS>&gt;</code></pre>
       </TabItem>
-      <TabItem value="holesky">
-        <pre><code>./prysm.sh validator --wallet-dir=&lt;YOUR_FOLDER_PATH&gt; --holesky --suggested-fee-recipient=&lt;YOUR_WALLET_ADDRESS>&gt;</code></pre>
+      <TabItem value="hoodi">
+        <pre><code>./prysm.sh validator --wallet-dir=&lt;YOUR_FOLDER_PATH&gt; --hoodi --suggested-fee-recipient=&lt;YOUR_WALLET_ADDRESS>&gt;</code></pre>
       </TabItem>
     </Tabs>
   </TabItem>

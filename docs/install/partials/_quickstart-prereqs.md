@@ -50,7 +50,7 @@
 
 - **If you're staking `ETH` as a validator**, try this guide on a testnet first, *then* mainnet.
 - **Keep things simple**. This guidance assumes all client software will run on a single machine.
-- **Review the latest advisories** for the network(s) that you're using: [Holesky](https://holesky.launchpad.ethereum.org/en/) or [Mainnet](https://launchpad.ethereum.org/en/).
+- **Review the latest advisories** for the network(s) that you're using: [Hoodi](https://hoodi.launchpad.ethereum.org/) or [Mainnet](https://launchpad.ethereum.org/en/).
 - Review all of our [published security best practices](/security-best-practices).
 - **Join the community**: Join our [mailing list](https://groups.google.com/g/prysm-dev), the [Prysm Discord server](https://discord.gg/prysm), [r/ethstaker](https://www.reddit.com/r/ethstaker/), and the [EthStaker Discord server](https://discord.gg/ethstaker) for updates and support.
 
