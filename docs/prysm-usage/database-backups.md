@@ -10,9 +10,9 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 This section outlines how to perform database backups for your beacon node and validator client. The validator client services expose an **HTTP backup endpoint** which is the **safest way** to trigger a database backup.
 
-:::danger Doing manual folder backups while the cllient is running is not safe
+:::danger Performing backups while the client is running is not safe
 
-If you perform backups by manually copying the database while the client is running, you risk copying a corrupted database! You might be copying the folder right when the client is in the middle of writing data to the database, and could end up with a bad backup.
+If you perform backups by manually copying the database while the client is running, **you risk copying a corrupted database**! You might be copying the folder right when the client is in the middle of writing data to the database, and could end up with a bad backup.
 
 :::
 
@@ -106,11 +106,10 @@ bazel run //cmd/beacon-chain -- db restore --restore-source-file=/path/to/backup
 
 ## Validator client
 
-### Add the backup webhook flags to your validator client 
+### Add the backup flag to your validator client 
 
-Add the following flags to your validator client:
+Add the following flag to your validator client:
 
-- `--enable-db-backup-webhook`: Serve an http server to initiate database backups. The handler is served on the validator client's monitoring host and port. Default endpoint is `http://127.0.0.1:8081/db/backup` if the flag is enabled.
 - `--db-backup-output-dir`: Folder path to where backups will be output to, such as `/path/to/mybackups`.
 
 Now, your validator client will expose an HTTP endpoint `http://monitoringhost:monitoringport/db/backup`, which is `http://127.0.0.1:8081/db/backup` by default. You can hit this endpoint using curl or any other tool you prefer, and a backup will initiate which will be output to your `--db-backup-output-dir` path.
