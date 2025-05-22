@@ -1,7 +1,9 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Next, we'll create your validator keys with the [Ethereum Staking Deposit CLI](https://github.com/ethereum/staking-deposit-cli).
+Next, we will walk through the steps to create your validator keys using the [Ethereum Staking Deposit CLI](https://github.com/ethereum/staking-deposit-cli).
+
+Alternatively, you could also use the [EthStaker Deposit CLI](https://github.com/eth-educators/ethstaker-deposit-cli). For step-by-step instructions on using that tool, you can refer to their repo [here](https://github.com/eth-educators/ethstaker-deposit-cli/blob/main/docs/src/quick_setup.md).
 
 Download - ideally on a new machine that has never been connected to the internet - the latest stable version of the deposit CLI from the [Staking Deposit CLI Releases page](https://github.com/ethereum/staking-deposit-cli/releases).
 
