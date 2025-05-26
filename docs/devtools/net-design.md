@@ -156,7 +156,7 @@ In this iteration of the networking design, initial synchronizing of a validator
 - 2. Round-robin batch block sync with `N` peers from genesis to the last finalized epoch.
 - 3. Process batch blocks upon each full epoch received.
 - 4. Upon syncing with the last block in the finalized epoch, verify the roots are aligned with the received information on the finalized epoch.
-- 5. Continue syncronization with the highest peer using fork choice rules and then resume with regular network syncronization.
+- 5. Continue synchronization with the highest peer using fork choice rules and then resume with regular network synchronization.
 
 The rationale for having Step 4 is that we are guaranteed not to have forks or run fork choice rule until we reach the finalized epoch. After that time, we must run fork choice rule to determine the head of the chain. 
 
@@ -182,7 +182,7 @@ func setupPeerHandShake(h host.Host, helloHandler sync.RPCHandler) {
 The above describes how we would handle the peer connection in the callback, we would validate each newly added peer using the hello rpc handler. This ensures any application logic stays in the sync package instead of the P2P package
 
 #### Round-Robin Batch Block Sync
-This sync mode requests subsets of the chain to multiple peers, perhaps even with some overlap in the future. The basic flow of this model of requests is to divide the requests evenly in round-robin fashion with peers. An important note to consider for batch syncronization is that a peer must enforce a maximum batch size defined in bytes (`REQ_RESP_MAX_SIZE`). The requesting client should not exceed this value when determining the batch sizes to request. At the time of writing this document, this value is to be determined. So, we’ll temporarily enforce a max count of one epoch worth of blocks. Using the maximum SSZ encoded byte size of a block (1.122968 Mb), we can determine the max number of blocks to request to be within the size limit. 
+This sync mode requests subsets of the chain to multiple peers, perhaps even with some overlap in the future. The basic flow of this model of requests is to divide the requests evenly in round-robin fashion with peers. An important note to consider for batch synchronization is that a peer must enforce a maximum batch size defined in bytes (`REQ_RESP_MAX_SIZE`). The requesting client should not exceed this value when determining the batch sizes to request. At the time of writing this document, this value is to be determined. So, we’ll temporarily enforce a max count of one epoch worth of blocks. Using the maximum SSZ encoded byte size of a block (1.122968 Mb), we can determine the max number of blocks to request to be within the size limit. 
 
 For example, if we were to request blocks 10 through 25 from 4 peers:
 
@@ -245,13 +245,13 @@ In the event that we request blocks from a peer and receive an empty response, w
 
 **Initial Sync UX**
 
-The user experience of initial sync should follow a design similar to Parity’s model of displaying interesting metrics as syncronization progresses. 
+The user experience of initial sync should follow a design similar to Parity’s model of displaying interesting metrics as synchronization progresses. 
 -->
 
-#### Regular Syncronization
-The current regular syncronization design is pretty much a giant `for select` block that just listens for incoming message announcements from peers, requests the full data, and sends the data over to its corresponding service for handling, such as attestations or blocks. This can be split up, as it is quite unorganized and messy. Current regular syncronization is also tasked with sending and announcing messages to peers in the network, not just receiving. Once again, that responsibility can also be split up for easier testing and readability of the API.
+#### Regular Synchronization
+The current regular synchronization design is pretty much a giant `for select` block that just listens for incoming message announcements from peers, requests the full data, and sends the data over to its corresponding service for handling, such as attestations or blocks. This can be split up, as it is quite unorganized and messy. Current regular synchronization is also tasked with sending and announcing messages to peers in the network, not just receiving. Once again, that responsibility can also be split up for easier testing and readability of the API.
 
-The code will be reorganized into a regular syncronization registry go file where all of the handlers are processed in the main select loop while each handler will exist in its own isolated go file. This pattern will avoid oversized files in the syncronization package. 
+The code will be reorganized into a regular synchronization registry go file where all of the handlers are processed in the main select loop while each handler will exist in its own isolated go file. This pattern will avoid oversized files in the synchronization package. 
 
 #### External RPC (Incoming Request Handling)
 The external RPC design implements the “Req/Resp” domain of the network specification. More specifically, the response part. The request part of the domain is covered in the next section, Internal API. 
