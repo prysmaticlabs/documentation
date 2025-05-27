@@ -112,7 +112,7 @@
         },
         {
           "type": "doc",
-          "id": "contribute/contribution-guidelines"
+          "id": "reading/eth2"
         }
       ]
     },
@@ -260,7 +260,7 @@
       "type": "category",
       "collapsed": true,
       "collapsible": true,
-      "label": "Monitoring and alerts",
+      "label": "Monitoring, alerts, and metrics",
       "items": [
         {
           "type": "doc",
@@ -281,15 +281,7 @@
         {
           "type": "doc",
           "id": "prysm-usage/monitoring/grafana-dashboard"
-        }
-      ]
-    },
-    {
-      "type": "category",
-      "collapsed": true,
-      "collapsible": true,
-      "label": "Metrics",
-      "items": [
+        },
         {
           "type": "doc",
           "id": "prysm-usage/client-stats"
@@ -352,19 +344,11 @@
       },
       {
         "type": "doc",
-        "id": "reading/eth2"
-      },
-      {
-        "type": "doc",
         "id": "reading/testnet-postmortems"
       },
       {
         "type": "doc",
         "id": "devtools/block-explorers"
-      },
-      {
-        "type": "doc",
-        "id": "contribute/bugreports"
       }
       ]
     },
@@ -381,6 +365,10 @@
         {
           "type": "doc",
           "id": "contribute/golang-principles"
+        },
+        {
+          "type": "doc",
+          "id": "contribute/bugreports"
         }
       ]
     },
