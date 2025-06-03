@@ -28,7 +28,7 @@ The Beacon Chain maintains the network's state and manages the validators involv
 Beacon nodes use beacon node client software to coordinate Ethereum's proof-of-stake consensus. A beacon node will talk to other beacon nodes via peer-to-peer networking, to a local execution node, and (optionally) to a local validator.
 
 #### Validator
-Most often refers to a [validator client](#validator-client) instance, but can also refer to an individual that is physically managing a validator client.
+Most often refers to a [validator client](#validator-client) instance, but can also refer to an individual that is physically managing a validator client, or the key used for staking.
 
 #### Validator client
 Allows users running the software to stake `ETH`, propose and validate new blocks, earn staking rewards, and staking tips.
@@ -46,10 +46,10 @@ The existing Ethereum 1.0 protocol.
 A protocol that governs how to choose validators to propose or validate blocks and process transactions. In cases where multiple blocks are at the head of the chain, a fork-choice mechanism selects the "heaviest" chain based on the number of validators voting for the blocks, weighted by the amount of staked ether.
 
 #### JWT token
-JSON Web Token (JWT) is an industry-standard method for decoding, verifying, and generating tokens that securely represent claims between two parties. It serves as a reliable and effective solution for ensuring secure communication.
+JSON Web Token (JWT) is an industry-standard method for decoding, verifying, and generating tokens that securely represent claims between two parties. It serves as a reliable and effective solution for ensuring secure communication (between the Execution and Consensus layers).
 
 #### Checkpoint
-An endpoint that can include state and verification of the Ethereum blockchain. It allows syncing a node to be faster and takes less space than syncing from genesis.
+An endpoint, specific to the Consensus layer, that can include state and verification of the Ethereum blockchain. It allows syncing a node to be faster and takes less space than syncing from genesis.
 
 #### Execution layer
 The execution client, also referred to as the Execution Engine or EL client, listens for new transactions on the network, executes them in the Ethereum Virtual Machine (EVM), and maintains the latest state of Ethereum data.
