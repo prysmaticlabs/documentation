@@ -18,23 +18,27 @@
           "items": [
             {
               "type": "doc",
-              "id": "concepts/nodes-networks"
+              "id": "learn/concepts/nodes-and-networks"
             },
             {
               "type": "doc",
-              "id": "how-prysm-works/validator-lifecycle"
+              "id": "learn/concepts/validator-lifecycle"
             },
             {
               "type": "doc",
-              "id": "wallet/introduction"
+              "id": "learn/concepts/execution-requests"
             },
             {
               "type": "doc",
-              "id": "concepts/slashing"
+              "id": "learn/concepts/keys-wallets-accounts"
             },
             {
               "type": "doc",
-              "id": "concepts/blobs"
+              "id": "learn/concepts/slashing"
+            },
+            {
+              "type": "doc",
+              "id": "learn/concepts/blobs"
             }
           ]
         },
@@ -46,15 +50,15 @@
           "items": [
             {
               "type": "doc",
-              "id": "contribute/golang-principles"
+              "id": "learn/tools/golang-principles"
             },
             {
               "type": "doc",
-              "id": "reading/golang"
+              "id": "learn/tools/about-golang"
             },
             {
               "type": "doc",
-              "id": "reading/bazel"
+              "id": "learn/tools/about-bazel"
             }
           ]
         },
@@ -66,53 +70,57 @@
           "items": [
             {
               "type": "doc",
-              "id": "devtools/init-state"
+              "id": "learn/dev-concepts/initial-sync"
             },
             {
               "type": "doc",
-              "id": "devtools/net-design"
+              "id": "learn/dev-concepts/network-design"
             },
             {
               "type": "doc",
-              "id": "how-prysm-works/architecture-overview"
+              "id": "learn/dev-concepts/architecture-overview"
             },
             {
               "type": "doc",
-              "id": "how-prysm-works/beacon-node"
+              "id": "learn/dev-concepts/beacon-node"
             },
             {
               "type": "doc",
-              "id": "how-prysm-works/prysm-validator-client"
+              "id": "learn/dev-concepts/prysm-validator-client"
             },
             {
               "type": "doc",
-              "id": "how-prysm-works/optimistic-sync"
+              "id": "learn/dev-concepts/optimistic-sync"
             },
             {
               "type": "doc",
-              "id": "how-prysm-works/validator-deposit-contract"
+              "id": "learn/dev-concepts/validator-deposit-contract"
             },
             {
               "type": "doc",
-              "id": "how-prysm-works/database-backend-boltdb"
+              "id": "learn/dev-concepts/boltdb-database"
             },
             {
               "type": "doc",
-              "id": "how-prysm-works/p2p-networking"
+              "id": "learn/dev-concepts/p2p-networking"
             },
             {
               "type": "doc",
-              "id": "how-prysm-works/bls-cryptography"
+              "id": "learn/dev-concepts/bls-cryptography"
             },
             {
               "type": "doc",
-              "id": "devtools/end-to-end"
+              "id": "learn/dev-concepts/end-to-end"
             }
           ]
         },
         {
           "type": "doc",
-          "id": "reading/eth2"
+          "id": "learn/about-ethereum"
+        },
+        {
+          "type": "doc",
+          "id": "learn/external-reading"
         }
       ]
     },
@@ -124,15 +132,15 @@
       "items": [
         {
           "type": "doc",
-          "id": "install/install-with-script"
+          "id": "install-prysm/install-with-script"
         },
         {
           "type": "doc",
-          "id": "install/install-with-docker"
+          "id": "install-prysm/install-with-docker"
         },
         {
           "type": "doc",
-          "id": "install/install-with-bazel"
+          "id": "install-prysm/install-with-bazel"
         }
       ]
     },
@@ -140,43 +148,47 @@
       "type": "category",
       "collapsed": true,
       "collapsible": true,
-      "label": "Configuring Prysm",
+      "label": "Configure Prysm",
       "items": [
         {
           "type": "doc",
-          "id": "execution-node/fee-recipient"
+          "id": "configure-prysm/configure-fee-recipient"
         },
         {
           "type": "doc",
-          "id": "execution-node/authentication"
+          "id": "configure-prysm/configure-fee-recipient-vnext"
         },
         {
           "type": "doc",
-          "id": "execution-node/configuring-for-prysm"
+          "id": "configure-prysm/configure-jwt"
         },
         {
           "type": "doc",
-          "id": "advanced/builder"
+          "id": "configure-prysm/configure-execution-node-for-prysm"
         },
         {
           "type": "doc",
-          "id": "prysm-usage/prysmctl"
+          "id": "configure-prysm/configure-mev-builder"
         },
         {
           "type": "doc",
-          "id": "prysm-usage/checkpoint-sync"
+          "id": "configure-prysm/prysmctl"
         },
         {
           "type": "doc",
-          "id": "prysm-usage/slasher"
+          "id": "configure-prysm/sync-from-checkpoint"
         },
         {
           "type": "doc",
-          "id": "advanced/beacon_node_api"
+          "id": "configure-prysm/run-a-slasher"
         },
         {
           "type": "doc",
-          "id": "advanced/proof-of-stake-devnet"
+          "id": "configure-prysm/run-an-archival-node"
+        },
+        {
+          "type": "doc",
+          "id": "configure-prysm/proof-of-stake-devnet"
         },
         {
           "type": "doc",
@@ -184,7 +196,7 @@
         },
         {
           "type": "doc",
-          "id": "prysm-usage/parameters"
+          "id": "configure-prysm/command-line-options"
         }
       ]
     },
@@ -196,19 +208,19 @@
       "items": [
           {
             "type": "doc",
-            "id": "prysm-usage/database-backups"
+            "id": "backup-and-migration/backup-and-restore-db"
           },
           {
             "type": "doc",
-            "id": "wallet/slashing-protection"
+            "id": "backup-and-migration/slashing-protection-history"
           },
           {
             "type": "doc",
-            "id": "advanced/migrating-keys"
+            "id": "backup-and-migration/migrating-keys"
           },
           {
             "type": "doc",
-            "id": "advanced/switch-clients"
+            "id": "backup-and-migration/switch-to-a-new-client"
           }
       ]
     },
@@ -220,19 +232,19 @@
       "items": [
         {
           "type": "doc",
-          "id": "wallet/deterministic"
+          "id": "manage-wallet/create-prysm-wallet"
         },
         {
           "type": "doc",
-          "id": "wallet/nondeterministic"
+          "id": "manage-wallet/import-keys-into-prysm-wallet"
         },
         {
           "type": "doc",
-          "id": "advanced/maintaining-uptime"
+          "id": "manage-wallet/maintain-validator-uptime"
         },
         {
           "type": "doc",
-          "id": "wallet/web3signer"
+          "id": "manage-wallet/use-web3signer"
         }
       ]
     },
@@ -244,15 +256,15 @@
       "items": [
         {
           "type": "doc",
-          "id": "prysm-usage/graffiti-file"
+          "id": "manage-validator/add-graffiti"
         },
         {
           "type": "doc",
-          "id": "wallet/exiting-a-validator"
+          "id": "manage-validator/exit-a-validator"
         },
         {
             "type": "doc",
-            "id": "wallet/withdraw-validator"
+            "id": "manage-validator/withdraw-validator"
         }
       ]
     },
@@ -264,31 +276,31 @@
       "items": [
         {
           "type": "doc",
-          "id": "prysm-usage/staying-up-to-date"
+          "id": "monitoring-alerts-metrics/staying-up-to-date"
         },
         {
           "type": "doc",
-          "id": "monitoring/checking-status"
+          "id": "monitoring-alerts-metrics/check-node-and-validator-status"
         },
         {
           "type": "doc",
-          "id": "monitoring/is-everything-fine"
+          "id": "monitoring-alerts-metrics/monitor-prysm"
         },
         {
           "type": "doc",
-          "id": "prysm-usage/individual-validator-monitoring"
+          "id": "monitoring-alerts-metrics/monitor-validators-by-index"
         },
         {
           "type": "doc",
-          "id": "prysm-usage/monitoring/grafana-dashboard"
+          "id": "monitoring-alerts-metrics/grafana-dashboard"
         },
         {
           "type": "doc",
-          "id": "prysm-usage/client-stats"
+          "id": "monitoring-alerts-metrics/collect-metrics-with-client-stats"
         },
         {
           "type": "doc",
-          "id": "prysm-usage/web-interface"
+          "id": "monitoring-alerts-metrics/prysm-web-ui"
         }
       ]
     },
@@ -300,11 +312,11 @@
       "items": [
         {
           "type": "doc",
-          "id": "prysm-usage/secure-grpc"
+          "id": "managing-connections/secure-grpc"
         },
         {
           "type": "doc",
-          "id": "prysm-usage/p2p-host-ip"
+          "id": "managing-connections/configure-ports-firewalls-for-p2p"
         }
       ]
     },
@@ -316,15 +328,15 @@
       "items": [
           {
             "type": "doc",
-            "id": "how-prysm-works/ethereum-public-api"
+            "id": "apis/ethereum-beacon-node-api"
           },
           {
             "type": "doc",
-            "id": "how-prysm-works/prysm-public-api"
+            "id": "apis/prysm-public-api"
           },
           {
             "type": "doc",
-            "id": "how-prysm-works/keymanager-api"
+            "id": "apis/keymanager-api"
           }
       ]
     },
@@ -336,19 +348,19 @@
       "items": [
       {
         "type": "doc",
-        "id": "audits/phase0"
+        "id": "misc/security-audits"
       },
       {
         "type": "doc",
-        "id": "licenses/prysm"
+        "id": "misc/prysm-license"
       },
       {
         "type": "doc",
-        "id": "reading/testnet-postmortems"
+        "id": "misc/testnet-postmortems"
       },
       {
         "type": "doc",
-        "id": "devtools/block-explorers"
+        "id": "misc/block-explorers"
       }
       ]
     },
@@ -364,11 +376,7 @@
         },
         {
           "type": "doc",
-          "id": "contribute/golang-principles"
-        },
-        {
-          "type": "doc",
-          "id": "contribute/bugreports"
+          "id": "contribute/file-bug-report"
         }
       ]
     },
@@ -378,7 +386,7 @@
     },
     {
       "type": "doc",
-      "id": "troubleshooting/issues-errors"
+      "id": "troubleshooting/troubleshooting"
     },
     {
       "type": "doc",
