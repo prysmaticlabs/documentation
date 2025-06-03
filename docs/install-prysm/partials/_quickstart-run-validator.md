@@ -1,7 +1,9 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Next, we'll create your validator keys with the [Ethereum Staking Deposit CLI](https://github.com/ethereum/staking-deposit-cli).
+Next, we will walk through the steps to create your validator keys using the [Ethereum Staking Deposit CLI](https://github.com/ethereum/staking-deposit-cli).
+
+Alternatively, you could also use the [EthStaker Deposit CLI](https://github.com/eth-educators/ethstaker-deposit-cli). For step-by-step instructions on using that tool, you can refer to their repo [here](https://github.com/eth-educators/ethstaker-deposit-cli/blob/main/docs/src/quick_setup.md).
 
 Download - ideally on a new machine that has never been connected to the internet - the latest stable version of the deposit CLI from the [Staking Deposit CLI Releases page](https://github.com/ethereum/staking-deposit-cli/releases).
 
@@ -124,7 +126,7 @@ Run the following command to create your mnemonic (a unique and <strong>highly s
 
   </TabItem>
 </Tabs>
-<p>Finally, run the following command to start your validator, replacing <code>&lt;YOUR_FOLDER_PATH&gt;</code> with the full path to your <code>consensus</code> folder and <code>&lt;YOUR_WALLET_ADDRESS&gt;</code> by the address of a wallet you own. When your validator proposes a block, it will allow you to earn block priority fees, also sometimes called "tips". See <a href='/configure-prysm/configure-fee-recipient'>How to configure Fee Recipient</a> for more information about this feature:</p>
+<p>Finally, run the following command to start your validator, replacing <code>&lt;YOUR_FOLDER_PATH&gt;</code> with the full path to your <code>consensus</code> folder and <code>&lt;YOUR_WALLET_ADDRESS&gt;</code> by the address of a wallet you own. When your validator proposes a block, it will allow you to earn block priority fees, also sometimes called "tips". See <a href='/configure-prysm/configure-fee-recipient.md'>How to configure Fee Recipient</a> for more information about this feature:</p>
 
 <Tabs groupId="os" defaultValue="others" values={[
     {label: 'Windows', value: 'win'},
