@@ -6,7 +6,7 @@
     </tr>
     <tr>
       <td>You see <code>Waiting for keymanager to initialize validator client with web UI...</code></td>
-      <td>You'll usually see this message when your beacon node is trying to interact with a validator client instance before the beacon node is fully synced. This is a known limitation. When your beacon node is finished syncing, this message should go away. Visit <a href='/monitoring/checking-status'>Check Node and Validator Status</a> to learn how to check the sync status of your beacon node.</td>
+      <td>You'll usually see this message when your beacon node is trying to interact with a validator client instance before the beacon node is fully synced. This is a known limitation. When your beacon node is finished syncing, this message should go away. Visit <a href='/monitoring-alerts-metrics/check-node-and-validator-status'>Check Node and Validator Status</a> to learn how to check the sync status of your beacon node.</td>
     </tr>
     <tr>
       <td>Everything seems fine, but your validator balance is going down.</td>
@@ -26,7 +26,7 @@
     </tr>
     <tr>
     <td><code>Could not request attestation to sign at slot error=rpc error: code = Unavailable desc = the node is currently optimistic and cannot serve validators</code></td>
-      <td>This usually means that your execution client isn't yet synchronized. Visit <a href='/monitoring/checking-status'>Check Node and Validator Status</a>. </td>
+      <td>This usually means that your execution client isn't yet synchronized. Visit <a href='/monitoring-alerts-metrics/check-node-and-validator-status'>Check Node and Validator Status</a>. </td>
     </tr>
     </tbody>
 </table>

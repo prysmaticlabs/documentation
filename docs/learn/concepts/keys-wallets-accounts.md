@@ -16,7 +16,7 @@ Prysm's validator accounts are extensible enough to allow for the most basic set
 
 Out of the box, Prysm supports three basic kinds of wallets that encompasses many different use-cases. In order of highest to lowest security:
 
-1. **non-HD wallet**: (good security) A simple wallet in which accounts are password protected and validator keys are generated non-deterministically. This is the recommended approach if you want to import an account from the [Ethereum launchpad](https://launchpad.ethereum.org/) and you can read dedicated instructions [here](/wallet/nondeterministic).
+1. **non-HD wallet**: (good security) A simple wallet in which accounts are password protected and validator keys are generated non-deterministically. This is the recommended approach if you want to import an account from the [Ethereum launchpad](https://launchpad.ethereum.org/) and you can read dedicated instructions [here](/manage-wallet/import-keys-into-prysm-wallet.md).
 2. **HD wallet**: (least security) A common type of blockchain wallet which is generated from a english mnemonic, able to create new accounts deterministically. The encrypted seed is stored on day encrypted by a strong password. Given you are tying your HD wallet to the validator client, it is less secure than simply importing validating keys you need from an external source or running a remote signer. 
 
 At the core of Prysm's validator accounts lies the notion of a validator private key, which is stored in a password-protected, keystore.json file. Prysm supports the ability to manage many validator accounts, making it easy to import and export them as well as easily list all the account info in your wallet. Prysm is compliant with the [EIP-2335](https://eips.ethereum.org/EIPS/eip-2335) standards for storing Ethereum consensus validator private keys, making it possible to move keys between different Ethereum consensus client implementations.
@@ -34,7 +34,7 @@ When creating an HD wallet, you'll be given a 24-word mnemonic phrase which you 
 The ideal security for an average user participating as a validator is as follows:
 
 - Create a wallet using the official [eth2.0-deposit-cli](https://github.com/ethereum/eth2.0-deposit-cli) and keep your mnemonic stored offline, safely.
-- Import only the validating keys you need into your validator client, such as by following the instructions [here](/install/install-with-script#step-5-run-a-validator-using-prysm).
+- Import only the validating keys you need into your validator client, such as by following the instructions [here](/install-prysm/install-with-script.md#step-5-run-a-validator-using-prysm).
 
 For **best security** in production cloud deployments, it's best you use a **remote signer**, as that offers absolute separation of your secret keys and your validator client software. Read more about remote signers [here](/manage-wallet/use-web3signer.md).
 

@@ -12,13 +12,13 @@ Validators should be online as much as possible. If you're running your validato
 
 :::caution
 
-This may be overkill for at-home stakers who use the `prysm.sh` script to run Prysm. To those users, we recommend **keeping it simple** by occasionally checking the status of your validator. See [Check Software Status](/monitoring/checking-status) to learn more.
+This may be overkill for at-home stakers who use the `prysm.sh` script to run Prysm. To those users, we recommend **keeping it simple** by occasionally checking the status of your validator. See [Check Software Status](/monitoring-alerts-metrics/check-node-and-validator-status.md) to learn more.
 
 :::
 
 ### Docker
 
-You can use Docker to run your beacon node and validators as background services. See [Install with Docker](/install/install-with-docker). You can monitor and view your running Docker containers using `docker ps`.
+You can use Docker to run your beacon node and validators as background services. See [Install with Docker](/install-prysm/install-with-docker.md). You can monitor and view your running Docker containers using `docker ps`.
 
 ### Systemd (Linux)
 

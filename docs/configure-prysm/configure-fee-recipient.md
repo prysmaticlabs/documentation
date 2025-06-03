@@ -204,7 +204,7 @@ New property definitions are as follows:
 
 <img style={{maxWidth: 700 + 'px'}} src={FeeRecipientPng} /> 
 
-Your fee recipient wallet address can also be set through the <a href='/prysm-usage/web-interface'>Web UI</a> dashboard. The Web UI uses the <a href='/how-prysm-works/keymanager-api'>Key Manager APIs</a> to set the fee recipient.
+Your fee recipient wallet address can also be set through the [Web UI](/monitoring-alerts-metrics/prysm-web-ui.md) dashboard. The Web UI uses the [Key Manager APIs](/apis/keymanager-api.md) to set the fee recipient.
 
 
 ## Frequently asked questions
@@ -227,4 +227,4 @@ This is an advanced configuration property related to custom builders (MEV) that
 
 Footnotes:
 
-<strong id="footnote-1">1.</strong> See <a href='/concepts/nodes-networks'>Nodes and Networks</a> for a quick refresher on the fundamentals of Ethereum nodes. <br /><br />
+<strong id="footnote-1">1.</strong> See [Nodes and Networks](/learn/concepts/nodes-and-networks.md) for a quick refresher on the fundamentals of Ethereum nodes. <br /><br />

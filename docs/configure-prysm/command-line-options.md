@@ -34,7 +34,7 @@ Refer to the [Use `prysmctl`](prysmctl.md) for `prysmctl` download and installat
 
 ## Client stats flags
 
-Prysm's client stats service is an optional utility that reports process metrics to third-parties such as block explorers. Refer to our [client stats documentation](/prysm-usage/client-stats) for more information.
+Prysm's client stats service is an optional utility that reports process metrics to third-parties such as block explorers. Refer to our [client stats documentation](/monitoring-alerts-metrics/collect-metrics-with-client-stats.md) for more information.
 
 <FetchCLIHelp prysmComponent={"client-stats"}/>
 

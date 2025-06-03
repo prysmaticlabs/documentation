@@ -23,7 +23,7 @@ In this how-to, you'll learn how to perform both types of withdrawals. Familiari
 ## Prerequisites
 
 1. **Your validator mnemonic**: You'll use this to authorize your validator withdrawal request(s). <!-- accessible accuracy > technical precision whenever technical precision isn't needed -->
-2. **Access to a beacon node**: You'll need to connect your validator to a beacon node in order to submit your withdrawal request. Visit our [Quickstart](/install/install-with-script.md) for instructions if you need them.
+2. **Access to a beacon node**: You'll need to connect your validator to a beacon node in order to submit your withdrawal request. Visit our [Quickstart](/install-prysm/install-with-script.md) for instructions if you need them.
 3. **Stable version of the `staking-deposit-cli` installed**: The [staking-deposit-cli](https://github.com/ethereum/staking-deposit-cli) is a command-line tool provided by the Ethereum research team. We'll use this to authorize your withdrawal. We recommend building this from source or otherwise verifying the binaries as a security best practice.
 4. **Familiarity with [The Ethereum Foundation Withdrawals FAQ](https://notes.ethereum.org/@launchpad/withdrawals-faq)**: A client-agnostic overview of important information regarding Ethereum validator withdrawals.
 5. **Time to focus:** This is a time-consuming procedure, making a mistake can be expensive. Be vigilant against scammers; never share your mnemonic; take your time; ping us [on Discord](https://discord.gg/prysm) if you have any questions.

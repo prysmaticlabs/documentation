@@ -56,7 +56,7 @@ The website at this time does not provide additional metrics over those that you
 
 To begin, follow the instructions to run Prysm in mainnet or testnet:
 
-- [Joining Mainnet](/install/install-with-script)
+- [Joining Mainnet](/install-prysm/install-with-script.md)
 
 To launch the web interface, you will need to restart your validator client from step 1 with the `--web` flag. This will allow you to access the web interface by default on `http://localhost:7500` if running on the same computer as your validator client and using `prysm.sh`, `prysm.bat` or building from source.
 

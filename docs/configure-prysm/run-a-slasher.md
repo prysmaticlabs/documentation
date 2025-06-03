@@ -8,7 +8,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <HeaderBadgesWidget />
 
-This section provides instructions on how to run [slasher](https://github.com/OffchainLabs/prysm/tree/develop/beacon-chain/slasher) as an **optional** process to report slashable offenses on Ethereum proof-of-stake.  If slasher detects a slashable offense, proof is sent to the [beacon-chain node](/how-prysm-works/beacon-node/) for inclusion in a block.  [Validators](/how-prysm-works/prysm-validator-client/) earn a small whistleblower reward for including this proof into a block.  
+This section provides instructions on how to run [slasher](https://github.com/OffchainLabs/prysm/tree/develop/beacon-chain/slasher) as an **optional** process to report slashable offenses on Ethereum proof-of-stake.  If slasher detects a slashable offense, proof is sent to the [beacon-chain node](/learn/dev-concepts/beacon-node.md) for inclusion in a block.  [Validators](/learn/dev-concepts/prysm-validator-client.md) earn a small whistleblower reward for including this proof into a block.  
 
 :::tip Slasher Requires Significant Disk Space
 
