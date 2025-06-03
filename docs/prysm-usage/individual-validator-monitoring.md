@@ -1,5 +1,5 @@
 ---
-id: individual-validator-monitoring
+id: monitor-validators-by-index
 title: Monitor validators by index
 sidebar_label: Monitor validators by index
 ---
