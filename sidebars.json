@@ -5,26 +5,6 @@
       "id": "getting-started"
     },
     {
-      "type": "doc",
-      "id": "install-prysm/install-with-script"
-    },
-    {
-      "type": "doc",
-      "id": "manage-validator/withdraw-validator"
-    },
-    {
-      "type": "doc",
-      "id": "security-best-practices"
-    },
-    {
-      "type": "doc",
-      "id": "configure-prysm/parameters"
-    },
-    {
-      "type": "doc",
-      "id": "monitoring-alerts-metrics/checking-status"
-    },
-    {
       "type": "category",
       "collapsed": true,
       "collapsible": true,
@@ -400,6 +380,10 @@
     {
       "type": "doc",
       "id": "terminology"
+    },
+    {
+      "type": "doc",
+      "id": "security-best-practices"
     },
     {
       "type": "doc",
