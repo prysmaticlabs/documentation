@@ -10,7 +10,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 :::info Looking for an end-to-end guide?
 
-If you're looking for end-to-end configuration guidance, refer to our [Quickstart](/install/install-with-script.md).
+If you're looking for end-to-end configuration guidance, refer to our [Quickstart](/install-prysm/install-with-script.md).
 
 :::
 
@@ -26,7 +26,7 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
 
 <div className='hide-tabs'>
 
-import QuickstartRunExecutionNodeJWTPartial from '@site/docs/install/partials/_quickstart-run-execution-node.md';
+import QuickstartRunExecutionNodeJWTPartial from '@site/docs/install-prysm/partials/_quickstart-run-execution-node.md';
 
 <QuickstartRunExecutionNodeJWTPartial />
 

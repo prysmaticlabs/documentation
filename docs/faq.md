@@ -24,7 +24,7 @@ If your beacon node or validator logs display an `ERROR`, go to our [open issues
 
 1. Try restarting your machine and associated processes.
 1. See if your node or validator client crashed. You can view the logs of the process to see if there were any `ERROR` logs. If so, please file a bug report or talk to our team on [Discord](https://discord.gg/prysm). A fatal crash is quite serious and something we'll investigate right away.
-2. Check your network connectivity. You can improve this by following our tips [here](/prysm-usage/p2p-host-ip) which can help you find better peers, improve attestation effectiveness, and more.
+2. Check your network connectivity. You can improve this by following our tips [here](/manage-connections/configure-ports-and-firewalls.md) which can help you find better peers, improve attestation effectiveness, and more.
 3. Check your system resource usage, perhaps your node is using excess CPU and RAM. Depending on your operating system, there are different ways to do this.
 
 If you still need help, note your **Prysm version** and **operating system**, and then reach out to our team on [Discord](https://discord.gg/OffchainLabs). Providing as much information as possible will help us troubleshoot your issue.
@@ -33,9 +33,9 @@ If you still need help, note your **Prysm version** and **operating system**, an
 
 Losing peers can be due to the following reasons:
 
-1. Your network connectivity has problems. You can check how to improve it with some of our tips [here](/prysm-usage/p2p-host-ip).
+1. Your network connectivity has problems. You can check how to improve it with some of our tips [here](/manage-connections/configure-ports-and-firewalls.md).
 2. Prysm is using a ton of memory or system resources and perhaps you ran out of memory. Ensure you meet the minimum specifications for running Prysm specified in our installation pages for your operating system.
-3. A bug in our software that can affect your p2p connectivity. It is known that certain versions have issues with peers on operating systems such as Windows, so you could try [downgrading](/prysm-usage/staying-up-to-date) to see if your issue is resolved. If this is the case, talk to our team on [Discord](https://discord.gg/prysm) letting us know you had this issue.
+3. A bug in our software that can affect your p2p connectivity. It is known that certain versions have issues with peers on operating systems such as Windows, so you could try [downgrading](/configure-prysm/stay-up-to-date.md) to see if your issue is resolved. If this is the case, talk to our team on [Discord](https://discord.gg/prysm) letting us know you had this issue.
 
 #### My CPU/RAM usage is huge, what’s going on?
 
@@ -114,20 +114,20 @@ If you are using Bazel, it means you are building Prysm from source. You can do 
 
 #### How can I upgrade Prysm? Do I just need to close and restart the process?
 
-Upgrading Prysm is done differently depending on your operating system and installation method. We prepared comprehensive instructions here in our docs portal on [upgrading and downgrading Prysm](/prysm-usage/staying-up-to-date).
+Upgrading Prysm is done differently depending on your operating system and installation method. We prepared comprehensive instructions here in our docs portal on [upgrading and downgrading Prysm](/configure-prysm/stay-up-to-date.md).
 
 #### How can I downgrade Prysm to an older version?
 
 Upgrading Prysm is done differently depending on your operating system and installation method. Please note that downgrading may not be as easy as upgrading as some versions may not be backward compatible and you will need to perform extra steps. For example, migrating down from <PrysmVersion minorOverride="1"/> to  <PrysmVersion  minorOverride="0"/> 
 has breaking changes that require you to also rollback your database. Downgrading major versions will not be possible.
 
-We prepared comprehensive instructions here in our docs portal on [upgrading and downgrading Prysm](/prysm-usage/staying-up-to-date).
+We prepared comprehensive instructions here in our docs portal on [upgrading and downgrading Prysm](/configure-prysm/stay-up-to-date).
 
 #### How can I improve my attestation effectiveness?
 
 Attestation effectiveness is a metric that directly affects your validator rewards. In simple terms, an attestation is more valuable the sooner it is put into a block and included in the chain. This interval is called the "inclusion distance" of an attestation. The smaller it is, the more profitable your validator will be. We highly recommend reading Attestant's awesome blog post on the matter [here](https://www.attestant.io/posts/defining-attestation-effectiveness/).
 
-Some stakers might notice their effectiveness is perfect, while others might see lower values such as 80%. Improving attestation effectiveness depends on a variety of factors, such as attestation network propagation, your network connectivity, the peers you are connected to. However, your network connectivity is one of the most important factors you can control to improve this metric. We have some tips to improve your connectivity [here](/prysm-usage/p2p-host-ip).
+Some stakers might notice their effectiveness is perfect, while others might see lower values such as 80%. Improving attestation effectiveness depends on a variety of factors, such as attestation network propagation, your network connectivity, the peers you are connected to. However, your network connectivity is one of the most important factors you can control to improve this metric. We have some tips to improve your connectivity [here](/manage-connections/configure-ports-and-firewalls.md).
 
 #### Do I need to keep my deposit keystores after I have imported them into Prysm?
 
@@ -139,7 +139,7 @@ For help with running geth specifically, the [go-ethereum Discord](https://disco
 
 #### How often should I perform database backups?
 
-The Prysm beacon node and validator allow performing database backups in case your machine gets corrupted and you need to restore it from some checkpoint. You can read our instructions on performing backups [here](/prysm-usage/database-backups). Briefly, the frequency at which you should perform backups really depends on your personal preference. If you want to perform backups once a day or once every week, there is no harm nor bigger difference in doing so. Losing your beacon chain database is not a big deal aside from the fact that you will need to sync again from genesis. Losing your validator db can be problematic but if you wait several epochs before starting your validator, ensure your computer's clock is synced, the risk of slashing is low.
+The Prysm beacon node and validator allow performing database backups in case your machine gets corrupted and you need to restore it from some checkpoint. You can read our instructions on performing backups [here](/backup-and-migration/backup-and-restore.md). Briefly, the frequency at which you should perform backups really depends on your personal preference. If you want to perform backups once a day or once every week, there is no harm nor bigger difference in doing so. Losing your beacon chain database is not a big deal aside from the fact that you will need to sync again from genesis. Losing your validator db can be problematic but if you wait several epochs before starting your validator, ensure your computer's clock is synced, the risk of slashing is low.
 
 #### Seeing a warning regarding binary signature not being trusted when downloading Prysm, should I be worried?
 
@@ -165,7 +165,7 @@ Your node is running the popular [Prometheus](https://prometheus.io/) server for
 
 #### Can I run this on a raspberry pi? What are the instructions?
 
-Yes, we currently support arm 64-bit architectures such as the Raspberry Pi 4 and they go out as part of our pre-compiled binary releases [here](https://github.com/OffchainLabs/prysm/releases). Our documentation portal has instructions on how to run the entire installation process [here](/install/install-with-script). However, we recommend using more powerful hardware in mainnet conditions. 
+Yes, we currently support arm 64-bit architectures such as the Raspberry Pi 4 and they go out as part of our pre-compiled binary releases [here](https://github.com/OffchainLabs/prysm/releases). Our documentation portal has instructions on how to run the entire installation process [here](/install-prysm/install-with-script.md). However, we recommend using more powerful hardware in mainnet conditions. 
 
 ### Validator keys and validator deposits
 

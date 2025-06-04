@@ -14,7 +14,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 :::info Knowledge Check
 
-Not familiar with nodes, networks, and related terminology? Consider reading [Nodes and networks](/concepts/nodes-networks.md) before proceeding. 
+Not familiar with nodes, networks, and related terminology? Consider reading [Nodes and networks](/learn/concepts/nodes-and-networks.md) before proceeding. 
 
 :::
 
@@ -30,7 +30,7 @@ In this how-to, we'll walk through the following tasks:
 
 :::note
 
-As long as you can complete the [Status checklist](/monitoring/checking-status.md) without error, this isn't required. These are optimizations targeted at power users.
+As long as you can complete the [Status checklist](/monitoring-alerts-metrics/check-node-and-validator-status.md) without error, this isn't required. These are optimizations targeted at power users.
 
 :::
 
@@ -156,4 +156,4 @@ If you see the following results, your beacon node is highly discoverable:
 
 You can perform the same test using `30303/TCP` to test your execution node's discoverability. 
 
-See [Check your node and validator status](/monitoring/checking-status.md) for a comprehensive status checklist.
+See [Check your node and validator status](/monitoring-alerts-metrics/check-node-and-validator-status.md) for a comprehensive status checklist.

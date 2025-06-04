@@ -10,7 +10,7 @@ Your execution node needs to **expose a new port** and then **use the JWT token*
 
 <p className="hidden-in-mergeprep-guide">Using the latest version of your execution client software, issue the following command to configure your execution node's JWT token and Engine API endpoint:</p>
 
-import QuickstartRunExecutionNodeJWTPartial from '@site/docs/install/partials/_quickstart-run-execution-node.md';
+import QuickstartRunExecutionNodeJWTPartial from '@site/docs/install-prysm/partials/_quickstart-run-execution-node.md';
 
 <QuickstartRunExecutionNodeJWTPartial />
 
@@ -18,6 +18,6 @@ import QuickstartRunExecutionNodeJWTPartial from '@site/docs/install/partials/_q
 
 Next, we'll configure your beacon node to consume your JWT token so it can form an authenticated HTTP connection with your execution node.
 
-import QuickstartRunBeaconNodePartial from '@site/docs/install/partials/_quickstart-run-beacon-node.md';
+import QuickstartRunBeaconNodePartial from '@site/docs/install-prysm/partials/_quickstart-run-beacon-node.md';
 
 <QuickstartRunBeaconNodePartial />

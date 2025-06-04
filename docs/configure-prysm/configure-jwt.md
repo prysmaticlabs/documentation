@@ -10,7 +10,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 :::info HTTP-JWT only
 
-This guidance is relevant only if your beacon node is connecting to your execution node over HTTP. If you're using IPC, you can ignore this. If you want to learn how to use IPC, see our [Quickstart](/install/install-with-script.md).
+This guidance is relevant only if your beacon node is connecting to your execution node over HTTP. If you're using IPC, you can ignore this. If you want to learn how to use IPC, see our [Quickstart](/install-prysm/install-with-script.md).
 
 :::
 

@@ -34,7 +34,7 @@ Refer to the [Use `prysmctl`](prysmctl.md) for `prysmctl` download and installat
 
 ## Client stats flags
 
-Prysm's client stats service is an optional utility that reports process metrics to third-parties such as block explorers. Refer to our [client stats documentation](/prysm-usage/client-stats) for more information.
+Prysm's client stats service is an optional utility that reports process metrics to third-parties such as block explorers. Refer to our [client stats documentation](/monitoring-alerts-metrics/collect-metrics-with-client-stats.md) for more information.
 
 <FetchCLIHelp prysmComponent={"client-stats"}/>
 
@@ -80,6 +80,6 @@ or for a validator like so:
 .\prysm.bat validator --config-file=c:\path\to\file.yaml
 ```
 
-It is possible to provide additional flags alongside the `.yaml` file, though if conflicting flags are provided, the flag defined in the`.yaml` file will take priority. For example, if the flag `--datadir=/data2` is specified and `datadir: "/data1"` is in the `.yaml` file, Prysm would prioritise writing to `/data1`.
+It is possible to provide additional flags alongside the `.yaml` file, though if conflicting flags are provided, the flag defined in the`.yaml` file will take priority. For example, if the flag `--datadir=/data2` is specified and `datadir: "/data1"` is in the `.yaml` file, Prysm would prioritize writing to `/data1`.
 
 

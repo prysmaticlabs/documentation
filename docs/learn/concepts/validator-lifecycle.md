@@ -8,7 +8,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <HeaderBadgesWidget />
 
-This section discusses the lifecycle of a [validator](validator-clients.md) as defined by [Ethereum consensus specifications](https://github.com/ethereum/consensus-specs).
+This section discusses the lifecycle of a [validator](/learn/dev-concepts/prysm-validator-client.md) as defined by [Ethereum consensus specifications](https://github.com/ethereum/consensus-specs).
 
 ![Validator Lifecycle Diagram](/images/validator-lifecycle-electra.png)
 
@@ -20,10 +20,10 @@ After the Deneb hardfork
 :::
 
 ## `UNKNOWN` State
-Prysm's [validator](validator-clients.md) client will report that the state of a particular validator is `UNKNOWN` when it loads validator keys that have not yet submitted a valid deposit to the [Ethereum proof-of-work chain](/terminology#eth1) [validator deposit contract](/how-prysm-works/validator-deposit-contract).
+Prysm's [validator](/learn/dev-concepts/prysm-validator-client.md) client will report that the state of a particular validator is `UNKNOWN` when it loads validator keys that have not yet submitted a valid deposit to the [Ethereum proof-of-work chain](/terminology#eth1) [validator deposit contract](/learn/dev-concepts/validator-deposit-contract.md).
 
 ## `DEPOSITED` State
-Once a valid transaction has been submitted to the [validator deposit contract](/how-prysm-works/validator-deposit-contract), your [beacon node](/how-prysm-works/beacon-node) will detect the presence of the transaction on the ETH1 chain and your [validator](validator-clients.md) client will now report being in the `DEPOSITED` state. The validator will get added to the beacon state within the next finalization period as a pending deposit. Learn about execution requestions [here](/concepts/execution-requests).
+Once a valid transaction has been submitted to the [validator deposit contract](/learn/dev-concepts/validator-deposit-contract.md), your [beacon node](/learn/dev-concepts/prysm-beacon-node.md) will detect the presence of the transaction on the ETH1 chain and your [validator](/learn/dev-concepts/prysm-validator-client.md) client will now report being in the `DEPOSITED` state. The validator will get added to the beacon state within the next finalization period as a pending deposit. Learn about execution requestions [here](/learn/concepts/execution-requests.md).
 
 ## `PENDING` State
 Before a deposit can appear in the Beacon Chain, it must pass through [process_pending_deposits](https://github.com/ethereum/consensus-specs/blob/dev/specs/electra/beacon-chain.md#new-process_pending_deposits). Once processed, the depositor—if new—receives a validator index and enters the activation queue. The usual follow-distance rule still withholds deposits during the brief transition window after the Electra hard fork. However, this becomes irrelevant after a few weeks as sufficient epochs get finalized.
@@ -34,7 +34,7 @@ Only a capped number of pending deposits get handled each epoch. Because the que
 Once the activation epoch arrives, the validator is activated and assigned responsibilities including [proposing](/terminology#propose) or [attesting](/terminology#attest) to blocks on the beacon chain. Validators receive either rewards or penalties to the initial deposit based upon their overall performance. If a validator's balance drops below 16 `ETH` (typically due to inactivity), it will be ejected. Ejections are treated the same as a voluntary exits.
 
 ## Withdrawals
-Validators that have been active and have a validator index (including validators that are slashed/exited) can initiate a [BLStoExecutionChange](https://github.com/ethereum/consensus-specs/blob/dev/specs/capella/beacon-chain.md#blstoexecutionchange) request that changes its `withdrawal_credentials` which begins the withdrawal process. Once the `withdrawal_credentials` are changed withdrawals will automatically be processed at the rate of 16 per block. Fully exited validators will also be fully withdrawn once withdrawals are initiated. Learn more in our [withdrawal guide](/wallet/withdraw-validator.md).
+Validators that have been active and have a validator index (including validators that are slashed/exited) can initiate a [BLStoExecutionChange](https://github.com/ethereum/consensus-specs/blob/dev/specs/capella/beacon-chain.md#blstoexecutionchange) request that changes its `withdrawal_credentials` which begins the withdrawal process. Once the `withdrawal_credentials` are changed withdrawals will automatically be processed at the rate of 16 per block. Fully exited validators will also be fully withdrawn once withdrawals are initiated. Learn more in our [withdrawal guide](/manage-validator/withdraw-validator.md).
 
 ## `EXITING` State 
 An `ACTIVE` validator may request to exit by submitting a signed [VoluntaryExit](https://github.com/ethereum/consensus-specs/blob/dev/specs/phase0/beacon-chain.md#voluntary-exits) operation to the Ethereum network. Assuming the validator has been in the active state for the `SHARD_COMMITTEE_PERIOD`or 256 epochs ~ 27 hours plus the look ahead 4~5 epochs(~31 minutes), the validator will be assigned an exit_epoch that is determined by the length of the exiting queue. The beacon chain can process the exits of 4 ~ 16 validators per finalized epoch, the difference in the number is determined by the number of total active validators on the chain.

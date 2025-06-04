@@ -174,13 +174,13 @@ removing the `--http-mev-relay` flag from the beacon node will disconnect the bu
 ### Advanced Validator Registration
 There are other ways to configure your validator registrations for more granular control on which validator keys should be registered to use the custom builder and which ones should use local execution.
 In these cases you would replace the `--suggested-fee-recipient` flag with  `--proposer-settings-file` flag or `--proposer-settings-url` flag.
-- if configuring with the `--proposer-settings-file` flag and provide it with a suitable JSON or YAML file. This file should include the necessary configuration for the builder. For detailed guidance and an example of this configuration, refer to the [MEV Builder and Gas Limit configuration guide](/execution-node/fee-recipient.md#advanced-configure-mev-builder-and-gas-limit).
- - if configuring with the `--proposer-settings-url` flag provide a url that returns the JSON response with the suitable proposer-settings. A guide and example on this configuration can be found [here](/execution-node/fee-recipient.md#advanced-configure-mev-builder-and-gas-limit).
+- if configuring with the `--proposer-settings-file` flag and provide it with a suitable JSON or YAML file. This file should include the necessary configuration for the builder. For detailed guidance and an example of this configuration, refer to the [MEV Builder and Gas Limit configuration guide](/configure-prysm/configure-fee-recipient.md#advanced-configure-mev-builder-and-gas-limit).
+ - if configuring with the `--proposer-settings-url` flag provide a url that returns the JSON response with the suitable proposer-settings. A guide and example on this configuration can be found [here](/configure-prysm/configure-fee-recipient.md#advanced-configure-mev-builder-and-gas-limit).
  - if configuring with the `--proposer-settings-file` or `--proposer-settings-url` flag with no builder settings but providing the `--enable-builder` flag instead. Optionally, you can also add the `--suggested-gas-limit` to adjust the default gas limit for the builder, this only applies with `--enable-builder`.
  
 :::info
 
-Validators updated through the [Keymanager-API's](/how-prysm-works/keymanager-api.md) fee recipient APIs will take on the default `proposer-settings` provided.
+Validators updated through the [Keymanager-API's](/apis/keymanager-api.md) fee recipient APIs will take on the default `proposer-settings` provided.
 
 If the `--enable-builder` flag is used without providing `--suggested-fee-recipient`, `--proposer-settings-file`, or `--proposer-settings-url` it will override builder settings from the db if proposer settings are saved, or it will set default builder settings and only save to the db if fee-recipient settings are saved through the keymanager APIs.
 

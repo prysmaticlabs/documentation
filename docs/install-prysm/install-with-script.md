@@ -14,13 +14,13 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <div className='quickstart'>
 
-import QuickstartIntroPartial from '@site/docs/install/partials/_quickstart-intro.md';
+import QuickstartIntroPartial from '@site/docs/install-prysm/partials/_quickstart-intro.md';
 
 <QuickstartIntroPartial />
 
 ## Step 1: Review prerequisites and best practices
 
-import QuickstartPrereqsPartial from '@site/docs/install/partials/_quickstart-prereqs.md';
+import QuickstartPrereqsPartial from '@site/docs/install-prysm/partials/_quickstart-prereqs.md';
 
 <QuickstartPrereqsPartial />
 
@@ -28,7 +28,7 @@ import QuickstartPrereqsPartial from '@site/docs/install/partials/_quickstart-pr
 
 <div className='hide-tabs'>
 
-import QuickstartInstallPrysmPartial from '@site/docs/install/partials/_quickstart-install-prysm.md';
+import QuickstartInstallPrysmPartial from '@site/docs/install-prysm/partials/_quickstart-install-prysm.md';
 
 <QuickstartInstallPrysmPartial />
 
@@ -36,13 +36,13 @@ import QuickstartInstallPrysmPartial from '@site/docs/install/partials/_quicksta
 
 In this step, you'll install an execution-layer client that Prysm's beacon node will connect to.
 
-import QuickstartRunExecutionNodeJWTPartial from '@site/docs/install/partials/_quickstart-run-execution-node.md';
+import QuickstartRunExecutionNodeJWTPartial from '@site/docs/install-prysm/partials/_quickstart-run-execution-node.md';
 
 <QuickstartRunExecutionNodeJWTPartial />
 
 ## Step 4: Run a beacon node using Prysm
 
-import QuickstartRunBeaconNodePartial from '@site/docs/install/partials/_quickstart-run-beacon-node.md';
+import QuickstartRunBeaconNodePartial from '@site/docs/install-prysm/partials/_quickstart-run-beacon-node.md';
 
 <QuickstartRunBeaconNodePartial />
 
@@ -50,7 +50,7 @@ import QuickstartRunBeaconNodePartial from '@site/docs/install/partials/_quickst
 ## Step 5: Run a validator using Prysm
 
 
-import QuickstartRunValidatorPartial from '@site/docs/install/partials/_quickstart-run-validator.md';
+import QuickstartRunValidatorPartial from '@site/docs/install-prysm/partials/_quickstart-run-validator.md';
 
 <QuickstartRunValidatorPartial />
 
@@ -80,7 +80,7 @@ No.
 We recommend **closing** TCP port `8545` to the internet and keeping TCP and UDP ports `30303` **open** to support other execution nodes.
 
 #### Can you mix and match networks between execution layer and consensus layer?
-No. See [Nodes and networks](/concepts/nodes-networks.md) for more information.
+No. See [Nodes and networks](/learn/concepts/nodes-and-networks.md) for more information.
 
 #### Can I stake with less than 32 `ETH`?
 Yes! <a href='https://ethereum.org/en/staking/pools/'>Pooled staking</a> lets you stake with less than 32 `ETH`. 

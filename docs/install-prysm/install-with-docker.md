@@ -15,7 +15,7 @@ Prysm can be installed on Windows, GNU/Linux, and MacOS systems with Docker. We 
 
 :::tip Not familiar with Docker? Try our Quickstart
 
-This guidance is targeted at users who are already comfortable with Docker. See our [Quickstart](/install/install-with-script) for beginner-friendly installation instructions.
+This guidance is targeted at users who are already comfortable with Docker. See our [Quickstart](/install-prysm/install-with-script.md) for beginner-friendly installation instructions.
 
 :::
 
@@ -88,7 +88,7 @@ These commands will automatically install dependencies.
 
 ## Configure ports (optional)
 
-We recommend opening up ports `tcp/13000` and `udp/12000` on your router and firewall to improve peer-to-peer connectivity. Refer to your operating system and router documentation for port configuration instructions. With this complete, appending `--p2p-host-ip=$(curl -s ident.me)` to your beacon node startup command will configure Prysm to use your newly opened ports. Refer to [Configure ports and firewalls](/prysm-usage/p2p-host-ip.md) for more information.
+We recommend opening up ports `tcp/13000` and `udp/12000` on your router and firewall to improve peer-to-peer connectivity. Refer to your operating system and router documentation for port configuration instructions. With this complete, appending `--p2p-host-ip=$(curl -s ident.me)` to your beacon node startup command will configure Prysm to use your newly opened ports. Refer to [Configure ports and firewalls](/manage-connections/configure-ports-and-firewalls.md) for more information.
 
 <div className='hide-tabs'>
 
@@ -96,11 +96,11 @@ We recommend opening up ports `tcp/13000` and `udp/12000` on your router and fir
 
 :::info Knowledge Check
 
-**Not familiar with nodes, networks, and related terminology?** Consider reading [Nodes and networks](/concepts/nodes-networks.md) before proceeding. 
+**Not familiar with nodes, networks, and related terminology?** Consider reading [Nodes and networks](/learn/concepts/nodes-and-networks.md) before proceeding. 
 
 :::
 
-If you're not already running an execution node, refer to our [Quickstart](/install/install-with-script) for beginner-friendly execution node installation instructions.
+If you're not already running an execution node, refer to our [Quickstart](/install-prysm/install-with-script.md) for beginner-friendly execution node installation instructions.
 
 Next, use Docker to tell your beacon node to connect to your local execution node. Note that `<YOUR_ETH_EXECUTION_NODE_ENDPOINT>` is either an HTTP endpoint `http://host:port` or an IPC path such as `/path/to/geth.ipc`.
 
@@ -218,7 +218,7 @@ docker run -it -v %LOCALAPPDATA%\Eth2:/data -v \path\to\genesis.ssz:/genesis/gen
 
 **You plan to run a validator?**
 
-Consider using `--suggested-fee-recipient` on your beacon node. See [How to configure Fee Recipient](/execution-node/fee-recipient.md) for more information about this feature.
+Consider using `--suggested-fee-recipient` on your beacon node. See [How to configure Fee Recipient](/configure-prysm/configure-fee-recipient.md) for more information about this feature.
 
 :::
 
@@ -252,7 +252,7 @@ The Ethereum launchpad URL is `https://launchpad.ethereum.org` and the only, off
 
 :::
 
-Use the [Mainnet Launchpad](https://launchpad.ethereum.org/summary) to deposit your 32 ETH. If you want to participate in the **testnet**, use the [Hoodi](https://hoodi.launchpad.ethereum.org/) launchpad.
+Use the [Mainnet Launchpad](https://launchpad.ethereum.org/summary) to deposit your 32 `ETH`. If you want to participate in the **testnet**, use the [Hoodi](https://hoodi.launchpad.ethereum.org/) launchpad.
 
 Throughout the process, you'll be asked to generate new validator credentials using the [official Ethereum deposit command-line-tool](https://github.com/ethereum/eth2.0-deposit-cli). Make sure you use the `mainnet` option when generating keys with the deposit CLI. During the process, you will have generated a `validator_keys` folder under the `eth2.0-deposit-cli` directory. You can import all of your validator keys into Prysm from that folder in the next step.
 
@@ -292,7 +292,7 @@ docker run -it -v %LOCALAPPDATA%\eth2.0-deposit-cli\validator_keys:/keys -v %LOC
 
 ### Run validator
 
-Open a second terminal window. Issue the following command to start the validator by replacing `<YOUR_WALLET_ADDRESS>` by the address of a wallet you own. See [How to configure Fee Recipient](/execution-node/fee-recipient.md) for more information about this feature:
+Open a second terminal window. Issue the following command to start the validator by replacing `<YOUR_WALLET_ADDRESS>` by the address of a wallet you own. See [How to configure Fee Recipient](/configure-prysm/configure-fee-recipient.md) for more information about this feature:
 
 
 <Tabs
@@ -334,7 +334,7 @@ You’re now running a <strong>full Ethereum node</strong> and a <strong>validat
 
 :::
 
-It can a long time (from days to months) for your validator to become fully activated. To learn more about the validator activation process, see [Deposit Process](https://kb.beaconcha.in/ethereum-2.0-depositing). See [Check node and validator status](/monitoring/checking-status.md) for detailed status monitoring guidance.
+It can a long time (from days to months) for your validator to become fully activated. To learn more about the validator activation process, see [Deposit Process](https://kb.beaconcha.in/ethereum-2.0-depositing). See [Check node and validator status](/monitoring-alerts-metrics/check-node-and-validator-status.md) for detailed status monitoring guidance.
 
 You can leave your **execution client**, **beacon node**, and **validator client** terminal windows open and running. Once your validator is activated, it will automatically begin proposing and validating blocks.
 
@@ -391,4 +391,4 @@ docker run -it -v %LOCALAPPDATA%\Eth2:/data -p 4000:4000 -p 13000:13000 -p 12000
 :::info
 `http-host` and `http-port` have replaced `--grpc-gateway-host` and `--grpc-gateway-port` respectively.
 :::
-This tells your Docker container to to "listen" for connections from outside of your container, allowing you (and other services) to reach your RPC endpoint(s). See [Configure ports and firewalls](/prysm-usage/p2p-host-ip.md) for more information.
+This tells your Docker container to to "listen" for connections from outside of your container, allowing you (and other services) to reach your RPC endpoint(s). See [Configure ports and firewalls](/manage-connections/configure-ports-and-firewalls.md) for more information.

@@ -24,7 +24,7 @@ At a high level, we'll walk through the following flow:
 
 :::info Knowledge Check
 
-Not familiar with nodes, networks, and related terminology? Consider reading [Nodes and networks](/concepts/nodes-networks.md) before proceeding. 
+Not familiar with nodes, networks, and related terminology? Consider reading [Nodes and networks](/learn/concepts/nodes-and-networks.md) before proceeding. 
 
 :::
 

@@ -29,7 +29,7 @@ While the default setting is sufficient for regular beacon chain functionality, 
 
 ## Beacon chain API information  
 
-Full details of the Ethereum beacon API are available in the [Ethereum public API section](/how-prysm-works/ethereum-public-api.md). 
+Full details of the Ethereum beacon API are available in the [Ethereum public API section](/apis/ethereum-beacon-node-api.md). 
 
 ## Command line/Configuration file usage:
 

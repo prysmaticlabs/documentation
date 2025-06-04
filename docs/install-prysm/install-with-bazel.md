@@ -13,14 +13,14 @@ Prysm can be installed on GNU/Linux, MacOS, and Arm64 using our build tool, [Baz
 
 :::tip Not familiar with Bazel? Try our quickstart
 
-This guidance is targeted at users who are already comfortable with Bazel and staking. See our [Quickstart](/install/install-with-script) for beginner-friendly installation instructions.
+This guidance is targeted at users who are already comfortable with Bazel and staking. See our [Quickstart](/install-prysm/install-with-script.md) for beginner-friendly installation instructions.
 
 :::
 
 
 ## Why Bazel?
 
-Instead of using the `Go` tool to build Prysm, our team relies on the [Bazel](https://bazel.build) build system used by major companies to manage monorepositories. Bazel provides reproducible builds and a sandboxed environment that ensures everyone building Prysm has the same experience and can build our entire project from a single command. For more detailed rationale on why Bazel, how it works in Prysm, and all important information about how exactly building from source works, read our rationale [here](/reading/bazel).
+Instead of using the `Go` tool to build Prysm, our team relies on the [Bazel](https://bazel.build) build system used by major companies to manage monorepositories. Bazel provides reproducible builds and a sandboxed environment that ensures everyone building Prysm has the same experience and can build our entire project from a single command. For more detailed rationale on why Bazel, how it works in Prysm, and all important information about how exactly building from source works, read our rationale [here](/learn/tools/bazel.md).
 
 
 <div className='bazel-guide'>
@@ -103,11 +103,11 @@ Bazel will automatically pull and install any dependencies as well, including Go
 
 :::info Knowledge Check
 
-**Not familiar with nodes, networks, and related terminology?** Consider reading [Nodes and networks](/concepts/nodes-networks.md) before proceeding. 
+**Not familiar with nodes, networks, and related terminology?** Consider reading [Nodes and networks](/learn/concepts/nodes-and-networks.md) before proceeding. 
 
 :::
 
-To run a beacon node, you'll need access to an execution node. See [Configure an execution node](/execution-node/configuring-for-prysm) for detailed instructions if you don't already have an execution node configured.
+To run a beacon node, you'll need access to an execution node. See [Configure an execution node](/configure-prysm/configure-an-execution-node.md) for detailed instructions if you don't already have an execution node configured.
 
 
 
@@ -161,7 +161,7 @@ bazel run //cmd/beacon-chain --config=release -- --execution-endpoint=<YOUR_ETH_
 
 ## Run a validator
 
-Ensure that your beacon node is fully synced before proceeding. See [Check node and validator status](/monitoring/checking-status.md) for detailed status-checking instructions.
+Ensure that your beacon node is fully synced before proceeding. See [Check node and validator status](/monitoring-alerts-metrics/check-node-and-validator-status.md) for detailed status-checking instructions.
 
 Navigate to the [Mainnet Launchpad](https://launchpad.ethereum.org/summary) and follow the instructions. If you want to participate in the **testnet**, you can navigate to the [Hoodi](https://hoodi.launchpad.ethereum.org/).
 
@@ -204,7 +204,7 @@ We do not write our own Dockerfiles, as Bazel provides us a more sandboxed, simp
 
 ### Dependencies needed
 
-* All specified dependencies for building with Bazel [here](/install/install-with-bazel#dependencies)
+* All specified dependencies for building with Bazel [here](/install-prysm/install-with-bazel.md#dependencies)
 * Python installed and available in your computer
 
 ### Build process

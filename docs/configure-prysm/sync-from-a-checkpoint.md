@@ -77,7 +77,7 @@ Issue the following commands to export the `BeaconState` and `SignedBeaconBlock`
 
 :::info
 
-Installing `prysmctl` via `prysm.sh`, or downloading it from prysm's github release page, will be possible in an upcoming stable release.
+Installing `prysmctl` via `prysm.sh`, or downloading it from Prysm's GitHub release page, will be possible in an upcoming stable release.
 
 :::
 

@@ -35,13 +35,13 @@ Users will need to migrate to using [grafana dashboards](./monitoring/grafana-da
 Prysm wallets (derived wallets) can be recovered with the associated mnemonic using the [staking-deposit-cli](https://github.com/ethereum/staking-deposit-cli). We recommend you do this recovery in an offline environment.
 
 #### How do I set a fee recipient without the Web UI
-Community provided UI solutions will continue to provide a graphical interface to setting your fee recipient via the client standard [keymanager APIs](https://ethereum.github.io/keymanager-APIs/). Alternatively, the Prysm team can provide a way to set the fee recipient via the [`prysmctl` tool](./prysmctl.md).
+Community provided UI solutions will continue to provide a graphical interface to setting your fee recipient via the client standard [keymanager APIs](https://ethereum.github.io/keymanager-APIs/). Alternatively, the Prysm team can provide a way to set the fee recipient via the [`prysmctl` tool](/configure-prysm/prysmctl.md).
 
 #### How do I exit my validator without the Web UI
-A CLI command through the `prysmctl` tool or validator client can be used to exit the validator. Learn more about that [here](/wallet/exiting-a-validator.md).
+A CLI command through the `prysmctl` tool or validator client can be used to exit the validator. Learn more about that [here](/manage-validator/exit-a-validator.md).
 
 #### How do I export slashing protection without the Web UI
-A CLI command through the validator client can provide slashing protection exports, Community provided UI solutions can also provide this information via the client standard [keymanager APIs](https://ethereum.github.io/keymanager-APIs/) when removing a local validator. Learn more about it [here](/wallet/slashing-protection.md).
+A CLI command through the validator client can provide slashing protection exports, Community provided UI solutions can also provide this information via the client standard [keymanager APIs](https://ethereum.github.io/keymanager-APIs/) when removing a local validator. Learn more about it [here](/backup-and-migration/slashing-protection.md).
 
 :::
 
@@ -56,7 +56,7 @@ The website at this time does not provide additional metrics over those that you
 
 To begin, follow the instructions to run Prysm in mainnet or testnet:
 
-- [Joining Mainnet](/install/install-with-script)
+- [Joining Mainnet](/install-prysm/install-with-script.md)
 
 To launch the web interface, you will need to restart your validator client from step 1 with the `--web` flag. This will allow you to access the web interface by default on `http://localhost:7500` if running on the same computer as your validator client and using `prysm.sh`, `prysm.bat` or building from source.
 

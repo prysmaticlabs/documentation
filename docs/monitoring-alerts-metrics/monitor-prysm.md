@@ -53,7 +53,7 @@ If you notice anything concerning or have any questions, feel free to get in tou
 
 ## Expected behavior: Validator client
 
-Validators are generally in one of the following states: `Unknown`, `Deposited`, `Pending`, `Active`, `Exiting`, `Slashing`, or `Exited`. To learn more about these states, visit [Validator Lifecycle](/how-prysm-works/validator-lifecycle.md).
+Validators are generally in one of the following states: `Unknown`, `Deposited`, `Pending`, `Active`, `Exiting`, `Slashing`, or `Exited`. To learn more about these states, visit [Validator Lifecycle](/learn/concepts/validator-lifecycle.md).
 
 When your validator is in `Deposited` state, it will produce `INFO` logs that look like this:
 

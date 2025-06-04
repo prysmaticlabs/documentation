@@ -24,7 +24,7 @@ To protect itself from accidentally being slashed due to some software bug or ot
 
 ## How to use slashing protection
 
-Basic slashing protection is **enabled** by default using a database that keeps track of objects your validator has previously signed in order to prevent it from signing the same message again causing a violation and getting slashed. If you want to use a more advanced, *remote* slashing protection, see our section on how to use **slasher** [here](/prysm-usage/slasher).
+Basic slashing protection is **enabled** by default using a database that keeps track of objects your validator has previously signed in order to prevent it from signing the same message again causing a violation and getting slashed. If you want to use a more advanced, *remote* slashing protection, see our section on how to use **slasher** [here](/configure-prysm/run-a-slasher.md).
 
 
 ## Slashing protection history standard format

@@ -25,7 +25,7 @@ The Prysm team is a small but mighty team of engineers who are working hard to s
 :::
 
 
-import StatusChecklistPartial from '@site/docs/monitoring/partials/_status-checklist-partial.md';
+import StatusChecklistPartial from '@site/docs/monitoring-alerts-metrics/partials/_status-checklist-partial.md';
 
 <StatusChecklistPartial />
 

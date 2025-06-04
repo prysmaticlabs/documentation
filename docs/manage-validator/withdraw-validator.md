@@ -23,7 +23,7 @@ In this how-to, you'll learn how to perform both types of withdrawals. Familiari
 ## Prerequisites
 
 1. **Your validator mnemonic**: You'll use this to authorize your validator withdrawal request(s). <!-- accessible accuracy > technical precision whenever technical precision isn't needed -->
-2. **Access to a beacon node**: You'll need to connect your validator to a beacon node in order to submit your withdrawal request. Visit our [Quickstart](/install/install-with-script.md) for instructions if you need them.
+2. **Access to a beacon node**: You'll need to connect your validator to a beacon node in order to submit your withdrawal request. Visit our [Quickstart](/install-prysm/install-with-script.md) for instructions if you need them.
 3. **Stable version of the `staking-deposit-cli` installed**: The [staking-deposit-cli](https://github.com/ethereum/staking-deposit-cli) is a command-line tool provided by the Ethereum research team. We'll use this to authorize your withdrawal. We recommend building this from source or otherwise verifying the binaries as a security best practice.
 4. **Familiarity with [The Ethereum Foundation Withdrawals FAQ](https://notes.ethereum.org/@launchpad/withdrawals-faq)**: A client-agnostic overview of important information regarding Ethereum validator withdrawals.
 5. **Time to focus:** This is a time-consuming procedure, making a mistake can be expensive. Be vigilant against scammers; never share your mnemonic; take your time; ping us [on Discord](https://discord.gg/prysm) if you have any questions.
@@ -242,7 +242,7 @@ Move the generated `bls_to_execution_changes-*.json` file to an online environme
 
 ### Step 5: Submit your signed `blstoexecutionchange` message(s) to the Ethereum network using `prysmctl`
 
-In this step, you will submit your signed requests to the Ethereum network using a tool provided by the Prysm project called `prysmctl`. Learn how to download and install the `prysmctl` tool from our [guide](/prysm-usage/prysmctl.md) or check commands on [Command-line options](/prysm-usage/parameters.md). You’ll need access to a synced beacon node to proceed with this step (it does not need to be a Prysm beacon node).
+In this step, you will submit your signed requests to the Ethereum network using a tool provided by the Prysm project called `prysmctl`. Learn how to download and install the `prysmctl` tool from our [guide](/configure-prysm/prysmctl.md) or check commands on [Command-line options](/configure-prysm/command-line-options.md). You’ll need access to a synced beacon node to proceed with this step (it does not need to be a Prysm beacon node).
 
 Once `prysmctl` is downloaded, you can use the `prysmctl validator withdraw` command, which will ask for terms of service acceptance and confirmation of command by providing additional flags, and also a path to the bls_to_execution_changes file from the previous step.
 
@@ -339,7 +339,7 @@ A maximum to 16 validators can have their balances withdrawn per block so delay 
 
 To fully withdraw a validator and its earnings, your validator needs to also be exited in addition to having its [withdrawal credentials](https://github.com/ethereum/consensus-specs/blob/master/specs/phase0/validator.md#withdrawal-credentials) changed.
 
-Please follow our [exiting-a-validator how-to](exiting-a-validator.md).
+Please follow our [exiting-a-validator how-to](/manage-validator/exit-a-validator.md).
 
 Refer to the above partial withdrawal guidance to change your validator's withdrawal credentials.
 
@@ -389,7 +389,7 @@ Partial withdrawals only require an updated `withdrawal_credentials` field and w
 Once you submit a BLS to Exec request to tell Ethereum the address you want to use in order to receive your withdrawn funds, it goes through several processing pipelines that might take a bit longer than expected. If your beacon node has also received many other requests for BLS to exec changes, your initial request could be dropped and you may need to try again, so do not panic if you have submitted a request and nothing has happened yet.
 
 #### I set my `withdrawal_credentials` but I am not fully withdrawn. How do I fully withdraw?
-Full validator withdrawals require your validator to exit first, as exits do not happen automatically. You will need to submit a voluntary exit by following our documentation [here](exiting-a-validator.md). Once your validator exits, it will no longer need to perform its responsibilities after some time (there can be a delay if the validator is part of a sync committee or recently slashed) . The ordering of requests for setting withdrawal credentials or exiting does not matter, once a validator has both its withdrawal credentials updated as well as in an exited state funds will automatically be added to the chosen execution address when processed. **note:** this process will take some time as withdrawals, full or partial, are processed at a rate of at most 16 validators per block.
+Full validator withdrawals require your validator to exit first, as exits do not happen automatically. You will need to submit a voluntary exit by following our documentation [here](/manage-validator/exit-a-validator.md). Once your validator exits, it will no longer need to perform its responsibilities after some time (there can be a delay if the validator is part of a sync committee or recently slashed) . The ordering of requests for setting withdrawal credentials or exiting does not matter, once a validator has both its withdrawal credentials updated as well as in an exited state funds will automatically be added to the chosen execution address when processed. **note:** this process will take some time as withdrawals, full or partial, are processed at a rate of at most 16 validators per block.
 
 #### My keys were compromised, can I still withdraw?
 You are still able to send the message as long as you have access to the mnemonic and can produce the signed `blstoexecutionchange` message to submit. Depending on where the keys were compromised there may be different protection programs to apply for to "frontrun" the compromiser. Please seek out the EthStaker community on [Reddit](https://www.reddit.com/r/ethstaker/) or [Discord](https://discord.gg/ethstaker) for more details if this applies to you.
