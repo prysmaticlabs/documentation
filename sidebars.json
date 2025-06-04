@@ -25,10 +25,6 @@
       "id": "monitoring-alerts-metrics/checking-status"
     },
     {
-      "type": "doc",
-      "id": "troubleshooting/issues-errors"
-    },
-    {
       "type": "category",
       "collapsed": true,
       "collapsible": true,
@@ -398,24 +394,16 @@
       ]
     },
     {
-      "type": "category",
-      "collapsed": true,
-      "collapsible": true,
-      "label": "Troubleshooting",
-      "items": [
-        {
-          "type": "doc",
-          "id": "troubleshooting/issues-errors"
-        }
-      ]
-    },
-    {
       "type": "doc",
       "id": "faq"
     },
     {
       "type": "doc",
       "id": "terminology"
+    },
+    {
+      "type": "doc",
+      "id": "troubleshooting/issues-errors"
     }
   ]
 }
