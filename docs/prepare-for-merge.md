@@ -111,7 +111,7 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
                 <div className='input-container'><input id="cl-7" type='checkbox'/><span className='done'></span></div>
                 <div className='guidance-container'>
                     <label htmlFor="cl-7">Configure JWT</label>
-                    <p>If you're not using IPC to connect your beacon node and execution node, ensure that both your execution node and beacon node are configured to use JWT authentication. These instructions are included below, and are also available here: <a href='/configure-prysm/configure-jwt'>Configure JWT</a></p>
+                    <p>If you're not using IPC to connect your beacon node and execution node, ensure that both your execution node and beacon node are configured to use JWT authentication. These instructions are included below, and are also available here: [Configure JWT](/configure-prysm/configure-jwt.md)</p>
                 </div>
             </div>
         </TabItem>
@@ -121,21 +121,21 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
         <div className='input-container'><input id="cl-8" type='checkbox'/><span className='done'></span></div>
         <div className='guidance-container'>
             <label htmlFor="cl-8">Update your firewall</label>
-            <p>If you're not using IPC to connect your beacon node and execution node, your beacon node will need to connect to its execution node on port <code>8551</code>. Previously, port <code>8545</code> was used. If your beacon node and execution node are on different host machines, ensure that your firewall rules are updated accordingly, and refer to <a href='/manage-connections/configure-ports-and-firewalls'>Configure ports and firewalls for improved network connectivity</a> for general connectivity improvement tips.</p>
+            <p>If you're not using IPC to connect your beacon node and execution node, your beacon node will need to connect to its execution node on port <code>8551</code>. Previously, port <code>8545</code> was used. If your beacon node and execution node are on different host machines, ensure that your firewall rules are updated accordingly, and refer to [Configure ports and firewalls for improved network connectivity](/manage-connections/configure-ports-and-firewalls.md) for general connectivity improvement tips.</p>
         </div>
     </div>
     <div className='task'>
         <div className='input-container'><input id="cl-9" type='checkbox'/><span className='done'></span></div>
         <div className='guidance-container'>
             <label htmlFor="cl-9">Configure a fee recipient address</label>
-            <p>If you're running a validator, configuring a fee recipient address will allow you to earn what were previously miners' transaction fee tips. Instructions are provided below, and also here: <a href='/configure-prysm/configure-fee-recipient'>Configure a Fee Recipient address</a>.</p>
+            <p>If you're running a validator, configuring a fee recipient address will allow you to earn what were previously miners' transaction fee tips. Instructions are provided below, and also here: [Configure a Fee Recipient address](/configure-prysm/configure-fee-recipient.md).</p>
         </div>
     </div>
     <div className='task'>
         <div className='input-container'><input id="cl-expected" type='checkbox'/><span className='done'></span></div>
         <div className='guidance-container'>
             <label htmlFor="cl-expected">Ensure that Prysm is running as expected</label>
-            <p>See <a href='/monitoring-alerts-metrics/check-node-and-validator-status'>Check node and validator status</a> to learn how to check the status of your execution node, beacon node, and validator node.</p>
+            <p>See [Check node and validator status](/monitoring-alerts-metrics/check-node-and-validator-status.md) to learn how to check the status of your execution node, beacon node, and validator node.</p>
         </div>
     </div>
 </div>

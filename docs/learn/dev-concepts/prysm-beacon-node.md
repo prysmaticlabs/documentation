@@ -8,7 +8,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <HeaderBadgesWidget />
 
-The beacon-chain node shipped with Prysm is the keystone component of the Ethereum proof-of-stake protocol. It is responsible for running a full [Proof-of-Stake](/terminology#proof-of-stake-pos) blockchain, known as a beacon chain, which uses distributed consensus to agree on blocks both [proposed](/terminology#propose) and [attested](/terminology#attest) on by [validators](/terminology#validator) in the network. Beacon nodes communicate their processed blocks to their peers via a P2P (peer-to-peer) network, which also manages the lifecycle process of active [validator clients](/how-prysm-works/prysm-validator-client).
+The beacon-chain node shipped with Prysm is the keystone component of the Ethereum proof-of-stake protocol. It is responsible for running a full [Proof-of-Stake](/terminology#proof-of-stake-pos) blockchain, known as a beacon chain, which uses distributed consensus to agree on blocks both [proposed](/terminology#propose) and [attested](/terminology#attest) on by [validators](/terminology#validator) in the network. Beacon nodes communicate their processed blocks to their peers via a P2P (peer-to-peer) network, which also manages the lifecycle process of active [validator clients](/learn/dev-concepts/prysm-validator-client.md).
 
 ![Beacon node](/images/prysm-beacon-chain.png)
 

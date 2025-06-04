@@ -121,7 +121,7 @@ Upgrading Prysm is done differently depending on your operating system and insta
 Upgrading Prysm is done differently depending on your operating system and installation method. Please note that downgrading may not be as easy as upgrading as some versions may not be backward compatible and you will need to perform extra steps. For example, migrating down from <PrysmVersion minorOverride="1"/> to  <PrysmVersion  minorOverride="0"/> 
 has breaking changes that require you to also rollback your database. Downgrading major versions will not be possible.
 
-We prepared comprehensive instructions here in our docs portal on [upgrading and downgrading Prysm](/configure-prysm/stay-up-to-date).
+We prepared comprehensive instructions here in our docs portal on [upgrading and downgrading Prysm](/configure-prysm/stay-up-to-date.md).
 
 #### How can I improve my attestation effectiveness?
 
