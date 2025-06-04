@@ -223,7 +223,7 @@ Proposing a block is a factor of random chance depending on the number of active
 
 #### Can I get back my ETH? How can I withdraw my validator gains?
 
-Yes, as of the capella hardfork partial and full withdrawals of validators is enabled. Please use our [guide to withdraw your validator](./wallet/withdraw-validator.md)
+Yes, as of the capella hardfork partial and full withdrawals of validators is enabled. Please use our [guide to withdraw your validator](/manage-validator/withdraw-validator.md)
 
 #### Where can I read more about the incentive model in Ethereum proof-of-stake?
 

@@ -29,7 +29,7 @@ The web UI and its associated API endpoints (aside from the keymanager APIs) wil
 You may see logs that mention that an endpoint is marked for deprecation and should no longer be used in the future. Our team will continue to provide support as users transition to alternative solutions.
 
 #### Where can I view my validator metrics such as attestations without the Web UI
-Users will need to migrate to using [grafana dashboards](./monitoring/grafana-dashboard.md) or our [individual validator monitoring guide](./individual-validator-monitoring.md) as well as look to online block explorers. Please let us know if any of these do not cover your usecase and provide any feedback on how we can improve our monitoring tools. 
+Users will need to migrate to using [grafana dashboards](/monitoring-alerts-metrics/grafana-dashboard.md) or our [individual validator monitoring guide](/monitoring-alerts-metrics/monitor-validators-by-index.md) as well as look to online block explorers. Please let us know if any of these do not cover your usecase and provide any feedback on how we can improve our monitoring tools. 
 
 #### How do I recover a prysm wallet from a mnemonic without the Web UI?
 Prysm wallets (derived wallets) can be recovered with the associated mnemonic using the [staking-deposit-cli](https://github.com/ethereum/staking-deposit-cli). We recommend you do this recovery in an offline environment.

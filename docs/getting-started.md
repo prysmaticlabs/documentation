@@ -10,7 +10,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <HeaderBadgesWidget />
 
-[Prysm](https://github.com/OffchainLabs/prysm) is an [Ethereum](https://ethereum.org/en/developers/docs/intro-to-ethereum/) [proof-of-stake](https://ethereum.org/en/developers/docs/consensus-mechanisms/pos/) client written in [Go](https://golang.org). You can use Prysm to participate in Ethereum's [decentralized economy](https://ethereum.org/en/developers/docs/web2-vs-web3/) by [running a node](./install/install-with-script.md) and, if you have [32 `ETH` to stake](https://ethereum.org/en/staking/), a [validator client](/install-prysm/install-with-script.md#step-5-run-a-validator-using-prysm). If you're new to Ethereum, you may enjoy our beginner-friendly [Nodes and networks](/learn/concepts/nodes-and-networks.md) explainer.
+[Prysm](https://github.com/OffchainLabs/prysm) is an [Ethereum](https://ethereum.org/en/developers/docs/intro-to-ethereum/) [proof-of-stake](https://ethereum.org/en/developers/docs/consensus-mechanisms/pos/) client written in [Go](https://golang.org). You can use Prysm to participate in Ethereum's [decentralized economy](https://ethereum.org/en/developers/docs/web2-vs-web3/) by [running a node](/install-prysm/install-with-script.md) and, if you have [32 `ETH` to stake](https://ethereum.org/en/staking/), a [validator client](/install-prysm/install-with-script.md#step-5-run-a-validator-using-prysm). If you're new to Ethereum, you may enjoy our beginner-friendly [Nodes and networks](/learn/concepts/nodes-and-networks.md) explainer.
 
 :::info
 
@@ -74,7 +74,7 @@ Review frequently asked questions and answers.
 
 
 ## Advanced installation guides
-This section contains alternatives to the script-based installation guidance provided within our [Quickstart](/install/install-with-script.md)
+This section contains alternatives to the script-based installation guidance provided within our [Quickstart](/install-prysm/install-with-script.md)
 
 ---
 
@@ -207,7 +207,7 @@ This subsection contains how-tos that help you configure monitoring and alerts f
 
 ---
 
-#### [Monitor Prysm for expected behavior](/monitoring-alerts-metrics/monitoring-prysm.md)
+#### [Monitor Prysm for expected behavior](/monitoring-alerts-metrics/monitor-prysm.md)
 Learn how to assess the health of your Prysm Beacon node and/or validator by analyzing output logs.
 
 ---

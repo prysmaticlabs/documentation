@@ -49,7 +49,7 @@
     { "source": "/prysm/docs/install/install-with-script/", "destination": "/prysm/docs/install-prysm/install-with-script/", "permanent": true },
     { "source": "/prysm/docs/licenses/prysm", "destination": "/prysm/docs/misc/prysm-license/", "permanent": true },
     { "source": "/prysm/docs/monitoring/checking-status/", "destination": "/prysm/docs/monitoring-alerts-metrics/check-node-and-validator-status/", "permanent": true },
-    { "source": "/prysm/docs/monitoring/is-everything-fine/", "destination": "/prysm/docs/monitoring-alerts-metrics/monitoring-prysm/", "permanent": true },
+    { "source": "/prysm/docs/monitoring/is-everything-fine/", "destination": "/prysm/docs/monitoring-alerts-metrics/monitor-prysm/", "permanent": true },
     { "source": "/prysm/docs/prysm-usage/monitoring/grafana-dashboard/", "destination": "/prysm/docs/monitoring-alerts-metrics/grafana-dashboard/", "permanent": true },
     { "source": "/prysm/docs/prysm-usage/checkpoint-sync/", "destination": "/prysm/docs/configure-prysm/sync-from-a-checkpoint/", "permanent": true },
     { "source": "/prysm/docs/prysm-usage/client-stats/", "destination": "/prysm/docs/monitoring-alerts-metrics/collect-metrics-with-client-stats/", "permanent": true },

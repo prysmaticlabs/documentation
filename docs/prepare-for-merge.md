@@ -155,7 +155,7 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
 
 ## Post-Merge system requirements
 
-import QuickstartPrereqsPartial from '@site/docs/install/partials/_quickstart-prereqs.md';
+import QuickstartPrereqsPartial from '@site/docs/install-prysm/partials/_quickstart-prereqs.md';
 
 <QuickstartPrereqsPartial />
 
