@@ -38,7 +38,7 @@ module.exports = {
                 label: prysmVersion,
             },
             {
-                to: '/prysm/docs/install/install-with-script',
+                to: '/prysm/docs/install-prysm/install-with-script',
                 label: 'Quick Install',
                 position: 'right',
             },

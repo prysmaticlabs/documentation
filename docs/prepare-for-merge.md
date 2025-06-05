@@ -14,7 +14,7 @@ import { PrysmVersion } from '@site/src/components/version.js';
 <HeaderBadgesWidget commaDelimitedContributors="Raul,James" />
 
 :::caution DEPRECATION NOTICE: Ethereum is post merge, use our quickstart guide.
-   The contents of this document was to help validators using **pre-Merge configuration** to migrate post merge. This is no longer required as Etheruem is already post merge. see our [Quickstart](./install/install-with-script.md) going forward.
+   The contents of this document was to help validators using **pre-Merge configuration** to migrate post merge. This is no longer required as Etheruem is already post merge. see our [Quickstart](/install-prysm/install-with-script.md) going forward.
 :::
 
 ## Select a configuration
@@ -111,7 +111,7 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
                 <div className='input-container'><input id="cl-7" type='checkbox'/><span className='done'></span></div>
                 <div className='guidance-container'>
                     <label htmlFor="cl-7">Configure JWT</label>
-                    <p>If you're not using IPC to connect your beacon node and execution node, ensure that both your execution node and beacon node are configured to use JWT authentication. These instructions are included below, and are also available here: <a href='/execution-node/authentication'>Configure JWT</a></p>
+                    <p>If you're not using IPC to connect your beacon node and execution node, ensure that both your execution node and beacon node are configured to use JWT authentication. These instructions are included below, and are also available here: [Configure JWT](/configure-prysm/configure-jwt.md)</p>
                 </div>
             </div>
         </TabItem>
@@ -121,21 +121,21 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
         <div className='input-container'><input id="cl-8" type='checkbox'/><span className='done'></span></div>
         <div className='guidance-container'>
             <label htmlFor="cl-8">Update your firewall</label>
-            <p>If you're not using IPC to connect your beacon node and execution node, your beacon node will need to connect to its execution node on port <code>8551</code>. Previously, port <code>8545</code> was used. If your beacon node and execution node are on different host machines, ensure that your firewall rules are updated accordingly, and refer to <a href='/prysm-usage/p2p-host-ip'>Configure ports and firewalls for improved network connectivity</a> for general connectivity improvement tips.</p>
+            <p>If you're not using IPC to connect your beacon node and execution node, your beacon node will need to connect to its execution node on port <code>8551</code>. Previously, port <code>8545</code> was used. If your beacon node and execution node are on different host machines, ensure that your firewall rules are updated accordingly, and refer to [Configure ports and firewalls for improved network connectivity](/manage-connections/configure-ports-and-firewalls.md) for general connectivity improvement tips.</p>
         </div>
     </div>
     <div className='task'>
         <div className='input-container'><input id="cl-9" type='checkbox'/><span className='done'></span></div>
         <div className='guidance-container'>
             <label htmlFor="cl-9">Configure a fee recipient address</label>
-            <p>If you're running a validator, configuring a fee recipient address will allow you to earn what were previously miners' transaction fee tips. Instructions are provided below, and also here: <a href='/execution-node/fee-recipient'>Configure a Fee Recipient address</a>.</p>
+            <p>If you're running a validator, configuring a fee recipient address will allow you to earn what were previously miners' transaction fee tips. Instructions are provided below, and also here: [Configure a Fee Recipient address](/configure-prysm/configure-fee-recipient.md).</p>
         </div>
     </div>
     <div className='task'>
         <div className='input-container'><input id="cl-expected" type='checkbox'/><span className='done'></span></div>
         <div className='guidance-container'>
             <label htmlFor="cl-expected">Ensure that Prysm is running as expected</label>
-            <p>See <a href='/monitoring/checking-status'>Check node and validator status</a> to learn how to check the status of your execution node, beacon node, and validator node.</p>
+            <p>See [Check node and validator status](/monitoring-alerts-metrics/check-node-and-validator-status.md) to learn how to check the status of your execution node, beacon node, and validator node.</p>
         </div>
     </div>
 </div>
@@ -155,7 +155,7 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
 
 ## Post-Merge system requirements
 
-import QuickstartPrereqsPartial from '@site/docs/install/partials/_quickstart-prereqs.md';
+import QuickstartPrereqsPartial from '@site/docs/install-prysm/partials/_quickstart-prereqs.md';
 
 <QuickstartPrereqsPartial />
 
@@ -183,7 +183,7 @@ import FullSyncWarningPartial from '@site/docs/partials/_full-sync-warning-parti
 
 <FullSyncWarningPartial />
 
-Other than ensuring that you're using the [latest stable Prysm release](https://github.com/OffchainLabs/prysm/releases), validator client configuration doesn't need to be updated for The Merge. A fee recipient address can optionally be configured on your validator node if you want redundancy or multiple fee recipient addresses. See [Configure a Fee Recipient address](/execution-node/fee-recipient.md) to learn more.
+Other than ensuring that you're using the [latest stable Prysm release](https://github.com/OffchainLabs/prysm/releases), validator client configuration doesn't need to be updated for The Merge. A fee recipient address can optionally be configured on your validator node if you want redundancy or multiple fee recipient addresses. See [Configure a Fee Recipient address](/configure-prysm/configure-fee-recipient.md) to learn more.
 
 import SingletonWarningPartial from '@site/docs/partials/_singleton-warning-partial.md';
 
@@ -203,7 +203,7 @@ You’re now running a post-Merge configuration. If you have any questions, feel
 You should make these changes now, regardless of the network you're running on.
 
 **Can I use IPC post-Merge?** <br />
-Yes. You also won't have to worry about JWT if you use IPC. See our [Quickstart](./install/install-with-script.md) for IPC instructions.
+Yes. You also won't have to worry about JWT if you use IPC. See our [Quickstart](/install-prysm/install-with-script.md) for IPC instructions.
 
 **Can I use a light node with Prysm, or do I need to run a full execution node?** <br />
 No - at this time, a full node is required.
