@@ -1,7 +1,7 @@
 ---
 id: install-with-docker
-title: Install Prysm with Docker
-sidebar_label: Install using Docker
+title: Install with Docker
+sidebar_label: Install with Docker
 ---
 
 import Tabs from '@theme/Tabs';

@@ -1,7 +1,7 @@
 ---
 id: contribution-guidelines
-title: Contribute to Prysm's codebase
-sidebar_label: Contribute to Prysm's codebase
+title: Contribution Guidelines
+sidebar_label: Contribution Guidelines
 ---
 
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';

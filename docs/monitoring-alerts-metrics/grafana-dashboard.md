@@ -1,7 +1,7 @@
 ---
 id: grafana-dashboard
 title: Configure dashboarding and alerts with Prometheus and Grafana
-sidebar_label: Configure dashboarding and alerts with Prometheus and Grafana
+sidebar_label: Configure Grafana dashboard
 ---
 
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';

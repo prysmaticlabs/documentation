@@ -1,7 +1,7 @@
 ---
 id: migrating-keys
-title: Move to a new machine
-sidebar_label: Move to a new machine
+title: Migrating Keys
+sidebar_label: Migrating Keys
 ---
 
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';

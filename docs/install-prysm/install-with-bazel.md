@@ -1,7 +1,7 @@
 ---
 id: install-with-bazel
-title: Build Prysm from source
-sidebar_label: Build from source
+title: Install with Bazel
+sidebar_label: Install with Bazel
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

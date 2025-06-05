@@ -1,7 +1,7 @@
 ---
 id: is-everything-fine
-title: Monitor Prysm for expected behavior
-sidebar_label: Monitor Prysm for expected behavior
+title: Monitor Prysm
+sidebar_label: Monitor Prysm
 ---
 
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';

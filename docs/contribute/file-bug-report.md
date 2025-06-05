@@ -1,7 +1,7 @@
 ---
 id: bugreports
-title: File a bug report
-sidebar_label: File a bug report
+title: Report a bug
+sidebar_label: Report a bug
 ---
 
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
