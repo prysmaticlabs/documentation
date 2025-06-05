@@ -49,7 +49,3 @@ import TroubleshootingAllPartial from '@site/docs/troubleshooting/partials/_trou
 import GenerateTroubleshootingReportPartial from '@site/docs/troubleshooting/partials/_generate-troubleshooting-report.md';
 
 <GenerateTroubleshootingReportPartial />
-
-
-
-
