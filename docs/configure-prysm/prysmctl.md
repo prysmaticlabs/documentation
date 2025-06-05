@@ -13,7 +13,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 ### Run via binaries
 
-Binaries for the latest `prysmctl` tool can be found on the [latest prysm release page](https://github.com/OffchainLabs/prysm/releases). Each binary is a unique version with its own set of features. New releases may include new features for `prysmctl` that will need to be downloaded separately. The installed binaries will need to be renamed to `prysmctl` to use the example below. 
+Binaries for the latest `prysmctl` tool can be found on the [latest Prysm release page](https://github.com/OffchainLabs/prysm/releases). Each binary is a unique version with its own set of features. New releases may include new features for `prysmctl` that will need to be downloaded separately. The installed binaries will need to be renamed to `prysmctl` to use the example below. 
 
 :::info
 

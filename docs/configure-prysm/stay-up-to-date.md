@@ -272,7 +272,7 @@ Prerequisite: the validator.db will be needed in the steps below
 
 If you are unsure where your folder location is the directory path will be printed when starting the validator client.
 This will typically be the location defined by `--data-dir` and by default found in a path that includes `Eth2`, base path different on each os.
-This file could also be found in the prysm wallet defined by `--wallet-dir` or has a default path that contains `Eth2Validators\prysm-wallet-v2\` which will be different on each os.
+This file could also be found in the Prysm wallet defined by `--wallet-dir` or has a default path that contains `Eth2Validators\prysm-wallet-v2\` which will be different on each os.
 
 :::
 

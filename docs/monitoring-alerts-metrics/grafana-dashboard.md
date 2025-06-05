@@ -10,7 +10,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 [Grafana](https://grafana.com/) is an open-source data metrics tool that is used to aggregate large amounts of data into a comprehensive visual dashboard for easy analysis. This section includes instructions for installing Grafana on the local machine and configuring Telegram or Discord alerts for monitoring validator status on-the-go.
 
-![Grafana dashboard for prysm node and validator](/images/dashboard_overview.png "Grafana dashboard for prysm node and validator")
+![Grafana dashboard for Prysm node and validator](/images/dashboard_overview.png "Grafana dashboard for Prysm node and validator")
 
 To view your validator's details, visit [beaconcha.in/validators](https://beaconcha.in/validators).
 
