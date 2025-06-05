@@ -26,7 +26,7 @@ Linux systems allow for easy running of services in the background through a dae
 
 You can run your beacon node with the following `systemd` configuration, where you can modify some of the fields and flags to your liking. Assuming your `prysm.sh` script is at `/home/prysm/prysm.sh`.
 
-```text
+```sh
 [Unit]
 Description=Prysm Beacon chain daemon
 After=network-online.target
@@ -42,7 +42,7 @@ WantedBy=default.target
 
 You can also run your validator client in `systemd` using the following configuration.
 
-```text
+```sh
 [Unit]
 Description=Prysm Validator daemon
 After=network-online.target

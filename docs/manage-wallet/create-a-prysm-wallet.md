@@ -25,7 +25,9 @@ To start using the HD wallet, you can create a new wallet using:
 ```
 
 :::info
+
 You'll need to set a **strong** password for your new HD wallet, containing at least one uppercase letter, one number, a special character, and be at least eight characters long. Any unicode characters can be used for your wallet password.
+
 :::
 
 Then select **HD** wallet when prompted. You can also create a wallet **non-interactively** by using the following command line flags, which are also viewable by typing `./prysm.sh validator wallet create --help`.
@@ -55,7 +57,7 @@ You can fully recover an HD wallet along with all its accounts from a 24-word en
 
 Output
 
-```text
+```sh
 ✔ Enter the wallet recovery phrase: layer write film stuff camp album strong ...
 Enter a wallet directory: /Users/johndoe/Library/Eth2Validators/.prysm-wallet-v2
 New wallet password: *********
@@ -65,7 +67,9 @@ Enter how many accounts you would like to recover: 2
 ```
 
 :::info Recovering many accounts
+
 Your accounts are generated deterministically from your recovery phrase, so you had 100 validator accounts on the wallet you want to recover, you can easily do so in Prysm.
+
 :::
 
 | Flag             | Usage                                                                        |
@@ -102,5 +106,3 @@ You can also run the `accounts list` command **non-interactively** by using the 
 | `--wallet-dir`           | Path to a wallet directory (default: "$HOME/Eth2Validators/prysm-wallet-v2"). |
 | `--wallet-password-file` | Path to plain-text file containing your wallet's password.                    |
 | `--show-private-keys`    | Display the private keys for validator accounts.                              |
-
-
