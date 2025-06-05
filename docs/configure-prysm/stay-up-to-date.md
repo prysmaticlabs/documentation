@@ -24,7 +24,7 @@ There are three main ways of installing Prysm:
 
 Regardless of your installation method, we always recommend you are running the latest version in our [releases page](https://github.com/OffchainLabs/prysm/releases) on GitHub, specified in [semver](https://semver.org/) format such as <PrysmVersion/>. You can check your Prysm version by running your beacon node or validator with the `--version` flag. For example, if using `prysm.sh` to run the beacon node, you would run:
 
-```
+```sh
 ./prysm.sh beacon-chain --version
 ```
 
@@ -79,7 +79,7 @@ If you are running `prysm.sh`, all it takes to upgrade to the latest release is 
 
 To update your Prysm with Docker, we recommend just pulling our `:stable` tag, which will always point to our latest release.
 
-```text
+```sh
 docker pull gcr.io/OffchainLabs/prysm/beacon-chain:stable
 docker pull gcr.io/OffchainLabs/prysm/validator:stable
 ```
@@ -99,7 +99,7 @@ If you are running `prysm.bat`, all it takes to upgrade to the latest release is
 
 To update your Prysm with Docker, we recommend just pulling our `:stable` tag, which will always point to our latest release.
 
-```text
+```sh
 docker pull gcr.io/OffchainLabs/prysm/beacon-chain:stable
 docker pull gcr.io/OffchainLabs/prysm/validator:stable
 ```
@@ -115,7 +115,7 @@ If you are running `prysm.sh`, all it takes to upgrade to the latest release is 
 
 To update your Prysm with Docker, we recommend just pulling our `:stable` tag, which will always point to our latest release.
 
-```text
+```sh
 docker pull gcr.io/OffchainLabs/prysm/beacon-chain:stable
 docker pull gcr.io/OffchainLabs/prysm/validator:stable
 ```
@@ -136,7 +136,7 @@ If you are running `prysm.sh`, all it takes to upgrade to the latest release is 
 
 To update your Prysm with Docker, we recommend just pulling our `:stable` tag, which will always point to our latest release.
 
-```text
+```sh
 docker pull gcr.io/OffchainLabs/prysm/beacon-chain:stable
 docker pull gcr.io/OffchainLabs/prysm/validator:stable
 ```
@@ -204,7 +204,8 @@ WantedBy    = multi-user.target
 </code>
   
 After you finish editing both of the files, you need to reload the service unit
-```
+
+```sh
 sudo systemctl daemon-reload
 ```
 
@@ -296,7 +297,7 @@ Next, we recommend backing up any important important folders such as your beaco
 
 Next up, run our database rollback command to make sure your database is going to be compatible with your new version. Find the folder where your `validator.db` file lives, then run:
 
-```
+```sh
 prysm.sh validator db migrate down --datadir=/path/to/folder
 ```
 
@@ -312,7 +313,7 @@ Next, we recommend backing up any important important folders such as your beaco
 
 Next up, run our database rollback command to make sure your database is going to be compatible with your new version. Find the folder where your `validator.db` file lives, then run:
 
-```
+```sh
 docker run -v /path/to/folder:/data gcr.io/OffchainLabs/prysm/validator:stable db migrate down --datadir=/data
 ```
 
@@ -327,7 +328,7 @@ Next, we recommend backing up any important important folders such as your beaco
 
 Next up, run our database rollback command to make sure your database is going to be compatible with your new version. Find the folder where your `validator.db` file lives, then run:
 
-```
+```sh
 bazel run //cmd/validator:validator -- db migrate down --datadir=/path/to/folder
 ```
 
@@ -344,7 +345,7 @@ Next, we recommend backing up any important important folders such as your beaco
 
 Next up, run our database rollback command to make sure your database is going to be compatible with your new version. Find the folder where your `validator.db` file lives, then run:
 
-```
+```sh
 prysm.bat validator db migrate down --datadir=\path\to\folder
 ```
 
@@ -369,7 +370,7 @@ Next, we recommend backing up any important important folders such as your beaco
 
 Next up, run our database rollback command to make sure your database is going to be compatible with your new version. Find the folder where your `validator.db` file lives, then run:
 
-```
+```sh
 docker run -v \path\to\folder:/data gcr.io/OffchainLabs/prysm/validator:stable db migrate down --datadir=/data
 ```
 
@@ -386,7 +387,7 @@ Next, we recommend backing up any important important folders such as your beaco
 
 Next up, run our database rollback command to make sure your database is going to be compatible with your new version. Find the folder where your `validator.db` file lives, then run:
 
-```
+```sh
 prysm.sh validator db migrate down --datadir=/path/to/folder
 ```
 
@@ -402,7 +403,7 @@ Next, we recommend backing up any important important folders such as your beaco
 
 Next up, run our database rollback command to make sure your database is going to be compatible with your new version. Find the folder where your `validator.db` file lives, then run:
 
-```
+```sh
 docker run -v /path/to/folder:/data gcr.io/OffchainLabs/prysm/validator:stable db migrate down --datadir=/data
 ```
 
@@ -416,7 +417,7 @@ Next, we recommend backing up any important important folders such as your beaco
 
 Next up, run our database rollback command to make sure your database is going to be compatible with your new version. Find the folder where your `validator.db` file lives, then run:
 
-```
+```sh
 bazel run //cmd/validator:validator -- db migrate down --datadir=/path/to/folder
 ```
 
@@ -433,7 +434,7 @@ Next, we recommend backing up any important important folders such as your beaco
 
 Next up, run our database rollback command to make sure your database is going to be compatible with your new version. Find the folder where your `validator.db` file lives, then run:
 
-```
+```sh
 prysm.sh validator db migrate down --datadir=/path/to/folder
 ```
 
@@ -449,7 +450,7 @@ Next, we recommend backing up any important important folders such as your beaco
 
 Next up, run our database rollback command to make sure your database is going to be compatible with your new version. Find the folder where your `validator.db` file lives, then run:
 
-```
+```sh
 docker run -v /path/to/folder:/data gcr.io/OffchainLabs/prysm/validator:stable db migrate down --datadir=/data
 ```
 

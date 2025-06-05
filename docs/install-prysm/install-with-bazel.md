@@ -83,7 +83,7 @@ You can install Bazelisk in multiple ways, including:
 
 Clone Prysm's [main repository](https://github.com/OffchainLabs/prysm). Make sure you switch to the latest version (the latest version number can be found from the [releases page](https://github.com/OffchainLabs/prysm/releases)). Once cloned, enter the directory:
 
-```text
+```sh
 git clone https://github.com/OffchainLabs/prysm
 cd prysm
 git checkout <version>
@@ -91,7 +91,7 @@ git checkout <version>
 
 Build both the beacon chain node and the validator client:
 
-```text
+```sh
 bazel build //cmd/beacon-chain:beacon-chain --config=release
 bazel build //cmd/validator:validator --config=release
 ```
@@ -129,7 +129,7 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
     ]}>
       <TabItem value="mainnet">
 
-```text
+```sh
 bazel run //cmd/beacon-chain --config=release -- --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> --mainnet
 ```
 
@@ -138,7 +138,7 @@ bazel run //cmd/beacon-chain --config=release -- --execution-endpoint=<YOUR_ETH_
 
 Download the Sepolia genesis state from [GitHub](https://github.com/eth-clients/merge-testnets/blob/main/sepolia/genesis.ssz) to a local file. In the following command, replace `<PATH_TO_GENESIS>` by the path of the genesis state you just downloaded and run it:
 
-```text
+```sh
 bazel run //cmd/beacon-chain --config=release -- --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> --sepolia --genesis-state=<PATH_TO_GENESIS>
 ```
 
@@ -148,7 +148,7 @@ bazel run //cmd/beacon-chain --config=release -- --execution-endpoint=<YOUR_ETH_
 
 Download the Hoodi genesis state from [GitHub](https://github.com/eth-clients/hoodi/blob/main/metadata/genesis.ssz) to a local file. In the following command, replace `<PATH_TO_GENESIS>` by the path of the genesis state you just downloaded and run it:
 
-```text
+```sh
 bazel run //cmd/beacon-chain --config=release -- --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> --hoodi --genesis-state=<PATH_TO_GENESIS>
 ```
 
@@ -173,13 +173,13 @@ The correct address for the launchpad is https://launchpad.ethereum.org and the 
 
 Throughout the process, you'll be asked to generate new validator credentials using the official Ethereum deposit command-line-tool [here](https://github.com/ethereum/eth2.0-deposit-cli). Make sure you use the `mainnet` option when generating keys with the deposit CLI. During the process, you will have generated a `validator_keys` folder under the `eth2.0-deposit-cli` directory. Copy the path to the `validator_keys` folder under the `eth2.0-deposit-cli` directory you created during the launchpad process. For example, if your `eth2.0-deposit-cli` installation is in your `$HOME` (or `%LOCALAPPDATA%` on Windows) directory, you can then run the following command to import your keys:
 
-```text
+```sh
 bazel run //cmd/validator:validator -- accounts import --keys-dir=$HOME/eth2.0-deposit-cli/validator_keys --accept-terms-of-use
 ```
 
 Next, open a second terminal window and issue the followimg command to start your validator.
 
-```text
+```sh
 bazel run //cmd/validator --config=release
 ```
 
@@ -248,7 +248,7 @@ The tags for the images are specified [here](https://github.com/OffchainLabs/pry
 
 <!-- todo: RC links to gcr.io -->
 
-```text
+```sh
 gcr.io/offchainlabs/prysm/beacon-chain:latest
 gcr.io/offchainlabs/prysm/validator:latest
 ```
@@ -259,19 +259,19 @@ You can edit these in the links above to your liking.
 
 You can load the images into your local Docker daemon by first building a `.tar` file as follows for your desired image bundle:
 
-```text
+```sh
 bazel build //cmd/beacon-chain:oci_image_tarball --config=release
 bazel build //cmd/validator:oci_image_tarball --config=release
 ```
 
 Then, you can load it into Docker with:
-```text
+```sh
 docker load -i bazel-bin/cmd/beacon-chain/oci_image_tarball/tarball.tar
 ```
 
 For example, you may see output such as this:
 
-```
+```sh
 docker load -i bazel-bin/cmd/beacon-chain/oci_image_tarball/tarball.tar
 54ad2ec71039: Loading layer [==================================================>]  103.7kB/103.7kB
 6fbdf253bbc2: Loading layer [==================================================>]   21.2kB/21.2kB
@@ -319,7 +319,7 @@ See:
 
 To push the actual images, you do not need to build the image bundle beforehand. You can do a simple:
 
-```text
+```sh
 bazel run //cmd/beacon-chain:push_images --config=release -- --tag latest --repository gcr.io/offchainlabs/prysm/beacon-chain
 bazel run //cmd/validator:push_images --config=release -- --tag latest --repository gcr.io/offchainlabs/prysm/beacon-chain 
 ```

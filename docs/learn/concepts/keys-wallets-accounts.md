@@ -28,7 +28,9 @@ Security for your keys is a big topic, but at its core, it is important to clari
 As a validator, you're expected to be consistently online to produce blocks and vote on others' blocks, as this is how you get rewarded for participating in Ethereum consensus. To do this, your software needs to have instant access to your validating key, also referred to often as a "hot key" or access to a "hot wallet". Keeping your withdrawal key, or wallet mnemonic _far away_ from your validator client is what will give you **optimal security** in Ethereum consensus. If someone were to steal your validating keys, they wouldn't be able to withdraw your validator's staked `ETH`.
 
 :::tip Keeping your wallet safe
+
 When creating an HD wallet, you'll be given a 24-word mnemonic phrase which you need to store safely. Make sure you write it down somewhere safe offline, and do not leave traces of it on your computer. If someone gets ahold of this mnemonic, they can steal all your accounts!
+
 :::
 
 The ideal security for an average user participating as a validator is as follows:
@@ -42,7 +44,7 @@ For **best security** in production cloud deployments, it's best you use a **rem
 
 Prysm supports a non-deterministic wallet, which is a very simple kind of wallet storing validating keystores on disk, which can be imported from an external source such as the [eth2.0-deposit-cli](https://github.com/ethereum/eth2.0-deposit-cli). This type of wallet makes it very easy to import and export accounts, useful for certain cloud deployments in which you don't want to store your eth2 withdrawal keys on-disk. This wallet is also the recommended approach if you generated a validator deposit using the [Ethereum launchpad](https://launchpad.ethereum.org/).
 
-```text
+```sh
 wallet-directory/
     accounts/
         all-accounts.keystore.json
@@ -54,7 +56,7 @@ wallet-directory/
 
 By default, a Prysm validator client uses its own **HD wallet**, which you can recover from a 24-word, simple english sentence should you lose access to it, such as:
 
-```text
+```sh
 glue hawk service repeat album stable arctic piece kiss arrive viable labor connect film deer trap brain fashion duck omit beach ten slot goat
 ```
 

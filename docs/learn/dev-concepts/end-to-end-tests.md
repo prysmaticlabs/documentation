@@ -14,7 +14,7 @@ Even the best unit tests won't prevent bugs from creeping into the system. They 
 
 The below command will run E2E tests using the minimal E2E configuration. It will run for ten epochs. We additionally specify a timeout value and declare `--test_output=streamed` to output logs for all tests in real time.
 
-```
+```sh
 bazel test //testing/endtoend:go_default_test --//proto:network=minimal --test_filter=TestEndToEnd_MinimalConfig --test_env=E2E_EPOCHS=10 --test_timeout=10000 --test_output=streamed
 ```
 
@@ -36,7 +36,7 @@ There are three main building block types from which E2E tests are constructed: 
 
 An E2E component is an abstract concept that represents a service that can be started and whose status can be inspected. It is defined as a Go interface type:
 
-```
+```sh
 // ComponentRunner defines an interface via which E2E component's configuration, execution and termination is managed.
 type ComponentRunner interface {
 	// Start starts a component.
@@ -56,7 +56,7 @@ Running components correctly is not a simple task. We can't simply start up all 
 
 An E2E evaluator is a type defined as follows:
 
-```
+```sh
 // Evaluator defines the structure of the evaluators used to conduct the current beacon state during the E2E.
 type Evaluator struct {
 	Name       string
@@ -84,7 +84,7 @@ Not every invariant can be checked at every epoch. As an example, the Altair for
 
 If one or more evaluators fail, we get a console output similar to the following:
 
-```
+```sh
 --- FAIL: TestEndToEnd_MinimalConfig (234.18s)
     --- PASS: TestEndToEnd_MinimalConfig/chain_started (14.50s)
     --- PASS: TestEndToEnd_MinimalConfig/finished_syncing_0 (0.00s)
@@ -114,13 +114,13 @@ INFO: Build completed, 1 test FAILED, 2 total actions
 
 This tells us which evaluator failed (`healthz_check_epoch_1`), but we don't know the reason of the failure. Fortunately, there are several logs that we can inspect. First of all, we can take a look at the main test log, whose path is provided in the output:
 
-```
+```sh
 /home/user/.cache/bazel/_bazel_user/ec3daeb6ce0cd7052bf7c79ca31f19c6/execroot/prysm/bazel-out/k8-fastbuild-ST-02d640e6fd05/testlogs/testing/endtoend/go_default_test/test.log
 ```
 
 The directory of the `test.log` file contains a `test.output` directory, which itself contains a zipped file with logs from several components, including all beacon nodes and validator clients started up during the test. They provide invaluable information about our test run. As an example, let's inspect a different error message:
 
-```
+```sh
 endtoend_test.go:279: E2E test ended in error: failed to start the ETH1 miner: exit status 1
 ```
 
@@ -134,7 +134,7 @@ The issue here is that our repo contains a static file named `genesis.json` that
 
 Prysm supports [feature flags](https://github.com/OffchainLabs/prysm/blob/develop/config/features/README.md), which are very useful when we want to test a particular feature before making it a standard in production. Sometimes you might want to run E2E with your feature flag enabled. To do this, go to https://github.com/OffchainLabs/prysm/blob/develop/config/features/flags.go and append your flag to `E2EBeaconChainFlags`:
 
-```
+```sh
 var E2EBeaconChainFlags = []string{
     "--dev",
     "--my-feature",

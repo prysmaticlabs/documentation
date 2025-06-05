@@ -47,9 +47,10 @@ Setting the beacon node to save the state for each slot can be done both on the 
 ```sh
 prysm.bat beacon-chain --slots-per-archive-point=32
 ```
+
 **Using the Configuration file:**
 
-If you are running Prysm and specifying command line flags via a configuration file such as ***/home/beacon/config.yaml*** on Linux or MacOS or ***c:\prysm\beacon\config.yaml*** on Windows, you can add the following to that file:
+If you are running Prysm and specifying command line flags via a configuration file such as `/home/beacon/config.yaml` on Linux or MacOS or `c:\prysm\beacon\config.yaml` on Windows, you can add the following to that file:
 
 ```sh
 slots-per-archive-point: 32 

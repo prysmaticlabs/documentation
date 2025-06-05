@@ -64,25 +64,25 @@ Download the latest Ethereum [staking-deposit-cli](https://github.com/ethereum/s
 }>
 <TabItem value="linux-amd">
 
-```
+```sh
 curl -LO  https://github.com/ethereum/staking-deposit-cli/releases/download/v2.7.0/staking_deposit-cli-fdab65d-linux-amd64.tar.gz
 ```
 </TabItem>
 <TabItem value="linux-arm">
 
-```
+```sh
 curl -LO  https://github.com/ethereum/staking-deposit-cli/releases/download/v2.7.0/staking_deposit-cli-fdab65d-linux-arm64.tar.gz
 ```
 </TabItem>
 <TabItem value="windows-amd">
 
-```
+```sh
 curl -LO  https://github.com/ethereum/staking-deposit-cli/releases/download/v2.7.0/staking_deposit-cli-fdab65d-windows-amd64.zip
 ```
 </TabItem>
 <TabItem value="mac-amd">
 
-```
+```sh
 curl -LO  https://github.com/ethereum/staking-deposit-cli/releases/download/v2.7.0/staking_deposit-cli-fdab65d-darwin-amd64.tar.gz
 ```
 </TabItem>
@@ -180,7 +180,7 @@ In the case of validators requiring different withdrawal addresses you will need
 
 Below is an example of running through the interactive process explained above:
 
-```
+```sh
 ./deposit generate-bls-to-execution-change
 Please choose your language ['1. العربية', '2. ελληνικά', '3. English', '4. Français', '5. Bahasa melayu', '6. Italiano', '7. 日本語', '8. 한국어', '9. Português do Brasil', '10. român', '11. Türkçe', '12. 简体中文']:  [English]: english
 
@@ -211,7 +211,7 @@ Your SignedBLSToExecutionChange JSON file can be found at: /home/me/Desktop/code
 
 Once you complete the above, you’ll have a file contained in the `bls_to_execution_changes/` folder of your [staking-deposit-cli](https://github.com/ethereum/staking-deposit-cli). It will represent a list of BLS to execution messages that have been signed with your private keys and are ready to submit to Ethereum. Here’s what a sample file of these looks like. Example output with placeholder values:
 
-```
+```json
 [
 	{
     "message": {
@@ -235,7 +235,9 @@ Once you complete the above, you’ll have a file contained in the `bls_to_execu
 The above demonstrates two different validators withdrawing - one with validator index `838`, the other with validator index `20303`. 
 
 :::caution
+
 Make sure the `validator_index` corresponds to the correct chosen `to_execution_address`. Once this message is accepted on submission you will not be able to change it again!
+
 :::
 
 Move the generated `bls_to_execution_changes-*.json` file to an online environment that has access to a synced beacon node for the next step.
@@ -247,6 +249,7 @@ In this step, you will submit your signed requests to the Ethereum network using
 Once `prysmctl` is downloaded, you can use the `prysmctl validator withdraw` command, which will ask for terms of service acceptance and confirmation of command by providing additional flags, and also a path to the bls_to_execution_changes file from the previous step.
 
 :::info
+
 default beacon node REST `<node-url>` is `http://localhost:3500` aka `http://127.0.0.1:3500`
 
 :::
@@ -257,6 +260,7 @@ Some users will need to give permissions to the downloaded binaries to be execut
 ```jsx
 ./prysmctl validator withdraw --beacon-node-host=<node-url> --path=<bls_to_execution_changes-*.json>
 ```
+
 This will extract data from the `bls_to_execution_changes-*.json` call the Beacon API endpoint on the synced Beacon Node and validate if the request was included.
 
 **Using docker:**
@@ -274,7 +278,7 @@ Note that this approach requires mounting of the `bls_to_execution_changes-*.jso
 You may also directly call the Beacon API endpoint through the following script.
 To do this you must replace the `<node-url>` as well as the `<post-request-content>` with the contents of our `blstoexecutionchange` message file
 
-```
+```sh
 curl -X 'POST' \
   '<node-url>/eth/v1/beacon/pool/bls_to_execution_changes' \
   -H 'accept: */*' \
@@ -287,7 +291,7 @@ curl -X 'POST' \
 
 On successful submission, the `SignedBLStoExecutionChange` messages are included in the pool waiting to be included in a block.
 
-```
+```sh
 Verifying requested withdrawal messages known to node...
 All (total:#) signed withdrawal messages were found in the pool.
 ```
@@ -311,7 +315,7 @@ You can track your withdrawal on an Ethereum Proof of Stake Block Scanner. Some 
 - [Beaconcha.in](http://Beaconcha.in): [mainnet](https://beaconcha.in/validators/withdrawals), [sepolia](https://sepolia.beaconcha.in/validators/withdrawals), [hoodi](https://hoodi.beaconcha.in/validators/withdrawals)
 - [Etherscan.io](https://etherscan.io/): [mainnet](https://etherscan.io/txsBeaconWithdrawal), [sepolia](https://sepolia.etherscan.io/txsBeaconWithdrawal), [hoodi](https://hoodi.etherscan.io/txsBeaconWithdrawal)
 
-you can also confirm the `withdrawal_credentials` updated by querying your local beacon node. 
+You can also confirm the `withdrawal_credentials` updated by querying your local beacon node. 
 
 ```rust
 curl -X 'GET' \
@@ -319,7 +323,7 @@ curl -X 'GET' \
   -H 'accept: application/json'
 ```
 
-and you should see a response that contains withdrawal credentials that should have changed to the `0x01` format which includes your Ethereum execution address.
+In addition, you should see a response that contains withdrawal credentials that should have changed to the `0x01` format which includes your Ethereum execution address.
 
 ### Done: Receiving partial withdrawals after `withdrawal_credentials` are updated is automatic, but will take time.
 

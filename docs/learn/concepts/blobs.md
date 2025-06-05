@@ -27,7 +27,7 @@ One design decision in the implementation of EIP-4844 to verify blobs and to ena
 
 The most significant impact on node operators is the increased storage requirement. Node runners have a new slightly increased storage requirement 
 
-```
+```sh
 131928 blob ssz byte size * blobs retention period (18 days or 4,096 epochs) * 32 potential blocks per epoch * 6~9 Blob sidecars per block 
 
 = 100GB~150GB

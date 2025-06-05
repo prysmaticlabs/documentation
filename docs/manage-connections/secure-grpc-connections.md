@@ -22,25 +22,25 @@ A validator client will attempt to connect to a beacon node by default with an i
 
 To use secure gRPC with a beacon node:
 
-```text
+```sh
 ./prysm.sh beacon-node --tls-cert=server.pem --tls-key=server.key
 ```
 
 and to use secure gRPC with a validator:
 
-```text
+```sh
 ./prysm.sh validator --tls-cert=server.pem
 ```
 
 Alternatively, a `ca.cert` certificate authority file can be passed to the validator to attempt a connection without requiring the server's certificate itself:
  
-```text
+```sh
 ./prysm.sh validator --tls-cert=ca.cert
 ```
 
 This will generate an output like so:
 
-```text
+```sh
 [2020-06-15 17:09:13]  INFO validator: Established secure gRPC connection
 ```
 
@@ -56,25 +56,25 @@ Creating a self-signed certificate is fine for simple TLS connections, though if
 
 2. Create a root signing key:
 
-    ```text
+    ```sh
     openssl genrsa -out ca.key 4096
     ```
 
 3. Create a self-signed root certificate:
 
-    ```text
+    ```sh
     openssl req -new -x509 -key ca.key -sha256 -subj "/C=US/ST=NJ/O=CA, Inc." -days 365 -out ca.cert
     ```
 
 4. Create a key certificate for the beacon node:
 
-    ```text
+    ```sh
     openssl genrsa -out beacon.key 4096
     ```
 
 5. Generate a signing CSR by first creating a  `certificate.conf` configuration file containing the specifications. For reference, you can use something as follows with any of its fields customized to your needs:
 
-    ```text
+    ```sh
     [req]
     default_bits = 4096
     prompt = no
@@ -95,25 +95,25 @@ Creating a self-signed certificate is fine for simple TLS connections, though if
     ```
 
 6. Generate the signing CSR:
-    ```text
+    ```sh
     openssl req -new -key beacon.key -out beacon.csr -config certificate.conf
     ```
 
 7. Generate a certificate for the beacon node:
 
-    ```text
+    ```sh
     openssl x509 -req -in beacon.csr -CA ca.cert -CAkey ca.key -CAcreateserial -out beacon.pem -days 365 -sha256 -extfile certificate.conf -extensions req_ext
     ```
 
 8. Verify your certificate is correct with openssl:
 
-    ```text
+    ```sh
     openssl x509 -in beacon.pem -text -noout
     ```
 
     This will generate an output like so:
 
-    ```text
+    ```sh
     Certificate:
         Data:
             Version: 3 (0x2)
@@ -133,19 +133,19 @@ Creating a self-signed certificate is fine for simple TLS connections, though if
 
 1. Use the certificates to launch the beacon node:
 
-    ```text
+    ```sh
     ./prysm.sh beacon-node --tls-cert=beacon.pem --tls-key=beacon.key
     ```
 
 2. As well as a validator:
 
-    ```text
+    ```sh
     ./prysm.sh validator --tls-cert=ca.cert
     ```
 
     This will generate an output like so: 
 
-    ```text
+    ```sh
     [2020-06-15 17:09:13]  INFO validator: Established secure gRPC connection
     ```
 

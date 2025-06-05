@@ -47,13 +47,14 @@ Examples below use the local Prysm wallet, if you are using [Web3Signer](/manage
 }>
 <TabItem value="lin">
 
-```
+```sh
 prysmctl validator exit --wallet-dir=<path/to/wallet> --beacon-rpc-provider=<127.0.0.1:4000> 
 ```
 
 `prysmctl` is not accessible from `prysm.sh` and will need to be built from source or downloaded from our release page.
 
 :::caution
+
 The following command is a soon-to-be-deprecated alternative that you should avoid using:
 
 ```bash
@@ -64,7 +65,7 @@ The following command is a soon-to-be-deprecated alternative that you should avo
 
 **Using Docker**
 
-```text
+```sh
 docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
   gcr.io/offchainlabs/prysm/cmd/prysmctl:latest \
   validator exit --wallet-dir=/wallet --beacon-rpc-provider=<127.0.0.1:4000> 
@@ -74,7 +75,7 @@ docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
 
 The following command is a soon-to-be-deprecated alternative that you should avoid using:
 
-```text
+```sh
 docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
   gcr.io/offchainlabs/prysm/validator:latest \
   accounts voluntary-exit --wallet-dir=/wallet
@@ -100,13 +101,13 @@ bazel run //cmd/validator --config=release -- accounts voluntary-exit
 </TabItem>
 <TabItem value="win">
 
-```
+```sh
 prysmctl validator exit --wallet-dir=<path/to/wallet> --beacon-rpc-provider=<127.0.0.1:4000>
 ```
 
 **Using Prysm.bat**
 
-```
+```sh
 prysmctl validator exit --wallet-dir=<path/to/wallet> --beacon-rpc-provider=<127.0.0.1:4000> 
 ```
 
@@ -124,7 +125,7 @@ prysm.bat validator accounts voluntary-exit
 
 **Using Docker**
 
-```text
+```sh
 docker run -it -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet \
   gcr.io/offchainlabs/prysm/cmd/prysmctl:latest \
   validator exit --wallet-dir=/wallet --beacon-rpc-provider=<127.0.0.1:4000> 
@@ -134,7 +135,7 @@ docker run -it -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet \
 
 The following command is a soon-to-be-deprecated alternative that you should avoid using:
 
-```text
+```sh
 docker run -it -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet gcr.io/offchainlabs/prysm/validator:latest accounts voluntary-exit --wallet-dir=/wallet
 ```
 :::
@@ -142,7 +143,7 @@ docker run -it -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet gcr.io/o
 </TabItem>
 <TabItem value="arm">
 
-```
+```sh
 prysmctl validator exit --wallet-dir=<path/to/wallet> --beacon-rpc-provider=<127.0.0.1:4000> 
 ```
 
@@ -160,7 +161,7 @@ The following command is a soon-to-be-deprecated alternative that you should avo
 
 **Using Docker**
 
-```text
+```sh
 docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
   gcr.io/offchainlabs/prysm/cmd/prysmctl:latest \
   validator exit --wallet-dir=/wallet --beacon-rpc-provider=<127.0.0.1:4000> 
@@ -170,7 +171,7 @@ docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
 
 The following command is a soon-to-be-deprecated alternative that you should avoid using:
 
-```text
+```sh
 docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
   gcr.io/offchainlabs/prysm/validator:latest \
   accounts voluntary-exit --wallet-dir=/wallet
