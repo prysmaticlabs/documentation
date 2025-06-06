@@ -394,7 +394,7 @@ For even better illustration on customized setups, please, see the following tes
 
 To run unit tests using Bazel:
 
-```
+```sh
 bazel test //beacon-chain/sync/initial-sync:go_default_test --test_arg=-test.v --test_output=streamed --test_arg=-test.failfast --nocache_test_results --test_filter=
 ```
 
@@ -411,7 +411,7 @@ The `--test_filter` can be empty (all tests will then be run), or specify a patt
 
 To run tests using vanilla Go, just use `go test` (to understand the reasons for passing the `develop` tag see our [DEPENDENCIES](https://github.com/OffchainLabs/prysm/blob/develop/DEPENDENCIES.md#running-tests)):
 
-```
+```go
 go test ./beacon-chain/sync/initial-sync -v -failfast -tags develop -run TestBlocksQueue
 ```
 
@@ -421,7 +421,7 @@ Variations include: stopping and restarting, stopping for a long time and then r
 
 Here is one way to do it:
 
-```
+```sh
 # Remove previous data:
 rm -r ~/prysm/beaconchaindata ~/prysm/network-keys
 # Assuming you have geth node running locally, run init-sync on hoodi
@@ -431,4 +431,3 @@ bazel run //beacon-chain -- --datadir=$HOME/prysm  \
   --execution-endpoint=$HOME/Library/Ethereum/hoodi/geth.ipc \ 
   --enable-debug-rpc-endpoints --hoodi
 ```
-

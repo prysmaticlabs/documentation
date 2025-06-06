@@ -1,7 +1,7 @@
 ---
 id: proof-of-stake-devnet
 title: How to Set Up an Ethereum Proof-of-Stake Devnet in Minutes
-sidebar_label: Configure a devnet
+sidebar_label: Configure an Ethereum devnet
 ---
 
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';

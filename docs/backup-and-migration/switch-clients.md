@@ -57,7 +57,7 @@ Teku, Nimbus, and Lighthouse all use port 9000 for both TCP and UDP.
 
 ### Step 5: Import Validator Keys
 
-To minimize slashing risk, wait until at least one full epoch has elapsed between stopping prysm and importing your validator keys, approximately 6.5 minutes, before proceeding. The inactivity leak cost is negligible compared to the cost of getting slashed.  
+To minimize slashing risk, wait until at least one full epoch has elapsed between stopping Prysm and importing your validator keys, approximately 6.5 minutes, before proceeding. The inactivity leak cost is negligible compared to the cost of getting slashed.  
 
 Once that amount of time has passed, import your validator keys into the respective validator client you wish to run.  
  

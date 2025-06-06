@@ -30,7 +30,7 @@ import QuickstartRunExecutionNodeJWTPartial from '@site/docs/install-prysm/parti
 
 <QuickstartRunExecutionNodeJWTPartial />
 
-Congratulations - you’re now running an <strong>execution node</strong> that your Prysm beacon node can connect to.
+Congratulations! You’re now running an <strong>execution node</strong> that your Prysm beacon node can connect to.
 
 </div>
 

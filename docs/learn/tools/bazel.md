@@ -46,9 +46,11 @@ Building with Bazel requires every directory and every package to have a `BUILD.
 
 Most of the time, developers will not need to edit BUILD files themselves. Instead, they can use the following tool:
 
-    `bazel run /:gazelle -- fix`
+```sh
+bazel run /:gazelle -- fix
+```
 
-which will edit all BUILD files that need to be changed based on any dependencies that were imported or any files that were added.
+Which will edit all BUILD files that need to be changed based on any dependencies that were imported or any files that were added.
 
 ## Dependency Management
 
@@ -81,15 +83,21 @@ To read comprehensive instructions on how to build Prysm's docker images for you
 
 Everything in Prysm can be built with Bazel using
 
-    `bazel build /...`
+```sh
+bazel build /...
+```
 
 For example, the beacon node can be built with
 
-    `bazel build //cmd/beacon-chain --config=release`
-    
+```sh
+bazel build //cmd/beacon-chain --config=release
+```
+
 The `--config=release` will apply all compile-time optimizations to the code, and build everything including C dependencies and our cryptography from source. Every package in the Prysm monorepo can be build with
 
-    `bazel build`
+```sh
+bazel build
+```
 
 ### With Go
 

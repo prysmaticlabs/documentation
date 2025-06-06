@@ -1,7 +1,7 @@
 ---
 id: install-with-script
-title: "Quickstart: Run a node and (optionally) stake `ETH` using Prysm"
-sidebar_label: "Quickstart: Run a node"
+title: Install with script
+sidebar_label: Install with script
 ---
 
 import Tabs from '@theme/Tabs';

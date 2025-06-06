@@ -12,31 +12,6 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 [Prysm](https://github.com/OffchainLabs/prysm) is an [Ethereum](https://ethereum.org/en/developers/docs/intro-to-ethereum/) [proof-of-stake](https://ethereum.org/en/developers/docs/consensus-mechanisms/pos/) client written in [Go](https://golang.org). You can use Prysm to participate in Ethereum's [decentralized economy](https://ethereum.org/en/developers/docs/web2-vs-web3/) by [running a node](/install-prysm/install-with-script.md) and, if you have [32 `ETH` to stake](https://ethereum.org/en/staking/), a [validator client](/install-prysm/install-with-script.md#step-5-run-a-validator-using-prysm). If you're new to Ethereum, you may enjoy our beginner-friendly [Nodes and networks](/learn/concepts/nodes-and-networks.md) explainer.
 
-:::info
-
-## Upcoming Hardfork: Electra/Prague [May 7th,2025](https://ethereum-magicians.org/t/all-core-devs-consensus-acdc-154/23340/3)
-
-New Requirements: 
-
-- Upgrade Prysm (validator & beacon node)
-- Upgrade Execution client
-- New blob retention requirements (100GB ~ 150GB). read more [here](/learn/concepts/blobs.md)
-
-New EIP features in Hard fork: (EIPs related directly to Prysm are marked)
-
-- [EIP-2537: Precompile for BLS12-381 curve operations](https://github.com/ethereum/EIPs/blob/f27ddf2b0af7e862a967ee38ceeaa7d980786ca1/EIPS/eip-2537.md)
-- [EIP-2935: Save historical block hashes in state](https://github.com/ethereum/EIPs/blob/f27ddf2b0af7e862a967ee38ceeaa7d980786ca1/EIPS/eip-2935.md)
-- [EIP-6110: Supply validator deposits onchain](https://github.com/ethereum/EIPs/blob/f27ddf2b0af7e862a967ee38ceeaa7d980786ca1/EIPS/eip-6110.md) (prysm)
-- [EIP-7002: Execution layer triggerable withdrawals](https://github.com/ethereum/EIPs/blob/f27ddf2b0af7e862a967ee38ceeaa7d980786ca1/EIPS/eip-7002.md) (prysm)
-- [EIP-7251: Increase the MAX_EFFECTIVE_BALANCE](https://github.com/ethereum/EIPs/blob/f27ddf2b0af7e862a967ee38ceeaa7d980786ca1/EIPS/eip-7251.md) (prysm)
-- [EIP-7549: Move committee index outside Attestation](https://github.com/ethereum/EIPs/blob/f27ddf2b0af7e862a967ee38ceeaa7d980786ca1/EIPS/eip-7549.md) (prysm)
-- [EIP-7623: Increase calldata cost](https://github.com/ethereum/EIPs/blob/f27ddf2b0af7e862a967ee38ceeaa7d980786ca1/EIPS/eip-7623.md)
-- [EIP-7685: General purpose execution layer requests](https://github.com/ethereum/EIPs/blob/f27ddf2b0af7e862a967ee38ceeaa7d980786ca1/EIPS/eip-7685.md)
-- [EIP-7691: Blob throughput increase](https://github.com/ethereum/EIPs/blob/f27ddf2b0af7e862a967ee38ceeaa7d980786ca1/EIPS/eip-7691.md) (prysm)
-- [EIP-7702: Set EOA account code](https://github.com/ethereum/EIPs/blob/f27ddf2b0af7e862a967ee38ceeaa7d980786ca1/EIPS/eip-7702.md)
-- [EIP-7840: Add blob schedule to EL config files](https://github.com/ethereum/EIPs/blob/f27ddf2b0af7e862a967ee38ceeaa7d980786ca1/EIPS/eip-7840.md)
-
-:::
 
 The following table of contents provides a descriptive overview of Prysm's documentation:
 

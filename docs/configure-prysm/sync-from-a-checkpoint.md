@@ -31,7 +31,7 @@ The following command starts a beacon node with checkpoint sync configured to pu
 ]}>
   <TabItem value="win">
 
-```
+```sh
 ./prysm.bat beacon-chain --checkpoint-sync-url=http://localhost:3500 --genesis-beacon-api-url=http://localhost:3500
 ```
     
@@ -47,7 +47,7 @@ The following command starts a beacon node with checkpoint sync configured to pu
 
 To confirm that checkpoint sync has succeeded, look for the following output:
 
-```
+```sh
 level=info msg="requesting <your configured checkpoint sync endpoint>"
 ```
 
@@ -109,7 +109,7 @@ INFO[0001] saved ssz-encoded state to to state_hoodi_electra_3041920-0x34ebc10f1
 
 The two exported `*.ssz` files are your `BeaconState` and `SignedBeaconBlock` files. Their filenames combine their file type (`state`, `block`), the network (`hoodi`), the fork name (`electra`), the slot (`2397120`) and the state or block root in hex encoding. The `checkpoint save` command doesn't export the required genesis state, but the genesis state can be downloaded via `curl` or `wget` using the following command:
 
-```
+```sh
 curl -H "Accept: application/octet-stream"  http://localhost:3500/eth/v1/debug/beacon/states/genesis > genesis.ssz
 ```
 

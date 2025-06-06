@@ -190,7 +190,8 @@ We have already described at a high level the changes in the blockchain package 
 
  Since the block hasn't been inserted to forkchoice yet, it records the return of this function. Recall that a block is inserted optimistically to forkchoice by default. If `notifyNewPayload` has returned `VALID`, then we call `SetOptimiticToValid` right after inserting the block to forkchoice. 
 
-The return type of `notifyNewPayload` is 
+The return type of `notifyNewPayload` is: 
+
 ```go
 func (s *Service) notifyNewPayload(...) (bool, error)
 ```

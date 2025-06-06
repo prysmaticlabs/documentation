@@ -13,7 +13,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 ### Run via binaries
 
-Binaries for the latest `prysmctl` tool can be found on the [latest prysm release page](https://github.com/OffchainLabs/prysm/releases). Each binary is a unique version with its own set of features. New releases may include new features for `prysmctl` that will need to be downloaded separately. The installed binaries will need to be renamed to `prysmctl` to use the example below. 
+Binaries for the latest `prysmctl` tool can be found on the [latest Prysm release page](https://github.com/OffchainLabs/prysm/releases). Each binary is a unique version with its own set of features. New releases may include new features for `prysmctl` that will need to be downloaded separately. The installed binaries will need to be renamed to `prysmctl` to use the example below. 
 
 :::info
 
@@ -22,7 +22,8 @@ Some users will need to give permissions to the downloaded binaries to be execut
 :::
 
 Example of running `prysmctl` by opening a terminal at the installed location after renaming:
-```
+
+```sh
 ./prysmctl --help
 ```
 
@@ -61,13 +62,13 @@ Bazelisk is a launcher for Bazel which automatically downloads and installs the 
 
 Clone Prysm's [main repository](https://github.com/OffchainLabs/prysm). Switch to the latest version (the latest version number can be found on the [releases page](https://github.com/OffchainLabs/prysm/releases)). Once cloned, enter the directory:
 
-```
+```sh
 git clone https://github.com/OffchainLabs/prysm && cd prysm
 ``````
 
 #### Build `prysmctl`
 
-```
+```sh
 bazel build //cmd/prysmctl --config=release
 ```
 
@@ -75,12 +76,12 @@ Bazel will automatically pull and install any dependencies as well, including Go
 
 ### List commands
 
-```
+```sh
 ./prysmctl --help
 ```
 
 **Using Docker**
-```
+```sh
 docker run -it gcr.io/offchainlabs/prysm/cmd/prysmctl:latest --help
 ```
 

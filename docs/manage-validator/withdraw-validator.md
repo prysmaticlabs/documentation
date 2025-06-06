@@ -64,25 +64,25 @@ Download the latest Ethereum [staking-deposit-cli](https://github.com/ethereum/s
 }>
 <TabItem value="linux-amd">
 
-```
+```sh
 curl -LO  https://github.com/ethereum/staking-deposit-cli/releases/download/v2.7.0/staking_deposit-cli-fdab65d-linux-amd64.tar.gz
 ```
 </TabItem>
 <TabItem value="linux-arm">
 
-```
+```sh
 curl -LO  https://github.com/ethereum/staking-deposit-cli/releases/download/v2.7.0/staking_deposit-cli-fdab65d-linux-arm64.tar.gz
 ```
 </TabItem>
 <TabItem value="windows-amd">
 
-```
+```sh
 curl -LO  https://github.com/ethereum/staking-deposit-cli/releases/download/v2.7.0/staking_deposit-cli-fdab65d-windows-amd64.zip
 ```
 </TabItem>
 <TabItem value="mac-amd">
 
-```
+```sh
 curl -LO  https://github.com/ethereum/staking-deposit-cli/releases/download/v2.7.0/staking_deposit-cli-fdab65d-darwin-amd64.tar.gz
 ```
 </TabItem>
@@ -180,7 +180,7 @@ In the case of validators requiring different withdrawal addresses you will need
 
 Below is an example of running through the interactive process explained above:
 
-```
+```sh
 ./deposit generate-bls-to-execution-change
 Please choose your language ['1. العربية', '2. ελληνικά', '3. English', '4. Français', '5. Bahasa melayu', '6. Italiano', '7. 日本語', '8. 한국어', '9. Português do Brasil', '10. român', '11. Türkçe', '12. 简体中文']:  [English]: english
 
@@ -211,7 +211,7 @@ Your SignedBLSToExecutionChange JSON file can be found at: /home/me/Desktop/code
 
 Once you complete the above, you’ll have a file contained in the `bls_to_execution_changes/` folder of your [staking-deposit-cli](https://github.com/ethereum/staking-deposit-cli). It will represent a list of BLS to execution messages that have been signed with your private keys and are ready to submit to Ethereum. Here’s what a sample file of these looks like. Example output with placeholder values:
 
-```
+```json
 [
 	{
     "message": {
@@ -235,7 +235,9 @@ Once you complete the above, you’ll have a file contained in the `bls_to_execu
 The above demonstrates two different validators withdrawing - one with validator index `838`, the other with validator index `20303`. 
 
 :::caution
+
 Make sure the `validator_index` corresponds to the correct chosen `to_execution_address`. Once this message is accepted on submission you will not be able to change it again!
+
 :::
 
 Move the generated `bls_to_execution_changes-*.json` file to an online environment that has access to a synced beacon node for the next step.
@@ -247,6 +249,7 @@ In this step, you will submit your signed requests to the Ethereum network using
 Once `prysmctl` is downloaded, you can use the `prysmctl validator withdraw` command, which will ask for terms of service acceptance and confirmation of command by providing additional flags, and also a path to the bls_to_execution_changes file from the previous step.
 
 :::info
+
 default beacon node REST `<node-url>` is `http://localhost:3500` aka `http://127.0.0.1:3500`
 
 :::
@@ -257,6 +260,7 @@ Some users will need to give permissions to the downloaded binaries to be execut
 ```jsx
 ./prysmctl validator withdraw --beacon-node-host=<node-url> --path=<bls_to_execution_changes-*.json>
 ```
+
 This will extract data from the `bls_to_execution_changes-*.json` call the Beacon API endpoint on the synced Beacon Node and validate if the request was included.
 
 **Using docker:**
@@ -274,7 +278,7 @@ Note that this approach requires mounting of the `bls_to_execution_changes-*.jso
 You may also directly call the Beacon API endpoint through the following script.
 To do this you must replace the `<node-url>` as well as the `<post-request-content>` with the contents of our `blstoexecutionchange` message file
 
-```
+```sh
 curl -X 'POST' \
   '<node-url>/eth/v1/beacon/pool/bls_to_execution_changes' \
   -H 'accept: */*' \
@@ -287,7 +291,7 @@ curl -X 'POST' \
 
 On successful submission, the `SignedBLStoExecutionChange` messages are included in the pool waiting to be included in a block.
 
-```
+```sh
 Verifying requested withdrawal messages known to node...
 All (total:#) signed withdrawal messages were found in the pool.
 ```
@@ -311,7 +315,7 @@ You can track your withdrawal on an Ethereum Proof of Stake Block Scanner. Some 
 - [Beaconcha.in](http://Beaconcha.in): [mainnet](https://beaconcha.in/validators/withdrawals), [sepolia](https://sepolia.beaconcha.in/validators/withdrawals), [hoodi](https://hoodi.beaconcha.in/validators/withdrawals)
 - [Etherscan.io](https://etherscan.io/): [mainnet](https://etherscan.io/txsBeaconWithdrawal), [sepolia](https://sepolia.etherscan.io/txsBeaconWithdrawal), [hoodi](https://hoodi.etherscan.io/txsBeaconWithdrawal)
 
-you can also confirm the `withdrawal_credentials` updated by querying your local beacon node. 
+You can also confirm the `withdrawal_credentials` updated by querying your local beacon node. 
 
 ```rust
 curl -X 'GET' \
@@ -319,7 +323,7 @@ curl -X 'GET' \
   -H 'accept: application/json'
 ```
 
-and you should see a response that contains withdrawal credentials that should have changed to the `0x01` format which includes your Ethereum execution address.
+In addition, you should see a response that contains withdrawal credentials that should have changed to the `0x01` format which includes your Ethereum execution address.
 
 ### Done: Receiving partial withdrawals after `withdrawal_credentials` are updated is automatic, but will take time.
 
@@ -424,20 +428,4 @@ Yes, however only account balances will change and there will be no associated t
 If any of your validators have been slashed since launch and exited from the chain forcefully, or if you exited a long time ago, you can still withdraw your remaining balance normally. To do so, you will just need to submit a BLS to execution change request by following the step-by-step guide to performing a full withdrawal in this document.
 
 #### I am a non technical user, how can I set my withdrawals in a safe way?
-
 The guide will still provide a safe way to generate the signed `blstoexecutionchange` messages in an offline environment. From there, if you're willing to take a small risk on inclusion guarantees, some block scanners like beaconcha.in will provide front ends to drag and drop the messages for inclusion to set the withdrawal address. 
-
-## Glossary
-<!-- TODO: These terms can now be moved into Glossary CMS and embedded via quicklooks to further streamline the content experience -->
-- **Validator**: The on-chain representation of a validator node and its staked Ethereum.
-- **Validator index:** A unique numeric ID assigned to a validator when activated. You can see this validator index in your Prysm validator client logs, or in block explorers such as [https://beaconcha.in](https://beaconcha.in) and [https://beaconscan.com](https://beaconscan.com) by looking it up using your public key. You will need to know the validator indices of the validators you wish to withdraw through this guide. Only activated validators can begin the exit and withdrawal processes.
-- **Staker:** The person or entity managing Ethereum validators.
-- **Voluntary exit:** Validators that are currently active on Ethereum can choose to **exit** the network, marking them as exited and exempting them from any staking responsibilities. In order to **withdraw** a validator’s balance completely, a voluntary exit must be submitted to Ethereum and must complete first.
-- **Full validator withdrawal:** The process of withdrawing your entire stake on Ethereum, exiting your validator, and withdrawing your entire balance to an Ethereum address of your choosing. Full validator withdrawals need a validator to exit first, which can take time depending on how large the exit queue is. Performing a full withdrawal requires submitting a voluntary exit first.
-- **Partial validator withdrawal:** The process of withdrawing your validator’s **earnings** only. That is, if you're staking 33.3 `ETH`, you can withdraw 1.3 `ETH` using a partial withdrawal. Your validator does **not** need to exit, and you will continue to validate normally. Partial withdrawals do not go through an exit queue, but will only be processed at a maximum of 16 validators at a time per block.
-- **Validator mnemonic, HD wallet mnemonic, or validator seed phrase:** A mnemonic in this context is the 24 word secret that you received upon creating your validator(s), which is the ultimate credential that gives you access to withdrawing your validator(s). For many, this was generated when they first interacted with the Ethereum staking CLI to prepare their validator deposits. We will refer to this as your validator mnemonic throughout this document
-- **Validator withdrawal credentials:** Each validator has data known as “withdrawal credentials” which can be fetched from your beacon node or from a block explorer such as [https://beaconcha.in](https://beaconcha.in) or [https://beaconscan.com](https://beaconscan.com) by looking at the “deposits” tab and seeing your credentials there. You will need these for this guide.
-- **Ethereum execution address:** Referred to also as an Ethereum address, this is a standard address to an Ethereum account which you can view in block explorers such as Etherscan. Your validator’s balance, upon a full withdrawal, will be available at an Ethereum address of your choosing.
-- **BLS key:** Your validators use a key format known as [BLS](/learn/dev-concepts/bls-cryptography.md), which is used exclusively for staking. Validators have four kinds of BLS keys: validator public key, validator private key, withdrawal public key, and withdrawal private key. only the validator public key can be viewed on staking explorers such as [https://beaconcha.in](https://beaconcha.in), and private keys, which are secret, are used for signing. Not to be confused with an Ethereum address. The validator mnemonic can be used to access all 4 keys which are important for setting the Ethereum address for withdrawing.
-- **BLS to Execution Change:** In order to withdraw your validator, Ethereum needs to associate an **Ethereum execution address** with your validator’s **keys**. Underneath the hood, submitting a bls-to-execution-change (withdrawal) request updates the [withdrawal credentials](https://github.com/ethereum/consensus-specs/blob/master/specs/phase0/validator.md#withdrawal-credentials) which tells Ethereum “I want to withdraw my validator balance to this specific Ethereum address”. When you see the terms BLS to Execution or bls_to_exec used, it refers to this action. **note:** withdrawal request and bls-to-execution-change are used interchangeably.
-- **Pool:** Upon submission of a validator exit request or bls-to-execution-change request, the message will sit in a special place in memory ( the pool ) to be broadcasted across your peers. Since only the block proposers can include these requests and there is a limit to the number of requests included per block, sometimes if the pool becomes too full your message may be dropped and not included. If this happens, a re-submission of the request may be required.

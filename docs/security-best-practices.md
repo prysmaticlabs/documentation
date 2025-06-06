@@ -52,7 +52,7 @@ Linux-specific best practices:
 
 
 ## Slash avoidance
-The Ethereum network penalizes malicious behavior with a slashing mechanism that burns staked Ethereum [<a href='#footnote-7'>7</a>]. Generally speaking, unless you deliberately act maliciously or over-engineer for redundancy, you won’t be slashed. 
+The Ethereum network penalizes malicious behavior with a slashing mechanism that burns staked `ETH` [<a href='#footnote-7'>7</a>]. Generally speaking, unless you deliberately act maliciously or over-engineer for redundancy, you won’t be slashed. 
  
 It’s very important for you to understand that **simple setups that occasionally experience downtime** are far better for you - and for the network - than complex highly-available architectures.
  

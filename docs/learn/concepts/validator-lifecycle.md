@@ -51,7 +51,9 @@ If a slashable event is included in a block while a validator is either `ACTIVE`
 ## `EXITED` State
 In the case that the validator has reached the exited state voluntarily, the funds will become withdrawable after 256 epochs (~27 hours). If the validator was slashed, this delay is extended to 4 eeks (2048 epochs*4 or ~36 days). If a slashable event is included in a block before funds have been withdrawn, the validator will move back to the `SLASHING` state causing withdrawal delays to reset.
 
+
 :::warning
+
 Funds will not be able to be withdrawn from validators until transactions are introduced after Ethereum proof-of-stake merges with the current Ethereum chain.
 
 :::

@@ -1,7 +1,7 @@
 ---
 id: install-with-docker
-title: Install Prysm with Docker
-sidebar_label: Install using Docker
+title: Install with Docker
+sidebar_label: Install with Docker
 ---
 
 import Tabs from '@theme/Tabs';
@@ -63,13 +63,13 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
 
 First, ensure that you're running the most recent version of Docker:
 
-```text
+```sh
 docker -v
 ```
 
 Next, pull the Prysm images:
 
-```text
+```sh
 ## stable, without Busybox debugging tools
 docker pull gcr.io/offchainlabs/prysm/validator:stable
 docker pull gcr.io/offchainlabs/prysm/beacon-chain:stable
@@ -121,7 +121,7 @@ Next, use Docker to tell your beacon node to connect to your local execution nod
     ]}>
       <TabItem value="mainnet">
 
-```text
+```sh
 docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node \
   gcr.io/offchainlabs/prysm/beacon-chain:stable \
   --datadir=/data \
@@ -137,7 +137,7 @@ docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/u
 
 Download the Sepolia genesis state from [GitHub](https://github.com/eth-clients/sepolia/blob/main/metadata/genesis.ssz) to a local file, then run:
 
-```text
+```sh
 docker run -it -v $HOME/.eth2:/data -v /path/to/genesis.ssz:/genesis/genesis.ssz -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node \
   gcr.io/offchainlabs/prysm/beacon-chain@sha256:bf9b95661c71ad60f633ee14cf352a668d550076471154cf80dfef8fce0bb41e \
   --datadir=/data \
@@ -155,7 +155,7 @@ docker run -it -v $HOME/.eth2:/data -v /path/to/genesis.ssz:/genesis/genesis.ssz
 
 Download the Hoodi genesis state from [GitHub](https://github.com/eth-clients/hoodi/blob/main/metadata/genesis.ssz) to a local file, then run:
 
-```text
+```sh
 docker run -it -v $HOME/.eth2:/data -v /path/to/genesis.ssz:/genesis/genesis.ssz -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node \
   gcr.io/offchainlabs/prysm/beacon-chain@sha256:bf9b95661c71ad60f633ee14cf352a668d550076471154cf80dfef8fce0bb41e \
   --datadir=/data \
@@ -186,7 +186,7 @@ To ensure that your Docker image has access to a data directory, mount a local d
     ]}>
       <TabItem value="mainnet">
 
-```text
+```sh
 docker run -it -v %LOCALAPPDATA%\Eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp gcr.io/offchainlabs/prysm/beacon-chain:stable --datadir=/data --jwt-secret=<YOUR_JWT_SECRET> --rpc-host=0.0.0.0 --http-host=0.0.0.0 --monitoring-host=0.0.0.0 --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> 
 ```
 
@@ -195,7 +195,7 @@ docker run -it -v %LOCALAPPDATA%\Eth2:/data -p 4000:4000 -p 13000:13000 -p 12000
 
 Download the Sepolia genesis state from [GitHub](https://github.com/eth-clients/sepolia/blob/main/metadata/genesis.ssz) to a local file, then run:
 
-```text
+```sh
 docker run -it -v %LOCALAPPDATA%\Eth2:/data -v \path\to\genesis.ssz:/genesis/genesis.ssz -p 4000:4000 -p 13000:13000 -p 12000:12000/udp gcr.io/offchainlabs/prysm/beacon-chain@sha256:bf9b95661c71ad60f633ee14cf352a668d550076471154cf80dfef8fce0bb41e --datadir=/data --jwt-secret=<YOUR_JWT_SECRET> --rpc-host=0.0.0.0 --http-host=0.0.0.0 --monitoring-host=0.0.0.0 --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> --genesis-state=/genesis/genesis.ssz --sepolia
 ```
 
@@ -204,7 +204,7 @@ docker run -it -v %LOCALAPPDATA%\Eth2:/data -v \path\to\genesis.ssz:/genesis/gen
 
 Download the Hoodi genesis state from [GitHub](https://github.com/eth-clients/hoodi/blob/314f727fc019c449905e16c84977415c91e62a30/metadata/genesis.ssz#L2) to a local file, then run:
 
-```text
+```sh
 docker run -it -v %LOCALAPPDATA%\Eth2:/data -v \path\to\genesis.ssz:/genesis/genesis.ssz -p 4000:4000 -p 13000:13000 -p 12000:12000/udp gcr.io/offchainlabs/prysm/beacon-chain@sha256:bf9b95661c71ad60f633ee14cf352a668d550076471154cf80dfef8fce0bb41e --datadir=/data --jwt-secret=<YOUR_JWT_SECRET> --rpc-host=0.0.0.0 --http-host=0.0.0.0 --monitoring-host=0.0.0.0 --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT> --genesis-state=/genesis/genesis.ssz --hoodi
 ```
 
@@ -234,13 +234,13 @@ import FullSyncWarningPartial from '@site/docs/partials/_full-sync-warning-parti
 
 Check the sync status of your node with the following command:
 
-```text
+```sh
 curl http://localhost:3500/eth/v1/node/syncing
 ```
 
 If your node is done synchronizing, you will see the response:
 
-```text
+```sh
 {"syncing":false}%
 ```
 
@@ -270,7 +270,7 @@ Copy the path to the `validator_keys` folder under the `eth2.0-deposit-cli` dire
 }>
 <TabItem value="others">
 
-```text
+```sh
 docker run -it -v $HOME/eth2.0-deposit-cli/validator_keys:/keys \
   -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
   --name validator \
@@ -282,7 +282,7 @@ docker run -it -v $HOME/eth2.0-deposit-cli/validator_keys:/keys \
 </TabItem>
 <TabItem value="win">
 
-```text
+```sh
 docker run -it -v %LOCALAPPDATA%\eth2.0-deposit-cli\validator_keys:/keys -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet gcr.io/offchainlabs/prysm/validator:stable accounts import --keys-dir=/keys --wallet-dir=/wallet --accept-terms-of-use
 ```
 
@@ -305,7 +305,7 @@ Open a second terminal window. Issue the following command to start the validato
 }>
 <TabItem value="others">
 
-```text
+```sh
 docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
   -v $HOME/Eth2:/validatorDB \
   --network="host" --name validator \
@@ -319,7 +319,7 @@ docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
 </TabItem>
 <TabItem value="win">
 
-```text
+```sh
 docker run -it -v %LOCALAPPDATA%\Eth2Validators\prysm-wallet-v2:/wallet -v %LOCALAPPDATA%\Eth2:/validatorDB --network="host" --name validator gcr.io/offchainlabs/prysm/validator:stable --beacon-rpc-provider=127.0.0.1:4000 --wallet-dir=/wallet --datadir=/validatorDB --suggested-fee-recipient=<YOUR_WALLET_ADDRESS>
 ```
 
@@ -343,9 +343,9 @@ You can leave your **execution client**, **beacon node**, and **validator client
 
 To interact with your beacon node through Docker, use one of the following commands:
 
- - Halt: `docker stop beacon-node` or `Ctrl+c`
- - Restart: `docker start -ai beacon-node`
- - Delete: `docker rm beacon-node`
+ - **Halt**: `docker stop beacon-node` or `Ctrl+c`
+ - **Restart**: `docker start -ai beacon-node`
+ - **Delete**: `docker rm beacon-node`
 
 To recreate a deleted container and refresh the chain database, issue the start command with an additional `--clear-db` parameter, where `<YOUR_ETH_EXECUTION_NODE_ENDPOINT>` is in the format of an http endpoint such as `http://host:port` (ex: `http://localhost:8551` for Geth) or an IPC path such as `/path/to/geth.ipc`:
 
@@ -360,7 +360,7 @@ To recreate a deleted container and refresh the chain database, issue the start 
 }>
 <TabItem value="others">
 
-```text
+```sh
 docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node \
   gcr.io/offchainlabs/prysm/beacon-chain:latest \
   --datadir=/data \
@@ -373,7 +373,7 @@ docker run -it -v $HOME/.eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/u
 </TabItem>
 <TabItem value="win">
 
-```text
+```sh
 docker run -it -v %LOCALAPPDATA%\Eth2:/data -p 4000:4000 -p 13000:13000 -p 12000:12000/udp --name beacon-node gcr.io/offchainlabs/prysm/beacon-chain:latest --datadir=/data --clear-db --monitoring-host=0.0.0.0 --rpc-host=0.0.0.0 --execution-endpoint=<YOUR_ETH_EXECUTION_NODE_ENDPOINT>
 ```
 
@@ -387,8 +387,11 @@ docker run -it -v %LOCALAPPDATA%\Eth2:/data -p 4000:4000 -p 13000:13000 -p 12000
 
 ## Frequently asked questions
 
-**Why do we set `--rpc-host` and `--http-host` to `0.0.0.0`?** <br />
+#### Why do we set `--rpc-host` and `--http-host` to `0.0.0.0`?
 :::info
+
 `http-host` and `http-port` have replaced `--grpc-gateway-host` and `--grpc-gateway-port` respectively.
+
 :::
+
 This tells your Docker container to to "listen" for connections from outside of your container, allowing you (and other services) to reach your RPC endpoint(s). See [Configure ports and firewalls](/manage-connections/configure-ports-and-firewalls.md) for more information.

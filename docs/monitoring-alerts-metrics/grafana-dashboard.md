@@ -1,7 +1,7 @@
 ---
 id: grafana-dashboard
 title: Configure dashboarding and alerts with Prometheus and Grafana
-sidebar_label: Configure dashboarding and alerts with Prometheus and Grafana
+sidebar_label: Configure Grafana dashboard
 ---
 
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
@@ -10,7 +10,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 [Grafana](https://grafana.com/) is an open-source data metrics tool that is used to aggregate large amounts of data into a comprehensive visual dashboard for easy analysis. This section includes instructions for installing Grafana on the local machine and configuring Telegram or Discord alerts for monitoring validator status on-the-go.
 
-![Grafana dashboard for prysm node and validator](/images/dashboard_overview.png "Grafana dashboard for prysm node and validator")
+![Grafana dashboard for Prysm node and validator](/images/dashboard_overview.png "Grafana dashboard for Prysm node and validator")
 
 To view your validator's details, visit [beaconcha.in/validators](https://beaconcha.in/validators).
 
@@ -38,7 +38,7 @@ Prometheus must first be installed to fetch the data from the beacon node and va
 
 3. Locate the `prometheus.yml` file and replace the contents with the following:
 
-```# my global config
+```sh
 global:
   scrape_interval:     15s # Set the scrape interval to every 15 seconds. Default is every 1 minute.
   evaluation_interval: 15s # Evaluate rules every 15 seconds. The default is every 1 minute.
@@ -68,13 +68,17 @@ scrape_configs:
 ```
 
 4. In the same directory, double-click the **prometheus** file (with extension `.exe` in Windows) to start Prometheus, or do so in a terminal by issuing the command:
-```
+
+```sh
 ./prometheus
 ```
-  A terminal will open presenting the Prometheus log. 
+
+A terminal will open presenting the Prometheus log. 
  
 :::caution Notice 
+
 Prometheus' default data logging time is 15 days. To extend dashboard statistics to 31 days, add `--storage.tsdb.retention.time=31d` to this startup command.
+
 :::
 
 5. Navigate to [http://localhost:9090/graph](http://localhost:9090/graph) in a browser. It will present a page similar to this:
@@ -85,9 +89,11 @@ Take note of the `validator_statuses` and `total_voted_target_balances`, as they
 #### (Optional) Windows: Running Prometheus in the background
 
 In a **Windows Powershell** prompt, navigate to the directory the `prometheus.exe` file is saved and issue the command:
-```
+
+```sh
 Start-Process "prometheus.exe" "--storage.tsdb.retention.time=31d" -WindowStyle Hidden
 ```
+
 To stop the prometheus process at any time, open the windows task manager and search for `prometheus.exe`, then end the task.
 
 

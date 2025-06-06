@@ -49,15 +49,19 @@ The below steps show how place a common Prysm flag into a YAML file, and how to 
 1. In your Prysm working directory, create a `.yaml` file and open it in a text editor.
 
 2. Add the following lines to the file before closing and saving:
+
 ```sh
 datadir: '/data'
 ```
 
 3. Start the Prysm beacon chain as normal, while specifying the location of the `.yaml` like so:
+
 ```sh
 ./prysm.sh beacon-chain --config-file=/path/to/file.yaml
+
 ```
 or for a validator like so:
+
 ```sh
 ./prysm.sh validator --config-file=/path/to/file.yaml
 ```
@@ -67,19 +71,21 @@ or for a validator like so:
 1. In your Prysm working directory, create a `.yaml` file and open it in a text editor.
 
 2. Add the following lines to the file before closing and saving:
+
 ```sh
 datadir: 'c:\prysm'
 ```
 
 3. Start the Prysm beacon chain as normal, while specifying the location of the `.yaml` like so:
+
 ```sh
 .\prysm.bat beacon-chain --config-file=c:\path\to\file.yaml
 ```
+
 or for a validator like so:
+
 ```sh
 .\prysm.bat validator --config-file=c:\path\to\file.yaml
 ```
 
 It is possible to provide additional flags alongside the `.yaml` file, though if conflicting flags are provided, the flag defined in the`.yaml` file will take priority. For example, if the flag `--datadir=/data2` is specified and `datadir: "/data1"` is in the `.yaml` file, Prysm would prioritize writing to `/data1`.
-
-

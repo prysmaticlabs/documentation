@@ -31,7 +31,7 @@ You may see logs that mention that an endpoint is marked for deprecation and sho
 #### Where can I view my validator metrics such as attestations without the Web UI
 Users will need to migrate to using [grafana dashboards](/monitoring-alerts-metrics/grafana-dashboard.md) or our [individual validator monitoring guide](/monitoring-alerts-metrics/monitor-validators-by-index.md) as well as look to online block explorers. Please let us know if any of these do not cover your usecase and provide any feedback on how we can improve our monitoring tools. 
 
-#### How do I recover a prysm wallet from a mnemonic without the Web UI?
+#### How do I recover a Prysm wallet from a mnemonic without the Web UI?
 Prysm wallets (derived wallets) can be recovered with the associated mnemonic using the [staking-deposit-cli](https://github.com/ethereum/staking-deposit-cli). We recommend you do this recovery in an offline environment.
 
 #### How do I set a fee recipient without the Web UI
@@ -64,7 +64,7 @@ Prysm protects web users with a special URL for authentication instead of requir
 
 example of URL in logs
 
-```
+```sh
 [2021-10-21 14:07:28]  INFO rpc: Once your validator process is running, navigate to the link below to authenticate with the Prysm web interface
 [2021-10-21 14:07:28]  INFO rpc: http://127.0.0.1:7500/initialize?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MzQzMzIyOTJ9.EgkawrXjxSkO26FcwuiB6IFI-KUMyLAc9FKkuLOTHl8&expiration=1634332292
 ```
@@ -100,7 +100,7 @@ Upon completion of onboarding, your web page should always redirect you to the m
 
 The web UI runs by default on port 7500 of the validator client if you are running with the `--web` flag. To customize this port, change the following flag to your liking:
 
-```
+```sh
 --http-port (default: 7500 for validator)
 ```
 
@@ -125,7 +125,7 @@ the `--wallet-dir` flag will determine the location where your auth token as wel
 
 If you are running your beacon node and validator on some server that you want to access from the outside, we recommend SSH local port forwarding to access it. For example, you would do the following from your home computer:
 
-```
+```sh
 ssh -L 7500:127.0.0.1:7500 user@host_ip
 ```
 
@@ -181,6 +181,7 @@ The recommended way to run Prysm web is from the validator client itself via the
 
 
 :::tip Develop URL login
+
 For authentication in develop you may use any token in the url query parameter i.e., `localhost:4200/initialize?token=anytoken`
 
 :::
@@ -188,5 +189,3 @@ For authentication in develop you may use any token in the url query parameter i
 ### Running in Staging
 
 run `npm run start:staging` will run a 'like' production build where the backend expects to be connected to `localhost:7500`. You will need to start the validator client with `--web` but interact with your angular application on `localhost:4200`.
-
-

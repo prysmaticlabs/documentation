@@ -18,7 +18,7 @@ Prysm supports the use of Web3Signer with the following flags:
 
 Example:
 
-```
+```sh
 --validators-external-signer-url=http://localhost:9000
 ```
 
@@ -26,7 +26,7 @@ the flag is also aliased to `--remote-signer-url`
 
 Example:
 
-```
+```sh
 --remote-signer-url=http://localhost:9000
 ```
 
@@ -35,20 +35,23 @@ It is recommended to use `https` for the Web3Signer url. Prysm currently support
 
 - `--validators-external-signer-public-keys`: Comma separated list of public validator keys in hex format or an external url endpoint for the validator to retrieve public keys in JSON format.
 
-HEX example: 
-```
+HEX example:
+
+```sh
 --validators-external-signer-public-keys=0xa99a...e44c,0xb89b...4a0b
 ```
 
 URL example:
-```
+
+```sh
 --validators-external-signer-public-keys=https://web3signer.com/api/v1/eth2/publicKeys
 ```
 
 The flag is also aliased to `--remote-signer-keys`
 
 Example:
-```
+
+```sh
 --remote-signer-keys=0xa99a...e44c,0xb89b...4a0b
 ```
 
@@ -72,19 +75,19 @@ if `--validators-external-signer-public-keys` is not defined the validator clien
 
 Example:
 
-```
+```sh
 validator --web --validators-external-signer-url=http://localhost:9000
 ```
 
-The `--web` flag will enable validator client APIs as well as the web ui ( not supported for `web3signer` ). A JWT token ( found on the second line of the auth-token file) will be generated in the prysm default wallet directory otherwise defined by `--wallet-dir` flag. the token will also be printed in the console:
+The `--web` flag will enable validator client APIs as well as the web ui ( not supported for `web3signer` ). A JWT token ( found on the second line of the auth-token file) will be generated in the Prysm default wallet directory otherwise defined by `--wallet-dir` flag. the token will also be printed in the console:
 
-```
+```sh
 [2022-04-15 14:07:39]  INFO rpc: http://127.0.0.1:7500/initialize?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.e30.ck3J6tcvHcI74IiFjyJqcBH-MmNAq-fMr0ncyZkGvFM
 ```
 
 The token needs to be copied and set in the header of the API request:
 
-```
+```sh
 Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.e30.ck3J6tcvHcI74IiFjyJqcBH-MmNAq-fMr0ncyZkGvFM`
 ```
 
@@ -96,11 +99,13 @@ Prysm Web Interface can only support local keys and will not support the Web3Sig
 
 :::
 
+
 :::warning Only supports Web3Signer currently
 
 The remote keymanager API only currently supports Web3Signer types, please use the regular keymanager API for locally stored keys.
 
 :::
+
 
 :::tip Beacon Chain needs to be synced for use
 
@@ -117,7 +122,7 @@ Keys can be persisted by setting the `--validators-external-signer-key-file` set
 
 Example:
 
-```
+```sh
 --validators-external-signer-key-file=/path/to/keyfile.txt
 ```
 
@@ -125,7 +130,7 @@ The flag is also aliased to `--remote-signer-keys-file`
 
 Example:
 
-```
+```sh
 --remote-signer-keys-file=/path/to/keyfile.txt
 ```
 
