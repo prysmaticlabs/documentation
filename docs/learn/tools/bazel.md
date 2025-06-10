@@ -47,7 +47,7 @@ Building with Bazel requires every directory and every package to have a `BUILD.
 Most of the time, developers will not need to edit BUILD files themselves. Instead, they can use the following tool:
 
 ```sh
-bazel run /:gazelle -- fix
+bazel run //:gazelle -- fix
 ```
 
 Which will edit all BUILD files that need to be changed based on any dependencies that were imported or any files that were added.
