@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
     {label: 'Geth', value: 'geth'}
     ]}>
   <TabItem value="nethermind">
-    <p className='hidden-in-jwt-guide hidden-in-mergeprep-guide'>Download the latest stable release of Nethermind for your operating system from the <a href='https://downloads.nethermind.io/'>Nethermind downloads page</a>.</p>
+    <p className='hidden-in-jwt-guide hidden-in-mergeprep-guide'>Follow the installation directions on the <a href="https://docs.nethermind.io/get-started/installing-nethermind">Nethermind documentation</a> site for your operating system.</p>
     <Tabs className='tabs-hidden-in-jwt-guide'  groupId="protocol" defaultValue="jwt" values={[
     {label: 'JWT', value: 'jwt'},
     {label: 'IPC', value: 'ipc'}
@@ -44,7 +44,7 @@ import TabItem from '@theme/TabItem';
                   {label: 'JWT', value: 'jwt'},
                   {label: 'IPC', value: 'ipc'}
                   ]}>
-                      <TabItem value="jwt"><pre><code>nethermind --config sepolia --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true--JsonRpc.JwtSecretFile=&lt;PATH_TO_JWT_FILE&gt</code></pre></TabItem>
+                      <TabItem value="jwt"><pre><code>nethermind --config sepolia --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.JwtSecretFile=&lt;PATH_TO_JWT_FILE&gt</code></pre></TabItem>
                       <TabItem value="ipc"><pre><code>nethermind --config sepolia --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.IpcUnixDomainSocketPath=&lt;PATH_TO_IPC_FILE&gt;</code></pre></TabItem>
                   </Tabs>
             </TabItem>
@@ -53,7 +53,7 @@ import TabItem from '@theme/TabItem';
                   {label: 'JWT', value: 'jwt'},
                   {label: 'IPC', value: 'ipc'}
                   ]}>
-                      <TabItem value="jwt"><pre><code>nethermind --config hoodi --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true--JsonRpc.JwtSecretFile=&lt;PATH_TO_JWT_FILE&gt;</code></pre></TabItem>
+                      <TabItem value="jwt"><pre><code>nethermind --config hoodi --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.JwtSecretFile=&lt;PATH_TO_JWT_FILE&gt;</code></pre></TabItem>
                       <TabItem value="ipc"><pre><code>nethermind --config hoodi --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.IpcUnixDomainSocketPath=/path/to/&lt;your.ipc&gt;</code></pre></TabItem>
                   </Tabs>
             </TabItem>
@@ -79,7 +79,7 @@ import TabItem from '@theme/TabItem';
                   {label: 'JWT', value: 'jwt'},
                   {label: 'IPC', value: 'ipc'}
                   ]}>
-                      <TabItem value="jwt"><pre><code>./nethermind --config sepolia --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true--JsonRpc.JwtSecretFile=&lt;PATH_TO_JWT_FILE&gt</code></pre></TabItem>
+                      <TabItem value="jwt"><pre><code>./nethermind --config sepolia --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.JwtSecretFile=&lt;PATH_TO_JWT_FILE&gt</code></pre></TabItem>
                       <TabItem value="ipc"><pre><code>./nethermind --config sepolia --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.IpcUnixDomainSocketPath=&lt;PATH_TO_IPC_FILE&gt;</code></pre></TabItem>
                   </Tabs>
             </TabItem>
@@ -88,7 +88,7 @@ import TabItem from '@theme/TabItem';
                   {label: 'JWT', value: 'jwt'},
                   {label: 'IPC', value: 'ipc'}
                   ]}>
-                      <TabItem value="jwt"><pre><code>./nethermind --config hoodi --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true--JsonRpc.JwtSecretFile=&lt;PATH_TO_JWT_FILE&gt;</code></pre></TabItem>
+                      <TabItem value="jwt"><pre><code>./nethermind --config hoodi --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.JwtSecretFile=&lt;PATH_TO_JWT_FILE&gt;</code></pre></TabItem>
                       <TabItem value="ipc"><pre><code>./nethermind --config hoodi --JsonRpc.Enabled true --HealthChecks.Enabled true --HealthChecks.UIEnabled true --JsonRpc.IpcUnixDomainSocketPath=/path/to/&lt;your.ipc&gt;</code></pre></TabItem>
                   </Tabs>
             </TabItem>
