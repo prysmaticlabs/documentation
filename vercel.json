@@ -6,6 +6,9 @@
   "trailingSlash": true,
   "cleanUrls": true,
   "redirects": [
+    { "source": "/prysm/docs/(.*)", 
+      "destination": "/docs/$1", 
+      "permanent": false },
     { "source": "/", 
       "destination": "/docs/", 
       "permanent": false },
