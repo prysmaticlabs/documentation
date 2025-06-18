@@ -4,7 +4,7 @@
     "docusaurus": "docusaurus",
     "examples": "docusaurus examples",
     "start": "docusaurus start",
-    "build": "docusaurus build && node scripts/postbuild.js",
+    "build": "docusaurus build",
     "publish-gh-pages": "docusaurus publish",
     "write-translations": "docusaurus write-translations",
     "version": "docusaurus version",
