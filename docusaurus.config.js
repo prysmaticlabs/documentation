@@ -8,7 +8,7 @@ module.exports = {
         : process.env.VERCEL_URL
             ? `https://${process.env.VERCEL_URL}`
             : 'http://localhost:3000',
-    baseUrl: '/docs/',
+    baseUrl: '/prysm/docs/',
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'throw',
     favicon: 'images/Prysm.svg',
@@ -29,7 +29,7 @@ module.exports = {
             logo: {
                 alt: "Prysm logo",
                 src: 'images/logo2.png',
-                href: '/docs/',
+                href: '/prysm/docs/',
             },
             items: [{
                 type: 'docsVersion',
@@ -38,7 +38,7 @@ module.exports = {
                 label: prysmVersion,
             },
             {
-                to: '/docs/install-prysm/install-with-script',
+                to: '/prysm/docs/install-prysm/install-with-script',
                 label: 'Quick Install',
                 position: 'right',
             },
@@ -57,7 +57,7 @@ module.exports = {
         footer: {
             logo: {
                 alt: "Prysm Eth2 Docs",
-                href: '/docs/',
+                href: '/prysm/docs/',
                 src: 'images/Prysm.svg',
             },
             copyright: `Copyright © ${new Date().getFullYear()} Offchain Labs, Inc., Validator Deposit Contract 0x00000000219ab540356cbb839cbe05303d7705fa`,
