@@ -159,7 +159,7 @@
     { "source": "/(docs/prysm-usage/parameters/?)", 
       "destination": "/docs/configure-prysm/parameters/", 
       "permanent": false },
-    { "source": "/(docs/prysm-usage/prysmctll/?)", 
+    { "source": "/(docs/prysm-usage/prysmctl/?)", 
       "destination": "/docs/configure-prysm/prysmctl/", 
       "permanent": false },
     { "source": "/(docs/prysm-usage/secure-grpc/?)", 
